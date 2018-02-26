@@ -39,7 +39,7 @@
         }
     ],
     "start_url": "./?utm_source=web_app_manifest",
-    "theme_color": "#0A1922",
+    "theme_color": "#3371e3",
     "background_color": "#FFF",
     "display": "standalone"
 }
