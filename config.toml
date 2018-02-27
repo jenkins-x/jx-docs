@@ -214,3 +214,10 @@ anchor = "smart"
     identifier = "github"
     post = "external"
     url = "https://github.com/jenkins-x/jx"
+
+  [[menu.global]]
+    name = "Jenkins"
+    weight = 200
+    identifier = "jenkins"
+    post = "external"
+    url = "https://jenkins.io"
