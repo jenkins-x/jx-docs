@@ -23,8 +23,7 @@ Yes! All of Jenkins X source code and artifacts are open source; either Apache o
        
 ### Is Jenkins X a fork of Jenkins?
 
-o! Jenkins X will always reuse whatever is in Jenkins Core and configure it to be as kubernetes
-                    native as possible.
+No! Jenkins X will always reuse whatever is in Jenkins Core and configure it to be as kubernetes native as possible.
                
 Initially Jenkins X is a distribution of the core Jenkins with a custom kubernetes configuration with some additional built in plugins (e.g. the kubernetes plugin and jx pipelines plugin) packaged as a Helm chart.
 
