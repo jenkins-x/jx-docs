@@ -1,6 +1,6 @@
 ---
-title: Install on Kuberentes
-linktitle: Install on Kuberentes
+title: Install on Kubernetes
+linktitle: Install on Kubernetes
 description: How to install Jenkins X on an existing Kubernetes cluster
 date: 2016-11-01
 publishdate: 2016-11-01
