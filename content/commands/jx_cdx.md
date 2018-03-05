@@ -1,26 +1,28 @@
 ---
 date: 2018-03-05T15:16:48Z
-title: "jx console"
-slug: jx_console
-url: /commands/jx_console/
+title: "jx cdx"
+slug: jx_cdx
+url: /commands/jx_cdx/
 ---
-## jx console
+## jx cdx
 
-Opens the Jenkins console
+Opens the CDX dashboard for visualising CI / CD and your environments
 
 ### Synopsis
 
-Opens the Jenkins X console in a browser.
+Opens the CDX dashboard in a browser. 
+
+Which helps you visualise your CI / CD pipelines, apps, environments and teams.
 
 ```
-jx console [flags]
+jx cdx [flags]
 ```
 
 ### Examples
 
 ```
-  # Open the Jenkins X console in a browser
-  jx console
+  # Open the CDX dashboard in a browser
+  jx cdx
   
   # Print the Jenkins X console URL but do not open a browser
   jx console -u
@@ -29,7 +31,7 @@ jx console [flags]
 ### Options
 
 ```
-  -h, --help   help for console
+  -h, --help   help for cdx
   -u, --url    Only displays and the URL and does not open the browser
 ```
 
