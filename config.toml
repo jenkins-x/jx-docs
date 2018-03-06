@@ -9,7 +9,7 @@ metaDataFormat = "yaml"
 title = "Jenkins X"
 theme = "gohugoioTheme"
 
-googleAnalytics = "UA-7131036-4"
+googleAnalytics = "UA-4216293-5"
 
 pluralizeListTitles = false
 
@@ -69,7 +69,7 @@ twitter = "jenkinsxio"
 
 #CUSTOM PARAMS
 [params]
-  description = "Jenkins X is a CI / CD platform for Kubernetes"
+  description = "Jenkins X provides CI / CD for Kubernetes"
   ## Used for views in rendered HTML (i.e., rather than using the .Hugo variable)
   release = "0.36.1"
   ## Setting this to true will add a "noindex" to *EVERY* page on the site
@@ -81,9 +81,9 @@ twitter = "jenkinsxio"
   ### Edit content repo (set to automatically enter "edit" mode; this is good for "improve this page" links)
   ghdocsrepo = "https://github.com/jenkins-x/jx-docs/tree/master/docs"
   ## Gitter URL
-  gitter = "https://gitter.im/jenkins-x/jx"
+  gitter = "http://slack.k8s.io/"
   ## Discuss Forum URL
-  forum = "https://discourse.jenkins-x.io/"
+  forum = "http://slack.k8s.io/"
   ## Google Tag Manager
   gtmid = ""
 
@@ -205,7 +205,7 @@ anchor = "smart"
     icon = true
     identifier = "community"
     post = "external"
-    url = "https://discourse.jenkins-x.io/"
+    url = "http://slack.k8s.io/"
 
 
   [[menu.global]]
