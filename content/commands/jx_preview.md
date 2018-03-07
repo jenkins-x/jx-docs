@@ -1,5 +1,5 @@
 ---
-date: 2018-03-07T11:38:57Z
+date: 2018-03-07T18:07:23Z
 title: "jx preview"
 slug: jx_preview
 url: /commands/jx_preview/

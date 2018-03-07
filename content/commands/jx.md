@@ -1,5 +1,5 @@
 ---
-date: 2018-03-07T11:38:57Z
+date: 2018-03-07T18:07:23Z
 title: "jx"
 slug: jx
 url: /commands/jx/
@@ -39,6 +39,7 @@ jx [flags]
 * [jx install](/commands/jx_install/)	 - Install Jenkins X in the current Kubernetes cluster
 * [jx logs](/commands/jx_logs/)	 - Tails the log of the latest pod for a deployment
 * [jx namespace](/commands/jx_namespace/)	 - View or change the current namespace context in the current kubernetes cluster
+* [jx open](/commands/jx_open/)	 - Open a service in a browser
 * [jx preview](/commands/jx_preview/)	 - Creates or updates a Preview Environment for the current version of an application
 * [jx promote](/commands/jx_promote/)	 - Promotes a version of an application to an environment
 * [jx prompt](/commands/jx_prompt/)	 - Generate the command line prompt for the current team and environment
