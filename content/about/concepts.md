@@ -63,13 +63,33 @@ Jenkins X builds upon the following core components:
 
 ### Kubernetes & Docker
 
-At the heart of the system is Kubernetes, which has become the defacto virtual infrastructure platform for DevOps. The Kubernetes platform extends the basic Containerisation principles provided by Docker to span across multiple physical Nodes. In brief, Kubernetes provides a homogeneous virtual infrastructure that can be scaled dynamically by adding or removing Nodes. Each Node participates in a single large flat private virtual network space. 
+At the heart of the system is Kubernetes, which has become the defacto virtual infrastructure platform for DevOps. Every major Cloud provider now offers Kubernetes infrastructure on demand and the platform may also be installed in-house on private infrastructure, if required. Test environments may also be created on local development hardware using the Minikube installer.
 
-The unit of deployment in Kubernetes is the Pod, which comprises one or more Docker containers and some meta-data. All containers within a Pod share the same virtual IP address and port space. Deployments within Kubernetes are declarative, so the user specifies the number of instances of a given version of a Pod to be deployed and Kubernetes calculates the actions required to get from the current state to the desired state, by deploying or deleting Pods across Nodes. The decision as to where specific instances of Pods will be instantiated is influenced by available resources, desired resources and label-matching. Once deployed, Kubernetes contracts to ensure that the desired number of Pods of each type remain operational by performing periodic health checks and terminating and replacing non-responsive Pods.
+Functionally, the Kubernetes platform extends the basic Containerisation principles provided by Docker to span across multiple physical Nodes. 
+
+In brief, Kubernetes provides a homogeneous virtual infrastructure that can be scaled dynamically by adding or removing Nodes. Each Node participates in a single large flat private virtual network space. 
+
+The unit of deployment in Kubernetes is the Pod, which comprises one or more Docker containers and some meta-data. All containers within a Pod share the same virtual IP address and port space. Deployments within Kubernetes are declarative, so the user specifies the number of instances of a given version of a Pod to be deployed and Kubernetes calculates the actions required to get from the current state to the desired state by deploying or deleting Pods across Nodes. The decision as to where specific instances of Pods will be instantiated is influenced by available resources, desired resources and label-matching. Once deployed, Kubernetes undertakes to ensure that the desired number of Pods of each type remain operational by performing periodic health checks and terminating and replacing non-responsive Pods.
 
 To impose some structure, Kubernetes allows for the creation of virtual Namespaces which can be used to seperate Pods logically, and to potentially associate groups of Pods with specific resources. Resources in a Namespace can share a single security policy, for example. Resource names are required to be unique within a Namespace but may be reused across Namespaces.
 
-In the Jenkins X model, a Pod equates to a deployed instance of a Microservice (in most cases). Where horizontal scaling of the Microservice is required, Kubernetes allows multiple identical instances of a given Pod to be deployed, each with its own virtual IP address. These can be aggregated into a single virtual endpoint known as a Service which has a unique and static IP address and a local DNS entry that matches the Service name. Calls to the Service are dynamically remapped to the IP of one of the healthy Pod instances on a random basis. Services can also be used to remap ports. 
+In the Jenkins X model, a Pod equates to a deployed instance of a Microservice (in most cases). Where horizontal scaling of the Microservice is required, Kubernetes allows multiple identical instances of a given Pod to be deployed, each with its own virtual IP address. These can be aggregated into a single virtual endpoint known as a Service which has a unique and static IP address and a local DNS entry that matches the Service name. Calls to the Service are dynamically remapped to the IP of one of the healthy Pod instances on a random basis. Services can also be used to remap ports. Within the Kubernetes virtual network, services can be referred to with a fully qualified domain name of the form: `<service-name>.<namespace-name>.svc.cluster.local` which may be shortened to `<service-name>.<namespace-name>` or just `<service-name>` in the case of services which fall within the same namespace. Hence, a RESTful service called 'payments' deployed in a namespace called 'finance' could be referred to in code via `http://payments.finance.svc.cluster.local`, `http://payments.finance` or just `http://payments`, dependent upon the location of the calling code.
+
+To access Services from outside the local network, Kubernetes requires the creation of an Ingress for each Service. The most common form of this utilises one or more load balancers with static IP addresses, which sit outside the Kubernetes virtual infrastructure and route network requests to mapped internal Services. By creating a wildcard external DNS entry for the static IP address of the load balancer, it becomes possible to map services to external fully-qualified domain names. For example, if our load balancer is mapped to `*.jenkins-x.io` then our payments service could be exposed as `http://payments.finance.jenkins-x.io`.
+
+Kubernetes represents a powerful and constantly improving platform for deploying services at massive scale, but is also complex to understand and can be difficult to configure correctly. Jenkins X brings to Kubernetes a set of default conventions and some simplified tooling, optimised for the purposes of DevOps and the management of loosely-coupled services. 
+
+The `jx` command line tool provides simple ways to perform common operations upon Kubernetes instances like viewing logs and connecting to container instances. In addition, Jenkins X extends the Kubernetes Namespace convention to create Environments which may be chained together to form a promotion hierarchy for the release pipeline. 
+
+A Jenkins X Environment can represent a virtual infrastructure environment such as Dev, Staging, Production etc for a given code team. Promotion rules between Environments can be defined so that releases may be moved automatically or manually through the pipeline. Each Environment is managed following the GitOps methodology - the desired state of an Environment is maintained in a Git repository and committing or rolling back changes to the repository triggers an associated change of state in the given Environment in Kubernetes.
+
+Kubernetes clusters can be created directly using the `jx create cluster` command, making it simple to reproduce clusters in the event of a failure. Similarly, the Jenkins X platform can be upgraded on an existing cluster using `jx upgrade platform`. Jenkins X supports working with multiple Kubernetes clusters through `jx context` and switching between multiple Environments within a cluster with `jx environment`.
+
+TODO:
+ConfigMaps
+Secrets
+Resource Quotas
+Persistent Volumes
 
 ### Helm
 
@@ -78,4 +98,6 @@ In the Jenkins X model, a Pod equates to a deployed instance of a Microservice (
 ### Maven
 
 ### Draft
+
+### GitHub / Gitea
 
