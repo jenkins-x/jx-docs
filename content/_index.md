@@ -25,9 +25,8 @@ features:
 sections:    
   - heading: "Watch a demo"
     cta: Check out this Jenkins X demo
-    link: http://demo.jenkins-x.io/
+    link: https://www.youtube.com/embed/ELA4tytdFeA
     color_classes: bg-accent-color white
-    image: /images/homepage-screenshot-hugo-themes.jpg
-    copy: "watch how easy it is to get started with Jenkins X."
+    copy: "watch how easy it is to get started with Jenkins X"
 ---
 
