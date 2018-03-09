@@ -134,12 +134,18 @@ anchor = "smart"
   url = "/getting-started/"
   post = "break"
 
+[[menu.docs]]
+  name = "Developing"
+  weight = 8
+  identifier = "developing"
+  url = "/developing/"
+  post = "break"
+
 # Core Menus
 
 [[menu.docs]]
   name = "CLI"
   weight = 40
-  post = "break"
   identifier = "commands"
   url = "/commands/jx/"
 

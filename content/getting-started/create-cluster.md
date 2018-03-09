@@ -26,10 +26,14 @@ A number of different public cloud providers are supported such as
 
 ### Using Google Cloud (GKE)
 
+Use the [jx create cluster gke](/commands/jx_create_cluster_gke) command: 
+
     jx create cluster gke
     
         
 ### Using Azure (AKS)
+
+Use the [jx create cluster aks](/commands/jx_create_cluster_aks) command: 
 
     jx create cluster aks
     
@@ -42,7 +46,7 @@ We recommend you try [install minikube](https://github.com/kubernetes/minikube#i
     
 To ensure your machine can run [minikube](https://github.com/kubernetes/minikube). 
 
-Once you have minikube running then try:
+Once you have minikube running then try the [jx install](/commands/jx_install) command:
 
     jx install
 
