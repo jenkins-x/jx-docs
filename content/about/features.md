@@ -1,7 +1,7 @@
 ---
-title: Jenkins X Features
+title: Features
 linktitle: Features
-description: 
+description: How Jenkins X can help you deliver continuously
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01
@@ -13,6 +13,7 @@ weight: 20
 sections_weight: 20
 draft: false
 aliases: [/about/features]
+categories: [fundamentals]
 toc: true
 ---
 
