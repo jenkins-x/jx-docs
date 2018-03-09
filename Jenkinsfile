@@ -25,6 +25,7 @@ pipeline {
           sh "hugo -d jenkins-x-website"
 
           dir("jenkins-x-website") {
+            sh "git config credential.helper store"
             sh "git add *"
             sh "git commit --allow-empty -a -m \"updated site\""
             sh "git push origin"
