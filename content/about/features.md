@@ -53,6 +53,8 @@ The CD Pipelines of Jenkins X automate the promotion of version changes through 
 
 To manually promote a version of an application to an environment you can use [jx promote](/developing/promote) command.
 
+<img src="/images/overview.png" class="img-thumbnail">
+
 ## Preview Environments
 
 Jenkins X lets you spin up Preview Environments for your Pull Requests so you can get fast feedback before changes are merged to master. This gives you faster feedback for your changes before they are merged and released and allows you to avoid having human approval inside your release pipeline to speed up delivery of changes merged to master.
@@ -67,4 +69,6 @@ Jenkins X automatically comments on your Commits, Issues and Pull Requests with 
 ## Applications
 
 A collection of best of breed software tools packaged as helm charts that come pre-integrated with Jenkins X such as: Nexus, Artifactory, SonarQube, Prometheus, Elasticsearch, Grafana etc
-upgrade versions. 
+upgrade versions.
+
+ 

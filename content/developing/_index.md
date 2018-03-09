@@ -5,7 +5,7 @@ description: Using Jenkins X to continuously deliver value to your customers
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01
-categories: []
+categories: [developing,fundamentals]
 keywords: []
 menu:
   docs:

@@ -57,6 +57,10 @@ Jenkins X brings together a number of familiar methodologies and components into
 
 Jenkins X builds upon the DevOps model of loosely-coupled architectures and is designed to support you in deploying large numbers of distributed microservices in a repeatable and manageable fashion, across multiple teams.
 
+### Conceptual model
+
+<img src="/images/model.png" class="img-thumbnail">
+
 ## Building Blocks
 
 Jenkins X builds upon the following core components:  
@@ -94,4 +98,5 @@ By default, Pod state is transient. Any data written to the local file system of
 Interacting directly with Kubernetes involves either manual configuration using the `kubectl` command line utility, or passing various flavours of YAML data to the API. This can be complex and is open to human error creeping in. In keeping with the DevOps principle of 'configuration as code', Jenkins X leverages Helm and Draft to create atomic blocks of configuration for your applications.
 
 Helm simplifies Kubernetes configuration through the concept of a Chart, which is a set of files that together specify the meta-data necessary to deploy a given application or service into Kubernetes. Rather than maintain a series of boilerplate YAML files based upon the Kubernetes API, Helm uses a templating language to create the required YAML specifications from a single shared set of values. This makes it possible to specify re-usable Kubernetes applications where configuration can be selectively over-ridden at deployment time.
+
 

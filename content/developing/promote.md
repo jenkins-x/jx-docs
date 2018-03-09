@@ -13,6 +13,7 @@ weight: 100
 sections_weight: 100
 draft: false
 toc: true
+aliases: [/developing/promotion/]
 ---
 
 
@@ -34,6 +35,8 @@ jx promote myapp --version 1.2.3 --env production --timeout 5h
 ```
 
 You can use terms like `20m` or `10h30m` for the various duration expressions.
+
+<img src="/images/overview.png" class="img-thumbnail">
 
 
 
