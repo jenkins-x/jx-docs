@@ -61,6 +61,29 @@ Jenkins X builds upon the DevOps model of loosely-coupled architectures and is d
 
 Jenkins X builds upon the following core components:
 
+
+## Environment
+
+An _environment_ is a place where applications get deployed. Developers often refer environments using a short name like `Testing, Staging/UAT or Production`.
+
+A _team_ has a collection of Environments. By default Jenkins X creates a `Staging` and `Production` environment but you can create new environments via [jx create environment](/commands/jx_create_environment).
+
+An Environment maps to a namespace in a Kubernetes cluster.
+
+We use GitOps to manage the configuration and version of the kubernetes resources which are deployed to each environment. So each Environment has its own git repository that contains all the Helm Charts that define and configure the applications.
+
+### Promotion
+
+Promotion is implemented by generating a pull request on the Environment's git repository - so that all changes go through git for audit, approval and so that any chance is easy to revert.
+
+When a new change to an environments git repository is merged to master, the pipeline for the environment triggers which applies any changes to the resources via helm - using the source code from the git repository.
+
+The CD Pipelines of Jenkins X automate the promotion of version changes through each Environment which is configured with a _promotion strategy_ property of `Auto`. By default the `Staging` environment uses automatic promotion and the `Production` environment uses `Manual` promotion. 
+
+So out of the box to promote an application to production you need to use the [jx promote](/commands/jx_promote) command.
+
+  
+  
 ### Kubernetes & Docker
 ---
 At the heart of the system is Kubernetes, which has become the defacto virtual infrastructure platform for DevOps. Every major Cloud provider now offers Kubernetes infrastructure on demand and the platform may also be installed in-house on private infrastructure, if required. Test environments may also be created on local development hardware using the Minikube installer.
