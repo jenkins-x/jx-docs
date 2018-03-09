@@ -132,6 +132,7 @@ anchor = "smart"
   weight = 5
   identifier = "getting-started"
   url = "/getting-started/"
+  post = "break"
 
 # Core Menus
 
@@ -156,7 +157,6 @@ anchor = "smart"
 [[menu.docs]]
   name = "Contribute"
   weight = 100
-  post = "break"
   identifier = "contribute"
   url = "/contribute/"
 

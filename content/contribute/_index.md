@@ -14,7 +14,7 @@ menu:
 weight: 01	#rem
 draft: false
 slug:
-aliases: [/tutorials/how-to-contribute-to-hugo/,/community/contributing/]
+aliases: [/community/contributing/]
 toc: false
 ---
 
