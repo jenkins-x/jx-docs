@@ -18,7 +18,7 @@ toc: true
 ---
 
                 
-To create a new Kubernetes cluster with Jenkins X installed then use the  [jx create cluster](/commands/jx_create_cluster) command:
+To create a new Kubernetes cluster with Jenkins X installed use the  [jx create cluster](/commands/jx_create_cluster) command:
 
     jx create cluster
     
@@ -34,7 +34,31 @@ A number of different public cloud providers are supported such as
     jx create cluster aks
     
     
+### Using Minikube (local)    
     
-        
+We recommend you try [install minikube](https://github.com/kubernetes/minikube#installation) and start it first
 
+    minikube start
+    
+To ensure your machine can run [minikube](https://github.com/kubernetes/minikube). 
+
+Once you have minikube running then try:
+
+    jx install
+
+
+We also have this shortcut command that does the above:
+                
+    jx create cluster minikube        
+
+
+### Demo
+
+Here's a little demo showing GKE, AKS and Minikube in parallel. It can take some time to start on different machines/clouds so please be patient!
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/ELA4tytdFeA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+### Troubleshooting
+
+If you hit any issues installing Jenkins X then please check out our [troubleshooting guide](/troubleshooting/faq/) or [let us know](/community) and we'll try our best to help.
 
