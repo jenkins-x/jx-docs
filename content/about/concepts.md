@@ -1,7 +1,7 @@
 ---
 title: Concepts
 linktitle: Concepts
-description: 
+description: An overview of the concepts in Jenkins X
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01
@@ -13,13 +13,13 @@ weight: 20
 sections_weight: 20
 draft: false
 aliases: [/about/concepts]
+categories: [fundamentals]
 toc: true
 ---
-## DevOps
 
 Jenkins X is designed to make it simple for developers to work to DevOps principles and best practices.
 
-### Principles
+## Principles
 ---
 *"DevOps is a set of practices intended to reduce the time between committing a change to a system and the change being placed into normal production, while ensuring high quality."*
 
@@ -39,7 +39,7 @@ The Mean Time To Recover from a failure should also be less than one hour.
 
 Jenkins X has been designed from first principles to allow teams to apply DevOps best practices to hit top-of-industry performance goals.
 
-### Practices
+## Practices
 ---
 The following best practices are considered key to operating a successful DevOps approach:
 

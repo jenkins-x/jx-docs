@@ -1,6 +1,6 @@
 ---
 title: Jenkins X Features
-linktitle: Jenkins X Features
+linktitle: Features
 description: 
 date: 2017-02-01
 publishdate: 2017-02-01
@@ -28,13 +28,22 @@ Jenkins X comes with a handy [jx](/commands/jx) command line tool to easily:
 
 ## Pipelines
 
-Reusable pipeline flows that work out of the box for most common languages for full CI / CD on kubernetes
-
+Rather than having to have deep knowledge of the internals of Jenkins Pipeline, Jenkins X will default awesome pipelines for your projects that implements fully CI and CD using [DevOps best practices](/about/concepts)
+     
 ## Environments
 
-Automatically migrate your application through separate environments via helm and GitOps
+Each team gets a set of Environments. Jenkins X then automates the management of the Environments and the Promotion of new versions of Applications between Environments via GitOps.
+
+## Preview Enviroments
+
+Jenkins X automatically spins up Preview Environments for your Pull Requests so you can get fast feedback before changes are merged to master.
+
+
+## Feedback
+
+Jenkins X automatically comments on your Commits, Issues and Pull Requests with feedback as code is ready to be previewed, is promoted to environments or if Pull Requests are generated automatically to upgrade versions. 
 
 ## Applications
 
 A collection of best of breed software tools packaged as helm charts that come pre-integrated with Jenkins X such as: Nexus, Artifactory, SonarQube, Prometheus, Elasticsearch, Grafana etc
-
+upgrade versions. 

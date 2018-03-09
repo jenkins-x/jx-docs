@@ -20,7 +20,7 @@ features:
   - heading: Feedback
     image_path: /images/icon-content-management.svg
     tagline: Feedback on Issues and Pull Requests
-    copy: Jenkins X automatically commonts on your Commits, Issues and Pull Requests with feeback as code is ready to be previewed, is promoted to environments or if Pull Requests are generated automatically to upgrade versions. 
+    copy: Jenkins X automatically comments on your Commits, Issues and Pull Requests with feedback as code is ready to be previewed, is promoted to environments or if Pull Requests are generated automatically to upgrade versions. 
       
 sections:    
   - heading: "Watch a demo"

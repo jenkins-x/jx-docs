@@ -1,7 +1,7 @@
 ---
 title: Get Started
 linktitle: Get Started Overview
-description: Quick start and guides for getting started with Jenkins X 
+description: Guides for getting started with Jenkins X 
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01
@@ -12,6 +12,7 @@ menu:
     parent: "getting-started"
     weight: 1
 weight: 0001	#rem
+sections_weight: 10
 draft: false
 aliases: [/overview/introduction/]
 toc: false
