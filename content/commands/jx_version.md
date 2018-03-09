@@ -1,5 +1,5 @@
 ---
-date: 2018-03-09T13:00:54Z
+date: 2018-03-09T13:26:03Z
 title: "jx version"
 slug: jx_version
 url: /commands/jx_version/

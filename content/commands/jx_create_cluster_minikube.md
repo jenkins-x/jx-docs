@@ -1,5 +1,5 @@
 ---
-date: 2018-03-09T13:00:54Z
+date: 2018-03-09T13:26:03Z
 title: "jx create cluster minikube"
 slug: jx_create_cluster_minikube
 url: /commands/jx_create_cluster_minikube/
@@ -43,7 +43,7 @@ jx create cluster minikube [flags]
       --headless                            Enable headless operation if using browser automation
       --helm-client-only                    Only install helm client
   -h, --help                                help for minikube
-      --http                                Toggle creating http or https ingress rules (default true)
+      --http string                         Toggle creating http or https ingress rules (default "true")
   -v, --hyperv-virtual-switch string        Additional options for using HyperV with minikube
       --keep-exposecontroller-job           Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
       --local-cloud-environment             Ignores default cloud-environment-repo and uses current directory 
@@ -54,7 +54,7 @@ jx create cluster minikube [flags]
       --recreate-existing-draft-repos       Delete existing helm repos used by Jenkins X under ~/draft/packs
       --register-local-helmrepo             Registers the Jenkins X chartmuseum registry with your helm client [default false]
       --timeout string                      The number of seconds to wait for the helm install to complete (default "6000")
-      --tls-acme                            Used to enable automatic TLS for ingress
+      --tls-acme string                     Used to enable automatic TLS for ingress (default "false")
       --verbose                             Enable verbose logging
   -d, --vm-driver string                    VM driver is one of: [virtualbox xhyve vmwarefusion hyperkit]
 ```

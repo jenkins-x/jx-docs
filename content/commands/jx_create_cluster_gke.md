@@ -1,5 +1,5 @@
 ---
-date: 2018-03-09T13:00:54Z
+date: 2018-03-09T13:26:03Z
 title: "jx create cluster gke"
 slug: jx_create_cluster_gke
 url: /commands/jx_create_cluster_gke/
@@ -49,7 +49,7 @@ jx create cluster gke [flags]
       --headless                            Enable headless operation if using browser automation
       --helm-client-only                    Only install helm client
   -h, --help                                help for gke
-      --http                                Toggle creating http or https ingress rules (default true)
+      --http string                         Toggle creating http or https ingress rules (default "true")
       --keep-exposecontroller-job           Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
       --labels string                       The labels to add to the cluster being created such as 'foo=bar,whatnot=123'. Label names must begin with a lowercase character ([a-z]), end with a lowercase alphanumeric ([a-z0-9]) with dashes (-), and lowercase alphanumeric ([a-z0-9]) between.
       --local-cloud-environment             Ignores default cloud-environment-repo and uses current directory 
@@ -63,7 +63,7 @@ jx create cluster gke [flags]
       --register-local-helmrepo             Registers the Jenkins X chartmuseum registry with your helm client [default false]
       --skip-login                          Skip Google auth if already logged in via gloud auth
       --timeout string                      The number of seconds to wait for the helm install to complete (default "6000")
-      --tls-acme                            Used to enable automatic TLS for ingress
+      --tls-acme string                     Used to enable automatic TLS for ingress (default "false")
       --verbose                             Enable verbose logging
   -z, --zone string                         The compute zone (e.g. us-central1-a) for the cluster
 ```

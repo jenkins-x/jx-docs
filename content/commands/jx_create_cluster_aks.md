@@ -1,5 +1,5 @@
 ---
-date: 2018-03-09T13:00:54Z
+date: 2018-03-09T13:26:03Z
 title: "jx create cluster aks"
 slug: jx_create_cluster_aks
 url: /commands/jx_create_cluster_aks/
@@ -47,7 +47,7 @@ jx create cluster aks [flags]
       --git-username string                 The git username to use for creating new git repositories
       --helm-client-only                    Only install helm client
   -h, --help                                help for aks
-      --http                                Toggle creating http or https ingress rules (default true)
+      --http string                         Toggle creating http or https ingress rules (default "true")
       --keep-exposecontroller-job           Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
       --local-cloud-environment             Ignores default cloud-environment-repo and uses current directory 
       --local-helm-repo-name string         The name of the helm repository for the installed Chart Museum (default "releases")
@@ -60,7 +60,7 @@ jx create cluster aks [flags]
       --register-local-helmrepo             Registers the Jenkins X chartmuseum registry with your helm client [default false]
   -n, --resource group name string          Name of the resource group
       --timeout string                      The number of seconds to wait for the helm install to complete (default "6000")
-      --tls-acme                            Used to enable automatic TLS for ingress
+      --tls-acme string                     Used to enable automatic TLS for ingress (default "false")
   -u, --user name string                    user name
 ```
 
