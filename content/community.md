@@ -1,13 +1,11 @@
 ---
 title: Community
 linktitle: Community
-description: Where to find us in the community
+description: 
 date: 2017-02-01
 publishdate: 2017-02-01
-categories: [contribute]
 menu:
   main:
-    parent: "contribute"
     weight: 01
 weight: 5
 sections_weight: 5
