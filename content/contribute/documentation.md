@@ -1,7 +1,7 @@
 ---
-title: Contribute to the Jenkins X Docs
+title: Contribute to the Documentation
 linktitle: Documentation
-description: Documentation is an integral part of any open source project. The Jenkins X docs are as much a work in progress as the source it attempts to cover.
+description: How to help improve the Jenkins X documentation
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01

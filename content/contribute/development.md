@@ -1,7 +1,7 @@
 ---
-title: Contribute to Jenkins X Development
+title: Contribute to the code
 linktitle: Development
-description: Jenkins X relies heavily on contributions from the open source community.
+description: How to contribute to Jenkins X development.
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01

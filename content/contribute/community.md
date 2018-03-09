@@ -1,18 +1,20 @@
 ---
-title: Jenkins X Community
-linktitle: Jenkins X Community
-description: 
+title: Community
+linktitle: Community
+description: Where to find us in the community
 date: 2017-02-01
 publishdate: 2017-02-01
+categories: [contribute]
 menu:
   main:
-    parent: "section name"
+    parent: "contribute"
     weight: 01
-weight: 01	#rem
+weight: 5
+sections_weight: 5
 draft: false
 slug:
-aliases: []
-toc: false
+aliases: [/community/,/contribute/community/]
+toc: true
 ---
 
 Please join us in the community, we'd love to hear your feedback! 

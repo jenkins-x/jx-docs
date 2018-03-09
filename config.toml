@@ -204,7 +204,6 @@ anchor = "smart"
     weight = 150
     icon = true
     identifier = "community"
-    post = "external"
     url = "/community"
 
 
