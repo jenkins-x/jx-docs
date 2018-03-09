@@ -43,7 +43,7 @@ An Environment maps to a namespace in a Kubernetes cluster. When Pull Requests a
 
 This means both developers and operations can use the same git repository to manage all the configuration and versions of all the applications and resources for an environment in the same git repository and all changes to the environment are captured in git. So its easy to see who made changes when and more importantly its then easy to revert changes which cause bad things to happen.
 
-### Promotion
+## Promotion
 
 Promotion is implemented with GitOps by generating a pull request on the Environment's git repository  so that all changes go through git for audit, approval and so that any change is easy to revert.
 
