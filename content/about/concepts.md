@@ -62,7 +62,7 @@ Jenkins X builds upon the DevOps model of loosely-coupled architectures and is d
 Jenkins X builds upon the following core components:
 
 ### Kubernetes & Docker
-
+---
 At the heart of the system is Kubernetes, which has become the defacto virtual infrastructure platform for DevOps. Every major Cloud provider now offers Kubernetes infrastructure on demand and the platform may also be installed in-house on private infrastructure, if required. Test environments may also be created on local development hardware using the Minikube installer.
 
 Functionally, the Kubernetes platform extends the basic Containerisation principles provided by Docker to span across multiple physical Nodes. 
@@ -85,19 +85,13 @@ A Jenkins X Environment can represent a virtual infrastructure environment such 
 
 Kubernetes clusters can be created directly using the `jx create cluster` command, making it simple to reproduce clusters in the event of a failure. Similarly, the Jenkins X platform can be upgraded on an existing cluster using `jx upgrade platform`. Jenkins X supports working with multiple Kubernetes clusters through `jx context` and switching between multiple Environments within a cluster with `jx environment`.
 
-TODO:
-ConfigMaps
-Secrets
-Resource Quotas
-Persistent Volumes
+Developers should be aware of the capabilities that Kubernetes provides for distributing configuration data and security credentials across the cluster. ConfigMaps can be used to create sets of name/value pairs for non-confidential configuration meta-data and Secrets perform a similar but encrypted mechanism for security credentials and tokens. Kubernetes also provides a mechanism for specifying Resource Quotas for Pods which is necessary for optimising deployments across Nodes and which we shall discuss shortly.
 
-### Helm
+By default, Pod state is transient. Any data written to the local file system of a Pod is lost when that Pod is deleted. Developers should be aware that Kubernetes may unilaterally decide to delete instances of Pods and recreate them at any time as part of the general load balancing process for Nodes so local data may be lost at any time. Where stateful data is required, Persistent Volumes should be declared and mounted within the file system of specific Pods.
 
-### Jenkins
+### Helm and Draft
+---
+Interacting directly with Kubernetes involves either manual configuration using the `kubectl` command line utility, or passing various flavours of YAML data to the API. This can be complex and is open to human error creeping in. In keeping with the DevOps principle of 'configuration as code', Jenkins X leverages Helm and Draft to create atomic blocks of configuration for your applications.
 
-### Maven
-
-### Draft
-
-### GitHub / Gitea
+Helm simplifies Kubernetes configuration through the concept of a Chart, which is a set of files that together specify the meta-data necessary to deploy a given application or service into Kubernetes. Rather than maintain a series of boilerplate YAML files based upon the Kubernetes API, Helm uses a templating language to create the required YAML specifications from a single shared set of values. This makes it possible to specify re-usable Kubernetes applications where configuration can be selectively over-ridden at deployment time.
 
