@@ -56,7 +56,7 @@ jx get app -u
 
 ### Environments
 
-To view the [environments](about/concepts/#environment) defined for your team use [jx get environments](/commands/jx_get_environments):
+To view the [environments](/about/features/#environments) defined for your team use [jx get environments](/commands/jx_get_environments):
 
 ```shell
 jx get environments

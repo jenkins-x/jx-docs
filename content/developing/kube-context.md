@@ -28,7 +28,7 @@ However [jx](/commands/jx) provides lots of helper commands for changing cluster
 
 ### Changing Environments
 
-Use [jx environment](/commands/jx_environment) to switch [environments](about/concepts/#environment)
+Use [jx environment](/commands/jx_environment) to switch [environments](/about/features/#environments)
 
 ```shell
 jx environment
