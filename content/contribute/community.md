@@ -33,10 +33,6 @@ Jenkins folks tend to use IRC so we have an IRC room **#jenkins-x** IRC room on 
 
 You could try using the [riot app for #jenkins-x](https://riot.im/app/#/room/#freenode_#jenkins-x:matrix.org)
 
-### Slack
-
-We are hoping to setup **#jenkins-x-dev** and **#jenkins-x-user** soon on the [Kubernetes slack channel](http://slack.k8s.io/)
-
 ### Issues
 
 Got any thoughts, ideas or feedback then please drop them in a [GitHub Issue](https://github.com/jenkins-x/jx/issues/new)
