@@ -1,5 +1,5 @@
 ---
-date: 2018-03-11T10:50:05Z
+date: 2018-03-11T12:56:40Z
 title: "jx create addon"
 slug: jx_create_addon
 url: /commands/jx_create_addon/
@@ -10,23 +10,22 @@ Creates an addon
 
 ### Synopsis
 
+
 Creates an addon
 
 ```
-jx create addon [flags]
+jx create addon
 ```
 
 ### Options
 
 ```
       --helm-update        Should we run helm update first to ensure we use the latest version (default true)
-  -h, --help               help for addon
   -n, --namespace string   The Namespace to install into
   -r, --release string     The chart release name (default "gitea")
 ```
 
 ### SEE ALSO
-
 * [jx create](/commands/jx_create/)	 - Create a new resource
 * [jx create addon cdx](/commands/jx_create_addon_cdx/)	 - Create the CDX addon (a web console for working with CI / CD and Environments)
 * [jx create addon gitea](/commands/jx_create_addon_gitea/)	 - Create a gitea addon for hosting git repositories

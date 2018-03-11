@@ -1,5 +1,5 @@
 ---
-date: 2018-03-11T10:50:05Z
+date: 2018-03-11T12:56:40Z
 title: "jx delete"
 slug: jx_delete
 url: /commands/jx_delete/
@@ -9,6 +9,7 @@ url: /commands/jx_delete/
 Deletes one or many resources
 
 ### Synopsis
+
 
 Deletes one or many resources.
 
@@ -23,14 +24,7 @@ jx delete TYPE [flags]
   jx delete env staging
 ```
 
-### Options
-
-```
-  -h, --help   help for delete
-```
-
 ### SEE ALSO
-
 * [jx](/commands/jx/)	 - jx is a command line tool for working with Jenkins X
 * [jx delete addon](/commands/jx_delete_addon/)	 - Deletes one or many addons
 * [jx delete contexts](/commands/jx_delete_contexts/)	 - Deletes one or more kubernetes contexts

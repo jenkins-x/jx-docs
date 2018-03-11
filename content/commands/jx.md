@@ -1,5 +1,5 @@
 ---
-date: 2018-03-11T10:50:05Z
+date: 2018-03-11T12:56:40Z
 title: "jx"
 slug: jx
 url: /commands/jx/
@@ -11,20 +11,14 @@ jx is a command line tool for working with Jenkins X
 ### Synopsis
 
 
+
  
 
 ```
-jx [flags]
-```
-
-### Options
-
-```
-  -h, --help   help for jx
+jx
 ```
 
 ### SEE ALSO
-
 * [jx cdx](/commands/jx_cdx/)	 - Opens the CDX dashboard for visualising CI / CD and your environments
 * [jx completion](/commands/jx_completion/)	 - Output shell completion code for the given shell (bash or zsh)
 * [jx console](/commands/jx_console/)	 - Opens the Jenkins console

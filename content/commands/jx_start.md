@@ -1,5 +1,5 @@
 ---
-date: 2018-03-11T10:50:05Z
+date: 2018-03-11T12:56:40Z
 title: "jx start"
 slug: jx_start
 url: /commands/jx_start/
@@ -9,6 +9,7 @@ url: /commands/jx_start/
 Starts a process such as a pipeline
 
 ### Synopsis
+
 
 Starts a process such as a Jenkins pipeline.
 
@@ -23,14 +24,7 @@ jx start TYPE [flags]
   jx start pipeline foo
 ```
 
-### Options
-
-```
-  -h, --help   help for start
-```
-
 ### SEE ALSO
-
 * [jx](/commands/jx/)	 - jx is a command line tool for working with Jenkins X
 * [jx start pipeline](/commands/jx_start_pipeline/)	 - Starts one or more pipelines
 

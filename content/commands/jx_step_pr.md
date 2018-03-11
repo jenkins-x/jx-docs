@@ -1,5 +1,5 @@
 ---
-date: 2018-03-11T10:50:05Z
+date: 2018-03-11T12:56:40Z
 title: "jx step pr"
 slug: jx_step_pr
 url: /commands/jx_step_pr/
@@ -10,10 +10,11 @@ pipeline step pr
 
 ### Synopsis
 
+
 pipeline step pr
 
 ```
-jx step pr [flags]
+jx step pr
 ```
 
 ### Options
@@ -21,12 +22,10 @@ jx step pr [flags]
 ```
   -b, --batch-mode   In batch mode the command never prompts for user input
       --headless     Enable headless operation if using browser automation
-  -h, --help         help for pr
       --verbose      Enable verbose logging
 ```
 
 ### SEE ALSO
-
 * [jx step](/commands/jx_step/)	 - pipeline steps
 * [jx step pr comment](/commands/jx_step_pr_comment/)	 - pipeline step pr comment
 
