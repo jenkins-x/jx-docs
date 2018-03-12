@@ -1,5 +1,5 @@
 ---
-date: 2018-03-12T07:41:42Z
+date: 2018-03-12T12:46:49Z
 title: "jx create cluster"
 slug: jx_create_cluster
 url: /commands/jx_create_cluster/
@@ -9,6 +9,7 @@ url: /commands/jx_create_cluster/
 Create a new kubernetes cluster
 
 ### Synopsis
+
 
 This command creates a new kubernetes cluster, installing required local dependencies and provisions the Jenkins X platform 
 
@@ -32,7 +33,7 @@ Depending on which cloud provider your cluster is created on possible dependenci
   * az (Azure CLI)
 
 ```
-jx create cluster [kubernetes provider] [flags]
+jx create cluster [kubernetes provider]
 ```
 
 ### Examples
@@ -41,14 +42,7 @@ jx create cluster [kubernetes provider] [flags]
   jx create cluster minikube
 ```
 
-### Options
-
-```
-  -h, --help   help for cluster
-```
-
 ### SEE ALSO
-
 * [jx create](/commands/jx_create/)	 - Create a new resource
 * [jx create cluster aks](/commands/jx_create_cluster_aks/)	 - Create a new kubernetes cluster on AKS: Runs on Azure
 * [jx create cluster gke](/commands/jx_create_cluster_gke/)	 - Create a new kubernetes cluster on GKE: Runs on Google Cloud

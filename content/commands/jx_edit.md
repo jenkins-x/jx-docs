@@ -1,5 +1,5 @@
 ---
-date: 2018-03-12T07:41:42Z
+date: 2018-03-12T12:46:49Z
 title: "jx edit"
 slug: jx_edit
 url: /commands/jx_edit/
@@ -9,6 +9,7 @@ url: /commands/jx_edit/
 Edit a resource
 
 ### Synopsis
+
 
 Edit a resource
 
@@ -23,14 +24,7 @@ jx edit [flags]
   jx edit env staging
 ```
 
-### Options
-
-```
-  -h, --help   help for edit
-```
-
 ### SEE ALSO
-
 * [jx](/commands/jx/)	 - jx is a command line tool for working with Jenkins X
 * [jx edit environment](/commands/jx_edit_environment/)	 - Edits an Environment which is used to promote your Team's Applications via Continuous Delivery
 

@@ -1,5 +1,5 @@
 ---
-date: 2018-03-12T07:41:42Z
+date: 2018-03-12T12:46:49Z
 title: "jx delete jenkins"
 slug: jx_delete_jenkins
 url: /commands/jx_delete_jenkins/
@@ -10,20 +10,14 @@ Deletes one or many jenkins resources
 
 ### Synopsis
 
+
 Deletes one or many jenkins resources
 
 ```
-jx delete jenkins [flags]
-```
-
-### Options
-
-```
-  -h, --help   help for jenkins
+jx delete jenkins
 ```
 
 ### SEE ALSO
-
 * [jx delete](/commands/jx_delete/)	 - Deletes one or many resources
 * [jx delete jenkins user](/commands/jx_delete_jenkins_user/)	 - Deletes one or more jenkins user api tokens
 

@@ -1,5 +1,5 @@
 ---
-date: 2018-03-12T07:41:42Z
+date: 2018-03-12T12:46:49Z
 title: "jx delete git"
 slug: jx_delete_git
 url: /commands/jx_delete_git/
@@ -10,20 +10,14 @@ Deletes one or many git resources
 
 ### Synopsis
 
+
 Deletes one or many git resources
 
 ```
-jx delete git [flags]
-```
-
-### Options
-
-```
-  -h, --help   help for git
+jx delete git
 ```
 
 ### SEE ALSO
-
 * [jx delete](/commands/jx_delete/)	 - Deletes one or many resources
 * [jx delete git server](/commands/jx_delete_git_server/)	 - Deletes one or more git server
 * [jx delete git token](/commands/jx_delete_git_token/)	 - Deletes one or more api tokens for a user on a git server

@@ -1,5 +1,5 @@
 ---
-date: 2018-03-12T07:41:42Z
+date: 2018-03-12T12:46:49Z
 title: "jx step nexus"
 slug: jx_step_nexus
 url: /commands/jx_step_nexus/
@@ -10,20 +10,14 @@ nexus [command]
 
 ### Synopsis
 
+
 nexus [command]
 
 ```
-jx step nexus [flags]
-```
-
-### Options
-
-```
-  -h, --help   help for nexus
+jx step nexus
 ```
 
 ### SEE ALSO
-
 * [jx step](/commands/jx_step/)	 - pipeline steps
 * [jx step nexus drop](/commands/jx_step_nexus_drop/)	 - Drops a staging nexus release
 * [jx step nexus release](/commands/jx_step_nexus_release/)	 - Releases a staging nexus release

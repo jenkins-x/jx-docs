@@ -1,5 +1,5 @@
 ---
-date: 2018-03-12T07:41:42Z
+date: 2018-03-12T12:46:49Z
 title: "jx create"
 slug: jx_create
 url: /commands/jx_create/
@@ -9,6 +9,7 @@ url: /commands/jx_create/
 Create a new resource
 
 ### Synopsis
+
 
 Creates a new resource.
   
@@ -21,17 +22,10 @@ Creates a new resource.
     * spring (aka 'springboot')
 
 ```
-jx create [flags]
-```
-
-### Options
-
-```
-  -h, --help   help for create
+jx create
 ```
 
 ### SEE ALSO
-
 * [jx](/commands/jx/)	 - jx is a command line tool for working with Jenkins X
 * [jx create addon](/commands/jx_create_addon/)	 - Creates an addon
 * [jx create archetype](/commands/jx_create_archetype/)	 - Create a new app from a Maven Archetype and import the generated code into git and Jenkins for CI / CD

@@ -1,5 +1,5 @@
 ---
-date: 2018-03-12T07:41:42Z
+date: 2018-03-12T12:46:49Z
 title: "jx upgrade"
 slug: jx_upgrade
 url: /commands/jx_upgrade/
@@ -9,6 +9,7 @@ url: /commands/jx_upgrade/
 Upgrades a resource
 
 ### Synopsis
+
 
 Upgrade a the whole Jenkins-X platform.
 
@@ -23,14 +24,7 @@ jx upgrade [flags]
   jx upgrade platform
 ```
 
-### Options
-
-```
-  -h, --help   help for upgrade
-```
-
 ### SEE ALSO
-
 * [jx](/commands/jx/)	 - jx is a command line tool for working with Jenkins X
 * [jx upgrade platform](/commands/jx_upgrade_platform/)	 - Upgrades the Jenkins X platform if there is a new release available
 

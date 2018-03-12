@@ -1,5 +1,5 @@
 ---
-date: 2018-03-12T07:41:42Z
+date: 2018-03-12T12:46:49Z
 title: "jx get build"
 slug: jx_get_build
 url: /commands/jx_get_build/
@@ -9,6 +9,7 @@ url: /commands/jx_get_build/
 Display one or many build resources
 
 ### Synopsis
+
 
 Display one or many resources. 
 
@@ -32,14 +33,7 @@ jx get build [flags]
   jx get url
 ```
 
-### Options
-
-```
-  -h, --help   help for build
-```
-
 ### SEE ALSO
-
 * [jx get](/commands/jx_get/)	 - Display one or many resources
 * [jx get build log](/commands/jx_get_build_log/)	 - Display a build log
 
