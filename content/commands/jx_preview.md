@@ -1,5 +1,5 @@
 ---
-date: 2018-03-13T15:57:01Z
+date: 2018-03-13T19:37:24Z
 title: "jx preview"
 slug: jx_preview
 url: /commands/jx_preview/
@@ -11,7 +11,9 @@ Creates or updates a Preview Environment for the current version of an applicati
 ### Synopsis
 
 
-Creates or updates a Preview environment for the given Pull Request or Branch
+Creates or updates a Preview Environment for the given Pull Request or Branch. 
+
+For more documentation on Preview Environments see: http://jenkins-x.io/about/features/#preview-environments
 
 ```
 jx preview

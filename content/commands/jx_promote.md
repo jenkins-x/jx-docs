@@ -1,5 +1,5 @@
 ---
-date: 2018-03-13T15:57:01Z
+date: 2018-03-13T19:37:24Z
 title: "jx promote"
 slug: jx_promote
 url: /commands/jx_promote/
@@ -11,7 +11,9 @@ Promotes a version of an application to an environment
 ### Synopsis
 
 
-Promotes a version of an application to zero to many permanent environments.
+Promotes a version of an application to zero to many permanent environments. 
+
+For more documentation see: http://jenkins-x.io/about/features/#promotion
 
 ```
 jx promote [application]

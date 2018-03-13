@@ -1,5 +1,5 @@
 ---
-date: 2018-03-13T15:57:01Z
+date: 2018-03-13T19:37:24Z
 title: "jx create cluster"
 slug: jx_create_cluster
 url: /commands/jx_create_cluster/
@@ -13,14 +13,16 @@ Create a new kubernetes cluster
 
 This command creates a new kubernetes cluster, installing required local dependencies and provisions the Jenkins X platform 
 
+You can see a demo of this command here: http://jenkins-x.io/demos/create_cluster/
+
 Valid kubernetes providers include:
 
-    * minikube (single-node Kubernetes cluster inside a VM on your laptop)
-    * gke (Google Container Engine - https://cloud.google.com/kubernetes-engine)
     * aks (Azure Container Service - https://docs.microsoft.com/en-us/azure/aks)
+    * gke (Google Container Engine - https://cloud.google.com/kubernetes-engine)
+    * kubernetes for custom installations of Kubernetes
+    * minikube (single-node Kubernetes cluster inside a VM on your laptop)
     * coming soon:
-        eks (Amazon Elastic Container Service - https://aws.amazon.com/eks)
-     
+        eks (Amazon Elastic Container Service - https://aws.amazon.com/eks)     
 
 Depending on which cloud provider your cluster is created on possible dependencies that will be installed are: 
 

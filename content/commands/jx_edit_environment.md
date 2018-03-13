@@ -1,5 +1,5 @@
 ---
-date: 2018-03-13T15:57:01Z
+date: 2018-03-13T19:37:24Z
 title: "jx edit environment"
 slug: jx_edit_environment
 url: /commands/jx_edit_environment/
@@ -11,9 +11,13 @@ Edits an Environment which is used to promote your Team's Applications via Conti
 ### Synopsis
 
 
-Edits a new Environment An Environment maps to a kubernetes cluster and namespace and is a place that your team's applications can be promoted to via Continous Delivery. 
+Edits a new Environment
+  
+An Environment maps to a kubernetes cluster and namespace and is a place that your team's applications can be promoted to via Continous Delivery. 
 
-  You can optionally use GitOps to manage the configuration of an Environment by storing all configuration in a git repository and then only changing it via Pull Requests and CI / CD.
+You can optionally use GitOps to manage the configuration of an Environment by storing all configuration in a git repository and then only changing it via Pull Requests and CI / CD. 
+
+For more documentation on Environments see: http://jenkins-x.io/about/features/#environments
 
 ```
 jx edit environment

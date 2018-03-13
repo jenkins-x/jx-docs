@@ -1,5 +1,5 @@
 ---
-date: 2018-03-13T15:57:01Z
+date: 2018-03-13T19:37:24Z
 title: "jx environment"
 slug: jx_environment
 url: /commands/jx_environment/
@@ -11,7 +11,9 @@ View or change the current environment in the current kubernetes cluster
 ### Synopsis
 
 
-Displays or changes the current environment.
+Displays or changes the current environment. 
+
+For more documentation on Environments see: http://jenkins-x.io/about/features/#environments
 
 ```
 jx environment
