@@ -24,7 +24,7 @@ You can create new Spring Boot applications using the [Spring Boot Initializr](h
 However another alternative is to use the [jx create spring](/commands/jx_create_spring) command which provides a fast automated path:
 
 ```shell
-$ jx create spring -d web -actuator
+$ jx create spring -d web -d actuator
 ```
 
 The `-d` argument lets you specify the Spring Boot dependencies you wish to add to your spring boot application.
