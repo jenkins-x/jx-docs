@@ -141,6 +141,13 @@ anchor = "smart"
   url = "/developing/"
   post = "break"
 
+[[menu.docs]]
+  name = "Demos"
+  weight = 20
+  identifier = "demos"
+  url = "/demos/"
+  post = "break"
+
 # Core Menus
 
 [[menu.docs]]
