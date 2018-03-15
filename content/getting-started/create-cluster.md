@@ -31,6 +31,14 @@ Use the [jx create cluster gke](/commands/jx_create_cluster_gke) command:
     jx create cluster gke
     
         
+### Using Amazon (AWS)
+
+Use the [jx create cluster aws](/commands/x_create_cluster_aws) command: 
+
+    jx create cluster aws
+
+This will use [kops](https://github.com/kubernetes/kops) on your Amazon account to create a new kubernetes cluster and install Jenkins X    
+        
 ### Using Azure (AKS)
 
 Use the [jx create cluster aks](/commands/jx_create_cluster_aks) command: 
