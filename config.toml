@@ -1,4 +1,4 @@
-baseURL = "https://jenkins-x.io/"
+baseURL = "http://jenkins-x.io/"
 paginate =  100
 defaultContentLanguage = "en"
 enableEmoji = true
