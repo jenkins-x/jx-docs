@@ -16,6 +16,7 @@ draft: false
 toc: true
 ---
 
+Quickstarts are pre-made applications you can start a project from, instead of starting from scratch. 
                 
 You can create new applications from our list of curated Quickstart applications via the [jx create quickstart](/commands/jx_create_quickstart) command.
 
@@ -38,6 +39,8 @@ Or use a text filter to filter on the project names:
 $ jx create quickstart  -f http
 ```
 
+The source of these Quickstarts are maintained in [this Github org](https://github.com/jenkins-x-quickstarts).
+
 Once you have chosen the project to create and given it a name the following is automated for you:
 
 * creates a new application from the quickstart in a sub directory
@@ -51,4 +54,3 @@ Once you have chosen the project to create and given it a name the following is 
 * register a webhook on the remote git repository to your teams Jenkins
 * add the git repository to your teams Jenkins
 * trigger the first pipeline 
-
