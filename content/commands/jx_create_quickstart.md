@@ -1,64 +1,59 @@
 ---
 date: 2018-03-15T15:34:32Z
-title: "jx create spring"
-slug: jx_create_spring
-url: /commands/jx_create_spring/
+title: "jx create quickstart"
+slug: jx_create_quickstart
+url: /commands/jx_create_quickstart/
 ---
-## jx create spring
+## jx create quickstart
 
-Create a new spring boot application and import the generated code into git and Jenkins for CI / CD
+Create a new app from a Quickstart and import the generated code into git and Jenkins for CI / CD
 
 ### Synopsis
 
-Creates a new Spring Boot application and then optionally setups CI / CD pipelines and GitOps promotion. 
+Creates a new Maven project using an Archetype 
 
-You can see a demo of this command here: http://jenkins-x.io/demos/create_spring/
-
-For more documentation see: http://jenkins-x.io/developing/create-spring/
+You then get the option to import the generated source code into a git repository and Jenkins for CI / CD
 
 ```
-jx create spring [flags]
+jx create quickstart [flags]
 ```
 
 ### Examples
 
 ```
-  # Create a Spring Boot application where you use the terminal to pick the values
-  jx create spring
+  # Create a new application from a Maven Archetype using the UI to choose which archetype to use
+  jx create archetype
   
-  # Creates a Spring Boot application passing in the required dependencies
-  jx create spring -d web -d actuator
+  # Creates a Camel Archetype, filtering on the archetypes containing the text 'spring'
+  jx create archetype -g  org.apache.camel.archetypes -a spring
 ```
 
 ### Options
 
 ```
-  -x, --advanced                       Advanced mode can show more detailed forms for some resource kinds like springboot
-  -a, --artifact string                Artifact ID to generate
   -b, --batch-mode                     In batch mode the command never prompts for user input
-  -t, --boot-version string            Spring Boot version
       --branches string                The branch pattern for branches to trigger CI / CD pipelines on. Defaults to 'master|PR-.*|feature.*'
       --credentials string             The Jenkins credentials name used by the job
-  -d, --dep stringArray                Spring Boot dependencies
       --dry-run                        Performs local changes to the repo but skips the import into Jenkins X
+  -f, --filter string                  The text filter
+      --framework string               The framework to filter on
       --git-api-token string           The git API token to use for creating new git repositories
       --git-provider-url string        The git server URL to create new git repositories inside (default "github.com")
       --git-username string            The git username to use for creating new git repositories
-  -g, --group string                   Group ID to generate
       --headless                       Enable headless operation if using browser automation
-  -h, --help                           help for spring
+  -h, --help                           help for quickstart
       --import-commit-message string   The git commit message for the import
-  -j, --java-version string            Java version
       --jenkinsfile string             The name of the Jenkinsfile to use. If not specified then 'Jenkinsfile' will be used
-  -k, --kind stringArray               Default dependency kinds to choose from (default [Core,Web,Template Engines,SQL,I/O,Ops])
-  -l, --language string                Language to generate
+  -l, --language string                The language to filter on
       --name string                    Specify the git repository name to import the project into (if it is not already in one)
       --no-draft                       Disable Draft from trying to default a Dockerfile and Helm Chart
       --no-import                      Disable import after the creation
       --no-jenkinsfile                 Disable defaulting a Jenkinsfile if its missing
       --org string                     Specify the git provider organisation to import the project into (if it is not already in one)
+  -g, --organisations stringArray      The github organisations to query for quickstarts
   -o, --output-dir string              Directory to output the project to. Defaults to the current directory
-  -p, --packaging string               Packaging
+      --owner string                   The owner to filter on
+  -t, --tag stringArray                The tags on the quickstarts to filter
       --verbose                        Enable verbose logging
 ```
 

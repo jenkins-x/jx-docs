@@ -1,5 +1,5 @@
 ---
-date: 2018-03-15T00:26:06Z
+date: 2018-03-15T15:34:32Z
 title: "jx create cluster minikube"
 slug: jx_create_cluster_minikube
 url: /commands/jx_create_cluster_minikube/
@@ -47,7 +47,9 @@ jx create cluster minikube [flags]
       --http string                         Toggle creating http or https ingress rules (default "true")
   -v, --hyperv-virtual-switch string        Additional options for using HyperV with minikube
       --ingress-cluster-role string         The cluster role for the Ingress controller (default "cluster-admin")
+      --ingress-deployment string           The namespace for the Ingress controller Deployment (default "jxing-nginx-ingress-controller")
       --ingress-namespace string            The namespace for the Ingress controller (default "kube-system")
+      --ingress-service string              The name of the Ingress controller Service (default "jxing-nginx-ingress-controller")
       --keep-exposecontroller-job           Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
       --local-cloud-environment             Ignores default cloud-environment-repo and uses current directory 
       --local-helm-repo-name string         The name of the helm repository for the installed Chart Museum (default "releases")

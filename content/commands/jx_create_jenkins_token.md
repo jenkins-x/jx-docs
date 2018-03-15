@@ -1,5 +1,5 @@
 ---
-date: 2018-03-15T00:26:06Z
+date: 2018-03-15T15:34:32Z
 title: "jx create jenkins token"
 slug: jx_create_jenkins_token
 url: /commands/jx_create_jenkins_token/
@@ -34,6 +34,7 @@ jx create jenkins token [username] [flags]
 ```
   -t, --api-token string   The API Token for the user
   -b, --batch-mode         In batch mode the command never prompts for user input
+      --browser            Use a Chrome browser to automatically find the API token if the user and password are known
       --headless           Enable headless operation if using browser automation
   -h, --help               help for token
   -n, --name string        The name of the git server to add a user

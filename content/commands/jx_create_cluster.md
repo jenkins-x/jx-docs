@@ -1,5 +1,5 @@
 ---
-date: 2018-03-15T00:26:06Z
+date: 2018-03-15T15:34:32Z
 title: "jx create cluster"
 slug: jx_create_cluster
 url: /commands/jx_create_cluster/
@@ -17,6 +17,7 @@ You can see a demo of this command here: http://jenkins-x.io/demos/create_cluste
 Valid kubernetes providers include:
 
     * aks (Azure Container Service - https://docs.microsoft.com/en-us/azure/aks)
+    * aws (Amazon Web Services via kops - https://github.com/aws-samples/aws-workshop-for-kubernetes/blob/master/readme.adoc)
     * gke (Google Container Engine - https://cloud.google.com/kubernetes-engine)
     * kubernetes for custom installations of Kubernetes
     * minikube (single-node Kubernetes cluster inside a VM on your laptop)
@@ -53,6 +54,7 @@ jx create cluster [kubernetes provider] [flags]
 
 * [jx create](/commands/jx_create/)	 - Create a new resource
 * [jx create cluster aks](/commands/jx_create_cluster_aks/)	 - Create a new kubernetes cluster on AKS: Runs on Azure
+* [jx create cluster aws](/commands/jx_create_cluster_aws/)	 - Create a new kubernetes cluster on AWS with kops
 * [jx create cluster gke](/commands/jx_create_cluster_gke/)	 - Create a new kubernetes cluster on GKE: Runs on Google Cloud
 * [jx create cluster minikube](/commands/jx_create_cluster_minikube/)	 - Create a new kubernetes cluster with minikube: Runs locally
 
