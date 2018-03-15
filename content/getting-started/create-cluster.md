@@ -48,18 +48,7 @@ Use the [jx create cluster aks](/commands/jx_create_cluster_aks) command:
     
 ### Using Minikube (local)    
     
-We recommend you try [install minikube](https://github.com/kubernetes/minikube#installation) and start it first
-
-    minikube start
-    
-To ensure your machine can run [minikube](https://github.com/kubernetes/minikube). 
-
-Once you have minikube running then try the [jx install](/commands/jx_install) command:
-
-    jx install
-
-
-We also have this shortcut command that does the above:
+Use the [jx create cluster minikube](/commands/jx_create_cluster_minikube/) command:
                 
     jx create cluster minikube        
 
