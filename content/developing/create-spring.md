@@ -31,7 +31,7 @@ The `-d` argument lets you specify the Spring Boot dependencies you wish to add 
 
 We highly recommend you always include the **actuator** dependency in your Spring Boot applications as it helps provide health checks for [Liveness and Readiness probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/).
 
-The [jx create spring](/commands/jx_create_spring) will then :
+The [jx create spring](/commands/jx_create_spring) will then:
 
 * create a new Spring Boot application in a sub directory
 * add your source code into a git repository 
