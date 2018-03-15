@@ -18,12 +18,34 @@ aliases: [/overview/usage/,/extras/livereload/,/doc/usage/,/usage/]
 toc: true
 ---
 
+Pick the most suitable instructions for your operating system:
+
+### macOs
+
 On a Mac you can use brew:
 
-    brew tap jenkins-x/jx
-    brew install jx 
+```shell
+brew tap jenkins-x/jx
+brew install jx 
+```
+
+Or if you have not installed [brew](https://brew.sh/) and prefer to install by hand:
+
+```shell
+curl -L https://github.com/jenkins-x/jx/releases/download/v{{< version >}}/jx-darwin-amd64.tar.gz | tar xzv 
+sudo mv jx /usr/local/bin
+```
+
+### Linux
+
+```shell
+curl -L https://github.com/jenkins-x/jx/releases/download/v{{< version >}}/jx-linux-amd64.tar.gz | tar xzv 
+sudo mv jx /usr/local/bin
+```
     
-Or [download the binary](https://github.com/jenkins-x/jx/releases) for `jx` and add it to your `$PATH`
+### Other platforms
+    
+[download the binary](https://github.com/jenkins-x/jx/releases) for `jx` and add it to your `$PATH`
 
 Or you can try [build it yourself](https://github.com/jenkins-x/jx/blob/master/docs/contributing/hacking.md). Though if build it yourself please be careful to remove any older `jx` binary so your local build is found first on the `$PATH` :)
 
