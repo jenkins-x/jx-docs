@@ -1,5 +1,5 @@
 ---
-date: 2018-03-15T00:26:06Z
+date: 2018-03-15T15:34:32Z
 title: "jx create cluster aks"
 slug: jx_create_cluster_aks
 url: /commands/jx_create_cluster_aks/
@@ -31,11 +31,9 @@ jx create cluster aks [flags]
 ### Options
 
 ```
-  -v, --K8Version string                    kubernetes version (default "1.8.2")
-  -k, --PathToPublicRSAKey string           pathToPublicRSAKey
       --cleanup-temp-files                  Cleans up any temporary values.yaml used by helm install [default true] (default true)
       --cloud-environment-repo string       Cloud Environments git repo (default "https://github.com/jenkins-x/cloud-environments")
-  -c, --clusterName string                  Name of the cluster
+  -c, --cluster-name string                 Name of the cluster
       --default-admin-password string       the default admin password to access Jenkins, Kubernetes Dashboard, Chartmuseum and Nexus
       --default-environment-prefix string   Default environment repo prefix, your git repos will be of the form 'environment-$prefix-$envName'
       --default-environments                Creates default Staging and Production environments (default true)
@@ -50,8 +48,11 @@ jx create cluster aks [flags]
   -h, --help                                help for aks
       --http string                         Toggle creating http or https ingress rules (default "true")
       --ingress-cluster-role string         The cluster role for the Ingress controller (default "cluster-admin")
+      --ingress-deployment string           The namespace for the Ingress controller Deployment (default "jxing-nginx-ingress-controller")
       --ingress-namespace string            The namespace for the Ingress controller (default "kube-system")
+      --ingress-service string              The name of the Ingress controller Service (default "jxing-nginx-ingress-controller")
       --keep-exposecontroller-job           Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
+  -v, --kubernetes-version string           kubernetes version (default "1.8.2")
       --local-cloud-environment             Ignores default cloud-environment-repo and uses current directory 
       --local-helm-repo-name string         The name of the helm repository for the installed Chart Museum (default "releases")
   -l, --location string                     location to run cluster in
@@ -59,9 +60,10 @@ jx create cluster aks [flags]
       --no-brew                             Disables the use of brew on MacOS to install dependencies like kubectl, draft, helm etc
   -o, --nodes string                        node count
   -p, --password string                     password
+  -k, --path-To-public-rsa-key string       pathToPublicRSAKey
       --recreate-existing-draft-repos       Delete existing helm repos used by Jenkins X under ~/draft/packs
       --register-local-helmrepo             Registers the Jenkins X chartmuseum registry with your helm client [default false]
-  -n, --resource group name string          Name of the resource group
+  -n, --resource-group-name string          Name of the resource group
       --tiller-cluster-role string          The cluster role for Helm's tiller (default "cluster-admin")
       --tiller-namespace string             The namespace for the Tiller when using a gloabl tiller (default "kube-system")
       --timeout string                      The number of seconds to wait for the helm install to complete (default "6000")
