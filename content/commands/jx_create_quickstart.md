@@ -10,51 +10,12 @@ Create a new app from a Quickstart and import the generated code into git and Je
 
 ### Synopsis
 
-Creates a new Maven project using an Archetype 
+Create a new project from a sample/starter (found in https://github.com/jenkins-x-quickstarts)
 
-You then get the option to import the generated source code into a git repository and Jenkins for CI / CD
+This will create a new project for you from the selected template. 
 
 ```
 jx create quickstart [flags]
-```
-
-### Examples
-
-```
-  # Create a new application from a Maven Archetype using the UI to choose which archetype to use
-  jx create archetype
-  
-  # Creates a Camel Archetype, filtering on the archetypes containing the text 'spring'
-  jx create archetype -g  org.apache.camel.archetypes -a spring
-```
-
-### Options
-
-```
-  -b, --batch-mode                     In batch mode the command never prompts for user input
-      --branches string                The branch pattern for branches to trigger CI / CD pipelines on. Defaults to 'master|PR-.*|feature.*'
-      --credentials string             The Jenkins credentials name used by the job
-      --dry-run                        Performs local changes to the repo but skips the import into Jenkins X
-  -f, --filter string                  The text filter
-      --framework string               The framework to filter on
-      --git-api-token string           The git API token to use for creating new git repositories
-      --git-provider-url string        The git server URL to create new git repositories inside (default "github.com")
-      --git-username string            The git username to use for creating new git repositories
-      --headless                       Enable headless operation if using browser automation
-  -h, --help                           help for quickstart
-      --import-commit-message string   The git commit message for the import
-      --jenkinsfile string             The name of the Jenkinsfile to use. If not specified then 'Jenkinsfile' will be used
-  -l, --language string                The language to filter on
-      --name string                    Specify the git repository name to import the project into (if it is not already in one)
-      --no-draft                       Disable Draft from trying to default a Dockerfile and Helm Chart
-      --no-import                      Disable import after the creation
-      --no-jenkinsfile                 Disable defaulting a Jenkinsfile if its missing
-      --org string                     Specify the git provider organisation to import the project into (if it is not already in one)
-  -g, --organisations stringArray      The github organisations to query for quickstarts
-  -o, --output-dir string              Directory to output the project to. Defaults to the current directory
-      --owner string                   The owner to filter on
-  -t, --tag stringArray                The tags on the quickstarts to filter
-      --verbose                        Enable verbose logging
 ```
 
 ### SEE ALSO
