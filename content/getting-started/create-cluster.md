@@ -22,7 +22,7 @@ To create a new Kubernetes cluster with Jenkins X installed use the  [jx create 
     
 A number of different public cloud providers are supported as shown below.  
 
-__For the best getting started experience we currently recommend using Google Container Engine (GKE)__ The Google Cloud Platform offers a $300 credit free trial.  If you don't have a Google Cloud account see https://console.cloud.google.com/freetrial
+__For the best getting started experience we currently recommend using Google Container Engine (GKE)__. The Google Cloud Platform offers a $300 free credit if you don't have a Google Cloud account.  See https://console.cloud.google.com/freetrial
 
 Here's a little demo showing GKE, AKS and Minikube in parallel. It can take some time to start on different machines/clouds so please be patient!
 
