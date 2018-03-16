@@ -18,8 +18,9 @@ aliases: [/overview/introduction/]
 toc: false
 ---
 
-First you will need to [install jx](install) on your machine.
+First you will need to [get the jx command line tool](install) locally on your machine.
 
-If you have an existing kubernetes cluster then [install Jenkins X on your kubernetes cluster](install-on-cluster)
+You can use the [jx command line](/commands/jx/#jx) to  [create a new kubernetes cluster](create-cluster) and have Jenkins X automatically installed.
 
-Otherwise [create a new kubernetes cluster](create-cluster)
+Or if you have an existing kubernetes cluster then [install Jenkins X on your kubernetes cluster](install-on-cluster)
+
