@@ -22,7 +22,12 @@ To create a new Kubernetes cluster with Jenkins X installed use the  [jx create 
 
     jx create cluster
     
-A number of different public cloud providers are supported such as
+A number of different public cloud providers are supported as shown below.
+
+Here's a little demo showing GKE, AKS and Minikube in parallel. It can take some time to start on different machines/clouds so please be patient!
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/ELA4tytdFeA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 
 ### Using Google Cloud (GKE)
 
@@ -48,16 +53,28 @@ Use the [jx create cluster aks](/commands/jx_create_cluster_aks) command:
     
 ### Using Minikube (local)    
     
-Use the [jx create cluster minikube](/commands/jx_create_cluster_minikube/) command:
-                
+Some folks have trouble getting minikube to work for a variety of reasons:
+
+* minikube requires up to date virtualisation software to be installed and your machine 
+* you may have an old Docker installation or old minikube / kubectl or helm binaries and so forth.
+
+So we **highly** recommend using one of the public clouds above to try out Jenkins X. They all have free tiers so it should not cost you any significant cash and it'll give you a chance to try out the cloud.
+
+If you still want to try minikube then we recommend you try [install minikube](https://github.com/kubernetes/minikube#installation) and start it first
+
+    minikube start
+    
+To ensure your machine can run [minikube](https://github.com/kubernetes/minikube). Any issues getting this far please [report them on the minikube issue tracker](https://github.com/kubernetes/minikube/issues) they are a pretty helpful group of folks! 
+
+Once you have minikube running then try the [jx install](/commands/jx_install) command:
+
+    jx install --provider=minikube
+
+
+We also have a shortcut command that starts minikube and installs Jenkins X if you are confident your machine can run minikube: [jx create cluster minikube](/commands/jx_create_cluster_minikube/) 
+
     jx create cluster minikube        
 
-
-### Demo
-
-Here's a little demo showing GKE, AKS and Minikube in parallel. It can take some time to start on different machines/clouds so please be patient!
-
-<iframe width="640" height="360" src="https://www.youtube.com/embed/ELA4tytdFeA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ### Troubleshooting
 

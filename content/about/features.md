@@ -8,9 +8,9 @@ lastmod: 2017-02-01
 menu:
   docs:
     parent: "about"
-    weight: 15
-weight: 15
-sections_weight: 15
+    weight: 5
+weight: 5
+sections_weight: 5
 draft: false
 aliases: [/about/features]
 categories: [fundamentals]
