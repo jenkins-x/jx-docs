@@ -18,9 +18,7 @@ toc: true
 ---
 
                 
-To create a new Kubernetes cluster with Jenkins X installed use the  [jx create cluster](/commands/jx_create_cluster) command:
-
-    jx create cluster
+To create a new Kubernetes cluster with Jenkins X installed use the  [jx create cluster](/commands/jx_create_cluster) command.
     
 A number of different public cloud providers are supported as shown below.  
 
@@ -38,7 +36,10 @@ Use the [jx create cluster gke](/commands/jx_create_cluster_gke) command:
     jx create cluster gke
 
 The command assumes you have a google account and you've setup a default project that you can use to create the kubernetes cluster within.    
-        
+     
+Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
+ 
+       
 ### Using Amazon (AWS)
 
 Use the [jx create cluster aws](/commands/x_create_cluster_aws) command: 
@@ -57,7 +58,8 @@ sudo mv jx /usr/local/bin
 jx create cluster aws
 ```
 
-Hopefully that works and then you can try [use your Jenkins X installation](/getting-started/next/)    
+Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
+
         
 ### Using Azure (AKS)
 
@@ -65,6 +67,7 @@ Use the [jx create cluster aks](/commands/jx_create_cluster_aks) command:
 
     jx create cluster aks
     
+Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
     
 ### Using Minikube (local)    
     
@@ -90,6 +93,7 @@ We also have a shortcut command that starts minikube and installs Jenkins X if y
 
     jx create cluster minikube        
 
+Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
 
 ### Troubleshooting
 
