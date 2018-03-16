@@ -17,7 +17,7 @@ draft: false
 toc: true
 ---
 
-To install Jenkins X on an existing kubernetes cluster use the [jx install](/commands/jx_install) command:
+To install Jenkins X on an existing kubernetes cluster it must first have RBAC enabled, you can then use the [jx install](/commands/jx_install) command:
 
     jx install
 
