@@ -22,7 +22,9 @@ To create a new Kubernetes cluster with Jenkins X installed use the  [jx create 
 
     jx create cluster
     
-A number of different public cloud providers are supported as shown below.
+A number of different public cloud providers are supported as shown below.  
+
+__For the best getting started experience we currently recommend using Google Container Engine (GKE)__
 
 Here's a little demo showing GKE, AKS and Minikube in parallel. It can take some time to start on different machines/clouds so please be patient!
 
