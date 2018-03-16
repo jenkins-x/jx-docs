@@ -42,7 +42,19 @@ Use the [jx create cluster aws](/commands/x_create_cluster_aws) command:
 
     jx create cluster aws
 
-This will use [kops](https://github.com/kubernetes/kops) on your Amazon account to create a new kubernetes cluster and install Jenkins X    
+This will use [kops](https://github.com/kubernetes/kops) on your Amazon account to create a new kubernetes cluster and install Jenkins X.
+
+To try this out we recommend you follow the [AWS Workshop for Kubernetes](https://github.com/aws-samples/aws-workshop-for-kubernetes/tree/master/01-path-basics/101-start-here#create-aws-cloud9-environment) to setup an AWS Cloud9 IDE session.
+
+Then create a new terminal in Cloud9 and try these commands:
+
+```shell 
+curl -L https://github.com/jenkins-x/jx/releases/download/v{{< version >}}/jx-linux-amd64.tar.gz | tar xzv 
+sudo mv jx /usr/local/bin
+jx create cluster aws
+```
+
+Hopefully that works and then you can try [use your Jenkins X installation](/getting-started/next/)    
         
 ### Using Azure (AKS)
 
