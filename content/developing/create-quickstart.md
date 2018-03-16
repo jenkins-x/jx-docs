@@ -39,7 +39,7 @@ Or use a text filter to filter on the project names:
 $ jx create quickstart  -f http
 ```
 
-The source of these Quickstarts are maintained in [this Github org](https://github.com/jenkins-x-quickstarts).
+### What happens when you create a quickstart
 
 Once you have chosen the project to create and given it a name the following is automated for you:
 
@@ -54,3 +54,31 @@ Once you have chosen the project to create and given it a name the following is 
 * register a webhook on the remote git repository to your teams Jenkins
 * add the git repository to your teams Jenkins
 * trigger the first pipeline 
+
+### How do quickstarts work?
+
+The source of these Quickstarts are maintained in [the jenkins-quickstarts Github organisation](https://github.com/jenkins-x-quickstarts).
+
+When you create a quickstart we use the [Jenkins X build packs](https://github.com/jenkins-x/draft-packs) to match the right pack for the project using the source code language kinds to pick the most suitable match.
+
+When you use [jx create](/getting-started/create-cluster/), [jx install](http://localhost:1313/getting-started/install-on-cluster/) or [jx init](/commands/jx_init/) the [Jenkins X build packs](https://github.com/jenkins-x/draft-packs) are cloned into your `~/.jx/draft/packs` folder.
+
+Then when you create a quickstart, use [jx create spring](/developing/create-spring/) or [jx import](developing/import/) then the [Jenkins X build packs](https://github.com/jenkins-x/draft-packs) are used to:
+
+* find the right language pack. e.g. here are the current [list of language packs](https://github.com/jenkins-x/draft-packs/tree/master/packs).
+* the language pack is then used to default these files if they don't already exist:
+  * `Dockerfile` to package the application as a docker image
+  * `Jenkinsfile` to implement the CI / CD pipelines using declarative pipeline as code
+  * Helm Charts to deploy the application on Kubernetes and to implement [Preview Environments](/about/features/#preview-environments)
+   
+### Adding your own Quickstarts
+
+If you would like to submit a new Quickstart to Jenkins X please just [raise an issue](https://github.com/jenkins-x/jx/issues/new?labels=quickstart&title=Add%20quickstart&body=Please%20add%20this%20github%20quickstart:) with the URL in GitHub of your quickstart and we can fork it it into the [quickstart organisation](https://github.com/jenkins-x-quickstarts) so it appears in the `jx create quickstart` menu.
+
+Until we do that you can still use your own Quickstarts in the `jx create quickstart` command via the `-g` or `--organisations` command line argument. e.g.
+
+```shell
+$ jx create quickstart  -l go --organisations my-github-org
+```
+
+Then all quickstarts found in `my-github-org` will be listed in addition to the Jenkins X quickstarts.
