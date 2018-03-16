@@ -5,7 +5,7 @@ description: How to create a new Kubernetes cluster with Jenkins X installed
 date: 2013-07-01
 publishdate: 2013-07-01
 categories: [getting started]
-keywords: [quick start,usage]
+keywords: [install]
 menu:
   docs:
     parent: "getting-started"

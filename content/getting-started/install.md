@@ -1,6 +1,6 @@
 ---
-title: Install jx
-linktitle: Install jx
+title: Get jx
+linktitle: Get jx
 description: How to install the jx binary on your machine
 date: 2017-02-01
 publishdate: 2017-02-01
