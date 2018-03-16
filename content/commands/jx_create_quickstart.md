@@ -1,5 +1,5 @@
 ---
-date: 2018-03-16T17:14:29Z
+date: 2018-03-16T18:23:28Z
 title: "jx create quickstart"
 slug: jx_create_quickstart
 url: /commands/jx_create_quickstart/
@@ -10,9 +10,9 @@ Create a new app from a Quickstart and import the generated code into git and Je
 
 ### Synopsis
 
-Creates a new Maven project using an Archetype 
+Create a new project from a sample/starter (found in https://github.com/jenkins-x-quickstarts) 
 
-You then get the option to import the generated source code into a git repository and Jenkins for CI / CD
+This will create a new project for you from the selected template.
 
 ```
 jx create quickstart [flags]
@@ -21,11 +21,13 @@ jx create quickstart [flags]
 ### Examples
 
 ```
-  # Create a new application from a Maven Archetype using the UI to choose which archetype to use
-  jx create archetype
+  Create a new project from a sample/starter (found in https://github.com/jenkins-x-quickstarts)
   
-  # Creates a Camel Archetype, filtering on the archetypes containing the text 'spring'
-  jx create archetype -g  org.apache.camel.archetypes -a spring
+  This will create a new project for you from the selected template.
+  
+  jx create quickstart
+  
+  jx create quickstart -f http
 ```
 
 ### Options
