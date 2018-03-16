@@ -34,7 +34,8 @@ Here's a little demo showing GKE, AKS and Minikube in parallel. It can take some
 Use the [jx create cluster gke](/commands/jx_create_cluster_gke) command: 
 
     jx create cluster gke
-    
+
+The command assumes you have a google account and you've setup a default project that you can use to create the kubernetes cluster within.    
         
 ### Using Amazon (AWS)
 
