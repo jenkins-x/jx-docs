@@ -63,6 +63,12 @@ When you create a quickstart we use the [Jenkins X build packs](https://github.c
 
 When you use [jx create](/getting-started/create-cluster/), [jx install](http://localhost:1313/getting-started/install-on-cluster/) or [jx init](/commands/jx_init/) the [Jenkins X build packs](https://github.com/jenkins-x/draft-packs) are cloned into your `~/.jx/draft/packs` folder.
 
+e.g. you can view all the languages supported via build packs on your machine via:
+
+```shell
+ls -al ~/.jx/draft/packs/github.com/jenkins-x/draft-packs/packs
+```
+
 Then when you create a quickstart, use [jx create spring](/developing/create-spring/) or [jx import](developing/import/) then the [Jenkins X build packs](https://github.com/jenkins-x/draft-packs) are used to:
 
 * find the right language pack. e.g. here are the current [list of language packs](https://github.com/jenkins-x/draft-packs/tree/master/packs).
