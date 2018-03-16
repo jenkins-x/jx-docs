@@ -39,6 +39,16 @@ You can use terms like `20m` or `10h30m` for the various duration expressions.
 <img src="/images/overview.png" class="img-thumbnail">
 
 
+### Feedback
+
+If the commit comments reference issues (e.g. via the text `fixes #123`) then Jenkins X pipelines will generate release notes like those of [the jx releases](https://github.com/jenkins-x/jx/releases).
+
+Also as the version with those new commits is promoted to `Staging` or `Production` you will get automated comments on each fixed issue that the issue is now available for review in the corresponding environment along with a link to the release notes and a link to the app running in that environment. e.g.
+
+<img src="/images/issue-comment.png" class="img-thumbnail">
+
+
+
 
 
 

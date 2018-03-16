@@ -59,16 +59,24 @@ To manually promote a version of an application to an environment you can use [j
 
 Jenkins X lets you spin up Preview Environments for your Pull Requests so you can get fast feedback before changes are merged to master. This gives you faster feedback for your changes before they are merged and released and allows you to avoid having human approval inside your release pipeline to speed up delivery of changes merged to master.
 
-When the Preview Environment is up and running Jenkins X will comment on your Pull Request with details of where the preview can be tried out.
+When the Preview Environment is up and running Jenkins X will comment on your Pull Request with a link so in one click your team members can try out the preview!
+ 
+<img src="/images/pr-comment.png" class="img-thumbnail">
 
 
 ## Feedback
 
-Jenkins X automatically comments on your Commits, Issues and Pull Requests with feedback as code is ready to be previewed, is promoted to environments or if Pull Requests are generated automatically to upgrade versions. 
+As you can see above Jenkins X automatically comments on your Pull Requests when using Preview Environments. 
+
+If the commit comments reference issues (e.g. via the text `fixes #123`) then Jenkins X pipelines will generate release notes like those of [the jx releases](https://github.com/jenkins-x/jx/releases).
+
+Also as the version with those new commits is promoted to `Staging` or `Production` you will get automated comments on each fixed issue that the issue is now available for review in the corresponding environment. e.g.
+
+<img src="/images/issue-comment.png" class="img-thumbnail">
+
 
 ## Applications
 
-A collection of best of breed software tools packaged as helm charts that come pre-integrated with Jenkins X such as: Nexus, Artifactory, SonarQube, Prometheus, Elasticsearch, Grafana etc
-upgrade versions.
+A collection of best of breed software tools packaged as helm charts that come pre-integrated with Jenkins X such as: Nexus, Chart Museum, Monocular, Prometheus, Grafana etc
 
  
