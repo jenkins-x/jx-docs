@@ -35,6 +35,7 @@ toc: true
 | Helm | | | | 1.1.x |
 | Skaffold | | | [In Progress](https://github.com/jenkins-x/jx/issues/433) | | 
 | Prow | | [Planned](https://github.com/jenkins-x/jx/issues/434) | | |
+| LetsEncrypt | | | [In Progress](https://github.com/jenkins-x/jx/issues/349) | |
 | **Git Providers** | | | | |
 | GitHub | | | | 1.1.x |
 | Gitea | | | [In Progress](https://github.com/jenkins-x/jx/issues/432) | |
