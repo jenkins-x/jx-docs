@@ -32,6 +32,28 @@ To view the current pipelines use [jx get pipelines](/commands/jx_get_pipelines)
 jx get pipelines
 ```
 
+### Pipeline Build logs
+
+To view the current pipeline build logs via [jx get build logs](/commands/jx_get_build_logs):
+
+```shell
+jx get build logs
+```
+
+You are then presented with all the possible pipelines to watch.
+
+You can quickly filter that via
+
+```shell
+jx get build logs -f myapp
+```
+
+or if you wish to be explicit
+
+```shell
+jx get build logs myorg/myapp/master
+```
+
 ### Pipeline Activity
 
 To view the current pipeline activity [jx get activities](/commands/jx_get_activities):
@@ -39,6 +61,16 @@ To view the current pipeline activity [jx get activities](/commands/jx_get_activ
 ```shell
 jx get activites
 ```
+
+### View Jenkins Console
+ 
+If you are familiar with the Jenkins console then you can use [jx console](/commands/jx_console):
+
+```shell
+jx console
+```
+
+to open it in a browser.
 
 ### Applications
 
