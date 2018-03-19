@@ -15,6 +15,7 @@ weight: 20
 sections_weight: 20
 draft: false
 aliases: [/contribute/roadmap/]
+categories: [fundamentals]
 toc: true
 ---
 
