@@ -74,16 +74,22 @@ to open it in a browser.
 
 ### Applications
 
-To view all the applications in your team across all your environments  the current pipeline activity  [jx get applications](/commands/applications):
+To view all the applications in your team across all your environments with URLs and pod counts use  [jx get applications](/commands/applications):
 
 ```shell
 jx get applications
 ```
 
-If you want to see the URLs of the applications in each environment then use:
+If you want to hide the URLs or the pod counts you can use `u` or `-p`. e.g. to hide the URLs:
 
 ```shell
 jx get app -u
+```
+
+Or hide the pod counts:
+
+```shell
+jx get app -p
 ```
 
 ### Environments
