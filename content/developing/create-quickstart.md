@@ -77,7 +77,7 @@ Then when you create a quickstart, use [jx create spring](/developing/create-spr
   * `Jenkinsfile` to implement the CI / CD pipelines using declarative pipeline as code
   * Helm Charts to deploy the application on Kubernetes and to implement [Preview Environments](/about/features/#preview-environments)
    
-### Adding your own Quickstarts
+## Adding your own Quickstarts
 
 If you would like to submit a new Quickstart to Jenkins X please just [raise an issue](https://github.com/jenkins-x/jx/issues/new?labels=quickstart&title=Add%20quickstart&body=Please%20add%20this%20github%20quickstart:) with the URL in GitHub of your quickstart and we can fork it it into the [quickstart organisation](https://github.com/jenkins-x-quickstarts) so it appears in the `jx create quickstart` menu.
 
