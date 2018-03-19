@@ -43,6 +43,7 @@ toc: true
 | GitLab | | [Planned](https://github.com/jenkins-x/jx/issues/40) | | |
 | **Issue Trackers** | | | | |
 | GitHub | | | | 1.1.x |
+| Gitea | | | [In Progress](https://github.com/jenkins-x/jx/issues/432) | |
 | JIRA | | [Planned](https://github.com/jenkins-x/jx/issues/430) | |
 
 If you are interested in helping out please see the above issues.
