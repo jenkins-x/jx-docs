@@ -31,6 +31,7 @@ toc: true
 | EKS  | | [Planned](https://github.com/jenkins-x/jx/issues/87) | | |
 | GKE | | | | 1.1.x |
 | Minkube | | | | 1.1.x |
+| OpenShift  | | [Planned](https://github.com/jenkins-x/jx/issues/435) | | |
 | **Tools** | | | | |
 | Helm | | | | 1.1.x |
 | Skaffold | | | [In Progress](https://github.com/jenkins-x/jx/issues/433) | | 
