@@ -1,5 +1,5 @@
 ---
-date: 2018-03-20T13:15:37Z
+date: 2018-03-20T17:16:20Z
 title: "jx install"
 slug: jx_install
 url: /commands/jx_install/
@@ -12,7 +12,7 @@ Install Jenkins X in the current Kubernetes cluster
 
 Installs the Jenkins X platform on a Kubernetes cluster 
 
-Requires a --git-username and either --git-token or --git-password that can be used to create a new token. This is so the Jenkins X platform can git tag your releases 
+Requires a --git-username and --git-api-token that can be used to create a new token. This is so the Jenkins X platform can git tag your releases 
 
 For more documentation see: http://jenkins-x.io/getting-started/install-on-cluster/
 
@@ -27,7 +27,7 @@ jx install [flags]
   jx install
   
   # Install with a GitHub personal access token
-  jx install --git-username jenkins-x-bot --git-token 9fdbd2d070cd81eb12bca87861bcd850
+  jx install --git-username jenkins-x-bot --git-api-token 9fdbd2d070cd81eb12bca87861bcd850
 ```
 
 ### Options
