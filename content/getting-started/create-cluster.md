@@ -78,20 +78,9 @@ Some folks have trouble getting minikube to work for a variety of reasons:
 
 So we **highly** recommend using one of the public clouds above to try out Jenkins X. They all have free tiers so it should not cost you any significant cash and it'll give you a chance to try out the cloud.
 
-If you still want to try minikube then we recommend you try [install minikube](https://github.com/kubernetes/minikube#installation) and start it first
+If you still want to try minikube then we recommend starting from scratch and letting jx create it for you by running
 
-    minikube start
-    
-To ensure your machine can run [minikube](https://github.com/kubernetes/minikube). Any issues getting this far please [report them on the minikube issue tracker](https://github.com/kubernetes/minikube/issues) they are a pretty helpful group of folks! 
-
-Once you have minikube running then try the [jx install](/commands/jx_install) command:
-
-    jx install --provider=minikube
-
-
-We also have a shortcut command that starts minikube and installs Jenkins X if you are confident your machine can run minikube: [jx create cluster minikube](/commands/jx_create_cluster_minikube/) 
-
-    jx create cluster minikube        
+    jx create cluster minikube
 
 Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
 
