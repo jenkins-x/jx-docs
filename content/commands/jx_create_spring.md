@@ -1,5 +1,5 @@
 ---
-date: 2018-03-21T17:21:42Z
+date: 2018-03-21T19:19:00Z
 title: "jx create spring"
 slug: jx_create_spring
 url: /commands/jx_create_spring/
@@ -28,6 +28,12 @@ jx create spring [flags]
   
   # Creates a Spring Boot application passing in the required dependencies
   jx create spring -d web -d actuator
+  
+  # To pick the advanced options (such as what package type maven-project/gradle-project) etc then use
+  jx create spring -x
+  
+  # To create a gradle project use:
+  jx create spring --type gradle-project
 ```
 
 ### Options
@@ -59,6 +65,7 @@ jx create spring [flags]
       --org string                     Specify the git provider organisation to import the project into (if it is not already in one)
   -o, --output-dir string              Directory to output the project to. Defaults to the current directory
   -p, --packaging string               Packaging
+      --type string                    Project Type (such as maven-project or gradle-project)
       --verbose                        Enable verbose logging
 ```
 
