@@ -1,5 +1,5 @@
 ---
-date: 2018-03-22T15:26:31Z
+date: 2018-03-22T17:22:49Z
 title: "jx create"
 slug: jx_create
 url: /commands/jx_create/
@@ -18,7 +18,7 @@ Creates a new resource.
   * cluster  
   * env  
   * git  
-    * spring (aka 'springboot')
+  * spring (aka 'springboot')
 
 ```
 jx create [flags]
