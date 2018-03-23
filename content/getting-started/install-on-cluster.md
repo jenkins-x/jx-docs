@@ -32,13 +32,14 @@ If you created the kubernetes cluster via [kops](https://github.com/kubernetes/k
 kops edit cluster 
 ```
 
-Then make sure the YAML has this `docker` entry:
+Then make sure the YAML has this `docker` entry inside the `spec` section:
 
 ```yaml 
 ...
 spec:
   docker:
     insecureRegistry: 100.64.0.0/10
+    logDriver: ""
 ``` 
 
 That IP range, `100.64.0.0/10`, works on AWS but you may need to change it on other kubernetes clusters; it depends on the IP range of kubernetes services.
