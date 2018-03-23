@@ -59,7 +59,7 @@ jx get build logs myorg/myapp/master
 To view the current pipeline activity [jx get activities](/commands/jx_get_activities):
 
 ```shell
-jx get activites
+jx get activities
 ```
 
 ### View Jenkins Console
