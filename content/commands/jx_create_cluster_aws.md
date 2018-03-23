@@ -1,5 +1,5 @@
 ---
-date: 2018-03-23T15:06:54Z
+date: 2018-03-23T18:06:24Z
 title: "jx create cluster aws"
 slug: jx_create_cluster_aws
 url: /commands/jx_create_cluster_aws/
@@ -26,6 +26,9 @@ jx create cluster aws [flags]
   
   # to specify the zones
   jx create cluster aws --zones us-west-2a,us-west-2b,us-west-2c
+  
+  # to output terraform configuration
+  jx create cluster aws --terraform /Users/jx/jx-infra
 ```
 
 ### Options
@@ -64,6 +67,7 @@ jx create cluster aws [flags]
       --register-local-helmrepo             Registers the Jenkins X chartmuseum registry with your helm client [default false]
       --skip-ingress                        Dont install an ingress controller
       --skip-tiller                         Dont install a Helms Tiller service
+  -t, --terraform string                    The directory to save terraform configuration.
       --tiller-cluster-role string          The cluster role for Helm's tiller (default "cluster-admin")
       --tiller-namespace string             The namespace for the Tiller when using a gloabl tiller (default "kube-system")
       --timeout string                      The number of seconds to wait for the helm install to complete (default "6000")
