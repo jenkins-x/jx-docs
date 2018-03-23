@@ -1,5 +1,5 @@
 ---
-date: 2018-03-23T14:30:44Z
+date: 2018-03-23T15:06:54Z
 title: "jx init"
 slug: jx_init
 url: /commands/jx_init/
@@ -37,7 +37,7 @@ jx init [flags]
       --ingress-namespace string        The namespace for the Ingress controller (default "kube-system")
       --ingress-service string          The name of the Ingress controller Service (default "jxing-nginx-ingress-controller")
       --namespace string                The namespace the Jenkins X platform should be installed into (default "jx")
-      --provider string                 Cloud service providing the kubernetes cluster.  Supported providers: [aks,eks,gke,kubernetes,minikube]
+      --provider string                 Cloud service providing the kubernetes cluster.  Supported providers: aks, aws, eks, gke, jx-infra, kubernetes, minikube, minishift, openshift
       --recreate-existing-draft-repos   Delete existing helm repos used by Jenkins X under ~/draft/packs
       --skip-ingress                    Dont install an ingress controller
       --skip-tiller                     Dont install a Helms Tiller service

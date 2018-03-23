@@ -1,5 +1,5 @@
 ---
-date: 2018-03-23T14:30:44Z
+date: 2018-03-23T15:06:54Z
 title: "jx create cluster aws"
 slug: jx_create_cluster_aws
 url: /commands/jx_create_cluster_aws/
@@ -21,7 +21,11 @@ jx create cluster aws [flags]
 ### Examples
 
 ```
+  # to create a new kubernetes cluster with Jenkins X in your default zones (from $AWS_AVAILABILITY_ZONES)
   jx create cluster aws
+  
+  # to specify the zones
+  jx create cluster aws --zones us-west-2a,us-west-2b,us-west-2c
 ```
 
 ### Options
