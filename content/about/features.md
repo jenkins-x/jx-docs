@@ -89,3 +89,6 @@ To install an addon then use the [jx create addon](/commands/jx_create_addon/) c
 jx create addon grafana
 ```
  
+ ## Roadmap
+ 
+ For a look at what features are coming soon please check out the [Jenkins X Roadmap](contribute/roadmap/)

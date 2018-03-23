@@ -31,7 +31,7 @@ toc: true
 | EKS  | | [Planned](https://github.com/jenkins-x/jx/issues/87) | | |
 | GKE | | | | 1.1.x |
 | Minkube | | | | 1.1.x |
-| OpenShift  | | [Planned](https://github.com/jenkins-x/jx/issues/435) | | |
+| OpenShift | | | [In Progress](https://github.com/jenkins-x/jx/issues/435) | |
 | **Tools** | | | | |
 | Helm | | | | 1.1.x |
 | Skaffold | | | [In Progress](https://github.com/jenkins-x/jx/issues/433) | | 
@@ -40,12 +40,14 @@ toc: true
 | **Git Providers** | | | | |
 | GitHub | | | | 1.1.x |
 | Gitea | | | [In Progress](https://github.com/jenkins-x/jx/issues/432) | |
-| BitBucket | | [Planned](https://github.com/jenkins-x/jx/issues/36) | | |
+| BitBucket | | | [In Progress](https://github.com/jenkins-x/jx/issues/36) | |
 | GitLab | | [Planned](https://github.com/jenkins-x/jx/issues/40) | | |
 | **Issue Trackers** | | | | |
 | GitHub | | | | 1.1.x |
 | Gitea | | | [In Progress](https://github.com/jenkins-x/jx/issues/432) | |
-| JIRA | | [Planned](https://github.com/jenkins-x/jx/issues/430) | |
+| JIRA | | | [In Progress](https://github.com/jenkins-x/jx/issues/430) |
+| **Featuress** | | | | |
+| Multi Cluster | | | [In Progress](https://github.com/jenkins-x/jx/issues/479) |
 
-If you are interested in helping out please see the above issues.
+If you are interested in helping out please see the above issues or [join us in the community](/community/).
 
