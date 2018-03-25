@@ -35,7 +35,7 @@ Use the [jx create cluster gke](/commands/jx_create_cluster_gke) command:
 
     jx create cluster gke
 
-The command assumes you have a google account and you've setup a default project that you can use to create the kubernetes cluster within.    
+The command assumes you have a google account and you've set up a default project that you can use to create the kubernetes cluster within.    
      
 Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
  
@@ -48,7 +48,7 @@ Use the [jx create cluster aws](/commands/x_create_cluster_aws) command:
 
 This will use [kops](https://github.com/kubernetes/kops) on your Amazon account to create a new kubernetes cluster and install Jenkins X.
 
-To try this out we recommend you follow the [AWS Workshop for Kubernetes](https://github.com/aws-samples/aws-workshop-for-kubernetes/tree/master/01-path-basics/101-start-here#create-aws-cloud9-environment) to setup an AWS Cloud9 IDE session.
+To try this out we recommend you follow the [AWS Workshop for Kubernetes](https://github.com/aws-samples/aws-workshop-for-kubernetes/tree/master/01-path-basics/101-start-here#create-aws-cloud9-environment) to set up an AWS Cloud9 IDE session.
 
 Then create a new terminal in Cloud9 and try these commands:
 
