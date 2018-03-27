@@ -1,5 +1,5 @@
 ---
-date: 2018-03-27T07:57:44Z
+date: 2018-03-27T11:38:13Z
 title: "jx get activities"
 slug: jx_get_activities
 url: /commands/jx_get_activities/
@@ -23,7 +23,10 @@ jx get activities [flags]
   jx get activities
   
   # List the current activities for application 'foo'
-  jx get act foo
+  jx get act -f foo
+  
+  # Watch the  activities for application 'foo'
+  jx get act -f foo -w
 ```
 
 ### Options
@@ -32,6 +35,7 @@ jx get activities [flags]
   -b, --build string    The build number to filter on
   -f, --filter string   Text to filter the pipeline names
   -h, --help            help for activities
+  -w, --watch           Whether to watch the activities for changes
 ```
 
 ### SEE ALSO

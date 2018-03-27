@@ -1,5 +1,5 @@
 ---
-date: 2018-03-27T07:57:44Z
+date: 2018-03-27T11:38:13Z
 title: "jx get applications"
 slug: jx_get_applications
 url: /commands/jx_get_applications/
@@ -22,6 +22,15 @@ jx get applications [flags]
   # List applications, their URL and pod counts for all environments
   jx get apps
   
+  # List applications only in the Staging environment
+  jx get apps -e staging
+  
+  # List applications only in the Production environment
+  jx get apps -e production
+  
+  # List applications only in a specific namespace
+  jx get apps -n jx-staging
+  
   # List applications hiding the URLs
   jx get apps -u
   
@@ -32,9 +41,11 @@ jx get applications [flags]
 ### Options
 
 ```
-  -h, --help   help for applications
-  -p, --pod    Hide the pod counts
-  -u, --url    Hide the URLs
+  -e, --env string         Filter applications in the given environment
+  -h, --help               help for applications
+  -n, --namespace string   Filter applications in the given namespace
+  -p, --pod                Hide the pod counts
+  -u, --url                Hide the URLs
 ```
 
 ### SEE ALSO
