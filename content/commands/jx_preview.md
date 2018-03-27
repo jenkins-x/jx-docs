@@ -1,5 +1,5 @@
 ---
-date: 2018-03-27T11:38:13Z
+date: 2018-03-27T16:18:48Z
 title: "jx preview"
 slug: jx_preview
 url: /commands/jx_preview/
@@ -42,6 +42,7 @@ jx preview [flags]
   -n, --name string                     The Environment resource name. Must follow the kubernetes name conventions like Services, Namespaces
       --namespace string                The Kubernetes namespace for the Environment
       --no-helm-update                  Allows the 'helm repo update' command if you are sure your local helm cache is up to date with the version you wish to promote
+      --no-merge                        Disables automatic merge of promote Pull Requests
       --pr string                       The Pull Request Name (e.g. 'PR-23' or just '23'
       --pr-url string                   The Pull Request URL
       --pull-request-poll-time string   Poll time when waiting for a Pull Request to merge (default "20s")

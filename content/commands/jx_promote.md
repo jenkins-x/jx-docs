@@ -1,5 +1,5 @@
 ---
-date: 2018-03-27T11:38:13Z
+date: 2018-03-27T16:18:48Z
 title: "jx promote"
 slug: jx_promote
 url: /commands/jx_promote/
@@ -45,6 +45,7 @@ jx promote [application] [flags]
   -h, --help                            help for promote
   -n, --namespace string                The Namespace to promote to
       --no-helm-update                  Allows the 'helm repo update' command if you are sure your local helm cache is up to date with the version you wish to promote
+      --no-merge                        Disables automatic merge of promote Pull Requests
       --pull-request-poll-time string   Poll time when waiting for a Pull Request to merge (default "20s")
       --release string                  The name of the helm release
   -t, --timeout string                  The timeout to wait for the promotion to succeed in the underlying Environment. The command fails if the timeout is exceeded or the promotion does not complete (default "1h")
