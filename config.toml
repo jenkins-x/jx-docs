@@ -69,7 +69,7 @@ twitter = "jenkinsxio"
 
 #CUSTOM PARAMS
 [params]
-  description = "Jenkins X provides CI / CD for Kubernetes"
+  description = "Jenkins X is a CI/CD solution for modern cloud applications on Kubernetes"
   ## Used for views in rendered HTML (i.e., rather than using the .Hugo variable)
   release = "1.1.10"
   ## Setting this to true will add a "noindex" to *EVERY* page on the site
