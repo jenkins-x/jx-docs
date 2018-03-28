@@ -24,6 +24,16 @@ kubectl get pods
 
 The Jenkins X command line tool, [jx](/commands/jx), has a similar look and feel to [kubectl](https://kubernetes.io/docs/reference/kubectl/overview/) and lets you get the status of all the Jenkins X resources.
 
+### View Jenkins Console
+ 
+If you are familiar with the Jenkins console then you can use [jx console](/commands/jx_console):
+
+```shell
+jx console
+```
+
+to open it in a browser.
+
 ### Pipelines
 
 To view the current pipelines use [jx get pipelines](/commands/jx_get_pipelines):
@@ -62,15 +72,13 @@ To view the current pipeline activity [jx get activities](/commands/jx_get_activ
 jx get activities
 ```
 
-### View Jenkins Console
- 
-If you are familiar with the Jenkins console then you can use [jx console](/commands/jx_console):
+If you want to watch whats going on with your app `myapp`  you can use:
 
 ```shell
-jx console
+jx get activities -f myapp -w
 ```
 
-to open it in a browser.
+Which will watch the pipeline activities and update the screen whenever a significant change happens (e.g. a release completes, a PR is created to start [promotion](/developing/promote) etc).
 
 ### Applications
 
@@ -91,6 +99,14 @@ Or hide the pod counts:
 ```shell
 jx get app -p
 ```
+
+You can also filter the apps by an environment:
+
+```shell
+jx get app -e staging
+```
+
+
 
 ### Environments
 
