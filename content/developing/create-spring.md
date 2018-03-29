@@ -33,7 +33,7 @@ We highly recommend you always include the **actuator** dependency in your Sprin
 
 The [jx create spring](/commands/jx_create_spring) will then:
 
-* create a new Spring Boot application in a sub directory
+* create a new Spring Boot application in a subdirectory
 * add your source code into a git repository 
 * create a remote git repository on a git service, such as [GitHub](https://github.com)
 * push your code to the remote git service
