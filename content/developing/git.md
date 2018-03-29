@@ -69,6 +69,9 @@ Now when you [install Jenkins X](/getting-started/) it will also install the `gi
 Then whenever Jenkins X needs to create a git repository for an Environment or for a new Project the gitea server will appear in the pick list.
 
 
+#### Known gitea limitations
 
+At the time of writing the [gitea plugin for Jenkins](https://issues.jenkins-ci.org/browse/JENKINS-50459) does not correctly update Pull Request and git commit build statuses which breaks the GitOps promption pipelines. Promotion can work through manual approval; but the pipeline reports a failure. 
 
+Another issue is new projects created by `jx` inside `gitea` do not get the [merge buttons enabled on Pull Requests](https://github.com/go-gitea/go-sdk/issues/100). The work around is after a project is created on github you go to the `Settings` page for the repository inside the `gitea` web console and enable the merge buttons there. 
 
