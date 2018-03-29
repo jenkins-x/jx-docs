@@ -1,5 +1,5 @@
 ---
-date: 2018-03-29T06:25:53Z
+date: 2018-03-29T12:04:23Z
 title: "jx create environment"
 slug: jx_create_environment
 url: /commands/jx_create_environment/
@@ -42,7 +42,7 @@ jx create environment [flags]
       --exposer string               Used to describe which strategy exposecontroller should use to access applications (default "Ingress")
   -f, --fork-git-repo string         The Git repository used as the fork when creating new Environment git repos (default "https://github.com/jenkins-x/default-environment-charts.git")
       --git-api-token string         The git API token to use for creating new git repositories
-      --git-provider-url string      The git server URL to create new git repositories inside (default "github.com")
+      --git-provider-url string      The git server URL to create new git repositories inside (default "https://github.com")
   -r, --git-ref string               The Git repo reference for the source code for GitOps based Environments
   -g, --git-url string               The Git clone URL for the source code for GitOps based Environments
       --git-username string          The git username to use for creating new git repositories

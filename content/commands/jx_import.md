@@ -1,5 +1,5 @@
 ---
-date: 2018-03-29T06:25:53Z
+date: 2018-03-29T12:04:23Z
 title: "jx import"
 slug: jx_import
 url: /commands/jx_import/
@@ -54,7 +54,7 @@ jx import [flags]
       --dry-run                        Performs local changes to the repo but skips the import into Jenkins X
       --filter string                  If selecting projects to import from a git provider this filters the list of repositories
       --git-api-token string           The git API token to use for creating new git repositories
-      --git-provider-url string        The git server URL to create new git repositories inside (default "github.com")
+      --git-provider-url string        The git server URL to create new git repositories inside (default "https://github.com")
       --git-username string            The git username to use for creating new git repositories
       --github                         If you wish to pick the repositories from GitHub to import
       --headless                       Enable headless operation if using browser automation

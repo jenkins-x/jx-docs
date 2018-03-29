@@ -1,5 +1,5 @@
 ---
-date: 2018-03-29T06:25:53Z
+date: 2018-03-29T12:04:23Z
 title: "jx create archetype"
 slug: jx_create_archetype
 url: /commands/jx_create_archetype/
@@ -41,7 +41,7 @@ jx create archetype [flags]
       --credentials string             The Jenkins credentials name used by the job
       --dry-run                        Performs local changes to the repo but skips the import into Jenkins X
       --git-api-token string           The git API token to use for creating new git repositories
-      --git-provider-url string        The git server URL to create new git repositories inside (default "github.com")
+      --git-provider-url string        The git server URL to create new git repositories inside (default "https://github.com")
       --git-username string            The git username to use for creating new git repositories
   -g, --group stringArray              The Group ID of the Archetypes
   -f, --group-filter string            Filter the Group IDs to choose from for he Archetypes

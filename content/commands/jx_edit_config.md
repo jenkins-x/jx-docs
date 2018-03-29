@@ -1,5 +1,5 @@
 ---
-date: 2018-03-29T06:25:53Z
+date: 2018-03-29T12:04:23Z
 title: "jx edit config"
 slug: jx_edit_config
 url: /commands/jx_edit_config/
@@ -28,7 +28,7 @@ jx edit config [flags]
 ```
   -d, --dir string    The root project directory
   -h, --help          help for config
-  -k, --kind string   The kind of configuration to edit root project directory. Possible values chat, issues, issues
+  -k, --kind string   The kind of configuration to edit root project directory. Possible values chat, issues, wiki
 ```
 
 ### SEE ALSO

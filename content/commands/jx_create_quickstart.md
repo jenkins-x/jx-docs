@@ -1,5 +1,5 @@
 ---
-date: 2018-03-29T06:25:53Z
+date: 2018-03-29T12:04:23Z
 title: "jx create quickstart"
 slug: jx_create_quickstart
 url: /commands/jx_create_quickstart/
@@ -43,7 +43,7 @@ jx create quickstart [flags]
       --framework string               The framework to filter on
       --git-api-token string           The git API token to use for creating new git repositories
       --git-host string                The Git server host if not using GitHub when pushing created project
-      --git-provider-url string        The git server URL to create new git repositories inside (default "github.com")
+      --git-provider-url string        The git server URL to create new git repositories inside (default "https://github.com")
       --git-username string            The git username to use for creating new git repositories
       --headless                       Enable headless operation if using browser automation
   -h, --help                           help for quickstart

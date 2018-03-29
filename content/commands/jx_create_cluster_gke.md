@@ -1,5 +1,5 @@
 ---
-date: 2018-03-29T06:25:53Z
+date: 2018-03-29T12:04:23Z
 title: "jx create cluster gke"
 slug: jx_create_cluster_gke
 url: /commands/jx_create_cluster_gke/
@@ -45,7 +45,7 @@ jx create cluster gke [flags]
       --enable-autoupgrade                  Sets autoupgrade feature for a cluster's default node-pool(s)
       --exposer string                      Used to describe which strategy exposecontroller should use to access applications (default "Ingress")
       --git-api-token string                The git API token to use for creating new git repositories
-      --git-provider-url string             The git server URL to create new git repositories inside (default "github.com")
+      --git-provider-url string             The git server URL to create new git repositories inside (default "https://github.com")
       --git-username string                 The git username to use for creating new git repositories
       --global-tiller                       Whether or not to use a cluster global tiller (default true)
       --headless                            Enable headless operation if using browser automation
