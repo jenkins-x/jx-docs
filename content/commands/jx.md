@@ -1,5 +1,5 @@
 ---
-date: 2018-03-30T05:57:31Z
+date: 2018-03-30T10:55:01Z
 title: "jx"
 slug: jx
 url: /commands/jx/
@@ -46,6 +46,7 @@ jx [flags]
 * [jx rsh](/commands/jx_rsh/)	 - Opens a terminal in a pod or runs a command in the pod
 * [jx shell](/commands/jx_shell/)	 - Create a sub shell so that changes to the kubernetes context, namespace or environment remain local to the shell
 * [jx start](/commands/jx_start/)	 - Starts a process such as a pipeline
+* [jx status](/commands/jx_status/)	 - status of the Kubernetes cluster or named node
 * [jx step](/commands/jx_step/)	 - pipeline steps
 * [jx uninstall](/commands/jx_uninstall/)	 - Uninstall the Jenkins X platform
 * [jx upgrade](/commands/jx_upgrade/)	 - Upgrades a resource
