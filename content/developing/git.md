@@ -36,12 +36,20 @@ jx create git server gitKind someURL
 
 Where the `gitKind` is one of the supported git provider kinds like `github, gitea, gitlab, bitbucket`
 
+e.g. to add a GitHub Enterprise server try:
+
+``` 
+jx create git server github https://github.foo.com -n GHE
+```
+
+Where `-n` is the name for the git service.
+
 ### Adding user tokens
 
 To use a git server you need to add a user name and API token via [jx create git token](/commands/jx_create_git_token):
 
 ``` 
-jx create git token myUserName
+jx create git token -n myProviderName myUserName
 ```
 
 You will then be prompted for the API token 
