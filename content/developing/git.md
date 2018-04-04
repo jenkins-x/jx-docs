@@ -26,7 +26,7 @@ You can list the git servers configured via [jx get git](/commands/jx_get_git):
 jx get git
 ```
 
-### Adding a new git provider
+## Adding a new git provider
 
 If you already have a git server somewhere you can add it into Jenkins X via [jx create git server](/commands/jx_create_git_server):
                                     
@@ -36,13 +36,23 @@ jx create git server gitKind someURL
 
 Where the `gitKind` is one of the supported git provider kinds like `github, gitea, gitlab, bitbucket`
 
-e.g. to add a GitHub Enterprise server try:
+## GitHub Enterprise
+
+To add a GitHub Enterprise server try:
 
 ``` 
 jx create git server github https://github.foo.com -n GHE
 ```
 
 Where `-n` is the name for the git service.
+
+## BitBucket
+
+To add BitBucket try:
+
+```
+jx create git server bitbucket -n BitBucket https://bitbucket.org
+```
 
 ### Adding user tokens
 
