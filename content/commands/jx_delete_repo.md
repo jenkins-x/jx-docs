@@ -1,5 +1,5 @@
 ---
-date: 2018-04-04T14:13:30Z
+date: 2018-04-04T16:30:22Z
 title: "jx delete repo"
 slug: jx_delete_repo
 url: /commands/jx_delete_repo/
@@ -34,8 +34,8 @@ jx delete repo [flags]
 ### Options
 
 ```
-      --all                If selecting projects to import from a git provider this defaults to selecting them all
-      --filter string      If selecting projects to import from a git provider this filters the list of repositories
+  -a, --all                If selecting projects to import from a git provider this defaults to selecting them all
+  -f, --filter string      If selecting projects to import from a git provider this filters the list of repositories
   -g, --git-host string    The Git server host if not using GitHub
       --github             If you wis to pick the repositories from GitHub to import
   -h, --help               help for repo
