@@ -42,13 +42,25 @@ toc: true
 | GitHub Enterprise | | | [In Progress](https://github.com/jenkins-x/jx/issues/525) | |
 | Gitea | | | [In Progress](https://github.com/jenkins-x/jx/issues/432) | |
 | BitBucket | | | [In Progress](https://github.com/jenkins-x/jx/issues/36) | |
-| GitLab | | [Planned](https://github.com/jenkins-x/jx/issues/40) | | |
+| GitLab | | | [In Progress](https://github.com/jenkins-x/jx/issues/40) | |
 | **Issue Trackers** | | | | |
 | GitHub | | | | 1.1.x |
+| GitHub Enterprise | | | [In Progress](https://github.com/jenkins-x/jx/issues/525) | |
 | Gitea | | | [In Progress](https://github.com/jenkins-x/jx/issues/432) | |
 | JIRA | | | [In Progress](https://github.com/jenkins-x/jx/issues/430) |
 | **Features** | | | | |
 | Multi Cluster | | | [In Progress](https://github.com/jenkins-x/jx/issues/479) |
+| **Build Packs** | | | | |
+| Go | | | | 1.1.43 |
+| Java + Maven | | | | 1.1.x |
+| Java + Gradle | | | | 1.1.43 |
+| Kubeless  | | [Planned](https://github.com/jenkins-x/jx/issues/554) | |
+| Node | | | | 1.1.43 |
+| Python  | | | [In Progress](https://github.com/jenkins-x/jx/issues/559) |
+| Rust | | | | 1.1.43 |
+| Serverless  | | [Planned](https://github.com/jenkins-x/jx/issues/553) | |
+| Swift  | | [Planned](https://github.com/jenkins-x/jx/issues/560) | |
+| .Net  | | [Planned](https://github.com/jenkins-x/jx/issues/561) | |
 
 If you are interested in helping out please see the above issues or [join us in the community](/community/).
 
