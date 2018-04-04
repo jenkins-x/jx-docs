@@ -1,5 +1,5 @@
 ---
-date: 2018-04-04T16:30:22Z
+date: 2018-04-04T17:37:55Z
 title: "jx create cluster minikube"
 slug: jx_create_cluster_minikube
 url: /commands/jx_create_cluster_minikube/
@@ -36,6 +36,7 @@ jx create cluster minikube [flags]
       --default-environments                Creates default Staging and Production environments (default true)
       --domain string                       Domain to expose ingress endpoints.  Example: jenkinsx.io
       --draft-client-only                   Only install draft client
+      --environment-git-owner string        The git provider organisation to create the environment git repositories in
       --exposer string                      Used to describe which strategy exposecontroller should use to access applications (default "Ingress")
       --git-api-token string                The git API token to use for creating new git repositories
       --git-provider-url string             The git server URL to create new git repositories inside
