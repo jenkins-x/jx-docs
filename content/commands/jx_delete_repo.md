@@ -1,5 +1,5 @@
 ---
-date: 2018-04-04T14:12:53Z
+date: 2018-04-04T14:13:30Z
 title: "jx delete repo"
 slug: jx_delete_repo
 url: /commands/jx_delete_repo/
