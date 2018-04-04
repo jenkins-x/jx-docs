@@ -39,6 +39,7 @@ toc: true
 | LetsEncrypt | | | [In Progress](https://github.com/jenkins-x/jx/issues/349) | |
 | **Git Providers** | | | | |
 | GitHub | | | | 1.1.x |
+| GitHub Enterprise | | | [In Progress](https://github.com/jenkins-x/jx/issues/525) | |
 | Gitea | | | [In Progress](https://github.com/jenkins-x/jx/issues/432) | |
 | BitBucket | | | [In Progress](https://github.com/jenkins-x/jx/issues/36) | |
 | GitLab | | [Planned](https://github.com/jenkins-x/jx/issues/40) | | |
