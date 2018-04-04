@@ -1,5 +1,5 @@
 ---
-date: 2018-04-04T07:25:50Z
+date: 2018-04-04T14:12:53Z
 title: "jx logs"
 slug: jx_logs
 url: /commands/jx_logs/
