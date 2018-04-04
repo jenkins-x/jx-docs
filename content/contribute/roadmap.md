@@ -47,7 +47,7 @@ toc: true
 | GitHub | | | | 1.1.x |
 | Gitea | | | [In Progress](https://github.com/jenkins-x/jx/issues/432) | |
 | JIRA | | | [In Progress](https://github.com/jenkins-x/jx/issues/430) |
-| **Featuress** | | | | |
+| **Features** | | | | |
 | Multi Cluster | | | [In Progress](https://github.com/jenkins-x/jx/issues/479) |
 
 If you are interested in helping out please see the above issues or [join us in the community](/community/).
