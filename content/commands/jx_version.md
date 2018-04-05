@@ -1,5 +1,5 @@
 ---
-date: 2018-04-05T16:02:10Z
+date: 2018-04-05T16:55:20Z
 title: "jx version"
 slug: jx_version
 url: /commands/jx_version/
@@ -19,7 +19,8 @@ jx version [flags]
 ### Options
 
 ```
-  -h, --help   help for version
+      --helm-tls   Whether to use TLS with helm
+  -h, --help       help for version
 ```
 
 ### SEE ALSO

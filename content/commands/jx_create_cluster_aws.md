@@ -1,5 +1,5 @@
 ---
-date: 2018-04-05T16:02:10Z
+date: 2018-04-05T16:55:20Z
 title: "jx create cluster aws"
 slug: jx_create_cluster_aws
 url: /commands/jx_create_cluster_aws/
@@ -49,6 +49,7 @@ jx create cluster aws [flags]
       --git-username string                 The git username to use for creating new git repositories
       --global-tiller                       Whether or not to use a cluster global tiller (default true)
       --helm-client-only                    Only install helm client
+      --helm-tls                            Whether to use TLS with helm
   -h, --help                                help for aws
       --http string                         Toggle creating http or https ingress rules (default "true")
       --ingress-cluster-role string         The cluster role for the Ingress controller (default "cluster-admin")
