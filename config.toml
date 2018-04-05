@@ -71,7 +71,7 @@ twitter = "jenkinsxio"
 [params]
   description = "Jenkins X is a CI/CD solution for modern cloud applications on Kubernetes"
   ## Used for views in rendered HTML (i.e., rather than using the .Hugo variable)
-  release = "1.1.53"
+  release = "1.1.54"
   ## Setting this to true will add a "noindex" to *EVERY* page on the site
   removefromexternalsearch = false
   ## Gh repo for site footer (include trailing slash)
