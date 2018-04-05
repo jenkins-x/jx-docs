@@ -1,5 +1,5 @@
 ---
-date: 2018-04-05T16:55:20Z
+date: 2018-04-05T17:56:38Z
 title: "jx step changelog"
 slug: jx_step_changelog
 url: /commands/jx_step_changelog/
@@ -50,6 +50,7 @@ jx step changelog [flags]
 ### Options
 
 ```
+  -b, --batch-mode                 In batch mode the command never prompts for user input
   -c, --crd                        Generate the CRD in the chart
       --crd-yaml-file string       the name of the file to generate the Release CustomResourceDefinition YAML (default "release-crd.yaml")
       --dir string                 The directory of the git repository. Defaults to the current working directory
@@ -58,6 +59,7 @@ jx step changelog [flags]
   -y, --generate-yaml              Generate the Release YAML in the local helm chart (default true)
       --header string              The changelog header in markdown for the changelog. Can use go template expressions on the ReleaseSpec object: https://golang.org/pkg/text/template/
       --header-file string         The file name of the changelog header in markdown for the changelog. Can use go template expressions on the ReleaseSpec object: https://golang.org/pkg/text/template/
+      --headless                   Enable headless operation if using browser automation
   -h, --help                       help for changelog
   -o, --overwrite                  overwrites the Release CRD YAML file if it exists
   -p, --previous-rev string        the previous tag revision
@@ -65,6 +67,7 @@ jx step changelog [flags]
   -r, --rev string                 the current tag revision
   -t, --templates-dir string       the directory containing the helm chart templates to generate the resources
       --update-release             Should we update the release on the git repository with the changelog (default true)
+      --verbose                    Enable verbose logging
   -v, --version string             The version to release
 ```
 
