@@ -50,6 +50,7 @@ toc: true
 | JIRA | | | [In Progress](https://github.com/jenkins-x/jx/issues/430) |
 | **Features** | | | | |
 | Multi Cluster | | | [In Progress](https://github.com/jenkins-x/jx/issues/479) |
+| Istio Production Canaries | | | [In Progress](https://github.com/jenkins-x/jx/issues/582) |
 | **Build Packs** | | | | |
 | Go | | | | 1.1.43 |
 | Java + Maven | | | | 1.1.x |
