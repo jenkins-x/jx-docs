@@ -1,5 +1,5 @@
 ---
-date: 2018-04-06T03:50:32Z
+date: 2018-04-06T17:45:01Z
 title: "jx create spring"
 slug: jx_create_spring
 url: /commands/jx_create_spring/
@@ -59,6 +59,7 @@ jx create spring [flags]
   -k, --kind stringArray               Default dependency kinds to choose from (default [Core,Web,Template Engines,SQL,I/O,Ops])
   -l, --language string                Language to generate
       --name string                    Specify the git repository name to import the project into (if it is not already in one)
+      --no-brew                        Disables the use of brew on MacOS to install or upgrade command line dependencies
       --no-draft                       Disable Draft from trying to default a Dockerfile and Helm Chart
       --no-import                      Disable import after the creation
       --no-jenkinsfile                 Disable defaulting a Jenkinsfile if its missing

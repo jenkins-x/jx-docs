@@ -1,5 +1,5 @@
 ---
-date: 2018-04-06T03:50:32Z
+date: 2018-04-06T17:45:01Z
 title: "jx install"
 slug: jx_install
 url: /commands/jx_install/
@@ -65,6 +65,7 @@ jx install [flags]
       --local-cloud-environment             Ignores default cloud-environment-repo and uses current directory 
       --local-helm-repo-name string         The name of the helm repository for the installed Chart Museum (default "releases")
       --namespace string                    The namespace the Jenkins X platform should be installed into (default "jx")
+      --no-brew                             Disables the use of brew on MacOS to install or upgrade command line dependencies
       --provider string                     Cloud service providing the kubernetes cluster.  Supported providers: aks, aws, eks, gke, jx-infra, kubernetes, minikube, minishift, openshift
       --recreate-existing-draft-repos       Delete existing helm repos used by Jenkins X under ~/draft/packs
       --register-local-helmrepo             Registers the Jenkins X chartmuseum registry with your helm client [default false]

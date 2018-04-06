@@ -1,5 +1,5 @@
 ---
-date: 2018-04-06T03:50:32Z
+date: 2018-04-06T17:45:01Z
 title: "jx import"
 slug: jx_import
 url: /commands/jx_import/
@@ -62,6 +62,7 @@ jx import [flags]
       --import-commit-message string   The git commit message for the import
   -j, --jenkinsfile string             The name of the Jenkinsfile to use. If not specified then 'Jenkinsfile' will be used
       --name string                    Specify the git repository name to import the project into (if it is not already in one) (default "n")
+      --no-brew                        Disables the use of brew on MacOS to install or upgrade command line dependencies
       --no-draft                       Disable Draft from trying to default a Dockerfile and Helm Chart
       --no-jenkinsfile                 Disable defaulting a Jenkinsfile if its missing
       --org string                     Specify the git provider organisation to import the project into (if it is not already in one)

@@ -1,5 +1,5 @@
 ---
-date: 2018-04-06T03:50:32Z
+date: 2018-04-06T17:45:01Z
 title: "jx cdx"
 slug: jx_cdx
 url: /commands/jx_cdx/

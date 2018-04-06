@@ -1,5 +1,5 @@
 ---
-date: 2018-04-06T03:50:32Z
+date: 2018-04-06T17:45:01Z
 title: "jx create cluster minikube"
 slug: jx_create_cluster_minikube
 url: /commands/jx_create_cluster_minikube/
@@ -57,7 +57,7 @@ jx create cluster minikube [flags]
       --local-helm-repo-name string         The name of the helm repository for the installed Chart Museum (default "releases")
   -m, --memory string                       Amount of RAM allocated to the minikube VM in MB (default "4096")
       --namespace string                    The namespace the Jenkins X platform should be installed into (default "jx")
-      --no-brew                             Disables the use of brew on MacOS to install dependencies like kubectl, draft, helm etc
+      --no-brew                             Disables the use of brew on MacOS to install or upgrade command line dependencies
       --recreate-existing-draft-repos       Delete existing helm repos used by Jenkins X under ~/draft/packs
       --register-local-helmrepo             Registers the Jenkins X chartmuseum registry with your helm client [default false]
       --skip-ingress                        Dont install an ingress controller

@@ -1,5 +1,5 @@
 ---
-date: 2018-04-06T03:50:32Z
+date: 2018-04-06T17:45:01Z
 title: "jx step changelog"
 slug: jx_step_changelog
 url: /commands/jx_step_changelog/
@@ -61,6 +61,7 @@ jx step changelog [flags]
       --header-file string         The file name of the changelog header in markdown for the changelog. Can use go template expressions on the ReleaseSpec object: https://golang.org/pkg/text/template/
       --headless                   Enable headless operation if using browser automation
   -h, --help                       help for changelog
+      --no-brew                    Disables the use of brew on MacOS to install or upgrade command line dependencies
   -o, --overwrite                  overwrites the Release CRD YAML file if it exists
   -p, --previous-rev string        the previous tag revision
       --release-yaml-file string   the name of the file to generate the Release YAML (default "release.yaml")

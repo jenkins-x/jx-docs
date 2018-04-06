@@ -1,5 +1,5 @@
 ---
-date: 2018-04-06T03:50:32Z
+date: 2018-04-06T17:45:01Z
 title: "jx create issue"
 slug: jx_create_issue
 url: /commands/jx_create_issue/
@@ -42,6 +42,7 @@ jx create issue [flags]
       --headless            Enable headless operation if using browser automation
   -h, --help                help for issue
   -l, --label stringArray   The labels to add to the issue
+      --no-brew             Disables the use of brew on MacOS to install or upgrade command line dependencies
   -t, --title string        The title of the issue to create
       --verbose             Enable verbose logging
 ```

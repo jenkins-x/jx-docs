@@ -1,5 +1,5 @@
 ---
-date: 2018-04-06T03:50:32Z
+date: 2018-04-06T17:45:01Z
 title: "jx step pr comment"
 slug: jx_step_pr_comment
 url: /commands/jx_step_pr_comment/
@@ -23,6 +23,7 @@ jx step pr comment [flags]
   -c, --comment string        comment to add to the Pull Request
       --headless              Enable headless operation if using browser automation
   -h, --help                  help for comment
+      --no-brew               Disables the use of brew on MacOS to install or upgrade command line dependencies
   -o, --owner string          git organisation / owner
   -p, --pull-request string   git pull request number
   -r, --repository string     git repository

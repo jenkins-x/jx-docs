@@ -1,5 +1,5 @@
 ---
-date: 2018-04-06T03:50:32Z
+date: 2018-04-06T17:45:01Z
 title: "jx promote"
 slug: jx_promote
 url: /commands/jx_promote/
@@ -44,6 +44,7 @@ jx promote [application] [flags]
   -u, --helm-repo-url string            The Helm Repository URL to use for the App (default "http://jenkins-x-chartmuseum:8080")
   -h, --help                            help for promote
   -n, --namespace string                The Namespace to promote to
+      --no-brew                         Disables the use of brew on MacOS to install or upgrade command line dependencies
       --no-helm-update                  Allows the 'helm repo update' command if you are sure your local helm cache is up to date with the version you wish to promote
       --no-merge                        Disables automatic merge of promote Pull Requests
       --pull-request-poll-time string   Poll time when waiting for a Pull Request to merge (default "20s")

@@ -1,5 +1,5 @@
 ---
-date: 2018-04-06T03:50:32Z
+date: 2018-04-06T17:45:01Z
 title: "jx create git user"
 slug: jx_create_git_user
 url: /commands/jx_create_git_user/
@@ -33,6 +33,7 @@ jx create git user [username] [flags]
       --headless           Enable headless operation if using browser automation
   -h, --help               help for user
   -n, --name string        The name of the git server to add a user
+      --no-brew            Disables the use of brew on MacOS to install or upgrade command line dependencies
   -p, --password string    The User password to try automatically create a new API Token
   -u, --url string         The URL of the git server to add a user
       --verbose            Enable verbose logging

@@ -1,5 +1,5 @@
 ---
-date: 2018-04-06T03:50:32Z
+date: 2018-04-06T17:45:01Z
 title: "jx shell"
 slug: jx_shell
 url: /commands/jx_shell/
@@ -35,6 +35,7 @@ jx shell [flags]
   -b, --batch-mode   In batch mode the command never prompts for user input
       --headless     Enable headless operation if using browser automation
   -h, --help         help for shell
+      --no-brew      Disables the use of brew on MacOS to install or upgrade command line dependencies
       --verbose      Enable verbose logging
 ```
 

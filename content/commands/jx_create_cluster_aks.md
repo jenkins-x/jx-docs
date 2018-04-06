@@ -1,5 +1,5 @@
 ---
-date: 2018-04-06T03:50:32Z
+date: 2018-04-06T17:45:01Z
 title: "jx create cluster aks"
 slug: jx_create_cluster_aks
 url: /commands/jx_create_cluster_aks/
@@ -59,7 +59,6 @@ jx create cluster aks [flags]
       --local-helm-repo-name string         The name of the helm repository for the installed Chart Museum (default "releases")
   -l, --location string                     location to run cluster in
       --namespace string                    The namespace the Jenkins X platform should be installed into (default "jx")
-      --no-brew                             Disables the use of brew on MacOS to install dependencies like kubectl, draft, helm etc
   -o, --nodes string                        node count
   -p, --password string                     password
   -k, --path-To-public-rsa-key string       pathToPublicRSAKey

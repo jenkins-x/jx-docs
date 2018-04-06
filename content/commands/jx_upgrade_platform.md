@@ -1,5 +1,5 @@
 ---
-date: 2018-04-06T03:50:32Z
+date: 2018-04-06T17:45:01Z
 title: "jx upgrade platform"
 slug: jx_upgrade_platform
 url: /commands/jx_upgrade_platform/
@@ -30,7 +30,7 @@ jx upgrade platform [flags]
   -h, --help               help for platform
   -n, --name string        The release name (default "jenkins-x")
       --namespace string   The Namespace to promote to
-  -v, --version string     The Version to promote
+  -v, --version string     The specific platform version to upgrade to
 ```
 
 ### SEE ALSO

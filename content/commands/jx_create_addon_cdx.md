@@ -1,5 +1,5 @@
 ---
-date: 2018-04-06T03:50:32Z
+date: 2018-04-06T17:45:01Z
 title: "jx create addon cdx"
 slug: jx_create_addon_cdx
 url: /commands/jx_create_addon_cdx/
@@ -33,7 +33,8 @@ jx create addon cdx [flags]
       --helm-update        Should we run helm update first to ensure we use the latest version (default true)
   -h, --help               help for cdx
   -n, --namespace string   The Namespace to install into
-  -r, --release string     The chart release name (default "gitea")
+      --no-brew            Disables the use of brew on MacOS to install or upgrade command line dependencies
+  -r, --release string     The chart release name (default "cdx")
       --verbose            Enable verbose logging
 ```
 

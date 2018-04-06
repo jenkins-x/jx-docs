@@ -1,5 +1,5 @@
 ---
-date: 2018-04-06T03:50:32Z
+date: 2018-04-06T17:45:01Z
 title: "jx create addon gitea"
 slug: jx_create_addon_gitea
 url: /commands/jx_create_addon_gitea/
@@ -34,13 +34,14 @@ jx create addon gitea [flags]
       --helm-update        Should we run helm update first to ensure we use the latest version (default true)
   -h, --help               help for gitea
   -n, --namespace string   The Namespace to install into
+      --no-brew            Disables the use of brew on MacOS to install or upgrade command line dependencies
       --no-token           If true disable trying to create a new token in the gitea server
       --no-user            If true disable trying to create a new user in the gitea server
   -p, --password string    The password for the user to create in gitea. Note that gitea tends to reject passwords less than 6 characters
   -r, --release string     The chart release name (default "gitea")
   -u, --username string    The name for the user to create in gitea. Note that gitea tends to reject 'admin'
       --verbose            Enable verbose logging
-  -v, --version string     The verison of the gitea addon to use
+  -v, --version string     The version of the gitea addon to use
 ```
 
 ### SEE ALSO

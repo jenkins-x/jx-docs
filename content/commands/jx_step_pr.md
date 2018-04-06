@@ -1,5 +1,5 @@
 ---
-date: 2018-04-06T03:50:32Z
+date: 2018-04-06T17:45:01Z
 title: "jx step pr"
 slug: jx_step_pr
 url: /commands/jx_step_pr/
@@ -22,6 +22,7 @@ jx step pr [flags]
   -b, --batch-mode   In batch mode the command never prompts for user input
       --headless     Enable headless operation if using browser automation
   -h, --help         help for pr
+      --no-brew      Disables the use of brew on MacOS to install or upgrade command line dependencies
       --verbose      Enable verbose logging
 ```
 

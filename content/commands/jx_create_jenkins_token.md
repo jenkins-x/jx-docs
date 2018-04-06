@@ -1,5 +1,5 @@
 ---
-date: 2018-04-06T03:50:32Z
+date: 2018-04-06T17:45:01Z
 title: "jx create jenkins token"
 slug: jx_create_jenkins_token
 url: /commands/jx_create_jenkins_token/
@@ -38,6 +38,7 @@ jx create jenkins token [username] [flags]
       --headless           Enable headless operation if using browser automation
   -h, --help               help for token
   -n, --name string        The name of the git server to add a user
+      --no-brew            Disables the use of brew on MacOS to install or upgrade command line dependencies
   -p, --password string    The User password to try automatically create a new API Token
       --timeout string     The timeout if using browser automation to generate the API token (by passing username and password)
   -u, --url string         The URL of the git server to add a user
