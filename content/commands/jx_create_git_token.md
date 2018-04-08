@@ -1,5 +1,5 @@
 ---
-date: 2018-04-08T07:12:18Z
+date: 2018-04-08T21:24:37Z
 title: "jx create git token"
 slug: jx_create_git_token
 url: /commands/jx_create_git_token/
