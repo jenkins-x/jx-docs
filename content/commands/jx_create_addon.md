@@ -1,5 +1,5 @@
 ---
-date: 2018-04-09T18:29:07Z
+date: 2018-04-09T19:33:50Z
 title: "jx create addon"
 slug: jx_create_addon
 url: /commands/jx_create_addon/
@@ -28,6 +28,7 @@ jx create addon [flags]
 ### SEE ALSO
 
 * [jx create](/commands/jx_create/)	 - Create a new resource
+* [jx create addon anchore](/commands/jx_create_addon_anchore/)	 - Create the Anchore addon for verifying container images
 * [jx create addon cdx](/commands/jx_create_addon_cdx/)	 - Create the CDX addon (a web console for working with CI / CD and Environments)
 * [jx create addon gitea](/commands/jx_create_addon_gitea/)	 - Create a gitea addon for hosting git repositories
 * [jx create addon kubeless](/commands/jx_create_addon_kubeless/)	 - Create a kubeless addon for hosting git repositories
