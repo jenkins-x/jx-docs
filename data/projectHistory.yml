@@ -1,0 +1,97 @@
+lastReportDate: April 11 2018
+reports:
+- reportDate: March 18 2018
+  starsMetrics:
+    count: 50
+    total: 50
+  downloadMetrics:
+    count: 500
+    total: 500
+  issueMetrics:
+    count: 39
+    total: 39
+  pullRequestMetrics:
+    count: 30
+    total: 261
+  commitMetrics:
+    count: 60
+    total: 900
+  newCommitterMetrics:
+    count: 5
+    total: 5
+  newContributorMetrics:
+    count: 5
+    total: 5
+  developerChatMetrics:
+    count: 5
+    total: 5
+  userChatMetrics:
+    count: 5
+    total: 5
+- reportDate: April 11 2018
+  starsMetrics:
+    count: 580
+    total: 630
+  downloadMetrics:
+    count: 7945
+    total: 8445
+  issueMetrics:
+    count: 105
+    total: 144
+  pullRequestMetrics:
+    count: 61
+    total: 322
+  commitMetrics:
+    count: 263
+    total: 1163
+  newCommitterMetrics:
+    count: 14
+    total: 19
+  newContributorMetrics:
+    count: 23
+    total: 28
+  developerChatMetrics:
+    count: 64
+    total: 69
+  userChatMetrics:
+    count: 128
+    total: 133
+contributors:
+- michaelneale
+- rajdavies
+- rawlingsj
+- jstrachan
+- gtseres
+- whoisjake
+- kaylanm
+- arun-gupta
+- jeffmaury
+- maniankara
+- tdcox
+- commixon
+- teruz
+- ngerstle
+- jody-frankowski
+- wbrefvem
+- abouchama
+- aaronwalker
+- jlong
+- bacongobbler
+- ryanmiville
+- jlordiales
+- rcmoutinho
+committers:
+- rawlingsj
+- jstrachan
+- ryanmiville
+- rajdavies
+- jlordiales
+- rcmoutinho
+- maniankara
+- wbrefvem
+- abouchama
+- aaronwalker
+- gtseres
+- kaylanm
+- tdcox
+- whoisjake

@@ -1,6 +1,6 @@
 ---
 title: "Introducing Jenkins X"
-date: 2017-03-19T18:36:00+02:00
+date: 2018-03-19T18:36:00+02:00
 description: >
     Introducing Jenkins X: a CI/CD solution for modern cloud applications on Kubernetes
 categories: [blog]

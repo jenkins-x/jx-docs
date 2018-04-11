@@ -1,6 +1,6 @@
 ---
 title: "JEP 400 submitted"
-date: 2017-03-09T18:36:00+02:00
+date: 2018-03-09T18:36:00+02:00
 description: >
     We have submitted JEP 400 to the Jenkins Foundation
 categories: [blog]

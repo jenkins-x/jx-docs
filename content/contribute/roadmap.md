@@ -39,15 +39,15 @@ toc: true
 | LetsEncrypt | | | [In Progress](https://github.com/jenkins-x/jx/issues/349) | |
 | **Git Providers** | | | | |
 | GitHub | | | | 1.1.x |
-| GitHub Enterprise | | | [In Progress](https://github.com/jenkins-x/jx/issues/525) | |
+| GitHub Enterprise | | | | 1.1.68 |
 | Gitea | | | [In Progress](https://github.com/jenkins-x/jx/issues/432) | |
 | BitBucket | | | [In Progress](https://github.com/jenkins-x/jx/issues/36) | |
 | GitLab | | | [In Progress](https://github.com/jenkins-x/jx/issues/40) | |
 | **Issue Trackers** | | | | |
 | GitHub | | | | 1.1.x |
-| GitHub Enterprise | | | [In Progress](https://github.com/jenkins-x/jx/issues/525) | |
+| GitHub Enterprise | | | | 1.1.68 |
 | Gitea | | | [In Progress](https://github.com/jenkins-x/jx/issues/432) | |
-| JIRA | | | [In Progress](https://github.com/jenkins-x/jx/issues/430) |
+| JIRA | | | | 1.1.68 |
 | **Features** | | | | |
 | Multi Cluster | | | [In Progress](https://github.com/jenkins-x/jx/issues/479) |
 | Istio Production Canaries | | | [In Progress](https://github.com/jenkins-x/jx/issues/582) |
