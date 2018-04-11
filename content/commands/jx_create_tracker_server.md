@@ -1,5 +1,5 @@
 ---
-date: 2018-04-11T09:28:32Z
+date: 2018-04-11T12:15:52Z
 title: "jx create tracker server"
 slug: jx_create_tracker_server
 url: /commands/jx_create_tracker_server/
@@ -19,8 +19,8 @@ jx create tracker server kind [url] [flags]
 ### Examples
 
 ```
-  # Add a new git server URL
-  jx create tracker server gitea
+  # Add a new issue tracker server URL
+  jx create tracker server jira myURL
 ```
 
 ### Options

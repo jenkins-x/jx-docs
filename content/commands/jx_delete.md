@@ -1,5 +1,5 @@
 ---
-date: 2018-04-11T09:28:32Z
+date: 2018-04-11T12:15:52Z
 title: "jx delete"
 slug: jx_delete
 url: /commands/jx_delete/
@@ -33,6 +33,7 @@ jx delete TYPE [flags]
 
 * [jx](/commands/jx/)	 - jx is a command line tool for working with Jenkins X
 * [jx delete addon](/commands/jx_delete_addon/)	 - Deletes one or many addons
+* [jx delete chat](/commands/jx_delete_chat/)	 - Deletes one or many chat services resources
 * [jx delete contexts](/commands/jx_delete_contexts/)	 - Deletes one or more kubernetes contexts
 * [jx delete environment](/commands/jx_delete_environment/)	 - Deletes one or more environments
 * [jx delete git](/commands/jx_delete_git/)	 - Deletes one or many git resources

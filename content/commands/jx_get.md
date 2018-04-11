@@ -1,5 +1,5 @@
 ---
-date: 2018-04-11T09:28:32Z
+date: 2018-04-11T12:15:52Z
 title: "jx get"
 slug: jx_get
 url: /commands/jx_get/
@@ -45,6 +45,7 @@ jx get TYPE [flags]
 * [jx get addons](/commands/jx_get_addons/)	 - Lists the addons
 * [jx get applications](/commands/jx_get_applications/)	 - Display one or many Applications and their versions
 * [jx get build](/commands/jx_get_build/)	 - Display one or many build resources
+* [jx get chat](/commands/jx_get_chat/)	 - Display the current registered chat service URLs
 * [jx get config](/commands/jx_get_config/)	 - Display the project configuration
 * [jx get environments](/commands/jx_get_environments/)	 - Display one or many Environments
 * [jx get git](/commands/jx_get_git/)	 - Display the current registered git service URLs

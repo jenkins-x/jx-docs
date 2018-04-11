@@ -1,5 +1,5 @@
 ---
-date: 2018-04-11T09:28:32Z
+date: 2018-04-11T12:15:52Z
 title: "jx step"
 slug: jx_step
 url: /commands/jx_step/
@@ -25,6 +25,7 @@ jx step [flags]
 ### SEE ALSO
 
 * [jx](/commands/jx/)	 - jx is a command line tool for working with Jenkins X
+* [jx step blog](/commands/jx_step_blog/)	 - Creates a blog post with changes, metrics and charts showing improvements
 * [jx step changelog](/commands/jx_step_changelog/)	 - Creates a changelog for a git tag
 * [jx step git](/commands/jx_step_git/)	 - git [command]
 * [jx step nexus](/commands/jx_step_nexus/)	 - nexus [command]

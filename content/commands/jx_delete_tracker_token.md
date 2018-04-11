@@ -1,5 +1,5 @@
 ---
-date: 2018-04-11T09:28:32Z
+date: 2018-04-11T12:15:52Z
 title: "jx delete tracker token"
 slug: jx_delete_tracker_token
 url: /commands/jx_delete_tracker_token/
@@ -19,7 +19,7 @@ jx delete tracker token [flags]
 ### Examples
 
 ```
-  # Deletes an issie tracker user token
+  # Deletes an issue tracker user token
   jx delete tracker token -n jira myusername
 ```
 

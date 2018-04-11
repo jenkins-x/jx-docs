@@ -1,5 +1,5 @@
 ---
-date: 2018-04-11T09:28:32Z
+date: 2018-04-11T12:15:52Z
 title: "jx step changelog"
 slug: jx_step_changelog
 url: /commands/jx_step_changelog/
@@ -62,7 +62,9 @@ jx step changelog [flags]
       --headless                   Enable headless operation if using browser automation
   -h, --help                       help for changelog
       --no-brew                    Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --output-markdown string     The file to generate for the changelog output if not updating a git provider release
   -o, --overwrite                  overwrites the Release CRD YAML file if it exists
+      --previous-date string       the previous date to find a revision in format 'MonthName dayNumber year'
   -p, --previous-rev string        the previous tag revision
       --release-yaml-file string   the name of the file to generate the Release YAML (default "release.yaml")
   -r, --rev string                 the current tag revision
