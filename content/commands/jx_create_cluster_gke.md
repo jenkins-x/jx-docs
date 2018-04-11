@@ -1,5 +1,5 @@
 ---
-date: 2018-04-11T08:21:13Z
+date: 2018-04-11T09:28:32Z
 title: "jx create cluster gke"
 slug: jx_create_cluster_gke
 url: /commands/jx_create_cluster_gke/
@@ -64,9 +64,10 @@ jx create cluster gke [flags]
       --local-cloud-environment             Ignores default cloud-environment-repo and uses current directory 
       --local-helm-repo-name string         The name of the helm repository for the installed Chart Museum (default "releases")
   -m, --machine-type string                 The type of machine to use for nodes
+      --max-num-nodes string                The maximum number of nodes to be created in each of the cluster's zones
+      --min-num-nodes string                The minimum number of nodes to be created in each of the cluster's zones
       --namespace string                    The namespace the Jenkins X platform should be installed into (default "jx")
       --no-brew                             Disables the use of brew on MacOS to install or upgrade command line dependencies
-      --num-nodes string                    The number of nodes to be created in each of the cluster's zones
   -p, --project-id string                   Google Project ID to create cluster in
       --recreate-existing-draft-repos       Delete existing helm repos used by Jenkins X under ~/draft/packs
       --register-local-helmrepo             Registers the Jenkins X chartmuseum registry with your helm client [default false]
