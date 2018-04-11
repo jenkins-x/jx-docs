@@ -23,7 +23,7 @@ We announced [Jenkins X](https://jenkins.io/blog/2018/03/19/introducing-jenkins-
  * Go, Node and Rust build packs are now available with more [planned](/contribute/roadmap/)
  * New _addons_ for [anchore](https://anchore.com/) and [kubeless](http://kubeless.io/) 
 
-Also we've made it a little bit easier to keep you're `jx` binary up to date _continuously_. Just type
+Also we've made it a little bit easier to keep your `jx` binary up to date _continuously_. Just type
 
 * [jx version](/commands/jx_version/) to get prompted if there is a new version available and if prompted, it will upgrade itself
 * [jx upgrade cli](/commands/jx_upgrade_cli/) will upgrade the `jx` binary if its available or [jx upgrade platform](/commands/jx_upgrade_platform/) for the platform 
