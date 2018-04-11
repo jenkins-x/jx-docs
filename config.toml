@@ -148,6 +148,13 @@ anchor = "smart"
   url = "/demos/"
   post = "break"
 
+[[menu.docs]]
+  name = "Architecture"
+  weight = 25
+  identifier = "architecture"
+  url = "/architecture/"
+  post = "break"
+
 # Core Menus
 
 [[menu.docs]]

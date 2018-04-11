@@ -34,13 +34,21 @@ jx console
 
 to open it in a browser.
 
-### Pipelines
+### Pipeline Activity
 
-To view the current pipelines use [jx get pipelines](/commands/jx_get_pipelines):
+To view the current pipeline activity [jx get activities](/commands/jx_get_activities):
 
 ```shell
-jx get pipelines
+jx get activities
 ```
+
+If you want to watch whats going on with your app `myapp`  you can use:
+
+```shell
+jx get activities -f myapp -w
+```
+
+Which will watch the pipeline activities and update the screen whenever a significant change happens (e.g. a release completes, a PR is created to start [promotion](/developing/promote) etc).
 
 ### Pipeline Build logs
 
@@ -64,21 +72,13 @@ or if you wish to be explicit
 jx get build logs myorg/myapp/master
 ```
 
-### Pipeline Activity
+### Pipelines
 
-To view the current pipeline activity [jx get activities](/commands/jx_get_activities):
-
-```shell
-jx get activities
-```
-
-If you want to watch whats going on with your app `myapp`  you can use:
+To view the current configured pipelines use [jx get pipelines](/commands/jx_get_pipelines):
 
 ```shell
-jx get activities -f myapp -w
+jx get pipelines
 ```
-
-Which will watch the pipeline activities and update the screen whenever a significant change happens (e.g. a release completes, a PR is created to start [promotion](/developing/promote) etc).
 
 ### Applications
 
