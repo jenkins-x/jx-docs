@@ -16,10 +16,10 @@ We announced [Jenkins X](https://jenkins.io/blog/2018/03/19/introducing-jenkins-
  We've made a lot of progress and improvements! The rest of the blog goes into more detail. 
  
  But first I'd like to call out a few specific details from the [Roadmap](/contribute/roadmap/):
- 
- * we now fully support GitHub and GitHub enterprise. BitBucket cloud and gitea is almost there too. Hopefully BitBucketServer and Gitlab are not too far away either. For more detail see [supporting different git servers](developing/git/)
+
+ * we now fully support GitHub and GitHub enterprise. BitBucket cloud and gitea is almost there too. Hopefully BitBucketServer and Gitlab are not too far away either. For more detail see [supporting different git servers](/developing/git/)
  * For issue tracking we support GitHub, GitHub Enterprise and JIRA. For more detail see [supporting issue trackers](/developing/issues/)
- * Gradle support is now available from [jx create spring](developing/create-spring/) or by importing gradle apps
+ * Gradle support is now available from [jx create spring](/developing/create-spring/) or by importing gradle apps
  * Go, Node and Rust build packs are now available with more [planned](/contribute/roadmap/)
  * New _addons_ for [anchore](https://anchore.com/) and [kubeless](http://kubeless.io/) 
 
