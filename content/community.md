@@ -39,3 +39,9 @@ Got any thoughts, ideas or feedback then please drop them in a [GitHub Issue](ht
 ### Email
 
 If you prefer email then join us on the [jenkins-developers mailing list](https://groups.google.com/forum/#!forum/jenkins-dev). Prefix posts with `[Jenkins X]` in the subject.
+
+### Want to contribute?
+
+It will be lots of fun!
+
+Check out the [contribution guide](/contribute/) for some tips on how to get started
