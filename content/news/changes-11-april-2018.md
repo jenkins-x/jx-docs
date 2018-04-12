@@ -21,7 +21,7 @@ We announced [Jenkins X](https://jenkins.io/blog/2018/03/19/introducing-jenkins-
  * For issue tracking we support GitHub, GitHub Enterprise and JIRA. For more detail see [supporting issue trackers](/developing/issues/)
  * Gradle support is now available from [jx create spring](/developing/create-spring/) or by importing gradle apps
  * Go, Node and Rust build packs are now available with more [planned](/contribute/roadmap/)
- * New _addons_ for [anchore](https://anchore.com/) and [kubeless](http://kubeless.io/) 
+ * New [addons](/about/features/#applications) for [anchore](https://anchore.com/) and [kubeless](http://kubeless.io/) 
 
 Also we've made it a little bit easier to keep your `jx` binary up to date _continuously_. Just type
 
