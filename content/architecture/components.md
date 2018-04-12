@@ -23,7 +23,9 @@ An installation of Jenkins X consists of:
   * each team can have as many environments as they wish and can call them whatever they like 
 * optional [Preview Environments](/about/features/#preview-environments) 
 
-Typically each environment is associated with its own [kubernetes namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/) which are usually different to ensure clean isolation between the environments. Though technically 2 teams could share the same underlying namespace for, say, `Staging` though we advise separation to keep things simple - otherwise changes in one git repo could conflict with changes in another if they both configure the same namespace; due to, say, service resource name or DNS conficts.
+Typically each environment is associated with its own [kubernetes namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/) which are usually different to ensure clean isolation between the environments. 
+
+Though technically 2 teams could share the same underlying namespace for, say, `Staging` though we advise separation to keep things simple - otherwise changes in one git repo could conflict with changes in another if they both configure the same namespace; due to, say, service resource name or DNS conflicts. If you wish 2 teams to share the same underlying microservices its much simpler to just use `service linking` to link services in one namespace to another so that they appear as local services with local DNS.
 
 ## Development Environment
 
