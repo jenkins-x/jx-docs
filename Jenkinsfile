@@ -22,7 +22,7 @@ pipeline {
         checkout scm
         container('go') {
           sh "git clone https://github.com/jenkins-x/jenkins-x-website.git"
-          sh "hugo -d jenkins-x-website"
+          sh "hugo -d jenkins-x-website --enableGitInfo"
 
           dir("jenkins-x-website") {
             sh "git config credential.helper store"
