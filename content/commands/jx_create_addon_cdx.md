@@ -1,5 +1,5 @@
 ---
-date: 2018-04-16T16:34:57Z
+date: 2018-04-16T18:22:39Z
 title: "jx create addon cdx"
 slug: jx_create_addon_cdx
 url: /commands/jx_create_addon_cdx/
