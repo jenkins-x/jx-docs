@@ -1,41 +1,44 @@
 ---
 date: 2018-04-16T16:34:57Z
-title: "jx create addon cdx"
-slug: jx_create_addon_cdx
-url: /commands/jx_create_addon_cdx/
+title: "jx create addon ambassador"
+slug: jx_create_addon_ambassador
+url: /commands/jx_create_addon_ambassador/
 ---
-## jx create addon cdx
+## jx create addon ambassador
 
-Create the CDX addon (a web console for working with CI/CD and Environments)
+Create an ambassador addon
 
 ### Synopsis
 
-Creates the CDX addon 
-
-CDX provides unified Continuous Delivery Environment console to make it easier to do CI/CD and Environments across a number of microservices and teams
+Creates the ambassador addon for smart load balancing on kubernetes
 
 ```
-jx create addon cdx [flags]
+jx create addon ambassador [flags]
 ```
 
 ### Examples
 
 ```
-  # Create the cdx addon
-  jx create addon cdx
+  # Create the ambassador addon
+  jx create addon ambassador
+  
+  # Create the ambassador addon in a custom namespace
+  jx create addon ambassador -n mynamespace
 ```
 
 ### Options
 
 ```
   -b, --batch-mode         In batch mode the command never prompts for user input
+  -c, --chart string       The name of the chart to use (default "datawire/ambassador")
       --headless           Enable headless operation if using browser automation
       --helm-update        Should we run helm update first to ensure we use the latest version (default true)
-  -h, --help               help for cdx
+  -h, --help               help for ambassador
   -n, --namespace string   The Namespace to install into
       --no-brew            Disables the use of brew on MacOS to install or upgrade command line dependencies
-  -r, --release string     The chart release name (default "cdx")
+  -r, --release string     The chart release name (default "ambassador")
       --verbose            Enable verbose logging
+  -v, --version string     The version of the ambassador addon to use
 ```
 
 ### SEE ALSO
