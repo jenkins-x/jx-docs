@@ -1,5 +1,5 @@
 ---
-date: 2018-04-17T08:24:43Z
+date: 2018-04-17T11:33:50Z
 title: "jx create quickstart"
 slug: jx_create_quickstart
 url: /commands/jx_create_quickstart/
@@ -48,7 +48,7 @@ jx create quickstart [flags]
       --git-username string            The git username to use for creating new git repositories
       --headless                       Enable headless operation if using browser automation
   -h, --help                           help for quickstart
-      --import-commit-message string   The git commit message for the import
+      --import-commit-message string   Should we override the Jenkinsfile in the project?
       --jenkinsfile string             The name of the Jenkinsfile to use. If not specified then 'Jenkinsfile' will be used
   -l, --language string                The language to filter on
       --name string                    Specify the git repository name to import the project into (if it is not already in one)
@@ -59,6 +59,7 @@ jx create quickstart [flags]
       --org string                     Specify the git provider organisation to import the project into (if it is not already in one)
   -g, --organisations stringArray      The github organisations to query for quickstarts
   -o, --output-dir string              Directory to output the project to. Defaults to the current directory
+  -w, --overwrite-jenkinsfile          Disable defaulting a Jenkinsfile if its missing
       --owner string                   The owner to filter on
   -t, --tag stringArray                The tags on the quickstarts to filter
       --verbose                        Enable verbose logging

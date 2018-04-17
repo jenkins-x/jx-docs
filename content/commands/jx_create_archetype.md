@@ -1,5 +1,5 @@
 ---
-date: 2018-04-17T08:24:43Z
+date: 2018-04-17T11:33:50Z
 title: "jx create archetype"
 slug: jx_create_archetype
 url: /commands/jx_create_archetype/
@@ -47,7 +47,7 @@ jx create archetype [flags]
   -f, --group-filter string            Filter the Group IDs to choose from for he Archetypes
       --headless                       Enable headless operation if using browser automation
   -h, --help                           help for archetype
-      --import-commit-message string   The git commit message for the import
+      --import-commit-message string   Should we override the Jenkinsfile in the project?
   -i, --interactive                    Allow interactive input into the maven archetype:generate command
       --jenkinsfile string             The name of the Jenkinsfile to use. If not specified then 'Jenkinsfile' will be used
       --name string                    Specify the git repository name to import the project into (if it is not already in one)
@@ -57,6 +57,7 @@ jx create archetype [flags]
       --no-jenkinsfile                 Disable defaulting a Jenkinsfile if its missing
       --org string                     Specify the git provider organisation to import the project into (if it is not already in one)
   -o, --output-dir string              Directory to output the project to. Defaults to the current directory
+  -w, --overwrite-jenkinsfile          Disable defaulting a Jenkinsfile if its missing
   -p, --pick                           Provide a list of versions to choose from
       --verbose                        Enable verbose logging
   -v, --version string                 The Version of the Archetype to use

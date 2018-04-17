@@ -1,5 +1,5 @@
 ---
-date: 2018-04-17T08:24:43Z
+date: 2018-04-17T11:33:50Z
 title: "jx create spring"
 slug: jx_create_spring
 url: /commands/jx_create_spring/
@@ -53,7 +53,7 @@ jx create spring [flags]
   -g, --group string                   Group ID to generate
       --headless                       Enable headless operation if using browser automation
   -h, --help                           help for spring
-      --import-commit-message string   The git commit message for the import
+      --import-commit-message string   Should we override the Jenkinsfile in the project?
   -j, --java-version string            Java version
       --jenkinsfile string             The name of the Jenkinsfile to use. If not specified then 'Jenkinsfile' will be used
   -k, --kind stringArray               Default dependency kinds to choose from (default [Core,Web,Template Engines,SQL,I/O,Ops])
@@ -65,6 +65,7 @@ jx create spring [flags]
       --no-jenkinsfile                 Disable defaulting a Jenkinsfile if its missing
       --org string                     Specify the git provider organisation to import the project into (if it is not already in one)
   -o, --output-dir string              Directory to output the project to. Defaults to the current directory
+  -w, --overwrite-jenkinsfile          Disable defaulting a Jenkinsfile if its missing
   -p, --packaging string               Packaging
       --type string                    Project Type (such as maven-project or gradle-project)
       --verbose                        Enable verbose logging
