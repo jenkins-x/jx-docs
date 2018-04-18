@@ -1,6 +1,36 @@
 [[article]]
-	title = "Jenkins X overview"
-	url = "https://blog.afoolishmanifesto.com/posts/hugo-unix-vim-integration/"
-	author = "James Strachan"
-	date = "2017-07-22"
+title = "Introducing Jenkins X: a CI/CD solution for modern cloud applications on Kubernetes"
+url = "https://jenkins.io/blog/2018/03/19/introducing-jenkins-x/"
+author = "James Strachan"
+date = "2018-03-19"
+
+[[article]]
+title = "Jenkins X Explained Part 1 - an integrated CI/CD solution for Kubernetes"
+url = "https://jenkins.io/blog/2018/04/16/jenkins-x-explained-part1/"
+author = "James Rawlings"
+date = "2018-04-16"
+
+[[article]]
+title = "Serverless and Kubernetes: Serverless Isn't Processless"
+url = "https://www.cloudbees.com/blog/serverless-and-kubernetes-serverless-isnt-processless"
+author = "Michael Neale"
+date = "2018-04-12"
+
+[[article]]
+title = "Don't Install Kubernetes!"
+url = "https://www.cloudbees.com/blog/dont-install-kubernetes"
+author = "Michael Neale"
+date = "2018-03-27"
+
+[[article]]
+title = "Opinionated Kubernetes and Jenkins X"
+url = "https://www.cloudbees.com/blog/opinionated-kubernetes-and-jenkins-x"
+author = "Michael Neale"
+date = "2018-03-13"
+
+[[article]]
+title = "Now on DevOps Radio: James Strachan Introduces Jenkins X, Taking Continuous Delivery to the NeXt Level"
+url = "https://www.cloudbees.com/blog/now-devops-radio-james-strachan-introduces-jenkins-x-taking-continuous-delivery-next-level"
+author = "Heidi Gilmore"
+date = "2018-03-28"
 
