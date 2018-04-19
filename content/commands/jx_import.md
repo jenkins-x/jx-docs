@@ -1,5 +1,5 @@
 ---
-date: 2018-04-19T05:41:38Z
+date: 2018-04-19T07:31:55Z
 title: "jx import"
 slug: jx_import
 url: /commands/jx_import/
@@ -61,12 +61,14 @@ jx import [flags]
   -h, --help                           help for import
       --import-commit-message string   Should we override the Jenkinsfile in the project?
   -j, --jenkinsfile string             The name of the Jenkinsfile to use. If not specified then 'Jenkinsfile' will be used
+      --list-packs                     list available draft packs
       --name string                    Specify the git repository name to import the project into (if it is not already in one) (default "n")
       --no-brew                        Disables the use of brew on MacOS to install or upgrade command line dependencies
       --no-draft                       Disable Draft from trying to default a Dockerfile and Helm Chart
       --no-jenkinsfile                 Disable defaulting a Jenkinsfile if its missing
       --org string                     Specify the git provider organisation to import the project into (if it is not already in one)
   -w, --overwrite-jenkinsfile          Disable defaulting a Jenkinsfile if its missing
+      --pack string                    The name of the pack to use
   -u, --url string                     The git clone URL to clone into the current directory and then import
       --verbose                        Enable verbose logging
 ```

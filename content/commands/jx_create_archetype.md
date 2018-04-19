@@ -1,5 +1,5 @@
 ---
-date: 2018-04-19T05:41:38Z
+date: 2018-04-19T07:31:55Z
 title: "jx create archetype"
 slug: jx_create_archetype
 url: /commands/jx_create_archetype/
@@ -50,6 +50,7 @@ jx create archetype [flags]
       --import-commit-message string   Should we override the Jenkinsfile in the project?
   -i, --interactive                    Allow interactive input into the maven archetype:generate command
       --jenkinsfile string             The name of the Jenkinsfile to use. If not specified then 'Jenkinsfile' will be used
+      --list-packs                     list available draft packs
       --name string                    Specify the git repository name to import the project into (if it is not already in one)
       --no-brew                        Disables the use of brew on MacOS to install or upgrade command line dependencies
       --no-draft                       Disable Draft from trying to default a Dockerfile and Helm Chart
@@ -58,6 +59,7 @@ jx create archetype [flags]
       --org string                     Specify the git provider organisation to import the project into (if it is not already in one)
   -o, --output-dir string              Directory to output the project to. Defaults to the current directory
   -w, --overwrite-jenkinsfile          Disable defaulting a Jenkinsfile if its missing
+      --pack string                    The name of the pack to use
   -p, --pick                           Provide a list of versions to choose from
       --verbose                        Enable verbose logging
   -v, --version string                 The Version of the Archetype to use

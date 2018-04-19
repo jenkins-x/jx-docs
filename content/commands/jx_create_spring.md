@@ -1,5 +1,5 @@
 ---
-date: 2018-04-19T05:41:38Z
+date: 2018-04-19T07:31:55Z
 title: "jx create spring"
 slug: jx_create_spring
 url: /commands/jx_create_spring/
@@ -58,6 +58,7 @@ jx create spring [flags]
       --jenkinsfile string             The name of the Jenkinsfile to use. If not specified then 'Jenkinsfile' will be used
   -k, --kind stringArray               Default dependency kinds to choose from (default [Core,Web,Template Engines,SQL,I/O,Ops])
   -l, --language string                Language to generate
+      --list-packs                     list available draft packs
       --name string                    Specify the git repository name to import the project into (if it is not already in one)
       --no-brew                        Disables the use of brew on MacOS to install or upgrade command line dependencies
       --no-draft                       Disable Draft from trying to default a Dockerfile and Helm Chart
@@ -66,6 +67,7 @@ jx create spring [flags]
       --org string                     Specify the git provider organisation to import the project into (if it is not already in one)
   -o, --output-dir string              Directory to output the project to. Defaults to the current directory
   -w, --overwrite-jenkinsfile          Disable defaulting a Jenkinsfile if its missing
+      --pack string                    The name of the pack to use
   -p, --packaging string               Packaging
       --type string                    Project Type (such as maven-project or gradle-project)
       --verbose                        Enable verbose logging
