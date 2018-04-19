@@ -1,5 +1,5 @@
 ---
-date: 2018-04-19T08:47:21Z
+date: 2018-04-19T09:54:31Z
 title: "jx create archetype"
 slug: jx_create_archetype
 url: /commands/jx_create_archetype/
@@ -58,7 +58,6 @@ jx create archetype [flags]
       --no-jenkinsfile                 Disable defaulting a Jenkinsfile if its missing
       --org string                     Specify the git provider organisation to import the project into (if it is not already in one)
   -o, --output-dir string              Directory to output the project to. Defaults to the current directory
-  -w, --overwrite-jenkinsfile          Disable defaulting a Jenkinsfile if its missing
       --pack string                    The name of the pack to use
   -p, --pick                           Provide a list of versions to choose from
       --verbose                        Enable verbose logging

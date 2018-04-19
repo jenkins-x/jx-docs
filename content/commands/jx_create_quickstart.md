@@ -1,5 +1,5 @@
 ---
-date: 2018-04-19T08:47:21Z
+date: 2018-04-19T09:54:31Z
 title: "jx create quickstart"
 slug: jx_create_quickstart
 url: /commands/jx_create_quickstart/
@@ -60,7 +60,6 @@ jx create quickstart [flags]
       --org string                     Specify the git provider organisation to import the project into (if it is not already in one)
   -g, --organisations stringArray      The github organisations to query for quickstarts
   -o, --output-dir string              Directory to output the project to. Defaults to the current directory
-  -w, --overwrite-jenkinsfile          Disable defaulting a Jenkinsfile if its missing
       --owner string                   The owner to filter on
       --pack string                    The name of the pack to use
   -t, --tag stringArray                The tags on the quickstarts to filter

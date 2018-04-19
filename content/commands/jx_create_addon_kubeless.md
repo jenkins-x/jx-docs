@@ -1,5 +1,5 @@
 ---
-date: 2018-04-19T08:47:21Z
+date: 2018-04-19T09:54:31Z
 title: "jx create addon kubeless"
 slug: jx_create_addon_kubeless
 url: /commands/jx_create_addon_kubeless/

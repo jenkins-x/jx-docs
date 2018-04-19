@@ -1,5 +1,5 @@
 ---
-date: 2018-04-19T08:47:21Z
+date: 2018-04-19T09:54:31Z
 title: "jx import"
 slug: jx_import
 url: /commands/jx_import/
@@ -67,7 +67,6 @@ jx import [flags]
       --no-draft                       Disable Draft from trying to default a Dockerfile and Helm Chart
       --no-jenkinsfile                 Disable defaulting a Jenkinsfile if its missing
       --org string                     Specify the git provider organisation to import the project into (if it is not already in one)
-  -w, --overwrite-jenkinsfile          Disable defaulting a Jenkinsfile if its missing
       --pack string                    The name of the pack to use
   -u, --url string                     The git clone URL to clone into the current directory and then import
       --verbose                        Enable verbose logging
