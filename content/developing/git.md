@@ -36,7 +36,7 @@ jx create git server gitKind someURL
 
 Where the `gitKind` is one of the supported git provider kinds like `github, gitea, gitlab, bitbucket`
 
-## GitHub Enterprise
+## GitHub Enterprise
 
 To add a GitHub Enterprise server try:
 
