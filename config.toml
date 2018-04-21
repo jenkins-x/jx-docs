@@ -58,13 +58,56 @@ pygmentsStyle = "friendly"
       identifier = "github"
       post = "external"
       url = "https://github.com/jenkins-x/jx"
-
     [[languages.zh.menu.global]]
       name = "Jenkins"
       weight = 200
       identifier = "jenkins"
       post = "external"
       url = "https://jenkins.io"
+
+    [[languages.zh.menu.docs]]
+      name = "关于 Jenkins X"
+      weight = 1
+      identifier = "about"
+      url = "/zh/about/"
+    [[languages.zh.menu.docs]]
+      name = "入门"
+      weight = 5
+      identifier = "getting-started"
+      url = "/zh/getting-started/"
+      post = "break"
+    [[languages.zh.menu.docs]]
+      name = "研发"
+      weight = 8
+      identifier = "developing"
+      url = "/zh/developing/"
+      post = "break"
+    [[languages.zh.menu.docs]]
+      name = "示例"
+      weight = 20
+      identifier = "demos"
+      url = "/zh/demos/"
+      post = "break"
+    [[languages.zh.menu.docs]]
+      name = "CLI"
+      weight = 40
+      identifier = "commands"
+      url = "/zh/commands/jx/"
+    [[languages.zh.menu.docs]]
+      name = "Troubleshooting"
+      weight = 60
+      identifier = "troubleshooting"
+      url = "/zh/troubleshooting/"
+    [[languages.zh.menu.docs]]
+      name = "贡献"
+      weight = 100
+      identifier = "contribute"
+      url = "/zh/contribute/"
+    [[menu.quicklinks]]
+      name = "Fundamentals"
+      weight = 1
+      identifier = "fundamentals"
+      url = "/tags/fundamentals/"
 
 [outputs]
 home = [ "HTML", "RSS", "REDIR", "HEADERS" ]

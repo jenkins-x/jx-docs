@@ -14,5 +14,5 @@ aliases: []
 toc: false
 layout: documentation-home
 ---
-Jenkins X is a CI / CD platform for Kubernetes
+Jenkins X 是基于 Kubernetes 的持续集成、持续部署平台
 
