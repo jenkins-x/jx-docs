@@ -1,9 +1,9 @@
 ---
-title: Create new Cluster
-linktitle: Create new Cluster
-description: How to create a new Kubernetes cluster with Jenkins X installed 
-date: 2013-07-01
-publishdate: 2013-07-01
+title: 创建新集群
+linktitle: 创建新集群
+description: 如何通过 Jenkins X 创建新的 Kubernetes 集群 
+date: 2018-04-21
+publishdate: 2018-04-21
 categories: [getting started]
 keywords: [install]
 menu:

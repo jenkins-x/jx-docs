@@ -1,10 +1,10 @@
 ---
-title: Get Started
-linktitle: Get Started Overview
-description: Guides for getting started with Jenkins X 
-date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
+title: 入门
+linktitle: 入门概览
+description: Jenkins X 的入门向导
+date: 2018-04-21
+publishdate: 2018-04-21
+lastmod: 2018-04-21
 categories: [getting started,fundamentals]
 keywords: [usage,docs]
 menu:
@@ -18,9 +18,8 @@ aliases: [/overview/introduction/]
 toc: false
 ---
 
-First you will need to [get the jx command line tool](install) locally on your machine.
+首先，需要在你本地的机器上[安装 jx 命令行工具](install) 。
 
-You can use the [jx command line](/commands/jx/#jx) to  [create a new kubernetes cluster](create-cluster) and have Jenkins X automatically installed.
+你可以使用 [jx 命令](/commands/jx/#jx) 来[创建一个新的 kubernetes 集群](create-cluster) ，然后 Jenkins X 就会自动安装。
 
-Or if you have an existing kubernetes cluster then [install Jenkins X on your kubernetes cluster](install-on-cluster)
-
+或者，如果你已经有了一个 kubernetes 集群，那么可以[在你的 kubernetes 集群上安装 Jenkins X](install-on-cluster)。

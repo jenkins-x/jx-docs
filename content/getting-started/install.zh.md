@@ -22,7 +22,7 @@ toc: true
 
 ### macOs
 
-On a Mac you can use brew:
+在 Mac 上你可以使用 brew：
 
 ```shell
 brew tap jenkins-x/jx
@@ -43,20 +43,20 @@ curl -L https://github.com/jenkins-x/jx/releases/download/v{{< version >}}/jx-li
 sudo mv jx /usr/local/bin
 ```
     
-### Other platforms
+### 其他平台
     
-[download the binary](https://github.com/jenkins-x/jx/releases) for `jx` and add it to your `$PATH`
+[下载二进制包](https://github.com/jenkins-x/jx/releases) `jx` 然后加到环境变量 `$PATH` 中
 
-Or you can try [build it yourself](https://github.com/jenkins-x/jx/blob/master/docs/contributing/hacking.md). Though if build it yourself please be careful to remove any older `jx` binary so your local build is found first on the `$PATH` :)
+或者，你可以尝试 [自行构建](https://github.com/jenkins-x/jx/blob/master/docs/contributing/hacking.md)。然而，如果你要自行构建的话，请注意移除所有旧版本的 `jx` 二进制文件，这样你的本地构建才会出现在环境变量 `$PATH` 的第一位 :)
 
-## Getting Help
+## 获得帮助
 
-To find out the available commands type:
+查找可用的命令类型：
 
     jx
 
-Or to get help on a specific command, say, `create` then type:
+或者，获取指定命令的帮助，例如： `create` 命令，可以输入：
 
     jx help create
 
-You can also browse the [jx command reference documentation](/commands/jx)
+你也可以浏览 [jx 命令参考文档](/zh/commands/jx)
