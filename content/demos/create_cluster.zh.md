@@ -1,10 +1,10 @@
 ---
-title: Create Cluster
-linktitle: Create Cluster
-description: How to create a Kubernetes cluster and install Jenkins X
-date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
+title: 创建集群
+linktitle: 创建集群
+description: 如何创建 Kubernetes 集群并安装 Jenkins X
+date: 2018-04-21
+publishdate: 2018-04-21
+lastmod: 2018-04-21
 menu:
   docs:
     parent: "demos"
@@ -15,7 +15,7 @@ draft: false
 toc: true
 ---
 
-This [demo](https://www.youtube.com/watch?v=ELA4tytdFeA) [creates a new kubernetes cluster](/getting-started/create-cluster) using these commands in parallel:
+该 [示例](https://www.youtube.com/watch?v=ELA4tytdFeA) 使用命令并行地 [创建了一个新的 Kubernetes 集群](/getting-started/create-cluster) ：
 
 * [jx create cluster gke](/commands/jx_create_cluster_gke)
 * [jx create cluster aks](/commands/jx_create_cluster_aks)
