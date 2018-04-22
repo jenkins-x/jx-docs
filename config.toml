@@ -89,12 +89,12 @@ pygmentsStyle = "friendly"
       url = "/zh/demos/"
       post = "break"
     [[languages.zh.menu.docs]]
-      name = "CLI"
+      name = "命令行"
       weight = 40
       identifier = "commands"
       url = "/zh/commands/jx/"
     [[languages.zh.menu.docs]]
-      name = "Troubleshooting"
+      name = "故障排除"
       weight = 60
       identifier = "troubleshooting"
       url = "/zh/troubleshooting/"
