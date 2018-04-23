@@ -1,0 +1,7 @@
+<ul class="list ma0 pa0 dn dib-l">
+{{ range $.Site.Home.AllTranslations }}
+  <li class="f5 dib mr4" role="menuitem">
+    <a href="{{ .Permalink }}" class="dim gray">{{ .Language.LanguageName }}</a>
+  </li>
+{{ end }}
+</ul>
