@@ -33,9 +33,11 @@ pygmentsStyle = "friendly"
 [languages]
   [languages.en]
     weight = 1
+    languageName = "English"
   [languages.zh]
     languageCode = "zh-CN"
     weight = 2
+    languageName = "中文"
     [[languages.zh.menu.global]]
       name = "新闻"
       weight = 1
