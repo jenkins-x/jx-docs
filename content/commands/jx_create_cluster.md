@@ -1,5 +1,5 @@
 ---
-date: 2018-04-23T06:12:35Z
+date: 2018-04-23T12:20:58Z
 title: "jx create cluster"
 slug: jx_create_cluster
 url: /commands/jx_create_cluster/
@@ -21,6 +21,8 @@ Valid kubernetes providers include:
     * gke (Google Container Engine - https://cloud.google.com/kubernetes-engine)
     * kubernetes for custom installations of Kubernetes
     * minikube (single-node Kubernetes cluster inside a VM on your laptop)
+	* minishift (single-node OpenShift cluster inside a VM on your laptop)
+	* openshift for installing on 3.9.x or later clusters of OpenShift
     * coming soon:
         eks (Amazon Elastic Container Service - https://aws.amazon.com/eks)     
 
@@ -30,6 +32,7 @@ Depending on which cloud provider your cluster is created on possible dependenci
   * helm (package manager for kubernetes)  
   * draft (CLI that makes it easy to build applications that run on kubernetes)  
   * minikube (single-node Kubernetes cluster inside a VM on your laptop )  
+  * minishift (single-node OpenShift cluster inside a VM on your laptop)  
   * virtualisation drivers (to run minikube in a VM)  
   * gcloud (Google Cloud CLI)  
   * az (Azure CLI)  

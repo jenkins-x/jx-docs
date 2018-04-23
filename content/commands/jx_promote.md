@@ -1,5 +1,5 @@
 ---
-date: 2018-04-23T06:12:35Z
+date: 2018-04-23T12:20:58Z
 title: "jx promote"
 slug: jx_promote
 url: /commands/jx_promote/
@@ -50,6 +50,7 @@ jx promote [application] [flags]
       --pull-request-poll-time string   Poll time when waiting for a Pull Request to merge (default "20s")
       --release string                  The name of the helm release
   -t, --timeout string                  The timeout to wait for the promotion to succeed in the underlying Environment. The command fails if the timeout is exceeded or the promotion does not complete (default "1h")
+      --trigger-pipeline string         The duration to wait time for webhooks to kick in and trigger pipelines before manually triggering them. In cases where webhooks are not possible (e.g. minikube) or not allowed (e.g. firewalls) this lets promotion work faster than the default 5 minute polling period. (default "10s")
       --verbose                         Enable verbose logging
   -v, --version string                  The Version to promote
 ```
