@@ -34,3 +34,16 @@ url = "https://www.cloudbees.com/blog/now-devops-radio-james-strachan-introduces
 author = "Heidi Gilmore"
 date = "2018-03-28"
 
+
+[[article]]
+title = "JenkinsX – new Kubernetes dream? Part 1"
+url = "https://blog.octo.com/en/jenkinsx-new-kubernetes-dream-part-1/"
+author = "Mykyta Shulhin, Ilya Trofimov"
+date = "2018-04-17"
+
+[[article]]
+title = "JenkinsX – new Kubernetes dream? Part 2 [Technical!]"
+url = "https://blog.octo.com/en/jenkinsx-new-kubernetes-dream-part-1/"
+author = "Mykyta Shulhin, Ilya Trofimov"
+date = "2018-04-19"
+
