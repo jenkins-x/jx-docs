@@ -54,6 +54,16 @@ To add BitBucket try:
 jx create git server bitbucket -n BitBucket https://bitbucket.org
 ```
 
+## Gitlab
+
+To add a git server for Gitlab and a token try:
+
+```
+jx create git server gitlab https://gitlab.com/
+jx create git token -n gitlab myusername
+```
+   
+   
 ### Adding user tokens
 
 To use a git server you need to add a user name and API token via [jx create git token](/commands/jx_create_git_token):
