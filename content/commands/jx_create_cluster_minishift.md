@@ -1,27 +1,27 @@
 ---
 date: 2018-04-23T06:12:35Z
-title: "jx create cluster minikube"
-slug: jx_create_cluster_minikube
-url: /commands/jx_create_cluster_minikube/
+title: "jx create cluster minishift"
+slug: jx_create_cluster_minishift
+url: /commands/jx_create_cluster_minishift/
 ---
-## jx create cluster minikube
+## jx create cluster minishift
 
-Create a new kubernetes cluster with minikube: Runs locally
+Create a new OpenShift cluster with minishift: Runs locally
 
 ### Synopsis
 
 This command creates a new kubernetes cluster, installing required local dependencies and provisions the Jenkins X platform 
 
-Minikube is a tool that makes it easy to run Kubernetes locally. Minikube runs a single-node Kubernetes cluster inside a VM on your laptop for users looking to try out Kubernetes or develop with it day-to-day.
+Minishift is a tool that makes it easy to run OpenShift locally. Minishift runs a single-node OpenShift cluster inside a VM on your laptop for users looking to try out Kubernetes or develop with it day-to-day.
 
 ```
-jx create cluster minikube [flags]
+jx create cluster minishift [flags]
 ```
 
 ### Examples
 
 ```
-  jx create cluster minikube
+  jx create cluster minishift
 ```
 
 ### Options
@@ -30,7 +30,7 @@ jx create cluster minikube [flags]
   -b, --batch-mode                          In batch mode the command never prompts for user input
       --cleanup-temp-files                  Cleans up any temporary values.yaml used by helm install [default true] (default true)
       --cloud-environment-repo string       Cloud Environments git repo (default "https://github.com/jenkins-x/cloud-environments")
-  -c, --cpu string                          Number of CPUs allocated to the minikube VM (default "3")
+  -c, --cpu string                          Number of CPUs allocated to the minishift VM (default "3")
       --default-admin-password string       the default admin password to access Jenkins, Kubernetes Dashboard, Chartmuseum and Nexus
       --default-environment-prefix string   Default environment repo prefix, your git repos will be of the form 'environment-$prefix-$envName'
       --domain string                       Domain to expose ingress endpoints.  Example: jenkinsx.io
@@ -44,18 +44,17 @@ jx create cluster minikube [flags]
       --headless                            Enable headless operation if using browser automation
       --helm-client-only                    Only install helm client
       --helm-tls                            Whether to use TLS with helm
-  -h, --help                                help for minikube
+  -h, --help                                help for minishift
       --http string                         Toggle creating http or https ingress rules (default "true")
-  -v, --hyperv-virtual-switch string        Additional options for using HyperV with minikube
+  -v, --hyperv-virtual-switch string        Additional options for using HyperV with minishift
       --ingress-cluster-role string         The cluster role for the Ingress controller (default "cluster-admin")
       --ingress-deployment string           The namespace for the Ingress controller Deployment (default "jxing-nginx-ingress-controller")
       --ingress-namespace string            The namespace for the Ingress controller (default "kube-system")
       --ingress-service string              The name of the Ingress controller Service (default "jxing-nginx-ingress-controller")
       --keep-exposecontroller-job           Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
-      --kubernetes-version string           kubernetes version
       --local-cloud-environment             Ignores default cloud-environment-repo and uses current directory 
       --local-helm-repo-name string         The name of the helm repository for the installed Chart Museum (default "releases")
-  -m, --memory string                       Amount of RAM allocated to the minikube VM in MB (default "4096")
+  -m, --memory string                       Amount of RAM allocated to the minishift VM in MB (default "4096")
       --namespace string                    The namespace the Jenkins X platform should be installed into (default "jx")
       --no-brew                             Disables the use of brew on MacOS to install or upgrade command line dependencies
       --no-default-environments             Disables the creation of the default Staging and Production environments
