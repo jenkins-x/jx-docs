@@ -84,6 +84,17 @@ If you still want to try minikube then we recommend starting from scratch and le
 
 Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
 
+### Using Minishift (local)
+
+If you want to try out Jenkins X on a local OpenShift cluster then you can try using minishift.
+
+To create a minishift VM with Jenkins X installed on it try the [jx create cluster minishift](/commands/jx_create_cluster_minishift) command:
+
+    jx create cluster minikube
+
+Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
+
+
 ### Troubleshooting
 
 If you hit any issues installing Jenkins X then please check out our [troubleshooting guide](/troubleshooting/faq/) or [let us know](/community) and we'll try our best to help.
