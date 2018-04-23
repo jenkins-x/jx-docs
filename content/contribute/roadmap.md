@@ -31,12 +31,14 @@ toc: true
 | EKS  | | [Planned](https://github.com/jenkins-x/jx/issues/87) | | |
 | GKE | | | | 1.1.x |
 | Minkube | | | | 1.1.x |
-| OpenShift | | | [In Progress](https://github.com/jenkins-x/jx/issues/435) | |
+| Minishift | | | | 1.2.11 |
+| OpenShift | | |  | 1.2.11 |
 | **Tools** | | | | |
 | Helm | | | | 1.1.x |
-| Skaffold | | | [In Progress](https://github.com/jenkins-x/jx/issues/433) | | 
+| Skaffold | | | | 1.2.11 | 
 | Prow | | [Planned](https://github.com/jenkins-x/jx/issues/434) | | |
 | LetsEncrypt | | | [In Progress](https://github.com/jenkins-x/jx/issues/349) | |
+| Argo | | [Planned](https://github.com/jenkins-x/jx/issues/694) | | |
 | **Git Providers** | | | | |
 | GitHub | | | | 1.1.x |
 | GitHub Enterprise | | | | 1.1.68 |
