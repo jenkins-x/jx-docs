@@ -42,7 +42,7 @@ Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
        
 ### Using Amazon (AWS)
 
-Use the [jx create cluster aws](/commands/x_create_cluster_aws) command: 
+Use the [jx create cluster aws](/commands/jx_create_cluster_aws) command: 
 
     jx create cluster aws
 
