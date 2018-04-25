@@ -90,7 +90,7 @@ If you want to try out Jenkins X on a local OpenShift cluster then you can try u
 
 To create a minishift VM with Jenkins X installed on it try the [jx create cluster minishift](/commands/jx_create_cluster_minishift) command:
 
-    jx create cluster minikube
+    jx create cluster minishift
 
 Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
 
