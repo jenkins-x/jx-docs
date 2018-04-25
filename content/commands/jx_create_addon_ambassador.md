@@ -1,5 +1,5 @@
 ---
-date: 2018-04-25T13:23:44Z
+date: 2018-04-25T16:26:40Z
 title: "jx create addon ambassador"
 slug: jx_create_addon_ambassador
 url: /commands/jx_create_addon_ambassador/
