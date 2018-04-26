@@ -1,5 +1,5 @@
 ---
-date: 2018-04-26T19:47:25Z
+date: 2018-04-26T20:20:23Z
 title: "jx get build log"
 slug: jx_get_build_log
 url: /commands/jx_get_build_log/
