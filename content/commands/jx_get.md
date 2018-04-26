@@ -1,5 +1,5 @@
 ---
-date: 2018-04-26T16:52:56Z
+date: 2018-04-26T18:36:42Z
 title: "jx get"
 slug: jx_get
 url: /commands/jx_get/
@@ -48,6 +48,7 @@ jx get TYPE [flags]
 * [jx get chat](/commands/jx_get_chat/)	 - Display the current registered chat service URLs
 * [jx get config](/commands/jx_get_config/)	 - Display the project configuration
 * [jx get cve](/commands/jx_get_cve/)	 - Display Common Vulnerabilities and Exposures (CVEs)
+* [jx get devpod](/commands/jx_get_devpod/)	 - Lists the DevPods
 * [jx get environments](/commands/jx_get_environments/)	 - Display one or many Environments
 * [jx get git](/commands/jx_get_git/)	 - Display the current registered git service URLs
 * [jx get issues](/commands/jx_get_issues/)	 - Display one or many issues

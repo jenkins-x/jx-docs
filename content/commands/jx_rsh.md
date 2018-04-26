@@ -1,5 +1,5 @@
 ---
-date: 2018-04-26T16:52:56Z
+date: 2018-04-26T18:36:42Z
 title: "jx rsh"
 slug: jx_rsh
 url: /commands/jx_rsh/
@@ -24,14 +24,19 @@ jx rsh [deploymentOrPodName] [flags]
   
   # Opens a terminal in the cheese container in the latest pod in the foo deployment
   jx rsh -c cheese foo
+  
+  # To connect to one of your DevPods use:
+  jx rsh -d
 ```
 
 ### Options
 
 ```
   -c, --container string   The name of the container to log
+  -d, --devpod             Connect to a DevPod
   -h, --help               help for rsh
   -n, --namespace string   the namespace to look for the Deployment. Defaults to the current namespace
+  -p, --pod string         the pod name to use
   -s, --shell string       Path to the shell command (default "/bin/sh")
 ```
 
