@@ -1,5 +1,5 @@
 ---
-date: 2018-04-27T14:56:44Z
+date: 2018-04-27T19:32:02Z
 title: "jx delete devpod"
 slug: jx_delete_devpod
 url: /commands/jx_delete_devpod/
@@ -10,10 +10,22 @@ Deletes one or many DevPods
 
 ### Synopsis
 
-Deletes one or many DevPods
+Deletes one or more DevPods 
+
+For more documentation see: http://jenkins-x.io/developing/devpods/
 
 ```
 jx delete devpod [flags]
+```
+
+### Examples
+
+```
+  # deletes a DevPod by picking one from the list and confirming to it
+  jx delete devpod
+  
+  # delete a specific DevPod
+  jx delete devpod myuser-maven2
 ```
 
 ### Options

@@ -1,5 +1,5 @@
 ---
-date: 2018-04-27T14:56:44Z
+date: 2018-04-27T19:32:02Z
 title: "jx create devpod"
 slug: jx_create_devpod
 url: /commands/jx_create_devpod/
@@ -10,10 +10,22 @@ Creates a Developer Pod for running builds and tests inside the cluster
 
 ### Synopsis
 
-Creates a Developer Pod for running builds and tests inside the cluster
+Creates a new DevPod 
+
+For more documentation see: http://jenkins-x.io/developing/devpods/
 
 ```
 jx create devpod [flags]
+```
+
+### Examples
+
+```
+  # creates a new DevPod asking the user for the label to use
+  jx create devpod
+  
+  # creates a new Maven DevPod
+  jx create devpod -l maven
 ```
 
 ### Options

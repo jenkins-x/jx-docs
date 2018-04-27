@@ -1,5 +1,5 @@
 ---
-date: 2018-04-27T14:56:44Z
+date: 2018-04-27T19:32:02Z
 title: "jx create quickstart"
 slug: jx_create_quickstart
 url: /commands/jx_create_quickstart/

@@ -1,5 +1,5 @@
 ---
-date: 2018-04-27T14:56:44Z
+date: 2018-04-27T19:32:02Z
 title: "jx sync"
 slug: jx_sync
 url: /commands/jx_sync/
@@ -10,7 +10,9 @@ Synchronises your local files to a devpod
 
 ### Synopsis
 
-Synchronises your local files to a devpod so you an build and test your code easily on the cloud
+Synchronises your local files to a DevPod so you an build and test your code easily on the cloud 
+
+For more documentation see: http://jenkins-x.io/developing/devpods/
 
 ```
 jx sync [flags]
@@ -19,8 +21,8 @@ jx sync [flags]
 ### Examples
 
 ```
-  # Open a terminal in the first container of the foo deployment's latest pod
-  jx sync foo
+  # Starts synchonizing the current directory files to the users DevPod
+  jx sync
 ```
 
 ### Options
