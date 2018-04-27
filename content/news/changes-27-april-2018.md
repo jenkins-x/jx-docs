@@ -17,7 +17,7 @@ Here's some of the main highlights:
 
 * we have moved to using [skaffold](https://github.com/GoogleContainerTools/skaffold) for building docker images so that we can easily take advantage of things like Google Container Builder or [kaniko](https://github.com/GoogleContainerTools/kaniko)
 * new [DevPods](/developing/devpods/) are a thing; making it easy to use your kubernetes cluster for building, testing and running apps
-* new integration with [Anchore](https://anchore.com/) for security scanning - we'll blog separately about that next week
+* new integration with [Anchore](https://anchore.com/) for security scanning via [jx get cve](/commands/jx_get_cve/) - we'll blog separately about that next week
 * thanks to the work of [https://github.com/LinuxSuRen](@LinuxSuRen) we now have the initial [Chinese translation of the Jenkins X documentation](http://jenkins-x.io/zh/)
 * we now support [MiniShift](/getting-started/create-cluster/) as well as AKS, AWS, GKE and vanilla kubernetes clusters.
 * we now have a much more flexible mechanism of handling Secrets/Credentials so dealing with [other git providers is now much simpler](/contribute/roadmap/)
