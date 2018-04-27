@@ -1,4 +1,4 @@
-lastReportDate: April 11 2018
+lastReportDate: April 27 2018
 reports:
 - reportDate: March 18 2018
   starsMetrics:
@@ -56,6 +56,34 @@ reports:
   userChatMetrics:
     count: 128
     total: 133
+- reportDate: April 27 2018
+  starsMetrics:
+    count: 238
+    total: 868
+  downloadMetrics:
+    count: 6321
+    total: 14766
+  issueMetrics:
+    count: 106
+    total: 250
+  pullRequestMetrics:
+    count: 41
+    total: 363
+  commitMetrics:
+    count: 150
+    total: 1313
+  newCommitterMetrics:
+    count: 8
+    total: 27
+  newContributorMetrics:
+    count: 11
+    total: 39
+  developerChatMetrics:
+    count: 39
+    total: 108
+  userChatMetrics:
+    count: 77
+    total: 210
 contributors:
 - michaelneale
 - rajdavies
@@ -80,6 +108,12 @@ contributors:
 - ryanmiville
 - jlordiales
 - rcmoutinho
+- kzantow
+- hekonsek
+- yahavi
+- garethjevans
+- sauravdevops
+- derryx
 committers:
 - rawlingsj
 - jstrachan
@@ -95,3 +129,7 @@ committers:
 - kaylanm
 - tdcox
 - whoisjake
+- yahavi
+- garethjevans
+- kzantow
+- hekonsek
