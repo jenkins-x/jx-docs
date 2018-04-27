@@ -1,7 +1,7 @@
 ---
 title: "Changes for April 27 2018"
 date: 2018-04-27T15:30:44+01:00
-description: "Whats new for April 27 2018"
+description: "Now Skaffold, DevPods, Anchore, MiniShift and much more..."
 categories: [blog]
 keywords: []
 slug: "changes-April-27-2018"
