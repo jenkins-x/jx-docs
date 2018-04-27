@@ -76,6 +76,7 @@ jx sync
 
 This command will download and install the excellent [ksync](https://github.com/vapor-ware/ksync) tool if its not already installed, run `ksync init` to add it to your cluster and then run `ksync watch` and then use `ksync create` to create a synchronisation spec.
 
+**NOTE** there is currently a [ksync limitation](https://github.com/vapor-ware/ksync/issues/151) with the `.git` folder not being synchronizable - a workaround until this is released is to install [these binaries](https://github.com/vapor-ware/ksync/issues/151#issuecomment-384827681) which include a fix.
 
 Then by default the code with be bidirectionally synchronized between the current directory and the `/code` folder in the `DevPod`. You can now edit the code in your IDE and run build/test commands inside the `DevPod`!
 
