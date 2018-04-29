@@ -82,6 +82,34 @@ e.g. you can build your code with whatever tools you are using (`maven, gradle, 
 
 Over time we are hoping to polish this experience to make it super easy to edit code in your IDE and get fast reloading working inside the kubernetes cluster using the same kubernetes resources, manifests and services!
 
+## Incremental building
+
+One of the benefits of integrating with [skaffold](https://github.com/GoogleContainerTools/skaffold) for building docker images is that we can perform incremental rebuilds of docker images and redeploys of the associated helm charts.
+
+So inside of your DevPod you can perform a regular build if your app is Java based. e.g. via maven:
+
+```shell
+mvn install
+```
+    
+Then to trigger incremental rebuilding and deploying of the local code in the DevPod you can use:
+
+```shell
+skaffold dev -p dev
+```
+    
+This will use the `dev` profile to generate a new docker image using the generated _digest_ then use it in the helm chart to deploy.
+
+When you created your DevPod it was associated with an _Edit Environment_ for your _username_ so that any apps deployed in a DevPod will appear in your _Edit Environment_.
+
+So once the `skaffold dev -p dev` command has built the docker image and installed the helm chart, your app will show up via  [jx get applications](/commands/applications):
+                                                                                                 
+```shell
+jx get applications
+```
+
+Now if you edit code and trigger a docker rebuild, which for most languages is just changing the source code; though for Java apps its whenever you rebuild the jar - the image is regenerated and the helm chart updated!        
+
 
 
 
