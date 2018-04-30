@@ -1,5 +1,5 @@
 ---
-date: 2018-04-30T18:21:25Z
+date: 2018-04-30T21:35:15Z
 title: "jx create addon cdx"
 slug: jx_create_addon_cdx
 url: /commands/jx_create_addon_cdx/
@@ -32,7 +32,7 @@ jx create addon cdx [flags]
       --headless           Enable headless operation if using browser automation
       --helm-update        Should we run helm update first to ensure we use the latest version (default true)
   -h, --help               help for cdx
-  -n, --namespace string   The Namespace to install into
+  -n, --namespace string   The Namespace to install into (default "jx")
       --no-brew            Disables the use of brew on MacOS to install or upgrade command line dependencies
   -r, --release string     The chart release name (default "cdx")
       --verbose            Enable verbose logging
