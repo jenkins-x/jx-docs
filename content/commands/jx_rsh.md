@@ -1,5 +1,5 @@
 ---
-date: 2018-04-30T08:44:09Z
+date: 2018-04-30T18:21:25Z
 title: "jx rsh"
 slug: jx_rsh
 url: /commands/jx_rsh/
@@ -37,7 +37,7 @@ jx rsh [deploymentOrPodName] [flags]
   -h, --help               help for rsh
   -n, --namespace string   the namespace to look for the Deployment. Defaults to the current namespace
   -p, --pod string         the pod name to use
-  -s, --shell string       Path to the shell command (default "/bin/sh")
+  -s, --shell string       Path to the shell command
 ```
 
 ### SEE ALSO

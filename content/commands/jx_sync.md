@@ -1,5 +1,5 @@
 ---
-date: 2018-04-30T08:44:09Z
+date: 2018-04-30T18:21:25Z
 title: "jx sync"
 slug: jx_sync
 url: /commands/jx_sync/
@@ -35,7 +35,7 @@ jx sync [flags]
       --no-init             Disables the use of 'ksync init' to ensure we have initialised ksync
   -p, --pod string          the pod name to use
       --reload              Should we reload the remote container on file changes?
-  -r, --remote-dir string   The remote directory in the DevPod to sync (default "/code")
+  -r, --remote-dir string   The remote directory in the DevPod to sync
 ```
 
 ### SEE ALSO
