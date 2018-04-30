@@ -1,10 +1,10 @@
 ---
-title: Features
-linktitle: Features
-description: How Jenkins X can help you deliver continuously
-date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
+title: 特色
+linktitle: 特色
+description: Jenkins X 如何帮助你做持续交付
+date: 2018-04-21
+publishdate: 2018-04-21
+lastmod: 2018-04-30
 menu:
   docs:
     parent: "about"
@@ -18,77 +18,76 @@ toc: true
 ---
 
 
-## Command Line
+## 命令行
 
-Jenkins X comes with a handy [jx](/commands/jx) command line tool to easily:
+Jenkins X 带来了一个方便使用的命令行工具 [jx](/commands/jx) ：
 
-* [install Jenkins X](/getting-started/install) inside your existing kubernetes cluster
-* [create a new kubernetes cluster](/getting-started/create-cluster) and install Jenkins X into it
-* [import projects](/developing/import) into Jenkins X and their Continuous Delivery pipelines setup
-* [create new Spring Boot applications](/developing/create-spring) which get imported into Jenkins X and their Continuous Delivery pipelines setup
+* [安装 Jenkins X](/zh/getting-started/install) 到你已经存在的 Kubernetes 集群
+* [创建一个新的 kubernetes 集群](/zh/getting-started/create-cluster) 并把 Jenkins X 安装进去
+* [导入项目](/zh/developing/import) 到 Jenkins X 中以及他们的持续部署流水线设置
+* [创建新的 Spring Boot 应用](/zh/developing/create-spring) 并导入 Jenkins X 中，以及他们的持续部署流水线设置
 
-## Pipelines
+## 流水线
 
-Rather than having to have deep knowledge of the internals of Jenkins Pipeline, Jenkins X will default awesome pipelines for your projects that implements fully CI and CD using [DevOps best practices](/about/concepts)
+不必深入了解 Jenkins 流水线的内部，Jenkins X 会默认给你的项目提供一些很好的流水线——基于[DevOps 最佳实践](/zh/about/concepts)实现了所有的持续集成和持续部署
 
-## Environments
+## 环境
 
-An _environment_ is a place where applications get deployed. Developers often refer environments using a short name like `Testing, Staging/UAT or Production`.
+环境指的是应用部署的地方。开发人员通常使用缩写来描述环境，例如：“测试中（Testing）、Staging/UAT或者生产（Production）”。
 
-With Jenkins X each _team_ gets its own Environments. By default Jenkins X creates a `Staging` and `Production` environment for each team but you can create new environments via [jx create environment](/commands/jx_create_environment).
+在 Jenkins X 中每个团队都有一套自己的环境。默认情况下，Jenkins X 会给每个团队创建一个 `Staging` 和 `生产` 环境，但你可以通过命令 [jx create environment](/commands/jx_create_environment)创建一个新的环境。
 
-We use GitOps to manage the configuration and version of the kubernetes resources which are deployed to each environment. So each Environment has its own git repository that contains all the Helm Charts, their versions and the configuration for the applications be run in the environment. 
+我们使用 GitOps 来管理要部署到每个环境中的 Kubernetes 资源的配置和版本。因此，每个环境都有自己的 git 仓库，应用在这个环境中运行需要的 Helm Charts、版本以及配置都在库中。
 
-An Environment maps to a namespace in a Kubernetes cluster. When Pull Requests are merged into the environments git repository the pipeline runs for the environment which then applies the  helm charts in git to the environments namespace.
+在 Kubernetes 集群中一个环境对应一个命名空间。当 Pull Requests 被合并到环境所在的 git 库后，该环境的流水线就会把 git 库中的 Helm Charts 应用到环境命名空间中。
 
-This means both developers and operations can use the same git repository to manage all the configuration and versions of all the applications and resources for an environment in the same git repository and all changes to the environment are captured in git. So its easy to see who made changes when and more importantly its then easy to revert changes which cause bad things to happen.
+这意味着开发和运维都可以在同一个 git 库中，管理应用和资源在某个环境中的所有配置和版本，并且对环境的所有改变都可以在 git 中获取到。因此，这样很容易看到是谁作出的改变，而且，更重要的是当发生问题后很容易回滚改变。
 
-## Promotion
+## 部署升级
 
-Promotion is implemented with GitOps by generating a pull request on the Environment's git repository  so that all changes go through git for audit, approval and so that any change is easy to revert.
+部署升级是通过 GitOps 在环境关联的 git 库上发起一个 Pull Requests 来实现的，这样所有的改变都通过 git 来审查、批准，因此所有的改变的都很容易回滚。
 
-When a new change to an environments git repository is merged to master, the pipeline for the environment triggers which applies any changes to the resources via helm - using the source code from the git repository.
+当环境所关联的 git 库上有新的变化合并到 master 后，环境的流水线就会触发，helm 就会把任何改变应用到资源上。
 
-The CD Pipelines of Jenkins X automate the promotion of version changes through each Environment which is configured with a _promotion strategy_ property of `Auto`. By default the `Staging` environment uses automatic promotion and the `Production` environment uses `Manual` promotion. 
+Jenkins X 的持续部署流水线把改变了的版本自动做部署升级，这是需要把配置中的”部署升级策略“设置为”自动“。默认情况下，”Staging“环境使用自动部署升级，而”生产“环境使用”手动“部署升级。
 
-To manually promote a version of an application to an environment you can use [jx promote](/developing/promote) command.
+要手动把某个版本的应用部署升级到一个环境中的话，你可以使用[jx promote](/developing/promote)命令。
 
 <img src="/images/overview.png" class="img-thumbnail">
 
-## Preview Environments
+## 预发环境
 
-Jenkins X lets you spin up Preview Environments for your Pull Requests so you can get fast feedback before changes are merged to master. This gives you faster feedback for your changes before they are merged and released and allows you to avoid having human approval inside your release pipeline to speed up delivery of changes merged to master.
+Jenkins X 允许你给 Pull Requests 设置一个预发环境，这样就可以在变更后并到 master 之前得到更多的反馈。这使你的变更在被合并以及发布之前更快得到反馈，并允许你避免在你的发版流水线中有人为的批准，加速变更在合并后的部署。
 
-When the Preview Environment is up and running Jenkins X will comment on your Pull Request with a link so in one click your team members can try out the preview!
- 
+当预发环境启动并运行后，Jenkins X 将会在你的 Pull Requests 中添加一个带链接的评论，这样你们团队的成员就可以点击来尝试它！
+
 <img src="/images/pr-comment.png" class="img-thumbnail">
 
+## 反馈
 
-## Feedback
+正如在上面看到的，当你使用预发环境时，Jenkins X 会在你的 Pull Requests 上自动添加评论。
 
-As you can see above Jenkins X automatically comments on your Pull Requests when using Preview Environments. 
+如果你在提交日志中引用了 issues（例如：通过文本`fixes #123`），那么，Jenkins X 流水线将会生成发版记录，例如： [the jx releases](https://github.com/jenkins-x/jx/releases)。
 
-If the commit comments reference issues (e.g. via the text `fixes #123`) then Jenkins X pipelines will generate release notes like those of [the jx releases](https://github.com/jenkins-x/jx/releases).
-
-Also as the version with those new commits is promoted to `Staging` or `Production` you will get automated comments on each fixed issue that the issue is now available for review in the corresponding environment. e.g.
+同样地，在升级到`Staging`或者`生产`环境时，这些版本上也会在已修复的问题上自动添加对应环境可用的评论。例如：
 
 <img src="/images/issue-comment.png" class="img-thumbnail">
 
 
-## Applications
+## 应用
 
-A collection of best of breed software tools packaged as helm charts that come pre-integrated with Jenkins X such as: Nexus, Chart Museum, Monocular, Prometheus, Grafana etc
+一些最好的软件工具已经被打包为 helm charts，部分预先集成在了 Jenkins X 中，例如：Nexus、Chart Museum、Monocular、Prometheus、Grafana等等。
 
-### Addons
+### 插件
 
-Some of these applications are baked in; like: Nexus, Chart Museum, Monocular.  Others are provided as an `Addon`.
+部分应用是内置的；例如：Nexus、Chart Museum、Monocular。其他的则是作为“插件”提供的。
 
-To install an addon then use the [jx create addon](/commands/jx_create_addon/) command. e.g.
+要安装插件的话，使用命令[jx create addon](/commands/jx_create_addon/)。例如：
 
 ```
 jx create addon grafana
 ```
  
-## Roadmap
- 
- For a look at what features are coming soon please check out the [Jenkins X Roadmap](/contribute/roadmap/)
+## 蓝图
+
+如果想要看一下有什么特色很快会出现，请查看[Jenkins X 蓝图](/contribute/roadmap/)
