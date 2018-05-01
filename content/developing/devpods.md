@@ -65,14 +65,21 @@ Then pick the devpod to delete and confirm. Or pass in the name of the devpod yo
 
 ## Synchronizing
 
-Having a DevPod is cool and all but many folks want to edit source code in their preferred IDE like [VS Code](https://code.visualstudio.com/) or [IDEA](https://www.jetbrains.com/idea/).
-
 So once you have a DevPod you can synchronise your local source code into your DevPod via the [jx sync](/commands/jx_sync/) command in the directory of your source code:
+
+This will allow you to edit source code in your preferred IDE like [VS Code](https://code.visualstudio.com/) or [IDEA](https://www.jetbrains.com/idea/).
+
 
 ```shell
 cd myApp 
 jx sync
 ```   
+
+You may have to add the ksync binary to your path (note the JX_HOME path from the result of the above command):
+```
+export PATH=$PATH:JX_HOME/.jx/bin
+```
+
 
 This command will download and install the excellent [ksync](https://github.com/vapor-ware/ksync) tool if its not already installed, run `ksync init` to add it to your cluster and then run `ksync watch` and then use `ksync create` to create a synchronisation spec.
 
