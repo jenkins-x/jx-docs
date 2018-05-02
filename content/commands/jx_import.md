@@ -16,7 +16,7 @@ If you specify no other options or arguments then the current directory is impor
 
 You can specify the git URL as an argument. 
 
-For more documentation see: http://jenkins-x.io/developing/import/
+For more documentation see: https://jenkins-x.io/developing/import/
 
 ```
 jx import [flags]

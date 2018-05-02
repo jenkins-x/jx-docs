@@ -14,7 +14,7 @@ Deletes one or more Applications from Jenkins
 
 Note that this command does not remove the underlying Git Repositories. 
 
-For that see the http://jenkins-x.io/commands/jx_delete_repo/command.
+For that see the https://jenkins-x.io/commands/jx_delete_repo/command.
 
 ```
 jx delete application [flags]

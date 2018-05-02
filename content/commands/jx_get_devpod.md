@@ -12,7 +12,7 @@ Lists the DevPods
 
 Display the available DevPods 
 
-For more documentation see: http://jenkins-x.io/developing/devpods/
+For more documentation see: https://jenkins-x.io/developing/devpods/
 
 ```
 jx get devpod [flags]

@@ -12,7 +12,7 @@ Creates or updates a Preview Environment for the current version of an applicati
 
 Creates or updates a Preview Environment for the given Pull Request or Branch. 
 
-For more documentation on Preview Environments see: http://jenkins-x.io/about/features/#preview-environments
+For more documentation on Preview Environments see: https://jenkins-x.io/about/features/#preview-environments
 
 ```
 jx preview [flags]

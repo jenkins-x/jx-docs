@@ -12,7 +12,7 @@ Synchronises your local files to a devpod
 
 Synchronises your local files to a DevPod so you an build and test your code easily on the cloud 
 
-For more documentation see: http://jenkins-x.io/developing/devpods/
+For more documentation see: https://jenkins-x.io/developing/devpods/
 
 ```
 jx sync [flags]

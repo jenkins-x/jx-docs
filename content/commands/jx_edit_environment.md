@@ -16,7 +16,7 @@ An Environment maps to a kubernetes cluster and namespace and is a place that yo
 
 You can optionally use GitOps to manage the configuration of an Environment by storing all configuration in a git repository and then only changing it via Pull Requests and CI/CD. 
 
-For more documentation on Environments see: http://jenkins-x.io/about/features/#environments
+For more documentation on Environments see: https://jenkins-x.io/about/features/#environments
 
 ```
 jx edit environment [flags]

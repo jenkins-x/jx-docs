@@ -12,7 +12,7 @@ Promotes a version of an application to an environment
 
 Promotes a version of an application to zero to many permanent environments. 
 
-For more documentation see: http://jenkins-x.io/about/features/#promotion
+For more documentation see: https://jenkins-x.io/about/features/#promotion
 
 ```
 jx promote [application] [flags]

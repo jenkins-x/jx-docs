@@ -14,7 +14,7 @@ Installs the Jenkins X platform on a Kubernetes cluster
 
 Requires a --git-username and --git-api-token that can be used to create a new token. This is so the Jenkins X platform can git tag your releases 
 
-For more documentation see: http://jenkins-x.io/getting-started/install-on-cluster/
+For more documentation see: https://jenkins-x.io/getting-started/install-on-cluster/
 
 The current requirements are:  * RBAC is enabled on the cluster  * insecure docker registry is enabled for docker registries running locally inside kubernetes on the service IP range. See the above documentation for more detail
 

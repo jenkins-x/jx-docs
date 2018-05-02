@@ -12,7 +12,7 @@ View or change the current environment in the current kubernetes cluster
 
 Displays or changes the current environment. 
 
-For more documentation on Environments see: http://jenkins-x.io/about/features/#environments
+For more documentation on Environments see: https://jenkins-x.io/about/features/#environments
 
 ```
 jx environment [flags]
