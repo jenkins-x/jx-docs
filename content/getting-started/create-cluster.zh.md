@@ -18,39 +18,38 @@ toc: true
 ---
 
                 
-To create a new Kubernetes cluster with Jenkins X installed use the  [jx create cluster](/commands/jx_create_cluster) command.
+通过已经安装的 Jenkins X 创建一个新的集群，使用命令  [jx create cluster](/commands/jx_create_cluster) 。
     
-A number of different public cloud providers are supported as shown below.  
+如下所示，支持很多不同的公有云提供商。
 
-__For the best getting started experience we currently recommend using Google Container Engine (GKE)__. The Google Cloud Platform offers a $300 free credit if you don't have a Google Cloud account.  See https://console.cloud.google.com/freetrial
+__为了最好的入门体验，我们目前推荐使用 Google Container Engine (GKE)__。如果你没有谷歌云账号的话，谷歌云平台提供三百美元的额度。查看 https://console.cloud.google.com/freetrial
 
-Here's a little demo showing GKE, AKS and Minikube in parallel. It can take some time to start on different machines/clouds so please be patient!
+这有一个小的演示，同时展示 GKE、AKS 和 Minikube。在不同的设备（云）上启动需要花点时间，请耐心等待！
 
 <iframe width="640" height="360" src="https://www.youtube.com/embed/ELA4tytdFeA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 
-### Using Google Cloud (GKE)
+### 使用谷歌云 (GKE)
 
-Use the [jx create cluster gke](/commands/jx_create_cluster_gke) command: 
+使用命令 [jx create cluster gke](/commands/jx_create_cluster_gke) ： 
 
     jx create cluster gke
 
-The command assumes you have a google account and you've set up a default project that you can use to create the kubernetes cluster within.    
+该命令假设你有一个谷歌账户，并且已经设置了一个默认项目，可以再里面创建 Kubernetes 集群。
      
-Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
- 
+现在 **[使用 Jenkins X 更快速地开发应用](/zh/getting-started/next/)**。
        
-### Using Amazon (AWS)
+### 使用亚马逊 (AWS)
 
-Use the [jx create cluster aws](/commands/x_create_cluster_aws) command: 
+使用命令 [jx create cluster aws](/commands/x_create_cluster_aws) ： 
 
     jx create cluster aws
 
-This will use [kops](https://github.com/kubernetes/kops) on your Amazon account to create a new kubernetes cluster and install Jenkins X.
+这会通过你的亚马逊账户，使用命令 [kops](https://github.com/kubernetes/kops) 创建一个新的 Kubernetes 集群并安装 Jenkins X。
 
-To try this out we recommend you follow the [AWS Workshop for Kubernetes](https://github.com/aws-samples/aws-workshop-for-kubernetes/tree/master/01-path-basics/101-start-here#create-aws-cloud9-environment) to set up an AWS Cloud9 IDE session.
+来试试这个，我们建议你参照 [AWS Workshop for Kubernetes](https://github.com/aws-samples/aws-workshop-for-kubernetes/tree/master/01-path-basics/101-start-here#create-aws-cloud9-environment)  设置 AWS Cloud9 IDE。
 
-Then create a new terminal in Cloud9 and try these commands:
+然后，在 Cloud9 中打开一个新的终端，试试这些命令：
 
 ```shell 
 curl -L https://github.com/jenkins-x/jx/releases/download/v{{< version >}}/jx-linux-amd64.tar.gz | tar xzv 
@@ -58,33 +57,33 @@ sudo mv jx /usr/local/bin
 jx create cluster aws
 ```
 
-Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
+现在 **[使用 Jenkins X 更快速地开发应用](/zh/getting-started/next/)**。
 
         
-### Using Azure (AKS)
+### 使用 Azure (AKS)
 
-Use the [jx create cluster aks](/commands/jx_create_cluster_aks) command: 
+使用命令 [jx create cluster aks](/commands/jx_create_cluster_aks) ： 
 
     jx create cluster aks
     
-Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
+现在 **[使用 Jenkins X 更快速地开发应用](/zh/getting-started/next/)**。
     
-### Using Minikube (local)    
+### 使用 Minikube (local)    
     
-Some folks have trouble getting minikube to work for a variety of reasons:
+有些人在开始使用 minikube 时遇到问题，可能有几个原因：
 
-* minikube requires up to date virtualisation software to be installed and your machine 
-* you may have an old Docker installation or old minikube / kubectl or helm binaries and so forth.
+* minikube 需要更新你的机器以及虚拟化软件
+* 你可能已经安装了旧版本的 Docker 或者 minikube、kuberctl、helm等。
 
-So we **highly** recommend using one of the public clouds above to try out Jenkins X. They all have free tiers so it should not cost you any significant cash and it'll give you a chance to try out the cloud.
+因此，我们**强烈**建议使用上面的公有云来尝试 Jenkins X。他们都有免费体验，所以应该不会花费你的任何现金，而且还给了你体验云的机会。
 
-If you still want to try minikube then we recommend starting from scratch and letting jx create it for you by running
+如果你还是想尝试 minikube，那么，我们建议从头开始，并让 jx 帮你创建
 
     jx create cluster minikube
 
-Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
+现在 **[使用 Jenkins X 更快速地开发应用](/zh/getting-started/next/)**。
 
-### Troubleshooting
+### 故障排除
 
-If you hit any issues installing Jenkins X then please check out our [troubleshooting guide](/troubleshooting/faq/) or [let us know](/community) and we'll try our best to help.
+如果你在安装 Jenkins X 时遇到任何问题，请检查我们的 [故障排除](/zh/troubleshooting/faq/) 或者 [让我们知道](/zh/community)，我们会尽力给予帮助。
 
