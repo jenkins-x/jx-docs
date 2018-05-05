@@ -21,6 +21,7 @@ Jenkins X can be installed on 1.8 or later of Kubernetes. The requirements are:
 
 * RBAC is enabled
 * insecure docker registries are enabled. This is so that pipelines can use a docker registry running inside the kubernetes cluster (which typically is not public so no https support). You can modify your pipelines to use other registries later.
+* A cluster with at least 4 vCpus in addition to the master node (e.g. 2 m4.large nodes + m4.large master)
 
 ### Enabling insecure registries on kops
 
