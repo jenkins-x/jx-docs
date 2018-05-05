@@ -16,7 +16,7 @@ Here is the [video of my talk: Jenkins X: Easy CI/CD for Kubernetes](https://you
 
 <iframe width="640" height="360" src="https://www.youtube.com/embed/uHe7R_iZSLU?list=PLj6h78yzYM2N8GdbjmhVU65KYm_68qBmo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-You can also [get the slides from this talk here](https://docs.google.com/presentation/d/19DAFONpT3L4t6sisyTuK2_chHrVorQO_1ijWEo8Euas/edit)
+You can also [get the slides from this talk here](https://docs.google.com/presentation/d/19DAFONpT3L4t6sisyTuK2_chHrVorQO_1ijWEo8Euas/edit?usp=sharing)
 
 <img src="/news/jenkins-x-does-kubecon/kubecon-talk.jpg">
 
