@@ -16,56 +16,55 @@ toc: true
 ---
 
                 
-If you already have some source code you wish to import into Jenkins X then you can use the [jx import](/commands/jx_import) command. e.g.
+如果你已经有一些源码，希望导入 Jenkins X，你可以使用 [jx import](/commands/jx_import) 命令。
 
 ```shell
 $ cd my-cool-app
 $ jx import
 ```
 
-Import will perform the following actions (prompting you along the way):
+导入将会执行下面的动作（提示你按照这个方法来）：
 
-* add your source code into a git repository if it isn't already
-* create a remote git repository on a git service, such as [GitHub](https://github.com)
-* push your code to the remote git service
-* add any required files to your project if they do not exist:
-  * `Dockerfile` to build your application as a docker image
-  * `Jenkinsfile` to implement the CI / CD pipeline
-  * helm chart to run your application inside Kubernetes
-* register a webhook on the remote git repository to your teams Jenkins
-* add the git repository to your teams Jenkins
-* trigger the first pipeline 
+* 如果你的源码还不在 git 库中，添加进去
+* 在给定的 git 服务上创建一个远程库，例如 [GitHub](https://github.com)
+* 把你的代码推送到远程 git 服务
+* 添加任何需要的文件到你的工程中，如果不存在的话：
+  * `Dockerfile` 把你的应用作为 docker 镜像进行构建
+  * `Jenkinsfile` 实现持续集成、持续构建流水线
+  * helm chart 让你的应用在 Kubernetes 中运行
+* 为你们团队的 Jenkins 注册一个 webhook 到远程 git 仓库
+* 为你们团队的 Jenkins 添加这个 git 仓库
+* 首次触发流水线
 
-### Avoiding docker + helm
+### 避免 docker + helm
 
-If you are importing a repository that does not create a docker image you can use the `--no-draft` command line argument which will not use Draft to default the Dockerfile and helm chart.
- 
+如果你正在导入的仓库而不需要创建 docker 镜像，你可以使用命令参数 `--no-draft` ，就不会使用 Draft 默认的 Dockerfile 和 helm chart。
 
-### Importing via URL
+### 通过 URL 导入
 
-If you wish to import a project which is already in a remote git repository then you can use the `--url`  argument:
+如果你希望导入的工程已经在 git 远程库中，那么，你可以使用参数 `--url`：
 
 ```shell
     jx import --url https://github.com/jenkins-x/spring-boot-web-example.git
 ```
 
-### Importing GitHub projects
+### 导入 GitHub 项目
 
-If you wish to import projects from a github organisation you can use:
+如果你希望从 Github 组织中导入，可以使用：
  
 ```shell
     jx import --github --org myname
 ```
 
-You will be prompted for the repositories you wish to import. Use the cursor keys and space bar to select/deselect the repositories to import.
+将会提示你需要导入的库。使用光标和空格键来选择（取消）要导入的库。
 
-If you wish to default all repositories to be imported (then deselect any you don't want add `--all`:
+如果你希望默认导入所有的库（那么反选你不想要的）添加 `--all`：
    
 ```shell
     jx import --github --org myname --all
 ```
 
-To filter the list you can add a `--filter`
+为了过滤列表，你可以添加参数 `--filter`
 
 ```shell
     jx import --github --org myname --all --filter foo
