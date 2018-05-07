@@ -45,9 +45,7 @@ Across all pages on the Jenkins X docs, the typical triple-back-tick markdown sy
 Your options for languages are `xml`/`html`, `go`/`golang`, `md`/`markdown`/`mkd`, `handlebars`, `apache`, `toml`, `yaml`, `json`, `css`, `asciidoc`, `ruby`, `powershell`/`ps`, `scss`, `sh`/`zsh`/`bash`/`git`, `http`/`https`, and `javascript`/`js`.
 
 ```
-```
 <h1>Hello world!</h1>
-```
 ```
 
 ### Code Block Shortcode
