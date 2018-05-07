@@ -16,91 +16,92 @@ toc: true
 ---
 
                 
-If you have used kubernetes before you're probably used the [kubectl](https://kubernetes.io/docs/reference/kubectl/overview/) command line to view kubernetes resources:
+如果你之前用过 Kubernetes，你可能使用过 [kubectl](https://kubernetes.io/docs/reference/kubectl/overview/) 命令查看 Kubernetes 资源：
 
 ```shell
 kubectl get pods
 ```
 
-The Jenkins X command line tool, [jx](/commands/jx), has a similar look and feel to [kubectl](https://kubernetes.io/docs/reference/kubectl/overview/) and lets you get the status of all the Jenkins X resources.
+Jenkins X 的命令行工具，[jx](/commands/jx)，和 [kubectl](https://kubernetes.io/docs/reference/kubectl/overview/) 看起来相似，并且可以让你看到所有的 Jenkins X 资源。
 
-### View Jenkins Console
+### 查看 Jenkins 控制台
  
-If you are familiar with the Jenkins console then you can use [jx console](/commands/jx_console):
+如果你熟悉 Jenkins 控制台，那么你可以使用 [jx console](/commands/jx_console) ：
 
 ```shell
 jx console
 ```
 
-to open it in a browser.
+就会打开一个浏览器。
 
-### Pipelines
+### 流水线
 
-To view the current pipelines use [jx get pipelines](/commands/jx_get_pipelines):
+要查看当前流水线使用 [jx get pipelines](/commands/jx_get_pipelines):
 
 ```shell
 jx get pipelines
 ```
 
-### Pipeline Build logs
+### 流水线构建日志
 
-To view the current pipeline build logs via [jx get build logs](/commands/jx_get_build_logs):
+通过 [jx get build logs](/commands/jx_get_build_logs) 查看当前流水线构建日志：
 
 ```shell
 jx get build logs
 ```
 
-You are then presented with all the possible pipelines to watch.
+你当前看到的是所有能看到的流水线。
 
-You can quickly filter that via
+你可以通过下面快速过滤
 
 ```shell
 jx get build logs -f myapp
 ```
 
-or if you wish to be explicit
+或者，你希望指定
 
 ```shell
 jx get build logs myorg/myapp/master
 ```
 
-### Pipeline Activity
+### 流水线活动
 
-To view the current pipeline activity [jx get activities](/commands/jx_get_activities):
+为了查看当前流水线的活动 [jx get activities](/commands/jx_get_activities)：
 
 ```shell
 jx get activities
 ```
 
-If you want to watch whats going on with your app `myapp`  you can use:
+如果你想要观察你的应用 `myapp`，你可以使用：
 
 ```shell
 jx get activities -f myapp -w
 ```
 
-Which will watch the pipeline activities and update the screen whenever a significant change happens (e.g. a release completes, a PR is created to start [promotion](/developing/promote) etc).
+这样将会观察流水线的活动，并无论任何重要的改变发生（例如：发版完成，一个 PR 被创建开始[升级](/zh/developing/promote) 等等）都会更新屏幕。
 
-### Applications
+### 应用程序
 
-To view all the applications in your team across all your environments with URLs and pod counts use  [jx get applications](/commands/applications):
+为了查看你的团队所有环境的所有应用的URL和 pod 数量，使用 [jx get applications](/commands/applications)：
+
 
 ```shell
 jx get applications
 ```
 
-If you want to hide the URLs or the pod counts you can use `u` or `-p`. e.g. to hide the URLs:
+如果你想要隐藏 URL 或者 pod 数量，你可以使用 `u` 或 `-p`。例如：为了隐藏 URL：
 
 ```shell
 jx get app -u
 ```
 
-Or hide the pod counts:
+或者隐藏 pod 数量：
 
 ```shell
 jx get app -p
 ```
 
-You can also filter the apps by an environment:
+你还可以根据环境来过滤应用：
 
 ```shell
 jx get app -e staging
@@ -108,16 +109,16 @@ jx get app -e staging
 
 
 
-### Environments
+### 环境
 
-To view the [environments](/about/features/#environments) defined for your team use [jx get environments](/commands/jx_get_environments):
+为了查看你们团队中的 [环境](/zh/about/features/#environments)，使用 [jx get environments](/commands/jx_get_environments)：
 
 ```shell
 jx get environments
 ```
 
-You can also 
+你还可以
 
-* create a new environment via [jx create environment](/commands/jx_create_environment)
-* edit an environment via [jx edit environment](/commands/jx_edit_environment)
-* delete an environment via [jx delete environment](/commands/jx_delete_environment)
+* 通过 [jx create environment](/commands/jx_create_environment) 创建一个新的环境
+* 通过 [jx edit environment](/commands/jx_edit_environment) 编辑环境
+* 通过 [jx delete environment](/commands/jx_delete_environment) 删除环境
