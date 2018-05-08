@@ -3,8 +3,8 @@ title: Kubernetes 上下文
 linktitle: Kubernetes 上下文
 description: 处理 Kubernetes 上下文 
 date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
+publishdate: 2018-05-08
+lastmod: 2018-05-08
 menu:
   docs:
     parent: "developing"
