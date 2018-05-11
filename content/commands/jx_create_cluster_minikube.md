@@ -1,5 +1,5 @@
 ---
-date: 2018-05-11T07:49:13Z
+date: 2018-05-11T09:10:48Z
 title: "jx create cluster minikube"
 slug: jx_create_cluster_minikube
 url: /commands/jx_create_cluster_minikube/
@@ -30,7 +30,7 @@ jx create cluster minikube [flags]
   -b, --batch-mode                          In batch mode the command never prompts for user input
       --cleanup-temp-files                  Cleans up any temporary values.yaml used by helm install [default true] (default true)
       --cloud-environment-repo string       Cloud Environments git repo (default "https://github.com/jenkins-x/cloud-environments")
-  -c, --cpu string                          Number of CPUs allocated to the minikube VM (default "3")
+  -c, --cpu string                          Number of CPUs allocated to the minikube VM. Defaults to 3.
       --default-admin-password string       the default admin password to access Jenkins, Kubernetes Dashboard, Chartmuseum and Nexus
       --default-environment-prefix string   Default environment repo prefix, your git repos will be of the form 'environment-$prefix-$envName'
       --domain string                       Domain to expose ingress endpoints.  Example: jenkinsx.io
@@ -55,7 +55,7 @@ jx create cluster minikube [flags]
       --kubernetes-version string           kubernetes version
       --local-cloud-environment             Ignores default cloud-environment-repo and uses current directory 
       --local-helm-repo-name string         The name of the helm repository for the installed Chart Museum (default "releases")
-  -m, --memory string                       Amount of RAM allocated to the minikube VM in MB (default "4096")
+  -m, --memory string                       Amount of RAM allocated to the minikube VM in MB. Defaults to 4096 MB.
       --namespace string                    The namespace the Jenkins X platform should be installed into (default "jx")
       --no-brew                             Disables the use of brew on MacOS to install or upgrade command line dependencies
       --no-default-environments             Disables the creation of the default Staging and Production environments
