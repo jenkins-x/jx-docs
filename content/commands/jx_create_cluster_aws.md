@@ -1,5 +1,5 @@
 ---
-date: 2018-05-11T17:47:13Z
+date: 2018-05-11T18:27:06Z
 title: "jx create cluster aws"
 slug: jx_create_cluster_aws
 url: /commands/jx_create_cluster_aws/
@@ -34,6 +34,7 @@ jx create cluster aws [flags]
 ### Options
 
 ```
+  -b, --batch-mode                          In batch mode the command never prompts for user input
       --cleanup-temp-files                  Cleans up any temporary values.yaml used by helm install [default true] (default true)
       --cloud-environment-repo string       Cloud Environments git repo (default "https://github.com/jenkins-x/cloud-environments")
   -n, --cluster-name string                 The name of this cluster. (default "aws1")
@@ -47,6 +48,7 @@ jx create cluster aws [flags]
       --git-provider-url string             The git server URL to create new git repositories inside
       --git-username string                 The git username to use for creating new git repositories
       --global-tiller                       Whether or not to use a cluster global tiller (default true)
+      --headless                            Enable headless operation if using browser automation
       --helm-client-only                    Only install helm client
       --helm-tls                            Whether to use TLS with helm
   -h, --help                                help for aws
@@ -61,6 +63,7 @@ jx create cluster aws [flags]
       --local-cloud-environment             Ignores default cloud-environment-repo and uses current directory 
       --local-helm-repo-name string         The name of the helm repository for the installed Chart Museum (default "releases")
       --namespace string                    The namespace the Jenkins X platform should be installed into (default "jx")
+      --no-brew                             Disables the use of brew on MacOS to install or upgrade command line dependencies
       --no-default-environments             Disables the creation of the default Staging and Production environments
   -o, --nodes string                        node count
   -r, --rbac                                whether to enable RBAC on the Kubernetes cluster (default true)
@@ -75,6 +78,7 @@ jx create cluster aws [flags]
       --tls-acme string                     Used to enable automatic TLS for ingress (default "false")
       --user-cluster-role string            The cluster role for the current user to be able to administer helm (default "cluster-admin")
       --username string                     The kubernetes username used to initialise helm. Usually your email address for your kubernetes account
+      --verbose                             Enable verbose logging
   -z, --zones string                        Availability zones. Defaults to $AWS_AVAILABILITY_ZONES
 ```
 
