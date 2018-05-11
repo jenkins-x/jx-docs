@@ -1,5 +1,5 @@
 ---
-date: 2018-05-11T12:28:04Z
+date: 2018-05-11T17:47:13Z
 title: "jx create spring"
 slug: jx_create_spring
 url: /commands/jx_create_spring/
@@ -56,7 +56,7 @@ jx create spring [flags]
       --import-commit-message string   Should we override the Jenkinsfile in the project?
   -j, --java-version string            Java version
       --jenkinsfile string             The name of the Jenkinsfile to use. If not specified then 'Jenkinsfile' will be used
-  -k, --kind stringArray               Default dependency kinds to choose from (default [Core,Web,Template Engines,SQL,I/O,Ops])
+  -k, --kind stringArray               Default dependency kinds to choose from (default [Core,Web,Template Engines,SQL,I/O,Ops,Spring Cloud GCP,Azure,Cloud Contract,Cloud AWS,Cloud Messaging,Cloud Tracing])
   -l, --language string                Language to generate
       --list-packs                     list available draft packs
       --name string                    Specify the git repository name to import the project into (if it is not already in one)
