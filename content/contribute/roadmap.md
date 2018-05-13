@@ -28,11 +28,14 @@ toc: true
 | **Cloud Providers** | | | | |
 | AWS | | | | 1.1.x |
 | Azure | | | | 1.1.x |
+| Digital Ocean  | | [Planned](https://github.com/jenkins-x/jx/issues/705) | | |
 | EKS  | | [Planned](https://github.com/jenkins-x/jx/issues/87) | | |
 | GKE | | | | 1.1.x |
+| IBM Cloud  | | [Planned](https://github.com/jenkins-x/jx/issues/472) | | |
 | Minkube | | | | 1.1.x |
 | Minishift | | | | 1.2.11 |
 | OpenShift | | |  | 1.2.11 |
+| PKS  | | [Planned](https://github.com/jenkins-x/jx/issues/807) | | |
 | **Tools** | | | | |
 | Helm | | | | 1.1.x |
 | Skaffold | | | | 1.2.11 | 
@@ -50,6 +53,11 @@ toc: true
 | GitHub Enterprise | | | | 1.1.68 |
 | Gitea | | | [In Progress](https://github.com/jenkins-x/jx/issues/432) | |
 | JIRA | | | | 1.1.68 |
+| **Repositories** | | | | |
+| Chart Museum | | | | 1.1.x |
+| Docker Registry | | | | 1.1.x |
+| Nexus | | | | 1.1.x |
+| Artifactory  | | [Planned](https://github.com/jenkins-x/jx/issues/805) | |
 | **Features** | | | | |
 | Multi Cluster | | | [In Progress](https://github.com/jenkins-x/jx/issues/479) |
 | Istio Production Canaries | | | [In Progress](https://github.com/jenkins-x/jx/issues/582) |
@@ -64,6 +72,14 @@ toc: true
 | Serverless  | | [Planned](https://github.com/jenkins-x/jx/issues/553) | |
 | Swift  | | [Planned](https://github.com/jenkins-x/jx/issues/560) | |
 | .Net  | | [Planned](https://github.com/jenkins-x/jx/issues/561) | |
+| **Addons** | | | | |
+| Anchore | | | | 1.2.x |
+| Cloud9  | | [Planned](https://github.com/jenkins-x/jx/issues/776) | |
+| Eclipse Che  | | [Planned](https://github.com/jenkins-x/jx/issues/774) | |
+| Gitea | | | | 1.1.x |
+| Prometheus | | | | 1.1.x |
+| SonarQube  | | [Planned](https://github.com/jenkins-x/jx/issues/536) | |
+
 
 If you are interested in helping out please see the above issues or [join us in the community](/community/).
 
