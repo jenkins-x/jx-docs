@@ -295,7 +295,7 @@ anchor = "smart"
     url = "/news/"
 
   [[menu.global]]
-    name = "Docs"
+    name = "Documentation"
     weight = 1
     identifier = "docs"
     url = "/documentation"
