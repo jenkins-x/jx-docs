@@ -18,10 +18,11 @@ sections_weight: 5
 * [Jenkins X Explained Part 1 - an integrated CI/CD solution for Kubernetes](https://jenkins.io/blog/2018/04/16/jenkins-x-explained-part1/) by James Rawlings on 16th April, 2018
 * [Serverless and Kubernetes: Serverless Isn't Processless](https://www.cloudbees.com/blog/serverless-and-kubernetes-serverless-isnt-processless) by Michael Neale on 12th April, 2018
 * [Opinionated Kubernetes and Jenkins X](https://www.cloudbees.com/blog/opinionated-kubernetes-and-jenkins-x) by Michael Neale on 13th February, 2018
-* [Now on DevOps Radio: [James Strachan](https://twitter.com/jstrachan) Introduces Jenkins X, Taking Continuous Delivery to the NeXt Level](https://www.cloudbees.com/blog/now-devops-radio-james-strachan-introduces-jenkins-x-taking-continuous-delivery-next-level) by Heidi Gilmore on 28th February, 2018
+* [Now on DevOps Radio: James Strachan - Introduces Jenkins X, Taking Continuous Delivery to the NeXt Level](https://www.cloudbees.com/blog/now-devops-radio-james-strachan-introduces-jenkins-x-taking-continuous-delivery-next-level) by Heidi Gilmore on 28th February, 2018
 * [Why Kubernetes Changes Everything!](https://www.cloudbees.com/blog/why-kubernetes-changes-everything) by Rob Davies on 17th April, 2018
 * [JenkinsX – new Kubernetes dream? Part 1](https://blog.octo.com/en/jenkinsx-new-kubernetes-dream-part-1/) by Mykyta Shulhin, Ilya Trofimov on 17th April, 2018
 * [JenkinsX – new Kubernetes dream? Part 2 - Technical!](https://blog.octo.com/en/jenkinsx-new-kubernetes-dream-part-1/) by Mykyta Shulhin, Ilya Trofimov on 19th April, 2018
+* [Jenkins: X or 2.0 ?](https://dzone.com/articles/jenkins-x-the-good-bad-and-ugly) by [Oleksii Dzhulai](https://medium.com/@odzhu) on 13th April, 2018 
 * [Want to Help Build CloudBees for Kubernetes with Jenkins X?](https://www.cloudbees.com/blog/want-help-build-cloudbees-kubernetes-jenkins-x) by Rob Davies on 2nd May, 2018
 * [Jenkins X: Announcing CVE docker image analysis with Anchore](https://jenkins.io/blog/2018/05/08/jenkins-x-anchore/) by James Rawlings on 8th May, 2018
 * [Activiti Cloud & Jenkins X: Blueprint in AWS and GCE](https://salaboy.com/2018/05/15/activiti-cloud-jenkins-x-blueprint-in-aws-and-gce/) by [Salaboy](https://salaboy.com/) on 15th May, 2018
