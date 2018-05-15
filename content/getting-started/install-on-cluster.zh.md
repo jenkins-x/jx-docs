@@ -2,9 +2,9 @@
 title: 在 Kubernetes 上安装
 linktitle: 在 Kubernetes 上安装
 description: 如何在已有的 Kubernetes 集群上安装 Jenkins X
-date: 2018－04-21
-publishdate: 2018－04-21
-lastmod: 2018－04-21
+date: 2018-04-21
+publishdate: 2018-04-21
+lastmod: 2018-04-21
 categories: [getting started]
 keywords: [install,kubernetes]
 menu:
