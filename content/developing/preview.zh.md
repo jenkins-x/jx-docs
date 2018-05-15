@@ -1,10 +1,10 @@
 ---
-title: Preview
-linktitle: Preview
-description: Preview pull requests before changes merge to master
-date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
+title: 预览
+linktitle: 预览
+description: 在变更合并到 master 之前预览 Pull Requests
+date: 2018-05-15
+publishdate: 2018-05-15
+lastmod: 2018-05-15
 menu:
   docs:
     parent: "developing"
@@ -16,21 +16,21 @@ toc: true
 ---
 
 
-We highly recommend the use of [Preview Environments](/about/features/#preview-environments) to get early feedback on changes to applications before the changes are merged into master.
+我们强烈建议使用 [预览环境](/zh/about/features/#preview-environments) ，使得在变更合并到 master 之前尽快地得到反馈。
   
-Typically the creation of preview environments is automated inside the Pipelines created by Jenkins X.
+通常，预览环境是由 Jenkins X 的流水线中自动创建的。
 
-However you can manually create a [Preview Environment](/about/features/#preview-environments) using [jx](/commands/jx) via the [jx preview](/commands/jx_preview) command.
+然而，你可以使用 [jx](/commands/jx) 通过命令 [jx preview](/commands/jx_preview) 手动创建一个[预览环境](/zh/about/features/#preview-environments)。
 
 ```shell 
 jx preview
 ```
 
-### What happens when a Preview environment is created
+### 创建预览环境时都做了什么
 
-* a new [Environment](/about/features/#environments) of kind `Preview` is created along with a [kubernetes namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/) which shows up in the [jx get environments](/commands/jx_get_environments/) command along with the [jx environment and jx namespace commands](/developing/kube-context) so you can see which preview environments are active and switch into them to look around
-* the Pull Request is built as a preview docker image and chart and deployed into the preview environment
-* a comment is added to the Pull Request to let your team know the preview application is ready for testing with a link to open the application. So in one click your team members can try out the preview!
+* 一个新的 [环境](/zh/about/features/#environments) ，例如 `预览` 被创建时，一个 [kubernetes 命名空间](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/) 会在 [jx get environments](/commands/jx_get_environments/) 出现， 使用 [jx 环境和 jx 命名空间命令](/zh/developing/kube-context) 你可以看到那个预览环境是活跃的，并可以进入查看。
+* Pull Request 会作为预览 Docker 镜像和 chart 构建，并被部署到预览环境中
+* 添加一条注释到 Pull Request 中，让你们团队知道该预览应用已经准备好可以测试了，并带有打开应用的链接。因此，只要点击一下就可以让你们团队成员体验预览环境！
  
 <img src="/images/pr-comment.png" class="img-thumbnail">
 
