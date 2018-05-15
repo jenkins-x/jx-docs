@@ -24,6 +24,7 @@ sections_weight: 5
 * [JenkinsX – new Kubernetes dream? Part 2 - Technical!](https://blog.octo.com/en/jenkinsx-new-kubernetes-dream-part-1/) by Mykyta Shulhin, Ilya Trofimov on 19th April, 2018
 * [Want to Help Build CloudBees for Kubernetes with Jenkins X?](https://www.cloudbees.com/blog/want-help-build-cloudbees-kubernetes-jenkins-x) by Rob Davies on 2nd May, 2018
 * [Jenkins X: Announcing CVE docker image analysis with Anchore](https://jenkins.io/blog/2018/05/08/jenkins-x-anchore/) by James Rawlings on 8th May, 2018
+* [Activiti Cloud & Jenkins X: Blueprint in AWS and GCE](https://salaboy.com/2018/05/15/activiti-cloud-jenkins-x-blueprint-in-aws-and-gce/) by [Salaboy](https://salaboy.com/) on 15th May, 2018
 
 
 Also check out the [Jenkins X Blog](/news/)
