@@ -18,15 +18,15 @@ toc: true
 
 Jenkins X 默认使用你的 git 提供商中的问题跟踪系统来创建和浏览问题。 
 
-e.g. if you are inside the source code of a github project then you can type [jx create issue](/commands/jx_create_issue):
+例如：如果你在 Github 项目中的源码中，那么你可以输入 [jx create issue](/commands/jx_create_issue)：
 
 ```
 jx create issue -t "lets make things more awesome"
 ```
 
-And a new issue will be created on github.
+一个新的问题就会在 Github 上被创建。
 
-You can list open the issues on your project via [jx get issues](/commands/jx_get_issues):
+你可以在你的项目上通过 [jx get issues](/commands/jx_get_issues) 列出打开的问题：
 
 ```
 jx get issues
@@ -34,21 +34,21 @@ jx get issues
              
 ### 使用不同的问题跟踪
 
-If you wish to use, say, JIRA on a project you first need to add a JIRA service.
+如果你希望在项目中使用 JIRA，你首先需要添加一个 JIRA 服务。
 
-You can register your JIRA service via [jx create tracker server](/commands/jx_create_tracker_server):
+你可以通过 [jx create tracker server](/commands/jx_create_tracker_server) 注册你的 JIRA服务：
 
 ```
 jx create tracker server jira https://mycompany.atlassian.net/
 ```
 
-You can then view your issue tracker server via [jx get tracker](/commands/jx_get_tracker):
+然后，你就可以通过 [jx get tracker](/commands/jx_get_tracker) 来查看你的问题追踪了：
 
 ```
 jx get tracker
 ```
              
-Then add a user and token via:
+然后，通过下面添加一个用户和 token：
 
 ```
 jx create tracker token -n jira  myEmailAddress
@@ -64,10 +64,10 @@ jx edit config -k issues
            
 然后 
 
-* if you have multiple issue trackers, pick the one you wish to use for the project
-* enter the name of the project in the issue tracker (e.g. the upper case name of the JIRA project)
+* 如果你有多个问题跟踪系统，选择一个用于当前项目
+* 在问题跟踪系统中输入项目名称（例如：大写的 JIRA 项目名称）
 
-A file called `jenkins-x.yml` will be modified in your project source code which should be added to your git repository. 
+在你的项目中一个叫做 `jenkins-x.xml` 的文件会被修改，这个文件应该被加到你的 git 库中。
  
 
 
