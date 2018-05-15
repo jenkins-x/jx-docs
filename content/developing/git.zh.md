@@ -2,9 +2,9 @@
 title: Git 服务器
 linktitle: Git 服务器
 description: 使用不同的 Git 服务器 
-date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
+date: 2018-05-15
+publishdate: 2018-05-15
+lastmod: 2018-05-15
 menu:
   docs:
     parent: "developing"
@@ -36,7 +36,7 @@ jx create git server gitKind someURL
 
 这里 `gitKind` 是某个 git 服务商，像 `github, gitea, gitlab, bitbucket`
 
-## 企业 GitHub
+## 企业 GitHub
 
 要添加一个企业 Github 服务，尝试：
 
@@ -68,28 +68,27 @@ jx create git token -n myProviderName myUserName
 
 你可以安装 git 服务到运行 Jenkins X 的 Kubernetes 集群中。
 
-e.g. there is an addon for [gitea](https://gitea.io/en-us/) that lets you install gitea as part of your Jenkins X installation.
+例如：有一个 [gitea](https://gitea.io/en-us/) 的插件，可以让你把 gitea 作为 Jenkins X 安装的一部分。
 
-To use [gitea](https://gitea.io/en-us/) with Jenkins X then you need to enable the `gitea` addon before installing Jenkins X:
+要在 Jenkins X 中使用 [gitea](https://gitea.io/en-us/)，你需要在安装 Jenkins X 之前启用 `gitea` 插件：
 
 ``` 
 jx edit addon gitea -e true
 ``` 
 
-You can view the enabled addons via [jx get addons](/commands/jx_get_addons):
+你可以通过 [jx get addons](/commands/jx_get_addons) 查看启用的插件：
 
 ``` 
 jx get addons
 ``` 
 
-Now when you [install Jenkins X](/getting-started/) it will also install the `gitea` addon. 
+现在，当你 [安装 Jenkins X](/zh/getting-started/) 时，也会安装 `gitea` 插件。 
 
-Then whenever Jenkins X needs to create a git repository for an Environment or for a new Project the gitea server will appear in the pick list.
+无论什么时候，Jenkins X 需要为一个环境或者新项目创建一个 git 库时，gitea 服务都会出现在选择列表中。
 
+#### gitea 已知的限制
 
-#### Known gitea limitations
+在写本文时，[gitea plugin for Jenkins](https://issues.jenkins-ci.org/browse/JENKINS-50459)不能够正确地更新 Pull Request 和 git 提交构建状态，这会打断 GitOps 升级流水线。可以手工审核来升级；但是，流水线会报告失败。
 
-At the time of writing the [gitea plugin for Jenkins](https://issues.jenkins-ci.org/browse/JENKINS-50459) does not correctly update Pull Request and git commit build statuses which breaks the GitOps promption pipelines. Promotion can work through manual approval; but the pipeline reports a failure. 
-
-Another issue is new projects created by `jx` inside `gitea` do not get the [merge buttons enabled on Pull Requests](https://github.com/go-gitea/go-sdk/issues/100). The work around is after a project is created on github you go to the `Settings` page for the repository inside the `gitea` web console and enable the merge buttons there. 
+另一个问题是，由 `jx` 在 `gitea` 创建的新项目，无法使得 [在 Pull Requests 中合并按钮可用](https://github.com/go-gitea/go-sdk/issues/100)。要使得可用的话，当一个项目在 Github 中创建后，你到仓库的 `Settings` 页面，在 `gitea` 的 web 控制台中，启用合并按钮。
 
