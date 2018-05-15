@@ -43,7 +43,7 @@ Jenkins X comes with configuration that wires these services together meaning ev
 
 ## Permanent Environments
 
-These [environments]((/about/features/#environments), like `Staging` and `Production` use GitOps to manage themselves and so each have a git repository containing the source code to configure all the applications and services which are deployed there.
+These [environments](/about/features/#environments), like `Staging` and `Production` use GitOps to manage themselves and so each have a git repository containing the source code to configure all the applications and services which are deployed there.
 
 Typically we use Helm charts in these git repositories to define which charts are to be installed, which versions of them and any environment specific configuration and additional resources (e.g. Secrets or operational applications like Prometheus etc)
 
@@ -54,4 +54,3 @@ Typically we use Helm charts in these git repositories to define which charts ar
 The main difference is preview environments are configured inside the application source code in the `./chart/preview` folder.
 
 Also they are not permanent but created on a Pull Request to an applications git repository and then deleted some time after (manually or via automatic garbage collection).
-)
