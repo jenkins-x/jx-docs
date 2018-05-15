@@ -1,12 +1,12 @@
 ---
-title: Contribute to the Documentation
-linktitle: Documentation
-description: How to help improve the Jenkins X documentation
+title: 文档贡献
+linktitle: 文档
+description: 如何完善 Jenkins X 文档
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [contribute]
-keywords: [docs,documentation,community, contribute]
+keywords: [docs, documentation, community, contribute]
 menu:
   docs:
     parent: "contribute"
@@ -18,75 +18,73 @@ aliases: [/contribute/docs/]
 toc: true
 ---
 
-## Create Your Fork
+## 创建派生库
 
-It's best to make changes to the Jenkins X docs on your local machine to check for consistent visual styling. Make sure you've created a fork of [jx-docs](https://github.com/jenkins-x/jx-docs) on GitHub and cloned the repository locally on your machine. For more information, you can see [GitHub's documentation on "forking"][ghforking] or follow along with [Jenkins X's development contribution guide][hugodev].
+最好在你本地的机器上修改 Jenkins X 文档，检查视觉风格一致。确保你已经在 Github 上派生了 [jx-docs](https://github.com/jenkins-x/jx-docs)，并在你的机器上克隆了这个库。更多信息，你可以查看 [GitHub 的"派生"文档][ghforking] 或者按照 [Jenkins X 开发贡献指导][hugodev]。
 
-You can then create a separate branch for your additions. Be sure to choose a descriptive branch name that best fits the type of content. The following is an example of a branch name you might use for adding a new website to the showcase:
+然后，你可以创建一个独立的分支。一定要选择符合内容类型的描述性分支名称。下面的一个示例分支的名称，你可以用于添加一个新的网站用于展示：
 
 ```
 git checkout -b jon-doe-showcase-addition
 ```
 
-## Add New Content
+## 添加新的内容
 
-The Jenkins X docs make heavy use of Jenkins X's [archetypes][] feature. All content sections in Jenkins X documentation have an assigned archetype.
+Jenkins X 文档重用 Jenkins X 的[骨架][]特点。在 Jenkins X 文档中所有内容章节都分配了骨架。
 
-Adding new content to the Jenkins X docs follows the same pattern, regardless of the content section:
+向 Jenkins X 中添加新的内容遵循下面相似的模式，不用考虑内容章节：
 
 ```
 hugo new <DOCS-SECTION>/<new-content-lowercase>.md
 ```
 
-### Standard Syntax
+### 语法标准
 
-Across all pages on the Jenkins X docs, the typical triple-back-tick markdown syntax is used. If you do not want to take the extra time to implement the following code block shortcodes, please use standard GitHub-flavored markdown. The Jenkins X docs use a version of [highlight.js](https://highlightjs.org/) with a specific set of languages.
+Jenkins X 文档中所有的页面，使用典型的三个反引号这样的语法。如果你不想花额外的时间来遵循下面的代码块简码，请使用标准的 Github 风格的 markdown。Jenkins X 使用 [highlight.js](https://highlightjs.org/) 的一组语言。
 
-Your options for languages are `xml`/`html`, `go`/`golang`, `md`/`markdown`/`mkd`, `handlebars`, `apache`, `toml`, `yaml`, `json`, `css`, `asciidoc`, `ruby`, `powershell`/`ps`, `scss`, `sh`/`zsh`/`bash`/`git`, `http`/`https`, and `javascript`/`js`.
+你可选的语言是 `xml`/`html`, `go`/`golang`, `md`/`markdown`/`mkd`, `handlebars`, `apache`, `toml`, `yaml`, `json`, `css`, `asciidoc`, `ruby`, `powershell`/`ps`, `scss`, `sh`/`zsh`/`bash`/`git`, `http`/`https`, 和 `javascript`/`js`.
 
-```
 ```
 <h1>Hello world!</h1>
 ```
-```
 
-### Code Block Shortcode
+### 代码块简码
 
-The Jenkins X documentation comes with a very robust shortcode for adding interactive code blocks.
+Jenkins X 文档带有强大的简码，用于增加交互式的代码块。
 
 {{% note %}}
-With the `code` shortcodes, *you must include triple back ticks and a language declaration*. This was done by design so that the shortcode wrappers were easily added to legacy documentation and will be that much easier to remove if needed in future versions of the Jenkins X docs.
+通过 `code` 这个简码, *你必须包括三个反引号和语言声明* 。简码包裹这样的设计，可以轻松地添加到遗留文档，如果有必要在 Jenkins X 未来的版本中移除的话也是很容易的。
 {{% /note %}}
 
 ### `code`
 
-`code` is the Jenkins X docs shortcode you'll use most often. `code` requires has only one named parameter: `file`. Here is the pattern:
+`code` 这个简码你将会在 Jenkins X 中经常使用。`code` 只能接收一个命名参数： `file`。模式是：
 
 ```
 {{%/* code file="smart/file/name/with/path.html" download="download.html" copy="true" */%}}
 ```
-A whole bunch of coding going on up in here!
+一大堆的编码会出现在这里！
 ```
 {{%/* /code */%}}
 ```
 
-The following are the arguments passed into `code`:
+下面是传递给 `code` 的参数：
 
 ***`file`***
-: the only *required* argument. `file` is needed for styling but also plays an important role in helping users create a mental model around Jenkins X's directory structure. Visually, this will be displayed as text in the top left of the code block.
+: 这是唯一的 *必需* 参数。 `file` 是用于风格需要，但同样也扮演了一个重要的角色，它帮助用户建立一个 Jenkins X 目录结构的思维模式。视觉上，这会作为文本显示在代码块的左上角。
 
 `download`
-: if omitted, this will have no effect on the rendered shortcode. When a value is added to `download`, it's used as the filename for a downloadable version of the code block.
+: 如果忽略，那么在渲染简码时没有任何效果。当添加一个值到 `download`，它会被当作文件名来作为这个代码块来下载。
 
 `copy`
-: a copy button is added automatically to all `code` shortcodes. If you want to keep the filename and styling of `code` but don't want to encourage readers to copy the code (e.g., a "Do not do" snippet in a tutorial), use `copy="false"`.
+: 拷贝按钮会自动添加到所有 `code` 简码。如果你想保持文件名和 `code` 的风格，但不想要渲染来拷贝代码（例如：在教程中的“不得做”的片段），使用 `copy="false"`。
 
-#### Example `code` Input
+#### 示例 `code` 输入
 
-This example HTML code block tells Jenkins X users the following:
+这个 HTML 示例代码块告诉 Jenkins X 用户如下信息：
 
-1. This file *could* live in `layouts/_default`, as demonstrated by `layouts/_default/single.html` as the value for `file`.
-2. This snippet is complete enough to be downloaded and implemented in a Jenkins X project, as demonstrated by `download="single.html"`.
+1. 这个文件 *会* 在 `layouts/_default` 中，`layouts/_default/single.html` 也就是 `file` 的值。
+2. 这个片段是完全可以下载，并是在 Jenkins X 工程里实现的，也就是 `download="single.html"`。
 
 ```
 {{</* code file="layouts/_default/single.html" download="single.html" */>}}
@@ -110,9 +108,9 @@ This example HTML code block tells Jenkins X users the following:
 {{</* /code */>}}
 ```
 
-##### Example 'code' Display
+##### 示例 'code' 显示
 
-The output of this example will render to the Jenkins X docs as follows:
+这个示例的输出将会如下展示到 Jenkins X 文档中：
 
 {{< code file="layouts/_default/single.html" download="single.html" >}}
 {{ define "main" }}
@@ -154,25 +152,26 @@ The preceding `output` example will render as follows to the Jenkins X docs:
 <p>I am excited to be using Jenkins X.</p>
 {{< /output >}} -->
 
-## Blockquotes
+## 块引用
 
-Blockquotes can be added to the Jenkins X documentation using [typical Markdown blockquote syntax][bqsyntax]:
+块引用可以通过 [典型的 Markdown 块引用语法][bqsyntax] 添加到 Jenkins X 文档中：
 
 ```
 > Without the threat of punishment, there is no joy in flight.
 ```
 
-The preceding blockquote will render as follows in the Jenkins X docs:
+上面的块引用会在 Jenkins X 文档中渲染为：
 
 > Without the threat of punishment, there is no joy in flight.
 
 However, you can add a quick and easy `<cite>` element (added on the client via JavaScript) by separating your main blockquote and the citation with a hyphen with a single space on each side:
+然而，
 
 ```
 > Without the threat of punishment, there is no joy in flight. - [Kobo Abe](https://en.wikipedia.org/wiki/Kobo_Abe)
 ```
 
-Which will render as follows in the Jenkins X docs:
+这样会在 Jenkins X 文档中渲染为：
 
 > Without the threat of punishment, there is no joy in flight. - [Kobo Abe][abe]
 
@@ -180,7 +179,7 @@ Which will render as follows in the Jenkins X docs:
 Previous versions of Jenkins X documentation used blockquotes to draw attention to text. This is *not* the [intended semantic use of `<blockquote>`](http://html5doctor.com/cite-and-blockquote-reloaded/). Use blockquotes when quoting. To note or warn your user of specific information, use the admonition shortcodes that follow.
 {{% /note %}}
 
-## Admonitions
+## 警告
 
 **Admonitions** are common in technical documentation. The most popular is that seen in [reStructuredText Directives][sourceforge]. From the SourceForge documentation:
 
@@ -188,11 +187,11 @@ Previous versions of Jenkins X documentation used blockquotes to draw attention 
 
 The Jenkins X docs contain three admonitions: `note`, `tip`, and `warning`.
 
-### `note` Admonition
+### `note` 警告
 
 Use the `note` shortcode when you want to draw attention to information subtly. `note` is intended to be less of an interruption in content than is `warning`.
 
-#### Example `note` Input
+#### 示例 `note` 输入
 
 {{< code file="note-with-heading.md" >}}
 {{%/* note */%}}
@@ -200,7 +199,7 @@ Here is a piece of information I would like to draw your **attention** to.
 {{%/* /note */%}}
 {{< /code >}}
 
-#### Example `note` Output
+#### 示例 `note` 输出
 
 {{< output file="note-with-heading.html" >}}
 {{% note %}}
@@ -208,17 +207,17 @@ Here is a piece of information I would like to draw your **attention** to.
 {{% /note %}}
 {{< /output >}}
 
-#### Example `note` Display
+#### 示例 `note` 显示
 
 {{% note %}}
 Here is a piece of information I would like to draw your **attention** to.
 {{% /note %}}
 
-### `tip` Admonition
+### `tip` 警告
 
 Use the `tip` shortcode when you want to give the reader advice. `tip`, like `note`, is intended to be less of an interruption in content than is `warning`.
 
-#### Example `tip` Input
+#### 示例 `tip` 输入
 
 {{< code file="using-tip.md" >}}
 {{%/* tip */%}}
@@ -226,7 +225,7 @@ Here's a bit of advice to improve your productivity with Jenkins X.
 {{%/* /tip */%}}
 {{< /code >}}
 
-#### Example `tip` Output
+#### 示例 `tip` 输出
 
 {{< output file="tip-output.html" >}}
 {{% tip %}}
@@ -234,17 +233,17 @@ Here's a bit of advice to improve your productivity with Jenkins X.
 {{% /tip %}}
 {{< /output >}}
 
-#### Example `tip` Display
+#### 示例 `tip` 显示
 
 {{% tip %}}
 Here's a bit of advice to improve your productivity with Jenkins X.
 {{% /tip %}}
 
-### `warning` Admonition
+### `warning` 警告
 
-Use the `warning` shortcode when you want to draw the user's attention to something important. A good usage example is for articulating breaking changes in Jenkins X versions, known bugs, or templating "gotchas."
+当你想要使用户引起注意时，使用 `warning` 简码。一个好的例子就是，当在 Jenkins X 版本中会引起阻断变更时，已知问题，或者模板“陷阱”。
 
-#### Example `warning` Input
+#### 示例 `warning` 输入
 
 {{< code file="warning-admonition-input.md" >}}
 {{%/* warning */%}}
@@ -252,7 +251,7 @@ This is a warning, which should be reserved for *important* information like bre
 {{%/* /warning */%}}
 {{< /code >}}
 
-#### Example `warning` Output
+#### 示例 `warning` 输出
 
 {{< output file="warning-admonition-output.html" >}}
 {{% warning %}}
@@ -260,14 +259,14 @@ This is a warning, which should be reserved for *important* information like bre
 {{% /warning %}}
 {{< /output >}}
 
-#### Example `warning` Display
+#### 示例 `warning` 显示
 
 {{% warning %}}
-This is a warning, which should be reserved for *important* information like breaking changes.
+这是一个警告，用于 *重要的* 信息，例如破坏性改变。
 {{% /warning %}}
 
 {{% note "Pull Requests and Branches" %}}
-Similar to [contributing to Jenkins X development](/contribute/development/), the Jenkins X team expects you to create a separate branch/fork when you make your contributions to the Jenkins X docs.
+和 [给 Jenkins X 贡献开发](/zh/contribute/development/)相似，当你想要给 Jenkins X 文档贡献时 Jenkins X 团队期望你创建一个独立的分支（派生）。
 {{% /note %}}
 
 [abe]: https://en.wikipedia.org/wiki/Kobo_Abe
