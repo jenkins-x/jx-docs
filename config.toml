@@ -290,13 +290,13 @@ anchor = "smart"
 
 [[menu.global]]
     name = "News"
-    weight = 1
+    weight = 5
     identifier = "news"
     url = "/news/"
 
   [[menu.global]]
     name = "Docs"
-    weight = 5
+    weight = 1
     identifier = "docs"
     url = "/documentation"
 
