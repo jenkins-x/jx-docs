@@ -31,3 +31,5 @@ Well the [Developing](/developing/) section contains the next steps you may want
 * [import existing source code into Jenkins X](/developing/import/)
 * [browsing](/developing/browsing/) for browsing pipelines, builds, apps and activity
 
+You may also want to check out the [various demonstrations of what you can do with Jenkins X](/demos/)
+
