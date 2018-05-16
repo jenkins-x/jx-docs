@@ -34,7 +34,7 @@ jx create addon gitea [flags]
       --helm-update        Should we run helm update first to ensure we use the latest version (default true)
   -h, --help               help for gitea
   -n, --namespace string   The Namespace to install into
-      --no-brew            Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --no-brew            Disables the use of brew on macOS to install or upgrade command line dependencies
       --no-token           If true disable trying to create a new token in the gitea server
       --no-user            If true disable trying to create a new user in the gitea server
   -p, --password string    The password for the user to create in gitea. Note that gitea tends to reject passwords less than 6 characters

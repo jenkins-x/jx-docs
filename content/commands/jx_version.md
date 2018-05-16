@@ -23,7 +23,7 @@ jx version [flags]
       --headless           Enable headless operation if using browser automation
       --helm-tls           Whether to use TLS with helm
   -h, --help               help for version
-      --no-brew            Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --no-brew            Disables the use of brew on macOS to install or upgrade command line dependencies
   -n, --no-version-check   Disable checking of version upgrade checks
       --verbose            Enable verbose logging
 ```

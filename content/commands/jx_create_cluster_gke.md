@@ -66,7 +66,7 @@ jx create cluster gke [flags]
       --max-num-nodes string                The maximum number of nodes to be created in each of the cluster's zones
       --min-num-nodes string                The minimum number of nodes to be created in each of the cluster's zones
       --namespace string                    The namespace the Jenkins X platform should be installed into (default "jx")
-      --no-brew                             Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --no-brew                             Disables the use of brew on macOS to install or upgrade command line dependencies
       --no-default-environments             Disables the creation of the default Staging and Production environments
   -p, --project-id string                   Google Project ID to create cluster in
       --recreate-existing-draft-repos       Delete existing helm repos used by Jenkins X under ~/draft/packs

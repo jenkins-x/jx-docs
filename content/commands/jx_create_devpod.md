@@ -35,7 +35,7 @@ jx create devpod [flags]
       --headless             Enable headless operation if using browser automation
   -h, --help                 help for devpod
   -l, --label string         The label of the pod template to use
-      --no-brew              Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --no-brew              Disables the use of brew on macOS to install or upgrade command line dependencies
   -c, --request-cpu string   The request CPU of the dev pod (default "1")
   -s, --suffix string        The suffix to append the pod name
       --verbose              Enable verbose logging

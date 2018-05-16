@@ -64,7 +64,7 @@ jx install [flags]
       --local-cloud-environment             Ignores default cloud-environment-repo and uses current directory 
       --local-helm-repo-name string         The name of the helm repository for the installed Chart Museum (default "releases")
       --namespace string                    The namespace the Jenkins X platform should be installed into (default "jx")
-      --no-brew                             Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --no-brew                             Disables the use of brew on macOS to install or upgrade command line dependencies
       --no-default-environments             Disables the creation of the default Staging and Production environments
       --provider string                     Cloud service providing the kubernetes cluster.  Supported providers: aks, aws, eks, gke, jx-infra, kubernetes, minikube, minishift, openshift
       --recreate-existing-draft-repos       Delete existing helm repos used by Jenkins X under ~/draft/packs

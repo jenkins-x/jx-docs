@@ -37,7 +37,7 @@ jx get cve [flags]
   -h, --help                 help for cve
       --image-id string      Image ID in CVE engine if already known
       --image-name string    Full image name e.g. jenkinsxio/nexus 
-      --no-brew              Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --no-brew              Disables the use of brew on macOS to install or upgrade command line dependencies
       --verbose              Enable verbose logging
       --version string       Version or tag e.g. 0.0.1
 ```

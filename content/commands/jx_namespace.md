@@ -35,7 +35,7 @@ jx namespace [flags]
   -b, --batch-mode   In batch mode the command never prompts for user input
       --headless     Enable headless operation if using browser automation
   -h, --help         help for namespace
-      --no-brew      Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --no-brew      Disables the use of brew on macOS to install or upgrade command line dependencies
       --verbose      Enable verbose logging
 ```
 

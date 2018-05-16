@@ -37,7 +37,7 @@ jx init [flags]
       --ingress-namespace string        The namespace for the Ingress controller (default "kube-system")
       --ingress-service string          The name of the Ingress controller Service (default "jxing-nginx-ingress-controller")
       --namespace string                The namespace the Jenkins X platform should be installed into (default "jx")
-      --no-brew                         Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --no-brew                         Disables the use of brew on macOS to install or upgrade command line dependencies
       --provider string                 Cloud service providing the kubernetes cluster.  Supported providers: aks, aws, eks, gke, jx-infra, kubernetes, minikube, minishift, openshift
       --recreate-existing-draft-repos   Delete existing helm repos used by Jenkins X under ~/draft/packs
       --skip-ingress                    Dont install an ingress controller

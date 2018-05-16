@@ -22,7 +22,7 @@ toc: true
 | 特色 | 未计划 | 已计划 | 进行中 | 已发布 |
 | --- | --- | --- | --- | --- |
 | **操作系统** | | | | |
-| macOs | | | | 1.1.x |
+| macOS | | | | 1.1.x |
 | Linux | | | | 1.1.x |
 | Windows  | | [已计划](https://github.com/jenkins-x/jx/issues/228) | | |
 | **Cloud Providers** | | | | |
