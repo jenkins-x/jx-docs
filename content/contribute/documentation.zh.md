@@ -2,9 +2,9 @@
 title: 文档贡献
 linktitle: 文档
 description: 如何完善 Jenkins X 文档
-date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
+date: 2018-05-15
+publishdate: 2018-05-15
+lastmod: 2018-05-15
 categories: [contribute]
 keywords: [docs, documentation, community, contribute]
 menu:
@@ -164,8 +164,7 @@ The preceding `output` example will render as follows to the Jenkins X docs:
 
 > Without the threat of punishment, there is no joy in flight.
 
-However, you can add a quick and easy `<cite>` element (added on the client via JavaScript) by separating your main blockquote and the citation with a hyphen with a single space on each side:
-然而，
+然而，你可以简单快速地添加一个 `<cite>` 元素（通过 JavaScript 在客户端添加），通过在连字符两边添加空格来区分你的块引用和参考。
 
 ```
 > Without the threat of punishment, there is no joy in flight. - [Kobo Abe](https://en.wikipedia.org/wiki/Kobo_Abe)
@@ -181,15 +180,15 @@ Previous versions of Jenkins X documentation used blockquotes to draw attention 
 
 ## 警告
 
-**Admonitions** are common in technical documentation. The most popular is that seen in [reStructuredText Directives][sourceforge]. From the SourceForge documentation:
+**警告** 在技术性文档中是常见的。最常见的是在 [reStructuredText Directives][sourceforge]。从 SourceForge 的文档中摘录：
 
 > Admonitions are specially marked "topics" that can appear anywhere an ordinary body element can. They contain arbitrary body elements. Typically, an admonition is rendered as an offset block in a document, sometimes outlined or shaded, with a title matching the admonition type. - [SourceForge][sourceforge]
 
-The Jenkins X docs contain three admonitions: `note`, `tip`, and `warning`.
+Jenkins X 文档包含三种警告：`note`, `tip`, and `warning`。
 
 ### `note` 警告
 
-Use the `note` shortcode when you want to draw attention to information subtly. `note` is intended to be less of an interruption in content than is `warning`.
+当你想要巧妙地提示信息是，可以使用简码 `note` 。`note` 不像 `warning` 那样会打断内容。
 
 #### 示例 `note` 输入
 
@@ -215,7 +214,7 @@ Here is a piece of information I would like to draw your **attention** to.
 
 ### `tip` 警告
 
-Use the `tip` shortcode when you want to give the reader advice. `tip`, like `note`, is intended to be less of an interruption in content than is `warning`.
+当你想要给读者建议时，使用简码 `tip` 。`tip`， 有点像 `note`，不像 `warning` 那样会打断内容。
 
 #### 示例 `tip` 输入
 
