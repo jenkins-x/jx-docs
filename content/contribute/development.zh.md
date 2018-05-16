@@ -1,10 +1,10 @@
 ---
-title: Contribute to the code
-linktitle: Development
-description: How to contribute to Jenkins X development.
-date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
+title: 贡献代码
+linktitle: 开发
+description: 如何为 Jenkins X 的发展做贡献
+date: 2018-05-16
+publishdate: 2018-05-16
+lastmod: 2018-05-16
 categories: [contribute]
 keywords: [dev,open source]
 authors: [digitalcraftsman]
@@ -19,11 +19,11 @@ aliases: [/contribute/development/]
 toc: true
 ---
 
-## Introduction
+## 介绍
 
 Jenkins X is an open-source project and lives by the work of its [contributors][]. There are plenty of [open issues][issues], and we need your help to make Jenkins X even more awesome. You don't need to be a Go guru to contribute to the project's development.
 
-## Assumptions
+## 假设
 
 This contribution guide takes a step-by-step approach in hopes of helping newcomers. Therefore, we only assume the following:
 
@@ -34,13 +34,13 @@ This contribution guide takes a step-by-step approach in hopes of helping newcom
 If you're struggling at any point in this contribution guide, reach out to the Jenkins X community in [Jenkins X's Discussion forum](https://discourse.jenkins-x.io).
 {{% /note %}}
 
-## Install Go
+## 安装 Go
 
 The installation of Go should take only a few minutes. You have more than one option to get Go up and running on your machine.
 
 If you are having trouble following the installation guides for go, check out [Go Bootcamp, which contains setups for every platform][gobootcamp] or reach out to the Jenkins X community in the [Jenkins X Discussion Forums][forums].
 
-### Install Go From Source
+### 从源码安装 Go
 
 [Download the latest stable version of Go][godl] and follow the official [Golang installation guide][goinstall].
 
@@ -64,7 +64,7 @@ You can print the `GOPATH` with `echo $GOPATH`. You should see a non-empty strin
 /Users/<yourusername>/Code/go
 ```
 
-### Install Go with Homebrew
+### 使用 Homebrew 安装 Go
 
 If you are a macOS user and have [Homebrew](https://brew.sh/) installed on your machine, installing Go is as simple as the following command:
 
@@ -72,17 +72,17 @@ If you are a macOS user and have [Homebrew](https://brew.sh/) installed on your 
 brew install go
 {{< /code >}}
 
-### Install Go via GVM
+### 通过 GVM 安装 GO
 
 More experienced users can use the [Go Version Manager][gvm] (GVM). GVM allows you to switch between different Go versions *on the same machine*. If you're a beginner, you probably don't need this feature. However, GVM makes it easy to upgrade to a new released Go version with just a few commands.
 
 GVM comes in especially handy if you follow the development of Jenkins X over a longer period of time. Future versions of Jenkins X will usually be compiled with the latest version of Go. Sooner or later, you will have to upgrade if you want to keep up.
 
-## Create a GitHub Account
+## 创建一个 GitHub 账号
 
 If you're going to contribute code, you'll need to have an account on GitHub. Go to [www.github.com/join](https://github.com/join) and set up a personal account.
 
-## Install Git on Your System
+## 在你的系统上安装 Git
 
 You will need to have Git installed on your computer to contribute to Jenkins X development. Teaching git is outside the scope of the Jenkins X docs, but if you're looking for an excellent reference to learn the basics of Git, we recommend the [Git book][gitbook] if you are not sure where to begin. The used terminology will be explained with annotations.
 
@@ -94,11 +94,11 @@ Move back to the terminal and check if Git is already installed. Type in `git ve
 
 Finally, check again with `git version` if Git was installed successfully.
 
-### Git Graphical Front Ends
+### Git 图形化前端
 
 There are several [GUI clients](https://git-scm.com/downloads/guis) that help you to operate Git. Not all are available for all operating systems and maybe differ in their usage. Thus, so we will use the command line since the commands are everywhere the same.
 
-### Install Hub on Your System (Optional)
+### 在你的系统上安装 Hub（可选）
 
 Hub is a great tool for working with GitHub. The main site for it is [hub.github.com](https://hub.github.com/). Feel free to install this little Git wrapper.
 
@@ -121,11 +121,11 @@ git version 2.6.3
 hub version 2.2.2
 ```
 
-## Set up your working copy
+## 设置你的工作备份
 
 The working copy is set up locally on your computer. It's what you'll edit, compile, and end up pushing back to GitHub. The main steps are cloning the repository and creating your fork as a remote.
 
-### Clone the repository
+### 克隆仓库
 
 We assume that you've set up your `GOPATH` (see the section above if you're unsure about this). You should now copy the Jenkins X repository down to your computer. You'll hear this called "clone the repo". GitHub's [help pages](https://help.github.com/articles/cloning-a-repository/) give us a short explanation:
 
@@ -145,13 +145,13 @@ Jenkins X relies on [Testify](https://github.com/stretchr/testify) for testing G
 go get github.com/stretchr/testify
 ```
 
-### Fork the repository
+### 派生仓库
 
 If you're not fimiliar with this term, GitHub's [help pages](https://help.github.com/articles/fork-a-repo/) provide again a simple explanation:
 
 > A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.
 
-#### Fork by hand
+#### 手工派生
 
 Open the [Jenkins X repository](https://github.com/jenkins-x/jx) on GitHub and click on the "Fork" button in the top right.
 
@@ -173,7 +173,7 @@ Now Git needs to know that our fork exists by adding the copied remote url:
 git remote add <YOUR-GITHUB-USERNAME> <COPIED REMOTE-URL>
 ```
 
-#### Fork with Hub
+#### 使用 Hub 派生
 
 Alternatively, you can use the Git wrapper Hub. Hub makes forking a repository easy:
 
@@ -183,7 +183,7 @@ git fork
 
 That command will log in to GitHub using your account, create a fork of the repository that you're currently working in, and add it as a remote to your working copy.
 
-#### Trust, but verify
+#### 验证
 
 Let's check if everything went right by listing all known remotes:
 
@@ -200,9 +200,9 @@ origin  https://github.com/jenkins-x/jx (fetch)
 origin  https://github.com/jenkins-x/jx (push)
 ```
 
-## The Jenkins X Git Contribution Workflow
+## Jenkins X Git 贡献流程
 
-### Create a new branch
+### 创建新的分支
 
 You should never develop against the "master" branch. The development team will not accept a pull request against that branch. Instead, create a descriptive named branch and work on it.
 
@@ -221,7 +221,7 @@ git checkout -b <BRANCH-NAME>
 
 You can check on which branch your are with `git branch`. You should see a list of all local branches. The current branch is indicated with a little asterisk.
 
-### Contribute to Documentation
+### 贡献文档
 
 Perhaps you want to start contributing to the Jenkins X docs. If so, you can ignore most of the following steps and focus on the `/docs` directory within your newly cloned repository. You can change directories into the Jenkins X docs using `cd docs`.
 
@@ -229,7 +229,7 @@ You can start Jenkins X's built-in server via `hugo server`. Browse the document
 
 We have developed a [separate Jenkins X documentation contribution guide][docscontrib] for more information on how the Jenkins X docs are built, organized, and improved by the generosity of people like you.
 
-### Build Jenkins X
+### 构建 Jenkins X
 
 While making changes in the codebase it's a good idea to build the binary to test them:
 
@@ -237,12 +237,12 @@ While making changes in the codebase it's a good idea to build the binary to tes
 go build -o hugo main.go
 ```
 
-### Test 
+### 测试 
 Sometimes changes on the codebase can cause unintended side effects. Or they don't work as expected. Most functions have their own test cases. You can find them in files ending with `_test.go`.
 
 Make sure the commands `go test ./...` passes, and `go build` completes.
 
-### Formatting 
+### 格式 
 The Go code styleguide maybe is opiniated but it ensures that the codebase looks the same, regardless who wrote the code. Go comes with its own formatting tool. Let's apply the styleguide to our addtions:
 
 ```
@@ -259,13 +259,13 @@ git commit --message "YOUR COMMIT MESSAGE"
 
 The commit message should describe what the commit does (e.g. add feature XYZ), not how it is done.
 
-### Modify commits
+### 修改提交
 
 You noticed some commit messages don't fulfill the code contribution guidelines or you just forget something to add some files? No problem. Git provides the necessary tools to fix such problems. The next two methods cover all common cases.
 
 If you are unsure what a command does leave the commit as it is. We can fix your commits later in the pull request.
 
-#### Modify the last commit
+#### 修改最后一次提交
 
 Let's say you want to modify the last commit message. Run the following command and replace the current message:
 
@@ -287,7 +287,7 @@ git add --all
 git commit --amend
 ```
 
-#### Modify multiple commits
+#### 修改多次提交
 
 {{% warning "Be Careful Modifying Multiple Commits"%}}
 Modifications such as those described in this section can have serious unintended consequences. Skip this section if you're not sure!
@@ -346,7 +346,7 @@ Successfully rebased and updated refs/heads/<BRANCHNAME>.
 
 Check the commit log if everything looks as expected. Should an error occur you can abort this rebase with `git rebase --abort`.
 
-### Push commits
+### 推送提交
 
 To push our commits to the fork on GitHub we need to speficy a destination. A destination is defined by the remote and a branch name. Earlier, the defined that the remote url of our fork is the same as our GitHub handle, in my case `digitalcraftsman`. The branch should have the same as our local one. This makes it easy to identify corresponding branches.
 
@@ -358,7 +358,7 @@ Now Git knows the destination. Next time when you to push commits you just need 
 
 If you modified your commit history in the last step GitHub will reject your try to push. This is a safety-feature because the commit history isn't the same and new commits can't be appended as usual. You can enforce this push explicitly with `git push --force`.
 
-## Open a pull request
+## 打开一个 Pull Request
 
 We made a lot of progress. Good work. In this step we finally open a pull request to submit our additions. Open the [Jenkins X master repository](https://github.com/jenkins-x/jx/) on GitHub in your browser.
 
@@ -368,13 +368,13 @@ You should find a green button labeld with "New pull request". But GitHub is cle
 
 The new page summaries the most important information of your pull request. Scroll down and you find the additions of all your commits. Make sure everything looks as expected and click on "Create pull request".
 
-### Accept the contributor license agreement
+### 同意贡献者授权协议
 
 Last but not least you should accept the contributor license agreement (CLA). A new comment should be added automatically to your pull request. Click on the yellow badge, accept the agreement and authenticate yourself with your GitHub account. It just takes a few clicks and only needs to be done once.
 
 ![Accept the CLA](/images/contribute/development/accept-cla.png)
 
-### Automatic builds
+### 自动化构建
 
 We use the [Travis CI loop](https://travis-ci.org/jenkins-x/jx) (Linux and OS&nbsp;X) and [AppVeyor](https://ci.appveyor.com/project/jenkins-x/jx/branch/master) (Windows) to compile Jenkins X with your additions. This should ensure that everything works as expected before merging your pull request. This in most cases only relevant if you made changes to the codebase of Jenkins X.
 
@@ -384,17 +384,17 @@ Above you can see that Travis wasn't able to compile the changes in this pull re
 
 If you have questions, leave a comment in the pull request. We are willing to assist you.
 
-## Where to start?
+## 从哪里开始？
 
 Thank you for reading through this contribution guide. Hopefully, we will see you again soon on GitHub. There are plenty of [open issues][issues] for you to help with.
 
 Feel free to [open an issue][newissue] if you think you found a bug or you have a new idea to improve Jenkins X. We are happy to hear from you.
 
-## Additional References for Learning Git and Golang
+## 学习 Git 和 Golang 的参考
 
-* [Codecademy's Free "Learn Git" Course][codecademy] (Free)
-* [Code School and GitHub's "Try Git" Tutorial][trygit] (Free)
-* [The Git Book][gitbook] (Free)
+* [Codecademy's Free "Learn Git" Course][codecademy] (免费)
+* [Code School and GitHub's "Try Git" Tutorial][trygit] (免费)
+* [The Git Book][gitbook] (免费)
 * [Go Bootcamp][gobootcamp]
 * [GitHub Pull Request Tutorial, Thinkful][thinkful]
 
