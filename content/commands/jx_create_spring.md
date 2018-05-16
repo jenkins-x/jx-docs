@@ -60,7 +60,7 @@ jx create spring [flags]
   -l, --language string                Language to generate
       --list-packs                     list available draft packs
       --name string                    Specify the git repository name to import the project into (if it is not already in one)
-      --no-brew                        Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --no-brew                        Disables the use of brew on macOS to install or upgrade command line dependencies
       --no-draft                       Disable Draft from trying to default a Dockerfile and Helm Chart
       --no-import                      Disable import after the creation
       --no-jenkinsfile                 Disable defaulting a Jenkinsfile if its missing

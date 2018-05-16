@@ -23,7 +23,7 @@ jx step pr comment [flags]
   -c, --comment string        comment to add to the Pull Request
       --headless              Enable headless operation if using browser automation
   -h, --help                  help for comment
-      --no-brew               Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --no-brew               Disables the use of brew on macOS to install or upgrade command line dependencies
   -o, --owner string          git organisation / owner
   -p, --pull-request string   git pull request number
   -r, --repository string     git repository

@@ -36,7 +36,7 @@ jx create addon anchore [flags]
       --helm-update         Should we run helm update first to ensure we use the latest version (default true)
   -h, --help                help for anchore
   -n, --namespace string    The Namespace to install into (default "anchore")
-      --no-brew             Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --no-brew             Disables the use of brew on macOS to install or upgrade command line dependencies
   -p, --password string     The default password to use for Anchore (default "anchore")
   -r, --release string      The chart release name (default "anchore")
       --verbose             Enable verbose logging

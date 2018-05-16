@@ -33,7 +33,7 @@ jx step next-version [flags]
   -f, --filename string    Filename that contains version property to update, e.g. package.json
       --headless           Enable headless operation if using browser automation
   -h, --help               help for next-version
-      --no-brew            Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --no-brew            Disables the use of brew on macOS to install or upgrade command line dependencies
   -t, --tag                tag and push new version
       --use-git-tag-only   only use a git tag so work out new semantic version, else specify filename [pom.xml,package.json,Makefile,Chart.yaml]
       --verbose            Enable verbose logging

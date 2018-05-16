@@ -44,7 +44,7 @@ jx promote [application] [flags]
   -u, --helm-repo-url string            The Helm Repository URL to use for the App (default "http://jenkins-x-chartmuseum:8080")
   -h, --help                            help for promote
   -n, --namespace string                The Namespace to promote to
-      --no-brew                         Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --no-brew                         Disables the use of brew on macOS to install or upgrade command line dependencies
       --no-helm-update                  Allows the 'helm repo update' command if you are sure your local helm cache is up to date with the version you wish to promote
       --no-merge                        Disables automatic merge of promote Pull Requests
       --pull-request-poll-time string   Poll time when waiting for a Pull Request to merge (default "20s")

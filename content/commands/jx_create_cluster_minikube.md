@@ -57,7 +57,7 @@ jx create cluster minikube [flags]
       --local-helm-repo-name string         The name of the helm repository for the installed Chart Museum (default "releases")
   -m, --memory string                       Amount of RAM allocated to the minikube VM in MB. Defaults to 4096 MB.
       --namespace string                    The namespace the Jenkins X platform should be installed into (default "jx")
-      --no-brew                             Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --no-brew                             Disables the use of brew on macOS to install or upgrade command line dependencies
       --no-default-environments             Disables the creation of the default Staging and Production environments
       --recreate-existing-draft-repos       Delete existing helm repos used by Jenkins X under ~/draft/packs
       --register-local-helmrepo             Registers the Jenkins X chartmuseum registry with your helm client [default false]

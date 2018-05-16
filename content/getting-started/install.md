@@ -20,7 +20,7 @@ toc: true
 
 Pick the most suitable instructions for your operating system:
 
-### macOs
+### macOS
 
 On a Mac you can use brew:
 

@@ -42,7 +42,7 @@ jx create issue [flags]
       --headless            Enable headless operation if using browser automation
   -h, --help                help for issue
   -l, --label stringArray   The labels to add to the issue
-      --no-brew             Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --no-brew             Disables the use of brew on macOS to install or upgrade command line dependencies
   -t, --title string        The title of the issue to create
       --verbose             Enable verbose logging
 ```

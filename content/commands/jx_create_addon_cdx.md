@@ -33,7 +33,7 @@ jx create addon cdx [flags]
       --helm-update        Should we run helm update first to ensure we use the latest version (default true)
   -h, --help               help for cdx
   -n, --namespace string   The Namespace to install into (default "jx")
-      --no-brew            Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --no-brew            Disables the use of brew on macOS to install or upgrade command line dependencies
   -r, --release string     The chart release name (default "cdx")
       --verbose            Enable verbose logging
 ```

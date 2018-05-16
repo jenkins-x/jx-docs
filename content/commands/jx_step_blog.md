@@ -35,7 +35,7 @@ jx step blog [flags]
   -f, --from-date string           The date to create the charts from. Defaults to a week before the to date. Should be a format: January 2 2006
       --headless                   Enable headless operation if using browser automation
   -h, --help                       help for blog
-      --no-brew                    Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --no-brew                    Disables the use of brew on macOS to install or upgrade command line dependencies
   -t, --to-date string             The date to query up to. Defaults to now. Should be a format: January 2 2006
       --user-channel-members int   If no chat bots can connect to your chat server you can pass in the counts for the user channel here
       --verbose                    Enable verbose logging

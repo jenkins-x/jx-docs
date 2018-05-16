@@ -61,7 +61,7 @@ jx step changelog [flags]
       --header-file string         The file name of the changelog header in markdown for the changelog. Can use go template expressions on the ReleaseSpec object: https://golang.org/pkg/text/template/
       --headless                   Enable headless operation if using browser automation
   -h, --help                       help for changelog
-      --no-brew                    Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --no-brew                    Disables the use of brew on macOS to install or upgrade command line dependencies
       --output-markdown string     The file to generate for the changelog output if not updating a git provider release
   -o, --overwrite                  overwrites the Release CRD YAML file if it exists
       --previous-date string       the previous date to find a revision in format 'MonthName dayNumber year'
