@@ -10,13 +10,14 @@ Documentation site for [Jenkins X](http://jenkins-x.io/)
 To edit the docs locally and try out what the [website](http://jenkins-x.io/) will look like then you need to clone this repository:
 
 ```bash
-git clone https://github.com/jenkins-x/jx-docs.git
+$ git clone https://github.com/jenkins-x/jx-docs.git
 ```
 
-Then to view the docs in your browser, [download and run Hugo](https://gohugo.io/) and open up the link:
+Then to view the docs in your browser, [install Hugo](https://gohugo.io/). Navigate to the directory and run hugo server. and open up the link:
 
 ```bash
-▶ hugo server
+$ cd jx-docs
+$ hugo server
 
 Started building sites ...
 .
