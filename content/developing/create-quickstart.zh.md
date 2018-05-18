@@ -17,8 +17,8 @@ toc: true
 ---
 
 你可以由预制的应用开始一个项目，而不是从头开始。 
-                
-你可以通过命令 [jx create quickstart](/zh/commands/jx_create_quickstart) ，从我们预制的快速应用列表中创建一个新的应用。
+
+你可以通过命令 [jx create quickstart](/commands/jx_create_quickstart) ，从我们预制的快速应用列表中创建一个新的应用。
 
 ```shell
 $ jx create quickstart
