@@ -32,6 +32,8 @@ After its installed hit `Reload` and you should be good to go.
 
 If you then expand the `JENKINS X` navigation window you should see UI that updates in real time as you create projects, as Pull Requests are raised or code is merged to master.
 
+<img src="/images/vscode.png">
+
 ### Features
 
 * browse all the pipelines in your team with real time updates as release or pull request pipelines start/stop.
