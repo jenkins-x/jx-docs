@@ -33,7 +33,6 @@ You could try using the [riot app for #jenkins-x](https://riot.im/app/#/room/#fr
 
 Got any thoughts, ideas or feedback then please drop them in a [GitHub Issue](https://github.com/jenkins-x/jx/issues/new)
 
-
 ### Email
 
 If you prefer email then join us on the [jenkins-x mailing list](https://groups.google.com/forum/#!forum/jenkins-x)
