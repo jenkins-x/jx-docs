@@ -26,7 +26,7 @@ sections_weight: 5
 * [Want to Help Build CloudBees for Kubernetes with Jenkins X?](https://www.cloudbees.com/blog/want-help-build-cloudbees-kubernetes-jenkins-x) by Rob Davies on 2nd May, 2018
 * [Jenkins X: Announcing CVE docker image analysis with Anchore](https://jenkins.io/blog/2018/05/08/jenkins-x-anchore/) by James Rawlings on 8th May, 2018
 * [Activiti Cloud & Jenkins X: Blueprint in AWS and GCE](https://salaboy.com/2018/05/15/activiti-cloud-jenkins-x-blueprint-in-aws-and-gce/) by [Salaboy](https://salaboy.com/) on 15th May, 2018
-
+* [CI/CD with Jenkins-x on your existing (GKE) cluster — ruby on rails application](https://medium.com/@maniankara/ci-cd-with-jenkins-x-on-your-existing-gke-cluster-ruby-on-rails-application-785d8390a857) by [anoop vijayan maniankara](https://medium.com/@maniankara) on May 20th, 2018
 
 Also check out the [Jenkins X Blog](/news/)
 
