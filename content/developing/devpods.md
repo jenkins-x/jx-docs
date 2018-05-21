@@ -117,7 +117,9 @@ jx get applications
 
 Now if you edit code and trigger a docker rebuild, which for most languages is just changing the source code; though for Java apps its whenever you rebuild the jar - the image is regenerated and the helm chart updated!        
 
+## Using an IDE
 
+One of the easiest ways to get started with DevPods is via an IDE such as [VS Code](https://code.visualstudio.com/). Check out the [Jenkins X plugins for IDEs](/developing/ide/)
 
 
 

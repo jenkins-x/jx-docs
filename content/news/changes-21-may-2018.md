@@ -25,7 +25,7 @@ We still found plenty of time to fix issues and add new features as you can see 
 
 We've now [lots more quickstarts](quickstarts) such as rails and python support. There's a [great blog on that here](https://medium.com/@maniankara/ci-cd-with-jenkins-x-on-your-existing-gke-cluster-ruby-on-rails-application-785d8390a857).
 
-One big change in the project is the new [jx tools VS Code Extension](https://github.com/jenkins-x/vscode-jx-tools) which we'll blog about soon in detail to walk through all the capabilities we've got & how to get started using it.
+One big change in the project is the new [VS Code Extension](/developing/ide/) which we'll blog about soon in detail to walk through all the capabilities we've got & how to get started using it.
 
 ## Metrics
 
