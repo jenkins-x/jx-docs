@@ -45,6 +45,13 @@ One of Jenkins big strengths has always been its flexibility and huge ecosystem 
 plugins and capabilities. The separate Jenkins X sub project helps the community iterate and go fast
 improving both the Cloud Native and the classic distributions of Jenkins in parallel.                   
 
+### What are the credentials to access core services?
+
+Authenticated core services of Jenkins X include Jenkins, Nexus, Chartmuseum.  The username is `admin` and the password by default is generated and printed out in the terminal after `jx create cluster` or `jx install`.  If you would like to set the default password yourself then you can set the flag `--default-admin-password=foo` to the two comamnds above.
+
+If you don't have the terminal console output anymore you can look in the local file `~/.jx/jenkinsAuth.yaml` and find the password that matches your Jenkins server URL for the desired cluster.
+
+
 ### Cannot create cluster minikube
 If you are using a Mac then `hyperkit` is the best VM driver to use - but does require you to install a recent [Docker for Mac](https://docs.docker.com/docker-for-mac/install/) first. Maybe try that then retry `jx create cluster minikube`?
 
