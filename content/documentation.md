@@ -15,4 +15,3 @@ toc: false
 layout: documentation-home
 ---
 Jenkins X is a CI / CD platform for Kubernetes
-

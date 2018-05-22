@@ -24,7 +24,6 @@ The Kubernetes community [hangs out on Slack](http://slack.k8s.io/) at [slack.k8
 * [\#jenkins-x-user](https://kubernetes.slack.com/messages/C9MBGQJRH) for users of Jenkins X
 * [\#jenkins-x-dev](https://kubernetes.slack.com/messages/C9LTHT2BB) for developers of Jenkins X
 
-
 ## Office Hours
 
 We meet every other Thursday at 5pm BST / 12pm US Eastern at [https://jenkins.io/hangout](https://jenkins.io/hangout). 
@@ -44,7 +43,6 @@ Got any thoughts, ideas or feedback then please drop them in a [GitHub Issue](ht
 Jenkins folks tend to use IRC so we have an IRC room **#jenkins-x** IRC room on **freenode.net**
 
 You could try using the [riot app for #jenkins-x](https://riot.im/app/#/room/#freenode_#jenkins-x:matrix.org)
-
 
 ## Email
 

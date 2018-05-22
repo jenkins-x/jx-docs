@@ -13,7 +13,7 @@ To edit the docs locally and try out what the [website](http://jenkins-x.io/) wi
 $ git clone https://github.com/jenkins-x/jx-docs.git
 ```
 
-Then to view the docs in your browser, [install Hugo](https://gohugo.io/). Navigate to the directory and run hugo server. and open up the link:
+Then to view the docs in your browser, [install Hugo](https://gohugo.io/). Navigate to the directory, run hugo server, and open up the link:
 
 ```bash
 $ cd jx-docs

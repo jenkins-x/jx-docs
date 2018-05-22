@@ -46,7 +46,8 @@ toc: true
 | GitHub | | | | 1.1.x |
 | GitHub Enterprise | | | | 1.1.68 |
 | Gitea | | | [In Progress](https://github.com/jenkins-x/jx/issues/432) | |
-| BitBucket | | | [In Progress](https://github.com/jenkins-x/jx/issues/36) | |
+| BitBucket Server | | | [In Progress](https://github.com/jenkins-x/jx/issues/36) | |
+| BitBucket Cloud | | | | 1.2.70 |
 | GitLab | | | [In Progress](https://github.com/jenkins-x/jx/issues/40) | |
 | **Issue Trackers** | | | | |
 | GitHub | | | | 1.1.x |
