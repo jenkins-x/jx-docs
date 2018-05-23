@@ -1,5 +1,5 @@
 ---
-date: 2018-05-23T17:39:39Z
+date: 2018-05-23T22:33:20Z
 title: "jx step split"
 slug: jx_step_split
 url: /commands/jx_step_split/
