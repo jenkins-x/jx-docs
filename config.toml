@@ -39,15 +39,15 @@ pygmentsStyle = "friendly"
     weight = 2
     languageName = "中文"
     [[languages.zh.menu.global]]
-      name = "新闻"
-      weight = 1
-      identifier = "news"
-      url = "/zh/news"
-    [[languages.zh.menu.global]]
       name = "文档"
-      weight = 5
+      weight = 1
       identifier = "docs"
       url = "/zh/documentation"
+    [[languages.zh.menu.global]]
+      name = "新闻"
+      weight = 5
+      identifier = "news"
+      url = "/zh/news"
     [[languages.zh.menu.global]]
       name = "社区"
       weight = 150
