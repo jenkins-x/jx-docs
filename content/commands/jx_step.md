@@ -1,5 +1,5 @@
 ---
-date: 2018-05-23T15:08:56Z
+date: 2018-05-23T17:39:39Z
 title: "jx step"
 slug: jx_step
 url: /commands/jx_step/
@@ -32,6 +32,7 @@ jx step [flags]
 * [jx step nexus](/commands/jx_step_nexus/)	 - nexus [command]
 * [jx step post](/commands/jx_step_post/)	 - post step actions
 * [jx step pr](/commands/jx_step_pr/)	 - pipeline step pr
+* [jx step report](/commands/jx_step_report/)	 - report step actions
 * [jx step split](/commands/jx_step_split/)	 - Mirrors the code from a monorepo into separate microservice style git repositories so its easier to do finer grained releases
 * [jx step tag](/commands/jx_step_tag/)	 - Creates a git tag and pushes to remote repo
 * [jx step validate](/commands/jx_step_validate/)	 - Validates the command line tools, container and platform to ensure a pipeline can run properly
