@@ -1,5 +1,5 @@
 ---
-date: 2018-05-24T09:20:41Z
+date: 2018-05-24T14:48:21Z
 title: "jx create"
 slug: jx_create
 url: /commands/jx_create/
@@ -44,6 +44,7 @@ jx create [flags]
 * [jx create git](/commands/jx_create_git/)	 - Creates a git resource
 * [jx create issue](/commands/jx_create_issue/)	 - Create an issue on the git project for the current directory
 * [jx create jenkins](/commands/jx_create_jenkins/)	 - Creates a jenkins resource
+* [jx create jhipster](/commands/jx_create_jhipster/)	 - Create a new JHipster based application and import the generated code into git and Jenkins for CI/CD
 * [jx create lile](/commands/jx_create_lile/)	 - Create a new lile based application and import the generated code into git and Jenkins for CI/CD
 * [jx create micro](/commands/jx_create_micro/)	 - Create a new micro based application and import the generated code into git and Jenkins for CI/CD
 * [jx create quickstart](/commands/jx_create_quickstart/)	 - Create a new app from a Quickstart and import the generated code into git and Jenkins for CI/CD

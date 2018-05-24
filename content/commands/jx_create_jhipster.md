@@ -1,36 +1,35 @@
 ---
 date: 2018-05-24T14:48:21Z
-title: "jx create quickstart"
-slug: jx_create_quickstart
-url: /commands/jx_create_quickstart/
+title: "jx create jhipster"
+slug: jx_create_jhipster
+url: /commands/jx_create_jhipster/
 ---
-## jx create quickstart
+## jx create jhipster
 
-Create a new app from a Quickstart and import the generated code into git and Jenkins for CI/CD
+Create a new JHipster based application and import the generated code into git and Jenkins for CI/CD
 
 ### Synopsis
 
-Create a new project from a sample/starter (found in https://github.com/jenkins-x-quickstarts) 
+Creates a new JHipster application and then optionally setups CI/CD pipelines and GitOps promotion. 
 
-This will create a new project for you from the selected template. It will exclude any work-in-progress repos (containing the "WIP-" pattern) 
+JHipster is an application generator for gRPC services in Go with a set of tools/libraries. 
 
-For more documentation see: http://jenkins-x.io/developing/create-quickstart/
+This command is expected to be run within your '$GOHOME' directory. e.g. at '$GOHOME/src/github.com/myOrgOrUser/' 
+
+For more documentation about jhipster see: https://github.com/jhipsterio/jhipster
 
 ```
-jx create quickstart [flags]
+jx create jhipster [flags]
 ```
 
 ### Examples
 
 ```
-  Create a new project from a sample/starter (found in https://github.com/jenkins-x-quickstarts)
+  # Create a JHipster application and be prompted for the folder name
+  jx create jhipster
   
-  This will create a new project for you from the selected template.
-  It will exclude any work-in-progress repos (containing the "WIP-" pattern)
-  
-  jx create quickstart
-  
-  jx create quickstart -f http
+  # Create a JHipster application in the myname sub-folder folder
+  jx create jhipster myname
 ```
 
 ### Options
@@ -41,17 +40,13 @@ jx create quickstart [flags]
       --credentials string             The Jenkins credentials name used by the job
       --default-owner string           The default user/organisation used if no user is found for the current git repository being imported (default "someone")
       --dry-run                        Performs local changes to the repo but skips the import into Jenkins X
-  -f, --filter string                  The text filter
-      --framework string               The framework to filter on
       --git-api-token string           The git API token to use for creating new git repositories
-      --git-host string                The Git server host if not using GitHub when pushing created project
       --git-provider-url string        The git server URL to create new git repositories inside
       --git-username string            The git username to use for creating new git repositories
       --headless                       Enable headless operation if using browser automation
-  -h, --help                           help for quickstart
+  -h, --help                           help for jhipster
       --import-commit-message string   Should we override the Jenkinsfile in the project?
       --jenkinsfile string             The name of the Jenkinsfile to use. If not specified then 'Jenkinsfile' will be used
-  -l, --language string                The language to filter on
       --list-packs                     list available draft packs
       --name string                    Specify the git repository name to import the project into (if it is not already in one)
       --no-brew                        Disables the use of brew on MacOS to install or upgrade command line dependencies
@@ -59,11 +54,8 @@ jx create quickstart [flags]
       --no-import                      Disable import after the creation
       --no-jenkinsfile                 Disable defaulting a Jenkinsfile if its missing
       --org string                     Specify the git provider organisation to import the project into (if it is not already in one)
-  -g, --organisations stringArray      The github organisations to query for quickstarts
   -o, --output-dir string              Directory to output the project to. Defaults to the current directory
-      --owner string                   The owner to filter on
       --pack string                    The name of the pack to use
-  -t, --tag stringArray                The tags on the quickstarts to filter
       --verbose                        Enable verbose logging
 ```
 

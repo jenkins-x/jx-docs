@@ -1,5 +1,5 @@
 ---
-date: 2018-05-24T09:20:41Z
+date: 2018-05-24T14:48:21Z
 title: "jx"
 slug: jx
 url: /commands/jx/
@@ -33,6 +33,7 @@ jx [flags]
 * [jx delete](/commands/jx_delete/)	 - Deletes one or many resources
 * [jx edit](/commands/jx_edit/)	 - Edit a resource
 * [jx environment](/commands/jx_environment/)	 - View or change the current environment in the current kubernetes cluster
+* [jx gc](/commands/jx_gc/)	 - Garbage collects Jenkins X resources
 * [jx get](/commands/jx_get/)	 - Display one or many resources
 * [jx import](/commands/jx_import/)	 - Imports a local project or git repository into Jenkins
 * [jx init](/commands/jx_init/)	 - Init Jenkins X
