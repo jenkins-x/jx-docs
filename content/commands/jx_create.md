@@ -1,5 +1,5 @@
 ---
-date: 2018-05-24T14:48:21Z
+date: 2018-05-24T21:04:49Z
 title: "jx create"
 slug: jx_create
 url: /commands/jx_create/
@@ -35,6 +35,7 @@ jx create [flags]
 * [jx](/commands/jx/)	 - jx is a command line tool for working with Jenkins X
 * [jx create addon](/commands/jx_create_addon/)	 - Creates an addon
 * [jx create archetype](/commands/jx_create_archetype/)	 - Create a new app from a Maven Archetype and import the generated code into git and Jenkins for CI/CD
+* [jx create branchpattern](/commands/jx_create_branchpattern/)	 - Create a git branch pattern for your team
 * [jx create chat](/commands/jx_create_chat/)	 - Creates a chat server resource
 * [jx create cluster](/commands/jx_create_cluster/)	 - Create a new kubernetes cluster
 * [jx create devpod](/commands/jx_create_devpod/)	 - Creates a Developer Pod for running builds and tests inside the cluster
@@ -48,6 +49,7 @@ jx create [flags]
 * [jx create lile](/commands/jx_create_lile/)	 - Create a new lile based application and import the generated code into git and Jenkins for CI/CD
 * [jx create micro](/commands/jx_create_micro/)	 - Create a new micro based application and import the generated code into git and Jenkins for CI/CD
 * [jx create quickstart](/commands/jx_create_quickstart/)	 - Create a new app from a Quickstart and import the generated code into git and Jenkins for CI/CD
+* [jx create quickstartlocation](/commands/jx_create_quickstartlocation/)	 - Create a location of quickstarts for your team
 * [jx create spring](/commands/jx_create_spring/)	 - Create a new spring boot application and import the generated code into git and Jenkins for CI/CD
 * [jx create token](/commands/jx_create_token/)	 - Creates a new user token for a service
 * [jx create tracker](/commands/jx_create_tracker/)	 - Creates an issue tracker resource
