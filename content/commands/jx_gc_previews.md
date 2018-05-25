@@ -1,5 +1,5 @@
 ---
-date: 2018-05-25T11:26:48Z
+date: 2018-05-25T11:52:33Z
 title: "jx gc previews"
 slug: jx_gc_previews
 url: /commands/jx_gc_previews/
@@ -10,7 +10,7 @@ garbage collection for preview environments
 
 ### Synopsis
 
-Gargabe collect Jenkins X preview environments.  If a pull request is merged or closed the associated preview environment will be deleted.
+Garbage collect Jenkins X preview environments.  If a pull request is merged or closed the associated preview environment will be deleted.
 
 ```
 jx gc previews [flags]

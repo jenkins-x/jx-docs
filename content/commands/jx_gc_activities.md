@@ -1,5 +1,5 @@
 ---
-date: 2018-05-25T11:26:48Z
+date: 2018-05-25T11:52:33Z
 title: "jx gc activities"
 slug: jx_gc_activities
 url: /commands/jx_gc_activities/
@@ -10,7 +10,7 @@ garbage collection for activities
 
 ### Synopsis
 
-Gargabe collect the Jenkins X Activity Custom Resource Definitions
+Garbage collect the Jenkins X Activity Custom Resource Definitions
 
 ```
 jx gc activities [flags]
@@ -26,7 +26,8 @@ jx gc activities [flags]
 ### Options
 
 ```
-  -h, --help   help for activities
+  -h, --help                         help for activities
+      --revision-history-limit int   Minimum number of Activities per application to keep (default 5)
 ```
 
 ### SEE ALSO

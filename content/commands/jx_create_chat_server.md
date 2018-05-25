@@ -1,5 +1,5 @@
 ---
-date: 2018-05-25T11:26:48Z
+date: 2018-05-25T11:52:33Z
 title: "jx create chat server"
 slug: jx_create_chat_server
 url: /commands/jx_create_chat_server/
