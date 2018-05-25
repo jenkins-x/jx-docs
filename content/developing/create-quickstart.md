@@ -90,3 +90,37 @@ $ jx create quickstart  -l go --organisations my-github-org
 ```
 
 Then all quickstarts found in `my-github-org` will be listed in addition to the Jenkins X quickstarts.
+
+## Customising your teams quickstarts
+
+You can configure at a team level the quickstarts which are presented to you in the `jx create quickstart` command. These settings are stored in the [Environment Custom Resource](/architecture/custom-resources/) in Kubernetes.
+
+To add the location of a set of quickstarts you can use the [jx create quickstartlocation](/commands/jx_create_quickstartlocation/) command.
+
+
+```shell
+$ jx create quickstartlocation --url https://mygit.server.com --owner my-quickstarts
+```  
+
+If you omit the `--url` argument the command will assume its a [GitHub](https://github.com/) repository. Note that both public and private repositories are supported.
+
+This means you can have your own shared private quickstarts to reuse within your organisation. Of course we'd obviously prefer you to [share your quickstarts with us via open source](https://github.com/jenkins-x/jx/issues/new?labels=quickstart&title=Add%20quickstart&body=Please%20add%20this%20github%20quickstart:) then we can include your quickstart with the entire [community](/community) - but there may be times you want to curate your own internal quickstarts using proprietary software. 
+
+You can also specify `--includes` or `--excludes` patterns to filter the names of the repositories where `*` matches anything and `foo*` matches anything starting with `foo`. e.g. you could just include the languages and technologies your organisation supports and exclude the rest etc. 
+
+Also note that you can use the alias of `qsloc` instead of `quickstartlocation` if you like shorter aliases ;)
+
+You can then view the current quickstart locations for your team via the [jx get quickstartlocations](/commands/jx_get_quickstartlocations/) command:
+
+```shell
+$ jx get quickstartlocations
+```  
+
+Or using an abbreviation
+  
+```shell
+$ jx get qsloc
+```  
+  
+There is also [jx delete quickstartlocation](http://localhost:1313/commands/jx_delete_quickstartlocation/) if you need to remove a git organisation.  
+                                                                                                 

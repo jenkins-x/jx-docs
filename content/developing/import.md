@@ -46,7 +46,7 @@ If you are importing a repository that does not create a docker image you can us
 If you wish to import a project which is already in a remote git repository then you can use the `--url`  argument:
 
 ```shell
-    jx import --url https://github.com/jenkins-x/spring-boot-web-example.git
+$ jx import --url https://github.com/jenkins-x/spring-boot-web-example.git
 ```
 
 ### Importing GitHub projects
@@ -54,7 +54,7 @@ If you wish to import a project which is already in a remote git repository then
 If you wish to import projects from a github organisation you can use:
  
 ```shell
-    jx import --github --org myname
+$ jx import --github --org myname
 ```
 
 You will be prompted for the repositories you wish to import. Use the cursor keys and space bar to select/deselect the repositories to import.
@@ -62,12 +62,49 @@ You will be prompted for the repositories you wish to import. Use the cursor key
 If you wish to default all repositories to be imported (then deselect any you don't want add `--all`:
    
 ```shell
-    jx import --github --org myname --all
+$ jx import --github --org myname --all
 ```
 
 To filter the list you can add a `--filter`
 
 ```shell
-    jx import --github --org myname --all --filter foo
+$ jx import --github --org myname --all --filter foo
 ```  
+  
+## Branch patterns
+
+When importing projects into Jenkins X we use git branch patterns to determine which branch names are automatically setup for CI/CD.
+
+Typically that may default to something like `master|PR-.*|feature.*`. That means that the `master` branch, any branch starting with `PR-` or `feature` will be scanned to look for a `Jenkinsfile` to setup the CI/CD pipelines.
+
+If you use another branch name than `master` such as `develop` or whatever you can change this pattern to be whatever you you like via the `--branches` argument whenever you run [jx import](/commands/jx_import), [jx create spring](/commands/jx_create_spring) or [jx create quickstart](/commands/jx_create_quickstart).
+
+
+```shell
+$ jx import --branches "develop|PR-.*|feature.*"
+```  
+  
+You may wish to set this to just `.*` to work with all branches,.
+
+```shell
+$ jx import --branches ".*"
+```  
+  
+## Configuring your teams branch patterns
+
+Usually a team uses the same naming conventions for branches so you may wish to configure the branch patterns at a team level so that they will be used by default if anyone in your team runs [jx import](/commands/jx_import), [jx create spring](/commands/jx_create_spring) or [jx create quickstart](/commands/jx_create_quickstart). 
+
+These settings are stored in the [Environment Custom Resource](/architecture/custom-resources/) in Kubernetes.
+
+To set the branch patterns for your team  [jx create branchpattern](/commands/jx_create_branchpattern/) command.
+
+```shell
+$ jx create branchpattern  "develop|PR-.*|feature.*"
+```  
+You can then view the current branch patterns for your team via the [jx get branchpattern](/commands/jx_get_branchpattern/) command:
+
+```shell
+$ jx get branchpattern
+```  
+  
   
