@@ -1,5 +1,5 @@
 ---
-date: 2018-05-25T08:53:42Z
+date: 2018-05-25T11:26:48Z
 title: "jx delete quickstartlocation"
 slug: jx_delete_quickstartlocation
 url: /commands/jx_delete_quickstartlocation/
@@ -10,7 +10,9 @@ Deletes one or more quickstart locations for your team
 
 ### Synopsis
 
-Deletes one or more quickstart locations for your team
+Deletes one or more quickstart locations for your team 
+
+For more documentation see: https://jenkins-x.io/developing/create-quickstart/#customising-your-teams-quickstarts
 
 ```
 jx delete quickstartlocation [flags]
@@ -19,8 +21,17 @@ jx delete quickstartlocation [flags]
 ### Examples
 
 ```
-  # Deletes a quickstart location for your team
-  jx delete tracker token -n jira myusername
+  # Pick a quickstart location to delete for your team
+  jx delete quickstartlocation
+  
+  # Pick a quickstart location to delete for your team using an abbreviation
+  jx delete qsloc
+  
+  # Delete a github organisation 'myorg' for your team
+  jx delete qsloc --owner myorg
+  
+  # Delete a specific location for your team
+  jx delete qsloc --url https://foo.com --owner myowner
 ```
 
 ### Options

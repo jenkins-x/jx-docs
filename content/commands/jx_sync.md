@@ -1,5 +1,5 @@
 ---
-date: 2018-05-25T08:53:42Z
+date: 2018-05-25T11:26:48Z
 title: "jx sync"
 slug: jx_sync
 url: /commands/jx_sync/
@@ -28,16 +28,11 @@ jx sync [flags]
 ### Options
 
 ```
-  -c, --container string         The name of the container to log
-      --daemon                   Runs ksync in a background daemon
-  -d, --dir string               The directory to watch. Defaults to the current directory
-  -h, --help                     help for sync
-  -n, --namespace string         the namespace to look for the Deployment. Defaults to the current namespace
-      --no-init                  Disables the use of 'ksync init' to ensure we have initialised ksync
-  -p, --pod string               the pod name to use
-      --reload                   Should we reload the remote container on file changes?
-  -r, --remote-dir string        The remote directory in the DevPod to sync
-      --watch-only ksync watch   Should we just run the ksync watch command only
+      --daemon                    Runs ksync in a background daemon
+  -h, --help                      help for sync
+      --no-init                   Disables the use of 'ksync init' to ensure we have initialised ksync
+      --single-mode ksync watch   Terminates eagerly if ksync watch fails
+      --watch-only                Deprecated this flag is now ignored!
 ```
 
 ### SEE ALSO

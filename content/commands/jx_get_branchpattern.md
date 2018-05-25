@@ -1,5 +1,5 @@
 ---
-date: 2018-05-25T08:53:42Z
+date: 2018-05-25T11:26:48Z
 title: "jx get branchpattern"
 slug: jx_get_branchpattern
 url: /commands/jx_get_branchpattern/
@@ -10,7 +10,9 @@ Display the git branch patterns for the current Team used on creating and import
 
 ### Synopsis
 
-Display the git branch patterns for the current Team used on creating and importing projects
+Display the git branch patterns for the current Team used on creating and importing projects 
+
+For more documentation see: https://jenkins-x.io/developing/import/#branch-patterns
 
 ```
 jx get branchpattern [flags]

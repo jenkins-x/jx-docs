@@ -1,5 +1,5 @@
 ---
-date: 2018-05-25T08:53:42Z
+date: 2018-05-25T11:26:48Z
 title: "jx create branchpattern"
 slug: jx_create_branchpattern
 url: /commands/jx_create_branchpattern/
@@ -10,7 +10,11 @@ Create a git branch pattern for your team
 
 ### Synopsis
 
-Create a git branch pattern for your team. The pattern should match all the branches you wish to automate CI/CD on when creating or importing projects
+Create a git branch pattern for your team. 
+
+The pattern should match all the branches you wish to automate CI/CD on when creating or importing projects. 
+
+For more documentation see: https://jenkins-x.io/developing/import/#branch-patterns
 
 ```
 jx create branchpattern [flags]
@@ -19,9 +23,8 @@ jx create branchpattern [flags]
 ### Examples
 
 ```
-  # Create a branch for your team
+  # Create a branch pattern for your team
   jx create branch pattern "master|develop|PR-.*"
-  "
 ```
 
 ### Options

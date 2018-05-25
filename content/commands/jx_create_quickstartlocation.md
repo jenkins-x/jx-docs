@@ -1,5 +1,5 @@
 ---
-date: 2018-05-25T08:53:42Z
+date: 2018-05-25T11:26:48Z
 title: "jx create quickstartlocation"
 slug: jx_create_quickstartlocation
 url: /commands/jx_create_quickstartlocation/
@@ -10,7 +10,9 @@ Create a location of quickstarts for your team
 
 ### Synopsis
 
-Create a location of quickstarts for your team
+Create a location of quickstarts for your team 
+
+For more documentation see: https://jenkins-x.io/developing/create-quickstart/#customising-your-teams-quickstarts
 
 ```
 jx create quickstartlocation [flags]
@@ -19,9 +21,14 @@ jx create quickstartlocation [flags]
 ### Examples
 
 ```
+  # Create a quickstart location using a github repository organisation
+  jx create quickstartlocation --owner my-quickstarts
+  
+  # Create a quickstart location using a github repository organisation via an abbreviation
+  jx create qsloc --owner my-quickstarts
+  
   # Create a quickstart location for your git repo and organisation
   jx create quickstartlocation --url https://mygit.server.com --owner my-quickstarts
-  "
 ```
 
 ### Options

@@ -1,5 +1,5 @@
 ---
-date: 2018-05-25T08:53:42Z
+date: 2018-05-25T11:26:48Z
 title: "jx get quickstartlocations"
 slug: jx_get_quickstartlocations
 url: /commands/jx_get_quickstartlocations/
@@ -10,7 +10,9 @@ Display one or many Quickstart Locations
 
 ### Synopsis
 
-Display one or many Quickstart Locations for the current Team.
+Display one or many Quickstart Locations for the current Team. 
+
+For more documentation see: https://jenkins-x.io/developing/create-quickstart/#customising-your-teams-quickstarts
 
 ```
 jx get quickstartlocations [flags]
@@ -20,7 +22,10 @@ jx get quickstartlocations [flags]
 
 ```
   # List all the quickstart locations
-  jx get quicksatrt locations
+  jx get quickstartlocations
+  
+  # List all the quickstart locations via an alias
+  jx get qsloc
 ```
 
 ### Options
