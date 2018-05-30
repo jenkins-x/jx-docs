@@ -75,12 +75,6 @@ cd myApp
 jx sync
 ```   
 
-You may have to add the ksync binary to your path (note the JX_HOME path from the result of the above command):
-```
-export PATH=$PATH:JX_HOME/.jx/bin
-```
-
-
 This command will download and install the excellent [ksync](https://github.com/vapor-ware/ksync) tool if its not already installed, run `ksync init` to add it to your cluster and then run `ksync watch` and then use `ksync create` to create a synchronisation spec.
 
 Then by default the code with be bidirectionally synchronized between the current directory and the `/code` folder in the `DevPod`. You can now edit the code in your IDE and run build/test commands inside the `DevPod`!
@@ -102,7 +96,7 @@ mvn install
 Then to trigger incremental rebuilding and deploying of the local code in the DevPod you can use:
 
 ```shell
-skaffold dev -p dev
+./watch.sh
 ```
     
 This will use the `dev` profile to generate a new docker image using the generated _digest_ then use it in the helm chart to deploy.
