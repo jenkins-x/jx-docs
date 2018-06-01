@@ -112,7 +112,7 @@ pygmentsStyle = "friendly"
       url = "/tags/fundamentals/"
 
 [outputs]
-home = [ "HTML", "RSS", "REDIR", "HEADERS" ]
+home = [ "HTML", "RSS", "REDIR", "HEADERS", "Algolia"]
 section = [ "HTML", "RSS"]
 
 [mediaTypes]
@@ -322,3 +322,14 @@ anchor = "smart"
     identifier = "jenkins"
     post = "external"
     url = "https://jenkins.io"
+
+## lets setup Angolia search
+[outputFormats.Algolia]
+baseName = "algolia"
+isPlainText = true
+mediaType = "application/json"
+notAlternative = true
+
+[params.algolia]
+vars = ["title", "summary", "date", "publishdate", "expirydate", "permalink"]
+params = ["categories", "tags"]
