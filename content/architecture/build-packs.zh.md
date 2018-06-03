@@ -15,32 +15,32 @@ draft: false
 toc: true
 ---
 
-We use [draft](https://draft.sh/) style _build packs_ for different languages, runtimes and build tools to add the necessary configuration files to projects as we [import them](/developing/import/) or [create](/developing/create-spring/) [them](/developing/create-quickstart/) so that we can build and deploy them in kubernetes.
+我们使用 [draft](https://draft.sh/) 风格为不同的语言_构建打包_ ，我们通过[导入](/zh/developing/import/)或者[创建](/zh/developing/create-spring/)[他们](/zh/developing/create-quickstart/)，运行时和构建工具添加必要的配置文件，因此我们可以在 Kubernetes 中构建和部署他们。
 
-The build packs are used to default the following files if they do not already exist in the project being created/imported:
+如果由于工程没有被创建或导入而不存在的话，构建包会默认使用下面的文件：
 
-* `Dockerfile` to turn the code into an immutable docker image for running on kubernetes
-* `Jenkinsfile` to define the declarative Jenkins pipeline to define the CI/CD steps for the application
-* helm chart in the `charts` folder to generate the kubernetes resources to run the application on kubernetes
-* a _preview chart_ in the `charts/preview` folder to define any dependencies for deploying a [preview environment](/about/features/#preview-environments) on a Pull Request   
+* `Dockerfile` 把代码构建为不可变的 docker 镜像，准备在 Kubernetes 中运行
+* `Jenkinsfile` 为应用使用申明式 Jenkins 流水线定义 CI/CD 步骤
+* helm chart 在文件夹 `charts` 中生成可以在 Kubernets 中运行的 Kubernetes 资源
+* 在 `charts/preview` 文件夹中的 _preview chart_ 定义了基于 Pull Request 部署一个[预览环境](/zh/about/features/#preview-environments)的所有依赖
 
-The default build packs are at [https://github.com/jenkins-x/draft-packs](https://github.com/jenkins-x/draft-packs) with a folder for each language or build tool.
+默认的构建包在 [https://github.com/jenkins-x/draft-packs](https://github.com/jenkins-x/draft-packs)，每个语言或者构建工具在一个文件夹中。
 
-The `jx` command line clones the build packs to your `.~/.jx/draft/packs/` folder and updates them via a `git pull` each time you try create or import a project.
+ `jx` 命令行克隆构建包到你的文件夹 `.~/.jx/draft/packs/` ，并在你每次尝试创建或者到一个工程时通过 `git pull` 来更新他们。
 
-## Creating new build packs
+## 创建新的构建
 
-We love [contributions](/community/) so please consider adding new build packs and [pod templates](/architecture/pod-templates/).
+我们欢迎[贡献](/zh/community/)，因此，请考虑增加新的构建包和 [pod 模板](/zh/architecture/pod-templates/)。
 
-Here are instructions on how to create a new build pack - please if anything is not clear come [join the community and just ask](/community/) we are happy to help!
+这里有如何创建一个新的构建包的指导 —— 如果有任何不清楚的请[加入社区并提问](/zh/community/)，我们很乐意帮助！
 
-The best place to start with is a _quickstart_ application. A sample project that you can use as a test. So create/find a suitable example project and then [import it](/developing/import).
+最好的开始就是 _快速开始_ 应用。你可以当作一个测试的样例工程。因此，创建或查找一个合适的例子工程，然后[导入](/zh/developing/import)。
 
-Then manually add a `Dockerfile` and `Jenkinsfile` if one is not already added for you. You could start with files from the [current build pack folders](https://github.com/jenkins-x/draft-packs/tree/master/packs) - using the most similar language/framework to yours.
+然后，如果不存在的话，手动添加 `Dockerfile` 和 `Jenkinsfile` 。你可以从[当前构建包文件夹](https://github.com/jenkins-x/draft-packs/tree/master/packs)开始 —— 使用相似的语言或框架。
 
-If your build pack is using build tools which are not yet available in one of the existing [pod templates](/architecture/pod-templates) then you will need to [submit a new pod template](/architecture/pod-templates/#submitting-new-pod-templates) probably using a new build container image too.
+如果你的构建包使用了 [pod 模板](/zh/architecture/pod-templates) 中不存在的构建工具，你需要[提交一个新的 pod 模板](/zh/architecture/pod-templates/#submitting-new-pod-templates)，还可能需要一个新的构建容器景象。
 
-Once you have a pod template to use, say, `jenkins-foo` then refer to it in your `Jenkinsfile`:
+一旦你有了 pod 模板可以使用，例如你的 `Jenkinsfile` 中引用到的 `jenkins-foo` ：
 
 ```groovy
 // my declarative Jenkinsfile
@@ -60,11 +60,11 @@ pipeline {
           }
 ```          
 
-Once your `Jenkinsfile` is capable of doing CI/CD for your language/runtime on your sample project then we should be able to take the `Dockerfile`, `Jenkinsfile` and charts folder and copy them into a folder in your fork of the [jenkins-x/draft-packs repository](https://github.com/jenkins-x/draft-packs).
+一旦你的 `Jenkinsfile` 可以在你的示例工程为你的语言实现 CI/CD 的话，我们因该把 `Dockerfile`, `Jenkinsfile` 和 charts 文件夹拷贝到你的派生 [jenkins-x/draft-packs 仓库](https://github.com/jenkins-x/draft-packs) 中。
 
-You can try that out locally by adding these files to your local clone of the build packs repository at ` ~/.jx/draft/packs/github.com/jenkins-x/draft-packs/packs`
+你可以通过把他们添加到构建包的本地库 ` ~/.jx/draft/packs/github.com/jenkins-x/draft-packs/packs` 中来尝试。
 
-e.g. 
+例如：
 
 ```shell 
 export PACK="foo"
@@ -75,7 +75,6 @@ cp Dockerfile Jenkinsfile  ~/.jx/draft/packs/github.com/jenkins-x/draft-packs/pa
 cp -r charts/somefoo ~/.jx/draft/packs/github.com/jenkins-x/draft-packs/packs/$PACK/charts
 ```   
 
-Once your build pack is in a folder at `~/.jx/draft/packs/github.com/jenkins-x/draft-packs/packs/` then it should be usable by the [jx import](/commands/jx_import) code which uses programming language detection to find the most suitable build pack to use when importing a project. If your build pack requires custom logic to detect it then let us know and we can help patch [jx import](/commands/jx_import) to work better for your build pack. e.g. we have some custom logic for handling [maven and gradle better](https://github.com/jenkins-x/jx/blob/master/pkg/jx/cmd/import.go#L383-L397)     
-   
+当你的构建包在 `~/.jx/draft/packs/github.com/jenkins-x/draft-packs/packs/` 文件夹中，就可以通过命令 [jx import](/commands/jx_import) 来导入工程，使用编程语言来检测并查找最合适的构建包。如果你的构建包自定义检测逻辑的话，请让我们指导，我们可以帮助改进 [jx import](/commands/jx_import) 使得在你的构建包上做的更好。例如：我们有一些自定义逻辑更好地处理 [maven 和 gradle](https://github.com/jenkins-x/jx/blob/master/pkg/jx/cmd/import.go#L383-L397)。
           
-If you need any more help [join the community](/community/)  
+如果你需要任何帮助 [请加入社区](/zh/community/) 。
