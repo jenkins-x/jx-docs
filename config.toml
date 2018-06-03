@@ -93,7 +93,7 @@ pygmentsStyle = "friendly"
     [[languages.zh.menu.docs]]
       name = "架构"
       weight = 25
-      identifier = "架构"
+      identifier = "architecture"
       url = "/zh/architecture/"
       post = "break"
     [[languages.zh.menu.docs]]
