@@ -17,22 +17,21 @@ toc: true
 
 ### Slack
 
-The Kubernetes community [hangs out on Slack](http://slack.k8s.io/) at [slack.k8s.io](http://slack.k8s.io/) so we have rooms there to chat about all things Jenkins X:
+Kubernetes 社区[在 Slack](http://slack.k8s.io/) 的 [slack.k8s.io](http://slack.k8s.io/) 频道上，因此，我们在那有聊天室可以讨论所有有关 Jenkins X 的事情：
 
-* [\#jenkins-x-user](https://kubernetes.slack.com/messages/C9MBGQJRH) for users of Jenkins X
-* [\#jenkins-x-dev](https://kubernetes.slack.com/messages/C9LTHT2BB) for developers of Jenkins X
- 
+* [\#jenkins-x-user](https://kubernetes.slack.com/messages/C9MBGQJRH) 用于 Jenkins X 的用户
+* [\#jenkins-x-dev](https://kubernetes.slack.com/messages/C9LTHT2BB) 用于 Jenkins X 的开发者
 
 ### IRC
 
-Jenkins folks tend to use IRC so we have an IRC room **#jenkins-x** IRC room on **freenode.net**
+Jenkins 的分支使用 IRC ，因此，我们在 **freenode.net** 有一个 IRC 聊天室 **#jenkins-x**
 
-You could try using the [riot app for #jenkins-x](https://riot.im/app/#/room/#freenode_#jenkins-x:matrix.org)
+你可以尝试使用 [#jenkins-x 的 riot 应用](https://riot.im/app/#/room/#freenode_#jenkins-x:matrix.org)
 
 ### Issues
 
-Got any thoughts, ideas or feedback then please drop them in a [GitHub Issue](https://github.com/jenkins-x/jx/issues/new)
+有任何想法、主意或者反馈，请添加到 [GitHub Issue](https://github.com/jenkins-x/jx/issues/new)。
 
 ### Email
 
-If you prefer email then join us on the [jenkins-x mailing list](https://groups.google.com/forum/#!forum/jenkins-x)
+如果你更喜欢电子邮件，那么加入我们的 [jenkins-x 邮件列表](https://groups.google.com/forum/#!forum/jenkins-x) 。
