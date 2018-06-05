@@ -13,7 +13,7 @@ weight: 5
 sections_weight: 5
 draft: false
 aliases: [/about/features]
-categories: [fundamentals]
+categories: [基础]
 toc: true
 ---
 

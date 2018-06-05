@@ -5,7 +5,7 @@ description: Jenkins X 的入门向导
 date: 2018-04-21
 publishdate: 2018-04-21
 lastmod: 2018-04-21
-categories: [getting started,fundamentals]
+categories: [getting started,基础]
 keywords: [usage,docs]
 menu:
   docs:
