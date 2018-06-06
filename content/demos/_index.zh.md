@@ -5,7 +5,7 @@ description: 观看 Jenkins X 示例视频
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01
-categories: [fundamentals]
+categories: [基础]
 keywords: []
 menu:
   docs:

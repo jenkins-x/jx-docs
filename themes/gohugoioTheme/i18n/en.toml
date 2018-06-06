@@ -27,3 +27,6 @@ other = "Quick Start"
 
 [improve-page]
 other = "Improve this page"
+
+[hero]
+other = "This project is being proposed as a sub project of the Jenkins Foundation"
