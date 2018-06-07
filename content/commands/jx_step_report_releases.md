@@ -1,25 +1,25 @@
 ---
 date: 2018-06-07T09:19:27Z
-title: "jx step report activities"
-slug: jx_step_report_activities
-url: /commands/jx_step_report_activities/
+title: "jx step report releases"
+slug: jx_step_report_releases
+url: /commands/jx_step_report_releases/
 ---
-## jx step report activities
+## jx step report releases
 
-Reports activities
+Reports Releases
 
 ### Synopsis
 
-This pipeline step reports activities to pluggable backends like ElasticSearch
+This pipeline step reports releases to pluggable backends like ElasticSearch
 
 ```
-jx step report activities [flags]
+jx step report releases [flags]
 ```
 
 ### Examples
 
 ```
-  jx step report activities
+  jx step report Releases
 ```
 
 ### Options
@@ -27,10 +27,10 @@ jx step report activities [flags]
 ```
   -b, --batch-mode   In batch mode the command never prompts for user input
       --headless     Enable headless operation if using browser automation
-  -h, --help         help for activities
+  -h, --help         help for releases
       --no-brew      Disables the use of brew on MacOS to install or upgrade command line dependencies
       --verbose      Enable verbose logging
-  -w, --watch        Whether to watch activities
+  -w, --watch        Whether to watch Releases
 ```
 
 ### SEE ALSO
