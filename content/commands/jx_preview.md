@@ -1,5 +1,5 @@
 ---
-date: 2018-06-07T09:19:27Z
+date: 2018-06-07T11:32:15Z
 title: "jx preview"
 slug: jx_preview
 url: /commands/jx_preview/
@@ -30,6 +30,7 @@ jx preview [flags]
 ```
   -a, --app string                      The Application to promote
   -c, --cluster string                  The Kubernetes cluster for the Environment. If blank and a namespace is specified assumes the current cluster
+      --dev-namespace string            The Developer namespace where the preview command should run
       --dir string                      The source directory used to detect the git source URL and reference
       --domain string                   Domain to expose ingress endpoints.  Example: jenkinsx.io
       --exposer string                  Used to describe which strategy exposecontroller should use to access applications (default "Ingress")

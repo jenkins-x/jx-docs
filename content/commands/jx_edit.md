@@ -1,5 +1,5 @@
 ---
-date: 2018-06-07T09:19:27Z
+date: 2018-06-07T11:32:15Z
 title: "jx edit"
 slug: jx_edit
 url: /commands/jx_edit/
@@ -33,6 +33,8 @@ jx edit [flags]
 
 * [jx](/commands/jx/)	 - jx is a command line tool for working with Jenkins X
 * [jx edit addon](/commands/jx_edit_addon/)	 - Edits the addon configuration
+* [jx edit branchpattern](/commands/jx_edit_branchpattern/)	 - Create a git branch pattern for your team
+* [jx edit buildpack](/commands/jx_edit_buildpack/)	 - Edits the build pack configuration for your team
 * [jx edit config](/commands/jx_edit_config/)	 - Edits the project configuration
 * [jx edit environment](/commands/jx_edit_environment/)	 - Edits an Environment which is used to promote your Team's Applications via Continuous Delivery
 

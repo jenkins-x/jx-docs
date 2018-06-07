@@ -1,5 +1,5 @@
 ---
-date: 2018-06-07T09:19:27Z
+date: 2018-06-07T11:32:15Z
 title: "jx delete preview"
 slug: jx_delete_preview
 url: /commands/jx_delete_preview/
@@ -19,20 +19,21 @@ jx delete preview [flags]
 ### Options
 
 ```
-  -b, --batch-mode          In batch mode the command never prompts for user input
-  -c, --cluster string      The Kubernetes cluster for the Environment. If blank and a namespace is specified assumes the current cluster
-      --dir string          The source directory used to detect the git source URL and reference
-      --headless            Enable headless operation if using browser automation
-  -h, --help                help for preview
-  -l, --label string        The Environment label which is a descriptive string like 'Production' or 'Staging'
-  -n, --name string         The Environment resource name. Must follow the kubernetes name conventions like Services, Namespaces
-      --namespace string    The Kubernetes namespace for the Environment
-      --no-brew             Disables the use of brew on MacOS to install or upgrade command line dependencies
-      --pr string           The Pull Request Name (e.g. 'PR-23' or just '23'
-      --pr-url string       The Pull Request URL
-      --source-ref string   The source code git ref (branch/sha)
-  -s, --source-url string   The source code git URL
-      --verbose             Enable verbose logging
+  -b, --batch-mode             In batch mode the command never prompts for user input
+  -c, --cluster string         The Kubernetes cluster for the Environment. If blank and a namespace is specified assumes the current cluster
+      --dev-namespace string   The Developer namespace where the preview command should run
+      --dir string             The source directory used to detect the git source URL and reference
+      --headless               Enable headless operation if using browser automation
+  -h, --help                   help for preview
+  -l, --label string           The Environment label which is a descriptive string like 'Production' or 'Staging'
+  -n, --name string            The Environment resource name. Must follow the kubernetes name conventions like Services, Namespaces
+      --namespace string       The Kubernetes namespace for the Environment
+      --no-brew                Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --pr string              The Pull Request Name (e.g. 'PR-23' or just '23'
+      --pr-url string          The Pull Request URL
+      --source-ref string      The source code git ref (branch/sha)
+  -s, --source-url string      The source code git URL
+      --verbose                Enable verbose logging
 ```
 
 ### SEE ALSO
