@@ -13,6 +13,7 @@ weight: 5
 sections_weight: 5
 ---
 
+* [Don't Install Developer Tools!](https://www.cloudbees.com/blog/don%E2%80%99t-install-development-tools) by Michael Neale on 30 May 2018
 * [Introducing Jenkins X: a CI/CD solution for modern cloud applications on Kubernetes](https://jenkins.io/blog/2018/03/19/introducing-jenkins-x/) by [James Strachan](https://twitter.com/jstrachan) on 19th March, 2018
 * [Don't Install Kubernetes!](https://www.cloudbees.com/blog/dont-install-kubernetes) by Michael Neale on 27th February, 2018
 * [Jenkins X Explained Part 1 - an integrated CI/CD solution for Kubernetes](https://jenkins.io/blog/2018/04/16/jenkins-x-explained-part1/) by James Rawlings on 16th April, 2018
