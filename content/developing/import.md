@@ -96,15 +96,13 @@ Usually a team uses the same naming conventions for branches so you may wish to 
 
 These settings are stored in the [Environment Custom Resource](/architecture/custom-resources/) in Kubernetes.
 
-To set the branch patterns for your team  [jx create branchpattern](/commands/jx_create_branchpattern/) command.
+To set the branch patterns for your team  [jx edit branchpattern](/commands/jx_edit_branchpattern/) command.
 
 ```shell
-$ jx create branchpattern  "develop|PR-.*|feature.*"
+$ jx edit branchpattern  "develop|PR-.*|feature.*"
 ```  
-You can then view the current branch patterns for your team via the [jx get branchpattern](/commands/jx_get_branchpattern/) command:
+You can then view the current branch patterns for your team via the [jx get branchdepattern](/commands/jx_get_branchpattern/) command:
 
 ```shell
 $ jx get branchpattern
 ```  
-  
-  
