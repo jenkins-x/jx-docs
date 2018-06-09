@@ -9,18 +9,18 @@ features:
      
   - heading: 环境
     image_path: /images/icon-custom-outputs.svg
-    tagline: Environment Promotion via GitOps
-    copy: Each team gets a set of Environments. Jenkins X then automates the management of the Environments and the Promotion of new versions of Applications between Environments via GitOps
+    tagline: 通过 GitOps 升级环境
+    copy: 每个团队有一套环境。Jenkins X 会自动化环境的管理，并在不同环境之间通过 GitOps 升级新版本的应用
         
-  - heading: 预览环境      
+  - heading: 预览环境
     image_path: /images/icon-built-in-templates.svg
-    tagline: Pull Request Preview Environments 
-    copy: Jenkins X automatically spins up Preview Environments for your Pull Requests so you can get fast feedback before changes are merged to master
+    tagline: Pull Request 预览环境
+    copy: Jenkins X 自动地为你的 Pull Request 设置预览环境，因此可以在变更被合并到 master 之前快速得到反馈
     
   - heading: 反馈
     image_path: /images/icon-content-management.svg
     tagline: 反馈问题和 Pull Requests
-    copy: Jenkins X automatically comments on your Commits, Issues and Pull Requests with feedback as code is ready to be previewed, is promoted to environments or if Pull Requests are generated automatically to upgrade versions. 
+    copy: 当代码可以预览、环境升级或者是自动生成版本升级的 Pull Requests 时，Jenkins X 自动地在你的提交、Issues 和 Pull Requests 添加反馈评论
       
 sections:    
   - heading: "观看示例"
