@@ -13,10 +13,9 @@ weight: 5
 sections_weight: 5
 draft: false
 aliases: [/about/features]
-categories: [基础]
+categories: [fundamentals, 基础]
 toc: true
 ---
-
 
 ## 命令行
 

@@ -11,7 +11,7 @@ menu:
     weight: 45
 weight: 45
 sections_weight: 45
-categories: [基础]
+categories: [fundamentals, 基础]
 draft: false
 toc: true
 ---
