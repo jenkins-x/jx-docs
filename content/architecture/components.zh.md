@@ -49,7 +49,7 @@ Jenkins X 的配置把这些服务连接起来，就可以直接工作了。这�
 
 ## 预览环境
 
-[预览环境](/zh/about/features/#preview-environments) 和[永久环境]类似(/zh/about/features/#environments) ，都在源码中使用 Helm charts 定义。
+[预览环境](/zh/about/features/#preview-environments) 和[永久环境](/zh/about/features/#environments) 类似，都在源码中使用 Helm charts 定义。
 
 主要的不同之处，是预览环境配置在应用的源码的 `./chart/preview` 目录中。
 
