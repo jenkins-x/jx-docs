@@ -1,5 +1,5 @@
 ---
-date: 2018-06-10T10:39:49Z
+date: 2018-06-10T15:34:50Z
 title: "jx create"
 slug: jx_create
 url: /commands/jx_create/
@@ -36,6 +36,7 @@ jx create [flags]
 * [jx create addon](/commands/jx_create_addon/)	 - Creates an addon
 * [jx create archetype](/commands/jx_create_archetype/)	 - Create a new app from a Maven Archetype and import the generated code into git and Jenkins for CI/CD
 * [jx create branchpattern](/commands/jx_create_branchpattern/)	 - Create a git branch pattern for your team
+* [jx create camel](/commands/jx_create_camel/)	 - Create a new camel based application and import the generated code into git and Jenkins for CI/CD
 * [jx create chat](/commands/jx_create_chat/)	 - Creates a chat server resource
 * [jx create cluster](/commands/jx_create_cluster/)	 - Create a new kubernetes cluster
 * [jx create devpod](/commands/jx_create_devpod/)	 - Creates a Developer Pod for running builds and tests inside the cluster

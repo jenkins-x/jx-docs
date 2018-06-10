@@ -1,5 +1,5 @@
 ---
-date: 2018-06-10T10:39:49Z
+date: 2018-06-10T15:34:50Z
 title: "jx create addon"
 slug: jx_create_addon
 url: /commands/jx_create_addon/
@@ -32,6 +32,7 @@ jx create addon [flags]
 * [jx create addon anchore](/commands/jx_create_addon_anchore/)	 - Create the Anchore addon for verifying container images
 * [jx create addon cloudbees](/commands/jx_create_addon_cloudbees/)	 - Create the CloudBees app for Kubernetes (a web console for working with CI/CD, Environments and GitOps)
 * [jx create addon gitea](/commands/jx_create_addon_gitea/)	 - Create a gitea addon for hosting git repositories
+* [jx create addon istio](/commands/jx_create_addon_istio/)	 - Create the Istio addon for service mesh
 * [jx create addon kubeless](/commands/jx_create_addon_kubeless/)	 - Create a kubeless addon for hosting git repositories
 * [jx create addon pipeline-events](/commands/jx_create_addon_pipeline-events/)	 - Create the pipeline events addon
 

@@ -1,5 +1,5 @@
 ---
-date: 2018-06-10T10:39:49Z
+date: 2018-06-10T15:34:50Z
 title: "jx create archetype"
 slug: jx_create_archetype
 url: /commands/jx_create_archetype/
@@ -25,27 +25,27 @@ jx create archetype [flags]
   jx create archetype
   
   # Creates a Camel Archetype, filtering on the archetypes containing the text 'spring'
-  jx create archetype -g  org.apache.camel.archetypes -a spring
+  jx create archetype --filter-group  org.apache.camel.archetypes --filter-artifact spring
 ```
 
 ### Options
 
 ```
-  -a, --artifact string                Either the Artifact ID or a text filter of the artifact IDs to pick from
+  -a, --artifact string                The artifact ID for the new application
   -b, --batch-mode                     In batch mode the command never prompts for user input
       --branches string                The branch pattern for branches to trigger CI/CD pipelines on
   -c, --catalog string                 The Maven Archetype Catalog to use (default "http://central.maven.org/maven2/archetype-catalog.xml")
-  -n, --create-artifact string         The artifact ID for the new application
-      --create-group string            The group ID for the new application
-      --create-version string          The version for the new application
       --credentials string             The Jenkins credentials name used by the job
       --default-owner string           The default user/organisation used if no user is found for the current git repository being imported (default "someone")
       --dry-run                        Performs local changes to the repo but skips the import into Jenkins X
+      --filter-artifact string         Either the Artifact ID or a text filter of the artifact IDs to pick from
+  -f, --filter-group string            Filter the Group IDs to choose from for he Archetypes
+      --filter-version string          The Version of the Archetype to use
       --git-api-token string           The git API token to use for creating new git repositories
       --git-provider-url string        The git server URL to create new git repositories inside
       --git-username string            The git username to use for creating new git repositories
-  -g, --group stringArray              The Group ID of the Archetypes
-  -f, --group-filter string            Filter the Group IDs to choose from for he Archetypes
+  -g, --group string                   The group ID for the new application (default "com.example")
+      --group-ids stringArray          The Group ID of the Archetypes to pick
       --headless                       Enable headless operation if using browser automation
   -h, --help                           help for archetype
       --import-commit-message string   Should we override the Jenkinsfile in the project?
@@ -62,7 +62,7 @@ jx create archetype [flags]
       --pack string                    The name of the pack to use
   -p, --pick                           Provide a list of versions to choose from
       --verbose                        Enable verbose logging
-  -v, --version string                 The Version of the Archetype to use
+  -v, --version string                 The version for the new application (default "1.0-SNAPSHOT")
 ```
 
 ### SEE ALSO

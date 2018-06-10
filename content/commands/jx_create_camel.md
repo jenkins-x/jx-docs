@@ -1,57 +1,52 @@
 ---
 date: 2018-06-10T15:34:50Z
-title: "jx create quickstart"
-slug: jx_create_quickstart
-url: /commands/jx_create_quickstart/
+title: "jx create camel"
+slug: jx_create_camel
+url: /commands/jx_create_camel/
 ---
-## jx create quickstart
+## jx create camel
 
-Create a new app from a Quickstart and import the generated code into git and Jenkins for CI/CD
+Create a new camel based application and import the generated code into git and Jenkins for CI/CD
 
 ### Synopsis
 
-Create a new project from a sample/starter (found in https://github.com/jenkins-x-quickstarts) 
+Creates a new Apache Camel application using Spring Boot and then optionally setups CI/CD pipelines and GitOps promotion. 
 
-This will create a new project for you from the selected template. It will exclude any work-in-progress repos (containing the "WIP-" pattern) 
-
-For more documentation see: http://jenkins-x.io/developing/create-quickstart/
+For more documentation about camel see: https://camel.apache.org/
 
 ```
-jx create quickstart [flags]
+jx create camel [flags]
 ```
 
 ### Examples
 
 ```
-  Create a new project from a sample/starter (found in https://github.com/jenkins-x-quickstarts)
+  # Create a camel application and be prompted for the folder name
+  jx create camel
   
-  This will create a new project for you from the selected template.
-  It will exclude any work-in-progress repos (containing the "WIP-" pattern)
-  
-  jx create quickstart
-  
-  jx create quickstart -f http
+  # Create a camel application called awesome
+  jx create camel -a awesome
 ```
 
 ### Options
 
 ```
+  -a, --artifact string                The artifact ID for the new application
   -b, --batch-mode                     In batch mode the command never prompts for user input
       --branches string                The branch pattern for branches to trigger CI/CD pipelines on
+  -c, --camel-version string           The Version of the Archetype to use (default "RELEASE")
       --credentials string             The Jenkins credentials name used by the job
       --default-owner string           The default user/organisation used if no user is found for the current git repository being imported (default "someone")
       --dry-run                        Performs local changes to the repo but skips the import into Jenkins X
-  -f, --filter string                  The text filter
-      --framework string               The framework to filter on
       --git-api-token string           The git API token to use for creating new git repositories
-      --git-host string                The Git server host if not using GitHub when pushing created project
       --git-provider-url string        The git server URL to create new git repositories inside
       --git-username string            The git username to use for creating new git repositories
+  -g, --group string                   The group ID for the new application (default "com.example")
       --headless                       Enable headless operation if using browser automation
-  -h, --help                           help for quickstart
+  -h, --help                           help for camel
       --import-commit-message string   Should we override the Jenkinsfile in the project?
+  -i, --interactive                    Allow interactive input into the maven archetype:generate command
       --jenkinsfile string             The name of the Jenkinsfile to use. If not specified then 'Jenkinsfile' will be used
-  -l, --language string                The language to filter on
       --list-packs                     list available draft packs
       --name string                    Specify the git repository name to import the project into (if it is not already in one)
       --no-brew                        Disables the use of brew on MacOS to install or upgrade command line dependencies
@@ -59,12 +54,10 @@ jx create quickstart [flags]
       --no-import                      Disable import after the creation
       --no-jenkinsfile                 Disable defaulting a Jenkinsfile if its missing
       --org string                     Specify the git provider organisation to import the project into (if it is not already in one)
-  -g, --organisations stringArray      The github organisations to query for quickstarts
   -o, --output-dir string              Directory to output the project to. Defaults to the current directory
-      --owner string                   The owner to filter on
       --pack string                    The name of the pack to use
-  -t, --tag stringArray                The tags on the quickstarts to filter
       --verbose                        Enable verbose logging
+  -v, --version string                 The version for the new application (default "1.0-SNAPSHOT")
 ```
 
 ### SEE ALSO
