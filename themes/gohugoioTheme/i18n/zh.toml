@@ -30,3 +30,51 @@ other = "改善此页面"
 
 [hero]
 other = "该项目正在被提议作为 Jenkins 基金会的子项目"
+
+[easy-install]
+other = "轻松地安装在任何云上"
+
+[supported-os]
+other = "Jenkins X 可以运行在 Mac、Linux、FreeBSD上，希望很快能支持 Windows！"
+
+[other-oses]
+other = "其它操作系统"
+
+[download-jx-bin]
+other = "下载 jx 二进制文件"
+
+[add-to-path]
+other = "并添加到你的"
+
+[then-install-jx]
+other = "然后安装 Jenkins X"
+
+[see-getting-stared]
+other = "查看入门教程获取更多信息"
+
+[saying-about-jx]
+other = "看看其他人是怎么评论 Jenkins X 的"
+
+[welcome-contributions]
+other = "我们欢迎所有的贡献"
+
+[jx-is-open]
+other = "Jenkins X 是完全开源免费的。"
+
+[more-ways-contribute]
+other = "更多贡献的方法"
+
+[help-improve-docs]
+other = "帮助改善文档"
+
+[help-others]
+other = "在聊天室 #jenkins-x 帮助其它人"
+
+[contributors-make-jx-great]
+other = "我们的贡献者使 Jenkins X 变得更好。"
+
+[fork-repo-issue]
+other = "派生仓库并解决问题"
+
+[browse-open-issues]
+other = "浏览打开的问题"
