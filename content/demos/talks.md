@@ -19,7 +19,7 @@ sections_weight: 5
 
 * [VirtualJUG: Jenkins X: Continuous Delivery for Kubernetes](https://www.youtube.com/watch?time_continue=1&v=53AtxQGXnMk) on [@virtualJUG](https://twitter.com/virtualJUG) with [slides](https://docs.google.com/presentation/d/1hwt2lFh3cCeFdP4xoT_stMPs0nh2xVZUtze6o79WfXc/edit?usp=sharing) by [James Strachan](https://twitter.com/jstrachan)
 
-* [JBCN Conference 11-13 June 2018:Jenkins X: Continuous Delivery for Kubernetes](http://www.jbcnconf.com/2018/infoSpeaker.html?ref=Um9iZXJ0RGF2aWVzcmRhdmllc0BjbG91ZGJlZXMuY29t) by [Rob Davies](https://twitter.com/rajdavies) and [JamesRawlings](https://twitter.com/jdrawlings)
+* [JBCN Conference 11-13 June 2018:Jenkins X: Continuous Delivery for Kubernetes](http://www.jbcnconf.com/2018/infoSpeaker.html?ref=Um9iZXJ0RGF2aWVzcmRhdmllc0BjbG91ZGJlZXMuY29t) by [Rob Davies](https://twitter.com/rajdavies) and [JamesRawlings](https://twitter.com/jdrawlings) with [slides](https://docs.google.com/presentation/d/1i0JTVaMGCD4pPuOOE0wIfYgbUU40qSmissu0UnizpVQ/edit?usp=sharing)
 
 * [Devoxx UK: Jenkins X: Continuous Delivery for Kubernetes](https://cfp.devoxx.co.uk/2018/talk/XWT-9637/Jenkins_X:_Continuous_Delivery_for_Kubernetes) by [James Strachan](https://twitter.com/jstrachan)
 
