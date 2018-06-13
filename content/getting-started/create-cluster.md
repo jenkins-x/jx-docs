@@ -31,9 +31,15 @@ Here's a little demo showing GKE, AKS and Minikube in parallel. It can take some
 
 ### Using Google Cloud (GKE)
 
+First make sure you have created/selected a Project in the [Google Cloud Console](https://console.cloud.google.com/). 
+
+Also make sure you have compute and container services enabled on your account:
+
+    gcloud services enable container compute
+
 Use the [jx create cluster gke](/commands/jx_create_cluster_gke) command: 
 
-    jx create cluster gke
+    jx create cluster gke --verbose
 
 The command assumes you have a google account and you've set up a default project that you can use to create the kubernetes cluster within.    
      
