@@ -1,5 +1,5 @@
 ---
-date: 2018-06-14T14:32:48Z
+date: 2018-06-14T15:56:33Z
 title: "jx get"
 slug: jx_get
 url: /commands/jx_get/
@@ -53,6 +53,7 @@ jx get TYPE [flags]
 * [jx get devpod](/commands/jx_get_devpod/)	 - Lists the DevPods
 * [jx get environments](/commands/jx_get_environments/)	 - Display one or many Environments
 * [jx get git](/commands/jx_get_git/)	 - Display the current registered git service URLs
+* [jx get helmbin](/commands/jx_get_helmbin/)	 - Display the helm binary name used in the pipelines
 * [jx get issues](/commands/jx_get_issues/)	 - Display one or many issues
 * [jx get pipelines](/commands/jx_get_pipelines/)	 - Display one or many Pipelines
 * [jx get previews](/commands/jx_get_previews/)	 - Display one or many Preview Environments

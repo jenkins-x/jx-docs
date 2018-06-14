@@ -1,5 +1,5 @@
 ---
-date: 2018-06-14T14:32:48Z
+date: 2018-06-14T15:56:33Z
 title: "jx"
 slug: jx
 url: /commands/jx/
@@ -45,6 +45,7 @@ jx [flags]
 * [jx preview](/commands/jx_preview/)	 - Creates or updates a Preview Environment for the current version of an application
 * [jx promote](/commands/jx_promote/)	 - Promotes a version of an application to an environment
 * [jx prompt](/commands/jx_prompt/)	 - Generate the command line prompt for the current team and environment
+* [jx repository](/commands/jx_repository/)	 - Opens the web page for the current git repository in a browser
 * [jx rsh](/commands/jx_rsh/)	 - Opens a terminal in a pod or runs a command in the pod
 * [jx shell](/commands/jx_shell/)	 - Create a sub shell so that changes to the kubernetes context, namespace or environment remain local to the shell
 * [jx start](/commands/jx_start/)	 - Starts a process such as a pipeline

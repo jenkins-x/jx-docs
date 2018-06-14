@@ -1,5 +1,5 @@
 ---
-date: 2018-06-14T14:32:48Z
+date: 2018-06-14T15:56:33Z
 title: "jx step"
 slug: jx_step
 url: /commands/jx_step/
@@ -29,6 +29,7 @@ jx step [flags]
 * [jx step changelog](/commands/jx_step_changelog/)	 - Creates a changelog for a git tag
 * [jx step git](/commands/jx_step_git/)	 - git [command]
 * [jx step gpg](/commands/jx_step_gpg/)	 - Creates the GPG credentials file for GPG signing releases
+* [jx step helm](/commands/jx_step_helm/)	 - helm [command]
 * [jx step next-version](/commands/jx_step_next-version/)	 - Writes next semantic version
 * [jx step nexus](/commands/jx_step_nexus/)	 - nexus [command]
 * [jx step post](/commands/jx_step_post/)	 - post step actions
