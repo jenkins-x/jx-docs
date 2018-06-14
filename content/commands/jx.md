@@ -1,5 +1,5 @@
 ---
-date: 2018-06-14T09:21:22Z
+date: 2018-06-14T10:45:27Z
 title: "jx"
 slug: jx
 url: /commands/jx/
@@ -27,6 +27,7 @@ jx [flags]
 
 * [jx cloudbees](/commands/jx_cloudbees/)	 - Opens the CloudBees app for Kubernetes for visualising CI/CD and your environments
 * [jx completion](/commands/jx_completion/)	 - Output shell completion code for the given shell (bash or zsh)
+* [jx compliance](/commands/jx_compliance/)	 - Run compliance tests against Kubernetes cluster
 * [jx console](/commands/jx_console/)	 - Opens the Jenkins console
 * [jx context](/commands/jx_context/)	 - View or change the current kubernetes context (kubernetes cluster)
 * [jx create](/commands/jx_create/)	 - Create a new resource
