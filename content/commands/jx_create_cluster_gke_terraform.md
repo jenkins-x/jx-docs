@@ -1,5 +1,5 @@
 ---
-date: 2018-06-14T10:45:27Z
+date: 2018-06-14T13:40:21Z
 title: "jx create cluster gke terraform"
 slug: jx_create_cluster_gke_terraform
 url: /commands/jx_create_cluster_gke_terraform/
@@ -37,8 +37,10 @@ jx create cluster gke terraform [flags]
   -n, --cluster-name string                 The name of this cluster, default is a random generated name
       --default-admin-password string       the default admin password to access Jenkins, Kubernetes Dashboard, Chartmuseum and Nexus
       --default-environment-prefix string   Default environment repo prefix, your git repos will be of the form 'environment-$prefix-$envName'
+  -d, --disk-size string                    Size in GB for node VM boot disks. Defaults to 100GB (default "100")
       --domain string                       Domain to expose ingress endpoints.  Example: jenkinsx.io
       --draft-client-only                   Only install draft client
+      --enable-autoupgrade                  Sets autoupgrade feature for a cluster's default node-pool(s)
       --environment-git-owner string        The git provider organisation to create the environment git repositories in
       --exposer string                      Used to describe which strategy exposecontroller should use to access applications (default "Ingress")
       --git-api-token string                The git API token to use for creating new git repositories
