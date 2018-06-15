@@ -1,3 +1,6 @@
+jenkins-x-website
+node_modules
+
 # idea stuff
 .idea
 *.iml
