@@ -1,5 +1,5 @@
 ---
-date: 2018-06-15T13:26:17Z
+date: 2018-06-15T18:23:33Z
 title: "jx update cluster gke terraform"
 slug: jx_update_cluster_gke_terraform
 url: /commands/jx_update_cluster_gke_terraform/
@@ -25,8 +25,12 @@ jx update cluster gke terraform [flags]
 ### Options
 
 ```
+  -b, --batch-mode            In batch mode the command never prompts for user input
   -n, --cluster-name string   The name of this cluster
+      --headless              Enable headless operation if using browser automation
   -h, --help                  help for terraform
+      --no-brew               Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --verbose               Enable verbose logging
 ```
 
 ### SEE ALSO
