@@ -66,6 +66,16 @@ Then follow all the prompts on the console (mostly just hitting enter will do).
 
 Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
 
+
+### Connecting to the cluster from your laptop
+
+If you wish to work with the Jenkins X cluster from your laptop then click on the `Connect` button on the [Kubernetes Engine page](https://console.cloud.google.com/kubernetes/list) in the [Google Console](https://console.cloud.google.com/)
+          
+<img src="/images/quickstart/gke-connect.png" class="img-thumbnail">
+
+You should now be able to use the `kubectl` and `jx` CLI tools on your laptop to talk to the GKE cluster.
+
+       
 ## Using Google Cloud from your laptop
 
 Use the [jx create cluster gke](/commands/jx_create_cluster_gke) command: 
@@ -78,14 +88,10 @@ If the above fails to make a cluster you may need to run this command first and 
 
 The command assumes you have a google account and you've set up a default project that you can use to create the kubernetes cluster within.         
 Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
- 
 
-#### Connecting to the cluster from your laptop
 
-If you wish to work with the Jenkins X cluster from your laptop then click on the `Connect` button on the [Kubernetes Engine page](https://console.cloud.google.com/kubernetes/list) in the [Google Console](https://console.cloud.google.com/)
-   
       
-### Using Amazon (AWS)
+## Using Amazon (AWS)
 
 Use the [jx create cluster aws](/commands/jx_create_cluster_aws) command: 
 
@@ -106,7 +112,7 @@ jx create cluster aws
 Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
 
         
-### Using Azure (AKS)
+## Using Azure (AKS)
 
 Use the [jx create cluster aks](/commands/jx_create_cluster_aks) command: 
 
@@ -114,7 +120,7 @@ Use the [jx create cluster aks](/commands/jx_create_cluster_aks) command:
     
 Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
     
-### Using Minikube (local)    
+## Using Minikube (local)    
     
 Some folks have trouble getting minikube to work for a variety of reasons:
 
@@ -129,7 +135,7 @@ If you still want to try minikube then we recommend letting jx create cluster fo
 
 Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
 
-### Using Minishift (local)
+## Using Minishift (local)
 
 If you want to try out Jenkins X on a local OpenShift cluster then you can try using minishift.
 
@@ -140,7 +146,7 @@ To create a minishift VM with Jenkins X installed on it try the [jx create clust
 Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
 
 
-### Troubleshooting
+## Troubleshooting
 
 If you hit any issues installing Jenkins X then please check out our [troubleshooting guide](/troubleshooting/faq/) or [let us know](/community) and we'll try our best to help.
 
