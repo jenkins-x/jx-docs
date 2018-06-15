@@ -62,7 +62,7 @@ kops rolling-update cluster --yes
 
 You should now be good to go!
 
-### Installing Jenkins X
+## Installing Jenkins X on a cloud
 
 To install Jenkins X on an existing kubernetes cluster you can then use the [jx install](/commands/jx_install) command:
 
@@ -72,4 +72,16 @@ If you know the provider you can specify that if you prefer on the command line.
 
     jx install --provider=aws
     
+## Installing Jenkins X on premise
+
+When using an on premise kubernetes cluster you can use this command line:
+
+    jx install --provider=kubernetes --on-premise
     
+This will default the argument for `--external-ip` to access services inside your cluster to use the kubernetes master IP address.
+
+If you wish to use a different external IP address you can use:
+    
+    jx install --provider=kubernetes --external-ip 1.2.3.4
+    
+Otherwise the `jx install` will try and wait for the Ingress Controllers `Service.Status.LoadBalancer.Ingress` to resolve to an IP address - which can fail on premise.    
