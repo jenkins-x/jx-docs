@@ -1,5 +1,5 @@
 ---
-date: 2018-06-15T07:07:28Z
+date: 2018-06-15T09:22:40Z
 title: "jx repository"
 slug: jx_repository
 url: /commands/jx_repository/
@@ -21,14 +21,11 @@ jx repository [flags]
 ### Examples
 
 ```
-  # Repo the Nexus console in a browser
-  jx repo jenkins-x-sonatype-nexus
-  
-  # Print the Nexus console URL but do not repo a browser
-  jx repo jenkins-x-sonatype-nexus -u
-  
-  # List all the service URLs
+  # Open the git repository in a browser
   jx repo
+  
+  # Print the URL of the git repository
+  jx repo -u
 ```
 
 ### Options

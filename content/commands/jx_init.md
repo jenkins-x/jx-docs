@@ -1,5 +1,5 @@
 ---
-date: 2018-06-15T07:07:28Z
+date: 2018-06-15T09:22:40Z
 title: "jx init"
 slug: jx_init
 url: /commands/jx_init/
@@ -28,6 +28,7 @@ jx init [flags]
   -b, --batch-mode                      In batch mode the command never prompts for user input
       --domain string                   Domain to expose ingress endpoints.  Example: jenkinsx.io
       --draft-client-only               Only install draft client
+      --external-ip string              The external IP used to access ingress endpoints from outside the kubernetes cluster. For bare metal on premise clusters this is often the IP of the kubernetes master. For cloud installations this is often the external IP of the ingress LoadBalancer.
       --global-tiller                   Whether or not to use a cluster global tiller (default true)
       --headless                        Enable headless operation if using browser automation
       --helm-client-only                Only install helm client
@@ -38,6 +39,7 @@ jx init [flags]
       --ingress-service string          The name of the Ingress controller Service (default "jxing-nginx-ingress-controller")
       --namespace string                The namespace the Jenkins X platform should be installed into (default "jx")
       --no-brew                         Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --on-premise                      If installing on an on premise cluster then lets default the 'external-ip' to be the kubernetes master IP address
       --provider string                 Cloud service providing the kubernetes cluster.  Supported providers: aks, aws, eks, gke, ibm, jx-infra, kubernetes, minikube, minishift, openshift, oracle, pks
       --recreate-existing-draft-repos   Delete existing helm repos used by Jenkins X under ~/draft/packs
       --skip-ingress                    Dont install an ingress controller

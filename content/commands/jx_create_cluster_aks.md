@@ -1,5 +1,5 @@
 ---
-date: 2018-06-15T07:07:28Z
+date: 2018-06-15T09:22:40Z
 title: "jx create cluster aks"
 slug: jx_create_cluster_aks
 url: /commands/jx_create_cluster_aks/
@@ -41,6 +41,7 @@ jx create cluster aks [flags]
       --draft-client-only                        Only install draft client
       --environment-git-owner string             The git provider organisation to create the environment git repositories in
       --exposer string                           Used to describe which strategy exposecontroller should use to access applications (default "Ingress")
+      --external-ip string                       The external IP used to access ingress endpoints from outside the kubernetes cluster. For bare metal on premise clusters this is often the IP of the kubernetes master. For cloud installations this is often the external IP of the ingress LoadBalancer.
       --git-api-token string                     The git API token to use for creating new git repositories
       --git-provider-url string                  The git server URL to create new git repositories inside
       --git-username string                      The git username to use for creating new git repositories
@@ -62,6 +63,7 @@ jx create cluster aks [flags]
       --no-default-environments                  Disables the creation of the default Staging and Production environments
   -s, --node-vm-size string                      Size of Virtual Machines to create as Kubernetes nodes
   -o, --nodes string                             node count
+      --on-premise                               If installing on an on premise cluster then lets default the 'external-ip' to be the kubernetes master IP address
   -p, --password string                          password
   -k, --path-To-public-rsa-key string            pathToPublicRSAKey
       --recreate-existing-draft-repos            Delete existing helm repos used by Jenkins X under ~/draft/packs
