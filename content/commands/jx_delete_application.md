@@ -1,5 +1,5 @@
 ---
-date: 2018-06-16T07:19:28Z
+date: 2018-06-16T07:56:21Z
 title: "jx delete application"
 slug: jx_delete_application
 url: /commands/jx_delete_application/
