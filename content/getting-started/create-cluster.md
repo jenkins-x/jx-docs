@@ -54,10 +54,6 @@ Now use the [jx create cluster gke](/commands/jx_create_cluster_gke) command:
 
     jx create cluster gke --skip-login
 
-If the above fails to make a cluster you may need to run this command first and re-run the above:
-
-    gcloud services enable container compute
- 
 If you wish to name your cluster and provide your own admin password you can run:
 
     jx create cluster gke --skip-login  --default-admin-password=mySecretPassWord123 -n myclustername
@@ -81,10 +77,6 @@ You should now be able to use the `kubectl` and `jx` CLI tools on your laptop to
 Use the [jx create cluster gke](/commands/jx_create_cluster_gke) command: 
 
     jx create cluster gke --verbose
-
-If the above fails to make a cluster you may need to run this command first and re-run the above:
-
-    gcloud services enable container compute
 
 The command assumes you have a google account and you've set up a default project that you can use to create the kubernetes cluster within.         
 Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
