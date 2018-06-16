@@ -1,5 +1,5 @@
 ---
-date: 2018-06-16T07:56:21Z
+date: 2018-06-16T09:17:07Z
 title: "jx step helm release"
 slug: jx_step_helm_release
 url: /commands/jx_step_helm_release/
@@ -25,7 +25,8 @@ jx step helm release [flags]
 ### Options
 
 ```
-  -h, --help   help for release
+  -d, --dir string   The directory containing the helm chart to apply (default ".")
+  -h, --help         help for release
 ```
 
 ### SEE ALSO
