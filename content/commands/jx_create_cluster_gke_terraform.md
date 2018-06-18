@@ -1,5 +1,5 @@
 ---
-date: 2018-06-18T18:23:15Z
+date: 2018-06-18T19:35:54Z
 title: "jx create cluster gke terraform"
 slug: jx_create_cluster_gke_terraform
 url: /commands/jx_create_cluster_gke_terraform/
@@ -71,6 +71,7 @@ jx create cluster gke terraform [flags]
   -p, --project-id string                   Google Project ID to create cluster in
       --recreate-existing-draft-repos       Delete existing helm repos used by Jenkins X under ~/draft/packs
       --register-local-helmrepo             Registers the Jenkins X chartmuseum registry with your helm client [default false]
+      --service-account string              Use a service account to login to GCE
       --skip-ingress                        Dont install an ingress controller
       --skip-login                          Skip Google auth if already logged in via gloud auth
       --skip-tiller                         Dont install a Helms Tiller service
