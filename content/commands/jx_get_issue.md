@@ -1,33 +1,34 @@
 ---
 date: 2018-06-19T06:24:46Z
-title: "jx get issues"
-slug: jx_get_issues
-url: /commands/jx_get_issues/
+title: "jx get issue"
+slug: jx_get_issue
+url: /commands/jx_get_issue/
 ---
-## jx get issues
+## jx get issue
 
-Display one or many issues
+Display the status of an issue
 
 ### Synopsis
 
-Display one or many issues for a project.
+Display the status of an issue for a project.
 
 ```
-jx get issues [flags]
+jx get issue [flags]
 ```
 
 ### Examples
 
 ```
-  # List open issues on the current project
-  jx get issues
+  # Get the status of an issue for a project
+  jx get issue --id ISSUE_ID
 ```
 
 ### Options
 
 ```
   -d, --dir string      The root project directory
-  -h, --help            help for issues
+  -h, --help            help for issue
+  -i, --id string       The issue ID
   -o, --output string   The output format such as 'yaml'
 ```
 
