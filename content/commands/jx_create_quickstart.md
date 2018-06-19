@@ -1,5 +1,5 @@
 ---
-date: 2018-06-19T06:24:46Z
+date: 2018-06-19T09:32:32Z
 title: "jx create quickstart"
 slug: jx_create_quickstart
 url: /commands/jx_create_quickstart/
@@ -14,7 +14,7 @@ Create a new project from a sample/starter (found in https://github.com/jenkins-
 
 This will create a new project for you from the selected template. It will exclude any work-in-progress repos (containing the "WIP-" pattern) 
 
-For more documentation see: http://jenkins-x.io/developing/create-quickstart/
+For more documentation see: https://jenkins-x.io/developing/create-quickstart/
 
 ```
 jx create quickstart [flags]

@@ -1,5 +1,5 @@
 ---
-date: 2018-06-19T06:24:46Z
+date: 2018-06-19T09:32:32Z
 title: "jx import"
 slug: jx_import
 url: /commands/jx_import/
@@ -16,7 +16,7 @@ If you specify no other options or arguments then the current directory is impor
 
 You can specify the git URL as an argument. 
 
-For more documentation see: http://jenkins-x.io/developing/import/
+For more documentation see: https://jenkins-x.io/developing/import/
 
 ```
 jx import [flags]

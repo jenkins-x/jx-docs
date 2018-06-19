@@ -1,5 +1,5 @@
 ---
-date: 2018-06-19T06:24:46Z
+date: 2018-06-19T09:32:32Z
 title: "jx create cluster gke terraform"
 slug: jx_create_cluster_gke_terraform
 url: /commands/jx_create_cluster_gke_terraform/
@@ -12,7 +12,7 @@ Create a new kubernetes cluster on GKE using Terraform: Runs on Google Cloud
 
 This command creates a new kubernetes cluster on GKE, installing required local dependencies and provisions the Jenkins X platform 
 
-You can see a demo of this command here: http://jenkins-x.io/demos/create_cluster_gke/
+You can see a demo of this command here: https://jenkins-x.io/demos/create_cluster_gke/
 
 Google Kubernetes Engine is a managed environment for deploying containerized applications. It brings our latest innovations in developer productivity, resource efficiency, automated operations, and open source flexibility to accelerate your time to market. 
 

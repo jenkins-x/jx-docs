@@ -1,5 +1,5 @@
 ---
-date: 2018-06-19T06:24:46Z
+date: 2018-06-19T09:32:32Z
 title: "jx get devpod"
 slug: jx_get_devpod
 url: /commands/jx_get_devpod/
@@ -12,7 +12,7 @@ Lists the DevPods
 
 Display the available DevPods 
 
-For more documentation see: http://jenkins-x.io/developing/devpods/
+For more documentation see: https://jenkins-x.io/developing/devpods/
 
 ```
 jx get devpod [flags]

@@ -1,12 +1,12 @@
 ---
-date: 2018-06-19T06:24:46Z
+date: 2018-06-19T09:32:32Z
 title: "jx delete git server"
 slug: jx_delete_git_server
 url: /commands/jx_delete_git_server/
 ---
 ## jx delete git server
 
-Deletes one or more git server
+Deletes one or more git servers
 
 ### Synopsis
 

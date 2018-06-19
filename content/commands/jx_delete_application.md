@@ -1,5 +1,5 @@
 ---
-date: 2018-06-19T06:24:46Z
+date: 2018-06-19T09:32:32Z
 title: "jx delete application"
 slug: jx_delete_application
 url: /commands/jx_delete_application/
@@ -14,7 +14,7 @@ Deletes one or more Applications from Jenkins
 
 Note that this command does not remove the underlying Git Repositories. 
 
-For that see the http://jenkins-x.io/commands/jx_delete_repo/command.
+For that see the https://jenkins-x.io/commands/jx_delete_repo/command.
 
 ```
 jx delete application [flags]

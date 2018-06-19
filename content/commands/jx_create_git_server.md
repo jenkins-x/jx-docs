@@ -1,5 +1,5 @@
 ---
-date: 2018-06-19T06:24:46Z
+date: 2018-06-19T09:32:32Z
 title: "jx create git server"
 slug: jx_create_git_server
 url: /commands/jx_create_git_server/
@@ -19,8 +19,13 @@ jx create git server kind [url] [flags]
 ### Examples
 
 ```
-  # Add a new git server URL
-  jx create git server gitea
+  # Add a new git server
+  jx create git server bitbucket http://bitbucket.org
+  
+  # Add a new git server with a name
+  jx create git server bitbucket http://bitbucket.org -n MyBitBucket
+  
+  For more documentation see: [https://jenkins-x.io/developing/git/](https://jenkins-x.io/developing/git/)
 ```
 
 ### Options
