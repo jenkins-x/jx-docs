@@ -1,5 +1,5 @@
 ---
-date: 2018-06-19T17:30:49Z
+date: 2018-06-19T19:23:18Z
 title: "jx compliance run"
 slug: jx_compliance_run
 url: /commands/jx_compliance_run/
@@ -20,7 +20,7 @@ jx compliance run [flags]
 
 ```
   # Run the compliance tests
-  jx compliance start
+  jx compliance run
 ```
 
 ### Options
