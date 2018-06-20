@@ -60,6 +60,14 @@ If you create a `config.json` file for your docker registry provider. e.g. for G
 }
 ```
 
+For AWS its more like
+
+```json
+{
+	"credsStore": "ecr-login"
+}
+```
+
 Then to update the `jenkins-docker-cfg` secret you can do:
 
 ```
