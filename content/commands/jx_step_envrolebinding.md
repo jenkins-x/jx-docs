@@ -1,5 +1,5 @@
 ---
-date: 2018-06-21T09:00:26Z
+date: 2018-06-21T10:52:44Z
 title: "jx step envrolebinding"
 slug: jx_step_envrolebinding
 url: /commands/jx_step_envrolebinding/
