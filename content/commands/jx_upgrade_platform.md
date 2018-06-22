@@ -1,5 +1,5 @@
 ---
-date: 2018-06-22T08:16:18Z
+date: 2018-06-22T17:18:35Z
 title: "jx upgrade platform"
 slug: jx_upgrade_platform
 url: /commands/jx_upgrade_platform/
@@ -26,12 +26,18 @@ jx upgrade platform [flags]
 ### Options
 
 ```
-  -c, --chart string       The Chart to upgrade (default "jenkins-x/jenkins-x-platform")
-  -h, --help               help for platform
-  -n, --name string        The release name (default "jenkins-x")
-      --namespace string   The Namespace to promote to
-  -s, --set string         The helm parameters to pass in while upgrading
-  -v, --version string     The specific platform version to upgrade to
+  -b, --batch-mode                      In batch mode the command never prompts for user input
+  -c, --chart string                    The Chart to upgrade (default "jenkins-x/jenkins-x-platform")
+      --cloud-environment-repo string   Cloud Environments git repo (default "https://github.com/jenkins-x/cloud-environments")
+      --headless                        Enable headless operation if using browser automation
+  -h, --help                            help for platform
+      --local-cloud-environment         Ignores default cloud-environment-repo and uses current directory 
+  -n, --name string                     The release name (default "jenkins-x")
+      --namespace string                The Namespace to promote to
+      --no-brew                         Disables the use of brew on MacOS to install or upgrade command line dependencies
+  -s, --set string                      The helm parameters to pass in while upgrading
+      --verbose                         Enable verbose logging
+  -v, --version string                  The specific platform version to upgrade to
 ```
 
 ### SEE ALSO

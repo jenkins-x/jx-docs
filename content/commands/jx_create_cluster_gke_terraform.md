@@ -1,5 +1,5 @@
 ---
-date: 2018-06-22T08:16:18Z
+date: 2018-06-22T17:18:35Z
 title: "jx create cluster gke terraform"
 slug: jx_create_cluster_gke_terraform
 url: /commands/jx_create_cluster_gke_terraform/
@@ -51,6 +51,7 @@ jx create cluster gke terraform [flags]
       --headless                            Enable headless operation if using browser automation
       --helm-client-only                    Only install helm client
       --helm-tls                            Whether to use TLS with helm
+      --helm3                               Use helm3 to install Jenkins X which does not use Tiller
   -h, --help                                help for terraform
       --http string                         Toggle creating http or https ingress rules (default "true")
       --ingress-cluster-role string         The cluster role for the Ingress controller (default "cluster-admin")
