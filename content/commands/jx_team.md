@@ -1,31 +1,34 @@
 ---
 date: 2018-06-22T22:31:14Z
-title: "jx repository"
-slug: jx_repository
-url: /commands/jx_repository/
+title: "jx team"
+slug: jx_team
+url: /commands/jx_team/
 ---
-## jx repository
+## jx team
 
-Opens the web page for the current git repository in a browser
+View or change the current team in the current kubernetes cluster
 
 ### Synopsis
 
-Opens the web page for the current git repository in a browser 
+Displays or changes the current team. 
 
-You can use the '--url' argument to just display the URL without opening it
+For more documentation on Teams see: https://jenkins-x.io/about/features/#teams
 
 ```
-jx repository [flags]
+jx team [flags]
 ```
 
 ### Examples
 
 ```
-  # Open the git repository in a browser
-  jx repo
+  # view the current team
+  jx team -b
   
-  # Print the URL of the git repository
-  jx repo -u
+  # pick which team to switch to
+  jx team
+  
+  # Change the current team to 'cheese'
+  jx team cheese
 ```
 
 ### Options
@@ -33,9 +36,8 @@ jx repository [flags]
 ```
   -b, --batch-mode   In batch mode the command never prompts for user input
       --headless     Enable headless operation if using browser automation
-  -h, --help         help for repository
+  -h, --help         help for team
       --no-brew      Disables the use of brew on MacOS to install or upgrade command line dependencies
-  -u, --url          Only displays and the URL and does not open the browser
       --verbose      Enable verbose logging
 ```
 

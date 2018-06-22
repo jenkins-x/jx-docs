@@ -1,5 +1,5 @@
 ---
-date: 2018-06-22T21:55:57Z
+date: 2018-06-22T22:31:14Z
 title: "jx"
 slug: jx
 url: /commands/jx/
@@ -53,6 +53,7 @@ jx [flags]
 * [jx step](/commands/jx_step/)	 - pipeline steps
 * [jx stop](/commands/jx_stop/)	 - Stops a process such as a pipeline
 * [jx sync](/commands/jx_sync/)	 - Synchronises your local files to a devpod
+* [jx team](/commands/jx_team/)	 - View or change the current team in the current kubernetes cluster
 * [jx uninstall](/commands/jx_uninstall/)	 - Uninstall the Jenkins X platform
 * [jx update](/commands/jx_update/)	 - Updates an existing resource
 * [jx upgrade](/commands/jx_upgrade/)	 - Upgrades a resource
