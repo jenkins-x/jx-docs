@@ -1,7 +1,7 @@
 ---
-title: 快速入门
-linktitle: 快速入门
-description: 如何创建快速入门应用并导入 Jenkins X
+title: 快速开始
+linktitle: 快速开始
+description: 如何创建快速开始应用并导入 Jenkins X
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01
@@ -38,7 +38,7 @@ $ jx create quickstart  -l go
 $ jx create quickstart  -f http
 ```
 
-### 当你选择快速入门时的细节
+### 当你选择快速开始时的细节
 
 一旦你选择项目并命名后，下面的步骤会自动完成：
 
@@ -56,9 +56,9 @@ $ jx create quickstart  -f http
 * 为你的 Jenkins 添加 git 库
 * 首次触发流水线 
 
-### 快速入门的原理？
+### 快速开始的原理？
 
-快速入门的源码托管在 [the jenkins-quickstarts Github organisation](https://github.com/jenkins-x-quickstarts)。
+快速开始的源码托管在 [the jenkins-quickstarts Github organisation](https://github.com/jenkins-x-quickstarts)。
 
 当你创建完成后，我们根据工程源码的语言，使用 [Jenkins X build packs](https://github.com/jenkins-x/draft-packs) 来匹配最合适的构建。
 
@@ -78,11 +78,11 @@ ls -al ~/.jx/draft/packs/github.com/jenkins-x/draft-packs/packs
   * `Jenkinsfile` 使用申明式流水线（pipeline）实现持续构建、持续部署
   * Helm Charts 在 Kubernetes 上部署程序，并且实现 [预发环境](/about/features/#preview-environments)
    
-## 添加你自己的快速入门
+## 添加你自己的快速开始
 
-如果你想要提交一个新的快速入门给 Jenkins X，请把你 Github中的链接[提交问题](https://github.com/jenkins-x/jx/issues/new?labels=quickstart&title=Add%20quickstart&body=Please%20add%20this%20github%20quickstart:) 到[快速入门组织](https://github.com/jenkins-x-quickstarts)，然后它就会出现在菜单 `jx create quickstart` 中。
+如果你想要提交一个新的快速开始给 Jenkins X，请把你 Github中的链接[提交问题](https://github.com/jenkins-x/jx/issues/new?labels=quickstart&title=Add%20quickstart&body=Please%20add%20this%20github%20quickstart:) 到[快速开始组织](https://github.com/jenkins-x-quickstarts)，然后它就会出现在菜单 `jx create quickstart` 中。
 
-或者，你是开源项目的一份子，希望管理一套你们项目的快速入门；你可以[提交问题](https://github.com/jenkins-x/jx/issues/new?labels=quickstart&title=Add%20quickstart&body=Please%20add%20this%20github%20quickstart:)，把你们的Github组织详细信息给我们，然后我们会它作为默认的组织添加到命令 [jx create quickstart](/commands/jx_create_quickstart) 中。如果你把快速入门作为一个单独的 Github 组织来维护的话，对于 [jx create quickstart](/commands/jx_create_quickstart) 会更容易些。
+或者，你是开源项目的一份子，希望管理一套你们项目的快速开始；你可以[提交问题](https://github.com/jenkins-x/jx/issues/new?labels=quickstart&title=Add%20quickstart&body=Please%20add%20this%20github%20quickstart:)，把你们的Github组织详细信息给我们，然后我们会它作为默认的组织添加到命令 [jx create quickstart](/commands/jx_create_quickstart) 中。如果你把快速开始作为一个单独的 Github 组织来维护的话，对于 [jx create quickstart](/commands/jx_create_quickstart) 会更容易些。
 
 在我们完成这些事情之前，你还是可以在命令 `jx create quickstart` 中通过参数 `-g` or `--organisations` 来实现。
 
@@ -90,4 +90,4 @@ ls -al ~/.jx/draft/packs/github.com/jenkins-x/draft-packs/packs
 $ jx create quickstart  -l go --organisations my-github-org
 ```
 
-在 `my-github-org`中可以找到所有 Jenkins X 需要的快速入门。
+在 `my-github-org`中可以找到所有 Jenkins X 需要的快速开始。
