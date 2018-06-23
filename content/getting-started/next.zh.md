@@ -27,7 +27,7 @@ toc: true
 在 [研发](/zh/developing/) 章节中可能会有你想要尝试的内容，例如：
 
 * [创建一个新的 Spring Boot 应用并导入 Jenkins X](/zh/developing/create-spring/) 
-* [创建一个新的快速入门并导入 Jenkins X](/zh/developing/create-quickstart/)
+* [创建一个新的快速开始并导入 Jenkins X](/zh/developing/create-quickstart/)
 * [把已有的源码导入 Jenkins X](/zh/developing/import/)
 * [浏览](/zh/developing/browsing/) 可以浏览流水线，构建，应用和活动
 
