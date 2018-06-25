@@ -17,7 +17,9 @@ categories: [fundamentals]
 toc: true
 ---
 
-Jenkins X is designed to make it simple for developers to work to DevOps principles and best practices.
+Jenkins X is designed to make it simple for developers to work to DevOps principles and best practices. The approaches taken
+are based on the comprehensive research done for [*ACCELERATE: Building and Scaling High Performing Technology Organsiations*](https://goo.gl/vZ8BFN) 
+
 
 ## Principles
 ---
@@ -37,7 +39,7 @@ The lead time for code to migrate from 'code committed' to 'code in production' 
 
 The Mean Time To Recover from a failure should also be less than one hour. 
 
-Jenkins X has been designed from first principles to allow teams to apply DevOps best practices to hit top-of-industry performance goals.
+Jenkins X has been designed from first principles to allow teams to apply DevOps best practices to hit top-of-industry performance goals. 
 
 ## Practices
 ---
@@ -49,7 +51,9 @@ The following best practices are considered key to operating a successful DevOps
 * Continuous Build / Integration and Delivery
 * Automated Release Management
 * Incremental Testing
-* Configuration as Code
+* Infrastructure Configuration as Code
+* Comprehensive configuration management
+* Trunk based development and feature flags
 
 Jenkins X brings together a number of familiar methodologies and components into an integrated approach that minimises complexity.
 
