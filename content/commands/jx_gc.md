@@ -1,5 +1,5 @@
 ---
-date: 2018-06-26T10:07:27Z
+date: 2018-06-26T15:12:44Z
 title: "jx gc"
 slug: jx_gc
 url: /commands/jx_gc/
@@ -10,10 +10,10 @@ Garbage collects Jenkins X resources
 
 ### Synopsis
 
-Garbage collect resources 
-
-Valid resource types include: 
-
+Garbage collect resources
+  
+  Valid resource types include:
+  
   * previews  
   * activities  
   * helm
@@ -28,6 +28,7 @@ jx gc TYPE [flags]
   jx gc previews
   jx gc activities
   jx gc helm
+  jx gc gke
 ```
 
 ### Options
@@ -40,6 +41,7 @@ jx gc TYPE [flags]
 
 * [jx](/commands/jx/)	 - jx is a command line tool for working with Jenkins X
 * [jx gc activities](/commands/jx_gc_activities/)	 - garbage collection for activities
+* [jx gc gke](/commands/jx_gc_gke/)	 - garbage collection for gke
 * [jx gc helm](/commands/jx_gc_helm/)	 - garbage collection for Helm ConfigMaps
 * [jx gc previews](/commands/jx_gc_previews/)	 - garbage collection for preview environments
 

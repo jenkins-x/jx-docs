@@ -1,5 +1,5 @@
 ---
-date: 2018-06-26T10:07:27Z
+date: 2018-06-26T15:12:44Z
 title: "jx delete application"
 slug: jx_delete_application
 url: /commands/jx_delete_application/
@@ -34,6 +34,7 @@ jx delete application [flags]
 
 ```
   -a, --all                             Selects all the matched apps
+  -b, --batch-mode                      Run without being prompted. WARNING! You will not be asked to confirm deletions if you use this flag.
   -f, --filter string                   Filter the list of apps to those containing this text
   -h, --help                            help for application
       --no-env                          Do not remove the app from any of the Environments

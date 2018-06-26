@@ -1,5 +1,5 @@
 ---
-date: 2018-06-26T10:07:27Z
+date: 2018-06-26T15:12:44Z
 title: "jx create quickstart"
 slug: jx_create_quickstart
 url: /commands/jx_create_quickstart/
@@ -63,6 +63,7 @@ jx create quickstart [flags]
   -o, --output-dir string              Directory to output the project to. Defaults to the current directory
       --owner string                   The owner to filter on
       --pack string                    The name of the pack to use
+  -p, --project-name string            The project name (for use with -b batch mode)
   -t, --tag stringArray                The tags on the quickstarts to filter
       --verbose                        Enable verbose logging
 ```
