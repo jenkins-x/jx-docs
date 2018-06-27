@@ -178,7 +178,7 @@ git remote add <YOUR-GITHUB-USERNAME> <COPIED REMOTE-URL>
 Alternatively, you can use the Git wrapper Hub. Hub makes forking a repository easy:
 
 ```
-git fork
+hub fork
 ```
 
 That command will log in to GitHub using your account, create a fork of the repository that you're currently working in, and add it as a remote to your working copy.
