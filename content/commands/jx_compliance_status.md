@@ -1,5 +1,5 @@
 ---
-date: 2018-06-27T12:12:26Z
+date: 2018-06-27T13:47:06Z
 title: "jx compliance status"
 slug: jx_compliance_status
 url: /commands/jx_compliance_status/
