@@ -1,5 +1,5 @@
 ---
-date: 2018-06-27T13:47:06Z
+date: 2018-06-27T16:51:01Z
 title: "jx prompt"
 slug: jx_prompt
 url: /commands/jx_prompt/
