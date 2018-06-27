@@ -34,7 +34,7 @@ If you already have a git server somewhere you can add it into Jenkins X via [jx
 jx create git server gitKind someURL
 ```
 
-Where the `gitKind` is one of the supported git provider kinds like `github, gitea, gitlab, bitbucket`
+Where the `gitKind` is one of the supported git provider kinds like `github, gitea, gitlab, bitbucketcloud, bitbucketserver`
 
 ## GitHub Enterprise
 
@@ -46,12 +46,20 @@ jx create git server github https://github.foo.com -n GHE
 
 Where `-n` is the name for the git service.
 
-## BitBucket
+## BitBucket Cloud
 
-To add BitBucket try:
+To add BitBucket Cloud try:
 
 ```
-jx create git server bitbucket -n BitBucket https://bitbucket.org
+jx create git server bitbucketcloud -n BitBucket https://bitbucket.org
+```
+
+## BitBucket Server
+
+To add BitBucket Standalone Server try:
+
+```
+jx create git server bitbucketserver -n BitBucket https://your_server_address
 ```
 
 ## Gitlab
