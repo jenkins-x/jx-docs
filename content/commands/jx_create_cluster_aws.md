@@ -1,5 +1,5 @@
 ---
-date: 2018-06-27T16:51:01Z
+date: 2018-06-27T19:27:49Z
 title: "jx create cluster aws"
 slug: jx_create_cluster_aws
 url: /commands/jx_create_cluster_aws/
@@ -60,13 +60,16 @@ jx create cluster aws [flags]
       --ingress-namespace string            The namespace for the Ingress controller (default "kube-system")
       --ingress-service string              The name of the Ingress controller Service (default "jxing-nginx-ingress-controller")
       --insecure-registry string            The insecure docker registries to allow (default "100.64.0.0/10")
+      --install-only                        Force the install comand to fail if there is already an installation. Otherwise lets update the installation
       --keep-exposecontroller-job           Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
   -v, --kubernetes-version string           kubernetes version
       --local-cloud-environment             Ignores default cloud-environment-repo and uses current directory 
       --local-helm-repo-name string         The name of the helm repository for the installed Chart Museum (default "releases")
+      --master-size string                  The size of a master in the kops created cluster.
       --namespace string                    The namespace the Jenkins X platform should be installed into (default "jx")
       --no-brew                             Disables the use of brew on MacOS to install or upgrade command line dependencies
       --no-default-environments             Disables the creation of the default Staging and Production environments
+      --node-size string                    The size of a node in the kops created cluster.
   -o, --nodes string                        node count
       --on-premise                          If installing on an on premise cluster then lets default the 'external-ip' to be the kubernetes master IP address
   -r, --rbac                                whether to enable RBAC on the Kubernetes cluster (default true)
@@ -82,6 +85,7 @@ jx create cluster aws [flags]
       --user-cluster-role string            The cluster role for the current user to be able to administer helm (default "cluster-admin")
       --username string                     The kubernetes username used to initialise helm. Usually your email address for your kubernetes account
       --verbose                             Enable verbose logging
+      --version string                      The specific platform version to install
   -z, --zones string                        Availability zones. Defaults to $AWS_AVAILABILITY_ZONES
 ```
 

@@ -1,5 +1,5 @@
 ---
-date: 2018-06-27T16:51:01Z
+date: 2018-06-27T19:27:49Z
 title: "jx create cluster gke terraform"
 slug: jx_create_cluster_gke_terraform
 url: /commands/jx_create_cluster_gke_terraform/
@@ -58,6 +58,7 @@ jx create cluster gke terraform [flags]
       --ingress-deployment string           The namespace for the Ingress controller Deployment (default "jxing-nginx-ingress-controller")
       --ingress-namespace string            The namespace for the Ingress controller (default "kube-system")
       --ingress-service string              The name of the Ingress controller Service (default "jxing-nginx-ingress-controller")
+      --install-only                        Force the install comand to fail if there is already an installation. Otherwise lets update the installation
       --keep-exposecontroller-job           Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
       --labels string                       The labels to add to the cluster being created such as 'foo=bar,whatnot=123'. Label names must begin with a lowercase character ([a-z]), end with a lowercase alphanumeric ([a-z0-9]) with dashes (-), and lowercase alphanumeric ([a-z0-9]) between.
       --local-cloud-environment             Ignores default cloud-environment-repo and uses current directory 
@@ -83,6 +84,7 @@ jx create cluster gke terraform [flags]
       --user-cluster-role string            The cluster role for the current user to be able to administer helm (default "cluster-admin")
       --username string                     The kubernetes username used to initialise helm. Usually your email address for your kubernetes account
       --verbose                             Enable verbose logging
+      --version string                      The specific platform version to install
   -z, --zone string                         The compute zone (e.g. us-central1-a) for the cluster
 ```
 
