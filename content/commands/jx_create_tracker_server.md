@@ -1,5 +1,5 @@
 ---
-date: 2018-06-28T13:39:35Z
+date: 2018-06-28T14:45:48Z
 title: "jx create tracker server"
 slug: jx_create_tracker_server
 url: /commands/jx_create_tracker_server/

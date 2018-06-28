@@ -1,5 +1,5 @@
 ---
-date: 2018-06-28T13:39:35Z
+date: 2018-06-28T14:45:48Z
 title: "jx uninstall"
 slug: jx_uninstall
 url: /commands/jx_uninstall/
@@ -26,7 +26,13 @@ jx uninstall [flags]
 ### Options
 
 ```
-  -h, --help   help for uninstall
+  -b, --batch-mode         In batch mode the command never prompts for user input
+      --headless           Enable headless operation if using browser automation
+  -h, --help               help for uninstall
+  -n, --namespace string   The team namespace to uninstall. Defaults to the current namespace.
+      --no-brew            Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --verbose            Enable verbose logging
+  -y, --yes                Confirms we should uninstall this installation
 ```
 
 ### SEE ALSO
