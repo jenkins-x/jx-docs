@@ -1,5 +1,5 @@
 ---
-date: 2018-06-28T14:45:48Z
+date: 2018-06-28T16:19:16Z
 title: "jx create terraform"
 slug: jx_create_terraform
 url: /commands/jx_create_terraform/
@@ -34,6 +34,14 @@ jx create terraform [flags]
       --git-api-token string            The git API token to use for creating new git repositories
       --git-provider-url string         The git server URL to create new git repositories inside
       --git-username string             The git username to use for creating new git repositories
+      --gke-disk-size string            Size in GB for node VM boot disks. Defaults to 100GB (default "100")
+      --gke-enable-autorepair           Sets autorepair feature for a cluster's default node-pool(s) (default true)
+      --gke-enable-autoupgrade          Sets autoupgrade feature for a cluster's default node-pool(s)
+      --gke-machine-type string         The type of machine to use for nodes
+      --gke-max-num-nodes string        The maximum number of nodes to be created in each of the cluster's zones
+      --gke-min-num-nodes string        The minimum number of nodes to be created in each of the cluster's zones
+      --gke-project-id string           Google Project ID to create cluster in
+      --gke-zone string                 The compute zone (e.g. us-central1-a) for the cluster
       --headless                        Enable headless operation if using browser automation
   -h, --help                            help for terraform
       --no-brew                         Disables the use of brew on MacOS to install or upgrade command line dependencies
