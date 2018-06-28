@@ -41,7 +41,7 @@ jenkins:
         DOCKER_REGISTRY: "gcr.io"
 ```
 
-### Update the config.json secret
+## Update the config.json secret
 
 Next you will need to update the `config.json` secret for docker. 
 
@@ -74,6 +74,21 @@ Then to update the `jenkins-docker-cfg` secret you can do:
 kubectl delete secret jenkins-docker-cfg
 kubectl create secret generic jenkins-docker-cfg --from-file=./config.json
 ```   
+
+## Using Docker Hub
+
+If you want to publish images to docker hub then you need to modify your `config.json` as described above to something like:
+
+```json 
+{
+    "auths": {
+        "https://index.docker.io/v1/": {
+            "auth": "MyDockerHubToken",
+            "email": "myemail@acme.com"
+        }
+    }
+}
+``` 
 
 ### Mount a Secret for your registry
 
