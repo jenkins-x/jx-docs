@@ -13,6 +13,8 @@ weight: 5
 sections_weight: 5
 ---
 
+* [JavaDay Perú 30 June 2018:CI/CD for Spring Boot Applications with Jenkins X](http://perujug.org/perujavaday2018/) by [Eddú Meléndez](https://twitter.com/eddumelendez)
+
 * [JBCN Conference 11-13 June 2018:Workshop - building Continuous Delivery for Microservices with Jenkins X](http://www.jbcnconf.com/2018/infoSpeaker.html?ref=SmFtZXNTdHJhY2hhbmpzdHJhY2hhbkBjbG91ZGJlZXMuY29t) by [James Strachan](https://twitter.com/jstrachan)
 
 * [CNCF webinar: Continuous Integration and Delivery with Kubernetes](https://www.youtube.com/watch?v=bIdMveCe75c&feature=youtu.be) with [slides](https://docs.google.com/presentation/d/1hwt2lFh3cCeFdP4xoT_stMPs0nh2xVZUtze6o79WfXc/edit?usp=sharing) by [James Strachan](https://twitter.com/jstrachan)
