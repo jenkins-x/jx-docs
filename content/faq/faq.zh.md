@@ -3,10 +3,10 @@ title: 常见问题解答
 linktitle: FAQ
 description: Jenkins X 常见问题的解决方案。
 date: 2018-05-20
-categories: [troubleshooting]
+categories: [faq]
 menu:
   docs:
-    parent: "troubleshooting"
+    parent: "faq"
 keywords: [faqs]
 weight: 2
 toc: true

@@ -1,14 +1,14 @@
 ---
-title: Frequently Asked Questions
-linktitle: FAQ
-description: Solutions to some common Jenkins X problems.
+title: Common Problems
+linktitle: Common Problems
+description: Questions on common issues setting up Jenkins X.
 date: 2018-02-10
-categories: [troubleshooting]
+categories: [faq]
 menu:
   docs:
-    parent: "troubleshooting"
+    parent: "faq"
 keywords: [faqs]
-weight: 2
+weight: 20
 toc: true
 aliases: [/faq/]
 ---

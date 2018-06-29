@@ -260,10 +260,10 @@ anchor = "smart"
 
 
 [[menu.docs]]
-  name = "Troubleshooting"
+  name = "FAQ"
   weight = 60
-  identifier = "troubleshooting"
-  url = "/troubleshooting/"
+  identifier = "faq"
+  url = "/faq/"
 
 [[menu.docs]]
   name = "Contribute"

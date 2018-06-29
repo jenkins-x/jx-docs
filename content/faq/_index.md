@@ -1,19 +1,19 @@
 ---
-title: Troubleshoot 
-linktitle: Troubleshoot
-description: Frequently asked questions
+title: FAQ Overview 
+linktitle: FAQ Overview
+description: Overview of the various sections of the FAQ
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01
 menu:
   docs:
-    parent: "troubleshooting"
+    parent: "faq"
     weight: 1
 weight: 1	
 draft: false
 hidesectioncontents: false
 slug:
-aliases: [/troubleshooting/faqs/,/faqs/]
+aliases: [/faq/faqs/,/faqs/]
 toc: false
 notesforauthors:
 ---
