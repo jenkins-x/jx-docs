@@ -46,3 +46,20 @@ Skaffold is also really useful inside [DevPods](/developing/devpods/) for doing 
 `skaffold` is a tool for performing docker builds and optionally redeploying apps via `kubectl` or `helm` - either inside a CI/CD pipeline or when developing locally.
 
 Jenkins X uses `skaffold` in its CI/CD pipelines to create docker images. We release versioned docker images and helm charts on each merge to master. Then we promote to environments via `helm`.
+
+## Whats is exposecontroller?
+
+It turns out that exposing services outside of the Kubernetes cluster can be complex. e.g. 
+
+* What domain to use? 
+* Should you use TLS & generate certificates and associate them with the domains?
+* Are you using OpenShift if so then maybe using `Route` is better than using `Ingress`?
+
+So we simplify microservices in Jenkins X by delegation to a microservice called [exposecontroller](https://github.com/jenkins-x/exposecontroller) who's job is to take care of that stuff - expose all `Service` resources which have a label to indicate they are intended to be exposed using the current cluster and namespaces's expose rules like the domain and whether or not to use TLS or `Route` versus `Ingress` etc.
+
+If you look inside your environment git repository you may notice 2 `exposecontroller` [charts are there by default](https://github.com/jenkins-x/default-environment-charts/blob/master/env/requirements.yaml)
+
+Those are 2 jobs we use by default to automate generating or cleaning `Ingress` resources to expose labeled `Services`resources that you want to access from outside of the cluster. Eg web apps or rest apis. 
+
+You can opt out of exposecontroller if you want - just don’t use the exposecontroller labels on your services. You could remove the exposecontroller job from an environment if you want - though none of our QuickStarts will be accessible from outside the cluster if you do!
+
