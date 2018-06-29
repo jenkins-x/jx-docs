@@ -1,5 +1,5 @@
 ---
-date: 2018-06-29T15:54:40Z
+date: 2018-06-29T17:29:33Z
 title: "jx create cluster aks"
 slug: jx_create_cluster_aks
 url: /commands/jx_create_cluster_aks/
@@ -81,8 +81,8 @@ jx create cluster aks [flags]
       --tiller-namespace string                  The namespace for the Tiller when using a gloabl tiller (default "kube-system")
       --timeout string                           The number of seconds to wait for the helm install to complete (default "6000")
       --tls-acme string                          Used to enable automatic TLS for ingress (default "false")
-  -u, --user name string                         user name
       --user-cluster-role string                 The cluster role for the current user to be able to administer helm (default "cluster-admin")
+  -u, --user-name string                         user name
       --username string                          The kubernetes username used to initialise helm. Usually your email address for your kubernetes account
       --version string                           The specific platform version to install
 ```

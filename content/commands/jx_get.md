@@ -1,5 +1,5 @@
 ---
-date: 2018-06-29T15:54:40Z
+date: 2018-06-29T17:29:33Z
 title: "jx get"
 slug: jx_get
 url: /commands/jx_get/
@@ -57,6 +57,7 @@ jx get TYPE [flags]
 * [jx get issue](/commands/jx_get_issue/)	 - Display the status of an issue
 * [jx get issues](/commands/jx_get_issues/)	 - Display one or many issues
 * [jx get pipelines](/commands/jx_get_pipelines/)	 - Display one or many Pipelines
+* [jx get post](/commands/jx_get_post/)	 - Create a job which is triggered after a Preview is created
 * [jx get previews](/commands/jx_get_previews/)	 - Display one or many Preview Environments
 * [jx get quickstartlocations](/commands/jx_get_quickstartlocations/)	 - Display one or many Quickstart Locations
 * [jx get teams](/commands/jx_get_teams/)	 - Display the Team or Teams the current user is a member of

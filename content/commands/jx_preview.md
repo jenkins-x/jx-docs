@@ -1,5 +1,5 @@
 ---
-date: 2018-06-29T15:54:40Z
+date: 2018-06-29T17:29:33Z
 title: "jx preview"
 slug: jx_preview
 url: /commands/jx_preview/
@@ -28,31 +28,33 @@ jx preview [flags]
 ### Options
 
 ```
-  -a, --app string                      The Application to promote
-  -c, --cluster string                  The Kubernetes cluster for the Environment. If blank and a namespace is specified assumes the current cluster
-      --dev-namespace string            The Developer namespace where the preview command should run
-      --dir string                      The source directory used to detect the git source URL and reference
-      --domain string                   Domain to expose ingress endpoints.  Example: jenkinsx.io
-      --exposer string                  Used to describe which strategy exposecontroller should use to access applications (default "Ingress")
-  -r, --helm-repo-name string           The name of the helm repository that contains the app (default "releases")
-  -u, --helm-repo-url string            The Helm Repository URL to use for the App (default "http://jenkins-x-chartmuseum:8080")
-  -h, --help                            help for preview
-      --http string                     Toggle creating http or https ingress rules (default "true")
-      --keep-exposecontroller-job       Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
-  -l, --label string                    The Environment label which is a descriptive string like 'Production' or 'Staging'
-  -n, --name string                     The Environment resource name. Must follow the kubernetes name conventions like Services, Namespaces
-      --namespace string                The Kubernetes namespace for the Environment
-      --no-helm-update                  Allows the 'helm repo update' command if you are sure your local helm cache is up to date with the version you wish to promote
-      --no-merge                        Disables automatic merge of promote Pull Requests
-      --pr string                       The Pull Request Name (e.g. 'PR-23' or just '23'
-      --pr-url string                   The Pull Request URL
-      --pull-request-poll-time string   Poll time when waiting for a Pull Request to merge (default "20s")
-      --release string                  The name of the helm release
-      --source-ref string               The source code git ref (branch/sha)
-  -s, --source-url string               The source code git URL
-  -t, --timeout string                  The timeout to wait for the promotion to succeed in the underlying Environment. The command fails if the timeout is exceeded or the promotion does not complete (default "1h")
-      --tls-acme string                 Used to enable automatic TLS for ingress (default "false")
-  -v, --version string                  The Version to promote
+  -a, --app string                        The Application to promote
+  -c, --cluster string                    The Kubernetes cluster for the Environment. If blank and a namespace is specified assumes the current cluster
+      --dev-namespace string              The Developer namespace where the preview command should run
+      --dir string                        The source directory used to detect the git source URL and reference
+      --domain string                     Domain to expose ingress endpoints.  Example: jenkinsx.io
+      --exposer string                    Used to describe which strategy exposecontroller should use to access applications (default "Ingress")
+  -r, --helm-repo-name string             The name of the helm repository that contains the app (default "releases")
+  -u, --helm-repo-url string              The Helm Repository URL to use for the App (default "http://jenkins-x-chartmuseum:8080")
+  -h, --help                              help for preview
+      --http string                       Toggle creating http or https ingress rules (default "true")
+      --keep-exposecontroller-job         Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
+  -l, --label string                      The Environment label which is a descriptive string like 'Production' or 'Staging'
+  -n, --name string                       The Environment resource name. Must follow the kubernetes name conventions like Services, Namespaces
+      --namespace string                  The Kubernetes namespace for the Environment
+      --no-helm-update                    Allows the 'helm repo update' command if you are sure your local helm cache is up to date with the version you wish to promote
+      --no-merge                          Disables automatic merge of promote Pull Requests
+      --post-preview-job-timeout string   The duration before we consider the post preview Jobs failed (default "2h")
+      --post-preview-poll-time string     The amount of time between polls for the post preview Job status (default "10s")
+      --pr string                         The Pull Request Name (e.g. 'PR-23' or just '23'
+      --pr-url string                     The Pull Request URL
+      --pull-request-poll-time string     Poll time when waiting for a Pull Request to merge (default "20s")
+      --release string                    The name of the helm release
+      --source-ref string                 The source code git ref (branch/sha)
+  -s, --source-url string                 The source code git URL
+  -t, --timeout string                    The timeout to wait for the promotion to succeed in the underlying Environment. The command fails if the timeout is exceeded or the promotion does not complete (default "1h")
+      --tls-acme string                   Used to enable automatic TLS for ingress (default "false")
+  -v, --version string                    The Version to promote
 ```
 
 ### SEE ALSO

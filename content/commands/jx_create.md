@@ -1,5 +1,5 @@
 ---
-date: 2018-06-29T15:54:40Z
+date: 2018-06-29T17:29:33Z
 title: "jx create"
 slug: jx_create
 url: /commands/jx_create/
@@ -49,6 +49,7 @@ jx create [flags]
 * [jx create jhipster](/commands/jx_create_jhipster/)	 - Create a new JHipster based application and import the generated code into git and Jenkins for CI/CD
 * [jx create lile](/commands/jx_create_lile/)	 - Create a new lile based application and import the generated code into git and Jenkins for CI/CD
 * [jx create micro](/commands/jx_create_micro/)	 - Create a new micro based application and import the generated code into git and Jenkins for CI/CD
+* [jx create post](/commands/jx_create_post/)	 - Create a job which is triggered after a Preview is created
 * [jx create quickstart](/commands/jx_create_quickstart/)	 - Create a new app from a Quickstart and import the generated code into git and Jenkins for CI/CD
 * [jx create quickstartlocation](/commands/jx_create_quickstartlocation/)	 - Create a location of quickstarts for your team
 * [jx create spring](/commands/jx_create_spring/)	 - Create a new spring boot application and import the generated code into git and Jenkins for CI/CD
