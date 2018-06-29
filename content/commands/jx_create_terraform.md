@@ -1,5 +1,5 @@
 ---
-date: 2018-06-29T11:29:06Z
+date: 2018-06-29T13:40:23Z
 title: "jx create terraform"
 slug: jx_create_terraform
 url: /commands/jx_create_terraform/
@@ -46,6 +46,7 @@ jx create terraform [flags]
   -h, --help                            help for terraform
       --no-brew                         Disables the use of brew on MacOS to install or upgrade command line dependencies
   -o, --organisation-repo-name string   The organisation name that will be used as the Git repo containing cluster details
+      --skip-terraform-apply            Skip applying the generated terraform plans
       --verbose                         Enable verbose logging
 ```
 
