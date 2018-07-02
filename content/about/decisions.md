@@ -1,10 +1,10 @@
 ---
-title: Opinions
-linktitle: Opinions
-description: Background 
-date: 2017-06-29
+title: Decisions
+linktitle: Decisions
+description: Documented decisions made by the Jenkins X project
+date: 2018-06-29
 publishdate: 2017-06-29
-lastmod: 2017-06-29
+lastmod: 2018-06-29
 menu:
   docs:
     parent: "about"
@@ -12,17 +12,16 @@ menu:
 weight: 40
 sections_weight: 40
 draft: false
-aliases: [/about/opinions]
+aliases: [/about/decisions]
 categories: [fundamentals]
 toc: true
 ---
 
+# Decisions
 
-## Opinions
+Jenkins X is an opinionated developer experience, here we will explain the background and decisions we have taken to help explain the reasons for these opinions.  You may also want to take a look at the [Accelerate](https://jenkins-x.io/about/opinions/) page for details on how Jenkins X implements the capabilities recommended by 
 
-Jenkins X is an opinionated developer experience, here we will explain the background and decisions we have taken to help explain the reasons for these opinions.
-
-### Kubernetes
+## Kubernetes
 
 First is why Jenkins X is purely focussed on Kubernetes and is only inteded to run on it.
 
@@ -34,9 +33,8 @@ Jenkins X strongly recommends using public cloud managed Kubernetes clusters whe
 
 i.e. let folks that know how to run containers and manage clusters at scale so you can focus on adding value to your business.
 
-### Tooling
- 
-#### Draft
+
+## Draft
 
 [Draft](https://draft.sh) has a few capabilities but Jenkins X only uses the language detection and pack creation feature.  Jenkins X maintains it's own [draft packs](https://github.com/jenkins-x/draft-packs) tailered to run with Jenkins X.
 
@@ -44,7 +42,7 @@ Draft provides a great way to bootstrap a source code project with the necessary
 
 The Draft project came from Deis who were aquired by Microsoft and continue to invest and evolve their Kubernetes developer story.
 
-#### Helm
+## Helm
 
 [Helm](https://helm.sh) provides the templated packaging for running applications on Kubernetes.  We've received mixed feedback from our use of Helm.  From our experience being able to template and compose multiple Helm Charts together has been a very welcome find. This lead to our use of using Helm to compose, install and upgrade entire environments and being able to easily override values such as number of replicas or application resource limits per environment for example.
 
@@ -54,13 +52,13 @@ Lots of the concerns with Helm are being addressed with the major version upgrad
 
 The Helm project came from Deis who were aquired by Microsoft and continue to invest and evolve their Kubernetes developer story.
 
-#### Skaffold
+## Skaffold
 
 Jenkins X uses [Skaffold](https://github.com/GoogleContainerTools/skaffold) to perform the build and push image actions in a pipeline.  Skaffold allows us to implement different image builder and registries services like [Google Container Buidler](https://cloud.google.com/container-builder/), [Azure Container Builder](https://github.com/Azure/acr-builder) and [ECR](https://aws.amazon.com/ecr/).  
 
 For folks that aren't running on a public cloud with container builder or registery services then Skaffold can also work with [Kanico](https://github.com/GoogleContainerTools/kaniko), this allows pipelines to build docker images using rootless containers.  This is significantly more secure than mounting the docker socket from each node in the cluster.
 
-#### Jenkins
+## Jenkins
 
 Jenkins as a large JVM that isn't highly available, may seem a surprise to be selected as the pipeline engine to use in the Cloud, however the adoption of Jenkins by developers and the community it has means it is ideal to use and evolve it's own cloud native story.  Already Jenkins X generates Kubernetes Custom Resource Definitions for pipeline activities that our IDE and CLI tooling uses rather than querying Jenkins.  We will be storing Jenkins builds and runs objects in Kubernetes rather than in the `$JENKINS_HOME` which means we can scale Jenkins masters.  We are also switching to Prow to intercept Git webhook events rather than using Jenkins, this means we can have a highly available solution as well as hand off the scheduling of builds to Kubernetes.  
 
@@ -68,13 +66,13 @@ TL;DR we are pushing more of the Jenkins master functionality down into the Kube
 
 Taking this approach also means we will be able to support other pipeline engins in the future as well.
 
-#### Prow
+## Prow
 
 [Prow](https://github.com/kubernetes/test-infra/tree/master/prow) handles Git events and can trigger workflows in Kubernetes.
 
 Prow can run in a highly available mode where multiple pods for a webhook ingress URL.  In contrast with Jenkins if you perform an upgrade then Jenkins has some downtime where webhook events can be missed.  This is on our roadmap and we hope to be available soon.
 
-#### Nexus
+## Nexus
 
 [Nexus](https://help.sonatype.com/repomanager3) is an overweight JVM that recenly moved to OSGi however it does the job we need of it.  Cache dependencies for faster builds and provide a shared repository where teams can share their released artifacts.  
 
@@ -82,49 +80,23 @@ If someone developed an open source artifact repository server in a more cloud f
 
 Right now Jenkins X doesn't use the docker registry from Nexus.  The main reason was we needed to do some work to setup pod definitions with image pull secrets so we can use the authentiacted registry.  Our preferred approach however is to switch to using native cloud provider registries like Amazon's [ECR](https://aws.amazon.com/ecr/), [Google Container Regitry](https://cloud.google.com/container-registry/) or Dockerhub for example with the help of Skaffold.
 
-#### Docker registry
+## Docker registry
 
 As above, we don't intend to use [this registry](https://github.com/kubernetes/charts/tree/master/stable/docker-registry) long term as we prefer using cloud provider registries like Amazon's [ECR](https://aws.amazon.com/ecr/), [Google Container Regitry](https://cloud.google.com/container-registry/) or Dockerhub for example with the help of Skaffold.
 
-#### Chartmuseum
+## Chartmuseum
 
 At time of creating Jenkins X there were few options of how to publish Helm Charts, the Kubernetes community uses GitHub pages but we wanted to find a solution that works for folks that use any git provider.  [Chartmuseum](https://github.com/kubernetes-helm/chartmuseum) is written in Go so performs well in the cloud, it supports multiple cloud storage and works great with Monocular.
 
-#### Monocular
+## Monocular
 
 We use [Monucular](https://github.com/kubernetes-helm/monocular) to discover our Teams published applications, we could use KubeApps by default instead if it is preferred by the community but we'll enable KubeApps as an addon regardless.
 
-#### Git
+## Git
 
 Jenkins X only works with Git.  There are a lot of dependencies and client implementations Jenkins X already needs to support for diferent Git providers, we don't hear enough demand to support other version control systems so for now Jenkins X is tied to Git.
 
-## Capabilities
-
-Jenkins X is heavily influence by the State of DevOps reports and more recently the [Accelerate book](https://www.amazon.co.uk/Accelerate-Software-Performing-Technology-Organizations/dp/1942788339) from [Nicole Forsgren](https://twitter.com/nicolefv) and [Gene Kim](https://twitter.com/RealGeneKim?).  Years of data gathering from real world teams and organisations which has been analysed by inspiring thought leaders and data scientists from the DevOps world.  The Accelerate book recommends a number of capabilites that Jenkins X looks to implement.  Some are easier than others so we will be continually improving these implementations as we gather more feedback.
-
-### GitOps
-
-Jenkins X believes that all configuration and environment state should be goverened via Git.  The Weaveworks folks coined the term GitOps which we love.  Any change to an environment, whether it be a new application, version upgrade, resource limit change or simple application configuration should be raised as a Pull Request to Git, have checks run against it like a form of CI for environments and approved by a team that has control over what goes into the related environment.
-
-_source: Accelerate Appenxix A, p201 Capability Use version control for all production artifacts_
-
-### Trunk based developmemt
-
-The Accelerate book found that teams which use trunk based development with short lived branches performed better.  This has always worked for the core Jenkins X team members so this was an easy opinion to settle on.
-
-_source: Accelerate Appenxix A, p202 Capability: Use trunk-based developement_
-
-### Versioning
-
-Jenkins X advoates the use of semantic versioning.  We use git tags to calculate the next release version which means we don't need to store the latest release version in the master branch.  Where release systems do store the latest release version in git means CD beomes hard as a commit in a release pipeline back to master triggers a new release.  Using a Git tag helps avoid this situation.
-
-### Releasing
-
-Jenkins X sees CI as the effort of validating a proposed change via pull requests, CD is the effort of taking that change after it's been merged to master through to running in a live environment.
-
-Jenkins X will automatically create a released version on __every__ merge to master which can then potentially progress through to production.
-
-### Programming languages
+## Programming languages
 
 Jenkins X aims to help provide the right level of feedback for developers to understand how their applications are performing and give them easy ways to experiment with other languages which may suit both the feature and running on the Cloud better.  For example there are a lot of Java based organisations that only know how to write, run and maintain Java applications.  Java is extremely resource intensive compared with Golang, Rust, Swift, NodeJS to name a few, this results in much much higher cloud bills each month.  With Jenkins X we aim to help developers experiment with other options using quickstarts and metrics addons like Grafana and Prometheus to see how they bahave in the cloud.
 
@@ -137,35 +109,3 @@ Maven has some tooling that a lot of folks are used to using which doesn't suit 
 For Java projects Jenkins X uses the [maven version:set plugin](https://www.mojohaus.org/versions-maven-plugin/set-mojo.html) to update all poms in a project using the next release version following the #Versioning step mentioned above.
 
 If a new major or minor version increment is needed users can create a new Git tag with the new major / minor number and Jenkins X will respect that.  Alternatively you can update the parent `pom.xml` and any child pom files youself and Jenkins X will detect and use the new major or minor version.
-
-### Automed CI and CD
-
-Jenkins X automatically configures source code repositories and Jenkins to provide both Ci and CD iut of the box.
-
-_source: Accelerate Appenxix A, p202.  Capability:  Implement Continious Integration, Capability: Implement Continious Delivery_
-
-## Environments
-
-### Preview environment
-
-In software develelopment we're used to working with multiple environment in the lead up to a change being promted to a live production environment.  Jenkins X still agrees with this approach however we are trying to move as much testing, security, validation and experimentation for a change before it is merged.  With the use of temporary and dynamically created Preview Environments in Jenkins X any pull request can have a preview version built and deployed, including libraries that feed into a downstream deployable application.  This means we can code review, test, collaborate better with all teams that are involved in agreeing that change can go live.
-
-Ultimatelty Jenkins X wants to provide a way that developers, testers, designers and product managers can be as sure as they can that when a change is merged to master that it works as expected, doesn't negatively affect any service or feature and delivers the value it is intended to do.
-
-Using preview environments is a great way to introduce better test automation.  While Jenkins X enables this we don't yet have examples of automated tests being run against a preview environment.  A simple test would be to ensure the application starts ok and Kubernetes liveness check pass for an amount of time. This relates to _Accelerate Appenxix A, p202.  Capability:  Implement Test Automation_
-
-Where preview environments get really interesting is when we are able to progress a PR through various stages of maturity and confidence where we begin to direct a percentage of real production beta users to it.  We can then analyse the value of the proposed change and possible run multiple automated experiments over time using Hypothesis Driven Development.  This helps give us better understanding of how the change will perform when released to all users.
-
-_source: Accelerate Appenxix A, p205.  Capability: Foster and enable team experimentaion_
-
-### Staging environment
-
-In software develelopment we're used to working with multiple environments in the lead up to a change being promted to a live production environment.  Whilst this seems business as unual it can cause significant delays to other changes if for any reason that it is deemed not fit via some process that didn't happen pre merge to master.  Subsequest commits then become blocked and can cause delay of urgent changes being promoted to production.
-
-Jenkins X wants any changes and experiments to be validated before it is merged to master.  We would like changes in a staging environment to be held there for a short amount of time before being promoted, ideally in an automated fasion.
-
-The default Jenkins X pipelines provide deployment automation via environments.  These are customizable to suite your own CI / CD pipeline requirements.
-
-Staging should act as a near as possible reflection on production, ideally with real production data shadowed to it using a service mesh to understand the behaviour.  This also helps when developing changes in preview where we can link to non production services in staging.
-
-_source: Accelerate Appenxix A, p202. Capability: Automate your deployment process_

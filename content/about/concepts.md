@@ -2,9 +2,9 @@
 title: Concepts
 linktitle: Concepts
 description: An overview of the concepts in Jenkins X
-date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
+date: 2018-02-01
+publishdate: 2018-02-01
+lastmod: 2018-02-01
 menu:
   docs:
     parent: "about"
