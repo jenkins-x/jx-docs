@@ -23,11 +23,11 @@ Jenkins X is an opinionated developer experience, here we will explain the backg
 
 ## Kubernetes
 
-First is why Jenkins X is purely focussed on Kubernetes and is only inteded to run on it.
+First is why Jenkins X is purely focused on Kubernetes and is only intended to run on it.
 
-Kubernetes has won the cloud wars, every major cloud provider now either supports Kubernetes or is actively working on a Kubernetes solution.  Google, Microsoft, Amazon, Red Hat, Oracle, IBM, Alibaba, Digital Ocean, Docker, Mesos and Cloud Foundary to name a few.  We now have one deployment platform to target and develop first class portable applications for.
+Kubernetes has won the cloud wars, every major cloud provider now either supports Kubernetes or is actively working on a Kubernetes solution.  Google, Microsoft, Amazon, Red Hat, Oracle, IBM, Alibaba, Digital Ocean, Docker, Mesos and Cloud Foundry to name a few.  We now have one deployment platform to target and develop first class portable applications for.
 
-The Kuberetes ecosystem is rich with innovation and with a vibrant, forward thinking, diverse open source communty which is inviting only suggests great things for all involved.
+The Kuberetes ecosystem is rich with innovation and with a vibrant, forward thinking, diverse open source community which is inviting only suggests great things for all involved.
 
 Jenkins X strongly recommends using public cloud managed Kubernetes clusters where possible. GKE, AKS and EKS all manage and run your Kubernetes masters for __free__ you pay for the worker resources required to run your applications.  This dramatically reduces risk of installing, upgrading and maintaining your Kubernetes cluster.  
 
@@ -36,11 +36,11 @@ i.e. let folks that know how to run containers and manage clusters at scale so y
 
 ## Draft
 
-[Draft](https://draft.sh) has a few capabilities but Jenkins X only uses the language detection and pack creation feature.  Jenkins X maintains it's own [draft packs](https://github.com/jenkins-x/draft-packs) tailered to run with Jenkins X.
+[Draft](https://draft.sh) has a few capabilities but Jenkins X only uses the language detection and pack creation feature.  Jenkins X maintains it's own [draft packs](https://github.com/jenkins-x/draft-packs) tailored to run with Jenkins X.
 
 Draft provides a great way to bootstrap a source code project with the necessary packaging needed to run the application on Kubernetes.
 
-The Draft project came from Deis who were aquired by Microsoft and continue to invest and evolve their Kubernetes developer story.
+The Draft project came from Deis who were acquired by Microsoft and continue to invest and evolve their Kubernetes developer story.
 
 ## Helm
 
@@ -50,13 +50,13 @@ OpenShift Templates aimed to do a similar thing however they are OpenShift speci
 
 Lots of the concerns with Helm are being addressed with the major version upgrade of Helm 3.  Removing the use of Tiller the server side component of Helm is a big win as it's seen as being insecure given the elevated permissions it needs to run.  Jenkins X provides a way https://jenkins-x.io/architecture/helm3/ to use the beta version of Helm 3 for folks that would like to try this instead, we're using this ourselves and it's working great so far.  If there are issues we'd like to feedback to the Helm project so we can help get them to GA sooner.
 
-The Helm project came from Deis who were aquired by Microsoft and continue to invest and evolve their Kubernetes developer story.
+The Helm project came from Deis who were acquired by Microsoft and continue to invest and evolve their Kubernetes developer story.
 
 ## Skaffold
 
 Jenkins X uses [Skaffold](https://github.com/GoogleContainerTools/skaffold) to perform the build and push image actions in a pipeline.  Skaffold allows us to implement different image builder and registries services like [Google Container Buidler](https://cloud.google.com/container-builder/), [Azure Container Builder](https://github.com/Azure/acr-builder) and [ECR](https://aws.amazon.com/ecr/).  
 
-For folks that aren't running on a public cloud with container builder or registery services then Skaffold can also work with [Kanico](https://github.com/GoogleContainerTools/kaniko), this allows pipelines to build docker images using rootless containers.  This is significantly more secure than mounting the docker socket from each node in the cluster.
+For folks that aren't running on a public cloud with container builder or registry services then Skaffold can also work with [Kanico](https://github.com/GoogleContainerTools/kaniko), this allows pipelines to build docker images using rootless containers.  This is significantly more secure than mounting the docker socket from each node in the cluster.
 
 ## Jenkins
 
@@ -64,7 +64,7 @@ Jenkins as a large JVM that isn't highly available, may seem a surprise to be se
 
 TL;DR we are pushing more of the Jenkins master functionality down into the Kubernetes platform.
 
-Taking this approach also means we will be able to support other pipeline engins in the future as well.
+Taking this approach also means we will be able to support other pipeline engines in the future as well.
 
 ## Prow
 
@@ -74,11 +74,11 @@ Prow can run in a highly available mode where multiple pods for a webhook ingres
 
 ## Nexus
 
-[Nexus](https://help.sonatype.com/repomanager3) is an overweight JVM that recenly moved to OSGi however it does the job we need of it.  Cache dependencies for faster builds and provide a shared repository where teams can share their released artifacts.  
+[Nexus](https://help.sonatype.com/repomanager3) is an overweight JVM that recently moved to OSGi however it does the job we need of it.  Cache dependencies for faster builds and provide a shared repository where teams can share their released artifacts.  
 
 If someone developed an open source artifact repository server in a more cloud friendly language like Go then Jenkins X would likely switch to save on cloud bills.
 
-Right now Jenkins X doesn't use the docker registry from Nexus.  The main reason was we needed to do some work to setup pod definitions with image pull secrets so we can use the authentiacted registry.  Our preferred approach however is to switch to using native cloud provider registries like Amazon's [ECR](https://aws.amazon.com/ecr/), [Google Container Regitry](https://cloud.google.com/container-registry/) or Dockerhub for example with the help of Skaffold.
+Right now Jenkins X doesn't use the docker registry from Nexus.  The main reason was we needed to do some work to setup pod definitions with image pull secrets so we can use the authenticated registry.  Our preferred approach however is to switch to using native cloud provider registries like Amazon's [ECR](https://aws.amazon.com/ecr/), [Google Container Regitry](https://cloud.google.com/container-registry/) or Dockerhub for example with the help of Skaffold.
 
 ## Docker registry
 
@@ -94,18 +94,18 @@ We use [Monucular](https://github.com/kubernetes-helm/monocular) to discover our
 
 ## Git
 
-Jenkins X only works with Git.  There are a lot of dependencies and client implementations Jenkins X already needs to support for diferent Git providers, we don't hear enough demand to support other version control systems so for now Jenkins X is tied to Git.
+Jenkins X only works with Git.  There are a lot of dependencies and client implementations Jenkins X already needs to support for different Git providers, we don't hear enough demand to support other version control systems so for now Jenkins X is tied to Git.
 
 ## Programming languages
 
-Jenkins X aims to help provide the right level of feedback for developers to understand how their applications are performing and give them easy ways to experiment with other languages which may suit both the feature and running on the Cloud better.  For example there are a lot of Java based organisations that only know how to write, run and maintain Java applications.  Java is extremely resource intensive compared with Golang, Rust, Swift, NodeJS to name a few, this results in much much higher cloud bills each month.  With Jenkins X we aim to help developers experiment with other options using quickstarts and metrics addons like Grafana and Prometheus to see how they bahave in the cloud.
+Jenkins X aims to help provide the right level of feedback for developers to understand how their applications are performing and give them easy ways to experiment with other languages which may suit both the feature and running on the Cloud better.  For example there are a lot of Java based organisations that only know how to write, run and maintain Java applications.  Java is extremely resource intensive compared with Golang, Rust, Swift, NodeJS to name a few, this results in much much higher cloud bills each month.  With Jenkins X we aim to help developers experiment with other options using quickstarts and metrics addons like Grafana and Prometheus to see how they behave in the cloud.
 
-For example any new microservice that we build on the Jenkins X project tends to be in either Golang or NodeJS given the huge affect is has on our cloud billing.  It does take time to shift to a new programming language but with Jenkins X we hope we can mitagate a lot of risk using quickstarts, automated CI/CD and a relatively consistent way of working on all languages.
+For example any new microservice that we build on the Jenkins X project tends to be in either Golang or NodeJS given the huge affect is has on our cloud billing.  It does take time to shift to a new programming language but with Jenkins X we hope we can mitigate a lot of risk using quickstarts, automated CI/CD and a relatively consistent way of working on all languages.
 
 ### Maven
 
-Maven has some tooling that a lot of folks are used to using which doesn't suit CD particuarly well.  For example the [maven release plugin](http://maven.apache.org/maven-release/maven-release-plugin/) will version a project and commit directly back to master the new next SNAPSHOT version which in CD world would trigger another release resulting in a recursive loop.
+Maven has some tooling that a lot of folks are used to using which doesn't suit CD particularly well.  For example the [maven release plugin](http://maven.apache.org/maven-release/maven-release-plugin/) will version a project and commit directly back to master the new next SNAPSHOT version which in CD world would trigger another release resulting in a recursive loop.
 
 For Java projects Jenkins X uses the [maven version:set plugin](https://www.mojohaus.org/versions-maven-plugin/set-mojo.html) to update all poms in a project using the next release version following the #Versioning step mentioned above.
 
-If a new major or minor version increment is needed users can create a new Git tag with the new major / minor number and Jenkins X will respect that.  Alternatively you can update the parent `pom.xml` and any child pom files youself and Jenkins X will detect and use the new major or minor version.
+If a new major or minor version increment is needed users can create a new Git tag with the new major / minor number and Jenkins X will respect that.  Alternatively you can update the parent `pom.xml` and any child pom files yourself and Jenkins X will detect and use the new major or minor version.
