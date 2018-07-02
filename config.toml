@@ -104,8 +104,8 @@ pygmentsStyle = "friendly"
     [[languages.zh.menu.docs]]
       name = "故障排除"
       weight = 60
-      identifier = "troubleshooting"
-      url = "/zh/troubleshooting/"
+      identifier = "faq"
+      url = "/zh/faq/"
     [[languages.zh.menu.docs]]
       name = "贡献"
       weight = 100
