@@ -2,9 +2,9 @@
 title: Apache License
 linktitle: License
 description: Jenkins X is released under the Apache 2.0 license.
-date: 2016-02-01
-publishdate: 2016-02-01
-lastmod: 2016-03-02
+date: 2018-02-01
+publishdate: 2018-02-01
+lastmod: 2018-03-02
 categories: ["about jenkins x"]
 keywords: ["License","apache"]
 menu:
