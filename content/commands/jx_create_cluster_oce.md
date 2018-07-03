@@ -1,5 +1,5 @@
 ---
-date: 2018-07-03T11:35:27Z
+date: 2018-07-03T11:36:48Z
 title: "jx create cluster oce"
 slug: jx_create_cluster_oce
 url: /commands/jx_create_cluster_oce/
@@ -10,9 +10,7 @@ Create a new kubernetes cluster on OCE: Runs on Oracle Cloud
 
 ### Synopsis
 
-This command creates a new kubernetes cluster on OCE, installing required local dependencies and provisions the Jenkins X platform 
-
-You can see a demo of this command here: http://jenkins-x.io/demos/create_cluster_oce/
+This command creates a new kubernetes cluster on OCE, installs required local dependencies and provisions the Jenkins X platform 
 
 Oracle Cloud Infrastructure Container Engine for Kubernetes is a fully-managed, scalable, and highly available service that you can use to deploy your containerized applications to the cloud. 
 
@@ -82,11 +80,11 @@ jx create cluster oce [flags]
       --quantityPerSubnet string            The number of nodes to create in each subnet.
       --recreate-existing-draft-repos       Delete existing helm repos used by Jenkins X under ~/draft/packs
       --register-local-helmrepo             Registers the Jenkins X chartmuseum registry with your helm client [default false]
-      --serviceLbSubnetIds string           Kubernetes Service LB Subnets.
+      --serviceLbSubnetIds string           Kubernetes Service LB Subnets. Optional but nice to have it as Jenkins X will create ingress controller based on it.
       --servicesCidr string                 Kubernetes Service CIDR Block.
       --skip-ingress                        Dont install an ingress controller
       --skip-tiller                         Dont install a Helms Tiller service
-      --sshPublicKey string                 The SSH public key to add to each node in the node pool.
+      --sshPublicKey string                 The SSH public key to add to each node in the node pool. Optional but nice to have it as user can access work nodes with it.
       --tiller-cluster-role string          The cluster role for Helm's tiller (default "cluster-admin")
       --tiller-namespace string             The namespace for the Tiller when using a gloabl tiller (default "kube-system")
       --timeout string                      The number of seconds to wait for the helm install to complete (default "6000")
