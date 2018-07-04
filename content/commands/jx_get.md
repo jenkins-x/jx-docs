@@ -1,5 +1,5 @@
 ---
-date: 2018-07-04T16:38:52Z
+date: 2018-07-04T22:28:37Z
 title: "jx get"
 slug: jx_get
 url: /commands/jx_get/
@@ -44,6 +44,7 @@ jx get TYPE [flags]
 * [jx get activities](/commands/jx_get_activities/)	 - Display one or many Activities on projects
 * [jx get addons](/commands/jx_get_addons/)	 - Lists the addons
 * [jx get applications](/commands/jx_get_applications/)	 - Display one or many Applications and their versions
+* [jx get aws](/commands/jx_get_aws/)	 - Displays AWS account information
 * [jx get branchpattern](/commands/jx_get_branchpattern/)	 - Display the git branch patterns for the current Team used on creating and importing projects
 * [jx get build](/commands/jx_get_build/)	 - Display one or many build resources
 * [jx get buildpack](/commands/jx_get_buildpack/)	 - Display the teams build pack git repository and references used for the current Team used on creating and importing projects

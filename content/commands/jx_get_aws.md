@@ -1,32 +1,32 @@
 ---
 date: 2018-07-04T22:28:37Z
-title: "jx get pipelines"
-slug: jx_get_pipelines
-url: /commands/jx_get_pipelines/
+title: "jx get aws"
+slug: jx_get_aws
+url: /commands/jx_get_aws/
 ---
-## jx get pipelines
+## jx get aws
 
-Display one or many Pipelines
+Displays AWS account information
 
 ### Synopsis
 
-Display one or many pipelines.
+Display the AWS information for the current user
 
 ```
-jx get pipelines [flags]
+jx get aws info [flags]
 ```
 
 ### Examples
 
 ```
-  # List all pipelines
-  jx get pipeline
+  # Get the AWS account information
+  jx get aws info
 ```
 
 ### Options
 
 ```
-  -h, --help            help for pipelines
+  -h, --help            help for aws
   -o, --output string   The output format such as 'yaml'
 ```
 

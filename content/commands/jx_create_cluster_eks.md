@@ -1,5 +1,5 @@
 ---
-date: 2018-07-04T16:38:52Z
+date: 2018-07-04T22:28:37Z
 title: "jx create cluster eks"
 slug: jx_create_cluster_eks
 url: /commands/jx_create_cluster_eks/
@@ -28,10 +28,11 @@ jx create cluster eks [flags]
 ### Options
 
 ```
+      --aws-api-timeout duration            Duration of AWS API timeout (default 20m0s)
   -b, --batch-mode                          In batch mode the command never prompts for user input
       --cleanup-temp-files                  Cleans up any temporary values.yaml used by helm install [default true] (default true)
       --cloud-environment-repo string       Cloud Environments git repo (default "https://github.com/jenkins-x/cloud-environments")
-  -n, --cluster-name string                 The name of this cluster. (default "eks1")
+  -n, --cluster-name string                 The name of this cluster.
       --default-admin-password string       the default admin password to access Jenkins, Kubernetes Dashboard, Chartmuseum and Nexus
       --default-environment-prefix string   Default environment repo prefix, your git repos will be of the form 'environment-$prefix-$envName'
       --domain string                       Domain to expose ingress endpoints.  Example: jenkinsx.io
@@ -57,6 +58,7 @@ jx create cluster eks [flags]
       --keep-exposecontroller-job           Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
       --local-cloud-environment             Ignores default cloud-environment-repo and uses current directory 
       --local-helm-repo-name string         The name of the helm repository for the installed Chart Museum (default "releases")
+      --log-level int                       set log level, use 0 to silence, 4 for debugging and 5 for debugging with AWS debug logging (default 3) (default -1)
       --namespace string                    The namespace the Jenkins X platform should be installed into (default "jx")
       --no-brew                             Disables the use of brew on MacOS to install or upgrade command line dependencies
       --no-default-environments             Disables the creation of the default Staging and Production environments

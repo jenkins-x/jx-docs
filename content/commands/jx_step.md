@@ -1,5 +1,5 @@
 ---
-date: 2018-07-04T16:38:52Z
+date: 2018-07-04T22:28:37Z
 title: "jx step"
 slug: jx_step
 url: /commands/jx_step/
@@ -35,6 +35,7 @@ jx step [flags]
 * [jx step nexus](/commands/jx_step_nexus/)	 - nexus [command]
 * [jx step post](/commands/jx_step_post/)	 - post step actions
 * [jx step pr](/commands/jx_step_pr/)	 - pipeline step pr
+* [jx step pre](/commands/jx_step_pre/)	 - pre step actions
 * [jx step report](/commands/jx_step_report/)	 - report step actions
 * [jx step split](/commands/jx_step_split/)	 - Mirrors the code from a monorepo into separate microservice style git repositories so its easier to do finer grained releases
 * [jx step tag](/commands/jx_step_tag/)	 - Creates a git tag and pushes to remote repo
