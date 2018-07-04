@@ -10,7 +10,9 @@ Create a new kubernetes cluster on OCE: Runs on Oracle Cloud
 
 ### Synopsis
 
-This command creates a new kubernetes cluster on OCE, installs required local dependencies and provisions the Jenkins X platform 
+This command creates a new kubernetes cluster on OCE, installs required local dependencies and provisions the Jenkins X platform.
+
+Please add your $HOME/bin to $PATH otherwise jx will have issue invoking OCI CLI command. If you have already installed OCI CLI, please make sure it is in $PATH. 
 
 Oracle Cloud Infrastructure Container Engine for Kubernetes is a fully-managed, scalable, and highly available service that you can use to deploy your containerized applications to the cloud. 
 

@@ -121,7 +121,7 @@ Use the [jx create cluster oce](/commands/jx_create_cluster_oce) command:
     
 This will use [oci](https://github.com/oracle/oci-cli) on your Oracle Cloud Infrastructure account to create a new OCE cluster and install Jenkins X. 
 
-We **highly** recommend adding your $HOME/bin in $PATH otherwise you will have trouble getting OCI CLI to work in your environment. 
+Please add your $HOME/bin to $PATH otherwise jx will have issue invoking OCI CLI command. If you have already installed OCI CLI, please make sure it is in $PATH.
 
 Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
 
