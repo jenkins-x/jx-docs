@@ -1,5 +1,5 @@
 ---
-date: 2018-07-05T11:41:29Z
+date: 2018-07-05T17:13:11Z
 title: "jx create cluster oce"
 slug: jx_create_cluster_oce
 url: /commands/jx_create_cluster_oce/
@@ -12,8 +12,13 @@ Create a new kubernetes cluster on OCE: Runs on Oracle Cloud
 
 This command creates a new kubernetes cluster on OCE, installs required local dependencies and provisions the Jenkins X platform 
 
-Oracle Cloud Infrastructure Container Engine for Kubernetes is a fully-managed, scalable, and highly available service that you can use to deploy your containerized applications to the cloud. 
+            Please add your $HOME/bin to $PATH otherwise jx will have issue invoking OCI CLI command. If you have already
+  
+installed OCI CLI, please make sure it is in $PATH. 
 
+     Oracle Cloud Infrastructure Container Engine for Kubernetes is a fully-managed, scalable, and highly available
+     service that you can use to deploy your containerized applications to the cloud.
+  
 Oracle build the best of what we learn into Kubernetes, the industry-leading open source container orchestrator which powers Kubernetes Engine.
 
 ```
