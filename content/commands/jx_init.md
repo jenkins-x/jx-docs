@@ -1,5 +1,5 @@
 ---
-date: 2018-07-06T13:48:17Z
+date: 2018-07-06T17:32:29Z
 title: "jx init"
 slug: jx_init
 url: /commands/jx_init/
@@ -41,7 +41,7 @@ jx init [flags]
       --namespace string                The namespace the Jenkins X platform should be installed into (default "jx")
       --no-brew                         Disables the use of brew on MacOS to install or upgrade command line dependencies
       --on-premise                      If installing on an on premise cluster then lets default the 'external-ip' to be the kubernetes master IP address
-      --provider string                 Cloud service providing the kubernetes cluster.  Supported providers: aks, aws, eks, gke, ibm, jx-infra, kubernetes, minikube, minishift, oce, openshift, pks
+      --provider string                 Cloud service providing the kubernetes cluster.  Supported providers: aks, aws, eks, gke, ibm, jx-infra, kubernetes, minikube, minishift, oke, openshift, pks
       --recreate-existing-draft-repos   Delete existing helm repos used by Jenkins X under ~/draft/packs
       --skip-ingress                    Dont install an ingress controller
       --skip-tiller                     Dont install a Helms Tiller service
