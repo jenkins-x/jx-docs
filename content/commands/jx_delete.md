@@ -1,5 +1,5 @@
 ---
-date: 2018-07-06T17:32:29Z
+date: 2018-07-06T18:22:36Z
 title: "jx delete"
 slug: jx_delete
 url: /commands/jx_delete/
@@ -44,6 +44,7 @@ jx delete TYPE [flags]
 * [jx delete preview](/commands/jx_delete_preview/)	 - Deletes a preview environment
 * [jx delete quickstartlocation](/commands/jx_delete_quickstartlocation/)	 - Deletes one or more quickstart locations for your team
 * [jx delete repo](/commands/jx_delete_repo/)	 - Deletes one or more git repositories
+* [jx delete team](/commands/jx_delete_team/)	 - Deletes one or many teams and their associated resources (Environments, Jenkins etc)
 * [jx delete token](/commands/jx_delete_token/)	 - Deletes one or many issue token resources
 * [jx delete tracker](/commands/jx_delete_tracker/)	 - Deletes one or many issue tracker resources
 
