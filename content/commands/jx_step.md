@@ -1,5 +1,5 @@
 ---
-date: 2018-07-07T04:37:36Z
+date: 2018-07-07T06:30:10Z
 title: "jx step"
 slug: jx_step
 url: /commands/jx_step/
@@ -37,6 +37,7 @@ jx step [flags]
 * [jx step pr](/commands/jx_step_pr/)	 - pipeline step pr
 * [jx step pre](/commands/jx_step_pre/)	 - pre step actions
 * [jx step report](/commands/jx_step_report/)	 - report step actions
+* [jx step service](/commands/jx_step_service/)	 - achieve service linking in preview environments
 * [jx step split](/commands/jx_step_split/)	 - Mirrors the code from a monorepo into separate microservice style git repositories so its easier to do finer grained releases
 * [jx step tag](/commands/jx_step_tag/)	 - Creates a git tag and pushes to remote repo
 * [jx step validate](/commands/jx_step_validate/)	 - Validates the command line tools, container and platform to ensure a pipeline can run properly
