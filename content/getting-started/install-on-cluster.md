@@ -23,6 +23,27 @@ Jenkins X can be installed on 1.8 or later of Kubernetes. The requirements are:
 * insecure docker registries are enabled. This is so that pipelines can use a docker registry running inside the kubernetes cluster (which typically is not public so no https support). You can modify your pipelines to use other registries later.
 * A cluster with at least 4 vCpus in addition to the master node (e.g. 2 m4.large nodes + m4.large master)
 
+### Validating cluster conformance 
+
+You can validate that your cluster is compliant with Jenkinx X by executing the following command:
+
+    jx compliance run
+
+It will run the Kubernetes conformance tests provided by [sonobuoy](https://github.com/heptio/sonobuoy). Typically, the execution takes up to an hour. 
+You can check the status at any time with this command:
+
+    jx compliance status
+
+When the compliance tests are completed, you can see the results with:
+
+    jx compliance results
+
+Ideally, you should not see any failed tests in the output.
+
+All the resources created by the conformance tests can be cleaned up with:
+
+    jx compliance delete
+
 ### Enabling insecure registries on kops
 
 Note that if you are on AWS you may want to use the [jx create aws](/getting-started/create-cluster/) command which automates all of this for you!
