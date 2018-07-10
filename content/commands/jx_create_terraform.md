@@ -1,5 +1,5 @@
 ---
-date: 2018-07-10T08:44:12Z
+date: 2018-07-10T13:11:19Z
 title: "jx create terraform"
 slug: jx_create_terraform
 url: /commands/jx_create_terraform/
@@ -50,6 +50,7 @@ jx create terraform [flags]
       --gke-max-num-nodes string            The maximum number of nodes to be created in each of the cluster's zones
       --gke-min-num-nodes string            The minimum number of nodes to be created in each of the cluster's zones
       --gke-project-id string               Google Project ID to create cluster in
+      --gke-service-account string          The service account to use to connect to GKE
       --gke-zone string                     The compute zone (e.g. us-central1-a) for the cluster
       --global-tiller                       Whether or not to use a cluster global tiller (default true)
       --headless                            Enable headless operation if using browser automation
