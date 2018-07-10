@@ -102,7 +102,7 @@ pygmentsStyle = "friendly"
       identifier = "commands"
       url = "/commands/jx/"
     [[languages.zh.menu.docs]]
-      name = "故障排除"
+      name = "常见问题"
       weight = 60
       identifier = "faq"
       url = "/zh/faq/"

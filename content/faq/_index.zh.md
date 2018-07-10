@@ -1,10 +1,10 @@
 ---
-title: 故障排除 
-linktitle: 故障排除
-description: 常见问题
+title: 常见问题概览 
+linktitle: 常见问题概览
+description: 按章节划分的常见问题概览
 date: 2018-04-21
 publishdate: 2018-04-21
-lastmod: 2018-04-21
+lastmod: 2018-07-02
 menu:
   docs:
     parent: "faq"
