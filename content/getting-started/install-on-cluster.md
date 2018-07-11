@@ -1,4 +1,4 @@
----
+o k---
 title: Install on Kubernetes
 linktitle: Install on Kubernetes
 description: How to install Jenkins X on an existing Kubernetes cluster
@@ -105,4 +105,6 @@ If you wish to use a different external IP address you can use:
     
     jx install --provider=kubernetes --external-ip 1.2.3.4
     
-Otherwise the `jx install` will try and wait for the Ingress Controllers `Service.Status.LoadBalancer.Ingress` to resolve to an IP address - which can fail on premise.    
+Otherwise the `jx install` will try and wait for the Ingress Controllers `Service.Status.LoadBalancer.Ingress` to resolve to an IP address - which can fail on premise.   
+
+If you want an explanation of what the [jx install](/commands/jx_install) command does, you can read [what happens with the install](../install-on-cluster-what-happens)
