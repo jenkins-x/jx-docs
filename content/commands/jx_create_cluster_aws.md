@@ -1,5 +1,5 @@
 ---
-date: 2018-07-11T14:59:12Z
+date: 2018-07-11T16:20:47Z
 title: "jx create cluster aws"
 slug: jx_create_cluster_aws
 url: /commands/jx_create_cluster_aws/
@@ -40,6 +40,7 @@ jx create cluster aws [flags]
   -n, --cluster-name string                 The name of this cluster. (default "aws1")
       --default-admin-password string       the default admin password to access Jenkins, Kubernetes Dashboard, Chartmuseum and Nexus
       --default-environment-prefix string   Default environment repo prefix, your git repos will be of the form 'environment-$prefix-$envName'
+      --docker-registry string              The Docker Registry host or host:port which is used when tagging and pushing images. If not specified it defaults to the internal registry unless there is a better provider default (e.g. ECR on AWS/EKS)
       --domain string                       Domain to expose ingress endpoints.  Example: jenkinsx.io
       --draft-client-only                   Only install draft client
       --environment-git-owner string        The git provider organisation to create the environment git repositories in
@@ -77,6 +78,7 @@ jx create cluster aws [flags]
       --register-local-helmrepo             Registers the Jenkins X chartmuseum registry with your helm client [default false]
       --skip-ingress                        Dont install an ingress controller
       --skip-tiller                         Dont install a Helms Tiller service
+      --state string                        The S3 bucket used to store the state of the cluster.
   -t, --terraform string                    The directory to save terraform configuration.
       --tiller-cluster-role string          The cluster role for Helm's tiller (default "cluster-admin")
       --tiller-namespace string             The namespace for the Tiller when using a gloabl tiller (default "kube-system")

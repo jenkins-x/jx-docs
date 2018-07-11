@@ -1,5 +1,5 @@
 ---
-date: 2018-07-11T14:59:12Z
+date: 2018-07-11T16:20:47Z
 title: "jx create cluster aks"
 slug: jx_create_cluster_aks
 url: /commands/jx_create_cluster_aks/
@@ -37,6 +37,7 @@ jx create cluster aks [flags]
       --default-admin-password string            the default admin password to access Jenkins, Kubernetes Dashboard, Chartmuseum and Nexus
       --default-environment-prefix string        Default environment repo prefix, your git repos will be of the form 'environment-$prefix-$envName'
       --disk-size string                         Size in GB of the OS disk for each node in the node pool.
+      --docker-registry string                   The Docker Registry host or host:port which is used when tagging and pushing images. If not specified it defaults to the internal registry unless there is a better provider default (e.g. ECR on AWS/EKS)
       --domain string                            Domain to expose ingress endpoints.  Example: jenkinsx.io
       --draft-client-only                        Only install draft client
       --environment-git-owner string             The git provider organisation to create the environment git repositories in
