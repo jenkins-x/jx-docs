@@ -18,3 +18,5 @@ toc: false
 notesforauthors:
 ---
 
+If you cannot find your question in the FAQ then [please ask in an issue](https://github.com/jenkins-x/jx/issues/new) and we'll see if we can help. Good luck!
+

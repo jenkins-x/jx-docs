@@ -16,34 +16,25 @@ aliases: [/faq/]
 We have tried to collate common issues here with work arounds. If your issue isn't listed here please [let us know](https://github.com/jenkins-x/jx/issues/new).
 
 
-### Is Jenkins X Open Source?
+## http: server gave HTTP response to HTTPS client
 
-Yes! All of Jenkins X source code and artifacts are open source; either Apache or MIT and will always remain so!
+If your pipeline fails with something like this:
 
+```
+The push refers to a repository [100.71.203.90:5000/lgil3/jx-test-app]
+time="2018-07-09T21:18:31Z" level=fatal msg="build step: pushing [100.71.203.90:5000/lgil3/jx-test-app:0.0.2]: Get https://100.71.203.90:5000/v1/_ping: http: server gave HTTP response to HTTPS client"
+```
 
-### Is Jenkins X a fork of Jenkins?
+Then this means that you are using the internal docker registry inside Jenkins X for your images but your kubernetes cluster's docker daemons has not been configured for `insecure-registries` so that you can use `http` to talk to the docker registry service `jenkins-x-docker-registry` in your cluster.
 
-No! Jenkins X will always reuse whatever is in Jenkins Core and configure it to be as kubernetes native as possible.
+By default docker wants all docker registries to be exposed over `https` and to use TLS and certificates. This should be done for all public docker registries. However when using Jenkins X with an internal local docker registry this is hard since its not available at a public DNS name and doesn't have HTTPS or certificates; so we default to requiring `insecure-registry` be configured on all the docker daemons for your kubernetes worker nodes.
 
-Initially Jenkins X is a distribution of the core Jenkins with a custom kubernetes configuration with some additional built in plugins (e.g. the kubernetes plugin and jx pipelines plugin) packaged as a Helm chart.
+We try to automate this setting when using `jx create cluster`  e.g. on AWS we default this value to the IP range `` to match most kubernetes service IP addresses.
 
-Over time we hope the Jenkins X project can drive some changes in the Jenkins Core to help make Jenkins more Cloud Native. e.g. using a database or Kubernetes resources to store Jobs, Runs and Credentials so its easier to support things like multi-master or one shot masters. Though those changes will happen first through Jenkins Core then get reused by Jenkins X
+On [EKS](https://jenkins-x.io/commands/jx_create_cluster_eks/) we default to using ECR to avoid this issue. Simialarly we will soon default to GCR and ACR on GKE and AKS respectively.
 
-### Why create a sub project?
+So a workaround is to use a real [external docker registry](/architecture/docker-registry/) or enable `insecure-registry` on your docker daemons on your compute nodes on your Kubernetes cluster.
 
-We are huge fans of <a href="https://kubernetes.io/">Kubernetes</a> &amp; the cloud and think its
-the long term future approach for running software for many folks.
-
-However lots of folks will still want to run Jenkins in the regular jenkins way via: <code>java
--jar jenkins.war</code>
-
-
-So the idea of the Jenkins X sub project is to focus 100% on the Kubernetes and Cloud Native use
-case and let the core Jenkins project focus on the classic java approach.
-
-One of Jenkins big strengths has always been its flexibility and huge ecosystem of different
-plugins and capabilities. The separate Jenkins X sub project helps the community iterate and go fast
-improving both the Cloud Native and the classic distributions of Jenkins in parallel.                   
 
 ### What are the credentials to access core services?
 
