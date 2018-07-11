@@ -1,4 +1,4 @@
-o k---
+---
 title: Install on Kubernetes
 linktitle: Install on Kubernetes
 description: How to install Jenkins X on an existing Kubernetes cluster
