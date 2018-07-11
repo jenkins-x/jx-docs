@@ -29,7 +29,7 @@ Then this means that you are using the internal docker registry inside Jenkins X
 
 By default docker wants all docker registries to be exposed over `https` and to use TLS and certificates. This should be done for all public docker registries. However when using Jenkins X with an internal local docker registry this is hard since its not available at a public DNS name and doesn't have HTTPS or certificates; so we default to requiring `insecure-registry` be configured on all the docker daemons for your kubernetes worker nodes.
 
-We try to automate this setting when using `jx create cluster`  e.g. on AWS we default this value to the IP range `` to match most kubernetes service IP addresses.
+We try to automate this setting when using `jx create cluster`  e.g. on AWS we default this value to the IP range `100.64.0.0/10` to match most kubernetes service IP addresses.
 
 On [EKS](https://jenkins-x.io/commands/jx_create_cluster_eks/) we default to using ECR to avoid this issue. Simialarly we will soon default to GCR and ACR on GKE and AKS respectively.
 
