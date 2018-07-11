@@ -1,5 +1,5 @@
 ---
-date: 2018-07-11T12:33:08Z
+date: 2018-07-11T12:36:45Z
 title: "jx upgrade cli"
 slug: jx_upgrade_cli
 url: /commands/jx_upgrade_cli/
