@@ -39,7 +39,7 @@ In a Kubernetes cluster, services and pods have IPs that are only routable from 
 
 ### Create Admin secrets
 
-Jenkins X generates an adminstration password for Monocular/Nexus/Jenkins, retrieves git secrets for the helm install (so they can be used in the pipelines).
+Jenkins X generates an administration password for Monocular/Nexus/Jenkins, retrieves git secrets for the helm install (so they can be used in the pipelines).
 
 ### Configure Jenkins
 
