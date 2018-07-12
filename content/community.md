@@ -32,6 +32,7 @@ Feel free to  [add your questions to the doc](https://docs.google.com/document/d
 
 Previous Videos:
 
+* [12th July, 2018](https://www.youtube.com/watch?v=oqJ__akQj5I)
 * [17th May, 2018](https://www.youtube.com/watch?v=bvStct7Cz5E)
 
 ## Issues
