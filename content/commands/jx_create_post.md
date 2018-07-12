@@ -1,5 +1,5 @@
 ---
-date: 2018-07-12T11:40:39Z
+date: 2018-07-12T13:35:38Z
 title: "jx create post"
 slug: jx_create_post
 url: /commands/jx_create_post/
@@ -32,6 +32,7 @@ jx create post preview job [flags]
       --headless               Enable headless operation if using browser automation
   -h, --help                   help for post
   -i, --image string           The image to run in the jobb
+      --install-dependencies   Should any required dependencies be installed automatically
   -n, --name string            The name of the job
       --no-brew                Disables the use of brew on MacOS to install or upgrade command line dependencies
       --verbose                Enable verbose logging

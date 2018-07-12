@@ -1,5 +1,5 @@
 ---
-date: 2018-07-12T11:40:39Z
+date: 2018-07-12T13:35:38Z
 title: "jx edit buildpack"
 slug: jx_edit_buildpack
 url: /commands/jx_edit_buildpack/
@@ -28,13 +28,14 @@ jx edit buildpack [flags]
 ### Options
 
 ```
-  -b, --batch-mode   In batch mode the command never prompts for user input
-      --headless     Enable headless operation if using browser automation
-  -h, --help         help for buildpack
-      --no-brew      Disables the use of brew on MacOS to install or upgrade command line dependencies
-  -r, --ref string   The git reference (branch,tag,sha) in the git repository touse
-  -u, --url string   The URL for the build pack git repository
-      --verbose      Enable verbose logging
+  -b, --batch-mode             In batch mode the command never prompts for user input
+      --headless               Enable headless operation if using browser automation
+  -h, --help                   help for buildpack
+      --install-dependencies   Should any required dependencies be installed automatically
+      --no-brew                Disables the use of brew on MacOS to install or upgrade command line dependencies
+  -r, --ref string             The git reference (branch,tag,sha) in the git repository touse
+  -u, --url string             The URL for the build pack git repository
+      --verbose                Enable verbose logging
 ```
 
 ### SEE ALSO

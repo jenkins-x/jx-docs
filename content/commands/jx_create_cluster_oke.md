@@ -1,5 +1,5 @@
 ---
-date: 2018-07-12T11:40:39Z
+date: 2018-07-12T13:35:38Z
 title: "jx create cluster oke"
 slug: jx_create_cluster_oke
 url: /commands/jx_create_cluster_oke/
@@ -63,6 +63,7 @@ jx create cluster oke [flags]
       --ingress-namespace string            The namespace for the Ingress controller (default "kube-system")
       --ingress-service string              The name of the Ingress controller Service (default "jxing-nginx-ingress-controller")
       --initialNodeLabels string            A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
+      --install-dependencies                Should any required dependencies be installed automatically
       --install-only                        Force the install comand to fail if there is already an installation. Otherwise lets update the installation
       --isKubernetesDashboardEnabled        Is KubernetesDashboard Enabled. (default true)
       --isTillerEnabled                     Is Tiller Enabled.

@@ -1,5 +1,5 @@
 ---
-date: 2018-07-12T11:40:39Z
+date: 2018-07-12T13:35:38Z
 title: "jx delete quickstartlocation"
 slug: jx_delete_quickstartlocation
 url: /commands/jx_delete_quickstartlocation/
@@ -37,13 +37,14 @@ jx delete quickstartlocation [flags]
 ### Options
 
 ```
-  -b, --batch-mode     In batch mode the command never prompts for user input
-      --headless       Enable headless operation if using browser automation
-  -h, --help           help for quickstartlocation
-      --no-brew        Disables the use of brew on MacOS to install or upgrade command line dependencies
-  -o, --owner string   The owner is the user or organisation of the git provider
-  -u, --url string     The URL of the git service (default "https://github.com")
-      --verbose        Enable verbose logging
+  -b, --batch-mode             In batch mode the command never prompts for user input
+      --headless               Enable headless operation if using browser automation
+  -h, --help                   help for quickstartlocation
+      --install-dependencies   Should any required dependencies be installed automatically
+      --no-brew                Disables the use of brew on MacOS to install or upgrade command line dependencies
+  -o, --owner string           The owner is the user or organisation of the git provider
+  -u, --url string             The URL of the git service (default "https://github.com")
+      --verbose                Enable verbose logging
 ```
 
 ### SEE ALSO

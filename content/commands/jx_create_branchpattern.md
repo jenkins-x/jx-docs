@@ -1,5 +1,5 @@
 ---
-date: 2018-07-12T11:40:39Z
+date: 2018-07-12T13:35:38Z
 title: "jx create branchpattern"
 slug: jx_create_branchpattern
 url: /commands/jx_create_branchpattern/
@@ -30,11 +30,12 @@ jx create branchpattern [flags]
 ### Options
 
 ```
-  -b, --batch-mode   In batch mode the command never prompts for user input
-      --headless     Enable headless operation if using browser automation
-  -h, --help         help for branchpattern
-      --no-brew      Disables the use of brew on MacOS to install or upgrade command line dependencies
-      --verbose      Enable verbose logging
+  -b, --batch-mode             In batch mode the command never prompts for user input
+      --headless               Enable headless operation if using browser automation
+  -h, --help                   help for branchpattern
+      --install-dependencies   Should any required dependencies be installed automatically
+      --no-brew                Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --verbose                Enable verbose logging
 ```
 
 ### SEE ALSO

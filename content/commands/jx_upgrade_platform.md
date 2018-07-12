@@ -1,5 +1,5 @@
 ---
-date: 2018-07-12T11:40:39Z
+date: 2018-07-12T13:35:38Z
 title: "jx upgrade platform"
 slug: jx_upgrade_platform
 url: /commands/jx_upgrade_platform/
@@ -31,6 +31,7 @@ jx upgrade platform [flags]
       --cloud-environment-repo string   Cloud Environments git repo (default "https://github.com/jenkins-x/cloud-environments")
       --headless                        Enable headless operation if using browser automation
   -h, --help                            help for platform
+      --install-dependencies            Should any required dependencies be installed automatically
       --local-cloud-environment         Ignores default cloud-environment-repo and uses current directory 
   -n, --name string                     The release name (default "jenkins-x")
       --namespace string                The Namespace to promote to

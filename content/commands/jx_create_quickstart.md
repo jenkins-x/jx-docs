@@ -1,5 +1,5 @@
 ---
-date: 2018-07-12T11:40:39Z
+date: 2018-07-12T13:35:38Z
 title: "jx create quickstart"
 slug: jx_create_quickstart
 url: /commands/jx_create_quickstart/
@@ -50,6 +50,7 @@ jx create quickstart [flags]
       --headless                       Enable headless operation if using browser automation
   -h, --help                           help for quickstart
       --import-commit-message string   Should we override the Jenkinsfile in the project?
+      --install-dependencies           Should any required dependencies be installed automatically
       --jenkinsfile string             The name of the Jenkinsfile to use. If not specified then 'Jenkinsfile' will be used
   -l, --language string                The language to filter on
       --list-packs                     list available draft packs

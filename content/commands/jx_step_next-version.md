@@ -1,5 +1,5 @@
 ---
-date: 2018-07-12T11:40:39Z
+date: 2018-07-12T13:35:38Z
 title: "jx step next-version"
 slug: jx_step_next-version
 url: /commands/jx_step_next-version/
@@ -28,16 +28,17 @@ jx step next-version [flags]
 ### Options
 
 ```
-  -b, --batch-mode         In batch mode the command never prompts for user input
-  -d, --dir string         the directory to look for files that contain a pom.xml or Makefile with the project version to bump
-  -f, --filename string    Filename that contains version property to update, e.g. package.json
-      --headless           Enable headless operation if using browser automation
-  -h, --help               help for next-version
-      --no-brew            Disables the use of brew on MacOS to install or upgrade command line dependencies
-  -t, --tag                tag and push new version
-      --use-git-tag-only   only use a git tag so work out new semantic version, else specify filename [pom.xml,package.json,Makefile,Chart.yaml]
-      --verbose            Enable verbose logging
-      --version string     optional version to use rather than generating a new one
+  -b, --batch-mode             In batch mode the command never prompts for user input
+  -d, --dir string             the directory to look for files that contain a pom.xml or Makefile with the project version to bump
+  -f, --filename string        Filename that contains version property to update, e.g. package.json
+      --headless               Enable headless operation if using browser automation
+  -h, --help                   help for next-version
+      --install-dependencies   Should any required dependencies be installed automatically
+      --no-brew                Disables the use of brew on MacOS to install or upgrade command line dependencies
+  -t, --tag                    tag and push new version
+      --use-git-tag-only       only use a git tag so work out new semantic version, else specify filename [pom.xml,package.json,Makefile,Chart.yaml]
+      --verbose                Enable verbose logging
+      --version string         optional version to use rather than generating a new one
 ```
 
 ### SEE ALSO

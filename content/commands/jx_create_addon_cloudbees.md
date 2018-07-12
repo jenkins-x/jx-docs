@@ -1,5 +1,5 @@
 ---
-date: 2018-07-12T11:40:39Z
+date: 2018-07-12T13:35:38Z
 title: "jx create addon cloudbees"
 slug: jx_create_addon_cloudbees
 url: /commands/jx_create_addon_cloudbees/
@@ -28,14 +28,15 @@ jx create addon cloudbees [flags]
 ### Options
 
 ```
-  -b, --batch-mode         In batch mode the command never prompts for user input
-      --headless           Enable headless operation if using browser automation
-      --helm-update        Should we run helm update first to ensure we use the latest version (default true)
-  -h, --help               help for cloudbees
-  -n, --namespace string   The Namespace to install into (default "jx")
-      --no-brew            Disables the use of brew on MacOS to install or upgrade command line dependencies
-  -r, --release string     The chart release name (default "cb")
-      --verbose            Enable verbose logging
+  -b, --batch-mode             In batch mode the command never prompts for user input
+      --headless               Enable headless operation if using browser automation
+      --helm-update            Should we run helm update first to ensure we use the latest version (default true)
+  -h, --help                   help for cloudbees
+      --install-dependencies   Should any required dependencies be installed automatically
+  -n, --namespace string       The Namespace to install into (default "jx")
+      --no-brew                Disables the use of brew on MacOS to install or upgrade command line dependencies
+  -r, --release string         The chart release name (default "cb")
+      --verbose                Enable verbose logging
 ```
 
 ### SEE ALSO

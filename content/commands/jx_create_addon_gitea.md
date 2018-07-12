@@ -1,5 +1,5 @@
 ---
-date: 2018-07-12T11:40:39Z
+date: 2018-07-12T13:35:38Z
 title: "jx create addon gitea"
 slug: jx_create_addon_gitea
 url: /commands/jx_create_addon_gitea/
@@ -26,22 +26,23 @@ jx create addon gitea [flags]
 ### Options
 
 ```
-      --admin              Should the new user created be an admin of the gitea server
-  -b, --batch-mode         In batch mode the command never prompts for user input
-  -c, --chart string       The name of the chart to use (default "jenkins-x/gitea")
-  -e, --email string       The email address of the new user to create in gitea
-      --headless           Enable headless operation if using browser automation
-      --helm-update        Should we run helm update first to ensure we use the latest version (default true)
-  -h, --help               help for gitea
-  -n, --namespace string   The Namespace to install into
-      --no-brew            Disables the use of brew on MacOS to install or upgrade command line dependencies
-      --no-token           If true disable trying to create a new token in the gitea server
-      --no-user            If true disable trying to create a new user in the gitea server
-  -p, --password string    The password for the user to create in gitea. Note that gitea tends to reject passwords less than 6 characters
-  -r, --release string     The chart release name (default "gitea")
-  -u, --username string    The name for the user to create in gitea. Note that gitea tends to reject 'admin'
-      --verbose            Enable verbose logging
-  -v, --version string     The version of the gitea addon to use
+      --admin                  Should the new user created be an admin of the gitea server
+  -b, --batch-mode             In batch mode the command never prompts for user input
+  -c, --chart string           The name of the chart to use (default "jenkins-x/gitea")
+  -e, --email string           The email address of the new user to create in gitea
+      --headless               Enable headless operation if using browser automation
+      --helm-update            Should we run helm update first to ensure we use the latest version (default true)
+  -h, --help                   help for gitea
+      --install-dependencies   Should any required dependencies be installed automatically
+  -n, --namespace string       The Namespace to install into
+      --no-brew                Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --no-token               If true disable trying to create a new token in the gitea server
+      --no-user                If true disable trying to create a new user in the gitea server
+  -p, --password string        The password for the user to create in gitea. Note that gitea tends to reject passwords less than 6 characters
+  -r, --release string         The chart release name (default "gitea")
+  -u, --username string        The name for the user to create in gitea. Note that gitea tends to reject 'admin'
+      --verbose                Enable verbose logging
+  -v, --version string         The version of the gitea addon to use
 ```
 
 ### SEE ALSO

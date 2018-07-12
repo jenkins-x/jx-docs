@@ -1,5 +1,5 @@
 ---
-date: 2018-07-12T11:40:39Z
+date: 2018-07-12T13:35:38Z
 title: "jx import"
 slug: jx_import
 url: /commands/jx_import/
@@ -61,6 +61,7 @@ jx import [flags]
       --headless                       Enable headless operation if using browser automation
   -h, --help                           help for import
       --import-commit-message string   Should we override the Jenkinsfile in the project?
+      --install-dependencies           Should any required dependencies be installed automatically
   -j, --jenkinsfile string             The name of the Jenkinsfile to use. If not specified then 'Jenkinsfile' will be used
       --list-packs                     list available draft packs
       --name string                    Specify the git repository name to import the project into (if it is not already in one) (default "n")

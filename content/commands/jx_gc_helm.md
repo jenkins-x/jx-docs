@@ -1,5 +1,5 @@
 ---
-date: 2018-07-12T11:40:39Z
+date: 2018-07-12T13:35:38Z
 title: "jx gc helm"
 slug: jx_gc_helm
 url: /commands/jx_gc_helm/
@@ -30,6 +30,7 @@ jx gc helm [flags]
       --dry-run                      Does not perform the delete operation on Kubernetes
       --headless                     Enable headless operation if using browser automation
   -h, --help                         help for helm
+      --install-dependencies         Should any required dependencies be installed automatically
       --no-backup                    Does not perform the backup operation to store files locally
       --no-brew                      Disables the use of brew on MacOS to install or upgrade command line dependencies
   -o, --output-dir string            Relative directory to output backup to. Defaults to ./configmaps (default "configmaps")

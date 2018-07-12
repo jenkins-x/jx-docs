@@ -1,5 +1,5 @@
 ---
-date: 2018-07-12T11:40:39Z
+date: 2018-07-12T13:35:38Z
 title: "jx step blog"
 slug: jx_step_blog
 url: /commands/jx_step_blog/
@@ -35,6 +35,7 @@ jx step blog [flags]
   -f, --from-date string           The date to create the charts from. Defaults to a week before the to date. Should be a format: January 2 2006
       --headless                   Enable headless operation if using browser automation
   -h, --help                       help for blog
+      --install-dependencies       Should any required dependencies be installed automatically
       --no-brew                    Disables the use of brew on MacOS to install or upgrade command line dependencies
   -t, --to-date string             The date to query up to. Defaults to now. Should be a format: January 2 2006
       --user-channel-members int   If no chat bots can connect to your chat server you can pass in the counts for the user channel here

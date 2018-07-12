@@ -1,5 +1,5 @@
 ---
-date: 2018-07-12T11:40:39Z
+date: 2018-07-12T13:35:38Z
 title: "jx create quickstartlocation"
 slug: jx_create_quickstartlocation
 url: /commands/jx_create_quickstartlocation/
@@ -39,6 +39,7 @@ jx create quickstartlocation [flags]
       --headless               Enable headless operation if using browser automation
   -h, --help                   help for quickstartlocation
   -i, --includes stringArray   The patterns to include repositories (default [*])
+      --install-dependencies   Should any required dependencies be installed automatically
   -k, --kind string            The kind of git service at the URL
       --no-brew                Disables the use of brew on MacOS to install or upgrade command line dependencies
   -o, --owner string           The owner is the user or organisation of the git provider used to find repositories

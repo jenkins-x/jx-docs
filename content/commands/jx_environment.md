@@ -1,5 +1,5 @@
 ---
-date: 2018-07-12T11:40:39Z
+date: 2018-07-12T13:35:38Z
 title: "jx environment"
 slug: jx_environment
 url: /commands/jx_environment/
@@ -34,11 +34,12 @@ jx environment [flags]
 ### Options
 
 ```
-  -b, --batch-mode   In batch mode the command never prompts for user input
-      --headless     Enable headless operation if using browser automation
-  -h, --help         help for environment
-      --no-brew      Disables the use of brew on MacOS to install or upgrade command line dependencies
-      --verbose      Enable verbose logging
+  -b, --batch-mode             In batch mode the command never prompts for user input
+      --headless               Enable headless operation if using browser automation
+  -h, --help                   help for environment
+      --install-dependencies   Should any required dependencies be installed automatically
+      --no-brew                Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --verbose                Enable verbose logging
 ```
 
 ### SEE ALSO

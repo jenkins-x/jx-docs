@@ -1,5 +1,5 @@
 ---
-date: 2018-07-12T11:40:39Z
+date: 2018-07-12T13:35:38Z
 title: "jx create spring"
 slug: jx_create_spring
 url: /commands/jx_create_spring/
@@ -55,6 +55,7 @@ jx create spring [flags]
       --headless                       Enable headless operation if using browser automation
   -h, --help                           help for spring
       --import-commit-message string   Should we override the Jenkinsfile in the project?
+      --install-dependencies           Should any required dependencies be installed automatically
   -j, --java-version string            Java version
       --jenkinsfile string             The name of the Jenkinsfile to use. If not specified then 'Jenkinsfile' will be used
   -k, --kind stringArray               Default dependency kinds to choose from (default [Core,Web,Template Engines,SQL,I/O,Ops,Spring Cloud GCP,Azure,Cloud Contract,Cloud AWS,Cloud Messaging,Cloud Tracing])

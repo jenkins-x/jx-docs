@@ -1,5 +1,5 @@
 ---
-date: 2018-07-12T11:40:39Z
+date: 2018-07-12T13:35:38Z
 title: "jx init"
 slug: jx_init
 url: /commands/jx_init/
@@ -38,6 +38,7 @@ jx init [flags]
       --ingress-deployment string       The namespace for the Ingress controller Deployment (default "jxing-nginx-ingress-controller")
       --ingress-namespace string        The namespace for the Ingress controller (default "kube-system")
       --ingress-service string          The name of the Ingress controller Service (default "jxing-nginx-ingress-controller")
+      --install-dependencies            Should any required dependencies be installed automatically
       --namespace string                The namespace the Jenkins X platform should be installed into (default "jx")
       --no-brew                         Disables the use of brew on MacOS to install or upgrade command line dependencies
       --on-premise                      If installing on an on premise cluster then lets default the 'external-ip' to be the kubernetes master IP address

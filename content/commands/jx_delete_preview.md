@@ -1,5 +1,5 @@
 ---
-date: 2018-07-12T11:40:39Z
+date: 2018-07-12T13:35:38Z
 title: "jx delete preview"
 slug: jx_delete_preview
 url: /commands/jx_delete_preview/
@@ -25,6 +25,7 @@ jx delete preview [flags]
       --dir string                        The source directory used to detect the git source URL and reference
       --headless                          Enable headless operation if using browser automation
   -h, --help                              help for preview
+      --install-dependencies              Should any required dependencies be installed automatically
   -l, --label string                      The Environment label which is a descriptive string like 'Production' or 'Staging'
   -n, --name string                       The Environment resource name. Must follow the kubernetes name conventions like Services, Namespaces
       --namespace string                  The Kubernetes namespace for the Environment

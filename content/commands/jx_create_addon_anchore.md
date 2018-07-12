@@ -1,5 +1,5 @@
 ---
-date: 2018-07-12T11:40:39Z
+date: 2018-07-12T13:35:38Z
 title: "jx create addon anchore"
 slug: jx_create_addon_anchore
 url: /commands/jx_create_addon_anchore/
@@ -29,18 +29,19 @@ jx create addon anchore [flags]
 ### Options
 
 ```
-  -b, --batch-mode          In batch mode the command never prompts for user input
-  -c, --chart string        The name of the chart to use (default "stable/anchore-engine")
-  -d, --config-dir string   The config directory to use (default "/anchore_service_dir")
-      --headless            Enable headless operation if using browser automation
-      --helm-update         Should we run helm update first to ensure we use the latest version (default true)
-  -h, --help                help for anchore
-  -n, --namespace string    The Namespace to install into (default "anchore")
-      --no-brew             Disables the use of brew on MacOS to install or upgrade command line dependencies
-  -p, --password string     The default password to use for Anchore (default "anchore")
-  -r, --release string      The chart release name (default "anchore")
-      --verbose             Enable verbose logging
-  -v, --version string      The version of the Anchore chart to use (default "0.1.4")
+  -b, --batch-mode             In batch mode the command never prompts for user input
+  -c, --chart string           The name of the chart to use (default "stable/anchore-engine")
+  -d, --config-dir string      The config directory to use (default "/anchore_service_dir")
+      --headless               Enable headless operation if using browser automation
+      --helm-update            Should we run helm update first to ensure we use the latest version (default true)
+  -h, --help                   help for anchore
+      --install-dependencies   Should any required dependencies be installed automatically
+  -n, --namespace string       The Namespace to install into (default "anchore")
+      --no-brew                Disables the use of brew on MacOS to install or upgrade command line dependencies
+  -p, --password string        The default password to use for Anchore (default "anchore")
+  -r, --release string         The chart release name (default "anchore")
+      --verbose                Enable verbose logging
+  -v, --version string         The version of the Anchore chart to use (default "0.1.4")
 ```
 
 ### SEE ALSO

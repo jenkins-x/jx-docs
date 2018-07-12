@@ -1,5 +1,5 @@
 ---
-date: 2018-07-12T11:40:39Z
+date: 2018-07-12T13:35:38Z
 title: "jx create token addon"
 slug: jx_create_token_addon
 url: /commands/jx_create_token_addon/
@@ -29,17 +29,18 @@ jx create token addon [username] [flags]
 ### Options
 
 ```
-  -t, --api-token string   The API Token for the user
-  -b, --batch-mode         In batch mode the command never prompts for user input
-      --headless           Enable headless operation if using browser automation
-  -h, --help               help for addon
-  -k, --kind string        The kind of addon. Defaults to the addon name if not specified
-  -n, --name string        The name of the git server to add a user
-      --no-brew            Disables the use of brew on MacOS to install or upgrade command line dependencies
-  -p, --password string    The password for the user
-      --timeout string     The timeout if using browser automation to generate the API token (by passing username and password)
-  -u, --url string         The URL of the git server to add a user
-      --verbose            Enable verbose logging
+  -t, --api-token string       The API Token for the user
+  -b, --batch-mode             In batch mode the command never prompts for user input
+      --headless               Enable headless operation if using browser automation
+  -h, --help                   help for addon
+      --install-dependencies   Should any required dependencies be installed automatically
+  -k, --kind string            The kind of addon. Defaults to the addon name if not specified
+  -n, --name string            The name of the git server to add a user
+      --no-brew                Disables the use of brew on MacOS to install or upgrade command line dependencies
+  -p, --password string        The password for the user
+      --timeout string         The timeout if using browser automation to generate the API token (by passing username and password)
+  -u, --url string             The URL of the git server to add a user
+      --verbose                Enable verbose logging
 ```
 
 ### SEE ALSO

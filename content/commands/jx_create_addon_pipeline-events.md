@@ -1,5 +1,5 @@
 ---
-date: 2018-07-12T11:40:39Z
+date: 2018-07-12T13:35:38Z
 title: "jx create addon pipeline-events"
 slug: jx_create_addon_pipeline-events
 url: /commands/jx_create_addon_pipeline-events/
@@ -29,16 +29,17 @@ jx create addon pipeline-events [flags]
 ### Options
 
 ```
-  -b, --batch-mode         In batch mode the command never prompts for user input
-      --headless           Enable headless operation if using browser automation
-      --helm-update        Should we run helm update first to ensure we use the latest version (default true)
-  -h, --help               help for pipeline-events
-  -n, --namespace string   The Namespace to install into (default "pipeline-events")
-      --no-brew            Disables the use of brew on MacOS to install or upgrade command line dependencies
-  -p, --password string    Password to access pipeline-events services such as Kibana and Elasticsearch.  Defaults to default Jenkins X admin password.
-  -r, --release string     The chart release name (default "jx-pipeline-events")
-      --verbose            Enable verbose logging
-  -v, --version string     The version of the pipeline events chart to use (default "0.0.11")
+  -b, --batch-mode             In batch mode the command never prompts for user input
+      --headless               Enable headless operation if using browser automation
+      --helm-update            Should we run helm update first to ensure we use the latest version (default true)
+  -h, --help                   help for pipeline-events
+      --install-dependencies   Should any required dependencies be installed automatically
+  -n, --namespace string       The Namespace to install into (default "pipeline-events")
+      --no-brew                Disables the use of brew on MacOS to install or upgrade command line dependencies
+  -p, --password string        Password to access pipeline-events services such as Kibana and Elasticsearch.  Defaults to default Jenkins X admin password.
+  -r, --release string         The chart release name (default "jx-pipeline-events")
+      --verbose                Enable verbose logging
+  -v, --version string         The version of the pipeline events chart to use (default "0.0.11")
 ```
 
 ### SEE ALSO

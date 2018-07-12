@@ -1,5 +1,5 @@
 ---
-date: 2018-07-12T11:40:39Z
+date: 2018-07-12T13:35:38Z
 title: "jx context"
 slug: jx_context
 url: /commands/jx_context/
@@ -35,11 +35,12 @@ jx context [flags]
 ### Options
 
 ```
-  -b, --batch-mode   In batch mode the command never prompts for user input
-      --headless     Enable headless operation if using browser automation
-  -h, --help         help for context
-      --no-brew      Disables the use of brew on MacOS to install or upgrade command line dependencies
-      --verbose      Enable verbose logging
+  -b, --batch-mode             In batch mode the command never prompts for user input
+      --headless               Enable headless operation if using browser automation
+  -h, --help                   help for context
+      --install-dependencies   Should any required dependencies be installed automatically
+      --no-brew                Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --verbose                Enable verbose logging
 ```
 
 ### SEE ALSO

@@ -1,5 +1,5 @@
 ---
-date: 2018-07-12T11:40:39Z
+date: 2018-07-12T13:35:38Z
 title: "jx create jhipster"
 slug: jx_create_jhipster
 url: /commands/jx_create_jhipster/
@@ -46,6 +46,7 @@ jx create jhipster [flags]
       --headless                       Enable headless operation if using browser automation
   -h, --help                           help for jhipster
       --import-commit-message string   Should we override the Jenkinsfile in the project?
+      --install-dependencies           Should any required dependencies be installed automatically
       --jenkinsfile string             The name of the Jenkinsfile to use. If not specified then 'Jenkinsfile' will be used
       --list-packs                     list available draft packs
       --name string                    Specify the git repository name to import the project into (if it is not already in one)

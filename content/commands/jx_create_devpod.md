@@ -1,5 +1,5 @@
 ---
-date: 2018-07-12T11:40:39Z
+date: 2018-07-12T13:35:38Z
 title: "jx create devpod"
 slug: jx_create_devpod
 url: /commands/jx_create_devpod/
@@ -31,17 +31,18 @@ jx create devpod [flags]
 ### Options
 
 ```
-  -b, --batch-mode           In batch mode the command never prompts for user input
-      --headless             Enable headless operation if using browser automation
-  -h, --help                 help for devpod
-  -l, --label string         The label of the pod template to use
-      --no-brew              Disables the use of brew on MacOS to install or upgrade command line dependencies
-  -c, --request-cpu string   The request CPU of the dev pod (default "1")
-      --reuse                Reuse and existing DevPod for this folder and label if one exists
-  -s, --suffix string        The suffix to append the pod name
-      --sync                 Also synchronise the local file system into the DevPod
-      --verbose              Enable verbose logging
-  -w, --working-dir string   The working directory of the dev pod
+  -b, --batch-mode             In batch mode the command never prompts for user input
+      --headless               Enable headless operation if using browser automation
+  -h, --help                   help for devpod
+      --install-dependencies   Should any required dependencies be installed automatically
+  -l, --label string           The label of the pod template to use
+      --no-brew                Disables the use of brew on MacOS to install or upgrade command line dependencies
+  -c, --request-cpu string     The request CPU of the dev pod (default "1")
+      --reuse                  Reuse and existing DevPod for this folder and label if one exists
+  -s, --suffix string          The suffix to append the pod name
+      --sync                   Also synchronise the local file system into the DevPod
+      --verbose                Enable verbose logging
+  -w, --working-dir string     The working directory of the dev pod
 ```
 
 ### SEE ALSO

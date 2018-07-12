@@ -1,5 +1,5 @@
 ---
-date: 2018-07-12T11:40:39Z
+date: 2018-07-12T13:35:38Z
 title: "jx create jenkins token"
 slug: jx_create_jenkins_token
 url: /commands/jx_create_jenkins_token/
@@ -32,17 +32,18 @@ jx create jenkins token [username] [flags]
 ### Options
 
 ```
-  -t, --api-token string   The API Token for the user
-  -b, --batch-mode         In batch mode the command never prompts for user input
-      --browser            Use a Chrome browser to automatically find the API token if the user and password are known
-      --headless           Enable headless operation if using browser automation
-  -h, --help               help for token
-  -n, --name string        The name of the git server to add a user
-      --no-brew            Disables the use of brew on MacOS to install or upgrade command line dependencies
-  -p, --password string    The User password to try automatically create a new API Token
-      --timeout string     The timeout if using browser automation to generate the API token (by passing username and password)
-  -u, --url string         The URL of the git server to add a user
-      --verbose            Enable verbose logging
+  -t, --api-token string       The API Token for the user
+  -b, --batch-mode             In batch mode the command never prompts for user input
+      --browser                Use a Chrome browser to automatically find the API token if the user and password are known
+      --headless               Enable headless operation if using browser automation
+  -h, --help                   help for token
+      --install-dependencies   Should any required dependencies be installed automatically
+  -n, --name string            The name of the git server to add a user
+      --no-brew                Disables the use of brew on MacOS to install or upgrade command line dependencies
+  -p, --password string        The User password to try automatically create a new API Token
+      --timeout string         The timeout if using browser automation to generate the API token (by passing username and password)
+  -u, --url string             The URL of the git server to add a user
+      --verbose                Enable verbose logging
 ```
 
 ### SEE ALSO

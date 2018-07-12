@@ -1,5 +1,5 @@
 ---
-date: 2018-07-12T11:40:39Z
+date: 2018-07-12T13:35:38Z
 title: "jx step link"
 slug: jx_step_link
 url: /commands/jx_step_link/
@@ -38,6 +38,7 @@ jx step link services [flags]
       --headless                Enable headless operation if using browser automation
   -h, --help                    help for link
   -i, --includes stringArray    What services from source namespace to include in the linking process
+      --install-dependencies    Should any required dependencies be installed automatically
       --no-brew                 Disables the use of brew on MacOS to install or upgrade command line dependencies
   -t, --to-namespace string     The destination namespace to which the linking would happen
       --verbose                 Enable verbose logging

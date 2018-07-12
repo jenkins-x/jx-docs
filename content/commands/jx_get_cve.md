@@ -1,5 +1,5 @@
 ---
-date: 2018-07-12T11:40:39Z
+date: 2018-07-12T13:35:38Z
 title: "jx get cve"
 slug: jx_get_cve
 url: /commands/jx_get_cve/
@@ -31,15 +31,16 @@ jx get cve [flags]
 ### Options
 
 ```
-  -b, --batch-mode           In batch mode the command never prompts for user input
-  -e, --environment string   The Environment to find running applications
-      --headless             Enable headless operation if using browser automation
-  -h, --help                 help for cve
-      --image-id string      Image ID in CVE engine if already known
-      --image-name string    Full image name e.g. jenkinsxio/nexus 
-      --no-brew              Disables the use of brew on MacOS to install or upgrade command line dependencies
-      --verbose              Enable verbose logging
-      --version string       Version or tag e.g. 0.0.1
+  -b, --batch-mode             In batch mode the command never prompts for user input
+  -e, --environment string     The Environment to find running applications
+      --headless               Enable headless operation if using browser automation
+  -h, --help                   help for cve
+      --image-id string        Image ID in CVE engine if already known
+      --image-name string      Full image name e.g. jenkinsxio/nexus 
+      --install-dependencies   Should any required dependencies be installed automatically
+      --no-brew                Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --verbose                Enable verbose logging
+      --version string         Version or tag e.g. 0.0.1
 ```
 
 ### SEE ALSO

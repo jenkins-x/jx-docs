@@ -1,5 +1,5 @@
 ---
-date: 2018-07-12T11:40:39Z
+date: 2018-07-12T13:35:38Z
 title: "jx step report releases"
 slug: jx_step_report_releases
 url: /commands/jx_step_report_releases/
@@ -25,12 +25,13 @@ jx step report releases [flags]
 ### Options
 
 ```
-  -b, --batch-mode   In batch mode the command never prompts for user input
-      --headless     Enable headless operation if using browser automation
-  -h, --help         help for releases
-      --no-brew      Disables the use of brew on MacOS to install or upgrade command line dependencies
-      --verbose      Enable verbose logging
-  -w, --watch        Whether to watch Releases
+  -b, --batch-mode             In batch mode the command never prompts for user input
+      --headless               Enable headless operation if using browser automation
+  -h, --help                   help for releases
+      --install-dependencies   Should any required dependencies be installed automatically
+      --no-brew                Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --verbose                Enable verbose logging
+  -w, --watch                  Whether to watch Releases
 ```
 
 ### SEE ALSO

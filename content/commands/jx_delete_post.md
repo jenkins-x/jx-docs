@@ -1,5 +1,5 @@
 ---
-date: 2018-07-12T11:40:39Z
+date: 2018-07-12T13:35:38Z
 title: "jx delete post"
 slug: jx_delete_post
 url: /commands/jx_delete_post/
@@ -26,12 +26,13 @@ jx delete post preview job [flags]
 ### Options
 
 ```
-  -b, --batch-mode    In batch mode the command never prompts for user input
-      --headless      Enable headless operation if using browser automation
-  -h, --help          help for post
-  -n, --name string   The name of the job to be deleted
-      --no-brew       Disables the use of brew on MacOS to install or upgrade command line dependencies
-      --verbose       Enable verbose logging
+  -b, --batch-mode             In batch mode the command never prompts for user input
+      --headless               Enable headless operation if using browser automation
+  -h, --help                   help for post
+      --install-dependencies   Should any required dependencies be installed automatically
+  -n, --name string            The name of the job to be deleted
+      --no-brew                Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --verbose                Enable verbose logging
 ```
 
 ### SEE ALSO
