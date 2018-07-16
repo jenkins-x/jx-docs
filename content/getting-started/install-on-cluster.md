@@ -46,7 +46,7 @@ All the resources created by the conformance tests can be cleaned up with:
 
 ### Enabling insecure registries on kops
 
-Note that if you are on AWS you may want to use the [jx create aws](/getting-started/create-cluster/) command which automates all of this for you!
+Note that if you are on AWS you may want to use the [jx create cluster aws](/getting-started/create-cluster/#using-amazon-aws) command which automates all of this for you!
 
 If you created the kubernetes cluster via [kops](https://github.com/kubernetes/kops) then you can do the following:
 
