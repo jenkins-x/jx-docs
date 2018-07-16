@@ -17,7 +17,7 @@ categories: [fundamentals]
 toc: true
 ---
 
-Jenkins X is an implementation heavily influence by the State of DevOps reports and more recently the [Accelerate](https://www.amazon.co.uk/Accelerate-Software-Performing-Technology-Organizations/dp/1942788339) book from [Nicole Forsgren](https://twitter.com/nicolefv), [Jez Jumble](https://twitter.com/jezhumble) and [Gene Kim](https://twitter.com/RealGeneKim?).  
+Jenkins X is an implementation heavily influence by the State of DevOps reports and more recently the [Accelerate](https://www.amazon.co.uk/Accelerate-Software-Performing-Technology-Organizations/dp/1942788339) book from [Nicole Forsgren](https://twitter.com/nicolefv), [Jez Humble](https://twitter.com/jezhumble) and [Gene Kim](https://twitter.com/RealGeneKim?).  
 
 Years of gathering data from real world teams and organisations which has been analysed by inspiring thought leaders and data scientists from the DevOps world.  The Accelerate book recommends a number of capabilities that Jenkins X is implementing so users gain the scientifically proven benefits, out of the box.  We've started documenting the capabilities that are available today and will continue as more become availble.
 
