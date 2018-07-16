@@ -1,5 +1,5 @@
 ---
-date: 2018-07-16T17:22:19Z
+date: 2018-07-16T17:26:37Z
 title: "jx create cluster gke"
 slug: jx_create_cluster_gke
 url: /commands/jx_create_cluster_gke/
@@ -72,6 +72,7 @@ jx create cluster gke [flags]
       --max-num-nodes string                The maximum number of nodes to be created in each of the cluster's zones
       --min-num-nodes string                The minimum number of nodes to be created in each of the cluster's zones
       --namespace string                    The namespace the Jenkins X platform should be installed into (default "jx")
+      --network string                      The Compute Engine Network that the cluster will connect to
       --no-brew                             Disables the use of brew on MacOS to install or upgrade command line dependencies
       --no-default-environments             Disables the creation of the default Staging and Production environments
       --on-premise                          If installing on an on premise cluster then lets default the 'external-ip' to be the kubernetes master IP address
@@ -81,6 +82,7 @@ jx create cluster gke [flags]
       --skip-ingress                        Dont install an ingress controller
       --skip-login                          Skip Google auth if already logged in via gloud auth
       --skip-tiller                         Dont install a Helms Tiller service
+      --subnetwork string                   The Google Compute Engine subnetwork to which the cluster is connected
       --tiller-cluster-role string          The cluster role for Helm's tiller (default "cluster-admin")
       --tiller-namespace string             The namespace for the Tiller when using a gloabl tiller (default "kube-system")
       --timeout string                      The number of seconds to wait for the helm install to complete (default "6000")
