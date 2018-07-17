@@ -1,5 +1,5 @@
 ---
-date: 2018-07-17T07:59:31Z
+date: 2018-07-17T12:13:11Z
 title: "jx create codeship"
 slug: jx_create_codeship
 url: /commands/jx_create_codeship/
@@ -39,7 +39,6 @@ jx create codeship [flags]
       --headless                       Enable headless operation if using browser automation
   -h, --help                           help for codeship
       --install-dependencies           Should any required dependencies be installed automatically
-      --jx-version string              The version of JX that Codeship will use (default "1.3.88")
       --no-brew                        Disables the use of brew on MacOS to install or upgrade command line dependencies
   -o, --organisation-name string       The organisation name that will be used as the Git repo containing cluster details, the repo will be organisation-<org name>
       --verbose                        Enable verbose logging
