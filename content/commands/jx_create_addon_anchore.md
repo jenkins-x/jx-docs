@@ -1,5 +1,5 @@
 ---
-date: 2018-07-18T09:21:40Z
+date: 2018-07-18T11:45:58Z
 title: "jx create addon anchore"
 slug: jx_create_addon_anchore
 url: /commands/jx_create_addon_anchore/
@@ -41,7 +41,7 @@ jx create addon anchore [flags]
   -p, --password string        The default password to use for Anchore (default "anchore")
   -r, --release string         The chart release name (default "anchore")
       --verbose                Enable verbose logging
-  -v, --version string         The version of the Anchore chart to use (default "0.1.4")
+  -v, --version string         The version of the Anchore chart to use (default "0.1.7")
 ```
 
 ### SEE ALSO

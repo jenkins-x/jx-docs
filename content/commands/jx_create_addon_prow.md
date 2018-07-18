@@ -1,5 +1,5 @@
 ---
-date: 2018-07-18T09:21:40Z
+date: 2018-07-18T11:45:58Z
 title: "jx create addon prow"
 slug: jx_create_addon_prow
 url: /commands/jx_create_addon_prow/
@@ -36,14 +36,14 @@ jx create addon prow [flags]
   -h, --help                   help for prow
       --hmac-token string      OPTIONAL: The hmac-token is the token that you give to GitHub for validating webhooks. Generate it using any reasonable randomness-generator, eg openssl rand -hex 20
       --install-dependencies   Should any required dependencies be installed automatically
-  -n, --namespace string       The Namespace to install into (default "prow")
+  -n, --namespace string       The Namespace to install into
       --no-brew                Disables the use of brew on MacOS to install or upgrade command line dependencies
       --oauth-token string     OPTIONAL: The oauth-token is an OAuth2 token that has read and write access to the bot account. Generate it from the account's settings -> Personal access tokens -> Generate new token.
       --password string        Overwrite the default admin password used to login to the Deck UI
   -r, --release string         The chart release name (default "prow")
       --username string        Overwrite cluster admin username
       --verbose                Enable verbose logging
-  -v, --version string         The version of the prow addon to use (default "0.0.4")
+  -v, --version string         The version of the prow addon to use (default "0.0.9")
 ```
 
 ### SEE ALSO
