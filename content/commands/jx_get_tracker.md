@@ -1,5 +1,5 @@
 ---
-date: 2018-07-19T14:57:59Z
+date: 2018-07-19T16:05:57Z
 title: "jx get tracker"
 slug: jx_get_tracker
 url: /commands/jx_get_tracker/
