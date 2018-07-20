@@ -13,6 +13,7 @@ weight: 5
 sections_weight: 5
 ---
 
+* [Accelerate with Jenkins X ](https://jenkins.io/blog/2018/07/19/jenkins-x-accelerate/) by [James Rawlings](https://twitter.com/jdrawlings/) on July 20, 2018 
 * [Add CI/CD to Your Spring Boot App with Jenkins X and Kubernetes](https://developer.okta.com/blog/2018/07/11/ci-cd-spring-boot-jenkins-x-kubernetes) by [Matt Raible](https://twitter.com/mraible/) on July 11, 2018 
 * [Don't Install Developer Tools!](https://www.cloudbees.com/blog/don%E2%80%99t-install-development-tools) by Michael Neale on 30 May 2018
 * [Introducing Jenkins X: a CI/CD solution for modern cloud applications on Kubernetes](https://jenkins.io/blog/2018/03/19/introducing-jenkins-x/) by [James Strachan](https://twitter.com/jstrachan) on 19th March, 2018
