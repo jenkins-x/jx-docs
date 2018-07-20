@@ -58,7 +58,7 @@ You can also run:
 jx get post preview
 ```
 
-to see any configured post preview jobs, and: 
+to list any configured post preview jobs, and: 
 
 ```
 jx delete post preview job --name=NAME_HERE
