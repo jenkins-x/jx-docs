@@ -101,7 +101,7 @@ To set the branch patterns for your team  [jx edit branchpattern](/commands/jx_e
 ```shell
 $ jx edit branchpattern  "develop|PR-.*|feature.*"
 ```  
-You can then view the current branch patterns for your team via the [jx get branchdepattern](/commands/jx_get_branchpattern/) command:
+You can then view the current branch patterns for your team via the [jx get branchpattern](/commands/jx_get_branchpattern/) command:
 
 ```shell
 $ jx get branchpattern
