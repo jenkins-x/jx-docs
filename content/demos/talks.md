@@ -13,6 +13,14 @@ weight: 5
 sections_weight: 5
 ---
 
+* [2018-09-18: Jenkins X - Continuously Driving the Kloud (German)](http://www.jug-kl.de/jenkins/) at [JUG Kaiserslautern (Germany)](http://www.jug-kl.de/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) 
+
+* [2018-10-18: Jenkins X - Continuously Driving the Kloud (German)](https://www.baselone.ch/speech/B6A3BA74-8E28-46CD-B4B7-F96C6FFE0B39/Jenkins-X---Continuously-Driving-the-Kloud) at [BaselOne (Basel, Switzerland)](https://www.baselone.ch/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) 
+
+* [2018-11-14: Jenkins X - Continuously Driving the Kloud (German)](https://www.continuouslifecycle.de/veranstaltung-7488-jenkins-x-%E2%80%93-continuously-driving-the-kloud.html?id=7488) at [Continuous Lifecycle (Mannheim, Germany)](https://www.continuouslifecycle.de/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) 
+
+* [2018-12-19: Jenkins X - Continuously Driving the Kloud (German)](https://sites.google.com/site/jugffm/home/19-12-2018-jenkins-x---continuously-driving-the-kloud) at [JUG Frankfurt (Germany)](https://sites.google.com/site/jugffm/home) by [Gerd Aschemann](https://twitter.com/GerdAschemann) 
+
 * [JavaDay Perú 30 June 2018:CI/CD for Spring Boot Applications with Jenkins X](http://perujug.org/perujavaday2018/) by [Eddú Meléndez](https://twitter.com/eddumelendez)
 
 * [JBCN Conference 11-13 June 2018:Workshop - building Continuous Delivery for Microservices with Jenkins X](http://www.jbcnconf.com/2018/infoSpeaker.html?ref=SmFtZXNTdHJhY2hhbmpzdHJhY2hhbkBjbG91ZGJlZXMuY29t) by [James Strachan](https://twitter.com/jstrachan)
