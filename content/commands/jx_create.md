@@ -1,5 +1,5 @@
 ---
-date: 2018-07-23T17:13:34Z
+date: 2018-07-23T18:37:04Z
 title: "jx create"
 slug: jx_create
 url: /commands/jx_create/
@@ -44,6 +44,7 @@ jx create [flags]
 * [jx create docs](/commands/jx_create_docs/)	 - Creates the documentation files
 * [jx create environment](/commands/jx_create_environment/)	 - Create a new Environment which is used to promote your Team's Applications via Continuous Delivery
 * [jx create etc-hosts](/commands/jx_create_etc-hosts/)	 - Creates a new git server URL
+* [jx create gcp-service-account](/commands/jx_create_gcp-service-account/)	 - Creates a GCP service account
 * [jx create git](/commands/jx_create_git/)	 - Creates a git resource
 * [jx create issue](/commands/jx_create_issue/)	 - Create an issue on the git project for the current directory
 * [jx create jenkins](/commands/jx_create_jenkins/)	 - Creates a jenkins resource
