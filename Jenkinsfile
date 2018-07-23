@@ -14,6 +14,19 @@ pipeline {
     BRANCH_NAME = "$BRANCH_NAME"
   }
   stages {
+    stage('CI Validate') {
+      when {
+        branch 'PR-*'
+      }
+      steps {
+        checkout scm
+        container('go') {
+          sh "hugo version"
+          sh "hugo -d tmp-website --enableGitInfo"
+        }
+      }
+    }
+
     stage('Regenerate Website') {
       when {
         branch 'master'
@@ -22,6 +35,7 @@ pipeline {
         checkout scm
         container('go') {
           sh "git clone https://github.com/jenkins-x/jenkins-x-website.git"
+          sh "hugo version"
           sh "hugo -d jenkins-x-website --enableGitInfo"
 
           dir("jenkins-x-website") {
