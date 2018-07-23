@@ -9,9 +9,9 @@ keywords: [install,builder]
 menu:
   docs:
     parent: "getting-started"
-    weight: 25
-weight: 25
-sections_weight: 25
+    weight: 85
+weight: 85
+sections_weight: 85
 draft: false
 aliases: [/quickstart/,/overview/quickstart/]
 toc: true
