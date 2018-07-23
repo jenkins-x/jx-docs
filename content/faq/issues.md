@@ -31,7 +31,7 @@ By default docker wants all docker registries to be exposed over `https` and to 
 
 We try to automate this setting when using `jx create cluster`  e.g. on AWS we default this value to the IP range `100.64.0.0/10` to match most kubernetes service IP addresses.
 
-On [EKS](https://jenkins-x.io/commands/jx_create_cluster_eks/) we default to using ECR to avoid this issue. Simialarly we will soon default to GCR and ACR on GKE and AKS respectively.
+On [EKS](https://jenkins-x.io/commands/jx_create_cluster_eks/) we default to using ECR to avoid this issue. Similarly we will soon default to GCR and ACR on GKE and AKS respectively.
 
 So a workaround is to use a real [external docker registry](/architecture/docker-registry/) or enable `insecure-registry` on your docker daemons on your compute nodes on your Kubernetes cluster.
 
