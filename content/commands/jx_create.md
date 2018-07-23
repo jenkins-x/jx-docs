@@ -1,5 +1,5 @@
 ---
-date: 2018-07-23T18:37:04Z
+date: 2018-07-23T22:54:29Z
 title: "jx create"
 slug: jx_create
 url: /commands/jx_create/
@@ -39,13 +39,13 @@ jx create [flags]
 * [jx create camel](/commands/jx_create_camel/)	 - Create a new camel based application and import the generated code into git and Jenkins for CI/CD
 * [jx create chat](/commands/jx_create_chat/)	 - Creates a chat server resource
 * [jx create cluster](/commands/jx_create_cluster/)	 - Create a new kubernetes cluster
-* [jx create codeship](/commands/jx_create_codeship/)	 - Creates a Codeship build to apply 
+* [jx create codeship](/commands/jx_create_codeship/)	 - Creates a build on CodeShip to create/update JX clusters
 * [jx create devpod](/commands/jx_create_devpod/)	 - Creates a Developer Pod for running builds and tests inside the cluster
 * [jx create docs](/commands/jx_create_docs/)	 - Creates the documentation files
 * [jx create environment](/commands/jx_create_environment/)	 - Create a new Environment which is used to promote your Team's Applications via Continuous Delivery
 * [jx create etc-hosts](/commands/jx_create_etc-hosts/)	 - Creates a new git server URL
-* [jx create gcp-service-account](/commands/jx_create_gcp-service-account/)	 - Creates a GCP service account
 * [jx create git](/commands/jx_create_git/)	 - Creates a git resource
+* [jx create gke-service-account](/commands/jx_create_gke-service-account/)	 - Creates a GKE service account
 * [jx create issue](/commands/jx_create_issue/)	 - Create an issue on the git project for the current directory
 * [jx create jenkins](/commands/jx_create_jenkins/)	 - Creates a jenkins resource
 * [jx create jhipster](/commands/jx_create_jhipster/)	 - Create a new JHipster based application and import the generated code into git and Jenkins for CI/CD

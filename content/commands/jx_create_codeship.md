@@ -1,16 +1,16 @@
 ---
-date: 2018-07-23T18:37:04Z
+date: 2018-07-23T22:54:29Z
 title: "jx create codeship"
 slug: jx_create_codeship
 url: /commands/jx_create_codeship/
 ---
 ## jx create codeship
 
-Creates a Codeship build to apply 
+Creates a build on CodeShip to create/update JX clusters
 
 ### Synopsis
 
-Creates a Codeship build to apply 
+Creates a build on CodeShip to create/update JX clusters
 
 ```
 jx create codeship [flags]
