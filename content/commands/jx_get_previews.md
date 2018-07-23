@@ -1,5 +1,5 @@
 ---
-date: 2018-07-23T15:02:59Z
+date: 2018-07-23T17:13:34Z
 title: "jx get previews"
 slug: jx_get_previews
 url: /commands/jx_get_previews/
@@ -19,11 +19,12 @@ jx get previews [flags]
 ### Examples
 
 ```
-  # List all environments
-  jx get environments
+  # List all preview environments
+  jx get previews
   
-  # List all environments using the shorter alias
-  jx get env
+  # View the current preview environment URL
+  # inside a CI pipeline
+  jx get preview --current
 ```
 
 ### Options
