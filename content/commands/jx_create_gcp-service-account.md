@@ -1,30 +1,28 @@
 ---
 date: 2018-07-23T18:37:04Z
-title: "jx create branchpattern"
-slug: jx_create_branchpattern
-url: /commands/jx_create_branchpattern/
+title: "jx create gcp-service-account"
+slug: jx_create_gcp-service-account
+url: /commands/jx_create_gcp-service-account/
 ---
-## jx create branchpattern
+## jx create gcp-service-account
 
-Create a git branch pattern for your team
+Creates a GCP service account
 
 ### Synopsis
 
-Create a git branch pattern for your team. 
-
-The pattern should match all the branches you wish to automate CI/CD on when creating or importing projects. 
-
-For more documentation see: https://jenkins-x.io/developing/import/#branch-patterns
+Creates a GCP service account
 
 ```
-jx create branchpattern [flags]
+jx create gcp-service-account [flags]
 ```
 
 ### Examples
 
 ```
-  # Create a branch pattern for your team
-  jx create branch pattern "master|develop|PR-.*"
+  jx create gcp-service-account
+  
+  # to specify the options via flags
+  jx create gcp-service-account --name my-service-account --project my-gcp-project
 ```
 
 ### Options
@@ -32,9 +30,11 @@ jx create branchpattern [flags]
 ```
   -b, --batch-mode             In batch mode the command never prompts for user input
       --headless               Enable headless operation if using browser automation
-  -h, --help                   help for branchpattern
+  -h, --help                   help for gcp-service-account
       --install-dependencies   Should any required dependencies be installed automatically
+  -n, --name string            The name of the service account to create
       --no-brew                Disables the use of brew on MacOS to install or upgrade command line dependencies
+  -p, --project string         The GCP project to create the service account in
       --verbose                Enable verbose logging
 ```
 
