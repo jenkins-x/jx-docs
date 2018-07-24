@@ -85,6 +85,36 @@ Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
       
 ## Using Amazon (AWS)
 
+You can either use `kops` or `eks` to create your Kubernetes cluster.
+
+### Ingress options
+
+On AWS the ideal setup is to use a Route 53 DNS wildcard CNAME to point `*.somedomain` at your ELB or NLB host name; then when prompted by `jx` you install `somedomain` (where `somedomain` is an actual DNS domain/subdomain you own). 
+
+Then all the `Ingress` resources for any exposed service in any namespace will appear as `mysvc.myns.somedomain` - whether for things like Jenkins or Nexus or for your own microservices or Preview Environments.
+
+Using wildcard DNS pointing to your ELB/NLB also means you'll be able to use all the availability zones on AWS.
+
+#### Avoiding DNS
+
+If you want to kick the tyres of Jenkins X without going to the trouble of getting a DNS domain name to use and setting up wildcard DNS you can instead use an NLP and use one of the IP addresses of one of the availability zones as your domain via `$IP.ip`.
+
+This is not really intended for real production installations; but can be a quick way to get started trying out Jenkins X.
+
+When using `jx create cluster aws`, `jx create cluster eks` or `jx install --provider=(aws|eks)` you are prompted if you want to use DNS and optionally setup a wildcard DNS CNAME record on Route 53; if not we are assuming you're gonna avoid DNS to kick the tyres on a single availability zone IP address by resolving the NLB host name to one of the availability zone IP addresses.
+
+
+### EKS
+
+Use the [jx create cluster eks](/commands/jx_create_cluster_eks) command: 
+
+    jx create cluster eks
+
+Under the covers this will download and use the [eksctl](https://eksctl.io/) tool to create a new EKS cluster, then it'll install Jenkins X on top.
+
+
+### Kops
+
 Use the [jx create cluster aws](/commands/jx_create_cluster_aws) command: 
 
     jx create cluster aws
