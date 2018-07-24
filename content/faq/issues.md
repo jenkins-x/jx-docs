@@ -36,7 +36,7 @@ On [EKS](https://jenkins-x.io/commands/jx_create_cluster_eks/) we default to usi
 So a workaround is to use a real [external docker registry](/architecture/docker-registry/) or enable `insecure-registry` on your docker daemons on your compute nodes on your Kubernetes cluster.
 
 
-### Invalid git token to scan a project
+## Invalid git token to scan a project
 
 If you get an error in Jenkins when it tries to scan your repositories for branches something like:
 
@@ -53,14 +53,16 @@ jx delete git token -n GitHub admin
 jx create token -n GitHub admin
 ```
 
-### What are the credentials to access core services?
+More details on [using git and Jenkins X here](/developing/git/)
+
+## What are the credentials to access core services?
 
 Authenticated core services of Jenkins X include Jenkins, Nexus, Chartmuseum.  The username is `admin` and the password by default is generated and printed out in the terminal after `jx create cluster` or `jx install`.  If you would like to set the default password yourself then you can set the flag `--default-admin-password=foo` to the two comamnds above.
 
 If you don't have the terminal console output anymore you can look in the local file `~/.jx/jenkinsAuth.yaml` and find the password that matches your Jenkins server URL for the desired cluster.
 
 
-### Cannot create cluster minikube
+## Cannot create cluster minikube
 If you are using a Mac then `hyperkit` is the best VM driver to use - but does require you to install a recent [Docker for Mac](https://docs.docker.com/docker-for-mac/install/) first. Maybe try that then retry `jx create cluster minikube`?
 
 If your minikube is failing to startup then you could try:
@@ -81,7 +83,7 @@ Otherwise you could try follow the minikube instructions
 * [install minikube](https://github.com/kubernetes/minikube#installation)
 * [run minikube start](https://github.com/kubernetes/minikube#quickstart)
 
-### Minkube and hyperkit: Could not find an IP address
+## Minkube and hyperkit: Could not find an IP address
 
 If you are using minikube on a mac with hyperkit and find minikube fails to start with a log like:
 
@@ -102,7 +104,7 @@ rm ~/.minikube/machines/minikube/hyperkit.pid
 
 Then try again. Hopefully this time it will work!
 
-### Cannot access services on minikube
+## Cannot access services on minikube
 
 When running minikube locally `jx` defaults to using [nip.io](http://nip.io/) as a way of using nice-isn DNS names for services and working around the fact that most laptops can't do wildcard DNS. However sometimes [nip.io](http://nip.io/) has issues and does not work.
 
@@ -132,6 +134,6 @@ You'll see all the URs of the form `http://$(minikube ip):somePortNumber` which 
 
 
 
-### Other issues
+## Other issues
 
 Please [let us know](https://github.com/jenkins-x/jx/issues/new) and see if we can help? Good luck!
