@@ -1,6 +1,6 @@
 ---
 title: General Questions
-linktitle: General
+linktitle: General Questions
 description: General questions about the Jenkins X project
 date: 2018-02-10
 categories: [faq]
