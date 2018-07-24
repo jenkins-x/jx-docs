@@ -1,5 +1,5 @@
 ---
-date: 2018-07-24T11:38:45Z
+date: 2018-07-24T13:14:48Z
 title: "jx cloudbees"
 slug: jx_cloudbees
 url: /commands/jx_cloudbees/
@@ -12,7 +12,9 @@ Opens the CloudBees app for Kubernetes for visualising CI/CD and your environmen
 
 Opens the CloudBees app for Kubernetes in a browser. 
 
-Which helps you visualise your CI/CD pipelines, apps, environments and teams.
+Which helps you visualise your CI/CD pipelines, apps, environments and teams. 
+
+For more information please see https://www.cloudbees.com/blog/want-help-build-cloudbees-kubernetes-jenkins-x
 
 ```
 jx cloudbees [flags]
