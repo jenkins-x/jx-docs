@@ -42,7 +42,7 @@ This is a temporary issue we are hoping [to work around soon](https://github.com
 
 Its basically a mismatch between the version of helm 2 installed on your laptop, the version of helm used in the build pods and the version of Tiller, the server side component in Helm 2 that is installed in the kubernetes cluster.
 
-The issue goes away when we move to helm 3 as there's no Tiller component. Also we are looking at moving to use the [local plugin to avoid a server side Tiller component]().
+The issue goes away when we move to helm 3 as there's no Tiller component. Also we are looking at moving to use the [local plugin to avoid a server side Tiller component](https://github.com/jenkins-x/jx/issues/1341).
 
 Until the the local plugin or helm 3 the manual workaround is:
 
