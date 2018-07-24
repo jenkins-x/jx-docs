@@ -1,5 +1,5 @@
 ---
-date: 2018-07-24T11:38:45Z
+date: 2018-07-24T13:14:48Z
 title: "jx create addon cloudbees"
 slug: jx_create_addon_cloudbees
 url: /commands/jx_create_addon_cloudbees/
@@ -12,7 +12,9 @@ Create the CloudBees app for Kubernetes (a web console for working with CI/CD, E
 
 Creates the CloudBees app for Kubernetes addon 
 
-CloudBees app for Kubernetes provides unified Continuous Delivery Environment console to make it easier to do CI/CD and Environments across a number of microservices and teams
+CloudBees app for Kubernetes provides unified Continuous Delivery Environment console to make it easier to do CI/CD and Environments across a number of microservices and teams 
+
+For more information please see https://www.cloudbees.com/blog/want-help-build-cloudbees-kubernetes-jenkins-x
 
 ```
 jx create addon cloudbees [flags]
