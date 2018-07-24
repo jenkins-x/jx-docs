@@ -36,6 +36,19 @@ On [EKS](https://jenkins-x.io/commands/jx_create_cluster_eks/) we default to usi
 So a workaround is to use a real [external docker registry](/architecture/docker-registry/) or enable `insecure-registry` on your docker daemons on your compute nodes on your Kubernetes cluster.
 
 
+## Helm fails with Error: UPGRADE FAILED: incompatible versions client[...] server[...]'
+
+This is a temporary issue we are hoping [to work around soon](https://github.com/jenkins-x/jx/issues/1304#issuecomment-405958831). 
+
+Its basically a mismatch between the version of helm 2 installed on your laptop, the version of helm used in the build pods and the version of Tiller, the server side component in Helm 2 that is installed in the kubernetes cluster.
+
+The issue goes away when we move to helm 3 as there's no Tiller component. Also we are looking at moving to use the [local plugin to avoid a server side Tiller component]().
+
+Until the the local plugin or helm 3 the manual workaround is:
+
+* [download the `2.10.0-rc1 version](https://github.com/helm/helm/releases) of helm and add it to your `PATH`
+* run `helm init --upgrade`
+
 ## Invalid git token to scan a project
 
 If you get an error in Jenkins when it tries to scan your repositories for branches something like:
