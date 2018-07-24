@@ -46,7 +46,7 @@ The issue goes away when we move to helm 3 as there's no Tiller component. Also 
 
 Until the the local plugin or helm 3 the manual workaround is:
 
-* [download the `2.10.0-rc1 version](https://github.com/helm/helm/releases) of helm and add it to your `PATH`
+* [download the 2.10.0-rc1 version](https://github.com/helm/helm/releases) of helm and add it to your `PATH`
 * run `helm init --upgrade`
 
 ## Invalid git token to scan a project
