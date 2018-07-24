@@ -36,6 +36,23 @@ On [EKS](https://jenkins-x.io/commands/jx_create_cluster_eks/) we default to usi
 So a workaround is to use a real [external docker registry](/architecture/docker-registry/) or enable `insecure-registry` on your docker daemons on your compute nodes on your Kubernetes cluster.
 
 
+### Invalid git token to scan a project
+
+If you get an error in Jenkins when it tries to scan your repositories for branches something like:
+
+``` 
+hudson.AbortException: Invalid scan credentials *****/****** (API Token for acccessing https://github.com git service inside pipelines) to connect to https://api.github.com, skipping
+```
+
+Then your git API token was probably wrong or has expired.
+
+To recreate it with a new API token value try the following (changing the git server name to match your git provider):
+
+```
+jx delete git token -n GitHub admin
+jx create token -n GitHub admin
+```
+
 ### What are the credentials to access core services?
 
 Authenticated core services of Jenkins X include Jenkins, Nexus, Chartmuseum.  The username is `admin` and the password by default is generated and printed out in the terminal after `jx create cluster` or `jx install`.  If you would like to set the default password yourself then you can set the flag `--default-admin-password=foo` to the two comamnds above.
