@@ -1,6 +1,6 @@
 ---
 title: Technology Questions
-linktitle: Technology
+linktitle: Technology Questions
 description: Technology questions on Kubernetes and the associated opens source projects
 date: 2018-02-10
 categories: [faq]
