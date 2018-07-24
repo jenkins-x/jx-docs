@@ -95,6 +95,12 @@ Then all the `Ingress` resources for any exposed service in any namespace will a
 
 Using wildcard DNS pointing to your ELB/NLB also means you'll be able to use all the availability zones on AWS.
 
+The `jx` command will ask you if you want to automate the setup fo the Route 53 wildcard CNAME. If you want to do it yourself you need to point to the ELB host name defined via:
+
+``` 
+kubectl get service -n kube-system jxing-nginx-ingress-controller  -oyaml | grep hostname
+```
+
 #### Avoiding DNS
 
 If you want to kick the tyres of Jenkins X without going to the trouble of getting a DNS domain name to use and setting up wildcard DNS you can instead use an NLP and use one of the IP addresses of one of the availability zones as your domain via `$IP.ip`.
