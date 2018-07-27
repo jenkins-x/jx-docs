@@ -1,5 +1,5 @@
 ---
-date: 2018-07-27T10:05:37Z
+date: 2018-07-27T13:31:39Z
 title: "jx create terraform"
 slug: jx_create_terraform
 url: /commands/jx_create_terraform/
@@ -28,7 +28,11 @@ jx create terraform [flags]
 ### Options
 
 ```
+      --artifactory-password string         Artifactory server password
+      --artifactory-url string              Artifactory server URL
+      --artifactory-user string             Artifactory server username
   -b, --batch-mode                          In batch mode the command never prompts for user input
+      --binary-repository-manager string    Binary repository manager to resolve dependencies and for uploading builds. Choose between Artifactory and Nexus
       --cleanup-temp-files                  Cleans up any temporary values.yaml used by helm install [default true] (default true)
       --cloud-environment-repo string       Cloud Environments git repo (default "https://github.com/jenkins-x/cloud-environments")
   -c, --cluster stringArray                 Name and Kubernetes provider (gke, aks, eks) of clusters to be created in the form --cluster foo=gke
