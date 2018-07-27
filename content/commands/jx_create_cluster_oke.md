@@ -1,5 +1,5 @@
 ---
-date: 2018-07-27T14:16:00Z
+date: 2018-07-27T14:48:45Z
 title: "jx create cluster oke"
 slug: jx_create_cluster_oke
 url: /commands/jx_create_cluster_oke/
@@ -33,11 +33,7 @@ jx create cluster oke [flags]
 ### Options
 
 ```
-      --artifactory-password string         Artifactory server password
-      --artifactory-url string              Artifactory server URL
-      --artifactory-user string             Artifactory server username
   -b, --batch-mode                          In batch mode the command never prompts for user input
-      --binary-repository-manager string    Binary repository manager to resolve dependencies and for uploading builds. Choose between Artifactory and Nexus
       --cleanup-temp-files                  Cleans up any temporary values.yaml used by helm install [default true] (default true)
       --cloud-environment-repo string       Cloud Environments git repo (default "https://github.com/jenkins-x/cloud-environments")
       --clusterMaxWaitSeconds string        The maximum time to wait for the work request to reach the state defined by --wait-for-state. Defaults to 1200 seconds.
