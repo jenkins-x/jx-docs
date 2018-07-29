@@ -1,5 +1,5 @@
 ---
-date: 2018-07-29T16:41:51Z
+date: 2018-07-29T22:02:22Z
 title: "jx create codeship"
 slug: jx_create_codeship
 url: /commands/jx_create_codeship/
@@ -21,8 +21,8 @@ jx create codeship [flags]
 ```
   jx create codeship
   
-  # to specify the clusters via flags
-  jx create codeship -o org
+  # to specify the org and service account via flags
+  jx create codeship -o org --gke-service-account <path>
 ```
 
 ### Options
