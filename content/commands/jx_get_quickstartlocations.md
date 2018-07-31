@@ -1,5 +1,5 @@
 ---
-date: 2018-07-31T18:55:25Z
+date: 2018-07-31T18:56:46Z
 title: "jx get quickstartlocations"
 slug: jx_get_quickstartlocations
 url: /commands/jx_get_quickstartlocations/

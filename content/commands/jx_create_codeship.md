@@ -1,5 +1,5 @@
 ---
-date: 2018-07-31T18:55:25Z
+date: 2018-07-31T18:56:46Z
 title: "jx create codeship"
 slug: jx_create_codeship
 url: /commands/jx_create_codeship/
@@ -28,34 +28,36 @@ jx create codeship [flags]
 ### Options
 
 ```
-  -b, --batch-mode                     In batch mode the command never prompts for user input
-  -c, --cluster stringArray            Name and Kubernetes provider (gke, aks, eks) of clusters to be created in the form --cluster foo=gke
-      --codeship-organisation string   The Codeship organisation to use, this will not be stored anywhere
-      --codeship-password string       The password to login to Codeship with, this will not be stored anywhere
-      --codeship-username string       The username to login to Codeship with, this will not be stored anywhere
-  -f, --fork-git-repo string           The Git repository used as the fork when creating new Organisation git repos (default "https://github.com/jenkins-x/default-organisation.git")
-      --git-email string               The email to use for any git commits (default "codeship@jenkins-x.io")
-      --git-user string                The name to use for any git commits (default "Codeship")
-      --gke-disk-size string           Size in GB for node VM boot disks. Defaults to 100GB (default "100")
-      --gke-enable-autorepair          Sets autorepair feature for a cluster's default node-pool(s) (default true)
-      --gke-enable-autoupgrade         Sets autoupgrade feature for a cluster's default node-pool(s)
-      --gke-machine-type string        The type of machine to use for nodes
-      --gke-max-num-nodes string       The maximum number of nodes to be created in each of the cluster's zones
-      --gke-min-num-nodes string       The minimum number of nodes to be created in each of the cluster's zones
-      --gke-project-id string          Google Project ID to create cluster in
-      --gke-service-account string     The GKE service account to use
-      --gke-zone string                The compute zone (e.g. us-central1-a) for the cluster
-      --headless                       Enable headless operation if using browser automation
-  -h, --help                           help for codeship
-      --install-dependencies           Should any required dependencies be installed automatically
-      --jx-environment string          The cluster name to install jx inside (default "dev")
-  -n, --name string                    The name of the service account to create
-      --no-brew                        Disables the use of brew on MacOS to install or upgrade command line dependencies
-  -o, --organisation-name string       The organisation name that will be used as the Git repo containing cluster details, the repo will be organisation-<org name>
-  -p, --project string                 The GCP project to create the service account in
-      --skip-login                     Skip Google auth if already logged in via gloud auth
-      --skip-terraform-apply           Skip applying the generated terraform plans
-      --verbose                        Enable verbose logging
+  -b, --batch-mode                             In batch mode the command never prompts for user input
+  -c, --cluster stringArray                    Name and Kubernetes provider (gke, aks, eks) of clusters to be created in the form --cluster foo=gke
+      --codeship-organisation string           The Codeship organisation to use, this will not be stored anywhere
+      --codeship-password string               The password to login to Codeship with, this will not be stored anywhere
+      --codeship-username string               The username to login to Codeship with, this will not be stored anywhere
+  -f, --fork-git-repo string                   The Git repository used as the fork when creating new Organisation git repos (default "https://github.com/jenkins-x/default-organisation.git")
+      --git-email string                       The email to use for any git commits (default "codeship@jenkins-x.io")
+      --git-user string                        The name to use for any git commits (default "Codeship")
+      --gke-disk-size string                   Size in GB for node VM boot disks. Defaults to 100GB (default "100")
+      --gke-enable-autorepair                  Sets autorepair feature for a cluster's default node-pool(s) (default true)
+      --gke-enable-autoupgrade                 Sets autoupgrade feature for a cluster's default node-pool(s)
+      --gke-machine-type string                The type of machine to use for nodes
+      --gke-max-num-nodes string               The maximum number of nodes to be created in each of the cluster's zones
+      --gke-min-num-nodes string               The minimum number of nodes to be created in each of the cluster's zones
+      --gke-project-id string                  Google Project ID to create cluster in
+      --gke-service-account string             The GKE service account to use
+      --gke-zone string                        The compute zone (e.g. us-central1-a) for the cluster
+      --headless                               Enable headless operation if using browser automation
+  -h, --help                                   help for codeship
+      --ignore-terraform-warnings              Ignore any warnings about the terraform plan being potentially destructive
+      --install-dependencies                   Should any required dependencies be installed automatically
+      --jx-environment string                  The cluster name to install jx inside (default "dev")
+      --local-organisation-repository string   Rather than cloning from a remote git server, the local directory to use for the organisational folder
+  -n, --name string                            The name of the service account to create
+      --no-brew                                Disables the use of brew on MacOS to install or upgrade command line dependencies
+  -o, --organisation-name string               The organisation name that will be used as the Git repo containing cluster details, the repo will be organisation-<org name>
+  -p, --project string                         The GCP project to create the service account in
+      --skip-login                             Skip Google auth if already logged in via gloud auth
+      --skip-terraform-apply                   Skip applying the generated terraform plans
+      --verbose                                Enable verbose logging
 ```
 
 ### SEE ALSO
