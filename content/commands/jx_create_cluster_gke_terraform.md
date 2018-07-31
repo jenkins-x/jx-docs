@@ -1,5 +1,5 @@
 ---
-date: 2018-07-31T15:09:18Z
+date: 2018-07-31T18:55:25Z
 title: "jx create cluster gke terraform"
 slug: jx_create_cluster_gke_terraform
 url: /commands/jx_create_cluster_gke_terraform/
@@ -74,6 +74,7 @@ jx create cluster gke terraform [flags]
       --no-default-environments             Disables the creation of the default Staging and Production environments
       --on-premise                          If installing on an on premise cluster then lets default the 'external-ip' to be the kubernetes master IP address
   -p, --project-id string                   Google Project ID to create cluster in
+      --prow                                Enable prow
       --recreate-existing-draft-repos       Delete existing helm repos used by Jenkins X under ~/draft/packs
       --register-local-helmrepo             Registers the Jenkins X chartmuseum registry with your helm client [default false]
       --service-account string              Use a service account to login to GCE

@@ -1,5 +1,5 @@
 ---
-date: 2018-07-31T15:09:18Z
+date: 2018-07-31T18:55:25Z
 title: "jx create terraform"
 slug: jx_create_terraform
 url: /commands/jx_create_terraform/
@@ -76,6 +76,7 @@ jx create terraform [flags]
       --no-default-environments             Disables the creation of the default Staging and Production environments
       --on-premise                          If installing on an on premise cluster then lets default the 'external-ip' to be the kubernetes master IP address
   -o, --organisation-name string            The organisation name that will be used as the Git repo containing cluster details, the repo will be organisation-<org name>
+      --prow                                Enable prow
       --recreate-existing-draft-repos       Delete existing helm repos used by Jenkins X under ~/draft/packs
       --register-local-helmrepo             Registers the Jenkins X chartmuseum registry with your helm client [default false]
       --skip-ingress                        Dont install an ingress controller

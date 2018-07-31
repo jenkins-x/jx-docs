@@ -1,5 +1,5 @@
 ---
-date: 2018-07-31T15:09:18Z
+date: 2018-07-31T18:55:25Z
 title: "jx step helm apply"
 slug: jx_step_helm_apply
 url: /commands/jx_step_helm_apply/
@@ -28,11 +28,13 @@ jx step helm apply [flags]
 ### Options
 
 ```
-  -d, --dir string         The directory containing the helm chart to apply (default ".")
-  -h, --help               help for apply
-      --name string        The name of the release
-      --namespace string   The kubernetes namespace to apply the helm chart to
-      --wait               Wait for Kubernetes readiness probe to confirm deployment (default true)
+      --clone-https git@foo/bar.git   Clone the environment git repo over https rather than ssh which uses git@foo/bar.git (default true)
+  -d, --dir string                    The directory containing the helm chart to apply (default ".")
+      --git-provider string           The Git provider for the environment Git repository (default "github.com")
+  -h, --help                          help for apply
+      --name string                   The name of the release
+      --namespace string              The kubernetes namespace to apply the helm chart to
+      --wait                          Wait for Kubernetes readiness probe to confirm deployment (default true)
 ```
 
 ### SEE ALSO

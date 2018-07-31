@@ -1,5 +1,5 @@
 ---
-date: 2018-07-31T15:09:18Z
+date: 2018-07-31T18:55:25Z
 title: "jx create environment"
 slug: jx_create_environment
 url: /commands/jx_create_environment/
@@ -56,6 +56,7 @@ jx create environment [flags]
   -o, --order int32                  The order weighting of the Environment so that they can be sorted by this order before name (default 100)
       --prefix string                Environment repo prefix, your git repo will be of the form 'environment-$prefix-$envName' (default "jx")
   -p, --promotion string             The promotion strategy
+      --prow                         Install and use Prow for environment promotion
       --tls-acme string              Used to enable automatic TLS for ingress (default "false")
 ```
 

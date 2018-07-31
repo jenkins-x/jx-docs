@@ -1,5 +1,5 @@
 ---
-date: 2018-07-31T15:09:18Z
+date: 2018-07-31T18:55:25Z
 title: "jx create cluster oke"
 slug: jx_create_cluster_oke
 url: /commands/jx_create_cluster_oke/
@@ -84,6 +84,7 @@ jx create cluster oke [flags]
       --podsCidr string                     PODS CIDR Block.
       --poolMaxWaitSeconds string           The maximum time to wait for the work request to reach the state defined by --wait-for-state. Defaults to 1200 seconds.
       --poolWaitIntervalSeconds string      Check every --wait-interval-seconds to see whether the work request to see if it has reached the state defined by --wait-for-state.
+      --prow                                Enable prow
       --quantityPerSubnet string            The number of nodes to create in each subnet.
       --recreate-existing-draft-repos       Delete existing helm repos used by Jenkins X under ~/draft/packs
       --register-local-helmrepo             Registers the Jenkins X chartmuseum registry with your helm client [default false]

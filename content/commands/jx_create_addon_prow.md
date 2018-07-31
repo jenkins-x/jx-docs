@@ -1,5 +1,5 @@
 ---
-date: 2018-07-31T15:09:18Z
+date: 2018-07-31T18:55:25Z
 title: "jx create addon prow"
 slug: jx_create_addon_prow
 url: /commands/jx_create_addon_prow/
@@ -40,9 +40,8 @@ jx create addon prow [flags]
       --no-brew                Disables the use of brew on MacOS to install or upgrade command line dependencies
       --oauth-token string     OPTIONAL: The oauth-token is an OAuth2 token that has read and write access to the bot account. Generate it from the account's settings -> Personal access tokens -> Generate new token.
       --password string        Overwrite the default admin password used to login to the Deck UI
-  -r, --release string         The chart release name (default "prow")
+  -r, --release string         The chart release name (default "jx-prow")
   -s, --set string             The chart set values (can specify multiple or separate values with commas: key1=val1,key2=val2)
-      --username string        Overwrite cluster admin username
       --verbose                Enable verbose logging
   -v, --version string         The version of the prow addon to use (default "0.0.9")
 ```

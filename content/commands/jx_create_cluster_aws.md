@@ -1,5 +1,5 @@
 ---
-date: 2018-07-31T15:09:18Z
+date: 2018-07-31T18:55:25Z
 title: "jx create cluster aws"
 slug: jx_create_cluster_aws
 url: /commands/jx_create_cluster_aws/
@@ -75,6 +75,7 @@ jx create cluster aws [flags]
       --node-size string                    The size of a node in the kops created cluster.
   -o, --nodes string                        node count
       --on-premise                          If installing on an on premise cluster then lets default the 'external-ip' to be the kubernetes master IP address
+      --prow                                Enable prow
   -r, --rbac                                whether to enable RBAC on the Kubernetes cluster (default true)
       --recreate-existing-draft-repos       Delete existing helm repos used by Jenkins X under ~/draft/packs
       --register-local-helmrepo             Registers the Jenkins X chartmuseum registry with your helm client [default false]

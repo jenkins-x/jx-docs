@@ -1,5 +1,5 @@
 ---
-date: 2018-07-31T15:09:18Z
+date: 2018-07-31T18:55:25Z
 title: "jx create cluster aks"
 slug: jx_create_cluster_aks
 url: /commands/jx_create_cluster_aks/
@@ -70,6 +70,7 @@ jx create cluster aks [flags]
       --on-premise                               If installing on an on premise cluster then lets default the 'external-ip' to be the kubernetes master IP address
   -p, --password string                          password
   -k, --path-To-public-rsa-key string            pathToPublicRSAKey
+      --prow                                     Enable prow
       --recreate-existing-draft-repos            Delete existing helm repos used by Jenkins X under ~/draft/packs
       --register-local-helmrepo                  Registers the Jenkins X chartmuseum registry with your helm client [default false]
   -n, --resource-group-name string               Name of the resource group
