@@ -31,7 +31,7 @@ Once your user has access to the kubernetes cluster:
 
 If Jenkins X was installed in the namespace `jx` then the following should [switch your context](/developing/kube-context/) to the `jx` namespace:
 
-    jx ns nx
+    jx ns jx
 
 To test you should be able to type:
 
