@@ -40,6 +40,8 @@ Previous Videos:
 
 Got any thoughts, ideas or feedback then please drop them in a [GitHub Issue](https://github.com/jenkins-x/jx/issues/new)
 
+You may also want to try [Stack Overflow](https://stackoverflow.com/questions/tagged/jenkins--x) though we prefer [GitHub Issues](https://github.com/jenkins-x/jx/issues)
+
 ## IRC
 
 Jenkins folks tend to use IRC so we have an IRC room **#jenkins-x** IRC room on **freenode.net**
