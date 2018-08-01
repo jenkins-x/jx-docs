@@ -15,6 +15,53 @@ aliases: [/faq/]
 
 We have tried to collate common issues here with work arounds. If your issue isn't listed here please [let us know](https://github.com/jenkins-x/jx/issues/new).
 
+## Jenkins X does not startup
+
+If your install fails to start there could be a few different reasons why the Jenkins X pods don't start.
+
+Your cluster could be out of resources. You can check the spare resources on your cluster via [jx status](/commands/jx_status/):
+
+    jx status
+    
+A common issue for pods not starting is if your cluster does not have a [default storage class](https://kubernetes.io/docs/concepts/storage/storage-classes/) setup so that `Persistent Volume Claims` can be bound to `Persistent Volumes` as described in the [install instructions](/getting-started/install-on-cluster/).
+
+You can check your storage class and persistent volume setup via:
+
+``` 
+kubectl get pvc
+```    
+
+If things are working you should see something like:
+
+``` 
+$ kubectl get pvc
+NAME                        STATUS    VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
+jenkins                     Bound     pvc-680b39b5-94f1-11e8-b93d-42010a840238   30Gi       RWO            standard       12h
+jenkins-x-chartmuseum       Bound     pvc-6808fb5e-94f1-11e8-b93d-42010a840238   8Gi        RWO            standard       12h
+jenkins-x-docker-registry   Bound     pvc-680a415c-94f1-11e8-b93d-42010a840238   100Gi      RWO            standard       12h
+jenkins-x-mongodb           Bound     pvc-680d6fd9-94f1-11e8-b93d-42010a840238   8Gi        RWO            standard       12h
+jenkins-x-nexus             Bound     pvc-680fc692-94f1-11e8-b93d-42010a840238   8Gi        RWO            standard       12h
+```    
+
+If you see `status` of `Pending` then this indicates that you have no [default storage class](https://kubernetes.io/docs/concepts/storage/storage-classes/) setup on your kubnernetes cluster or you have ran out of persistent volume space.
+
+Please try create a [default storage class](https://kubernetes.io/docs/concepts/storage/storage-classes/) for your cluster or contact your operations team or cloud provider.
+
+If the `Persistent Volume Claims` are all `Bound` and things still have not started then try
+
+```
+kubectl get pod
+```
+
+If a pod cannot start try
+
+```
+kubectl describe pod some-pod-name
+```
+
+Maybe that gives you a clue. Is it RBAC related maybe?
+
+If you are still stuck try [create an issue](https://github.com/jenkins-x/jx/issues/new)
 
 ## http: server gave HTTP response to HTTPS client
 
