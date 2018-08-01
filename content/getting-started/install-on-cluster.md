@@ -123,6 +123,11 @@ If you know the provider you can specify that if you prefer on the command line.
     
 ## Installing Jenkins X on premise
 
+__Prerequisits__
+- Kubernetes > 1.8
+- RBAC enabled
+- A default cluster [dynamic storage class](https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/) for provisioning persistent volumes.
+
 When using an on premise kubernetes cluster you can use this command line:
 
     jx install --provider=kubernetes --on-premise

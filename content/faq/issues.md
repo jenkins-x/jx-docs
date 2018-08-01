@@ -133,6 +133,13 @@ Authenticated core services of Jenkins X include Jenkins, Nexus, Chartmuseum.  T
 
 If you don't have the terminal console output anymore you can look in the local file `~/.jx/jenkinsAuth.yaml` and find the password that matches your Jenkins server URL for the desired cluster.
 
+## Persistent Volume Claims do not bind
+
+If you notice that the persistent volume claims created when installing Jenkins X don't bind with
+
+    kubectl get pvc
+
+The you should check that you have a cluster default storage class for dynamic persistent volume provisioning.  See [here](https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/) for more details.
 
 ## Cannot create cluster minikube
 If you are using a Mac then `hyperkit` is the best VM driver to use - but does require you to install a recent [Docker for Mac](https://docs.docker.com/docker-for-mac/install/) first. Maybe try that then retry `jx create cluster minikube`?
