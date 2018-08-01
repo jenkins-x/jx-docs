@@ -49,6 +49,18 @@ Until the the local plugin or helm 3 the manual workaround is:
 * [download the 2.10.0-rc1 version](https://github.com/helm/helm/releases) of helm and add it to your `PATH`
 * run `helm init --upgrade`
 
+
+## error creating jenkins credential jenkins-x-chartmuseum 500 Server Error
+
+This is a [pending issue](https://github.com/jenkins-x/jx/issues/1234) which we will hopefully fix soon.
+
+It basically happens if you have an old API token in `~/.jx/jenkinsAuth.yaml` for your jenkins server URL. You can either:
+
+* remove it from that file by hand
+* run the following command [jx delete jenkins token](https://jenkins-x.io/commands/jx_delete_jenkins_user/):
+
+    jx delete jenkins token admin
+
 ## Invalid git token to scan a project
 
 If you get an error in Jenkins when it tries to scan your repositories for branches something like:
