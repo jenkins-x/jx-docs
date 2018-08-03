@@ -1,19 +1,19 @@
 ---
 date: 2018-08-03T11:17:11Z
-title: "jx create issue"
-slug: jx_create_issue
-url: /commands/jx_create_issue/
+title: "jx create user"
+slug: jx_create_user
+url: /commands/jx_create_user/
 ---
-## jx create issue
+## jx create user
 
-Create an issue on the git project for the current directory
+Create a new User which is then provisioned by the user controller
 
 ### Synopsis
 
-Creates an issue in a the git project of the current directory
+Creates a user
 
 ```
-jx create issue [flags]
+jx create user [flags]
 ```
 
 ### Examples
@@ -37,14 +37,13 @@ jx create issue [flags]
 
 ```
   -b, --batch-mode             In batch mode the command never prompts for user input
-      --body string            The body of the issue
-      --dir string             The source directory used to detect the git repository. Defaults to the current directory
+  -e, --email string           The users email address
       --headless               Enable headless operation if using browser automation
-  -h, --help                   help for issue
+  -h, --help                   help for user
       --install-dependencies   Should any required dependencies be installed automatically
-  -l, --label stringArray      The labels to add to the issue
+  -l, --login string           The user login name
+  -n, --name string            The textual full name of the user
       --no-brew                Disables the use of brew on MacOS to install or upgrade command line dependencies
-  -t, --title string           The title of the issue to create
       --verbose                Enable verbose logging
 ```
 

@@ -1,38 +1,40 @@
 ---
 date: 2018-08-03T11:17:11Z
-title: "jx delete post"
-slug: jx_delete_post
-url: /commands/jx_delete_post/
+title: "jx delete user"
+slug: jx_delete_user
+url: /commands/jx_delete_user/
 ---
-## jx delete post
+## jx delete user
 
-Create a job which is triggered after a Preview is created
+Deletes one or many users
 
 ### Synopsis
 
-Delete a job which is triggered after a Preview is created
+Deletes one or many users
 
 ```
-jx delete post preview job [flags]
+jx delete user [flags]
 ```
 
 ### Examples
 
 ```
-  # Delete a post preview job
-  jx delete post preview job --name owasp
+  # Delete the user with the login of cheese
+  jx delete user cheese
 ```
 
 ### Options
 
 ```
+  -a, --all                    Should we default to selecting all the matched users for deletion
   -b, --batch-mode             In batch mode the command never prompts for user input
+  -f, --filter string          Fitlers the list of users you can pick from
       --headless               Enable headless operation if using browser automation
-  -h, --help                   help for post
+  -h, --help                   help for user
       --install-dependencies   Should any required dependencies be installed automatically
-  -n, --name string            The name of the job to be deleted
       --no-brew                Disables the use of brew on MacOS to install or upgrade command line dependencies
       --verbose                Enable verbose logging
+  -y, --yes                    Confirms we should uninstall this installation
 ```
 
 ### SEE ALSO
