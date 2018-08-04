@@ -8,13 +8,13 @@
 
       <ul class="center f6 list ma0 mv3 pa0 tc">
         {{- with .Site.Params.github_repo -}}
-        <li class="dib mr3"><a href="{{ . }}" class="dim link light-gray pv2">File an Issue</a></li>
+        <li class="dib mr3"><a href="{{ . }}" class="dim link light-gray pv2">{{ T "file-issue" }}</a></li>
         {{- end -}}
         {{- with .Site.Params.forum -}}
-        <li class="dib mr3"><a href="{{ . }}" class="dim link light-gray pv2">Get Help</a></li>
+        <li class="dib mr3"><a href="{{ . }}" class="dim link light-gray pv2">{{ T "get-help" }}</a></li>
         {{- end -}}
         {{- with .Site.Params.gitter -}}
-        <li class="dib"><a href="{{ . }}" class="dim link light-gray pv2">Discuss Source Code</a></li>
+        <li class="dib"><a href="{{ . }}" class="dim link light-gray pv2">{{ T "discuss-source-code" }}</a></li>
         {{- end -}}
       </ul>
 
@@ -30,7 +30,7 @@
     </div>
 
     <div> 
-      <img src="http://jenkins-x.io/img/profile.png" with="100" height="100">
+      <img src="https://jenkins-x.io/img/profile.png" with="100" height="100">
     </div>
 
   </div>

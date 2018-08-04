@@ -31,7 +31,7 @@ This contribution guide takes a step-by-step approach in hopes of helping newcom
 * You are a fan of Jenkins X and enthusiastic about contributing to the project
 
 {{% note "Additional Questions?" %}}
-If you're struggling at any point in this contribution guide, reach out to the Jenkins X community in [Jenkins X's Discussion forum](https://discourse.jenkins-x.io).
+If you're struggling at any point in this contribution guide, reach out to the Jenkins X community in [Jenkins X's Discussion forum](https://jenkins-x.io/community/).
 {{% /note %}}
 
 ## Install Go
@@ -178,7 +178,7 @@ git remote add <YOUR-GITHUB-USERNAME> <COPIED REMOTE-URL>
 Alternatively, you can use the Git wrapper Hub. Hub makes forking a repository easy:
 
 ```
-git fork
+hub fork
 ```
 
 That command will log in to GitHub using your account, create a fork of the repository that you're currently working in, and add it as a remote to your working copy.

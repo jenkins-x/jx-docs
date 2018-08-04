@@ -17,7 +17,7 @@ draft: false
 toc: true
 ---
 
-OK so you have [got the jx CLI](getting-started/install/) and you either 
+OK so you have [got the jx CLI](/getting-started/install/) and you either
 
 * [created a Kubernetes cluster with Jenkins X](/getting-started/install-on-cluster/)
 * [installed Jenkins X on an existing kubernetes cluster](/getting-started/install-on-cluster/)
@@ -30,4 +30,6 @@ Well the [Developing](/developing/) section contains the next steps you may want
 * [create a new quickstart and import it into Jenkins X](/developing/create-quickstart/)
 * [import existing source code into Jenkins X](/developing/import/)
 * [browsing](/developing/browsing/) for browsing pipelines, builds, apps and activity
+
+You may also want to check out the [various demonstrations of what you can do with Jenkins X](/demos/)
 

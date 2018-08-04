@@ -2,9 +2,9 @@
 title: Features
 linktitle: Features
 description: How Jenkins X can help you deliver continuously
-date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
+date: 2018-02-01
+publishdate: 2018-02-01
+lastmod: 2018-02-01
 menu:
   docs:
     parent: "about"
@@ -42,6 +42,8 @@ We use GitOps to manage the configuration and version of the kubernetes resource
 An Environment maps to a namespace in a Kubernetes cluster. When Pull Requests are merged into the environments git repository the pipeline runs for the environment which then applies the  helm charts in git to the environments namespace.
 
 This means both developers and operations can use the same git repository to manage all the configuration and versions of all the applications and resources for an environment in the same git repository and all changes to the environment are captured in git. So its easy to see who made changes when and more importantly its then easy to revert changes which cause bad things to happen.
+
+<img src="/images/gitops.png" class="img-thumbnail">
 
 ## Promotion
 
@@ -89,6 +91,6 @@ To install an addon then use the [jx create addon](/commands/jx_create_addon/) c
 jx create addon grafana
 ```
  
- ## Roadmap
+## Roadmap
  
- For a look at what features are coming soon please check out the [Jenkins X Roadmap](contribute/roadmap/)
+ For a look at what features are coming soon please check out the [Jenkins X Roadmap](/contribute/roadmap/)

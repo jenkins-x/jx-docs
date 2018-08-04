@@ -1,4 +1,11 @@
-/.idea
+jenkins-x-website
+node_modules
+
+# idea stuff
+.idea
+*.iml
+
+# generated files
 /public
 nohup.out
 .DS_Store

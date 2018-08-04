@@ -1,7 +1,89 @@
+[[tweet]]
+name = "Vic Iglesias"
+twitter_handle = "@vicnastea"
+quote = "This looks really awesome!!! Focus on the user experience is so great. From install to deploy to running builds everything can be run from the CLI. The GKE support looks top notch. Nice work @jstrachan and team! "
+link = "https://twitter.com/vicnastea/status/975861980975132672"
+date = 2018-03-19T19:44:00Z
+
+[[tweet]]
+name = "David Lewis"
+twitter_handle = "@HighwayofLife"
+quote = "Damn, you guys are evil in the best possible way! This is going to be fantastic and I&#39;m excited to start implementing this in our Build Pipeline infrastructure in @Azure #Kubernetes #Skaffold #JenkinsX #Docker"
+link = "https://twitter.com/HighwayofLife/status/976121471184527360"
+date = 2018-03-19T19:44:00Z
+
+[[tweet]]
+name = "Preben Asmussen"
+twitter_handle = "@pax95"
+quote = "Awesome. Just what I have been looking for"
+link = "https://twitter.com/pax95/status/975805115465715714"
+date = 2018-03-19T19:44:00Z
+
+
+[[tweet]]
+name = "Daniel Speers"
+twitter_handle = "@dspeers"
+quote = "Its all cool but I really love the idea of temporary test servers provisioned from builds on branches.   I have so much to learn about #JenkinsX #VeryCool"
+link = "https://twitter.com/dspeers/status/978380542575030272"
+date = 2018-03-19T19:44:00Z
+
+
+[[tweet]]
+name = "Jeremy Davis (@) "
+twitter_handle = "@argntprgrmr"
+quote = "looks very cool.  Can’t wait to try it"
+link = "https://twitter.com/argntprgrmr/status/976482449642393600"
+date = 2018-03-19T19:44:00Z
+
+
+[[tweet]]
+name = "Rene Gielen"
+twitter_handle = "@rgielen"
+quote = "Congrats James and Jenkins X team! Sounds like lots of fun to come, can&#39;t wait to spin it up later today"
+link = "https://twitter.com/rgielen/status/975989552069447680"
+date = 2018-03-19T19:44:00Z
+
+[[tweet]]
+name = "George Simpson"
+twitter_handle = "@gezerk"
+quote = "Looks really promising I especially like the idea of getting plugins out of the JVM and into micro services that interact with resources.  I&#39;ll be interested to see where this goes."
+link = "https://twitter.com/gezerk/status/976276637489577984"
+date = 2018-03-19T19:44:00Z
+
+[[tweet]]
+name = "Luciano Salotto"
+twitter_handle = "@lsalotto"
+quote = "This looks AWESOME, looking forward being an early adopter of this."
+link = "https://twitter.com/lsalotto/status/975860242666926081"
+date = 2018-03-19T19:44:00Z
+
+[[tweet]]
+name = "Ti"
+twitter_handle = "@chumboslice"
+quote = "Cannot wait to try this out today with GKE. Skaffold integration would be legit 🔥"
+link = "https://twitter.com/chumboslice/status/976107478525018112"
+date = 2018-03-19T19:44:00Z
+
+
+
+[[tweet]]
+name = "Florian Thiel"
+twitter_handle = "@noroute"
+quote = "#jenkinsx looks very promising as it provides integrated full-pipeline CI/CD with sane defaults. More #product focus! #jenkins #kubernetes"
+link = "https://twitter.com/noroute/status/977524703928684544"
+date = 2018-03-19T19:44:00Z
+
+[[tweet]]
+name = "David Conde"
+twitter_handle = "@davidconde"
+quote = "Awesome, I’ll do some poking around when I get a bit of free time 😀 Looks like it’ll solve lots of issues for us"
+link = "https://twitter.com/davidconde/status/976035761630965760?"
+date = 2018-03-19T19:44:00Z
 
 [[tweet]]
 name = "James Strachan"
 twitter_handle = "@jstrachan"
-quote = "Jenkins X is totally awesome!"
-link = "https://twitter.com/jstrachan/status/809753145270272005"
-date = 2018-03-09T00:00:00Z
+quote = "I'm super excited to announce Jenkins X"
+link = "https://twitter.com/jstrachan/status/975796722147438598"
+date = 2018-03-19T00:00:00Z
+

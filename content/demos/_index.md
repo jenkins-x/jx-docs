@@ -5,7 +5,8 @@ description: Demo videos showing Jenkins X in action
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01
-categories: [fundamentals]
+categories: [fundamentals,getting started]
+
 keywords: []
 menu:
   docs:
