@@ -26,3 +26,13 @@ Serving pages from memory
 Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
 Press Ctrl+C to stop
 ```
+
+# Contribution
+
+Here is something about Jenkins X documents contribution.
+
+## Localization
+
+In order to let more people know Jenkins X better, localization is very important and meaningful. And we should keep some rules about this, please read related languages below:
+
+* [Chinese](Localization_Chinese.md)
