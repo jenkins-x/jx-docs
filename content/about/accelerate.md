@@ -41,7 +41,7 @@ Out of the box Jenkins X creates Staging and Production (this is customisable) p
 
 ### Previews Environments
 
-We are trying to move as much testing, security, validation and experimentation for a change before it's merged to master.  With the use of temporary dynamically created Preview Environments any pull request can have a preview version built and deployed, including libraries that feed into a downstream deployable application.  This means we can code review, test, collaborate better with all teams that are involved in agreeing that change can go live.
+We are trying to move as much testing, security, validation and experimentation for a change before it's merged to master.  With the use of temporary dynamically created Preview Environments any Pull Request can have a preview version built and deployed, including libraries that feed into a downstream deployable application.  This means we can code review, test, collaborate better with all teams that are involved in agreeing that change can go live.
 
 Ultimately Jenkins X wants to provide a way that developers, testers, designers and product managers can be as sure as they can that when a change is merged to master it works as expected.  We want to be confident the proposed change does not negatively affect any service or feature as well as deliver the value it is intended to.
 
@@ -72,7 +72,7 @@ The Accelerate book found that teams which use trunk based development with shor
 
 # Implement Continuous Integration
 
-Jenkins X sees CI as the effort of validating a proposed change via pull requests before it is merged to master.  Jenkins X will automatically configure source code repositories, Jenkins and Kubernetes to provide Continuous Integration of the box.
+Jenkins X sees CI as the effort of validating a proposed change via Pull Requests before it is merged to master.  Jenkins X will automatically configure source code repositories, Jenkins and Kubernetes to provide Continuous Integration of the box.
 
 # Implement Continuous Delivery
 
