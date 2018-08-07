@@ -13,7 +13,10 @@ weight: 5
 sections_weight: 5
 ---
 
-* [2018-09-18: Jenkins X - Continuously Driving the Kloud (German)](http://www.jug-kl.de/jenkins/) at [JUG Kaiserslautern (Germany)](http://www.jug-kl.de/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) 
+
+* [2018-09-06: Jenkins X - Continuously Driving the Kloud (German)](http://bed-con.org/2018/programm) at [Bed-Con: Berlin Expert Days 2018 (Germany)](http://bed-con.org/2018) by [Gerd Aschemann](https://twitter.com/GerdAschemann) 
+
+* [2018-09-12: Jenkins X - Continuously Driving the Kloud (German)](http://www.jug-kl.de/jenkins/) at [JUG Kaiserslautern (Germany)](http://www.jug-kl.de/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) 
 
 * [2018-10-18: Jenkins X - Continuously Driving the Kloud (German)](https://www.baselone.ch/speech/B6A3BA74-8E28-46CD-B4B7-F96C6FFE0B39/Jenkins-X---Continuously-Driving-the-Kloud) at [BaselOne (Basel, Switzerland)](https://www.baselone.ch/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) 
 
