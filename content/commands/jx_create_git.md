@@ -1,5 +1,5 @@
 ---
-date: 2018-08-08T21:48:14Z
+date: 2018-08-08T23:26:34Z
 title: "jx create git"
 slug: jx_create_git
 url: /commands/jx_create_git/
