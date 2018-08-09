@@ -1,5 +1,5 @@
 ---
-date: 2018-08-09T12:39:51Z
+date: 2018-08-09T21:20:24Z
 title: "jx create addon owasp-zap"
 slug: jx_create_addon_owasp-zap
 url: /commands/jx_create_addon_owasp-zap/
@@ -10,7 +10,7 @@ Create the OWASP Zed Attack Proxy addon for dynamic security checks against runn
 
 ### Synopsis
 
-Creates the Owasp dyanmic security testing addon
+Creates the Owasp dynamic security testing addon
 
 ```
 jx create addon owasp-zap [flags]
@@ -19,7 +19,7 @@ jx create addon owasp-zap [flags]
 ### Examples
 
 ```
-  # Create the kubeless addon in the kubeless namespace
+  # Create the owasp addon
   jx create addon owasp-zap
 ```
 
