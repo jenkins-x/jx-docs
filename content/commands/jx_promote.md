@@ -1,5 +1,5 @@
 ---
-date: 2018-08-13T10:55:34Z
+date: 2018-08-13T14:11:46Z
 title: "jx promote"
 slug: jx_promote
 url: /commands/jx_promote/
@@ -28,6 +28,13 @@ jx promote [application] [flags]
   # Promote a version of the myapp application to production
   jx promote myapp --version 1.2.3 --env production
   
+  # To search for all the available charts for a given name use -f.
+  # e.g. to find a redis chart to install
+  jx promote -f redis
+  
+  # To promote a postgres chart using an alias
+  jx promote -f postgres --alias mydb
+  
   # To create or update a Preview Environment please see the 'jx preview' command
   jx preview
 ```
@@ -35,11 +42,13 @@ jx promote [application] [flags]
 ### Options
 
 ```
+      --alias string                    The optional alias used in the 'requirements.yaml' file
       --all-auto                        Promote to all automatic environments in order
   -a, --app string                      The Application to promote
   -b, --batch-mode                      In batch mode the command never prompts for user input
       --build string                    The Build number which is used to update the PipelineActivity. If not specified its defaulted from  the '$BUILD_NUMBER' environment variable
   -e, --env string                      The Environment to promote to
+  -f, --filter string                   The search filter to find charts to promote
       --headless                        Enable headless operation if using browser automation
   -r, --helm-repo-name string           The name of the helm repository that contains the app (default "releases")
   -u, --helm-repo-url string            The Helm Repository URL to use for the App (default "http://jenkins-x-chartmuseum:8080")

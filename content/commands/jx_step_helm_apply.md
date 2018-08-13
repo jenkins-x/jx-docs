@@ -1,5 +1,5 @@
 ---
-date: 2018-08-13T10:55:34Z
+date: 2018-08-13T14:11:46Z
 title: "jx step helm apply"
 slug: jx_step_helm_apply
 url: /commands/jx_step_helm_apply/
@@ -30,6 +30,7 @@ jx step helm apply [flags]
 ```
       --clone-https git@foo/bar.git   Clone the environment git repo over https rather than ssh which uses git@foo/bar.git (default true)
   -d, --dir string                    The directory containing the helm chart to apply (default ".")
+  -f, --force                         Whether to to pass '--force' to helm to help deal with upgrading if a previous promote failed (default true)
       --git-provider string           The Git provider for the environment Git repository (default "github.com")
   -h, --help                          help for apply
       --name string                   The name of the release

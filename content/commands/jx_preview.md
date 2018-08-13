@@ -1,5 +1,5 @@
 ---
-date: 2018-08-13T10:55:34Z
+date: 2018-08-13T14:11:46Z
 title: "jx preview"
 slug: jx_preview
 url: /commands/jx_preview/
@@ -28,6 +28,7 @@ jx preview [flags]
 ### Options
 
 ```
+      --alias string                      The optional alias used in the 'requirements.yaml' file
   -a, --app string                        The Application to promote
       --build string                      The Build number which is used to update the PipelineActivity. If not specified its defaulted from  the '$BUILD_NUMBER' environment variable
   -c, --cluster string                    The Kubernetes cluster for the Environment. If blank and a namespace is specified assumes the current cluster
@@ -35,6 +36,7 @@ jx preview [flags]
       --dir string                        The source directory used to detect the git source URL and reference
       --domain string                     Domain to expose ingress endpoints.  Example: jenkinsx.io
       --exposer string                    Used to describe which strategy exposecontroller should use to access applications (default "Ingress")
+  -f, --filter string                     The search filter to find charts to promote
   -r, --helm-repo-name string             The name of the helm repository that contains the app (default "releases")
   -u, --helm-repo-url string              The Helm Repository URL to use for the App (default "http://jenkins-x-chartmuseum:8080")
   -h, --help                              help for preview
