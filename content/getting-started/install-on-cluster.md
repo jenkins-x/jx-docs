@@ -20,7 +20,7 @@ toc: true
 Jenkins X can be installed on 1.8 or later of Kubernetes. The requirements are:
 
 * RBAC is enabled
-* your kubernetes cluster as a [default storage class](https://kubernetes.io/docs/concepts/storage/storage-classes/) setup so that `Persistent Volume Claims` can be bound to `Persistent Volumes`
+* your kubernetes cluster has a [default storage class](https://kubernetes.io/docs/concepts/storage/storage-classes/) setup so that `Persistent Volume Claims` can be bound to `Persistent Volumes`
 * If not using the `aws` or `eks` providers then we need insecure docker registries are enabled. This is so that pipelines can use a docker registry running inside the kubernetes cluster (which typically is not public so no https support). You can modify your pipelines to use other registries later.
 * A cluster with at least 4 vCpus in addition to the master node (e.g. 2 m4.large nodes + m4.large master)
 
