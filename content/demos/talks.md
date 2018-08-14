@@ -13,6 +13,8 @@ weight: 5
 sections_weight: 5
 ---
 
+* [2018-10-08 JDD Poland: End to End automation and Continuous Delivery of Microservices for Kubernetes](http://bit.ly/jdd-conference-jx) by [Paolo Carta](https://twitter.com/cl4mer)
+
 * [2018-09-13 Workshop Days Switzerland: Jenkins X: Continuous Delivery for Java services in Kubernetes](https://workshoptage.ch/workshops/2018/jenkins-x-continuous-delivery-for-java-services-in-kubernetes/) by [Cosmin Cojocar](https://twitter.com/CojocarCosmin)
 
 * [2018-09-12 Workshop Days Switzerland: End-to-End Continuous Delivery on Kubernetes](http://bit.ly/workshop-ci-cd-jx) by [Paolo Carta and Matteo Baiguini](https://twitter.com/cl4mer)
