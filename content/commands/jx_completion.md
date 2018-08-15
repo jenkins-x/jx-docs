@@ -14,34 +14,30 @@ Output shell completion code for the given shell (bash or zsh).
 
 This command prints shell code which must be evaluation to provide interactive completion of jx commands. 
 
-  $ source <(jx completion bash)
+    $ source <(jx completion bash)
   
 will load the jx completion code for bash. Note that this depends on the bash-completion framework. It must be sourced before sourcing the jx completion, e.g. on the Mac: 
 
-  $ brew install bash-completion
-  $ source $(brew --prefix)/etc/bash_completion
-  $ source <(jx completion bash)
+    $ brew install bash-completion
+    $ source $(brew --prefix)/etc/bash_completion
+    $ source <(jx completion bash)
   
 On a Mac it often works better to generate a file with the completion and source that: 
 
-  $ jx completion bash > ~/.jx/bash
-  $ source ~/.jx/bash
+    $ jx completion bash > ~/.jx/bash
+    $ source ~/.jx/bash
   
 If you use zsh [1], the following will load jx zsh completion: 
 
-  $ source <(jx completion zsh)
+    $ source <(jx completion zsh)
   
  [1] zsh completions are only supported in versions of zsh >= 5.2
 
-```
-jx completion SHELL [flags]
-```
+    jx completion SHELL [flags]
 
 ### Options
 
-```
-  -h, --help   help for completion
-```
+    -h, --help   help for completion
 
 ### SEE ALSO
 
