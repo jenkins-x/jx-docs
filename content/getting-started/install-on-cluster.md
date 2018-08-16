@@ -121,6 +121,8 @@ If you know the provider you can specify that if you prefer on the command line.
 
     jx install --provider=aws
     
+Note if you wish to use a different git provider than GitHub for your environments see [how to use a different git provider](/developing/git/#using-a-different-git-provider-for-environments)
+
 ## Installing Jenkins X on premise
 
 __Prerequisits__

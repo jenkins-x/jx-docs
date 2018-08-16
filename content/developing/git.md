@@ -26,6 +26,24 @@ You can list the git servers configured via [jx get git](/commands/jx_get_git):
 jx get git
 ```
 
+## Using a different git provider for environments
+
+When you install Jenkins X it will create git repositories for `Staging` and `Production` using GitHub.
+
+If you wish to use a different git provider for your environments then when you install Jenkins X add the `--no-default-environments` argument on [jx create cluster](/commands/jx_create_cluster/) or [jx install](/commands/jx_install/)
+
+Once Jenkins X is installed you can then add a new git provider (see below for details).
+
+Then when the git provider is setup you can create the `Staging` and `Production` environments using whatever git provider you wish via:
+
+``` 
+jx create env staging
+jx create env production
+```
+
+
+
+
 ## Adding a new git provider
 
 If you already have a git server somewhere you can add it into Jenkins X via [jx create git server](/commands/jx_create_git_server):
@@ -42,6 +60,8 @@ To add a GitHub Enterprise server try:
 
 ``` 
 jx create git server github https://github.foo.com -n GHE
+jx create git token -n GHE myusername
+
 ```
 
 Where `-n` is the name for the git service.
@@ -52,6 +72,7 @@ To add BitBucket Cloud try:
 
 ```
 jx create git server bitbucketcloud -n BitBucket https://bitbucket.org
+jx create git token -n BitBucket myusername
 ```
 
 ## BitBucket Server
@@ -60,6 +81,7 @@ To add BitBucket Standalone Server try:
 
 ```
 jx create git server bitbucketserver -n BitBucket https://your_server_address
+jx create git token -n BitBucket myusername
 ```
 
 ## Gitlab

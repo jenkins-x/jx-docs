@@ -60,8 +60,10 @@ If you wish to name your cluster and provide your own admin password you can run
    
 Then follow all the prompts on the console (mostly just hitting enter will do).
 
-Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
+Note if you wish to use a different git provider than GitHub for your environments see [how to use a different git provider](/developing/git/#using-a-different-git-provider-for-environments)
 
+
+Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
 
 ### Connecting to the cluster from your laptop
 
@@ -108,6 +110,8 @@ If you want to kick the tyres of Jenkins X without going to the trouble of getti
 This is not really intended for real production installations; but can be a quick way to get started trying out Jenkins X.
 
 When using `jx create cluster aws`, `jx create cluster eks` or `jx install --provider=(aws|eks)` you are prompted if you want to use DNS and optionally setup a wildcard DNS CNAME record on Route 53; if not we are assuming you're gonna avoid DNS to kick the tyres on a single availability zone IP address by resolving the NLB host name to one of the availability zone IP addresses.
+
+Note if you wish to use a different git provider than GitHub for your environments see [how to use a different git provider](/developing/git/#using-a-different-git-provider-for-environments)
 
 
 ### EKS
