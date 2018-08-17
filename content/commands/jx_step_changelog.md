@@ -1,5 +1,5 @@
 ---
-date: 2018-08-17T13:03:52Z
+date: 2018-08-17T13:59:49Z
 title: "jx step changelog"
 slug: jx_step_changelog
 url: /commands/jx_step_changelog/
@@ -64,6 +64,7 @@ jx step changelog [flags]
   -h, --help                       help for changelog
       --install-dependencies       Should any required dependencies be installed automatically
       --no-brew                    Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --no-dev-release             Disables the generation of Release CRDs in the development namespace to track releases being performed
       --output-markdown string     The file to generate for the changelog output if not updating a git provider release
   -o, --overwrite                  overwrites the Release CRD YAML file if it exists
       --previous-date string       the previous date to find a revision in format 'MonthName dayNumber year'
