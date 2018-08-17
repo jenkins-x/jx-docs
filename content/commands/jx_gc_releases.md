@@ -1,5 +1,5 @@
 ---
-date: 2018-08-17T13:59:49Z
+date: 2018-08-17T17:15:48Z
 title: "jx gc releases"
 slug: jx_gc_releases
 url: /commands/jx_gc_releases/
@@ -27,7 +27,7 @@ jx gc releases [flags]
 
 ```
   -h, --help                         help for releases
-      --revision-history-limit int   Minimum number of Releases per application to keep (default 5)
+  -l, --revision-history-limit int   Minimum number of Releases per application to keep (default 5)
 ```
 
 ### SEE ALSO
