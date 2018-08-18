@@ -142,4 +142,11 @@ If you wish to use a different external IP address you can use:
     
 Otherwise the `jx install` will try and wait for the Ingress Controllers `Service.Status.LoadBalancer.Ingress` to resolve to an IP address - which can fail on premise.   
 
+If you already have an ingress controller installed then try:
+
+    jx install --provider=kubernetes --external-ip 10.123.0.17 \
+    --ingress-service=$(yoursvcname) \
+    --ingress-deployment=$(yourdeployname) \
+    --ingress-namespace=kube-system
+
 If you want an explanation of what the [jx install](/commands/jx_install) command does, you can read [what happens with the install](../install-on-cluster-what-happens)
