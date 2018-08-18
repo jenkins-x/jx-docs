@@ -1,5 +1,5 @@
 ---
-date: 2018-08-18T06:10:17Z
+date: 2018-08-18T12:49:44Z
 title: "jx create cluster eks"
 slug: jx_create_cluster_eks
 url: /commands/jx_create_cluster_eks/
