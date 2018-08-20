@@ -14,9 +14,9 @@ Garbage collect resources
   
   Valid resource types include:
   
-  * previews  
   * activities  
   * helm  
+  * previews  
   * releases
 
 ```
@@ -26,10 +26,10 @@ jx gc TYPE [flags]
 ### Examples
 
 ```
-  jx gc previews
   jx gc activities
   jx gc helm
   jx gc gke
+  jx gc previews
   jx gc releases
 ```
 
