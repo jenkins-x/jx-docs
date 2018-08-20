@@ -22,14 +22,14 @@ toc: true
 
 ### macOS
 
-在 Mac 上你可以使用 brew：
+在 Mac 上你可以使用 [brew](https://brew.sh/)：
 
 ```shell
 brew tap jenkins-x/jx
 brew install jx 
 ```
 
-Or if you have not installed [brew](https://brew.sh/) and prefer to install by hand:
+或者，如果您尚未安装 [brew](https://brew.sh/) ，并且喜欢手动安装的话，请执行如下指令安装:
 
 ```shell
 curl -L https://github.com/jenkins-x/jx/releases/download/v{{< version >}}/jx-darwin-amd64.tar.gz | tar xzv 
