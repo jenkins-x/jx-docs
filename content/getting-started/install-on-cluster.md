@@ -70,11 +70,46 @@ When using `jx install --provider=(aws|eks)` you are prompted if you want to use
 
 
 
-### Enabling insecure registries on kops
+### Getting registries to work on AWS with cluster set up with kops 
 
-This is no longer required as we default to using ECR as the docker container registry now OOTB but if you wish to use the embedded docker registry of Jenkins X inside your kubernetes cluster you will need to enable insecure docker registries.
+The default on AWS is to use ECR as the docker container registry. For this to work the nodes need permission to upload images to ECR. If you instead want to use the embedded docker registry of Jenkins X inside your kubernetes cluster you will need to enable insecure docker registries.
 
-Note that if you are on AWS you may want to use the [jx create cluster aws](/getting-started/create-cluster/#using-amazon-aws) command which automates all of this for you!
+Note that you may want to use the [jx create cluster aws](/getting-started/create-cluster/#using-amazon-aws) command which automates all of this for you!
+
+#### Give nodes permission to use ECR
+
+If you created the kubernetes cluster via [kops](https://github.com/kubernetes/kops) then you can do the following:
+
+```
+kops edit cluster 
+```
+
+Then make sure the YAML has this `docker` entry inside the `spec` section:
+
+```yaml 
+...
+spec:
+  additionalPolicies:
+    node: |
+      [
+        {
+        "Effect": "Allow",
+        "Action": ["ecr:InitiateLayerUpload", "ecr:UploadLayerPart","ecr:CompleteLayerUpload","ecr:PutImage"],
+        "Resource": ["*"]
+        }
+      ]
+``` 
+
+Now to make this change active on your cluster type:
+
+```
+kops update cluster --yes
+```
+
+You should now be good to go!
+
+
+#### Enabling insecure registries on kops ####
 
 If you created the kubernetes cluster via [kops](https://github.com/kubernetes/kops) then you can do the following:
 
