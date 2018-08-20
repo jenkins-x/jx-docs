@@ -78,13 +78,13 @@ Note that you may want to use the [jx create cluster aws](/getting-started/creat
 
 #### Give nodes permission to use ECR
 
-If you created the kubernetes cluster via [kops](https://github.com/kubernetes/kops) then you can do the following:
+Do the following:
 
 ```
 kops edit cluster 
 ```
 
-Then make sure the YAML has this `docker` entry inside the `spec` section:
+Then make sure the YAML has this `additionalPolicies` entry inside the `spec` section:
 
 ```yaml 
 ...
@@ -111,7 +111,7 @@ You should now be good to go!
 
 #### Enabling insecure registries on kops ####
 
-If you created the kubernetes cluster via [kops](https://github.com/kubernetes/kops) then you can do the following:
+Do the following:
 
 ```
 kops edit cluster 
