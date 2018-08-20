@@ -35,7 +35,7 @@ _关联的加速能力项：对所有生产构件进行版本控制_
 
 ## 环境
 
-Jenkins X 在安装过程中会自动创建基于 Git 的环境，并且使用`jx create environment`命令来创建新的环境非常简单。除此之外的，当创建一个新的 quickstart 应用(`jx create quickstart`)，基于 Java 的 SpringBoot 项目(`jx create spring`)或者导入已有应用(`jx import`)，Jenkins X 都会自动帮你添加 CI/CD 流水线，配置相关任务，git 代码仓库，webhook 来激活一条自动化的部署流水线。
+Jenkins X 在安装过程中会自动创建基于 Git 的环境，并且使用`jx create environment`命令来轻松地创建新的环境。除此之外的，当创建一个新的 quickstart 应用(`jx create quickstart`)，基于 Java 的 SpringBoot 项目(`jx create spring`)或者导入已有应用(`jx import`)，Jenkins X 都会自动帮你添加 CI/CD 流水线，配置相关任务，git 代码仓库，webhook 来激活一条自动化的部署流水线。
 
 Jenkins X 开箱即用地创建了永久的预发布和生产环境（这个是可配置的）以及一个 Pull Request 阶段临时使用的应用预览环境。
 
