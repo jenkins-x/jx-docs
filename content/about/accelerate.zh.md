@@ -25,7 +25,7 @@ Jenkins X 重新构思了云原生时代下的 CI/CD 实现，这些想法受到
 
 <img src="/images/capabilities_zh.png" class="img-thumbnail">
 
-# 对所有制品进行版本控制
+# 对所有构件进行版本控制
 
 来自 Weaveworks 的天才们创造了 GitOps 的概念，这一点我们非常认同。对环境的任何变更，无论是一个新的应用，版本升级，资源约束变更，还是简单的应用配置，都应该在 Git 上提交一个 Pull Request ，并且采用类似环境的持续集成对这些变更进行验证，并且经过团队的审核，这个团队负责所有相关环境的变更控制。于是针对一个环境的任何变更都可以被追溯并且达到受控状态。
 
@@ -35,7 +35,7 @@ _关联的加速能力项：对所有生产构件进行版本控制_
 
 ## 环境
 
-Jenkins X 在安装过程中会自动创建基于 Git 的环境，并且使用`jx create environment`命令来创建新的环境非常简单。除此之外的，当创建一个新的 quickstart 应用(`jx create quickstart`)，基于 Java 的 SpringBoot 项目(`jx create spring`)或者导入已有应用(`jx import`)，Jenkins X 都会自动帮你添加 CI/CD 流水线，配置相关任务，git 代码仓库，webhook 来激活一条自动化的部署流水线。
+Jenkins X 在安装过程中会自动创建基于 Git 的环境，并且使用`jx create environment`命令来轻松地创建新的环境。此外，当通过quickstart(`jx create quickstart`)创建一个新的基于 Java 中 SpringBoot (`jx create spring`) 应用，或者导入已有应用(`jx import`)时，Jenkins X 都会自动帮你添加 CI/CD 流水线，并配置相关任务、git 代码仓库、webhook 来启用自动化部署流程。
 
 Jenkins X 开箱即用地创建了永久的预发布和生产环境（这个是可配置的）以及一个 Pull Request 阶段临时使用的应用预览环境。
 
