@@ -1,5 +1,5 @@
 ---
-date: 2018-08-21T17:17:11Z
+date: 2018-08-21T17:17:21Z
 title: "jx promote"
 slug: jx_promote
 url: /commands/jx_promote/

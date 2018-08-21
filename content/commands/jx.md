@@ -1,5 +1,5 @@
 ---
-date: 2018-08-21T17:17:11Z
+date: 2018-08-21T17:17:21Z
 title: "jx"
 slug: jx
 url: /commands/jx/
@@ -48,6 +48,7 @@ jx [flags]
 * [jx prompt](/commands/jx_prompt/)	 - Generate the command line prompt for the current team and environment
 * [jx repository](/commands/jx_repository/)	 - Opens the web page for the current git repository in a browser
 * [jx rsh](/commands/jx_rsh/)	 - Opens a terminal in a pod or runs a command in the pod
+* [jx scan](/commands/jx_scan/)	 - Perform a scan action
 * [jx shell](/commands/jx_shell/)	 - Create a sub shell so that changes to the kubernetes context, namespace or environment remain local to the shell
 * [jx start](/commands/jx_start/)	 - Starts a process such as a pipeline
 * [jx status](/commands/jx_status/)	 - status of the Kubernetes cluster or named node
