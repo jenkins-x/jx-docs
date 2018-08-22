@@ -1,5 +1,5 @@
 ---
-date: 2018-08-22T12:35:40Z
+date: 2018-08-22T13:44:46Z
 title: "jx get environments"
 slug: jx_get_environments
 url: /commands/jx_get_environments/
