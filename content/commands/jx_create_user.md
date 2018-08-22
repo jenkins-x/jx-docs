@@ -1,5 +1,5 @@
 ---
-date: 2018-08-22T06:24:43Z
+date: 2018-08-22T07:03:49Z
 title: "jx create user"
 slug: jx_create_user
 url: /commands/jx_create_user/
@@ -44,6 +44,7 @@ jx create user [flags]
   -l, --login string           The user login name
   -n, --name string            The textual full name of the user
       --no-brew                Disables the use of brew on MacOS to install or upgrade command line dependencies
+  -r, --role string            The user's role
       --verbose                Enable verbose logging
 ```
 
