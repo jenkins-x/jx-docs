@@ -1,5 +1,5 @@
 ---
-date: 2018-08-23T09:09:32Z
+date: 2018-08-23T09:28:54Z
 title: "jx edit buildpack"
 slug: jx_edit_buildpack
 url: /commands/jx_edit_buildpack/

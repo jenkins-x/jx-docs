@@ -1,5 +1,5 @@
 ---
-date: 2018-08-23T09:09:32Z
+date: 2018-08-23T09:28:54Z
 title: "jx create cluster gke terraform"
 slug: jx_create_cluster_gke_terraform
 url: /commands/jx_create_cluster_gke_terraform/
@@ -58,7 +58,7 @@ jx create cluster gke terraform [flags]
   -h, --help                                help for terraform
       --http string                         Toggle creating http or https ingress rules (default "true")
       --ingress-cluster-role string         The cluster role for the Ingress controller (default "cluster-admin")
-      --ingress-deployment string           The namespace for the Ingress controller Deployment (default "jxing-nginx-ingress-controller")
+      --ingress-deployment string           The name of the Ingress controller Deployment (default "jxing-nginx-ingress-controller")
       --ingress-namespace string            The namespace for the Ingress controller (default "kube-system")
       --ingress-service string              The name of the Ingress controller Service (default "jxing-nginx-ingress-controller")
       --install-dependencies                Should any required dependencies be installed automatically

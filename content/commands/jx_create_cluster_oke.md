@@ -1,5 +1,5 @@
 ---
-date: 2018-08-23T09:09:32Z
+date: 2018-08-23T09:28:54Z
 title: "jx create cluster oke"
 slug: jx_create_cluster_oke
 url: /commands/jx_create_cluster_oke/
@@ -61,7 +61,7 @@ jx create cluster oke [flags]
   -h, --help                                help for oke
       --http string                         Toggle creating http or https ingress rules (default "true")
       --ingress-cluster-role string         The cluster role for the Ingress controller (default "cluster-admin")
-      --ingress-deployment string           The namespace for the Ingress controller Deployment (default "jxing-nginx-ingress-controller")
+      --ingress-deployment string           The name of the Ingress controller Deployment (default "jxing-nginx-ingress-controller")
       --ingress-namespace string            The namespace for the Ingress controller (default "kube-system")
       --ingress-service string              The name of the Ingress controller Service (default "jxing-nginx-ingress-controller")
       --initialNodeLabels string            A list of key/value pairs to add to nodes after they join the Kubernetes cluster.

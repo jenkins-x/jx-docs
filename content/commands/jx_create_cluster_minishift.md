@@ -1,5 +1,5 @@
 ---
-date: 2018-08-23T09:09:32Z
+date: 2018-08-23T09:28:54Z
 title: "jx create cluster minishift"
 slug: jx_create_cluster_minishift
 url: /commands/jx_create_cluster_minishift/
@@ -53,7 +53,7 @@ jx create cluster minishift [flags]
       --http string                         Toggle creating http or https ingress rules (default "true")
   -v, --hyperv-virtual-switch string        Additional options for using HyperV with minishift
       --ingress-cluster-role string         The cluster role for the Ingress controller (default "cluster-admin")
-      --ingress-deployment string           The namespace for the Ingress controller Deployment (default "jxing-nginx-ingress-controller")
+      --ingress-deployment string           The name of the Ingress controller Deployment (default "jxing-nginx-ingress-controller")
       --ingress-namespace string            The namespace for the Ingress controller (default "kube-system")
       --ingress-service string              The name of the Ingress controller Service (default "jxing-nginx-ingress-controller")
       --install-dependencies                Should any required dependencies be installed automatically

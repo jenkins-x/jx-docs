@@ -1,5 +1,5 @@
 ---
-date: 2018-08-23T09:09:32Z
+date: 2018-08-23T09:28:54Z
 title: "jx init"
 slug: jx_init
 url: /commands/jx_init/
@@ -35,7 +35,7 @@ jx init [flags]
       --helm3                           Use helm3 to install Jenkins X which does not use Tiller
   -h, --help                            help for init
       --ingress-cluster-role string     The cluster role for the Ingress controller (default "cluster-admin")
-      --ingress-deployment string       The namespace for the Ingress controller Deployment (default "jxing-nginx-ingress-controller")
+      --ingress-deployment string       The name of the Ingress controller Deployment (default "jxing-nginx-ingress-controller")
       --ingress-namespace string        The namespace for the Ingress controller (default "kube-system")
       --ingress-service string          The name of the Ingress controller Service (default "jxing-nginx-ingress-controller")
       --install-dependencies            Should any required dependencies be installed automatically
