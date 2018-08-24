@@ -1,4 +1,4 @@
-lastReportDate: May 21 2018
+lastReportDate: August 24 2018
 reports:
 - reportDate: March 18 2018
   starsMetrics:
@@ -112,6 +112,34 @@ reports:
   userChatMetrics:
     count: 103
     total: 313
+- reportDate: August 24 2018
+  starsMetrics:
+    count: 404
+    total: 1455
+  downloadMetrics:
+    count: 32116
+    total: 53562
+  issueMetrics:
+    count: 265
+    total: 559
+  pullRequestMetrics:
+    count: 297
+    total: 693
+  commitMetrics:
+    count: 1152
+    total: 2588
+  newCommitterMetrics:
+    count: 36
+    total: 71
+  newContributorMetrics:
+    count: 46
+    total: 95
+  developerChatMetrics:
+    count: 117
+    total: 270
+  userChatMetrics:
+    count: 334
+    total: 647
 contributors:
 - michaelneale
 - rajdavies
@@ -144,6 +172,42 @@ contributors:
 - derryx
 - andreabettich
 - bardec
+- josephldooley
+- ysaakpr
+- no-stupid-questions
+- RamonGebben
+- ccojocar
+- angoothachap
+- binarix
+- migangqui
+- steinko
+- polothy
+- secade
+- LinuxSuRen
+- Salaboy
+- tirumaraiselvan
+- biancajiang
+- i0n
+- gregpardo
+- hhuiliu
+- jramosf
+- majgaard
+- 123batman
+- bigloupe
+- tedchoward
+- sanketjpatel
+- elad-lachmi
+- ryandawsonuk
+- johnmshields
+- Vlatombe
+- paveq
+- pksdemo
+- CharliePF
+- pushthat
+- ascheman
+- magnum99
+- ariefrahmansyah
+- alf5
 committers:
 - rawlingsj
 - jstrachan
@@ -165,3 +229,30 @@ committers:
 - hekonsek
 - andreabettich
 - bardec
+- jramosf
+- elad-lachmi
+- alf5
+- pushthat
+- hhuiliu
+- josephldooley
+- ysaakpr
+- magnum99
+- i0n
+- ascheman
+- migangqui
+- ariefrahmansyah
+- binarix
+- gregpardo
+- LinuxSuRen
+- michaelneale
+- ccojocar
+- majgaard
+- Vlatombe
+- tedchoward
+- no-stupid-questions
+- paveq
+- polothy
+- angoothachap
+- secade
+- johnmshields
+- sanketjpatel
