@@ -39,6 +39,7 @@ pipeline {
           sh "hugo -d jenkins-x-website --enableGitInfo"
 
           dir("jenkins-x-website") {
+            sh "jx step git credentials"
             sh 'git config credential.helper store'
             sh 'git add *'
             sh "git commit --allow-empty -a -m \"updated site\""
