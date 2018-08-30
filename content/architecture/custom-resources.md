@@ -55,7 +55,7 @@ The Jenkins X pipelines generate a custom `Release` resource which we can use to
 
 ### PipelineActivity
 
-This resource stores the pipeline status in terms of Jenkins Pipeline stages plus the [promotion activity](http://localhost:1313/about/features/#promotion)
+This resource stores the pipeline status in terms of Jenkins Pipeline stages plus the [promotion activity](/about/features/#promotion)
 
 This resource is also used by the [jx get activities](/commands/jx_get_activities) command
   
