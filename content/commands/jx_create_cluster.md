@@ -23,10 +23,8 @@ Valid kubernetes providers include:
     * oke (Oracle Cloud Infrastructure Container Engine for Kubernetes - https://docs.cloud.oracle.com/iaas/Content/ContEng/Concepts/contengoverview.htm)
     * kubernetes for custom installations of Kubernetes
     * minikube (single-node Kubernetes cluster inside a VM on your laptop)
-	* minishift (single-node OpenShift cluster inside a VM on your laptop)
-	* openshift for installing on 3.9.x or later clusters of OpenShift
-    * coming soon:
-        eks (Amazon Elastic Container Service - https://aws.amazon.com/eks)     
+    * minishift (single-node OpenShift cluster inside a VM on your laptop)
+    * openshift for installing on 3.9.x or later clusters of OpenShift
 
 Depending on which cloud provider your cluster is created on possible dependencies that will be installed are: 
 
