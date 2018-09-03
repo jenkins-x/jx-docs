@@ -48,7 +48,7 @@ chartmuseumServiceLink:
 
 ## Docker Registry
 
-We try and use the best defaults for each platform for the Docker Registry; e.g. using ECR on AWS or KES. 
+We try and use the best defaults for each platform for the Docker Registry; e.g. using ECR on AWS. 
 
 However you can also specify this via the `--docker-registry` option when running  [jx create cluster](/commands/jx_create_cluster) or [jx install](/commands/jx_install)
 
