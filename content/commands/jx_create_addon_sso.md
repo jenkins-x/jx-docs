@@ -1,45 +1,46 @@
 ---
 date: 2018-09-03T09:30:13Z
-title: "jx create addon cloudbees"
-slug: jx_create_addon_cloudbees
-url: /commands/jx_create_addon_cloudbees/
+title: "jx create addon sso"
+slug: jx_create_addon_sso
+url: /commands/jx_create_addon_sso/
 ---
-## jx create addon cloudbees
+## jx create addon sso
 
-Create the CloudBees app for Kubernetes (a web console for working with CI/CD, Environments and GitOps)
+Create a SSO addon for Single Sign-On
 
 ### Synopsis
 
-Creates the CloudBees app for Kubernetes addon 
+Creates the Single Sign-On addon 
 
-CloudBees app for Kubernetes provides unified Continuous Delivery Environment console to make it easier to do CI/CD and Environments across a number of microservices and teams 
-
-For more information please see https://www.cloudbees.com/blog/want-help-build-cloudbees-kubernetes-jenkins-x
+This addon will install and configure the dex identity provider, sso-operator and cert-manager.
 
 ```
-jx create addon cloudbees [flags]
+jx create addon sso [flags]
 ```
 
 ### Examples
 
 ```
-  # Create the cloudbees addon
-  jx create addon cloudbees
+  # Create the sso addon
+  jx create addon sso
 ```
 
 ### Options
 
 ```
   -b, --batch-mode                In batch mode the command never prompts for user input
+      --cluster                   Enable cluster wide Ingress upgrade
       --headless                  Enable headless operation if using browser automation
       --helm-update               Should we run helm update first to ensure we use the latest version (default true)
-  -h, --help                      help for cloudbees
+  -h, --help                      help for sso
       --install-dependencies      Should any required dependencies be installed automatically
   -n, --namespace string          The Namespace to install into (default "jx")
+      --namespaces stringArray    Namespaces to upgrade
       --no-brew                   Disables the use of brew on MacOS to install or upgrade command line dependencies
-  -r, --release string            The chart release name (default "cb")
+  -r, --release string            The chart release name (default "jx")
   -s, --set string                The chart set values (can specify multiple or separate values with commas: key1=val1,key2=val2)
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
+      --skip-certmanager          Skips certmanager installation
       --verbose                   Enable verbose logging
 ```
 
