@@ -51,5 +51,5 @@ The (cloud environment repository)[https://github.com/jenkins-x/cloud-environmen
 
 ### Install the Jenkins X platform
 
-The (Jenkins X Platform)[https://github.com/jenkins-x/jenkins-x-platform] holds the Helm charts for installing the components that provide the Jenkins X true CD solution. These include [Jenkins](https://github.com/jenkinsci/jenkins) a CI/CD pipeline solution, [Nexus](https://github.com/Nexusoft/Nexus) - an artifact repository,  [Chartmuseum](https://github.com/kubernetes-helm/chartmuseum) - a Helm Chart repository,and [Monocular]
+The (Jenkins X Platform)[https://github.com/jenkins-x/jenkins-x-platform] holds the Helm charts for installing the components that provide the Jenkins X true CD solution. These include [Jenkins](https://github.com/jenkinsci/jenkins) a CI/CD pipeline solution, [Nexus](https://www.sonatype.com/nexus-repository-oss) - an artifact repository,  [Chartmuseum](https://github.com/kubernetes-helm/chartmuseum) - a Helm Chart repository,and [Monocular]
 (https://github.com/kubernetes-helm/monocular) which provides a Web UI for searching and discovering charts deployed into your cluster via Jenkins X.
