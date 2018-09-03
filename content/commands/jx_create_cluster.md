@@ -1,5 +1,5 @@
 ---
-date: 2018-09-03T09:30:13Z
+date: 2018-09-03T14:19:08Z
 title: "jx create cluster"
 slug: jx_create_cluster
 url: /commands/jx_create_cluster/
@@ -25,8 +25,7 @@ Valid kubernetes providers include:
     * minikube (single-node Kubernetes cluster inside a VM on your laptop)
 	* minishift (single-node OpenShift cluster inside a VM on your laptop)
 	* openshift for installing on 3.9.x or later clusters of OpenShift
-    * coming soon:
-        eks (Amazon Elastic Container Service - https://aws.amazon.com/eks)     
+ 
 
 Depending on which cloud provider your cluster is created on possible dependencies that will be installed are: 
 
