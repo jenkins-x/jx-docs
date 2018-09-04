@@ -245,6 +245,13 @@ anchor = "smart"
   url = "/architecture/"
   post = "break"
 
+[[menu.docs]]
+  name = "Extending"
+  weight = 30
+  identifier = "extending"
+  url = "/extending/"
+  post = "break"
+
 # Core Menus
 
 [[menu.docs]]
