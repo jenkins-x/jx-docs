@@ -1,5 +1,5 @@
 ---
-date: 2018-09-04T12:17:09Z
+date: 2018-09-04T14:39:09Z
 title: "jx create addon cloudbees"
 slug: jx_create_addon_cloudbees
 url: /commands/jx_create_addon_cloudbees/
@@ -40,6 +40,7 @@ jx create addon cloudbees [flags]
   -r, --release string            The chart release name (default "cb")
   -s, --set string                The chart set values (can specify multiple or separate values with commas: key1=val1,key2=val2)
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
+      --sso                       Enable single sign-on
       --verbose                   Enable verbose logging
 ```
 
