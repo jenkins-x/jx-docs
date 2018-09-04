@@ -1,5 +1,5 @@
 ---
-date: 2018-09-04T14:39:09Z
+date: 2018-09-04T15:05:50Z
 title: "jx create cluster minishift"
 slug: jx_create_cluster_minishift
 url: /commands/jx_create_cluster_minishift/
@@ -71,6 +71,7 @@ jx create cluster minishift [flags]
       --register-local-helmrepo             Registers the Jenkins X chartmuseum registry with your helm client [default false]
       --skip-auth-secrets-merge             Skips merging a local git auth yaml file with any pipeline secrets that are found
       --skip-ingress                        Dont install an ingress controller
+      --skip-installation                   Provision cluster only, don't install Jenkins X into it
       --skip-tiller                         Dont install a Helms Tiller service
       --tiller-cluster-role string          The cluster role for Helm's tiller (default "cluster-admin")
       --tiller-namespace string             The namespace for the Tiller when using a gloabl tiller (default "kube-system")

@@ -1,5 +1,5 @@
 ---
-date: 2018-09-04T14:39:09Z
+date: 2018-09-04T15:05:50Z
 title: "jx create cluster aks"
 slug: jx_create_cluster_aks
 url: /commands/jx_create_cluster_aks/
@@ -76,6 +76,7 @@ jx create cluster aks [flags]
       --register-local-helmrepo                  Registers the Jenkins X chartmuseum registry with your helm client [default false]
   -n, --resource-group-name string               Name of the resource group
       --skip-ingress                             Dont install an ingress controller
+      --skip-installation                        Provision cluster only, don't install Jenkins X into it
       --skip-login az login                      Skip login if already logged in using az login
       --skip-provider-registration               Skip provider registration
       --skip-resource-group-creation             Skip resource group creation

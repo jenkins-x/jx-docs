@@ -1,5 +1,5 @@
 ---
-date: 2018-09-04T14:39:09Z
+date: 2018-09-04T15:05:50Z
 title: "jx create cluster oke"
 slug: jx_create_cluster_oke
 url: /commands/jx_create_cluster_oke/
@@ -93,6 +93,7 @@ jx create cluster oke [flags]
       --servicesCidr string                 Kubernetes Service CIDR Block.
       --skip-auth-secrets-merge             Skips merging a local git auth yaml file with any pipeline secrets that are found
       --skip-ingress                        Dont install an ingress controller
+      --skip-installation                   Provision cluster only, don't install Jenkins X into it
       --skip-tiller                         Dont install a Helms Tiller service
       --sshPublicKey string                 The SSH public key to add to each node in the node pool. Optional but nice to have it as user can access work nodes with it.
       --tiller-cluster-role string          The cluster role for Helm's tiller (default "cluster-admin")

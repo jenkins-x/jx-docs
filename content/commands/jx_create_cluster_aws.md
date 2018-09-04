@@ -1,5 +1,5 @@
 ---
-date: 2018-09-04T14:39:09Z
+date: 2018-09-04T15:05:50Z
 title: "jx create cluster aws"
 slug: jx_create_cluster_aws
 url: /commands/jx_create_cluster_aws/
@@ -82,6 +82,7 @@ jx create cluster aws [flags]
       --register-local-helmrepo             Registers the Jenkins X chartmuseum registry with your helm client [default false]
       --skip-auth-secrets-merge             Skips merging a local git auth yaml file with any pipeline secrets that are found
       --skip-ingress                        Dont install an ingress controller
+      --skip-installation                   Provision cluster only, don't install Jenkins X into it
       --skip-tiller                         Dont install a Helms Tiller service
       --state string                        The S3 bucket used to store the state of the cluster.
   -t, --terraform string                    The directory to save terraform configuration.
