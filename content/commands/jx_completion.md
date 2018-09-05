@@ -1,5 +1,5 @@
 ---
-date: 2018-09-05T12:53:28Z
+date: 2018-09-05T14:13:16Z
 title: "jx completion"
 slug: jx_completion
 url: /commands/jx_completion/
