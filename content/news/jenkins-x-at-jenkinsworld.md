@@ -4,9 +4,9 @@ date: 2018-09-06T08:36:00+02:00
 description: "Jenkins X @ JenkinsWorld" 
 categories: [blog]
 keywords: []
-slug: "jenkins-x-does-kubecon"
+slug: "jenkins-x-at-JenkinsWorld"
 aliases: []
-author: jstrachan
+author: rdavies
 ---
 
 ## Jenkins X at JenkinsWorld
