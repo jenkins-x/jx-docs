@@ -1,5 +1,5 @@
 ---
-date: 2018-09-06T12:07:16Z
+date: 2018-09-06T15:25:33Z
 title: "jx controller workflow"
 slug: jx_controller_workflow
 url: /commands/jx_controller_workflow/
@@ -19,11 +19,17 @@ jx controller workflow [flags]
 ### Options
 
 ```
+  -b, --batch-mode                      In batch mode the command never prompts for user input
+      --headless                        Enable headless operation if using browser automation
   -r, --helm-repo-name string           The name of the helm repository that contains the app (default "releases")
   -h, --help                            help for workflow
+      --install-dependencies            Should any required dependencies be installed automatically
   -n, --namespace string                The namespace to watch or defaults to the current namespace
+      --no-brew                         Disables the use of brew on MacOS to install or upgrade command line dependencies
       --no-watch                        Disable watch so just performs any delta processes on pending workflows
       --pull-request-poll-time string   Poll time when waiting for a Pull Request to merge (default "20s")
+      --skip-auth-secrets-merge         Skips merging a local git auth yaml file with any pipeline secrets that are found
+      --verbose                         Enable verbose logging
 ```
 
 ### SEE ALSO
