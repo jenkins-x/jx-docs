@@ -1,5 +1,5 @@
 ---
-date: 2018-09-08T06:29:31Z
+date: 2018-09-08T08:37:19Z
 title: "jx create cluster oke"
 slug: jx_create_cluster_oke
 url: /commands/jx_create_cluster_oke/
@@ -66,7 +66,7 @@ jx create cluster oke [flags]
       --ingress-service string              The name of the Ingress controller Service (default "jxing-nginx-ingress-controller")
       --initialNodeLabels string            A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
       --install-dependencies                Should any required dependencies be installed automatically
-      --install-only                        Force the install comand to fail if there is already an installation. Otherwise lets update the installation
+      --install-only                        Force the install command to fail if there is already an installation. Otherwise lets update the installation
       --isKubernetesDashboardEnabled        Is KubernetesDashboard Enabled. (default true)
       --isTillerEnabled                     Is Tiller Enabled.
       --keep-exposecontroller-job           Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment

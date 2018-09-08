@@ -1,5 +1,5 @@
 ---
-date: 2018-09-08T06:29:31Z
+date: 2018-09-08T08:37:19Z
 title: "jx create cluster eks"
 slug: jx_create_cluster_eks
 url: /commands/jx_create_cluster_eks/
@@ -61,7 +61,7 @@ jx create cluster eks [flags]
       --ingress-namespace string            The namespace for the Ingress controller (default "kube-system")
       --ingress-service string              The name of the Ingress controller Service (default "jxing-nginx-ingress-controller")
       --install-dependencies                Should any required dependencies be installed automatically
-      --install-only                        Force the install comand to fail if there is already an installation. Otherwise lets update the installation
+      --install-only                        Force the install command to fail if there is already an installation. Otherwise lets update the installation
       --keep-exposecontroller-job           Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
       --local-cloud-environment             Ignores default cloud-environment-repo and uses current directory 
       --local-helm-repo-name string         The name of the helm repository for the installed Chart Museum (default "releases")

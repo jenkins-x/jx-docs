@@ -1,5 +1,5 @@
 ---
-date: 2018-09-08T06:29:31Z
+date: 2018-09-08T08:37:19Z
 title: "jx create cluster aks"
 slug: jx_create_cluster_aks
 url: /commands/jx_create_cluster_aks/
@@ -58,7 +58,7 @@ jx create cluster aks [flags]
       --ingress-deployment string                The name of the Ingress controller Deployment (default "jxing-nginx-ingress-controller")
       --ingress-namespace string                 The namespace for the Ingress controller (default "kube-system")
       --ingress-service string                   The name of the Ingress controller Service (default "jxing-nginx-ingress-controller")
-      --install-only                             Force the install comand to fail if there is already an installation. Otherwise lets update the installation
+      --install-only                             Force the install command to fail if there is already an installation. Otherwise lets update the installation
       --keep-exposecontroller-job                Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
   -v, --kubernetes-version az aks get-versions   Version of Kubernetes to use for creating the cluster, such as '1.8.11' or '1.9.6'.  Values from: az aks get-versions.
       --local-cloud-environment                  Ignores default cloud-environment-repo and uses current directory 

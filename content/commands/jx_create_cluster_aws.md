@@ -1,5 +1,5 @@
 ---
-date: 2018-09-08T06:29:31Z
+date: 2018-09-08T08:37:19Z
 title: "jx create cluster aws"
 slug: jx_create_cluster_aws
 url: /commands/jx_create_cluster_aws/
@@ -64,7 +64,7 @@ jx create cluster aws [flags]
       --ingress-service string              The name of the Ingress controller Service (default "jxing-nginx-ingress-controller")
       --insecure-registry string            The insecure docker registries to allow (default "100.64.0.0/10")
       --install-dependencies                Should any required dependencies be installed automatically
-      --install-only                        Force the install comand to fail if there is already an installation. Otherwise lets update the installation
+      --install-only                        Force the install command to fail if there is already an installation. Otherwise lets update the installation
       --keep-exposecontroller-job           Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
   -v, --kubernetes-version string           kubernetes version
       --local-cloud-environment             Ignores default cloud-environment-repo and uses current directory 
