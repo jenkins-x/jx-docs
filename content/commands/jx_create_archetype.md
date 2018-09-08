@@ -1,5 +1,5 @@
 ---
-date: 2018-09-08T08:37:19Z
+date: 2018-09-08T09:00:38Z
 title: "jx create archetype"
 slug: jx_create_archetype
 url: /commands/jx_create_archetype/
@@ -37,6 +37,7 @@ jx create archetype [flags]
   -c, --catalog string                 The Maven Archetype Catalog to use (default "http://central.maven.org/maven2/archetype-catalog.xml")
       --credentials string             The Jenkins credentials name used by the job
       --default-owner string           The default user/organisation used if no user is found for the current git repository being imported (default "someone")
+      --docker-registry-org string     The name of the docker registry organisation to use. If not specified then the git provider organisation will be used
       --dry-run                        Performs local changes to the repo but skips the import into Jenkins X
       --filter-artifact string         Either the Artifact ID or a text filter of the artifact IDs to pick from
   -f, --filter-group string            Filter the Group IDs to choose from for he Archetypes

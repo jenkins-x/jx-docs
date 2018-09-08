@@ -1,5 +1,5 @@
 ---
-date: 2018-09-08T08:37:19Z
+date: 2018-09-08T09:00:38Z
 title: "jx create cluster minishift"
 slug: jx_create_cluster_minishift
 url: /commands/jx_create_cluster_minishift/

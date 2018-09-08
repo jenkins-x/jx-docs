@@ -1,5 +1,5 @@
 ---
-date: 2018-09-08T08:37:19Z
+date: 2018-09-08T09:00:38Z
 title: "jx create camel"
 slug: jx_create_camel
 url: /commands/jx_create_camel/
@@ -37,6 +37,7 @@ jx create camel [flags]
   -c, --camel-version string           The Version of the Archetype to use (default "RELEASE")
       --credentials string             The Jenkins credentials name used by the job
       --default-owner string           The default user/organisation used if no user is found for the current git repository being imported (default "someone")
+      --docker-registry-org string     The name of the docker registry organisation to use. If not specified then the git provider organisation will be used
       --dry-run                        Performs local changes to the repo but skips the import into Jenkins X
       --git-api-token string           The git API token to use for creating new git repositories
       --git-private                    Create new git repositories as private
