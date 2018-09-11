@@ -82,7 +82,7 @@ kubectl delete secret jenkins-docker-cfg
 kubectl create secret generic jenkins-docker-cfg --from-file=./config.json
 ```   
 
-*NOTE* that the file must be called `config.json` as the file name is used in the key of the underlying `Secret` in kubernetes
+**NOTE** that the file must be called `config.json` as the file name is used in the key of the underlying `Secret` in kubernetes
 
 ## Using Docker Hub
 
