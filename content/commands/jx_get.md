@@ -1,5 +1,5 @@
 ---
-date: 2018-09-11T11:11:16Z
+date: 2018-09-11T20:03:18Z
 title: "jx get"
 slug: jx_get
 url: /commands/jx_get/
@@ -62,6 +62,7 @@ jx get TYPE [flags]
 * [jx get previews](/commands/jx_get_previews/)	 - Display one or many Preview Environments
 * [jx get quickstartlocations](/commands/jx_get_quickstartlocations/)	 - Display one or many Quickstart Locations
 * [jx get releases](/commands/jx_get_releases/)	 - Display the Release or Releases the current user is a member of
+* [jx get teamroles](/commands/jx_get_teamroles/)	 - Display the Team or Teams the current user is a member of
 * [jx get teams](/commands/jx_get_teams/)	 - Display the Team or Teams the current user is a member of
 * [jx get token](/commands/jx_get_token/)	 - Display the tokens for different kinds of services
 * [jx get tracker](/commands/jx_get_tracker/)	 - Display the current registered issue tracker service URLs

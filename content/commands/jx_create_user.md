@@ -1,5 +1,5 @@
 ---
-date: 2018-09-11T11:11:16Z
+date: 2018-09-11T20:03:18Z
 title: "jx create user"
 slug: jx_create_user
 url: /commands/jx_create_user/
@@ -44,7 +44,6 @@ jx create user [flags]
   -l, --login string              The user login name
   -n, --name string               The textual full name of the user
       --no-brew                   Disables the use of brew on MacOS to install or upgrade command line dependencies
-  -r, --role string               The user's role
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
       --verbose                   Enable verbose logging
 ```

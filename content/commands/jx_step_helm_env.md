@@ -1,28 +1,26 @@
 ---
 date: 2018-09-11T20:03:18Z
-title: "jx step helm build"
-slug: jx_step_helm_build
-url: /commands/jx_step_helm_build/
+title: "jx step helm env"
+slug: jx_step_helm_env
+url: /commands/jx_step_helm_env/
 ---
-## jx step helm build
+## jx step helm env
 
-Builds the helm chart in a given directory and validate the build completes
+Generates the helm environment variables
 
 ### Synopsis
 
-Builds the helm chart in a given directory. 
-
-This step is usually used to validate any GitOps Pull Requests.
+Generates the helm environment variables
 
 ```
-jx step helm build [flags]
+jx step helm env [flags]
 ```
 
 ### Examples
 
 ```
-  # builds the helm chart in the env directory
-  jx step helm build --dir env
+  # output the helm environment variables that should be set to use helm directly
+  jx step helm env
 ```
 
 ### Options
@@ -31,8 +29,7 @@ jx step helm build [flags]
       --clone-https git@foo/bar.git   Clone the environment git repo over https rather than ssh which uses git@foo/bar.git (default true)
   -d, --dir string                    The directory containing the helm chart to apply (default ".")
       --git-provider string           The Git provider for the environment Git repository (default "github.com")
-  -h, --help                          help for build
-  -r, --recursive                     Build recursively the dependent charts
+  -h, --help                          help for env
 ```
 
 ### SEE ALSO

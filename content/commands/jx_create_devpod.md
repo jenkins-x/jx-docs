@@ -1,5 +1,5 @@
 ---
-date: 2018-09-11T11:11:16Z
+date: 2018-09-11T20:03:18Z
 title: "jx create devpod"
 slug: jx_create_devpod
 url: /commands/jx_create_devpod/
@@ -31,12 +31,14 @@ jx create devpod [flags]
 ### Options
 
 ```
+      --auto-expose               Automatically expose useful ports as services such as the debug port, as well as any ports specified using --ports (default true)
   -b, --batch-mode                In batch mode the command never prompts for user input
       --headless                  Enable headless operation if using browser automation
   -h, --help                      help for devpod
       --install-dependencies      Should any required dependencies be installed automatically
   -l, --label string              The label of the pod template to use
       --no-brew                   Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --persist                   Persist changes made to the devpod. Cannot be used with --sync
   -p, --ports ints                Container ports exposed by the DevPod
   -c, --request-cpu string        The request CPU of the dev pod (default "1")
       --reuse                     Reuse and existing DevPod for this folder and label if one exists
