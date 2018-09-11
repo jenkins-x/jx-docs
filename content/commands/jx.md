@@ -1,5 +1,5 @@
 ---
-date: 2018-09-11T10:44:47Z
+date: 2018-09-11T11:11:16Z
 title: "jx"
 slug: jx
 url: /commands/jx/
@@ -40,6 +40,7 @@ jx [flags]
 * [jx import](/commands/jx_import/)	 - Imports a local project or git repository into Jenkins
 * [jx init](/commands/jx_init/)	 - Init Jenkins X
 * [jx install](/commands/jx_install/)	 - Install Jenkins X in the current Kubernetes cluster
+* [jx login](/commands/jx_login/)	 - Onboard an user into the CloudBees application
 * [jx logs](/commands/jx_logs/)	 - Tails the log of the latest pod for a deployment
 * [jx namespace](/commands/jx_namespace/)	 - View or change the current namespace context in the current kubernetes cluster
 * [jx open](/commands/jx_open/)	 - Open a service in a browser
