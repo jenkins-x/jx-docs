@@ -1,5 +1,5 @@
 ---
-date: 2018-09-11T08:26:01Z
+date: 2018-09-11T10:44:47Z
 title: "jx install"
 slug: jx_install
 url: /commands/jx_install/
@@ -84,7 +84,8 @@ jx install [flags]
       --register-local-helmrepo             Registers the Jenkins X chartmuseum registry with your helm client [default false]
       --skip-auth-secrets-merge             Skips merging a local git auth yaml file with any pipeline secrets that are found
       --skip-ingress                        Dont install an ingress controller
-      --skip-tiller                         Dont install a Helms Tiller service
+      --skip-tiller                         Don't install a Helms Tiller service
+      --tiller                              Whether or not to use tiller at all. If no tiller is enabled then its ran as a local process instead (default true)
       --tiller-cluster-role string          The cluster role for Helm's tiller (default "cluster-admin")
       --tiller-namespace string             The namespace for the Tiller when using a gloabl tiller (default "kube-system")
       --timeout string                      The number of seconds to wait for the helm install to complete (default "6000")

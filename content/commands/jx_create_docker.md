@@ -1,5 +1,5 @@
 ---
-date: 2018-09-11T08:26:01Z
+date: 2018-09-11T10:44:47Z
 title: "jx create docker"
 slug: jx_create_docker
 url: /commands/jx_create_docker/
@@ -10,7 +10,7 @@ Create/update docker auth for a given host and user in the config.json file
 
 ### Synopsis
 
-Creates/updates an entry for secret in the config.json for a given user, host
+Creates/updates an entry for secret in the Docker config.json for a given user, host
 
 ```
 jx create docker auth [flags]
@@ -20,7 +20,7 @@ jx create docker auth [flags]
 
 ```
   # Create/update docker auth entry in the config.json file
-  jx create auth --host "foo.private.docker.registry" --user "foo" --secret "FooDockerHubToken" --email "fakeemail@gmail.com"
+  jx create docker auth --host "foo.private.docker.registry" --user "foo" --secret "FooDockerHubToken" --email "fakeemail@gmail.com"
 ```
 
 ### Options
