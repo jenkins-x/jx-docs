@@ -61,6 +61,8 @@ Jenkins X brings together a number of familiar methodologies and components into
 
 Jenkins X builds upon the DevOps model of loosely-coupled architectures and is designed to support you in deploying large numbers of distributed microservices in a repeatable and manageable fashion, across multiple teams.
 
+<img src="/images/jx-arch.png" class="img-thumbnail">
+
 ### Conceptual model
 
 <img src="/images/model.png" class="img-thumbnail">
