@@ -1,5 +1,5 @@
 ---
-date: 2018-09-11T02:24:41Z
+date: 2018-09-11T08:26:01Z
 title: "jx create addon prow"
 slug: jx_create_addon_prow
 url: /commands/jx_create_addon_prow/
@@ -44,7 +44,7 @@ jx create addon prow [flags]
   -s, --set string                The chart set values (can specify multiple or separate values with commas: key1=val1,key2=val2)
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
       --verbose                   Enable verbose logging
-  -v, --version string            The version of the prow addon to use (default "0.0.23")
+  -v, --version string            The version of the prow addon to use (default "0.0.26")
 ```
 
 ### SEE ALSO
