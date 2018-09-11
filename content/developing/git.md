@@ -32,16 +32,34 @@ When you install Jenkins X it will create git repositories for `Staging` and `Pr
 
 If you wish to use a different git provider for your environments then when you install Jenkins X add the `--no-default-environments` argument on [jx create cluster](/commands/jx_create_cluster/) or [jx install](/commands/jx_install/)
 
-Once Jenkins X is installed you can then add a new git provider (see below for details).
+e.g. to [create a new cluster](/getting-started/create-cluster/)
+ 
+``` 
+jx create cluster gke --no-default-environments
+```
 
-Then when the git provider is setup you can create the `Staging` and `Production` environments using whatever git provider you wish via:
+or to [install in an existing cluster](/getting-started/install-on-cluster/)
+
+``` 
+jx install --no-default-environments
+```
+
+
+Then once Jenkins X is installed you can then [add a new git provider](#adding-a-new-git-provider).
+
+Then when the git provider is setup you can verify its available and has the right `gitKind` via:
+
+``` 
+jx get git server
+```
+
+
+Now create the `Staging` and `Production` environments using whatever git provider you wish via:
 
 ``` 
 jx create env staging
 jx create env production
 ```
-
-
 
 
 ## Adding a new git provider
@@ -53,6 +71,14 @@ jx create git server gitKind someURL
 ```
 
 Where the `gitKind` is one of the supported git provider kinds like `github, gitea, gitlab, bitbucketcloud, bitbucketserver`
+
+You can verify what server URLs and `gitKind` values are setup via
+
+``` 
+jx get git server
+```
+
+**NOTE** please make sure you set the right `gitKind` for your git provider otherwise the wrong underlying REST API provider will be invoked! 
 
 ## GitHub Enterprise
 
@@ -74,6 +100,14 @@ To add BitBucket Cloud try:
 jx create git server bitbucketcloud -n BitBucket https://bitbucket.org
 jx create git token -n BitBucket myusername
 ```
+
+Please make sure that the `gitKind` is properly set to `bitbucketcloud` via the following command
+
+``` 
+jx get git server
+```
+
+and look in the `Kind` column.
 
 ## BitBucket Server
 
