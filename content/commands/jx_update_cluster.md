@@ -1,5 +1,5 @@
 ---
-date: 2018-09-11T20:03:18Z
+date: 2018-09-11T20:39:49Z
 title: "jx update cluster"
 slug: jx_update_cluster
 url: /commands/jx_update_cluster/
