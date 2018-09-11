@@ -45,6 +45,13 @@ jenkins:
 
 Next you will need to update the `config.json` secret for docker. 
 
+You can do this via the [jx create docker auth](/commands/jx_create_docker/) command line tool:
+
+```
+jx create docker auth --host "foo.private.docker.registry" --user "foo" --secret "FooDockerHubToken" --email "fakeemail@gmail.com"
+
+```
+
 If you create a `config.json` file for your docker registry provider. e.g. for GCR on Google Cloud its probably something like:
 
 
@@ -68,12 +75,14 @@ For AWS its more like
 }
 ```
 
-Then to update the `jenkins-docker-cfg` secret you can do:
+Then to update the `jenkins-docker-cfg` secret you can do the following:
 
 ```
 kubectl delete secret jenkins-docker-cfg
 kubectl create secret generic jenkins-docker-cfg --from-file=./config.json
 ```   
+
+*NOTE* that the file must be called `config.json` as the file name is used in the key of the underlying `Secret` in kubernetes
 
 ## Using Docker Hub
 
