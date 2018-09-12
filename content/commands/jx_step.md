@@ -1,5 +1,5 @@
 ---
-date: 2018-09-12T05:30:01Z
+date: 2018-09-12T11:41:31Z
 title: "jx step"
 slug: jx_step
 url: /commands/jx_step/
@@ -32,6 +32,7 @@ jx step [flags]
 * [jx step gpg](/commands/jx_step_gpg/)	 - Creates the GPG credentials file for GPG signing releases
 * [jx step helm](/commands/jx_step_helm/)	 - helm [command]
 * [jx step link](/commands/jx_step_link/)	 - achieve service linking in preview environments
+* [jx step next-buildnumber](/commands/jx_step_next-buildnumber/)	 - Generates the next build unique number for a pipeline.
 * [jx step next-version](/commands/jx_step_next-version/)	 - Writes next semantic version
 * [jx step nexus](/commands/jx_step_nexus/)	 - nexus [command]
 * [jx step post](/commands/jx_step_post/)	 - post step actions
