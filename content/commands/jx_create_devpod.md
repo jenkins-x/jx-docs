@@ -1,5 +1,5 @@
 ---
-date: 2018-09-12T14:55:36Z
+date: 2018-09-12T15:30:22Z
 title: "jx create devpod"
 slug: jx_create_devpod
 url: /commands/jx_create_devpod/
@@ -35,13 +35,15 @@ jx create devpod [flags]
   -b, --batch-mode                In batch mode the command never prompts for user input
       --headless                  Enable headless operation if using browser automation
   -h, --help                      help for devpod
+      --import                    Detect if there is a Git repository in the current directory and attempt to clone it into the DevPod. Ignored if used with --sync (default true)
+  -u, --import-url string         Clone a Git repository into the DevPod. Cannot be used with --sync
       --install-dependencies      Should any required dependencies be installed automatically
   -l, --label string              The label of the pod template to use
       --no-brew                   Disables the use of brew on MacOS to install or upgrade command line dependencies
-      --persist                   Persist changes made to the devpod. Cannot be used with --sync
+      --persist                   Persist changes made to the DevPod. Cannot be used with --sync
   -p, --ports ints                Container ports exposed by the DevPod
   -c, --request-cpu string        The request CPU of the dev pod (default "1")
-      --reuse                     Reuse and existing DevPod for this folder and label if one exists
+      --reuse                     Reuse an existing DevPod if a suitable one exists. The DevPod will be selected based on the label (or current working directory) (default true)
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
   -s, --suffix string             The suffix to append the pod name
       --sync                      Also synchronise the local file system into the DevPod
