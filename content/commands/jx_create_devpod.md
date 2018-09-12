@@ -1,5 +1,5 @@
 ---
-date: 2018-09-12T20:35:49Z
+date: 2018-09-12T22:28:25Z
 title: "jx create devpod"
 slug: jx_create_devpod
 url: /commands/jx_create_devpod/
@@ -44,6 +44,7 @@ jx create devpod [flags]
   -p, --ports ints                Container ports exposed by the DevPod
   -c, --request-cpu string        The request CPU of the dev pod (default "1")
       --reuse                     Reuse an existing DevPod if a suitable one exists. The DevPod will be selected based on the label (or current working directory) (default true)
+      --shell string              The name of the shell to invoke in the DevPod. If nothing is specified it will use 'bash'
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
   -s, --suffix string             The suffix to append the pod name
       --sync                      Also synchronise the local file system into the DevPod
