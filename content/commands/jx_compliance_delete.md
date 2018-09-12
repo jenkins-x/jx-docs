@@ -1,5 +1,5 @@
 ---
-date: 2018-09-12T22:28:25Z
+date: 2018-09-12T22:52:25Z
 title: "jx compliance delete"
 slug: jx_compliance_delete
 url: /commands/jx_compliance_delete/
