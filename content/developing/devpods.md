@@ -34,9 +34,21 @@ jx create devpod -l maven
 
 This will then create a new `DevPod` based on the maven based [pod template](/architecture/pod-templates/) and open your terminal inside that pod. You are now free to use the various tools like `git, docker, maven, skaffold, jx` which will all be using the same exact configuration as the CI/CD pipelines will.
 
-## Example workflow: with an existing project
+## Using Theia IDE
 
-Typically you would want to sync the source code from the project you are working on to the dev pod, so you can work on it there, using your preferred editor on your desktop. In this case the workflow is: 
+If you don't use `--sync` then the DevPod will embed the [Theia IDE](https://www.theia-ide.org/) so that you can open the IDE in a browser and work on the source code inside your DevPod!
+
+The source code is mounted into the workspace of Theia in the folder `/workspace`.
+ 
+To get an incremental redeploy as you edit source inside [Theia IDE](https://www.theia-ide.org/) then type:
+
+`./watch.sh`
+
+inside the shell of the DevPod.
+
+## Using a desktop IDE
+
+If you wish to use a desktop IDE then you need to sync your source code you can work on it there, using your preferred editor on your desktop. In this case the workflow is: 
 
 1. run `jx sync` once on your system
 2. cd into your project dir, and run `jx create devpod --reuse --sync`
