@@ -1,5 +1,5 @@
 ---
-date: 2018-09-12T16:31:09Z
+date: 2018-09-12T19:43:44Z
 title: "jx context"
 slug: jx_context
 url: /commands/jx_context/
@@ -36,6 +36,7 @@ jx context [flags]
 
 ```
   -b, --batch-mode                In batch mode the command never prompts for user input
+  -f, --filter string             Filter the list of contexts to switch between using the given text
       --headless                  Enable headless operation if using browser automation
   -h, --help                      help for context
       --install-dependencies      Should any required dependencies be installed automatically
