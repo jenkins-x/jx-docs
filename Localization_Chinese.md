@@ -12,7 +12,7 @@
 
 * Pull Request (PR)
 * master
-* Github API
+* Github API
 * Github / Bitbucket
 * Token
 * ...
@@ -23,7 +23,7 @@
 
 |英文|中文|说明|
 |---|---|---|
-|artifacts|制品|
+|artifacts|制品|
 |Previews Environments|预览环境|
 |Permanent Environments|永久环境|
 |Owner|拥有者|
