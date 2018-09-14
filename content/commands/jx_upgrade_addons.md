@@ -1,19 +1,19 @@
 ---
 date: 2018-09-14T14:26:00Z
-title: "jx upgrade platform"
-slug: jx_upgrade_platform
-url: /commands/jx_upgrade_platform/
+title: "jx upgrade addons"
+slug: jx_upgrade_addons
+url: /commands/jx_upgrade_addons/
 ---
-## jx upgrade platform
+## jx upgrade addons
 
-Upgrades the Jenkins X platform if there is a new release available
+Upgrades any Addons added to Jenkins X if there are any new releases available
 
 ### Synopsis
 
 Upgrades the Jenkins X platform if there is a newer release
 
 ```
-jx upgrade platform [flags]
+jx upgrade addons [flags]
 ```
 
 ### Examples
@@ -27,19 +27,16 @@ jx upgrade platform [flags]
 
 ```
   -b, --batch-mode                      In batch mode the command never prompts for user input
-  -c, --chart string                    The Chart to upgrade (default "jenkins-x/jenkins-x-platform")
       --cloud-environment-repo string   Cloud Environments git repo (default "https://github.com/jenkins-x/cloud-environments")
       --headless                        Enable headless operation if using browser automation
-  -h, --help                            help for platform
+  -h, --help                            help for addons
       --install-dependencies            Should any required dependencies be installed automatically
       --local-cloud-environment         Ignores default cloud-environment-repo and uses current directory 
-  -n, --name string                     The release name (default "jenkins-x")
       --namespace string                The Namespace to promote to
       --no-brew                         Disables the use of brew on MacOS to install or upgrade command line dependencies
   -s, --set string                      The helm parameters to pass in while upgrading
       --skip-auth-secrets-merge         Skips merging a local git auth yaml file with any pipeline secrets that are found
       --verbose                         Enable verbose logging
-  -v, --version string                  The specific platform version to upgrade to
 ```
 
 ### SEE ALSO

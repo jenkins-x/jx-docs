@@ -1,5 +1,5 @@
 ---
-date: 2018-09-14T12:58:05Z
+date: 2018-09-14T14:26:00Z
 title: "jx upgrade"
 slug: jx_upgrade
 url: /commands/jx_upgrade/
@@ -35,6 +35,7 @@ jx upgrade [flags]
 ### SEE ALSO
 
 * [jx](/commands/jx/)	 - jx is a command line tool for working with Jenkins X
+* [jx upgrade addons](/commands/jx_upgrade_addons/)	 - Upgrades any Addons added to Jenkins X if there are any new releases available
 * [jx upgrade cli](/commands/jx_upgrade_cli/)	 - Upgrades the command line applications - if there are new versions available
 * [jx upgrade cluster](/commands/jx_upgrade_cluster/)	 - Upgrades the kubernetes master to the specified version
 * [jx upgrade ingress](/commands/jx_upgrade_ingress/)	 - Upgrades Ingress rules
