@@ -3,13 +3,19 @@
 # 风格
 
 * 中英文之间使用一个空格分割
+* 使用中文的标点符号
+* 保留原有文本格式
 
 # 术语
 
 部分技术术语，我们无需进行翻译，应该保留。
 
-* Pull Request
+* Pull Request (PR)
 * master
+* Github API
+* Github / Bitbucket
+* Token
+* ...
 
 # 中英文对照表
 
@@ -20,6 +26,7 @@
 |artifacts|制品|
 |Previews Environments|预览环境|
 |Permanent Environments|永久环境|
+|Owner|拥有者|
 
 如果有任何疑问，请先针对该说明发起讨论。
 
