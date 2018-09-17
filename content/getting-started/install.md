@@ -44,6 +44,12 @@ curl -L https://github.com/jenkins-x/jx/releases/download/v{{< version >}}/jx-li
 export PATH=$PATH:~/.jx/bin
 echo 'export PATH=$PATH:~/.jx/bin' >> ~/.bashrc
 ```
+
+### Windows
+ On Windows you can use [Chocolatey](https://chocolatey.org/):
+```shell
+choco install jenkins-x
+```
     
 ### Other platforms
     
