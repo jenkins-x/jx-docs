@@ -13,6 +13,8 @@ weight: 5
 sections_weight: 5
 ---
 
+* [JavaDay Ecuador 8 September 2018:CI/CD for Spring Boot Applications with Jenkins X](https://www.javaday.ec/) by [Eddú Meléndez](https://twitter.com/eddumelendez)
+
 * [2018-10-08 JDD Poland: End to End automation and Continuous Delivery of Microservices for Kubernetes](http://bit.ly/jdd-conference-jx) by [Paolo Carta](https://twitter.com/cl4mer)
 
 * [2018-09-13 Workshop Days Switzerland: Jenkins X: Continuous Delivery for Java services in Kubernetes](https://workshoptage.ch/workshops/2018/jenkins-x-continuous-delivery-for-java-services-in-kubernetes/) by [Cosmin Cojocar](https://twitter.com/CojocarCosmin)
