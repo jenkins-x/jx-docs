@@ -1,5 +1,5 @@
 ---
-date: 2018-09-18T12:55:15Z
+date: 2018-09-18T14:03:19Z
 title: "jx step helm build"
 slug: jx_step_helm_build
 url: /commands/jx_step_helm_build/
@@ -28,11 +28,17 @@ jx step helm build [flags]
 ### Options
 
 ```
+  -b, --batch-mode                    In batch mode the command never prompts for user input
       --clone-https git@foo/bar.git   Clone the environment git repo over https rather than ssh which uses git@foo/bar.git (default true)
   -d, --dir string                    The directory containing the helm chart to apply (default ".")
       --git-provider string           The Git provider for the environment Git repository (default "github.com")
+      --headless                      Enable headless operation if using browser automation
   -h, --help                          help for build
+      --install-dependencies          Should any required dependencies be installed automatically
+      --no-brew                       Disables the use of brew on MacOS to install or upgrade command line dependencies
   -r, --recursive                     Build recursively the dependent charts
+      --skip-auth-secrets-merge       Skips merging a local git auth yaml file with any pipeline secrets that are found
+      --verbose                       Enable verbose logging
 ```
 
 ### SEE ALSO
