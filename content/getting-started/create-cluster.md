@@ -192,15 +192,15 @@ jxpv3                           8Gi        RWO            Recycle          Bound
 jxpv4                           30Gi       RWO            Recycle          Bound       jx/jenkins                                                                    6d
 ```
 
-"I get error creating cluster exit status 1, or it seems to hang - what should I do?"
+"I get `Error creating cluster exit status 1`, or it seems to be hanging - what should I do?"
 
 Check to see if `minikube status` reports that minikube is actually already running. If it is, do `minikube stop` and then repeat the cluster creation process. Removing your `~/.minikube` directory is also known to help: you want to make sure you have a clean environment with a working driver installed before attemping to run `jx create cluster minikube`.
 
-"I get Error: Command failed  kubectl create clusterrolebinding add-on-cluster-admin --clusterrole cluster-admin --serviceaccount kube-system:default, help!"
+"I get `Error: Command failed kubectl create clusterrolebinding add-on-cluster-admin --clusterrole cluster-admin --serviceaccount kube-system:default`, help!"
 
-It may already exist through your use of Minikube before with RBAC. Delete any existing clusterrolebinding with the above name and then repeat the `jx create cluster minikube` command.
+It may already exist through your use of Minikube before with RBAC. Delete any existing cluster role binding with the above name (`kubectl delete clusterrolebinding add-on-cluster-admin`) and then repeat the `jx create cluster minikube` command.
 
-If the above continues OK, you'll be greeted with `Please enter the name you wish to use with git:`.
+If the above proceeds OK, you'll be greeted with `Please enter the name you wish to use with git:`.
 
 * you can specify more cores than you actually have!
 
