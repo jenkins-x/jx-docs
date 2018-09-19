@@ -183,8 +183,13 @@ You'll be prompted for the amount of memory, cores, and disk size to use, and al
 
 A known good configuration on a 2015 model Macbook Pro is to use 8 GB of RAM, 3 cores, a 150 GB disk size and hyperkit. For installing hyperkit, see the [hyperkit installation documentation](https://github.com/kubernetes/minikube/blob/master/docs/drivers.md#hyperkit-driver).
 
-The disk size is particularly large as a number of images will need to be downloaded. For those looking to install a "bare minimum" Jenkins X simply to try it out, the following options can be used:
+The disk size is particularly large as a number of images will need to be downloaded. These are used by jx and here are the sizes at the time of this document:
 
+```
+jxpv1                           8Gi        RWO            Recycle          Bound       jx/jenkins-x-nexus                                                               5d
+jxpv2                           100Gi      RWO            Recycle          Bound       jx/jenkins-x-docker-registry                                                     6d
+jxpv3                           8Gi        RWO            Recycle          Bound       jx/jenkins-x-mongodb                                                             22h
+jxpv4                           30Gi       RWO            Recycle          Bound       jx/jenkins                                    ```                                 6d
 
 "I get error creating cluster exit status 1, or it seems to hang - what should I do?"
 Check to see if `minikube status` reports that minikube is actually already running. If it is, do `minikube stop` and then repeat the cluster creation process. Removing your ~/.minikube directory is also known to help: you want to make sure you have a clean environment with a working driver installed before attemping to run `jx create cluster minikube`.
