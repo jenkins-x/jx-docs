@@ -197,8 +197,9 @@ jxpv4                           30Gi       RWO            Recycle          Bound
 Check to see if `minikube status` reports that minikube is actually already running. If it is, do `minikube stop` and then repeat the cluster creation process. Removing your `~/.minikube` directory is also known to help: you want to make sure you have a clean environment with a working driver installed before attemping to run `jx create cluster minikube`.
 
 "I get Error: Command failed  kubectl create clusterrolebinding add-on-cluster-admin --clusterrole cluster-admin --serviceaccount kube-system:default, help!"
+It may already exist through your use of Minikube before with RBAC. Delete any existing clusterrolebinding with the above name and then repeat the `jx create cluster minikube` command.
 
-You need to...
+If the above continues OK, you'll be greeted with `Please enter the name you wish to use with git:`.
 
 * you can specify more cores than you actually have!
 
