@@ -181,7 +181,7 @@ If you still want to try minikube then we recommend letting jx create the cluste
     
 You'll be prompted for the amount of memory, cores, and disk size to use, and also the driver.
 
-A known good configuration on a 2015 model Macbook Pro is to use 8 GB of RAM, 3 cores, a 150 GB disk size and hyperkit. For installing hyperkit, see the [hyperkit installation documentation](https://github.com/kubernetes/minikube/blob/master/docs/drivers.md#hyperkit-driver).
+A known good configuration on a 2015 model Macbook Pro is to use 8 GB of RAM, 8 cores*, a 150 GB disk size and hyperkit. For installing hyperkit, see the [hyperkit installation documentation](https://github.com/kubernetes/minikube/blob/master/docs/drivers.md#hyperkit-driver).
 
 The disk size is particularly large as a number of images will need to be downloaded. These are used by jx and here are the sizes at the time of this document:
 
@@ -194,7 +194,13 @@ jxpv4                           30Gi       RWO            Recycle          Bound
 
 "I get error creating cluster exit status 1, or it seems to hang - what should I do?"
 
-Check to see if `minikube status` reports that minikube is actually already running. If it is, do `minikube stop` and then repeat the cluster creation process. Removing your ~/.minikube directory is also known to help: you want to make sure you have a clean environment with a working driver installed before attemping to run `jx create cluster minikube`.
+Check to see if `minikube status` reports that minikube is actually already running. If it is, do `minikube stop` and then repeat the cluster creation process. Removing your `~/.minikube` directory is also known to help: you want to make sure you have a clean environment with a working driver installed before attemping to run `jx create cluster minikube`.
+
+"I get Error: Command failed  kubectl create clusterrolebinding add-on-cluster-admin --clusterrole cluster-admin --serviceaccount kube-system:default, help!"
+
+You need to...
+
+* you can specify more cores than you actually have!
 
 Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
 
