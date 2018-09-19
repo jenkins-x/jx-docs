@@ -198,7 +198,7 @@ Check to see if `minikube status` reports that minikube is actually already runn
 
 "I get `Error: Command failed kubectl create clusterrolebinding add-on-cluster-admin --clusterrole cluster-admin --serviceaccount kube-system:default`, help!"
 
-It may already exist through your use of Minikube before with RBAC. Delete any existing cluster role binding with the above name (`kubectl delete clusterrolebinding add-on-cluster-admin`) and then repeat the `jx create cluster minikube` command.
+The cluster role binding may exist through your use of Minikube before with RBAC. Delete any existing cluster role binding with the above name (`kubectl delete clusterrolebinding add-on-cluster-admin`) and then repeat the `jx create cluster minikube` command.
 
 If the above proceeds OK, you'll be greeted with `Please enter the name you wish to use with git:`.
 
