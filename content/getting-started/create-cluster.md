@@ -175,9 +175,22 @@ Some folks have trouble getting minikube to work for a variety of reasons:
 
 So we **highly** recommend using one of the public clouds above to try out Jenkins X. They all have free tiers so it should not cost you any significant cash and it'll give you a chance to try out the cloud.
 
-If you still want to try minikube then we recommend letting jx create cluster for you (as opposed to installing jx into existing minikube cluster) by running:
+If you still want to try minikube then we recommend letting jx create the cluster for you (as opposed to installing jx into an existing minikube cluster) by running:
 
     jx create cluster minikube
+    
+You'll be prompted for the amount of memory, cores, and disk size to use, and also the driver.
+
+A known good configuration on a 2015 model Macbook Pro is to use the default values for resources (4 GB of RAM, 3 cores, a 150 GB disk size) and Virtualbox.
+
+The disk size is particularly large as a number of images will need to be downloaded. For those looking to install a "bare minimum" Jenkins X simply to try it out, the following options can be used:
+
+
+If it's taking a while, ensure the process is still alive (for example with `ps -ef | grep minikube")`, and we then went to take a look at the logs. Do so with 
+
+"I get error creating cluster exit status 1, what should I do?"
+Check to see if `minikube status` reports that minikube is actually already running. If it is, do `minikube stop` and then repeat the cluster creation process.
+
 
 Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
 
