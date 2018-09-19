@@ -1,6 +1,6 @@
 ---
-title: Extending
-linktitle: Extending
+title: Overview
+linktitle: Extending Jenkins X
 description: Extending Jenkins X
 date: 2018-09-04
 publishdate: 2018-09-04
@@ -16,6 +16,9 @@ draft: false
 aliases: [/extending/]
 toc: false
 ---
+
+> This guide is still a work in progress!
+
 
 In this guide we will explore the extension points that Jenkins X offers.
 
