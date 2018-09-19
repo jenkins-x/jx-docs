@@ -189,9 +189,11 @@ The disk size is particularly large as a number of images will need to be downlo
 jxpv1                           8Gi        RWO            Recycle          Bound       jx/jenkins-x-nexus                                                               5d
 jxpv2                           100Gi      RWO            Recycle          Bound       jx/jenkins-x-docker-registry                                                     6d
 jxpv3                           8Gi        RWO            Recycle          Bound       jx/jenkins-x-mongodb                                                             22h
-jxpv4                           30Gi       RWO            Recycle          Bound       jx/jenkins                                    ```                                 6d
+jxpv4                           30Gi       RWO            Recycle          Bound       jx/jenkins                                                                    6d
+```
 
 "I get error creating cluster exit status 1, or it seems to hang - what should I do?"
+
 Check to see if `minikube status` reports that minikube is actually already running. If it is, do `minikube stop` and then repeat the cluster creation process. Removing your ~/.minikube directory is also known to help: you want to make sure you have a clean environment with a working driver installed before attemping to run `jx create cluster minikube`.
 
 Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
