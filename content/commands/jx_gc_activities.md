@@ -1,5 +1,5 @@
 ---
-date: 2018-09-20T05:37:50Z
+date: 2018-09-20T09:15:49Z
 title: "jx gc activities"
 slug: jx_gc_activities
 url: /commands/jx_gc_activities/
@@ -26,8 +26,14 @@ jx gc activities [flags]
 ### Options
 
 ```
+  -b, --batch-mode                   In batch mode the command never prompts for user input
+      --headless                     Enable headless operation if using browser automation
   -h, --help                         help for activities
+      --install-dependencies         Should any required dependencies be installed automatically
+      --no-brew                      Disables the use of brew on MacOS to install or upgrade command line dependencies
   -l, --revision-history-limit int   Minimum number of Activities per application to keep (default 5)
+      --skip-auth-secrets-merge      Skips merging a local git auth yaml file with any pipeline secrets that are found
+      --verbose                      Enable verbose logging
 ```
 
 ### SEE ALSO
