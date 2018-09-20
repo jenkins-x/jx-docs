@@ -179,6 +179,13 @@ Otherwise the `jx install` will try and wait for the Ingress Controllers `Servic
 
 If you already have an ingress controller installed then try:
 
+    jx install --provider=kubernetes \
+    --skip-ingress \
+    --external-ip=10.20.30.40 \
+    --domain=10.20.30.40.nip.io
+
+If you do not know the domain or want it extracted from your Ingress deployment try
+
     jx install --provider=kubernetes --external-ip 10.123.0.17 \
     --ingress-service=$(yoursvcname) \
     --ingress-deployment=$(yourdeployname) \
