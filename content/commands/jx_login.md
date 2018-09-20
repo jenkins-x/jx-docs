@@ -1,5 +1,5 @@
 ---
-date: 2018-09-20T18:39:10Z
+date: 2018-09-20T19:44:20Z
 title: "jx login"
 slug: jx_login
 url: /commands/jx_login/
@@ -22,14 +22,18 @@ jx login [flags]
 
 ```
   # Onboard into CloudBees application
-  jx login
+  jx login -u https://cloudbees-app-url
+  
+  # Onboard into CloudBees application and switched to team 'cheese'
+  jx login -u https://cloudbees-app-url -t cheese
 ```
 
 ### Options
 
 ```
-  -h, --help         help for login
-  -u, --url string   The URL of the CloudBees application
+  -h, --help          help for login
+  -t, --team string   The team to use upon login
+  -u, --url string    The URL of the CloudBees application
 ```
 
 ### SEE ALSO
