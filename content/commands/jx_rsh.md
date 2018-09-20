@@ -1,5 +1,5 @@
 ---
-date: 2018-09-20T09:15:49Z
+date: 2018-09-20T09:43:07Z
 title: "jx rsh"
 slug: jx_rsh
 url: /commands/jx_rsh/
@@ -35,14 +35,15 @@ jx rsh [deploymentOrPodName] [flags]
 ### Options
 
 ```
-  -c, --container string   The name of the container to log
-  -d, --devpod             Connect to a DevPod
-  -e, --execute string     Execute this command on the remote container (default "bash")
-  -h, --help               help for rsh
-  -n, --namespace string   the namespace to look for the Deployment. Defaults to the current namespace
-  -p, --pod string         the pod name to use
-  -s, --shell string       Path to the shell command
-      --username string    The username to create the DevPod. If not specified defaults to the current operating system user or $USER'
+  -c, --container string     The name of the container to log
+  -d, --devpod               Connect to a DevPod
+      --environment string   The environment in which to look for the Deployment. Defaults to the current environment
+  -e, --execute string       Execute this command on the remote container (default "bash")
+  -h, --help                 help for rsh
+  -n, --namespace string     the namespace to look for the Deployment. Defaults to the current namespace
+  -p, --pod string           the pod name to use
+  -s, --shell string         Path to the shell command
+      --username string      The username to create the DevPod. If not specified defaults to the current operating system user or $USER'
 ```
 
 ### SEE ALSO
