@@ -44,6 +44,22 @@ curl -L https://github.com/jenkins-x/jx/releases/download/v{{< version >}}/jx-li
 export PATH=$PATH:~/.jx/bin
 echo 'export PATH=$PATH:~/.jx/bin' >> ~/.bashrc
 ```
+
+### Windows
+
+If you use Chocolatey, then there is a [package available](https://chocolatey.org/packages/jenkins-x).
+
+To install the `jx` binary run:
+
+```cmd
+choco install jenkins-x
+```
+
+To upgrade the `jx` binary run:
+
+```cmd
+choco upgrade jenkins-x
+```
     
 ### Other platforms
     
