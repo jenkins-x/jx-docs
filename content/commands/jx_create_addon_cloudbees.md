@@ -1,5 +1,5 @@
 ---
-date: 2018-09-21T07:59:42Z
+date: 2018-09-21T14:18:35Z
 title: "jx create addon cloudbees"
 slug: jx_create_addon_cloudbees
 url: /commands/jx_create_addon_cloudbees/
@@ -30,6 +30,7 @@ jx create addon cloudbees [flags]
 ### Options
 
 ```
+      --basic                     Enable basic auth
   -b, --batch-mode                In batch mode the command never prompts for user input
       --headless                  Enable headless operation if using browser automation
       --helm-update               Should we run helm update first to ensure we use the latest version (default true)
@@ -37,6 +38,7 @@ jx create addon cloudbees [flags]
       --install-dependencies      Should any required dependencies be installed automatically
   -n, --namespace string          The Namespace to install into (default "jx")
       --no-brew                   Disables the use of brew on MacOS to install or upgrade command line dependencies
+  -p, --password string           Password to access UI when using basic auth.  Defaults to default Jenkins X admin password.
   -r, --release string            The chart release name (default "cb")
   -s, --set string                The chart set values (can specify multiple or separate values with commas: key1=val1,key2=val2)
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
