@@ -1,5 +1,5 @@
 ---
-date: 2018-09-21T05:12:38Z
+date: 2018-09-21T05:47:01Z
 title: "jx import"
 slug: jx_import
 url: /commands/jx_import/
