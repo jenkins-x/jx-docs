@@ -97,6 +97,12 @@ pygmentsStyle = "friendly"
       url = "/zh/architecture/"
       post = "break"
     [[languages.zh.menu.docs]]
+      name = "扩展"
+      weight = 30
+      identifier = "extending"
+      url = "/zh/extending/"
+      post = "break"
+    [[languages.zh.menu.docs]]
       name = "命令行"
       weight = 40
       identifier = "commands"
