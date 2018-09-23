@@ -10,9 +10,9 @@ keywords: [install,kubernetes]
 menu:
   docs:
     parent: "getting-started"
-    weight: 30
-weight: 30
-sections_weight: 30
+    weight: 40
+weight: 40
+sections_weight: 40
 draft: false
 toc: true
 ---
@@ -27,7 +27,7 @@ Helm 2.x normally requires a cluster-side component - called tiller, that Jenkin
 
 ### Install client binary for your cluster
 
-If you are using a public cloud, there will be an associated CLI for interacting with it. When install is called via the [jx create aws](/getting-started/create-cluster/) command, the associated binary to your cloud provider will also be installed, if not present on your command shell path.
+If you are using a public cloud, there will be an associated CLI for interacting with it. When install is called via the [jx create cluster](/getting-started/create-cluster/) command, the associated binary to your cloud provider will also be installed, if not present on your command shell path.
 
 ### Create the Jenkins X platform namespace
 
