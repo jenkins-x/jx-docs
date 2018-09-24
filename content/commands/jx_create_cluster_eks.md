@@ -1,5 +1,5 @@
 ---
-date: 2018-09-24T08:01:05Z
+date: 2018-09-24T09:50:51Z
 title: "jx create cluster eks"
 slug: jx_create_cluster_eks
 url: /commands/jx_create_cluster_eks/
@@ -69,6 +69,7 @@ jx create cluster eks [flags]
       --namespace string                    The namespace the Jenkins X platform should be installed into (default "jx")
       --no-brew                             Disables the use of brew on MacOS to install or upgrade command line dependencies
       --no-default-environments             Disables the creation of the default Staging and Production environments
+      --node-type string                    node instance type (default "m5.large")
   -o, --nodes int                           number of nodes (default -1)
       --nodes-max int                       maximum number of nodes (default -1)
       --nodes-min int                       minimum number of nodes (default -1)

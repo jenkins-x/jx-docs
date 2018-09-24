@@ -1,5 +1,5 @@
 ---
-date: 2018-09-24T08:01:05Z
+date: 2018-09-24T09:50:51Z
 title: "jx delete addon gitea"
 slug: jx_delete_addon_gitea
 url: /commands/jx_delete_addon_gitea/
