@@ -108,6 +108,20 @@ It basically happens if you have an old API token in `~/.jx/jenkinsAuth.yaml` fo
 
     jx delete jenkins token admin
 
+## git errors: POST 401 Bad credentials
+
+This indicates your git API token either was input incorrectly or has been regenerated and is now incorrect.
+
+To recreate it with a new API token value try the following (changing the git server name to match your git provider):
+
+```
+jx delete git token -n GitHub admin
+jx create token -n GitHub admin
+```
+
+More details on [using git and Jenkins X here](/developing/git/)
+
+
 ## Invalid git token to scan a project
 
 If you get an error in Jenkins when it tries to scan your repositories for branches something like:
