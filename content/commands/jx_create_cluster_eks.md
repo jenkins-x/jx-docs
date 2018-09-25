@@ -1,5 +1,5 @@
 ---
-date: 2018-09-25T04:17:12Z
+date: 2018-09-25T07:32:08Z
 title: "jx create cluster eks"
 slug: jx_create_cluster_eks
 url: /commands/jx_create_cluster_eks/
@@ -52,6 +52,7 @@ jx create cluster eks [flags]
       --global-tiller                       Whether or not to use a cluster global tiller (default true)
       --headless                            Enable headless operation if using browser automation
       --helm-client-only                    Only install helm client
+      --helm-template                       If enabled we use helm template mode to generate the YAML then we use 'kubectl apply' to install it to avoid using server side tiller
       --helm-tls                            Whether to use TLS with helm
       --helm3                               Use helm3 to install Jenkins X which does not use Tiller
   -h, --help                                help for eks
@@ -93,7 +94,7 @@ jx create cluster eks [flags]
       --username string                     The kubernetes username used to initialise helm. Usually your email address for your kubernetes account
       --verbose                             Enable verbose logging
       --version string                      The specific platform version to install
-  -z, --zones string                        Availability zones. Auto-select if not specified. If provided, this overrides the $EKS_AVAILABILITY_ZONES environment variable
+  -z, --zones string                        Availability Zones. Auto-select if not specified. If provided, this overrides the $EKS_AVAILABILITY_ZONES environment variable
 ```
 
 ### SEE ALSO

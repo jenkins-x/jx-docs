@@ -1,5 +1,5 @@
 ---
-date: 2018-09-25T04:17:12Z
+date: 2018-09-25T07:32:08Z
 title: "jx create cluster aws"
 slug: jx_create_cluster_aws
 url: /commands/jx_create_cluster_aws/
@@ -54,6 +54,7 @@ jx create cluster aws [flags]
       --global-tiller                       Whether or not to use a cluster global tiller (default true)
       --headless                            Enable headless operation if using browser automation
       --helm-client-only                    Only install helm client
+      --helm-template                       If enabled we use helm template mode to generate the YAML then we use 'kubectl apply' to install it to avoid using server side tiller
       --helm-tls                            Whether to use TLS with helm
       --helm3                               Use helm3 to install Jenkins X which does not use Tiller
   -h, --help                                help for aws
@@ -95,7 +96,7 @@ jx create cluster aws [flags]
       --username string                     The kubernetes username used to initialise helm. Usually your email address for your kubernetes account
       --verbose                             Enable verbose logging
       --version string                      The specific platform version to install
-  -z, --zones string                        Availability zones. Defaults to $AWS_AVAILABILITY_ZONES
+  -z, --zones string                        Availability Zones. Defaults to $AWS_AVAILABILITY_ZONES
 ```
 
 ### SEE ALSO

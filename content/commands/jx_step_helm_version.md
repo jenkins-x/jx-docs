@@ -1,25 +1,26 @@
 ---
 date: 2018-09-25T07:32:08Z
-title: "jx step helm release"
-slug: jx_step_helm_release
-url: /commands/jx_step_helm_release/
+title: "jx step helm version"
+slug: jx_step_helm_version
+url: /commands/jx_step_helm_version/
 ---
-## jx step helm release
+## jx step helm version
 
-Releases the helm chart in the current directory
+Updates the chart version in the given directory
 
 ### Synopsis
 
-This pipeline step releases the Helm chart in the current directory
+Updates version of the helm Chart.yaml in the given directory
 
 ```
-jx step helm release [flags]
+jx step helm version [flags]
 ```
 
 ### Examples
 
 ```
-  jx step helm release
+  # output the helm environment variables that should be set to use helm directly
+  jx step helm env
 ```
 
 ### Options
@@ -28,7 +29,8 @@ jx step helm release [flags]
       --clone-https git@foo/bar.git   Clone the environment git repo over https rather than ssh which uses git@foo/bar.git (default true)
   -d, --dir string                    The directory containing the helm chart to apply (default ".")
       --git-provider string           The Git provider for the environment Git repository (default "github.com")
-  -h, --help                          help for release
+  -h, --help                          help for version
+  -v, --version string                The version to update. If none specified it defaults to $BUILD_NUMBER
 ```
 
 ### SEE ALSO
