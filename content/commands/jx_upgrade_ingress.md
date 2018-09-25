@@ -1,5 +1,5 @@
 ---
-date: 2018-09-25T19:27:14Z
+date: 2018-09-25T21:48:10Z
 title: "jx upgrade ingress"
 slug: jx_upgrade_ingress
 url: /commands/jx_upgrade_ingress/
@@ -29,6 +29,7 @@ jx upgrade ingress [flags]
       --cluster                  Enable cluster wide Ingress upgrade
   -h, --help                     help for ingress
       --namespaces stringArray   Namespaces to upgrade
+      --services stringArray     Services to upgrdde
       --skip-certmanager         Skips certmanager installation
 ```
 
