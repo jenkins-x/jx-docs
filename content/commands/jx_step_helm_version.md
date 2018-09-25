@@ -1,5 +1,5 @@
 ---
-date: 2018-09-25T09:29:45Z
+date: 2018-09-25T15:24:19Z
 title: "jx step helm version"
 slug: jx_step_helm_version
 url: /commands/jx_step_helm_version/
@@ -19,8 +19,8 @@ jx step helm version [flags]
 ### Examples
 
 ```
-  # output the helm environment variables that should be set to use helm directly
-  jx step helm env
+  # updates the current helm Chart.yaml to the latest build number version
+  jx step helm version
 ```
 
 ### Options
