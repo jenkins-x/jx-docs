@@ -8,7 +8,7 @@ menu:
   docs:
     parent: "faq"
 keywords: [faqs]
-weight: 20
+weight: 4
 toc: true
 aliases: [/faq/]
 ---
@@ -107,6 +107,20 @@ It basically happens if you have an old API token in `~/.jx/jenkinsAuth.yaml` fo
 * run the following command [jx delete jenkins token](https://jenkins-x.io/commands/jx_delete_jenkins_user/):
 
     jx delete jenkins token admin
+
+## git errors: POST 401 Bad credentials
+
+This indicates your git API token either was input incorrectly or has been regenerated and is now incorrect.
+
+To recreate it with a new API token value try the following (changing the git server name to match your git provider):
+
+```
+jx delete git token -n GitHub admin
+jx create token -n GitHub admin
+```
+
+More details on [using git and Jenkins X here](/developing/git/)
+
 
 ## Invalid git token to scan a project
 

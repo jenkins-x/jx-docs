@@ -8,7 +8,7 @@ menu:
   docs:
     parent: "faq"
 keywords: [faqs]
-weight: 2
+weight: 4
 toc: true
 aliases: [/faq/]
 ---
