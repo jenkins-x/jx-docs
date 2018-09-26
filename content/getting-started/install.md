@@ -47,7 +47,7 @@ echo 'export PATH=$PATH:~/.jx/bin' >> ~/.bashrc
 
 ### Windows
 
-If you use Chocolatey, then there is a [package available](https://chocolatey.org/packages/jenkins-x).
+If you use [Chocolatey](https://chocolatey.org/), then there is a [package available](https://chocolatey.org/packages/jenkins-x).
 
 To install the `jx` binary run:
 
