@@ -1,5 +1,5 @@
 ---
-date: 2018-09-26T16:42:28Z
+date: 2018-09-26T17:06:47Z
 title: "jx step blog"
 slug: jx_step_blog
 url: /commands/jx_step_blog/
