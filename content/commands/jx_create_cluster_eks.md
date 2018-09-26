@@ -1,5 +1,5 @@
 ---
-date: 2018-09-26T10:56:07Z
+date: 2018-09-26T11:31:36Z
 title: "jx create cluster eks"
 slug: jx_create_cluster_eks
 url: /commands/jx_create_cluster_eks/
@@ -78,7 +78,7 @@ jx create cluster eks [flags]
   -p, --profile string                      AWS profile to use. If provided, this overrides the AWS_PROFILE environment variable
       --prow                                Enable prow
       --recreate-existing-draft-repos       Delete existing helm repos used by Jenkins X under ~/draft/packs
-  -r, --region string                       The region to use. (default "us-west-2")
+  -r, --region string                       The region to use. Default: us-west-2
       --register-local-helmrepo             Registers the Jenkins X chartmuseum registry with your helm client [default false]
       --skip-auth-secrets-merge             Skips merging a local git auth yaml file with any pipeline secrets that are found
       --skip-ingress                        Dont install an ingress controller
