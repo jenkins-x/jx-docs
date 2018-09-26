@@ -1,5 +1,5 @@
 ---
-date: 2018-09-26T18:02:06Z
+date: 2018-09-26T18:57:17Z
 title: "jx step report releases"
 slug: jx_step_report_releases
 url: /commands/jx_step_report_releases/
