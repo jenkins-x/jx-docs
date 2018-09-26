@@ -1,12 +1,12 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx delete repo"
 slug: jx_delete_repo
 url: /commands/jx_delete_repo/
 ---
 ## jx delete repo
 
-Deletes one or more git repositories
+Deletes one or more Git repositories
 
 ### Synopsis
 
@@ -23,7 +23,7 @@ jx delete repo [flags]
 ### Examples
 
 ```
-  # Selects the repositories to delete from the given github organisation
+  # Selects the repositories to delete from the given GitHub organisation
   jx delete repo --github --org myname
   
   # Selects all the repositories in organisation myname that contain 'foo'
@@ -34,14 +34,14 @@ jx delete repo [flags]
 ### Options
 
 ```
-  -a, --all                If selecting projects to import from a git provider this defaults to selecting them all
+  -a, --all                If selecting projects to import from a Git provider this defaults to selecting them all
   -b, --batch-mode         Run without being prompted. WARNING! You will not be asked to confirm deletions if you use this flag.
-  -f, --filter string      If selecting projects to import from a git provider this filters the list of repositories
+  -f, --filter string      If selecting projects to import from a Git provider this filters the list of repositories
   -g, --git-host string    The Git server host if not using GitHub
       --github             If you wish to pick the repositories from GitHub to import
   -h, --help               help for repo
-  -n, --name stringArray   Specify the git repository names to delete
-  -o, --org string         Specify the git provider organisation that includes the repository to delete
+  -n, --name stringArray   Specify the Git repository names to delete
+  -o, --org string         Specify the Git provider organisation that includes the repository to delete
 ```
 
 ### SEE ALSO

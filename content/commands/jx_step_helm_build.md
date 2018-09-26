@@ -1,5 +1,5 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx step helm build"
 slug: jx_step_helm_build
 url: /commands/jx_step_helm_build/
@@ -29,7 +29,7 @@ jx step helm build [flags]
 
 ```
   -b, --batch-mode                    In batch mode the command never prompts for user input
-      --clone-https git@foo/bar.git   Clone the environment git repo over https rather than ssh which uses git@foo/bar.git (default true)
+      --clone-https git@foo/bar.git   Clone the environment Git repo over https rather than ssh which uses git@foo/bar.git (default true)
   -d, --dir string                    The directory containing the helm chart to apply (default ".")
       --git-provider string           The Git provider for the environment Git repository (default "github.com")
       --headless                      Enable headless operation if using browser automation

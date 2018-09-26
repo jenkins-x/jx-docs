@@ -1,12 +1,12 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx namespace"
 slug: jx_namespace
 url: /commands/jx_namespace/
 ---
 ## jx namespace
 
-View or change the current namespace context in the current kubernetes cluster
+View or change the current namespace context in the current Kubernetes cluster
 
 ### Synopsis
 

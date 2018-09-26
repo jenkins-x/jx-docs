@@ -1,16 +1,16 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx import"
 slug: jx_import
 url: /commands/jx_import/
 ---
 ## jx import
 
-Imports a local project or git repository into Jenkins
+Imports a local project or Git repository into Jenkins
 
 ### Synopsis
 
-Imports a local folder or git repository into Jenkins X. 
+Imports a local folder or Git repository into Jenkins X. 
 
 If you specify no other options or arguments then the current directory is imported. Or you can use '--dir' to specify a directory to import. 
 
@@ -31,34 +31,34 @@ jx import [flags]
   # Import a different folder
   jx import /foo/bar
   
-  # Import a git repository from a URL
+  # Import a Git repository from a URL
   jx import --url https://github.com/jenkins-x/spring-boot-web-example.git
   
-  # Select a number of repositories from a github organisation
+  # Select a number of repositories from a GitHub organisation
   jx import --github --org myname
   
-  # Import all repositories from a github organisation selecting ones to not import
+  # Import all repositories from a GitHub organisation selecting ones to not import
   jx import --github --org myname --all
   
-  # Import all repositories from a github organisation which contain the text foo
+  # Import all repositories from a GitHub organisation which contain the text foo
   jx import --github --org myname --all --filter foo
 ```
 
 ### Options
 
 ```
-      --all                            If selecting projects to import from a git provider this defaults to selecting them all
+      --all                            If selecting projects to import from a Git provider this defaults to selecting them all
   -b, --batch-mode                     In batch mode the command never prompts for user input
       --branches string                The branch pattern for branches to trigger CI/CD pipelines on
   -c, --credentials string             The Jenkins credentials name used by the job
-      --default-owner string           The default user/organisation used if no user is found for the current git repository being imported (default "someone")
-      --docker-registry-org string     The name of the docker registry organisation to use. If not specified then the git provider organisation will be used
+      --default-owner string           The default user/organisation used if no user is found for the current Git repository being imported (default "someone")
+      --docker-registry-org string     The name of the docker registry organisation to use. If not specified then the Git provider organisation will be used
       --dry-run                        Performs local changes to the repo but skips the import into Jenkins X
-      --filter string                  If selecting projects to import from a git provider this filters the list of repositories
-      --git-api-token string           The git API token to use for creating new git repositories
-      --git-private                    Create new git repositories as private
-      --git-provider-url string        The git server URL to create new git repositories inside
-      --git-username string            The git username to use for creating new git repositories
+      --filter string                  If selecting projects to import from a Git provider this filters the list of repositories
+      --git-api-token string           The Git API token to use for creating new Git repositories
+      --git-private                    Create new Git repositories as private
+      --git-provider-url string        The Git server URL to create new Git repositories inside
+      --git-username string            The Git username to use for creating new Git repositories
       --github                         If you wish to pick the repositories from GitHub to import
       --headless                       Enable headless operation if using browser automation
   -h, --help                           help for import
@@ -66,11 +66,11 @@ jx import [flags]
       --install-dependencies           Should any required dependencies be installed automatically
   -j, --jenkinsfile string             The name of the Jenkinsfile to use. If not specified then 'Jenkinsfile' will be used
       --list-packs                     list available draft packs
-      --name string                    Specify the git repository name to import the project into (if it is not already in one) (default "n")
+      --name string                    Specify the Git repository name to import the project into (if it is not already in one) (default "n")
       --no-brew                        Disables the use of brew on MacOS to install or upgrade command line dependencies
       --no-draft                       Disable Draft from trying to default a Dockerfile and Helm Chart
       --no-jenkinsfile                 Disable defaulting a Jenkinsfile if its missing
-      --org string                     Specify the git provider organisation to import the project into (if it is not already in one)
+      --org string                     Specify the Git provider organisation to import the project into (if it is not already in one)
       --pack string                    The name of the pack to use
       --skip-auth-secrets-merge        Skips merging a local git auth yaml file with any pipeline secrets that are found
   -u, --url string                     The git clone URL to clone into the current directory and then import

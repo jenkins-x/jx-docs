@@ -1,5 +1,5 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx step helm install"
 slug: jx_step_helm_install
 url: /commands/jx_step_helm_install/
@@ -26,7 +26,7 @@ jx step helm install [flags]
 ### Options
 
 ```
-      --clone-https git@foo/bar.git   Clone the environment git repo over https rather than ssh which uses git@foo/bar.git (default true)
+      --clone-https git@foo/bar.git   Clone the environment Git repo over https rather than ssh which uses git@foo/bar.git (default true)
   -d, --dir string                    The directory containing the helm chart to apply (default ".")
       --git-provider string           The Git provider for the environment Git repository (default "github.com")
   -h, --help                          help for install

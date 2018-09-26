@@ -1,12 +1,12 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx delete git token"
 slug: jx_delete_git_token
 url: /commands/jx_delete_git_token/
 ---
 ## jx delete git token
 
-Deletes one or more api tokens for a user on a git server
+Deletes one or more api tokens for a user on a Git server
 
 ### Synopsis
 
@@ -27,8 +27,8 @@ jx delete git token [flags]
 
 ```
   -h, --help          help for token
-  -n, --name string   The name of the git server to add a user
-  -u, --url string    The URL of the git server to add a user
+  -n, --name string   The name of the Git server to add a user
+  -u, --url string    The URL of the Git server to add a user
 ```
 
 ### SEE ALSO

@@ -1,5 +1,5 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx step pr comment"
 slug: jx_step_pr_comment
 url: /commands/jx_step_pr_comment/
@@ -25,9 +25,9 @@ jx step pr comment [flags]
   -h, --help                      help for comment
       --install-dependencies      Should any required dependencies be installed automatically
       --no-brew                   Disables the use of brew on MacOS to install or upgrade command line dependencies
-  -o, --owner string              git organisation / owner
-  -p, --pull-request string       git pull request number
-  -r, --repository string         git repository
+  -o, --owner string              Git organisation / owner
+  -p, --pull-request string       Git Pull Request number
+  -r, --repository string         Git repository
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
       --verbose                   Enable verbose logging
 ```

@@ -1,16 +1,16 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx create cluster gke terraform"
 slug: jx_create_cluster_gke_terraform
 url: /commands/jx_create_cluster_gke_terraform/
 ---
 ## jx create cluster gke terraform
 
-Create a new kubernetes cluster on GKE using Terraform: Runs on Google Cloud
+Create a new Kubernetes cluster on GKE using Terraform: Runs on Google Cloud
 
 ### Synopsis
 
-This command creates a new kubernetes cluster on GKE, installing required local dependencies and provisions the Jenkins X platform 
+This command creates a new Kubernetes cluster on GKE, installing required local dependencies and provisions the Jenkins X platform 
 
 You can see a demo of this command here: https://jenkins-x.io/demos/create_cluster_gke/
 
@@ -33,23 +33,23 @@ jx create cluster gke terraform [flags]
 ```
   -b, --batch-mode                          In batch mode the command never prompts for user input
       --cleanup-temp-files                  Cleans up any temporary values.yaml used by helm install [default true] (default true)
-      --cloud-environment-repo string       Cloud Environments git repo (default "https://github.com/jenkins-x/cloud-environments")
+      --cloud-environment-repo string       Cloud Environments Git repo (default "https://github.com/jenkins-x/cloud-environments")
   -n, --cluster-name string                 The name of this cluster, default is a random generated name
       --default-admin-password string       the default admin password to access Jenkins, Kubernetes Dashboard, Chartmuseum and Nexus
-      --default-environment-prefix string   Default environment repo prefix, your git repos will be of the form 'environment-$prefix-$envName'
+      --default-environment-prefix string   Default environment repo prefix, your Git repos will be of the form 'environment-$prefix-$envName'
   -d, --disk-size string                    Size in GB for node VM boot disks. Defaults to 100GB (default "100")
       --docker-registry string              The Docker Registry host or host:port which is used when tagging and pushing images. If not specified it defaults to the internal registry unless there is a better provider default (e.g. ECR on AWS/EKS)
       --domain string                       Domain to expose ingress endpoints.  Example: jenkinsx.io
       --draft-client-only                   Only install draft client
       --enable-autoupgrade                  Sets autoupgrade feature for a cluster's default node-pool(s)
-      --environment-git-owner string        The git provider organisation to create the environment git repositories in
+      --environment-git-owner string        The Git provider organisation to create the environment Git repositories in
       --exposecontroller-pathmode path      The ExposeController path mode for how services should be exposed as URLs. Defaults to using subnets. Use a value of path to use relative paths within the domain host such as when using AWS ELB host names
       --exposer string                      Used to describe which strategy exposecontroller should use to access applications (default "Ingress")
-      --external-ip string                  The external IP used to access ingress endpoints from outside the kubernetes cluster. For bare metal on premise clusters this is often the IP of the kubernetes master. For cloud installations this is often the external IP of the ingress LoadBalancer.
-      --git-api-token string                The git API token to use for creating new git repositories
-      --git-private                         Create new git repositories as private
-      --git-provider-url string             The git server URL to create new git repositories inside
-      --git-username string                 The git username to use for creating new git repositories
+      --external-ip string                  The external IP used to access ingress endpoints from outside the Kubernetes cluster. For bare metal on premise clusters this is often the IP of the Kubernetes master. For cloud installations this is often the external IP of the ingress LoadBalancer.
+      --git-api-token string                The Git API token to use for creating new Git repositories
+      --git-private                         Create new Git repositories as private
+      --git-provider-url string             The Git server URL to create new Git repositories inside
+      --git-username string                 The Git username to use for creating new Git repositories
       --global-tiller                       Whether or not to use a cluster global tiller (default true)
       --headless                            Enable headless operation if using browser automation
       --helm-client-only                    Only install helm client
@@ -74,24 +74,24 @@ jx create cluster gke terraform [flags]
       --namespace string                    The namespace the Jenkins X platform should be installed into (default "jx")
       --no-brew                             Disables the use of brew on MacOS to install or upgrade command line dependencies
       --no-default-environments             Disables the creation of the default Staging and Production environments
-      --on-premise                          If installing on an on premise cluster then lets default the 'external-ip' to be the kubernetes master IP address
+      --on-premise                          If installing on an on premise cluster then lets default the 'external-ip' to be the Kubernetes master IP address
   -p, --project-id string                   Google Project ID to create cluster in
       --prow                                Enable prow
       --recreate-existing-draft-repos       Delete existing helm repos used by Jenkins X under ~/draft/packs
       --register-local-helmrepo             Registers the Jenkins X chartmuseum registry with your helm client [default false]
       --service-account string              Use a service account to login to GCE
       --skip-auth-secrets-merge             Skips merging a local git auth yaml file with any pipeline secrets that are found
-      --skip-ingress                        Dont install an ingress controller
+      --skip-ingress                        Don't install an ingress controller
       --skip-installation                   Provision cluster only, don't install Jenkins X into it
       --skip-login                          Skip Google auth if already logged in via gloud auth
-      --skip-tiller                         Don't install a Helms Tiller service
+      --skip-tiller                         Don't install a Helm Tiller service
       --tiller                              Whether or not to use tiller at all. If no tiller is enabled then its ran as a local process instead (default true)
       --tiller-cluster-role string          The cluster role for Helm's tiller (default "cluster-admin")
       --tiller-namespace string             The namespace for the Tiller when using a gloabl tiller (default "kube-system")
       --timeout string                      The number of seconds to wait for the helm install to complete (default "6000")
       --tls-acme string                     Used to enable automatic TLS for ingress (default "false")
       --user-cluster-role string            The cluster role for the current user to be able to administer helm (default "cluster-admin")
-      --username string                     The kubernetes username used to initialise helm. Usually your email address for your kubernetes account
+      --username string                     The Kubernetes username used to initialise helm. Usually your email address for your Kubernetes account
       --verbose                             Enable verbose logging
       --version string                      The specific platform version to install
   -z, --zone string                         The compute zone (e.g. us-central1-a) for the cluster
@@ -99,6 +99,6 @@ jx create cluster gke terraform [flags]
 
 ### SEE ALSO
 
-* [jx create cluster gke](/commands/jx_create_cluster_gke/)	 - Create a new kubernetes cluster on GKE: Runs on Google Cloud
+* [jx create cluster gke](/commands/jx_create_cluster_gke/)	 - Create a new Kubernetes cluster on GKE: Runs on Google Cloud
 
 ###### Auto generated by spf13/cobra on 26-Sep-2018

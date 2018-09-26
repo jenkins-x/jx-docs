@@ -1,5 +1,5 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx get build log"
 slug: jx_get_build_log
 url: /commands/jx_get_build_log/
@@ -10,7 +10,7 @@ Display a build log
 
 ### Synopsis
 
-Display the git server URLs.
+Display the Git server URLs.
 
 ```
 jx get build log [flags]
@@ -19,7 +19,7 @@ jx get build log [flags]
 ### Examples
 
 ```
-  # List all registered git server URLs
+  # List all registered Git server URLs
   jx get git
 ```
 

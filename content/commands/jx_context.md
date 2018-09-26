@@ -1,16 +1,16 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx context"
 slug: jx_context
 url: /commands/jx_context/
 ---
 ## jx context
 
-View or change the current kubernetes context (kubernetes cluster)
+View or change the current Kubernetes context (Kubernetes cluster)
 
 ### Synopsis
 
-Displays or changes the current kubernetes context (cluster).
+Displays or changes the current Kubernetes context (cluster).
 
 ```
 jx context [flags]

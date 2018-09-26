@@ -1,5 +1,5 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx delete"
 slug: jx_delete
 url: /commands/jx_delete/
@@ -36,7 +36,7 @@ jx delete TYPE [flags]
 * [jx delete application](/commands/jx_delete_application/)	 - Deletes one or many applications from Jenkins
 * [jx delete aws](/commands/jx_delete_aws/)	 - Deletes given AWS VPC and resources associated with it (like elastic load balancers or subnets)
 * [jx delete chat](/commands/jx_delete_chat/)	 - Deletes one or many chat services resources
-* [jx delete contexts](/commands/jx_delete_contexts/)	 - Deletes one or more kubernetes contexts
+* [jx delete contexts](/commands/jx_delete_contexts/)	 - Deletes one or more Kubernetes contexts
 * [jx delete devpod](/commands/jx_delete_devpod/)	 - Deletes one or many DevPods
 * [jx delete environment](/commands/jx_delete_environment/)	 - Deletes one or more Environments
 * [jx delete git](/commands/jx_delete_git/)	 - Deletes one or many git resources
@@ -44,7 +44,7 @@ jx delete TYPE [flags]
 * [jx delete post](/commands/jx_delete_post/)	 - Create a job which is triggered after a Preview is created
 * [jx delete preview](/commands/jx_delete_preview/)	 - Deletes a preview environment
 * [jx delete quickstartlocation](/commands/jx_delete_quickstartlocation/)	 - Deletes one or more quickstart locations for your team
-* [jx delete repo](/commands/jx_delete_repo/)	 - Deletes one or more git repositories
+* [jx delete repo](/commands/jx_delete_repo/)	 - Deletes one or more Git repositories
 * [jx delete team](/commands/jx_delete_team/)	 - Deletes one or many teams and their associated resources (Environments, Jenkins etc)
 * [jx delete token](/commands/jx_delete_token/)	 - Deletes one or many issue token resources
 * [jx delete tracker](/commands/jx_delete_tracker/)	 - Deletes one or many issue tracker resources

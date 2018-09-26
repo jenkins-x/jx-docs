@@ -1,5 +1,5 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx delete tracker token"
 slug: jx_delete_tracker_token
 url: /commands/jx_delete_tracker_token/
@@ -27,8 +27,8 @@ jx delete tracker token [flags]
 
 ```
   -h, --help          help for token
-  -n, --name string   The name of the git server to add a user
-  -u, --url string    The URL of the git server to add a user
+  -n, --name string   The name of the Git server to add a user
+  -u, --url string    The URL of the Git server to add a user
 ```
 
 ### SEE ALSO

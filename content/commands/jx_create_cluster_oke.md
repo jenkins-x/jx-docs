@@ -1,16 +1,16 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx create cluster oke"
 slug: jx_create_cluster_oke
 url: /commands/jx_create_cluster_oke/
 ---
 ## jx create cluster oke
 
-Create a new kubernetes cluster on OKE: Runs on Oracle Cloud
+Create a new Kubernetes cluster on OKE: Runs on Oracle Cloud
 
 ### Synopsis
 
-This command creates a new kubernetes cluster on OKE, installs required local dependencies and provisions the Jenkins X platform 
+This command creates a new Kubernetes cluster on OKE, installs required local dependencies and provisions the Jenkins X platform 
 
     Please add your $HOME/bin to $PATH otherwise jx will have issue invoking OCI CLI command. If you have already
   
@@ -35,24 +35,24 @@ jx create cluster oke [flags]
 ```
   -b, --batch-mode                          In batch mode the command never prompts for user input
       --cleanup-temp-files                  Cleans up any temporary values.yaml used by helm install [default true] (default true)
-      --cloud-environment-repo string       Cloud Environments git repo (default "https://github.com/jenkins-x/cloud-environments")
+      --cloud-environment-repo string       Cloud Environments Git repo (default "https://github.com/jenkins-x/cloud-environments")
       --clusterMaxWaitSeconds string        The maximum time to wait for the work request to reach the state defined by --wait-for-state. Defaults to 1200 seconds.
       --clusterWaitIntervalSeconds string   Check every --wait-interval-seconds to see whether the work request to see if it has reached the state defined by --wait-for-state.
       --compartmentId string                The OCID of the compartment in which to create the cluster.
       --default-admin-password string       the default admin password to access Jenkins, Kubernetes Dashboard, Chartmuseum and Nexus
-      --default-environment-prefix string   Default environment repo prefix, your git repos will be of the form 'environment-$prefix-$envName'
+      --default-environment-prefix string   Default environment repo prefix, your Git repos will be of the form 'environment-$prefix-$envName'
       --docker-registry string              The Docker Registry host or host:port which is used when tagging and pushing images. If not specified it defaults to the internal registry unless there is a better provider default (e.g. ECR on AWS/EKS)
       --domain string                       Domain to expose ingress endpoints.  Example: jenkinsx.io
       --draft-client-only                   Only install draft client
       --endpoint string                     Endpoint for the environment.
-      --environment-git-owner string        The git provider organisation to create the environment git repositories in
+      --environment-git-owner string        The Git provider organisation to create the environment Git repositories in
       --exposecontroller-pathmode path      The ExposeController path mode for how services should be exposed as URLs. Defaults to using subnets. Use a value of path to use relative paths within the domain host such as when using AWS ELB host names
       --exposer string                      Used to describe which strategy exposecontroller should use to access applications (default "Ingress")
-      --external-ip string                  The external IP used to access ingress endpoints from outside the kubernetes cluster. For bare metal on premise clusters this is often the IP of the kubernetes master. For cloud installations this is often the external IP of the ingress LoadBalancer.
-      --git-api-token string                The git API token to use for creating new git repositories
-      --git-private                         Create new git repositories as private
-      --git-provider-url string             The git server URL to create new git repositories inside
-      --git-username string                 The git username to use for creating new git repositories
+      --external-ip string                  The external IP used to access ingress endpoints from outside the Kubernetes cluster. For bare metal on premise clusters this is often the IP of the Kubernetes master. For cloud installations this is often the external IP of the ingress LoadBalancer.
+      --git-api-token string                The Git API token to use for creating new Git repositories
+      --git-private                         Create new Git repositories as private
+      --git-provider-url string             The Git server URL to create new Git repositories inside
+      --git-username string                 The Git username to use for creating new Git repositories
       --global-tiller                       Whether or not to use a cluster global tiller (default true)
       --headless                            Enable headless operation if using browser automation
       --helm-client-only                    Only install helm client
@@ -82,7 +82,7 @@ jx create cluster oke [flags]
       --nodePoolName string                 The name of the node pool.
       --nodePoolSubnetIds string            The OCIDs of the subnets in which to place nodes for this node pool.
       --nodeShape string                    The name of the node shape of the nodes in the node pool.
-      --on-premise                          If installing on an on premise cluster then lets default the 'external-ip' to be the kubernetes master IP address
+      --on-premise                          If installing on an on premise cluster then lets default the 'external-ip' to be the Kubernetes master IP address
       --podsCidr string                     PODS CIDR Block.
       --poolMaxWaitSeconds string           The maximum time to wait for the work request to reach the state defined by --wait-for-state. Defaults to 1200 seconds.
       --poolWaitIntervalSeconds string      Check every --wait-interval-seconds to see whether the work request to see if it has reached the state defined by --wait-for-state.
@@ -93,9 +93,9 @@ jx create cluster oke [flags]
       --serviceLbSubnetIds string           Kubernetes Service LB Subnets. Optional but nice to have it as Jenkins X will create ingress controller based on it.
       --servicesCidr string                 Kubernetes Service CIDR Block.
       --skip-auth-secrets-merge             Skips merging a local git auth yaml file with any pipeline secrets that are found
-      --skip-ingress                        Dont install an ingress controller
+      --skip-ingress                        Don't install an ingress controller
       --skip-installation                   Provision cluster only, don't install Jenkins X into it
-      --skip-tiller                         Don't install a Helms Tiller service
+      --skip-tiller                         Don't install a Helm Tiller service
       --sshPublicKey string                 The SSH public key to add to each node in the node pool. Optional but nice to have it as user can access work nodes with it.
       --tiller                              Whether or not to use tiller at all. If no tiller is enabled then its ran as a local process instead (default true)
       --tiller-cluster-role string          The cluster role for Helm's tiller (default "cluster-admin")
@@ -103,7 +103,7 @@ jx create cluster oke [flags]
       --timeout string                      The number of seconds to wait for the helm install to complete (default "6000")
       --tls-acme string                     Used to enable automatic TLS for ingress (default "false")
       --user-cluster-role string            The cluster role for the current user to be able to administer helm (default "cluster-admin")
-      --username string                     The kubernetes username used to initialise helm. Usually your email address for your kubernetes account
+      --username string                     The Kubernetes username used to initialise helm. Usually your email address for your Kubernetes account
       --vcnId string                        The OCID of the virtual cloud network (VCN) in which to create the cluster.
       --verbose                             Enable verbose logging
       --version string                      The specific platform version to install
@@ -112,6 +112,6 @@ jx create cluster oke [flags]
 
 ### SEE ALSO
 
-* [jx create cluster](/commands/jx_create_cluster/)	 - Create a new kubernetes cluster
+* [jx create cluster](/commands/jx_create_cluster/)	 - Create a new Kubernetes cluster
 
 ###### Auto generated by spf13/cobra on 26-Sep-2018

@@ -1,16 +1,16 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx step git credentials"
 slug: jx_step_git_credentials
 url: /commands/jx_step_git_credentials/
 ---
 ## jx step git credentials
 
-Creates the git credentials file for the current pipeline git credentials
+Creates the Git credentials file for the current pipeline Git credentials
 
 ### Synopsis
 
-This pipeline step generates a git credentials file for the current Git provider pipeline Secrets
+This pipeline step generates a Git credentials file for the current Git provider pipeline Secrets
 
 ```
 jx step git credentials [flags]
@@ -19,10 +19,10 @@ jx step git credentials [flags]
 ### Examples
 
 ```
-  # generate the git credentials file in the canonical location
+  # generate the Git credentials file in the canonical location
   jx step git credentials
   
-  # generate the git credentials to a output file
+  # generate the Git credentials to a output file
   jx step git credentials -o /tmp/mycreds
 ```
 

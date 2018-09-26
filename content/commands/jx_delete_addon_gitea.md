@@ -1,16 +1,16 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx delete addon gitea"
 slug: jx_delete_addon_gitea
 url: /commands/jx_delete_addon_gitea/
 ---
 ## jx delete addon gitea
 
-Deletes the gitea addon
+Deletes the Gitea addon
 
 ### Synopsis
 
-Deletes the gitea addon
+Deletes the Gitea addon
 
 ```
 jx delete addon gitea [flags]
@@ -19,7 +19,7 @@ jx delete addon gitea [flags]
 ### Examples
 
 ```
-  # Deletes the gitea addon
+  # Deletes the Gitea addon
   jx delete addon gitea
 ```
 

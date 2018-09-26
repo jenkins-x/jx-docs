@@ -1,5 +1,5 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx step changelog"
 slug: jx_step_changelog
 url: /commands/jx_step_changelog/
@@ -24,7 +24,7 @@ You can opt out of the release YAML generation via the '--generate-yaml=false' o
 
 To update the release notes on GitHub / Gitea this command needs a git API token.
 
-By default jx commands look for a file '~/.jx/gitAuth.yaml' to find the API tokens for git servers. You can use 'jx create git token' to create a git token.
+By default jx commands look for a file '~/.jx/gitAuth.yaml' to find the API tokens for Git servers. You can use 'jx create git token' to create a Git token.
 
 Alternatively if you are running this command inside a CI server you can use environment variables to specify the username and API token.
 e.g. define environment variables GIT_USERNAME and GIT_API_TOKEN
@@ -54,7 +54,7 @@ jx step changelog [flags]
       --build string               The Build number which is used to update the PipelineActivity. If not specified its defaulted from  the '$BUILD_NUMBER' environment variable
   -c, --crd                        Generate the CRD in the chart
       --crd-yaml-file string       the name of the file to generate the Release CustomResourceDefinition YAML (default "release-crd.yaml")
-      --dir string                 The directory of the git repository. Defaults to the current working directory
+      --dir string                 The directory of the Git repository. Defaults to the current working directory
       --footer string              The changelog footer in markdown for the changelog. Can use go template expressions on the ReleaseSpec object: https://golang.org/pkg/text/template/
       --footer-file string         The file name of the changelog footer in markdown for the changelog. Can use go template expressions on the ReleaseSpec object: https://golang.org/pkg/text/template/
   -y, --generate-yaml              Generate the Release YAML in the local helm chart (default true)
@@ -65,7 +65,7 @@ jx step changelog [flags]
       --install-dependencies       Should any required dependencies be installed automatically
       --no-brew                    Disables the use of brew on MacOS to install or upgrade command line dependencies
       --no-dev-release             Disables the generation of Release CRDs in the development namespace to track releases being performed
-      --output-markdown string     The file to generate for the changelog output if not updating a git provider release
+      --output-markdown string     The file to generate for the changelog output if not updating a Git provider release
   -o, --overwrite                  overwrites the Release CRD YAML file if it exists
       --previous-date string       the previous date to find a revision in format 'MonthName dayNumber year'
   -p, --previous-rev string        the previous tag revision
@@ -73,7 +73,7 @@ jx step changelog [flags]
   -r, --rev string                 the current tag revision
       --skip-auth-secrets-merge    Skips merging a local git auth yaml file with any pipeline secrets that are found
   -t, --templates-dir string       the directory containing the helm chart templates to generate the resources
-      --update-release             Should we update the release on the git repository with the changelog (default true)
+      --update-release             Should we update the release on the Git repository with the changelog (default true)
       --verbose                    Enable verbose logging
   -v, --version string             The version to release
 ```

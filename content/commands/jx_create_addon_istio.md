@@ -1,5 +1,5 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx create addon istio"
 slug: jx_create_addon_istio
 url: /commands/jx_create_addon_istio/
@@ -10,7 +10,7 @@ Create the Istio addon for service mesh
 
 ### Synopsis
 
-Creates the istio addon for service mesh on kubernetes
+Creates the istio addon for service mesh on Kubernetes
 
 ```
 jx create addon istio [flags]

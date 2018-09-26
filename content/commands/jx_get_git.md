@@ -1,16 +1,16 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx get git"
 slug: jx_get_git
 url: /commands/jx_get_git/
 ---
 ## jx get git
 
-Display the current registered git service URLs
+Display the current registered Git service URLs
 
 ### Synopsis
 
-Display the git server URLs.
+Display the Git server URLs.
 
 ```
 jx get git [flags]
@@ -19,7 +19,7 @@ jx get git [flags]
 ### Examples
 
 ```
-  # List all registered git server URLs
+  # List all registered Git server URLs
   jx get git
 ```
 

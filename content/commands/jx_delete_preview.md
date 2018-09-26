@@ -1,5 +1,5 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx delete preview"
 slug: jx_delete_preview
 url: /commands/jx_delete_preview/
@@ -27,7 +27,7 @@ jx delete preview [flags]
   -h, --help                              help for preview
       --install-dependencies              Should any required dependencies be installed automatically
   -l, --label string                      The Environment label which is a descriptive string like 'Production' or 'Staging'
-  -n, --name string                       The Environment resource name. Must follow the kubernetes name conventions like Services, Namespaces
+  -n, --name string                       The Environment resource name. Must follow the Kubernetes name conventions like Services, Namespaces
       --namespace string                  The Kubernetes namespace for the Environment
       --no-brew                           Disables the use of brew on MacOS to install or upgrade command line dependencies
       --post-preview-job-timeout string   The duration before we consider the post preview Jobs failed (default "2h")

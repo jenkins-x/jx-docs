@@ -1,5 +1,5 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx edit environment"
 slug: jx_edit_environment
 url: /commands/jx_edit_environment/
@@ -12,9 +12,9 @@ Edits an Environment which is used to promote your Team's Applications via Conti
 
 Edits a new Environment
   
-An Environment maps to a kubernetes cluster and namespace and is a place that your team's applications can be promoted to via Continous Delivery. 
+An Environment maps to a Kubernetes cluster and namespace and is a place that your team's applications can be promoted to via Continous Delivery. 
 
-You can optionally use GitOps to manage the configuration of an Environment by storing all configuration in a git repository and then only changing it via Pull Requests and CI/CD. 
+You can optionally use GitOps to manage the configuration of an Environment by storing all configuration in a Git repository and then only changing it via Pull Requests and CI/CD. 
 
 For more documentation on Environments see: https://jenkins-x.io/about/features/#environments
 
@@ -35,27 +35,27 @@ jx edit environment [flags]
 ### Options
 
 ```
-      --branches string              The branch pattern for branches to trigger CI/CD pipelines on the enivronment git repository
+      --branches string              The branch pattern for branches to trigger CI/CD pipelines on the environment Git repository
   -c, --cluster string               The Kubernetes cluster for the Environment. If blank and a namespace is specified assumes the current cluster
       --domain string                Domain to expose ingress endpoints.  Example: jenkinsx.io
       --env-job-credentials string   The Jenkins credentials used by the GitOps Job for this environment
       --exposer string               Used to describe which strategy exposecontroller should use to access applications (default "Ingress")
-  -f, --fork-git-repo string         The Git repository used as the fork when creating new Environment git repos (default "https://github.com/jenkins-x/default-environment-charts.git")
-      --git-api-token string         The git API token to use for creating new git repositories
-      --git-private                  Create new git repositories as private
-      --git-provider-url string      The git server URL to create new git repositories inside
+  -f, --fork-git-repo string         The Git repository used as the fork when creating new Environment Git repos (default "https://github.com/jenkins-x/default-environment-charts.git")
+      --git-api-token string         The Git API token to use for creating new Git repositories
+      --git-private                  Create new Git repositories as private
+      --git-provider-url string      The Git server URL to create new Git repositories inside
   -r, --git-ref string               The Git repo reference for the source code for GitOps based Environments
   -g, --git-url string               The Git clone URL for the source code for GitOps based Environments
-      --git-username string          The git username to use for creating new git repositories
+      --git-username string          The Git username to use for creating new Git repositories
   -h, --help                         help for environment
       --http string                  Toggle creating http or https ingress rules (default "true")
       --keep-exposecontroller-job    Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
   -l, --label string                 The Environment label which is a descriptive string like 'Production' or 'Staging'
-  -n, --name string                  The Environment resource name. Must follow the kubernetes name conventions like Services, Namespaces
+  -n, --name string                  The Environment resource name. Must follow the Kubernetes name conventions like Services, Namespaces
   -s, --namespace string             The Kubernetes namespace for the Environment
-  -x, --no-gitops                    Disables the use of GitOps on the environment so that promotion is implemented by directly modifying the resources via helm instead of using a git repository
+  -x, --no-gitops                    Disables the use of GitOps on the environment so that promotion is implemented by directly modifying the resources via Helm instead of using a Git repository
   -o, --order int32                  The order weighting of the Environment so that they can be sorted by this order before name (default 100)
-      --prefix string                Environment repo prefix, your git repo will be of the form 'environment-$prefix-$envName' (default "jx")
+      --prefix string                Environment repo prefix, your Git repo will be of the form 'environment-$prefix-$envName' (default "jx")
   -p, --promotion string             The promotion strategy
       --tls-acme string              Used to enable automatic TLS for ingress (default "false")
 ```

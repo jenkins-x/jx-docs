@@ -1,5 +1,5 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx promote"
 slug: jx_promote
 url: /commands/jx_promote/
@@ -53,7 +53,7 @@ jx promote [application] [flags]
   -r, --helm-repo-name string           The name of the helm repository that contains the app (default "releases")
   -u, --helm-repo-url string            The Helm Repository URL to use for the App (default "http://jenkins-x-chartmuseum:8080")
   -h, --help                            help for promote
-      --ignore-local-file               Ignores the local file system when deducing the git repository
+      --ignore-local-file               Ignores the local file system when deducing the Git repository
       --install-dependencies            Should any required dependencies be installed automatically
   -n, --namespace string                The Namespace to promote to
       --no-brew                         Disables the use of brew on MacOS to install or upgrade command line dependencies

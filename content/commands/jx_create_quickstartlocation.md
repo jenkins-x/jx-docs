@@ -1,5 +1,5 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx create quickstartlocation"
 slug: jx_create_quickstartlocation
 url: /commands/jx_create_quickstartlocation/
@@ -21,13 +21,13 @@ jx create quickstartlocation [flags]
 ### Examples
 
 ```
-  # Create a quickstart location using a github repository organisation
+  # Create a quickstart location using a GitHub repository organisation
   jx create quickstartlocation --owner my-quickstarts
   
-  # Create a quickstart location using a github repository organisation via an abbreviation
+  # Create a quickstart location using a GitHub repository organisation via an abbreviation
   jx create qsloc --owner my-quickstarts
   
-  # Create a quickstart location for your git repo and organisation
+  # Create a quickstart location for your Git repo and organisation
   jx create quickstartlocation --url https://mygit.server.com --owner my-quickstarts
 ```
 
@@ -40,11 +40,11 @@ jx create quickstartlocation [flags]
   -h, --help                      help for quickstartlocation
   -i, --includes stringArray      The patterns to include repositories (default [*])
       --install-dependencies      Should any required dependencies be installed automatically
-  -k, --kind string               The kind of git service at the URL
+  -k, --kind string               The kind of Git service at the URL
       --no-brew                   Disables the use of brew on MacOS to install or upgrade command line dependencies
-  -o, --owner string              The owner is the user or organisation of the git provider used to find repositories
+  -o, --owner string              The owner is the user or organisation of the Git provider used to find repositories
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
-  -u, --url string                The URL of the git service (default "https://github.com")
+  -u, --url string                The URL of the Git service (default "https://github.com")
       --verbose                   Enable verbose logging
 ```
 

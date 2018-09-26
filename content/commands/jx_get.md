@@ -1,5 +1,5 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx get"
 slug: jx_get
 url: /commands/jx_get/
@@ -47,14 +47,14 @@ jx get TYPE [flags]
 * [jx get aws](/commands/jx_get_aws/)	 - Displays AWS account information
 * [jx get branchpattern](/commands/jx_get_branchpattern/)	 - Display the git branch patterns for the current Team used on creating and importing projects
 * [jx get build](/commands/jx_get_build/)	 - Display one or many build resources
-* [jx get buildpack](/commands/jx_get_buildpack/)	 - Display the teams build pack git repository and references used for the current Team used on creating and importing projects
+* [jx get buildpack](/commands/jx_get_buildpack/)	 - Display the teams build pack Git repository and references used for the current Team used on creating and importing projects
 * [jx get chat](/commands/jx_get_chat/)	 - Display the current registered chat service URLs
 * [jx get config](/commands/jx_get_config/)	 - Display the project configuration
 * [jx get cve](/commands/jx_get_cve/)	 - Display Common Vulnerabilities and Exposures (CVEs)
 * [jx get devpod](/commands/jx_get_devpod/)	 - Lists the DevPods
 * [jx get environments](/commands/jx_get_environments/)	 - Display one or many Environments
-* [jx get git](/commands/jx_get_git/)	 - Display the current registered git service URLs
-* [jx get helmbin](/commands/jx_get_helmbin/)	 - Display the helm binary name used in the pipelines
+* [jx get git](/commands/jx_get_git/)	 - Display the current registered Git service URLs
+* [jx get helmbin](/commands/jx_get_helmbin/)	 - Display the Helm binary name used in the pipelines
 * [jx get issue](/commands/jx_get_issue/)	 - Display the status of an issue
 * [jx get issues](/commands/jx_get_issues/)	 - Display one or many issues
 * [jx get pipelines](/commands/jx_get_pipelines/)	 - Display one or many Pipelines

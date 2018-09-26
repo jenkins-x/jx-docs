@@ -1,16 +1,16 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx create cluster aks"
 slug: jx_create_cluster_aks
 url: /commands/jx_create_cluster_aks/
 ---
 ## jx create cluster aks
 
-Create a new kubernetes cluster on AKS: Runs on Azure
+Create a new Kubernetes cluster on AKS: Runs on Azure
 
 ### Synopsis
 
-This command creates a new kubernetes cluster on AKS, installing required local dependencies and provisions the Jenkins X platform 
+This command creates a new Kubernetes cluster on AKS, installing required local dependencies and provisions the Jenkins X platform 
 
 Azure Container Service (AKS) manages your hosted Kubernetes environment, making it quick and easy to deploy and manage containerized applications without container orchestration expertise. It also eliminates the burden of ongoing operations and maintenance by provisioning, upgrading, and scaling resources on demand, without taking your applications offline. 
 
@@ -31,24 +31,32 @@ jx create cluster aks [flags]
 ### Options
 
 ```
+      --aad-client-app-id string                 The ID of an Azure Active Directory client application
+      --aad-server-app-id string                 The ID of an Azure Active Directory server application
+      --aad-server-app-secret string             The secret of an Azure Active Directory server application
+      --aad-tenant-id string                     The ID of an Azure Active Directory tenant
+      --admin-username string                    User account to create on node VMs for SSH access
       --cleanup-temp-files                       Cleans up any temporary values.yaml used by helm install [default true] (default true)
       --client-secret string                     Azure AD client secret to use an existing SP
-      --cloud-environment-repo string            Cloud Environments git repo (default "https://github.com/jenkins-x/cloud-environments")
+      --cloud-environment-repo string            Cloud Environments Git repo (default "https://github.com/jenkins-x/cloud-environments")
   -c, --cluster-name string                      Name of the cluster
       --default-admin-password string            the default admin password to access Jenkins, Kubernetes Dashboard, Chartmuseum and Nexus
-      --default-environment-prefix string        Default environment repo prefix, your git repos will be of the form 'environment-$prefix-$envName'
+      --default-environment-prefix string        Default environment repo prefix, your Git repos will be of the form 'environment-$prefix-$envName'
       --disk-size string                         Size in GB of the OS disk for each node in the node pool.
+      --dns-name-prefix string                   Prefix for hostnames that are created
+      --dns-service-ip string                    IP address assigned to the Kubernetes DNS service
+      --docker-bridge-address string             An IP address and netmask assigned to the Docker bridge
       --docker-registry string                   The Docker Registry host or host:port which is used when tagging and pushing images. If not specified it defaults to the internal registry unless there is a better provider default (e.g. ECR on AWS/EKS)
       --domain string                            Domain to expose ingress endpoints.  Example: jenkinsx.io
       --draft-client-only                        Only install draft client
-      --environment-git-owner string             The git provider organisation to create the environment git repositories in
+      --environment-git-owner string             The Git provider organisation to create the environment Git repositories in
       --exposecontroller-pathmode path           The ExposeController path mode for how services should be exposed as URLs. Defaults to using subnets. Use a value of path to use relative paths within the domain host such as when using AWS ELB host names
       --exposer string                           Used to describe which strategy exposecontroller should use to access applications (default "Ingress")
-      --external-ip string                       The external IP used to access ingress endpoints from outside the kubernetes cluster. For bare metal on premise clusters this is often the IP of the kubernetes master. For cloud installations this is often the external IP of the ingress LoadBalancer.
-      --git-api-token string                     The git API token to use for creating new git repositories
-      --git-private                              Create new git repositories as private
-      --git-provider-url string                  The git server URL to create new git repositories inside
-      --git-username string                      The git username to use for creating new git repositories
+      --external-ip string                       The external IP used to access ingress endpoints from outside the Kubernetes cluster. For bare metal on premise clusters this is often the IP of the Kubernetes master. For cloud installations this is often the external IP of the ingress LoadBalancer.
+      --git-api-token string                     The Git API token to use for creating new Git repositories
+      --git-private                              Create new Git repositories as private
+      --git-provider-url string                  The Git server URL to create new Git repositories inside
+      --git-username string                      The Git username to use for creating new Git repositories
       --global-tiller                            Whether or not to use a cluster global tiller (default true)
       --helm-client-only                         Only install helm client
       --helm-template                            If enabled we use helm template mode to generate the YAML then we use 'kubectl apply' to install it to avoid using server side tiller
@@ -70,20 +78,22 @@ jx create cluster aks [flags]
       --no-default-environments                  Disables the creation of the default Staging and Production environments
   -s, --node-vm-size string                      Size of Virtual Machines to create as Kubernetes nodes
   -o, --nodes string                             Number of node
-      --on-premise                               If installing on an on premise cluster then lets default the 'external-ip' to be the kubernetes master IP address
+      --on-premise                               If installing on an on premise cluster then lets default the 'external-ip' to be the Kubernetes master IP address
   -p, --password string                          Azure password
   -k, --path-To-public-rsa-key string            Path to public RSA key
+      --pod-cidr string                          A CIDR notation IP range from which to assign pod IPs
       --prow                                     Enable prow
       --recreate-existing-draft-repos            Delete existing helm repos used by Jenkins X under ~/draft/packs
       --register-local-helmrepo                  Registers the Jenkins X chartmuseum registry with your helm client [default false]
   -n, --resource-group-name string               Name of the resource group
+      --service-cidr string                      A CIDR notation IP range from which to assign service cluster IPs
       --service-principal string                 Azure AD service principal to use an existing SP
-      --skip-ingress                             Dont install an ingress controller
+      --skip-ingress                             Don't install an ingress controller
       --skip-installation                        Provision cluster only, don't install Jenkins X into it
       --skip-login az login                      Skip login if already logged in using az login
       --skip-provider-registration               Skip provider registration
       --skip-resource-group-creation             Skip resource group creation
-      --skip-tiller                              Don't install a Helms Tiller service
+      --skip-tiller                              Don't install a Helm Tiller service
       --subscription string                      Azure subscription to be used if not default one
       --tags string                              Space-separated tags in 'key[=value]' format. Use '' to clear existing tags.
       --tiller                                   Whether or not to use tiller at all. If no tiller is enabled then its ran as a local process instead (default true)
@@ -93,12 +103,14 @@ jx create cluster aks [flags]
       --tls-acme string                          Used to enable automatic TLS for ingress (default "false")
       --user-cluster-role string                 The cluster role for the current user to be able to administer helm (default "cluster-admin")
   -u, --user-name string                         Azure user name
-      --username string                          The kubernetes username used to initialise helm. Usually your email address for your kubernetes account
+      --username string                          The Kubernetes username used to initialise helm. Usually your email address for your Kubernetes account
       --version string                           The specific platform version to install
+      --vnet-subnet-id string                    The ID of a subnet in an existing VNet into which to deploy the cluster
+      --workspace-resource-id string             The resource ID of an existing Log Analytics Workspace
 ```
 
 ### SEE ALSO
 
-* [jx create cluster](/commands/jx_create_cluster/)	 - Create a new kubernetes cluster
+* [jx create cluster](/commands/jx_create_cluster/)	 - Create a new Kubernetes cluster
 
 ###### Auto generated by spf13/cobra on 26-Sep-2018

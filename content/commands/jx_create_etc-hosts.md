@@ -1,12 +1,12 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx create etc-hosts"
 slug: jx_create_etc-hosts
 url: /commands/jx_create_etc-hosts/
 ---
 ## jx create etc-hosts
 
-Creates a new git server URL
+Creates a new Git server URL
 
 ### Synopsis
 

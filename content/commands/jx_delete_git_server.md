@@ -1,16 +1,16 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx delete git server"
 slug: jx_delete_git_server
 url: /commands/jx_delete_git_server/
 ---
 ## jx delete git server
 
-Deletes one or more git servers
+Deletes one or more Git servers
 
 ### Synopsis
 
-Deletes one or more git servers from your local settings
+Deletes one or more Git servers from your local settings
 
 ```
 jx delete git server [flags]
@@ -19,7 +19,7 @@ jx delete git server [flags]
 ### Examples
 
 ```
-  # Deletes a git provider
+  # Deletes a Git provider
   jx delete git server MyProvider
 ```
 
@@ -27,7 +27,7 @@ jx delete git server [flags]
 
 ```
   -h, --help             help for server
-  -i, --ignore-missing   Silently ignore attempts to remove a git server name that does not exist
+  -i, --ignore-missing   Silently ignore attempts to remove a Git server name that does not exist
 ```
 
 ### SEE ALSO

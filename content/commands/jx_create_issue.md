@@ -1,5 +1,5 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx create issue"
 slug: jx_create_issue
 url: /commands/jx_create_issue/
@@ -38,7 +38,7 @@ jx create issue [flags]
 ```
   -b, --batch-mode                In batch mode the command never prompts for user input
       --body string               The body of the issue
-      --dir string                The source directory used to detect the git repository. Defaults to the current directory
+      --dir string                The source directory used to detect the Git repository. Defaults to the current directory
       --headless                  Enable headless operation if using browser automation
   -h, --help                      help for issue
       --install-dependencies      Should any required dependencies be installed automatically

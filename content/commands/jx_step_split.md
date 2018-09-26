@@ -1,18 +1,18 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx step split"
 slug: jx_step_split
 url: /commands/jx_step_split/
 ---
 ## jx step split
 
-Mirrors the code from a monorepo into separate microservice style git repositories so its easier to do finer grained releases
+Mirrors the code from a monorepo into separate microservice style Git repositories so its easier to do finer grained releases
 
 ### Synopsis
 
-Mirrors the code from a monorepo into separate microservice style git repositories so its easier to do finer grained releases. 
+Mirrors the code from a monorepo into separate microservice style Git repositories so its easier to do finer grained releases. 
 
-If you have lots of apps in folders in a monorepo then this comamnd can run on that repo to mirror changes into a number of microsevice based repositories which can each then get auto-imported into Jenkins X
+If you have lots of apps in folders in a monorepo then this command can run on that repo to mirror changes into a number of microservice based repositories which can each then get auto-imported into Jenkins X
 
 ```
 jx step split monorepo [flags]
@@ -21,7 +21,7 @@ jx step split monorepo [flags]
 ### Examples
 
 ```
-  # Split the current folder up into separate git repositories
+  # Split the current folder up into separate Git repositories
   jx step split monorepo -o mygithuborg
 ```
 
@@ -30,11 +30,11 @@ jx step split monorepo [flags]
 ```
   -g, --glob string                The glob pattern to find folders to mirror to separate repositories (default "*")
   -h, --help                       help for split
-      --kubernetes-folder string   The folder containing all the kubernetes YAML for each app (default "kubernetes")
+      --kubernetes-folder string   The folder containing all the Kubernetes YAML for each app (default "kubernetes")
       --no-git                     If enabled then don't try to clone/create the separate repositories in github
-  -o, --organisation string        The github organisation to split the repositories into
+  -o, --organisation string        The GitHub organisation to split the repositories into
   -d, --output-dir string          The output directory where new projects are created (default "generated")
-  -s, --source-dir string          The source directory to look inside for the folders to move into separate git repositories
+  -s, --source-dir string          The source directory to look inside for the folders to move into separate Git repositories
 ```
 
 ### SEE ALSO

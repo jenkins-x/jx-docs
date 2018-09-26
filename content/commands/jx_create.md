@@ -1,5 +1,5 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx create"
 slug: jx_create
 url: /commands/jx_create/
@@ -38,13 +38,13 @@ jx create [flags]
 * [jx create branchpattern](/commands/jx_create_branchpattern/)	 - Create a git branch pattern for your team
 * [jx create camel](/commands/jx_create_camel/)	 - Create a new camel based application and import the generated code into git and Jenkins for CI/CD
 * [jx create chat](/commands/jx_create_chat/)	 - Creates a chat server resource
-* [jx create cluster](/commands/jx_create_cluster/)	 - Create a new kubernetes cluster
-* [jx create codeship](/commands/jx_create_codeship/)	 - Creates a build on CodeShip to create/update JX clusters
+* [jx create cluster](/commands/jx_create_cluster/)	 - Create a new Kubernetes cluster
+* [jx create codeship](/commands/jx_create_codeship/)	 - Creates a build on Codeship to create/update JX clusters
 * [jx create devpod](/commands/jx_create_devpod/)	 - Creates a Developer Pod for running builds and tests inside the cluster
 * [jx create docker](/commands/jx_create_docker/)	 - Create/update docker auth for a given host and user in the config.json file
 * [jx create docs](/commands/jx_create_docs/)	 - Creates the documentation files
 * [jx create environment](/commands/jx_create_environment/)	 - Create a new Environment which is used to promote your Team's Applications via Continuous Delivery
-* [jx create etc-hosts](/commands/jx_create_etc-hosts/)	 - Creates a new git server URL
+* [jx create etc-hosts](/commands/jx_create_etc-hosts/)	 - Creates a new Git server URL
 * [jx create git](/commands/jx_create_git/)	 - Creates a git resource
 * [jx create gke-service-account](/commands/jx_create_gke-service-account/)	 - Creates a GKE service account
 * [jx create issue](/commands/jx_create_issue/)	 - Create an issue on the git project for the current directory
@@ -57,7 +57,7 @@ jx create [flags]
 * [jx create quickstartlocation](/commands/jx_create_quickstartlocation/)	 - Create a location of quickstarts for your team
 * [jx create spring](/commands/jx_create_spring/)	 - Create a new spring boot application and import the generated code into git and Jenkins for CI/CD
 * [jx create team](/commands/jx_create_team/)	 - Create a new Team which is then provisioned later on
-* [jx create terraform](/commands/jx_create_terraform/)	 - Creates a Jenkins X terraform plan
+* [jx create terraform](/commands/jx_create_terraform/)	 - Creates a Jenkins X Terraform plan
 * [jx create token](/commands/jx_create_token/)	 - Creates a new user token for a service
 * [jx create tracker](/commands/jx_create_tracker/)	 - Creates an issue tracker resource
 * [jx create user](/commands/jx_create_user/)	 - Create a new User which is then provisioned by the user controller

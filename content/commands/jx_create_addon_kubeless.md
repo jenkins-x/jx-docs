@@ -1,16 +1,16 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx create addon kubeless"
 slug: jx_create_addon_kubeless
 url: /commands/jx_create_addon_kubeless/
 ---
 ## jx create addon kubeless
 
-Create a kubeless addon for hosting git repositories
+Create a kubeless addon for hosting Git repositories
 
 ### Synopsis
 
-Creates the kubeless addon for serverless on kubernetes
+Creates the kubeless addon for serverless on Kubernetes
 
 ```
 jx create addon kubeless [flags]

@@ -1,5 +1,5 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx create token addon"
 slug: jx_create_token_addon
 url: /commands/jx_create_token_addon/
@@ -35,12 +35,12 @@ jx create token addon [username] [flags]
   -h, --help                      help for addon
       --install-dependencies      Should any required dependencies be installed automatically
   -k, --kind string               The kind of addon. Defaults to the addon name if not specified
-  -n, --name string               The name of the git server to add a user
+  -n, --name string               The name of the Git server to add a user
       --no-brew                   Disables the use of brew on MacOS to install or upgrade command line dependencies
   -p, --password string           The password for the user
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
       --timeout string            The timeout if using browser automation to generate the API token (by passing username and password)
-  -u, --url string                The URL of the git server to add a user
+  -u, --url string                The URL of the Git server to add a user
       --verbose                   Enable verbose logging
 ```
 

@@ -1,16 +1,16 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx upgrade cluster"
 slug: jx_upgrade_cluster
 url: /commands/jx_upgrade_cluster/
 ---
 ## jx upgrade cluster
 
-Upgrades the kubernetes master to the specified version
+Upgrades the Kubernetes master to the specified version
 
 ### Synopsis
 
-Upgrades the Jenkins X kubernetes master to the specified version
+Upgrades the Jenkins X Kubernetes master to the specified version
 
 ```
 jx upgrade cluster [flags]

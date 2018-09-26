@@ -1,16 +1,16 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx create addon gitea"
 slug: jx_create_addon_gitea
 url: /commands/jx_create_addon_gitea/
 ---
 ## jx create addon gitea
 
-Create a gitea addon for hosting git repositories
+Create a Gitea addon for hosting Git repositories
 
 ### Synopsis
 
-Creates the gitea addon (hosted git server)
+Creates the Gitea addon (hosted Git server)
 
 ```
 jx create addon gitea [flags]
@@ -19,32 +19,32 @@ jx create addon gitea [flags]
 ### Examples
 
 ```
-  # Create the gitea addon
+  # Create the Gitea addon
   jx create addon gitea
 ```
 
 ### Options
 
 ```
-      --admin                     Should the new user created be an admin of the gitea server
+      --admin                     Should the new user created be an admin of the Gitea server
   -b, --batch-mode                In batch mode the command never prompts for user input
   -c, --chart string              The name of the chart to use (default "jenkins-x/gitea")
-  -e, --email string              The email address of the new user to create in gitea
+  -e, --email string              The email address of the new user to create in Gitea
       --headless                  Enable headless operation if using browser automation
       --helm-update               Should we run helm update first to ensure we use the latest version (default true)
   -h, --help                      help for gitea
       --install-dependencies      Should any required dependencies be installed automatically
   -n, --namespace string          The Namespace to install into
       --no-brew                   Disables the use of brew on MacOS to install or upgrade command line dependencies
-      --no-token                  If true disable trying to create a new token in the gitea server
-      --no-user                   If true disable trying to create a new user in the gitea server
-  -p, --password string           The password for the user to create in gitea. Note that gitea tends to reject passwords less than 6 characters
+      --no-token                  If true disable trying to create a new token in the Gitea server
+      --no-user                   If true disable trying to create a new user in the Gitea server
+  -p, --password string           The password for the user to create in Gitea. Note that Gitea tends to reject passwords less than 6 characters
   -r, --release string            The chart release name (default "gitea")
   -s, --set string                The chart set values (can specify multiple or separate values with commas: key1=val1,key2=val2)
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
-  -u, --username string           The name for the user to create in gitea. Note that gitea tends to reject 'admin'
+  -u, --username string           The name for the user to create in Gitea. Note that Gitea tends to reject 'admin'
       --verbose                   Enable verbose logging
-  -v, --version string            The version of the gitea addon to use
+  -v, --version string            The version of the Gitea addon to use
 ```
 
 ### SEE ALSO

@@ -1,5 +1,5 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx create tracker token"
 slug: jx_create_tracker_token
 url: /commands/jx_create_tracker_token/
@@ -34,11 +34,11 @@ jx create tracker token [username] [flags]
       --headless                  Enable headless operation if using browser automation
   -h, --help                      help for token
       --install-dependencies      Should any required dependencies be installed automatically
-  -n, --name string               The name of the git server to add a user
+  -n, --name string               The name of the Git server to add a user
       --no-brew                   Disables the use of brew on MacOS to install or upgrade command line dependencies
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
       --timeout string            The timeout if using browser automation to generate the API token (by passing username and password)
-  -u, --url string                The URL of the git server to add a user
+  -u, --url string                The URL of the Git server to add a user
       --verbose                   Enable verbose logging
 ```
 

@@ -1,5 +1,5 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx step"
 slug: jx_step
 url: /commands/jx_step/
@@ -38,9 +38,9 @@ jx step [flags]
 * [jx step post](/commands/jx_step_post/)	 - post step actions
 * [jx step pr](/commands/jx_step_pr/)	 - pipeline step pr
 * [jx step pre](/commands/jx_step_pre/)	 - pre step actions
-* [jx step release](/commands/jx_step_release/)	 - performs a release on the current git repository
+* [jx step release](/commands/jx_step_release/)	 - performs a release on the current Git repository
 * [jx step report](/commands/jx_step_report/)	 - report step actions
-* [jx step split](/commands/jx_step_split/)	 - Mirrors the code from a monorepo into separate microservice style git repositories so its easier to do finer grained releases
+* [jx step split](/commands/jx_step_split/)	 - Mirrors the code from a monorepo into separate microservice style Git repositories so its easier to do finer grained releases
 * [jx step tag](/commands/jx_step_tag/)	 - Creates a git tag and pushes to remote repo
 * [jx step validate](/commands/jx_step_validate/)	 - Validates the command line tools, container and platform to ensure a pipeline can run properly
 * [jx step verify](/commands/jx_step_verify/)	 - Performs deployment verification in a pipeline

@@ -1,5 +1,5 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx delete jenkins user"
 slug: jx_delete_jenkins_user
 url: /commands/jx_delete_jenkins_user/
@@ -27,8 +27,8 @@ jx delete jenkins user [flags]
 
 ```
   -h, --help          help for user
-  -n, --name string   The name of the git server to add a user
-  -u, --url string    The URL of the git server to add a user
+  -n, --name string   The name of the Git server to add a user
+  -u, --url string    The URL of the Git server to add a user
 ```
 
 ### SEE ALSO

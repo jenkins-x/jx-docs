@@ -1,5 +1,5 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx uninstall"
 slug: jx_uninstall
 url: /commands/jx_uninstall/
@@ -10,7 +10,7 @@ Uninstall the Jenkins X platform
 
 ### Synopsis
 
-Uninstalls the Jenkins X platform from a kubernetes cluster
+Uninstalls the Jenkins X platform from a Kubernetes cluster
 
 ```
 jx uninstall [flags]

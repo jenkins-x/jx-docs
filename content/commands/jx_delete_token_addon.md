@@ -1,5 +1,5 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx delete token addon"
 slug: jx_delete_token_addon
 url: /commands/jx_delete_token_addon/
@@ -28,8 +28,8 @@ jx delete token addon [flags]
 ```
   -h, --help          help for addon
   -k, --kind string   The kind of addon. Defaults to the addon name if not specified
-  -n, --name string   The name of the git server to add a user
-  -u, --url string    The URL of the git server to add a user
+  -n, --name string   The name of the Git server to add a user
+  -u, --url string    The URL of the Git server to add a user
 ```
 
 ### SEE ALSO

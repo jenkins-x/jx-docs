@@ -1,18 +1,18 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx get helmbin"
 slug: jx_get_helmbin
 url: /commands/jx_get_helmbin/
 ---
 ## jx get helmbin
 
-Display the helm binary name used in the pipelines
+Display the Helm binary name used in the pipelines
 
 ### Synopsis
 
-Display the helm binary name used in pipelines. 
+Display the Helm binary name used in pipelines. 
 
-This setting lets you switch from the stable release to early access releases (e.g. from helm 2 <-> 3)
+This setting lets you switch from the stable release to early access releases (e.g. from Helm 2 <-> 3)
 
 ```
 jx get helmbin [flags]

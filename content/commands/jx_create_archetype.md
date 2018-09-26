@@ -1,5 +1,5 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx create archetype"
 slug: jx_create_archetype
 url: /commands/jx_create_archetype/
@@ -12,7 +12,7 @@ Create a new app from a Maven Archetype and import the generated code into git a
 
 Creates a new Maven project using an Archetype 
 
-You then get the option to import the generated source code into a git repository and Jenkins for CI/CD
+You then get the option to import the generated source code into a Git repository and Jenkins for CI/CD
 
 ```
 jx create archetype [flags]
@@ -36,16 +36,16 @@ jx create archetype [flags]
       --branches string                The branch pattern for branches to trigger CI/CD pipelines on
   -c, --catalog string                 The Maven Archetype Catalog to use (default "http://central.maven.org/maven2/archetype-catalog.xml")
       --credentials string             The Jenkins credentials name used by the job
-      --default-owner string           The default user/organisation used if no user is found for the current git repository being imported (default "someone")
-      --docker-registry-org string     The name of the docker registry organisation to use. If not specified then the git provider organisation will be used
+      --default-owner string           The default user/organisation used if no user is found for the current Git repository being imported (default "someone")
+      --docker-registry-org string     The name of the docker registry organisation to use. If not specified then the Git provider organisation will be used
       --dry-run                        Performs local changes to the repo but skips the import into Jenkins X
       --filter-artifact string         Either the Artifact ID or a text filter of the artifact IDs to pick from
   -f, --filter-group string            Filter the Group IDs to choose from for he Archetypes
       --filter-version string          The Version of the Archetype to use
-      --git-api-token string           The git API token to use for creating new git repositories
-      --git-private                    Create new git repositories as private
-      --git-provider-url string        The git server URL to create new git repositories inside
-      --git-username string            The git username to use for creating new git repositories
+      --git-api-token string           The Git API token to use for creating new Git repositories
+      --git-private                    Create new Git repositories as private
+      --git-provider-url string        The Git server URL to create new Git repositories inside
+      --git-username string            The Git username to use for creating new Git repositories
   -g, --group string                   The group ID for the new application (default "com.example")
       --group-ids stringArray          The Group ID of the Archetypes to pick
       --headless                       Enable headless operation if using browser automation
@@ -55,12 +55,12 @@ jx create archetype [flags]
   -i, --interactive                    Allow interactive input into the maven archetype:generate command
       --jenkinsfile string             The name of the Jenkinsfile to use. If not specified then 'Jenkinsfile' will be used
       --list-packs                     list available draft packs
-      --name string                    Specify the git repository name to import the project into (if it is not already in one)
+      --name string                    Specify the Git repository name to import the project into (if it is not already in one)
       --no-brew                        Disables the use of brew on MacOS to install or upgrade command line dependencies
       --no-draft                       Disable Draft from trying to default a Dockerfile and Helm Chart
       --no-import                      Disable import after the creation
       --no-jenkinsfile                 Disable defaulting a Jenkinsfile if its missing
-      --org string                     Specify the git provider organisation to import the project into (if it is not already in one)
+      --org string                     Specify the Git provider organisation to import the project into (if it is not already in one)
   -o, --output-dir string              Directory to output the project to. Defaults to the current directory
       --pack string                    The name of the pack to use
   -p, --pick                           Provide a list of versions to choose from

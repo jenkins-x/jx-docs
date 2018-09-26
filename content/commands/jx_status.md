@@ -1,5 +1,5 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx status"
 slug: jx_status
 url: /commands/jx_status/
@@ -19,7 +19,7 @@ jx status [node] [flags]
 ### Examples
 
 ```
-  # displays the current status of the kubernetes cluster
+  # displays the current status of the Kubernetes cluster
   jx status
 ```
 

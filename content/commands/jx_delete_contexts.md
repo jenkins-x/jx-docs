@@ -1,16 +1,16 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx delete contexts"
 slug: jx_delete_contexts
 url: /commands/jx_delete_contexts/
 ---
 ## jx delete contexts
 
-Deletes one or more kubernetes contexts
+Deletes one or more Kubernetes contexts
 
 ### Synopsis
 
-Deletes one or more kubernetes contexts.
+Deletes one or more Kubernetes contexts.
 
 ```
 jx delete contexts [flags]

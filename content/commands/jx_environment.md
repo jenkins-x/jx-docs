@@ -1,12 +1,12 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx environment"
 slug: jx_environment
 url: /commands/jx_environment/
 ---
 ## jx environment
 
-View or change the current environment in the current kubernetes cluster
+View or change the current environment in the current Kubernetes cluster
 
 ### Synopsis
 

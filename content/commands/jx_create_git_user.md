@@ -1,12 +1,12 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx create git user"
 slug: jx_create_git_user
 url: /commands/jx_create_git_user/
 ---
 ## jx create git user
 
-Adds a new user to the git server
+Adds a new user to the Git server
 
 ### Synopsis
 
@@ -19,7 +19,7 @@ jx create git user [username] [flags]
 ### Examples
 
 ```
-  # Creates a new user in the local gitea server
+  # Creates a new user in the local Gitea server
   jx create git user -n local someUserName -p somepassword -e foo@bar.com
 ```
 
@@ -33,11 +33,11 @@ jx create git user [username] [flags]
       --headless                  Enable headless operation if using browser automation
   -h, --help                      help for user
       --install-dependencies      Should any required dependencies be installed automatically
-  -n, --name string               The name of the git server to add a user
+  -n, --name string               The name of the Git server to add a user
       --no-brew                   Disables the use of brew on MacOS to install or upgrade command line dependencies
   -p, --password string           The User password to try automatically create a new API Token
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
-  -u, --url string                The URL of the git server to add a user
+  -u, --url string                The URL of the Git server to add a user
       --verbose                   Enable verbose logging
 ```
 

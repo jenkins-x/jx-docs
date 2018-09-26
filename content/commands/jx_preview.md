@@ -1,5 +1,5 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx preview"
 slug: jx_preview
 url: /commands/jx_preview/
@@ -43,11 +43,11 @@ jx preview [flags]
   -u, --helm-repo-url string              The Helm Repository URL to use for the App (default "http://jenkins-x-chartmuseum:8080")
   -h, --help                              help for preview
       --http string                       Toggle creating http or https ingress rules (default "true")
-      --ignore-local-file                 Ignores the local file system when deducing the git repository
+      --ignore-local-file                 Ignores the local file system when deducing the Git repository
       --install-dependencies              Should any required dependencies be installed automatically
       --keep-exposecontroller-job         Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
   -l, --label string                      The Environment label which is a descriptive string like 'Production' or 'Staging'
-  -n, --name string                       The Environment resource name. Must follow the kubernetes name conventions like Services, Namespaces
+  -n, --name string                       The Environment resource name. Must follow the Kubernetes name conventions like Services, Namespaces
       --namespace string                  The Kubernetes namespace for the Environment
       --no-brew                           Disables the use of brew on MacOS to install or upgrade command line dependencies
       --no-helm-update                    Allows the 'helm repo update' command if you are sure your local helm cache is up to date with the version you wish to promote

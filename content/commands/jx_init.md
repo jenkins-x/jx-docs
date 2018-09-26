@@ -1,5 +1,5 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx init"
 slug: jx_init
 url: /commands/jx_init/
@@ -10,7 +10,7 @@ Init Jenkins X
 
 ### Synopsis
 
-This command installs the Jenkins X platform on a connected kubernetes cluster
+This command installs the Jenkins X platform on a connected Kubernetes cluster
 
 ```
 jx init [flags]
@@ -28,7 +28,7 @@ jx init [flags]
   -b, --batch-mode                      In batch mode the command never prompts for user input
       --domain string                   Domain to expose ingress endpoints.  Example: jenkinsx.io
       --draft-client-only               Only install draft client
-      --external-ip string              The external IP used to access ingress endpoints from outside the kubernetes cluster. For bare metal on premise clusters this is often the IP of the kubernetes master. For cloud installations this is often the external IP of the ingress LoadBalancer.
+      --external-ip string              The external IP used to access ingress endpoints from outside the Kubernetes cluster. For bare metal on premise clusters this is often the IP of the Kubernetes master. For cloud installations this is often the external IP of the ingress LoadBalancer.
       --global-tiller                   Whether or not to use a cluster global tiller (default true)
       --headless                        Enable headless operation if using browser automation
       --helm-client-only                Only install helm client
@@ -42,17 +42,17 @@ jx init [flags]
       --install-dependencies            Should any required dependencies be installed automatically
       --namespace string                The namespace the Jenkins X platform should be installed into (default "jx")
       --no-brew                         Disables the use of brew on MacOS to install or upgrade command line dependencies
-      --on-premise                      If installing on an on premise cluster then lets default the 'external-ip' to be the kubernetes master IP address
-      --provider string                 Cloud service providing the kubernetes cluster.  Supported providers: aks, aws, eks, gke, ibm, jx-infra, kubernetes, minikube, minishift, oke, openshift, pks
+      --on-premise                      If installing on an on premise cluster then lets default the 'external-ip' to be the Kubernetes master IP address
+      --provider string                 Cloud service providing the Kubernetes cluster.  Supported providers: aks, aws, eks, gke, ibm, jx-infra, kubernetes, minikube, minishift, oke, openshift, pks
       --recreate-existing-draft-repos   Delete existing helm repos used by Jenkins X under ~/draft/packs
       --skip-auth-secrets-merge         Skips merging a local git auth yaml file with any pipeline secrets that are found
-      --skip-ingress                    Dont install an ingress controller
-      --skip-tiller                     Don't install a Helms Tiller service
+      --skip-ingress                    Don't install an ingress controller
+      --skip-tiller                     Don't install a Helm Tiller service
       --tiller                          Whether or not to use tiller at all. If no tiller is enabled then its ran as a local process instead (default true)
       --tiller-cluster-role string      The cluster role for Helm's tiller (default "cluster-admin")
       --tiller-namespace string         The namespace for the Tiller when using a gloabl tiller (default "kube-system")
       --user-cluster-role string        The cluster role for the current user to be able to administer helm (default "cluster-admin")
-      --username string                 The kubernetes username used to initialise helm. Usually your email address for your kubernetes account
+      --username string                 The Kubernetes username used to initialise helm. Usually your email address for your Kubernetes account
       --verbose                         Enable verbose logging
 ```
 

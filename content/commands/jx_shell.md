@@ -1,16 +1,16 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx shell"
 slug: jx_shell
 url: /commands/jx_shell/
 ---
 ## jx shell
 
-Create a sub shell so that changes to the kubernetes context, namespace or environment remain local to the shell
+Create a sub shell so that changes to the Kubernetes context, namespace or environment remain local to the shell
 
 ### Synopsis
 
-Create a sub shell so that changes to the kubernetes context, namespace or environment remain local to the shell.
+Create a sub shell so that changes to the Kubernetes context, namespace or environment remain local to the shell.
 
 ```
 jx shell [flags]
@@ -25,7 +25,7 @@ jx shell [flags]
   # create a new shell using a specific named context
   jx shell prod-cluster
   
-  # ends the current shell and returns to the previous kubernetes context
+  # ends the current shell and returns to the previous Kubernetes context
   exit
 ```
 

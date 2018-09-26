@@ -1,5 +1,5 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx delete quickstartlocation"
 slug: jx_delete_quickstartlocation
 url: /commands/jx_delete_quickstartlocation/
@@ -27,7 +27,7 @@ jx delete quickstartlocation [flags]
   # Pick a quickstart location to delete for your team using an abbreviation
   jx delete qsloc
   
-  # Delete a github organisation 'myorg' for your team
+  # Delete a GitHub organisation 'myorg' for your team
   jx delete qsloc --owner myorg
   
   # Delete a specific location for your team
@@ -42,9 +42,9 @@ jx delete quickstartlocation [flags]
   -h, --help                      help for quickstartlocation
       --install-dependencies      Should any required dependencies be installed automatically
       --no-brew                   Disables the use of brew on MacOS to install or upgrade command line dependencies
-  -o, --owner string              The owner is the user or organisation of the git provider
+  -o, --owner string              The owner is the user or organisation of the Git provider
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
-  -u, --url string                The URL of the git service (default "https://github.com")
+  -u, --url string                The URL of the Git service (default "https://github.com")
       --verbose                   Enable verbose logging
 ```
 

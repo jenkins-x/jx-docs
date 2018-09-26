@@ -1,16 +1,16 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx repository"
 slug: jx_repository
 url: /commands/jx_repository/
 ---
 ## jx repository
 
-Opens the web page for the current git repository in a browser
+Opens the web page for the current Git repository in a browser
 
 ### Synopsis
 
-Opens the web page for the current git repository in a browser 
+Opens the web page for the current Git repository in a browser 
 
 You can use the '--url' argument to just display the URL without opening it
 
@@ -21,10 +21,10 @@ jx repository [flags]
 ### Examples
 
 ```
-  # Open the git repository in a browser
+  # Open the Git repository in a browser
   jx repo
   
-  # Print the URL of the git repository
+  # Print the URL of the Git repository
   jx repo -u
 ```
 

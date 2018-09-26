@@ -1,16 +1,16 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx create codeship"
 slug: jx_create_codeship
 url: /commands/jx_create_codeship/
 ---
 ## jx create codeship
 
-Creates a build on CodeShip to create/update JX clusters
+Creates a build on Codeship to create/update JX clusters
 
 ### Synopsis
 
-Creates a build on CodeShip to create/update JX clusters
+Creates a build on Codeship to create/update JX clusters
 
 ```
 jx create codeship [flags]
@@ -33,7 +33,7 @@ jx create codeship [flags]
       --codeship-organisation string           The Codeship organisation to use, this will not be stored anywhere
       --codeship-password string               The password to login to Codeship with, this will not be stored anywhere
       --codeship-username string               The username to login to Codeship with, this will not be stored anywhere
-  -f, --fork-git-repo string                   The Git repository used as the fork when creating new Organisation git repos (default "https://github.com/jenkins-x/default-organisation.git")
+  -f, --fork-git-repo string                   The Git repository used as the fork when creating new Organisation Git repos (default "https://github.com/jenkins-x/default-organisation.git")
       --git-email string                       The email to use for any git commits (default "codeship@jenkins-x.io")
       --git-user string                        The name to use for any git commits (default "Codeship")
       --gke-disk-size string                   Size in GB for node VM boot disks. Defaults to 100GB (default "100")
@@ -47,17 +47,17 @@ jx create codeship [flags]
       --gke-zone string                        The compute zone (e.g. us-central1-a) for the cluster
       --headless                               Enable headless operation if using browser automation
   -h, --help                                   help for codeship
-      --ignore-terraform-warnings              Ignore any warnings about the terraform plan being potentially destructive
+      --ignore-terraform-warnings              Ignore any warnings about the Terraform plan being potentially destructive
       --install-dependencies                   Should any required dependencies be installed automatically
       --jx-environment string                  The cluster name to install jx inside (default "dev")
-      --local-organisation-repository string   Rather than cloning from a remote git server, the local directory to use for the organisational folder
+      --local-organisation-repository string   Rather than cloning from a remote Git server, the local directory to use for the organisational folder
   -n, --name string                            The name of the service account to create
       --no-brew                                Disables the use of brew on MacOS to install or upgrade command line dependencies
   -o, --organisation-name string               The organisation name that will be used as the Git repo containing cluster details, the repo will be organisation-<org name>
   -p, --project string                         The GCP project to create the service account in
       --skip-auth-secrets-merge                Skips merging a local git auth yaml file with any pipeline secrets that are found
       --skip-login                             Skip Google auth if already logged in via gloud auth
-      --skip-terraform-apply                   Skip applying the generated terraform plans
+      --skip-terraform-apply                   Skip applying the generated Terraform plans
       --verbose                                Enable verbose logging
 ```
 

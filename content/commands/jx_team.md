@@ -1,12 +1,12 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx team"
 slug: jx_team
 url: /commands/jx_team/
 ---
 ## jx team
 
-View or change the current team in the current kubernetes cluster
+View or change the current team in the current Kubernetes cluster
 
 ### Synopsis
 

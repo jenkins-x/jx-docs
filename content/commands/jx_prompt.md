@@ -1,5 +1,5 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx prompt"
 slug: jx_prompt
 url: /commands/jx_prompt/
@@ -10,7 +10,7 @@ Generate the command line prompt for the current team and environment
 
 ### Synopsis
 
-Generate a command prompt for the current namespace and kubernetes context.
+Generate a command prompt for the current namespace and Kubernetes context.
 
 ```
 jx prompt [flags]
@@ -32,7 +32,7 @@ jx prompt [flags]
 ### Options
 
 ```
-      --context-color stringArray     The color for the kubernetes context (default [cyan])
+      --context-color stringArray     The color for the Kubernetes context (default [cyan])
   -d, --divider string                The divider between the team and environment for the prompt (default ":")
   -h, --help                          help for prompt
   -i, --icon                          Uses an icon for the label in the prompt

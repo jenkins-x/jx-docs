@@ -1,5 +1,5 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx upgrade platform"
 slug: jx_upgrade_platform
 url: /commands/jx_upgrade_platform/
@@ -28,7 +28,7 @@ jx upgrade platform [flags]
 ```
   -b, --batch-mode                      In batch mode the command never prompts for user input
   -c, --chart string                    The Chart to upgrade (default "jenkins-x/jenkins-x-platform")
-      --cloud-environment-repo string   Cloud Environments git repo (default "https://github.com/jenkins-x/cloud-environments")
+      --cloud-environment-repo string   Cloud Environments Git repo (default "https://github.com/jenkins-x/cloud-environments")
       --headless                        Enable headless operation if using browser automation
   -h, --help                            help for platform
       --install-dependencies            Should any required dependencies be installed automatically

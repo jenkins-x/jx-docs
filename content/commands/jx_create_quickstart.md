@@ -1,5 +1,5 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx create quickstart"
 slug: jx_create_quickstart
 url: /commands/jx_create_quickstart/
@@ -39,16 +39,16 @@ jx create quickstart [flags]
   -b, --batch-mode                     In batch mode the command never prompts for user input
       --branches string                The branch pattern for branches to trigger CI/CD pipelines on
       --credentials string             The Jenkins credentials name used by the job
-      --default-owner string           The default user/organisation used if no user is found for the current git repository being imported (default "someone")
-      --docker-registry-org string     The name of the docker registry organisation to use. If not specified then the git provider organisation will be used
+      --default-owner string           The default user/organisation used if no user is found for the current Git repository being imported (default "someone")
+      --docker-registry-org string     The name of the docker registry organisation to use. If not specified then the Git provider organisation will be used
       --dry-run                        Performs local changes to the repo but skips the import into Jenkins X
   -f, --filter string                  The text filter
       --framework string               The framework to filter on
-      --git-api-token string           The git API token to use for creating new git repositories
+      --git-api-token string           The Git API token to use for creating new Git repositories
       --git-host string                The Git server host if not using GitHub when pushing created project
-      --git-private                    Create new git repositories as private
-      --git-provider-url string        The git server URL to create new git repositories inside
-      --git-username string            The git username to use for creating new git repositories
+      --git-private                    Create new Git repositories as private
+      --git-provider-url string        The Git server URL to create new Git repositories inside
+      --git-username string            The Git username to use for creating new Git repositories
       --headless                       Enable headless operation if using browser automation
   -h, --help                           help for quickstart
       --import-commit-message string   Should we override the Jenkinsfile in the project?
@@ -56,13 +56,13 @@ jx create quickstart [flags]
       --jenkinsfile string             The name of the Jenkinsfile to use. If not specified then 'Jenkinsfile' will be used
   -l, --language string                The language to filter on
       --list-packs                     list available draft packs
-      --name string                    Specify the git repository name to import the project into (if it is not already in one)
+      --name string                    Specify the Git repository name to import the project into (if it is not already in one)
       --no-brew                        Disables the use of brew on MacOS to install or upgrade command line dependencies
       --no-draft                       Disable Draft from trying to default a Dockerfile and Helm Chart
       --no-import                      Disable import after the creation
       --no-jenkinsfile                 Disable defaulting a Jenkinsfile if its missing
-      --org string                     Specify the git provider organisation to import the project into (if it is not already in one)
-  -g, --organisations stringArray      The github organisations to query for quickstarts
+      --org string                     Specify the Git provider organisation to import the project into (if it is not already in one)
+  -g, --organisations stringArray      The GitHub organisations to query for quickstarts
   -o, --output-dir string              Directory to output the project to. Defaults to the current directory
       --owner string                   The owner to filter on
       --pack string                    The name of the pack to use

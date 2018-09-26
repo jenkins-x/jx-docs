@@ -1,16 +1,16 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx get buildpack"
 slug: jx_get_buildpack
 url: /commands/jx_get_buildpack/
 ---
 ## jx get buildpack
 
-Display the teams build pack git repository and references used for the current Team used on creating and importing projects
+Display the teams build pack Git repository and references used for the current Team used on creating and importing projects
 
 ### Synopsis
 
-Display the teams build pack git repository and references used for the current Team used on creating and importing projects 
+Display the teams build pack Git repository and references used for the current Team used on creating and importing projects 
 
 For more documentation see: https://jenkins-x.io/architecture/build-packs/
 

@@ -1,12 +1,12 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx create git token"
 slug: jx_create_git_token
 url: /commands/jx_create_git_token/
 ---
 ## jx create git token
 
-Adds a new API token for a user on a git server
+Adds a new API token for a user on a Git server
 
 ### Synopsis
 
@@ -19,13 +19,13 @@ jx create git token [username] [flags]
 ### Examples
 
 ```
-  # Add a new API Token for a user for the local git server
+  # Add a new API Token for a user for the local Git server
   # prompting the user to find and enter the API Token
   jx create git token -n local someUserName
   
-  # Add a new API Token for a user for the local git server
-  # using browser automation to login to the git server
-  # with the username an password to find the API Token
+  # Add a new API Token for a user for the local Git server
+  # using browser automation to login to the Git server
+  # with the username and password to find the API Token
   jx create git token -n local -p somePassword someUserName
 ```
 
@@ -37,12 +37,12 @@ jx create git token [username] [flags]
       --headless                  Enable headless operation if using browser automation
   -h, --help                      help for token
       --install-dependencies      Should any required dependencies be installed automatically
-  -n, --name string               The name of the git server to add a user
+  -n, --name string               The name of the Git server to add a user
       --no-brew                   Disables the use of brew on MacOS to install or upgrade command line dependencies
   -p, --password string           The User password to try automatically create a new API Token
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
       --timeout string            The timeout if using browser automation to generate the API token (by passing username and password)
-  -u, --url string                The URL of the git server to add a user
+  -u, --url string                The URL of the Git server to add a user
       --verbose                   Enable verbose logging
 ```
 

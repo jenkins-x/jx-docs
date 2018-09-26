@@ -1,5 +1,5 @@
 ---
-date: 2018-09-26T17:06:47Z
+date: 2018-09-26T18:02:06Z
 title: "jx step next-buildnumber"
 slug: jx_step_next-buildnumber
 url: /commands/jx_step_next-buildnumber/
@@ -25,10 +25,10 @@ jx step next-buildnumber [flags]
 ### Options
 
 ```
-  -b, --branch string   The git branch (default "master")
+  -b, --branch string   The Git branch (default "master")
   -h, --help            help for next-buildnumber
-  -o, --owner string    The git repository owner
-  -r, --repo string     The git repository name
+  -o, --owner string    The Git repository owner
+  -r, --repo string     The Git repository name
 ```
 
 ### SEE ALSO
