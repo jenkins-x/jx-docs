@@ -1,5 +1,5 @@
 ---
-date: 2018-09-26T18:57:17Z
+date: 2018-09-26T19:53:21Z
 title: "jx step pre build"
 slug: jx_step_pre_build
 url: /commands/jx_step_pre_build/
@@ -19,7 +19,7 @@ jx step pre build [flags]
 ### Examples
 
 ```
-  jx step post build ${DOCKER_REGISTRY}/someorg/myapp
+  jx step pre build ${DOCKER_REGISTRY}/someorg/myapp
 ```
 
 ### Options
