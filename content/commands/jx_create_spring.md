@@ -1,5 +1,5 @@
 ---
-date: 2018-09-27T19:43:39Z
+date: 2018-09-27T21:57:56Z
 title: "jx create spring"
 slug: jx_create_spring
 url: /commands/jx_create_spring/

@@ -1,5 +1,5 @@
 ---
-date: 2018-09-27T19:43:39Z
+date: 2018-09-27T21:57:56Z
 title: "jx get aws"
 slug: jx_get_aws
 url: /commands/jx_get_aws/
