@@ -1,5 +1,5 @@
 ---
-date: 2018-09-27T17:35:27Z
+date: 2018-09-27T19:43:39Z
 title: "jx upgrade ingress"
 slug: jx_upgrade_ingress
 url: /commands/jx_upgrade_ingress/
@@ -26,11 +26,17 @@ jx upgrade ingress [flags]
 ### Options
 
 ```
-      --cluster                  Enable cluster wide Ingress upgrade
-  -h, --help                     help for ingress
-      --namespaces stringArray   Namespaces to upgrade
-      --services stringArray     Services to upgrdde
-      --skip-certmanager         Skips certmanager installation
+  -b, --batch-mode                In batch mode the command never prompts for user input
+      --cluster                   Enable cluster wide Ingress upgrade
+      --headless                  Enable headless operation if using browser automation
+  -h, --help                      help for ingress
+      --install-dependencies      Should any required dependencies be installed automatically
+      --namespaces stringArray    Namespaces to upgrade
+      --no-brew                   Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --services stringArray      Services to upgrdde
+      --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
+      --skip-certmanager          Skips certmanager installation
+      --verbose                   Enable verbose logging
 ```
 
 ### SEE ALSO
