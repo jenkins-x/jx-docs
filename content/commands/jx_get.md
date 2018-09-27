@@ -1,16 +1,16 @@
 ---
-date: 2018-09-27T05:49:48Z
+date: 2018-09-27T06:10:55Z
 title: "jx get"
 slug: jx_get
 url: /commands/jx_get/
 ---
 ## jx get
 
-Display one or many resources
+Display one or more resources
 
 ### Synopsis
 
-Display one or many resources. 
+Display one or more resources. 
 
 Valid resource types include: 
 
@@ -41,32 +41,32 @@ jx get TYPE [flags]
 ### SEE ALSO
 
 * [jx](/commands/jx/)	 - jx is a command line tool for working with Jenkins X
-* [jx get activities](/commands/jx_get_activities/)	 - Display one or many Activities on projects
+* [jx get activities](/commands/jx_get_activities/)	 - Display one or more Activities on projects
 * [jx get addons](/commands/jx_get_addons/)	 - Lists the addons
-* [jx get applications](/commands/jx_get_applications/)	 - Display one or many Applications and their versions
+* [jx get applications](/commands/jx_get_applications/)	 - Display one or more Applications and their versions
 * [jx get aws](/commands/jx_get_aws/)	 - Displays AWS account information
 * [jx get branchpattern](/commands/jx_get_branchpattern/)	 - Display the git branch patterns for the current Team used on creating and importing projects
-* [jx get build](/commands/jx_get_build/)	 - Display one or many build resources
+* [jx get build](/commands/jx_get_build/)	 - Display one or more build resources
 * [jx get buildpack](/commands/jx_get_buildpack/)	 - Display the teams build pack Git repository and references used for the current Team used on creating and importing projects
 * [jx get chat](/commands/jx_get_chat/)	 - Display the current registered chat service URLs
 * [jx get config](/commands/jx_get_config/)	 - Display the project configuration
 * [jx get cve](/commands/jx_get_cve/)	 - Display Common Vulnerabilities and Exposures (CVEs)
 * [jx get devpod](/commands/jx_get_devpod/)	 - Lists the DevPods
-* [jx get environments](/commands/jx_get_environments/)	 - Display one or many Environments
+* [jx get environments](/commands/jx_get_environments/)	 - Display one or more Environments
 * [jx get git](/commands/jx_get_git/)	 - Display the current registered Git service URLs
 * [jx get helmbin](/commands/jx_get_helmbin/)	 - Display the Helm binary name used in the pipelines
 * [jx get issue](/commands/jx_get_issue/)	 - Display the status of an issue
-* [jx get issues](/commands/jx_get_issues/)	 - Display one or many issues
-* [jx get pipelines](/commands/jx_get_pipelines/)	 - Display one or many Pipelines
+* [jx get issues](/commands/jx_get_issues/)	 - Display one or more issues
+* [jx get pipelines](/commands/jx_get_pipelines/)	 - Display one or more Pipelines
 * [jx get post](/commands/jx_get_post/)	 - Create a job which is triggered after a Preview is created
-* [jx get previews](/commands/jx_get_previews/)	 - Display one or many Preview Environments
-* [jx get quickstartlocations](/commands/jx_get_quickstartlocations/)	 - Display one or many Quickstart Locations
+* [jx get previews](/commands/jx_get_previews/)	 - Display one or more Preview Environments
+* [jx get quickstartlocations](/commands/jx_get_quickstartlocations/)	 - Display one or more Quickstart Locations
 * [jx get releases](/commands/jx_get_releases/)	 - Display the Release or Releases the current user is a member of
 * [jx get teamroles](/commands/jx_get_teamroles/)	 - Display the Team or Teams the current user is a member of
 * [jx get teams](/commands/jx_get_teams/)	 - Display the Team or Teams the current user is a member of
 * [jx get token](/commands/jx_get_token/)	 - Display the tokens for different kinds of services
 * [jx get tracker](/commands/jx_get_tracker/)	 - Display the current registered issue tracker service URLs
-* [jx get urls](/commands/jx_get_urls/)	 - Display one or many URLs
+* [jx get urls](/commands/jx_get_urls/)	 - Display one or more URLs
 * [jx get users](/commands/jx_get_users/)	 - Display the User or Users the current user is a member of
 * [jx get workflows](/commands/jx_get_workflows/)	 - Display either all the available workflows or a specific workflow
 

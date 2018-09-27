@@ -1,5 +1,5 @@
 ---
-date: 2018-09-27T05:49:48Z
+date: 2018-09-27T06:10:55Z
 title: "jx create chat server"
 slug: jx_create_chat_server
 url: /commands/jx_create_chat_server/
@@ -10,7 +10,7 @@ Creates a new chat server URL
 
 ### Synopsis
 
-Adds a new Chat Server URL
+Adds a new chat server URL
 
 ```
 jx create chat server kind [url] [flags]

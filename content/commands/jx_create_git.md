@@ -1,16 +1,16 @@
 ---
-date: 2018-09-27T05:49:48Z
+date: 2018-09-27T06:10:55Z
 title: "jx create git"
 slug: jx_create_git
 url: /commands/jx_create_git/
 ---
 ## jx create git
 
-Creates a git resource
+Creates a Git resource
 
 ### Synopsis
 
-Creates a git resource
+Creates a Git resource
 
 ```
 jx create git [flags]

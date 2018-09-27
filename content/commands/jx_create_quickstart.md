@@ -1,12 +1,12 @@
 ---
-date: 2018-09-27T05:49:48Z
+date: 2018-09-27T06:10:55Z
 title: "jx create quickstart"
 slug: jx_create_quickstart
 url: /commands/jx_create_quickstart/
 ---
 ## jx create quickstart
 
-Create a new app from a Quickstart and import the generated code into git and Jenkins for CI/CD
+Create a new app from a Quickstart and import the generated code into Git and Jenkins for CI/CD
 
 ### Synopsis
 

@@ -1,5 +1,5 @@
 ---
-date: 2018-09-27T05:49:48Z
+date: 2018-09-27T06:10:55Z
 title: "jx install"
 slug: jx_install
 url: /commands/jx_install/
@@ -20,7 +20,7 @@ The current requirements are:
 
  *RBAC is enabled on the cluster 
 
- *Insecure docker registry is enabled for docker registries running locally inside Kubernetes on the service IP range. See the above documentation for more detail
+ *Insecure Docker registry is enabled for Docker registries running locally inside Kubernetes on the service IP range. See the above documentation for more detail
 
 ```
 jx install [flags]

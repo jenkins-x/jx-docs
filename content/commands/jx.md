@@ -1,5 +1,5 @@
 ---
-date: 2018-09-27T05:49:48Z
+date: 2018-09-27T06:10:55Z
 title: "jx"
 slug: jx
 url: /commands/jx/
@@ -32,12 +32,12 @@ jx [flags]
 * [jx context](/commands/jx_context/)	 - View or change the current Kubernetes context (Kubernetes cluster)
 * [jx controller](/commands/jx_controller/)	 - Runs a controller
 * [jx create](/commands/jx_create/)	 - Create a new resource
-* [jx delete](/commands/jx_delete/)	 - Deletes one or many resources
-* [jx diagnose](/commands/jx_diagnose/)	 - Print diagnostic information about the Jenkins-X installation
+* [jx delete](/commands/jx_delete/)	 - Deletes one or more resources
+* [jx diagnose](/commands/jx_diagnose/)	 - Print diagnostic information about the Jenkins X installation
 * [jx edit](/commands/jx_edit/)	 - Edit a resource
 * [jx environment](/commands/jx_environment/)	 - View or change the current environment in the current Kubernetes cluster
 * [jx gc](/commands/jx_gc/)	 - Garbage collects Jenkins X resources
-* [jx get](/commands/jx_get/)	 - Display one or many resources
+* [jx get](/commands/jx_get/)	 - Display one or more resources
 * [jx import](/commands/jx_import/)	 - Imports a local project or Git repository into Jenkins
 * [jx init](/commands/jx_init/)	 - Init Jenkins X
 * [jx install](/commands/jx_install/)	 - Install Jenkins X in the current Kubernetes cluster
@@ -57,7 +57,7 @@ jx [flags]
 * [jx status](/commands/jx_status/)	 - status of the Kubernetes cluster or named node
 * [jx step](/commands/jx_step/)	 - pipeline steps
 * [jx stop](/commands/jx_stop/)	 - Stops a process such as a pipeline
-* [jx sync](/commands/jx_sync/)	 - Synchronises your local files to a devpod
+* [jx sync](/commands/jx_sync/)	 - Synchronises your local files to a DevPod
 * [jx team](/commands/jx_team/)	 - View or change the current team in the current Kubernetes cluster
 * [jx uninstall](/commands/jx_uninstall/)	 - Uninstall the Jenkins X platform
 * [jx update](/commands/jx_update/)	 - Updates an existing resource

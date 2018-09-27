@@ -1,16 +1,16 @@
 ---
-date: 2018-09-27T05:49:48Z
+date: 2018-09-27T06:10:55Z
 title: "jx create addon prow"
 slug: jx_create_addon_prow
 url: /commands/jx_create_addon_prow/
 ---
 ## jx create addon prow
 
-Create a prow addon
+Create a Prow addon
 
 ### Synopsis
 
-Creates the prow addon for handling webhook events
+Creates the Prow addon for handling webhook events
 
 ```
 jx create addon prow [flags]
@@ -19,10 +19,10 @@ jx create addon prow [flags]
 ### Examples
 
 ```
-  # Create the prow addon
+  # Create the Prow addon
   jx create addon prow
   
-  # Create the prow addon in a custom namespace
+  # Create the Prow addon in a custom namespace
   jx create addon prow -n mynamespace
 ```
 
@@ -44,7 +44,7 @@ jx create addon prow [flags]
   -s, --set string                The chart set values (can specify multiple or separate values with commas: key1=val1,key2=val2)
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
       --verbose                   Enable verbose logging
-  -v, --version string            The version of the prow addon to use
+  -v, --version string            The version of the Prow addon to use
 ```
 
 ### SEE ALSO

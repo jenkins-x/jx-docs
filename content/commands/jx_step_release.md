@@ -1,5 +1,5 @@
 ---
-date: 2018-09-27T05:49:48Z
+date: 2018-09-27T06:10:55Z
 title: "jx step release"
 slug: jx_step_release
 url: /commands/jx_step_release/
@@ -19,16 +19,16 @@ jx step release [flags]
 ### Options
 
 ```
-  -a, --application string                the docker application image name
+  -a, --application string                the Docker application image name
   -b, --build string                      The Build number which is used to update the PipelineActivity. If not specified its defaulted from  the '$BUILD_NUMBER' environment variable
-  -r, --docker-registry docker-registry   the docker registry host or host:port to use. If not specified it is loaded from the docker-registry ConfigMap
-  -e, --git-email string                  The git email address to configure if there is none already setup
-  -u, --git-username string               The git username to configure if there is none already setup
+  -r, --docker-registry docker-registry   the Docker registry host or host:port to use. If not specified it is loaded from the docker-registry ConfigMap
+  -e, --git-email string                  The Git email address to configure if there is none already setup
+  -u, --git-username string               The Git username to configure if there is none already setup
       --helm-repo-name string             The name of the helm repository that contains the app (default "releases")
       --helm-repo-url string              The Helm Repository URL to use for the App (default "http://jenkins-x-chartmuseum:8080")
   -h, --help                              help for release
       --no-batch                          Whether to disable batch mode
-  -o, --organisation string               the docker organisation for the generated docker image
+  -o, --organisation string               the Docker organisation for the generated Docker image
       --pull-request-poll-time string     Poll time when waiting for a Pull Request to merge (default "20s")
   -t, --timeout string                    The timeout to wait for the promotion to succeed in the underlying Environment. The command fails if the timeout is exceeded or the promotion does not complete (default "1h")
       --xdg-config-home string            The home directory where git config is setup (default "/home/jenkins")

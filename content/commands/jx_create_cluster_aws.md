@@ -1,5 +1,5 @@
 ---
-date: 2018-09-27T05:49:48Z
+date: 2018-09-27T06:10:55Z
 title: "jx create cluster aws"
 slug: jx_create_cluster_aws
 url: /commands/jx_create_cluster_aws/
@@ -10,7 +10,7 @@ Create a new Kubernetes cluster on AWS with kops
 
 ### Synopsis
 
-This command creates a new Kubernetes cluster on Amazon Web Service (AWS) using kops, installing required local dependencies and provisions the Jenkins X platform 
+This command creates a new Kubernetes cluster on Amazon Web Service (AWS) using kops, installing required local dependencies and provisions the Jenkins X platform. 
 
 AWS manages your hosted Kubernetes environment via kops, making it quick and easy to deploy and manage containerized applications without container orchestration expertise. It also eliminates the burden of ongoing operations and maintenance by provisioning, upgrading, and scaling resources on demand, without taking your applications offline.
 
@@ -63,11 +63,11 @@ jx create cluster aws [flags]
       --ingress-deployment string           The name of the Ingress controller Deployment (default "jxing-nginx-ingress-controller")
       --ingress-namespace string            The namespace for the Ingress controller (default "kube-system")
       --ingress-service string              The name of the Ingress controller Service (default "jxing-nginx-ingress-controller")
-      --insecure-registry string            The insecure docker registries to allow (default "100.64.0.0/10")
+      --insecure-registry string            The insecure Docker registries to allow (default "100.64.0.0/10")
       --install-dependencies                Should any required dependencies be installed automatically
       --install-only                        Force the install command to fail if there is already an installation. Otherwise lets update the installation
       --keep-exposecontroller-job           Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
-  -v, --kubernetes-version string           kubernetes version
+  -v, --kubernetes-version string           Kubernetes version
       --local-cloud-environment             Ignores default cloud-environment-repo and uses current directory 
       --local-helm-repo-name string         The name of the helm repository for the installed Chart Museum (default "releases")
       --master-size string                  The size of a master in the kops created cluster.

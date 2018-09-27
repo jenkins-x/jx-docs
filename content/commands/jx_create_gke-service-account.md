@@ -1,5 +1,5 @@
 ---
-date: 2018-09-27T05:49:48Z
+date: 2018-09-27T06:10:55Z
 title: "jx create gke-service-account"
 slug: jx_create_gke-service-account
 url: /commands/jx_create_gke-service-account/
@@ -36,7 +36,7 @@ jx create gke-service-account [flags]
       --no-brew                   Disables the use of brew on MacOS to install or upgrade command line dependencies
   -p, --project string            The GCP project to create the service account in
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
-      --skip-login                Skip Google auth if already logged in via gloud auth
+      --skip-login                Skip Google auth if already logged in via gcloud auth
       --verbose                   Enable verbose logging
 ```
 

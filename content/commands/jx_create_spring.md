@@ -1,12 +1,12 @@
 ---
-date: 2018-09-27T05:49:48Z
+date: 2018-09-27T06:10:55Z
 title: "jx create spring"
 slug: jx_create_spring
 url: /commands/jx_create_spring/
 ---
 ## jx create spring
 
-Create a new spring boot application and import the generated code into git and Jenkins for CI/CD
+Create a new Spring Boot application and import the generated code into Git and Jenkins for CI/CD
 
 ### Synopsis
 

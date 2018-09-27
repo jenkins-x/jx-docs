@@ -1,12 +1,12 @@
 ---
-date: 2018-09-27T05:49:48Z
+date: 2018-09-27T06:10:55Z
 title: "jx create cluster minishift"
 slug: jx_create_cluster_minishift
 url: /commands/jx_create_cluster_minishift/
 ---
 ## jx create cluster minishift
 
-Create a new OpenShift cluster with minishift: Runs locally
+Create a new OpenShift cluster with Minishift: Runs locally
 
 ### Synopsis
 
@@ -30,7 +30,7 @@ jx create cluster minishift [flags]
   -b, --batch-mode                          In batch mode the command never prompts for user input
       --cleanup-temp-files                  Cleans up any temporary values.yaml used by helm install [default true] (default true)
       --cloud-environment-repo string       Cloud Environments Git repo (default "https://github.com/jenkins-x/cloud-environments")
-  -c, --cpu string                          Number of CPUs allocated to the minishift VM (default "3")
+  -c, --cpu string                          Number of CPUs allocated to the Minishift VM (default "3")
       --default-admin-password string       the default admin password to access Jenkins, Kubernetes Dashboard, Chartmuseum and Nexus
       --default-environment-prefix string   Default environment repo prefix, your Git repos will be of the form 'environment-$prefix-$envName'
       --docker-registry string              The Docker Registry host or host:port which is used when tagging and pushing images. If not specified it defaults to the internal registry unless there is a better provider default (e.g. ECR on AWS/EKS)
@@ -52,7 +52,7 @@ jx create cluster minishift [flags]
       --helm3                               Use helm3 to install Jenkins X which does not use Tiller
   -h, --help                                help for minishift
       --http string                         Toggle creating http or https ingress rules (default "true")
-  -v, --hyperv-virtual-switch string        Additional options for using HyperV with minishift
+  -v, --hyperv-virtual-switch string        Additional options for using HyperV with Minishift
       --ingress-cluster-role string         The cluster role for the Ingress controller (default "cluster-admin")
       --ingress-deployment string           The name of the Ingress controller Deployment (default "jxing-nginx-ingress-controller")
       --ingress-namespace string            The namespace for the Ingress controller (default "kube-system")
@@ -62,7 +62,7 @@ jx create cluster minishift [flags]
       --keep-exposecontroller-job           Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
       --local-cloud-environment             Ignores default cloud-environment-repo and uses current directory 
       --local-helm-repo-name string         The name of the helm repository for the installed Chart Museum (default "releases")
-  -m, --memory string                       Amount of RAM allocated to the minishift VM in MB (default "4096")
+  -m, --memory string                       Amount of RAM allocated to the Minishift VM in MB (default "4096")
       --namespace string                    The namespace the Jenkins X platform should be installed into (default "jx")
       --no-brew                             Disables the use of brew on MacOS to install or upgrade command line dependencies
       --no-default-environments             Disables the creation of the default Staging and Production environments

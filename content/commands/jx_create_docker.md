@@ -1,12 +1,12 @@
 ---
-date: 2018-09-27T05:49:48Z
+date: 2018-09-27T06:10:55Z
 title: "jx create docker"
 slug: jx_create_docker
 url: /commands/jx_create_docker/
 ---
 ## jx create docker
 
-Create/update docker auth for a given host and user in the config.json file
+Create/update Docker auth for a given host and user in the config.json file
 
 ### Synopsis
 
@@ -19,7 +19,7 @@ jx create docker auth [flags]
 ### Examples
 
 ```
-  # Create/update docker auth entry in the config.json file
+  # Create/update Docker auth entry in the config.json file
   jx create docker auth --host "foo.private.docker.registry" --user "foo" --secret "FooDockerHubToken" --email "fakeemail@gmail.com"
 ```
 
@@ -30,7 +30,7 @@ jx create docker auth [flags]
   -e, --email string              The email to associate auth component of config.json
       --headless                  Enable headless operation if using browser automation
   -h, --help                      help for docker
-  -t, --host string               The docker host
+  -t, --host string               The Docker host
       --install-dependencies      Should any required dependencies be installed automatically
       --no-brew                   Disables the use of brew on MacOS to install or upgrade command line dependencies
   -s, --secret string             The secret to associate auth component of config.json

@@ -1,12 +1,12 @@
 ---
-date: 2018-09-27T05:49:48Z
+date: 2018-09-27T06:10:55Z
 title: "jx sync"
 slug: jx_sync
 url: /commands/jx_sync/
 ---
 ## jx sync
 
-Synchronises your local files to a devpod
+Synchronises your local files to a DevPod
 
 ### Synopsis
 
@@ -21,7 +21,7 @@ jx sync [flags]
 ### Examples
 
 ```
-  # Starts synchonizing the current directory files to the users DevPod
+  # Starts synchronizing the current directory files to the users DevPod
   jx sync
 ```
 

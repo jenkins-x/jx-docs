@@ -1,12 +1,12 @@
 ---
-date: 2018-09-27T05:49:48Z
+date: 2018-09-27T06:10:55Z
 title: "jx create devpod"
 slug: jx_create_devpod
 url: /commands/jx_create_devpod/
 ---
 ## jx create devpod
 
-Creates a Developer Pod for running builds and tests inside the cluster
+Creates a DevPod for running builds and tests inside the cluster
 
 ### Synopsis
 
@@ -33,7 +33,7 @@ jx create devpod [flags]
 ```
       --auto-expose               Automatically expose useful ports as services such as the debug port, as well as any ports specified using --ports (default true)
   -b, --batch-mode                In batch mode the command never prompts for user input
-      --docker-registry string    The docker registry to use within the DevPod. If not specified, default to the built-in registry or $DOCKER_REGISTRY
+      --docker-registry string    The Docker registry to use within the DevPod. If not specified, default to the built-in registry or $DOCKER_REGISTRY
       --headless                  Enable headless operation if using browser automation
   -h, --help                      help for devpod
       --import                    Detect if there is a Git repository in the current directory and attempt to clone it into the DevPod. Ignored if used with --sync (default true)
@@ -43,7 +43,7 @@ jx create devpod [flags]
       --no-brew                   Disables the use of brew on MacOS to install or upgrade command line dependencies
       --persist                   Persist changes made to the DevPod. Cannot be used with --sync
   -p, --ports ints                Container ports exposed by the DevPod
-  -c, --request-cpu string        The request CPU of the dev pod (default "1")
+  -c, --request-cpu string        The request CPU of the DevPod (default "1")
       --reuse                     Reuse an existing DevPod if a suitable one exists. The DevPod will be selected based on the label (or current working directory) (default true)
       --shell string              The name of the shell to invoke in the DevPod. If nothing is specified it will use 'bash'
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
@@ -51,7 +51,7 @@ jx create devpod [flags]
       --sync                      Also synchronise the local file system into the DevPod
       --username string           The username to create the DevPod. If not specified defaults to the current operating system user or $USER'
       --verbose                   Enable verbose logging
-  -w, --working-dir string        The working directory of the dev pod
+  -w, --working-dir string        The working directory of the DevPod
 ```
 
 ### SEE ALSO

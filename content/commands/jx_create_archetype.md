@@ -1,12 +1,12 @@
 ---
-date: 2018-09-27T05:49:48Z
+date: 2018-09-27T06:10:55Z
 title: "jx create archetype"
 slug: jx_create_archetype
 url: /commands/jx_create_archetype/
 ---
 ## jx create archetype
 
-Create a new app from a Maven Archetype and import the generated code into git and Jenkins for CI/CD
+Create a new app from a Maven Archetype and import the generated code into Git and Jenkins for CI/CD
 
 ### Synopsis
 

@@ -1,18 +1,18 @@
 ---
-date: 2018-09-27T05:49:48Z
+date: 2018-09-27T06:10:55Z
 title: "jx create camel"
 slug: jx_create_camel
 url: /commands/jx_create_camel/
 ---
 ## jx create camel
 
-Create a new camel based application and import the generated code into git and Jenkins for CI/CD
+Create a new Camel based application and import the generated code into Git and Jenkins for CI/CD
 
 ### Synopsis
 
-Creates a new Apache Camel application using Spring Boot and then optionally setups CI/CD pipelines and GitOps promotion. 
+Creates a new Apache Camel application using Spring Boot and then optionally sets up CI/CD pipelines and GitOps promotion. 
 
-For more documentation about camel see: https://camel.apache.org/
+For more documentation about Camel see: https://camel.apache.org/
 
 ```
 jx create camel [flags]
@@ -21,10 +21,10 @@ jx create camel [flags]
 ### Examples
 
 ```
-  # Create a camel application and be prompted for the folder name
+  # Create a Camel application and be prompted for the folder name
   jx create camel
   
-  # Create a camel application called awesome
+  # Create a Camel application called awesome
   jx create camel -a awesome
 ```
 

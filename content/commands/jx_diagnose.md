@@ -1,16 +1,16 @@
 ---
-date: 2018-09-27T05:49:48Z
+date: 2018-09-27T06:10:55Z
 title: "jx diagnose"
 slug: jx_diagnose
 url: /commands/jx_diagnose/
 ---
 ## jx diagnose
 
-Print diagnostic information about the Jenkins-X installation
+Print diagnostic information about the Jenkins X installation
 
 ### Synopsis
 
-Print diagnostic information about the Jenkins-X installation
+Print diagnostic information about the Jenkins X installation
 
 ```
 jx diagnose [flags]

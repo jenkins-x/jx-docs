@@ -1,5 +1,5 @@
 ---
-date: 2018-09-27T05:49:48Z
+date: 2018-09-27T06:10:55Z
 title: "jx create cluster gke terraform"
 slug: jx_create_cluster_gke_terraform
 url: /commands/jx_create_cluster_gke_terraform/
@@ -83,7 +83,7 @@ jx create cluster gke terraform [flags]
       --skip-auth-secrets-merge             Skips merging a local git auth yaml file with any pipeline secrets that are found
       --skip-ingress                        Don't install an ingress controller
       --skip-installation                   Provision cluster only, don't install Jenkins X into it
-      --skip-login                          Skip Google auth if already logged in via gloud auth
+      --skip-login                          Skip Google auth if already logged in via gcloud auth
       --skip-tiller                         Don't install a Helm Tiller service
       --tiller                              Whether or not to use tiller at all. If no tiller is enabled then its ran as a local process instead (default true)
       --tiller-cluster-role string          The cluster role for Helm's tiller (default "cluster-admin")

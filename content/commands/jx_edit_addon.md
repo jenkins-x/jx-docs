@@ -1,5 +1,5 @@
 ---
-date: 2018-09-27T05:49:48Z
+date: 2018-09-27T06:10:55Z
 title: "jx edit addon"
 slug: jx_edit_addon
 url: /commands/jx_edit_addon/
@@ -19,7 +19,7 @@ jx edit addon [flags]
 ### Examples
 
 ```
-  # Enables or disbles an addon
+  # Enables or disables an addon
   jx edit addon
   
   # Enables or disables an addon

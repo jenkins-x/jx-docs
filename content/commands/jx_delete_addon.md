@@ -1,16 +1,16 @@
 ---
-date: 2018-09-27T05:49:48Z
+date: 2018-09-27T06:10:55Z
 title: "jx delete addon"
 slug: jx_delete_addon
 url: /commands/jx_delete_addon/
 ---
 ## jx delete addon
 
-Deletes one or many addons
+Deletes one or more addons
 
 ### Synopsis
 
-Deletes one or many addons
+Deletes one or more addons
 
 ```
 jx delete addon [flags]
@@ -25,7 +25,7 @@ jx delete addon [flags]
 
 ### SEE ALSO
 
-* [jx delete](/commands/jx_delete/)	 - Deletes one or many resources
+* [jx delete](/commands/jx_delete/)	 - Deletes one or more resources
 * [jx delete addon cloudbees](/commands/jx_delete_addon_cloudbees/)	 - Deletes the CloudBees app for Kubernetes addon
 * [jx delete addon gitea](/commands/jx_delete_addon_gitea/)	 - Deletes the Gitea addon
 

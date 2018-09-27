@@ -1,5 +1,5 @@
 ---
-date: 2018-09-27T05:49:48Z
+date: 2018-09-27T06:10:55Z
 title: "jx create codeship"
 slug: jx_create_codeship
 url: /commands/jx_create_codeship/
@@ -56,7 +56,7 @@ jx create codeship [flags]
   -o, --organisation-name string               The organisation name that will be used as the Git repo containing cluster details, the repo will be organisation-<org name>
   -p, --project string                         The GCP project to create the service account in
       --skip-auth-secrets-merge                Skips merging a local git auth yaml file with any pipeline secrets that are found
-      --skip-login                             Skip Google auth if already logged in via gloud auth
+      --skip-login                             Skip Google auth if already logged in via gcloud auth
       --skip-terraform-apply                   Skip applying the generated Terraform plans
       --verbose                                Enable verbose logging
 ```

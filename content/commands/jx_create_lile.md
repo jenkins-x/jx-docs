@@ -1,22 +1,22 @@
 ---
-date: 2018-09-27T05:49:48Z
+date: 2018-09-27T06:10:55Z
 title: "jx create lile"
 slug: jx_create_lile
 url: /commands/jx_create_lile/
 ---
 ## jx create lile
 
-Create a new lile based application and import the generated code into git and Jenkins for CI/CD
+Create a new Lile based application and import the generated code into Git and Jenkins for CI/CD
 
 ### Synopsis
 
-Creates a new lile application and then optionally setups CI/CD pipelines and GitOps promotion. 
+Creates a new Lile application and then optionally setups CI/CD pipelines and GitOps promotion. 
 
 Lile is an application generator for gRPC services in Go with a set of tools/libraries. 
 
 This command is expected to be run within your '$GOHOME' directory. e.g. at '$GOHOME/src/github.com/myOrgOrUser/' 
 
-For more documentation about lile see: https://github.com/lileio/lile
+For more documentation about Lile see: https://github.com/lileio/lile
 
 ```
 jx create lile [flags]
@@ -25,10 +25,10 @@ jx create lile [flags]
 ### Examples
 
 ```
-  # Create a lile application and be prompted for the folder name
+  # Create a Lile application and be prompted for the folder name
   jx create lile
   
-  # Create a lile application under test1
+  # Create a Lile application under test1
   jx create lile -o test1
 ```
 

@@ -1,5 +1,5 @@
 ---
-date: 2018-09-27T05:49:48Z
+date: 2018-09-27T06:10:55Z
 title: "jx upgrade"
 slug: jx_upgrade
 url: /commands/jx_upgrade/
@@ -10,7 +10,7 @@ Upgrades a resource
 
 ### Synopsis
 
-Upgrade a the whole Jenkins-X platform.
+Upgrade a the whole Jenkins X platform.
 
 ```
 jx upgrade [flags]

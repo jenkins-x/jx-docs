@@ -1,5 +1,5 @@
 ---
-date: 2018-09-27T05:49:48Z
+date: 2018-09-27T06:10:55Z
 title: "jx step pre build"
 slug: jx_step_pre_build
 url: /commands/jx_step_pre_build/
@@ -10,7 +10,7 @@ Performs actions before a build happens in a pipeline
 
 ### Synopsis
 
-This pipeline step performs pre build actions such as ensuring that a docker registry is available in the cloud
+This pipeline step performs pre build actions such as ensuring that a Docker registry is available in the cloud
 
 ```
 jx step pre build [flags]

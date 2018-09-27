@@ -1,5 +1,5 @@
 ---
-date: 2018-09-27T05:49:48Z
+date: 2018-09-27T06:10:55Z
 title: "jx create cluster aks"
 slug: jx_create_cluster_aks
 url: /commands/jx_create_cluster_aks/
@@ -16,7 +16,7 @@ Azure Container Service (AKS) manages your hosted Kubernetes environment, making
 
 Please use a location local to you: you can retrieve this from the Azure portal or by running "az provider list" in your terminal. 
 
-Important: You will need an account on azure, with a storage account (https://portal.azure.com/#create/Microsoft.StorageAccount-ARM) and network (https://portal.azure.com/#create/Microsoft.VirtualNetwork-ARM) - both linked to the resource group you use to create the cluster in.
+Important: You will need an account on Azure, with a storage account (https://portal.azure.com/#create/Microsoft.StorageAccount-ARM) and network (https://portal.azure.com/#create/Microsoft.VirtualNetwork-ARM) - both linked to the resource group you use to create the cluster in.
 
 ```
 jx create cluster aks [flags]
