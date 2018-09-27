@@ -1,32 +1,31 @@
 ---
 date: 2018-09-27T07:39:59Z
-title: "jx get aws"
-slug: jx_get_aws
-url: /commands/jx_get_aws/
+title: "jx get eks"
+slug: jx_get_eks
+url: /commands/jx_get_eks/
 ---
-## jx get aws
+## jx get eks
 
-Displays AWS account information
+List EKS clusters.
 
 ### Synopsis
 
-Display the AWS information for the current user
+List EKS clusters
 
 ```
-jx get aws info [flags]
+jx get eks [flags]
 ```
 
 ### Examples
 
 ```
-  # Get the AWS account information
-  jx get aws info
+  jx get eks
 ```
 
 ### Options
 
 ```
-  -h, --help            help for aws
+  -h, --help            help for eks
   -o, --output string   The output format such as 'yaml'
 ```
 

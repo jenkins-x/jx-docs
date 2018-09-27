@@ -1,5 +1,5 @@
 ---
-date: 2018-09-27T06:10:55Z
+date: 2018-09-27T07:39:59Z
 title: "jx get"
 slug: jx_get
 url: /commands/jx_get/
@@ -52,6 +52,7 @@ jx get TYPE [flags]
 * [jx get config](/commands/jx_get_config/)	 - Display the project configuration
 * [jx get cve](/commands/jx_get_cve/)	 - Display Common Vulnerabilities and Exposures (CVEs)
 * [jx get devpod](/commands/jx_get_devpod/)	 - Lists the DevPods
+* [jx get eks](/commands/jx_get_eks/)	 - List EKS clusters.
 * [jx get environments](/commands/jx_get_environments/)	 - Display one or more Environments
 * [jx get git](/commands/jx_get_git/)	 - Display the current registered Git service URLs
 * [jx get helmbin](/commands/jx_get_helmbin/)	 - Display the Helm binary name used in the pipelines
