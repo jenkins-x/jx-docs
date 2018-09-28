@@ -1,5 +1,5 @@
 ---
-date: 2018-09-28T08:20:15Z
+date: 2018-09-28T14:25:56Z
 title: "jx create cluster aws"
 slug: jx_create_cluster_aws
 url: /commands/jx_create_cluster_aws/
@@ -54,7 +54,6 @@ jx create cluster aws [flags]
       --global-tiller                       Whether or not to use a cluster global tiller (default true)
       --headless                            Enable headless operation if using browser automation
       --helm-client-only                    Only install helm client
-      --helm-template                       If enabled we use helm template mode to generate the YAML then we use 'kubectl apply' to install it to avoid using server side tiller
       --helm-tls                            Whether to use TLS with helm
       --helm3                               Use helm3 to install Jenkins X which does not use Tiller
   -h, --help                                help for aws
@@ -74,6 +73,7 @@ jx create cluster aws [flags]
       --namespace string                    The namespace the Jenkins X platform should be installed into (default "jx")
       --no-brew                             Disables the use of brew on MacOS to install or upgrade command line dependencies
       --no-default-environments             Disables the creation of the default Staging and Production environments
+      --no-tiller                           Whether to disable the use of tiller with helm. If disabled we use 'helm template' to generate the YAML from helm charts then we use 'kubectl apply' to install it to avoid using tiller completely.
       --node-size string                    The size of a node in the kops created cluster.
   -o, --nodes string                        node count
       --on-premise                          If installing on an on premise cluster then lets default the 'external-ip' to be the Kubernetes master IP address
@@ -81,13 +81,13 @@ jx create cluster aws [flags]
   -r, --rbac                                whether to enable RBAC on the Kubernetes cluster (default true)
       --recreate-existing-draft-repos       Delete existing helm repos used by Jenkins X under ~/draft/packs
       --register-local-helmrepo             Registers the Jenkins X chartmuseum registry with your helm client [default false]
+      --remote-tiller                       If enabled and we are using tiller for helm then run tiller remotely in the kubernetes cluster. Otherwise we run the tiller process locally. (default true)
       --skip-auth-secrets-merge             Skips merging a local git auth yaml file with any pipeline secrets that are found
       --skip-ingress                        Don't install an ingress controller
       --skip-installation                   Provision cluster only, don't install Jenkins X into it
       --skip-tiller                         Don't install a Helm Tiller service
       --state string                        The S3 bucket used to store the state of the cluster.
   -t, --terraform string                    The directory to save Terraform configuration.
-      --tiller                              Whether or not to use tiller at all. If no tiller is enabled then its ran as a local process instead (default true)
       --tiller-cluster-role string          The cluster role for Helm's tiller (default "cluster-admin")
       --tiller-namespace string             The namespace for the Tiller when using a gloabl tiller (default "kube-system")
       --timeout string                      The number of seconds to wait for the helm install to complete (default "6000")

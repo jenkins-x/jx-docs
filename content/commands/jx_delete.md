@@ -1,5 +1,5 @@
 ---
-date: 2018-09-28T08:20:15Z
+date: 2018-09-28T14:25:56Z
 title: "jx delete"
 slug: jx_delete
 url: /commands/jx_delete/
@@ -35,6 +35,7 @@ jx delete TYPE [flags]
 * [jx delete addon](/commands/jx_delete_addon/)	 - Deletes one or more addons
 * [jx delete application](/commands/jx_delete_application/)	 - Deletes one or more applications from Jenkins
 * [jx delete aws](/commands/jx_delete_aws/)	 - Deletes given AWS VPC and resources associated with it (like elastic load balancers or subnets)
+* [jx delete branch](/commands/jx_delete_branch/)	 - Deletes one or more branches in git repositories
 * [jx delete chat](/commands/jx_delete_chat/)	 - Deletes one or more chat services resources
 * [jx delete contexts](/commands/jx_delete_contexts/)	 - Deletes one or more Kubernetes contexts
 * [jx delete devpod](/commands/jx_delete_devpod/)	 - Deletes one or more DevPods

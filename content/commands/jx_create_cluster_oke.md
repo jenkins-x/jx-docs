@@ -1,5 +1,5 @@
 ---
-date: 2018-09-28T08:20:15Z
+date: 2018-09-28T14:25:56Z
 title: "jx create cluster oke"
 slug: jx_create_cluster_oke
 url: /commands/jx_create_cluster_oke/
@@ -56,7 +56,6 @@ jx create cluster oke [flags]
       --global-tiller                       Whether or not to use a cluster global tiller (default true)
       --headless                            Enable headless operation if using browser automation
       --helm-client-only                    Only install helm client
-      --helm-template                       If enabled we use helm template mode to generate the YAML then we use 'kubectl apply' to install it to avoid using server side tiller
       --helm-tls                            Whether to use TLS with helm
       --helm3                               Use helm3 to install Jenkins X which does not use Tiller
   -h, --help                                help for oke
@@ -78,6 +77,7 @@ jx create cluster oke [flags]
       --namespace string                    The namespace the Jenkins X platform should be installed into (default "jx")
       --no-brew                             Disables the use of brew on MacOS to install or upgrade command line dependencies
       --no-default-environments             Disables the creation of the default Staging and Production environments
+      --no-tiller                           Whether to disable the use of tiller with helm. If disabled we use 'helm template' to generate the YAML from helm charts then we use 'kubectl apply' to install it to avoid using tiller completely.
       --nodeImageName string                The name of the image running on the nodes in the node pool.
       --nodePoolName string                 The name of the node pool.
       --nodePoolSubnetIds string            The OCIDs of the subnets in which to place nodes for this node pool.
@@ -90,6 +90,7 @@ jx create cluster oke [flags]
       --quantityPerSubnet string            The number of nodes to create in each subnet.
       --recreate-existing-draft-repos       Delete existing helm repos used by Jenkins X under ~/draft/packs
       --register-local-helmrepo             Registers the Jenkins X chartmuseum registry with your helm client [default false]
+      --remote-tiller                       If enabled and we are using tiller for helm then run tiller remotely in the kubernetes cluster. Otherwise we run the tiller process locally. (default true)
       --serviceLbSubnetIds string           Kubernetes Service LB Subnets. Optional but nice to have it as Jenkins X will create ingress controller based on it.
       --servicesCidr string                 Kubernetes Service CIDR Block.
       --skip-auth-secrets-merge             Skips merging a local git auth yaml file with any pipeline secrets that are found
@@ -97,7 +98,6 @@ jx create cluster oke [flags]
       --skip-installation                   Provision cluster only, don't install Jenkins X into it
       --skip-tiller                         Don't install a Helm Tiller service
       --sshPublicKey string                 The SSH public key to add to each node in the node pool. Optional but nice to have it as user can access work nodes with it.
-      --tiller                              Whether or not to use tiller at all. If no tiller is enabled then its ran as a local process instead (default true)
       --tiller-cluster-role string          The cluster role for Helm's tiller (default "cluster-admin")
       --tiller-namespace string             The namespace for the Tiller when using a gloabl tiller (default "kube-system")
       --timeout string                      The number of seconds to wait for the helm install to complete (default "6000")

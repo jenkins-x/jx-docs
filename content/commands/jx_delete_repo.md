@@ -1,5 +1,5 @@
 ---
-date: 2018-09-28T08:20:15Z
+date: 2018-09-28T14:25:56Z
 title: "jx delete repo"
 slug: jx_delete_repo
 url: /commands/jx_delete_repo/
@@ -34,9 +34,9 @@ jx delete repo [flags]
 ### Options
 
 ```
-  -a, --all                If selecting projects to import from a Git provider this defaults to selecting them all
+  -a, --all                If selecting projects to delete from a Git provider this defaults to selecting them all
   -b, --batch-mode         Run without being prompted. WARNING! You will not be asked to confirm deletions if you use this flag.
-  -f, --filter string      If selecting projects to import from a Git provider this filters the list of repositories
+  -f, --filter string      If selecting projects to delete from a Git provider this filters the list of repositories
   -g, --git-host string    The Git server host if not using GitHub
       --github             If you wish to pick the repositories from GitHub to import
   -h, --help               help for repo
