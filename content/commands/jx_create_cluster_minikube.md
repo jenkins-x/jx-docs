@@ -1,5 +1,5 @@
 ---
-date: 2018-09-29T14:50:51Z
+date: 2018-09-29T18:05:24Z
 title: "jx create cluster minikube"
 slug: jx_create_cluster_minikube
 url: /commands/jx_create_cluster_minikube/
