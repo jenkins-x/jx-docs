@@ -1,5 +1,5 @@
 ---
-date: 2018-09-29T08:05:49Z
+date: 2018-09-29T08:37:34Z
 title: "jx create quickstart"
 slug: jx_create_quickstart
 url: /commands/jx_create_quickstart/
@@ -42,6 +42,7 @@ jx create quickstart [flags]
       --default-owner string           The default user/organisation used if no user is found for the current Git repository being imported (default "someone")
       --docker-registry-org string     The name of the docker registry organisation to use. If not specified then the Git provider organisation will be used
       --dry-run                        Performs local changes to the repo but skips the import into Jenkins X
+      --external-jenkins-url string    The jenkins url that an external git provider needs to use
   -f, --filter string                  The text filter
       --framework string               The framework to filter on
       --git-api-token string           The Git API token to use for creating new Git repositories

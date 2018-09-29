@@ -1,5 +1,5 @@
 ---
-date: 2018-09-29T08:05:49Z
+date: 2018-09-29T08:37:34Z
 title: "jx create archetype"
 slug: jx_create_archetype
 url: /commands/jx_create_archetype/
@@ -39,6 +39,7 @@ jx create archetype [flags]
       --default-owner string           The default user/organisation used if no user is found for the current Git repository being imported (default "someone")
       --docker-registry-org string     The name of the docker registry organisation to use. If not specified then the Git provider organisation will be used
       --dry-run                        Performs local changes to the repo but skips the import into Jenkins X
+      --external-jenkins-url string    The jenkins url that an external git provider needs to use
       --filter-artifact string         Either the Artifact ID or a text filter of the artifact IDs to pick from
   -f, --filter-group string            Filter the Group IDs to choose from for he Archetypes
       --filter-version string          The Version of the Archetype to use

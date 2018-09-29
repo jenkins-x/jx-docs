@@ -1,5 +1,5 @@
 ---
-date: 2018-09-29T08:05:49Z
+date: 2018-09-29T08:37:34Z
 title: "jx import"
 slug: jx_import
 url: /commands/jx_import/
@@ -54,6 +54,7 @@ jx import [flags]
       --default-owner string           The default user/organisation used if no user is found for the current Git repository being imported (default "someone")
       --docker-registry-org string     The name of the docker registry organisation to use. If not specified then the Git provider organisation will be used
       --dry-run                        Performs local changes to the repo but skips the import into Jenkins X
+      --external-jenkins-url string    The jenkins url that an external git provider needs to use
       --filter string                  If selecting projects to import from a Git provider this filters the list of repositories
       --git-api-token string           The Git API token to use for creating new Git repositories
       --git-private                    Create new Git repositories as private

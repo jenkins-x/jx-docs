@@ -1,5 +1,5 @@
 ---
-date: 2018-09-29T08:05:49Z
+date: 2018-09-29T08:37:34Z
 title: "jx create spring"
 slug: jx_create_spring
 url: /commands/jx_create_spring/
@@ -49,6 +49,7 @@ jx create spring [flags]
   -d, --dep stringArray                Spring Boot dependencies
       --docker-registry-org string     The name of the docker registry organisation to use. If not specified then the Git provider organisation will be used
       --dry-run                        Performs local changes to the repo but skips the import into Jenkins X
+      --external-jenkins-url string    The jenkins url that an external git provider needs to use
       --git-api-token string           The Git API token to use for creating new Git repositories
       --git-private                    Create new Git repositories as private
       --git-provider-url string        The Git server URL to create new Git repositories inside
