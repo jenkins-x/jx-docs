@@ -56,7 +56,7 @@ The Helm project came from Deis who were acquired by Microsoft and continue to i
 
 Jenkins X uses [Skaffold](https://github.com/GoogleContainerTools/skaffold) to perform the build and push image actions in a pipeline.  Skaffold allows us to implement different image builder and registries services like [Google Container Buidler](https://cloud.google.com/container-builder/), [Azure Container Builder](https://github.com/Azure/acr-builder) and [ECR](https://aws.amazon.com/ecr/).  
 
-For folks that aren't running on a public cloud with container builder or registry services then Skaffold can also work with [Kanico](https://github.com/GoogleContainerTools/kaniko), this allows pipelines to build docker images using rootless containers.  This is significantly more secure than mounting the docker socket from each node in the cluster.
+For folks that aren't running on a public cloud with container builder or registry services then Skaffold can also work with [kaniko](https://github.com/GoogleContainerTools/kaniko), this allows pipelines to build docker images using rootless containers.  This is significantly more secure than mounting the docker socket from each node in the cluster.
 
 ## Jenkins
 
