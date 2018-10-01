@@ -90,7 +90,7 @@ At time of creating Jenkins X there were few options of how to publish Helm Char
 
 ## Monocular
 
-We use [Monucular](https://github.com/kubernetes-helm/monocular) to discover our Teams published applications, we could use KubeApps by default instead if it is preferred by the community but we'll enable KubeApps as an addon regardless.
+We use [Monocular](https://github.com/kubernetes-helm/monocular) to discover our Teams published applications, we could use KubeApps by default instead if it is preferred by the community but we'll enable KubeApps as an addon regardless.
 
 ## Git
 
