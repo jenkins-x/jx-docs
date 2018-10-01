@@ -1,5 +1,5 @@
 ---
-date: 2018-10-01T09:49:18Z
+date: 2018-10-01T12:17:12Z
 title: "jx step wait"
 slug: jx_step_wait
 url: /commands/jx_step_wait/
