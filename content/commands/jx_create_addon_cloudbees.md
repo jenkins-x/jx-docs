@@ -1,5 +1,5 @@
 ---
-date: 2018-10-01T15:56:46Z
+date: 2018-10-01T16:49:19Z
 title: "jx create addon cloudbees"
 slug: jx_create_addon_cloudbees
 url: /commands/jx_create_addon_cloudbees/
