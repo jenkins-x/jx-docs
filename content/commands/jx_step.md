@@ -1,5 +1,5 @@
 ---
-date: 2018-10-02T06:26:15Z
+date: 2018-10-02T10:21:23Z
 title: "jx step"
 slug: jx_step
 url: /commands/jx_step/
@@ -27,6 +27,7 @@ jx step [flags]
 * [jx](/commands/jx/)	 - jx is a command line tool for working with Jenkins X
 * [jx step blog](/commands/jx_step_blog/)	 - Creates a blog post with changes, metrics and charts showing improvements
 * [jx step changelog](/commands/jx_step_changelog/)	 - Creates a changelog for a git tag
+* [jx step collect](/commands/jx_step_collect/)	 - Collects the specified files that need storing from the build
 * [jx step create](/commands/jx_step_create/)	 - Creates a Knative Build resource for a project
 * [jx step git](/commands/jx_step_git/)	 - git [command]
 * [jx step gpg](/commands/jx_step_gpg/)	 - Creates the GPG credentials file for GPG signing releases
