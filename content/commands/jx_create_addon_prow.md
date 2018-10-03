@@ -1,5 +1,5 @@
 ---
-date: 2018-10-03T06:53:37Z
+date: 2018-10-03T08:13:56Z
 title: "jx create addon prow"
 slug: jx_create_addon_prow
 url: /commands/jx_create_addon_prow/
@@ -36,6 +36,7 @@ jx create addon prow [flags]
   -h, --help                      help for prow
       --hmac-token string         OPTIONAL: The hmac-token is the token that you give to GitHub for validating webhooks. Generate it using any reasonable randomness-generator, eg openssl rand -hex 20
       --install-dependencies      Should any required dependencies be installed automatically
+      --log-level string          Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
   -n, --namespace string          The Namespace to install into
       --no-brew                   Disables the use of brew on MacOS to install or upgrade command line dependencies
       --oauth-token string        OPTIONAL: The oauth-token is an OAuth2 token that has read and write access to the bot account. Generate it from the account's settings -> Personal access tokens -> Generate new token.

@@ -1,5 +1,5 @@
 ---
-date: 2018-10-03T06:53:37Z
+date: 2018-10-03T08:13:56Z
 title: "jx upgrade platform"
 slug: jx_upgrade_platform
 url: /commands/jx_upgrade_platform/
@@ -33,6 +33,7 @@ jx upgrade platform [flags]
   -h, --help                            help for platform
       --install-dependencies            Should any required dependencies be installed automatically
       --local-cloud-environment         Ignores default cloud-environment-repo and uses current directory 
+      --log-level string                Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
   -n, --name string                     The release name (default "jenkins-x")
       --namespace string                The Namespace to promote to
       --no-brew                         Disables the use of brew on MacOS to install or upgrade command line dependencies

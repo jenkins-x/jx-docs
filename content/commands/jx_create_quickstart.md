@@ -1,5 +1,5 @@
 ---
-date: 2018-10-03T06:53:37Z
+date: 2018-10-03T08:13:56Z
 title: "jx create quickstart"
 slug: jx_create_quickstart
 url: /commands/jx_create_quickstart/
@@ -56,6 +56,7 @@ jx create quickstart [flags]
       --jenkinsfile string             The name of the Jenkinsfile to use. If not specified then 'Jenkinsfile' will be used
   -l, --language string                The language to filter on
       --list-packs                     list available draft packs
+      --log-level string               Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
       --name string                    Specify the Git repository name to import the project into (if it is not already in one)
       --no-brew                        Disables the use of brew on MacOS to install or upgrade command line dependencies
       --no-draft                       Disable Draft from trying to default a Dockerfile and Helm Chart

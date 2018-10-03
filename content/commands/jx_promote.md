@@ -1,5 +1,5 @@
 ---
-date: 2018-10-03T06:53:37Z
+date: 2018-10-03T08:13:56Z
 title: "jx promote"
 slug: jx_promote
 url: /commands/jx_promote/
@@ -55,6 +55,7 @@ jx promote [application] [flags]
   -h, --help                            help for promote
       --ignore-local-file               Ignores the local file system when deducing the Git repository
       --install-dependencies            Should any required dependencies be installed automatically
+      --log-level string                Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
   -n, --namespace string                The Namespace to promote to
       --no-brew                         Disables the use of brew on MacOS to install or upgrade command line dependencies
       --no-helm-update                  Allows the 'helm repo update' command if you are sure your local helm cache is up to date with the version you wish to promote

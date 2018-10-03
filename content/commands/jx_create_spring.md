@@ -1,5 +1,5 @@
 ---
-date: 2018-10-03T06:53:37Z
+date: 2018-10-03T08:13:56Z
 title: "jx create spring"
 slug: jx_create_spring
 url: /commands/jx_create_spring/
@@ -63,6 +63,7 @@ jx create spring [flags]
   -k, --kind stringArray               Default dependency kinds to choose from (default [Core,Web,Template Engines,SQL,I/O,Ops,Spring Cloud GCP,Azure,Cloud Contract,Cloud AWS,Cloud Messaging,Cloud Tracing])
   -l, --language string                Language to generate
       --list-packs                     list available draft packs
+      --log-level string               Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
       --name string                    Specify the Git repository name to import the project into (if it is not already in one)
       --no-brew                        Disables the use of brew on MacOS to install or upgrade command line dependencies
       --no-draft                       Disable Draft from trying to default a Dockerfile and Helm Chart

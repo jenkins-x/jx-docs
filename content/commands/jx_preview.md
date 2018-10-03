@@ -1,5 +1,5 @@
 ---
-date: 2018-10-03T06:53:37Z
+date: 2018-10-03T08:13:56Z
 title: "jx preview"
 slug: jx_preview
 url: /commands/jx_preview/
@@ -47,6 +47,7 @@ jx preview [flags]
       --install-dependencies              Should any required dependencies be installed automatically
       --keep-exposecontroller-job         Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
   -l, --label string                      The Environment label which is a descriptive string like 'Production' or 'Staging'
+      --log-level string                  Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
   -n, --name string                       The Environment resource name. Must follow the Kubernetes name conventions like Services, Namespaces
       --namespace string                  The Kubernetes namespace for the Environment
       --no-brew                           Disables the use of brew on MacOS to install or upgrade command line dependencies

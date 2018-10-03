@@ -1,5 +1,5 @@
 ---
-date: 2018-10-03T06:53:37Z
+date: 2018-10-03T08:13:56Z
 title: "jx create token addon"
 slug: jx_create_token_addon
 url: /commands/jx_create_token_addon/
@@ -35,6 +35,7 @@ jx create token addon [username] [flags]
   -h, --help                      help for addon
       --install-dependencies      Should any required dependencies be installed automatically
   -k, --kind string               The kind of addon. Defaults to the addon name if not specified
+      --log-level string          Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
   -n, --name string               The name of the Git server to add a user
       --no-brew                   Disables the use of brew on MacOS to install or upgrade command line dependencies
   -p, --password string           The password for the user

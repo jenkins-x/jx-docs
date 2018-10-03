@@ -1,5 +1,5 @@
 ---
-date: 2018-10-03T06:53:37Z
+date: 2018-10-03T08:13:56Z
 title: "jx upgrade cli"
 slug: jx_upgrade_cli
 url: /commands/jx_upgrade_cli/
@@ -26,9 +26,10 @@ jx upgrade cli [flags]
 ### Options
 
 ```
-  -h, --help             help for cli
-      --verbose          Enable verbose logging
-  -v, --version string   The specific version to upgrade to
+  -h, --help               help for cli
+      --log-level string   Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
+      --verbose            Enable verbose logging
+  -v, --version string     The specific version to upgrade to
 ```
 
 ### SEE ALSO

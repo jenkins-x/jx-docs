@@ -1,5 +1,5 @@
 ---
-date: 2018-10-03T06:53:37Z
+date: 2018-10-03T08:13:56Z
 title: "jx controller workflow"
 slug: jx_controller_workflow
 url: /commands/jx_controller_workflow/
@@ -24,6 +24,7 @@ jx controller workflow [flags]
   -r, --helm-repo-name string           The name of the helm repository that contains the app (default "releases")
   -h, --help                            help for workflow
       --install-dependencies            Should any required dependencies be installed automatically
+      --log-level string                Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
   -n, --namespace string                The namespace to watch or defaults to the current namespace
       --no-brew                         Disables the use of brew on MacOS to install or upgrade command line dependencies
       --no-watch                        Disable watch so just performs any delta processes on pending workflows

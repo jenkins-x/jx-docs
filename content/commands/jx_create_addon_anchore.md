@@ -1,5 +1,5 @@
 ---
-date: 2018-10-03T06:53:37Z
+date: 2018-10-03T08:13:56Z
 title: "jx create addon anchore"
 slug: jx_create_addon_anchore
 url: /commands/jx_create_addon_anchore/
@@ -36,6 +36,7 @@ jx create addon anchore [flags]
       --helm-update               Should we run helm update first to ensure we use the latest version (default true)
   -h, --help                      help for anchore
       --install-dependencies      Should any required dependencies be installed automatically
+      --log-level string          Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
   -n, --namespace string          The Namespace to install into (default "anchore")
       --no-brew                   Disables the use of brew on MacOS to install or upgrade command line dependencies
   -p, --password string           The default password to use for Anchore (default "anchore")

@@ -1,5 +1,5 @@
 ---
-date: 2018-10-03T06:53:37Z
+date: 2018-10-03T08:13:56Z
 title: "jx delete post"
 slug: jx_delete_post
 url: /commands/jx_delete_post/
@@ -30,6 +30,7 @@ jx delete post preview job [flags]
       --headless                  Enable headless operation if using browser automation
   -h, --help                      help for post
       --install-dependencies      Should any required dependencies be installed automatically
+      --log-level string          Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
   -n, --name string               The name of the job to be deleted
       --no-brew                   Disables the use of brew on MacOS to install or upgrade command line dependencies
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found

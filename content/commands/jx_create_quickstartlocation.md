@@ -1,5 +1,5 @@
 ---
-date: 2018-10-03T06:53:37Z
+date: 2018-10-03T08:13:56Z
 title: "jx create quickstartlocation"
 slug: jx_create_quickstartlocation
 url: /commands/jx_create_quickstartlocation/
@@ -41,6 +41,7 @@ jx create quickstartlocation [flags]
   -i, --includes stringArray      The patterns to include repositories (default [*])
       --install-dependencies      Should any required dependencies be installed automatically
   -k, --kind string               The kind of Git service at the URL
+      --log-level string          Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
       --no-brew                   Disables the use of brew on MacOS to install or upgrade command line dependencies
   -o, --owner string              The owner is the user or organisation of the Git provider used to find repositories
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found

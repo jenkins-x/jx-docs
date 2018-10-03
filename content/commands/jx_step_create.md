@@ -1,5 +1,5 @@
 ---
-date: 2018-10-03T06:53:37Z
+date: 2018-10-03T08:13:56Z
 title: "jx step create"
 slug: jx_step_create
 url: /commands/jx_step_create/
@@ -36,6 +36,7 @@ jx step create build [flags]
   -h, --help                      help for create
       --install-dependencies      Should any required dependencies be installed automatically
   -k, --kind string               The kind of build such as 'release' or 'pullRequest' otherwise all of the builds are created
+      --log-level string          Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
       --no-brew                   Disables the use of brew on MacOS to install or upgrade command line dependencies
   -o, --output-dir string         The directory where the generated build yaml files will be output to
   -p, --output-prefix string      The file name prefix used in the generated build files if output-dir is enabled (default "build-")

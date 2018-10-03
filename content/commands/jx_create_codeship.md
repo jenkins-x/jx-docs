@@ -1,5 +1,5 @@
 ---
-date: 2018-10-03T06:53:37Z
+date: 2018-10-03T08:13:56Z
 title: "jx create codeship"
 slug: jx_create_codeship
 url: /commands/jx_create_codeship/
@@ -51,6 +51,7 @@ jx create codeship [flags]
       --install-dependencies                   Should any required dependencies be installed automatically
       --jx-environment string                  The cluster name to install jx inside (default "dev")
       --local-organisation-repository string   Rather than cloning from a remote Git server, the local directory to use for the organisational folder
+      --log-level string                       Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
   -n, --name string                            The name of the service account to create
       --no-brew                                Disables the use of brew on MacOS to install or upgrade command line dependencies
   -o, --organisation-name string               The organisation name that will be used as the Git repo containing cluster details, the repo will be organisation-<org name>

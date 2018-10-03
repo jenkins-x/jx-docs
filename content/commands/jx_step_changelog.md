@@ -1,5 +1,5 @@
 ---
-date: 2018-10-03T06:53:37Z
+date: 2018-10-03T08:13:56Z
 title: "jx step changelog"
 slug: jx_step_changelog
 url: /commands/jx_step_changelog/
@@ -63,6 +63,7 @@ jx step changelog [flags]
       --headless                   Enable headless operation if using browser automation
   -h, --help                       help for changelog
       --install-dependencies       Should any required dependencies be installed automatically
+      --log-level string           Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
       --no-brew                    Disables the use of brew on MacOS to install or upgrade command line dependencies
       --no-dev-release             Disables the generation of Release CRDs in the development namespace to track releases being performed
       --output-markdown string     The file to generate for the changelog output if not updating a Git provider release

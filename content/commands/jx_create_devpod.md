@@ -1,5 +1,5 @@
 ---
-date: 2018-10-03T06:53:37Z
+date: 2018-10-03T08:13:56Z
 title: "jx create devpod"
 slug: jx_create_devpod
 url: /commands/jx_create_devpod/
@@ -40,6 +40,7 @@ jx create devpod [flags]
   -u, --import-url string         Clone a Git repository into the DevPod. Cannot be used with --sync
       --install-dependencies      Should any required dependencies be installed automatically
   -l, --label string              The label of the pod template to use
+      --log-level string          Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
       --no-brew                   Disables the use of brew on MacOS to install or upgrade command line dependencies
       --persist                   Persist changes made to the DevPod. Cannot be used with --sync
   -p, --ports ints                Container ports exposed by the DevPod

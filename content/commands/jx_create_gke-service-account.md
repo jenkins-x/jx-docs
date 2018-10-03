@@ -1,5 +1,5 @@
 ---
-date: 2018-10-03T06:53:37Z
+date: 2018-10-03T08:13:56Z
 title: "jx create gke-service-account"
 slug: jx_create_gke-service-account
 url: /commands/jx_create_gke-service-account/
@@ -32,6 +32,7 @@ jx create gke-service-account [flags]
       --headless                  Enable headless operation if using browser automation
   -h, --help                      help for gke-service-account
       --install-dependencies      Should any required dependencies be installed automatically
+      --log-level string          Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
   -n, --name string               The name of the service account to create
       --no-brew                   Disables the use of brew on MacOS to install or upgrade command line dependencies
   -p, --project string            The GCP project to create the service account in

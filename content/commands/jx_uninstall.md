@@ -1,5 +1,5 @@
 ---
-date: 2018-10-03T06:53:37Z
+date: 2018-10-03T08:13:56Z
 title: "jx uninstall"
 slug: jx_uninstall
 url: /commands/jx_uninstall/
@@ -31,6 +31,7 @@ jx uninstall [flags]
   -h, --help                      help for uninstall
       --install-dependencies      Should any required dependencies be installed automatically
       --keep-environments         Don't delete environments. Uninstall Jenkins X only.
+      --log-level string          Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
   -n, --namespace string          The team namespace to uninstall. Defaults to the current namespace.
       --no-brew                   Disables the use of brew on MacOS to install or upgrade command line dependencies
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found

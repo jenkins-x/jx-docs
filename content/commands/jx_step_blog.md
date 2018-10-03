@@ -1,5 +1,5 @@
 ---
-date: 2018-10-03T06:53:37Z
+date: 2018-10-03T08:13:56Z
 title: "jx step blog"
 slug: jx_step_blog
 url: /commands/jx_step_blog/
@@ -36,6 +36,7 @@ jx step blog [flags]
       --headless                   Enable headless operation if using browser automation
   -h, --help                       help for blog
       --install-dependencies       Should any required dependencies be installed automatically
+      --log-level string           Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
       --no-brew                    Disables the use of brew on MacOS to install or upgrade command line dependencies
       --skip-auth-secrets-merge    Skips merging a local git auth yaml file with any pipeline secrets that are found
   -t, --to-date string             The date to query up to. Defaults to now. Should be a format: January 2 2006

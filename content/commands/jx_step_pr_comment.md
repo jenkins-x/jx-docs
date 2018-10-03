@@ -1,5 +1,5 @@
 ---
-date: 2018-10-03T06:53:37Z
+date: 2018-10-03T08:13:56Z
 title: "jx step pr comment"
 slug: jx_step_pr_comment
 url: /commands/jx_step_pr_comment/
@@ -24,6 +24,7 @@ jx step pr comment [flags]
       --headless                  Enable headless operation if using browser automation
   -h, --help                      help for comment
       --install-dependencies      Should any required dependencies be installed automatically
+      --log-level string          Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
       --no-brew                   Disables the use of brew on MacOS to install or upgrade command line dependencies
   -o, --owner string              Git organisation / owner
   -p, --pull-request string       Git Pull Request number

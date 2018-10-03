@@ -1,5 +1,5 @@
 ---
-date: 2018-10-03T06:53:37Z
+date: 2018-10-03T08:13:56Z
 title: "jx create cluster eks"
 slug: jx_create_cluster_eks
 url: /commands/jx_create_cluster_eks/
@@ -41,6 +41,7 @@ jx create cluster eks [flags]
       --docker-registry string              The Docker Registry host or host:port which is used when tagging and pushing images. If not specified it defaults to the internal registry unless there is a better provider default (e.g. ECR on AWS/EKS)
       --domain string                       Domain to expose ingress endpoints.  Example: jenkinsx.io
       --draft-client-only                   Only install draft client
+      --eksctl-log-level int                set log level, use 0 to silence, 4 for debugging and 5 for debugging with AWS debug logging (default 3) (default -1)
       --environment-git-owner string        The Git provider organisation to create the environment Git repositories in
       --exposecontroller-pathmode path      The ExposeController path mode for how services should be exposed as URLs. Defaults to using subnets. Use a value of path to use relative paths within the domain host such as when using AWS ELB host names
       --exposer string                      Used to describe which strategy exposecontroller should use to access applications (default "Ingress")
@@ -65,7 +66,7 @@ jx create cluster eks [flags]
       --keep-exposecontroller-job           Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
       --local-cloud-environment             Ignores default cloud-environment-repo and uses current directory 
       --local-helm-repo-name string         The name of the helm repository for the installed Chart Museum (default "releases")
-      --log-level int                       set log level, use 0 to silence, 4 for debugging and 5 for debugging with AWS debug logging (default 3) (default -1)
+      --log-level string                    Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
       --namespace string                    The namespace the Jenkins X platform should be installed into (default "jx")
       --no-brew                             Disables the use of brew on MacOS to install or upgrade command line dependencies
       --no-default-environments             Disables the creation of the default Staging and Production environments

@@ -1,5 +1,5 @@
 ---
-date: 2018-10-03T06:53:37Z
+date: 2018-10-03T08:13:56Z
 title: "jx create addon sso"
 slug: jx_create_addon_sso
 url: /commands/jx_create_addon_sso/
@@ -34,6 +34,7 @@ jx create addon sso [flags]
       --helm-update               Should we run helm update first to ensure we use the latest version (default true)
   -h, --help                      help for sso
       --install-dependencies      Should any required dependencies be installed automatically
+      --log-level string          Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
   -n, --namespace string          The Namespace to install into (default "jx")
       --namespaces stringArray    Namespaces to upgrade
       --no-brew                   Disables the use of brew on MacOS to install or upgrade command line dependencies
