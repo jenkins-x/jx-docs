@@ -95,7 +95,7 @@ Though its looking like helm 3 is still some way off so its not recommended any 
 
 If you use helm then we highly recommend you avoid tiller! 
 
-If you are using Jenkins X then please consider using the `--no-tiller`  option when you [creating a cluster](/getting-started/create-cluster/) or [install Jenkins X on an existing cluster(/getting-started/install-on-cluster/).
+If you are using Jenkins X then please consider using the `--no-tiller`  option when you're [creating a cluster](/getting-started/create-cluster/) or [install Jenkins X on an existing cluster](/getting-started/install-on-cluster/).
 
 We're working  on Jenkins X 2.0 - most of its features are already available hidden behind feature flags. So in Jenkins X 2.0 we will default disable tiller by default along with enabling other things like Prow integration and using _serverless_ Jenkins by default (more on those in a separate blog!).
 
