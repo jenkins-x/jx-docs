@@ -1,5 +1,5 @@
 ---
-date: 2018-10-03T19:43:28Z
+date: 2018-10-03T20:03:31Z
 title: "jx create addon"
 slug: jx_create_addon
 url: /commands/jx_create_addon/
@@ -34,7 +34,7 @@ jx create addon [flags]
 * [jx create addon cloudbees](/commands/jx_create_addon_cloudbees/)	 - Create the CloudBees app for Kubernetes (a web console for working with CI/CD, Environments and GitOps)
 * [jx create addon gitea](/commands/jx_create_addon_gitea/)	 - Create a Gitea addon for hosting Git repositories
 * [jx create addon istio](/commands/jx_create_addon_istio/)	 - Create the Istio addon for service mesh
-* [jx create addon knative-build](/commands/jx_create_addon_knative-build/)	 - Create the Knative Build addon
+* [jx create addon knative-build](/commands/jx_create_addon_knative-build/)	 - Create the Knative build addon
 * [jx create addon kubeless](/commands/jx_create_addon_kubeless/)	 - Create a kubeless addon for hosting Git repositories
 * [jx create addon owasp-zap](/commands/jx_create_addon_owasp-zap/)	 - Create the OWASP Zed Attack Proxy addon for dynamic security checks against running apps
 * [jx create addon pipeline-events](/commands/jx_create_addon_pipeline-events/)	 - Create the pipeline events addon

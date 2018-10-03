@@ -1,16 +1,16 @@
 ---
-date: 2018-10-03T19:43:28Z
+date: 2018-10-03T20:03:31Z
 title: "jx create addon knative-build"
 slug: jx_create_addon_knative-build
 url: /commands/jx_create_addon_knative-build/
 ---
 ## jx create addon knative-build
 
-Create the Knative Build addon
+Create the Knative build addon
 
 ### Synopsis
 
-Creates the Knative Build addon
+Creates the Knative build addon
 
 ```
 jx create addon knative-build [flags]
@@ -19,7 +19,7 @@ jx create addon knative-build [flags]
 ### Examples
 
 ```
-  # Create the knative addon
+  # Create the Knative addon
   jx create addon knative-build
 ```
 

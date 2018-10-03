@@ -1,16 +1,16 @@
 ---
-date: 2018-10-03T19:43:28Z
+date: 2018-10-03T20:03:31Z
 title: "jx step create"
 slug: jx_step_create
 url: /commands/jx_step_create/
 ---
 ## jx step create
 
-Creates a Knative Build resource for a project
+Creates a Knative build resource for a project
 
 ### Synopsis
 
-Creates a Knative Build resource for a project
+Creates a Knative build resource for a project
 
 ```
 jx step create build [flags]
@@ -19,10 +19,10 @@ jx step create build [flags]
 ### Examples
 
 ```
-  # create a knative build and render to the console
+  # create a Knative build and render to the console
   jx step create build
   
-  # create a knative build
+  # create a Knative build
   jx step create build -o mybuild.yaml
 ```
 
