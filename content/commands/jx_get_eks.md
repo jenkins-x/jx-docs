@@ -1,5 +1,5 @@
 ---
-date: 2018-10-03T05:48:33Z
+date: 2018-10-03T06:53:37Z
 title: "jx get eks"
 slug: jx_get_eks
 url: /commands/jx_get_eks/
@@ -10,7 +10,7 @@ List EKS clusters.
 
 ### Synopsis
 
-List EKS clusters
+Display one or many EKS cluster resources
 
 ```
 jx get eks [flags]
@@ -19,7 +19,14 @@ jx get eks [flags]
 ### Examples
 
 ```
+  # List EKS clusters available in AWS
   jx get eks
+  
+  # Displays someCluster EKS resource
+  jx get eks someCluster
+  
+  # Displays someCluster resource in YAML format
+  jx get eks someCluster -oyaml
 ```
 
 ### Options
