@@ -1,8 +1,8 @@
 var docsearch = require('docsearch.js/dist/cdn/docsearch.js');
-docsearch({
-  apiKey: '929044fb1a3a337a4eb4108c7769f269',
-  appId: "TCRDI09Q5C",
-  indexName: 'jxd',
-  inputSelector: '#search-input',
-  debug: true // Set debug to true if you want to inspect the dropdown
+docsearch({ 
+  apiKey: '8904bbd3ca621bef472e3de7e0e29532', 
+  indexName: 'jenkins_x', 
+  inputSelector: '#search-input', 
+  algoliaOptions: { 'facetFilters': ["en-us"] },
+  debug: false
 });
