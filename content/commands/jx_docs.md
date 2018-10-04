@@ -1,25 +1,25 @@
 ---
 date: 2018-10-04T12:20:27Z
-title: "jx options"
-slug: jx_options
-url: /commands/jx_options/
+title: "jx docs"
+slug: jx_docs
+url: /commands/jx_docs/
 ---
-## jx options
+## jx docs
 
-
+Open the documentation in a browser
 
 ### Synopsis
 
-
+Open the documentation in a browser
 
 ```
-jx options [flags]
+jx docs [flags]
 ```
 
 ### Options
 
 ```
-  -h, --help   help for options
+  -h, --help   help for docs
 ```
 
 ### SEE ALSO
