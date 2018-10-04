@@ -1,5 +1,5 @@
 ---
-date: 2018-10-04T15:55:01Z
+date: 2018-10-04T16:49:35Z
 title: "jx get teams"
 slug: jx_get_teams
 url: /commands/jx_get_teams/
