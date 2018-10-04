@@ -1,5 +1,5 @@
 ---
-date: 2018-10-04T14:24:51Z
+date: 2018-10-04T14:54:58Z
 title: "jx get"
 slug: jx_get
 url: /commands/jx_get/
@@ -58,6 +58,7 @@ jx get TYPE [flags]
 * [jx get helmbin](/commands/jx_get_helmbin/)	 - Display the Helm binary name used in the pipelines
 * [jx get issue](/commands/jx_get_issue/)	 - Display the status of an issue
 * [jx get issues](/commands/jx_get_issues/)	 - Display one or more issues
+* [jx get limits](/commands/jx_get_limits/)	 - Displays the git user limits
 * [jx get pipelines](/commands/jx_get_pipelines/)	 - Display one or more Pipelines
 * [jx get post](/commands/jx_get_post/)	 - Create a job which is triggered after a Preview is created
 * [jx get previews](/commands/jx_get_previews/)	 - Display one or more Preview Environments
