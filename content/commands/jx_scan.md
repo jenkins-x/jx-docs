@@ -1,5 +1,5 @@
 ---
-date: 2018-10-04T15:25:30Z
+date: 2018-10-04T15:55:01Z
 title: "jx scan"
 slug: jx_scan
 url: /commands/jx_scan/
