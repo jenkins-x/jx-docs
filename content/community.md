@@ -51,7 +51,7 @@ You could try using the [riot app for #jenkins-x](https://riot.im/app/#/room/#fr
 
 ## Email
 
-If you prefer email then join us on the [jenkins-developers mailing list](https://groups.google.com/forum/#!forum/jenkins-dev). Prefix posts with `[Jenkins X]` in the subject.
+If you prefer email then join us on the [jenkins-developers mailing list](https://groups.google.com/forum/#!forum/jenkinsci-dev). Prefix posts with `[Jenkins X]` in the subject.
 
 ## Want to contribute?
 
