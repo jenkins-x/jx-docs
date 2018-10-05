@@ -26,7 +26,7 @@ The Kubernetes community [hangs out on Slack](http://slack.k8s.io/) at [slack.k8
 
 ## Office Hours
 
-We meet every other Thursday at 5pm BST / 12pm US Eastern at [https://jenkins.io/hangout](https://jenkins.io/hangout). 
+We meet every other Thursday at 4pm BST / 11pm US Eastern at [https://jenkins.io/hangout](https://jenkins.io/hangout). 
 
 Feel free to  [add your questions to the doc](https://docs.google.com/document/d/1wHdBlZAN-ndPELuBoM5HBnYiQLvcz92-euXne2mKOEI/edit) or hangout live and ask chat in person.
 
