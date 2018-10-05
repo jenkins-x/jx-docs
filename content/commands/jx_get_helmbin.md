@@ -1,5 +1,5 @@
 ---
-date: 2018-10-05T08:42:16Z
+date: 2018-10-05T11:17:50Z
 title: "jx get helmbin"
 slug: jx_get_helmbin
 url: /commands/jx_get_helmbin/
