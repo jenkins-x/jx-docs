@@ -686,6 +686,6 @@ At this point the JX team have also learnt that we want to build some additional
 * A `jx step post` support for a 'post build` steps. This will allow us to implement build health, as it will allow us to:
    * Inject additional steps into the build that allow us to run e.g. `mvn surefire-report:report` without modifying the build
 * `jx step collect` for collecting build artifact that will run even if the build fails
-  * Add URLs to the `PipelineActivty` CRD
+  * Add URLs to the `PipelineActivity` CRD
 
 TODO complete the guide 
