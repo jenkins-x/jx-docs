@@ -26,12 +26,13 @@ The Kubernetes community [hangs out on Slack](http://slack.k8s.io/) at [slack.k8
 
 ## Office Hours
 
-We meet every other Thursday at 5pm BST / 12pm US Eastern at [https://jenkins.io/hangout](https://jenkins.io/hangout). 
+We meet every other Thursday at 4pm BST / 11pm US Eastern at [https://jenkins.io/hangout](https://jenkins.io/hangout). 
 
 Feel free to  [add your questions to the doc](https://docs.google.com/document/d/1wHdBlZAN-ndPELuBoM5HBnYiQLvcz92-euXne2mKOEI/edit) or hangout live and ask chat in person.
 
 Previous Videos:
 
+* [6th September, 2018](https://www.youtube.com/watch?v=2bl-3abyFe4)
 * [9th August, 2018](https://www.youtube.com/watch?v=0NUtGVTBLto)
 * [26th July, 2018](https://www.youtube.com/watch?v=Io3p7NurYqY&t)
 * [12th July, 2018](https://www.youtube.com/watch?v=oqJ__akQj5I)
@@ -51,7 +52,7 @@ You could try using the [riot app for #jenkins-x](https://riot.im/app/#/room/#fr
 
 ## Email
 
-If you prefer email then join us on the [jenkins-developers mailing list](https://groups.google.com/forum/#!forum/jenkins-dev). Prefix posts with `[Jenkins X]` in the subject.
+If you prefer email then join us on the [jenkins-developers mailing list](https://groups.google.com/forum/#!forum/jenkinsci-dev). Prefix posts with `[Jenkins X]` in the subject.
 
 ## Want to contribute?
 
