@@ -1,5 +1,5 @@
 ---
-date: 2018-10-08T11:46:51Z
+date: 2018-10-08T12:10:01Z
 title: "jx get workflows"
 slug: jx_get_workflows
 url: /commands/jx_get_workflows/
