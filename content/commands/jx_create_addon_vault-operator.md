@@ -1,29 +1,28 @@
 ---
 date: 2018-10-08T10:41:59Z
-title: "jx create addon pipeline-events"
-slug: jx_create_addon_pipeline-events
-url: /commands/jx_create_addon_pipeline-events/
+title: "jx create addon vault-operator"
+slug: jx_create_addon_vault-operator
+url: /commands/jx_create_addon_vault-operator/
 ---
-## jx create addon pipeline-events
+## jx create addon vault-operator
 
-Create the pipeline events addon
+Create an vault-operator addon for Hashicorp Vault
 
 ### Synopsis
 
-Creates the Jenkins X pipeline events addon
+Creates the Vault operator addon 
+
+This addon will install an operator for HashiCorp Vault.""
 
 ```
-jx create addon pipeline-events [flags]
+jx create addon vault-operator [flags]
 ```
 
 ### Examples
 
 ```
-  # Create the pipeline-events addon
-  jx create addon pipeline-events
-  
-  # Create the pipeline-events addon in a custom namespace
-  jx create addon pipeline-events -n mynamespace
+  # Create the vault-operator addon
+  jx create addon vault-operator
 ```
 
 ### Options
@@ -32,17 +31,15 @@ jx create addon pipeline-events [flags]
   -b, --batch-mode                In batch mode the command never prompts for user input
       --headless                  Enable headless operation if using browser automation
       --helm-update               Should we run helm update first to ensure we use the latest version (default true)
-  -h, --help                      help for pipeline-events
+  -h, --help                      help for vault-operator
       --install-dependencies      Should any required dependencies be installed automatically
       --log-level string          Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
-  -n, --namespace string          The Namespace to install into (default "pipeline-events")
+  -n, --namespace string          The Namespace to install into (default "jx")
       --no-brew                   Disables the use of brew on MacOS to install or upgrade command line dependencies
-  -p, --password string           Password to access pipeline-events services such as Kibana and Elasticsearch.  Defaults to default Jenkins X admin password.
-  -r, --release string            The chart release name (default "jx-pipeline-events")
+  -r, --release string            The chart release name (default "vault-operator")
   -s, --set string                The chart set values (can specify multiple or separate values with commas: key1=val1,key2=val2)
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
       --verbose                   Enable verbose logging
-  -v, --version string            The version of the pipeline events chart to use (default "0.0.11")
 ```
 
 ### SEE ALSO
