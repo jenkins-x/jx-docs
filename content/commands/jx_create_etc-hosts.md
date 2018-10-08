@@ -1,5 +1,5 @@
 ---
-date: 2018-10-08T14:49:35Z
+date: 2018-10-08T16:29:20Z
 title: "jx create etc-hosts"
 slug: jx_create_etc-hosts
 url: /commands/jx_create_etc-hosts/
