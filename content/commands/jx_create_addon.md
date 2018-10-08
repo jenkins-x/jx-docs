@@ -1,5 +1,5 @@
 ---
-date: 2018-10-08T14:28:50Z
+date: 2018-10-08T14:49:35Z
 title: "jx create addon"
 slug: jx_create_addon
 url: /commands/jx_create_addon/
@@ -24,6 +24,7 @@ jx create addon [flags]
   -n, --namespace string   The Namespace to install into (default "jx")
   -r, --release string     The chart release name
   -s, --set string         The chart set values (can specify multiple or separate values with commas: key1=val1,key2=val2)
+  -v, --version string     The chart version to install)
 ```
 
 ### SEE ALSO

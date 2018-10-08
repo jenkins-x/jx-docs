@@ -1,5 +1,5 @@
 ---
-date: 2018-10-08T14:28:50Z
+date: 2018-10-08T14:49:35Z
 title: "jx create addon cloudbees"
 slug: jx_create_addon_cloudbees
 url: /commands/jx_create_addon_cloudbees/
@@ -45,6 +45,7 @@ jx create addon cloudbees [flags]
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
       --sso                       Enable single sign-on
       --verbose                   Enable verbose logging
+  -v, --version string            The chart version to install)
 ```
 
 ### SEE ALSO

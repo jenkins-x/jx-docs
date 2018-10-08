@@ -1,5 +1,5 @@
 ---
-date: 2018-10-08T14:28:50Z
+date: 2018-10-08T14:49:35Z
 title: "jx create addon gitea"
 slug: jx_create_addon_gitea
 url: /commands/jx_create_addon_gitea/
@@ -45,7 +45,7 @@ jx create addon gitea [flags]
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
   -u, --username string           The name for the user to create in Gitea. Note that Gitea tends to reject 'admin'
       --verbose                   Enable verbose logging
-  -v, --version string            The version of the Gitea addon to use
+  -v, --version string            The chart version to install)
 ```
 
 ### SEE ALSO

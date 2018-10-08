@@ -1,5 +1,5 @@
 ---
-date: 2018-10-08T14:28:50Z
+date: 2018-10-08T14:49:35Z
 title: "jx create addon sso"
 slug: jx_create_addon_sso
 url: /commands/jx_create_addon_sso/
@@ -30,6 +30,7 @@ jx create addon sso [flags]
 ```
   -b, --batch-mode                In batch mode the command never prompts for user input
       --cluster                   Enable cluster wide Ingress upgrade
+      --dex-version string        The dex chart version to install)
       --headless                  Enable headless operation if using browser automation
       --helm-update               Should we run helm update first to ensure we use the latest version (default true)
   -h, --help                      help for sso
@@ -44,6 +45,7 @@ jx create addon sso [flags]
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
       --skip-certmanager          Skips certmanager installation
       --verbose                   Enable verbose logging
+  -v, --version string            The chart version to install)
 ```
 
 ### SEE ALSO

@@ -1,5 +1,5 @@
 ---
-date: 2018-10-08T14:28:50Z
+date: 2018-10-08T14:49:35Z
 title: "jx create addon pipeline-events"
 slug: jx_create_addon_pipeline-events
 url: /commands/jx_create_addon_pipeline-events/
@@ -42,7 +42,7 @@ jx create addon pipeline-events [flags]
   -s, --set string                The chart set values (can specify multiple or separate values with commas: key1=val1,key2=val2)
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
       --verbose                   Enable verbose logging
-  -v, --version string            The version of the pipeline events chart to use (default "0.0.11")
+  -v, --version string            The chart version to install) (default "0.0.11")
 ```
 
 ### SEE ALSO
