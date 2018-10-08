@@ -1,5 +1,5 @@
 ---
-date: 2018-10-08T16:29:20Z
+date: 2018-10-08T16:49:23Z
 title: "jx create jhipster"
 slug: jx_create_jhipster
 url: /commands/jx_create_jhipster/
@@ -43,7 +43,7 @@ jx create jhipster [flags]
       --external-jenkins-url string    The jenkins url that an external git provider needs to use
       --git-api-token string           The Git API token to use for creating new Git repositories
       --git-private                    Create new Git repositories as private
-      --git-provider-url string        The Git server URL to create new Git repositories inside
+      --git-provider-url string        The Git server URL to create new Git repositories inside (default "https://github.com")
       --git-username string            The Git username to use for creating new Git repositories
       --headless                       Enable headless operation if using browser automation
   -h, --help                           help for jhipster

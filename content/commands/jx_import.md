@@ -1,5 +1,5 @@
 ---
-date: 2018-10-08T16:29:20Z
+date: 2018-10-08T16:49:23Z
 title: "jx import"
 slug: jx_import
 url: /commands/jx_import/
@@ -57,7 +57,7 @@ jx import [flags]
       --filter string                  If selecting projects to import from a Git provider this filters the list of repositories
       --git-api-token string           The Git API token to use for creating new Git repositories
       --git-private                    Create new Git repositories as private
-      --git-provider-url string        The Git server URL to create new Git repositories inside
+      --git-provider-url string        The Git server URL to create new Git repositories inside (default "https://github.com")
       --git-username string            The Git username to use for creating new Git repositories
       --github                         If you wish to pick the repositories from GitHub to import
       --headless                       Enable headless operation if using browser automation

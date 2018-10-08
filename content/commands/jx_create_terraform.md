@@ -1,5 +1,5 @@
 ---
-date: 2018-10-08T16:29:20Z
+date: 2018-10-08T16:49:23Z
 title: "jx create terraform"
 slug: jx_create_terraform
 url: /commands/jx_create_terraform/
@@ -44,7 +44,7 @@ jx create terraform [flags]
   -f, --fork-git-repo string                   The Git repository used as the fork when creating new Organisation Git repos (default "https://github.com/jenkins-x/default-organisation.git")
       --git-api-token string                   The Git API token to use for creating new Git repositories
       --git-private                            Create new Git repositories as private
-      --git-provider-url string                The Git server URL to create new Git repositories inside
+      --git-provider-url string                The Git server URL to create new Git repositories inside (default "https://github.com")
       --git-username string                    The Git username to use for creating new Git repositories
       --gke-disk-size string                   Size in GB for node VM boot disks. Defaults to 100GB (default "100")
       --gke-enable-autorepair                  Sets autorepair feature for a cluster's default node-pool(s) (default true)
