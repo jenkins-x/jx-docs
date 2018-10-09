@@ -45,7 +45,7 @@ jenkins:
 
 下一步，你需要为 docker 更新 `config.json` 中的认证。
 
-如果为你的 Docker Registry 创建一个 `config.json` 文件，例如：Google 云的 GC，它可能看起来像：
+如果为你的 Docker Registry 创建一个 `config.json` 文件，例如：Google 云的 GCR，它可能看起来像：
 
 ```json
 {
@@ -67,16 +67,16 @@ jenkins:
 }
 ```
 
-Then to update the `jenkins-docker-cfg` secret you can do:
+然后需要更新凭据 `jenkins-docker-cfg` ，你可以执行以下操作:
 
 ```
 kubectl delete secret jenkins-docker-cfg
 kubectl create secret generic jenkins-docker-cfg --from-file=./config.json
 ```   
 
-## Using Docker Hub
+## 使用 Docker Hub
 
-If you want to publish images to docker hub then you need to modify your `config.json` as described above to something like:
+如果你想要发布你的镜像到 Docker Hub 当中 ，则需要修改你的 `config.json` 像下面那样:
 
 ```json 
 {
@@ -89,7 +89,7 @@ If you want to publish images to docker hub then you need to modify your `config
 }
 ``` 
 
-### Mount a Secret for your registry
+### 为你的 registry 挂载凭证
 
-Your docker registry will require a Secret to be mounted into the [Pod Templates](/architecture/pod-templates/).
+你的 docker registry 需要将凭证挂载到 [Pod 模板](/zh/architecture/pod-templates/)当中。
 
