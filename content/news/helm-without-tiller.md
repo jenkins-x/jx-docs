@@ -40,7 +40,7 @@ So now if you want to use Jenkins X without tiller there's a new magic command l
 or if you are [installing on an existing kubernetes cluster](/getting-started/install-on-cluster/):
  
 ``` 
- jx create install --no-tiller 
+ jx install --no-tiller
 ```
 
 ### How does it work?
