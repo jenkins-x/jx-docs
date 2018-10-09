@@ -31,7 +31,7 @@ If you are running on Mac OS X, Jenkins X is using `Homebrew` to install the var
 
 ### Install Helm
 
-Jenkins X will install the [helm](https://github.com/kubernetes/helm) client - (either  helm *2.x* or helm *3*), if it does not already exist in your command shell path. Helm is used for packaging applications/resources (called charts) on Kubernetes, and is rapidly becoming the defacto standard for doing so.
+Jenkins X will install the [helm](https://github.com/kubernetes/helm) client - (either  helm *2.x* or helm *3*), if it does not already exist in your command shell path. Helm is used for packaging applications/resources (called charts) on Kubernetes, and is rapidly becoming the default standard for doing so.
 
 ### Install cloud provider CLI
 
