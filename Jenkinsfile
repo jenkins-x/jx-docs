@@ -28,7 +28,6 @@ pipeline {
         branch 'master'
       }
       steps {
-        checkout scm
         sh "git clone https://github.com/jenkins-x/jenkins-x-website.git"
         sh "hugo version"
         sh "hugo -d jenkins-x-website --enableGitInfo"
