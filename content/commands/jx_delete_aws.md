@@ -1,5 +1,5 @@
 ---
-date: 2018-10-10T14:55:38Z
+date: 2018-10-10T15:50:08Z
 title: "jx delete aws"
 slug: jx_delete_aws
 url: /commands/jx_delete_aws/
@@ -19,9 +19,11 @@ jx delete aws [flags]
 ### Options
 
 ```
-  -h, --help            help for aws
-      --region string   AWS region to use.
-      --vpc-id string   ID of VPC to delete.
+  -h, --help               help for aws
+      --log-level string   Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
+      --profile string     AWS profile to use.
+      --region string      AWS region to use.
+      --vpc-id string      ID of VPC to delete.
 ```
 
 ### SEE ALSO
