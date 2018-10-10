@@ -1,5 +1,5 @@
 ---
-date: 2018-10-10T14:20:40Z
+date: 2018-10-10T14:55:38Z
 title: "jx delete tracker server"
 slug: jx_delete_tracker_server
 url: /commands/jx_delete_tracker_server/
