@@ -77,7 +77,7 @@ metadata:
 
 ### Kustomize?
 
-One nice benefit of using `helm template` to generate the YAML then using `kubectl apply` means that we can look at optionally using tools like [kustomize](--remote-tiller=) post process the output of `helm template` to allow resources to be overridden or enriched in ways that the chart author did not think of.
+One nice benefit of using `helm template` to generate the YAML then using `kubectl apply` means that we can look at optionally using tools like [kustomize](https://github.com/kubernetes-sigs/kustomize) post process the output of `helm template` to allow resources to be overridden or enriched in ways that the chart author did not think of.
 
 
 ### Other helm feature flags
