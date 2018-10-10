@@ -18,8 +18,8 @@ pipeline {
       }
       steps {
         checkout scm
-          sh "hugo version"
-          sh "hugo -d tmp-website --enableGitInfo"
+        sh "hugo version"
+        sh "hugo -d tmp-website --enableGitInfo"
       }
     }
 
@@ -29,17 +29,18 @@ pipeline {
       }
       steps {
         sh "git clone https://github.com/jenkins-x/jx-docs.git"
-        sh "jx-docs"
-        sh "git clone https://github.com/jenkins-x/jenkins-x-website.git"
-        sh "hugo version"
-        sh "hugo -d jenkins-x-website --enableGitInfo"
+        dir("jx-docs") {
+          sh "git clone https://github.com/jenkins-x/jenkins-x-website.git"
+          sh "hugo version"
+          sh "hugo -d jenkins-x-website --enableGitInfo"
 
-        dir("jenkins-x-website") {
-          sh "jx step git credentials"
-          sh 'git config credential.helper store'
-          sh 'git add *'
-          sh "git commit --allow-empty -a -m \"updated site\""
-          sh "git push origin"
+          dir("jenkins-x-website") {
+            sh "jx step git credentials"
+            sh 'git config credential.helper store'
+            sh 'git add *'
+            sh "git commit --allow-empty -a -m \"updated site\""
+            sh "git push origin"
+          }
         }
       }
     }
