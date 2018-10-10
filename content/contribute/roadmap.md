@@ -26,22 +26,22 @@ toc: true
 | Linux | | | | 1.1.x |
 | Windows  | | [Planned](https://github.com/jenkins-x/jx/issues/228) | | |
 | **Cloud Providers** | | | | |
-| AWS | | | | 1.1.x |
+| AWS kops | | | | 1.1.x |
+| AWS EKS  | |  | | 1.3.x |
 | Azure | | | | 1.1.x |
 | Digital Ocean  | | [Planned](https://github.com/jenkins-x/jx/issues/705) | | |
-| EKS  | | [Planned](https://github.com/jenkins-x/jx/issues/87) | | |
 | GKE | | | | 1.1.x |
 | IBM Cloud  | | [Planned](https://github.com/jenkins-x/jx/issues/472) | | |
 | Minkube | | | | 1.1.x |
 | Minishift | | | | 1.2.11 |
+| OKE | | Planned | | |
 | OpenShift | | |  | 1.2.11 |
-| PKS  | | [Planned](https://github.com/jenkins-x/jx/issues/807) | | |
+| PKS  | | | | 1.3.x |
 | **Tools** | | | | |
 | Helm | | | | 1.1.x |
 | Skaffold | | | | 1.2.11 | 
-| Prow | | [Planned](https://github.com/jenkins-x/jx/issues/434) | | |
-| LetsEncrypt | | | [In Progress](https://github.com/jenkins-x/jx/issues/349) | |
-| Argo | | [Planned](https://github.com/jenkins-x/jx/issues/694) | | |
+| Prow | | | | 1.3.x (via `--prow` on [jx install](/commands/jx_install/)) |
+| LetsEncrypt | | | | 1.3.x |
 | **Git Providers** | | | | |
 | GitHub | | | | 1.1.x |
 | GitHub Enterprise | | | | 1.1.68 |
@@ -79,6 +79,7 @@ toc: true
 | Eclipse Che  | | [Planned](https://github.com/jenkins-x/jx/issues/774) | |
 | Gitea | | | | 1.1.x |
 | Prometheus | | | | 1.1.x |
+| Theia IDE | | | | 1.3.x in [DevPods](/developing/devpods/#using-theia-ide) |
 | SonarQube  | | [Planned](https://github.com/jenkins-x/jx/issues/536) | |
 
 
