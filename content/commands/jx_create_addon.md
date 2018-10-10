@@ -1,5 +1,5 @@
 ---
-date: 2018-10-10T13:58:08Z
+date: 2018-10-10T14:20:40Z
 title: "jx create addon"
 slug: jx_create_addon
 url: /commands/jx_create_addon/
@@ -39,6 +39,7 @@ jx create addon [flags]
 * [jx create addon kubeless](/commands/jx_create_addon_kubeless/)	 - Create a kubeless addon for hosting Git repositories
 * [jx create addon owasp-zap](/commands/jx_create_addon_owasp-zap/)	 - Create the OWASP Zed Attack Proxy addon for dynamic security checks against running apps
 * [jx create addon pipeline-events](/commands/jx_create_addon_pipeline-events/)	 - Create the pipeline events addon
+* [jx create addon prometheus](/commands/jx_create_addon_prometheus/)	 - Creates a prometheus addon
 * [jx create addon prow](/commands/jx_create_addon_prow/)	 - Create a Prow addon
 * [jx create addon sso](/commands/jx_create_addon_sso/)	 - Create a SSO addon for Single Sign-On
 * [jx create addon vault-operator](/commands/jx_create_addon_vault-operator/)	 - Create an vault-operator addon for Hashicorp Vault
