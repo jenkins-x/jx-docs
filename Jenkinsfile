@@ -28,6 +28,8 @@ pipeline {
         branch 'master'
       }
       steps {
+        sh "git clone https://github.com/jenkins-x/jx-docs.git"
+        sh "jx-docs"
         sh "git clone https://github.com/jenkins-x/jenkins-x-website.git"
         sh "hugo version"
         sh "hugo -d jenkins-x-website --enableGitInfo"
