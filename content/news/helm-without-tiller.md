@@ -25,7 +25,7 @@ However Tiller has a number of issues...
 
 ### Helm 3 will be tiller-less
 
-Whenever Helm 3 shows up Tiller will be a thing of the past - which is awesome - all of the above issues will be fixed! The only downside is no-one outside of Microsoft has any clue when Helm 3 will be a thing. Very little is [happening on the public helm 3 branch](github), no [issues](https://github.com/helm/helm/issues/4255) or [pull requests](https://github.com/helm/helm/pull/4257) are being accepted yet. I'm hoping there's loads of activity on a private branch somewhere - but its probably a while away from being public and GA.
+Whenever Helm 3 shows up Tiller will be a thing of the past - which is awesome - all of the above issues will be fixed! The only downside is no-one outside of Microsoft has any clue when Helm 3 will be a thing. Very little is [happening on the public helm 3 branch](https://github.com/helm/helm/tree/dev-v3), no [issues](https://github.com/helm/helm/issues/4255) or [pull requests](https://github.com/helm/helm/pull/4257) are being accepted yet. I'm hoping there's loads of activity on a private branch somewhere - but its probably a while away from being public and GA.
 
 ### Going tiller-less on Helm 2.x
 
