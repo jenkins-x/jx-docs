@@ -1,5 +1,5 @@
 ---
-date: 2018-10-11T17:15:40Z
+date: 2018-10-11T22:05:21Z
 title: "jx gc"
 slug: jx_gc
 url: /commands/jx_gc/
@@ -26,10 +26,9 @@ jx gc TYPE [flags]
 ### Examples
 
 ```
-  jx gc previews
   jx gc activities
-  jx gc helm
   jx gc gke
+  jx gc helm
   jx gc previews
   jx gc releases
 ```
