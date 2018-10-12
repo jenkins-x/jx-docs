@@ -1,5 +1,5 @@
 ---
-date: 2018-10-12T14:56:05Z
+date: 2018-10-12T15:18:41Z
 title: "jx step pre check compliance"
 slug: jx_step_pre_check_compliance
 url: /commands/jx_step_pre_check_compliance/
