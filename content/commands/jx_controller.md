@@ -1,5 +1,5 @@
 ---
-date: 2018-10-12T10:27:14Z
+date: 2018-10-12T10:54:32Z
 title: "jx controller"
 slug: jx_controller
 url: /commands/jx_controller/
@@ -33,6 +33,7 @@ jx controller [flags]
 * [jx](/commands/jx/)	 - jx is a command line tool for working with Jenkins X
 * [jx controller backup](/commands/jx_controller_backup/)	 - Runs the backup controller
 * [jx controller build](/commands/jx_controller_build/)	 - Runs the build controller
+* [jx controller compliance](/commands/jx_controller_compliance/)	 - Updates a pull request with compliance status
 * [jx controller role](/commands/jx_controller_role/)	 - Controller which mirrors Role & EnvironmentRoleBinding resources to Roles and RoleBindings in all matching Environment namespaces
 * [jx controller team](/commands/jx_controller_team/)	 - Runs the team controller
 * [jx controller workflow](/commands/jx_controller_workflow/)	 - Runs the workflow controller
