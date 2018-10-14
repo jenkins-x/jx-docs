@@ -1,5 +1,5 @@
 ---
-date: 2018-10-14T20:28:17Z
+date: 2018-10-14T21:18:37Z
 title: "jx upgrade extensions"
 slug: jx_upgrade_extensions
 url: /commands/jx_upgrade_extensions/
@@ -26,9 +26,10 @@ jx upgrade extensions [flags]
 ### Options
 
 ```
-      --extensions-repository string   Specify the extensions repository yaml file to read from (default "https://raw.githubusercontent.com/jenkins-x/jenkins-x-extensions/master/jenkins-x-extensions-repository.lock.yaml")
-  -h, --help                           help for extensions
-      --verbose                        Enable verbose logging
+      --extensions-repository string        Specify the extensions repository git repo to read from. Accepts github.com/<org>/<repo>
+      --extensions-repository-file string   Specify the extensions repository yaml file to read from
+  -h, --help                                help for extensions
+      --verbose                             Enable verbose logging
 ```
 
 ### SEE ALSO
