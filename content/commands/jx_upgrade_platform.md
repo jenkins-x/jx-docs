@@ -1,5 +1,5 @@
 ---
-date: 2018-10-15T11:10:43Z
+date: 2018-10-15T13:15:13Z
 title: "jx upgrade platform"
 slug: jx_upgrade_platform
 url: /commands/jx_upgrade_platform/
@@ -37,7 +37,7 @@ jx upgrade platform [flags]
       --log-level string                Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
   -n, --name string                     The release name (default "jenkins-x")
       --namespace string                The Namespace to promote to
-      --no-brew                         Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --no-brew                         Disables the use of brew on macOS to install or upgrade command line dependencies
   -s, --set string                      The helm parameters to pass in while upgrading
       --skip-auth-secrets-merge         Skips merging a local git auth yaml file with any pipeline secrets that are found
       --verbose                         Enable verbose logging

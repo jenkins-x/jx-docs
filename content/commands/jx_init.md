@@ -1,5 +1,5 @@
 ---
-date: 2018-10-15T11:10:43Z
+date: 2018-10-15T13:15:13Z
 title: "jx init"
 slug: jx_init
 url: /commands/jx_init/
@@ -41,7 +41,7 @@ jx init [flags]
       --install-dependencies            Should any required dependencies be installed automatically
       --log-level string                Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
       --namespace string                The namespace the Jenkins X platform should be installed into (default "jx")
-      --no-brew                         Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --no-brew                         Disables the use of brew on macOS to install or upgrade command line dependencies
       --no-tiller                       Whether to disable the use of tiller with helm. If disabled we use 'helm template' to generate the YAML from helm charts then we use 'kubectl apply' to install it to avoid using tiller completely.
       --on-premise                      If installing on an on premise cluster then lets default the 'external-ip' to be the Kubernetes master IP address
       --provider string                 Cloud service providing the Kubernetes cluster.  Supported providers: aks, aws, eks, gke, ibm, iks, jx-infra, kubernetes, minikube, minishift, oke, openshift, pks

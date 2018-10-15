@@ -1,5 +1,5 @@
 ---
-date: 2018-10-15T11:10:43Z
+date: 2018-10-15T13:15:13Z
 title: "jx create devpod"
 slug: jx_create_devpod
 url: /commands/jx_create_devpod/
@@ -41,7 +41,7 @@ jx create devpod [flags]
       --install-dependencies      Should any required dependencies be installed automatically
   -l, --label string              The label of the pod template to use
       --log-level string          Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
-      --no-brew                   Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --no-brew                   Disables the use of brew on macOS to install or upgrade command line dependencies
       --persist                   Persist changes made to the DevPod. Cannot be used with --sync
   -p, --ports ints                Container ports exposed by the DevPod
   -c, --request-cpu string        The request CPU of the DevPod (default "1")

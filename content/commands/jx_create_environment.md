@@ -1,5 +1,5 @@
 ---
-date: 2018-10-15T11:10:43Z
+date: 2018-10-15T13:15:13Z
 title: "jx create environment"
 slug: jx_create_environment
 url: /commands/jx_create_environment/
@@ -57,7 +57,7 @@ jx create environment [flags]
       --log-level string             Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
   -n, --name string                  The Environment resource name. Must follow the Kubernetes name conventions like Services, Namespaces
   -s, --namespace string             The Kubernetes namespace for the Environment
-      --no-brew                      Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --no-brew                      Disables the use of brew on macOS to install or upgrade command line dependencies
   -x, --no-gitops                    Disables the use of GitOps on the environment so that promotion is implemented by directly modifying the resources via helm instead of using a Git repository
   -o, --order int32                  The order weighting of the Environment so that they can be sorted by this order before name (default 100)
       --prefix string                Environment repo prefix, your Git repo will be of the form 'environment-$prefix-$envName' (default "jx")

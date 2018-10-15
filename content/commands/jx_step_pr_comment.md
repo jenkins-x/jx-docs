@@ -1,5 +1,5 @@
 ---
-date: 2018-10-15T11:10:43Z
+date: 2018-10-15T13:15:13Z
 title: "jx step pr comment"
 slug: jx_step_pr_comment
 url: /commands/jx_step_pr_comment/
@@ -25,7 +25,7 @@ jx step pr comment [flags]
   -h, --help                      help for comment
       --install-dependencies      Should any required dependencies be installed automatically
       --log-level string          Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
-      --no-brew                   Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --no-brew                   Disables the use of brew on macOS to install or upgrade command line dependencies
   -o, --owner string              Git organisation / owner
   -p, --pull-request string       Git Pull Request number
   -r, --repository string         Git repository

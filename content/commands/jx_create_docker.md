@@ -1,5 +1,5 @@
 ---
-date: 2018-10-15T11:10:43Z
+date: 2018-10-15T13:15:13Z
 title: "jx create docker"
 slug: jx_create_docker
 url: /commands/jx_create_docker/
@@ -33,7 +33,7 @@ jx create docker auth [flags]
   -t, --host string               The Docker host
       --install-dependencies      Should any required dependencies be installed automatically
       --log-level string          Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
-      --no-brew                   Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --no-brew                   Disables the use of brew on macOS to install or upgrade command line dependencies
   -s, --secret string             The secret to associate auth component of config.json
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
   -u, --user string               The user to associate auth component of config.json

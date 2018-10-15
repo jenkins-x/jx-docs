@@ -1,5 +1,5 @@
 ---
-date: 2018-10-15T11:10:43Z
+date: 2018-10-15T13:15:13Z
 title: "jx create addon gitea"
 slug: jx_create_addon_gitea
 url: /commands/jx_create_addon_gitea/
@@ -36,7 +36,7 @@ jx create addon gitea [flags]
       --install-dependencies      Should any required dependencies be installed automatically
       --log-level string          Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
   -n, --namespace string          The Namespace to install into
-      --no-brew                   Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --no-brew                   Disables the use of brew on macOS to install or upgrade command line dependencies
       --no-token                  If true disable trying to create a new token in the Gitea server
       --no-user                   If true disable trying to create a new user in the Gitea server
   -p, --password string           The password for the user to create in Gitea. Note that Gitea tends to reject passwords less than 6 characters

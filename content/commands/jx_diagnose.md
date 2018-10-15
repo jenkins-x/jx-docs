@@ -1,5 +1,5 @@
 ---
-date: 2018-10-15T11:10:43Z
+date: 2018-10-15T13:15:13Z
 title: "jx diagnose"
 slug: jx_diagnose
 url: /commands/jx_diagnose/
@@ -25,7 +25,7 @@ jx diagnose [flags]
       --install-dependencies      Should any required dependencies be installed automatically
       --log-level string          Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
   -n, --namespace string          The namespace to display the kube resources from. If left out, defaults to the current namespace
-      --no-brew                   Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --no-brew                   Disables the use of brew on macOS to install or upgrade command line dependencies
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
       --verbose                   Enable verbose logging
 ```

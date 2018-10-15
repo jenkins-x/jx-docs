@@ -1,5 +1,5 @@
 ---
-date: 2018-10-15T11:10:43Z
+date: 2018-10-15T13:15:13Z
 title: "jx preview"
 slug: jx_preview
 url: /commands/jx_preview/
@@ -50,7 +50,7 @@ jx preview [flags]
       --log-level string                  Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
   -n, --name string                       The Environment resource name. Must follow the Kubernetes name conventions like Services, Namespaces
       --namespace string                  The Kubernetes namespace for the Environment
-      --no-brew                           Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --no-brew                           Disables the use of brew on macOS to install or upgrade command line dependencies
       --no-helm-update                    Allows the 'helm repo update' command if you are sure your local helm cache is up to date with the version you wish to promote
       --no-merge                          Disables automatic merge of promote Pull Requests
       --no-poll                           Disables polling for Pull Request or Pipeline status

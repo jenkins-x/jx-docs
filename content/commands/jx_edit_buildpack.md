@@ -1,5 +1,5 @@
 ---
-date: 2018-10-15T11:10:43Z
+date: 2018-10-15T13:15:13Z
 title: "jx edit buildpack"
 slug: jx_edit_buildpack
 url: /commands/jx_edit_buildpack/
@@ -33,7 +33,7 @@ jx edit buildpack [flags]
   -h, --help                      help for buildpack
       --install-dependencies      Should any required dependencies be installed automatically
       --log-level string          Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
-      --no-brew                   Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --no-brew                   Disables the use of brew on macOS to install or upgrade command line dependencies
   -r, --ref string                The Git reference (branch,tag,sha) in the Git repository touse
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
   -u, --url string                The URL for the build pack Git repository

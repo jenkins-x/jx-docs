@@ -1,5 +1,5 @@
 ---
-date: 2018-10-15T11:10:43Z
+date: 2018-10-15T13:15:13Z
 title: "jx create cluster oke"
 slug: jx_create_cluster_oke
 url: /commands/jx_create_cluster_oke/
@@ -76,7 +76,7 @@ jx create cluster oke [flags]
       --log-level string                    Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
       --name string                         The name of the cluster. Avoid entering confidential information.
       --namespace string                    The namespace the Jenkins X platform should be installed into (default "jx")
-      --no-brew                             Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --no-brew                             Disables the use of brew on macOS to install or upgrade command line dependencies
       --no-default-environments             Disables the creation of the default Staging and Production environments
       --no-tiller                           Whether to disable the use of tiller with helm. If disabled we use 'helm template' to generate the YAML from helm charts then we use 'kubectl apply' to install it to avoid using tiller completely.
       --nodeImageName string                The name of the image running on the nodes in the node pool.

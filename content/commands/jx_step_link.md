@@ -1,5 +1,5 @@
 ---
-date: 2018-10-15T11:10:43Z
+date: 2018-10-15T13:15:13Z
 title: "jx step link"
 slug: jx_step_link
 url: /commands/jx_step_link/
@@ -40,7 +40,7 @@ jx step link services [flags]
   -i, --includes stringArray      What services from source namespace to include in the linking process
       --install-dependencies      Should any required dependencies be installed automatically
       --log-level string          Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
-      --no-brew                   Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --no-brew                   Disables the use of brew on macOS to install or upgrade command line dependencies
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
   -t, --to-namespace string       The destination namespace to which the linking would happen
       --verbose                   Enable verbose logging

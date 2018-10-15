@@ -1,5 +1,5 @@
 ---
-date: 2018-10-15T11:10:43Z
+date: 2018-10-15T13:15:13Z
 title: "jx delete preview"
 slug: jx_delete_preview
 url: /commands/jx_delete_preview/
@@ -30,7 +30,7 @@ jx delete preview [flags]
       --log-level string                  Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
   -n, --name string                       The Environment resource name. Must follow the Kubernetes name conventions like Services, Namespaces
       --namespace string                  The Kubernetes namespace for the Environment
-      --no-brew                           Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --no-brew                           Disables the use of brew on macOS to install or upgrade command line dependencies
       --post-preview-job-timeout string   The duration before we consider the post preview Jobs failed (default "2h")
       --post-preview-poll-time string     The amount of time between polls for the post preview Job status (default "10s")
       --pr string                         The Pull Request Name (e.g. 'PR-23' or just '23'

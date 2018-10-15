@@ -1,5 +1,5 @@
 ---
-date: 2018-10-15T11:10:43Z
+date: 2018-10-15T13:15:13Z
 title: "jx controller workflow"
 slug: jx_controller_workflow
 url: /commands/jx_controller_workflow/
@@ -26,7 +26,7 @@ jx controller workflow [flags]
       --install-dependencies            Should any required dependencies be installed automatically
       --log-level string                Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
   -n, --namespace string                The namespace to watch or defaults to the current namespace
-      --no-brew                         Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --no-brew                         Disables the use of brew on macOS to install or upgrade command line dependencies
       --no-watch                        Disable watch so just performs any delta processes on pending workflows
       --pull-request-poll-time string   Poll time when waiting for a Pull Request to merge (default "20s")
       --skip-auth-secrets-merge         Skips merging a local git auth yaml file with any pipeline secrets that are found

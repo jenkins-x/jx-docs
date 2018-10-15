@@ -1,5 +1,5 @@
 ---
-date: 2018-10-15T11:10:43Z
+date: 2018-10-15T13:15:13Z
 title: "jx import"
 slug: jx_import
 url: /commands/jx_import/
@@ -68,7 +68,7 @@ jx import [flags]
       --list-packs                     list available draft packs
       --log-level string               Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
       --name string                    Specify the Git repository name to import the project into (if it is not already in one) (default "n")
-      --no-brew                        Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --no-brew                        Disables the use of brew on macOS to install or upgrade command line dependencies
       --no-draft                       Disable Draft from trying to default a Dockerfile and Helm Chart
       --no-jenkinsfile                 Disable defaulting a Jenkinsfile if its missing
       --org string                     Specify the Git provider organisation to import the project into (if it is not already in one)

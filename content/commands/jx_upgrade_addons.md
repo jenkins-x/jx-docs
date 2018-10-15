@@ -1,5 +1,5 @@
 ---
-date: 2018-10-15T11:10:43Z
+date: 2018-10-15T13:15:13Z
 title: "jx upgrade addons"
 slug: jx_upgrade_addons
 url: /commands/jx_upgrade_addons/
@@ -34,7 +34,7 @@ jx upgrade addons [flags]
       --local-cloud-environment         Ignores default cloud-environment-repo and uses current directory 
       --log-level string                Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
       --namespace string                The Namespace to promote to
-      --no-brew                         Disables the use of brew on MacOS to install or upgrade command line dependencies
+      --no-brew                         Disables the use of brew on macOS to install or upgrade command line dependencies
   -s, --set string                      The helm parameters to pass in while upgrading
       --skip-auth-secrets-merge         Skips merging a local git auth yaml file with any pipeline secrets that are found
       --verbose                         Enable verbose logging
