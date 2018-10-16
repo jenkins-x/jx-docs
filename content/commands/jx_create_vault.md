@@ -1,43 +1,42 @@
 ---
 date: 2018-10-16T12:02:23Z
-title: "jx create gke-service-account"
-slug: jx_create_gke-service-account
-url: /commands/jx_create_gke-service-account/
+title: "jx create vault"
+slug: jx_create_vault
+url: /commands/jx_create_vault/
 ---
-## jx create gke-service-account
+## jx create vault
 
-Creates a GKE service account
+Create a new Vault using the vault-opeator
 
 ### Synopsis
 
-Creates a GKE service account
+Creates a Vault using the vault-operator
 
 ```
-jx create gke-service-account [flags]
+jx create vault [flags]
 ```
 
 ### Examples
 
 ```
-  jx create gke-service-account
-  
-  # to specify the options via flags
-  jx create gke-service-account --name my-service-account --project my-gke-project
+  # Create a new vault
+  jx create vault
+  "
 ```
 
 ### Options
 
 ```
   -b, --batch-mode                In batch mode the command never prompts for user input
+      --gke-project-id string     Google Project ID to use for Vault backend
+      --gke-zone string           The zone (e.g. us-central1-a) where Vault will store the encrypted data
       --headless                  Enable headless operation if using browser automation
-  -h, --help                      help for gke-service-account
+  -h, --help                      help for vault
       --install-dependencies      Should any required dependencies be installed automatically
       --log-level string          Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
-  -n, --name string               The name of the service account to create
+  -n, --namespace string          Namespace where the Vault is created
       --no-brew                   Disables the use of brew on macOS to install or upgrade command line dependencies
-  -p, --project string            The GCP project to create the service account in
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
-      --skip-login                Skip Google auth if already logged in via gcloud auth
       --verbose                   Enable verbose logging
 ```
 

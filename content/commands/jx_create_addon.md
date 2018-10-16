@@ -1,5 +1,5 @@
 ---
-date: 2018-10-16T10:00:08Z
+date: 2018-10-16T12:02:23Z
 title: "jx create addon"
 slug: jx_create_addon
 url: /commands/jx_create_addon/
@@ -19,12 +19,13 @@ jx create addon [flags]
 ### Options
 
 ```
-      --helm-update        Should we run helm update first to ensure we use the latest version (default true)
-  -h, --help               help for addon
-  -n, --namespace string   The Namespace to install into (default "jx")
-  -r, --release string     The chart release name
-  -s, --set string         The chart set values (can specify multiple or separate values with commas: key1=val1,key2=val2)
-  -v, --version string     The chart version to install)
+      --helm-update          Should we run helm update first to ensure we use the latest version (default true)
+  -h, --help                 help for addon
+  -n, --namespace string     The Namespace to install into (default "jx")
+  -r, --release string       The chart release name
+  -s, --set string           The chart set values (can specify multiple or separate values with commas: key1=val1,key2=val2)
+  -f, --values stringArray   List of locations for values files, can be local files or URLs
+  -v, --version string       The chart version to install)
 ```
 
 ### SEE ALSO
