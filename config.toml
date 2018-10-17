@@ -65,7 +65,7 @@ pygmentsStyle = "friendly"
       weight = 200
       identifier = "jenkins"
       post = "external"
-      url = "https://jenkins.io"
+      url = "https://jenkins.io/cn/"
 
     [[languages.zh.menu.docs]]
       name = "关于 Jenkins X"
