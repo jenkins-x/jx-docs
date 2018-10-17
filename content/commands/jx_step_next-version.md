@@ -1,5 +1,5 @@
 ---
-date: 2018-10-17T18:32:51Z
+date: 2018-10-17T19:46:07Z
 title: "jx step next-version"
 slug: jx_step_next-version
 url: /commands/jx_step_next-version/
