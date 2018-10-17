@@ -1,5 +1,5 @@
 ---
-date: 2018-10-17T12:57:56Z
+date: 2018-10-17T14:42:22Z
 title: "jx cloudbees"
 slug: jx_cloudbees
 url: /commands/jx_cloudbees/
@@ -23,7 +23,7 @@ jx cloudbees [flags]
 ### Examples
 
 ```
-  # Open the CDX dashboard in a browser
+  # Open the core dashboard in a browser
   jx cloudbees
   
   # Print the Jenkins X console URL but do not open a browser
