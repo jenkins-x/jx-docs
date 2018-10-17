@@ -165,7 +165,18 @@ Please add your $HOME/bin to $PATH otherwise jx will have issue invoking OCI CLI
 
 Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
 
+## Using IBM Cloud Kubernetes Service (IKS)
+
+Use the [jx create cluster iks](/commands/jx_create_cluster_iks) command: 
+
+    jx create cluster iks --apikey=<IBM Cloud API Key>
     
+This will use [IBM Cloud CLI](https://console.bluemix.net/docs/cli/index.html#overview) on your IBM Cloud Infrastructure account to create a new IKS cluster and install Jenkins X. 
+
+You need to make sure you have the $HOME/.jx/bin folder in your $PATH.
+
+Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
+
 ## Using Minikube (local)    
     
 Some folks have trouble getting minikube to work for a variety of reasons:
