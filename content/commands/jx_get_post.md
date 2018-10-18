@@ -1,5 +1,5 @@
 ---
-date: 2018-10-18T11:45:17Z
+date: 2018-10-18T14:57:40Z
 title: "jx get post"
 slug: jx_get_post
 url: /commands/jx_get_post/
