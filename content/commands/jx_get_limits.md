@@ -1,5 +1,5 @@
 ---
-date: 2018-10-18T09:12:48Z
+date: 2018-10-18T11:45:17Z
 title: "jx get limits"
 slug: jx_get_limits
 url: /commands/jx_get_limits/
