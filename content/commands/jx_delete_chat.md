@@ -1,5 +1,5 @@
 ---
-date: 2018-10-19T14:11:31Z
+date: 2018-10-19T18:00:21Z
 title: "jx delete chat"
 slug: jx_delete_chat
 url: /commands/jx_delete_chat/
