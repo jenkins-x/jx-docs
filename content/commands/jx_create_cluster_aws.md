@@ -1,5 +1,5 @@
 ---
-date: 2018-10-19T10:20:27Z
+date: 2018-10-19T11:02:32Z
 title: "jx create cluster aws"
 slug: jx_create_cluster_aws
 url: /commands/jx_create_cluster_aws/
@@ -80,6 +80,7 @@ jx create cluster aws [flags]
       --on-premise                          If installing on an on premise cluster then lets default the 'external-ip' to be the Kubernetes master IP address
       --profile string                      AWS profile to use.
       --prow                                Enable prow
+      --pull-secrets string                 The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
   -r, --rbac                                whether to enable RBAC on the Kubernetes cluster (default true)
       --recreate-existing-draft-repos       Delete existing helm repos used by Jenkins X under ~/draft/packs
       --region string                       AWS region to use. Default: us-west-2

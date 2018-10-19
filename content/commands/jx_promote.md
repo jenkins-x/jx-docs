@@ -1,5 +1,5 @@
 ---
-date: 2018-10-19T10:20:27Z
+date: 2018-10-19T11:02:32Z
 title: "jx promote"
 slug: jx_promote
 url: /commands/jx_promote/
@@ -64,6 +64,7 @@ jx promote [application] [flags]
       --no-wait                         Disables waiting for completing promotion after the Pull request is merged
       --pipeline string                 The Pipeline string in the form 'folderName/repoName/branch' which is used to update the PipelineActivity. If not specified its defaulted from  the '$BUILD_NUMBER' environment variable
       --pull-request-poll-time string   Poll time when waiting for a Pull Request to merge (default "20s")
+      --pull-secrets string             The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
       --release string                  The name of the helm release
       --skip-auth-secrets-merge         Skips merging a local git auth yaml file with any pipeline secrets that are found
   -t, --timeout string                  The timeout to wait for the promotion to succeed in the underlying Environment. The command fails if the timeout is exceeded or the promotion does not complete (default "1h")

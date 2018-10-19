@@ -1,5 +1,5 @@
 ---
-date: 2018-10-19T10:20:27Z
+date: 2018-10-19T11:02:32Z
 title: "jx create environment"
 slug: jx_create_environment
 url: /commands/jx_create_environment/
@@ -63,6 +63,7 @@ jx create environment [flags]
       --prefix string                Environment repo prefix, your Git repo will be of the form 'environment-$prefix-$envName' (default "jx")
   -p, --promotion string             The promotion strategy
       --prow                         Install and use Prow for environment promotion
+      --pull-secrets string          The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
       --skip-auth-secrets-merge      Skips merging a local git auth yaml file with any pipeline secrets that are found
       --tls-acme string              Used to enable automatic TLS for ingress (default "false")
       --verbose                      Enable verbose logging

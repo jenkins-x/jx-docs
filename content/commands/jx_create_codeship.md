@@ -1,5 +1,5 @@
 ---
-date: 2018-10-19T10:20:27Z
+date: 2018-10-19T11:02:32Z
 title: "jx create codeship"
 slug: jx_create_codeship
 url: /commands/jx_create_codeship/
@@ -89,6 +89,7 @@ jx create codeship [flags]
   -o, --organisation-name string               The organisation name that will be used as the Git repo containing cluster details, the repo will be organisation-<org name>
   -p, --project string                         The GCP project to create the service account in
       --prow                                   Enable prow
+      --pull-secrets string                    The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
       --recreate-existing-draft-repos          Delete existing helm repos used by Jenkins X under ~/draft/packs
       --register-local-helmrepo                Registers the Jenkins X chartmuseum registry with your helm client [default false]
       --remote-tiller                          If enabled and we are using tiller for helm then run tiller remotely in the kubernetes cluster. Otherwise we run the tiller process locally. (default true)

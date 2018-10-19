@@ -1,5 +1,5 @@
 ---
-date: 2018-10-19T10:20:27Z
+date: 2018-10-19T11:02:32Z
 title: "jx create docker"
 slug: jx_create_docker
 url: /commands/jx_create_docker/
@@ -34,6 +34,7 @@ jx create docker auth [flags]
       --install-dependencies      Should any required dependencies be installed automatically
       --log-level string          Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
       --no-brew                   Disables the use of brew on macOS to install or upgrade command line dependencies
+      --pull-secrets string       The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
   -s, --secret string             The secret to associate auth component of config.json
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
   -u, --user string               The user to associate auth component of config.json

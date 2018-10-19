@@ -1,5 +1,5 @@
 ---
-date: 2018-10-19T10:20:27Z
+date: 2018-10-19T11:02:32Z
 title: "jx create jhipster"
 slug: jx_create_jhipster
 url: /commands/jx_create_jhipster/
@@ -60,6 +60,7 @@ jx create jhipster [flags]
       --org string                     Specify the Git provider organisation to import the project into (if it is not already in one)
   -o, --output-dir string              Directory to output the project to. Defaults to the current directory
       --pack string                    The name of the pack to use
+      --pull-secrets string            The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
       --skip-auth-secrets-merge        Skips merging a local git auth yaml file with any pipeline secrets that are found
       --verbose                        Enable verbose logging
 ```

@@ -1,5 +1,5 @@
 ---
-date: 2018-10-19T10:20:27Z
+date: 2018-10-19T11:02:32Z
 title: "jx step changelog"
 slug: jx_step_changelog
 url: /commands/jx_step_changelog/
@@ -70,6 +70,7 @@ jx step changelog [flags]
   -o, --overwrite                  overwrites the Release CRD YAML file if it exists
       --previous-date string       the previous date to find a revision in format 'MonthName dayNumber year'
   -p, --previous-rev string        the previous tag revision
+      --pull-secrets string        The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
       --release-yaml-file string   the name of the file to generate the Release YAML (default "release.yaml")
   -r, --rev string                 the current tag revision
       --skip-auth-secrets-merge    Skips merging a local git auth yaml file with any pipeline secrets that are found

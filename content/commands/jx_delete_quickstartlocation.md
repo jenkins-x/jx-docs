@@ -1,5 +1,5 @@
 ---
-date: 2018-10-19T10:20:27Z
+date: 2018-10-19T11:02:32Z
 title: "jx delete quickstartlocation"
 slug: jx_delete_quickstartlocation
 url: /commands/jx_delete_quickstartlocation/
@@ -44,6 +44,7 @@ jx delete quickstartlocation [flags]
       --log-level string          Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
       --no-brew                   Disables the use of brew on macOS to install or upgrade command line dependencies
   -o, --owner string              The owner is the user or organisation of the Git provider
+      --pull-secrets string       The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
   -u, --url string                The URL of the Git service (default "https://github.com")
       --verbose                   Enable verbose logging

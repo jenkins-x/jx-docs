@@ -1,5 +1,5 @@
 ---
-date: 2018-10-19T10:20:27Z
+date: 2018-10-19T11:02:32Z
 title: "jx create addon sso"
 slug: jx_create_addon_sso
 url: /commands/jx_create_addon_sso/
@@ -39,6 +39,7 @@ jx create addon sso [flags]
   -n, --namespace string          The Namespace to install into (default "jx")
       --namespaces stringArray    Namespaces to upgrade
       --no-brew                   Disables the use of brew on macOS to install or upgrade command line dependencies
+      --pull-secrets string       The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
   -r, --release string            The chart release name (default "jx-sso")
       --services stringArray      Services to upgrdde
   -s, --set string                The chart set values (can specify multiple or separate values with commas: key1=val1,key2=val2)

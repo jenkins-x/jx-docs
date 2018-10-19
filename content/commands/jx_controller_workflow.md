@@ -1,5 +1,5 @@
 ---
-date: 2018-10-19T10:20:27Z
+date: 2018-10-19T11:02:32Z
 title: "jx controller workflow"
 slug: jx_controller_workflow
 url: /commands/jx_controller_workflow/
@@ -29,6 +29,7 @@ jx controller workflow [flags]
       --no-brew                         Disables the use of brew on macOS to install or upgrade command line dependencies
       --no-watch                        Disable watch so just performs any delta processes on pending workflows
       --pull-request-poll-time string   Poll time when waiting for a Pull Request to merge (default "20s")
+      --pull-secrets string             The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
       --skip-auth-secrets-merge         Skips merging a local git auth yaml file with any pipeline secrets that are found
       --verbose                         Enable verbose logging
 ```

@@ -1,5 +1,5 @@
 ---
-date: 2018-10-19T10:20:27Z
+date: 2018-10-19T11:02:32Z
 title: "jx preview"
 slug: jx_preview
 url: /commands/jx_preview/
@@ -61,6 +61,7 @@ jx preview [flags]
       --pr string                         The Pull Request Name (e.g. 'PR-23' or just '23'
       --pr-url string                     The Pull Request URL
       --pull-request-poll-time string     Poll time when waiting for a Pull Request to merge (default "20s")
+      --pull-secrets string               The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
       --release string                    The name of the helm release
       --skip-auth-secrets-merge           Skips merging a local git auth yaml file with any pipeline secrets that are found
       --source-ref string                 The source code git ref (branch/sha)

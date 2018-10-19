@@ -1,5 +1,5 @@
 ---
-date: 2018-10-19T10:20:27Z
+date: 2018-10-19T11:02:32Z
 title: "jx create devpod"
 slug: jx_create_devpod
 url: /commands/jx_create_devpod/
@@ -44,6 +44,7 @@ jx create devpod [flags]
       --no-brew                   Disables the use of brew on macOS to install or upgrade command line dependencies
       --persist                   Persist changes made to the DevPod. Cannot be used with --sync
   -p, --ports ints                Container ports exposed by the DevPod
+      --pull-secrets string       The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
   -c, --request-cpu string        The request CPU of the DevPod (default "1")
       --reuse                     Reuse an existing DevPod if a suitable one exists. The DevPod will be selected based on the label (or current working directory) (default true)
       --shell string              The name of the shell to invoke in the DevPod. If nothing is specified it will use 'bash'

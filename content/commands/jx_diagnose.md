@@ -1,5 +1,5 @@
 ---
-date: 2018-10-19T10:20:27Z
+date: 2018-10-19T11:02:32Z
 title: "jx diagnose"
 slug: jx_diagnose
 url: /commands/jx_diagnose/
@@ -26,6 +26,7 @@ jx diagnose [flags]
       --log-level string          Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
   -n, --namespace string          The namespace to display the kube resources from. If left out, defaults to the current namespace
       --no-brew                   Disables the use of brew on macOS to install or upgrade command line dependencies
+      --pull-secrets string       The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
       --verbose                   Enable verbose logging
 ```

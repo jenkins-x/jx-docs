@@ -1,5 +1,5 @@
 ---
-date: 2018-10-19T10:20:27Z
+date: 2018-10-19T11:02:32Z
 title: "jx create addon cloudbees"
 slug: jx_create_addon_cloudbees
 url: /commands/jx_create_addon_cloudbees/
@@ -40,6 +40,7 @@ jx create addon cloudbees [flags]
   -n, --namespace string          The Namespace to install into (default "jx")
       --no-brew                   Disables the use of brew on macOS to install or upgrade command line dependencies
   -p, --password string           Password to access UI when using basic auth.  Defaults to default Jenkins X admin password.
+      --pull-secrets string       The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
   -r, --release string            The chart release name (default "cb")
   -s, --set string                The chart set values (can specify multiple or separate values with commas: key1=val1,key2=val2)
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found

@@ -1,5 +1,5 @@
 ---
-date: 2018-10-19T10:20:27Z
+date: 2018-10-19T11:02:32Z
 title: "jx create spring"
 slug: jx_create_spring
 url: /commands/jx_create_spring/
@@ -73,6 +73,7 @@ jx create spring [flags]
   -o, --output-dir string              Directory to output the project to. Defaults to the current directory
       --pack string                    The name of the pack to use
   -p, --packaging string               Packaging
+      --pull-secrets string            The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
       --skip-auth-secrets-merge        Skips merging a local git auth yaml file with any pipeline secrets that are found
       --type string                    Project Type (such as maven-project or gradle-project)
       --verbose                        Enable verbose logging
