@@ -10,11 +10,15 @@ Create a new kubernetes cluster on IBM Cloud Kubernetes Services
 
 ### Synopsis
 
-This command creates a new kubernetes cluster on IKS, installing required local dependencies and provisions the Jenkins X platform 
+This command creates a new kubernetes cluster on IKS, installing required local dependencies and provisions the Jenkins X platform.
 
-IBM® Cloud Kubernetes Service delivers powerful tools by combining Docker containers, the Kubernetes technology, an intuitive user experience, and built-in security and isolation to automate the deployment, operation, scaling, and monitoring of containerized apps in a cluster of compute hosts. 
+IBM® Cloud Kubernetes Service delivers powerful tools by combining Docker containers, the Kubernetes technology, an intuitive user experience, and built-in security and isolation to automate the deployment, operation, scaling, and monitoring of containerized apps in a cluster of compute hosts.
 
-Important: In order to create a "standard cluster" required for jenkins-x, you must have a Trial, Pay-As-You-Go, or Subscription IBM Cloud account (https://console.bluemix.net/registration/). "Free cluster"s are currently not supported.
+{{% note %}}Important:
+In order to create a "standard cluster" required for jenkins-x, you must have a Trial, Pay-As-You-Go, or Subscription IBM Cloud account (https://console.bluemix.net/registration/). "Free cluster"s are currently not supported.
+{{% /note %}}
+
+Running this command will install Helm and IBM Cloud CLI tools locally in your $HOME/.jx/bin folder.
 
 ```
 jx create cluster iks [flags]
@@ -23,8 +27,16 @@ jx create cluster iks [flags]
 ### Examples
 
 ```
-  jx create cluster iks
+  jx create cluster iks --apikey=<IBM Cloud API Key>
 ```
+
+### Recommandations
+
+When creating the cluster, the following values are recommended:
+
+    - Kubernetes Version: 1.10.x (installation on top of 1.11.x won't work)
+    - Kubernetes Node Machine Type: b2c.4x16
+    - Number of kubernetes workers: 3
 
 ### Options
 
