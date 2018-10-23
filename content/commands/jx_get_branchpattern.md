@@ -1,5 +1,5 @@
 ---
-date: 2018-10-23T08:04:58Z
+date: 2018-10-23T09:32:57Z
 title: "jx get branchpattern"
 slug: jx_get_branchpattern
 url: /commands/jx_get_branchpattern/

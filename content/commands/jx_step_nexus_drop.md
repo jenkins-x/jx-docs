@@ -1,5 +1,5 @@
 ---
-date: 2018-10-23T08:04:58Z
+date: 2018-10-23T09:32:57Z
 title: "jx step nexus drop"
 slug: jx_step_nexus_drop
 url: /commands/jx_step_nexus_drop/
