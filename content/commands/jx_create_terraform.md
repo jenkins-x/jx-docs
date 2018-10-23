@@ -1,5 +1,5 @@
 ---
-date: 2018-10-23T09:32:57Z
+date: 2018-10-23T18:53:41Z
 title: "jx create terraform"
 slug: jx_create_terraform
 url: /commands/jx_create_terraform/
@@ -88,6 +88,7 @@ jx create terraform [flags]
       --remote-tiller                          If enabled and we are using tiller for helm then run tiller remotely in the kubernetes cluster. Otherwise we run the tiller process locally. (default true)
       --skip-auth-secrets-merge                Skips merging a local git auth yaml file with any pipeline secrets that are found
       --skip-ingress                           Don't install an ingress controller
+      --skip-login                             Skip Google auth if already logged in via gcloud auth
       --skip-terraform-apply                   Skip applying the generated Terraform plans
       --skip-tiller                            Don't install a Helm Tiller service
       --tiller-cluster-role string             The cluster role for Helm's tiller (default "cluster-admin")
