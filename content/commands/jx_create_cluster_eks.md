@@ -1,5 +1,5 @@
 ---
-date: 2018-10-24T08:48:39Z
+date: 2018-10-24T13:34:57Z
 title: "jx create cluster eks"
 slug: jx_create_cluster_eks
 url: /commands/jx_create_cluster_eks/
@@ -77,7 +77,7 @@ jx create cluster eks [flags]
       --nodes-min int                       minimum number of nodes (default -1)
       --on-premise                          If installing on an on premise cluster then lets default the 'external-ip' to be the Kubernetes master IP address
   -p, --profile string                      AWS profile to use. If provided, this overrides the AWS_PROFILE environment variable
-      --prow                                Enable prow
+      --prow                                Enable Prow
       --pull-secrets string                 The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
       --recreate-existing-draft-repos       Delete existing helm repos used by Jenkins X under ~/draft/packs
   -r, --region string                       The region to use. Default: us-west-2

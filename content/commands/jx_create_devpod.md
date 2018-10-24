@@ -1,5 +1,5 @@
 ---
-date: 2018-10-24T08:48:39Z
+date: 2018-10-24T13:34:57Z
 title: "jx create devpod"
 slug: jx_create_devpod
 url: /commands/jx_create_devpod/
@@ -51,6 +51,7 @@ jx create devpod [flags]
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
   -s, --suffix string             The suffix to append the pod name
       --sync                      Also synchronise the local file system into the DevPod
+      --tiller-namespace string   The optional tiller namespace to use within the DevPod.
       --username string           The username to create the DevPod. If not specified defaults to the current operating system user or $USER'
       --verbose                   Enable verbose logging
   -w, --working-dir string        The working directory of the DevPod

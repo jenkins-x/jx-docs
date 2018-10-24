@@ -1,5 +1,5 @@
 ---
-date: 2018-10-24T08:48:39Z
+date: 2018-10-24T13:34:57Z
 title: "jx create cluster iks"
 slug: jx_create_cluster_iks
 url: /commands/jx_create_cluster_iks/
@@ -76,7 +76,7 @@ jx create cluster iks [flags]
   -p, --password string                     Password
       --private-only                        Use this flag to prevent a public VLAN from being created. Required only when you specify the ‘--private-vlan’ flag without specifying the ‘--public-vlan’ flag.
       --private-vlan string                 Conditional: Specify the ID of the private VLAN. To see available VLANs, run 'ibmcloud ks vlans --zone <zone name>'. If you do not have a private VLAN yet, do not specify this option because one will be automatically created for you. When you specify a private VLAN, you must also specify either the ‘--public-vlan’ flag or the ‘--private-only’ flag.
-      --prow                                Enable prow
+      --prow                                Enable Prow
       --public-vlan string                  Conditional: Specify the ID of the public VLAN. To see available VLANs, run 'ibmcloud ks vlans --zone <zone name>'. If you do not have a public VLAN yet, do not specify this option because one will be automatically created for you.
       --recreate-existing-draft-repos       Delete existing helm repos used by Jenkins X under ~/draft/packs
   -r, --region string                       The IBM Cloud Region. Default is 'us-east'
