@@ -1,5 +1,5 @@
 ---
-date: 2018-10-24T08:01:18Z
+date: 2018-10-24T08:20:21Z
 title: "jx upgrade ingress"
 slug: jx_upgrade_ingress
 url: /commands/jx_upgrade_ingress/

@@ -1,5 +1,5 @@
 ---
-date: 2018-10-24T08:01:18Z
+date: 2018-10-24T08:20:21Z
 title: "jx update cluster gke terraform"
 slug: jx_update_cluster_gke_terraform
 url: /commands/jx_update_cluster_gke_terraform/
