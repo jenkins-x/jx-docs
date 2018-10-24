@@ -19,84 +19,91 @@ aliases: [/contribute/development/]
 toc: true
 ---
 
-## Introduction
 
-Jenkins X is an open-source project and lives by the work of its [contributors][]. There are plenty of [open issues][issues], and we need your help to make Jenkins X even more awesome. You don't need to be a Go guru to contribute to the project's development.
+# Introduction
 
-## Assumptions
+Jenkins X is an open-source project and lives by the work of its [contributors](https://github.com/jenkins-x/jx/graphs/contributors). There are plenty of [open issues](https://github.com/jenkins-x/jx/issues), and we need your help to make Jenkins X even more awesome. You don't need to be a Go guru to contribute to the project's development.
+
+# Assumptions
 
 This contribution guide takes a step-by-step approach in hopes of helping newcomers. Therefore, we only assume the following:
 
 * You are new to Git or open-source projects in general
 * You are a fan of Jenkins X and enthusiastic about contributing to the project
 
-{{% note "Additional Questions?" %}}
+{{% note %}}
 If you're struggling at any point in this contribution guide, reach out to the Jenkins X community in [Jenkins X's Discussion forum](https://jenkins-x.io/community/).
 {{% /note %}}
+
+# Prerequisites
+
+To contribute to Jenkins X jx binary, you will need:
+
+ - [Git](https://git-scm.com) and a [GitHub](https://github.com) account
+ - [Go](https://golang.org/) 1.9 or later, with support for compiling to `linux/amd64`
+ - [dep](https://github.com/golang/dep)
+ 
 
 ## Install Go
 
 The installation of Go should take only a few minutes. You have more than one option to get Go up and running on your machine.
 
-If you are having trouble following the installation guides for go, check out [Go Bootcamp, which contains setups for every platform][gobootcamp] or reach out to the Jenkins X community in the [Jenkins X Discussion Forums][forums].
+If you are having trouble following the installation guides for go, check out [Go Bootcamp](http://www.golangbootcamp.com/book/get_setup) which contains setups for every platform or reach out to the Jenkins X community in the [Jenkins X Slack channels](/community/#slack).
 
-### Install Go From Source
-
-[Download the latest stable version of Go][godl] and follow the official [Golang installation guide][goinstall].
-
-Once you're finished installing Go, let's confirm everything is working correctly. Open a terminal---or command line under Windows--and type the following:
-
-```
-go version
-```
-
-You should see something similar to the following written to the console. Note that the version here reflects the most recent version of Go as of the last update for this page:
-
-```
-go version go1.8 darwin/amd64
-```
-
-Next, make sure that you set up your `GOPATH` [as described in the installation guide][setupgopath].
-
-You can print the `GOPATH` with `echo $GOPATH`. You should see a non-empty string containing a valid path to your Go workspace; .e.g.:
-
-```
-/Users/<yourusername>/Code/go
-```
-
-### Install Go with Homebrew
+### Install Go on macOS
 
 If you are a macOS user and have [Homebrew](https://brew.sh/) installed on your machine, installing Go is as simple as the following command:
 
-{{< code file="install-go.sh" >}}
-brew install go
-{{< /code >}}
+```shell
+$ brew install go 
+```
 
 ### Install Go via GVM
 
-More experienced users can use the [Go Version Manager][gvm] (GVM). GVM allows you to switch between different Go versions *on the same machine*. If you're a beginner, you probably don't need this feature. However, GVM makes it easy to upgrade to a new released Go version with just a few commands.
+More experienced users can use the [Go Version Manager](https://github.com/moovweb/gvm) (GVM). GVM allows you to switch between different Go versions *on the same machine*. If you're a beginner, you probably don't need this feature. However, GVM makes it easy to upgrade to a new released Go version with just a few commands.
 
 GVM comes in especially handy if you follow the development of Jenkins X over a longer period of time. Future versions of Jenkins X will usually be compiled with the latest version of Go. Sooner or later, you will have to upgrade if you want to keep up.
 
-## Create a GitHub Account
+### Install Go on Windows
 
-If you're going to contribute code, you'll need to have an account on GitHub. Go to [www.github.com/join](https://github.com/join) and set up a personal account.
+Simply install the latest version by downloading the [installer](https://golang.org/dl/).
 
-## Install Git on Your System
+### Set up your GOPATH
 
-You will need to have Git installed on your computer to contribute to Jenkins X development. Teaching git is outside the scope of the Jenkins X docs, but if you're looking for an excellent reference to learn the basics of Git, we recommend the [Git book][gitbook] if you are not sure where to begin. The used terminology will be explained with annotations.
+Once you're finished installing Go, let's confirm everything is working correctly. Open a terminal - or command line under Windows - and type the following:
 
-Git is a [version control system](https://en.wikipedia.org/wiki/Version_control) to track the changes of source code. Jenkins X depends on smaller third-party packages that are used to extend the functionality. We use them because we don't want to reinvent the wheel.
+```shell
+$ go version
+```
 
-Go ships with a sub-command called `get` that will download these packages for us when we setup our working environment. The source code of the packages is tracked with Git. `get` will interact with the Git servers of the package hosters in order to fetch all dependencies.
+You should see something similar to the following written to the console (on macOS). Note that the version here reflects the most recent version of Go as of the last update for this page:
 
-Move back to the terminal and check if Git is already installed. Type in `git version` and press enter. You can skip the rest of this section if the command returned a version number. Otherwise [download](https://git-scm.com/downloads) the lastest version of Git and follow this [installation guide](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+```
+go version go1.11 darwin/amd64
+```
+
+Next, make sure that you set up your `GOPATH` [as described in the installation guide](https://github.com/golang/go/wiki/SettingGOPATH).
+
+You can print the `GOPATH` with `echo $GOPATH`. You should see a non-empty string containing a valid path to your Go workspace; .e.g.:
+
+```shell
+$ echo $GOPATH
+/Users/<yourusername>/Code/go
+```
+
+## Install Git on your system
+
+Git is a [version control system](https://en.wikipedia.org/wiki/Version_control) to track the changes of source code.
+
+You will need to have Git installed on your computer to contribute to Jenkins X development. Teaching Git is outside the scope of the Jenkins X docs, but if you're looking for an excellent reference to learn the basics of Git, we recommend the [Git book](https://git-scm.com/book/) if you are not sure where to begin.
+
+Move back to the terminal and check if Git is already installed. Type in `git version` and press enter. You can skip the rest of this section if the command returned a version number. Otherwise [download](https://git-scm.com/downloads) the latest version and follow this [installation guide](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
 Finally, check again with `git version` if Git was installed successfully.
 
 ### Git Graphical Front Ends
 
-There are several [GUI clients](https://git-scm.com/downloads/guis) that help you to operate Git. Not all are available for all operating systems and maybe differ in their usage. Thus, so we will use the command line since the commands are everywhere the same.
+There are several [GUI clients](https://git-scm.com/downloads/guis) that help you to operate Git. Not all are available for all operating systems and maybe differ in their usage. Thus, we will use the command line since the commands are everywhere the same.
 
 ### Install Hub on Your System (Optional)
 
@@ -104,76 +111,72 @@ Hub is a great tool for working with GitHub. The main site for it is [hub.github
 
 On a Mac, you can install [Hub](https://github.com/github/hub) using [Homebrew](https://brew.sh):
 
-```
-brew install hub
+```shell
+$ brew install hub
 ```
 
 Now we'll create an [alias in Bash](http://tldp.org/LDP/abs/html/aliases.html) so that typing `git` actually runs `Hub`:
 
-```
-echo "alias git='hub'" >> ~/.bash_profile
+```shell
+$ echo "alias git='hub'" >> ~/.bash_profile
 ```
 
-Confirm the installation:
+## Create a GitHub Account
 
-```
-git version 2.6.3
-hub version 2.2.2
-```
+If you're going to contribute code, you'll need to have an account on GitHub. Go to [www.github.com/join](https://github.com/join) and set up a personal account.
 
 ## Set up your working copy
 
 The working copy is set up locally on your computer. It's what you'll edit, compile, and end up pushing back to GitHub. The main steps are cloning the repository and creating your fork as a remote.
 
-### Clone the repository
-
-We assume that you've set up your `GOPATH` (see the section above if you're unsure about this). You should now copy the Jenkins X repository down to your computer. You'll hear this called "clone the repo". GitHub's [help pages](https://help.github.com/articles/cloning-a-repository/) give us a short explanation:
-
-> When you create a repository on GitHub, it exists as a remote repository. You can create a local clone of your repository on your computer and sync between the two locations.
-
-We're going to clone the [master Jenkins X repository](https://github.com/jenkins-x/jx). That seems counter-intuitive, since you won't have commit rights on it. But it's required for the Go workflow. You'll work on a copy of the master and push your changes to your own repository on GitHub.
-
-So, let's clone that master repository:
-
-```
-go get -v -u github.com/jenkins-x/jx
-```
-
-Jenkins X relies on [Testify](https://github.com/stretchr/testify) for testing Go code. If you don't already have it, get the Testify testing tools:
-
-```
-go get github.com/stretchr/testify
-```
-
 ### Fork the repository
 
-If you're not fimiliar with this term, GitHub's [help pages](https://help.github.com/articles/fork-a-repo/) provide again a simple explanation:
+If you're not familiar with this term, GitHub's [help pages](https://help.github.com/articles/fork-a-repo/) provide again a simple explanation:
 
 > A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.
-
-#### Fork by hand
 
 Open the [Jenkins X repository](https://github.com/jenkins-x/jx) on GitHub and click on the "Fork" button in the top right.
 
 ![Fork button](/images/contribute/development/forking-a-repository.png)
 
+### Clone your fork locally
+
 Now open your fork repository on GitHub and copy the remote url of your fork. You can choose between HTTPS and SSH as protocol that Git should use for the following operations. HTTPS works always [if you're not sure](https://help.github.com/articles/which-remote-url-should-i-use/).
 
 ![Copy remote url](/images/contribute/development/copy-remote-url.png)
 
-Switch back to the terminal and move into the directory of the cloned master repository from the last step.
+Then go back to your terminal and clone your fork locally. Since jx is a Go package, it should be located at `$GOPATH/src/github.com/jenkins-x/jx`.
 
-```
-cd $GOPATH/src/github.com/jenkins-x/jx
-```
-
-Now Git needs to know that our fork exists by adding the copied remote url:
-
-```
-git remote add <YOUR-GITHUB-USERNAME> <COPIED REMOTE-URL>
+```shell
+$ mkdir -p $GOPATH/src/github.com/jenkins-x
+$ cd $GOPATH/src/github.com/jenkins-x
+$ git clone git@github.com:<username>/jx.git
+$ cd jx
 ```
 
-#### Fork with Hub
+Add the conventional upstream `git` remote in order to fetch changes from jx's main master
+branch and to create pull requests:
+
+```shell
+$ git remote add upstream https://github.com/jenkins-x/jx.git
+```
+
+Let's check if everything went right by listing all known remotes:
+
+```shell
+$ git remote -v
+```
+
+The output should look similar:
+
+```
+digitalcraftsman    git@github.com:digitalcraftsman/jx.git (fetch)
+digitalcraftsman    git@github.com:digitalcraftsman/jx.git (push)
+origin  https://github.com/jenkins-x/jx (fetch)
+origin  https://github.com/jenkins-x/jx (push)
+```
+
+### Fork with Hub
 
 Alternatively, you can use the Git wrapper Hub. Hub makes forking a repository easy:
 
@@ -183,141 +186,72 @@ hub fork
 
 That command will log in to GitHub using your account, create a fork of the repository that you're currently working in, and add it as a remote to your working copy.
 
-#### Trust, but verify
-
-Let's check if everything went right by listing all known remotes:
-
-```
-git remote -v
-```
-
-The output should look similar:
-
-```
-digitalcraftsman    git@github.com:digitalcraftsman/hugo.git (fetch)
-digitalcraftsman    git@github.com:digitalcraftsman/hugo.git (push)
-origin  https://github.com/jenkins-x/jx (fetch)
-origin  https://github.com/jenkins-x/jx (push)
-```
-
-## The Jenkins X Git Contribution Workflow
+## Contribution Workflow
 
 ### Create a new branch
 
-You should never develop against the "master" branch. The development team will not accept a pull request against that branch. Instead, create a descriptive named branch and work on it.
+First, ensure that your local repository is up-to-date with the latest version of jx. More details on [GitHub help](https://help.github.com/articles/syncing-a-fork/)
 
-First, you should always pull the latest changes from the master repository:
-
+```shell
+$ git fetch upstream
+$ git checkout master
+$ git merge upstream/master
 ```
-git checkout master
-git pull
-```
 
-Now we can create a new branch for your additions:
+Now you can create a new branch for your change:
 
-```
-git checkout -b <BRANCH-NAME>
+```shell
+$ git checkout -b <BRANCH-NAME>
 ```
 
 You can check on which branch your are with `git branch`. You should see a list of all local branches. The current branch is indicated with a little asterisk.
 
-### Contribute to Documentation
+### Push commits
 
-Perhaps you want to start contributing to the Jenkins X docs. If so, you can ignore most of the following steps and focus on the `/docs` directory within your newly cloned repository. You can change directories into the Jenkins X docs using `cd docs`.
+To push our commits to the fork on GitHub you need to specify a destination. A destination is defined by the remote and a branch name. Earlier, you defined that the remote url of our fork is the same as our GitHub handle, in this case `digitalcraftsman`. The branch should have the same as our local one. This makes it easy to identify corresponding branches.
 
-You can start Jenkins X's built-in server via `hugo server`. Browse the documentation by entering [http://localhost:1313](http://localhost:1313) in the address bar of your browser. The server automatically updates the page whenever you change content.
-
-We have developed a [separate Jenkins X documentation contribution guide][docscontrib] for more information on how the Jenkins X docs are built, organized, and improved by the generosity of people like you.
-
-### Build Jenkins X
-
-While making changes in the codebase it's a good idea to build the binary to test them:
-
-```
-go build -o hugo main.go
+```shell
+$ git push --set-upstream origin <BRANCH-NAME>
 ```
 
-### Test 
-Sometimes changes on the codebase can cause unintended side effects. Or they don't work as expected. Most functions have their own test cases. You can find them in files ending with `_test.go`.
+Now Git knows the destination. Next time when you to push commits you just need to enter `git push`.
 
-Make sure the commands `go test ./...` passes, and `go build` completes.
+### Build your change
 
-### Formatting 
-The Go code styleguide maybe is opiniated but it ensures that the codebase looks the same, regardless who wrote the code. Go comes with its own formatting tool. Let's apply the styleguide to our addtions:
+With the prerequisites installed and your fork of jx cloned, you can make changes to local jx source code and hack as much as you want.
 
+Run `make` to build the `jx` binaries:
+
+```shell
+$ make build
 ```
-go fmt ./...
-```
+See below to get some advises on how to [test](#testing) and [debug](#debugging).
 
-Once you made your additions commit your changes. Make sure that you follow our [code contribution guidelines](https://github.com/jenkins-x/jx/blob/master/CONTRIBUTING.md):
+### Squash and rebase
 
-```
-# Add all changed files
-git add --all
-git commit --message "YOUR COMMIT MESSAGE"
-```
+So you are happy with your development and are ready to prepare the PR. Before going further, let's squash and rebase your work.
 
-The commit message should describe what the commit does (e.g. add feature XYZ), not how it is done.
+This is a bit more advanced but required to ensure a proper Git history of Jenkins X. Git allows you to [rebase](https://git-scm.com/docs/git-rebase) commits. In other words: it allows you to rewrite the commit history.
 
-### Modify commits
+Let's take an example. 
 
-You noticed some commit messages don't fulfill the code contribution guidelines or you just forget something to add some files? No problem. Git provides the necessary tools to fix such problems. The next two methods cover all common cases.
-
-If you are unsure what a command does leave the commit as it is. We can fix your commits later in the pull request.
-
-#### Modify the last commit
-
-Let's say you want to modify the last commit message. Run the following command and replace the current message:
-
-```
-git commit --amend -m"YOUR NEW COMMIT MESSAGE"
+```shell
+$ git rebase --interactive @~3
 ```
 
-Take a look at the commit log to see the change:
+The `3` at the end of the command represents the number of commits that should be modified. An editor should open and present a list of last three commit messages:
 
 ```
-git log
-# Exit with q
-```
-
-After making the last commit you may forgot something. There is no need to create a new commit. Just add the latest changes and merge them into the intended commit:
-
-```
-git add --all
-git commit --amend
-```
-
-#### Modify multiple commits
-
-{{% warning "Be Careful Modifying Multiple Commits"%}}
-Modifications such as those described in this section can have serious unintended consequences. Skip this section if you're not sure!
-{{% /warning %}}
-
-This is a bit more advanced. Git allows you to [rebase](https://git-scm.com/docs/git-rebase) commits interactively. In other words: it allows you to rewrite the commit history.
-
-```
-git rebase --interactive @~6
-```
-
-The `6` at the end of the command represents the number of commits that should be modified. An editor should open and present a list of last six commit messages:
-
-```
-pick 80d02a1 tpl: Add hasPrefix to the template funcs' "smoke test"
-pick aaee038 tpl: Sort the smoke tests
-pick f0dbf2c tpl: Add the other test case for hasPrefix
 pick 911c35b Add "How to contribute to Jenkins X" tutorial
 pick 33c8973 Begin workflow
 pick 3502f2e Refactoring and typo fixes
 ```
 
-In the case above we should merge the last to commits in the commit of this tutorial (`Add "How to contribute to Jenkins X" tutorial`). You can "squash" commits, i.e. merge two or more commits into a single one.
+In the case above we should merge the last 2 commits in the commit of this tutorial (`Add "How to contribute to Jenkins X" tutorial`). You can "squash" commits, i.e. merge two or more commits into a single one.
 
-All operations are written before the commit message. Replace "pick" with an operation. In this case `squash` or `s` for short:
+All operations are written before the commit message. Replace `pick` with an operation. In this case `squash` or `s` for short:
 
 ```
-pick 80d02a1 tpl: Add hasPrefix to the template funcs' "smoke test"
-pick aaee038 tpl: Sort the smoke tests
-pick f0dbf2c tpl: Add the other test case for hasPrefix
 pick 911c35b Add "How to contribute to Jenkins X" tutorial
 squash 33c8973 Begin workflow
 squash 3502f2e Refactoring and typo fixes
@@ -328,89 +262,231 @@ We also want to rewrite the commits message of the third last commit. We forgot 
 You should end up with a similar setup:
 
 ```
-pick 80d02a1 tpl: Add hasPrefix to the template funcs' "smoke test"
-pick aaee038 tpl: Sort the smoke tests
-pick f0dbf2c tpl: Add the other test case for hasPrefix
 reword 911c35b Add "How to contribute to Jenkins X" tutorial
 squash 33c8973 Begin workflow
 squash 3502f2e Refactoring and typo fixes
 ```
 
-Close the editor. It should open again with a new tab. A text is instructing you to define a new commit message for the last two commits that should be merged (aka "squashed"). Save the file with <kbd>CTRL</kbd>+<kbd>S</kbd> and close the editor again.
+Close the editor. It should open again with a new tab. A text is instructing you to define a new commit message for the last two commits that should be merged (aka "squashed"). Save the file and close the editor again.
 
 A last time a new tab opens. Enter a new commit message and save again. Your terminal should contain a status message. Hopefully this one:
 
 ```
-Successfully rebased and updated refs/heads/<BRANCHNAME>.
+Successfully rebased and updated refs/heads/<BRANCH-NAME>.
 ```
 
 Check the commit log if everything looks as expected. Should an error occur you can abort this rebase with `git rebase --abort`.
 
-### Push commits
+In case you already pushed your work to your fork, you need to make a force push
 
-To push our commits to the fork on GitHub we need to speficy a destination. A destination is defined by the remote and a branch name. Earlier, the defined that the remote url of our fork is the same as our GitHub handle, in my case `digitalcraftsman`. The branch should have the same as our local one. This makes it easy to identify corresponding branches.
+```shell
+$ git push --force
+```
+Last step, to ensure that your change would not conflict with other changes done in parallel by other contributors, you need to rebase your work on the latest changes done on jx master branch. Simply:
+
+```shell
+$ git checkout master #Move to local master branch
+$ git fetch upstream #Retrieve change from jx master bracnch
+$ git merge upstream/master #Merge the change into your local master
+$ git checkout <BRANCH-NAME> #Move back to your local branch where you did your development
+$ git rebase master
 
 ```
-git push --set-upstream <YOUR-GITHUB-USERNAME> <BRANCHNAME>
-```
-
-Now Git knows the destination. Next time when you to push commits you just need to enter `git push`.
-
-If you modified your commit history in the last step GitHub will reject your try to push. This is a safety-feature because the commit history isn't the same and new commits can't be appended as usual. You can enforce this push explicitly with `git push --force`.
+Handle any conflicts and make sure your code builds and all tests pass. Then force push your branch to your remote.
 
 ## Open a pull request
 
 We made a lot of progress. Good work. In this step we finally open a pull request to submit our additions. Open the [Jenkins X master repository](https://github.com/jenkins-x/jx/) on GitHub in your browser.
 
-You should find a green button labeld with "New pull request". But GitHub is clever and probably suggests you a pull request like in the beige box below:
+You should find a green button labeled with "New pull request". But GitHub is clever and probably suggests you a pull request like in the beige box below:
 
 ![Open a pull request](/images/contribute/development/open-pull-request.png)
 
 The new page summaries the most important information of your pull request. Scroll down and you find the additions of all your commits. Make sure everything looks as expected and click on "Create pull request".
 
-### Accept the contributor license agreement
+Then Jenkins X itself and the maintainers will review your PR, potentially initiate discussion around your change and finally, merge it successfully in Jenkins X jx. Congratulations !
 
-Last but not least you should accept the contributor license agreement (CLA). A new comment should be added automatically to your pull request. Click on the yellow badge, accept the agreement and authenticate yourself with your GitHub account. It just takes a few clicks and only needs to be done once.
+## Testing
 
-![Accept the CLA](/images/contribute/development/accept-cla.png)
+The jx test suite is divided into three sections:
+ - The standard unit test suite
+ - Slow unit tests
+ - Integration tests
 
-### Automatic builds
+To run the standard test suite:
+```$ make test```
 
-We use the [Travis CI loop](https://travis-ci.org/jenkins-x/jx) (Linux and OS&nbsp;X) and [AppVeyor](https://ci.appveyor.com/project/jenkins-x/jx/branch/master) (Windows) to compile Jenkins X with your additions. This should ensure that everything works as expected before merging your pull request. This in most cases only relevant if you made changes to the codebase of Jenkins X.
+To run the standard test suite including slow running tests:
+```$ make test-slow```
 
-![Automic builds and their status](/images/contribute/development/ci-errors.png)
+To run all tests including integration tests (NOTE These tests are not encapsulated):
+```$ make test-slow-integration```
 
-Above you can see that Travis wasn't able to compile the changes in this pull request. Click on "Details" and try to investigate why the build failed. But it doesn't have to be your fault. Mostly, the `master` branch that we used as foundation for your pull request should build without problems.
+To get a nice HTML report on the tests:
+```$ make test-report-html```
 
-If you have questions, leave a comment in the pull request. We are willing to assist you.
+### Writing tests
 
-## Where to start?
+#### Unit Tests
 
-Thank you for reading through this contribution guide. Hopefully, we will see you again soon on GitHub. There are plenty of [open issues][issues] for you to help with.
+Unit tests should be isolated (see below what is an unencapsulated test), and should contain the `t.Parallel()` directive in order to keep things nice and speedy.
 
-Feel free to [open an issue][newissue] if you think you found a bug or you have a new idea to improve Jenkins X. We are happy to hear from you.
+If you add a slow running (more than a couple of seconds) test, it needs to be wrapped like so:
+```golang
+if testing.Short() {
+	t.Skip("skipping a_long_running_test")
+} else {
+	// Slow test goes here...
+}
+```
+Slows tests can (and should) still include `t.Parallel()`.
 
-## Additional References for Learning Git and Golang
+Best practice for unit tests is to define the testing package appending _test to the name of your package, e.g. `mypackage_test` and then import `mypackage` inside your tests.
+This encourages good package design and will enable you to define the exported package API in a composable way.
 
-* [Codecademy's Free "Learn Git" Course][codecademy] (Free)
-* [Code School and GitHub's "Try Git" Tutorial][trygit] (Free)
-* [The Git Book][gitbook] (Free)
-* [Go Bootcamp][gobootcamp]
-* [GitHub Pull Request Tutorial, Thinkful][thinkful]
+#### Integration Tests
+
+To add an integration test, create a separate file for your integration tests using the naming convention `mypackage_integration_test.go` Use the same package declaration as your unit tests: `mypackage_test`. At the very top of the file before the package declaration add this custom build directive:
+
+```golang
+// +build integration
+```
+Note that there needs to be a blank line before you declare the package name. 
+
+This directive will ensure that integration tests are automatically separated from unit tests, and will not be run as part of the normal test suite.
+You should **NOT** add `t.Parallel()` to an unencapsulated test as it may cause intermittent failures.
+
+### What is an unencapsulated test?
+A test is unencapsulated (not isolated) if it cannot be run (with repeatable success) without a certain surrounding state. Relying on external binaries that may not be present, writing or reading from the filesystem without care to specifically avoid collisions, or relying on other tests to run in a specific sequence for your test to pass are all examples of a test that you should carefully consider before committing. If you would like to easily check that your test is isolated before committing simply run: `make docker-test`, or if your test is marked as slow: `make docker-test-slow`. This will mount the jx project folder into a golang docker container that does not include any of your host machines environment. If your test passes here, then you can be happy that the test is encapsulated.
+
+### Mocking / Stubbing
+Mocking or stubbing methods in your unit tests will get you a long way towards test isolation. Coupled with the use of interface based APIs you should be able to make your methods easily testable and useful to other packages that may need to import them.
+[Pegomock](https://github.com/petergtz/pegomock) is our current mocking library of choice, mainly because it is very easy to use and doesn't require you to write your own mocks (Yay!)
+We place all interfaces for each package in a file called `interface.go` in the relevant folder. So you can find all interfaces for `github.com/jenkins-x/jx/pkg/util` in `github.com/jenkins-x/jx/pkg/util/interface.go` 
+Generating/regenerating a mock for a given interface is easy, just go to the `interface.go` file that corresponds with the interface you would like to mock and add a comment directly above your interface definition that will look something like this:
+```golang
+// CommandInterface defines the interface for a Command
+//go:generate pegomock generate github.com/jenkins-x/jx/pkg/util CommandInterface -o mocks/command_interface.go
+type CommandInterface interface {
+	DidError() bool
+	DidFail() bool
+	Error() error
+	Run() (string, error)
+	RunWithoutRetry() (string, error)
+	SetName(string)
+	SetDir(string)
+	SetArgs([]string)
+	SetTimeout(time.Duration)
+	SetExponentialBackOff(*backoff.ExponentialBackOff)
+}
+```
+In the example you can see that we pass the generator to use: `pegomock generate` the package path name: `github.com/jenkins-x/jx/pkg/util` the name of the interface: `CommandInterface` and finally an output directive to write the generated file to a mock sub-folder. To keep things nice and tidy it's best to write each mocked interface to a separate file in this folder. So in this case: `-o mocks/command_interface.go`
+
+Now simply run:
+```shell
+$ go generate ./...
+```
+or
+```shell
+$ make generate
+```
+
+You now have a mock to test your new interface!
+The new mock can now be imported into your test file and used for easy mocking/stubbing.
+Here's an example:
+```golang
+package util_test
+
+import (
+	"errors"
+	"testing"
+
+	"github.com/jenkins-x/jx/pkg/util"
+	mocks "github.com/jenkins-x/jx/pkg/util/mocks"
+	. "github.com/petergtz/pegomock"
+	"github.com/stretchr/testify/assert"
+)
+
+func TestJXBinaryLocationSuccess(t *testing.T) {
+	t.Parallel()
+	commandInterface := mocks.NewMockCommandInterface()
+	When(commandInterface.RunWithoutRetry()).ThenReturn("/test/something/bin/jx", nil)
+
+	res, err := util.JXBinaryLocation(commandInterface)
+	assert.Equal(t, "/test/something/bin", res)
+	assert.NoError(t, err, "Should not error")
+}
+```
+Here we're importing the mock we need in our import declaration:
+```golang
+mocks "github.com/jenkins-x/jx/pkg/util/mocks"
+```
+Then inside the test we're instantiating `NewMockCommandInterface` which was automatically generated for us by pegomock.
+
+Next we're stubbing something that we don't actually want to run when we execute our test. In this case we don't want to make a call to an external binary as that could break our tests isolation. We're using some handy matchers which are provided by pegomock, and importing using a `.` import to keep the syntax neat (You probably shouldn't do this outside of tests):
+```golang
+When(commandInterface.RunWithoutRetry()).ThenReturn("/test/something/bin/jx", nil)
+```
+Now when we can set up our  test using the mock interface and make assertions as normal.
 
 
-[codecademy]: https://www.codecademy.com/learn/learn-git
-[contributors]: https://github.com/jenkins-x/jx/graphs/contributors
-[docscontrib]: /contribute/documentation/
-[forums]: https://discourse.jenkins-x.io
-[gitbook]: https://git-scm.com/
-[gobootcamp]: http://www.golangbootcamp.com/book/get_setup
-[godl]: https://golang.org/dl/
-[goinstall]: https://golang.org/doc/install
-[gvm]: https://github.com/moovweb/gvm
-[issues]: https://github.com/jenkins-x/jx/issues
-[newissue]: https://github.com/jenkins-x/jx/issues/new
-[releases]: /getting-started/
-[setupgopath]: https://golang.org/doc/code.html#Workspaces
-[thinkful]: https://www.thinkful.com/learn/github-pull-request-tutorial/
-[trygit]: https://try.github.io/levels/1/challenges/1
+### Debug logging
+
+Lots of the test have debug output to try figure out when things fail. You can enable verbose debug logging for tests via:
+
+```shell 
+export JX_TEST_DEBUG=true
+```
+
+## Debugging
+
+First you need to [install Delve](https://github.com/derekparker/delve/blob/master/Documentation/installation/README.md).
+
+Then you should be able to run a debug version of a jx command:
+
+```shell
+dlv --listen=:2345 --headless=true --api-version=2 exec ./build/jx -- some arguments
+```
+
+Then, in your IDE you should be able to set a breakpoint and connect to `2345` e.g. in IntelliJ you create a new `Go Remote` execution and then hit `Debug`.
+
+### Debugging jx with stdin
+
+If you want to debug using `jx` with `stdin` to test out terminal interaction, you can start `jx` as usual from the command line then:
+
+1. Find the `pid` of the jx command via something like `ps -elaf | grep jx`
+2. Start Delve, attaching to the pid:
+
+	```shell
+	dlv --listen=:2345 --headless=true --api-version=2 attach SomePID
+	```
+
+### Debugging a unit test
+
+You can run a single unit test via:
+
+```shell
+export TEST="TestSomething"
+make test1
+```
+
+You can then start a Delve debug session on a unit test via:
+
+```shell
+export TEST="TestSomething"
+make debugtest1
+```
+
+Then set breakpoints and debug in your IDE as described in [Debugging](#debugging).
+
+### Using a helper script
+
+If you create a bash file called `jxDebug` as the following (replacing `SomePid` with the actual `pid`):
+
+```bash
+#!/bin/sh
+echo "Debugging jx"
+dlv --listen=:2345 --headless=true --api-version=2 exec `which jx` -- $*
+```
+
+Then you can change your `jx someArgs` CLI to `jxDebug someArgs` then debug it!
