@@ -1,5 +1,5 @@
 ---
-date: 2018-10-24T16:22:15Z
+date: 2018-10-24T18:14:25Z
 title: "jx update cluster"
 slug: jx_update_cluster
 url: /commands/jx_update_cluster/
@@ -18,6 +18,8 @@ Valid Kubernetes providers include:
     * aws (Amazon Web Services via kops - https://github.com/aws-samples/aws-workshop-for-kubernetes/blob/master/readme.adoc)
     * eks (Amazon Web Services Elastic Container Service for Kubernetes - https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html)
     * gke (Google Container Engine - https://cloud.google.com/kubernetes-engine)
+    * oke (Oracle Cloud Infrastructure Container Engine for Kubernetes - https://docs.cloud.oracle.com/iaas/Content/ContEng/Concepts/contengoverview.htm)
+    # icp (IBM Cloud Private) - https://www.ibm.com/cloud/private
     * iks (IBM Cloud Kubernetes Service - https://console.bluemix.net/docs/containers)
     * oke (Oracle Cloud Infrastructure Container Engine for Kubernetes - https://docs.cloud.oracle.com/iaas/Content/ContEng/Concepts/contengoverview.htm)
     * kubernetes for custom installations of Kubernetes

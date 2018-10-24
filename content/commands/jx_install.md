@@ -1,5 +1,5 @@
 ---
-date: 2018-10-24T16:22:15Z
+date: 2018-10-24T18:14:25Z
 title: "jx install"
 slug: jx_install
 url: /commands/jx_install/
@@ -80,7 +80,7 @@ jx install [flags]
       --no-default-environments             Disables the creation of the default Staging and Production environments
       --no-tiller                           Whether to disable the use of tiller with helm. If disabled we use 'helm template' to generate the YAML from helm charts then we use 'kubectl apply' to install it to avoid using tiller completely.
       --on-premise                          If installing on an on premise cluster then lets default the 'external-ip' to be the Kubernetes master IP address
-      --provider string                     Cloud service providing the Kubernetes cluster.  Supported providers: aks, aws, eks, gke, iks, jx-infra, kubernetes, minikube, minishift, oke, openshift, pks
+      --provider string                     Cloud service providing the Kubernetes cluster.  Supported providers: aks, aws, eks, gke, icp, iks, jx-infra, kubernetes, minikube, minishift, oke, openshift, pks
       --prow                                Enable Prow
       --pull-secrets string                 The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
       --recreate-existing-draft-repos       Delete existing helm repos used by Jenkins X under ~/draft/packs
