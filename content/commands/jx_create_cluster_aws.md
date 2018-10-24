@@ -1,5 +1,5 @@
 ---
-date: 2018-10-24T13:34:57Z
+date: 2018-10-24T14:13:51Z
 title: "jx create cluster aws"
 slug: jx_create_cluster_aws
 url: /commands/jx_create_cluster_aws/
@@ -84,7 +84,7 @@ jx create cluster aws [flags]
   -r, --rbac                                whether to enable RBAC on the Kubernetes cluster (default true)
       --recreate-existing-draft-repos       Delete existing helm repos used by Jenkins X under ~/draft/packs
       --region string                       AWS region to use. Default: us-west-2
-      --register-local-helmrepo             Registers the Jenkins X chartmuseum registry with your helm client [default false]
+      --register-local-helmrepo             Registers the Jenkins X ChartMuseum registry with your helm client [default false]
       --remote-tiller                       If enabled and we are using tiller for helm then run tiller remotely in the kubernetes cluster. Otherwise we run the tiller process locally. (default true)
       --skip-auth-secrets-merge             Skips merging a local git auth yaml file with any pipeline secrets that are found
       --skip-ingress                        Don't install an ingress controller

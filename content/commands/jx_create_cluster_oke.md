@@ -1,5 +1,5 @@
 ---
-date: 2018-10-24T13:34:57Z
+date: 2018-10-24T14:13:51Z
 title: "jx create cluster oke"
 slug: jx_create_cluster_oke
 url: /commands/jx_create_cluster_oke/
@@ -91,7 +91,7 @@ jx create cluster oke [flags]
       --pull-secrets string                 The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
       --quantityPerSubnet string            The number of nodes to create in each subnet.
       --recreate-existing-draft-repos       Delete existing helm repos used by Jenkins X under ~/draft/packs
-      --register-local-helmrepo             Registers the Jenkins X chartmuseum registry with your helm client [default false]
+      --register-local-helmrepo             Registers the Jenkins X ChartMuseum registry with your helm client [default false]
       --remote-tiller                       If enabled and we are using tiller for helm then run tiller remotely in the kubernetes cluster. Otherwise we run the tiller process locally. (default true)
       --serviceLbSubnetIds string           Kubernetes Service LB Subnets. Optional but nice to have it as Jenkins X will create ingress controller based on it.
       --servicesCidr string                 Kubernetes Service CIDR Block.

@@ -1,5 +1,5 @@
 ---
-date: 2018-10-24T13:34:57Z
+date: 2018-10-24T14:13:51Z
 title: "jx create cluster aks"
 slug: jx_create_cluster_aks
 url: /commands/jx_create_cluster_aks/
@@ -84,7 +84,7 @@ jx create cluster aks [flags]
       --pod-cidr string                          A CIDR notation IP range from which to assign pod IPs
       --prow                                     Enable Prow
       --recreate-existing-draft-repos            Delete existing helm repos used by Jenkins X under ~/draft/packs
-      --register-local-helmrepo                  Registers the Jenkins X chartmuseum registry with your helm client [default false]
+      --register-local-helmrepo                  Registers the Jenkins X ChartMuseum registry with your helm client [default false]
       --remote-tiller                            If enabled and we are using tiller for helm then run tiller remotely in the kubernetes cluster. Otherwise we run the tiller process locally. (default true)
   -n, --resource-group-name string               Name of the resource group
       --service-cidr string                      A CIDR notation IP range from which to assign service cluster IPs

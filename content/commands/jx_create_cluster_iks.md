@@ -1,5 +1,5 @@
 ---
-date: 2018-10-24T13:34:57Z
+date: 2018-10-24T14:13:51Z
 title: "jx create cluster iks"
 slug: jx_create_cluster_iks
 url: /commands/jx_create_cluster_iks/
@@ -80,7 +80,7 @@ jx create cluster iks [flags]
       --public-vlan string                  Conditional: Specify the ID of the public VLAN. To see available VLANs, run 'ibmcloud ks vlans --zone <zone name>'. If you do not have a public VLAN yet, do not specify this option because one will be automatically created for you.
       --recreate-existing-draft-repos       Delete existing helm repos used by Jenkins X under ~/draft/packs
   -r, --region string                       The IBM Cloud Region. Default is 'us-east'
-      --register-local-helmrepo             Registers the Jenkins X chartmuseum registry with your helm client [default false]
+      --register-local-helmrepo             Registers the Jenkins X ChartMuseum registry with your helm client [default false]
       --remote-tiller                       If enabled and we are using tiller for helm then run tiller remotely in the kubernetes cluster. Otherwise we run the tiller process locally. (default true)
       --skip-ingress                        Don't install an ingress controller
       --skip-installation                   Provision cluster only, don't install Jenkins X into it

@@ -1,5 +1,5 @@
 ---
-date: 2018-10-24T13:34:57Z
+date: 2018-10-24T14:13:51Z
 title: "jx install"
 slug: jx_install
 url: /commands/jx_install/
@@ -84,7 +84,7 @@ jx install [flags]
       --prow                                Enable Prow
       --pull-secrets string                 The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
       --recreate-existing-draft-repos       Delete existing helm repos used by Jenkins X under ~/draft/packs
-      --register-local-helmrepo             Registers the Jenkins X chartmuseum registry with your helm client [default false]
+      --register-local-helmrepo             Registers the Jenkins X ChartMuseum registry with your helm client [default false]
       --remote-tiller                       If enabled and we are using tiller for helm then run tiller remotely in the kubernetes cluster. Otherwise we run the tiller process locally. (default true)
       --skip-auth-secrets-merge             Skips merging a local git auth yaml file with any pipeline secrets that are found
       --skip-ingress                        Don't install an ingress controller
