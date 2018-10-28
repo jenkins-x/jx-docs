@@ -17,19 +17,19 @@ aliases: [/faq/]
 
 Jenkins X 假设每个用户都可以访问运行 Jenkins X 的 kubernetes 开发集群。
 
-如果您的用户无权访问kubernetes集群，我们需要设置他们的 `~/.kube/config` 文件，以便他们可以访问它。
+如果您的用户无权访问 kubernetes 集群，我们需要设置他们的 `~/.kube/config` 文件，以便他们可以访问它。
 
-如果您正在使用 Google 的 GKE，那么您可以浏览 [GKE Console]() 以查看所有集群，然后单击开发集群旁边的 `Connect` 按钮，然后可以运行复制/粘贴命令以连接到集群。
+如果您正在使用 Google 的 GKE ，那么您可以浏览 [GKE Console](https://console.cloud.google.com) 以查看所有集群，然后单击开发集群旁边的 `Connect` 按钮，然后可以运行复制/粘贴命令以连接到集群。
 
-对于其他集群，我们计划编写一些 [CLI 命令来导出和导入kube配置](https://github.com/jenkins-x/jx/issues/1406).
+对于其他集群，我们计划编写一些 [CLI 命令来导出和导入kube配置](https://github.com/jenkins-x/jx/issues/1406)。
 
 ### 当用户拥有了 kubernetes 集群的访问权限
 
 当用户拥有了 kubernetes 集群的访问权限：
 
-* [安装 jx 二进制文件](/getting-started/install/)
+* [安装 jx 二进制文件](/zh/getting-started/install/)
 
-如果 Jenkins X 安装在命名空间`jx`中，那么应该 [切换你的上下文](/zh/developing/kube-context/) 到命名空间 `jx` 当中：
+如果 Jenkins X 安装在命名空间 `jx` 中，那么应该 [切换你的上下文](/zh/developing/kube-context/) 到命名空间 `jx` 当中：
 
     jx ns jx
 
