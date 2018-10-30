@@ -40,4 +40,3 @@ To test you should be able to type:
 
 To view the environments and any development tools like the Jenkins or Nexus consoles.
 
-    
