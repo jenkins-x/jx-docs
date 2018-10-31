@@ -1,5 +1,5 @@
 ---
-date: 2018-10-31T20:08:51Z
+date: 2018-10-31T22:49:35Z
 title: "jx upgrade extensions repository"
 slug: jx_upgrade_extensions_repository
 url: /commands/jx_upgrade_extensions_repository/
@@ -29,6 +29,7 @@ jx upgrade extensions repository [flags]
 ### Options
 
 ```
+  -b, --batch-mode           Enable batch mode
   -h, --help                 help for repository
   -i, --input-file string    The input file to read to generate the .lock file (default "jenkins-x-extensions-repository.yaml")
   -o, --output-file string   The output .lock file (default "jenkins-x-extensions-repository.lock.yaml")
