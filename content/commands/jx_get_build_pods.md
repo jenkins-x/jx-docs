@@ -1,5 +1,5 @@
 ---
-date: 2018-10-31T10:49:20Z
+date: 2018-10-31T16:13:59Z
 title: "jx get build pods"
 slug: jx_get_build_pods
 url: /commands/jx_get_build_pods/
@@ -35,6 +35,7 @@ jx get build pods [flags]
   -h, --help               help for pods
   -n, --namespace string   The namespace to look for the build pods. Defaults to the current namespace
   -o, --owner string       Filters the owner (person/organisation) of the repository
+  -p, --pending            Filter builds which are currently pending or running
   -r, --repo string        Filters the build repository
 ```
 

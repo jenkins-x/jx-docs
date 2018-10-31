@@ -1,5 +1,5 @@
 ---
-date: 2018-10-31T10:49:20Z
+date: 2018-10-31T16:13:59Z
 title: "jx gc"
 slug: jx_gc
 url: /commands/jx_gc/
@@ -45,6 +45,7 @@ jx gc TYPE [flags]
 * [jx gc activities](/commands/jx_gc_activities/)	 - garbage collection for activities
 * [jx gc gke](/commands/jx_gc_gke/)	 - garbage collection for gke
 * [jx gc helm](/commands/jx_gc_helm/)	 - garbage collection for Helm ConfigMaps
+* [jx gc pods](/commands/jx_gc_pods/)	 - garbage collection for pods
 * [jx gc previews](/commands/jx_gc_previews/)	 - garbage collection for preview environments
 * [jx gc releases](/commands/jx_gc_releases/)	 - garbage collection for Releases
 

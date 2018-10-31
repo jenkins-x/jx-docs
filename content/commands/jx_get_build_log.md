@@ -1,5 +1,5 @@
 ---
-date: 2018-10-31T10:49:20Z
+date: 2018-10-31T16:13:59Z
 title: "jx get build log"
 slug: jx_get_build_log
 url: /commands/jx_get_build_log/
@@ -27,7 +27,7 @@ jx get build log [flags]
 
 ```
       --branch string   Filters the branch
-  -b, --build int       The build number to view
+  -b, --build string    The build number to view
   -f, --filter string   Filters all the available jobs by those that contain the given text
   -h, --help            help for log
   -o, --owner string    Filters the owner (person/organisation) of the repository
