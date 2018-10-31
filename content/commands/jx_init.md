@@ -1,5 +1,5 @@
 ---
-date: 2018-10-31T10:08:00Z
+date: 2018-10-31T10:49:20Z
 title: "jx init"
 slug: jx_init
 url: /commands/jx_init/
@@ -50,7 +50,7 @@ jx init [flags]
       --remote-tiller                   If enabled and we are using tiller for helm then run tiller remotely in the kubernetes cluster. Otherwise we run the tiller process locally. (default true)
       --skip-auth-secrets-merge         Skips merging a local git auth yaml file with any pipeline secrets that are found
       --skip-ingress                    Don't install an ingress controller
-      --skip-tiller                     Don't install a Helm Tiller service
+      --skip-setup-tiller               Don't setup the Helm Tiller service - lets use whatever tiller is already setup for us.
       --tiller-cluster-role string      The cluster role for Helm's tiller (default "cluster-admin")
       --tiller-namespace string         The namespace for the Tiller when using a global tiller (default "kube-system")
       --user-cluster-role string        The cluster role for the current user to be able to administer helm (default "cluster-admin")

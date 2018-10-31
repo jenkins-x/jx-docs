@@ -1,5 +1,5 @@
 ---
-date: 2018-10-31T10:08:00Z
+date: 2018-10-31T10:49:20Z
 title: "jx create cluster gke"
 slug: jx_create_cluster_gke
 url: /commands/jx_create_cluster_gke/
@@ -89,7 +89,7 @@ jx create cluster gke [flags]
       --skip-ingress                        Don't install an ingress controller
       --skip-installation                   Provision cluster only, don't install Jenkins X into it
       --skip-login                          Skip Google auth if already logged in via gcloud auth
-      --skip-tiller                         Don't install a Helm Tiller service
+      --skip-setup-tiller                   Don't setup the Helm Tiller service - lets use whatever tiller is already setup for us.
       --subnetwork string                   The Google Compute Engine subnetwork to which the cluster is connected
       --tiller-cluster-role string          The cluster role for Helm's tiller (default "cluster-admin")
       --tiller-namespace string             The namespace for the Tiller when using a global tiller (default "kube-system")

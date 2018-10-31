@@ -1,26 +1,26 @@
 ---
 date: 2018-10-31T10:49:20Z
-title: "jx step helm version"
-slug: jx_step_helm_version
-url: /commands/jx_step_helm_version/
+title: "jx step helm list"
+slug: jx_step_helm_list
+url: /commands/jx_step_helm_list/
 ---
-## jx step helm version
+## jx step helm list
 
-Updates the chart version in the given directory
+List the helm releases
 
 ### Synopsis
 
-Updates version of the helm Chart.yaml in the given directory
+List the helm releases
 
 ```
-jx step helm version [flags]
+jx step helm list [flags]
 ```
 
 ### Examples
 
 ```
-  # updates the current helm Chart.yaml to the latest build number version
-  jx step helm version
+  # list all the helm releases in the current namespace
+  jx step helm list
 ```
 
 ### Options
@@ -29,8 +29,8 @@ jx step helm version [flags]
       --clone-https git@foo/bar.git   Clone the environment Git repo over https rather than ssh which uses git@foo/bar.git (default true)
   -d, --dir string                    The directory containing the helm chart to apply (default ".")
       --git-provider string           The Git provider for the environment Git repository (default "github.com")
-  -h, --help                          help for version
-  -v, --version string                The version to update. If none specified it defaults to $BUILD_NUMBER
+  -h, --help                          help for list
+  -n, --namespace string              the namespace to look for the helm releases. Defaults to the current namespace
 ```
 
 ### SEE ALSO

@@ -1,5 +1,5 @@
 ---
-date: 2018-10-31T10:08:00Z
+date: 2018-10-31T10:49:20Z
 title: "jx create terraform"
 slug: jx_create_terraform
 url: /commands/jx_create_terraform/
@@ -89,8 +89,8 @@ jx create terraform [flags]
       --skip-auth-secrets-merge                Skips merging a local git auth yaml file with any pipeline secrets that are found
       --skip-ingress                           Don't install an ingress controller
       --skip-login                             Skip Google auth if already logged in via gcloud auth
+      --skip-setup-tiller                      Don't setup the Helm Tiller service - lets use whatever tiller is already setup for us.
       --skip-terraform-apply                   Skip applying the generated Terraform plans
-      --skip-tiller                            Don't install a Helm Tiller service
       --tiller-cluster-role string             The cluster role for Helm's tiller (default "cluster-admin")
       --tiller-namespace string                The namespace for the Tiller when using a global tiller (default "kube-system")
       --timeout string                         The number of seconds to wait for the helm install to complete (default "6000")

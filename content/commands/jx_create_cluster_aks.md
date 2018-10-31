@@ -1,5 +1,5 @@
 ---
-date: 2018-10-31T10:08:00Z
+date: 2018-10-31T10:49:20Z
 title: "jx create cluster aks"
 slug: jx_create_cluster_aks
 url: /commands/jx_create_cluster_aks/
@@ -94,7 +94,7 @@ jx create cluster aks [flags]
       --skip-login az login                      Skip login if already logged in using az login
       --skip-provider-registration               Skip provider registration
       --skip-resource-group-creation             Skip resource group creation
-      --skip-tiller                              Don't install a Helm Tiller service
+      --skip-setup-tiller                        Don't setup the Helm Tiller service - lets use whatever tiller is already setup for us.
       --subscription string                      Azure subscription to be used if not default one
       --tags string                              Space-separated tags in 'key[=value]' format. Use '' to clear existing tags.
       --tiller-cluster-role string               The cluster role for Helm's tiller (default "cluster-admin")

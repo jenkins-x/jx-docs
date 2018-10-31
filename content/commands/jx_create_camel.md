@@ -1,5 +1,5 @@
 ---
-date: 2018-10-31T10:08:00Z
+date: 2018-10-31T10:49:20Z
 title: "jx create camel"
 slug: jx_create_camel
 url: /commands/jx_create_camel/

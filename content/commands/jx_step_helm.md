@@ -1,5 +1,5 @@
 ---
-date: 2018-10-31T10:08:00Z
+date: 2018-10-31T10:49:20Z
 title: "jx step helm"
 slug: jx_step_helm
 url: /commands/jx_step_helm/
@@ -29,6 +29,7 @@ jx step helm [flags]
 * [jx step helm build](/commands/jx_step_helm_build/)	 - Builds the helm chart in a given directory and validate the build completes
 * [jx step helm env](/commands/jx_step_helm_env/)	 - Generates the helm environment variables
 * [jx step helm install](/commands/jx_step_helm_install/)	 - Installs the given chart
+* [jx step helm list](/commands/jx_step_helm_list/)	 - List the helm releases
 * [jx step helm release](/commands/jx_step_helm_release/)	 - Releases the helm chart in the current directory
 * [jx step helm version](/commands/jx_step_helm_version/)	 - Updates the chart version in the given directory
 
