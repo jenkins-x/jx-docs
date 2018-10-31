@@ -1,5 +1,5 @@
 ---
-date: 2018-10-31T16:13:59Z
+date: 2018-10-31T20:08:51Z
 title: "jx edit"
 slug: jx_edit
 url: /commands/jx_edit/
@@ -38,6 +38,7 @@ jx edit [flags]
 * [jx edit config](/commands/jx_edit_config/)	 - Edits the project configuration
 * [jx edit dockerregistryorg](/commands/jx_edit_dockerregistryorg/)	 - Docker registry organisation used for new projects in Jenkins X.
 * [jx edit environment](/commands/jx_edit_environment/)	 - Edits an Environment which is used to promote your Team's Applications via Continuous Delivery
+* [jx edit extensionsrepository](/commands/jx_edit_extensionsrepository/)	 - Sets Extensions Repository in use
 * [jx edit gitprivate](/commands/jx_edit_gitprivate/)	 - Are new repositories private by default
 * [jx edit gitserver](/commands/jx_edit_gitserver/)	 - Default git server for new repositories
 * [jx edit helmbin](/commands/jx_edit_helmbin/)	 - Configures the helm binary version used by your team
