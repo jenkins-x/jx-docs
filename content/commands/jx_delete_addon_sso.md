@@ -1,5 +1,5 @@
 ---
-date: 2018-11-01T18:08:54Z
+date: 2018-11-01T19:01:50Z
 title: "jx delete addon sso"
 slug: jx_delete_addon_sso
 url: /commands/jx_delete_addon_sso/
