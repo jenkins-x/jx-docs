@@ -1,5 +1,5 @@
 ---
-date: 2018-11-01T17:07:10Z
+date: 2018-11-01T18:08:54Z
 title: "jx get build pods"
 slug: jx_get_build_pods
 url: /commands/jx_get_build_pods/
@@ -22,8 +22,17 @@ jx get build pods [flags]
   # List all the knative build pods
   jx get build pods
   
+  # List all the pending knative build pods
+  jx get build pods -p
+  
   # List all the knative build pods for a given repository
   jx get build pods --repo cheese
+  
+  # List all the pending knative build pods for a given repository
+  jx get build pods --repo cheese -p
+  
+  # List all the knative build pods for a given Pull Request
+  jx get build pods --repo cheese --branch PR-1234
 ```
 
 ### Options

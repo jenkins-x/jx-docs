@@ -1,5 +1,5 @@
 ---
-date: 2018-11-01T17:07:10Z
+date: 2018-11-01T18:08:54Z
 title: "jx get build log"
 slug: jx_get_build_log
 url: /commands/jx_get_build_log/
@@ -19,8 +19,20 @@ jx get build log [flags]
 ### Examples
 
 ```
-  # Display a build log
+  # Display a build log - with the user choosing which repo + build to view
   jx get build log
+  
+  # Pick a build to view the log based on the repo cheese
+  jx get build log --repo cheese
+  
+  # Pick a pending knative build to view the log based
+  jx get build log -p
+  
+  # Pick a pending knative build to view the log based on the repo cheese
+  jx get build log --repo cheese -p
+  
+  # Pick a knative build for the 1234 Pull Request on the repo cheese
+  jx get build log --repo cheese --branch PR-1234
 ```
 
 ### Options
