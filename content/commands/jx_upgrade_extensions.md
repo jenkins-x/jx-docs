@@ -1,5 +1,5 @@
 ---
-date: 2018-11-01T14:47:53Z
+date: 2018-11-01T17:07:10Z
 title: "jx upgrade extensions"
 slug: jx_upgrade_extensions
 url: /commands/jx_upgrade_extensions/
@@ -26,7 +26,6 @@ jx upgrade extensions [flags]
 ### Options
 
 ```
-      --extensions-repository string        Specify the extensions repository git repo to read from. Accepts github.com/<org>/<repo>
       --extensions-repository-file string   Specify the extensions repository yaml file to read from
   -h, --help                                help for extensions
       --verbose                             Enable verbose logging
