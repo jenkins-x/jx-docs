@@ -1,5 +1,5 @@
 ---
-date: 2018-11-02T14:40:03Z
+date: 2018-11-02T15:17:22Z
 title: "jx create user"
 slug: jx_create_user
 url: /commands/jx_create_user/
@@ -19,18 +19,8 @@ jx create user [flags]
 ### Examples
 
 ```
-  # Create an issue in the current project
-  jx create issue -t "something we should do"
-  
-  
-  # Create an issue with a title and a body
-  jx create issue -t "something we should do" --body "
-  some more
-  text
-  goes
-  here
-  ""
-  "
+  # Create a user
+  jx create user -e "user@email.com" --login username --name username"
 ```
 
 ### Options
