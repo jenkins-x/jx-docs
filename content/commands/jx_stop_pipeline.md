@@ -1,5 +1,5 @@
 ---
-date: 2018-11-02T10:52:59Z
+date: 2018-11-02T11:45:02Z
 title: "jx stop pipeline"
 slug: jx_stop_pipeline
 url: /commands/jx_stop_pipeline/

@@ -1,5 +1,5 @@
 ---
-date: 2018-11-02T10:52:59Z
+date: 2018-11-02T11:45:02Z
 title: "jx get"
 slug: jx_get
 url: /commands/jx_get/
@@ -25,7 +25,7 @@ jx get TYPE [flags]
 ### Examples
 
 ```
-  # List all pipeines
+  # List all pipelines
   jx get pipeline
   
   # List all URLs for services in the current namespace
