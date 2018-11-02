@@ -1,5 +1,5 @@
 ---
-date: 2018-11-02T09:32:38Z
+date: 2018-11-02T10:13:05Z
 title: "jx create vault"
 slug: jx_create_vault
 url: /commands/jx_create_vault/
@@ -29,22 +29,23 @@ jx create vault [flags]
 ### Options
 
 ```
-  -b, --batch-mode                In batch mode the command never prompts for user input
-      --cluster                   Enable cluster wide Ingress upgrade
-      --gke-project-id string     Google Project ID to use for Vault backend
-      --gke-zone string           The zone (e.g. us-central1-a) where Vault will store the encrypted data
-      --headless                  Enable headless operation if using browser automation
-  -h, --help                      help for vault
-      --install-dependencies      Should any required dependencies be installed automatically
-      --log-level string          Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
-  -n, --namespace string          Namespace where the Vault is created
-      --namespaces stringArray    Namespaces to upgrade
-      --no-brew                   Disables the use of brew on macOS to install or upgrade command line dependencies
-      --pull-secrets string       The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
-      --services stringArray      Services to upgrdde
-      --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
-      --skip-certmanager          Skips certmanager installation
-      --verbose                   Enable verbose logging
+  -b, --batch-mode                   In batch mode the command never prompts for user input
+      --cluster                      Enable cluster wide Ingress upgrade
+      --gke-project-id string        Google Project ID to use for Vault backend
+      --gke-zone string              The zone (e.g. us-central1-a) where Vault will store the encrypted data
+      --headless                     Enable headless operation if using browser automation
+  -h, --help                         help for vault
+      --install-dependencies         Should any required dependencies be installed automatically
+      --log-level string             Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
+  -n, --namespace string             Namespace where the Vault is created
+      --namespaces stringArray       Namespaces to upgrade
+      --no-brew                      Disables the use of brew on macOS to install or upgrade command line dependencies
+      --pull-secrets string          The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
+  -p, --secrets-path-prefix string   Path prefix for secrets used for access control config (default "secret/*")
+      --services stringArray         Services to upgrdde
+      --skip-auth-secrets-merge      Skips merging a local git auth yaml file with any pipeline secrets that are found
+      --skip-certmanager             Skips certmanager installation
+      --verbose                      Enable verbose logging
 ```
 
 ### SEE ALSO
