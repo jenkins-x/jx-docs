@@ -1,7 +1,7 @@
 ---
-title: Roadmap
-linktitle: Roadmap
-description: The long term development roadmap
+title: Planned Features
+linktitle: Planned Features
+description: Features and connectors we plan to add...
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01
@@ -24,7 +24,7 @@ toc: true
 | **Operating Systems** | | | | |
 | macOS | | | | 1.1.x |
 | Linux | | | | 1.1.x |
-| Windows  | | [Planned](https://github.com/jenkins-x/jx/issues/228) | | |
+| Windows  | | |  [In Progress](https://github.com/jenkins-x/jx/issues/228) | |
 | **Cloud Providers** | | | | |
 | AWS kops | | | | 1.1.x |
 | AWS EKS  | |  | | 1.3.x |
@@ -58,7 +58,7 @@ toc: true
 | Chart Museum | | | | 1.1.x |
 | Docker Registry | | | | 1.1.x |
 | Nexus | | | | 1.1.x |
-| Artifactory  | | [Planned](https://github.com/jenkins-x/jx/issues/805) | |
+| Artifactory  | | | [In Progress](https://github.com/jenkins-x/jx/issues/805) |
 | **Features** | | | | |
 | Multi Cluster | | | [In Progress](https://github.com/jenkins-x/jx/issues/479) |
 | Istio Production Canaries | | | [In Progress](https://github.com/jenkins-x/jx/issues/582) |
