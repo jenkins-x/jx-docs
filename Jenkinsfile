@@ -17,9 +17,14 @@ pipeline {
         branch 'PR-*'
       }
       steps {
-        checkout scm
-        sh "hugo version"
-        sh "hugo -d tmp-website --enableGitInfo"
+        sh "git clone https://github.com/jenkins-x/jx-docs.git"
+        dir("jx-docs") {
+          sh "git fetch origin pull/$PULL_NUMBER/head:$BRANCH_NAME"
+          sh "git checkout $PULL_PULL_SHA"
+          
+          sh "hugo version"
+          sh "hugo -d tmp-website --enableGitInfo"
+        }
       }
     }
 
