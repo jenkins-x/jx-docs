@@ -1,5 +1,5 @@
 ---
-date: 2018-11-05T11:23:47Z
+date: 2018-11-05T11:51:58Z
 title: "jx step helm apply"
 slug: jx_step_helm_apply
 url: /commands/jx_step_helm_apply/
@@ -35,6 +35,7 @@ jx step helm apply [flags]
   -h, --help                          help for apply
       --name string                   The name of the release
       --namespace string              The Kubernetes namespace to apply the helm chart to
+      --no-helm-version               Don't set Chart version before applying
       --wait                          Wait for Kubernetes readiness probe to confirm deployment (default true)
 ```
 

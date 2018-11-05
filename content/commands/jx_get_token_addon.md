@@ -1,5 +1,5 @@
 ---
-date: 2018-11-05T11:23:47Z
+date: 2018-11-05T11:51:58Z
 title: "jx get token addon"
 slug: jx_get_token_addon
 url: /commands/jx_get_token_addon/

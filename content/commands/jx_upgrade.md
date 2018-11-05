@@ -1,5 +1,5 @@
 ---
-date: 2018-11-05T11:23:47Z
+date: 2018-11-05T11:51:58Z
 title: "jx upgrade"
 slug: jx_upgrade
 url: /commands/jx_upgrade/
