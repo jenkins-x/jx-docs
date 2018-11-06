@@ -1,12 +1,12 @@
 ---
-date: 2018-11-06T15:34:15Z
+date: 2018-11-06T16:03:49Z
 title: "jx create addon knative-build"
 slug: jx_create_addon_knative-build
 url: /commands/jx_create_addon_knative-build/
 ---
 ## jx create addon knative-build
 
-Create the Knative build addon
+Create the knative build addon
 
 ### Synopsis
 
@@ -26,9 +26,7 @@ jx create addon knative-build [flags]
 ### Options
 
 ```
-  -l, --backoff-limit int32   The backoff limit: how many times to retry the job before considering it failed) to run in the Job (default 2)
-  -h, --help                  help for knative-build
-  -i, --image string          The KnativeBuild image to use to run the ZA Proxy baseline scan (default "KnativeBuild/zap2docker-live:latest")
+  -h, --help   help for knative-build
 ```
 
 ### SEE ALSO
