@@ -19,10 +19,14 @@ Please join us in the community, we'd love to hear your feedback!
 
 ## Slack
 
-The Kubernetes community [hangs out on Slack](http://slack.k8s.io/) at [slack.k8s.io](http://slack.k8s.io/) so we have rooms there to chat about all things Jenkins X:
+The Kubernetes community [hangs out on Slack](http://slack.k8s.io/) at [kubernetes.slack.com](https://kubernetes.slack.com/) so we have rooms there to chat about all things Jenkins X:
 
 * [\#jenkins-x-user](https://kubernetes.slack.com/messages/C9MBGQJRH) for users of Jenkins X
 * [\#jenkins-x-dev](https://kubernetes.slack.com/messages/C9LTHT2BB) for developers of Jenkins X
+
+{{% note %}}
+If you do not already have an account created for the `kubernetes` workspace you can create one by clicking [`GET MY INVITE`](http://slack.k8s.io/)
+{{% /note %}}
 
 ## Office Hours
 
