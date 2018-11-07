@@ -27,6 +27,8 @@ sections_weight: 5
 
 * [2018-10-15 Jenkins X - Continuously Driving the Kloud (German)](https://www.meetup.com/Frankfurt-am-Main-Kubernetes-Meetup/events/254372021/) at [Kubernetes Meetup Frankfurt a.M. (Germany)](https://www.meetup.com/Frankfurt-am-Main-Kubernetes-Meetup/) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
 
+* [2018-10-13 Jenkins X - Continuously Driving the Kloud (German)](https://openspacer.org/60-devops-community/222-devops-camp-compact-2018/session/926-jenkins-x/) at [Devops Camp Compact 2018 Nürnberg (Germany)](https://devops-camp.de/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) - [Youtube Stream of Part 1](https://youtu.be/hqg7mbjBDTo?t=13352&end=16578)
+
 * [2018-10-08 JDD Poland: End to End automation and Continuous Delivery of Microservices for Kubernetes](http://bit.ly/jdd-conference-jx) by [Paolo Carta](https://twitter.com/cl4mer)
 
 * [2018-09-28 XantarJ Santiago de Compostela: Acelera el desarrollo de tus aplicaciones con Docker y Jenkins](https://www.eventbrite.es/e/entradas-xantarj-2018-49884037499) by [Carlos Sanchez](https://csanchez.org)
