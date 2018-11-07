@@ -21,13 +21,13 @@ sections_weight: 5
 
 * [2018-11-15 DevOpsPro Moscow: Using Kubernetes for Continuous Integration and Continuous Delivery](https://www.devopspro.ru/carlos-sanchez/) by [Carlos Sanchez](https://csanchez.org)
 
-* [2018-11-14 Jenkins X - Continuously Driving the Kloud (German)](https://www.continuouslifecycle.de/veranstaltung-7488-jenkins-x-%E2%80%93-continuously-driving-the-kloud.html?id=7488) at [Continuous Lifecycle (Mannheim, Germany)](https://www.continuouslifecycle.de/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) 
+* [2018-11-14 Jenkins X - Continuously Driving the Kloud (German)](https://www.continuouslifecycle.de/veranstaltung-7488-jenkins-x-%E2%80%93-continuously-driving-the-kloud.html?id=7488) at [Continuous Lifecycle (Mannheim, Germany)](https://www.continuouslifecycle.de/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) ([Slides](http://aschemann.net/gerd/publications/jx-talk-conli-2018/))
 
-* [2018-10-18 Jenkins X - Continuously Driving the Kloud (German)](https://www.baselone.ch/speech/B6A3BA74-8E28-46CD-B4B7-F96C6FFE0B39/Jenkins-X---Continuously-Driving-the-Kloud) at [BaselOne (Basel, Switzerland)](https://www.baselone.ch/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) 
+* [2018-10-18 Jenkins X - Continuously Driving the Kloud (German)](https://www.baselone.ch/speech/B6A3BA74-8E28-46CD-B4B7-F96C6FFE0B39/Jenkins-X---Continuously-Driving-the-Kloud) at [BaselOne (Basel, Switzerland)](https://www.baselone.ch/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) ([Slides](http://aschemann.net/gerd/publications/jx-talk-baselone-2018/))
 
-* [2018-10-15 Jenkins X - Continuously Driving the Kloud (German)](https://www.meetup.com/Frankfurt-am-Main-Kubernetes-Meetup/events/254372021/) at [Kubernetes Meetup Frankfurt a.M. (Germany)](https://www.meetup.com/Frankfurt-am-Main-Kubernetes-Meetup/) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
+* [2018-10-15 Jenkins X - Continuously Driving the Kloud (German)](https://www.meetup.com/Frankfurt-am-Main-Kubernetes-Meetup/events/254372021/) at [Kubernetes Meetup Frankfurt a.M. (Germany)](https://www.meetup.com/Frankfurt-am-Main-Kubernetes-Meetup/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) ([Slides](http://aschemann.net/gerd/publications/jx-talk-k8s-ffm-2018/))
 
-* [2018-10-13 Jenkins X - Continuously Driving the Kloud (German)](https://openspacer.org/60-devops-community/222-devops-camp-compact-2018/session/926-jenkins-x/) at [Devops Camp Compact 2018 Nürnberg (Germany)](https://devops-camp.de/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) - [Youtube Stream of Part 1](https://youtu.be/hqg7mbjBDTo?t=13352&end=16578)
+* [2018-10-13 Jenkins X - Continuously Driving the Kloud (German)](https://openspacer.org/60-devops-community/222-devops-camp-compact-2018/session/926-jenkins-x/) at [Devops Camp Compact 2018 Nürnberg (Germany)](https://devops-camp.de/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) - [Youtube Stream of Part 1](https://youtu.be/hqg7mbjBDTo?t=13352&end=16578) ([Slides](http://aschemann.net/gerd/publications/jx-talk-docc-2018/))
 
 * [2018-10-08 JDD Poland: End to End automation and Continuous Delivery of Microservices for Kubernetes](http://bit.ly/jdd-conference-jx) by [Paolo Carta](https://twitter.com/cl4mer)
 
@@ -39,11 +39,11 @@ sections_weight: 5
 
 * [2018-09-12 JavaZone: Using Kubernetes for Continuous Integration and Continuous Delivery](https://2018.javazone.no/program/7f3694e6-1936-4d14-9ac1-2b1f7585da41) 🎥 by [Carlos Sanchez](https://csanchez.org)
 
-* [2018-09-12 Jenkins X - Continuously Driving the Kloud (German)](http://www.jug-kl.de/jenkins/) at [JUG Kaiserslautern (Germany)](http://www.jug-kl.de/) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
+* [2018-09-12 Jenkins X - Continuously Driving the Kloud (German)](http://www.jug-kl.de/jenkins/) at [JUG Kaiserslautern (Germany)](http://www.jug-kl.de/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) ([Slides](http://aschemann.net/gerd/publications/jx-talk-jugkl-2018/))
 
 * [2018-09-08 JavaDay Ecuador: CI/CD for Spring Boot Applications with Jenkins X](https://www.javaday.ec/) by [Eddú Meléndez](https://twitter.com/eddumelendez)
 
-* [2018-09-06 Jenkins X - Continuously Driving the Kloud (German)](http://bed-con.org/2018/programm) at [Bed-Con: Berlin Expert Days 2018 (Germany)](http://bed-con.org/2018) by [Gerd Aschemann](https://twitter.com/GerdAschemann) 
+* [2018-09-06 Jenkins X - Continuously Driving the Kloud (German)](http://bed-con.org/2018/programm) at [Bed-Con: Berlin Expert Days 2018 (Germany)](http://bed-con.org/2018) by [Gerd Aschemann](https://twitter.com/GerdAschemann) ([Slides](http://aschemann.net/gerd/publications/jx-talk-bedcon-2018/))
 
 * [JavaDay Perú 30 June 2018:CI/CD for Spring Boot Applications with Jenkins X](http://perujug.org/perujavaday2018/) by [Eddú Meléndez](https://twitter.com/eddumelendez)
 
