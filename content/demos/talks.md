@@ -13,6 +13,8 @@ weight: 5
 sections_weight: 5
 ---
 
+* [2019-01-24 Jenkins X - Continuously Driving the Kloud (German)](https://www.xing.com/events/jenkins-continuously-driving-the-kloud-1995467?sc_o=si1942_com) at [JUG Metroplregion Nürnberg (Germany)](http://www.jug-n.de) by [Gerd Aschemann](https://twitter.com/GerdAschemann) 
+
 * [2018-12-19 Jenkins X - Continuously Driving the Kloud (German)](https://sites.google.com/site/jugffm/home/19-12-2018-jenkins-x---continuously-driving-the-kloud) at [JUG Frankfurt (Germany)](https://sites.google.com/site/jugffm/home) by [Gerd Aschemann](https://twitter.com/GerdAschemann) 
 
 * [2018-12-12 KubeCon NA Seattle: Jenkins X: Continuous Delivery for Kubernetes](http://sched.co/GrT2) by [Carlos Sanchez](https://csanchez.org)
