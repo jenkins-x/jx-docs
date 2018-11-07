@@ -17,6 +17,8 @@ sections_weight: 5
 
 * [2018-12-12 KubeCon NA Seattle: Jenkins X: Continuous Delivery for Kubernetes](http://sched.co/GrT2) by [Carlos Sanchez](https://csanchez.org)
 
+* [2018-12-03 Jenkins X - Continuously Driving the Kloud (German)](https://www.meetup.com/de-DE/DevOps-Wuerzburg-Mainfranken/events/255614733/) at [DevOps Meetup Würzburg (Germany)](https://www.meetup.com/DevOps-Wuerzburg-Mainfranken/) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
+
 * [2018-11-23 CommitConf Madrid: Jenkins X: Continuous Delivery for Kubernetes](https://www.koliseo.com/events/commit-2018/r4p/5630471824211968/agenda#/5116072650866688/5742659054338048) by [Carlos Sanchez](https://csanchez.org)
 
 * [2018-11-15 DevOpsPro Moscow: Using Kubernetes for Continuous Integration and Continuous Delivery](https://www.devopspro.ru/carlos-sanchez/) by [Carlos Sanchez](https://csanchez.org)
