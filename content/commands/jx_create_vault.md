@@ -1,5 +1,5 @@
 ---
-date: 2018-11-07T18:48:28Z
+date: 2018-11-07T22:48:02Z
 title: "jx create vault"
 slug: jx_create_vault
 url: /commands/jx_create_vault/
