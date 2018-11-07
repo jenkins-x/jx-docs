@@ -1,5 +1,5 @@
 ---
-date: 2018-11-07T10:27:55Z
+date: 2018-11-07T12:40:25Z
 title: "jx upgrade cli"
 slug: jx_upgrade_cli
 url: /commands/jx_upgrade_cli/
@@ -26,10 +26,16 @@ jx upgrade cli [flags]
 ### Options
 
 ```
-  -h, --help               help for cli
-      --log-level string   Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
-      --verbose            Enable verbose logging
-  -v, --version string     The specific version to upgrade to
+  -b, --batch-mode                In batch mode the command never prompts for user input
+      --headless                  Enable headless operation if using browser automation
+  -h, --help                      help for cli
+      --install-dependencies      Should any required dependencies be installed automatically
+      --log-level string          Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
+      --no-brew                   Disables the use of brew on macOS to install or upgrade command line dependencies
+      --pull-secrets string       The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
+      --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
+      --verbose                   Enable verbose logging
+  -v, --version string            The specific version to upgrade to
 ```
 
 ### SEE ALSO
