@@ -1,5 +1,5 @@
 ---
-date: 2018-11-08T12:38:07Z
+date: 2018-11-08T13:06:52Z
 title: "jx get"
 slug: jx_get
 url: /commands/jx_get/
@@ -64,12 +64,14 @@ jx get TYPE [flags]
 * [jx get previews](/commands/jx_get_previews/)	 - Display one or more Preview Environments
 * [jx get quickstartlocations](/commands/jx_get_quickstartlocations/)	 - Display one or more Quickstart Locations
 * [jx get releases](/commands/jx_get_releases/)	 - Display the Release or Releases the current user is a member of
+* [jx get secrets](/commands/jx_get_secrets/)	 - Display one or more Secrets
 * [jx get teamroles](/commands/jx_get_teamroles/)	 - Display the Team or Teams the current user is a member of
 * [jx get teams](/commands/jx_get_teams/)	 - Display the Team or Teams the current user is a member of
 * [jx get token](/commands/jx_get_token/)	 - Display the tokens for different kinds of services
 * [jx get tracker](/commands/jx_get_tracker/)	 - Display the current registered issue tracker service URLs
 * [jx get urls](/commands/jx_get_urls/)	 - Display one or more URLs
 * [jx get users](/commands/jx_get_users/)	 - Display the User or Users the current user is a member of
+* [jx get vault-config](/commands/jx_get_vault-config/)	 - Gets the configuration for using the official vault CLI client
 * [jx get vaults](/commands/jx_get_vaults/)	 - Display one or more Vaults
 * [jx get workflows](/commands/jx_get_workflows/)	 - Display either all the available workflows or a specific workflow
 
