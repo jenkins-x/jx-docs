@@ -1,5 +1,5 @@
 ---
-date: 2018-11-08T09:15:23Z
+date: 2018-11-08T12:38:07Z
 title: "jx create token"
 slug: jx_create_token
 url: /commands/jx_create_token/
