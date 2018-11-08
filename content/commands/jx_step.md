@@ -1,5 +1,5 @@
 ---
-date: 2018-11-08T13:06:52Z
+date: 2018-11-08T17:58:31Z
 title: "jx step"
 slug: jx_step
 url: /commands/jx_step/
@@ -25,6 +25,7 @@ jx step [flags]
 ### SEE ALSO
 
 * [jx](/commands/jx/)	 - jx is a command line tool for working with Jenkins X
+* [jx step bdd](/commands/jx_step_bdd/)	 - Performs the BDD tests on the current cluster, new clusters or teams
 * [jx step blog](/commands/jx_step_blog/)	 - Creates a blog post with changes, metrics and charts showing improvements
 * [jx step changelog](/commands/jx_step_changelog/)	 - Creates a changelog for a git tag
 * [jx step collect](/commands/jx_step_collect/)	 - Collects the specified files that need storing from the build

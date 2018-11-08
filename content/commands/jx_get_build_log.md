@@ -1,5 +1,5 @@
 ---
-date: 2018-11-08T13:06:52Z
+date: 2018-11-08T17:58:31Z
 title: "jx get build log"
 slug: jx_get_build_log
 url: /commands/jx_get_build_log/
@@ -46,6 +46,7 @@ jx get build log [flags]
   -p, --pending         Only display logs which are currently pending to choose from if no build name is supplied
   -r, --repo string     Filters the build repository
   -t, --tail            Tails the build log to the current terminal (default true)
+  -w, --wait            Waits for the build to start before failing
 ```
 
 ### SEE ALSO
