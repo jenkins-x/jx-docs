@@ -1,5 +1,5 @@
 ---
-date: 2018-11-09T16:37:36Z
+date: 2018-11-09T20:56:02Z
 title: "jx upgrade platform"
 slug: jx_upgrade_platform
 url: /commands/jx_upgrade_platform/
@@ -29,6 +29,7 @@ jx upgrade platform [flags]
       --always-upgrade                  If set to true, jx will upgrade platform Helm chart even if requested version is already installed.
   -b, --batch-mode                      In batch mode the command never prompts for user input
   -c, --chart string                    The Chart to upgrade (default "jenkins-x/jenkins-x-platform")
+      --cleanup-temp-files              Cleans up any temporary values.yaml used by helm install [default true] (default true)
       --cloud-environment-repo string   Cloud Environments Git repo (default "https://github.com/jenkins-x/cloud-environments")
       --headless                        Enable headless operation if using browser automation
   -h, --help                            help for platform
