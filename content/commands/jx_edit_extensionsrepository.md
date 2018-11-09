@@ -1,5 +1,5 @@
 ---
-date: 2018-11-09T14:25:47Z
+date: 2018-11-09T15:38:58Z
 title: "jx edit extensionsrepository"
 slug: jx_edit_extensionsrepository
 url: /commands/jx_edit_extensionsrepository/
@@ -28,22 +28,14 @@ jx edit extensionsrepository [flags]
 ### Options
 
 ```
-  -b, --batch-mode                In batch mode the command never prompts for user input
-      --github string             The extensions repository GitHub repo to use
-      --headless                  Enable headless operation if using browser automation
-      --helm-chart string         The extensions repository Helm Chart to use
-      --helm-password string      The extensions repository Helm Chart Password to use
-      --helm-repo string          The extensions repository Helm Chart Repo to use
-      --helm-repo-name string     The extensions repository Helm Chart Repo Name to use
-      --helm-username string      The extensions repository Helm Chart Username to use
-  -h, --help                      help for extensionsrepository
-      --install-dependencies      Should any required dependencies be installed automatically
-      --log-level string          Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
-      --no-brew                   Disables the use of brew on macOS to install or upgrade command line dependencies
-      --pull-secrets string       The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
-      --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
-      --url string                The extensions repository URL to use
-      --verbose                   Enable verbose logging
+      --github string           The extensions repository GitHub repo to use
+      --helm-chart string       The extensions repository Helm Chart to use
+      --helm-password string    The extensions repository Helm Chart Password to use
+      --helm-repo string        The extensions repository Helm Chart Repo to use
+      --helm-repo-name string   The extensions repository Helm Chart Repo Name to use
+      --helm-username string    The extensions repository Helm Chart Username to use
+  -h, --help                    help for extensionsrepository
+      --url string              The extensions repository URL to use
 ```
 
 ### SEE ALSO
