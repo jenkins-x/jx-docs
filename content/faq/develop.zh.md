@@ -23,7 +23,7 @@ Jenkins X 中的每个环境都在 git 存储库中定义; 我们使用 GitOps �
 
 前两个项在您环境的 git 存储库的 `env/requirements.yaml` 文件中定义。 后者在 `env/values.yaml` 文件中定义。
 
-Helm charts 使用 [values.yaml文件](https://github.com/helm/helm/blob/master/docs/chart_template_guide/values_files.md)，以便您可以覆盖图表中的任何配置以修改设置，例如任何资源或资源配置上的标签或注释（例如 `replicaCount` ）或将环境变量等内容传递给 `Deployment` 。
+Helm charts 使用 [values.yaml文件](https://github.com/helm/helm/blob/master/docs/chart_template_guide/values_files.md)，以便您可以覆盖 charts 中的任何配置以修改设置，例如任何资源或资源配置上的标签或注释（例如 `replicaCount` ）或将环境变量等内容传递给 `Deployment` 。
 
 所以，如果你想改变 `staging` 环境中应用 `foo` 的 `replicaCount` ，那么通过 [jx get env](/commands/jx_get_environments/) 查找 `staging` 环境的 git 存储库，找到 git URL 。
 
@@ -45,4 +45,4 @@ foo:
 
 我们自己使用封闭 Secrets 来管理我们所有 CI/CD 的 Jenkins X 安装 - 所以 Secret 被加密并检出到每个环境的 git 仓库。 我们使用 [helm-secrets](https://github.com/futuresimple/helm-secrets) 插件来执行此操作。
 
-虽然更好的方法是使用我们正在调查的 Vault 运算符 - 它可以通过 Vault 获取和填充密码（并回收它们等）。
+虽然更好的方法是使用我们正在调研的 Vault Operator - 它可以通过 Vault 获取和填充密码（并回收它们等）。
