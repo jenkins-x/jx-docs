@@ -1,5 +1,5 @@
 ---
-date: 2018-11-14T09:12:28Z
+date: 2018-11-14T10:32:01Z
 title: "jx init"
 slug: jx_init
 url: /commands/jx_init/
