@@ -87,7 +87,9 @@ This can be handy - but is sometimes dangerous. e.g. if you want to do something
  
  You can do that with the [jx shell](/commands/jx_shell) command which prompts you to pick a different kubernetes context like the  [jx context](/commands/jx_context) command. However changes to the namespace and/or cluster made in this shell only affect the current shell only! 
  
- Also [jx shell](/commands/jx_shell) automatically updates your command prompt using  [jx prompt](/commands/jx_prompt) so that its clear your shell has changed the context and/or namespace.
+[jx shell](/commands/jx_shell) also automatically updates your command prompt using [jx prompt](/commands/jx_prompt)
+so that it is clear your shell has changed the context and/or namespace,
+and adds bash completion via [jx prompt](/commands/jx_prompt).
  
 ### Customise your shell
 
