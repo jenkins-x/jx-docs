@@ -19,7 +19,7 @@ Jenkins X assumes each user has access to the same development kubernetes cluste
 
 If your user does not have access to the kubernetes cluster we need to setup their `~/.kube/config` file so that they can access it. 
 
-If you are using Google's GKE then you can browse the [GKE Console]() to view all the clusters and click on the `Connect` button next to your development cluster and then that lets you copy/paste the command to connect to the cluster.
+If you are using Google's GKE then you can browse the [GKE Console](https://console.cloud.google.com) to view all the clusters and click on the `Connect` button next to your development cluster and then that lets you copy/paste the command to connect to the cluster.
 
 For other clusters we are planning on writing some [CLI commands to export and import the kube config](https://github.com/jenkins-x/jx/issues/1406).
 
