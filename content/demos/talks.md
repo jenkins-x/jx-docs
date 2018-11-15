@@ -27,6 +27,8 @@ sections_weight: 5
 
 * [2018-11-15 DevOpsPro Moscow: Using Kubernetes for Continuous Integration and Continuous Delivery](https://www.devopspro.ru/carlos-sanchez/) by [Carlos Sanchez](https://csanchez.org)
 
+* [2018-11-14: Jenkins X at KubeCon CloudNativeCon China 2018](https://linuxsuren.github.io/opensource/2018-KubeCon-Shanghai-jenkinsx.pdf) by [Zhao Xiaojie](https://github.com/linuxsuren)
+
 * [2018-11-14 Jenkins X - Continuously Driving the Kloud (German)](https://www.continuouslifecycle.de/veranstaltung-7488-jenkins-x-%E2%80%93-continuously-driving-the-kloud.html?id=7488) at [Continuous Lifecycle (Mannheim, Germany)](https://www.continuouslifecycle.de/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) ([Slides](http://aschemann.net/gerd/publications/jx-talk-conli-2018/))
 
 * [2018-10-18 Jenkins X - Continuously Driving the Kloud (German)](https://www.baselone.ch/speech/B6A3BA74-8E28-46CD-B4B7-F96C6FFE0B39/Jenkins-X---Continuously-Driving-the-Kloud) at [BaselOne (Basel, Switzerland)](https://www.baselone.ch/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) ([Slides](http://aschemann.net/gerd/publications/jx-talk-baselone-2018/))
