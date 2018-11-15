@@ -29,6 +29,8 @@ sections_weight: 5
 
 * [2018-11-14: Jenkins X at KubeCon CloudNativeCon China 2018](https://linuxsuren.github.io/opensource/2018-KubeCon-Shanghai-jenkinsx.pdf) by [Zhao Xiaojie](https://github.com/linuxsuren)
 
+* [2018-11-14 Meetup Munich: Continuous Applications Delivery for Kubernetes](https://www.meetup.com/munchen-jenkins-area-meetup/events/255633850/) by [Cosmin Cojocar](https://github.com/ccojocar)
+
 * [2018-11-14 Jenkins X - Continuously Driving the Kloud (German)](https://www.continuouslifecycle.de/veranstaltung-7488-jenkins-x-%E2%80%93-continuously-driving-the-kloud.html?id=7488) at [Continuous Lifecycle (Mannheim, Germany)](https://www.continuouslifecycle.de/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) ([Slides](http://aschemann.net/gerd/publications/jx-talk-conli-2018/))
 
 * [2018-10-18 Jenkins X - Continuously Driving the Kloud (German)](https://www.baselone.ch/speech/B6A3BA74-8E28-46CD-B4B7-F96C6FFE0B39/Jenkins-X---Continuously-Driving-the-Kloud) at [BaselOne (Basel, Switzerland)](https://www.baselone.ch/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) ([Slides](http://aschemann.net/gerd/publications/jx-talk-baselone-2018/))
@@ -36,6 +38,8 @@ sections_weight: 5
 * [2018-10-15 Jenkins X - Continuously Driving the Kloud (German)](https://www.meetup.com/Frankfurt-am-Main-Kubernetes-Meetup/events/254372021/) at [Kubernetes Meetup Frankfurt a.M. (Germany)](https://www.meetup.com/Frankfurt-am-Main-Kubernetes-Meetup/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) ([Slides](http://aschemann.net/gerd/publications/jx-talk-k8s-ffm-2018/))
 
 * [2018-10-13 Jenkins X - Continuously Driving the Kloud (German)](https://openspacer.org/60-devops-community/222-devops-camp-compact-2018/session/926-jenkins-x/) at [Devops Camp Compact 2018 Nürnberg (Germany)](https://devops-camp.de/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) - [Youtube Stream of Part 1](https://youtu.be/hqg7mbjBDTo?t=13352&end=16578) ([Slides](http://aschemann.net/gerd/publications/jx-talk-docc-2018/))
+
+* [2018-11-14 Meetup Zurich: Continuous Applications Delivery for Kubernetes](https://www.meetup.com/Swiss-Jenkins-Area-Meetup/events/254221707/) by [Cosmin Cojocar](https://github.com/ccojocar)
 
 * [2018-10-08 JDD Poland: End to End automation and Continuous Delivery of Microservices for Kubernetes](http://bit.ly/jdd-conference-jx) by [Paolo Carta](https://twitter.com/cl4mer)
 
