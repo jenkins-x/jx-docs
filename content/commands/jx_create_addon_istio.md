@@ -1,5 +1,5 @@
 ---
-date: 2018-11-16T12:10:58Z
+date: 2018-11-16T12:43:02Z
 title: "jx create addon istio"
 slug: jx_create_addon_istio
 url: /commands/jx_create_addon_istio/
