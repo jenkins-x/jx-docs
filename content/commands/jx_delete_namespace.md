@@ -1,53 +1,46 @@
 ---
 date: 2018-11-16T12:10:58Z
-title: "jx delete quickstartlocation"
-slug: jx_delete_quickstartlocation
-url: /commands/jx_delete_quickstartlocation/
+title: "jx delete namespace"
+slug: jx_delete_namespace
+url: /commands/jx_delete_namespace/
 ---
-## jx delete quickstartlocation
+## jx delete namespace
 
-Deletes one or more quickstart locations for your team
+Deletes one or more namespaces and their associated resources (Environments, Jenkins etc)
 
 ### Synopsis
 
-Deletes one or more quickstart locations for your team 
-
-For more documentation see: https://jenkins-x.io/developing/create-quickstart/#customising-your-teams-quickstarts
+Deletes one or more namespaces
 
 ```
-jx delete quickstartlocation [flags]
+jx delete namespace [flags]
 ```
 
 ### Examples
 
 ```
-  # Pick a quickstart location to delete for your team
-  jx delete quickstartlocation
+  # Delete the named namespace
+  jx delete namespace cheese
   
-  # Pick a quickstart location to delete for your team using an abbreviation
-  jx delete qsloc
-  
-  # Delete a GitHub organisation 'myorg' for your team
-  jx delete qsloc --owner myorg
-  
-  # Delete a specific location for your team
-  jx delete qsloc --url https://foo.com --owner myowner
+  # Delete the namespaces matching the given filter
+  jx delete namespace -f foo -a
 ```
 
 ### Options
 
 ```
+  -a, --all                       Should we default to selecting all the matched namespaces for deletion
   -b, --batch-mode                In batch mode the command never prompts for user input
+  -f, --filter string             Filters the list of namespaces you can pick from
       --headless                  Enable headless operation if using browser automation
-  -h, --help                      help for quickstartlocation
+  -h, --help                      help for namespace
       --install-dependencies      Should any required dependencies be installed automatically
       --log-level string          Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
       --no-brew                   Disables the use of brew on macOS to install or upgrade command line dependencies
-  -o, --owner string              The owner is the user or organisation of the Git provider
       --pull-secrets string       The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
-  -u, --url string                The URL of the Git service (default "https://github.com")
       --verbose                   Enable verbose logging
+  -y, --yes                       Confirms we should uninstall this installation
 ```
 
 ### SEE ALSO
