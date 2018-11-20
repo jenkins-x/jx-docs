@@ -13,6 +13,7 @@ weight: 5
 sections_weight: 5
 ---
 
+* [Continuous Delivery with Amazon EKS and Jenkins X](https://aws.amazon.com/blogs/opensource/continuous-delivery-eks-jenkins-x/) by [Henryk Konsek](https://twitter.com/hekonsek), 7th November, 2018
 * [Jenkins X and Pivotal PKS](http://www.routetocloud.com/2018/08/1969/) on 1st August, 2018 by [Roie Ben-haim](https://twitter.com/roie9876)
 * [Accelerate with Jenkins X ](https://jenkins.io/blog/2018/07/19/jenkins-x-accelerate/) by [James Rawlings](https://twitter.com/jdrawlings/) on July 20, 2018 
 * [Add CI/CD to Your Spring Boot App with Jenkins X and Kubernetes](https://developer.okta.com/blog/2018/07/11/ci-cd-spring-boot-jenkins-x-kubernetes) by [Matt Raible](https://twitter.com/mraible/) on July 11, 2018 
