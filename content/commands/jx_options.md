@@ -1,5 +1,5 @@
 ---
-date: 2018-11-20T12:29:36Z
+date: 2018-11-20T13:14:23Z
 title: "jx options"
 slug: jx_options
 url: /commands/jx_options/
