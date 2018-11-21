@@ -77,6 +77,8 @@ jenkins:
     ImageTag: "1.2.3"
 ```
 
+There is an example OSS project [jenkins-x/jenkins-x-openshift-image](https://github.com/jenkins-x/jenkins-x-openshift-image) you could use as a template which creates a new Jenkins image to add OpenShift specific plugins and configuration for using Jenkins X on OpenShift.
+
 ## Docker Registry
 
 We try and use the best defaults for each platform for the Docker Registry; e.g. using ECR on AWS. 
