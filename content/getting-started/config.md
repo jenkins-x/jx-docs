@@ -25,6 +25,8 @@ To do this you need to create a `myvalues.yaml` file in the current directory yo
 
 Then this YAML file can be used to override any of the underlying `values.yaml` in any of the charts in Jenkins X.
 
+## Nexus
+
 e.g. if you wish to disable Nexus being installed and instead service link to a separate nexus at a different host name you can use this `myvalues.yaml`:
 
 ```yaml
