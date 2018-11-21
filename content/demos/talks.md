@@ -25,6 +25,8 @@ sections_weight: 5
 
 * [2018-11-23 CommitConf Madrid: Jenkins X: Continuous Delivery for Kubernetes](https://www.koliseo.com/events/commit-2018/r4p/5630471824211968/agenda#/5116072650866688/5742659054338048) by [Carlos Sanchez](https://csanchez.org)
 
+* [2018-11-17 Korea Developer Conference at Seoul: Jenkins X - automated CI/CD solution for cloud native applications on Kubernetes](http://www.hanbit.co.kr/store/education/edu_view.html?p_code=S8548956082) on [JBUG Korea](https://www.facebook.com/groups/jbossusergroup/) with [slides](https://www.slideshare.net/tedwon/jenkins-x-automated-cicd-solution-for-cloud-native-applications-on-kubernetes-123332546) by [Ted Won](https://twitter.com/tedwon)
+
 * [2018-11-15 DevOpsPro Moscow: Using Kubernetes for Continuous Integration and Continuous Delivery](https://www.devopspro.ru/carlos-sanchez/) by [Carlos Sanchez](https://csanchez.org)
 
 * [2018-11-14: Jenkins X at KubeCon CloudNativeCon China 2018](https://linuxsuren.github.io/opensource/2018-KubeCon-Shanghai-jenkinsx.pdf) by [Zhao Xiaojie](https://github.com/linuxsuren)
