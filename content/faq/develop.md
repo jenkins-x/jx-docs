@@ -46,3 +46,11 @@ To see a more complex example of how you can use a `values.yaml` file to inject 
 We’re using sealed secrets ourselves to manage our production Jenkins X install for all of our CI/CD - so the secrets get encrypted and checked into the git repo of each environment. We use the [helm-secrets](https://github.com/futuresimple/helm-secrets) plugin to do this.
  
 Though a nicer approach would be using a Vault operator which we’re investigating now - which would fetch + populate secrets (and recycle them etc) via Vault.
+
+
+## How do I add other services into a Preview?
+
+When you create a Pull Request by default Jenkins X creates a new [Preview Environment](/about/features/#preview-environments). Since this is a new dynamic namespace you may want to configure additional microservices in the namespace so you can properly test your preview build.
+
+To find out more see [how to add dependent charts, services or configuration to your preview environment](/developing/preview/#adding-more-resources)
+

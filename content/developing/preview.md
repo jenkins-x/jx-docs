@@ -26,7 +26,7 @@ However you can manually create a [Preview Environment](/about/features/#preview
 jx preview
 ```
 
-### What happens when a Preview environment is created
+## What happens when a Preview environment is created
 
 * a new [Environment](/about/features/#environments) of kind `Preview` is created along with a [kubernetes namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/) which shows up in the [jx get environments](/commands/jx_get_environments/) command along with the [jx environment and jx namespace commands](/developing/kube-context) so you can see which preview environments are active and switch into them to look around
 * the Pull Request is built as a preview docker image and chart and deployed into the preview environment
@@ -34,7 +34,54 @@ jx preview
  
 <img src="/images/pr-comment.png" class="img-thumbnail">
 
-### Post preview jobs
+
+## Adding more resources 
+
+Its common when creating, for example, a web front end to need a backend or database to work from to verify that the microservice works.
+
+For each application the preview environment is defined by a helm chart at: `charts/preview/Chart.yaml`. 
+
+### Charts
+
+So you can easily add any dependent helm charts to your preview environment by adding new entries in the file `charts/preview/requirements.yaml`.
+
+You can find possible charts to install by searching helm. e.g. to find a `postgresql` chart try:
+
+``` 
+helm search postgres
+```
+
+Once you know the chart and the repository its in you can add it to your `charts/preview/requirements.yaml` file (the `postgresql` section at the end of the file):
+
+```yaml
+dependencies:
+- alias: expose
+  name: exposecontroller
+  repository: https://chartmuseum.build.cd.jenkins-x.io
+  version: 2.3.56
+- alias: cleanup
+  name: exposecontroller
+  repository: https://chartmuseum.build.cd.jenkins-x.io
+  version: 2.3.56
+- alias: preview
+  name: demo179
+  repository: file://../demo179
+- name: postgresql
+  repository: https://kubernetes-charts.storage.googleapis.com
+  version: 2.6.2
+```
+
+### Service Linking
+
+If you need any additional resources like `ConfigMap`, `Secret` or `Service` resources you can add them to `charts/preview/resources/*.yaml`.
+
+You can always _service link_ from the Preview Environment namespace to other namespaces by creating a `Service` with an `externalName` which links to a `Service` running in another namespace (such as Staging or Production) or to point to a service running outside of the Kubernetes cluster completely. 
+
+### Configuration
+
+If you need to tweak your application when running in a Preview Environment you can add custom settings to the `charts/preview/values.yaml`file
+
+## Post preview jobs
 
 One of the extension points of Jenkins X lets you put a hook in after a preview job has been deployed. This hook applies to all apps in a team even existing ones, for all new pull requests/changes. (You don't have to add it to each pipeline by hand - it can be used to enforce best practices).
 
