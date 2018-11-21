@@ -1,5 +1,5 @@
 ---
-date: 2018-11-21T05:32:33Z
+date: 2018-11-21T09:35:06Z
 title: "jx delete jenkins"
 slug: jx_delete_jenkins
 url: /commands/jx_delete_jenkins/
