@@ -87,7 +87,9 @@ Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
       
 ## Using Amazon (AWS)
 
-You can either use `kops` or `eks` to create your Kubernetes cluster.
+If you are using AWS be sure to check out the detailed blog on [Continuous Delivery with Amazon EKS and Jenkins X](https://aws.amazon.com/blogs/opensource/continuous-delivery-eks-jenkins-x/) by [Henryk Konsek](https://twitter.com/hekonsek) which goes into lots of detail on how to setup AWS + EKS with Jenkins X.
+
+We support both `kops` or `eks` to create your Kubernetes cluster with Jenkins X where EKS is the most strategic direction; increasingly AWS will manage more of the kubernetes side for you with EKS.
 
 ### Ingress options
 
