@@ -1,5 +1,5 @@
 ---
-date: 2018-11-21T13:48:27Z
+date: 2018-11-21T14:22:37Z
 title: "jx edit environment"
 slug: jx_edit_environment
 url: /commands/jx_edit_environment/
@@ -57,7 +57,7 @@ jx edit environment [flags]
   -o, --order int32                  The order weighting of the Environment so that they can be sorted by this order before name (default 100)
       --prefix string                Environment repo prefix, your Git repo will be of the form 'environment-$prefix-$envName' (default "jx")
   -p, --promotion string             The promotion strategy
-      --tls-acme string              Used to enable automatic TLS for ingress (default "false")
+      --tls-acme string              Used to enable automatic TLS for ingress
 ```
 
 ### SEE ALSO

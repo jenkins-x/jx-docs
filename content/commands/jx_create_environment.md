@@ -1,5 +1,5 @@
 ---
-date: 2018-11-21T13:48:27Z
+date: 2018-11-21T14:22:37Z
 title: "jx create environment"
 slug: jx_create_environment
 url: /commands/jx_create_environment/
@@ -65,7 +65,7 @@ jx create environment [flags]
       --prow                         Install and use Prow for environment promotion
       --pull-secrets string          The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
       --skip-auth-secrets-merge      Skips merging a local git auth yaml file with any pipeline secrets that are found
-      --tls-acme string              Used to enable automatic TLS for ingress (default "false")
+      --tls-acme string              Used to enable automatic TLS for ingress
       --vault                        Sets up a Hashicorp Vault for storing secrets during the cluster creation
       --verbose                      Enable verbose logging
 ```

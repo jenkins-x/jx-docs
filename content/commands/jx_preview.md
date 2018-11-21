@@ -1,5 +1,5 @@
 ---
-date: 2018-11-21T13:48:27Z
+date: 2018-11-21T14:22:37Z
 title: "jx preview"
 slug: jx_preview
 url: /commands/jx_preview/
@@ -67,7 +67,7 @@ jx preview [flags]
       --source-ref string                 The source code git ref (branch/sha)
   -s, --source-url string                 The source code git URL
   -t, --timeout string                    The timeout to wait for the promotion to succeed in the underlying Environment. The command fails if the timeout is exceeded or the promotion does not complete (default "1h")
-      --tls-acme string                   Used to enable automatic TLS for ingress (default "false")
+      --tls-acme string                   Used to enable automatic TLS for ingress
       --verbose                           Enable verbose logging
   -v, --version string                    The Version to promote
 ```

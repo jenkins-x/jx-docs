@@ -1,5 +1,5 @@
 ---
-date: 2018-11-21T13:48:27Z
+date: 2018-11-21T14:22:37Z
 title: "jx create cluster minishift"
 slug: jx_create_cluster_minishift
 url: /commands/jx_create_cluster_minishift/
@@ -83,7 +83,7 @@ jx create cluster minishift [flags]
       --tiller-cluster-role string          The cluster role for Helm's tiller (default "cluster-admin")
       --tiller-namespace string             The namespace for the Tiller when using a global tiller (default "kube-system")
       --timeout string                      The number of seconds to wait for the helm install to complete (default "6000")
-      --tls-acme string                     Used to enable automatic TLS for ingress (default "false")
+      --tls-acme string                     Used to enable automatic TLS for ingress
       --user-cluster-role string            The cluster role for the current user to be able to administer helm (default "cluster-admin")
       --username string                     The Kubernetes username used to initialise helm. Usually your email address for your Kubernetes account
       --vault                               Sets up a Hashicorp Vault for storing secrets during installation
