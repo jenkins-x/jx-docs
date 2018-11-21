@@ -45,6 +45,37 @@ chartmuseumServiceLink:
   externalName: "jenkins-x-chartmuseum.jx.svc.cluster.local"
 ```
 
+## Jenkins Image
+
+We ship with a default Jenkins docker image [jenkinsxio/jenkinsx](https://hub.docker.com/r/jenkinsxio/jenkinsx/) with Jenkins X which has all of our required plugins inside. 
+
+If you wish to add your own plugins you can create your own `Dockerfile` and image using our base image like this:
+
+```
+# Dockerfile for adding plugins to Jenkins X 
+FROM jenkinsxio/jenkinsx:latest
+
+COPY plugins.txt /usr/share/jenkins/ref/openshift-plugins.txt
+RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/openshift-plugins.txt
+```
+
+Then add your custom plugins to `plugins.txt` locally of the form:
+
+``` 
+myplugin:1.2.3
+anotherplugin:4.5.6
+```
+
+Once you have built and released your image via CI/CD you can then use it in your Jenkins X installation.
+
+To configure Jenkins X to use your customm image you can specify your own Jenkins image via a `myvalues.yaml` file:
+  
+```yaml
+jenkins:
+  Master:
+    Image: "acme/my-jenkinsx"
+    ImageTag: "1.2.3"
+```
 
 ## Docker Registry
 
