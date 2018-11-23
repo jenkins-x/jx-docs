@@ -1,5 +1,5 @@
 ---
-date: 2018-11-23T15:34:20Z
+date: 2018-11-23T18:59:39Z
 title: "jx create cluster oke"
 slug: jx_create_cluster_oke
 url: /commands/jx_create_cluster_oke/
@@ -34,6 +34,7 @@ jx create cluster oke [flags]
 
 ```
   -b, --batch-mode                          In batch mode the command never prompts for user input
+      --buildpack string                    The name of the build pack to use for the Team
       --cleanup-temp-files                  Cleans up any temporary values.yaml used by helm install [default true] (default true)
       --cloud-environment-repo string       Cloud Environments Git repo (default "https://github.com/jenkins-x/cloud-environments")
       --clusterMaxWaitSeconds string        The maximum time to wait for the work request to reach the state defined by --wait-for-state. Defaults to 1200 seconds.

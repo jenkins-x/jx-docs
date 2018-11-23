@@ -1,5 +1,5 @@
 ---
-date: 2018-11-23T15:34:20Z
+date: 2018-11-23T18:59:39Z
 title: "jx create codeship"
 slug: jx_create_codeship
 url: /commands/jx_create_codeship/
@@ -29,6 +29,7 @@ jx create codeship [flags]
 
 ```
   -b, --batch-mode                             In batch mode the command never prompts for user input
+      --buildpack string                       The name of the build pack to use for the Team
       --cleanup-temp-files                     Cleans up any temporary values.yaml used by helm install [default true] (default true)
       --cloud-environment-repo string          Cloud Environments Git repo (default "https://github.com/jenkins-x/cloud-environments")
   -c, --cluster stringArray                    Name and Kubernetes provider (gke, aks, eks) of clusters to be created in the form --cluster foo=gke

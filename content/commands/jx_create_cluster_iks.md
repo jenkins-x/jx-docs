@@ -1,5 +1,5 @@
 ---
-date: 2018-11-23T15:34:20Z
+date: 2018-11-23T18:59:39Z
 title: "jx create cluster iks"
 slug: jx_create_cluster_iks
 url: /commands/jx_create_cluster_iks/
@@ -31,6 +31,7 @@ jx create cluster iks [flags]
 ```
   -c, --account string                      Account
       --apikey string                       The IBM Cloud API Key.
+      --buildpack string                    The name of the build pack to use for the Team
       --cleanup-temp-files                  Cleans up any temporary values.yaml used by helm install [default true] (default true)
       --cloud-environment-repo string       Cloud Environments Git repo (default "https://github.com/jenkins-x/cloud-environments")
       --create-private-vlan                 Automatically create private vlan (default 'true')

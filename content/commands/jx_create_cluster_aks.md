@@ -1,5 +1,5 @@
 ---
-date: 2018-11-23T15:34:20Z
+date: 2018-11-23T18:59:39Z
 title: "jx create cluster aks"
 slug: jx_create_cluster_aks
 url: /commands/jx_create_cluster_aks/
@@ -36,6 +36,7 @@ jx create cluster aks [flags]
       --aad-server-app-secret string             The secret of an Azure Active Directory server application
       --aad-tenant-id string                     The ID of an Azure Active Directory tenant
       --admin-username string                    User account to create on node VMs for SSH access
+      --buildpack string                         The name of the build pack to use for the Team
       --cleanup-temp-files                       Cleans up any temporary values.yaml used by helm install [default true] (default true)
       --client-secret string                     Azure AD client secret to use an existing SP
       --cloud-environment-repo string            Cloud Environments Git repo (default "https://github.com/jenkins-x/cloud-environments")

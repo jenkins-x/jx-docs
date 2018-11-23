@@ -1,5 +1,5 @@
 ---
-date: 2018-11-23T15:34:20Z
+date: 2018-11-23T18:59:39Z
 title: "jx get buildpack"
 slug: jx_get_buildpack
 url: /commands/jx_get_buildpack/
@@ -10,7 +10,7 @@ Display the teams build pack Git repository and references used for the current 
 
 ### Synopsis
 
-Display the teams build pack Git repository and references used for the current Team used on creating and importing projects 
+Display the teams build pack Git repository and references used when creating and importing projects 
 
 For more documentation see: https://jenkins-x.io/architecture/build-packs/
 
@@ -21,13 +21,17 @@ jx get buildpack [flags]
 ### Examples
 
 ```
-  # List the build pack  the current team
+  # List the build pack for the current team
   jx get buildpack
+  
+  # List all the available build packs you can pick from
+  jx get bp -a
 ```
 
 ### Options
 
 ```
+  -a, --all             View all available Build Packs
   -h, --help            help for buildpack
   -o, --output string   The output format such as 'yaml'
 ```

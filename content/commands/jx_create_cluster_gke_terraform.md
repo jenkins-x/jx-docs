@@ -1,5 +1,5 @@
 ---
-date: 2018-11-23T15:34:20Z
+date: 2018-11-23T18:59:39Z
 title: "jx create cluster gke terraform"
 slug: jx_create_cluster_gke_terraform
 url: /commands/jx_create_cluster_gke_terraform/
@@ -32,6 +32,7 @@ jx create cluster gke terraform [flags]
 
 ```
   -b, --batch-mode                          In batch mode the command never prompts for user input
+      --buildpack string                    The name of the build pack to use for the Team
       --cleanup-temp-files                  Cleans up any temporary values.yaml used by helm install [default true] (default true)
       --cloud-environment-repo string       Cloud Environments Git repo (default "https://github.com/jenkins-x/cloud-environments")
   -n, --cluster-name string                 The name of this cluster, default is a random generated name
