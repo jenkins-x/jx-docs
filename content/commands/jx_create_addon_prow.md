@@ -1,5 +1,5 @@
 ---
-date: 2018-11-23T12:31:34Z
+date: 2018-11-23T13:30:51Z
 title: "jx create addon prow"
 slug: jx_create_addon_prow
 url: /commands/jx_create_addon_prow/
