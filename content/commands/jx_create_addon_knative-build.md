@@ -1,5 +1,5 @@
 ---
-date: 2018-11-24T14:07:27Z
+date: 2018-11-24T22:45:50Z
 title: "jx create addon knative-build"
 slug: jx_create_addon_knative-build
 url: /commands/jx_create_addon_knative-build/
@@ -27,7 +27,7 @@ jx create addon knative-build [flags]
 
 ```
   -h, --help              help for knative-build
-  -p, --password string   The pipeline bot password
+  -t, --token string      The pipeline bot token
   -u, --username string   The pipeline bot username
 ```
 
