@@ -35,3 +35,9 @@ Jenkins 的分支使用 IRC ，因此，我们在 **freenode.net** 有一个 IRC
 ### Email
 
 如果你更喜欢电子邮件，那么加入我们的 [jenkins-x 邮件列表](https://groups.google.com/forum/#!forum/jenkins-x) 。
+
+### 微信
+
+使用微信扫描下面的二维码，关注我们的微信公众号，及时获取我们最新分享的技术文章或者活动通知：
+
+<img src="/images/wechat.png" class="img-thumbnail" style="width:129px;">
