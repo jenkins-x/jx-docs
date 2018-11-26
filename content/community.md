@@ -50,12 +50,6 @@ Got any thoughts, ideas or feedback then please drop them in a [GitHub Issue](ht
 
 You may also want to try [Stack Overflow](https://stackoverflow.com/questions/tagged/jenkins--x) with the tag `jenkins--x` though we prefer [GitHub Issues](https://github.com/jenkins-x/jx/issues)
 
-## IRC
-
-Jenkins folks tend to use IRC so we have an IRC room **#jenkins-x** IRC room on **freenode.net**
-
-You could try using the [riot app for #jenkins-x](https://riot.im/app/#/room/#freenode_#jenkins-x:matrix.org)
-
 ## Email
 
 If you prefer email then join us on the [jenkins-developers mailing list](https://groups.google.com/forum/#!forum/jenkinsci-dev). Prefix posts with `[Jenkins X]` in the subject.
