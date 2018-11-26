@@ -39,7 +39,7 @@ To do this we've introduced a simple new YAML file format for defining pipelines
 
 ### Pipelines 
 
-Each Pipeline YA?ML file has a number of separate logical pipelines:
+Each Pipeline YAML file has a number of separate logical pipelines:
 
 * `release` for processing merges to the `master` branch which typically creates a new version and release then triggers promotion
 * `pullRequest` for processing Pull Requests
