@@ -1,4 +1,4 @@
-lastReportDate: August 24 2018
+lastReportDate: November 26 2018
 reports:
 - reportDate: March 18 2018
   starsMetrics:
@@ -140,6 +140,88 @@ reports:
   userChatMetrics:
     count: 334
     total: 647
+- reportDate: October 22 2018
+  starsMetrics:
+    count: 200
+    total: 1655
+  downloadMetrics:
+    count: 25553
+    total: 79115
+  issueMetrics:
+    count: 27
+    total: 586
+  pullRequestMetrics:
+    count: 328
+    total: 1021
+  commitMetrics:
+    count: 1276
+    total: 3864
+  newCommitterMetrics:
+    count: 33
+    total: 104
+  newContributorMetrics:
+    count: 40
+    total: 135
+  developerChatMetrics:
+    count: 111
+    total: 381
+  userChatMetrics:
+    count: 191
+    total: 838
+- reportDate: October 23 2018
+  starsMetrics:
+    count: 4
+    total: 1659
+  downloadMetrics:
+    count: 779
+    total: 79894
+  issueMetrics:
+    count: 100
+    total: 686
+  pullRequestMetrics:
+    count: 331
+    total: 1352
+  commitMetrics:
+    count: 1289
+    total: 5153
+  newCommitterMetrics:
+    count: 33
+    total: 137
+  newContributorMetrics:
+    count: 40
+    total: 175
+  developerChatMetrics:
+    total: 381
+  userChatMetrics:
+    total: 838
+- reportDate: November 26 2018
+  starsMetrics:
+    count: 99
+    total: 1758
+  downloadMetrics:
+    count: 19955
+    total: 99849
+  issueMetrics:
+    count: 150
+    total: 836
+  pullRequestMetrics:
+    count: 488
+    total: 1840
+  commitMetrics:
+    count: 2125
+    total: 7278
+  newCommitterMetrics:
+    count: 47
+    total: 184
+  newContributorMetrics:
+    count: 56
+    total: 231
+  developerChatMetrics:
+    count: 70
+    total: 451
+  userChatMetrics:
+    count: 108
+    total: 946
 contributors:
 - michaelneale
 - rajdavies
@@ -208,6 +290,49 @@ contributors:
 - magnum99
 - ariefrahmansyah
 - alf5
+- darinpope
+- Lazyshot
+- akihikokuroda
+- abergmeier
+- darthcabs
+- davidcurrie
+- msvticket
+- johnmcollier
+- kmadel
+- sekmarco
+- beebird
+- pmuir
+- davidvanlaatum
+- bkuschel
+- tgarlot
+- benvandenberg
+- daveconde
+- carlossg
+- a-roberts
+- rajivnathan
+- hamzapurra
+- othomann
+- aespejel
+- jvz
+- bwalding
+- dashford
+- surajnarwade
+- hangchan
+- vbehar
+- igdianov
+- markawm
+- jglick
+- mikecirioli
+- jenkins-x-bot
+- romainverduci
+- agentgonzo
+- daya
+- wenzlaff
+- gabeduke
+- jtnord
+- amuniz
+- tedwon
+- stubrowncloudbees
 committers:
 - rawlingsj
 - jstrachan
@@ -256,3 +381,38 @@ committers:
 - secade
 - johnmshields
 - sanketjpatel
+- dashford
+- surajnarwade
+- akihikokuroda
+- abergmeier
+- darinpope
+- benvandenberg
+- aespejel
+- davidcurrie
+- daveconde
+- jvz
+- bwalding
+- bkuschel
+- beebird
+- johnmcollier
+- Lazyshot
+- pmuir
+- tgarlot
+- a-roberts
+- othomann
+- msvticket
+- rajivnathan
+- jtnord
+- amuniz
+- hangchan
+- romainverduci
+- tedwon
+- stubrowncloudbees
+- wenzlaff
+- mikecirioli
+- gabeduke
+- vbehar
+- markawm
+- jenkins-x-bot
+- jglick
+- agentgonzo
