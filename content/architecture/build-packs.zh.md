@@ -24,7 +24,7 @@ toc: true
 * helm chart 在文件夹 `charts` 中生成可以在 Kubernets 中运行的 Kubernetes 资源
 * 在 `charts/preview` 文件夹中的 _preview chart_ 定义了基于 Pull Request 部署一个[预览环境](/zh/about/features/#preview-environments)的所有依赖
 
-默认的构建包在 [https://github.com/jenkins-x/draft-packs](https://github.com/jenkins-x/draft-packs)，每个语言或者构建工具在一个文件夹中。
+默认的构建包在 [https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes)，每个语言或者构建工具在一个文件夹中。
 
  `jx` 命令行克隆构建包到你的文件夹 `.~/.jx/draft/packs/` ，并在你每次尝试创建或者到一个工程时通过 `git pull` 来更新他们。
 
@@ -36,7 +36,7 @@ toc: true
 
 最好的开始就是 _快速开始_ 应用。你可以当作一个测试的样例工程。因此，创建或查找一个合适的例子工程，然后[导入](/zh/developing/import)。
 
-然后，如果不存在的话，手动添加 `Dockerfile` 和 `Jenkinsfile` 。你可以从[当前构建包文件夹](https://github.com/jenkins-x/draft-packs/tree/master/packs)开始 —— 使用相似的语言或框架。
+然后，如果不存在的话，手动添加 `Dockerfile` 和 `Jenkinsfile` 。你可以从[当前构建包文件夹](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/tree/master/packs)开始 —— 使用相似的语言或框架。
 
 如果你的构建包使用了 [pod 模板](/zh/architecture/pod-templates) 中不存在的构建工具，你需要[提交一个新的 pod 模板](/zh/architecture/pod-templates/#submitting-new-pod-templates)，还可能需要一个新的构建容器景象。
 
@@ -60,7 +60,7 @@ pipeline {
           }
 ```          
 
-一旦你的 `Jenkinsfile` 可以在你的示例工程为你的语言实现 CI/CD 的话，我们因该把 `Dockerfile`, `Jenkinsfile` 和 charts 文件夹拷贝到你的派生 [jenkins-x/draft-packs 仓库](https://github.com/jenkins-x/draft-packs) 中。
+一旦你的 `Jenkinsfile` 可以在你的示例工程为你的语言实现 CI/CD 的话，我们因该把 `Dockerfile`, `Jenkinsfile` 和 charts 文件夹拷贝到你的派生 [jenkins-x/draft-packs 仓库](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) 中。
 
 你可以通过把他们添加到构建包的本地库 ` ~/.jx/draft/packs/github.com/jenkins-x/draft-packs/packs` 中来尝试。
 

@@ -24,9 +24,59 @@ The build packs are used to default the following files if they do not already e
 * helm chart in the `charts` folder to generate the kubernetes resources to run the application on kubernetes
 * a _preview chart_ in the `charts/preview` folder to define any dependencies for deploying a [preview environment](/about/features/#preview-environments) on a Pull Request   
 
-The default build packs are at [https://github.com/jenkins-x/draft-packs](https://github.com/jenkins-x/draft-packs) with a folder for each language or build tool.
+The default build packs are at [https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) with a folder for each language or build tool.
 
 The `jx` command line clones the build packs to your `.~/.jx/draft/packs/` folder and updates them via a `git pull` each time you try create or import a project.
+
+## Pipeline extension model
+
+As part of the move to [cloud native jenkins](/architecture/cloud-native-jenkins/) we've refactored our [build packs](https://github.com/jenkins-x-buildpacks/) so that they are more modular and easier to compose and reuse across workloads.
+
+For example the [jenkins-x-kubernetes](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) build pack inherits from the [jenkins-x-classic](https://github.com/jenkins-x-buildpacks/jenkins-x-classic) build pack, reusing the CI and release pipelines but then adding the kubernetes specific workloads (e.g. building docker images, creating helm charts, [Preview Environments](/about/features/#preview-environments) and [Promotion via GitOps](/about/features/#promotion))
+
+To do this we've introduced a simple new YAML file format for defining pipelines.
+
+
+### Pipelines 
+
+Each Pipeline YA?ML file has a number of separate logical pipelines:
+
+* `release` for processing merges to the `master` branch which typically creates a new version and release then triggers promotion
+* `pullRequest` for processing Pull Requests
+* `feature` for processing merges to a feature branch. Though note that the [accelerate book](/about/accelerate/) recommends against long term feature branches. Instead consider using trunk based development which is a practice of high performing teams. 
+
+### Lifecycles
+
+Then each pipeline has a number of distinct lifecycle phases - rather like maven has `clean`, `compile`, `compile-test`, `package` etc. 
+
+The lifecycle phases in Jenkins X Pipeline YAML are:
+
+* `setup`
+* `preBuild`
+* `build`
+* `postBuild`
+* `promote`
+
+### Extending
+
+Rather like classes in languages like Java you can extend a Pipeline YAML from a base Pipeline YAML. This lets you reuse the steps in a base pipeline's lifecycle then add your own additional steps.
+
+By default any steps you define are added after the base pipeline YAML steps like in [this example](https://github.com/jenkins-x/jx/blob/master/pkg/jx/cmd/test_data/step_buildpack_apply/inheritence/pipeline.yaml#L7). 
+
+You can add steps before the base pipeline steps using the `preSteps: ` property like [this example](https://github.com/jenkins-x/jx/blob/master/pkg/jx/cmd/test_data/step_buildpack_apply/inheritence2/pipeline.yaml#L6)
+
+If you want to completely replace all the steps from a base pipeline for a particular lifecycle you can use `replace: true` like in [this example](https://github.com/jenkins-x/jx/blob/master/pkg/jx/cmd/test_data/step_buildpack_apply/inheritence2/pipeline.yaml#L11-L14)
+
+## Example Pipeline
+
+For example for [maven libraries we use this pipeilne.yaml file](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/master/packs/maven/pipeline.yaml) which:
+
+* [extends](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/master/packs/maven/pipeline.yaml#L1-L2) the [common pipeline](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/master/packs/pipeline.yaml) that sets up git and defines common post build steps
+* [configures the agent](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/master/packs/maven/pipeline.yaml#L3-L5) in terms of [pod template](/architecture/pod-templates/) and container name
+* defines the steps for the `pull request` pipeline [build steps](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/master/packs/maven/pipeline.yaml#L7-L11)  
+* defines the `release` pipeline [set version steps](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/master/packs/maven/pipeline.yaml#L13-L18) and [build steps](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/master/packs/maven/pipeline.yaml#L19-L21)
+
+Then the [maven kubernetes pipeline.yaml](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/blob/master/packs/maven/pipeline.yaml) then [extends](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/blob/master/packs/maven/pipeline.yaml#L2-L3) from the classic pipepeline to add the kubernetes steps
 
 ## Creating new build packs
 
@@ -36,7 +86,7 @@ Here are instructions on how to create a new build pack - please if anything is 
 
 The best place to start with is a _quickstart_ application. A sample project that you can use as a test. So create/find a suitable example project and then [import it](/developing/import).
 
-Then manually add a `Dockerfile` and `Jenkinsfile` if one is not already added for you. You could start with files from the [current build pack folders](https://github.com/jenkins-x/draft-packs/tree/master/packs) - using the most similar language/framework to yours.
+Then manually add a `Dockerfile` and `Jenkinsfile` if one is not already added for you. You could start with files from the [current build pack folders](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/tree/master/packs) - using the most similar language/framework to yours.
 
 If your build pack is using build tools which are not yet available in one of the existing [pod templates](/architecture/pod-templates) then you will need to [submit a new pod template](/architecture/pod-templates/#submitting-new-pod-templates) probably using a new build container image too.
 
@@ -60,7 +110,7 @@ pipeline {
           }
 ```          
 
-Once your `Jenkinsfile` is capable of doing CI/CD for your language/runtime on your sample project then we should be able to take the `Dockerfile`, `Jenkinsfile` and charts folder and copy them into a folder in your fork of the [jenkins-x/draft-packs repository](https://github.com/jenkins-x/draft-packs).
+Once your `Jenkinsfile` is capable of doing CI/CD for your language/runtime on your sample project then we should be able to take the `Dockerfile`, `Jenkinsfile` and charts folder and copy them into a folder in your fork of the [jenkins-x/draft-packs repository](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes).
 
 You can try that out locally by adding these files to your local clone of the build packs repository at ` ~/.jx/draft/packs/github.com/jenkins-x/draft-packs/packs`
 

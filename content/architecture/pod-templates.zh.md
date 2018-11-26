@@ -30,9 +30,9 @@ Kubernetes 插件使用 _pod templates_ 定义用于运行 CI/CD 流水线的 po
 
 Jenkins X 带有一套给支持的语言和运行时的默认 pod 模板，在你的 [build packs](/zh/architecture/build-packs)中，命名类似于：`jenkins-$PACKNAME`。
 
-例如 [maven build pack](https://github.com/jenkins-x/draft-packs/blob/master/packs/maven/) 使用的 pod 模板时是 `jenkins-maven`。
+例如 [maven build pack](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/blob/master/packs/maven/) 使用的 pod 模板时是 `jenkins-maven`。
 
-然后，我们就可以 [在 Jenkinsfile 中引用 pod 模板名称](https://github.com/jenkins-x/draft-packs/blob/master/packs/maven/Jenkinsfile#L1-L4)，在申明式流水线中使用这样的语法 `agent { label "jenkins-$PACKNAME }` ，例如：
+然后，我们就可以 [在 Jenkinsfile 中引用 pod 模板名称](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/blob/master/packs/maven/Jenkinsfile#L1-L4)，在申明式流水线中使用这样的语法 `agent { label "jenkins-$PACKNAME }` ，例如：
 
 ```groovy
 // my declarative Jenkinsfile

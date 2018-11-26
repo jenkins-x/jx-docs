@@ -36,7 +36,7 @@ i.e. let folks that know how to run containers and manage clusters at scale so y
 
 ## Draft
 
-[Draft](https://draft.sh) has a few capabilities but Jenkins X only uses the language detection and pack creation feature.  Jenkins X maintains it's own [draft packs](https://github.com/jenkins-x/draft-packs) tailored to run with Jenkins X.
+[Draft](https://draft.sh) has a few capabilities but Jenkins X only uses the language detection and pack creation feature.  Jenkins X maintains it's own [draft packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) tailored to run with Jenkins X.
 
 Draft provides a great way to bootstrap a source code project with the necessary packaging needed to run the application on Kubernetes.
 

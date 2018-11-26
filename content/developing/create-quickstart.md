@@ -59,9 +59,9 @@ Once you have chosen the project to create and given it a name the following is 
 
 The source of these Quickstarts are maintained in [the jenkins-quickstarts Github organisation](https://github.com/jenkins-x-quickstarts).
 
-When you create a quickstart we use the [Jenkins X build packs](https://github.com/jenkins-x/draft-packs) to match the right pack for the project using the source code language kinds to pick the most suitable match.
+When you create a quickstart we use the [Jenkins X build packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) to match the right pack for the project using the source code language kinds to pick the most suitable match.
 
-When you use [jx create](/getting-started/create-cluster/), [jx install](http://localhost:1313/getting-started/install-on-cluster/) or [jx init](/commands/jx_init/) the [Jenkins X build packs](https://github.com/jenkins-x/draft-packs) are cloned into your `~/.jx/draft/packs` folder.
+When you use [jx create](/getting-started/create-cluster/), [jx install](http://localhost:1313/getting-started/install-on-cluster/) or [jx init](/commands/jx_init/) the [Jenkins X build packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) are cloned into your `~/.jx/draft/packs` folder.
 
 e.g. you can view all the languages supported via build packs on your machine via:
 
@@ -69,9 +69,9 @@ e.g. you can view all the languages supported via build packs on your machine vi
 ls -al ~/.jx/draft/packs/github.com/jenkins-x/draft-packs/packs
 ```
 
-Then when you create a quickstart, use [jx create spring](/developing/create-spring/) or [jx import](developing/import/) then the [Jenkins X build packs](https://github.com/jenkins-x/draft-packs) are used to:
+Then when you create a quickstart, use [jx create spring](/developing/create-spring/) or [jx import](developing/import/) then the [Jenkins X build packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) are used to:
 
-* find the right language pack. e.g. here are the current [list of language packs](https://github.com/jenkins-x/draft-packs/tree/master/packs).
+* find the right language pack. e.g. here are the current [list of language packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/tree/master/packs).
 * the language pack is then used to default these files if they don't already exist:
   * `Dockerfile` to package the application as a docker image
   * `Jenkinsfile` to implement the CI / CD pipelines using declarative pipeline as code
