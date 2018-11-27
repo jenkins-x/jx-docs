@@ -31,7 +31,7 @@ toc: true
 | Azure | | | | 1.1.x |
 | Digital Ocean  | | [Planned](https://github.com/jenkins-x/jx/issues/705) | | |
 | GKE | | | | 1.1.x |
-| IBM Cloud  | | [Planned](https://github.com/jenkins-x/jx/issues/472) | | |
+| IBM Cloud  | | | | 1.3.x|
 | Minkube | | | | 1.1.x |
 | Minishift | | | | 1.2.11 |
 | OKE | | Planned | | |
