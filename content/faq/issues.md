@@ -224,7 +224,9 @@ jx open
 
 You'll see all the URs of the form `http://$(minikube ip):somePortNumber` which then avoids going through [nip.io](http://nip.io/) - it just means the URLs are a little more cryptic using magic port numbers rather than simple host names.
 
+## How do I get the Password and Username for Jenkins?
 
+Install [KSD](https://github.com/mfuentesg/ksd) by running `go get github.com/mfuentesg/ksd` and then run `kubectl get secret jenkins -o yaml | ksd`
 
 
 ## Other issues
