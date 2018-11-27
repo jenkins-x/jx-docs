@@ -1,5 +1,5 @@
 ---
-date: 2018-11-27T15:13:25Z
+date: 2018-11-27T23:29:35Z
 title: "jx step"
 slug: jx_step
 url: /commands/jx_step/
@@ -30,7 +30,7 @@ jx step [flags]
 * [jx step buildpack](/commands/jx_step_buildpack/)	 - buildpack [command]
 * [jx step changelog](/commands/jx_step_changelog/)	 - Creates a changelog for a git tag
 * [jx step collect](/commands/jx_step_collect/)	 - Collects the specified files that need storing from the build
-* [jx step create](/commands/jx_step_create/)	 - Creates a Knative build resource for a project
+* [jx step create](/commands/jx_step_create/)	 - create [command]
 * [jx step env](/commands/jx_step_env/)	 - env [command]
 * [jx step git](/commands/jx_step_git/)	 - git [command]
 * [jx step gpg](/commands/jx_step_gpg/)	 - Creates the GPG credentials file for GPG signing releases
