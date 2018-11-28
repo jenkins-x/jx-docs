@@ -1,5 +1,5 @@
 ---
-date: 2018-11-28T15:02:08Z
+date: 2018-11-28T18:24:44Z
 title: "jx create cluster gke"
 slug: jx_create_cluster_gke
 url: /commands/jx_create_cluster_gke/
@@ -81,6 +81,7 @@ jx create cluster gke [flags]
       --no-default-environments             Disables the creation of the default Staging and Production environments
       --no-gitops-env-apply                 When using GitOps to create the source code for the development environment and installation, don't run 'jx step env apply' to perform the install
       --no-gitops-env-repo                  When using GitOps to create the source code for the development environment this flag disables the creation of a git repository for the source code
+      --no-gitops-vault                     When using GitOps to create the source code for the development environment this flag disables the creation of a vault
       --no-tiller                           Whether to disable the use of tiller with helm. If disabled we use 'helm template' to generate the YAML from helm charts then we use 'kubectl apply' to install it to avoid using tiller completely.
       --on-premise                          If installing on an on premise cluster then lets default the 'external-ip' to be the Kubernetes master IP address
   -p, --project-id string                   Google Project ID to create cluster in
