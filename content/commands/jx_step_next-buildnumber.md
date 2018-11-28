@@ -1,5 +1,5 @@
 ---
-date: 2018-11-28T10:54:12Z
+date: 2018-11-28T12:55:10Z
 title: "jx step next-buildnumber"
 slug: jx_step_next-buildnumber
 url: /commands/jx_step_next-buildnumber/

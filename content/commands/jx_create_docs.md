@@ -1,5 +1,5 @@
 ---
-date: 2018-11-28T10:54:12Z
+date: 2018-11-28T12:55:10Z
 title: "jx create docs"
 slug: jx_create_docs
 url: /commands/jx_create_docs/

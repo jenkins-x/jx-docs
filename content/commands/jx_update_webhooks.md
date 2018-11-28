@@ -1,5 +1,5 @@
 ---
-date: 2018-11-28T10:54:12Z
+date: 2018-11-28T12:55:10Z
 title: "jx update webhooks"
 slug: jx_update_webhooks
 url: /commands/jx_update_webhooks/
@@ -29,6 +29,7 @@ jx update webhooks [flags]
   -h, --help                       help for webhooks
   -o, --org string                 The name of the git organisation to query (default "jenkins-x")
       --previous-hook-url string   Whether to match based on an another URL
+  -r, --repo string                The name of the repository to query
 ```
 
 ### SEE ALSO
