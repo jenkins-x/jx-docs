@@ -1,5 +1,5 @@
 ---
-date: 2018-11-29T11:05:18Z
+date: 2018-11-29T12:24:52Z
 title: "jx upgrade ingress"
 slug: jx_upgrade_ingress
 url: /commands/jx_upgrade_ingress/
@@ -38,6 +38,7 @@ jx upgrade ingress [flags]
       --services stringArray      Services to upgrdde
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
       --skip-certmanager          Skips certmanager installation
+      --skip-resources-update     Skips the update of jx related resources such as webhook or Jenkins URL
       --verbose                   Enable verbose logging
 ```
 

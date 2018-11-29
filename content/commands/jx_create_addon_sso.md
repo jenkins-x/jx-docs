@@ -1,5 +1,5 @@
 ---
-date: 2018-11-29T11:05:18Z
+date: 2018-11-29T12:24:52Z
 title: "jx create addon sso"
 slug: jx_create_addon_sso
 url: /commands/jx_create_addon_sso/
@@ -45,6 +45,7 @@ jx create addon sso [flags]
   -s, --set string                The chart set values (can specify multiple or separate values with commas: key1=val1,key2=val2)
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
       --skip-certmanager          Skips certmanager installation
+      --skip-resources-update     Skips the update of jx related resources such as webhook or Jenkins URL
   -f, --values stringArray        List of locations for values files, can be local files or URLs
       --verbose                   Enable verbose logging
   -v, --version string            The chart version to install)
