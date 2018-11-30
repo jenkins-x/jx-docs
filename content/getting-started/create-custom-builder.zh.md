@@ -31,7 +31,7 @@ FROM jenkinsxio/builder-base:latest
 # Install your tools and libraries
 RUN yum install -y gcc openssl-devel
 
-CMD["gcc"]
+CMD ["gcc"]
 ```
 
 现在，您可以构建并发布这个镜像到您的 registry：

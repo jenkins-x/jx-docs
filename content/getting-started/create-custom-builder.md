@@ -33,7 +33,7 @@ FROM jenkinsxio/builder-base:latest
 # Install your tools and libraries
 RUN yum install -y gcc openssl-devel
 
-CMD["gcc"]
+CMD ["gcc"]
 ```
 
 Now you can build the image and publish it to your registry:
