@@ -39,7 +39,7 @@ You can use terms like `20m` or `10h30m` for the various duration expressions.
 <img src="/images/overview.png" class="img-thumbnail">
 
 
-### Feedback
+## Feedback
 
 If the commit comments reference issues (e.g. via the text `fixes #123`) then Jenkins X pipelines will generate release notes like those of [the jx releases](https://github.com/jenkins-x/jx/releases).
 
@@ -48,6 +48,45 @@ Also as the version with those new commits is promoted to `Staging` or `Producti
 <img src="/images/issue-comment.png" class="img-thumbnail">
 
 
+## Promoting external apps
+
+There may be apps that have already been released by other teams or companies who maybe don't yet use Jenkins X and the applications are not already in your helm chart repository.
+
+If you wish to search your helm repositories for an application to promote you can use the `-f` for filter option to find a chart to promote.
+
+e.g. to find a `redis` chart to promote to staging you could do:
+
+```shell 
+jx promote -f redis --env staging
+```
+
+For databases you may want to alias (via `--alias`) the name of the chart to be a logical name for the kind of database you need. As you may need multiple databases in the same environment for different microservices. e.g. 
+
+```shell 
+jx promote -f postgres --alias salesdb --env staging
+```
+
+If you cannot find the particular application you are looking for you may need to add a helm chart repository to your helm installation via:
+
+```shell 
+helm repo add myrepo https://something.acme.com/charts/
+```
+
+for example to add the stable community charts:
+
+```shell 
+$ helm repo add incubator https://kubernetes-charts.storage.googleapis.com/
+"stable" has been added to your repositories
+```
+  
+to add the incubator community charts:
+
+```shell 
+$ helm repo add incubator https://kubernetes-charts-incubator.storage.googleapis.com/
+"incubator" has been added to your repositories
+```  
+
+There are huge numbers of [charts already created and maintained by the community](https://github.com/helm/charts/tree/master/stable) these days. If you want to add your own apps developed outside of Jenkins X you just need to package the YAML as a helm chart and install it in a chart repository.
 
 
 
