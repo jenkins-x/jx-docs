@@ -45,8 +45,8 @@ By default just hit enter to stick to the `kubernetes workloads` option. Though 
 
 We store our build packs in [jenkins-x-buildpacks](https://github.com/jenkins-x-buildpacks/) organisation at github. Currently we support: 
  
-* the [jenkins-x-classic](https://github.com/jenkins-x-buildpacks/jenkins-x-classic) build pack supports CI+Releases but does not include CD. e.g. do CI and release of your Java libraries or Node modules but don't deploy to Kuberetes
-* the [jenkins-x-kubernetes](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) build pack supports automated CI+CD with GitOps promotion and Preview Environments for kubernetes workloads 
+* the [jenkins-x-classic](https://github.com/jenkins-x-buildpacks/jenkins-x-classic) build pack supports CI+Releases but does not include CD. e.g. do CI and release of your Java libraries or Node modules but don't deploy to Kubernetes
+* the [jenkins-x-kubernetes](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) build pack supports automated CI+CD with GitOps promotion and Preview Environments for `kubernetes workloads`
 
 However you should be able to extend either of these build packs to add alternative platforms and capabilities.
 
