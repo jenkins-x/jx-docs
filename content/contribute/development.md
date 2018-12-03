@@ -460,6 +460,12 @@ export JX_TEST_DEBUG=true
 
 First you need to [install Delve](https://github.com/derekparker/delve/blob/master/Documentation/installation/README.md).
 
+Then build a version of `jx` that is optimised for debugging
+
+```shell
+DEBUG=on make
+```
+
 Then you should be able to run a debug version of a jx command:
 
 ```shell
