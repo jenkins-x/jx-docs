@@ -125,7 +125,12 @@ cp Dockerfile Jenkinsfile  ~/.jx/draft/packs/github.com/jenkins-x/draft-packs/pa
 cp -r charts/somefoo ~/.jx/draft/packs/github.com/jenkins-x/draft-packs/packs/$PACK/charts
 ```   
 
-Once your build pack is in a folder at `~/.jx/draft/packs/github.com/jenkins-x/draft-packs/packs/` then it should be usable by the [jx import](/commands/jx_import) code which uses programming language detection to find the most suitable build pack to use when importing a project. If your build pack requires custom logic to detect it then let us know and we can help patch [jx import](/commands/jx_import) to work better for your build pack. e.g. we have some custom logic for handling [maven and gradle better](https://github.com/jenkins-x/jx/blob/master/pkg/jx/cmd/import.go#L383-L397)     
+Once your build pack is in a folder at `~/.jx/draft/packs/github.com/jenkins-x/draft-packs/packs/`
+then it should be usable by the [jx import](/commands/jx_import) code
+which uses programming language detection to find the most suitable build pack to use when importing a project.
+If your build pack requires custom logic to detect it then let us know
+and we can help patch [jx import](/commands/jx_import) to work better for your build pack.
+For example, we have some custom logic for handling [Maven and Gradle better](https://github.com/jenkins-x/jx/blob/712d9edf5e55aafaadfb3e0ac57692bb44634b1c/pkg/jx/cmd/common_buildpacks.go#L82:L108).     
    
           
 If you need any more help [join the community](/community/)  
