@@ -324,16 +324,24 @@ The jx test suite is divided into three sections:
  - Integration tests
 
 To run the standard test suite:
-```$ make test```
+```shell
+$ make test
+```
 
 To run the standard test suite including slow running tests:
-```$ make test-slow```
+```shell
+$ make test-slow
+```
 
 To run all tests including integration tests (NOTE These tests are not encapsulated):
-```$ make test-slow-integration```
+```shell
+$ make test-slow-integration
+```
 
 To get a nice HTML report on the tests:
-```$ make test-report-html```
+```shell
+$ make test-report-html
+```
 
 ### Writing tests
 
