@@ -40,3 +40,16 @@ To test you should be able to type:
 
 To view the environments and any development tools like the Jenkins or Nexus consoles.
 
+## How do I upgrade my Jenkins X installation?
+
+You can upgrade via the [jx upgrade](/commands/jx_upgrade/) commands. Start with 
+
+```shell 
+jx upgrade cli
+```
+
+to get you on the latest CLI then you can upgrade the platform:
+
+```shell 
+jx upgrade platform
+```
