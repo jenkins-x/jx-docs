@@ -1,5 +1,5 @@
 ---
-date: 2018-12-04T17:06:54Z
+date: 2018-12-04T21:07:22Z
 title: "jx step collect"
 slug: jx_step_collect
 url: /commands/jx_step_collect/
@@ -25,7 +25,7 @@ jx step collect [flags]
 ### Options
 
 ```
-      --classifier string     A name which classifies this type of file e.g. test-reports, coverage
+      --classifier string     A name which classifies this type of file. Example values: coverage, tests, logs
       --destination string    Specify the HTTP endpoint to send each file to
   -h, --help                  help for collect
       --pattern stringArray   Specify the pattern to use to look for files

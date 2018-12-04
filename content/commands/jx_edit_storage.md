@@ -1,50 +1,49 @@
 ---
 date: 2018-12-04T21:07:22Z
-title: "jx edit buildpack"
-slug: jx_edit_buildpack
-url: /commands/jx_edit_buildpack/
+title: "jx edit storage"
+slug: jx_edit_storage
+url: /commands/jx_edit_storage/
 ---
-## jx edit buildpack
+## jx edit storage
 
-Edits the build pack configuration for your team
+Configures the storage location for a set of pipeline output data for your team
 
 ### Synopsis
 
-Edits the build pack configuration for your team
+Configures the storage location for a set of pipeline output data for your team 
+
+Per team you can specify a Git repository URL to store artifacts inside per classification or you can use a HTTP URL. 
+
+If you don't specify any specific storage it will default to the git repository for a project.'
 
 ```
-jx edit buildpack [flags]
+jx edit storage [flags]
 ```
 
 ### Examples
 
 ```
-  # Edit the build pack configuration for your team, picking the build pack you wish to use from the available
-  jx edit buildpack
+  # To switch your team to helm3 use:
+  jx edit storage helm3
   
-  # to switch to classic workloads for your team
-  jx edit buildpack -n classic-workloads
-  
-  # to switch to kubernetes workloads for your team
-  jx edit buildpack -n kubernetes-workloads
-  
-  For more documentation see: [https://jenkins-x.io/architecture/build-packs/](https://jenkins-x.io/architecture/build-packs/)
+  # To switch back to 2.x use:
+  jx edit storage helm
 ```
 
 ### Options
 
 ```
   -b, --batch-mode                In batch mode the command never prompts for user input
+  -c, --classifier string         A name which classifies this type of file. Example values: coverage, tests, logs
+      --git-url string            Specify the Git URL to populate in a gh-pages branch
       --headless                  Enable headless operation if using browser automation
-  -h, --help                      help for buildpack
+  -h, --help                      help for storage
+      --http-url string           Specify the HTTP endpoint to send each file to
       --install-dependencies      Should any required dependencies be installed automatically
       --log-level string          Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
-  -n, --name string               The name of the BuildPack resource to use
       --no-brew                   Disables the use of brew on macOS to install or upgrade command line dependencies
       --pull-secrets string       The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
-  -r, --ref string                The Git reference (branch,tag,sha) in the Git repository to use
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
-  -u, --url string                The URL for the build pack Git repository
       --verbose                   Enable verbose logging
 ```
 

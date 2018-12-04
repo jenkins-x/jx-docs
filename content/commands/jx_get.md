@@ -1,5 +1,5 @@
 ---
-date: 2018-12-04T17:06:54Z
+date: 2018-12-04T21:07:22Z
 title: "jx get"
 slug: jx_get
 url: /commands/jx_get/
@@ -66,6 +66,7 @@ jx get TYPE [flags]
 * [jx get quickstartlocations](/commands/jx_get_quickstartlocations/)	 - Display one or more Quickstart Locations
 * [jx get releases](/commands/jx_get_releases/)	 - Display the Release or Releases the current user is a member of
 * [jx get secrets](/commands/jx_get_secrets/)	 - Display one or more Secrets
+* [jx get storage](/commands/jx_get_storage/)	 - Display the storage configuration for different classifications
 * [jx get teamroles](/commands/jx_get_teamroles/)	 - Display the Team or Teams the current user is a member of
 * [jx get teams](/commands/jx_get_teams/)	 - Display the Team or Teams the current user is a member of
 * [jx get token](/commands/jx_get_token/)	 - Display the tokens for different kinds of services
