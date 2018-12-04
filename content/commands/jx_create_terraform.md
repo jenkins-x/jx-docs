@@ -1,5 +1,5 @@
 ---
-date: 2018-12-04T21:07:22Z
+date: 2018-12-04T21:44:56Z
 title: "jx create terraform"
 slug: jx_create_terraform
 url: /commands/jx_create_terraform/
