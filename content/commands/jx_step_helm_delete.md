@@ -1,25 +1,26 @@
 ---
 date: 2018-12-04T15:14:38Z
-title: "jx step helm release"
-slug: jx_step_helm_release
-url: /commands/jx_step_helm_release/
+title: "jx step helm delete"
+slug: jx_step_helm_delete
+url: /commands/jx_step_helm_delete/
 ---
-## jx step helm release
+## jx step helm delete
 
-Releases the helm chart in the current directory
+Deletes the given helm release
 
 ### Synopsis
 
-This pipeline step releases the Helm chart in the current directory
+Deletes a helm release
 
 ```
-jx step helm release [flags]
+jx step helm delete [releaseName] [flags]
 ```
 
 ### Examples
 
 ```
-  jx step helm release
+  # list all the helm releases in the current namespace
+  jx step helm list
 ```
 
 ### Options
@@ -28,7 +29,9 @@ jx step helm release [flags]
       --clone-https git@foo/bar.git   Clone the environment Git repo over https rather than ssh which uses git@foo/bar.git (default true)
   -d, --dir string                    The directory containing the helm chart to apply (default ".")
       --git-provider string           The Git provider for the environment Git repository (default "github.com")
-  -h, --help                          help for release
+  -h, --help                          help for delete
+  -n, --namespace string              the namespace to look for the helm releases. Defaults to the current namespace
+      --purge                         Whether to purge the helm release
 ```
 
 ### SEE ALSO
