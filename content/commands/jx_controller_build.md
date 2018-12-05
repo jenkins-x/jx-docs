@@ -1,5 +1,5 @@
 ---
-date: 2018-12-05T14:28:45Z
+date: 2018-12-05T17:44:03Z
 title: "jx controller build"
 slug: jx_controller_build
 url: /commands/jx_controller_build/
@@ -19,8 +19,17 @@ jx controller build [flags]
 ### Options
 
 ```
-  -h, --help               help for build
-  -n, --namespace string   The namespace to watch or defaults to the current namespace
+  -b, --batch-mode                In batch mode the command never prompts for user input
+      --git-credentials           If enable then lets run the 'jx step git credentials' step to initialise git credentials
+      --headless                  Enable headless operation if using browser automation
+  -h, --help                      help for build
+      --install-dependencies      Should any required dependencies be installed automatically
+      --log-level string          Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
+  -n, --namespace string          The namespace to watch or defaults to the current namespace
+      --no-brew                   Disables the use of brew on macOS to install or upgrade command line dependencies
+      --pull-secrets string       The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
+      --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
+      --verbose                   Enable verbose logging
 ```
 
 ### SEE ALSO
