@@ -514,3 +514,24 @@ dlv --listen=:2345 --headless=true --api-version=2 exec `which jx` -- $*
 ```
 
 Then you can change your `jx someArgs` CLI to `jxDebug someArgs` then debug it!
+
+## Try a new version of jx inside a pipeline
+
+You can usually just run `jx` locally on your laptop and can simulate being in a pipeline using environment variables and run it inside a git clone of a sample project etc. However there are times you really want to test inside an actual running pipeline - here's how:
+
+When you create a Pull Request and its approved for test we generate preview docker images you can use inside your jenkins server pipelines for maven/go/nodejs builders. 
+
+e.g. see the `SNAPSHOT-JX_PR-$ID-$BUILD_NUMBER` images for the [jenkinsxio/builder-maven](https://hub.docker.com/r/jenkinsxio/builder-maven/tags/) image
+
+Once you have a preview docker image you can then edit the jenkins pod template for maven/go/nodejs to use your PR’s docker image to try out your changes to jx in a jenkins pipeline. To do this
+
+* `jx console` to open the Jenkins console
+* Manage Jenkins -> Configure System
+* search for builder-(maven|go|nodejs) and use the new docker image version you just built (that ends in your `PR number-buildnumber`)
+* now retrigger a pipeline
+
+We don't yet do the same for serverless jenkins images am afraid - for that you'll have to make your own Docker image replacing the `jx` binary then edit the Prow configuration (`kubectl edit cm config`).
+
+
+Another approach is you can make your own docker image, then pause a pipeline and `kubectl cp` your linux build of `jx` into the docker image and `kubectl exec` or `jx rsh` into the build pod and run the `jx` command there.
+
