@@ -57,8 +57,8 @@ jx get git server
 Now create the `Staging` and `Production` environments using whatever git provider you wish via:
 
 ``` 
-jx create env staging
-jx create env production
+jx create env staging --git-provider-url=https://gitproviderhostname.com
+jx create env production --git-provider-url=https://gitproviderhostname.com
 ```
 
 
