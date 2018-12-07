@@ -1,5 +1,5 @@
 ---
-date: 2018-12-07T11:43:13Z
+date: 2018-12-07T12:54:58Z
 title: "jx edit storage"
 slug: jx_edit_storage
 url: /commands/jx_edit_storage/
@@ -23,11 +23,14 @@ jx edit storage [flags]
 ### Examples
 
 ```
-  # To switch your team to helm3 use:
-  jx edit storage helm3
+  # Be prompted what classification to edit
+  jx edit storage
   
-  # To switch back to 2.x use:
-  jx edit storage helm
+  # Configure the git/http URLs of where to store logs
+  jx edit storage -c logs
+  
+  # Configure the git URL of where to store logs
+  jx edit storage -c logs --git-url https://github.com/myorg/mylogs.git'
 ```
 
 ### Options
