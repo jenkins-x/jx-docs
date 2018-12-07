@@ -123,7 +123,7 @@ jx create git token -n BitBucket myusername
 To add a git server for Gitlab and a token try:
 
 ```
-jx create git server gitlab https://gitlab.com/
+jx create git server gitlab https://gitlab.com/ -n gitlab
 jx create git token -n gitlab myusername
 ```
    
