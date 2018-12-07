@@ -1,5 +1,5 @@
 ---
-date: 2018-12-07T14:36:46Z
+date: 2018-12-07T16:57:34Z
 title: "jx delete application"
 slug: jx_delete_application
 url: /commands/jx_delete_application/
@@ -33,11 +33,11 @@ jx delete application [flags]
 ### Options
 
 ```
-  -a, --all                             Selects all the matched apps
+  -a, --all                             Selects all the matched applications
   -b, --batch-mode                      Run without being prompted. WARNING! You will not be asked to confirm deletions if you use this flag.
-  -f, --filter string                   Filter the list of apps to those containing this text
+  -f, --filter string                   Filter the list of applications to those containing this text
   -h, --help                            help for application
-      --no-env                          Do not remove the app from any of the Environments
+      --no-env                          Do not remove the application from any of the Environments
       --no-merge                        Disables automatic merge of promote Pull Requests
   -o, --org string                      github organisation/project name that source code resides in. Temporary workaround until the platform can determine this automatically
       --pull-request-poll-time string   Poll time when waiting for a Pull Request to merge (default "20s")
