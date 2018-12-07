@@ -1,5 +1,5 @@
 ---
-date: 2018-12-07T16:57:34Z
+date: 2018-12-07T18:41:02Z
 title: "jx gc"
 slug: jx_gc
 url: /commands/jx_gc/
