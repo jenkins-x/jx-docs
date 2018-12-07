@@ -24,13 +24,13 @@ Jenkins X can be installed on 1.8 or later of Kubernetes. The requirements are:
 * If not using the `aws` or `eks` providers then we need insecure docker registries are enabled. This is so that pipelines can use a docker registry running inside the kubernetes cluster (which typically is not public so no https support). You can modify your pipelines to use other registries later.
 * A cluster with at least 4 vCpus in addition to the master node (e.g. 2 m4.large nodes + m4.large master)
 
-### Validating cluster conformance 
+### Validating cluster conformance
 
 You can validate that your cluster is compliant with Jenkinx X by executing the following command:
 
     jx compliance run
 
-It will run the Kubernetes conformance tests provided by [sonobuoy](https://github.com/heptio/sonobuoy). Typically, the execution takes up to an hour. 
+It will run the Kubernetes conformance tests provided by [sonobuoy](https://github.com/heptio/sonobuoy). Typically, the execution takes up to an hour.
 You can check the status at any time with this command:
 
     jx compliance status
@@ -52,7 +52,7 @@ If you are using AWS be sure to check out the detailed blog on [Continuous Deliv
 
 ### Ingress on AWS
 
-On AWS the ideal setup is to use a Route 53 DNS wildcard CNAME to point `*.somedomain` at your ELB or NLB host name; then when prompted by `jx` you install `somedomain` (where `somedomain` is an actual DNS domain/subdomain you own). 
+On AWS the ideal setup is to use a Route 53 DNS wildcard CNAME to point `*.somedomain` at your ELB or NLB host name; then when prompted by `jx` you install `somedomain` (where `somedomain` is an actual DNS domain/subdomain you own).
 
 Then all the `Ingress` resources for any exposed service in any namespace will appear as `mysvc.myns.somedomain` - whether for things like Jenkins or Nexus or for your own microservices or Preview Environments.
 
@@ -60,7 +60,7 @@ Using wildcard DNS pointing to your ELB/NLB also means you'll be able to use all
 
 The `jx` command will ask you if you want to automate the setup fo the Route 53 wildcard CNAME. If you want to do it yourself you need to point to the ELB host name defined via:
 
-``` 
+```
 kubectl get service -n kube-system jxing-nginx-ingress-controller  -oyaml | grep hostname
 ```
 
@@ -74,7 +74,7 @@ When using `jx install --provider=(aws|eks)` you are prompted if you want to use
 
 
 
-### Getting registries to work on AWS with cluster set up with kops 
+### Getting registries to work on AWS with cluster set up with kops
 
 The default on AWS is to use ECR as the docker container registry. For this to work the nodes need permission to upload images to ECR. If you instead want to use the embedded docker registry of Jenkins X inside your kubernetes cluster you will need to enable insecure docker registries.
 
@@ -85,12 +85,12 @@ Note that you may want to use the [jx create cluster aws](/getting-started/creat
 Do the following:
 
 ```
-kops edit cluster 
+kops edit cluster
 ```
 
 Then make sure the YAML has this `additionalPolicies` entry inside the `spec` section:
 
-```yaml 
+```yaml
 ...
 spec:
   additionalPolicies:
@@ -102,7 +102,7 @@ spec:
         "Resource": ["*"]
         }
       ]
-``` 
+```
 
 Now to make this change active on your cluster type:
 
@@ -118,21 +118,21 @@ You should now be good to go!
 Do the following:
 
 ```
-kops edit cluster 
+kops edit cluster
 ```
 
 Then make sure the YAML has this `docker` entry inside the `spec` section:
 
-```yaml 
+```yaml
 ...
 spec:
   docker:
     insecureRegistry: 100.64.0.0/10
     logDriver: ""
-``` 
+```
 
 That IP range, `100.64.0.0/10`, works on AWS but you may need to change it on other kubernetes clusters; it depends on the IP range of kubernetes services.
- 
+
 Then save the changes. You can verify your changes via:
 
 ```
@@ -159,7 +159,7 @@ To install Jenkins X on an existing kubernetes cluster you can then use the [jx 
 If you know the provider you can specify that if you prefer on the command line. e.g.
 
     jx install --provider=aws
-    
+
 Note if you wish to use a different git provider than GitHub for your environments see [how to use a different git provider](/developing/git/#using-a-different-git-provider-for-environments)
 
 ## Installing Jenkins X on premise
@@ -172,13 +172,13 @@ __Prerequisits__
 When using an on premise kubernetes cluster you can use this command line:
 
     jx install --provider=kubernetes --on-premise
-    
+
 This will default the argument for `--external-ip` to access services inside your cluster to use the kubernetes master IP address.
 
 If you wish to use a different external IP address you can use:
-    
+
     jx install --provider=kubernetes --external-ip 1.2.3.4
-    
+
 Otherwise the `jx install` will try and wait for the Ingress Controllers `Service.Status.LoadBalancer.Ingress` to resolve to an IP address - which can fail on premise.   
 
 If you already have an ingress controller installed then try:
@@ -196,3 +196,38 @@ If you do not know the domain or want it extracted from your Ingress deployment 
     --ingress-namespace=kube-system
 
 If you want an explanation of what the [jx install](/commands/jx_install) command does, you can read [what happens with the install](../install-on-cluster-what-happens)
+
+## Installing Jenkins X on IBM Cloud Private
+
+__Prerequisites__
+- IBM Cloud Private version 3.1.0 is compatible with Jenkins X version 1.3.572.
+- You might have to clean up with the `helm delete --purge jenkins-x` or `jx uninstall` commands. However, the `jx uninstall` command might not correctly pick up Helm releases at the `default` namespace if you point to the `kube-system` Tiller.
+
+IBM Cloud Private includes a Docker registry and ingress controller. You can install Jenkins X into IBM Cloud Private with the following command:
+
+```
+jx install --provider=icp
+```
+
+The installation process prompts for the master IP address in your Kubernetes cluster. The master IP address is the same address that you used to access the IBM Cloud Private dashboard.
+
+Create `ClusterImagePolicies` on IBM Cloud Private version 3.1.0 and set the following permissions:
+
+```
+- name: docker.io/*
+- name: gcr.io/*
+- name: quay.io/*
+- name: k8s.gcr.io/*
+```
+
+Specify the following two `jx install` parameters with the command line or when prompted by the IBM Cloud Private provider:
+- The `domain=''` parameter is the domain to expose ingress endpoints, for example, `jenkinsx.io`.
+- The `external-ip=''` parameter is the external IP that is used to access ingress endpoints from outside the Kubernetes cluster and for bare metal on premise clusters.
+
+If you don't specify these parameters, then the `jx install --provider=icp` command first prompts you to enter the `external-ip` parameter. Next, it prompts you to enter the `domain` parameter and offers you the `<external-ip>.nip.io` default value. After you enter these values, an ingress endpoint becomes available at `http://jenkins.jx.<your cluster IP>.nip.io`.
+
+A Tiller is set in the default namespace as part of the Jenkins X installation process. To ensure that all Helm commands point to the correct Tiller, enter the `export TILLER_NAMESPACE=default` command when interacting with your Jenkins X installation.
+
+Create registry secrets and patch the default service account in any of the namespaces that Jenkins X creates. Deployments can then pull images from the IBM Cloud Private registry.
+
+If you create environments manually, you can specify `--pull-secrets <secret name>` with the `jx create environment` command. The created service account is automatically configured to use the pull secret that you mention. The pull secret needs to exist in the created namespace.
