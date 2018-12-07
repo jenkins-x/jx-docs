@@ -1,5 +1,5 @@
 ---
-date: 2018-12-07T12:54:58Z
+date: 2018-12-07T14:36:46Z
 title: "jx delete application"
 slug: jx_delete_application
 url: /commands/jx_delete_application/
@@ -10,7 +10,7 @@ Deletes one or more applications from Jenkins
 
 ### Synopsis
 
-Deletes one or more Applications from Jenkins 
+Deletes one or more Applications 
 
 Note that this command does not remove the underlying Git Repositories. 
 
@@ -39,6 +39,7 @@ jx delete application [flags]
   -h, --help                            help for application
       --no-env                          Do not remove the app from any of the Environments
       --no-merge                        Disables automatic merge of promote Pull Requests
+  -o, --org string                      github organisation/project name that source code resides in. Temporary workaround until the platform can determine this automatically
       --pull-request-poll-time string   Poll time when waiting for a Pull Request to merge (default "20s")
   -t, --timeout string                  The timeout to wait for the promotion to succeed in the underlying Environment. The command fails if the timeout is exceeded or the promotion does not complete (default "1h")
 ```
