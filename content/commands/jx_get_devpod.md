@@ -1,5 +1,5 @@
 ---
-date: 2018-12-09T22:47:19Z
+date: 2018-12-09T23:41:16Z
 title: "jx get devpod"
 slug: jx_get_devpod
 url: /commands/jx_get_devpod/
