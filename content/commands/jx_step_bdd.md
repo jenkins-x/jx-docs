@@ -1,5 +1,5 @@
 ---
-date: 2018-12-10T13:46:18Z
+date: 2018-12-10T18:34:29Z
 title: "jx step bdd"
 slug: jx_step_bdd
 url: /commands/jx_step_bdd/
