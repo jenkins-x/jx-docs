@@ -82,7 +82,7 @@ jx get pipelines
 
 ### Applications
 
-To view all the applications in your team across all your environments with URLs and pod counts use  [jx get applications](/commands/applications):
+To view all the applications in your team across all your environments with URLs and pod counts use  [jx get applications](/commands/jx_get_applications):
 
 ```shell
 jx get applications
