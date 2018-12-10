@@ -1,5 +1,5 @@
 ---
-date: 2018-12-10T12:19:30Z
+date: 2018-12-10T13:46:18Z
 title: "jx upgrade extensions repository"
 slug: jx_upgrade_extensions_repository
 url: /commands/jx_upgrade_extensions_repository/
