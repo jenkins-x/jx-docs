@@ -1,5 +1,5 @@
 ---
-date: 2018-12-11T17:04:49Z
+date: 2018-12-11T18:22:38Z
 title: "jx upgrade apps"
 slug: jx_upgrade_apps
 url: /commands/jx_upgrade_apps/
@@ -29,11 +29,14 @@ jx upgrade apps [flags]
 ### Options
 
 ```
-  -b, --batch-mode         In batch mode the command never prompts for user input
-  -h, --help               help for apps
-      --namespace string   The Namespace to promote to
-  -s, --set string         The Helm parameters to pass in while upgrading
-      --verbose            Enable verbose logging
+  -b, --batch-mode          In batch mode the command never prompts for user input
+  -h, --help                help for apps
+      --namespace string    The Namespace to promote to
+      --password string     The password for the repository
+      --repository string   The repository from which the app should be installed
+  -s, --set string          The Helm parameters to pass in while upgrading
+      --username string     The username for the repository
+      --verbose             Enable verbose logging
 ```
 
 ### SEE ALSO

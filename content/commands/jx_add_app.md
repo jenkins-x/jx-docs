@@ -1,5 +1,5 @@
 ---
-date: 2018-12-11T17:04:49Z
+date: 2018-12-11T18:22:38Z
 title: "jx add app"
 slug: jx_add_app
 url: /commands/jx_add_app/
@@ -23,11 +23,11 @@ jx add app [flags]
       --helm-update          Should we run helm update first to ensure we use the latest version (default true)
   -h, --help                 help for app
   -n, --namespace string     The Namespace to install into (default "jx")
-      --password string      The password for the chart repository
+      --password string      The password for the repository
   -r, --release string       The chart release name
-      --repository string    The repository from which the chart should be installed
+      --repository string    The repository from which the app should be installed
   -s, --set string           The chart set values (can specify multiple or separate values with commas: key1=val1,key2=val2)
-      --username string      The username for the chart repository
+      --username string      The username for the repository
   -f, --values stringArray   List of locations for values files, can be local files or URLs
       --verbose              Enable verbose logging
   -v, --version string       The chart version to install
