@@ -1,5 +1,5 @@
 ---
-date: 2018-12-12T10:43:17Z
+date: 2018-12-12T13:17:50Z
 title: "jx step create buildtemplate"
 slug: jx_step_create_buildtemplate
 url: /commands/jx_step_create_buildtemplate/
