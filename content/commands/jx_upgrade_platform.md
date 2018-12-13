@@ -1,5 +1,5 @@
 ---
-date: 2018-12-13T10:30:17Z
+date: 2018-12-13T17:58:37Z
 title: "jx upgrade platform"
 slug: jx_upgrade_platform
 url: /commands/jx_upgrade_platform/
