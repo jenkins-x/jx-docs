@@ -1,5 +1,5 @@
 ---
-date: 2018-12-14T09:25:04Z
+date: 2018-12-14T11:50:31Z
 title: "jx step gpg"
 slug: jx_step_gpg
 url: /commands/jx_step_gpg/
