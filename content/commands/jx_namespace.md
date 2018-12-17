@@ -1,5 +1,5 @@
 ---
-date: 2018-12-17T13:55:38Z
+date: 2018-12-17T16:48:51Z
 title: "jx namespace"
 slug: jx_namespace
 url: /commands/jx_namespace/
