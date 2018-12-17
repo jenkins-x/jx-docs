@@ -2,10 +2,12 @@ pipeline {
   agent any
   environment {
     HUGO_VERSION = "0.26"
-    GH_CREDS = credentials('jenkins-x-github')
     BUILD_NUMBER = "$BUILD_NUMBER"
-    GIT_USERNAME = "$GH_CREDS_USR"
-    GIT_API_TOKEN = "$GH_CREDS_PSW"
+
+    GH_CREDS            = credentials('jx-pipeline-git-github-github')
+    GHE_CREDS           = credentials('jx-pipeline-git-github-ghe')
+    GIT_USERNAME = "$GH_CREDS_USR"	
+    GIT_API_TOKEN = "$GH_CREDS_PSW"	
     GITHUB_ACCESS_TOKEN = "$GH_CREDS_PSW"
 
     JOB_NAME = "$JOB_NAME"
