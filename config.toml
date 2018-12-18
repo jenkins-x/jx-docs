@@ -9,7 +9,7 @@ metaDataFormat = "yaml"
 title = "Jenkins X"
 theme = "gohugoioTheme"
 
-googleAnalytics = "UA-4216293-5"
+googleAnalytics = "UA-4216293-7"
 
 canonifyURLs=true
 pluralizeListTitles = false
