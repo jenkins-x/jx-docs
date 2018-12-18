@@ -1,6 +1,6 @@
 ---
 title: Triaging issues
-linktitle: Triage
+linktitle: Triaging issues
 description: How to triage issues on the Jenkins X project
 date: 2018-12-18
 publishdate: 2018-12-18
@@ -19,17 +19,17 @@ aliases: [/contribute/triage/]
 toc: true
 ---
 
-The main issue tracker for the Jenkins X project is https://github.com/jenkins-x/jx/issues.  This aims to capture issues, ideas and development work.  If in doubt please raise an issue and a Jenkins X committer will look to triage it as soon as possible.
+The main issue tracker for the Jenkins X project is https://github.com/jenkins-x/jx/issues.  This aims to capture issues, ideas and development work.  If in doubt please raise an issue and a Jenkins X team member will look to triage it as soon as possible.
 
-As Jenkins X is using [prow](/https://www.cloudbees.com/blog/serverless-jenkins-jenkins-x) from the Kubernetes ecosystem we figured we'd take their lead in traiaging a large number of issues to aid and encourage contributions.  We are resing the style of labels including colours in an attempt to create familiarity across open source projects.
+As Jenkins X is using [prow](/https://www.cloudbees.com/blog/serverless-jenkins-jenkins-x) from the Kubernetes ecosystem we figured we'd take their lead in traiaging a large number of issues to aid and encourage contributions.  We are reusing the style of labels including colours in an attempt to create familiarity across open source projects and reduce the barrier to contributing.
 
 # Triaging issues
 
 For a full list of available labels please see https://github.com/jenkins-x/jx/labels
 
-When triaging an issue, someone from the Jenkins X community will assign labels to describe the area and kind of issue.  Where possible they will also add a priority however these are subject to change after further analysis or wider visability.
+When triaging an issue, someone from the Jenkins X team will assign labels to describe the __area__ and __kind__ of issue.  Where possible they will also add a priority however these are subject to change after further analysis or wider visibility.
 
-Labels are added via the prow [label](https://prow.k8s.io/plugins) plugin using comments.  For example:
+Labels are added via the prow [label](https://prow.k8s.io/plugins) plugin using GitHub comments.  For example:
 ```
 /kind bug
 /area prow
@@ -42,7 +42,7 @@ When triaging we will attempt to assign someone to the issue.  This may change d
 
 # Investigating issues
 
-When anyone is working on an issue we aim to capture anything of value by adding comments.  This helps people learn tips on how to investigate similar problems, helps people understand the thought process and provides context for any linked fixes via pull requests.
+When anyone is working on an issue we aim to capture any analysis by adding comments.  This helps people learn tips on how to investigate similar problems, helps people understand the thought process and provides context for any linked fixes via pull requests.
 
 # New labels
 
