@@ -1,5 +1,5 @@
 ---
-date: 2018-12-18T16:50:04Z
+date: 2018-12-18T17:44:16Z
 title: "jx get eks"
 slug: jx_get_eks
 url: /commands/jx_get_eks/
@@ -36,6 +36,7 @@ jx get eks [flags]
   -o, --output string    The output format such as 'yaml'
       --profile string   AWS profile to use.
       --region string    AWS region to use. Default: us-west-2
+      --verbose          Enable verbose logging.
 ```
 
 ### SEE ALSO
