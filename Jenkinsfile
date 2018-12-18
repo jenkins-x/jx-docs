@@ -1,6 +1,7 @@
 pipeline {
   agent any
   environment {
+    HUGO_ENV = "production"
     HUGO_VERSION = "0.26"
     BUILD_NUMBER = "$BUILD_NUMBER"
 
