@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
-    "babel-loader": "^7.0.0",
+    "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
     "clipboard": "^1.6.1",
     "css-loader": "^0.28.0",
