@@ -8,6 +8,7 @@ approvers:
 - i0n
 - pmuir
 - linuxsuren
+- dependabot
 reviewers:
 - rawlingsj
 - jenkins-x-bot
@@ -18,3 +19,4 @@ reviewers:
 - i0n
 - pmuir
 - linuxsuren
+- dependabot
