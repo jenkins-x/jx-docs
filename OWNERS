@@ -9,6 +9,7 @@ approvers:
 - pmuir
 - linuxsuren
 - dependabot
+- rheinwein
 reviewers:
 - rawlingsj
 - jenkins-x-bot
@@ -20,3 +21,4 @@ reviewers:
 - pmuir
 - linuxsuren
 - dependabot
+- rheinwein
