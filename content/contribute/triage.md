@@ -35,6 +35,7 @@ Labels are added via the prow [label](https://prow.k8s.io/plugins) plugin using 
 /area prow
 /priority important-soon
 ```
+![Triage](/images/contribute/triage.png)
 
 # Assigning issues
 
