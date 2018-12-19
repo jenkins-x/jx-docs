@@ -1,5 +1,5 @@
 ---
-date: 2018-12-19T13:37:50Z
+date: 2018-12-19T16:01:35Z
 title: "jx delete"
 slug: jx_delete
 url: /commands/jx_delete/
@@ -39,7 +39,7 @@ jx delete TYPE [flags]
 * [jx delete chat](/commands/jx_delete_chat/)	 - Deletes one or more chat services resources
 * [jx delete contexts](/commands/jx_delete_contexts/)	 - Deletes one or more Kubernetes contexts
 * [jx delete devpod](/commands/jx_delete_devpod/)	 - Deletes one or more DevPods
-* [jx delete eks](/commands/jx_delete_eks/)	 - Delete EKS cluster.
+* [jx delete eks](/commands/jx_delete_eks/)	 - Deletes EKS cluster.
 * [jx delete environment](/commands/jx_delete_environment/)	 - Deletes one or more Environments
 * [jx delete extension](/commands/jx_delete_extension/)	 - Deletes one or more extensions
 * [jx delete git](/commands/jx_delete_git/)	 - Deletes one or more Git resources
