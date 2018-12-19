@@ -15,7 +15,7 @@
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
-    "clipboard": "^1.6.1",
+    "clipboard": "^2.0.4",
     "css-loader": "^0.28.0",
     "cssnano": "^4.1.7",
     "docsearch.js": "^2.3.3",
