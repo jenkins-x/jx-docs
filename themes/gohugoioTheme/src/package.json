@@ -16,7 +16,7 @@
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
     "clipboard": "^2.0.4",
-    "css-loader": "^0.28.0",
+    "css-loader": "^0.28.11",
     "cssnano": "^4.1.7",
     "docsearch.js": "^2.3.3",
     "extract-text-webpack-plugin": "^2.1.0",
