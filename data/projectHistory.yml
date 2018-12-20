@@ -1,4 +1,4 @@
-lastReportDate: November 26 2018
+lastReportDate: December 20 2018
 reports:
 - reportDate: March 18 2018
   starsMetrics:
@@ -222,6 +222,34 @@ reports:
   userChatMetrics:
     count: 108
     total: 946
+- reportDate: December 20 2018
+  starsMetrics:
+    count: 95
+    total: 1853
+  downloadMetrics:
+    count: 20274
+    total: 120123
+  issueMetrics:
+    count: 98
+    total: 934
+  pullRequestMetrics:
+    count: 113
+    total: 1953
+  commitMetrics:
+    count: 515
+    total: 7793
+  newCommitterMetrics:
+    count: 26
+    total: 210
+  newContributorMetrics:
+    count: 29
+    total: 260
+  developerChatMetrics:
+    count: 47
+    total: 498
+  userChatMetrics:
+    count: 105
+    total: 1051
 contributors:
 - michaelneale
 - rajdavies
@@ -333,6 +361,14 @@ contributors:
 - amuniz
 - tedwon
 - stubrowncloudbees
+- zrlay
+- onuryartasi
+- runzexia
+- aweis89
+- g-foster
+- martijnburger
+- salbertson
+- yuwzho
 committers:
 - rawlingsj
 - jstrachan
@@ -416,3 +452,8 @@ committers:
 - jenkins-x-bot
 - jglick
 - agentgonzo
+- martijnburger
+- aweis89
+- yuwzho
+- runzexia
+- salbertson
