@@ -1,5 +1,5 @@
 ---
-date: 2018-12-20T09:31:56Z
+date: 2018-12-20T11:35:56Z
 title: "jx step validate"
 slug: jx_step_validate
 url: /commands/jx_step_validate/
@@ -22,7 +22,7 @@ jx step validate [flags]
 
 ```
   # Validates that the jx version is new enough
-  jx validate --min-jx-version 1.3.675
+  jx validate --min-jx-version 1.3.676
 ```
 
 ### Options

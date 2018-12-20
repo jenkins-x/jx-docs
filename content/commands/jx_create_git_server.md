@@ -1,29 +1,29 @@
 ---
-date: 2018-12-20T09:31:56Z
+date: 2018-12-20T11:35:56Z
 title: "jx create git server"
 slug: jx_create_git_server
 url: /commands/jx_create_git_server/
 ---
 ## jx create git server
 
-Creates a new Git server URL
+Creates a new Git server from a URL and kind
 
 ### Synopsis
 
 Adds a new Git Server URL
 
 ```
-jx create git server kind [url] [flags]
+jx create git server [flags]
 ```
 
 ### Examples
 
 ```
   # Add a new Git server
-  jx create git server -kind bitbucket --url http://bitbucket.org
+  jx create git server --kind bitbucketserver --url http://bitbucket.acme.org
   
   # Add a new Git server with a name
-  jx create git server -k bitbucket -u http://bitbucket.org -n MyBitBucket
+  jx create git server -k bitbucketcloud -u http://bitbucket.org -n MyBitBucket
   
   For more documentation see: [https://jenkins-x.io/developing/git/](https://jenkins-x.io/developing/git/)
 ```

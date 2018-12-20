@@ -1,5 +1,5 @@
 ---
-date: 2018-12-20T09:31:56Z
+date: 2018-12-20T11:35:56Z
 title: "jx create git"
 slug: jx_create_git
 url: /commands/jx_create_git/
@@ -25,7 +25,7 @@ jx create git [flags]
 ### SEE ALSO
 
 * [jx create](/commands/jx_create/)	 - Create a new resource
-* [jx create git server](/commands/jx_create_git_server/)	 - Creates a new Git server URL
+* [jx create git server](/commands/jx_create_git_server/)	 - Creates a new Git server from a URL and kind
 * [jx create git token](/commands/jx_create_git_token/)	 - Adds a new API token for a user on a Git server
 * [jx create git user](/commands/jx_create_git_user/)	 - Adds a new user to the Git server
 
