@@ -1,7 +1,7 @@
 ---
-title: "Happy Jenkins X Mas!"
+title: "Merry Jenkins X Mas!"
 date: 2018-12-20T15:07:24Z
-description: "Happy Jenkins X Mas!"
+description: "Merry Jenkins X Mas!"
 categories: [blog]
 keywords: []
 slug: "changes-20-december-2018"
