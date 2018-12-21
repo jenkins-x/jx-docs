@@ -136,7 +136,7 @@ This will use the `dev` profile to generate a new docker image using the generat
 
 When you created your DevPod it was associated with an _Edit Environment_ for your _username_ so that any apps deployed in a DevPod will appear in your _Edit Environment_.
 
-So once the `skaffold dev -p dev` (what `watch.s`h does) command has built the docker image and installed the helm chart, your app will show up via  [jx get applications](/commands/applications):
+So once the `skaffold dev -p dev` (what `watch.sh` does) command has built the docker image and installed the helm chart, your app will show up via  [jx get applications](/commands/applications):
                                                                                                  
 ```shell
 jx get applications
