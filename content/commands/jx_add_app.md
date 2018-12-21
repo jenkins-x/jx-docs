@@ -1,5 +1,5 @@
 ---
-date: 2018-12-21T11:30:54Z
+date: 2018-12-21T18:37:00Z
 title: "jx add app"
 slug: jx_add_app
 url: /commands/jx_add_app/
