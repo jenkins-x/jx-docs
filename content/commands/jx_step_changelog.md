@@ -1,5 +1,5 @@
 ---
-date: 2018-12-21T08:26:17Z
+date: 2018-12-21T08:57:44Z
 title: "jx step changelog"
 slug: jx_step_changelog
 url: /commands/jx_step_changelog/
@@ -62,6 +62,7 @@ jx step changelog [flags]
       --header-file string         The file name of the changelog header in markdown for the changelog. Can use go template expressions on the ReleaseSpec object: https://golang.org/pkg/text/template/
       --headless                   Enable headless operation if using browser automation
   -h, --help                       help for changelog
+      --include-merge-commits      Include merge commits when generating the changelog
       --install-dependencies       Should any required dependencies be installed automatically
       --log-level string           Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
       --no-brew                    Disables the use of brew on macOS to install or upgrade command line dependencies
