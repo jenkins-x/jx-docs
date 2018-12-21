@@ -1,5 +1,5 @@
 ---
-date: 2018-12-21T01:29:23Z
+date: 2018-12-21T01:48:16Z
 title: "jx create devpod"
 slug: jx_create_devpod
 url: /commands/jx_create_devpod/
@@ -47,7 +47,7 @@ jx create devpod [flags]
       --pull-secrets string       The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
   -c, --request-cpu string        The request CPU of the DevPod (default "1")
       --reuse                     Reuse an existing DevPod if a suitable one exists. The DevPod will be selected based on the label (or current working directory) (default true)
-      --service-account string    The ServiceAccount name used for the DevPod (default "jenkins")
+      --service-account string    The ServiceAccount name used for the DevPod
       --shell string              The name of the shell to invoke in the DevPod. If nothing is specified it will use 'bash'
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
   -s, --suffix string             The suffix to append the pod name
