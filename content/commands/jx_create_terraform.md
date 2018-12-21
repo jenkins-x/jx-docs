@@ -1,5 +1,5 @@
 ---
-date: 2018-12-21T02:31:05Z
+date: 2018-12-21T08:26:17Z
 title: "jx create terraform"
 slug: jx_create_terraform
 url: /commands/jx_create_terraform/
@@ -45,6 +45,7 @@ jx create terraform [flags]
   -f, --fork-git-repo string                   The Git repository used as the fork when creating new Organisation Git repos (default "https://github.com/jenkins-x/default-organisation.git")
       --git-api-token string                   The Git API token to use for creating new Git repositories
       --git-private                            Create new Git repositories as private
+      --git-provider-kind string               Kind of Git server. If not specified, kind of server will be autodetected from Git provider URL. Possible values: bitbucketcloud, bitbucketserver, gitea, gitlab, github, fakegit
       --git-provider-url string                The Git server URL to create new Git repositories inside (default "https://github.com")
       --git-username string                    The Git username to use for creating new Git repositories
       --gitops                                 Sets up the local file system for GitOps so that the current installation can be configured or upgraded at any time via GitOps

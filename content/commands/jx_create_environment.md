@@ -1,5 +1,5 @@
 ---
-date: 2018-12-21T02:31:05Z
+date: 2018-12-21T08:26:17Z
 title: "jx create environment"
 slug: jx_create_environment
 url: /commands/jx_create_environment/
@@ -45,6 +45,7 @@ jx create environment [flags]
       --git-api-token string         The Git API token to use for creating new Git repositories
       --git-owner string             Git organisation / owner
       --git-private                  Create new Git repositories as private
+      --git-provider-kind string     Kind of Git server. If not specified, kind of server will be autodetected from Git provider URL. Possible values: bitbucketcloud, bitbucketserver, gitea, gitlab, github, fakegit
       --git-provider-url string      The Git server URL to create new Git repositories inside (default "https://github.com")
   -r, --git-ref string               The Git repo reference for the source code for GitOps based Environments
   -g, --git-url string               The Git clone URL for the source code for GitOps based Environments

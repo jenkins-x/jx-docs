@@ -1,5 +1,5 @@
 ---
-date: 2018-12-21T02:31:05Z
+date: 2018-12-21T08:26:17Z
 title: "jx step bdd"
 slug: jx_step_bdd
 url: /commands/jx_step_bdd/
@@ -48,6 +48,7 @@ jx step bdd [flags]
       --git-owner string                    the git owner of new git repositories created by the tests
       --git-private                         Create new Git repositories as private
   -g, --git-provider string                 the git provider kind
+      --git-provider-kind string            Kind of Git server. If not specified, kind of server will be autodetected from Git provider URL. Possible values: bitbucketcloud, bitbucketserver, gitea, gitlab, github, fakegit
       --git-provider-url string             The Git server URL to create new Git repositories inside (default "https://github.com")
       --git-username string                 The Git username to use for creating new Git repositories
       --gitops                              Sets up the local file system for GitOps so that the current installation can be configured or upgraded at any time via GitOps
