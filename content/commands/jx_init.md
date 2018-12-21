@@ -1,5 +1,5 @@
 ---
-date: 2018-12-21T08:57:44Z
+date: 2018-12-21T11:30:54Z
 title: "jx init"
 slug: jx_init
 url: /commands/jx_init/
@@ -10,7 +10,7 @@ Init Jenkins X
 
 ### Synopsis
 
-This command installs the Jenkins X platform on a connected Kubernetes cluster
+This command initializes the connected Kubernetes cluster for Jenkins X platform installation
 
 ```
 jx init [flags]
