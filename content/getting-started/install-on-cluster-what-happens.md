@@ -43,7 +43,7 @@ If you are using a public cloud, there will be an associated CLI for interacting
 - `eksctl` for [AWS EKS](https://aws.amazon.com/eks/) cluster
 - `oci` for OKS cluster (Oracle Cloud)
 
-If you want to run Jenkins X locally via minikube ou minishift, the following binaries are added:
+If you want to run Jenkins X locally via minikube or minishift, the following binaries are added:
 
 - `oc` (OpenShift CLI) and `minishift` for a local minishift cluster (OpenShift)
 - `minikube` for a local minikube cluster
