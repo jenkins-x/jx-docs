@@ -32,7 +32,7 @@ toc: true
 | Digital Ocean  | | [Planned](https://github.com/jenkins-x/jx/issues/705) | | |
 | GKE | | | | 1.1.x |
 | IBM Cloud  | | | | 1.3.x|
-| Minkube | | | | 1.1.x |
+| Minikube | | | | 1.1.x |
 | Minishift | | | | 1.2.11 |
 | OKE | | Planned | | |
 | OpenShift | | |  | 1.2.11 |
