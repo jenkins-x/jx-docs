@@ -29,7 +29,7 @@
     </div>
 
     <div class="list ma0 pa0 dn dib-l">
-      {{- partial "languages-switcher.html" . -}}
+      {{- partial "languages-switcher.html" (dict "context" . "allTranslations" $.Site.Home.AllTranslations ) -}}
     </div>
 
     <span class="absolute mt1 mt2-l pr3 right-0 top-0">
