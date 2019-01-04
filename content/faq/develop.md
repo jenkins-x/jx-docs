@@ -86,4 +86,22 @@ If you have a developer who is fundamentally opposed to helm's configuration man
 
 Then if you wish to use another configuration management tool you can add it in - e.g. [kustomise support](https://github.com/jenkins-x/jx/issues/2302).
 
+## Can I reuse exposecontroller for my apps?
+
+You should be able to use [exposecontroller](https://github.com/jenkins-x/exposecontroller/blob/master/README.md) directly in any app you deploy in any environment (e.g. Staging or Production) as we already trigger exposecontroller on each new release.
+
+We use [exposecontroller](https://github.com/jenkins-x/exposecontroller/blob/master/README.md) for Jenkins X to handle the generation of `Ingress` resources so that we can support wildcard DNS on a domain or automate the setup of HTTPS/TLS along with injecting external endpoints into applications in ConfigMaps via [annotations](https://github.com/jenkins-x/exposecontroller/blob/master/README.md#using-the-expose-url-in-other-resources).
+
+To get [exposecontroller](https://github.com/jenkins-x/exposecontroller/blob/master/README.md) to generate the `Ingress` for a `Service` just [add the label to your Service](https://github.com/jenkins-x/exposecontroller/blob/master/README.md#label). e.g. add this to your `charts/myapp/templates/service.yaml`:
+
+```yaml 
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp
+  annotations:
+    fabric8.io/expose: "true"  
+```
+
+If you want to inject the URL or host name of the external URL or your ingress just [use these annotations](https://github.com/jenkins-x/exposecontroller/blob/master/README.md#using-the-expose-url-in-other-resources).
 
