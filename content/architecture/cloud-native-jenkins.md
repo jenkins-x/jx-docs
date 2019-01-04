@@ -18,7 +18,7 @@ toc: true
 Jenkins X helps to support _cloud native jenkins_ via:
 
 * orchestrating either [serverless jenkins](/news/serverless-jenkins/) or a Static Jenkins masters per team. This lets teams move towards servlerless while bring along static masters too.
-* each team can install its own Jenkins X in its own namespace (via `jx install -n myteam`)
+* each team can install its own Jenkins X in its own namespace (via `jx install --namespace myteam`)
 * support for different workloads per team (see [jx edit buildpack](/commands/jx_edit_buildpack/)). 
 
 
