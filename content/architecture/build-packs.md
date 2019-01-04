@@ -37,7 +37,7 @@ For example the [jenkins-x-kubernetes](https://github.com/jenkins-x-buildpacks/j
 To do this we've introduced a simple new YAML file format for defining pipelines.
 
 
-### Pipelines 
+# Pipelines 
 
 Each Pipeline YAML file has a number of separate logical pipelines:
 
@@ -45,7 +45,7 @@ Each Pipeline YAML file has a number of separate logical pipelines:
 * `pullRequest` for processing Pull Requests
 * `feature` for processing merges to a feature branch. Though note that the [accelerate book](/about/accelerate/) recommends against long term feature branches. Instead consider using trunk based development which is a practice of high performing teams. 
 
-### Lifecycles
+## Lifecycles
 
 Then each pipeline has a number of distinct lifecycle phases - rather like maven has `clean`, `compile`, `compile-test`, `package` etc. 
 
@@ -57,14 +57,14 @@ The lifecycle phases in Jenkins X Pipeline YAML are:
 * `postBuild`
 * `promote`
 
-### Extending
+## Extending
 
 A Pipeline YAML can extend another YAML file. You can reference a base pipeline YAML via:
 
 * using `file` to reference a relative file path in the same build pack [like this example using file](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/master/packs/maven/pipeline.yaml#L1-L2)
 * using `import` to reference a YAML file which is imported like [this example using import](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/blob/master/packs/maven/pipeline.yaml#L2-L3) which then refers to a [named imported module via git](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/blob/master/packs/imports.yaml#L2-L4)
 
-### Overriding steps
+## Overriding steps
 
 Rather like classes in languages like Java you can override steps in a Pipeline YAML from a base Pipeline YAML. This lets you reuse the steps in a base pipeline's lifecycle then add your own additional steps.
 
@@ -85,7 +85,7 @@ For example for [maven libraries we use this pipeilne.yaml file](https://github.
 
 Then the [maven kubernetes pipeline.yaml](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/blob/master/packs/maven/pipeline.yaml) then [extends](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/blob/master/packs/maven/pipeline.yaml#L2-L3) from the classic pipepeline to add the kubernetes steps
 
-## Creating new build packs
+# Creating new build packs
 
 We love [contributions](/community/) so please consider adding new build packs and [pod templates](/architecture/pod-templates/).
 
