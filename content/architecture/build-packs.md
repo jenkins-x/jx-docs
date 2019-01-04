@@ -59,7 +59,14 @@ The lifecycle phases in Jenkins X Pipeline YAML are:
 
 ### Extending
 
-Rather like classes in languages like Java you can extend a Pipeline YAML from a base Pipeline YAML. This lets you reuse the steps in a base pipeline's lifecycle then add your own additional steps.
+A Pipeline YAML can extend another YAML file. You can reference a base pipeline YAML via:
+
+* using `file` to reference a relative file path in the same build pack [like this example using file](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/master/packs/maven/pipeline.yaml#L1-L2)
+* using `import` to reference a YAML file which is imported like [this example using import](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/blob/master/packs/maven/pipeline.yaml#L2-L3) which then refers to a [named imported module via git](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/blob/master/packs/imports.yaml#L2-L4)
+
+### Overriding steps
+
+Rather like classes in languages like Java you can override steps in a Pipeline YAML from a base Pipeline YAML. This lets you reuse the steps in a base pipeline's lifecycle then add your own additional steps.
 
 By default any steps you define are added after the base pipeline YAML steps like in [this example](https://github.com/jenkins-x/jx/blob/master/pkg/jx/cmd/test_data/step_buildpack_apply/inheritence/pipeline.yaml#L7). 
 
