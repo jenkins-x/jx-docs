@@ -1,5 +1,5 @@
 ---
-date: 2019-01-04T14:50:10Z
+date: 2019-01-04T18:20:32Z
 title: "jx delete environment"
 slug: jx_delete_environment
 url: /commands/jx_delete_environment/
