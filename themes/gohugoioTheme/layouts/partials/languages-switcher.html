@@ -1,7 +1,14 @@
+{{- if .context.IsTranslated -}}
+{{ $currentLan := .context.Language }}
+{{ .context.RelPermalink }}
+{{ $pageURL := .context.RelPermalink}}
 <ul class="list ma0 pa0 dn dib-l">
-{{ range $.Site.Home.AllTranslations }}
+{{ range .allTranslations }}
   <li class="f5 dib mr4" role="menuitem">
-    <a href="{{ .Permalink }}" class="dim gray">{{ .Language.LanguageName }}</a>
+    {{ $pageURL = strings.TrimPrefix "/" $pageURL }}
+    {{ $pageURL = strings.TrimPrefix $currentLan $pageURL }}
+    <a href="{{ .Permalink }}{{ $pageURL }}" class="dim gray">{{ .Language.LanguageName }}</a>
   </li>
 {{ end }}
 </ul>
+{{- end -}}
