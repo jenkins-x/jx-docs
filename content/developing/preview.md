@@ -51,9 +51,10 @@ You can find possible charts to install by searching helm. e.g. to find a `postg
 helm search postgres
 ```
 
-Once you know the chart and the repository its in you can add it to your `charts/preview/requirements.yaml` file (the `postgresql` section at the end of the file):
+Once you know the chart and the repository its in you can add it to your `charts/preview/requirements.yaml` file (the `postgresql` section in dependencies array):
 
 ```yaml
+# !! File must end with empty line !!
 dependencies:
 - alias: expose
   name: exposecontroller
@@ -63,13 +64,20 @@ dependencies:
   name: exposecontroller
   repository: https://chartmuseum.build.cd.jenkins-x.io
   version: 2.3.56
-- alias: preview
-  name: demo179
-  repository: file://../demo179
+
+  # Ephemeral PostgeSQL created in preview environment.
 - name: postgresql
   repository: https://kubernetes-charts.storage.googleapis.com
   version: 2.6.2
+
+  # !! "alias: preview" must be last entry in dependencies array !!
+  # !! Place custom dependencies above !!
+- alias: preview
+  name: demo179
+  repository: file://../demo179
+
 ```
+Note: `- alias: preview` must be last entry in dependecies array and `requirements.yaml` file must end with empty line.
 
 ### Service Linking
 
