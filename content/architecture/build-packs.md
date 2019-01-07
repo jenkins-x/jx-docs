@@ -76,7 +76,7 @@ If you want to completely replace all the steps from a base pipeline for a parti
 
 ## Example Pipeline
 
-For example for [maven libraries we use this pipeilne.yaml file](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/master/packs/maven/pipeline.yaml) which:
+For example for [maven libraries we use this pipeline.yaml file](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/master/packs/maven/pipeline.yaml) which:
 
 * [extends](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/master/packs/maven/pipeline.yaml#L1-L2) the [common pipeline](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/master/packs/pipeline.yaml) that sets up git and defines common post build steps
 * [configures the agent](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/master/packs/maven/pipeline.yaml#L3-L5) in terms of [pod template](/architecture/pod-templates/) and container name
