@@ -19,9 +19,21 @@ toc: true
 
 This page describes any specific manual work arounds you may require above and beyond changes described in the [News section](/news/) or using [jx upgrade]() to upgrade the [CLI](http://localhost:1313/commands/jx_upgrade_cli/) or [platform](/commands/jx_upgrade_platform/)
 
-## 7 Jan 2019: knative upgrade
+## 8 Jan 2019: Prow and Knative Build upgrade
 
-If you wish to upgrade to the latest [serverless jenkins](/news/serverless-jenkins/) and Prow we recommend you uninstall knative, update the platform and reinstall again:
+There are three critical bugs with the prow based Jenkins X
+https://github.com/jenkins-x/jx/issues/2539
+https://github.com/jenkins-x/jx/issues/2561
+https://github.com/jenkins-x/jx/issues/2544
+
+The fixes involve upgrading to a newer version of Prow and Knative Build, the latter caused an issue when performing a traditional `jx upgrade addon` so we recommend uninstalling Knative Build first (removes Knative Build related Custom Resource Definitions) and install the latest release.  
+
+The `jx upgrade addon prow` will now handle this for you but this means any existing builds or custom changes to `BuildTemplate` resources will be lost.
+
+```
+jx upgrade cli
+jx upgrade addon prow
+```
 
 ## 5 Jan 2019: environment git repository issue
 
