@@ -1,16 +1,16 @@
 ---
-date: 2019-01-07T17:03:13Z
+date: 2019-01-07T20:37:53Z
 title: "jx delete addon knative-build"
 slug: jx_delete_addon_knative-build
 url: /commands/jx_delete_addon_knative-build/
 ---
 ## jx delete addon knative-build
 
-Deletes the KnativeBuild app for Kubernetes addon
+Deletes the Knative Build app for Kubernetes addon
 
 ### Synopsis
 
-Deletes the KnativeBuild addon
+Deletes the Knative Build addon
 
 ```
 jx delete addon knative-build [flags]
@@ -19,8 +19,8 @@ jx delete addon knative-build [flags]
 ### Examples
 
 ```
-  # Deletes the KnativeBuild addon
-  jx delete addon KnativeBuild
+  # Deletes the Knative Build addon
+  jx delete addon knative-build
 ```
 
 ### Options
