@@ -73,7 +73,7 @@ dependencies:
 
 ### Service Linking
 
-If you need any additional resources like `ConfigMap`, `Secret` or `Service` resources you can add them to `charts/preview/resources/*.yaml`.
+If you need any additional resources like `ConfigMap`, `Secret` or `Service` resources you can add them to `charts/preview/templates/*.yaml`.
 
 You can always _service link_ from the Preview Environment namespace to other namespaces by creating a `Service` with an `externalName` which links to a `Service` running in another namespace (such as Staging or Production) or to point to a service running outside of the Kubernetes cluster completely. 
 
