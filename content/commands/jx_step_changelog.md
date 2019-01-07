@@ -1,5 +1,5 @@
 ---
-date: 2019-01-07T12:27:50Z
+date: 2019-01-07T16:15:30Z
 title: "jx step changelog"
 slug: jx_step_changelog
 url: /commands/jx_step_changelog/

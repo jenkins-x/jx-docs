@@ -1,5 +1,5 @@
 ---
-date: 2019-01-07T12:27:50Z
+date: 2019-01-07T16:15:30Z
 title: "jx create addon sso"
 slug: jx_create_addon_sso
 url: /commands/jx_create_addon_sso/
@@ -31,6 +31,7 @@ jx create addon sso [flags]
   -b, --batch-mode                In batch mode the command never prompts for user input
       --cluster                   Enable cluster wide Ingress upgrade
       --dex-version string        The dex chart version to install)
+      --force                     Forces upgrades of all webooks even if ingress URL has not changed
       --headless                  Enable headless operation if using browser automation
       --helm-update               Should we run helm update first to ensure we use the latest version (default true)
   -h, --help                      help for sso

@@ -1,5 +1,5 @@
 ---
-date: 2019-01-07T12:27:50Z
+date: 2019-01-07T16:15:30Z
 title: "jx upgrade ingress"
 slug: jx_upgrade_ingress
 url: /commands/jx_upgrade_ingress/
@@ -28,6 +28,7 @@ jx upgrade ingress [flags]
 ```
   -b, --batch-mode                In batch mode the command never prompts for user input
       --cluster                   Enable cluster wide Ingress upgrade
+      --force                     Forces upgrades of all webooks even if ingress URL has not changed
       --headless                  Enable headless operation if using browser automation
   -h, --help                      help for ingress
       --install-dependencies      Should any required dependencies be installed automatically
