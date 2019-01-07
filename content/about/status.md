@@ -23,5 +23,10 @@ This page describes any specific manual work arounds you may require above and b
 
 If you wish to upgrade to the latest [serverless jenkins](/news/serverless-jenkins/) and Prow we recommend you uninstall knative, update the platform and reinstall again:
 
+## 5 Jan 2019: environment git repository issue
+
+There was a regression added a few weeks ago which led to new installations setting up invalid `exposecontroller` configuration in your `Staging/Production` git repositories. See the [issue and workaround](https://github.com/jenkins-x/jx/issues/2591#issuecomment-451516674)
+
+Make sure that the `env/values.yaml` file for your environment git repository uses `expose:` as the key in the YAML and not `exposecontroller:` - if it uses `exposecontroller:` just edit it back to `expose:` and you should be good to go!
 
 
