@@ -59,3 +59,20 @@ This resource stores the pipeline status in terms of Jenkins Pipeline stages plu
 
 This resource is also used by the [jx get activities](/commands/jx_get_activities) command
   
+### Team
+
+The `Team` Custom Resource is created via the [jx create team](/commands/jx_create_team/) command and is used by the `team controller` to watch for new `Team` resources and then create an installation of Jenkins X in the teams namespace. For more background on teams see the [team feature](/about/features/#teams)
+
+### User
+
+The `User` Custom Resource is used to support RBAC across the various [environments](/about/features/#environments) and [preview environments](about/features/#preview-environments) in teams.
+
+Its also used by the [jx edit userroles](/commands/jx_edit_userroles/) to change user roles.
+
+### EnvironmentRoleBinding
+
+The `EnvironmentRoleBinding` resource is like the standard Kubernetes [RoleBinding](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.13/#rolebinding-v1-rbac-authorization-k8s-io) resource but it allows mapping of a `Role` to multiple [environments](/about/features/#environments) and [preview environments](about/features/#preview-environments) in a team by using a selector of Environments on which to bind roles.
+
+This makes it easy to bind a `Role` to either all environments, all preview environments or both or a given set of users.
+
+ 
