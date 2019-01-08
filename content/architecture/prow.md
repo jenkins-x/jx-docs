@@ -1,7 +1,7 @@
 ---
 title: Prow
 linktitle: Prow
-description: The CI/CD system that builds Kubernetes itself
+description: The CI/CD system that Kubernetes uses to build itself
 date: 2019-01-08
 publishdate: 2019-01-08
 lastmod: 2019-01-08
