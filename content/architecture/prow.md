@@ -130,4 +130,3 @@ It will query GH every once in a while trying to merge PR’s. It doesn’t reac
 ## Ongoing efforts
 Using init-containers for steps [may change in the future](https://github.com/knative/build/pull/470), due to limitations on init-containers.
 Knative Build CRD is being deprecated in favor of the Pipeline CRD. The Build CRD will be superseeded by the new Task CRD, but they are really similar.
-Instead of using the Jenkins File Runner, there are plans to translate from a Jenkinsfile to a declarative Pipeline CRD. Reference: https://docs.google.com/document/d/1kGWWbpmQFuwIq29iQ2PSg-0xcOFc2U2HdnW47_rJeUw/
