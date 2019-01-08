@@ -53,3 +53,8 @@ to get you on the latest CLI then you can upgrade the platform:
 ```shell 
 jx upgrade platform
 ```
+
+## How does `--prow` differ from `--gitops`
+
+* `--prow` uses [serverless jenkins](/news/serverless-jenkins/) and uses [prow](https://github.com/kubernetes/test-infra/tree/master/prow) to implement ChatOps on Pull Requests.
+*  `--gitops` is still work in progress but will use GitOps to manage the Jenkins X installation (the dev environment) so that the platform installation is all stored in a git repo and upgrading / adding Apps / changing config is all changed via Pull Requests like changes to promotion of applications to the Staging or Production environments

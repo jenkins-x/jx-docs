@@ -37,14 +37,27 @@ An _environment_ is a place where applications get deployed. Developers often re
 
 With Jenkins X each _team_ gets its own Environments. By default Jenkins X creates a `Staging` and `Production` environment for each team but you can create new environments via [jx create environment](/commands/jx_create_environment).
 
+There is also the `Dev` environment which is where tools like Jenkins, Nexus or Prow are installed and where CI/CD pipelines run.
+
 We use GitOps to manage the configuration and version of the kubernetes resources which are deployed to each environment. So each Environment has its own git repository that contains all the Helm Charts, their versions and the configuration for the applications be run in the environment. 
 
-An Environment maps to a namespace in a Kubernetes cluster. When Pull Requests are merged into the environments git repository the pipeline runs for the environment which then applies the  helm charts in git to the environments namespace.
+An Environment maps to a namespace in a Kubernetes cluster. When Pull Requests are merged into the environments git repository the pipeline runs for the environment which then applies the helm charts in git to the environments namespace.
 
 This means both developers and operations can use the same git repository to manage all the configuration and versions of all the applications and resources for an environment in the same git repository and all changes to the environment are captured in git. So its easy to see who made changes when and more importantly its then easy to revert changes which cause bad things to happen.
 
 <img src="/images/gitops.png" class="img-thumbnail">
 
+## Teams
+
+A Team in Jenkins X is represented by an install of Jenkins X in a separate namespace. 
+
+You can install Jenkins X into different namespaces in the same cluster if you wish using the `--namespace` command line argument in [jx create cluster](/commands/jx_create_cluster/) or [jx install](/commands/jx_install/). Note that to support multiple installs of Jenkins X in the same cluster you need to [avoid Tiller if you are using helm 2.x](/news/helm-without-tiller/).
+
+You can also use the [jx create team](/commands/jx_create_team/) CLI which creates a new `Team` [Custom Resource](/architecture/custom-resources/) then in the background the team controller will create a new Jenkins X install in the teams namespaces, by default reusing the same underlying nexus and docker registry.
+
+See the [configuration guide](/getting-started/config/) for more details on how to share resources like Nexus across Teams.
+
+ 
 ## Promotion
 
 Promotion is implemented with GitOps by generating a pull request on the Environment's git repository  so that all changes go through git for audit, approval and so that any change is easy to revert.
