@@ -20,13 +20,13 @@ toc: true
 Jenkins X can be installed on 1.8 or later of Kubernetes. The requirements are:
 
 * RBAC is enabled
-* your kubernetes cluster has a [default storage class](https://kubernetes.io/docs/concepts/storage/storage-classes/) setup so that `Persistent Volume Claims` can be bound to `Persistent Volumes`
-* If not using the `aws` or `eks` providers then we need insecure docker registries are enabled. This is so that pipelines can use a docker registry running inside the kubernetes cluster (which typically is not public so no https support). You can modify your pipelines to use other registries later.
-* A cluster with at least 4 vCpus in addition to the master node (e.g. 2 m4.large nodes + m4.large master)
+* Your Kubernetes cluster has a [default storage class](https://kubernetes.io/docs/concepts/storage/storage-classes/) setup so that `Persistent Volume Claims` can be bound to `Persistent Volumes`
+* If not using the `aws` or `eks` providers, then we need to make sure that insecure Docker registries are enabled. This is so that pipelines can use a Docker registry running inside the Kubernetes cluster (which typically is not public, so no https support). You can modify your pipelines to use other registries later.
+* A cluster with at least 4 vCPUs in addition to the master node (e.g. 2 m4.large worker nodes + 1 m4.large master node)
 
 ### Validating cluster conformance
 
-You can validate that your cluster is compliant with Jenkinx X by executing the following command:
+You can validate that your cluster is compliant with Jenkins X by executing the following command:
 
     jx compliance run
 
@@ -48,17 +48,17 @@ All the resources created by the conformance tests can be cleaned up with:
 
 ## Using AWS
 
-If you are using AWS be sure to check out the detailed blog on [Continuous Delivery with Amazon EKS and Jenkins X](https://aws.amazon.com/blogs/opensource/continuous-delivery-eks-jenkins-x/) by [Henryk Konsek](https://twitter.com/hekonsek) which goes into lots of detail on how to setup AWS + EKS with Jenkins X
+If you are using AWS, be sure to check out the detailed blog on [Continuous Delivery with Amazon EKS and Jenkins X](https://aws.amazon.com/blogs/opensource/continuous-delivery-eks-jenkins-x/) by [Henryk Konsek](https://twitter.com/hekonsek) which goes into lots of detail on how to setup AWS + EKS with Jenkins X.
 
 ### Ingress on AWS
 
-On AWS the ideal setup is to use a Route 53 DNS wildcard CNAME to point `*.somedomain` at your ELB or NLB host name; then when prompted by `jx` you install `somedomain` (where `somedomain` is an actual DNS domain/subdomain you own).
+On AWS, the ideal setup is to use a Route 53 DNS wildcard CNAME to point `*.somedomain` at your ELB or NLB host name. Then, when prompted by `jx`, you install `somedomain` (where `somedomain` is an actual DNS domain/subdomain you own).
 
-Then all the `Ingress` resources for any exposed service in any namespace will appear as `mysvc.myns.somedomain` - whether for things like Jenkins or Nexus or for your own microservices or Preview Environments.
+Then, all the `Ingress` resources for any exposed service in any namespace will appear as `mysvc.myns.somedomain` - whether for things like Jenkins or Nexus or for your own microservices or Preview Environments.
 
 Using wildcard DNS pointing to your ELB/NLB also means you'll be able to use all the availability zones on AWS.
 
-The `jx` command will ask you if you want to automate the setup fo the Route 53 wildcard CNAME. If you want to do it yourself you need to point to the ELB host name defined via:
+The `jx` command will ask you if you want to automate the setup fo the Route 53 wildcard CNAME. If you want to do it yourself, you need to point to the ELB host name defined via:
 
 ```
 kubectl get service -n kube-system jxing-nginx-ingress-controller  -oyaml | grep hostname
@@ -66,17 +66,17 @@ kubectl get service -n kube-system jxing-nginx-ingress-controller  -oyaml | grep
 
 #### Avoiding DNS
 
-If you want to kick the tyres of Jenkins X without going to the trouble of getting a DNS domain name to use and setting up wildcard DNS you can instead use an NLP and use one of the IP addresses of one of the availability zones as your domain via `$IP.ip`.
+If you want to kick the tires of Jenkins X without going to the trouble of getting a DNS domain name to use and setting up wildcard DNS, you can instead use an NLB and use one of the IP addresses of one of the availability zones as your domain via `$IP.ip`.
 
-This is not really intended for real production installations; but can be a quick way to get started trying out Jenkins X.
+This is not really intended for real production installations. However, it can be a quick way to get started trying out Jenkins X.
 
-When using `jx install --provider=(aws|eks)` you are prompted if you want to use DNS and optionally setup a wildcard DNS CNAME record on Route 53; if not we are assuming you're gonna avoid DNS to kick the tyres on a single availability zone IP address by resolving the NLB host name to one of the availability zone IP addresses.
+When using `jx install --provider=(aws|eks)`, you are prompted if you want to use DNS and optionally setup a wildcard DNS CNAME record on Route 53. If not, we assume you're going to avoid DNS to kick the tires on a single availability zone IP address by resolving the NLB host name to one of the availability zone IP addresses.
 
 
 
 ### Getting registries to work on AWS with cluster set up with kops
 
-The default on AWS is to use ECR as the docker container registry. For this to work the nodes need permission to upload images to ECR. If you instead want to use the embedded docker registry of Jenkins X inside your kubernetes cluster you will need to enable insecure docker registries.
+The default on AWS is to use ECR as the Docker container registry. For this to work, the nodes need permission to upload images to ECR. If you instead want to use the embedded Docker registry of Jenkins X inside your Kubernetes cluster, you will need to enable insecure Docker registries.
 
 Note that you may want to use the [jx create cluster aws](/getting-started/create-cluster/#using-amazon-aws) command which automates all of this for you!
 
@@ -131,7 +131,7 @@ spec:
     logDriver: ""
 ```
 
-That IP range, `100.64.0.0/10`, works on AWS but you may need to change it on other kubernetes clusters; it depends on the IP range of kubernetes services.
+That IP range, `100.64.0.0/10`, works on AWS, but you may need to change it on other Kubernetes clusters. It depends on the IP range of Kubernetes services.
 
 Then save the changes. You can verify your changes via:
 
@@ -152,15 +152,15 @@ You should now be good to go!
 
 ## Installing Jenkins X on a cloud
 
-To install Jenkins X on an existing kubernetes cluster you can then use the [jx install](/commands/jx_install) command:
+To install Jenkins X on an existing Kubernetes cluster, you can then use the [jx install](/commands/jx_install) command:
 
     jx install
 
-If you know the provider you can specify that if you prefer on the command line. e.g.
+If you know the provider, you can specify the provider on the command line. e.g.
 
     jx install --provider=aws
 
-Note if you wish to use a different git provider than GitHub for your environments see [how to use a different git provider](/developing/git/#using-a-different-git-provider-for-environments)
+Note: if you wish to use a different Git provider than GitHub for your environments, see [how to use a different Git provider](/developing/git/#using-a-different-git-provider-for-environments)
 
 ## Installing Jenkins X on premise
 
@@ -169,26 +169,26 @@ __Prerequisits__
 - RBAC enabled
 - A default cluster [dynamic storage class](https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/) for provisioning persistent volumes.
 
-When using an on premise kubernetes cluster you can use this command line:
+When using an on premise Kubernetes cluster, you can use this command line:
 
     jx install --provider=kubernetes --on-premise
 
-This will default the argument for `--external-ip` to access services inside your cluster to use the kubernetes master IP address.
+This will default the argument for `--external-ip` to access services inside your cluster to use the Kubernetes master IP address.
 
-If you wish to use a different external IP address you can use:
+If you wish to use a different external IP address, you can use:
 
     jx install --provider=kubernetes --external-ip 1.2.3.4
 
-Otherwise the `jx install` will try and wait for the Ingress Controllers `Service.Status.LoadBalancer.Ingress` to resolve to an IP address - which can fail on premise.   
+Otherwise, the `jx install` will try and wait for the Ingress Controllers `Service.Status.LoadBalancer.Ingress` to resolve to an IP address - which can fail on premise.   
 
-If you already have an ingress controller installed then try:
+If you already have an ingress controller installed, then try:
 
     jx install --provider=kubernetes \
     --skip-ingress \
     --external-ip=10.20.30.40 \
     --domain=10.20.30.40.nip.io
 
-If you do not know the domain or want it extracted from your Ingress deployment try
+If you do not know the domain or want it extracted from your Ingress deployment, try
 
     jx install --provider=kubernetes --external-ip 10.123.0.17 \
     --ingress-service=$(yoursvcname) \
