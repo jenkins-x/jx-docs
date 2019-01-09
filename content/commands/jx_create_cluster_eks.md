@@ -68,7 +68,7 @@ jx create cluster eks [flags]
       --install-only                        Force the install command to fail if there is already an installation. Otherwise lets update the installation
       --keep-exposecontroller-job           Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
       --local-cloud-environment             Ignores default cloud-environment-repo and uses current directory 
-      --local-helm-repo-name string         The name of the helm repository for the installed Chart Museum (default "releases")
+      --local-helm-repo-name string         The name of the helm repository for the installed ChartMuseum (default "releases")
       --log-level string                    Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
       --namespace string                    The namespace the Jenkins X platform should be installed into (default "jx")
       --no-brew                             Disables the use of brew on macOS to install or upgrade command line dependencies

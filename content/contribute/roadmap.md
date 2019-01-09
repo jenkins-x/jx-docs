@@ -55,7 +55,7 @@ toc: true
 | Gitea | | | [In Progress](https://github.com/jenkins-x/jx/issues/432) | |
 | JIRA | | | | 1.1.68 |
 | **Repositories** | | | | |
-| Chart Museum | | | | 1.1.x |
+| ChartMuseum | | | | 1.1.x |
 | Docker Registry | | | | 1.1.x |
 | Nexus | | | | 1.1.x |
 | Artifactory  | | | [In Progress](https://github.com/jenkins-x/jx/issues/805) |

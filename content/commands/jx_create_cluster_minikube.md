@@ -65,7 +65,7 @@ jx create cluster minikube [flags]
       --keep-exposecontroller-job           Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
       --kubernetes-version string           Kubernetes version
       --local-cloud-environment             Ignores default cloud-environment-repo and uses current directory 
-      --local-helm-repo-name string         The name of the helm repository for the installed Chart Museum (default "releases")
+      --local-helm-repo-name string         The name of the helm repository for the installed ChartMuseum (default "releases")
       --log-level string                    Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
   -m, --memory string                       Amount of RAM allocated to the Minikube VM in MB. Defaults to 4096 MB.
       --namespace string                    The namespace the Jenkins X platform should be installed into (default "jx")

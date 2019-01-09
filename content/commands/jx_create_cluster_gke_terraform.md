@@ -69,7 +69,7 @@ jx create cluster gke terraform [flags]
       --keep-exposecontroller-job           Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
       --labels string                       The labels to add to the cluster being created such as 'foo=bar,whatnot=123'. Label names must begin with a lowercase character ([a-z]), end with a lowercase alphanumeric ([a-z0-9]) with dashes (-), and lowercase alphanumeric ([a-z0-9]) between.
       --local-cloud-environment             Ignores default cloud-environment-repo and uses current directory 
-      --local-helm-repo-name string         The name of the helm repository for the installed Chart Museum (default "releases")
+      --local-helm-repo-name string         The name of the helm repository for the installed ChartMuseum (default "releases")
       --log-level string                    Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
   -m, --machine-type string                 The type of machine to use for nodes
       --max-num-nodes string                The maximum number of nodes to be created in each of the cluster's zones

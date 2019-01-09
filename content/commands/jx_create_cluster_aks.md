@@ -77,7 +77,7 @@ jx create cluster aks [flags]
       --keep-exposecontroller-job                Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
   -v, --kubernetes-version az aks get-versions   Version of Kubernetes to use for creating the cluster, such as '1.8.11' or '1.9.6'.  Values from: az aks get-versions.
       --local-cloud-environment                  Ignores default cloud-environment-repo and uses current directory 
-      --local-helm-repo-name string              The name of the helm repository for the installed Chart Museum (default "releases")
+      --local-helm-repo-name string              The name of the helm repository for the installed ChartMuseum (default "releases")
   -l, --location string                          Location to run cluster in
       --log-level string                         Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
       --namespace string                         The namespace the Jenkins X platform should be installed into (default "jx")

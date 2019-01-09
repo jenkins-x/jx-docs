@@ -67,7 +67,7 @@ jx create cluster iks [flags]
       --keep-exposecontroller-job           Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
   -k, --kube-version string                 Specify the Kubernetes version, including at least the major.minor version. If you do not include this flag, the default version is used. To see available versions, run ‘ibmcloud ks kube-versions’.
       --local-cloud-environment             Ignores default cloud-environment-repo and uses current directory 
-      --local-helm-repo-name string         The name of the helm repository for the installed Chart Museum (default "releases")
+      --local-helm-repo-name string         The name of the helm repository for the installed ChartMuseum (default "releases")
   -u, --login string                        Username
   -m, --machine-type string                 The machine type of the worker node. To see available machine types, run 'ibmcloud ks machine-types --zone <zone name>'. Default is 'b2c.4x16', 4 cores CPU, 16GB Memory
   -n, --name string                         Set the name of the cluster that will be created.
