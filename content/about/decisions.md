@@ -84,9 +84,9 @@ Right now Jenkins X doesn't use the docker registry from Nexus.  The main reason
 
 As above, we don't intend to use [this registry](https://github.com/kubernetes/charts/tree/master/stable/docker-registry) long term as we prefer using cloud provider registries like Amazon's [ECR](https://aws.amazon.com/ecr/), [Google Container Regitry](https://cloud.google.com/container-registry/) or Dockerhub for example with the help of Skaffold.
 
-## Chartmuseum
+## ChartMuseum
 
-At time of creating Jenkins X there were few options of how to publish Helm Charts, the Kubernetes community uses GitHub pages but we wanted to find a solution that works for folks that use any git provider.  [Chartmuseum](https://github.com/kubernetes-helm/chartmuseum) is written in Go so performs well in the cloud, it supports multiple cloud storage and works great with Monocular.
+At time of creating Jenkins X there were few options of how to publish Helm Charts, the Kubernetes community uses GitHub pages but we wanted to find a solution that works for folks that use any git provider.  [ChartMuseum](https://github.com/kubernetes-helm/chartmuseum) is written in Go so performs well in the cloud, it supports multiple cloud storage and works great with Monocular.
 
 ## Monocular
 

@@ -96,5 +96,5 @@ The [Jenkins X Platform](https://github.com/jenkins-x/jenkins-x-platform) holds 
 
 - [Jenkins](https://github.com/jenkinsci/jenkins) a CI/CD pipeline solution
 - [Nexus](https://www.sonatype.com/nexus-repository-oss) an artifact repository
-- [Chartmuseum](https://github.com/kubernetes-helm/chartmuseum) - a Helm Chart repository
+- [ChartMuseum](https://github.com/kubernetes-helm/chartmuseum) - a Helm Chart repository
 - [Monocular](https://github.com/kubernetes-helm/monocular) which provides a Web UI for searching and discovering charts deployed into your cluster via Jenkins X.

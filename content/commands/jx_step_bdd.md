@@ -34,7 +34,7 @@ jx step bdd [flags]
       --cleanup-temp-files                  Cleans up any temporary values.yaml used by helm install [default true] (default true)
       --cloud-environment-repo string       Cloud Environments Git repo (default "https://github.com/jenkins-x/cloud-environments")
   -c, --clusters stringArray                the list of cluster kinds to create
-      --default-admin-password string       the default admin password to access Jenkins, Kubernetes Dashboard, Chartmuseum and Nexus
+      --default-admin-password string       the default admin password to access Jenkins, Kubernetes Dashboard, ChartMuseum and Nexus
       --default-environment-prefix string   Default environment repo prefix, your Git repos will be of the form 'environment-$prefix-$envName'
       --delete-team                         Whether we should delete the Team we create for each Git Provider (default true)
       --docker-registry string              The Docker Registry host or host:port which is used when tagging and pushing images. If not specified it defaults to the internal registry unless there is a better provider default (e.g. ECR on AWS/EKS)

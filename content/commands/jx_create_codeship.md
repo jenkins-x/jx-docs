@@ -36,7 +36,7 @@ jx create codeship [flags]
       --codeship-organisation string           The Codeship organisation to use, this will not be stored anywhere
       --codeship-password string               The password to login to Codeship with, this will not be stored anywhere
       --codeship-username string               The username to login to Codeship with, this will not be stored anywhere
-      --default-admin-password string          the default admin password to access Jenkins, Kubernetes Dashboard, Chartmuseum and Nexus
+      --default-admin-password string          the default admin password to access Jenkins, Kubernetes Dashboard, ChartMuseum and Nexus
       --default-environment-prefix string      Default environment repo prefix, your Git repos will be of the form 'environment-$prefix-$envName'
       --docker-registry string                 The Docker Registry host or host:port which is used when tagging and pushing images. If not specified it defaults to the internal registry unless there is a better provider default (e.g. ECR on AWS/EKS)
       --domain string                          Domain to expose ingress endpoints.  Example: jenkinsx.io
