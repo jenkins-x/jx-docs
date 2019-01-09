@@ -596,7 +596,7 @@ Welcome to our new contributors!
 ### Tests
 
 * prow: add some unit tests for OWNERS_ALIASES file (Cosmin Cojocar)
-* add a test to verify the Github provider creation from URL (Cosmin Cojocar)
+* add a test to verify the GitHub provider creation from URL (Cosmin Cojocar)
 
 ### Chores
 

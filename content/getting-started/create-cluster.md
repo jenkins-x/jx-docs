@@ -107,11 +107,11 @@ kubectl get service -n kube-system jxing-nginx-ingress-controller  -oyaml | grep
 
 #### Avoiding DNS
 
-If you want to kick the tyres of Jenkins X without going to the trouble of getting a DNS domain name to use and setting up wildcard DNS you can instead use an NLP and use one of the IP addresses of one of the availability zones as your domain via `$IP.ip`.
+If you want to kick the tires of Jenkins X without going to the trouble of getting a DNS domain name to use and setting up wildcard DNS you can instead use an NLP and use one of the IP addresses of one of the availability zones as your domain via `$IP.ip`.
 
 This is not really intended for real production installations; but can be a quick way to get started trying out Jenkins X.
 
-When using `jx create cluster aws`, `jx create cluster eks` or `jx install --provider=(aws|eks)` you are prompted if you want to use DNS and optionally setup a wildcard DNS CNAME record on Route 53; if not we are assuming you're gonna avoid DNS to kick the tyres on a single availability zone IP address by resolving the NLB host name to one of the availability zone IP addresses.
+When using `jx create cluster aws`, `jx create cluster eks` or `jx install --provider=(aws|eks)` you are prompted if you want to use DNS and optionally setup a wildcard DNS CNAME record on Route 53; if not we are assuming you're gonna avoid DNS to kick the tires on a single availability zone IP address by resolving the NLB host name to one of the availability zone IP addresses.
 
 Note if you wish to use a different git provider than GitHub for your environments see [how to use a different git provider](/developing/git/#using-a-different-git-provider-for-environments)
 

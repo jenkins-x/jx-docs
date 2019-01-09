@@ -58,7 +58,7 @@ $ jx create quickstart  -f http
 
 ### 快速开始的原理？
 
-快速开始的源码托管在 [the jenkins-quickstarts Github organisation](https://github.com/jenkins-x-quickstarts)。
+快速开始的源码托管在 [the jenkins-quickstarts GitHub organisation](https://github.com/jenkins-x-quickstarts)。
 
 当你创建完成后，我们根据工程源码的语言，使用 [Jenkins X build packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) 来匹配最合适的构建。
 
@@ -80,9 +80,9 @@ ls -al ~/.jx/draft/packs/github.com/jenkins-x/draft-packs/packs
    
 ## 添加你自己的快速开始
 
-如果你想要提交一个新的快速开始给 Jenkins X，请把你 Github中的链接[提交问题](https://github.com/jenkins-x/jx/issues/new?labels=quickstart&title=Add%20quickstart&body=Please%20add%20this%20github%20quickstart:) 到[快速开始组织](https://github.com/jenkins-x-quickstarts)，然后它就会出现在菜单 `jx create quickstart` 中。
+如果你想要提交一个新的快速开始给 Jenkins X，请把你 GitHub中的链接[提交问题](https://github.com/jenkins-x/jx/issues/new?labels=quickstart&title=Add%20quickstart&body=Please%20add%20this%20github%20quickstart:) 到[快速开始组织](https://github.com/jenkins-x-quickstarts)，然后它就会出现在菜单 `jx create quickstart` 中。
 
-或者，你是开源项目的一份子，希望管理一套你们项目的快速开始；你可以[提交问题](https://github.com/jenkins-x/jx/issues/new?labels=quickstart&title=Add%20quickstart&body=Please%20add%20this%20github%20quickstart:)，把你们的Github组织详细信息给我们，然后我们会它作为默认的组织添加到命令 [jx create quickstart](/commands/jx_create_quickstart) 中。如果你把快速开始作为一个单独的 Github 组织来维护的话，对于 [jx create quickstart](/commands/jx_create_quickstart) 会更容易些。
+或者，你是开源项目的一份子，希望管理一套你们项目的快速开始；你可以[提交问题](https://github.com/jenkins-x/jx/issues/new?labels=quickstart&title=Add%20quickstart&body=Please%20add%20this%20github%20quickstart:)，把你们的GitHub组织详细信息给我们，然后我们会它作为默认的组织添加到命令 [jx create quickstart](/commands/jx_create_quickstart) 中。如果你把快速开始作为一个单独的 GitHub 组织来维护的话，对于 [jx create quickstart](/commands/jx_create_quickstart) 会更容易些。
 
 在我们完成这些事情之前，你还是可以在命令 `jx create quickstart` 中通过参数 `-g` or `--organisations` 来实现。
 

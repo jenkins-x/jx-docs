@@ -170,7 +170,7 @@ Welcome to our new contributors!
 
 These commits did not use [Conventional Commits](https://conventionalcommits.org/) formatted messages:
 
-* Github is pointers all the way down (#736) (Keith Zantow)
+* GitHub is pointers all the way down (#736) (Keith Zantow)
 * Merge pull request #733 from hekonsek/minikube-vm-driver-help2 (James Strachan)
 * Merge branch 'master' into minikube-vm-driver-help2 (Henryk Konsek)
 * Added missing VM drivers list to cmd help. (Henryk Konsek)
@@ -240,7 +240,7 @@ These commits did not use [Conventional Commits](https://conventionalcommits.org
 
 ### Pull Requests
 
-* [#736](https://github.com/jenkins-x/jx/pull/736) Github is pointers all the way down ([kzantow](https://github.com/kzantow))
+* [#736](https://github.com/jenkins-x/jx/pull/736) GitHub is pointers all the way down ([kzantow](https://github.com/kzantow))
 * [#734](https://github.com/jenkins-x/jx/pull/734) fix:  select correct app server on import for liberty/spring boot pro… ([rajdavies](https://github.com/rajdavies))
 * [#733](https://github.com/jenkins-x/jx/pull/733) Added missing VM drivers list to cmd help ([hekonsek](https://github.com/hekonsek))
 * [#727](https://github.com/jenkins-x/jx/pull/727) Selecting KVM provider for minikube should not throw error ([hekonsek](https://github.com/hekonsek))
