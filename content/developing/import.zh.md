@@ -50,7 +50,7 @@ $ jx import
 
 ### 导入 GitHub 项目
 
-如果你希望从 Github 组织中导入，可以使用：
+如果你希望从 GitHub 组织中导入，可以使用：
  
 ```shell
     jx import --github --org myname

@@ -18,13 +18,13 @@ toc: true
 
 Jenkins X 默认使用你的 git 提供商中的问题跟踪系统来创建和浏览问题。 
 
-例如：如果你在 Github 项目中的源码中，那么你可以输入 [jx create issue](/commands/jx_create_issue)：
+例如：如果你在 GitHub 项目中的源码中，那么你可以输入 [jx create issue](/commands/jx_create_issue)：
 
 ```
 jx create issue -t "lets make things more awesome"
 ```
 
-一个新的问题就会在 Github 上被创建。
+一个新的问题就会在 GitHub 上被创建。
 
 你可以在你的项目上通过 [jx get issues](/commands/jx_get_issues) 列出打开的问题：
 

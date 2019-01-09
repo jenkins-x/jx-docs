@@ -96,5 +96,5 @@ Jenkins X 为 Monocular/Nexus/Jenkins 生成管理员密码并保存到 Secret �
 
 - [Jenkins](https://github.com/jenkinsci/jenkins) 一个 CI/CD 流水线方案
 - [Nexus](https://www.sonatype.com/nexus-repository-oss) 一个制品仓库
-- [Chartmuseum](https://github.com/kubernetes-helm/chartmuseum) 一个 Helm Chart 仓库
+- [ChartMuseum](https://github.com/kubernetes-helm/chartmuseum) 一个 Helm Chart 仓库
 - [Monocular](https://github.com/kubernetes-helm/monocular) 提供了一个 Web UI 用于搜索和发现通过 Jenkins X 部署到您的集群中的 Chart。

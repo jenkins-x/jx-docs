@@ -20,7 +20,7 @@ toc: true
 
 ## 创建派生库
 
-最好在你本地的机器上修改 Jenkins X 文档，检查视觉风格一致。确保你已经在 Github 上派生了 [jx-docs](https://github.com/jenkins-x/jx-docs)，并在你的机器上克隆了这个库。更多信息，你可以查看 [GitHub 的"派生"文档][ghforking] 或者按照 [Jenkins X 开发贡献指导][hugodev]。
+最好在你本地的机器上修改 Jenkins X 文档，检查视觉风格一致。确保你已经在 GitHub 上派生了 [jx-docs](https://github.com/jenkins-x/jx-docs)，并在你的机器上克隆了这个库。更多信息，你可以查看 [GitHub 的"派生"文档][ghforking] 或者按照 [Jenkins X 开发贡献指导][hugodev]。
 
 然后，你可以创建一个独立的分支。一定要选择符合内容类型的描述性分支名称。下面的一个示例分支的名称，你可以用于添加一个新的网站用于展示：
 
@@ -40,7 +40,7 @@ hugo new <DOCS-SECTION>/<new-content-lowercase>.md
 
 ### 语法标准
 
-Jenkins X 文档中所有的页面，使用典型的三个反引号这样的语法。如果你不想花额外的时间来遵循下面的代码块简码，请使用标准的 Github 风格的 markdown。Jenkins X 使用 [highlight.js](https://highlightjs.org/) 的一组语言。
+Jenkins X 文档中所有的页面，使用典型的三个反引号这样的语法。如果你不想花额外的时间来遵循下面的代码块简码，请使用标准的 GitHub 风格的 markdown。Jenkins X 使用 [highlight.js](https://highlightjs.org/) 的一组语言。
 
 你可选的语言是 `xml`/`html`, `go`/`golang`, `md`/`markdown`/`mkd`, `handlebars`, `apache`, `toml`, `yaml`, `json`, `css`, `asciidoc`, `ruby`, `powershell`/`ps`, `scss`, `sh`/`zsh`/`bash`/`git`, `http`/`https`, 和 `javascript`/`js`.
 

@@ -12,8 +12,8 @@
 
 * Pull Request (PR)
 * master
-* Github API
-* Github / Bitbucket
+* GitHub API
+* GitHub / Bitbucket
 * Token
 * ...
 
@@ -32,4 +32,4 @@
 
 # 协作
 
-为了让大家可以高效地协作本地化工作，在准备翻译某一篇文章时，在 Github 的 Issues 中创建一个，并说明要翻译的文件。另外，建议一个 Issue 的周期为一周。并在翻译的 PR 注释中添加 `fixes #351`。或者，创建一个标题以 `WiP:` 开头的 PR，例如：https://github.com/jenkins-x/jx-docs/pull/434
+为了让大家可以高效地协作本地化工作，在准备翻译某一篇文章时，在 GitHub 的 Issues 中创建一个，并说明要翻译的文件。另外，建议一个 Issue 的周期为一周。并在翻译的 PR 注释中添加 `fixes #351`。或者，创建一个标题以 `WiP:` 开头的 PR，例如：https://github.com/jenkins-x/jx-docs/pull/434

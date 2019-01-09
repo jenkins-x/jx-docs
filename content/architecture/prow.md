@@ -20,10 +20,10 @@ Prow is a Kubernetes based CI/CD system. Jobs can be triggered by various types 
 Prow has a microservice architecture implemented as a collection of container images that run as Kubernetes deployments
 
 ## hook
-There is a [binary called hook](https://github.com/kubernetes/test-infra/tree/master/prow/cmd/hook) that receives all the web hooks from Github. It is a stateless server that listens for GitHub webhooks and dispatches them to the appropriate plugins. Hook's plugins are used to trigger jobs, implement 'slash' commands, post to Slack, and more. The hook binary exposes a /hook endpoint to receive the Git server web hook requests (basically all web hooks go to /hook). There is an ingress rule that exposes that endpoint to outside the cluster.
+There is a [binary called hook](https://github.com/kubernetes/test-infra/tree/master/prow/cmd/hook) that receives all the web hooks from GitHub. It is a stateless server that listens for GitHub webhooks and dispatches them to the appropriate plugins. Hook's plugins are used to trigger jobs, implement 'slash' commands, post to Slack, and more. The hook binary exposes a /hook endpoint to receive the Git server web hook requests (basically all web hooks go to /hook). There is an ingress rule that exposes that endpoint to outside the cluster.
 
 ## Prow Plugins
-The [hook binary](https://github.com/kubernetes/test-infra/tree/master/prow/cmd/hook) uses several different plugins that can be enable/disable independently, to do different things. They are basically event handlers for the different Github events received through web hooks. These plugins are configured using a yaml config that is passed from a kubernetes ConfigMap to hook and can be enabled per repo or org. 
+The [hook binary](https://github.com/kubernetes/test-infra/tree/master/prow/cmd/hook) uses several different plugins that can be enable/disable independently, to do different things. They are basically event handlers for the different GitHub events received through web hooks. These plugins are configured using a yaml config that is passed from a kubernetes ConfigMap to hook and can be enabled per repo or org. 
 All plugins have the same interface. The hook process passes two objects to every plugin: a plugin client that let them talk to k8s, git, github, owners file in git repo, slack, etc., and the deserialized GitHub event (like IssueCommentEvent).
 
 ### lgtm plugin
@@ -115,9 +115,9 @@ Remember that each init container uses its own container image. Also, they have 
 [Garbage collector](https://github.com/kubernetes/test-infra/tree/master/prow/cmd/sinker) for ProwJobs and Pods created to run builds. It removes completed ProwJobs after 2 days, and completed pods after 30 minutes.
 
 ## crier
-Another Kubernetes controller that watches ProwJobs CRDs. It contains different reporters to notify ProwJob changes to external clients, like Github status check, or message to PubSub.
+Another Kubernetes controller that watches ProwJobs CRDs. It contains different reporters to notify ProwJob changes to external clients, like GitHub status check, or message to PubSub.
 
-It's used to update the Github commit status when the ProwJob finishes.
+It's used to update the GitHub commit status when the ProwJob finishes.
 
 ## deck
 [Presents a UI of recent jobs](https://prow.k8s.io/), and [command/plugin help information](https://prow.k8s.io/command-help).

@@ -143,7 +143,7 @@ More details on [using git and Jenkins X here](/developing/git/)
 
 ## What are the credentials to access core services?
 
-Authenticated core services of Jenkins X include Jenkins, Nexus, Chartmuseum.  The username is `admin` and the password by default is generated and printed out in the terminal after `jx create cluster` or `jx install`.  If you would like to set the default password yourself then you can set the flag `--default-admin-password=foo` to the two comamnds above.
+Authenticated core services of Jenkins X include Jenkins, Nexus, ChartMuseum.  The username is `admin` and the password by default is generated and printed out in the terminal after `jx create cluster` or `jx install`.  If you would like to set the default password yourself then you can set the flag `--default-admin-password=foo` to the two comamnds above.
 
 If you don't have the terminal console output anymore you can look in the local file `~/.jx/jenkinsAuth.yaml` and find the password that matches your Jenkins server URL for the desired cluster.
 
