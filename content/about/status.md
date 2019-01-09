@@ -17,7 +17,7 @@ categories: [fundamentals]
 toc: true
 ---
 
-This page describes any specific manual work arounds you may require above and beyond changes described in the [News section](/news/) or using [jx upgrade]() to upgrade the [CLI](http://localhost:1313/commands/jx_upgrade_cli/) or [platform](/commands/jx_upgrade_platform/)
+This page describes any specific manual work arounds you may require above and beyond changes described in the [News section](/news/) or using [jx upgrade](/commands/jx_upgrade/) to upgrade the [CLI](/commands/jx_upgrade_cli/) or [platform](/commands/jx_upgrade_platform/)
 
 ## 8 Jan 2019: Prow and Knative Build upgrade
 
