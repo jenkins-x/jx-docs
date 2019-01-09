@@ -1,5 +1,5 @@
 ---
-date: 2019-01-09T12:42:31Z
+date: 2019-01-09T18:49:46Z
 title: "jx gc activities"
 slug: jx_gc_activities
 url: /commands/jx_gc_activities/
@@ -32,6 +32,7 @@ jx gc activities [flags]
       --install-dependencies         Should any required dependencies be installed automatically
       --log-level string             Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
       --no-brew                      Disables the use of brew on macOS to install or upgrade command line dependencies
+  -p, --pull-request-hours int       Number of hours to keep pull request activities for (default 48)
       --pull-secrets string          The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
   -l, --revision-history-limit int   Minimum number of Activities per application to keep (default 5)
       --skip-auth-secrets-merge      Skips merging a local git auth yaml file with any pipeline secrets that are found
