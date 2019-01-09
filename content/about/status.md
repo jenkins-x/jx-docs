@@ -41,4 +41,5 @@ There was a regression added a few weeks ago which led to new installations sett
 
 Make sure that the `env/values.yaml` file for your environment git repository uses `expose:` as the key in the YAML and not `exposecontroller:` - if it uses `exposecontroller:` just edit it back to `expose:` and you should be good to go!
 
+Also we have noticed a possible regression with helm where if you have multiple `expose:` sections in your environment `env/values.yaml` it can disable the `exposecontroller` post install helm hook which can break the creation of `Ingress` resources in your environment - if you have more than one `expose:` sections please combine them into a single entry
 
