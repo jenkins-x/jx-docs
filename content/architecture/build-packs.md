@@ -61,29 +61,29 @@ The lifecycle phases in Jenkins X Pipeline YAML are:
 
 A Pipeline YAML can extend another YAML file. You can reference a base pipeline YAML via:
 
-* using `file` to reference a relative file path in the same build pack [like this example using file](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/master/packs/maven/pipeline.yaml#L1-L2)
-* using `import` to reference a YAML file which is imported like [this example using import](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/blob/master/packs/maven/pipeline.yaml#L2-L3) which then refers to a [named imported module via git](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/blob/master/packs/imports.yaml#L2-L4)
+* using `file` to reference a relative file path in the same build pack [like this example using file](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/f7027df958eb385d50fec0c0368e606a6d5eb9df/packs/maven/pipeline.yaml#L1-L2)
+* using `import` to reference a YAML file which is imported like [this example using import](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/blob/45819e05fa197d9069af682fbbcad0af8d8d605a/packs/maven/pipeline.yaml#L2-L3) which then refers to a [named imported module via git](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/blob/45819e05fa197d9069af682fbbcad0af8d8d605a/packs/imports.yaml#L2-L4)
 
 ## Overriding steps
 
 Rather like classes in languages like Java you can override steps in a Pipeline YAML from a base Pipeline YAML. This lets you reuse the steps in a base pipeline's lifecycle then add your own additional steps.
 
-By default any steps you define are added after the base pipeline YAML steps like in [this example](https://github.com/jenkins-x/jx/blob/master/pkg/jx/cmd/test_data/step_buildpack_apply/inheritence/pipeline.yaml#L7). 
+By default any steps you define are added after the base pipeline YAML steps like in [this example](https://github.com/jenkins-x/jx/blob/0520fe3d9740cbcb1cc9754e173fe7726219f58e/pkg/jx/cmd/test_data/step_buildpack_apply/inheritence/pipeline.yaml#L7). 
 
-You can add steps before the base pipeline steps using the `preSteps: ` property like [this example](https://github.com/jenkins-x/jx/blob/master/pkg/jx/cmd/test_data/step_buildpack_apply/inheritence2/pipeline.yaml#L6)
+You can add steps before the base pipeline steps using the `preSteps: ` property like [this example](https://github.com/jenkins-x/jx/blob/0520fe3d9740cbcb1cc9754e173fe7726219f58e/pkg/jx/cmd/test_data/step_buildpack_apply/inheritence2/pipeline.yaml#L6)
 
-If you want to completely replace all the steps from a base pipeline for a particular lifecycle you can use `replace: true` like in [this example](https://github.com/jenkins-x/jx/blob/master/pkg/jx/cmd/test_data/step_buildpack_apply/inheritence2/pipeline.yaml#L11-L14)
+If you want to completely replace all the steps from a base pipeline for a particular lifecycle you can use `replace: true` like in [this example](https://github.com/jenkins-x/jx/blob/0520fe3d9740cbcb1cc9754e173fe7726219f58e/pkg/jx/cmd/test_data/step_buildpack_apply/inheritence2/pipeline.yaml#L11-L14)
 
 ## Example Pipeline
 
-For example for [maven libraries we use this pipeline.yaml file](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/master/packs/maven/pipeline.yaml) which:
+For example for [maven libraries we use this pipeline.yaml file](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/f7027df958eb385d50fec0c0368e606a6d5eb9df/packs/maven/pipeline.yaml) which:
 
-* [extends](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/master/packs/maven/pipeline.yaml#L1-L2) the [common pipeline](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/master/packs/pipeline.yaml) that sets up git and defines common post build steps
-* [configures the agent](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/master/packs/maven/pipeline.yaml#L3-L5) in terms of [pod template](/architecture/pod-templates/) and container name
-* defines the steps for the `pull request` pipeline [build steps](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/master/packs/maven/pipeline.yaml#L7-L11)  
-* defines the `release` pipeline [set version steps](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/master/packs/maven/pipeline.yaml#L13-L18) and [build steps](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/master/packs/maven/pipeline.yaml#L19-L21)
+* [extends](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/f7027df958eb385d50fec0c0368e606a6d5eb9df/packs/maven/pipeline.yaml#L1-L2) the [common pipeline](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/f7027df958eb385d50fec0c0368e606a6d5eb9df/packs/pipeline.yaml) that sets up git and defines common post build steps
+* [configures the agent](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/f7027df958eb385d50fec0c0368e606a6d5eb9df/packs/maven/pipeline.yaml#L3-L5) in terms of [pod template](/architecture/pod-templates/) and container name
+* defines the steps for the `pull request` pipeline [build steps](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/f7027df958eb385d50fec0c0368e606a6d5eb9df/packs/maven/pipeline.yaml#L7-L11)
+* defines the `release` pipeline [set version steps](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/f7027df958eb385d50fec0c0368e606a6d5eb9df/packs/maven/pipeline.yaml#L13-L18) and [build steps](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/f7027df958eb385d50fec0c0368e606a6d5eb9df/packs/maven/pipeline.yaml#L19-L21)
 
-Then the [maven kubernetes pipeline.yaml](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/blob/master/packs/maven/pipeline.yaml) then [extends](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/blob/master/packs/maven/pipeline.yaml#L2-L3) from the classic pipepeline to add the kubernetes steps
+Then the [maven kubernetes pipeline.yaml](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/blob/45819e05fa197d9069af682fbbcad0af8d8d605a/packs/maven/pipeline.yaml) then [extends](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/blob/45819e05fa197d9069af682fbbcad0af8d8d605a/packs/maven/pipeline.yaml#L2-L3) from the classic pipepeline to add the kubernetes steps
 
 # Creating new build packs
 
