@@ -1,5 +1,5 @@
 ---
-date: 2019-01-10T10:23:41Z
+date: 2019-01-10T12:43:48Z
 title: "jx step bdd"
 slug: jx_step_bdd
 url: /commands/jx_step_bdd/
@@ -98,7 +98,7 @@ jx step bdd [flags]
       --use-current-team                    If enabled lets use the current Team to run the tests
       --user-cluster-role string            The cluster role for the current user to be able to administer helm (default "cluster-admin")
       --username string                     The Kubernetes username used to initialise helm. Usually your email address for your Kubernetes account
-      --vault                               Sets up a Hashicorp Vault for storing secrets during installation
+      --vault                               Sets up a Hashicorp Vault for storing secrets during installation (supported only for GKE)
       --verbose                             Enable verbose logging
       --version string                      The specific platform version to install
 ```

@@ -1,5 +1,5 @@
 ---
-date: 2019-01-10T10:23:41Z
+date: 2019-01-10T12:43:48Z
 title: "jx create cluster minikube"
 slug: jx_create_cluster_minikube
 url: /commands/jx_create_cluster_minikube/
@@ -91,7 +91,7 @@ jx create cluster minikube [flags]
       --tls-acme string                     Used to enable automatic TLS for ingress
       --user-cluster-role string            The cluster role for the current user to be able to administer helm (default "cluster-admin")
       --username string                     The Kubernetes username used to initialise helm. Usually your email address for your Kubernetes account
-      --vault                               Sets up a Hashicorp Vault for storing secrets during installation
+      --vault                               Sets up a Hashicorp Vault for storing secrets during installation (supported only for GKE)
       --verbose                             Enable verbose logging
       --version string                      The specific platform version to install
   -d, --vm-driver string                    VM driver is one of: [hyperkit hyperv kvm kvm2 virtualbox vmwarefusion xhyve]

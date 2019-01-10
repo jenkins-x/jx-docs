@@ -1,5 +1,5 @@
 ---
-date: 2019-01-10T10:23:41Z
+date: 2019-01-10T12:43:48Z
 title: "jx create cluster iks"
 slug: jx_create_cluster_iks
 url: /commands/jx_create_cluster_iks/
@@ -100,7 +100,7 @@ jx create cluster iks [flags]
       --trusted                             Optional: Enable trusted cluster feature.
       --user-cluster-role string            The cluster role for the current user to be able to administer helm (default "cluster-admin")
       --username string                     The Kubernetes username used to initialise helm. Usually your email address for your Kubernetes account
-      --vault                               Sets up a Hashicorp Vault for storing secrets during installation
+      --vault                               Sets up a Hashicorp Vault for storing secrets during installation (supported only for GKE)
       --version string                      The specific platform version to install
       --workers string                      The number of cluster worker nodes. Defaults to 3.
   -z, --zone string                         Specify the zone where you want to create the cluster, the options depend on what region that you are logged in to. To see available zones, run 'ibmcloud ks zones'. Default is 'wdc07'
