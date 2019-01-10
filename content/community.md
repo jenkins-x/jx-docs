@@ -30,14 +30,15 @@ If you do not already have an account created for the `kubernetes` workspace you
 
 ## Office Hours
 
-We meet every other Thursday at 5pm BST / 12pm US Eastern at [https://zoom.us/j/758242060](https://zoom.us/j/758242060). 
+We meet every other Thursday at 5pm BST / 12pm US Eastern at [zoom](https://zoom.us/j/163162963). 
 
 Feel free to  [add your questions to the doc](https://docs.google.com/document/d/1wHdBlZAN-ndPELuBoM5HBnYiQLvcz92-euXne2mKOEI/edit) or hangout live and ask chat in person.
 
-Next meeting scheduled Thursday 8th November [https://zoom.us/j/758242060](https://zoom.us/j/758242060)
+Next meeting scheduled Thursday 8th November [here](https://zoom.us/j/163162963)
 
 Previous Videos:
 
+* [13th December, 2018 - from KubeCon US](https://www.youtube.com/watch?v=TF_Mxq5sDsI&t)
 * [6th September, 2018](https://www.youtube.com/watch?v=2bl-3abyFe4)
 * [9th August, 2018](https://www.youtube.com/watch?v=0NUtGVTBLto)
 * [26th July, 2018](https://www.youtube.com/watch?v=Io3p7NurYqY&t)
