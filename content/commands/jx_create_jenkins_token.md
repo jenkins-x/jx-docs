@@ -1,5 +1,5 @@
 ---
-date: 2019-01-11T12:12:22Z
+date: 2019-01-11T12:42:21Z
 title: "jx create jenkins token"
 slug: jx_create_jenkins_token
 url: /commands/jx_create_jenkins_token/
@@ -34,7 +34,7 @@ jx create jenkins token [username] [flags]
 ```
   -t, --api-token string          The API Token for the user
   -b, --batch-mode                In batch mode the command never prompts for user input
-      --browser                   Use a Chrome browser to automatically find the API token if the user and password are known
+      --browser                   Use REST calls to automatically find the API token if the user and password are known
       --headless                  Enable headless operation if using browser automation
   -h, --help                      help for token
       --install-dependencies      Should any required dependencies be installed automatically
@@ -44,7 +44,7 @@ jx create jenkins token [username] [flags]
   -p, --password string           The User password to try automatically create a new API Token
       --pull-secrets string       The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
-      --timeout string            The timeout if using browser automation to generate the API token (by passing username and password)
+      --timeout string            The timeout if using REST to generate the API token (by passing username and password)
   -u, --url string                The URL of the Git server to add a user
       --verbose                   Enable verbose logging
 ```
