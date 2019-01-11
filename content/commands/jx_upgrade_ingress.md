@@ -1,5 +1,5 @@
 ---
-date: 2019-01-11T15:10:38Z
+date: 2019-01-11T16:01:24Z
 title: "jx upgrade ingress"
 slug: jx_upgrade_ingress
 url: /commands/jx_upgrade_ingress/
@@ -36,11 +36,12 @@ jx upgrade ingress [flags]
       --namespaces stringArray    Namespaces to upgrade
       --no-brew                   Disables the use of brew on macOS to install or upgrade command line dependencies
       --pull-secrets string       The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
-      --services stringArray      Services to upgrdde
+      --services stringArray      Services to upgrade
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
-      --skip-certmanager          Skips certmanager installation
+      --skip-certmanager          Skips cert-manager installation
       --skip-resources-update     Skips the update of jx related resources such as webhook or Jenkins URL
       --verbose                   Enable verbose logging
+      --wait-for-certs            Waits for TLS certs to be issued by cert-manager
 ```
 
 ### SEE ALSO

@@ -1,5 +1,5 @@
 ---
-date: 2019-01-11T15:10:38Z
+date: 2019-01-11T16:01:24Z
 title: "jx create addon sso"
 slug: jx_create_addon_sso
 url: /commands/jx_create_addon_sso/
@@ -42,14 +42,15 @@ jx create addon sso [flags]
       --no-brew                   Disables the use of brew on macOS to install or upgrade command line dependencies
       --pull-secrets string       The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
   -r, --release string            The chart release name (default "jx-sso")
-      --services stringArray      Services to upgrdde
+      --services stringArray      Services to upgrade
   -s, --set string                The chart set values (can specify multiple or separate values with commas: key1=val1,key2=val2)
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
-      --skip-certmanager          Skips certmanager installation
+      --skip-certmanager          Skips cert-manager installation
       --skip-resources-update     Skips the update of jx related resources such as webhook or Jenkins URL
   -f, --values stringArray        List of locations for values files, can be local files or URLs
       --verbose                   Enable verbose logging
   -v, --version string            The chart version to install)
+      --wait-for-certs            Waits for TLS certs to be issued by cert-manager
 ```
 
 ### SEE ALSO
