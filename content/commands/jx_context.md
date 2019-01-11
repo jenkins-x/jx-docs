@@ -1,5 +1,5 @@
 ---
-date: 2019-01-11T18:55:22Z
+date: 2019-01-11T19:26:45Z
 title: "jx context"
 slug: jx_context
 url: /commands/jx_context/
