@@ -1,5 +1,5 @@
 ---
-date: 2019-01-11T17:25:25Z
+date: 2019-01-11T18:20:02Z
 title: "jx create codeship"
 slug: jx_create_codeship
 url: /commands/jx_create_codeship/
@@ -36,7 +36,7 @@ jx create codeship [flags]
       --codeship-organisation string           The Codeship organisation to use, this will not be stored anywhere
       --codeship-password string               The password to login to Codeship with, this will not be stored anywhere
       --codeship-username string               The username to login to Codeship with, this will not be stored anywhere
-      --default-admin-password string          the default admin password to access Jenkins, Kubernetes Dashboard, Chartmuseum and Nexus
+      --default-admin-password string          the default admin password to access Jenkins, Kubernetes Dashboard, ChartMuseum and Nexus
       --default-environment-prefix string      Default environment repo prefix, your Git repos will be of the form 'environment-$prefix-$envName'
       --docker-registry string                 The Docker Registry host or host:port which is used when tagging and pushing images. If not specified it defaults to the internal registry unless there is a better provider default (e.g. ECR on AWS/EKS)
       --domain string                          Domain to expose ingress endpoints.  Example: jenkinsx.io
@@ -80,7 +80,7 @@ jx create codeship [flags]
       --jx-environment string                  The cluster name to install jx inside (default "dev")
       --keep-exposecontroller-job              Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
       --local-cloud-environment                Ignores default cloud-environment-repo and uses current directory 
-      --local-helm-repo-name string            The name of the helm repository for the installed Chart Museum (default "releases")
+      --local-helm-repo-name string            The name of the helm repository for the installed ChartMuseum (default "releases")
       --local-organisation-repository string   Rather than cloning from a remote Git server, the local directory to use for the organisational folder
       --log-level string                       Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
   -n, --name string                            The name of the service account to create

@@ -1,5 +1,5 @@
 ---
-date: 2019-01-11T17:25:25Z
+date: 2019-01-11T18:20:02Z
 title: "jx create cluster oke"
 slug: jx_create_cluster_oke
 url: /commands/jx_create_cluster_oke/
@@ -40,7 +40,7 @@ jx create cluster oke [flags]
       --clusterMaxWaitSeconds string        The maximum time to wait for the work request to reach the state defined by --wait-for-state. Defaults to 1200 seconds.
       --clusterWaitIntervalSeconds string   Check every --wait-interval-seconds to see whether the work request to see if it has reached the state defined by --wait-for-state.
       --compartmentId string                The OCID of the compartment in which to create the cluster.
-      --default-admin-password string       the default admin password to access Jenkins, Kubernetes Dashboard, Chartmuseum and Nexus
+      --default-admin-password string       the default admin password to access Jenkins, Kubernetes Dashboard, ChartMuseum and Nexus
       --default-environment-prefix string   Default environment repo prefix, your Git repos will be of the form 'environment-$prefix-$envName'
       --docker-registry string              The Docker Registry host or host:port which is used when tagging and pushing images. If not specified it defaults to the internal registry unless there is a better provider default (e.g. ECR on AWS/EKS)
       --domain string                       Domain to expose ingress endpoints.  Example: jenkinsx.io
@@ -75,7 +75,7 @@ jx create cluster oke [flags]
       --keep-exposecontroller-job           Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
       --kubernetesVersion string            The version of Kubernetes to install into the cluster masters.
       --local-cloud-environment             Ignores default cloud-environment-repo and uses current directory 
-      --local-helm-repo-name string         The name of the helm repository for the installed Chart Museum (default "releases")
+      --local-helm-repo-name string         The name of the helm repository for the installed ChartMuseum (default "releases")
       --log-level string                    Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
       --name string                         The name of the cluster. Avoid entering confidential information.
       --namespace string                    The namespace the Jenkins X platform should be installed into (default "jx")

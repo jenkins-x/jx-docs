@@ -1,5 +1,5 @@
 ---
-date: 2019-01-11T17:25:25Z
+date: 2019-01-11T18:20:02Z
 title: "jx create cluster gke"
 slug: jx_create_cluster_gke
 url: /commands/jx_create_cluster_gke/
@@ -37,7 +37,7 @@ jx create cluster gke [flags]
       --cloud-environment-repo string       Cloud Environments Git repo (default "https://github.com/jenkins-x/cloud-environments")
       --cluster-ipv4-cidr string            The IP address range for the pods in this cluster in CIDR notation (e.g. 10.0.0.0/14)
   -n, --cluster-name string                 The name of this cluster, default is a random generated name
-      --default-admin-password string       the default admin password to access Jenkins, Kubernetes Dashboard, Chartmuseum and Nexus
+      --default-admin-password string       the default admin password to access Jenkins, Kubernetes Dashboard, ChartMuseum and Nexus
       --default-environment-prefix string   Default environment repo prefix, your Git repos will be of the form 'environment-$prefix-$envName'
   -d, --disk-size string                    Size in GB for node VM boot disks. Defaults to 100GB
       --docker-registry string              The Docker Registry host or host:port which is used when tagging and pushing images. If not specified it defaults to the internal registry unless there is a better provider default (e.g. ECR on AWS/EKS)
@@ -71,7 +71,7 @@ jx create cluster gke [flags]
   -v, --kubernetes-version string           The Kubernetes version to use for the master and nodes. Defaults to server-specified
       --labels string                       The labels to add to the cluster being created such as 'foo=bar,whatnot=123'. Label names must begin with a lowercase character ([a-z]), end with a lowercase alphanumeric ([a-z0-9]) with dashes (-), and lowercase alphanumeric ([a-z0-9]) between.
       --local-cloud-environment             Ignores default cloud-environment-repo and uses current directory 
-      --local-helm-repo-name string         The name of the helm repository for the installed Chart Museum (default "releases")
+      --local-helm-repo-name string         The name of the helm repository for the installed ChartMuseum (default "releases")
       --log-level string                    Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
   -m, --machine-type string                 The type of machine to use for nodes
       --max-num-nodes string                The maximum number of nodes to be created in each of the cluster's zones
