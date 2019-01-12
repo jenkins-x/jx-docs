@@ -75,11 +75,11 @@ Jenkins X 允许你给 Pull Requests 设置一个预发环境，这样就可以�
 
 ## 应用
 
-一些最好的软件工具已经被打包为 helm charts，部分预先集成在了 Jenkins X 中，例如：Nexus、Chart Museum、Monocular、Prometheus、Grafana等等。
+一些最好的软件工具已经被打包为 helm charts，部分预先集成在了 Jenkins X 中，例如：Nexus、ChartMuseum、Monocular、Prometheus、Grafana等等。
 
 ### 插件
 
-部分应用是内置的；例如：Nexus、Chart Museum、Monocular。其他的则是作为“插件”提供的。
+部分应用是内置的；例如：Nexus、ChartMuseum、Monocular。其他的则是作为“插件”提供的。
 
 要安装插件的话，使用命令[jx create addon](/commands/jx_create_addon/)。例如：
 

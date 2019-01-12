@@ -92,11 +92,11 @@ Also as the version with those new commits is promoted to `Staging` or `Producti
 
 ## Applications
 
-A collection of best of breed software tools packaged as helm charts that come pre-integrated with Jenkins X such as: Nexus, Chart Museum, Monocular, Prometheus, Grafana etc
+A collection of best of breed software tools packaged as helm charts that come pre-integrated with Jenkins X such as: Nexus, ChartMuseum, Monocular, Prometheus, Grafana etc
 
 ### Addons
 
-Some of these applications are baked in; like: Nexus, Chart Museum, Monocular.  Others are provided as an `Addon`.
+Some of these applications are baked in; like: Nexus, ChartMuseum, Monocular.  Others are provided as an `Addon`.
 
 To install an addon then use the [jx create addon](/commands/jx_create_addon/) command. e.g.
 
