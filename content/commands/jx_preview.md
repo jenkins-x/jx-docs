@@ -1,5 +1,5 @@
 ---
-date: 2019-01-12T07:39:21Z
+date: 2019-01-12T19:32:07Z
 title: "jx preview"
 slug: jx_preview
 url: /commands/jx_preview/
@@ -51,6 +51,7 @@ jx preview [flags]
   -n, --name string                       The Environment resource name. Must follow the Kubernetes name conventions like Services, Namespaces
       --namespace string                  The Kubernetes namespace for the Environment
       --no-brew                           Disables the use of brew on macOS to install or upgrade command line dependencies
+      --no-comment                        Disables commenting on the Pull Request after preview is created.
       --no-helm-update                    Allows the 'helm repo update' command if you are sure your local helm cache is up to date with the version you wish to promote
       --no-merge                          Disables automatic merge of promote Pull Requests
       --no-poll                           Disables polling for Pull Request or Pipeline status
