@@ -17,11 +17,11 @@ sections_weight: 5
 
 * [2019-01-24 Jenkins X - Continuously Driving the Kloud (German)](https://www.xing.com/events/jenkins-continuously-driving-the-kloud-1995467?sc_o=si1942_com) at [JUG Metroplregion Nürnberg (Germany)](http://www.jug-n.de) by [Gerd Aschemann](https://twitter.com/GerdAschemann) 
 
+* [2019-01-14 Jenkins X - Continuously Driving the Kloud (German)](https://www.meetup.com/de-DE/DevOps-Wuerzburg-Mainfranken/events/255614733/) at [DevOps Meetup Würzburg (Germany)](https://www.meetup.com/DevOps-Wuerzburg-Mainfranken/) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
+
 * [2018-12-19 Jenkins X - Continuously Driving the Kloud (German)](https://sites.google.com/site/jugffm/home/19-12-2018-jenkins-x---continuously-driving-the-kloud) at [JUG Frankfurt (Germany)](https://sites.google.com/site/jugffm/home) by [Gerd Aschemann](https://twitter.com/GerdAschemann) 
 
 * [2018-12-12 KubeCon NA Seattle: Jenkins X: Continuous Delivery for Kubernetes](http://sched.co/GrT2) [YouTube 🎥](https://www.youtube.com/watch?v=IDEa8seAzVc&index=1&list=PLHsuXkXI4xdjGlGkCBdxIAmkzfWXqsUrO) by [Carlos Sanchez](https://csanchez.org)
-
-* [2018-12-03 Jenkins X - Continuously Driving the Kloud (German)](https://www.meetup.com/de-DE/DevOps-Wuerzburg-Mainfranken/events/255614733/) at [DevOps Meetup Würzburg (Germany)](https://www.meetup.com/DevOps-Wuerzburg-Mainfranken/) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
 
 * [2018-11-23 CommitConf Madrid: Jenkins X: Continuous Delivery for Kubernetes](https://www.koliseo.com/events/commit-2018/r4p/5630471824211968/agenda#/5116072650866688/5742659054338048) by [Carlos Sanchez](https://csanchez.org)
 
