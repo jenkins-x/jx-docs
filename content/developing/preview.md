@@ -122,4 +122,6 @@ jx delete post preview job --name=NAME_HERE
 And it will remove that post preview job (for the whole team).
 
 
+## Further reading
 
+To get more detail on using preview environments check out [this blog post](https://medium.com/@MichalFoksa/jenkins-x-preview-environment-3bf2424a05e4)
