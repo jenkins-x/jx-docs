@@ -28,12 +28,21 @@ https://github.com/jenkins-x/jx/issues/2544
 
 The fixes involve upgrading to a newer version of Prow and Knative Build, the latter caused an issue when performing a traditional `jx upgrade addon` so we recommend uninstalling Knative Build first (removes Knative Build related Custom Resource Definitions) and install the latest release.  
 
-The `jx upgrade addon prow` will now handle this for you but this means any existing builds or custom changes to `BuildTemplate` resources will be lost.
+```jx delete addon knative-build```
+
+And to be extra sure it’s gone maybe do an extra:
+
+```helm del --purge knative-build```
+
+then:
 
 ```
 jx upgrade cli
 jx upgrade addon prow
 ```
+
+But this means any existing builds or custom changes to `BuildTemplate` resources will be lost.
+
 
 ## 5 Jan 2019: environment git repository issue
 
