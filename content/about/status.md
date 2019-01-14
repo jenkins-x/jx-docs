@@ -28,11 +28,15 @@ https://github.com/jenkins-x/jx/issues/2544
 
 The fixes involve upgrading to a newer version of Prow and Knative Build, the latter caused an issue when performing a traditional `jx upgrade addon` so we recommend uninstalling Knative Build first (removes Knative Build related Custom Resource Definitions) and install the latest release.  
 
-```jx delete addon knative-build```
+```
+jx delete addon knative-build
+```
 
 And to be extra sure it’s gone maybe do an extra:
 
-```helm del --purge knative-build```
+```
+helm del --purge knative-build
+```
 
 then:
 
