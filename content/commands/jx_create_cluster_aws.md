@@ -1,5 +1,5 @@
 ---
-date: 2019-01-14T08:56:25Z
+date: 2019-01-14T09:35:13Z
 title: "jx create cluster aws"
 slug: jx_create_cluster_aws
 url: /commands/jx_create_cluster_aws/
@@ -96,6 +96,7 @@ jx create cluster aws [flags]
       --skip-ingress                        Don't install an ingress controller
       --skip-installation                   Provision cluster only, don't install Jenkins X into it
       --skip-setup-tiller                   Don't setup the Helm Tiller service - lets use whatever tiller is already setup for us.
+      --ssh-public-key string               SSH public key to use for nodes (default "~/.ssh/id_rsa.pub").
       --state string                        The S3 bucket used to store the state of the cluster.
       --tags string                         A list of KV pairs used to tag all instance groups in AWS (eg "Owner=John Doe,Team=Some Team").
   -t, --terraform string                    The directory to save Terraform configuration.
