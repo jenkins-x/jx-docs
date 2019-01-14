@@ -1,5 +1,5 @@
 ---
-date: 2019-01-14T17:30:53Z
+date: 2019-01-14T19:55:33Z
 title: "jx edit helmbin"
 slug: jx_edit_helmbin
 url: /commands/jx_edit_helmbin/
