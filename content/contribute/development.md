@@ -46,6 +46,8 @@ To contribute to Jenkins X jx binary, you will need:
 
 ## Install Go
 
+We recommend the latest version of go `1.11.4` as this ensures the go modules works.
+
 The installation of Go should take only a few minutes. You have more than one option to get Go up and running on your machine.
 
 If you are having trouble following the installation guides for go, check out [Go Bootcamp](http://www.golangbootcamp.com/book/get_setup) which contains setups for every platform or reach out to the Jenkins X community in the [Jenkins X Slack channels](/community/#slack).
@@ -67,6 +69,15 @@ GVM comes in especially handy if you follow the development of Jenkins X over a 
 ### Install Go on Windows
 
 Simply install the latest version by downloading the [installer](https://golang.org/dl/).
+
+
+## Clearing your go module cache
+
+If you have used an older version of go you may have old versions of go modules. So its good to run this command to clear your cache if you are having go build issues:
+
+```shell 
+go clean -modcache
+``` 
 
 ### Set up your GOPATH
 
