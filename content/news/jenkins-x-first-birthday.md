@@ -32,7 +32,7 @@ These are the Jenkins X killer feature. Preview environments enable developers t
 
 ### Developer Experience (DevEx)
 
-Jenkins X can provide preview environments and a complete system for scalable CI/CD because it builds on Kubernetes and the cloud native ecosystem (tools such as Helm). However Kubernetes is complex so Jenkins X abstracts away alot of this complexity, for example by providing a one line [‘jx create cluster’](https://jenkins-x.io/commands/jx_create_cluster/) command to create a fully formed cluster automatically set up with sensible defaults. 
+Jenkins X can provide preview environments and a complete system for scalable CI/CD because it builds on Kubernetes and the cloud native ecosystem (tools such as Helm). However Kubernetes is complex so Jenkins X abstracts away a lot of this complexity, for example by providing a one line [‘jx create cluster’](https://jenkins-x.io/commands/jx_create_cluster/) command to create a fully formed cluster automatically set up with sensible defaults. 
 
 ### Multicloud
 
@@ -61,7 +61,7 @@ This is the most popular way to extend Jenkins X as the community have contribut
 Not everybody has the luxury of starting on cloud native apps from fresh. so recently Jenkins X added buildpacks to bridge the cloud-native divide for typical Jenkins workloads such as Java, Maven, Gradle etc.. Buildpacks themselves are extensible. Read more about [buildpacks here](https://jenkins-x.io/architecture/build-packs/). 
 
 ## What do developer think of Jenkins X?
-From the early adopters trying out Jenkins X we hear ‘Wow’ alot, for example:
+From the early adopters trying out Jenkins X we hear ‘Wow’ a lot, for example:
 
 * When Daily Motion wrote about how they went from [Jenkins to Jenkins X](https://medium.com/dailymotion/from-jenkins-to-jenkins-x-604b6cde0ce3) they described the ‘wow effect’ of creating a cluster in one command
 * Joselie Castañeda commented ‘take my wow!’ after watching the [Jenkins X talk video from Kubecon](https://youtu.be/uHe7R_iZSLU). 
