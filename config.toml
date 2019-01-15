@@ -344,6 +344,12 @@ anchor = "smart"
     post = "external"
     url = "https://jenkins.io"
 
+  [[menu.global]]
+    name = "Security"
+    weight = 250
+    identifier = "security"
+    url = "/security/"
+
 ## lets setup Angolia search
 [outputFormats.Algolia]
 baseName = "algolia"
