@@ -63,7 +63,7 @@ Not everybody has the luxury of starting on cloud native apps from fresh. so rec
 ## What do developer think of Jenkins X?
 From the early adopters trying out Jenkins X we hear ‘Wow’ a lot, for example:
 
-* When Daily Motion wrote about how they went from [Jenkins to Jenkins X](https://medium.com/dailymotion/from-jenkins-to-jenkins-x-604b6cde0ce3) they described the ‘wow effect’ of creating a cluster in one command
+* When Dailymotion wrote about how they went from [Jenkins to Jenkins X](https://medium.com/dailymotion/from-jenkins-to-jenkins-x-604b6cde0ce3) they described the ‘wow effect’ of creating a cluster in one command
 * Joselie Castañeda commented ‘take my wow!’ after watching the [Jenkins X talk video from Kubecon](https://youtu.be/uHe7R_iZSLU). 
 
 ## Community
