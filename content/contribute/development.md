@@ -71,7 +71,7 @@ GVM comes in especially handy if you follow the development of Jenkins X over a 
 Simply install the latest version by downloading the [installer](https://golang.org/dl/).
 
 
-## Clearing your go module cache
+## Clearing your go module cache
 
 If you have used an older version of go you may have old versions of go modules. So its good to run this command to clear your cache if you are having go build issues:
 
