@@ -14,7 +14,7 @@ Time flies when you are delivering software. It has been just over a year since 
 
 <img src="/news/jenkins-x-first-birthday/birthday.jpg"> 
 
-Jenkins X is the brainchild of James Strachan of CloudBees, who is know for building many popular open source software projects such as Apache Groovy, Apache Camel and fabric8. Notable these projects also have enduring open source software communities around them. With all this experience it is safe to say James simply gets developers and what they want, need and care about.
+One of the main founders of Jenkins X is [James Strachan](https://twitter.com/jstrachan) of CloudBees, who is known for building many popular open source software projects such as [Apache Groovy](http://groovy-lang.org/index.html), [Apache Camel](http://camel.apache.org/) and fabric8. Notable these projects also have enduring open source software communities around them. With all this experience it is safe to say James simply gets developers and what they want, need and care about.
 
 Developers WANT to ship code fast.
 
