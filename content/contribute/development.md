@@ -327,6 +327,16 @@ The new page summaries the most important information of your pull request. Scro
 
 Then Jenkins X itself and the maintainers will review your PR, potentially initiate discussion around your change and finally, merge it successfully in Jenkins X jx. Congratulations !
 
+## Getting a pull request merged
+
+Now your pull request is submitted, you need to get it merged. If you aren't a regular contributor you'll need a maintainer to manually review your PR and issue a `/ok-to-test` command in a PR comment. This will trigger the automated tests. If the tests fail, you'll need to ask one of the maintainers to send you the failure log (in the future we will make these public but first we need to check we are masking all secrets).
+
+If the tests pass you need to get a `/lgtm` from one of the reviewers (listed in the `OWNERS` file in the repository). You need a new LGTM every time you push changes. Once the tests pass and you have a LGTM for the latest changeset, your PR will be automatically merged.
+
+Jenkins X (well, Tide, a component of Jenkins X) won't merge your changes until it has the tests passing against the *current* `HEAD` of `master` - but don't worry, whilst the tests *continue* to pass it will automatically merge your changeset into master and rerun the tests. As you can imagine, this can take a little while (a few hours) if the merge queue is long. Tide will also automatically attempt to batch up passing changes, but if the batch fails, it will resort to merging the changesets one by one.
+
+If the retest against `HEAD` of `master` fail, then it will notify you on the pull request and you'll need to make some changes (and potentially get a new LGTM). 
+
 ## Testing
 
 The jx test suite is divided into three sections:
