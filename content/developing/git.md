@@ -47,7 +47,7 @@ jx install --no-default-environments
 
 Then once Jenkins X is installed you can then [add a new git provider](#adding-a-new-git-provider).
 
-Then when the git provider is setup you can verify its available and has the right `gitKind` via:
+Then when the git provider is setup you can verify it is available and has the right `gitKind` via:
 
 ``` 
 jx get git server
@@ -163,7 +163,7 @@ Then whenever Jenkins X needs to create a git repository for an Environment or f
 
 #### Known gitea limitations
 
-At the time of writing the [gitea plugin for Jenkins](https://issues.jenkins-ci.org/browse/JENKINS-50459) does not correctly update Pull Request and git commit build statuses which breaks the GitOps promption pipelines. Promotion can work through manual approval; but the pipeline reports a failure. 
+At the time of writing the [gitea plugin for Jenkins](https://issues.jenkins-ci.org/browse/JENKINS-50459) does not correctly update Pull Request and git commit build statuses which breaks the GitOps promotion pipelines. Promotion can work through manual approval, but the pipeline reports a failure.
 
 Another issue is new projects created by `jx` inside `gitea` do not get the [merge buttons enabled on Pull Requests](https://github.com/go-gitea/go-sdk/issues/100). The work around is after a project is created on github you go to the `Settings` page for the repository inside the `gitea` web console and enable the merge buttons there. 
 
