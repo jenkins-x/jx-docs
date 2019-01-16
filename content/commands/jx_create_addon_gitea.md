@@ -1,5 +1,5 @@
 ---
-date: 2019-01-16T13:18:29Z
+date: 2019-01-16T14:02:30Z
 title: "jx create addon gitea"
 slug: jx_create_addon_gitea
 url: /commands/jx_create_addon_gitea/
