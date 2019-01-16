@@ -1,5 +1,5 @@
 ---
-date: 2019-01-16T17:36:56Z
+date: 2019-01-16T18:36:33Z
 title: "jx stop"
 slug: jx_stop
 url: /commands/jx_stop/
