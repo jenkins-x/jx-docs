@@ -1,5 +1,5 @@
 ---
-date: 2019-01-16T19:02:39Z
+date: 2019-01-16T20:43:19Z
 title: "jx edit storage"
 slug: jx_edit_storage
 url: /commands/jx_edit_storage/
@@ -29,8 +29,11 @@ jx edit storage [flags]
   # Configure the git/http URLs of where to store logs
   jx edit storage -c logs
   
-  # Configure the git URL of where to store logs
+  # Configure the git URL of where to store logs (defaults to gh-pages branch)
   jx edit storage -c logs --git-url https://github.com/myorg/mylogs.git'
+  
+  # Configure the git URL and branch of where to store logs
+  jx edit storage -c logs --git-url https://github.com/myorg/mylogs.git' --git-branch cheese
   
   # Configure the git URL of where all storage goes to by default unless a specific classifier has a config
   jx edit storage -c default --git-url https://github.com/myorg/mylogs.git'
@@ -40,11 +43,16 @@ jx edit storage [flags]
 
 ```
   -b, --batch-mode                In batch mode the command never prompts for user input
+      --bucket string             Specify the name of the bucket to use
+      --bucket-kind string        The kind of bucket to use like 'gs, s3, azure' etc
+      --bucket-url string         Specify the go-cloud URL of the bucket to use
   -c, --classifier string         A name which classifies this type of file. Example values: coverage, tests, logs
+      --git-branch string         The branch to use to store files in the git branch (default "gh-pages")
       --git-url string            Specify the Git URL to populate in a gh-pages branch
+      --gke-project-id string     Google Project ID to use for a new bucket
+      --gke-zone string           The zone (e.g. us-central1-a) where the new bucket will be created
       --headless                  Enable headless operation if using browser automation
   -h, --help                      help for storage
-      --http-url string           Specify the HTTP endpoint to send each file to
       --install-dependencies      Should any required dependencies be installed automatically
       --log-level string          Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
       --no-brew                   Disables the use of brew on macOS to install or upgrade command line dependencies
