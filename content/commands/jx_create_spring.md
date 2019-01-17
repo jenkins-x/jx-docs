@@ -1,5 +1,5 @@
 ---
-date: 2019-01-17T11:11:03Z
+date: 2019-01-17T22:35:44Z
 title: "jx create spring"
 slug: jx_create_spring
 url: /commands/jx_create_spring/
@@ -46,6 +46,7 @@ jx create spring [flags]
       --branches string                The branch pattern for branches to trigger CI/CD pipelines on
       --credentials string             The Jenkins credentials name used by the job
   -d, --dep stringArray                Spring Boot dependencies
+      --disable-updatebot              disable updatebot-maven-plugin from attempting to fix/update the maven pom.xml
       --docker-registry-org string     The name of the docker registry organisation to use. If not specified then the Git provider organisation will be used
       --dry-run                        Performs local changes to the repo but skips the import into Jenkins X
       --external-jenkins-url string    The jenkins url that an external git provider needs to use

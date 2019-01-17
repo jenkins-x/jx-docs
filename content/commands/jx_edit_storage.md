@@ -1,20 +1,27 @@
 ---
-date: 2019-01-17T11:11:03Z
+date: 2019-01-17T22:35:44Z
 title: "jx edit storage"
 slug: jx_edit_storage
 url: /commands/jx_edit_storage/
 ---
 ## jx edit storage
 
-Configures the storage location for a set of pipeline output data for your team
+Configures the storage location for stashing files or storing build logs for your team
 
 ### Synopsis
 
-Configures the storage location for a set of pipeline output data for your team 
+Configures the storage location used by your team to stashing files or storing build logs.
+  
+      If you don't specify any specific storage for a classifier it will try the classifier 'default'. If there is still no configuration then it will default to the git repository for a project.'
+  
+Currently Jenkins X supports storing files into a branch of a git repository or in cloud blob storage like S3, GCS, Azure blobs etc. 
 
-Per team you can specify a Git repository URL to store artifacts inside per classification or you can use a HTTP URL. 
+When using Cloud Storage we use URLs like 's3://nameOfBucket' on AWS, 'gs://anotherBucket' on GCP or on Azure 'azblob://thatBucket' 
 
-If you don't specify any specific storage for a classifier it will try the classifier 'default'.If there is still no configuration then it will default to the git repository for a project.'
+See Also: 
+
+  * jx step stash : https://jenkins-x.io/commands/jx_step_stash  
+  * jx get storage : https://jenkins-x.io/commands/jx_get_storage
 
 ```
 jx edit storage [flags]
@@ -26,8 +33,9 @@ jx edit storage [flags]
   # Be prompted what classification to edit
   jx edit storage
   
-  # Configure the git/http URLs of where to store logs
+  # Configure the where to store logs prompting the user to ask for more data
   jx edit storage -c logs
+  
   
   # Configure the git URL of where to store logs (defaults to gh-pages branch)
   jx edit storage -c logs --git-url https://github.com/myorg/mylogs.git'
@@ -37,6 +45,13 @@ jx edit storage [flags]
   
   # Configure the git URL of where all storage goes to by default unless a specific classifier has a config
   jx edit storage -c default --git-url https://github.com/myorg/mylogs.git'
+  
+  
+  # Configure the tests to be stored in cloud storage (using S3 / GCS / Azure Blobs etc)
+  jx edit storage -c tests --bucket-url s3://myExistingBucketName
+  
+  # Creates a new GCS bucket and configures the logs to be stored in it
+  jx edit storage -c logs --bucket myBucketName
 ```
 
 ### Options

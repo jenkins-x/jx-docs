@@ -1,5 +1,5 @@
 ---
-date: 2019-01-17T11:11:03Z
+date: 2019-01-17T22:35:44Z
 title: "jx step"
 slug: jx_step
 url: /commands/jx_step/
@@ -29,7 +29,6 @@ jx step [flags]
 * [jx step blog](/commands/jx_step_blog/)	 - Creates a blog post with changes, metrics and charts showing improvements
 * [jx step buildpack](/commands/jx_step_buildpack/)	 - buildpack [command]
 * [jx step changelog](/commands/jx_step_changelog/)	 - Creates a changelog for a git tag
-* [jx step collect](/commands/jx_step_collect/)	 - Collects the specified files that need storing from the build
 * [jx step create](/commands/jx_step_create/)	 - create [command]
 * [jx step credential](/commands/jx_step_credential/)	 - Returns a secret entry for easy scripting in pipeline steps
 * [jx step env](/commands/jx_step_env/)	 - env [command]
@@ -45,7 +44,9 @@ jx step [flags]
 * [jx step pre](/commands/jx_step_pre/)	 - pre step actions
 * [jx step release](/commands/jx_step_release/)	 - performs a release on the current Git repository
 * [jx step split](/commands/jx_step_split/)	 - Mirrors the code from a monorepo into separate microservice style Git repositories so its easier to do finer grained releases
+* [jx step stash](/commands/jx_step_stash/)	 - Stashes local files generated as part of a pipeline into long term storage
 * [jx step tag](/commands/jx_step_tag/)	 - Creates a git tag and pushes to remote repo
+* [jx step unstash](/commands/jx_step_unstash/)	 - Unstashes files generated as part of a pipeline to a local file or directory or displays on the console
 * [jx step validate](/commands/jx_step_validate/)	 - Validates the command line tools, container and platform to ensure a pipeline can run properly
 * [jx step verify](/commands/jx_step_verify/)	 - Performs deployment verification in a pipeline
 * [jx step wait](/commands/jx_step_wait/)	 - Waits for the given artifact to be available in a maven style repository
