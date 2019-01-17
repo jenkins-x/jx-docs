@@ -1,5 +1,5 @@
 ---
-date: 2019-01-17T09:22:53Z
+date: 2019-01-17T09:59:00Z
 title: "jx delete eks"
 slug: jx_delete_eks
 url: /commands/jx_delete_eks/
@@ -10,7 +10,7 @@ Deletes EKS cluster.
 
 ### Synopsis
 
-Deletes EKS cluster resource
+Deletes EKS cluster resource. Under the hood this command delegated removal operation to eksctl.
 
 ```
 jx delete eks [flags]
