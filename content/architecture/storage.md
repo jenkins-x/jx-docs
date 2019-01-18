@@ -1,7 +1,7 @@
 ---
 title: Storage
 linktitle: Storage
-description: Turning source code into applications on kubernetes
+description: Let's save your pipeline files somewhere cloud native!
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01
