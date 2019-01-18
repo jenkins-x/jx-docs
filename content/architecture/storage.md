@@ -53,4 +53,29 @@ jx edit storage -c tests --bucket-url s3://myExistingBucketName
 # Configure the git URL and branch of where to store logs
 jx edit storage -c logs --git-url https://github.com/myorg/mylogs.git' --git-branch cheese
 ```
+
+You can view your teams storage settings via [jx get storage](/commands/jx_get_storage/)
+   
+
+## Using Stash
+
+Inside a pipeline you can then run the [jx step stash](/commands/jx_step_stash/) command to stash files:
+
+```shell 
+# lets collect some files with the file names relative to the 'target/test-reports' folder and store in a Git URL
+jx step stash -c tests -p "target/test-reports/*" --basedir target/test-reports 
+
+# lets collect some files to a specific AWS cloud storage bucket
+jx step stash -c coverage -p "build/coverage/*" --bucket-url s3://my-aws-bucket
+```
+
+* specify the `classifier` via `-c` such as for `tests` or `coverage` etc. 
+* specify the files to collect via `-p` which supports wildcards like `*`. files which will be stored with the relative directory path
+* if you want to remove a direectory prefix from the stashed files, like `target/reports` you can use `--basedir` to specify the directory to create relative file names from
+
+By default [jx step stash](/commands/jx_step_stash/) will use your team's configured location for the classification you give. If you wish you can override the location for a stash using `--git-url` or `--bucket-url`
+
+### Unstashing
+
+If you need to you can unstash previously stored files via [jx step unstash](/commands/jx_step_unstash/)
    
