@@ -56,6 +56,62 @@ to get you on the latest CLI then you can upgrade the platform:
 jx upgrade platform
 ```
 
+## How do I upgrade the jx binary used inside the builds when using serverless jenkins?
+
+We use specific `BuildTemplates` for different programming languages. These `BuildTemplates` describe the steps that will be executed as part of the job, which in case of the Jenkins X BuildTemplates, they all execute the `JenkinsfileRunner` to execute the project's Jenkinsfile.
+
+```
+$ kubectl get buildtemplates
+NAME                        AGE
+environment-apply           9d
+environment-build           9d
+jenkins-base                9d
+jenkins-csharp              9d
+jenkins-cwp                 9d
+jenkins-elixir              9d
+jenkins-filerunner          9d
+jenkins-go                  9d
+jenkins-go-nodocker         9d
+jenkins-go-script-bdd       1d
+jenkins-go-script-ci        1d
+jenkins-go-script-release   1d
+jenkins-gradle              9d
+jenkins-javascript          9d
+jenkins-jenkins             9d
+jenkins-maven               9d
+jenkins-python              9d
+jenkins-rust                9d
+jenkins-scala               9d
+jenkins-test                9d
+knative-chart-ci            9d
+knative-chart-release       9d
+knative-deploy              9d
+knative-maven-ci            9d
+knative-maven-release       9d
+```
+
+The docker image that has the `Jenkinsfile` runner has also other tools installed, like the `jx` binary. If you need to update jx to a newer version, you need to modify [the base Dockerfile used for the Jenkinsfile runner step of the BuildTemplate](https://github.com/jenkins-x/jenkins-x-serverless/blob/def939f559b6b0e6735c043ce032686397053a6e/Dockerfile.base#L120-L123), so that it uses the jx version that you want. Althought [this is normally done automatically](https://github.com/jenkins-x/jenkins-x-serverless/commits/def939f559b6b0e6735c043ce032686397053a6e/Dockerfile.base).
+
+Once this is done, you need to change the BuildTemplate in your cluster so that it starts using the new version of the docker image. For example, you can see the current version of this image for the Go BuildTemplate in your cluster
+
+```
+$ kubectl describe buildtemplate jenkins-go | grep Image
+Image:       jenkinsxio/jenkins-go:256.0.44
+```
+
+If you want to use a different version that uses a newer jx version you could manually change all the BuildTemplates but instead let's jx take care of it
+
+```
+$ jx upgrade addon jx-build-templates
+```
+
+Check that the change has been done
+
+```
+$ kubectl describe buildtemplate jenkins-go | grep Image
+Image:       jenkinsxio/jenkins-go:256.0.50
+```
+
 ## How does `--prow` differ from `--gitops`
 
 * `--prow` uses [serverless jenkins](/news/serverless-jenkins/) and uses [prow](https://github.com/kubernetes/test-infra/tree/master/prow) to implement ChatOps on Pull Requests.
