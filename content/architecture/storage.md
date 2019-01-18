@@ -32,7 +32,7 @@ So we've added a storage extension point which is used from:
 You can setup the default location to use for storage. We currently support: 
 
 * storing files (logs, test or coverage reports) in a branch of a git repository. e.g. they could be part of your `gh-pages` branch for your static site.
-* storing files in Cloud Storage buckets like S3, GCZ, Azure blobs etc
+* storing files in Cloud Storage buckets like S3, GCS, Azure blobs etc
 
 Storage uses classifications which are used to define the folder in which the kind of resources live such as 
 
