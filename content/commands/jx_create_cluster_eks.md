@@ -1,5 +1,5 @@
 ---
-date: 2019-01-19T07:28:39Z
+date: 2019-01-19T09:46:59Z
 title: "jx create cluster eks"
 slug: jx_create_cluster_eks
 url: /commands/jx_create_cluster_eks/
@@ -94,7 +94,7 @@ jx create cluster eks [flags]
       --skip-installation                   Provision cluster only, don't install Jenkins X into it
       --skip-setup-tiller                   Don't setup the Helm Tiller service - lets use whatever tiller is already setup for us.
       --ssh-public-key string               SSH public key to use for nodes (import from local path, or use existing EC2 key pair) (default "~/.ssh/id_rsa.pub")
-      --tags string                         A list of KV pairs used to tag all instance groups in AWS (eg "Owner=John Doe,Team=Some Team").
+      --tags string                         A list of KV pairs used to tag all instance groups in AWS (eg "Owner=John Doe,Team=Some Team"). (default "CreatedBy=JenkinsX")
       --tiller-cluster-role string          The cluster role for Helm's tiller (default "cluster-admin")
       --tiller-namespace string             The namespace for the Tiller when using a global tiller (default "kube-system")
       --timeout string                      The number of seconds to wait for the helm install to complete (default "6000")
