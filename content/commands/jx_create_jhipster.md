@@ -1,5 +1,5 @@
 ---
-date: 2019-01-19T10:23:59Z
+date: 2019-01-19T11:43:58Z
 title: "jx create jhipster"
 slug: jx_create_jhipster
 url: /commands/jx_create_jhipster/
@@ -10,13 +10,17 @@ Create a new JHipster based application and import the generated code into Git a
 
 ### Synopsis
 
-Creates a new JHipster application and then optionally setups CI/CD pipelines and GitOps promotion. 
+Creates a new JHipster application and then optionally setups CI/CD pipelines and GitOps promotion.
+  
+      JHipster is an application generator for gRPC services in Go with a set of tools/libraries.
+  
+      This command is expected to be run within your '$GOHOME' directory. e.g. at '$GOHOME/src/github.com/myOrgOrUser/'
+  
+      For more documentation about JHipster see: [https://www.jhipster.tech/](https://www.jhipster.tech/)
+  
+See Also: 
 
-JHipster is an application generator for gRPC services in Go with a set of tools/libraries. 
-
-This command is expected to be run within your '$GOHOME' directory. e.g. at '$GOHOME/src/github.com/myOrgOrUser/' 
-
-For more documentation about JHipster see: https://www.jhipster.tech/
+  * jx create project : https://jenkins-x.io/commands/jx_create_project
 
 ```
 jx create jhipster [flags]

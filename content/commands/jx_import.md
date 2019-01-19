@@ -1,5 +1,5 @@
 ---
-date: 2019-01-19T10:23:59Z
+date: 2019-01-19T11:43:58Z
 title: "jx import"
 slug: jx_import
 url: /commands/jx_import/
@@ -10,13 +10,18 @@ Imports a local project or Git repository into Jenkins
 
 ### Synopsis
 
-Imports a local folder or Git repository into Jenkins X. 
+Imports a local folder or Git repository into Jenkins X.
+  
+      If you specify no other options or arguments then the current directory is imported.
+      Or you can use '--dir' to specify a directory to import.
+  
+      You can specify the git URL as an argument.
+  
+      For more documentation see: [https://jenkins-x.io/developing/import/](https://jenkins-x.io/developing/import/)
+  
+See Also: 
 
-If you specify no other options or arguments then the current directory is imported. Or you can use '--dir' to specify a directory to import. 
-
-You can specify the git URL as an argument. 
-
-For more documentation see: https://jenkins-x.io/developing/import/
+  * jx create project : https://jenkins-x.io/commands/jx_create_project
 
 ```
 jx import [flags]

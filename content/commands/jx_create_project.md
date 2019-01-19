@@ -1,5 +1,5 @@
 ---
-date: 2019-01-19T10:23:59Z
+date: 2019-01-19T11:43:58Z
 title: "jx create project"
 slug: jx_create_project
 url: /commands/jx_create_project/
@@ -10,7 +10,15 @@ Create a new Project by importing code, using a Quickstart or custom wizard for 
 
 ### Synopsis
 
-Creates a project
+Create a new Project by importing code, using a Quickstart or custom wizard for Spring or Camel.
+  
+See Also: 
+
+  * jx create quickstart : https://jenkins-x.io/commands/jx_create_quickstart  
+  * jx create spring : https://jenkins-x.io/commands/jx_create_spring  
+  * jx create camel : https://jenkins-x.io/commands/jx_create_camel  
+  * jx create jhipster : https://jenkins-x.io/commands/jx_create_jhipster  
+  * jx import : https://jenkins-x.io/commands/jx_import
 
 ```
 jx create project [flags]

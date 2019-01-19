@@ -1,5 +1,5 @@
 ---
-date: 2019-01-19T10:23:59Z
+date: 2019-01-19T11:43:58Z
 title: "jx create quickstart"
 slug: jx_create_quickstart
 url: /commands/jx_create_quickstart/
@@ -10,11 +10,16 @@ Create a new app from a Quickstart and import the generated code into Git and Je
 
 ### Synopsis
 
-Create a new project from a sample/starter (found in https://github.com/jenkins-x-quickstarts) 
+Create a new project from a sample/starter (found in https://github.com/jenkins-x-quickstarts)
+  
+      This will create a new project for you from the selected template.
+      It will exclude any work-in-progress repos (containing the "WIP-" pattern)
+  
+      For more documentation see: [https://jenkins-x.io/developing/create-quickstart/](https://jenkins-x.io/developing/create-quickstart/)
+  
+See Also: 
 
-This will create a new project for you from the selected template. It will exclude any work-in-progress repos (containing the "WIP-" pattern) 
-
-For more documentation see: https://jenkins-x.io/developing/create-quickstart/
+  * jx create project : https://jenkins-x.io/commands/jx_create_project
 
 ```
 jx create quickstart [flags]

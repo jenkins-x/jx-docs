@@ -1,5 +1,5 @@
 ---
-date: 2019-01-19T10:23:59Z
+date: 2019-01-19T11:43:58Z
 title: "jx edit storage"
 slug: jx_edit_storage
 url: /commands/jx_edit_storage/
@@ -60,10 +60,10 @@ jx edit storage [flags]
   -b, --batch-mode                In batch mode the command never prompts for user input
       --bucket string             Specify the name of the bucket to use
       --bucket-kind string        The kind of bucket to use like 'gs, s3, azure' etc
-      --bucket-url string         Specify the go-cloud URL of the bucket to use
+      --bucket-url string         Specify the cloud storage bucket URL to send each file to. e.g. use 's3://nameOfBucket' on AWS, gs://anotherBucket' on GCP or on Azure 'azblob://thatBucket'
   -c, --classifier string         A name which classifies this type of file. Example values: coverage, tests, logs
-      --git-branch string         The branch to use to store files in the git branch (default "gh-pages")
-      --git-url string            Specify the Git URL to populate in a gh-pages branch
+      --git-branch string         The branch to use to store files in the git repository (default "gh-pages")
+      --git-url string            Specify the Git URL to of the repository to use for storage
       --gke-project-id string     Google Project ID to use for a new bucket
       --gke-zone string           The zone (e.g. us-central1-a) where the new bucket will be created
       --headless                  Enable headless operation if using browser automation

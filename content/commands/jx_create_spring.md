@@ -1,5 +1,5 @@
 ---
-date: 2019-01-19T10:23:59Z
+date: 2019-01-19T11:43:58Z
 title: "jx create spring"
 slug: jx_create_spring
 url: /commands/jx_create_spring/
@@ -10,11 +10,15 @@ Create a new Spring Boot application and import the generated code into Git and 
 
 ### Synopsis
 
-Creates a new Spring Boot application and then optionally setups CI/CD pipelines and GitOps promotion. 
+Creates a new Spring Boot application and then optionally setups CI/CD pipelines and GitOps promotion.
+  
+      You can see a demo of this command here: [https://jenkins-x.io/demos/create_spring/](https://jenkins-x.io/demos/create_spring/)
+  
+      For more documentation see: [https://jenkins-x.io/developing/create-spring/](https://jenkins-x.io/developing/create-spring/)
+  
+See Also: 
 
-You can see a demo of this command here: https://jenkins-x.io/demos/create_spring/
-
-For more documentation see: https://jenkins-x.io/developing/create-spring/
+  * jx create project : https://jenkins-x.io/commands/jx_create_project
 
 ```
 jx create spring [flags]
