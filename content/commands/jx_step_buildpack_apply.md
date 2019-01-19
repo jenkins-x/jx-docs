@@ -1,5 +1,5 @@
 ---
-date: 2019-01-19T17:53:01Z
+date: 2019-01-19T18:18:25Z
 title: "jx step buildpack apply"
 slug: jx_step_buildpack_apply
 url: /commands/jx_step_buildpack_apply/
