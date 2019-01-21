@@ -1,5 +1,5 @@
 ---
-date: 2019-01-21T21:05:55Z
+date: 2019-01-21T22:19:57Z
 title: "jx create jhipster"
 slug: jx_create_jhipster
 url: /commands/jx_create_jhipster/

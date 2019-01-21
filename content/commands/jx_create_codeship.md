@@ -1,5 +1,5 @@
 ---
-date: 2019-01-21T21:05:55Z
+date: 2019-01-21T22:19:57Z
 title: "jx create codeship"
 slug: jx_create_codeship
 url: /commands/jx_create_codeship/
@@ -60,6 +60,7 @@ jx create codeship [flags]
       --gke-machine-type string                The type of machine to use for nodes
       --gke-max-num-nodes string               The maximum number of nodes to be created in each of the cluster's zones
       --gke-min-num-nodes string               The minimum number of nodes to be created in each of the cluster's zones
+      --gke-preemptible                        Use preemptible VMs in the node-pool
       --gke-project-id string                  Google Project ID to create cluster in
       --gke-service-account string             The GKE service account to use
       --gke-zone string                        The compute zone (e.g. us-central1-a) for the cluster
