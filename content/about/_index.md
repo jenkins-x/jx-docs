@@ -1,7 +1,7 @@
 ---
 title: About Jenkins X
 linktitle: Overview
-description: Jenkins X's features, roadmap, license, and motivation.
+description: Jenkins X's features, license, and motivation.
 date: 2018-02-01
 publishdate: 2018-02-01
 lastmod: 2018-02-01

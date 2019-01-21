@@ -345,8 +345,14 @@ anchor = "smart"
     url = "https://jenkins.io"
 
   [[menu.global]]
-    name = "Security"
+    name = "Sponsors"
     weight = 250
+    identifier = "sponsors"
+    url = "/sponsors/"
+
+  [[menu.global]]
+    name = "Security"
+    weight = 300
     identifier = "security"
     url = "/security/"
 
