@@ -155,7 +155,28 @@ If you notice that the persistent volume claims created when installing Jenkins 
 
 The you should check that you have a cluster default storage class for dynamic persistent volume provisioning.  See [here](https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/) for more details.
 
+
+## How can I diagnose exposecontroller issues?
+
+When you [promote a new version of your application to an environment](/faq/develop/#how-does-promotion-actually-work), such as the Staging Environment a Pull Request is raised on the environment repository.
+
+When the master pipeline runs on an environment a Kubernetes `Job` is created for [exposecontroller](https://github.com/jenkins-x/exposecontroller) which runs a pod until it terminates.
+
+It can be tricky finding the log for temporary jobs since the pod is removed.
+
+One way to diagnose logs in your, say, Staging environment is to [download and install kail](https://github.com/boz/kail) and add it to your `PATH`.
+
+Then run this command:
+
+```shell 
+kail -l job-name=expose -n jx-staging
+```
+
+If you then promote to the Staging environment or retrigger the pipeline on the `master` branch of your Staging git repository (e.g. via [jx start pipeline](/commands/jx_start_pipeline/)) then you should see the output of the [exposecontroller](https://github.com/jenkins-x/exposecontroller) pod.
+
+
 ## Cannot create cluster minikube
+
 If you are using a Mac then `hyperkit` is the best VM driver to use - but does require you to install a recent [Docker for Mac](https://docs.docker.com/docker-for-mac/install/) first. Maybe try that then retry `jx create cluster minikube`?
 
 If your minikube is failing to startup then you could try:
