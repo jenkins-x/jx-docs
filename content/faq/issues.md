@@ -116,7 +116,7 @@ To recreate it with a new API token value try the following (changing the git se
 
 ```
 jx delete git token -n GitHub admin
-jx create token -n GitHub admin
+jx create git token -n GitHub admin
 ```
 
 More details on [using git and Jenkins X here](/developing/git/)
@@ -136,7 +136,7 @@ To recreate it with a new API token value try the following (changing the git se
 
 ```
 jx delete git token -n GitHub admin
-jx create token -n GitHub admin
+jx create git token -n GitHub admin
 ```
 
 More details on [using git and Jenkins X here](/developing/git/)
