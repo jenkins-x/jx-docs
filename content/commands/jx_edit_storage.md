@@ -1,5 +1,5 @@
 ---
-date: 2019-01-21T16:44:14Z
+date: 2019-01-21T17:57:21Z
 title: "jx edit storage"
 slug: jx_edit_storage
 url: /commands/jx_edit_storage/
@@ -65,7 +65,7 @@ jx edit storage [flags]
       --git-branch string         The branch to use to store files in the git repository (default "gh-pages")
       --git-url string            Specify the Git URL to of the repository to use for storage
       --gke-project-id string     Google Project ID to use for a new bucket
-      --gke-zone string           The zone (e.g. us-central1-a) where the new bucket will be created
+      --gke-zone string           The GKE zone (e.g. us-central1-a) where the new bucket will be created
       --headless                  Enable headless operation if using browser automation
   -h, --help                      help for storage
       --install-dependencies      Should any required dependencies be installed automatically
