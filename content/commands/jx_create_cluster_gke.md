@@ -1,5 +1,5 @@
 ---
-date: 2019-01-22T09:44:30Z
+date: 2019-01-22T12:23:48Z
 title: "jx create cluster gke"
 slug: jx_create_cluster_gke
 url: /commands/jx_create_cluster_gke/
@@ -44,6 +44,7 @@ jx create cluster gke [flags]
       --domain string                       Domain to expose ingress endpoints.  Example: jenkinsx.io
       --draft-client-only                   Only install draft client
       --enable-autoupgrade                  Sets autoupgrade feature for a cluster's default node-pool(s)
+      --enhanced-scopes                     Use enhanced Oauth scopes for access to GCS/GCR
       --environment-git-owner string        The Git provider organisation to create the environment Git repositories in
       --exposecontroller-pathmode path      The ExposeController path mode for how services should be exposed as URLs. Defaults to using subnets. Use a value of path to use relative paths within the domain host such as when using AWS ELB host names
       --exposer string                      Used to describe which strategy exposecontroller should use to access applications (default "Ingress")
