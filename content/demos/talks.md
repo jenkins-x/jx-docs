@@ -43,6 +43,8 @@ sections_weight: 5
 
 * [2018-11-14 Meetup Zurich: Continuous Applications Delivery for Kubernetes](https://www.meetup.com/Swiss-Jenkins-Area-Meetup/events/254221707/) by [Cosmin Cojocar](https://github.com/ccojocar)
 
+* [2018-09-29 Software Crafters, Barcelona, Spain: Continuous Deployment With Jenkins X And Kubernetes](https://scbcn.github.io) by [Viktor Farcic](https://twitter.com/vfarcic) [Video](https://youtu.be/zoT8FyqITLI)
+
 * [2018-10-08 JDD Poland: End to End automation and Continuous Delivery of Microservices for Kubernetes](http://bit.ly/jdd-conference-jx) by [Paolo Carta](https://twitter.com/cl4mer)
 
 * [2018-09-28 XantarJ Santiago de Compostela: Acelera el desarrollo de tus aplicaciones con Docker y Jenkins](https://www.eventbrite.es/e/entradas-xantarj-2018-49884037499) by [Carlos Sanchez](https://csanchez.org)
@@ -70,6 +72,8 @@ sections_weight: 5
 * [JBCN Conference 11-13 June 2018:Jenkins X: Continuous Delivery for Kubernetes](http://www.jbcnconf.com/2018/infoSpeaker.html?ref=Um9iZXJ0RGF2aWVzcmRhdmllc0BjbG91ZGJlZXMuY29t) by [Rob Davies](https://twitter.com/rajdavies) and [JamesRawlings](https://twitter.com/jdrawlings) with [slides](https://docs.google.com/presentation/d/1i0JTVaMGCD4pPuOOE0wIfYgbUU40qSmissu0UnizpVQ/edit?usp=sharing)
 
 * [Devoxx UK: Jenkins X: Continuous Delivery for Kubernetes](https://cfp.devoxx.co.uk/2018/talk/XWT-9637/Jenkins_X:_Continuous_Delivery_for_Kubernetes) by [James Strachan](https://twitter.com/jstrachan)
+
+* [2018-05-31 Dev Days, Riga: Continuous Deployment With Jenkins X And Kubernetes](https://rigadevdays.lv/) by [Viktor Farcic](https://twitter.com/vfarcic) [Video](https://youtu.be/iughcmtWz8s)
 
 * [Cloud Native Meetup, Wales 10 May 2018: Jenkins X: Easy CI/CD for Kubernetes](https://www.meetup.com/Cloud-Native-Wales/events/lxwbppyxhbnb/) by [James Rawlings](https://twitter.com/jdrawlings)
 
