@@ -82,6 +82,7 @@ toc: true
 | Theia IDE | | | | 1.3.x in [DevPods](/developing/devpods/#using-theia-ide) |
 | SonarQube  | | [Planned](https://github.com/jenkins-x/jx/issues/536) | |
 
+We use [this document](https://docs.google.com/document/d/1bKAoae4B4cjzNsIQe0JpTWE5TReX_gLEveq04P4J_3k/edit?usp=sharing) to brainstorm new ideas and work themes.
 
 If you are interested in helping out please see the above issues or [join us in the community](/community/).
 
