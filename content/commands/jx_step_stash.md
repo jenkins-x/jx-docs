@@ -1,5 +1,5 @@
 ---
-date: 2019-01-22T08:45:34Z
+date: 2019-01-22T09:44:30Z
 title: "jx step stash"
 slug: jx_step_stash
 url: /commands/jx_step_stash/
@@ -42,6 +42,9 @@ jx step stash [flags]
   
   # lets collect some files to a specific cloud storage bucket
   jx step stash -c tests -p "target/test-reports/*" ---bucket-url gs://my-gcp-bucket
+  
+  # lets collect some files to a specific cloud storage bucket and specify the path to store them inside
+  jx step stash -c tests -p "target/test-reports/*" ---bucket-url gs://my-gcp-bucket --to-path tests/mystuff
 ```
 
 ### Options
@@ -64,6 +67,7 @@ jx step stash [flags]
       --project-git-url string    The project git URL to collect for. Used to default the organisation and repository folders in the storage. If not specified its discovered from the local '.git' folder
       --pull-secrets string       The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
+  -t, --to-path string            The path within the storage to store the files. If not specified it defaults to 'jenkins-x/$category/$owner/$repoName/$branch/$buildNumber'
       --verbose                   Enable verbose logging
 ```
 
