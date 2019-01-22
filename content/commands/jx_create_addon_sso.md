@@ -1,5 +1,5 @@
 ---
-date: 2019-01-22T12:23:48Z
+date: 2019-01-22T18:37:18Z
 title: "jx create addon sso"
 slug: jx_create_addon_sso
 url: /commands/jx_create_addon_sso/
@@ -29,28 +29,21 @@ jx create addon sso [flags]
 
 ```
   -b, --batch-mode                In batch mode the command never prompts for user input
-      --cluster                   Enable cluster wide Ingress upgrade
       --dex-version string        The dex chart version to install)
-      --force                     Forces upgrades of all webooks even if ingress URL has not changed
       --headless                  Enable headless operation if using browser automation
       --helm-update               Should we run helm update first to ensure we use the latest version (default true)
   -h, --help                      help for sso
       --install-dependencies      Should any required dependencies be installed automatically
       --log-level string          Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
-  -n, --namespace string          The Namespace to install into (default "jx")
-      --namespaces stringArray    Namespaces to upgrade
+  -n, --namespace string          The Namespace to install into (default "sso")
       --no-brew                   Disables the use of brew on macOS to install or upgrade command line dependencies
       --pull-secrets string       The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
   -r, --release string            The chart release name (default "jx-sso")
-      --services stringArray      Services to upgrade
   -s, --set string                The chart set values (can specify multiple or separate values with commas: key1=val1,key2=val2)
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
-      --skip-certmanager          Skips cert-manager installation
-      --skip-resources-update     Skips the update of jx related resources such as webhook or Jenkins URL
   -f, --values stringArray        List of locations for values files, can be local files or URLs
       --verbose                   Enable verbose logging
   -v, --version string            The chart version to install)
-      --wait-for-certs            Waits for TLS certs to be issued by cert-manager
 ```
 
 ### SEE ALSO

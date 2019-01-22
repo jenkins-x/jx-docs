@@ -1,5 +1,5 @@
 ---
-date: 2019-01-22T12:23:48Z
+date: 2019-01-22T18:37:18Z
 title: "jx create jenkins token"
 slug: jx_create_jenkins_token
 url: /commands/jx_create_jenkins_token/
@@ -43,6 +43,7 @@ jx create jenkins token [username] [flags]
       --no-brew                   Disables the use of brew on macOS to install or upgrade command line dependencies
   -p, --password string           The User password to try automatically create a new API Token
       --pull-secrets string       The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
+      --recreate-token            Should we recreate teh API token if it already exists
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
       --timeout string            The timeout if using REST to generate the API token (by passing username and password)
   -u, --url string                The URL of the Git server to add a user

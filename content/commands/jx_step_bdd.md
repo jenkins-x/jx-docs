@@ -1,5 +1,5 @@
 ---
-date: 2019-01-22T12:23:48Z
+date: 2019-01-22T18:37:18Z
 title: "jx step bdd"
 slug: jx_step_bdd
 url: /commands/jx_step_bdd/
@@ -30,10 +30,11 @@ jx step bdd [flags]
 
 ```
   -b, --batch-mode                          In batch mode the command never prompts for user input
+      --binary string                       the binary location of the 'jx' executable for creating clusters (default "jx")
       --buildpack string                    The name of the build pack to use for the Team
       --cleanup-temp-files                  Cleans up any temporary values.yaml used by helm install [default true] (default true)
       --cloud-environment-repo string       Cloud Environments Git repo (default "https://github.com/jenkins-x/cloud-environments")
-  -c, --clusters stringArray                the list of cluster kinds to create
+  -c, --config string                       the config YAML file containing the clusters to create
       --default-admin-password string       the default admin password to access Jenkins, Kubernetes Dashboard, ChartMuseum and Nexus
       --default-environment-prefix string   Default environment repo prefix, your Git repos will be of the form 'environment-$prefix-$envName'
       --delete-team                         Whether we should delete the Team we create for each Git Provider (default true)
@@ -53,6 +54,7 @@ jx step bdd [flags]
       --git-username string                 The Git username to use for creating new Git repositories
       --gitops                              Sets up the local file system for GitOps so that the current installation can be configured or upgraded at any time via GitOps
       --global-tiller                       Whether or not to use a cluster global tiller (default true)
+      --gopath string                       the GOPATH directory where the BDD test git repository will be cloned
       --headless                            Enable headless operation if using browser automation
       --helm-client-only                    Only install helm client
       --helm-tls                            Whether to use TLS with helm
@@ -80,6 +82,7 @@ jx step bdd [flags]
       --no-gitops-vault                     When using GitOps to create the source code for the development environment this flag disables the creation of a vault
       --no-tiller                           Whether to disable the use of tiller with helm. If disabled we use 'helm template' to generate the YAML from helm charts then we use 'kubectl apply' to install it to avoid using tiller completely.
       --on-premise                          If installing on an on premise cluster then lets default the 'external-ip' to be the Kubernetes master IP address
+      --parallel                            Should we process each cluster configuration in parallel
       --provider string                     Cloud service providing the Kubernetes cluster.  Supported providers: aks, aws, eks, gke, icp, iks, jx-infra, kubernetes, minikube, minishift, oke, openshift, pks
       --prow                                Enable Prow
       --pull-secrets string                 The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
