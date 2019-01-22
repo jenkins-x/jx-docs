@@ -1,5 +1,5 @@
 ---
-date: 2019-01-22T19:37:42Z
+date: 2019-01-22T20:22:02Z
 title: "jx create vault"
 slug: jx_create_vault
 url: /commands/jx_create_vault/
@@ -31,6 +31,7 @@ jx create vault [flags]
 ```
   -b, --batch-mode                   In batch mode the command never prompts for user input
       --cluster                      Enable cluster wide Ingress upgrade
+      --config-namespace string      Namespace where the ingress-config is stored (if empty, it will try to read it from Dev environment namespace)
       --force                        Forces upgrades of all webooks even if ingress URL has not changed
       --gke-project-id string        Google Project ID to use for Vault backend
       --gke-zone string              The zone (e.g. us-central1-a) where Vault will store the encrypted data
