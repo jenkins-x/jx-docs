@@ -70,7 +70,7 @@ anotherplugin:4.5.6
 
 Once you have built and released your image via CI/CD you can then use it in your Jenkins X installation.
 
-To configure Jenkins X to use your customm image you can specify your own Jenkins image via a `myvalues.yaml` file:
+To configure Jenkins X to use your custom image you can specify your own Jenkins image via a `myvalues.yaml` file:
   
 ```yaml
 jenkins:
