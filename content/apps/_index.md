@@ -1,7 +1,7 @@
 ---
 title: Overview
 linktitle: Apps Framework
-description: Extending Jenkins X with the App Framework
+description: Extending Jenkins X using the Apps Framework
 date: 2018-09-04
 publishdate: 2018-09-04
 lastmod: 2018-09-04
