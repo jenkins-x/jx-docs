@@ -254,8 +254,8 @@ anchor = "smart"
 [[menu.docs]]
   name = "Extending"
   weight = 30
-  identifier = "extending"
-  url = "/extending/"
+  identifier = "apps"
+  url = "/apps/"
   post = "break"
 
 # Core Menus
