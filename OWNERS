@@ -10,6 +10,7 @@ approvers:
 - linuxsuren
 - dependabot
 - rheinwein
+- deanesmith
 reviewers:
 - rawlingsj
 - jenkins-x-bot
@@ -22,3 +23,4 @@ reviewers:
 - linuxsuren
 - dependabot
 - rheinwein
+- deanesmith
