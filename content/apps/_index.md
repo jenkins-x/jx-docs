@@ -84,6 +84,15 @@ via client libraries for different platforms. Currently we offer clients for:
 * Java (incomplete) - [Quickstart](https://github.com/jenkins-x-quickstarts/spring-boot-watch-pipeline-activity)
 * Javascript [Quickstart](https://github.com/jenkins-x-quickstarts/spring-boot-watch-pipeline-activity)
 
+## Using `jx` as a library
+
+[jx](https://github.com/jenkins-x/jx) contains many useful functions and is documented on [godoc.org](https://godoc
+.org/github.com/jenkins-x/jx). The easiest way to consume it is is as a go module:
+
+```bash
+$ go get github.com/jenkins-x/jx
+``` 
+
 ## Source code management
 
 The ability to add new SCM connections to Jenkins X from an app is under active development.
@@ -155,3 +164,4 @@ itself. Binary plugins can import `jx` as a library of useful functions.
 Jenkins X provides a management framework for binary plugins that allows them to be automatically installed on the 
 users machine when the relevant subcommand is called. The management framework will also take care of upgrading and 
 removing plugins as needed. Plugins are managed by adding a custom resource to the team or cluster.
+
