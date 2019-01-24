@@ -19,7 +19,7 @@ Jenkins X is built on the shoulders of giants and also has lots of different sou
 
 This page lists the main organisations and repositories.
 
-## Organisations
+## Organisations
 
 * [jenkins-x](https://github.com/jenkins-x) the main organisation for source code
 * [jenkins-x-apps](https://github.com/jenkins-x-apps) contains the standard  [addon Apps](/apps/) for Jenkins X
