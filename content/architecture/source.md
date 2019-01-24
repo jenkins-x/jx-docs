@@ -47,4 +47,5 @@ Here we'll call out of some of the main repositories in the above organisations:
 
 ### Tools
 
+* [jenkins-x/exposecontroller](https://github.com/jenkins-x/exposecontroller) a `Deployment` or `Job` that can be used to generate/update `Ingress` resources (or `Route` on OpenShift) if you change your DNS domain or enable TLS - it can also inject external URLs into your application via `ConfigMap` injection 
 * [jenkins-x/updatebot](https://github.com/jenkins-x/updatebot) a command line bot we use to perform Continuous Delivery of libraries, executables, charts and images. i.e. we it generates Pull Requests on downstream dependent git repositories when a new upstream release is done
