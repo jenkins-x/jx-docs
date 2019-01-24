@@ -1,5 +1,5 @@
 ---
-date: 2019-01-24T18:51:59Z
+date: 2019-01-24T22:46:57Z
 title: "jx delete contexts"
 slug: jx_delete_contexts
 url: /commands/jx_delete_contexts/
