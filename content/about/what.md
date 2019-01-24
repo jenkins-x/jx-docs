@@ -1,4 +1,4 @@
-# What Is Jenkins X
+# What Is Jenkins X?
 
 To understand Jenkins X, we need to understand Kubernetes. But, this is not the place where you will learn Kubernetes, but rather extend your knowledge. So, I will assume that you already know what Kubernetes is and how to use it. If you do not, Jenkins X might be overwhelming, and I suggest you learn at least basic Kubernetes features and get a bit of hands-on practice first. I do not expect you to be a Kubernetes ninja and to know everything there is to know about Kubernetes. No one does. As a matter a fact, Jenkins X helps us by simplifying complex processes into concepts that can be adopted quickly and without spending months in trying to figure out "the right way to do stuff." It helps to elevate some of the problems based on the overall complexity of Kubernetes and its ecosystem.
 
