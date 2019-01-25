@@ -1,5 +1,5 @@
 ---
-date: 2019-01-25T13:30:57Z
+date: 2019-01-25T13:47:43Z
 title: "jx delete token addon"
 slug: jx_delete_token_addon
 url: /commands/jx_delete_token_addon/
