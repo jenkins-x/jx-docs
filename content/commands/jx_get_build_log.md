@@ -1,5 +1,5 @@
 ---
-date: 2019-01-25T11:42:46Z
+date: 2019-01-25T12:15:32Z
 title: "jx get build log"
 slug: jx_get_build_log
 url: /commands/jx_get_build_log/
@@ -38,16 +38,17 @@ jx get build log [flags]
 ### Options
 
 ```
-      --branch string   Filters the branch
-  -b, --build string    The build number to view
-  -c, --current         Display logs using current folder as repo name, and parent folder as owner
-  -f, --filter string   Filters all the available jobs by those that contain the given text
-  -h, --help            help for log
-  -o, --owner string    Filters the owner (person/organisation) of the repository
-  -p, --pending         Only display logs which are currently pending to choose from if no build name is supplied
-  -r, --repo string     Filters the build repository
-  -t, --tail            Tails the build log to the current terminal (default true)
-  -w, --wait            Waits for the build to start before failing
+      --branch string            Filters the branch
+  -b, --build string             The build number to view
+  -c, --current                  Display logs using current folder as repo name, and parent folder as owner
+  -f, --filter string            Filters all the available jobs by those that contain the given text
+  -h, --help                     help for log
+  -o, --owner string             Filters the owner (person/organisation) of the repository
+  -p, --pending                  Only display logs which are currently pending to choose from if no build name is supplied
+  -r, --repo string              Filters the build repository
+  -t, --tail                     Tails the build log to the current terminal (default true)
+  -w, --wait                     Waits for the build to start before failing
+  -d, --wait-duration duration   Timeout period waiting for the given pipeline to be created (default 5m0s)
 ```
 
 ### SEE ALSO
