@@ -1,5 +1,5 @@
 ---
-date: 2019-01-25T12:15:32Z
+date: 2019-01-25T12:46:58Z
 title: "jx create issue"
 slug: jx_create_issue
 url: /commands/jx_create_issue/
