@@ -16,7 +16,8 @@ Configures the storage location used by your team to stashing files or storing b
   
 Currently Jenkins X supports storing files into a branch of a git repository or in cloud blob storage like S3, GCS, Azure blobs etc. 
 
-When using Cloud Storage we use URLs like 's3://nameOfBucket' on AWS, 'gs://anotherBucket' on GCP or on Azure 'azblob://thatBucket' 
+When using Cloud Storage we use URLs like 's3://name-of-bucket' on AWS, 'gs://another-bucket' on GCP or on Azure 'azblob://that-bucket'.  Cloud storage containers must follow their providers naming conventions, typically requiring the name to be all lower case with minimal punctuation.
+
 
 See Also: 
 
@@ -48,10 +49,10 @@ jx edit storage [flags]
   
   
   # Configure the tests to be stored in cloud storage (using S3 / GCS / Azure Blobs etc)
-  jx edit storage -c tests --bucket-url s3://myExistingBucketName
+  jx edit storage -c tests --bucket-url s3://my-existing-bucket-name
   
   # Creates a new GCS bucket and configures the logs to be stored in it
-  jx edit storage -c logs --bucket myBucketName
+  jx edit storage -c logs --bucket my-bucket-name
 ```
 
 ### Options
