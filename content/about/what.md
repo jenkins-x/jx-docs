@@ -1,3 +1,22 @@
+---
+title: What Is Jenkins X
+linktitle: What Is Jenkins X
+description: What Is Jenkins X And Why Do We Want It?
+date: 2019-01-29
+publishdate: 2019-01-29
+lastmod: 2019-01-29
+menu:
+  docs:
+    parent: "about"
+    weight: 5
+weight: 5
+sections_weight: 5
+draft: false
+aliases: [/about/whatisjx]
+categories: [fundamentals]
+toc: true
+---
+
 # What Is Jenkins X?
 
 To understand **intricacies and inner workings** of Jenkins X, we need to understand Kubernetes. But, you do not need to understand Kubernetes to **use Jenkins X**. That is one of the main contributions of the project. Jenkins X allows us to harness the power of Kubernetes without spending eternity learning the ever-growing list of the things it does. Jenkins X helps us by simplifying complex processes into concepts that can be adopted quickly and without spending months in trying to figure out "the right way to do stuff." It helps by removing and simplifying some of the problems caused by the overall complexity of Kubernetes and its ecosystem. If you are indeed a Kubernetes ninja, you will appreciate all the effort put into Jenkins X. If you're not, you will be able to jump right in and harness the power of Kubernetes without ripping your hair out of frustration caused by Kubernetes complexity.
