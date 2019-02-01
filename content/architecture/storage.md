@@ -51,7 +51,7 @@ e.g.
 jx edit storage -c tests --bucket-url s3://myExistingBucketName
   
 # Configure the git URL and branch of where to store logs
-jx edit storage -c logs --git-url https://github.com/myorg/mylogs.git' --git-branch cheese
+jx edit storage -c logs --git-url https://github.com/myorg/mylogs.git --git-branch cheese
 ```
 
 You can view your teams storage settings via [jx get storage](/commands/jx_get_storage/)
