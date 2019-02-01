@@ -52,6 +52,11 @@ The Jenkins X pipelines generate a custom `Release` resource which we can use to
 * what Jenkins pipeline URL and log was used to perform the release
 * which commits, issues and Pull Requests were part of each release so that we can implement [feedback as issues are fixed in Staging/Production](/about/features/#feedback)
 
+### SourceRepository
+
+This stores information about source code repositories that Jenkins X is set to build.
+
+It is created by `jx import` and `jx create quickstart` and removed whenever a `jx delete application` is invoked.
 
 ### PipelineActivity
 
