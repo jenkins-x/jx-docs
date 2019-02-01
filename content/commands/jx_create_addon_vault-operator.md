@@ -1,5 +1,5 @@
 ---
-date: 2019-02-01T06:06:28Z
+date: 2019-02-01T06:29:26Z
 title: "jx create addon vault-operator"
 slug: jx_create_addon_vault-operator
 url: /commands/jx_create_addon_vault-operator/
@@ -42,7 +42,7 @@ jx create addon vault-operator [flags]
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
   -f, --values stringArray        List of locations for values files, can be local files or URLs
       --verbose                   Enable verbose logging
-  -v, --version string            The chart version to install)
+  -v, --version string            The chart version to install) (default "0.2.1")
 ```
 
 ### SEE ALSO

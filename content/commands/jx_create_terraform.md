@@ -1,5 +1,5 @@
 ---
-date: 2019-02-01T06:06:28Z
+date: 2019-02-01T06:29:26Z
 title: "jx create terraform"
 slug: jx_create_terraform
 url: /commands/jx_create_terraform/
@@ -58,6 +58,7 @@ jx create terraform [flags]
       --gke-preemptible                        Use preemptible VMs in the node-pool
       --gke-project-id string                  Google Project ID to create cluster in
       --gke-service-account string             The service account to use to connect to GKE
+      --gke-use-enhanced-apis                  Enable enhanced APIs to utilise Container Registry & Cloud Build
       --gke-use-enhanced-scopes                Use enhanced Oauth scopes for access to GCS/GCR
       --gke-zone string                        The compute zone (e.g. us-central1-a) for the cluster
       --global-tiller                          Whether or not to use a cluster global tiller (default true)
