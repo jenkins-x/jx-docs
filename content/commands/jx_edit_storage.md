@@ -1,5 +1,5 @@
 ---
-date: 2019-02-01T06:29:26Z
+date: 2019-02-01T09:38:43Z
 title: "jx edit storage"
 slug: jx_edit_storage
 url: /commands/jx_edit_storage/
@@ -38,13 +38,13 @@ jx edit storage [flags]
   
   
   # Configure the git URL of where to store logs (defaults to gh-pages branch)
-  jx edit storage -c logs --git-url https://github.com/myorg/mylogs.git
+  jx edit storage -c logs --git-url https://github.com/myorg/mylogs.git'
   
   # Configure the git URL and branch of where to store logs
-  jx edit storage -c logs --git-url https://github.com/myorg/mylogs.git --git-branch cheese
+  jx edit storage -c logs --git-url https://github.com/myorg/mylogs.git' --git-branch cheese
   
   # Configure the git URL of where all storage goes to by default unless a specific classifier has a config
-  jx edit storage -c default --git-url https://github.com/myorg/mylogs.git
+  jx edit storage -c default --git-url https://github.com/myorg/mylogs.git'
   
   
   # Configure the tests to be stored in cloud storage (using S3 / GCS / Azure Blobs etc)
