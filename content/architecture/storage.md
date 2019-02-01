@@ -51,7 +51,7 @@ e.g.
 jx edit storage -c tests --bucket-url s3://myExistingBucketName
   
 # Configure the git URL and branch of where to store logs
-jx edit storage -c logs --git-url https://github.com/myorg/mylogs.git' --git-branch cheese
+jx edit storage -c logs --git-url https://github.com/myorg/mylogs.git --git-branch cheese
 ```
 
 You can view your teams storage settings via [jx get storage](/commands/jx_get_storage/)
@@ -87,4 +87,5 @@ If you are in some Go source code and you have a URL from Jenkins X, such as a B
   * `gs://anotherBucket/mydir/something.txt` : using a GCS bucket on GCP
   * `azblob://thatBucket/mydir/something.txt` : using an Azure bucket
    
+
 If you want to easily be able to read from the URL from Go source code you can use the [`ReadURL` function](https://github.com/jenkins-x/jx/blob/e5a7943dc0c3d79c27f30aea73235f18b3f5dcff/pkg/cloud/buckets/buckets.go#L44-L45).
