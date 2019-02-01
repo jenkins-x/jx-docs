@@ -1,5 +1,5 @@
 ---
-date: 2019-02-01T10:20:17Z
+date: 2019-02-01T13:46:13Z
 title: "jx create cluster gke"
 slug: jx_create_cluster_gke
 url: /commands/jx_create_cluster_gke/
@@ -70,6 +70,7 @@ jx create cluster gke [flags]
       --install-dependencies                Should any required dependencies be installed automatically
       --install-only                        Force the install command to fail if there is already an installation. Otherwise lets update the installation
       --keep-exposecontroller-job           Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
+      --knative-pipeline                    Enables Knative Build Pipeline. Otherwise we default to use Knative Build
   -v, --kubernetes-version string           The Kubernetes version to use for the master and nodes. Defaults to server-specified
       --labels string                       The labels to add to the cluster being created such as 'foo=bar,whatnot=123'. Label names must begin with a lowercase character ([a-z]), end with a lowercase alphanumeric ([a-z0-9]) with dashes (-), and lowercase alphanumeric ([a-z0-9]) between.
       --local-cloud-environment             Ignores default cloud-environment-repo and uses current directory 

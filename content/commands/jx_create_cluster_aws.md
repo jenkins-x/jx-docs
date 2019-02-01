@@ -1,5 +1,5 @@
 ---
-date: 2019-02-01T10:20:17Z
+date: 2019-02-01T13:46:13Z
 title: "jx create cluster aws"
 slug: jx_create_cluster_aws
 url: /commands/jx_create_cluster_aws/
@@ -69,6 +69,7 @@ jx create cluster aws [flags]
       --install-dependencies                Should any required dependencies be installed automatically
       --install-only                        Force the install command to fail if there is already an installation. Otherwise lets update the installation
       --keep-exposecontroller-job           Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
+      --knative-pipeline                    Enables Knative Build Pipeline. Otherwise we default to use Knative Build
   -v, --kubernetes-version string           Kubernetes version
       --local-cloud-environment             Ignores default cloud-environment-repo and uses current directory 
       --local-helm-repo-name string         The name of the helm repository for the installed ChartMuseum (default "releases")

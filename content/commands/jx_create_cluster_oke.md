@@ -1,5 +1,5 @@
 ---
-date: 2019-02-01T10:20:17Z
+date: 2019-02-01T13:46:13Z
 title: "jx create cluster oke"
 slug: jx_create_cluster_oke
 url: /commands/jx_create_cluster_oke/
@@ -73,6 +73,7 @@ jx create cluster oke [flags]
       --isKubernetesDashboardEnabled        Is KubernetesDashboard Enabled. (default true)
       --isTillerEnabled                     Is Tiller Enabled.
       --keep-exposecontroller-job           Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
+      --knative-pipeline                    Enables Knative Build Pipeline. Otherwise we default to use Knative Build
       --kubernetesVersion string            The version of Kubernetes to install into the cluster masters.
       --local-cloud-environment             Ignores default cloud-environment-repo and uses current directory 
       --local-helm-repo-name string         The name of the helm repository for the installed ChartMuseum (default "releases")

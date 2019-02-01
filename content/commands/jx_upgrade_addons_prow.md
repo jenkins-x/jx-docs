@@ -1,5 +1,5 @@
 ---
-date: 2019-02-01T10:20:17Z
+date: 2019-02-01T13:46:13Z
 title: "jx upgrade addons prow"
 slug: jx_upgrade_addons_prow
 url: /commands/jx_upgrade_addons_prow/
@@ -27,6 +27,7 @@ jx upgrade addons prow [flags]
 
 ```
   -b, --batch-mode                         In batch mode the command never prompts for user input
+      --build-pipeline                     Enables Knative Build Pipeline. Otherwise we default to use Knative Build (default true)
       --cloud-environment-repo string      Cloud Environments Git repo (default "https://github.com/jenkins-x/cloud-environments")
       --headless                           Enable headless operation if using browser automation
   -h, --help                               help for prow

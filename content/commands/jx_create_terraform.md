@@ -1,5 +1,5 @@
 ---
-date: 2019-02-01T10:20:17Z
+date: 2019-02-01T13:46:13Z
 title: "jx create terraform"
 slug: jx_create_terraform
 url: /commands/jx_create_terraform/
@@ -77,6 +77,7 @@ jx create terraform [flags]
       --install-only                           Force the install command to fail if there is already an installation. Otherwise lets update the installation
       --jx-environment string                  The cluster name to install jx inside (default "dev")
       --keep-exposecontroller-job              Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
+      --knative-pipeline                       Enables Knative Build Pipeline. Otherwise we default to use Knative Build
       --local-cloud-environment                Ignores default cloud-environment-repo and uses current directory 
       --local-helm-repo-name string            The name of the helm repository for the installed ChartMuseum (default "releases")
       --local-organisation-repository string   Rather than cloning from a remote Git server, the local directory to use for the organisational folder

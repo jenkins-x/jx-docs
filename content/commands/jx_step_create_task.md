@@ -1,5 +1,5 @@
 ---
-date: 2019-02-01T10:20:17Z
+date: 2019-02-01T13:46:13Z
 title: "jx step create task"
 slug: jx_step_create_task
 url: /commands/jx_step_create_task/
@@ -49,7 +49,7 @@ jx step create task [flags]
   -p, --pack string               The build pack name. If none is specified its discovered from the source code
       --pull-secrets string       The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
   -r, --ref string                The Git reference (branch,tag,sha) in the Git repository to use
-      --service-account string    The Kubernetes ServiceAccount to use to run the pipeline (default "knative-build-bot")
+      --service-account string    The Kubernetes ServiceAccount to use to run the pipeline (default "pipeline")
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
       --source string             The name of the source repository (default "source")
       --target-path string        The target path appended to /workspace/${source} to clone the source code

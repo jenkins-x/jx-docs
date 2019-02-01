@@ -1,5 +1,5 @@
 ---
-date: 2019-02-01T10:20:17Z
+date: 2019-02-01T13:46:13Z
 title: "jx create addon prow"
 slug: jx_create_addon_prow
 url: /commands/jx_create_addon_prow/
@@ -30,6 +30,7 @@ jx create addon prow [flags]
 
 ```
   -b, --batch-mode                In batch mode the command never prompts for user input
+      --build-pipeline            Enables Knative Build Pipeline. Otherwise we default to use Knative Build (default true)
   -c, --chart string              The name of the chart to use (default "jenkins-x/prow")
       --headless                  Enable headless operation if using browser automation
       --helm-update               Should we run helm update first to ensure we use the latest version (default true)
