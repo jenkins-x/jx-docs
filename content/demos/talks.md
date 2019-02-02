@@ -49,7 +49,7 @@ sections_weight: 5
 
 * [2018-09-29 Software Crafters, Barcelona, Spain: Continuous Deployment With Jenkins X And Kubernetes](https://scbcn.github.io) by [Viktor Farcic](https://twitter.com/vfarcic) [Video](https://youtu.be/zoT8FyqITLI)
 
-* [2018-10-08 JDD Poland: End to End automation and Continuous Delivery of Microservices for Kubernetes](http://bit.ly/jdd-conference-jx) by [Paolo Carta](https://twitter.com/cl4mer)
+* [2018-10-08 JDD Poland: End to End automation and Continuous Delivery of Microservices for Kubernetes](http://bit.ly/jdd-conference-jx) by [Paolo Carta](https://twitter.com/cl4mer) with [Video](http://bit.ly/video-jdd-jx)
 
 * [2018-09-28 XantarJ Santiago de Compostela: Acelera el desarrollo de tus aplicaciones con Docker y Jenkins](https://www.eventbrite.es/e/entradas-xantarj-2018-49884037499) by [Carlos Sanchez](https://csanchez.org)
 
