@@ -1,5 +1,5 @@
 ---
-date: 2019-02-02T08:50:17Z
+date: 2019-02-02T16:07:19Z
 title: "jx create environment"
 slug: jx_create_environment
 url: /commands/jx_create_environment/
@@ -52,7 +52,6 @@ jx create environment [flags]
       --git-username string          The Git username to use for creating new Git repositories
       --headless                     Enable headless operation if using browser automation
   -h, --help                         help for environment
-      --http string                  Toggle creating http or https ingress rules (default "true")
       --install-dependencies         Should any required dependencies be installed automatically
       --keep-exposecontroller-job    Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
   -l, --label string                 The Environment label which is a descriptive string like 'Production' or 'Staging'
@@ -67,7 +66,7 @@ jx create environment [flags]
       --prow                         Install and use Prow for environment promotion
       --pull-secrets string          The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
       --skip-auth-secrets-merge      Skips merging a local git auth yaml file with any pipeline secrets that are found
-      --tls-acme string              Used to enable automatic TLS for ingress
+      --urltemplate string           For ingress; exposers can set the urltemplate to expose
       --vault                        Sets up a Hashicorp Vault for storing secrets during the cluster creation
       --verbose                      Enable verbose logging
 ```

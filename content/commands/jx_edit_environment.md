@@ -1,5 +1,5 @@
 ---
-date: 2019-02-02T08:50:17Z
+date: 2019-02-02T16:07:19Z
 title: "jx edit environment"
 slug: jx_edit_environment
 url: /commands/jx_edit_environment/
@@ -49,7 +49,6 @@ jx edit environment [flags]
   -g, --git-url string               The Git clone URL for the source code for GitOps based Environments
       --git-username string          The Git username to use for creating new Git repositories
   -h, --help                         help for environment
-      --http string                  Toggle creating http or https ingress rules (default "true")
       --keep-exposecontroller-job    Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
   -l, --label string                 The Environment label which is a descriptive string like 'Production' or 'Staging'
   -n, --name string                  The Environment resource name. Must follow the Kubernetes name conventions like Services, Namespaces
@@ -58,7 +57,7 @@ jx edit environment [flags]
   -o, --order int32                  The order weighting of the Environment so that they can be sorted by this order before name (default 100)
       --prefix string                Environment repo prefix, your Git repo will be of the form 'environment-$prefix-$envName' (default "jx")
   -p, --promotion string             The promotion strategy
-      --tls-acme string              Used to enable automatic TLS for ingress
+      --urltemplate string           For ingress; exposers can set the urltemplate to expose
 ```
 
 ### SEE ALSO

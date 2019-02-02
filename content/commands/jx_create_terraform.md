@@ -1,5 +1,5 @@
 ---
-date: 2019-02-02T08:50:17Z
+date: 2019-02-02T16:07:19Z
 title: "jx create terraform"
 slug: jx_create_terraform
 url: /commands/jx_create_terraform/
@@ -67,7 +67,6 @@ jx create terraform [flags]
       --helm-tls                               Whether to use TLS with helm
       --helm3                                  Use helm3 to install Jenkins X which does not use Tiller
   -h, --help                                   help for terraform
-      --http string                            Toggle creating http or https ingress rules (default "true")
       --ignore-terraform-warnings              Ignore any warnings about the Terraform plan being potentially destructive
       --ingress-cluster-role string            The cluster role for the Ingress controller (default "cluster-admin")
       --ingress-deployment string              The name of the Ingress controller Deployment (default "jxing-nginx-ingress-controller")
@@ -104,7 +103,7 @@ jx create terraform [flags]
       --tiller-cluster-role string             The cluster role for Helm's tiller (default "cluster-admin")
       --tiller-namespace string                The namespace for the Tiller when using a global tiller (default "kube-system")
       --timeout string                         The number of seconds to wait for the helm install to complete (default "6000")
-      --tls-acme string                        Used to enable automatic TLS for ingress
+      --urltemplate string                     For ingress; exposers can set the urltemplate to expose
       --user-cluster-role string               The cluster role for the current user to be able to administer helm (default "cluster-admin")
       --username string                        The Kubernetes username used to initialise helm. Usually your email address for your Kubernetes account
       --vault                                  Sets up a Hashicorp Vault for storing secrets during installation (supported only for GKE)

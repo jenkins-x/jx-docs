@@ -1,5 +1,5 @@
 ---
-date: 2019-02-02T08:50:17Z
+date: 2019-02-02T16:07:19Z
 title: "jx preview"
 slug: jx_preview
 url: /commands/jx_preview/
@@ -42,7 +42,6 @@ jx preview [flags]
   -r, --helm-repo-name string             The name of the helm repository that contains the app (default "releases")
   -u, --helm-repo-url string              The Helm Repository URL to use for the App (default "http://jenkins-x-chartmuseum:8080")
   -h, --help                              help for preview
-      --http string                       Toggle creating http or https ingress rules (default "true")
       --ignore-local-file                 Ignores the local file system when deducing the Git repository
       --install-dependencies              Should any required dependencies be installed automatically
       --keep-exposecontroller-job         Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
@@ -68,7 +67,7 @@ jx preview [flags]
       --source-ref string                 The source code git ref (branch/sha)
   -s, --source-url string                 The source code git URL
   -t, --timeout string                    The timeout to wait for the promotion to succeed in the underlying Environment. The command fails if the timeout is exceeded or the promotion does not complete (default "1h")
-      --tls-acme string                   Used to enable automatic TLS for ingress
+      --urltemplate string                For ingress; exposers can set the urltemplate to expose
       --verbose                           Enable verbose logging
   -v, --version string                    The Version to promote
 ```
