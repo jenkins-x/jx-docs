@@ -1,5 +1,5 @@
 ---
-date: 2019-02-03T09:14:09Z
+date: 2019-02-03T19:57:45Z
 title: "jx upgrade platform"
 slug: jx_upgrade_platform
 url: /commands/jx_upgrade_platform/
@@ -45,6 +45,7 @@ jx upgrade platform [flags]
       --update-secrets                  Regenerate adminSecrets.yaml on upgrade
       --verbose                         Enable verbose logging
   -v, --version string                  The specific platform version to upgrade to.
+      --versions-repo string            Jenkins X versions Git repo (default "https://github.com/jenkins-x/jenkins-x-versions")
 ```
 
 ### SEE ALSO

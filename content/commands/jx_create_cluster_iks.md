@@ -1,5 +1,5 @@
 ---
-date: 2019-02-03T09:14:09Z
+date: 2019-02-03T19:57:45Z
 title: "jx create cluster iks"
 slug: jx_create_cluster_iks
 url: /commands/jx_create_cluster_iks/
@@ -102,6 +102,7 @@ jx create cluster iks [flags]
       --username string                     The Kubernetes username used to initialise helm. Usually your email address for your Kubernetes account
       --vault                               Sets up a Hashicorp Vault for storing secrets during installation (supported only for GKE)
       --version string                      The specific platform version to install
+      --versions-repo string                Jenkins X versions Git repo (default "https://github.com/jenkins-x/jenkins-x-versions")
       --workers string                      The number of cluster worker nodes. Defaults to 3.
   -z, --zone string                         Specify the zone where you want to create the cluster, the options depend on what region that you are logged in to. To see available zones, run 'ibmcloud ks zones'. Default is 'wdc07'
 ```

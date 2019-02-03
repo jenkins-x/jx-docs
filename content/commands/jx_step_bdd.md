@@ -1,5 +1,5 @@
 ---
-date: 2019-02-03T09:14:09Z
+date: 2019-02-03T19:57:45Z
 title: "jx step bdd"
 slug: jx_step_bdd
 url: /commands/jx_step_bdd/
@@ -38,7 +38,7 @@ jx step bdd [flags]
       --default-admin-password string       the default admin password to access Jenkins, Kubernetes Dashboard, ChartMuseum and Nexus
       --default-environment-prefix string   Default environment repo prefix, your Git repos will be of the form 'environment-$prefix-$envName'
       --delete-team                         Whether we should delete the Team we create for each Git Provider (default true)
-      --dir string                          the git clone of the jenkins-x/cloud-environments git repository. Used to default the version of jenkins-x-platform when creating clusters if no --version option is supplied (default ".")
+      --dir string                          the git clone of the jenkins-x/jenkins-x-versions git repository. Used to default the version of jenkins-x-platform when creating clusters if no --version option is supplied
       --docker-registry string              The Docker Registry host or host:port which is used when tagging and pushing images. If not specified it defaults to the internal registry unless there is a better provider default (e.g. ECR on AWS/EKS)
       --domain string                       Domain to expose ingress endpoints.  Example: jenkinsx.io
       --draft-client-only                   Only install draft client
@@ -108,6 +108,7 @@ jx step bdd [flags]
       --vault                               Sets up a Hashicorp Vault for storing secrets during installation (supported only for GKE)
       --verbose                             Enable verbose logging
       --version string                      The specific platform version to install
+      --versions-repo string                Jenkins X versions Git repo (default "https://github.com/jenkins-x/jenkins-x-versions")
 ```
 
 ### SEE ALSO

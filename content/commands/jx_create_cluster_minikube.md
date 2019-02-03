@@ -1,5 +1,5 @@
 ---
-date: 2019-02-03T09:14:09Z
+date: 2019-02-03T19:57:45Z
 title: "jx create cluster minikube"
 slug: jx_create_cluster_minikube
 url: /commands/jx_create_cluster_minikube/
@@ -94,6 +94,7 @@ jx create cluster minikube [flags]
       --vault                               Sets up a Hashicorp Vault for storing secrets during installation (supported only for GKE)
       --verbose                             Enable verbose logging
       --version string                      The specific platform version to install
+      --versions-repo string                Jenkins X versions Git repo (default "https://github.com/jenkins-x/jenkins-x-versions")
   -d, --vm-driver string                    VM driver is one of: [hyperkit hyperv kvm kvm2 virtualbox vmwarefusion xhyve]
 ```
 

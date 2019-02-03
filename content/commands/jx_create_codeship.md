@@ -1,5 +1,5 @@
 ---
-date: 2019-02-03T09:14:09Z
+date: 2019-02-03T19:57:45Z
 title: "jx create codeship"
 slug: jx_create_codeship
 url: /commands/jx_create_codeship/
@@ -116,6 +116,7 @@ jx create codeship [flags]
       --vault                                  Sets up a Hashicorp Vault for storing secrets during installation (supported only for GKE)
       --verbose                                Enable verbose logging
       --version string                         The specific platform version to install
+      --versions-repo string                   Jenkins X versions Git repo (default "https://github.com/jenkins-x/jenkins-x-versions")
 ```
 
 ### SEE ALSO

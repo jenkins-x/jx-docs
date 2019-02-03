@@ -1,5 +1,5 @@
 ---
-date: 2019-02-03T09:14:09Z
+date: 2019-02-03T19:57:45Z
 title: "jx upgrade addons"
 slug: jx_upgrade_addons
 url: /commands/jx_upgrade_addons/
@@ -39,6 +39,7 @@ jx upgrade addons [flags]
   -s, --set string                      The Helm parameters to pass in while upgrading
       --skip-auth-secrets-merge         Skips merging a local git auth yaml file with any pipeline secrets that are found
       --verbose                         Enable verbose logging
+      --versions-repo string            Jenkins X versions Git repo (default "https://github.com/jenkins-x/jenkins-x-versions")
 ```
 
 ### SEE ALSO
