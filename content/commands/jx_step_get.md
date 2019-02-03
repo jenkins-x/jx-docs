@@ -1,5 +1,5 @@
 ---
-date: 2019-02-03T19:57:45Z
+date: 2019-02-03T20:33:47Z
 title: "jx step get"
 slug: jx_step_get
 url: /commands/jx_step_get/
