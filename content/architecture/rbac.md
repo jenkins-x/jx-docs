@@ -37,7 +37,7 @@ Jenkins X ships with a bunch of default `Role` objects you can use in the `jenki
 To add users use the [jx create user](/commands/jx_create_user/) command:
 
 ```shell
-jx create user -e "user@email.com" --login login --name username" 
+jx create user -e "user@email.com" --login username --name "User Name" 
 ```
 
 ## Changing user roles
