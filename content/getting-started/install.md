@@ -61,7 +61,7 @@ echo 'export PATH=$PATH:~/.jx/bin' >> ~/.bashrc
   choco upgrade jenkins-x
   ```
 
-  - If you use [scoop](https://scoop.sh), then there is a [manifest available](https://github.com/lukesampson/scoop/blob/master/bucket/jx.json).
+- If you use [scoop](https://scoop.sh), then there is a [manifest available](https://github.com/lukesampson/scoop/blob/master/bucket/jx.json).
 
   To install the `jx` binary run:
 
