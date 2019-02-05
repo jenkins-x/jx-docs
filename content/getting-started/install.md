@@ -47,20 +47,34 @@ echo 'export PATH=$PATH:~/.jx/bin' >> ~/.bashrc
 
 ### Windows
 
-If you use [Chocolatey](https://chocolatey.org/), then there is a [package available](https://chocolatey.org/packages/jenkins-x).
+- If you use [Chocolatey](https://chocolatey.org/), then there is a [package available](https://chocolatey.org/packages/jenkins-x).
 
-To install the `jx` binary run:
+  To install the `jx` binary run:
 
-```cmd
-choco install jenkins-x
-```
+  ```cmd
+  choco install jenkins-x
+  ```
 
-To upgrade the `jx` binary run:
+  To upgrade the `jx` binary run:
 
-```cmd
-choco upgrade jenkins-x
-```
-    
+  ```cmd
+  choco upgrade jenkins-x
+  ```
+
+- If you use [scoop](https://scoop.sh), then there is a [manifest available](https://github.com/lukesampson/scoop/blob/master/bucket/jx.json).
+
+  To install the `jx` binary run:
+
+  ```cmd
+  scoop install jx
+  ```
+
+  To upgrade the `jx` binary run:
+
+  ```cmd
+  scoop update jx
+  ```
+
 ### Other platforms
     
 [download the binary](https://github.com/jenkins-x/jx/releases) for `jx` and add it to your `$PATH`
