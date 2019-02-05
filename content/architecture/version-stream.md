@@ -32,7 +32,7 @@ We use GitOps and CI/CD to manage the Version Stream.
 
 As new packages or charts are released we generate Pull Requests on the [jenkins-x/jenkins-x-versions](https://github.com/jenkins-x/jenkins-x-versions) git repository which will then trigger our [BDD tests](https://github.com/jenkins-x/bdd-jx) via [jx step bdd](/commands/jx_step_bdd/) and verify the new chart/package version works.
 
-Pull Request approvers cam also choose to run their own manual tests on Pull Requests if they want. 
+Pull Request approvers can also choose to run their own manual tests on Pull Requests if they want. 
 
 ## Running the BDD tests
 
