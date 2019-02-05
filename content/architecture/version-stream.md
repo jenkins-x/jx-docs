@@ -22,19 +22,19 @@ To improve the stability of Jenkins X when lots of packages and charts are chang
 
 ## How it works
 
-The value stream is stored in the [jenkins-x/jenkins-x-versions](https://github.com/jenkins-x/jenkins-x-versions) git repository and stores the stable version of all packages and charts used by Jenkins X.
+The version stream is stored in the [jenkins-x/jenkins-x-versions](https://github.com/jenkins-x/jenkins-x-versions) git repository and stores the stable version of all packages and charts used by Jenkins X.
 
 When you run a command, such as to [create a cluster](/getting-started/create-cluster/), [install on an existing cluster](/getting-started/install-on-cluster/) or run a [jx upgrade](/commands/jx_upgrade/) command the `jx` command will ensure you have a local clone of the  [jenkins-x/jenkins-x-versions](https://github.com/jenkins-x/jenkins-x-versions) git repository and it will then pull the stable version of any chart or package from that source - or log a warning if a version is not yet being maintained.
 
-## How we upgrade the Value Stream
+## How we upgrade the Version Stream
 
-We use GitOps and CI/CD to manage the Value Stream.
+We use GitOps and CI/CD to manage the Version Stream.
 
 As new packages or charts are released we generate Pull Requests on the [jenkins-x/jenkins-x-versions](https://github.com/jenkins-x/jenkins-x-versions) git repository which will then trigger our [BDD tests](https://github.com/jenkins-x/bdd-jx) via [jx step bdd](/commands/jx_step_bdd/) and verify the new chart/package version works.
 
 Pull Request approvers cam also choose to run their own manual tests on Pull Requests if they want. 
 
-## Running the BDD tests
+## Running the BDD tests
 
 Note from a git clone of master or a Pull Request you can run the BDD tests against the Pull Requests version combination by using the [jx step bdd](/commands/jx_step_bdd/) and passing in `--dir .` for the directory of the clone.
 
