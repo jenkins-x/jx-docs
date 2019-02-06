@@ -1,5 +1,5 @@
 ---
-date: 2019-02-06T21:47:55Z
+date: 2019-02-06T22:20:38Z
 title: "jx step bdd"
 slug: jx_step_bdd
 url: /commands/jx_step_bdd/
@@ -96,6 +96,7 @@ jx step bdd [flags]
       --skip-auth-secrets-merge             Skips merging a local git auth yaml file with any pipeline secrets that are found
       --skip-ingress                        Don't install an ingress controller
       --skip-setup-tiller                   Don't setup the Helm Tiller service - lets use whatever tiller is already setup for us.
+      --skip-test-git-repo-clone            Skip cloning the bdd test git repo
       --test-git-branch string              the git repository branch to use for the BDD tests (default "master")
       --test-git-pr-number string           the Pull Request number to fetch from the repository for the BDD tests
   -r, --test-git-repo string                the git repository to clone for the BDD tests (default "https://github.com/jenkins-x/bdd-jx.git")
