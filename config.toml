@@ -261,8 +261,14 @@ anchor = "smart"
 # Core Menus
 
 [[menu.docs]]
-  name = "CLI"
+  name = "API"
   weight = 40
+  identifier = "api"
+  url = "https://jenkins-x.io/apidocs/"
+
+[[menu.docs]]
+  name = "CLI"
+  weight = 42
   identifier = "commands"
   url = "/commands/jx/"
 
