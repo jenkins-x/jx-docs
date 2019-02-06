@@ -41,7 +41,6 @@ To contribute to Jenkins X jx binary, you will need:
 
  - [Git](https://git-scm.com) and a [GitHub](https://github.com) account
  - [Go](https://golang.org/) `1.11.4` or later, with support for compiling to `linux/amd64`
- - [dep](https://github.com/golang/dep)
  
 
 ## Install Go
