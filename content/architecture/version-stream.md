@@ -36,7 +36,7 @@ Pull Request approvers can also choose to run their own manual tests on Pull Req
 
 ## Running the BDD tests
 
-Note from a git clone of master or a Pull Request you can run the BDD tests against the Pull Requests version combination by using the [jx step bdd](/commands/jx_step_bdd/) and passing in `--dir .` for the directory of the clone.
+From a git clone of master or a Pull Request you can run the BDD tests against the Pull Requests version combination by using the [jx step bdd](/commands/jx_step_bdd/) command and specifying `--dir .` for the directory of the clone.
 
 e.g. you can run the BDD tests yourself via...
 
