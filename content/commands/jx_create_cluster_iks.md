@@ -1,5 +1,5 @@
 ---
-date: 2019-02-06T18:05:54Z
+date: 2019-02-06T21:47:55Z
 title: "jx create cluster iks"
 slug: jx_create_cluster_iks
 url: /commands/jx_create_cluster_iks/
@@ -76,6 +76,7 @@ jx create cluster iks [flags]
       --no-default-environments             Disables the creation of the default Staging and Production environments
       --no-gitops-env-apply                 When using GitOps to create the source code for the development environment and installation, don't run 'jx step env apply' to perform the install
       --no-gitops-env-repo                  When using GitOps to create the source code for the development environment this flag disables the creation of a git repository for the source code
+      --no-gitops-env-seup                  When using GitOps to install the development environment this falg skips the post-install setup
       --no-gitops-vault                     When using GitOps to create the source code for the development environment this flag disables the creation of a vault
       --no-subnet                           Optional: Prevent the creation of a portable subnet when creating the cluster. By default, both a public and a private portable subnet are created on the associated VLAN, and this flag prevents that behavior. To add a subnet to the cluster later, run 'ibmcloud ks cluster-subnet-add'.
       --no-tiller                           Whether to disable the use of tiller with helm. If disabled we use 'helm template' to generate the YAML from helm charts then we use 'kubectl apply' to install it to avoid using tiller completely.

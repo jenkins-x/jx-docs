@@ -1,5 +1,5 @@
 ---
-date: 2019-02-06T18:05:54Z
+date: 2019-02-06T21:47:55Z
 title: "jx step create task"
 slug: jx_step_create_task
 url: /commands/jx_step_create_task/
@@ -48,7 +48,7 @@ jx step create task [flags]
       --log-level string          Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
       --no-apply                  Disables creating the Pipeline resources in the kubernetes cluster and just outputs the generated Task to the console or output file
       --no-brew                   Disables the use of brew on macOS to install or upgrade command line dependencies
-  -o, --output string             The output file to write the output to as YAML
+  -o, --output string             The directory to write the output to as YAML
   -p, --pack string               The build pack name. If none is specified its discovered from the source code
       --pull-secrets string       The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
   -r, --ref string                The Git reference (branch,tag,sha) in the Git repository to use
