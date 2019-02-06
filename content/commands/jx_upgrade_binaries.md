@@ -1,5 +1,5 @@
 ---
-date: 2019-02-06T09:25:17Z
+date: 2019-02-06T14:33:56Z
 title: "jx upgrade binaries"
 slug: jx_upgrade_binaries
 url: /commands/jx_upgrade_binaries/

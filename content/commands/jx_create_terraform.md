@@ -1,5 +1,5 @@
 ---
-date: 2019-02-06T09:25:17Z
+date: 2019-02-06T14:33:56Z
 title: "jx create terraform"
 slug: jx_create_terraform
 url: /commands/jx_create_terraform/
@@ -32,7 +32,9 @@ jx create terraform [flags]
       --buildpack string                       The name of the build pack to use for the Team
       --cleanup-temp-files                     Cleans up any temporary values.yaml used by helm install [default true] (default true)
       --cloud-environment-repo string          Cloud Environments Git repo (default "https://github.com/jenkins-x/cloud-environments")
+      --cloud-provider string                  The cloud provider (eg gke, aws) - cannot be used in conjunction with --cluster
   -c, --cluster stringArray                    Name and Kubernetes provider (gke, aks, eks) of clusters to be created in the form --cluster foo=gke
+      --cluster-name string                    The name of a single cluster to create - cannot be used in conjunction with --cluster
       --default-admin-password string          the default admin password to access Jenkins, Kubernetes Dashboard, ChartMuseum and Nexus
       --default-environment-prefix string      Default environment repo prefix, your Git repos will be of the form 'environment-$prefix-$envName'
       --docker-registry string                 The Docker Registry host or host:port which is used when tagging and pushing images. If not specified it defaults to the internal registry unless there is a better provider default (e.g. ECR on AWS/EKS)

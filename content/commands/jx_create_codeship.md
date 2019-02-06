@@ -1,5 +1,5 @@
 ---
-date: 2019-02-06T09:25:17Z
+date: 2019-02-06T14:33:56Z
 title: "jx create codeship"
 slug: jx_create_codeship
 url: /commands/jx_create_codeship/
@@ -32,7 +32,9 @@ jx create codeship [flags]
       --buildpack string                       The name of the build pack to use for the Team
       --cleanup-temp-files                     Cleans up any temporary values.yaml used by helm install [default true] (default true)
       --cloud-environment-repo string          Cloud Environments Git repo (default "https://github.com/jenkins-x/cloud-environments")
+      --cloud-provider string                  The cloud provider (eg gke, aws) - cannot be used in conjunction with --cluster
   -c, --cluster stringArray                    Name and Kubernetes provider (gke, aks, eks) of clusters to be created in the form --cluster foo=gke
+      --cluster-name string                    The name of a single cluster to create - cannot be used in conjunction with --cluster
       --codeship-organisation string           The Codeship organisation to use, this will not be stored anywhere
       --codeship-password string               The password to login to Codeship with, this will not be stored anywhere
       --codeship-username string               The username to login to Codeship with, this will not be stored anywhere
