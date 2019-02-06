@@ -1,5 +1,5 @@
 ---
-date: 2019-02-06T22:59:48Z
+date: 2019-02-06T23:34:52Z
 title: "jx delete quickstartlocation"
 slug: jx_delete_quickstartlocation
 url: /commands/jx_delete_quickstartlocation/
