@@ -34,6 +34,31 @@ As new packages or charts are released we generate Pull Requests on the [jenkins
 
 Pull Request approvers can also choose to run their own manual tests on Pull Requests if they want. 
 
+## Creating Pull Requests
+
+We have a simple CLI command [jx step create version pr](/commands/jx_step_create_version/) which can be used to automatically generate Pull Requests on the [jenkins-x/jenkins-x-versions](https://github.com/jenkins-x/jenkins-x-versions) git repository.
+
+If you are the maintainer of an upstream chart that is used by Jenkins X it would be awesome to add this command at the end of your release pipeline to generate a Pull Request for us to upgrade Jenkins X to use your new release (after the BDD tests have run to verify things still work):
+
+```shell 
+
+jx step create version pr -n mychartName -v 1.2.3
+```
+
+where `mychartName` is the fully qualified chart name using the remote repository prefix. e.g. `jenkins-x/prow` is the name of the `prow` chart maintained in the `jenkins-x` chart repository.
+
+### Periodic updates
+
+Its not always easy/possible to update upstream pipelines to push version changes to Jenkins X via a Pull Request. So you can setup a periodic job to check for version upgrades for all charts or charts matching some kind of wildcard.
+
+e.g. to upgrade the versions of all the `jenkins-x` maintained charts you can run this command:
+
+
+```shell 
+
+jx step create version pr -f "jenkins-x/*"
+```
+
 ## Running the BDD tests
 
 From a git clone of master or a Pull Request you can run the BDD tests against the Pull Requests version combination by using the [jx step bdd](/commands/jx_step_bdd/) command and specifying `--dir .` for the directory of the clone.
