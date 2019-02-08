@@ -1,5 +1,5 @@
 ---
-date: 2019-02-08T08:15:38Z
+date: 2019-02-08T10:02:43Z
 title: "jx create addon vault-operator"
 slug: jx_create_addon_vault-operator
 url: /commands/jx_create_addon_vault-operator/
