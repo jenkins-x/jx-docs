@@ -1,5 +1,5 @@
 ---
-date: 2019-02-14T10:24:11Z
+date: 2019-02-14T12:14:34Z
 title: "jx create addon flagger"
 slug: jx_create_addon_flagger
 url: /commands/jx_create_addon_flagger/
@@ -28,6 +28,7 @@ jx create addon flagger [flags]
 ```
   -b, --batch-mode                In batch mode the command never prompts for user input
   -c, --chart string              The name of the chart to use (default "flagger/flagger")
+  -e, --environment string        The name of the production environment where Istio will be enabled (default "production")
       --grafana-chart string      The name of the Flagger Grafana chart to use (default "flagger/grafana")
       --headless                  Enable headless operation if using browser automation
       --helm-update               Should we run helm update first to ensure we use the latest version (default true)
