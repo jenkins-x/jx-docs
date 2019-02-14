@@ -1,5 +1,5 @@
 ---
-date: 2019-02-14T12:14:34Z
+date: 2019-02-14T17:37:13Z
 title: "jx delete team"
 slug: jx_delete_team
 url: /commands/jx_delete_team/
