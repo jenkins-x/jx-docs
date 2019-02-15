@@ -1,5 +1,5 @@
 ---
-date: 2019-02-15T17:45:19Z
+date: 2019-02-15T20:01:51Z
 title: "jx get"
 slug: jx_get
 url: /commands/jx_get/
@@ -64,6 +64,7 @@ jx get TYPE [flags]
 * [jx get post](/commands/jx_get_post/)	 - Create a job which is triggered after a Preview is created
 * [jx get previews](/commands/jx_get_previews/)	 - Display one or more Preview Environments
 * [jx get quickstartlocations](/commands/jx_get_quickstartlocations/)	 - Display one or more Quickstart Locations
+* [jx get quickstarts](/commands/jx_get_quickstarts/)	 - Lists the available quickstarts
 * [jx get releases](/commands/jx_get_releases/)	 - Display the Release or Releases the current user is a member of
 * [jx get secrets](/commands/jx_get_secrets/)	 - Display one or more Secrets
 * [jx get storage](/commands/jx_get_storage/)	 - Display the storage configuration for different classifications
