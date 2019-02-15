@@ -30,7 +30,7 @@ When you run a command, such as to [create a cluster](/getting-started/create-cl
 
 We use GitOps and CI/CD to manage the Version Stream.
 
-As new packages or charts are released we generate Pull Requests on the [jenkins-x/jenkins-x-versions](https://github.com/jenkins-x/jenkins-x-versions) git repository which will then trigger our [BDD tests](https://github.com/jenkins-x/bdd-jx) via [jx step bdd](/commands/jx_step_bdd/) and verify the new chart/package version works.
+As new packages or charts are released we generate Pull Requests on the [jenkins-x/jenkins-x-versions](https://github.com/jenkins-x/jenkins-x-versions) git repository. We then trigger our [BDD tests](https://github.com/jenkins-x/bdd-jx) via [jx step bdd](/commands/jx_step_bdd/) and verify the new chart/package version works before merging changes. Currently we manually trigger the BDD tests via a comment of `/test this` - but we hope to move to periodic triggering of the BDD tests (e.g. once per day). 
 
 Pull Request approvers can also choose to run their own manual tests on Pull Requests if they want. 
 
