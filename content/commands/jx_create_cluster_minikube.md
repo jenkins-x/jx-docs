@@ -1,5 +1,5 @@
 ---
-date: 2019-02-18T08:12:19Z
+date: 2019-02-18T10:53:25Z
 title: "jx create cluster minikube"
 slug: jx_create_cluster_minikube
 url: /commands/jx_create_cluster_minikube/
@@ -84,7 +84,7 @@ jx create cluster minikube [flags]
       --register-local-helmrepo             Registers the Jenkins X ChartMuseum registry with your helm client [default false]
       --remote-tiller                       If enabled and we are using tiller for helm then run tiller remotely in the kubernetes cluster. Otherwise we run the tiller process locally. (default true)
       --skip-auth-secrets-merge             Skips merging a local git auth yaml file with any pipeline secrets that are found
-      --skip-ingress                        Don't install an ingress controller
+      --skip-ingress                        Skips the installation of ingress controller. Note that a ingress controller must already be installed into the cluster in order for the installation to succeed
       --skip-installation                   Provision cluster only, don't install Jenkins X into it
       --skip-setup-tiller                   Don't setup the Helm Tiller service - lets use whatever tiller is already setup for us.
       --tiller-cluster-role string          The cluster role for Helm's tiller (default "cluster-admin")

@@ -1,5 +1,5 @@
 ---
-date: 2019-02-18T08:12:19Z
+date: 2019-02-18T10:53:25Z
 title: "jx create cluster oke"
 slug: jx_create_cluster_oke
 url: /commands/jx_create_cluster_oke/
@@ -104,7 +104,7 @@ jx create cluster oke [flags]
       --serviceLbSubnetIds string           Kubernetes Service LB Subnets. Optional but nice to have it as Jenkins X will create ingress controller based on it.
       --servicesCidr string                 Kubernetes Service CIDR Block.
       --skip-auth-secrets-merge             Skips merging a local git auth yaml file with any pipeline secrets that are found
-      --skip-ingress                        Don't install an ingress controller
+      --skip-ingress                        Skips the installation of ingress controller. Note that a ingress controller must already be installed into the cluster in order for the installation to succeed
       --skip-installation                   Provision cluster only, don't install Jenkins X into it
       --skip-setup-tiller                   Don't setup the Helm Tiller service - lets use whatever tiller is already setup for us.
       --sshPublicKey string                 The SSH public key to add to each node in the node pool. Optional but nice to have it as user can access work nodes with it.

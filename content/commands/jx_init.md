@@ -1,5 +1,5 @@
 ---
-date: 2019-02-18T08:12:19Z
+date: 2019-02-18T10:53:25Z
 title: "jx init"
 slug: jx_init
 url: /commands/jx_init/
@@ -49,7 +49,7 @@ jx init [flags]
       --recreate-existing-draft-repos   Delete existing helm repos used by Jenkins X under ~/draft/packs
       --remote-tiller                   If enabled and we are using tiller for helm then run tiller remotely in the kubernetes cluster. Otherwise we run the tiller process locally. (default true)
       --skip-auth-secrets-merge         Skips merging a local git auth yaml file with any pipeline secrets that are found
-      --skip-ingress                    Don't install an ingress controller
+      --skip-ingress                    Skips the installation of ingress controller. Note that a ingress controller must already be installed into the cluster in order for the installation to succeed
       --skip-setup-tiller               Don't setup the Helm Tiller service - lets use whatever tiller is already setup for us.
       --tiller-cluster-role string      The cluster role for Helm's tiller (default "cluster-admin")
       --tiller-namespace string         The namespace for the Tiller when using a global tiller (default "kube-system")
