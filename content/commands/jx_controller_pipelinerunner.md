@@ -1,5 +1,5 @@
 ---
-date: 2019-02-18T16:39:43Z
+date: 2019-02-18T21:30:06Z
 title: "jx controller pipelinerunner"
 slug: jx_controller_pipelinerunner
 url: /commands/jx_controller_pipelinerunner/
@@ -36,6 +36,7 @@ jx controller pipelinerunner [flags]
   -p, --path string               The path to listen on for requests to trigger a pipeline run. (default "/")
       --port int                  The TCP port to listen on. (default 8080)
       --pull-secrets string       The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
+      --service-account string    The Kubernetes ServiceAccount to use to run the pipeline (default "build-bot")
       --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
       --verbose                   Enable verbose logging
 ```
