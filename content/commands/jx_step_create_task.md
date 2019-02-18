@@ -1,5 +1,5 @@
 ---
-date: 2019-02-18T10:53:25Z
+date: 2019-02-18T16:09:22Z
 title: "jx step create task"
 slug: jx_step_create_task
 url: /commands/jx_step_create_task/
@@ -45,7 +45,7 @@ jx step create task [flags]
       --image string              Specify a custom image to use for the steps which overrides the image in the PodTemplates
       --install-dependencies      Should any required dependencies be installed automatically
   -k, --kind string               The kind of pipeline to create such as: release, pullrequest, feature (default "release")
-  -l, --labels stringArray        List of custome labels to be applied to resources that are created
+  -l, --labels stringArray        List of custom labels to be applied to resources that are created
       --log-level string          Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
       --no-apply                  Disables creating the Pipeline resources in the kubernetes cluster and just outputs the generated Task to the console or output file
       --no-brew                   Disables the use of brew on macOS to install or upgrade command line dependencies
