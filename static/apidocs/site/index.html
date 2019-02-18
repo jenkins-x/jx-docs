@@ -306,6 +306,12 @@
    <LI class="nav-level-2"><A href="#pipelineactivitystep-v1-jenkins_io" class="nav-item">PipelineActivityStep v1 jenkins_io</A></LI>
  </UL>
   <UL>
+   <LI class="nav-level-2"><A href="#pipelinestructure-v1-jenkins_io" class="nav-item">PipelineStructure v1 jenkins_io</A></LI>
+ </UL>
+  <UL>
+   <LI class="nav-level-2"><A href="#pipelinestructurestage-v1-jenkins_io" class="nav-item">PipelineStructureStage v1 jenkins_io</A></LI>
+ </UL>
+  <UL>
    <LI class="nav-level-2"><A href="#podaffinity-v1-core" class="nav-item">PodAffinity v1 core</A></LI>
  </UL>
   <UL>
@@ -2666,6 +2672,7 @@ DEPRECATED: GitRepo is deprecated. To provision a container with a git repo, mou
   <LI><a href="#factlist-v1-jenkins_io">FactList [jenkins_io/v1]</a></LI>
   <LI><a href="#gitservicelist-v1-jenkins_io">GitServiceList [jenkins_io/v1]</a></LI>
   <LI><a href="#pipelineactivitylist-v1-jenkins_io">PipelineActivityList [jenkins_io/v1]</a></LI>
+  <LI><a href="#pipelinestructurelist-v1-jenkins_io">PipelineStructureList [jenkins_io/v1]</a></LI>
   <LI><a href="#pluginlist-v1-jenkins_io">PluginList [jenkins_io/v1]</a></LI>
   <LI><a href="#releaselist-v1-jenkins_io">ReleaseList [jenkins_io/v1]</a></LI>
   <LI><a href="#sourcerepositorylist-v1-jenkins_io">SourceRepositoryList [jenkins_io/v1]</a></LI>
@@ -2874,6 +2881,7 @@ DEPRECATED: GitRepo is deprecated. To provision a container with a git repo, mou
   <LI><a href="#gitservice-v1-jenkins_io">GitService [jenkins_io/v1]</a></LI>
   <LI><a href="#job-v1-batch">Job [batch/v1]</a></LI>
   <LI><a href="#pipelineactivity-v1-jenkins_io">PipelineActivity [jenkins_io/v1]</a></LI>
+  <LI><a href="#pipelinestructure-v1-jenkins_io">PipelineStructure [jenkins_io/v1]</a></LI>
   <LI><a href="#plugin-v1-jenkins_io">Plugin [jenkins_io/v1]</a></LI>
   <LI><a href="#podtemplatespec-v1-core">PodTemplateSpec [core/v1]</a></LI>
   <LI><a href="#release-v1-jenkins_io">Release [jenkins_io/v1]</a></LI>
@@ -3009,6 +3017,56 @@ DEPRECATED: GitRepo is deprecated. To provision a container with a git repo, mou
 <TR><TD><CODE>preview</CODE><BR /><I><a href="#previewactivitystep-v1-jenkins_io">PreviewActivityStep</a></I></TD><TD></TD></TR>
 <TR><TD><CODE>promote</CODE><BR /><I><a href="#promoteactivitystep-v1-jenkins_io">PromoteActivityStep</a></I></TD><TD></TD></TR>
 <TR><TD><CODE>stage</CODE><BR /><I><a href="#stageactivitystep-v1-jenkins_io">StageActivityStep</a></I></TD><TD></TD></TR>
+</TBODY>
+</TABLE>
+<H2 id="pipelinestructure-v1-jenkins_io">PipelineStructure v1 jenkins_io</H2>
+<TABLE class="col-md-8">
+<THEAD><TR><TH>Group</TH><TH>Version</TH><TH>Kind</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>jenkins_io</CODE></TD><TD><CODE>v1</CODE></TD><TD><CODE>PipelineStructure</CODE></TD></TR>
+</TBODY>
+</TABLE>
+<P>PipelineStructure contains references to the Pipeline and PipelineRun, and a list of PipelineStructureStages in the pipeline. This allows us to map between a running Pod to its TaskRun, to the TaskRun&#39;s Task and PipelineRun, and finally from there to the stage and potential parent stages that the Pod is actually executing, for use with populating PipelineActivity and providing logs.</P>
+<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
+ <UL>
+  <LI><a href="#pipelinestructurelist-v1-jenkins_io">PipelineStructureList [jenkins_io/v1]</a></LI>
+ </UL>
+</DIV>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
+<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
+<TR><TD><CODE>metadata</CODE><BR /><I><a href="#objectmeta-v1-meta">ObjectMeta</a></I></TD><TD>Standard object&#39;s metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</TD></TR>
+<TR><TD><CODE>pipelineRunRef</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>stages</CODE><BR /><I><a href="#pipelinestructurestage-v1-jenkins_io">PipelineStructureStage</a> array</I></TD><TD></TD></TR>
+</TBODY>
+</TABLE>
+<H2 id="pipelinestructurestage-v1-jenkins_io">PipelineStructureStage v1 jenkins_io</H2>
+<TABLE class="col-md-8">
+<THEAD><TR><TH>Group</TH><TH>Version</TH><TH>Kind</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>jenkins_io</CODE></TD><TD><CODE>v1</CODE></TD><TD><CODE>PipelineStructureStage</CODE></TD></TR>
+</TBODY>
+</TABLE>
+<P>PipelineStructureStage contains the stage&#39;s name, one of either a reference to the Task corresponding to the stage if it has steps, a list of sequential stage names nested within this stage, or a list of parallel stage names nested within this stage, and information on this stage&#39;s depth within the PipelineStructure as a whole, the name of its parent stage, if any, the name of the stage before it in execution order, if any, and the name of the stage after it in execution order, if any.</P>
+<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
+ <UL>
+  <LI><a href="#pipelinestructure-v1-jenkins_io">PipelineStructure [jenkins_io/v1]</a></LI>
+ </UL>
+</DIV>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>depth</CODE><BR /><I>integer</I></TD><TD></TD></TR>
+<TR><TD><CODE>name</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>next</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>parallel</CODE><BR /><I>string array</I></TD><TD></TD></TR>
+<TR><TD><CODE>parent</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>previous</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>stages</CODE><BR /><I>string array</I></TD><TD></TD></TR>
+<TR><TD><CODE>taskRef</CODE><BR /><I>string</I></TD><TD>Must have one of TaskRef+TaskRunRef, Stages, or Parallel</TD></TR>
+<TR><TD><CODE>taskRunRef</CODE><BR /><I>string</I></TD><TD>Populated during pod discovery, not at initial creation time.</TD></TR>
 </TBODY>
 </TABLE>
 <H2 id="podaffinity-v1-core">PodAffinity v1 core</H2>
