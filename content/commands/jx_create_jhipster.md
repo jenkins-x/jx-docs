@@ -1,5 +1,5 @@
 ---
-date: 2019-02-19T12:25:13Z
+date: 2019-02-19T20:16:51Z
 title: "jx create jhipster"
 slug: jx_create_jhipster
 url: /commands/jx_create_jhipster/
@@ -54,6 +54,7 @@ jx create jhipster [flags]
       --headless                       Enable headless operation if using browser automation
   -h, --help                           help for jhipster
       --import-commit-message string   Specifies the initial commit message used when importing the project
+  -m, --import-mode string             The import mode to use. Should be one of Jenkinsfile, YAML
       --install-dependencies           Should any required dependencies be installed automatically
       --jenkinsfile string             The name of the Jenkinsfile to use. If not specified then 'Jenkinsfile' will be used
       --list-packs                     list available draft packs
