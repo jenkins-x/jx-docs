@@ -13,7 +13,7 @@ author: rawlingsj
 
 The [Jenkins X](https://jenkins-x.io/) team and [CloudBees](https://www.cloudbees.com/) are excited to announce some changes that we’ve been working on for the future of Jenkins Pipeline. 
 
-So far, you’ve been able to use [Serverless Jenkins](https://medium.com/@jdrawlings/serverless-jenkins-with-jenkins-x-9134cbfe6870) to run Jenkins pipelines. Soon, you will be able to author cloud native Jenkins pipelines by using a YAML syntax. These pipelines will run with our new cloud native pipeline execution engine built using the currently named [Knative Build Pipeline](https://github.com/knative/build-pipeline) project.
+So far, you’ve been able to use [Serverless Jenkins](https://medium.com/@jdrawlings/serverless-jenkins-with-jenkins-x-9134cbfe6870) to run Jenkins pipelines. Soon, you will be able to author cloud native Jenkins pipelines by using a YAML syntax. These pipelines will run with our new cloud native pipeline execution engine built using the [Tekton Pipelines](https://github.com/knative/build-pipeline#-tekton-pipelines) project.
 
 We’ve been calling this initiative “Next Generation Pipeline” and the intent is to bring a truly cloud native experience to Jenkins users, with less overhead, increased predictability and tighter integrations with Jenkins X. 
 
