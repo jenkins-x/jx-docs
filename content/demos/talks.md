@@ -13,19 +13,23 @@ weight: 5
 sections_weight: 5
 ---
 
+* [2019-06-06 Continuous Delivery mit Jenkins X und Kubernetes](https://www.devops-essentials.de/lecture.php?id=7929-continuous-delivery-mit-jenkins-x-und) at [DevOps Essentials 2019](https://www.devops-essentials.de/) by [Nicolas Byl](https://twitter.com/NicolasByl)
+
 * [2019-01-23 Introduction to Jenkins X and opinionated CI/CD](https://www.slideshare.net/michaelneale/jenkins-x-intro-from-google-app-dev-conference) at Google Digital AppDev conference (Singapore) by [Michael Neale](https://twitter.com/michaelneale)
 
 * [2019-05-07 Workshop: Continuous Deployment To Kubernetes](https://craft-conf.com/workshops) at [Craft (Budapest)](https://craft-conf.com/) by [Viktor Farcic](https://twitter.com/vfarcic)
 
 * [2019-03-19 Jenkins X - Continuously Driving the Kloud (German)](https://programm.javaland.eu/2019/#/scheduledEvent/569771) at [Javaland 2019 (Germany)](https://www.javaland.eu) by [Gerd Aschemann](https://twitter.com/GerdAschemann) 
 
-* [2019-01-24 Jenkins X - Continuously Driving the Kloud (German)](https://www.xing.com/events/jenkins-continuously-driving-the-kloud-1995467?sc_o=si1942_com) at [JUG Metroplregion Nürnberg (Germany)](http://www.jug-n.de) by [Gerd Aschemann](https://twitter.com/GerdAschemann) 
+* [2019-02-26 GitOps by courtesy of Jenkins-X (German)](https://www.meetup.com/Agile-Testing-Munich/events/258881963/) at [Agile Testing @Munich (Germany)](https://www.meetup.com/Agile-Testing-Munich/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) 
 
-* [2019-01-14 Jenkins X - Continuously Driving the Kloud (German)](https://www.meetup.com/de-DE/DevOps-Wuerzburg-Mainfranken/events/255614733/) at [DevOps Meetup Würzburg (Germany)](https://www.meetup.com/DevOps-Wuerzburg-Mainfranken/) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
+* [2019-01-24 Jenkins X - Continuously Driving the Kloud (German)](https://www.xing.com/events/jenkins-continuously-driving-the-kloud-1995467?sc_o=si1942_com) at [JUG Metroplregion Nürnberg (Germany)](http://www.jug-n.de) by [Gerd Aschemann](https://twitter.com/GerdAschemann) ([Slides](http://aschemann.net/gerd/publications/jx-talk-jug-met-n-2019/))
+
+* [2019-01-14 Jenkins X - Continuously Driving the Kloud (German)](https://www.meetup.com/de-DE/DevOps-Wuerzburg-Mainfranken/events/255614733/) at [DevOps Meetup Würzburg (Germany)](https://www.meetup.com/DevOps-Wuerzburg-Mainfranken/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) - ([Youtube Stream](https://www.youtube.com/watch?v=NDIut5uYVS0), [Slides](http://aschemann.net/gerd/publications/jx-talk-devops-wue-2019/))
 
 * [2019-02-01 Continuous Deployment with Jenkins X, Kubernetes, and Friends](https://www.eventbrite.com/e/workshop-continuous-deployment-with-jenkins-x-kubernetes-and-friends-tickets-54562126790) at Fosdem, Brussels by [Viktor Farcic](https://twitter.com/vfarcic)
 
-* [2018-12-19 Jenkins X - Continuously Driving the Kloud (German)](https://sites.google.com/site/jugffm/home/19-12-2018-jenkins-x---continuously-driving-the-kloud) at [JUG Frankfurt (Germany)](https://sites.google.com/site/jugffm/home) by [Gerd Aschemann](https://twitter.com/GerdAschemann) 
+* [2018-12-19 Jenkins X - Continuously Driving the Kloud (German)](https://sites.google.com/site/jugffm/home/19-12-2018-jenkins-x---continuously-driving-the-kloud) at [JUG Frankfurt (Germany)](https://sites.google.com/site/jugffm/home) by [Gerd Aschemann](https://twitter.com/GerdAschemann) ([Slides](http://aschemann.net/gerd/publications/jx-talk-jugffm-2018/))
 
 * [2018-12-12 KubeCon NA Seattle: Jenkins X: Continuous Delivery for Kubernetes](http://sched.co/GrT2) [YouTube 🎥](https://www.youtube.com/watch?v=IDEa8seAzVc&index=1&list=PLHsuXkXI4xdjGlGkCBdxIAmkzfWXqsUrO) by [Carlos Sanchez](https://csanchez.org)
 
