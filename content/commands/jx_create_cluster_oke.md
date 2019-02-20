@@ -1,5 +1,5 @@
 ---
-date: 2019-02-20T07:09:50Z
+date: 2019-02-20T19:22:15Z
 title: "jx create cluster oke"
 slug: jx_create_cluster_oke
 url: /commands/jx_create_cluster_oke/
@@ -33,7 +33,6 @@ jx create cluster oke [flags]
 ### Options
 
 ```
-  -b, --batch-mode                          In batch mode the command never prompts for user input
       --buildpack string                    The name of the build pack to use for the Team
       --cleanup-temp-files                  Cleans up any temporary values.yaml used by helm install [default true] (default true)
       --cloud-environment-repo string       Cloud Environments Git repo (default "https://github.com/jenkins-x/cloud-environments")
@@ -57,7 +56,6 @@ jx create cluster oke [flags]
       --git-username string                 The Git username to use for creating new Git repositories
       --gitops                              Sets up the local file system for GitOps so that the current installation can be configured or upgraded at any time via GitOps
       --global-tiller                       Whether or not to use a cluster global tiller (default true)
-      --headless                            Enable headless operation if using browser automation
       --helm-client-only                    Only install helm client
       --helm-tls                            Whether to use TLS with helm
       --helm3                               Use helm3 to install Jenkins X which does not use Tiller
@@ -67,7 +65,6 @@ jx create cluster oke [flags]
       --ingress-namespace string            The namespace for the Ingress controller (default "kube-system")
       --ingress-service string              The name of the Ingress controller Service (default "jxing-nginx-ingress-controller")
       --initialNodeLabels string            A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
-      --install-dependencies                Should any required dependencies be installed automatically
       --install-only                        Force the install command to fail if there is already an installation. Otherwise lets update the installation
       --isKubernetesDashboardEnabled        Is KubernetesDashboard Enabled. (default true)
       --isTillerEnabled                     Is Tiller Enabled.
@@ -77,10 +74,8 @@ jx create cluster oke [flags]
       --kubernetesVersion string            The version of Kubernetes to install into the cluster masters.
       --local-cloud-environment             Ignores default cloud-environment-repo and uses current directory 
       --local-helm-repo-name string         The name of the helm repository for the installed ChartMuseum (default "releases")
-      --log-level string                    Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
       --name string                         The name of the cluster. Avoid entering confidential information.
       --namespace string                    The namespace the Jenkins X platform should be installed into (default "jx")
-      --no-brew                             Disables the use of brew on macOS to install or upgrade command line dependencies
       --no-default-environments             Disables the creation of the default Staging and Production environments
       --no-gitops-env-apply                 When using GitOps to create the source code for the development environment and installation, don't run 'jx step env apply' to perform the install
       --no-gitops-env-repo                  When using GitOps to create the source code for the development environment this flag disables the creation of a git repository for the source code
@@ -96,14 +91,12 @@ jx create cluster oke [flags]
       --poolMaxWaitSeconds string           The maximum time to wait for the work request to reach the state defined by --wait-for-state. Defaults to 1200 seconds.
       --poolWaitIntervalSeconds string      Check every --wait-interval-seconds to see whether the work request to see if it has reached the state defined by --wait-for-state.
       --prow                                Enable Prow
-      --pull-secrets string                 The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
       --quantityPerSubnet string            The number of nodes to create in each subnet.
       --recreate-existing-draft-repos       Delete existing helm repos used by Jenkins X under ~/draft/packs
       --register-local-helmrepo             Registers the Jenkins X ChartMuseum registry with your helm client [default false]
       --remote-tiller                       If enabled and we are using tiller for helm then run tiller remotely in the kubernetes cluster. Otherwise we run the tiller process locally. (default true)
       --serviceLbSubnetIds string           Kubernetes Service LB Subnets. Optional but nice to have it as Jenkins X will create ingress controller based on it.
       --servicesCidr string                 Kubernetes Service CIDR Block.
-      --skip-auth-secrets-merge             Skips merging a local git auth yaml file with any pipeline secrets that are found
       --skip-ingress                        Skips the installation of ingress controller. Note that a ingress controller must already be installed into the cluster in order for the installation to succeed
       --skip-installation                   Provision cluster only, don't install Jenkins X into it
       --skip-setup-tiller                   Don't setup the Helm Tiller service - lets use whatever tiller is already setup for us.
@@ -116,10 +109,21 @@ jx create cluster oke [flags]
       --username string                     The Kubernetes username used to initialise helm. Usually your email address for your Kubernetes account
       --vault                               Sets up a Hashicorp Vault for storing secrets during installation (supported only for GKE)
       --vcnId string                        The OCID of the virtual cloud network (VCN) in which to create the cluster.
-      --verbose                             Enable verbose logging
       --version string                      The specific platform version to install
       --versions-repo string                Jenkins X versions Git repo (default "https://github.com/jenkins-x/jenkins-x-versions")
       --waitForState string                 Specify this option to perform the action and then wait until the work request reaches a certain state. (default "SUCCEEDED")
+```
+
+### Options inherited from parent commands
+
+```
+  -b, --batch-mode                Runs in batch mode without prompting for user input
+      --headless                  Runs in headless mode when using browser automation
+      --install-dependencies      Enables automatic dependencies installation when required
+      --log-level string          Sets the logging level (panic, fatal, error, warning, info, debug) (default "info")
+      --no-brew                   Disables brew package manager on MacOS when installing binary dependencies
+      --skip-auth-secrets-merge   Skips merging the secrets from local files with the secrets from Kubernetes cluster
+      --verbose                   Enables verbose output
 ```
 
 ### SEE ALSO

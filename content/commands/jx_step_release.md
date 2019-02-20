@@ -1,5 +1,5 @@
 ---
-date: 2019-02-20T07:09:50Z
+date: 2019-02-20T19:22:15Z
 title: "jx step release"
 slug: jx_step_release
 url: /commands/jx_step_release/
@@ -20,7 +20,7 @@ jx step release [flags]
 
 ```
   -a, --application string                the Docker application image name
-  -b, --build string                      The Build number which is used to update the PipelineActivity. If not specified its defaulted from  the '$BUILD_NUMBER' environment variable
+      --build string                      The Build number which is used to update the PipelineActivity. If not specified its defaulted from  the '$BUILD_NUMBER' environment variable
   -r, --docker-registry docker-registry   the Docker registry host or host:port to use. If not specified it is loaded from the docker-registry ConfigMap
   -e, --git-email string                  The Git email address to configure if there is none already setup
   -u, --git-username string               The Git username to configure if there is none already setup
@@ -32,6 +32,18 @@ jx step release [flags]
       --pull-request-poll-time string     Poll time when waiting for a Pull Request to merge (default "20s")
   -t, --timeout string                    The timeout to wait for the promotion to succeed in the underlying Environment. The command fails if the timeout is exceeded or the promotion does not complete (default "1h")
       --xdg-config-home string            The home directory where git config is setup (default "/home/jenkins")
+```
+
+### Options inherited from parent commands
+
+```
+  -b, --batch-mode                Runs in batch mode without prompting for user input
+      --headless                  Runs in headless mode when using browser automation
+      --install-dependencies      Enables automatic dependencies installation when required
+      --log-level string          Sets the logging level (panic, fatal, error, warning, info, debug) (default "info")
+      --no-brew                   Disables brew package manager on MacOS when installing binary dependencies
+      --skip-auth-secrets-merge   Skips merging the secrets from local files with the secrets from Kubernetes cluster
+      --verbose                   Enables verbose output
 ```
 
 ### SEE ALSO

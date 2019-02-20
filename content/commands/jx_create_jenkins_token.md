@@ -1,5 +1,5 @@
 ---
-date: 2019-02-20T07:09:50Z
+date: 2019-02-20T19:22:15Z
 title: "jx create jenkins token"
 slug: jx_create_jenkins_token
 url: /commands/jx_create_jenkins_token/
@@ -32,23 +32,27 @@ jx create jenkins token [username] [flags]
 ### Options
 
 ```
-  -t, --api-token string          The API Token for the user
-  -b, --batch-mode                In batch mode the command never prompts for user input
-      --browser                   Use REST calls to automatically find the API token if the user and password are known
-      --headless                  Enable headless operation if using browser automation
-  -h, --help                      help for token
-      --install-dependencies      Should any required dependencies be installed automatically
-      --log-level string          Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
-  -n, --name string               The name of the Git server to add a user
-      --namespace string          The namespace of the secret where the Jenkins API token will be stored
-      --no-brew                   Disables the use of brew on macOS to install or upgrade command line dependencies
-  -p, --password string           The User password to try automatically create a new API Token
-      --pull-secrets string       The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
-      --recreate-token            Should we recreate teh API token if it already exists
-      --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
-      --timeout string            The timeout if using REST to generate the API token (by passing username and password)
-  -u, --url string                The URL of the Git server to add a user
-      --verbose                   Enable verbose logging
+  -t, --api-token string   The API Token for the user
+      --browser            Use REST calls to automatically find the API token if the user and password are known
+  -h, --help               help for token
+  -n, --name string        The name of the Git server to add a user
+      --namespace string   The namespace of the secret where the Jenkins API token will be stored
+  -p, --password string    The User password to try automatically create a new API Token
+      --recreate-token     Should we recreate teh API token if it already exists
+      --timeout string     The timeout if using REST to generate the API token (by passing username and password)
+  -u, --url string         The URL of the Git server to add a user
+```
+
+### Options inherited from parent commands
+
+```
+  -b, --batch-mode                Runs in batch mode without prompting for user input
+      --headless                  Runs in headless mode when using browser automation
+      --install-dependencies      Enables automatic dependencies installation when required
+      --log-level string          Sets the logging level (panic, fatal, error, warning, info, debug) (default "info")
+      --no-brew                   Disables brew package manager on MacOS when installing binary dependencies
+      --skip-auth-secrets-merge   Skips merging the secrets from local files with the secrets from Kubernetes cluster
+      --verbose                   Enables verbose output
 ```
 
 ### SEE ALSO

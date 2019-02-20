@@ -1,5 +1,5 @@
 ---
-date: 2019-02-20T07:09:50Z
+date: 2019-02-20T19:22:15Z
 title: "jx create codeship"
 slug: jx_create_codeship
 url: /commands/jx_create_codeship/
@@ -28,7 +28,6 @@ jx create codeship [flags]
 ### Options
 
 ```
-  -b, --batch-mode                             In batch mode the command never prompts for user input
       --buildpack string                       The name of the build pack to use for the Team
       --cleanup-temp-files                     Cleans up any temporary values.yaml used by helm install [default true] (default true)
       --cloud-environment-repo string          Cloud Environments Git repo (default "https://github.com/jenkins-x/cloud-environments")
@@ -69,7 +68,6 @@ jx create codeship [flags]
       --gke-use-enhanced-scopes                Use enhanced Oauth scopes for access to GCS/GCR
       --gke-zone string                        The compute zone (e.g. us-central1-a) for the cluster
       --global-tiller                          Whether or not to use a cluster global tiller (default true)
-      --headless                               Enable headless operation if using browser automation
       --helm-client-only                       Only install helm client
       --helm-tls                               Whether to use TLS with helm
       --helm3                                  Use helm3 to install Jenkins X which does not use Tiller
@@ -79,7 +77,6 @@ jx create codeship [flags]
       --ingress-deployment string              The name of the Ingress controller Deployment (default "jxing-nginx-ingress-controller")
       --ingress-namespace string               The namespace for the Ingress controller (default "kube-system")
       --ingress-service string                 The name of the Ingress controller Service (default "jxing-nginx-ingress-controller")
-      --install-dependencies                   Should any required dependencies be installed automatically
       --install-only                           Force the install command to fail if there is already an installation. Otherwise lets update the installation
       --jx-environment string                  The cluster name to install jx inside (default "dev")
       --kaniko                                 Use Kaniko for building docker images
@@ -88,10 +85,8 @@ jx create codeship [flags]
       --local-cloud-environment                Ignores default cloud-environment-repo and uses current directory 
       --local-helm-repo-name string            The name of the helm repository for the installed ChartMuseum (default "releases")
       --local-organisation-repository string   Rather than cloning from a remote Git server, the local directory to use for the organisational folder
-      --log-level string                       Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
   -n, --name string                            The name of the service account to create
       --namespace string                       The namespace the Jenkins X platform should be installed into (default "jx")
-      --no-brew                                Disables the use of brew on macOS to install or upgrade command line dependencies
       --no-default-environments                Disables the creation of the default Staging and Production environments
       --no-gitops-env-apply                    When using GitOps to create the source code for the development environment and installation, don't run 'jx step env apply' to perform the install
       --no-gitops-env-repo                     When using GitOps to create the source code for the development environment this flag disables the creation of a git repository for the source code
@@ -102,11 +97,9 @@ jx create codeship [flags]
   -o, --organisation-name string               The organisation name that will be used as the Git repo containing cluster details, the repo will be organisation-<org name>
   -p, --project string                         The GCP project to create the service account in
       --prow                                   Enable Prow
-      --pull-secrets string                    The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
       --recreate-existing-draft-repos          Delete existing helm repos used by Jenkins X under ~/draft/packs
       --register-local-helmrepo                Registers the Jenkins X ChartMuseum registry with your helm client [default false]
       --remote-tiller                          If enabled and we are using tiller for helm then run tiller remotely in the kubernetes cluster. Otherwise we run the tiller process locally. (default true)
-      --skip-auth-secrets-merge                Skips merging a local git auth yaml file with any pipeline secrets that are found
       --skip-ingress                           Skips the installation of ingress controller. Note that a ingress controller must already be installed into the cluster in order for the installation to succeed
       --skip-login                             Skip Google auth if already logged in via gcloud auth
       --skip-setup-tiller                      Don't setup the Helm Tiller service - lets use whatever tiller is already setup for us.
@@ -118,9 +111,20 @@ jx create codeship [flags]
       --user-cluster-role string               The cluster role for the current user to be able to administer helm (default "cluster-admin")
       --username string                        The Kubernetes username used to initialise helm. Usually your email address for your Kubernetes account
       --vault                                  Sets up a Hashicorp Vault for storing secrets during installation (supported only for GKE)
-      --verbose                                Enable verbose logging
       --version string                         The specific platform version to install
       --versions-repo string                   Jenkins X versions Git repo (default "https://github.com/jenkins-x/jenkins-x-versions")
+```
+
+### Options inherited from parent commands
+
+```
+  -b, --batch-mode                Runs in batch mode without prompting for user input
+      --headless                  Runs in headless mode when using browser automation
+      --install-dependencies      Enables automatic dependencies installation when required
+      --log-level string          Sets the logging level (panic, fatal, error, warning, info, debug) (default "info")
+      --no-brew                   Disables brew package manager on MacOS when installing binary dependencies
+      --skip-auth-secrets-merge   Skips merging the secrets from local files with the secrets from Kubernetes cluster
+      --verbose                   Enables verbose output
 ```
 
 ### SEE ALSO

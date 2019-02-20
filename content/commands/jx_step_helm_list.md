@@ -1,5 +1,5 @@
 ---
-date: 2019-02-20T07:09:50Z
+date: 2019-02-20T19:22:15Z
 title: "jx step helm list"
 slug: jx_step_helm_list
 url: /commands/jx_step_helm_list/
@@ -31,6 +31,18 @@ jx step helm list [flags]
       --git-provider string           The Git provider for the environment Git repository (default "github.com")
   -h, --help                          help for list
   -n, --namespace string              the namespace to look for the helm releases. Defaults to the current namespace
+```
+
+### Options inherited from parent commands
+
+```
+  -b, --batch-mode                Runs in batch mode without prompting for user input
+      --headless                  Runs in headless mode when using browser automation
+      --install-dependencies      Enables automatic dependencies installation when required
+      --log-level string          Sets the logging level (panic, fatal, error, warning, info, debug) (default "info")
+      --no-brew                   Disables brew package manager on MacOS when installing binary dependencies
+      --skip-auth-secrets-merge   Skips merging the secrets from local files with the secrets from Kubernetes cluster
+      --verbose                   Enables verbose output
 ```
 
 ### SEE ALSO

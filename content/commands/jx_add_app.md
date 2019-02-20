@@ -1,5 +1,5 @@
 ---
-date: 2019-02-20T07:09:50Z
+date: 2019-02-20T19:22:15Z
 title: "jx add app"
 slug: jx_add_app
 url: /commands/jx_add_app/
@@ -20,7 +20,6 @@ jx add app [flags]
 
 ```
       --alias string         An alias to use for the app (available when using GitOps for your dev environment)
-  -b, --batch-mode           In batch mode the command never prompts for user input
       --helm-update          Should we run helm update first to ensure we use the latest version (available when NOT using GitOps for your dev environment) (default true)
   -h, --help                 help for app
   -n, --namespace string     The Namespace to install into (available when NOT using GitOps for your dev environment) (default "jx")
@@ -30,8 +29,19 @@ jx add app [flags]
   -s, --set stringArray      The chart set values (can specify multiple or separate values with commas: key1=val1,key2=val2) (available when NOT using GitOps for your dev environment)
       --username string      The username for the repository
   -f, --values stringArray   List of locations for values files, can be local files or URLs (available when NOT using GitOps for your dev environment)
-      --verbose              Enable verbose logging
   -v, --version string       The chart version to install
+```
+
+### Options inherited from parent commands
+
+```
+  -b, --batch-mode                Runs in batch mode without prompting for user input
+      --headless                  Runs in headless mode when using browser automation
+      --install-dependencies      Enables automatic dependencies installation when required
+      --log-level string          Sets the logging level (panic, fatal, error, warning, info, debug) (default "info")
+      --no-brew                   Disables brew package manager on MacOS when installing binary dependencies
+      --skip-auth-secrets-merge   Skips merging the secrets from local files with the secrets from Kubernetes cluster
+      --verbose                   Enables verbose output
 ```
 
 ### SEE ALSO

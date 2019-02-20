@@ -1,5 +1,5 @@
 ---
-date: 2019-02-20T07:09:50Z
+date: 2019-02-20T19:22:15Z
 title: "jx upgrade apps"
 slug: jx_upgrade_apps
 url: /commands/jx_upgrade_apps/
@@ -30,7 +30,6 @@ jx upgrade apps [flags]
 
 ```
       --alias string        An alias to use for the app [--gitops]
-  -b, --batch-mode          In batch mode the command never prompts for user input
       --helm-update         Should we run helm update first to ensure we use the latest version (available when NOT using GitOps for your dev environment) (default true)
   -h, --help                help for apps
       --namespace string    The Namespace to promote to [--no-gitops]
@@ -38,8 +37,19 @@ jx upgrade apps [flags]
       --repository string   The repository from which the app should be installed
   -s, --set stringArray     The Helm parameters to pass in while upgrading [--no-gitops]
       --username string     The username for the repository
-      --verbose             Enable verbose logging
   -v, --version string      The chart version to install [--gitops]
+```
+
+### Options inherited from parent commands
+
+```
+  -b, --batch-mode                Runs in batch mode without prompting for user input
+      --headless                  Runs in headless mode when using browser automation
+      --install-dependencies      Enables automatic dependencies installation when required
+      --log-level string          Sets the logging level (panic, fatal, error, warning, info, debug) (default "info")
+      --no-brew                   Disables brew package manager on MacOS when installing binary dependencies
+      --skip-auth-secrets-merge   Skips merging the secrets from local files with the secrets from Kubernetes cluster
+      --verbose                   Enables verbose output
 ```
 
 ### SEE ALSO

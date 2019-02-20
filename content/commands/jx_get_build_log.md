@@ -1,5 +1,5 @@
 ---
-date: 2019-02-20T07:09:50Z
+date: 2019-02-20T19:22:15Z
 title: "jx get build log"
 slug: jx_get_build_log
 url: /commands/jx_get_build_log/
@@ -39,7 +39,7 @@ jx get build log [flags]
 
 ```
       --branch string            Filters the branch
-  -b, --build string             The build number to view
+      --build string             The build number to view
   -c, --current                  Display logs using current folder as repo name, and parent folder as owner
   -f, --filter string            Filters all the available jobs by those that contain the given text
   -h, --help                     help for log
@@ -49,6 +49,18 @@ jx get build log [flags]
   -t, --tail                     Tails the build log to the current terminal (default true)
   -w, --wait                     Waits for the build to start before failing
   -d, --wait-duration duration   Timeout period waiting for the given pipeline to be created (default 5m0s)
+```
+
+### Options inherited from parent commands
+
+```
+  -b, --batch-mode                Runs in batch mode without prompting for user input
+      --headless                  Runs in headless mode when using browser automation
+      --install-dependencies      Enables automatic dependencies installation when required
+      --log-level string          Sets the logging level (panic, fatal, error, warning, info, debug) (default "info")
+      --no-brew                   Disables brew package manager on MacOS when installing binary dependencies
+      --skip-auth-secrets-merge   Skips merging the secrets from local files with the secrets from Kubernetes cluster
+      --verbose                   Enables verbose output
 ```
 
 ### SEE ALSO

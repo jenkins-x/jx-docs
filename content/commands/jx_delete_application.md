@@ -1,5 +1,5 @@
 ---
-date: 2019-02-20T07:09:50Z
+date: 2019-02-20T19:22:15Z
 title: "jx delete application"
 slug: jx_delete_application
 url: /commands/jx_delete_application/
@@ -34,7 +34,6 @@ jx delete application [flags]
 
 ```
   -a, --all                             Selects all the matched applications
-  -b, --batch-mode                      Run without being prompted. WARNING! You will not be asked to confirm deletions if you use this flag.
   -f, --filter string                   Filter the list of applications to those containing this text
   -h, --help                            help for application
       --no-env                          Do not remove the application from any of the Environments
@@ -42,6 +41,18 @@ jx delete application [flags]
   -o, --org string                      github organisation/project name that source code resides in
       --pull-request-poll-time string   Poll time when waiting for a Pull Request to merge (default "20s")
   -t, --timeout string                  The timeout to wait for the promotion to succeed in the underlying Environment. The command fails if the timeout is exceeded or the promotion does not complete (default "1h")
+```
+
+### Options inherited from parent commands
+
+```
+  -b, --batch-mode                Runs in batch mode without prompting for user input
+      --headless                  Runs in headless mode when using browser automation
+      --install-dependencies      Enables automatic dependencies installation when required
+      --log-level string          Sets the logging level (panic, fatal, error, warning, info, debug) (default "info")
+      --no-brew                   Disables brew package manager on MacOS when installing binary dependencies
+      --skip-auth-secrets-merge   Skips merging the secrets from local files with the secrets from Kubernetes cluster
+      --verbose                   Enables verbose output
 ```
 
 ### SEE ALSO

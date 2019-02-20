@@ -1,5 +1,5 @@
 ---
-date: 2019-02-20T07:09:50Z
+date: 2019-02-20T19:22:15Z
 title: "jx upgrade extensions repository"
 slug: jx_upgrade_extensions_repository
 url: /commands/jx_upgrade_extensions_repository/
@@ -29,11 +29,21 @@ jx upgrade extensions repository [flags]
 ### Options
 
 ```
-  -b, --batch-mode           Enable batch mode
   -h, --help                 help for repository
   -i, --input-file string    The input file to read to generate the .lock file (default "jenkins-x-extensions-repository.yaml")
   -o, --output-file string   The output .lock file (default "jenkins-x-extensions-repository.lock.yaml")
-      --verbose              Enable verbose logging
+```
+
+### Options inherited from parent commands
+
+```
+  -b, --batch-mode                Runs in batch mode without prompting for user input
+      --headless                  Runs in headless mode when using browser automation
+      --install-dependencies      Enables automatic dependencies installation when required
+      --log-level string          Sets the logging level (panic, fatal, error, warning, info, debug) (default "info")
+      --no-brew                   Disables brew package manager on MacOS when installing binary dependencies
+      --skip-auth-secrets-merge   Skips merging the secrets from local files with the secrets from Kubernetes cluster
+      --verbose                   Enables verbose output
 ```
 
 ### SEE ALSO

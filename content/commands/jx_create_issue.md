@@ -1,5 +1,5 @@
 ---
-date: 2019-02-20T07:09:50Z
+date: 2019-02-20T19:22:15Z
 title: "jx create issue"
 slug: jx_create_issue
 url: /commands/jx_create_issue/
@@ -36,19 +36,23 @@ jx create issue [flags]
 ### Options
 
 ```
-  -b, --batch-mode                In batch mode the command never prompts for user input
-      --body string               The body of the issue
-      --dir string                The source directory used to detect the Git repository. Defaults to the current directory
-      --headless                  Enable headless operation if using browser automation
-  -h, --help                      help for issue
-      --install-dependencies      Should any required dependencies be installed automatically
-  -l, --label stringArray         The labels to add to the issue
-      --log-level string          Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
-      --no-brew                   Disables the use of brew on macOS to install or upgrade command line dependencies
-      --pull-secrets string       The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
-      --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
-  -t, --title string              The title of the issue to create
-      --verbose                   Enable verbose logging
+      --body string         The body of the issue
+      --dir string          The source directory used to detect the Git repository. Defaults to the current directory
+  -h, --help                help for issue
+  -l, --label stringArray   The labels to add to the issue
+  -t, --title string        The title of the issue to create
+```
+
+### Options inherited from parent commands
+
+```
+  -b, --batch-mode                Runs in batch mode without prompting for user input
+      --headless                  Runs in headless mode when using browser automation
+      --install-dependencies      Enables automatic dependencies installation when required
+      --log-level string          Sets the logging level (panic, fatal, error, warning, info, debug) (default "info")
+      --no-brew                   Disables brew package manager on MacOS when installing binary dependencies
+      --skip-auth-secrets-merge   Skips merging the secrets from local files with the secrets from Kubernetes cluster
+      --verbose                   Enables verbose output
 ```
 
 ### SEE ALSO

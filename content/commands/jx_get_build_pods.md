@@ -1,5 +1,5 @@
 ---
-date: 2019-02-20T07:09:50Z
+date: 2019-02-20T19:22:15Z
 title: "jx get build pods"
 slug: jx_get_build_pods
 url: /commands/jx_get_build_pods/
@@ -39,13 +39,25 @@ jx get build pods [flags]
 
 ```
       --branch string      Filters the branch
-  -b, --build string       Filter a specific build number
+      --build string       Filter a specific build number
   -f, --filter string      Filters the build name by the given text
   -h, --help               help for pods
   -n, --namespace string   The namespace to look for the build pods. Defaults to the current namespace
   -o, --owner string       Filters the owner (person/organisation) of the repository
   -p, --pending            Filter builds which are currently pending or running
   -r, --repo string        Filters the build repository
+```
+
+### Options inherited from parent commands
+
+```
+  -b, --batch-mode                Runs in batch mode without prompting for user input
+      --headless                  Runs in headless mode when using browser automation
+      --install-dependencies      Enables automatic dependencies installation when required
+      --log-level string          Sets the logging level (panic, fatal, error, warning, info, debug) (default "info")
+      --no-brew                   Disables brew package manager on MacOS when installing binary dependencies
+      --skip-auth-secrets-merge   Skips merging the secrets from local files with the secrets from Kubernetes cluster
+      --verbose                   Enables verbose output
 ```
 
 ### SEE ALSO
