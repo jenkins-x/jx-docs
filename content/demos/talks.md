@@ -15,6 +15,8 @@ sections_weight: 5
 
 * [2019-06-06 Continuous Delivery mit Jenkins X und Kubernetes](https://www.devops-essentials.de/lecture.php?id=7929-continuous-delivery-mit-jenkins-x-und) at [DevOps Essentials 2019](https://www.devops-essentials.de/) by [Nicolas Byl](https://twitter.com/NicolasByl)
 
+* [2019-01-23 Introduction to Jenkins X and opinionated CI/CD](https://www.slideshare.net/michaelneale/jenkins-x-intro-from-google-app-dev-conference) at Google Digital AppDev conference (Singapore) by [Michael Neale](https://twitter.com/michaelneale)
+
 * [2019-05-07 Workshop: Continuous Deployment To Kubernetes](https://craft-conf.com/workshops) at [Craft (Budapest)](https://craft-conf.com/) by [Viktor Farcic](https://twitter.com/vfarcic)
 
 * [2019-03-19 Jenkins X - Continuously Driving the Kloud (German)](https://programm.javaland.eu/2019/#/scheduledEvent/569771) at [Javaland 2019 (Germany)](https://www.javaland.eu) by [Gerd Aschemann](https://twitter.com/GerdAschemann) 
