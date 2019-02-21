@@ -13,6 +13,7 @@ weight: 5
 sections_weight: 5
 ---
 
+* [Zero cost preview environments on Kubernetes with Jenkins X and Osiris](https://medium.com/@vbehar/zero-cost-preview-environments-on-kubernetes-with-jenkins-x-and-osiris-bd9ce0148d03) by [Vincent Behar](https://medium.com/@vbehar), February 5th, 2019
 * [Jenkins X: Preview Environment](https://medium.com/@MichalFoksa/jenkins-x-preview-environment-3bf2424a05e4) by [Michal Foksa](https://medium.com/@MichalFoksa), January 10th, 2019
 * [Continuous Delivery with Amazon EKS and Jenkins X](https://aws.amazon.com/blogs/opensource/continuous-delivery-eks-jenkins-x/) by [Henryk Konsek](https://twitter.com/hekonsek), 7th November, 2018
 * [Trying out Jenkins X on Azure Kubernetes Service(AKS)](https://medium.com/@puichan/trying-out-jenkins-x-on-azure-kubernetes-service-aks-20fe94bd72d2) by [PC Chan](https://medium.com/@puichan) on October 29th, 2018
