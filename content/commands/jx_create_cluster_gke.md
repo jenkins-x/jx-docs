@@ -1,5 +1,5 @@
 ---
-date: 2019-02-21T18:04:10Z
+date: 2019-02-21T23:35:07Z
 title: "jx create cluster gke"
 slug: jx_create_cluster_gke
 url: /commands/jx_create_cluster_gke/
@@ -67,7 +67,6 @@ jx create cluster gke [flags]
       --install-only                        Force the install command to fail if there is already an installation. Otherwise lets update the installation
       --kaniko                              Use Kaniko for building docker images
       --keep-exposecontroller-job           Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
-      --knative-pipeline                    Enables Knative Build Pipeline. Otherwise we default to use Knative Build
   -v, --kubernetes-version string           The Kubernetes version to use for the master and nodes. Defaults to server-specified
       --labels string                       The labels to add to the cluster being created such as 'foo=bar,whatnot=123'. Label names must begin with a lowercase character ([a-z]), end with a lowercase alphanumeric ([a-z0-9]) with dashes (-), and lowercase alphanumeric ([a-z0-9]) between.
       --local-cloud-environment             Ignores default cloud-environment-repo and uses current directory 
@@ -77,6 +76,7 @@ jx create cluster gke [flags]
       --min-num-nodes string                The minimum number of nodes to be created in each of the cluster's zones
       --namespace string                    The namespace the Jenkins X platform should be installed into (default "jx")
       --network string                      The Compute Engine Network that the cluster will connect to
+      --ng                                  Use the Next Generation Jenkins X features like Prow, Tekton, No Tiller, Vault, Dev GitOps
       --no-default-environments             Disables the creation of the default Staging and Production environments
       --no-gitops-env-apply                 When using GitOps to create the source code for the development environment and installation, don't run 'jx step env apply' to perform the install
       --no-gitops-env-repo                  When using GitOps to create the source code for the development environment this flag disables the creation of a git repository for the source code
@@ -96,6 +96,7 @@ jx create cluster gke [flags]
       --skip-login                          Skip Google auth if already logged in via gcloud auth
       --skip-setup-tiller                   Don't setup the Helm Tiller service - lets use whatever tiller is already setup for us.
       --subnetwork string                   The Google Compute Engine subnetwork to which the cluster is connected
+      --tekton                              Enables the Tekton pipeline engine (which used to be called knative build pipeline). Otherwise we default to use Knative Build
       --tiller-cluster-role string          The cluster role for Helm's tiller (default "cluster-admin")
       --tiller-namespace string             The namespace for the Tiller when using a global tiller (default "kube-system")
       --timeout string                      The number of seconds to wait for the helm install to complete (default "6000")
