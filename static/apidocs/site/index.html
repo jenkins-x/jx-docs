@@ -1932,9 +1932,9 @@ For example to specify the binding of roles on all Preview environments or on al
 <TABLE>
 <THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
 <TBODY>
-<TR><TD><CODE>Parameters</CODE><BR /><I><a href="#extensionparametervalue-v1-jenkins_io">ExtensionParameterValue</a> array</I></TD><TD></TD></TR>
 <TR><TD><CODE>name</CODE><BR /><I>string</I></TD><TD></TD></TR>
 <TR><TD><CODE>namespace</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>parameters</CODE><BR /><I><a href="#extensionparametervalue-v1-jenkins_io">ExtensionParameterValue</a> array</I></TD><TD></TD></TR>
 </TBODY>
 </TABLE>
 <H2 id="extensiondefinition-v1-jenkins_io">ExtensionDefinition v1 jenkins_io</H2>
@@ -4171,12 +4171,14 @@ The contents of the target Secret&#39;s Data field will be presented in a volume
 <TR><TD><CODE>gitServer</CODE><BR /><I>string</I></TD><TD></TD></TR>
 <TR><TD><CODE>helmBinary</CODE><BR /><I>string</I></TD><TD></TD></TR>
 <TR><TD><CODE>helmTemplate</CODE><BR /><I>boolean</I></TD><TD></TD></TR>
+<TR><TD><CODE>importMode</CODE><BR /><I>string</I></TD><TD>ImportMode indicates what kind of</TD></TR>
 <TR><TD><CODE>kubeProvider</CODE><BR /><I>string</I></TD><TD></TD></TR>
 <TR><TD><CODE>noTiller</CODE><BR /><I>boolean</I></TD><TD></TD></TR>
 <TR><TD><CODE>organisation</CODE><BR /><I>string</I></TD><TD></TD></TR>
 <TR><TD><CODE>pipelineUsername</CODE><BR /><I>string</I></TD><TD></TD></TR>
 <TR><TD><CODE>postPreviewJobs</CODE><BR /><I><a href="#job-v1-batch">Job</a> array</I></TD><TD></TD></TR>
 <TR><TD><CODE>promotionEngine</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>prowEngine</CODE><BR /><I>string</I></TD><TD>ProwEngine is the kind of prow engine used such as knative build or build pipeline</TD></TR>
 <TR><TD><CODE>quickstartLocations</CODE><BR /><I><a href="#quickstartlocation-v1-jenkins_io">QuickStartLocation</a> array</I></TD><TD></TD></TR>
 <TR><TD><CODE>storageLocations</CODE><BR /><I><a href="#storagelocation-v1-jenkins_io">StorageLocation</a> array</I></TD><TD></TD></TR>
 <TR><TD><CODE>useGitOps</CODE><BR /><I>boolean</I></TD><TD></TD></TR>
