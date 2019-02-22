@@ -17,7 +17,10 @@ aliases: [/developing/]
 toc: false
 ---
 
-Jenkins X allows you to edit app code by using a Kubernetes Pod which we call `DevPod`.  This helps you develop inside the cloud with the same container images and pod templates as the CI/CD pipelines.  There are a couple of ways that you as a developer can quickly become productive when editing an app, and add value ultra fast. 
+Jenkins X allows you to edit app code by using a Kubernetes Pod which we call `DevPod`.  This helps you develop inside the cloud with the same software tools, platform, container images and pod templates as the CI/CD pipelines. This helps keep everyone in the team and your CI/CD pipelines using the same platform and tools all the time to reduce waste and avoid those pesky 'it works on my laptop but not in production' issues.  
+
+
+There are a couple of ways that you as a developer can quickly become productive when editing an app, and add value ultra fast. 
 
 There are specific steps for each approach, and we provide you a visual representation of each workflow, as well as the specific steps to quickly get started.
 
