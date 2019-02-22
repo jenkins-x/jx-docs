@@ -1,5 +1,5 @@
 ---
-date: 2019-02-22T17:02:09Z
+date: 2019-02-22T18:00:28Z
 title: "jx controller pipelinerunner"
 slug: jx_controller_pipelinerunner
 url: /commands/jx_controller_pipelinerunner/
@@ -30,7 +30,7 @@ jx controller pipelinerunner [flags]
   -h, --help                     help for pipelinerunner
   -p, --path string              The path to listen on for requests to trigger a pipeline run. (default "/")
       --port int                 The TCP port to listen on. (default 8080)
-      --service-account string   The Kubernetes ServiceAccount to use to run the pipeline (default "build-bot")
+      --service-account string   The Kubernetes ServiceAccount to use to run the pipeline (default "tekton-bot")
 ```
 
 ### Options inherited from parent commands
