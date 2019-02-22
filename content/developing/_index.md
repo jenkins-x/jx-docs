@@ -28,8 +28,10 @@ There are specific steps for each approach, and we provide you a visual represen
 Keep in mind, this development workflow helps you make changes before even checking in your code to the repo, or submitting a formal pull request.  Really meant for you to validate your changes fast!
 
 {{% /note %}}
-## Develop Using DevPods and an IDE
-In this scenario, you are using an IDE such as Atom or VSCode which in fact has a plugin for `Jenkins X`.  You are making **iterative** changes using your IDE and said changes are reflected immediately when you open the `url` assigned to your `DevPod`
+
+## Develop Using DevPods and a desktop IDE
+
+In this scenario, you are using a desktop IDE such as VS Code or Intellij which in fact have [a plugin](/developing/ide) for `Jenkins X`.  You are making **iterative** changes using your IDE and said changes are reflected immediately when you open the `url` assigned to your `DevPod`
 
 <figure>
 <img src="/images/developing/developer_workflow_ide.png" />
@@ -38,7 +40,7 @@ In this scenario, you are using an IDE such as Atom or VSCode which in fact has 
 </figcaption>
 
 {{% note %}}
-See [IDE](http://localhost:1313/developing/ide/#vs-code) for more details on using VSCode
+See [IDE](/developing/ide/#vs-code) for more details on using VSCode
 {{% /note %}}
 
 To get started using this approach, simply execute the following command in the root of your app directory.  We are using a `NodeJS` app for this example, therefore we specify the language using the `-l` parameter.
