@@ -1,5 +1,5 @@
 ---
-date: 2019-02-21T18:04:10Z
+date: 2019-02-21T23:35:07Z
 title: "jx upgrade addons prow"
 slug: jx_upgrade_addons_prow
 url: /commands/jx_upgrade_addons_prow/
@@ -26,13 +26,13 @@ jx upgrade addons prow [flags]
 ### Options
 
 ```
-      --build-pipeline                     Enables Knative Build Pipeline. Otherwise we default to use Knative Build (default true)
       --cloud-environment-repo string      Cloud Environments Git repo (default "https://github.com/jenkins-x/cloud-environments")
   -h, --help                               help for prow
       --local-cloud-environment            Ignores default cloud-environment-repo and uses current directory 
       --namespace string                   The Namespace to upgrade
       --new-knative-build-version string   The new kanative build verion that prow needs to work with (default "0.1.1")
   -s, --set string                         The Helm parameters to pass in while upgrading
+  -t, --tekton                             Enables Knative Build Pipeline. Otherwise we default to use Knative Build (default true)
       --versions-repo string               Jenkins X versions Git repo (default "https://github.com/jenkins-x/jenkins-x-versions")
 ```
 

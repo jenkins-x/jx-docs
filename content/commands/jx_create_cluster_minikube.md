@@ -1,5 +1,5 @@
 ---
-date: 2019-02-21T18:04:10Z
+date: 2019-02-21T23:35:07Z
 title: "jx create cluster minikube"
 slug: jx_create_cluster_minikube
 url: /commands/jx_create_cluster_minikube/
@@ -60,12 +60,12 @@ jx create cluster minikube [flags]
       --install-only                        Force the install command to fail if there is already an installation. Otherwise lets update the installation
       --kaniko                              Use Kaniko for building docker images
       --keep-exposecontroller-job           Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
-      --knative-pipeline                    Enables Knative Build Pipeline. Otherwise we default to use Knative Build
       --kubernetes-version string           Kubernetes version
       --local-cloud-environment             Ignores default cloud-environment-repo and uses current directory 
       --local-helm-repo-name string         The name of the helm repository for the installed ChartMuseum (default "releases")
   -m, --memory string                       Amount of RAM allocated to the Minikube VM in MB. Defaults to 4096 MB.
       --namespace string                    The namespace the Jenkins X platform should be installed into (default "jx")
+      --ng                                  Use the Next Generation Jenkins X features like Prow, Tekton, No Tiller, Vault, Dev GitOps
       --no-default-environments             Disables the creation of the default Staging and Production environments
       --no-gitops-env-apply                 When using GitOps to create the source code for the development environment and installation, don't run 'jx step env apply' to perform the install
       --no-gitops-env-repo                  When using GitOps to create the source code for the development environment this flag disables the creation of a git repository for the source code
@@ -80,6 +80,7 @@ jx create cluster minikube [flags]
       --skip-ingress                        Skips the installation of ingress controller. Note that a ingress controller must already be installed into the cluster in order for the installation to succeed
       --skip-installation                   Provision cluster only, don't install Jenkins X into it
       --skip-setup-tiller                   Don't setup the Helm Tiller service - lets use whatever tiller is already setup for us.
+      --tekton                              Enables the Tekton pipeline engine (which used to be called knative build pipeline). Otherwise we default to use Knative Build
       --tiller-cluster-role string          The cluster role for Helm's tiller (default "cluster-admin")
       --tiller-namespace string             The namespace for the Tiller when using a global tiller (default "kube-system")
       --timeout string                      The number of seconds to wait for the helm install to complete (default "6000")

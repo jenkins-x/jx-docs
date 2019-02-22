@@ -1,5 +1,5 @@
 ---
-date: 2019-02-21T18:04:10Z
+date: 2019-02-21T23:35:07Z
 title: "jx create addon prow"
 slug: jx_create_addon_prow
 url: /commands/jx_create_addon_prow/
@@ -29,7 +29,6 @@ jx create addon prow [flags]
 ### Options
 
 ```
-      --build-pipeline       Enables Knative Build Pipeline. Otherwise we default to use Knative Build (default true)
   -c, --chart string         The name of the chart to use (default "jenkins-x/prow")
       --helm-update          Should we run helm update first to ensure we use the latest version (default true)
   -h, --help                 help for prow
@@ -39,6 +38,7 @@ jx create addon prow [flags]
       --password string      Overwrite the default admin password used to login to the Deck UI
   -r, --release string       The chart release name (default "jx-prow")
   -s, --set string           The chart set values (can specify multiple or separate values with commas: key1=val1,key2=val2)
+  -t, --tekton               Enables Tekton. Otherwise we default to use Knative Build (default true)
   -f, --values stringArray   List of locations for values files, can be local files or URLs
   -v, --version string       The chart version to install)
 ```

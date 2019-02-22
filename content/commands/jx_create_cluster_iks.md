@@ -1,5 +1,5 @@
 ---
-date: 2019-02-21T18:04:10Z
+date: 2019-02-21T23:35:07Z
 title: "jx create cluster iks"
 slug: jx_create_cluster_iks
 url: /commands/jx_create_cluster_iks/
@@ -65,7 +65,6 @@ jx create cluster iks [flags]
       --isolation string                    The level of hardware isolation for your worker node. Use 'private' to have available physical resources dedicated to you only, or 'public' to allow physical resources to be shared with other IBM customers. For IBM Cloud Public accounts, the default value is public. (default "public")
       --kaniko                              Use Kaniko for building docker images
       --keep-exposecontroller-job           Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
-      --knative-pipeline                    Enables Knative Build Pipeline. Otherwise we default to use Knative Build
   -k, --kube-version string                 Specify the Kubernetes version, including at least the major.minor version. If you do not include this flag, the default version is used. To see available versions, run ‘ibmcloud ks kube-versions’.
       --local-cloud-environment             Ignores default cloud-environment-repo and uses current directory 
       --local-helm-repo-name string         The name of the helm repository for the installed ChartMuseum (default "releases")
@@ -73,6 +72,7 @@ jx create cluster iks [flags]
   -m, --machine-type string                 The machine type of the worker node. To see available machine types, run 'ibmcloud ks machine-types --zone <zone name>'. Default is 'b2c.4x16', 4 cores CPU, 16GB Memory
   -n, --name string                         Set the name of the cluster that will be created.
       --namespace string                    The namespace the Jenkins X platform should be installed into (default "jx")
+      --ng                                  Use the Next Generation Jenkins X features like Prow, Tekton, No Tiller, Vault, Dev GitOps
       --no-default-environments             Disables the creation of the default Staging and Production environments
       --no-gitops-env-apply                 When using GitOps to create the source code for the development environment and installation, don't run 'jx step env apply' to perform the install
       --no-gitops-env-repo                  When using GitOps to create the source code for the development environment this flag disables the creation of a git repository for the source code
@@ -95,6 +95,7 @@ jx create cluster iks [flags]
       --skip-login ibmcloud login           Skip login if already logged in using ibmcloud login
       --skip-setup-tiller                   Don't setup the Helm Tiller service - lets use whatever tiller is already setup for us.
       --sso                                 SSO Passcode. See run 'ibmcloud login --sso'
+      --tekton                              Enables the Tekton pipeline engine (which used to be called knative build pipeline). Otherwise we default to use Knative Build
       --tiller-cluster-role string          The cluster role for Helm's tiller (default "cluster-admin")
       --tiller-namespace string             The namespace for the Tiller when using a global tiller (default "kube-system")
       --timeout string                      The number of seconds to wait for the helm install to complete (default "6000")

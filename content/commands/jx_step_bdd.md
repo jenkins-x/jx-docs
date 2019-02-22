@@ -1,5 +1,5 @@
 ---
-date: 2019-02-21T18:04:10Z
+date: 2019-02-21T23:35:07Z
 title: "jx step bdd"
 slug: jx_step_bdd
 url: /commands/jx_step_bdd/
@@ -67,10 +67,10 @@ jx step bdd [flags]
       --install-only                        Force the install command to fail if there is already an installation. Otherwise lets update the installation
       --kaniko                              Use Kaniko for building docker images
       --keep-exposecontroller-job           Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
-      --knative-pipeline                    Enables Knative Build Pipeline. Otherwise we default to use Knative Build
       --local-cloud-environment             Ignores default cloud-environment-repo and uses current directory 
       --local-helm-repo-name string         The name of the helm repository for the installed ChartMuseum (default "releases")
       --namespace string                    The namespace the Jenkins X platform should be installed into (default "jx")
+      --ng                                  Use the Next Generation Jenkins X features like Prow, Tekton, No Tiller, Vault, Dev GitOps
       --no-default-environments             Disables the creation of the default Staging and Production environments
       --no-delete-app                       Disables deleting the created app after the test
       --no-delete-repo                      Disables deleting the created repository after the test
@@ -90,6 +90,7 @@ jx step bdd [flags]
       --skip-ingress                        Skips the installation of ingress controller. Note that a ingress controller must already be installed into the cluster in order for the installation to succeed
       --skip-setup-tiller                   Don't setup the Helm Tiller service - lets use whatever tiller is already setup for us.
       --skip-test-git-repo-clone            Skip cloning the bdd test git repo
+      --tekton                              Enables the Tekton pipeline engine (which used to be called knative build pipeline). Otherwise we default to use Knative Build
       --test-git-branch string              the git repository branch to use for the BDD tests (default "master")
       --test-git-pr-number string           the Pull Request number to fetch from the repository for the BDD tests
   -r, --test-git-repo string                the git repository to clone for the BDD tests (default "https://github.com/jenkins-x/bdd-jx.git")
