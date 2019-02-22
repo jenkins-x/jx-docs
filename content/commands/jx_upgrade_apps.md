@@ -1,5 +1,5 @@
 ---
-date: 2019-02-22T08:23:22Z
+date: 2019-02-22T10:14:35Z
 title: "jx upgrade apps"
 slug: jx_upgrade_apps
 url: /commands/jx_upgrade_apps/
@@ -30,10 +30,12 @@ jx upgrade apps [flags]
 
 ```
       --alias string        An alias to use for the app [--gitops]
+      --ask-all             Ask all configuration questions. By default existing answers are reused automatically.
       --helm-update         Should we run helm update first to ensure we use the latest version (available when NOT using GitOps for your dev environment) (default true)
   -h, --help                help for apps
       --namespace string    The Namespace to promote to [--no-gitops]
       --password string     The password for the repository
+  -r, --release string      The chart release name (by default the name of the app, available when NOT using GitOps for your dev environment)
       --repository string   The repository from which the app should be installed
   -s, --set stringArray     The Helm parameters to pass in while upgrading [--no-gitops]
       --username string     The username for the repository
