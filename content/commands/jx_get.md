@@ -1,5 +1,5 @@
 ---
-date: 2019-02-22T10:14:35Z
+date: 2019-02-22T11:29:10Z
 title: "jx get"
 slug: jx_get
 url: /commands/jx_get/
@@ -53,6 +53,7 @@ jx get TYPE [flags]
 ### SEE ALSO
 
 * [jx](/commands/jx/)	 - jx is a command line tool for working with Jenkins X
+* [jx get Apps](/commands/jx_get_apps/)	 - Display one or more installed Apps
 * [jx get activities](/commands/jx_get_activities/)	 - Display one or more Activities on projects
 * [jx get addons](/commands/jx_get_addons/)	 - Lists the addons
 * [jx get applications](/commands/jx_get_applications/)	 - Display one or more Applications and their versions
