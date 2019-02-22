@@ -1,5 +1,5 @@
 ---
-date: 2019-02-22T11:29:10Z
+date: 2019-02-22T12:33:31Z
 title: "jx get vault-config"
 slug: jx_get_vault-config
 url: /commands/jx_get_vault-config/
