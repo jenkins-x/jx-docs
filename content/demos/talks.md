@@ -15,7 +15,7 @@ sections_weight: 5
 
 * [2019-06-06 Continuous Delivery mit Jenkins X und Kubernetes](https://www.devops-essentials.de/lecture.php?id=7929-continuous-delivery-mit-jenkins-x-und) at [DevOps Essentials 2019](https://www.devops-essentials.de/) by [Nicolas Byl](https://twitter.com/NicolasByl)
 
-* [2019-01-23 Introduction to Jenkins X and opinionated CI/CD](https://www.slideshare.net/michaelneale/jenkins-x-intro-from-google-app-dev-conference) at Google Digital AppDev conference (Singapore) by [Michael Neale](https://twitter.com/michaelneale)
+* [2019-05-27/28/29 GitOps by courtesy of Jenkins-X](https://gr8conf.eu/talks/760) at [gr8conf (Copenhagen/Denmark)](https://gr8conf.eu/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) 
 
 * [2019-05-07 Workshop: Continuous Deployment To Kubernetes](https://craft-conf.com/workshops) at [Craft (Budapest)](https://craft-conf.com/) by [Viktor Farcic](https://twitter.com/vfarcic)
 
@@ -24,6 +24,8 @@ sections_weight: 5
 * [2019-02-26 GitOps by courtesy of Jenkins-X (German)](https://www.meetup.com/Agile-Testing-Munich/events/258881963/) at [Agile Testing @Munich (Germany)](https://www.meetup.com/Agile-Testing-Munich/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) 
 
 * [2019-01-24 Jenkins X - Continuously Driving the Kloud (German)](https://www.xing.com/events/jenkins-continuously-driving-the-kloud-1995467?sc_o=si1942_com) at [JUG Metroplregion Nürnberg (Germany)](http://www.jug-n.de) by [Gerd Aschemann](https://twitter.com/GerdAschemann) ([Slides](http://aschemann.net/gerd/publications/jx-talk-jug-met-n-2019/))
+
+* [2019-01-23 Introduction to Jenkins X and opinionated CI/CD](https://www.slideshare.net/michaelneale/jenkins-x-intro-from-google-app-dev-conference) at Google Digital AppDev conference (Singapore) by [Michael Neale](https://twitter.com/michaelneale)
 
 * [2019-01-14 Jenkins X - Continuously Driving the Kloud (German)](https://www.meetup.com/de-DE/DevOps-Wuerzburg-Mainfranken/events/255614733/) at [DevOps Meetup Würzburg (Germany)](https://www.meetup.com/DevOps-Wuerzburg-Mainfranken/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) - ([Youtube Stream](https://www.youtube.com/watch?v=NDIut5uYVS0), [Slides](http://aschemann.net/gerd/publications/jx-talk-devops-wue-2019/))
 
