@@ -1,5 +1,5 @@
 ---
-date: 2019-02-22T12:33:31Z
+date: 2019-02-22T14:54:58Z
 title: "jx create addon istio"
 slug: jx_create_addon_istio
 url: /commands/jx_create_addon_istio/
@@ -29,17 +29,18 @@ jx create addon istio [flags]
 ### Options
 
 ```
-  -c, --chart string          The name of the chart to use
-  -d, --config-dir string     The config directory to use (default "/istio_service_dir")
-      --helm-update           Should we run helm update first to ensure we use the latest version (default true)
-  -h, --help                  help for istio
-  -n, --namespace string      The Namespace to install into (default "istio-system")
-      --no-injector-webhook   Disables the injector webhook
-  -p, --password string       The default password to use for Istio (default "istio")
-  -r, --release string        The chart release name (default "istio")
-  -s, --set string            The chart set values (can specify multiple or separate values with commas: key1=val1,key2=val2)
-  -f, --values stringArray    List of locations for values files, can be local files or URLs
-  -v, --version string        The chart version to install)
+  -c, --chart string                     The name of the chart to use
+  -d, --config-dir string                The config directory to use (default "/istio_service_dir")
+      --helm-update                      Should we run helm update first to ensure we use the latest version (default true)
+  -h, --help                             help for istio
+      --ingress-gateway-service string   The name of the ingress gateway service created by Istio (default "istio-ingressgateway")
+  -n, --namespace string                 The Namespace to install into (default "istio-system")
+      --no-injector-webhook              Disables the injector webhook
+  -p, --password string                  The default password to use for Istio (default "istio")
+  -r, --release string                   The chart release name (default "istio")
+  -s, --set string                       The chart set values (can specify multiple or separate values with commas: key1=val1,key2=val2)
+  -f, --values stringArray               List of locations for values files, can be local files or URLs
+  -v, --version string                   The chart version to install)
 ```
 
 ### Options inherited from parent commands

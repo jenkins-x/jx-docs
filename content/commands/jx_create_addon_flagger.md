@@ -1,5 +1,5 @@
 ---
-date: 2019-02-22T12:33:31Z
+date: 2019-02-22T14:54:58Z
 title: "jx create addon flagger"
 slug: jx_create_addon_flagger
 url: /commands/jx_create_addon_flagger/
@@ -31,6 +31,7 @@ jx create addon flagger [flags]
       --grafana-chart string   The name of the Flagger Grafana chart to use (default "flagger/grafana")
       --helm-update            Should we run helm update first to ensure we use the latest version (default true)
   -h, --help                   help for flagger
+      --istio-gateway string   The name of the Istio Gateway that will be created if it does not exist (default "jx-gateway")
   -n, --namespace string       The Namespace to install into (default "istio-system")
   -r, --release string         The chart release name (default "flagger")
   -s, --set string             The chart set values (can specify multiple or separate values with commas: key1=val1,key2=val2)
