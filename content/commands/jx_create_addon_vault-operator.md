@@ -1,5 +1,5 @@
 ---
-date: 2019-02-23T10:20:47Z
+date: 2019-02-23T16:16:58Z
 title: "jx create addon vault-operator"
 slug: jx_create_addon_vault-operator
 url: /commands/jx_create_addon_vault-operator/
@@ -41,7 +41,6 @@ jx create addon vault-operator [flags]
 
 ```
   -b, --batch-mode                Runs in batch mode without prompting for user input
-      --headless                  Runs in headless mode when using browser automation
       --install-dependencies      Enables automatic dependencies installation when required
       --log-level string          Sets the logging level (panic, fatal, error, warning, info, debug) (default "info")
       --no-brew                   Disables brew package manager on MacOS when installing binary dependencies
