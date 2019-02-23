@@ -1,5 +1,5 @@
 ---
-date: 2019-02-23T09:01:28Z
+date: 2019-02-23T10:20:47Z
 title: "jx create cluster aws"
 slug: jx_create_cluster_aws
 url: /commands/jx_create_cluster_aws/
@@ -94,7 +94,7 @@ jx create cluster aws [flags]
       --ssh-public-key string               SSH public key to use for nodes (default "~/.ssh/id_rsa.pub").
       --state string                        The S3 bucket used to store the state of the cluster.
       --tags string                         A list of KV pairs used to tag all instance groups in AWS (eg "Owner=John Doe,Team=Some Team").
-      --tekton                              Enables the Tekton pipeline engine (which used to be called knative build pipeline). Otherwise we default to use Knative Build
+      --tekton                              Enables the Tekton pipeline engine (which used to be called knative build pipeline) along with Prow. Otherwise we default to use Knative Build if you enable Prow
   -t, --terraform string                    The directory to save Terraform configuration.
       --tiller-cluster-role string          The cluster role for Helm's tiller (default "cluster-admin")
       --tiller-namespace string             The namespace for the Tiller when using a global tiller (default "kube-system")

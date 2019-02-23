@@ -1,5 +1,5 @@
 ---
-date: 2019-02-23T09:01:28Z
+date: 2019-02-23T10:20:47Z
 title: "jx create jenkins token"
 slug: jx_create_jenkins_token
 url: /commands/jx_create_jenkins_token/
@@ -32,15 +32,17 @@ jx create jenkins token [username] [flags]
 ### Options
 
 ```
-  -t, --api-token string   The API Token for the user
-      --browser            Use REST calls to automatically find the API token if the user and password are known
-  -h, --help               help for token
-  -n, --name string        The name of the Git server to add a user
-      --namespace string   The namespace of the secret where the Jenkins API token will be stored
-  -p, --password string    The User password to try automatically create a new API Token
-      --recreate-token     Should we recreate teh API token if it already exists
-      --timeout string     The timeout if using REST to generate the API token (by passing username and password)
-  -u, --url string         The URL of the Git server to add a user
+  -t, --api-token string      The API Token for the user
+  -m, --custom                Use a custom Jenkins App instead of the default execution engine in Jenkins X
+  -h, --help                  help for token
+  -j, --jenkins-name string   The name of the custom Jenkins App if you don't wish to use the default execution engine in Jenkins X
+  -n, --name string           The name of the Git server to add a user
+      --namespace string      The namespace of the secret where the Jenkins API token will be stored
+      --no-rest               Disables the use of REST calls to automatically find the API token if the user and password are known
+  -p, --password string       The User password to try automatically create a new API Token
+      --recreate-token        Should we recreate teh API token if it already exists
+      --timeout string        The timeout if using REST to generate the API token (by passing username and password)
+  -u, --url string            The URL of the Git server to add a user
 ```
 
 ### Options inherited from parent commands

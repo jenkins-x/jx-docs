@@ -1,5 +1,5 @@
 ---
-date: 2019-02-23T09:01:28Z
+date: 2019-02-23T10:20:47Z
 title: "jx controller commitstatus"
 slug: jx_controller_commitstatus
 url: /commands/jx_controller_commitstatus/

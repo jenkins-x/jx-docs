@@ -1,5 +1,5 @@
 ---
-date: 2019-02-23T09:01:28Z
+date: 2019-02-23T10:20:47Z
 title: "jx get pipelines"
 slug: jx_get_pipelines
 url: /commands/jx_get_pipelines/
@@ -19,14 +19,19 @@ jx get pipelines [flags]
 ### Examples
 
 ```
-  # List all pipelines
+  # list all pipelines
   jx get pipeline
+  
+  # Lists all the pipelines in a custom Jenkins App
+  jx get pipeline -m
 ```
 
 ### Options
 
 ```
+  -m, --custom          List the pipelines in custom Jenkins App instead of the default execution engine in Jenkins X
   -h, --help            help for pipelines
+  -n, --name string     The name of the custom Jenkins App if you don't wish to list the pipelines in the default execution engine in Jenkins X
   -o, --output string   The output format such as 'yaml'
 ```
 

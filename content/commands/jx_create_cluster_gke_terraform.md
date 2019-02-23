@@ -1,5 +1,5 @@
 ---
-date: 2019-02-23T09:01:28Z
+date: 2019-02-23T10:20:47Z
 title: "jx create cluster gke terraform"
 slug: jx_create_cluster_gke_terraform
 url: /commands/jx_create_cluster_gke_terraform/
@@ -89,7 +89,7 @@ jx create cluster gke terraform [flags]
       --skip-installation                   Provision cluster only, don't install Jenkins X into it
       --skip-login                          Skip Google auth if already logged in via gcloud auth
       --skip-setup-tiller                   Don't setup the Helm Tiller service - lets use whatever tiller is already setup for us.
-      --tekton                              Enables the Tekton pipeline engine (which used to be called knative build pipeline). Otherwise we default to use Knative Build
+      --tekton                              Enables the Tekton pipeline engine (which used to be called knative build pipeline) along with Prow. Otherwise we default to use Knative Build if you enable Prow
       --tiller-cluster-role string          The cluster role for Helm's tiller (default "cluster-admin")
       --tiller-namespace string             The namespace for the Tiller when using a global tiller (default "kube-system")
       --timeout string                      The number of seconds to wait for the helm install to complete (default "6000")

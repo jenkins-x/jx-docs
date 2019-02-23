@@ -1,5 +1,5 @@
 ---
-date: 2019-02-23T09:01:28Z
+date: 2019-02-23T10:20:47Z
 title: "jx get build log"
 slug: jx_get_build_log
 url: /commands/jx_get_build_log/
@@ -41,8 +41,10 @@ jx get build log [flags]
       --branch string            Filters the branch
       --build string             The build number to view
   -c, --current                  Display logs using current folder as repo name, and parent folder as owner
+  -m, --custom                   Use a custom Jenkins App instead of the default execution engine in Jenkins X
   -f, --filter string            Filters all the available jobs by those that contain the given text
   -h, --help                     help for log
+  -j, --jenkins-name string      The name of the custom Jenkins App if you don't wish to use the default execution engine in Jenkins X
   -o, --owner string             Filters the owner (person/organisation) of the repository
   -p, --pending                  Only display logs which are currently pending to choose from if no build name is supplied
   -r, --repo string              Filters the build repository

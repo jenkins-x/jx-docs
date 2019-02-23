@@ -1,5 +1,5 @@
 ---
-date: 2019-02-23T09:01:28Z
+date: 2019-02-23T10:20:47Z
 title: "jx create client openapi"
 slug: jx_create_client_openapi
 url: /commands/jx_create_client_openapi/

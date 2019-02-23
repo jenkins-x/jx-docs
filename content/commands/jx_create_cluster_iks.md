@@ -1,5 +1,5 @@
 ---
-date: 2019-02-23T09:01:28Z
+date: 2019-02-23T10:20:47Z
 title: "jx create cluster iks"
 slug: jx_create_cluster_iks
 url: /commands/jx_create_cluster_iks/
@@ -95,7 +95,7 @@ jx create cluster iks [flags]
       --skip-login ibmcloud login           Skip login if already logged in using ibmcloud login
       --skip-setup-tiller                   Don't setup the Helm Tiller service - lets use whatever tiller is already setup for us.
       --sso                                 SSO Passcode. See run 'ibmcloud login --sso'
-      --tekton                              Enables the Tekton pipeline engine (which used to be called knative build pipeline). Otherwise we default to use Knative Build
+      --tekton                              Enables the Tekton pipeline engine (which used to be called knative build pipeline) along with Prow. Otherwise we default to use Knative Build if you enable Prow
       --tiller-cluster-role string          The cluster role for Helm's tiller (default "cluster-admin")
       --tiller-namespace string             The namespace for the Tiller when using a global tiller (default "kube-system")
       --timeout string                      The number of seconds to wait for the helm install to complete (default "6000")

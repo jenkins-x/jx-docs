@@ -1,5 +1,5 @@
 ---
-date: 2019-02-23T09:01:28Z
+date: 2019-02-23T10:20:47Z
 title: "jx stop pipeline"
 slug: jx_stop_pipeline
 url: /commands/jx_stop_pipeline/
@@ -29,9 +29,11 @@ jx stop pipeline [flags]
 ### Options
 
 ```
-      --build int       The build number to stop
-  -f, --filter string   Filters all the available jobs by those that contain the given text
-  -h, --help            help for pipeline
+      --build int             The build number to stop
+  -m, --custom                Use a custom Jenkins App instead of the default execution engine in Jenkins X
+  -f, --filter string         Filters all the available jobs by those that contain the given text
+  -h, --help                  help for pipeline
+  -j, --jenkins-name string   The name of the custom Jenkins App if you don't wish to use the default execution engine in Jenkins X
 ```
 
 ### Options inherited from parent commands

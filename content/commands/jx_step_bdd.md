@@ -1,5 +1,5 @@
 ---
-date: 2019-02-23T09:01:28Z
+date: 2019-02-23T10:20:47Z
 title: "jx step bdd"
 slug: jx_step_bdd
 url: /commands/jx_step_bdd/
@@ -90,7 +90,7 @@ jx step bdd [flags]
       --skip-ingress                        Skips the installation of ingress controller. Note that a ingress controller must already be installed into the cluster in order for the installation to succeed
       --skip-setup-tiller                   Don't setup the Helm Tiller service - lets use whatever tiller is already setup for us.
       --skip-test-git-repo-clone            Skip cloning the bdd test git repo
-      --tekton                              Enables the Tekton pipeline engine (which used to be called knative build pipeline). Otherwise we default to use Knative Build
+      --tekton                              Enables the Tekton pipeline engine (which used to be called knative build pipeline) along with Prow. Otherwise we default to use Knative Build if you enable Prow
       --test-git-branch string              the git repository branch to use for the BDD tests (default "master")
       --test-git-pr-number string           the Pull Request number to fetch from the repository for the BDD tests
   -r, --test-git-repo string                the git repository to clone for the BDD tests (default "https://github.com/jenkins-x/bdd-jx.git")

@@ -1,5 +1,5 @@
 ---
-date: 2019-02-23T09:01:28Z
+date: 2019-02-23T10:20:47Z
 title: "jx install"
 slug: jx_install
 url: /commands/jx_install/
@@ -90,7 +90,7 @@ jx install [flags]
       --remote-tiller                       If enabled and we are using tiller for helm then run tiller remotely in the kubernetes cluster. Otherwise we run the tiller process locally. (default true)
       --skip-ingress                        Skips the installation of ingress controller. Note that a ingress controller must already be installed into the cluster in order for the installation to succeed
       --skip-setup-tiller                   Don't setup the Helm Tiller service - lets use whatever tiller is already setup for us.
-      --tekton                              Enables the Tekton pipeline engine (which used to be called knative build pipeline). Otherwise we default to use Knative Build
+      --tekton                              Enables the Tekton pipeline engine (which used to be called knative build pipeline) along with Prow. Otherwise we default to use Knative Build if you enable Prow
       --tiller-cluster-role string          The cluster role for Helm's tiller (default "cluster-admin")
       --tiller-namespace string             The namespace for the Tiller when using a global tiller (default "kube-system")
       --timeout string                      The number of seconds to wait for the helm install to complete (default "6000")

@@ -1,5 +1,5 @@
 ---
-date: 2019-02-23T09:01:28Z
+date: 2019-02-23T10:20:47Z
 title: "jx start pipeline"
 slug: jx_start_pipeline
 url: /commands/jx_start_pipeline/
@@ -32,9 +32,11 @@ jx start pipeline [flags]
 ### Options
 
 ```
-  -f, --filter string   Filters all the available jobs by those that contain the given text
-  -h, --help            help for pipeline
-  -t, --tail            Tails the build log to the current terminal
+  -m, --custom                Use a custom Jenkins App instead of the default execution engine in Jenkins X
+  -f, --filter string         Filters all the available jobs by those that contain the given text
+  -h, --help                  help for pipeline
+  -j, --jenkins-name string   The name of the custom Jenkins App if you don't wish to use the default execution engine in Jenkins X
+  -t, --tail                  Tails the build log to the current terminal
 ```
 
 ### Options inherited from parent commands
