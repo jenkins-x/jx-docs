@@ -1,5 +1,5 @@
 ---
-date: 2019-02-23T08:06:54Z
+date: 2019-02-23T09:01:28Z
 title: "jx controller team"
 slug: jx_controller_team
 url: /commands/jx_controller_team/
