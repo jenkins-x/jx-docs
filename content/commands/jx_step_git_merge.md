@@ -1,5 +1,5 @@
 ---
-date: 2019-02-25T13:17:33Z
+date: 2019-02-25T15:29:18Z
 title: "jx step git merge"
 slug: jx_step_git_merge
 url: /commands/jx_step_git_merge/
@@ -24,6 +24,7 @@ jx step git merge [flags]
 
 ```
   # Merge the SHAs from the PULL_REFS environment variable
+  jx step git merge
   
   # Merge the SHA into the HEAD of master
   jx step git merge --sha 123456a
