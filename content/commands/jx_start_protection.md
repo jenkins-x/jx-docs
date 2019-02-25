@@ -1,5 +1,5 @@
 ---
-date: 2019-02-25T17:23:46Z
+date: 2019-02-25T20:01:00Z
 title: "jx start protection"
 slug: jx_start_protection
 url: /commands/jx_start_protection/

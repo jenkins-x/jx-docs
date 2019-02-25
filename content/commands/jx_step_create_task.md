@@ -1,5 +1,5 @@
 ---
-date: 2019-02-25T17:23:46Z
+date: 2019-02-25T20:01:00Z
 title: "jx step create task"
 slug: jx_step_create_task
 url: /commands/jx_step_create_task/
@@ -46,6 +46,7 @@ jx step create task [flags]
       --no-apply                 Disables creating the Pipeline resources in the kubernetes cluster and just outputs the generated Task to the console or output file
   -o, --output string            The directory to write the output to as YAML
   -p, --pack string              The build pack name. If none is specified its discovered from the source code
+      --pr-number string         If a Pull Request this is it's number
   -r, --ref string               The Git reference (branch,tag,sha) in the Git repository to use
       --revision string          The git revision to checkout, can be a branch name or git sha
       --service-account string   The Kubernetes ServiceAccount to use to run the pipeline (default "tekton-bot")

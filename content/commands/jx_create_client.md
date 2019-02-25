@@ -1,5 +1,5 @@
 ---
-date: 2019-02-25T17:23:46Z
+date: 2019-02-25T20:01:00Z
 title: "jx create client"
 slug: jx_create_client
 url: /commands/jx_create_client/
