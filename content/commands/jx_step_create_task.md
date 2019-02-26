@@ -1,5 +1,5 @@
 ---
-date: 2019-02-26T16:26:41Z
+date: 2019-02-26T20:19:09Z
 title: "jx step create task"
 slug: jx_step_create_task
 url: /commands/jx_step_create_task/
@@ -44,6 +44,7 @@ jx step create task [flags]
   -k, --kind string              The kind of pipeline to create such as: release, pullrequest, feature (default "release")
   -l, --labels stringArray       List of custom labels to be applied to resources that are created
       --no-apply                 Disables creating the Pipeline resources in the kubernetes cluster and just outputs the generated Task to the console or output file
+      --no-set-version           Disables creating the version and git tag up front before release pipelines
   -o, --output string            The directory to write the output to as YAML
   -p, --pack string              The build pack name. If none is specified its discovered from the source code
       --pr-number string         If a Pull Request this is it's number
