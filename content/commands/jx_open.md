@@ -1,5 +1,5 @@
 ---
-date: 2019-02-26T13:35:54Z
+date: 2019-02-26T16:26:41Z
 title: "jx open"
 slug: jx_open
 url: /commands/jx_open/
@@ -34,11 +34,13 @@ jx open [flags]
 ### Options
 
 ```
-      --classic            Use the classic Jenkins skin instead of Blue Ocean
-  -e, --env string         Specifies the Environment name to look inside
-  -h, --help               help for open
-  -n, --namespace string   Specifies the namespace name to look inside
-  -u, --url                Only displays and the URL and does not open the browser
+      --classic               Use the classic Jenkins skin instead of Blue Ocean
+  -m, --custom                Use a custom Jenkins App instead of the default execution engine in Jenkins X
+  -e, --env string            Specifies the Environment name to look inside
+  -h, --help                  help for open
+  -j, --jenkins-name string   The name of the custom Jenkins App if you don't wish to use the default execution engine in Jenkins X
+  -n, --namespace string      Specifies the namespace name to look inside
+  -u, --url                   Only displays and the URL and does not open the browser
 ```
 
 ### Options inherited from parent commands

@@ -1,5 +1,5 @@
 ---
-date: 2019-02-26T13:35:54Z
+date: 2019-02-26T16:26:41Z
 title: "jx step credential"
 slug: jx_step_credential
 url: /commands/jx_step_credential/
@@ -12,7 +12,7 @@ Returns a secret entry for easy scripting in pipeline steps
 
 Returns a credential from a Secret for easy scripting in pipeline steps. 
 
-Supports the https://jenkinsci.github.io/kubernetes-credentials-provider-plugin/examples/on the Secrets
+Supports the https://jenkinsci.github.io/kubernetes-credentials-provider-plugin/examples/
 
 ```
 jx step credential [flags]
