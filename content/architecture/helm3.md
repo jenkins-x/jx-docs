@@ -5,14 +5,9 @@ description: Using Helm 3 with Jenkins X
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01
-menu:
-  docs:
-    parent: "architecture"
-    weight: 110
 weight: 110
 sections_weight: 110
-draft: false
-toc: true
+draft: true
 ---
 
 Jenkins X uses [Helm](https://www.helm.sh/) to install both Jenkins X and to install the applications you create in each of the [Environments](/about/features/#environments) (like `Staging` and `Production`)
