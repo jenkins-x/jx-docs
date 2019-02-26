@@ -1,5 +1,5 @@
 ---
-date: 2019-02-26T07:55:42Z
+date: 2019-02-26T13:35:54Z
 title: "jx step env apply"
 slug: jx_step_env_apply
 url: /commands/jx_step_env_apply/
@@ -32,6 +32,7 @@ jx step env apply [flags]
   -d, --dir string         The directory to look for the environment chart
   -f, --force              Whether to to pass '--force' to helm to help deal with upgrading if a previous promote failed (default true)
   -h, --help               help for apply
+  -r, --name string        The name of the release
   -n, --namespace string   The Kubernetes namespace to apply the helm charts to
       --no-helm-version    Don't set Chart version before applying
       --vault              Environment secrets are stored in vault
