@@ -1,5 +1,5 @@
 ---
-date: 2019-02-28T07:52:26Z
+date: 2019-02-28T09:29:45Z
 title: "jx step changelog"
 slug: jx_step_changelog
 url: /commands/jx_step_changelog/
@@ -54,6 +54,7 @@ jx step changelog [flags]
   -c, --crd                        Generate the CRD in the chart
       --crd-yaml-file string       the name of the file to generate the Release CustomResourceDefinition YAML (default "release-crd.yaml")
       --dir string                 The directory of the Git repository. Defaults to the current working directory
+      --fail-if-no-commits         Do we want to fail the build if we don't find any commits to generate the changelog
       --footer string              The changelog footer in markdown for the changelog. Can use go template expressions on the ReleaseSpec object: https://golang.org/pkg/text/template/
       --footer-file string         The file name of the changelog footer in markdown for the changelog. Can use go template expressions on the ReleaseSpec object: https://golang.org/pkg/text/template/
   -y, --generate-yaml              Generate the Release YAML in the local helm chart (default true)
