@@ -1,5 +1,5 @@
 ---
-date: 2019-02-28T12:38:40Z
+date: 2019-02-28T17:46:05Z
 title: "jx controller pipelinerunner"
 slug: jx_controller_pipelinerunner
 url: /commands/jx_controller_pipelinerunner/
@@ -28,6 +28,7 @@ jx controller pipelinerunner [flags]
 ```
       --bind string              The interface address to bind to (by default, will listen on all interfaces/addresses).
   -h, --help                     help for pipelinerunner
+      --no-git-init              Disables checking we have setup git credentials on startup
   -p, --path string              The path to listen on for requests to trigger a pipeline run. (default "/")
       --port int                 The TCP port to listen on. (default 8080)
       --service-account string   The Kubernetes ServiceAccount to use to run the pipeline (default "tekton-bot")
