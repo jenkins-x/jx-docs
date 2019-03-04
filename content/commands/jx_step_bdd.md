@@ -1,5 +1,5 @@
 ---
-date: 2019-03-04T08:22:01Z
+date: 2019-03-04T15:18:22Z
 title: "jx step bdd"
 slug: jx_step_bdd
 url: /commands/jx_step_bdd/
@@ -87,6 +87,7 @@ jx step bdd [flags]
       --register-local-helmrepo             Registers the Jenkins X ChartMuseum registry with your helm client [default false]
       --remote-tiller                       If enabled and we are using tiller for helm then run tiller remotely in the kubernetes cluster. Otherwise we run the tiller process locally. (default true)
       --reports-dir string                  the directory used to copy in any generated report files (default "reports")
+      --skip-cluster-role                   Don't enable cluster admin role for user
       --skip-ingress                        Skips the installation of ingress controller. Note that a ingress controller must already be installed into the cluster in order for the installation to succeed
       --skip-setup-tiller                   Don't setup the Helm Tiller service - lets use whatever tiller is already setup for us.
       --skip-test-git-repo-clone            Skip cloning the bdd test git repo

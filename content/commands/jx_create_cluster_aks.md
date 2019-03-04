@@ -1,5 +1,5 @@
 ---
-date: 2019-03-04T08:22:01Z
+date: 2019-03-04T15:18:22Z
 title: "jx create cluster aks"
 slug: jx_create_cluster_aks
 url: /commands/jx_create_cluster_aks/
@@ -97,6 +97,7 @@ jx create cluster aks [flags]
   -n, --resource-group-name string               Name of the resource group
       --service-cidr string                      A CIDR notation IP range from which to assign service cluster IPs
       --service-principal string                 Azure AD service principal to use an existing SP
+      --skip-cluster-role                        Don't enable cluster admin role for user
       --skip-ingress                             Skips the installation of ingress controller. Note that a ingress controller must already be installed into the cluster in order for the installation to succeed
       --skip-installation                        Provision cluster only, don't install Jenkins X into it
       --skip-login az login                      Skip login if already logged in using az login

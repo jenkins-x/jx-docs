@@ -1,5 +1,5 @@
 ---
-date: 2019-03-04T08:22:01Z
+date: 2019-03-04T15:18:22Z
 title: "jx init"
 slug: jx_init
 url: /commands/jx_init/
@@ -42,6 +42,7 @@ jx init [flags]
       --provider string                 Cloud service providing the Kubernetes cluster.  Supported providers: aks, aws, eks, gke, icp, iks, jx-infra, kubernetes, minikube, minishift, oke, openshift, pks
       --recreate-existing-draft-repos   Delete existing helm repos used by Jenkins X under ~/draft/packs
       --remote-tiller                   If enabled and we are using tiller for helm then run tiller remotely in the kubernetes cluster. Otherwise we run the tiller process locally. (default true)
+      --skip-cluster-role               Don't enable cluster admin role for user
       --skip-ingress                    Skips the installation of ingress controller. Note that a ingress controller must already be installed into the cluster in order for the installation to succeed
       --skip-setup-tiller               Don't setup the Helm Tiller service - lets use whatever tiller is already setup for us.
       --tiller-cluster-role string      The cluster role for Helm's tiller (default "cluster-admin")

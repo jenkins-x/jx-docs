@@ -1,5 +1,5 @@
 ---
-date: 2019-03-04T08:22:01Z
+date: 2019-03-04T15:18:22Z
 title: "jx create terraform"
 slug: jx_create_terraform
 url: /commands/jx_create_terraform/
@@ -93,6 +93,7 @@ jx create terraform [flags]
       --recreate-existing-draft-repos          Delete existing helm repos used by Jenkins X under ~/draft/packs
       --register-local-helmrepo                Registers the Jenkins X ChartMuseum registry with your helm client [default false]
       --remote-tiller                          If enabled and we are using tiller for helm then run tiller remotely in the kubernetes cluster. Otherwise we run the tiller process locally. (default true)
+      --skip-cluster-role                      Don't enable cluster admin role for user
       --skip-ingress                           Skips the installation of ingress controller. Note that a ingress controller must already be installed into the cluster in order for the installation to succeed
       --skip-login                             Skip Google auth if already logged in via gcloud auth
       --skip-setup-tiller                      Don't setup the Helm Tiller service - lets use whatever tiller is already setup for us.
