@@ -36,6 +36,14 @@ This will install a new Jenkins Server in your current Team. It should then show
 jx open
 ```    
 
+### Create an API Token
+
+This step will hopefully be automated away ASAP - but until we get that bit working you then need to setup an API token for your custom jenkins server via:
+
+```
+jx create jenkins token -m
+```    
+
 ## Using the custom Jenkins
 
 The `jx` command which work with Jenkins servers can all work directly with your new custom Jenkins server; though you need to specify that you want to interact with a custom Jenkins Server as opposed to the built in execution engine in Jenkins X (e.g. [serverless Jenkins](http://localhost:1313/news/serverless-jenkins/) or the built in Jenkins server inside Jenkins X)
