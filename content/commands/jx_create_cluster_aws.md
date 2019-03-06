@@ -1,5 +1,5 @@
 ---
-date: 2019-03-06T21:14:15Z
+date: 2019-03-06T21:57:52Z
 title: "jx create cluster aws"
 slug: jx_create_cluster_aws
 url: /commands/jx_create_cluster_aws/
@@ -52,7 +52,7 @@ jx create cluster aws [flags]
       --git-provider-kind string            Kind of Git server. If not specified, kind of server will be autodetected from Git provider URL. Possible values: bitbucketcloud, bitbucketserver, gitea, gitlab, github, fakegit
       --git-provider-url string             The Git server URL to create new Git repositories inside (default "https://github.com")
       --git-username string                 The Git username to use for creating new Git repositories
-      --gitops                              Sets up the local file system for GitOps so that the current installation can be configured or upgraded at any time via GitOps
+      --gitops                              Creates a git repository for the Dev environment to manage the installation, configuration, upgrade and addition of Apps in Jenkins X all via GitOps
       --global-tiller                       Whether or not to use a cluster global tiller (default true)
       --helm-client-only                    Only install helm client
       --helm-tls                            Whether to use TLS with helm
@@ -82,7 +82,7 @@ jx create cluster aws [flags]
   -o, --nodes string                        node count
       --on-premise                          If installing on an on premise cluster then lets default the 'external-ip' to be the Kubernetes master IP address
       --profile string                      AWS profile to use.
-      --prow                                Enable Prow
+      --prow                                Enable Prow to implement Serverless Jenkins and support ChatOps on Pull Requests
   -r, --rbac                                whether to enable RBAC on the Kubernetes cluster (default true)
       --recreate-existing-draft-repos       Delete existing helm repos used by Jenkins X under ~/draft/packs
       --region string                       AWS region to use. Default: us-west-2
@@ -95,7 +95,7 @@ jx create cluster aws [flags]
       --ssh-public-key string               SSH public key to use for nodes (default "~/.ssh/id_rsa.pub").
       --state string                        The S3 bucket used to store the state of the cluster.
       --tags string                         A list of KV pairs used to tag all instance groups in AWS (eg "Owner=John Doe,Team=Some Team").
-      --tekton                              Enables the Tekton pipeline engine (which used to be called knative build pipeline) along with Prow. Otherwise we default to use Knative Build if you enable Prow
+      --tekton                              Enables the Tekton pipeline engine (which used to be called knative build pipeline) along with Prow to provide Serverless Jenkins. Otherwise we default to use Knative Build if you enable Prow
   -t, --terraform string                    The directory to save Terraform configuration.
       --tiller-cluster-role string          The cluster role for Helm's tiller (default "cluster-admin")
       --tiller-namespace string             The namespace for the Tiller when using a global tiller (default "kube-system")

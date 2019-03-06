@@ -1,5 +1,5 @@
 ---
-date: 2019-03-06T21:14:15Z
+date: 2019-03-06T21:57:52Z
 title: "jx create jenkins token"
 slug: jx_create_jenkins_token
 url: /commands/jx_create_jenkins_token/
@@ -32,17 +32,18 @@ jx create jenkins token [username] [flags]
 ### Options
 
 ```
-  -t, --api-token string      The API Token for the user
-  -m, --custom                Use a custom Jenkins App instead of the default execution engine in Jenkins X
-  -h, --help                  help for token
-  -j, --jenkins-name string   The name of the custom Jenkins App if you don't wish to use the default execution engine in Jenkins X
-  -n, --name string           The name of the Git server to add a user
-      --namespace string      The namespace of the secret where the Jenkins API token will be stored
-      --no-rest               Disables the use of REST calls to automatically find the API token if the user and password are known
-  -p, --password string       The User password to try automatically create a new API Token
-      --recreate-token        Should we recreate teh API token if it already exists
-      --timeout string        The timeout if using REST to generate the API token (by passing username and password)
-  -u, --url string            The URL of the Git server to add a user
+  -t, --api-token string          The API Token for the user
+  -m, --custom                    Use a custom Jenkins App instead of the default execution engine in Jenkins X
+      --health-timeout duration   The maximum duration to wait for the Jenkins service to be healthy before trying to create the API token (default 30m0s)
+  -h, --help                      help for token
+  -j, --jenkins-name string       The name of the custom Jenkins App if you don't wish to use the default execution engine in Jenkins X
+  -n, --name string               The name of the Git server to add a user
+      --namespace string          The namespace of the secret where the Jenkins API token will be stored
+      --no-rest                   Disables the use of REST calls to automatically find the API token if the user and password are known
+  -p, --password string           The User password to try automatically create a new API Token
+      --recreate-token            Should we recreate teh API token if it already exists
+      --timeout string            The timeout if using REST to generate the API token (by passing username and password)
+  -u, --url string                The URL of the Git server to add a user
 ```
 
 ### Options inherited from parent commands

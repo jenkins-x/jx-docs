@@ -1,5 +1,5 @@
 ---
-date: 2019-03-06T21:14:15Z
+date: 2019-03-06T21:57:52Z
 title: "jx create cluster iks"
 slug: jx_create_cluster_iks
 url: /commands/jx_create_cluster_iks/
@@ -51,7 +51,7 @@ jx create cluster iks [flags]
       --git-provider-kind string            Kind of Git server. If not specified, kind of server will be autodetected from Git provider URL. Possible values: bitbucketcloud, bitbucketserver, gitea, gitlab, github, fakegit
       --git-provider-url string             The Git server URL to create new Git repositories inside (default "https://github.com")
       --git-username string                 The Git username to use for creating new Git repositories
-      --gitops                              Sets up the local file system for GitOps so that the current installation can be configured or upgraded at any time via GitOps
+      --gitops                              Creates a git repository for the Dev environment to manage the installation, configuration, upgrade and addition of Apps in Jenkins X all via GitOps
       --global-tiller                       Whether or not to use a cluster global tiller (default true)
       --helm-client-only                    Only install helm client
       --helm-tls                            Whether to use TLS with helm
@@ -84,7 +84,7 @@ jx create cluster iks [flags]
   -p, --password string                     Password
       --private-only                        Use this flag to prevent a public VLAN from being created. Required only when you specify the ‘--private-vlan’ flag without specifying the ‘--public-vlan’ flag.
       --private-vlan string                 Conditional: Specify the ID of the private VLAN. To see available VLANs, run 'ibmcloud ks vlans --zone <zone name>'. If you do not have a private VLAN yet, do not specify this option because one will be automatically created for you. When you specify a private VLAN, you must also specify either the ‘--public-vlan’ flag or the ‘--private-only’ flag.
-      --prow                                Enable Prow
+      --prow                                Enable Prow to implement Serverless Jenkins and support ChatOps on Pull Requests
       --public-vlan string                  Conditional: Specify the ID of the public VLAN. To see available VLANs, run 'ibmcloud ks vlans --zone <zone name>'. If you do not have a public VLAN yet, do not specify this option because one will be automatically created for you.
       --recreate-existing-draft-repos       Delete existing helm repos used by Jenkins X under ~/draft/packs
   -r, --region string                       The IBM Cloud Region. Default is 'us-east'
@@ -96,7 +96,7 @@ jx create cluster iks [flags]
       --skip-login ibmcloud login           Skip login if already logged in using ibmcloud login
       --skip-setup-tiller                   Don't setup the Helm Tiller service - lets use whatever tiller is already setup for us.
       --sso                                 SSO Passcode. See run 'ibmcloud login --sso'
-      --tekton                              Enables the Tekton pipeline engine (which used to be called knative build pipeline) along with Prow. Otherwise we default to use Knative Build if you enable Prow
+      --tekton                              Enables the Tekton pipeline engine (which used to be called knative build pipeline) along with Prow to provide Serverless Jenkins. Otherwise we default to use Knative Build if you enable Prow
       --tiller-cluster-role string          The cluster role for Helm's tiller (default "cluster-admin")
       --tiller-namespace string             The namespace for the Tiller when using a global tiller (default "kube-system")
       --timeout string                      The number of seconds to wait for the helm install to complete (default "6000")

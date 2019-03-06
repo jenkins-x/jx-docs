@@ -1,5 +1,5 @@
 ---
-date: 2019-03-06T21:14:15Z
+date: 2019-03-06T21:57:52Z
 title: "jx create codeship"
 slug: jx_create_codeship
 url: /commands/jx_create_codeship/
@@ -54,7 +54,7 @@ jx create codeship [flags]
       --git-provider-url string                The Git server URL to create new Git repositories inside (default "https://github.com")
       --git-user string                        The name to use for any git commits (default "Codeship")
       --git-username string                    The Git username to use for creating new Git repositories
-      --gitops                                 Sets up the local file system for GitOps so that the current installation can be configured or upgraded at any time via GitOps
+      --gitops                                 Creates a git repository for the Dev environment to manage the installation, configuration, upgrade and addition of Apps in Jenkins X all via GitOps
       --gke-disk-size string                   Size in GB for node VM boot disks. Defaults to 100GB (default "100")
       --gke-enable-autorepair                  Sets autorepair feature for a cluster's default node-pool(s) (default true)
       --gke-enable-autoupgrade                 Sets autoupgrade feature for a cluster's default node-pool(s)
@@ -96,7 +96,7 @@ jx create codeship [flags]
       --on-premise                             If installing on an on premise cluster then lets default the 'external-ip' to be the Kubernetes master IP address
   -o, --organisation-name string               The organisation name that will be used as the Git repo containing cluster details, the repo will be organisation-<org name>
   -p, --project string                         The GCP project to create the service account in
-      --prow                                   Enable Prow
+      --prow                                   Enable Prow to implement Serverless Jenkins and support ChatOps on Pull Requests
       --recreate-existing-draft-repos          Delete existing helm repos used by Jenkins X under ~/draft/packs
       --register-local-helmrepo                Registers the Jenkins X ChartMuseum registry with your helm client [default false]
       --remote-tiller                          If enabled and we are using tiller for helm then run tiller remotely in the kubernetes cluster. Otherwise we run the tiller process locally. (default true)
@@ -105,7 +105,7 @@ jx create codeship [flags]
       --skip-login                             Skip Google auth if already logged in via gcloud auth
       --skip-setup-tiller                      Don't setup the Helm Tiller service - lets use whatever tiller is already setup for us.
       --skip-terraform-apply                   Skip applying the generated Terraform plans
-      --tekton                                 Enables the Tekton pipeline engine (which used to be called knative build pipeline) along with Prow. Otherwise we default to use Knative Build if you enable Prow
+      --tekton                                 Enables the Tekton pipeline engine (which used to be called knative build pipeline) along with Prow to provide Serverless Jenkins. Otherwise we default to use Knative Build if you enable Prow
       --tiller-cluster-role string             The cluster role for Helm's tiller (default "cluster-admin")
       --tiller-namespace string                The namespace for the Tiller when using a global tiller (default "kube-system")
       --timeout string                         The number of seconds to wait for the helm install to complete (default "6000")
