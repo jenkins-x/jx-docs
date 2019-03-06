@@ -1,5 +1,5 @@
 ---
-date: 2019-03-06T07:35:49Z
+date: 2019-03-06T13:25:38Z
 title: "jx step create task"
 slug: jx_step_create_task
 url: /commands/jx_step_create_task/
@@ -32,30 +32,33 @@ jx step create task [flags]
 ### Options
 
 ```
-      --branch string            The git branch to trigger the build in. Defaults to the current local branch name
-      --clone-git-url string     Specify the git URL to clone to a temporary directory to get the source code
-  -c, --context string           The pipeline context if there are multiple separate pipelines for a given branch
-      --delete-temp-dir          Deletes the temporary directory of cloned files if using the 'clone-git-url' option
-  -d, --dir string               The directory to query to find the projects .git directory
-      --docker-registry string   The Docker Registry host name to use which is added as a prefix to docker images
-      --duration duration        Retry duration when trying to create a PipelineRun (default 30s)
-  -h, --help                     help for task
-      --image string             Specify a custom image to use for the steps which overrides the image in the PodTemplates
-  -k, --kind string              The kind of pipeline to create such as: release, pullrequest, feature (default "release")
-  -l, --labels stringArray       List of custom labels to be applied to resources that are created
-      --no-apply                 Disables creating the Pipeline resources in the kubernetes cluster and just outputs the generated Task to the console or output file
-      --no-release-prepare       Disables creating the release version number and tagging git and triggering the release pipeline from the new tag
-  -o, --output string            The directory to write the output to as YAML
-  -p, --pack string              The build pack name. If none is specified its discovered from the source code
-      --pr-number string         If a Pull Request this is it's number
-  -r, --ref string               The Git reference (branch,tag,sha) in the Git repository to use
-      --revision string          The git revision to checkout, can be a branch name or git sha
-      --service-account string   The Kubernetes ServiceAccount to use to run the pipeline (default "tekton-bot")
-      --source string            The name of the source repository (default "source")
-      --target-path string       The target path appended to /workspace/${source} to clone the source code
-  -t, --trigger string           The kind of pipeline trigger (default "manual")
-  -u, --url string               The URL for the build pack Git repository
-      --view                     Just view the steps that would be created
+      --branch string                The git branch to trigger the build in. Defaults to the current local branch name
+      --clone-git-url string         Specify the git URL to clone to a temporary directory to get the source code
+  -c, --context string               The pipeline context if there are multiple separate pipelines for a given branch
+      --delete-temp-dir              Deletes the temporary directory of cloned files if using the 'clone-git-url' option
+  -d, --dir string                   The directory to query to find the projects .git directory
+      --docker-registry string       The Docker Registry host name to use which is added as a prefix to docker images
+      --docker-registry-org string   The Docker registry organisation. If blank the git repository owner is used
+      --duration duration            Retry duration when trying to create a PipelineRun (default 30s)
+  -h, --help                         help for task
+      --image string                 Specify a custom image to use for the steps which overrides the image in the PodTemplates
+      --kaniko-image string          The docker image for Kaniko (default "rawlingsj/executor:dev40")
+  -k, --kind string                  The kind of pipeline to create such as: release, pullrequest, feature (default "release")
+  -l, --labels stringArray           List of custom labels to be applied to resources that are created
+      --no-apply                     Disables creating the Pipeline resources in the kubernetes cluster and just outputs the generated Task to the console or output file
+      --no-kaniko                    Disables using kaniko directly for building docker images
+      --no-release-prepare           Disables creating the release version number and tagging git and triggering the release pipeline from the new tag
+  -o, --output string                The directory to write the output to as YAML
+  -p, --pack string                  The build pack name. If none is specified its discovered from the source code
+      --pr-number string             If a Pull Request this is it's number
+  -r, --ref string                   The Git reference (branch,tag,sha) in the Git repository to use
+      --revision string              The git revision to checkout, can be a branch name or git sha
+      --service-account string       The Kubernetes ServiceAccount to use to run the pipeline (default "tekton-bot")
+      --source string                The name of the source repository (default "source")
+      --target-path string           The target path appended to /workspace/${source} to clone the source code
+  -t, --trigger string               The kind of pipeline trigger (default "manual")
+  -u, --url string                   The URL for the build pack Git repository
+      --view                         Just view the steps that would be created
 ```
 
 ### Options inherited from parent commands
