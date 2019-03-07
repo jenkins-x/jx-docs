@@ -35,6 +35,8 @@ sections_weight: 5
 
 * [2018-12-12 KubeCon NA Seattle: Jenkins X: Continuous Delivery for Kubernetes](http://sched.co/GrT2) [YouTube 🎥](https://www.youtube.com/watch?v=IDEa8seAzVc&index=1&list=PLHsuXkXI4xdjGlGkCBdxIAmkzfWXqsUrO) by [Carlos Sanchez](https://csanchez.org)
 
+* [2018-12-05 Jenkins x Kubernetesが簡単だと思ったら大変だった話 (Japanese)](https://www.slideshare.net/YamamotoMasaki/jenkins-x-kubernetes) at [JapanContainerDays v18.12](https://containerdays.jp/)  [YouTube 🎥](https://www.youtube.com/watch?v=3-1MKJE6_mI) by [Masaki Yamamoto](https://blog.nnasaki.com/)
+
 * [2018-11-23 CommitConf Madrid: Jenkins X: Continuous Delivery for Kubernetes](https://www.koliseo.com/events/commit-2018/r4p/5630471824211968/agenda#/5116072650866688/5742659054338048) by [Carlos Sanchez](https://csanchez.org)
 
 * [2018-11-17 Korea Developer Conference at Seoul: Jenkins X - automated CI/CD solution for cloud native applications on Kubernetes](http://www.hanbit.co.kr/store/education/edu_view.html?p_code=S8548956082) on [JBUG Korea](https://www.facebook.com/groups/jbossusergroup/) with [slides](https://www.slideshare.net/tedwon/jenkins-x-automated-cicd-solution-for-cloud-native-applications-on-kubernetes-123332546) by [Ted Won](https://twitter.com/tedwon)
