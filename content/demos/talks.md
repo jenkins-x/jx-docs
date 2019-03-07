@@ -13,9 +13,13 @@ weight: 5
 sections_weight: 5
 ---
 
+* [2019-06-04 Jenkins X: Progressive Delivery for Kubernetes](https://jnation.pt/speakers/carlos-sanchez/) at [JNation (Coimbra, Portugal)](https://jnation.pt) by [Carlos Sanchez](https://csanchez.org)
+
 * [2019-05-07 Workshop: Continuous Deployment To Kubernetes](https://craft-conf.com/workshops) at [Craft (Budapest)](https://craft-conf.com/) by [Viktor Farcic](https://twitter.com/vfarcic)
 
 * [2019-03-19 Jenkins X - Continuously Driving the Kloud (German)](https://programm.javaland.eu/2019/#/scheduledEvent/569771) at [Javaland 2019 (Germany)](https://www.javaland.eu) by [Gerd Aschemann](https://twitter.com/GerdAschemann) 
+
+* [2019-02-28 Jenkins X: Continuous Delivery for Kubernetes](https://www.youtube.com/watch?v=hrridH35y64&list=PLHsuXkXI4xdjGlGkCBdxIAmkzfWXqsUrO&t=0s&index=2) [YouTube 🎥](https://www.youtube.com/watch?v=hrridH35y64&list=PLHsuXkXI4xdjGlGkCBdxIAmkzfWXqsUrO&t=0s&index=2) by [Carlos Sanchez](https://csanchez.org)
 
 * [2019-01-24 Jenkins X - Continuously Driving the Kloud (German)](https://www.xing.com/events/jenkins-continuously-driving-the-kloud-1995467?sc_o=si1942_com) at [JUG Metroplregion Nürnberg (Germany)](http://www.jug-n.de) by [Gerd Aschemann](https://twitter.com/GerdAschemann) 
 
