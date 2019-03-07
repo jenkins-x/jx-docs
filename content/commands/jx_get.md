@@ -1,5 +1,5 @@
 ---
-date: 2019-03-07T12:07:44Z
+date: 2019-03-07T18:44:36Z
 title: "jx get"
 slug: jx_get
 url: /commands/jx_get/
@@ -52,10 +52,10 @@ jx get TYPE [flags]
 ### SEE ALSO
 
 * [jx](/commands/jx/)	 - jx is a command line tool for working with Jenkins X
-* [jx get Apps](/commands/jx_get_apps/)	 - Display one or more installed Apps
 * [jx get activities](/commands/jx_get_activities/)	 - Display one or more Activities on projects
 * [jx get addons](/commands/jx_get_addons/)	 - Lists the addons
 * [jx get applications](/commands/jx_get_applications/)	 - Display one or more Applications and their versions
+* [jx get apps](/commands/jx_get_apps/)	 - Display one or more installed Apps
 * [jx get aws](/commands/jx_get_aws/)	 - Displays AWS account information
 * [jx get branchpattern](/commands/jx_get_branchpattern/)	 - Display the git branch patterns for the current Team used on creating and importing projects
 * [jx get build](/commands/jx_get_build/)	 - Display one or more build resources

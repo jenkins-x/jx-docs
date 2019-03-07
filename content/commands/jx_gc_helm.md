@@ -1,5 +1,5 @@
 ---
-date: 2019-03-07T12:07:44Z
+date: 2019-03-07T18:44:36Z
 title: "jx gc helm"
 slug: jx_gc_helm
 url: /commands/jx_gc_helm/
