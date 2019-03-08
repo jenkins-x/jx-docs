@@ -19,6 +19,46 @@ toc: true
 
 This page describes any specific manual work arounds you may require above and beyond changes described in the [News section](/news/) or using [jx upgrade](/commands/jx_upgrade/) to upgrade the [CLI](/commands/jx_upgrade_cli/) or [platform](/commands/jx_upgrade_platform/)
 
+## 6th Feb 2019: Regression in `jx-install-config` secret.
+
+We have spotted a regression in the install process that generates an invalid config file inside the secret `jx-install-config` secret.  Whilst the original defect has been fixed, the invalid secret will create an issue with `jx upgrade platform` causing the cluster to loose all secrets.
+
+To work around this, we have added some logic into `jx upgrade platform` to detect the invalid secret and attempt to fix.  This feature is included in jx version `1.3.842`.  An extract of a running upgrade is shown below:  
+
+```
+Creating /Users/garethjevans/.jx/adminSecrets.yaml from jx-install-config
+Creating /Users/garethjevans/.jx/extraValues.yaml from jx-install-config
+We have detected that the /Users/garethjevans/.jx/adminSecrets.yaml file has an invalid format
+? Would you like to repair the file? Yes
+```
+
+## 1st Feb 2019: Changes to the default Nexus configuration
+
+Anonymous access to Nexus has been disabled by default, this has implications to those running Maven based builds.  To support this, the maven settings.xml injected into each build pod needs to be modified.
+
+This can be done automatically using:
+
+```
+jx upgrade platform --update-secrets
+```
+
+NOTE: this will regenerate the settings.xml from a defined template.
+
+If you would prefer to apply this changes manually, edit the secret `jenkins-maven-settings`, duplicating the server block for `local-nexus`, changing the server id to `nexus` e.g. 
+
+```
+<server>
+    <id>local-nexus</id>
+    <username>admin</username>
+    <password>%s</password>
+</server>
+<server>
+    <id>nexus</id>
+    <username>admin</username>
+    <password>%s</password>
+</server>
+```
+
 ## 8 Jan 2019: Prow and Knative Build upgrade
 
 There are three critical bugs with the prow based Jenkins X

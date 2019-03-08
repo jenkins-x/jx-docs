@@ -85,6 +85,12 @@ If you need any additional resources like `ConfigMap`, `Secret` or `Service` res
 
 You can always _service link_ from the Preview Environment namespace to other namespaces by creating a `Service` with an `externalName` which links to a `Service` running in another namespace (such as Staging or Production) or to point to a service running outside of the Kubernetes cluster completely. 
 
+We have a command [jx step service link](/commands/jx_step_link/) which does this for you:
+
+```
+jx step link services --from-namespace jx-staging --includes "*" --excludes "cheese*"
+ ```
+ 
 ### Configuration
 
 If you need to tweak your application when running in a Preview Environment you can add custom settings to the `charts/preview/values.yaml`file

@@ -76,7 +76,6 @@ toc: true
 | **Addons** | | | | |
 | Anchore | | | | 1.2.x |
 | Cloud9  | | [Planned](https://github.com/jenkins-x/jx/issues/776) | |
-| Eclipse Che  | | [Planned](https://github.com/jenkins-x/jx/issues/774) | |
 | Gitea | | | | 1.1.x |
 | Prometheus | | | | 1.1.x |
 | Theia IDE | | | | 1.3.x in [DevPods](/developing/devpods/#using-theia-ide) |

@@ -43,6 +43,19 @@ If you then expand the `JENKINS X` navigation window you should see UI that upda
   * start/stop pipelines too! 
 * open [DevPods](/developing/devpods/) with source code synchronisation in a single command in VS Code for developing inside the cloud with the same container images and pod templates as the CI/CD pipelines  
 
+## IntelliJ
 
+We have a plugin for [IntelliJ](https://www.jetbrains.com/idea/) and the associated IDEs like WebStorm, GoLand, PyCharm et al
+
+You can find the [Jenkins X plugin for IntelliJ here](https://plugins.jetbrains.com/plugin/11099-jenkins-x)
+
+<img src="/images/intellij.png">
+
+
+## Web based IDE
+
+To help you work in the cloud we also support a Web Based IDE using  the [Theia IDE](https://www.theia-ide.org/).
+
+To get started with Theia see [how to create a DevPod with an embedded Web IDE](/devpods/#using-theia-ide) 
 
 

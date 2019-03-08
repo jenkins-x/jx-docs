@@ -40,8 +40,7 @@ If you're struggling at any point in this contribution guide, reach out to the J
 To contribute to Jenkins X jx binary, you will need:
 
  - [Git](https://git-scm.com) and a [GitHub](https://github.com) account
- - [Go](https://golang.org/) `1.11.4` or later, with support for compiling to `linux/amd64`
- - [dep](https://github.com/golang/dep)
+ - [Go](https://golang.org/) `1.11.4`, with support for compiling to `linux/amd64`
  
 
 ## Install Go
@@ -427,7 +426,7 @@ $ go generate ./...
 ```
 or
 ```shell
-$ make generate
+$ make generate-mocks
 ```
 
 You now have a mock to test your new interface!
@@ -556,3 +555,23 @@ We don't yet do the same for serverless jenkins images am afraid - for that you'
 
 Another approach is you can make your own docker image, then pause a pipeline and `kubectl cp` your linux build of `jx` into the docker image and `kubectl exec` or `jx rsh` into the build pod and run the `jx` command there.
 
+## Code Generation
+
+Jenkins X makes use of code generation to create [Mocks](#mocking--stubbing), Kubernetes Custom Resource clients, 
+[OpenAPI spec and API Documentation](../apidocs). The generated files are always committed.
+
+• `make generate` runs all generation you need to do before commiting changes
+• `make generate-mocks` - generates the mocks only (run by `make generate`)
+• `make generate-client` - generates the Kubernetes Custom Resource clients only
+• `make generate-openapi` generates the OpenAPI spec only (run by `make generate`)
+• `make generate-docs` generates the HTML apidocs, and is not committed
+
+If you get a conflict on any of these directories or files when committing, rebasing or merging your best bet is to 
+discard the changeset you have, and regenerate the clients:
+
+* `pkg/client`
+* `docs/apidocs/openapi-spec`
+* `*/mocks/*`
+
+As part of the PR builds we run a job to validate that the code generation is up to date. If the code generation is 
+not up to date (running `make generate` produces a `git diff` or untracked files) then your PR will be blocked.

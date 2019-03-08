@@ -13,6 +13,10 @@ weight: 5
 sections_weight: 5
 ---
 
+* [Setting up Jenkins X on Azure Kubernetes Service (AKS)](https://cloudblogs.microsoft.com/opensource/2019/03/06/jenkins-x-azure-kubernetes-service-setup/) on March 6th, 2019 by [Pui Chee Chan](https://cloudblogs.microsoft.com/opensource/author/pui-chee-chan/)
+* [Progressive Delivery with Jenkins X: Automatic Canary Deployments](https://blog.csanchez.org/2019/03/05/progressive-delivery-with-jenkins-x-automatic-canary-deployments/) on March 5th, 2019 by  [Carlos Sanchez](https://blog.csanchez.org/author/carlossanchez/)
+* [Jenkins X Environment Specific Variables](https://nicholasduffy.com/posts/jenkins-x-environment-specific-variables/) on March 4th, 2019 by [Nicholas Duffy](https://nicholasduffy.com/) 
+* [Zero cost preview environments on Kubernetes with Jenkins X and Osiris](https://medium.com/@vbehar/zero-cost-preview-environments-on-kubernetes-with-jenkins-x-and-osiris-bd9ce0148d03) by [Vincent Behar](https://medium.com/@vbehar), February 5th, 2019
 * [Jenkins X: Preview Environment](https://medium.com/@MichalFoksa/jenkins-x-preview-environment-3bf2424a05e4) by [Michal Foksa](https://medium.com/@MichalFoksa), January 10th, 2019
 * [Continuous Delivery with Amazon EKS and Jenkins X](https://aws.amazon.com/blogs/opensource/continuous-delivery-eks-jenkins-x/) by [Henryk Konsek](https://twitter.com/hekonsek), 7th November, 2018
 * [Trying out Jenkins X on Azure Kubernetes Service(AKS)](https://medium.com/@puichan/trying-out-jenkins-x-on-azure-kubernetes-service-aks-20fe94bd72d2) by [PC Chan](https://medium.com/@puichan) on October 29th, 2018

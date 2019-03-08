@@ -80,7 +80,11 @@ Use the [jx create cluster gke](/commands/jx_create_cluster_gke) command:
 
     jx create cluster gke --verbose
 
-The command assumes you have a google account and you've set up a default project that you can use to create the kubernetes cluster within.         
+Or if you are already logged in by previously using `gcloud init` or `gcloud auth login`:
+
+    jx create cluster gke --skip-login --verbose
+
+Those commands assume you have a google account and you've set up a default project that you can use to create the kubernetes cluster within.         
 Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
 
 
@@ -147,6 +151,8 @@ Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
 
         
 ## Using Azure (AKS)
+
+Before you start you may find [this blog helpful](https://cloudblogs.microsoft.com/opensource/2019/03/06/jenkins-x-azure-kubernetes-service-setup/).
 
 Use the [jx create cluster aks](/commands/jx_create_cluster_aks) command: 
 
