@@ -1,5 +1,5 @@
 ---
-date: 2019-03-08T08:52:01Z
+date: 2019-03-08T12:05:53Z
 title: "jx gc gke"
 slug: jx_gc_gke
 url: /commands/jx_gc_gke/
