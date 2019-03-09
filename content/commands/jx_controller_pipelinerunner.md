@@ -1,5 +1,5 @@
 ---
-date: 2019-03-09T07:56:58Z
+date: 2019-03-09T11:50:12Z
 title: "jx controller pipelinerunner"
 slug: jx_controller_pipelinerunner
 url: /commands/jx_controller_pipelinerunner/
