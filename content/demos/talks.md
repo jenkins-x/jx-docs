@@ -21,9 +21,13 @@ sections_weight: 5
 
 * [2019-03-19 Jenkins X - Continuously Driving the Kloud (German)](https://programm.javaland.eu/2019/#/scheduledEvent/569771) at [Javaland 2019 (Germany)](https://www.javaland.eu) by [Gerd Aschemann](https://twitter.com/GerdAschemann) 
 
+* [2019-03-06 Cloud Native CI/CD for Kubernetes with JenkinsX](https://www.meetup.com/Dubai-Jenkins-Area-Meetup/events/258523035/) at [Jenkins Area Meetup(JAM) Dubai](https://www.meetup.com/Dubai-Jenkins-Area-Meetup/) by [Viktor Farcic](https://twitter.com/vfarcic) 
+
 * [2019-03-05 Cloud Native CI/CD with Jenkins X and Knative Pipelines](https://qconlondon.com/london2019/presentation/cloud-native-cicd-jenkins-x-and-knative-pipelines) at [QConLondon](https://qconlondon.com/) by [James Rawlings](https://twitter.com/jdrawlings) and [Christie Wilson](https://twitter.com/bobcatwilson) 
 
 * [2019-02-26 GitOps by courtesy of Jenkins-X (German)](https://www.meetup.com/Agile-Testing-Munich/events/258881963/) at [Agile Testing @Munich (Germany)](https://www.meetup.com/Agile-Testing-Munich/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) 
+
+* [2019-02-19 Cloud Native Computing Paris: CI/CD with Jenkins X](https://www.meetup.com/Cloud-Native-Computing-Paris/events/258880938/) by [Viktor Farcic](https://twitter.com/vfarcic)
 
 * [2019-01-24 Jenkins X - Continuously Driving the Kloud (German)](https://www.xing.com/events/jenkins-continuously-driving-the-kloud-1995467?sc_o=si1942_com) at [JUG Metroplregion Nürnberg (Germany)](http://www.jug-n.de) by [Gerd Aschemann](https://twitter.com/GerdAschemann) ([Slides](http://aschemann.net/gerd/publications/jx-talk-jug-met-n-2019/))
 
