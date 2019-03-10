@@ -19,5 +19,3 @@ Jenkins X is just over [a year old](/news/happy-first-birthday/) but has been gr
 Jenkins X started life under the Jenkins umbrella. In CDF, Jenkins X will be a distinct project from Jenkins which means some changes, such as having a Jenkins X Technical Steering Committee. These changes will happen gradually as we transition to CDF over the coming weeks. Normal development work will continue as usual.
 
 We are excited about all the new possibilities that being part of the CDF will bring. We look forward to new initiatives and welcoming everybody to get involved with the project (link to contributions page).
-
-(For CDF logos see here: https://github.com/cdfoundation/artwork) 
