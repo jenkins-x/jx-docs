@@ -1,7 +1,7 @@
 ---
-title: "Next Gen Pipeline engine"
+title: "Jenkins Pipelines and Tekton in Jenkins X"
 date: 2019-02-19T10:36:00+02:00
-description: "Jenkins X: Next Gen Pipeline engine" 
+description: "Jenkins X: Serverless Jenkins Pipeline" 
 categories: [blog]
 keywords: []
 slug: "jenkins-x-next-gen-pipeline-engine"
