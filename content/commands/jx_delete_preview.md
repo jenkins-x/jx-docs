@@ -1,5 +1,5 @@
 ---
-date: 2019-03-13T09:00:43Z
+date: 2019-03-13T15:44:10Z
 title: "jx delete preview"
 slug: jx_delete_preview
 url: /commands/jx_delete_preview/
