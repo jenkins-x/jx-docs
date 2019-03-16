@@ -1,7 +1,7 @@
 ---
-title: Next Gen Pipelines
-linktitle: Next Gen Pipelines
-description: Next Gen Pipelines
+title: Jenkins X Pipelines
+linktitle: Jenkins X Pipelines
+description: Jenkins X Pipelines
 date: 2019-03-04
 publishdate: 2019-03-04
 categories: [tekton]
@@ -17,7 +17,7 @@ aliases: [/tekton/]
 toc: true
 ---
 
-Jenkins X [recently announced](/news/jenkins-x-next-gen-pipeline-engine) that it was working with the Next Gen Pipeline initiative which offers a new pipeline execution engine in the form of Tekton Pipelines project.  Tekton has been designed as a cloud native solution.
+Jenkins X [recently announced](/news/jenkins-x-next-gen-pipeline-engine) that it was working with the Jenkins X Pipeline initiative which offers a new pipeline execution engine in the form of Tekton Pipelines project.  Tekton has been designed as a cloud native solution.
 
 The work here is still experimental but we'd love feedback and help from the community to drive it forward.  Right now to enable a Tekton based install you can create a new cluster using `jx` along with these flags:
 
