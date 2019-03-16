@@ -1,7 +1,7 @@
 ---
-title: "Jenkins Pipelines and Tekton in Jenkins X"
+title: "Jenkins X Pipelines integrated with Tekton"
 date: 2019-02-19T10:36:00+02:00
-description: "Jenkins X: Serverless Jenkins Pipeline" 
+description: "Jenkins X Pipelines are Serverless" 
 categories: [blog]
 keywords: []
 slug: "jenkins-x-next-gen-pipeline-engine"
@@ -9,9 +9,9 @@ aliases: []
 author: rawlingsj
 ---
 
-## Jenkins X: Next Gen Pipeline engine
+## Introducing the new Jenkins X Pipeline Engine
 
-The [Jenkins X](https://jenkins-x.io/) team and [CloudBees](https://www.cloudbees.com/) are excited to announce some changes that we’ve been working on for the future of Jenkins Pipeline.
+The [Jenkins X](https://jenkins-x.io/) team and [CloudBees](https://www.cloudbees.com/) are excited to announce some changes that we’ve been working on and are jntroducing the new Jenkins X Pipeline Engine.
 
 Today, there are two ways that you can run your Jenkins pipelines in Jenkins X. By default today, Jenkins X uses a static traditional Jenkins master. This mode works well for those who may have complex existing Jenkins pipelines and want to be able to use all the Jenkins X goodness of GitOps and preview environments in Kubernetes. As of last October, you can run Jenkins pipelines without the static Jenkins server -- so, it’s [serverless](https://medium.com/@jdrawlings/serverless-jenkins-with-jenkins-x-9134cbfe6870). 
 
