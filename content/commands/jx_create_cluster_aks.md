@@ -41,7 +41,8 @@ jx create cluster aks [flags]
       --client-secret string                     Azure AD client secret to use an existing SP
       --cloud-environment-repo string            Cloud Environments Git repo (default "https://github.com/jenkins-x/cloud-environments")
   -c, --cluster-name string                      Name of the cluster
-      --default-admin-password string            the default admin password to access Jenkins, Kubernetes Dashboard, ChartMuseum and Nexus
+      --default-admin-username='admin'           The default admin username to access Jenkins, Kubernetes Dashboard, ChartMuseum and Nexus
+      --default-admin-password string            The default admin password to access Jenkins, Kubernetes Dashboard, ChartMuseum and Nexus
       --default-environment-prefix string        Default environment repo prefix, your Git repos will be of the form 'environment-$prefix-$envName'
       --disk-size string                         Size in GB of the OS disk for each node in the node pool.
       --dns-name-prefix string                   Prefix for hostnames that are created

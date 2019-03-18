@@ -36,7 +36,8 @@ jx create cluster gke [flags]
       --cloud-environment-repo string       Cloud Environments Git repo (default "https://github.com/jenkins-x/cloud-environments")
       --cluster-ipv4-cidr string            The IP address range for the pods in this cluster in CIDR notation (e.g. 10.0.0.0/14)
   -n, --cluster-name string                 The name of this cluster, default is a random generated name
-      --default-admin-password string       the default admin password to access Jenkins, Kubernetes Dashboard, ChartMuseum and Nexus
+      --default-admin-username='admin'      The default admin username to access Jenkins, Kubernetes Dashboard, ChartMuseum and Nexus
+      --default-admin-password string       The default admin password to access Jenkins, Kubernetes Dashboard, ChartMuseum and Nexus
       --default-environment-prefix string   Default environment repo prefix, your Git repos will be of the form 'environment-$prefix-$envName'
   -d, --disk-size string                    Size in GB for node VM boot disks. Defaults to 100GB
       --docker-registry string              The Docker Registry host or host:port which is used when tagging and pushing images. If not specified it defaults to the internal registry unless there is a better provider default (e.g. ECR on AWS/EKS)
