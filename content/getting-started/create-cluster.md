@@ -152,6 +152,8 @@ Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
         
 ## Using Azure (AKS)
 
+Before you start you may find [this blog helpful](https://cloudblogs.microsoft.com/opensource/2019/03/06/jenkins-x-azure-kubernetes-service-setup/).
+
 Use the [jx create cluster aks](/commands/jx_create_cluster_aks) command: 
 
     jx create cluster aks
