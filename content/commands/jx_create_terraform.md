@@ -1,5 +1,5 @@
 ---
-date: 2019-02-21T23:35:07Z
+date: 2019-03-16T11:04:02Z
 title: "jx create terraform"
 slug: jx_create_terraform
 url: /commands/jx_create_terraform/
@@ -35,6 +35,7 @@ jx create terraform [flags]
   -c, --cluster stringArray                    Name and Kubernetes provider (gke, aks, eks) of clusters to be created in the form --cluster foo=gke
       --cluster-name string                    The name of a single cluster to create - cannot be used in conjunction with --cluster
       --default-admin-password string          the default admin password to access Jenkins, Kubernetes Dashboard, ChartMuseum and Nexus
+      --default-admin-username string          the default admin username to access Jenkins, Kubernetes Dashboard, ChartMuseum and Nexus (default "admin")
       --default-environment-prefix string      Default environment repo prefix, your Git repos will be of the form 'environment-$prefix-$envName'
       --docker-registry string                 The Docker Registry host or host:port which is used when tagging and pushing images. If not specified it defaults to the internal registry unless there is a better provider default (e.g. ECR on AWS/EKS)
       --domain string                          Domain to expose ingress endpoints.  Example: jenkinsx.io
@@ -49,7 +50,7 @@ jx create terraform [flags]
       --git-provider-kind string               Kind of Git server. If not specified, kind of server will be autodetected from Git provider URL. Possible values: bitbucketcloud, bitbucketserver, gitea, gitlab, github, fakegit
       --git-provider-url string                The Git server URL to create new Git repositories inside (default "https://github.com")
       --git-username string                    The Git username to use for creating new Git repositories
-      --gitops                                 Sets up the local file system for GitOps so that the current installation can be configured or upgraded at any time via GitOps
+      --gitops                                 Creates a git repository for the Dev environment to manage the installation, configuration, upgrade and addition of Apps in Jenkins X all via GitOps
       --gke-disk-size string                   Size in GB for node VM boot disks. Defaults to 100GB (default "100")
       --gke-enable-autorepair                  Sets autorepair feature for a cluster's default node-pool(s) (default true)
       --gke-enable-autoupgrade                 Sets autoupgrade feature for a cluster's default node-pool(s)
@@ -89,15 +90,16 @@ jx create terraform [flags]
       --no-tiller                              Whether to disable the use of tiller with helm. If disabled we use 'helm template' to generate the YAML from helm charts then we use 'kubectl apply' to install it to avoid using tiller completely.
       --on-premise                             If installing on an on premise cluster then lets default the 'external-ip' to be the Kubernetes master IP address
   -o, --organisation-name string               The organisation name that will be used as the Git repo containing cluster details, the repo will be organisation-<org name>
-      --prow                                   Enable Prow
+      --prow                                   Enable Prow to implement Serverless Jenkins and support ChatOps on Pull Requests
       --recreate-existing-draft-repos          Delete existing helm repos used by Jenkins X under ~/draft/packs
       --register-local-helmrepo                Registers the Jenkins X ChartMuseum registry with your helm client [default false]
       --remote-tiller                          If enabled and we are using tiller for helm then run tiller remotely in the kubernetes cluster. Otherwise we run the tiller process locally. (default true)
+      --skip-cluster-role                      Don't enable cluster admin role for user
       --skip-ingress                           Skips the installation of ingress controller. Note that a ingress controller must already be installed into the cluster in order for the installation to succeed
       --skip-login                             Skip Google auth if already logged in via gcloud auth
       --skip-setup-tiller                      Don't setup the Helm Tiller service - lets use whatever tiller is already setup for us.
       --skip-terraform-apply                   Skip applying the generated Terraform plans
-      --tekton                                 Enables the Tekton pipeline engine (which used to be called knative build pipeline). Otherwise we default to use Knative Build
+      --tekton                                 Enables the Tekton pipeline engine (which used to be called knative build pipeline) along with Prow to provide Serverless Jenkins. Otherwise we default to use Knative Build if you enable Prow
       --tiller-cluster-role string             The cluster role for Helm's tiller (default "cluster-admin")
       --tiller-namespace string                The namespace for the Tiller when using a global tiller (default "kube-system")
       --timeout string                         The number of seconds to wait for the helm install to complete (default "6000")
@@ -113,7 +115,6 @@ jx create terraform [flags]
 
 ```
   -b, --batch-mode                Runs in batch mode without prompting for user input
-      --headless                  Runs in headless mode when using browser automation
       --install-dependencies      Enables automatic dependencies installation when required
       --log-level string          Sets the logging level (panic, fatal, error, warning, info, debug) (default "info")
       --no-brew                   Disables brew package manager on MacOS when installing binary dependencies
@@ -125,4 +126,4 @@ jx create terraform [flags]
 
 * [jx create](/commands/jx_create/)	 - Create a new resource
 
-###### Auto generated by spf13/cobra on 21-Feb-2019
+###### Auto generated by spf13/cobra on 16-Mar-2019

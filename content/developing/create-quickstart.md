@@ -61,7 +61,7 @@ The source of these Quickstarts are maintained in [the jenkins-quickstarts GitHu
 
 When you create a quickstart we use the [Jenkins X build packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) to match the right pack for the project using the source code language kinds to pick the most suitable match.
 
-When you use [jx create](/getting-started/create-cluster/), [jx install](http://localhost:1313/getting-started/install-on-cluster/) or [jx init](/commands/jx_init/) the [Jenkins X build packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) are cloned into your `~/.jx/draft/packs` folder.
+When you use [jx create](/getting-started/create-cluster/), [jx install](/getting-started/install-on-cluster/) or [jx init](/commands/jx_init/) the [Jenkins X build packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) are cloned into your `~/.jx/draft/packs` folder.
 
 Depending on your JenkinsX installation type (Serverless Jenkins vs. Static Master Jenkin), you can view all the languages supported via build packs on your machine via:
 
@@ -128,5 +128,5 @@ Or using an abbreviation
 $ jx get qsloc
 ```  
   
-There is also [jx delete quickstartlocation](http://localhost:1313/commands/jx_delete_quickstartlocation/) if you need to remove a git organisation.  
+There is also [jx delete quickstartlocation](/commands/jx_delete_quickstartlocation/) if you need to remove a git organisation.  
                                                                                                  
