@@ -54,3 +54,10 @@ Typically we use Helm charts in these git repositories to define which charts ar
 The main difference is preview environments are configured inside the application source code in the `./chart/preview` folder.
 
 Also they are not permanent but created on a Pull Request to an applications git repository and then deleted some time after (manually or via automatic garbage collection).
+
+
+## Ingress Custom Annotations
+
+To learn how to add custom annotations to the ingress controller, please see [How To Add Custom Annotations to Ingress Controller?](/faq/develop/#How-To-Add-Custom-Annotations-to-Ingress-Controller?)
+
+
