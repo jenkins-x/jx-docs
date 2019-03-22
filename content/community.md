@@ -37,6 +37,13 @@ Feel free to [add your questions to the doc](https://docs.google.com/document/d/
 
 Previous Videos:
 
+* [21st March, 2019](https://youtu.be/dDKK-ud7DWk)
+  - Overview and demo of DevEnv - Cai Cooper
+  - CLI plugins - Pete Muir
+  - CloudBees Docs Team (Ashton, Kim, Tammy, John) - want to know how they can help the community with Jenkins X docs :-)
+* [21st February, 2019](https://www.youtube.com/watch?v=EYywyqcPVMY)
+  - Jenkins X Pipelines - Andrew Bayer
+  - Container Tests - Gareth Evans
 * [13th December, 2018 - from KubeCon US](https://www.youtube.com/watch?v=TF_Mxq5sDsI&t)
 * [6th September, 2018](https://www.youtube.com/watch?v=2bl-3abyFe4)
 * [9th August, 2018](https://www.youtube.com/watch?v=0NUtGVTBLto)
