@@ -27,7 +27,7 @@ sections_weight: 5
 
 * [2019-03-06 Cloud Native CI/CD for Kubernetes with JenkinsX](https://www.meetup.com/Dubai-Jenkins-Area-Meetup/events/258523035/) at [Jenkins Area Meetup(JAM) Dubai](https://www.meetup.com/Dubai-Jenkins-Area-Meetup/) by [Viktor Farcic](https://twitter.com/vfarcic) 
 
-* [2019-03-05 Cloud Native CI/CD with Jenkins X and Knative Pipelines](https://qconlondon.com/london2019/presentation/cloud-native-cicd-jenkins-x-and-knative-pipelines) at [QConLondon](https://qconlondon.com/) by [James Rawlings](https://twitter.com/jdrawlings) and [Christie Wilson](https://twitter.com/bobcatwilson) 
+* [2019-03-05 Cloud Native CI/CD with Jenkins X and Tekton Pipelines](https://qconlondon.com/london2019/presentation/cloud-native-cicd-jenkins-x-and-knative-pipelines) at [QConLondon](https://qconlondon.com/) by [James Rawlings](https://twitter.com/jdrawlings) and [Christie Wilson](https://twitter.com/bobcatwilson) [slides](https://qconlondon.com/system/files/presentation-slides/cloud_native_ci_cd_with_jenkins_x_and_knative_pipelines.pdf)
 
 * [2019-02-28 Jenkins X: Continuous Delivery for Kubernetes](https://www.youtube.com/watch?v=hrridH35y64&list=PLHsuXkXI4xdjGlGkCBdxIAmkzfWXqsUrO&t=0s&index=2) [YouTube 🎥](https://www.youtube.com/watch?v=hrridH35y64&list=PLHsuXkXI4xdjGlGkCBdxIAmkzfWXqsUrO&t=0s&index=2) by [Carlos Sanchez](https://csanchez.org)
 
