@@ -13,6 +13,10 @@ weight: 5
 sections_weight: 5
 ---
 
+* [2019-07-04 Jenkins-X - CI/CD für die Kloud (German)](https://www.java-forum-stuttgart.de/de/Konferenz.html) at [Java Forum Stuttgart (Germany)](https://www.java-forum-stuttgart.de/de/Konferenz.html) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
+
+* [2019-06-24/25/26 GitOps by courtesy of Jenkins-X](https://www.containerdays.io/) at [Container Days, Hamburg (Germany)](https://www.containerdays.io/) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
+
 * [2019-06-06 Continuous Delivery mit Jenkins X und Kubernetes](https://www.devops-essentials.de/lecture.php?id=7929-continuous-delivery-mit-jenkins-x-und) at [DevOps Essentials 2019](https://www.devops-essentials.de/) by [Nicolas Byl](https://twitter.com/NicolasByl)
 
 * [2019-06-04 Jenkins X: Progressive Delivery for Kubernetes](https://jnation.pt/speakers/carlos-sanchez/) at [JNation (Coimbra, Portugal)](https://jnation.pt) by [Carlos Sanchez](https://csanchez.org)
@@ -23,7 +27,7 @@ sections_weight: 5
 
 * [2019-05-07 Workshop: Continuous Deployment To Kubernetes](https://craft-conf.com/workshops) at [Craft (Budapest)](https://craft-conf.com/) by [Viktor Farcic](https://twitter.com/vfarcic)
 
-* [2019-03-19 Jenkins X - Continuously Driving the Kloud (German)](https://programm.javaland.eu/2019/#/scheduledEvent/569771) at [Javaland 2019 (Germany)](https://www.javaland.eu) by [Gerd Aschemann](https://twitter.com/GerdAschemann) 
+* [2019-03-19 Jenkins X - Continuously Driving the Kloud (German)](https://programm.javaland.eu/2019/#/scheduledEvent/569771) at [Javaland 2019 (Germany)](https://www.javaland.eu) by [Gerd Aschemann](https://twitter.com/GerdAschemann) ([Slides](http://aschemann.net/gerd/publications/jx-talk-javaland-2019/))
 
 * [2019-03-06 Cloud Native CI/CD for Kubernetes with JenkinsX](https://www.meetup.com/Dubai-Jenkins-Area-Meetup/events/258523035/) at [Jenkins Area Meetup(JAM) Dubai](https://www.meetup.com/Dubai-Jenkins-Area-Meetup/) by [Viktor Farcic](https://twitter.com/vfarcic) 
 
