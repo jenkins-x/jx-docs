@@ -8,9 +8,9 @@ lastmod: 2017-02-01
 menu:
   docs:
     parent: "architecture"
-    weight: 50
-weight: 50
-sections_weight: 50
+    weight: 72
+weight: 72
+sections_weight: 72
 draft: false
 toc: true
 ---

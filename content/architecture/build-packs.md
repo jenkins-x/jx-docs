@@ -37,7 +37,7 @@ For example the [jenkins-x-kubernetes](https://github.com/jenkins-x-buildpacks/j
 To do this we've introduced a simple new YAML file format for defining pipelines.
 
 
-# Pipelines 
+## Pipelines 
 
 Each Pipeline YAML file has a number of separate logical pipelines:
 
