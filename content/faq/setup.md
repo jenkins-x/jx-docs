@@ -23,7 +23,7 @@ If you are using Google's GKE then you can browse the [GKE Console](https://cons
 
 For other clusters we are planning on writing some [CLI commands to export and import the kube config](https://github.com/jenkins-x/jx/issues/1406).
 
-Also CloudBees have a [commercial addon to Jenkins X called CloudBees Core](https://www.cloudbees.com/products/cloudbees-core-for-kubernetes-continuous-delivery) which adds Single Sign On and a single pane of glass UI to visualise teams, pipelines, logs, environments, applications, versions and infrastructure. This will hopefully be available as a freemium distribution soon. The CloudBees Core UI provides an easy way for anyone in your team to login to Jenkins X from the command line with the `Connect` button on the `Teams` page which uses [jx login](/commands/jx_login/) 
+Also [CloudBees](https://www.cloudbees.com/) are working on a distribution of Jenkins X which will include single sign on together with an awesome web UI to visualise teams, pipelines, logs, environments, applications, versions and infrastructure. The CloudBees UI provides an easy way for anyone in your team to login to Jenkins X from the command line with the `Connect` button on the `Teams` page which uses [jx login](/commands/jx_login/) 
 
 ### Once the user has access to the kubernetes cluster
 

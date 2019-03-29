@@ -13,6 +13,7 @@ weight: 5
 sections_weight: 5
 ---
 
+* [Exploring Jenkins X: DevPods](https://www.cloudbees.com/blog/exploring-jenkins-x-devpod) on March 6th, 2019 by [Nicolas DeLoof](https://www.cloudbees.com/blogs/nicolas-deloof)
 * [Setting up Jenkins X on Azure Kubernetes Service (AKS)](https://cloudblogs.microsoft.com/opensource/2019/03/06/jenkins-x-azure-kubernetes-service-setup/) on March 6th, 2019 by [Pui Chee Chan](https://cloudblogs.microsoft.com/opensource/author/pui-chee-chan/)
 * [Progressive Delivery with Jenkins X: Automatic Canary Deployments](https://blog.csanchez.org/2019/03/05/progressive-delivery-with-jenkins-x-automatic-canary-deployments/) on March 5th, 2019 by  [Carlos Sanchez](https://blog.csanchez.org/author/carlossanchez/)
 * [Jenkins X Environment Specific Variables](https://nicholasduffy.com/posts/jenkins-x-environment-specific-variables/) on March 4th, 2019 by [Nicholas Duffy](https://nicholasduffy.com/) 

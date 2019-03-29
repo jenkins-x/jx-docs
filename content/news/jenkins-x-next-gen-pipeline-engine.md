@@ -13,6 +13,9 @@ author: rawlingsj
 
 The [Jenkins X](https://jenkins-x.io/) team and [CloudBees](https://www.cloudbees.com/) are excited to announce some changes that we’ve been working on and are jntroducing the new Jenkins X Pipeline Engine.
 
+{{< youtube id="EYywyqcPVMY" autoplay="true" >}}
+
+
 Today, there are two ways that you can run your Jenkins pipelines in Jenkins X. By default today, Jenkins X uses a static traditional Jenkins master. This mode works well for those who may have complex existing Jenkins pipelines and want to be able to use all the Jenkins X goodness of GitOps and preview environments in Kubernetes. As of last October, you can run Jenkins pipelines without the static Jenkins server -- so, it’s [serverless](https://medium.com/@jdrawlings/serverless-jenkins-with-jenkins-x-9134cbfe6870). 
 
 Serverless pipeline execution mode will become the best way to run Jenkins X in the not-too-distant future. And as we’re looking forward, we’ve begun to find ways to further improve the serverless mode of Jenkins X. [Tekton](https://github.com/tektoncd/pipeline) is a new Kubernetes-native way of running serverless pipelines. While it’s still in its early stages, Tekton will eventually become the best way to run CI/CD pipelines in Kubernetes. 
