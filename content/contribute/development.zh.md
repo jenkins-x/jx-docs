@@ -21,30 +21,30 @@ toc: true
 
 ## 介绍
 
-Jenkins X 是由众多[开发者][contributors]开发的开源项目。 还有很多[尚未解决的问题][issues], 我们需要你的帮助来使 Jenkins X 变得更棒。 即使你不是一个Go语言的专家， 也可以对项目的开发贡献力量。
+Jenkins X 是由众多[开发者][contributors]开发的开源项目。 还有很多 [open issues][issues], 我们需要你的帮助来使 Jenkins X 变得更棒。即使你不是一个Go语言的专家，也可以对项目的开发贡献力量。
 
 
 ## 假设
 
-本篇指导文档将帮助你逐步熟悉它，因此我们假定：
+本篇指导文档将帮助新接触的 Jenkins X 的读者逐步熟悉它，因此我们假定：
 
-* 你是刚刚接触Git或者开源项目
-* 你是Jenkins X的爱好者并乐于对项目的发展贡献力量
+* 你是刚刚接触 Git 或者开源项目
+* 你是 Jenkins X 的爱好者并乐于对项目的发展贡献力量
 
-{{% note "Additional Questions?" %}}
-如果在阅读此指导文档过程中有任何问题，请向Jenkins X社区的[讨论组](https://jenkins-x.io/community/)寻求帮。
+{{% note "有其它的问题？" %}}
+如果在阅读此指导文档过程中有任何问题，请向 Jenkins X 社区的[讨论组](https://jenkins-x.io/community/)寻求帮助。
 {{% /note %}}
 
 ## 安装 Go
 
-Go语言环境的安装仅需要几分钟. 并且多种方式可供选择
+Go语言环境的安装仅需要几分钟。并且多种方式可供选择。
 
-如果在安装过程当中遇到问题，请查阅 [Go Bootcamp, which contains setups for every platform][gobootcamp] 或者向Jenkins X[论坛][forums]中寻求帮助
+如果在安装过程当中遇到问题，请查阅 [Go Bootcamp, which contains setups for every platform][gobootcamp] 或者向 Jenkins X [论坛][forums]中寻求帮助。
 
 
 ### 从源码安装 Go
 
-[下载最新版Go源码][godl] 并通过官方[安装文档][goinstall]进行安装。
+[下载最新版Go源码][godl]并通过官方[安装文档][goinstall]进行安装。
 
 安装完成后，确认是否一切工作正常。 打开一个新的终端或者在Windows上的命令行并输入:
 
@@ -75,7 +75,7 @@ brew install go
 
 ### 通过 GVM 安装 GO
 
-更多有经验的用户使用[Go Version Manager][gvm] (GVM), GVM 允许你在`同一台机器上`安装并切换使用多种版本的GO语言环境。 如果你是初学者，可能不太需要这个功能。 然而, GVM 通过几条命令使得Go环境的更新变得很简。
+更有经验的用户可以使用[Go Version Manager][gvm] (GVM)。GVM 允许你在 *同一台机器上* 安装并切换使用多种版本的Go语言环境。如果你是初学者，可能不太需要这个功能。然而, GVM 通过几条命令可以很简单的更新到新发布版本的Go语言。
 
 在开发Jenkins X很长一段时间后，GVM使用起来将会特别的方便。 Jenkins X之后的版本将会用最新版版的Go语言进行编译，因此如果想与社区开发同步的话，将会需要更新Go环境。
 
@@ -84,23 +84,23 @@ brew install go
 如果你想要贡献代码的话，需要创建一个Github账号。 登录 [www.github.com/join](https://github.com/join)注册个人账号。
 
 ## 在你的系统上安装 Git
-Jenkins X 开发过程当中需要在本机安装Git 客户端。Git 的使用学习不包含在 Jenkins X 的文档中， 如果你不确定从哪里开始的话，我们推荐通过[Git book][gitbook]学习使用Git的基本知识。 使用的词汇将会通过注解进行解释。
+Jenkins X 开发过程当中需要在本机安装 Git 客户端。Git 的使用学习不包含在 Jenkins X 的文档中， 如果你不确定从哪里开始的话，我们推荐通过 [Git book][gitbook] 学习使用 Git 的基本知识。使用的词汇将会通过注解进行解释。
 
-Git 是一个[版本控制系统](https://en.wikipedia.org/wiki/Version_control), 用于记录源代码的变化。 为了不重复造轮子，Jenkins X 使用了第三方的软件包来扩展功能。
+Git 是一个[版本控制系统](https://en.wikipedia.org/wiki/Version_control)，用于跟踪源代码的变化。为了不重复造轮子，Jenkins X 使用了第三方的软件包来扩展功能。
 
-Go 提供了`get`的命令来帮助下载软件包以配置工作环境。这些软件包的源码信息在Git中记录。 `get` 会与承载这些软件包的Git服务器端进行交互来下载所有的依赖。
+Go 提供了 `get` 的子命令来帮助下载软件包以配置工作环境。这些软件包的源码信息在Git中记录。`get` 会与承载这些软件包的Git服务器端进行交互来下载所有的依赖。
 
-回到终端中，输入`git version` 并按回车，检验是否安装Git。 如果返回的是一个版本号信息，那么可以跳过下面的配置。否则的话[下载](https://git-scm.com/downloads)最新版的Git并根据[安装文档](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)进行安装。
+回到终端中，输入 `git version` 并按回车，检验是否安装 Git。如果返回的是一个版本号信息，那么可以跳过下面的配置。否则的话[下载](https://git-scm.com/downloads)最新版的 Git 并根据[安装文档](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)进行安装。
 
-最后，再一次输入`git version`检验Git是否安装成功。
+最后，再一次输入 `git version` 检验 Git 是否已经安装。
 
 ### Git 图形化前端
 
-有一些[图形界面客户端](https://git-scm.com/downloads/guis)可以帮助操作Git。并不是所有的客户端在所有的操作系统上都有相应的版本，而且不同的客户端的使用方法也可能不同。因此，在以下的操作中，我们会以使用命令行的方式为基准。
+有一些[图形界面客户端](https://git-scm.com/downloads/guis)可以帮助操作 Git。并不是所有的客户端在所有的操作系统上都有相应的版本，而且不同的客户端的使用方法也可能不同。因此，在以下的操作中，我们会以使用命令行的方式为基准。
 
 ### 在你的系统上安装 Hub（可选）
 
-在与Github协同开发时，Hub是个很好的工具。请访问 [hub.github.com](https://hub.github.com/), 来安装体验这个包装了Git的小工具。
+在与GitHub协同开发时，Hub是个很好的工具。请访问 [hub.github.com](https://hub.github.com/)，来安装体验这个封装了 Git 的小工具。
 
 在Mac系统上，可以通过 [Homebrew](https://brew.sh) 来安装 [Hub](https://github.com/github/hub)：
 
@@ -108,7 +108,7 @@ Go 提供了`get`的命令来帮助下载软件包以配置工作环境。这些
 brew install hub
 ```
 
-安装之后，在Bash中创建[快捷键](http://tldp.org/LDP/abs/html/aliases.html), 以方便我们在执行`git`的时候，实际上执行的是`hub`:
+安装之后，在Bash中创建[快捷键](http://tldp.org/LDP/abs/html/aliases.html)，以方便我们在执行 `git` 的时候，实际上执行的是 `hub`:
 
 ```
 echo "alias git='hub'" >> ~/.bash_profile
@@ -123,23 +123,23 @@ hub version 2.2.2
 
 ## 设置你的工作副本
 
-工作副本是在你的个人电脑中进行设置的。你将会对它进行编辑，编译以及最终推送回到Github。主要的步骤是在远端对源Git代码库创建你的分支仓库并之后在本地进行克隆。
+工作副本是在你的电脑中进行本地设置的。你将会对它进行编辑，编译以及最终推送回到 GitHub。主要的步骤是在远端对源 Git 代码库创建你的分支仓库并之后在本地进行克隆。
 
 ### 克隆仓库
 
-我们假定你已经设置了 `GOPATH` （如果不确定的话查阅上面的相应部分） 环境变量，现在以可以下载Jenkis X的代码库到本地电脑中。这一过程就是被称作“克隆仓库”。GitHub的[帮助文档](https://help.github.com/articles/cloning-a-repository/)对其进行了简短的解释：
+我们假定你已经设置了 `GOPATH` （如果不确定的话查阅上面的相应部分）环境变量，现在以可以下载 Jenkins X 的代码库到本地电脑中。这一过程就是被称作“克隆仓库”。GitHub 的[帮助文档](https://help.github.com/articles/cloning-a-repository/)对其进行了简短的解释：
 
 > When you create a repository on GitHub, it exists as a remote repository. You can create a local clone of your repository on your computer and sync between the two locations.
 
-我们会克隆Jenkins X代码库的[主版本](https://github.com/jenkins-x/jx)。由于你还没有对代码库的提交代码的权限，这看上去有些违反常理。但是这一步骤在 Go 的工作流当中是必须的一项。你将会在主版本的副本中进行工作，将修改的部分提交到你在GitHub上的仓库当中。
+我们会克隆 Jenkins X 代码库的[主版本](https://github.com/jenkins-x/jx)。由于你还没有对代码库的提交代码的权限，这看上去有些违反常理。但是这一步骤在 Go 的工作流当中是必须的一项。你将会在主版本的副本中进行工作，将修改的部分提交到你在 GitHub 上的仓库当中。
 
-首先， 我们克隆主版本库：
+首先，我们克隆主版本库：
 
 ```
 go get -v -u github.com/jenkins-x/jx
 ```
 
-Jenkins X 使用 [Testify](https://github.com/stretchr/testify) 进行Go代码的测试。如果还没有安装的话，使用下面的方式获得Testify测试工具：
+Jenkins X 使用 [Testify](https://github.com/stretchr/testify) 进行 Go 代码的测试。如果还没有安装的话，使用下面的方式获得Testify测试工具：
 
 ```
 go get github.com/stretchr/testify
@@ -147,7 +147,7 @@ go get github.com/stretchr/testify
 
 ### 派生仓库
 
-如果对这个属于感到陌生的话， Github的[帮助文档](https://help.github.com/articles/fork-a-repo/) 提供了简单的说明：
+如果对这个术语感到陌生的话，GitHub 的[帮助文档](https://help.github.com/articles/fork-a-repo/) 提供了简单的说明：
 
 > A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.
 
@@ -166,7 +166,7 @@ go get github.com/stretchr/testify
 cd $GOPATH/src/github.com/jenkins-x/jx
 ```
 
-现在Git 需要知道我们刚刚创建出来的分之仓库的地址信息
+现在 Git 需要知道我们刚刚创建出来的分之仓库的地址信息
 
 ```
 git remote add <YOUR-GITHUB-USERNAME> <COPIED REMOTE-URL>
@@ -174,16 +174,16 @@ git remote add <YOUR-GITHUB-USERNAME> <COPIED REMOTE-URL>
 
 #### 使用 Hub 派生
 
-相类似的， 可以使用Git的包装工具Hub进行操作。Hub使得创建分之仓库变得容易：
+相类似的，可以使用 Git 的封装工具 Hub 进行操作。Hub 使得创建分之仓库变得容易：
 ```
 git fork
 ```
 
-这一命令会使用你的账号登录到Github中，并对当前所在的工作目录的主仓库创建派生仓库，在之后会将新创建的连接信息添加到你的工作副本当中。
+这一命令会使用你的账号登录到 GitHub 中，并对当前所在的工作目录的主仓库创建派生仓库，在之后会将新创建的连接信息添加到你的工作副本当中。
 
 #### 验证
 
-检验一下是否所有的远程信息配置正确：
+让我们通过列出所有已有的 remote 来检查是否一切就绪：
 
 ```
 git remote -v
@@ -202,29 +202,29 @@ origin  https://github.com/jenkins-x/jx (push)
 
 ### 创建新的分支
 
-永远不要在"master" 分支长进行代码的开发。开发团队也不会接收在此之上的合并申请。相反， 应该创建一个有描述信息的分之并在其之上进行开发。
+永远不要在 "master" 分支上进行代码的开发。开发团队也不会接受在此之上的 pull request。相反， 应该创建一个有描述信息的分之并在其之上进行开发。
 
-首先， 你需要获取在主版本上进行的最新的修改：
+首先， 你需要获取在主版本上进行的最新的内容：
 
 ```
 git checkout master
 git pull
 ```
-现在， 创建一个新的版本：
+现在，为你的附加功能创建一个新的版本：
 
 ```
 git checkout -b <BRANCH-NAME>
 ```
 
-可以通过 `git branch` 在任意分支间进行切换。你可以列出所有的本地分支。在当前所操作的版本之前会有“*”标识。
+可以通过 `git branch` 来检查你当前所在的分支。你可以看到一个包含所有本地分支的列表。在当前所操作的版本之前会有 “*” 标识。
 
 ### 贡献文档
 
-也许你想先从 Jenkins X的文档开始贡献代码。 如果这样的话， 你可以省略下面大部分的步骤，仅关注在刚克隆的代码库的 `/docs` 目录中的文件即可。 通过执行 `cd docs` 进入文档目录中。
+也许你想先从 Jenkins X 的文档开始贡献。如果这样的话，你可以省略下面大部分的步骤，仅关注在刚克隆的代码库的 `/docs` 目录中的文件即可。 通过执行 `cd docs` 进入文档目录中。
 
 可以通过 `hugo server` 启动 Jenxins X 内置的服务。 通过浏览器访问 [http://localhost:1313](http://localhost:1313) 进行浏览。 Hugo 会监测所有文件内容的修改，并将其在浏览器中进行显示。
 
-想了解更多的信息，包括Jenkins X 文档是如果构建，组织以及由众多像你一样无私的人如何对其进行改进的，请[参阅](docscontrib)。
+想了解更多的信息，包括 Jenkins X 文档是如何构建、组织以及由众多像你一样无私的人如何对其进行改进的，请[参阅](docscontrib)。
 
 ### 构建 Jenkins X
 
@@ -235,7 +235,7 @@ go build -o hugo main.go
 ```
 
 ### 测试 
-有时对代码的修改可能会带来没有注意到的负面影响。或者是并不像预期的那样工作。 大部分的功能都有其相对应的测试案例。 这些测试文件都以 `_test.go` 结尾。
+有时对代码的修改可能会带来没有注意到的负面影响。或者是并不像预期的那样工作。 大部分的功能都有其相对应的测试用例。这些测试文件都以 `_test.go` 结尾。
 
 请确保 `go test ./...` 命令通过没有异常以及 `go build` 执行完毕。
 
@@ -247,7 +247,7 @@ Go 语言的代码格式也许根据人的意识会有所不同，但是不论�
 go fmt ./...
 ```
 
-如果进行了修改， 请确保遵循我们的的[代码贡献指导说明](https://github.com/jenkins-x/jx/blob/master/CONTRIBUTING.MD)。
+如果进行了修改， 请确保遵循我们的[代码贡献指导说明](https://github.com/jenkins-x/jx/blob/master/CONTRIBUTING.MD)。
 
 ```
 # Add all changed files
@@ -385,9 +385,9 @@ git push --set-upstream <YOUR-GITHUB-USERNAME> <BRANCHNAME>
 
 ## 从哪里开始？
 
-感谢你阅读了本篇贡献指导文档。希望我们可以在GitHub中再一次的看到你。 有很多[的尚未解决的问题][issues] 需要你的帮助。
+感谢你阅读了本篇贡献指导文档。希望我们可以在 GitHub 中再次看到你。有很多 [open issues][issues] 需要你的帮助。
 
-如果你认为发现了bug 或者有新的想法可以改进 Jenkins X，请随时的[创建问题][newissue]， 我们很乐于听取你的声音。
+如果你认为发现了 bug 或者有新的想法可以改进 Jenkins X，请随时的 [open an issue][newissue]，我们很乐于听取你的声音。
 
 ## 学习 Git 和 Golang 的参考
 
