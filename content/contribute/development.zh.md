@@ -6,7 +6,7 @@ date: 2018-05-16
 publishdate: 2018-05-16
 lastmod: 2018-05-16
 categories: [contribute]
-keywords: [dev，open source]
+keywords: [dev,open source]
 authors: [digitalcraftsman]
 menu:
   docs:
