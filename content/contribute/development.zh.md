@@ -6,7 +6,7 @@ date: 2018-05-16
 publishdate: 2018-05-16
 lastmod: 2018-05-16
 categories: [contribute]
-keywords: [dev,open source]
+keywords: [dev，open source]
 authors: [digitalcraftsman]
 menu:
   docs:
@@ -21,7 +21,7 @@ toc: true
 
 ## 介绍
 
-Jenkins X 是由众多[开发者][contributors]开发的开源项目。 还有很多 [open issues][issues], 我们需要你的帮助来使 Jenkins X 变得更棒。即使你不是一个Go语言的专家，也可以对项目的开发贡献力量。
+Jenkins X 是由众多[开发者][contributors]开发的开源项目。还有很多 [open issues][issues]，我们需要你的帮助来使 Jenkins X 变得更棒。即使你不是一个Go语言的专家，也可以对项目的开发贡献力量。
 
 
 ## 假设
@@ -39,27 +39,27 @@ Jenkins X 是由众多[开发者][contributors]开发的开源项目。 还有�
 
 Go语言环境的安装仅需要几分钟。并且多种方式可供选择。
 
-如果在安装过程当中遇到问题，请查阅 [Go Bootcamp, which contains setups for every platform][gobootcamp] 或者向 Jenkins X [论坛][forums]中寻求帮助。
+如果在安装过程当中遇到问题，请查阅 [Go Bootcamp， which contains setups for every platform][gobootcamp] 或者向 Jenkins X [论坛][forums]中寻求帮助。
 
 
 ### 从源码安装 Go
 
 [下载最新版Go源码][godl]并通过官方[安装文档][goinstall]进行安装。
 
-安装完成后，确认是否一切工作正常。 打开一个新的终端或者在Windows上的命令行并输入:
+安装完成后，确认是否一切工作正常。打开一个新的终端或者在Windows上的命令行并输入:
 
 ```
 go version
 ```
 
-在终端的窗口上可以看到类似如下的信息。 注意`version`表示的是在在更新此文档时最新的Go的版本信息:
+在终端的窗口上可以看到类似如下的信息。注意`version`表示的是在在更新此文档时最新的Go的版本信息:
 
 ```
 go version go1.8 darwin/amd64
 ```
 
 下一步，确保[根据安装文档][setupgopath] 设置了 `GOPATH` 环境变量。
-通过 `echo $GOPATH` 输出 `GOPATH`。 应该是指向了你的合法的Go的工作目录的非空字符串, 如:
+通过 `echo $GOPATH` 输出 `GOPATH`。应该是指向了你的合法的Go的工作目录的非空字符串，如:
 
 ```
 /Users/<yourusername>/Code/go
@@ -67,7 +67,7 @@ go version go1.8 darwin/amd64
 
 ### 使用 Homebrew 安装 Go
 
-如果你是MacOS用户并且安装了[Homebrew](https://brew.sh/), 安装过程将会很简单, 在终端中执行以下命令:
+如果你是MacOS用户并且安装了[Homebrew](https://brew.sh/)，安装过程将会很简单，在终端中执行以下命令:
 
 {{< code file="install-go.sh" >}}
 brew install go
@@ -75,16 +75,16 @@ brew install go
 
 ### 通过 GVM 安装 GO
 
-更有经验的用户可以使用[Go Version Manager][gvm] (GVM)。GVM 允许你在 *同一台机器上* 安装并切换使用多种版本的Go语言环境。如果你是初学者，可能不太需要这个功能。然而, GVM 通过几条命令可以很简单的更新到新发布版本的Go语言。
+更有经验的用户可以使用 [Go Version Manager][gvm] (GVM)。GVM 允许你在 *同一台机器上* 安装并切换使用多种版本的Go语言环境。如果你是初学者，可能不太需要这个功能。然而， GVM 通过几条命令可以很简单的更新到新发布版本的Go语言。
 
 在开发Jenkins X很长一段时间后，GVM使用起来将会特别的方便。 Jenkins X之后的版本将会用最新版版的Go语言进行编译，因此如果想与社区开发同步的话，将会需要更新Go环境。
 
 ## 创建一个 GitHub 账号
 
-如果你想要贡献代码的话，需要创建一个Github账号。 登录 [www.github.com/join](https://github.com/join)注册个人账号。
+如果你想要贡献代码的话，需要创建一个Github账号。登录 [www.github.com/join](https://github.com/join)注册个人账号。
 
 ## 在你的系统上安装 Git
-Jenkins X 开发过程当中需要在本机安装 Git 客户端。Git 的使用学习不包含在 Jenkins X 的文档中， 如果你不确定从哪里开始的话，我们推荐通过 [Git book][gitbook] 学习使用 Git 的基本知识。使用的词汇将会通过注解进行解释。
+Jenkins X 开发过程当中需要在本机安装 Git 客户端。Git 的使用学习不包含在 Jenkins X 的文档中，如果你不确定从哪里开始的话，我们推荐通过 [Git book][gitbook] 学习使用 Git 的基本知识。使用的词汇将会通过注解进行解释。
 
 Git 是一个[版本控制系统](https://en.wikipedia.org/wiki/Version_control)，用于跟踪源代码的变化。为了不重复造轮子，Jenkins X 使用了第三方的软件包来扩展功能。
 
@@ -129,7 +129,7 @@ hub version 2.2.2
 
 我们假定你已经设置了 `GOPATH` （如果不确定的话查阅上面的相应部分）环境变量，现在以可以下载 Jenkins X 的代码库到本地电脑中。这一过程就是被称作“克隆仓库”。GitHub 的[帮助文档](https://help.github.com/articles/cloning-a-repository/)对其进行了简短的解释：
 
-> When you create a repository on GitHub, it exists as a remote repository. You can create a local clone of your repository on your computer and sync between the two locations.
+> When you create a repository on GitHub， it exists as a remote repository. You can create a local clone of your repository on your computer and sync between the two locations.
 
 我们会克隆 Jenkins X 代码库的[主版本](https://github.com/jenkins-x/jx)。由于你还没有对代码库的提交代码的权限，这看上去有些违反常理。但是这一步骤在 Go 的工作流当中是必须的一项。你将会在主版本的副本中进行工作，将修改的部分提交到你在 GitHub 上的仓库当中。
 
@@ -153,7 +153,7 @@ go get github.com/stretchr/testify
 
 #### 手工派生
 
-打开 [Jenkins X 仓库](https://github.com/jenkins-x/jx)， 点击右上角的 "Fork" 按钮。
+打开 [Jenkins X 仓库](https://github.com/jenkins-x/jx)，点击右上角的 "Fork" 按钮。
 
 ![Fork button](/images/contribute/development/forking-a-repository.png)
 现在打开你在GitHub中创建出的派生仓库， 拷贝远端连接。你可以在HTTPS和SSH协议间进行选择。 HTTPS适用于任何情况。如果你不确定的话， 请[查阅](https://help.github.com/articles/which-remote-url-should-i-use/)。
@@ -321,7 +321,7 @@ squash 33c8973 Begin workflow
 squash 3502f2e Refactoring and typo fixes
 ```
 
-根据代码贡献指导文档，在历史提交中的第三个提交忘记了添加前缀 "docs:", 因此想要对其进行修改。 修改一个提交的操作是 `reword` 或者其省略版 `r`。
+根据代码贡献指导文档，在历史提交中的第三个提交忘记了添加前缀 "docs:"，因此想要对其进行修改。修改一个提交的操作是 `reword` 或者其省略版 `r`。
 
 修改后，应该是类似如下的内容：
 
@@ -346,7 +346,7 @@ Successfully rebased and updated refs/heads/<BRANCHNAME>.
 
 ### 推送提交
 
-我们需要指定目标地址以使得将我们的提交推送回到在Github中的分支版本库。目标地址由 `remote` 和 `branch`名称所构成。 在之前的操作中，`remote` 地址与我们的GitHub账号所对应， 以我为例是 `digitalcraftsman`。 分支（branch） 应该和我们本地的一样。 这就使得识别相应的分支变得简单。
+我们需要指定目标地址以使得将我们的提交推送回到在Github中的分支版本库。目标地址由 `remote` 和 `branch`名称所构成。 在之前的操作中，`remote` 地址与我们的GitHub账号所对应， 以我为例是 `digitalcraftsman`。分支（branch）应该和我们本地的一样。 这就使得识别相应的分支变得简单。
 
 ```
 git push --set-upstream <YOUR-GITHUB-USERNAME> <BRANCHNAME>
