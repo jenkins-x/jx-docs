@@ -37,53 +37,7 @@ pipelineConfig:
               - --enableGitInfo
 
           - image: gcr.io/jenkinsxio/builder-go:0.1.320
-            command: jx
-            workingDir: "/workspace/workspace/jenkins-x-website"
-            args:
-              - step
-              - git
-              - credentials
-
-          - image: gcr.io/jenkinsxio/builder-go:0.1.320
-            command: git
-            workingDir: "/workspace/workspace/jenkins-x-website"
-            args:
-              - config
-              - credential.helper
-              - store
-
-          - image: alpine:3.8
-            name: sleep
-            workingDir: "/workspace/workspace/jenkins-x-website"
-            command: ls
-            args:
-            - -al
-
-          - image: gcr.io/jenkinsxio/builder-go:0.1.320
-            command: git
-            workingDir: "/workspace/workspace/jenkins-x-website"
-            args:
-              - add
-              - '*'
-
-          - image: gcr.io/jenkinsxio/builder-go:0.1.320
-            command: git
-            workingDir: "/workspace/workspace/jenkins-x-website"
-            args:
-              - commit
-              - --allow-empty
-              - -a
-              - -m
-              - "updated site"
-
-          - image: gcr.io/jenkinsxio/builder-go:0.1.320
-            command: git
-            workingDir: "/workspace/workspace/jenkins-x-website"
-            args:
-              - push
-              - --set-upstream
-              - origin
-              - master
+            command: ./update-website.sh
 
     pullRequest:
       pipeline:
