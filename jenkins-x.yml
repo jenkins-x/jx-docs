@@ -59,7 +59,7 @@ pipelineConfig:
             workingDir: "/workspace/workspace/jenkins-x-website"
             args:
               - add
-              - *
+              - '*'
 
           - image: gcr.io/jenkinsxio/builder-go:0.1.320
             command: git
