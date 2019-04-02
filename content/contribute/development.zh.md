@@ -261,7 +261,7 @@ git commit --message "YOUR COMMIT MESSAGE"
 
 你也许注意到了一些提交记录信息并不遵守贡献指导说明或者你是在某些文件中忘记了什么。没关系，Git 提供了相应的工具来解决类似这样的问题。下面的两种方法将会覆盖所有的常见问题。
 
-如果你不确定如何使用这些命令的话也可以保留不行改正，在之后提交Pull Request的时候，我们会对提交信息进行修改。
+如果你不确定如何使用这些命令的话也可以保留不行改正，在之后提交 Pull Request 的时候，我们会对提交信息进行修改。
 
 #### 修改最后一次提交
 
@@ -360,11 +360,11 @@ git push --set-upstream <YOUR-GITHUB-USERNAME> <BRANCHNAME>
 
 做的很好，我们有了很大的进展。在这一步，我们将会提出合并请求来提交我们的附加功能。在浏览器中打开 [Jenkins X 主代码库](https://github.com/jenkins-x/jx/)。
 
-你会发现一个绿色按钮，上面标识 “New pull request”。GitHub 很智能，很有可能像如下图所示的那样，在一个米黄色窗口中建议你开pull request：
+你会发现一个绿色按钮，上面标识 “New pull request”。GitHub 很智能，很有可能像如下图所示的那样，在一个米黄色窗口中建议你开 pull request：
 
 ![Open a pull request](/images/contribute/development/open-pull-request.png)
 
-在新的页面当中，将会包含你的pull request中的重要信息。滚动鼠标你会发现所有的提交信息。确保所有的一切与构想的一致并点击按钮 “Create pull request”。
+在新的页面当中，将会包含你的 pull request 中的重要信息。滚动鼠标你会发现所有的提交信息。确保所有的一切与构想的一致并点击按钮 “Create pull request”。
 
 
 ### 同意贡献者授权协议
@@ -375,13 +375,13 @@ git push --set-upstream <YOUR-GITHUB-USERNAME> <BRANCHNAME>
 
 ### 自动化构建
 
-我们使用 [Travis CI loop](https://travis-ci.org/jenkins-x/jx) (Linux 和 OS&nbsp;X) 以及 [AppVeyor](https://ci.appveyor.com/project/jenkins-x/jx/branch/master) (Windows) 来对包含有你的提交的 Jenkins X 进行编译。 这可以确保在合并你的pull request之前，所有的都与所设想的工作一致。大部分情况下，如果你对 Jenkins X 的代码库进行了修改的话，这将很有意义。
+我们使用 [Travis CI loop](https://travis-ci.org/jenkins-x/jx) (Linux 和 OS&nbsp;X) 以及 [AppVeyor](https://ci.appveyor.com/project/jenkins-x/jx/branch/master) (Windows) 来对包含有你的提交的 Jenkins X 进行编译。 这可以确保在合并你的 pull request 之前，所有的都与所设想的工作一致。大部分情况下，如果你对 Jenkins X 的代码库进行了修改的话，这将很有意义。
 
 ![Automic builds and their status](/images/contribute/development/ci-errors.png)
 
-在上图中，你可以看到 Travis 不能够对这个 pull request 进行编译。点击 “Details” 来查看失败的原因。但是这个错误并不一定是由你的提交所导致的。大部分情况下，我们使用 `master` 分支来作为基础来验证你的pull request是没有问题的。
+在上图中，你可以看到 Travis 不能够对这个 pull request 进行编译。点击 “Details” 来查看失败的原因。但是这个错误并不一定是由你的提交所导致的。大部分情况下，我们使用 `master` 分支来作为基础来验证你的 pull request 是没有问题的。
 
-如果你遇到问题的话，在pull request当中进行评论。我们愿意对你进行帮助。
+如果你遇到问题的话，在 pull request 当中进行评论。我们愿意对你进行帮助。
 
 ## 从哪里开始？
 
