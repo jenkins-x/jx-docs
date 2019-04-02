@@ -1,0 +1,99 @@
+buildPack: none
+pipelineConfig:
+  pipelines:
+    release:
+      pipeline:
+        agent:
+          image: gcr.io/kaniko-project/executor:9912ccbf8d22bbafbf971124600fbb0b13b9cbd6
+        stages:
+        - name: release
+          environment:
+          - name: GIT_COMMITTER_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_COMMITTER_NAME
+            value: jenkins-x-bot
+          - name: GIT_AUTHOR_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_AUTHOR_NAME
+            value: jenkins-x-bot
+          - name: GOOGLE_APPLICATION_CREDENTIALS
+            value: /builder/home/kaniko-secret.json
+          steps:
+          
+          - image: gcr.io/jenkinsxio/builder-go:0.1.320
+            command: git
+            args:
+              - clone
+              - https://github.com/jenkins-x/jenkins-x-website.git
+
+          - image: gcr.io/jenkinsxio/builder-go:0.1.320
+            command: hugo
+            args:
+              - version
+
+          - image: gcr.io/jenkinsxio/builder-go:0.1.320
+            command: hugo
+            args:
+              - -d
+              - jenkins-x-website
+              - --enableGitInfo
+
+          - image: gcr.io/jenkinsxio/builder-go:0.1.320
+            command: jx
+            workingDir: "/workspace/workspace/jenkins-x-website"
+            args:
+              - step
+              - git
+              - credentials
+
+          - image: gcr.io/jenkinsxio/builder-go:0.1.320
+            command: git
+            workingDir: "/workspace/workspace/jenkins-x-website"
+            args:
+              - config
+              - credential.helper
+              - store
+
+          - image: gcr.io/jenkinsxio/builder-go:0.1.320
+            command: git
+            workingDir: "/workspace/workspace/jenkins-x-website"
+            args:
+              - add
+              - *
+
+          - image: gcr.io/jenkinsxio/builder-go:0.1.320
+            command: git
+            workingDir: "/workspace/workspace/jenkins-x-website"
+            args:
+              - commit
+              - --allow-empty
+              - -a
+              - -m
+              - "updated site"
+
+          - image: gcr.io/jenkinsxio/builder-go:0.1.320
+            command: git
+            workingDir: "/workspace/workspace/jenkins-x-website"
+            args:
+              - push
+              - origin
+
+    pullRequest:
+      pipeline:
+        agent:
+          image: gcr.io/kaniko-project
+        stages:
+        - name: build-tmp-website
+          steps:
+ 
+          - image: gcr.io/jenkinsxio/builder-go:0.1.320
+            command: hugo
+            args:
+              - version
+
+          - image: gcr.io/jenkinsxio/builder-go:0.1.320
+            command: hugo
+            args:
+              - -d
+              - tmp-website
+              - --enableGitInfo
