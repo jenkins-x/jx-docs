@@ -16,8 +16,6 @@ pipelineConfig:
             value: jenkins-x@googlegroups.com
           - name: GIT_AUTHOR_NAME
             value: jenkins-x-bot
-          - name: GOOGLE_APPLICATION_CREDENTIALS
-            value: /builder/home/kaniko-secret.json
           steps:
           
           - image: gcr.io/jenkinsxio/builder-go:0.1.320
@@ -53,6 +51,12 @@ pipelineConfig:
               - config
               - credential.helper
               - store
+
+          - image: alpine:3.8
+            name: sleep
+            command: sleep
+            args:
+            - '5000'
 
           - image: gcr.io/jenkinsxio/builder-go:0.1.320
             command: git
