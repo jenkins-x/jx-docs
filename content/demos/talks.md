@@ -27,7 +27,11 @@ sections_weight: 5
 
 * [2019-05-07 Workshop: Continuous Deployment To Kubernetes](https://craft-conf.com/workshops) at [Craft (Budapest)](https://craft-conf.com/) by [Viktor Farcic](https://twitter.com/vfarcic)
 
-* [2019-03-19 Jenkins X - Continuously Driving the Kloud (German)](https://programm.javaland.eu/2019/#/scheduledEvent/569771) at [Javaland 2019 (Germany)](https://www.javaland.eu) by [Gerd Aschemann](https://twitter.com/GerdAschemann) ([Slides](http://aschemann.net/gerd/publications/jx-talk-javaland-2019/))
+* [2019-03-26 Ten Commandments Of GitOps Applied To Continuous Delivery](https://www.meetup.com/Barcelona-Jenkins-Area-Meetup/events/259869827/) at [Barcelona Jenkins Area Meetup](https://www.meetup.com/Barcelona-Jenkins-Area-Meetup/) by [Viktor Farcic](https://twitter.com/vfarcic)
+
+* [2019-03-20 Cloud-Native Kubernetes-First Continuous Delivery With Jenkins X](https://www.meetup.com/DevOps-Freiburg/events/259091235/) at [DevOps Meetup Freiburg](https://www.meetup.com/DevOps-Freiburg/) by [Viktor Farcic](https://twitter.com/vfarcic)
+
+* [2019-03-19 Jenkins X - Continuously Driving the Kloud (German)](https://programm.javaland.eu/2019/#/scheduledEvent/569771) at [Javaland 2019 (Germany)](https://www.javaland.eu) by [Gerd Aschemann](https://twitter.com/GerdAschemann) 
 
 * [2019-03-06 Cloud Native CI/CD for Kubernetes with JenkinsX](https://www.meetup.com/Dubai-Jenkins-Area-Meetup/events/258523035/) at [Jenkins Area Meetup(JAM) Dubai](https://www.meetup.com/Dubai-Jenkins-Area-Meetup/) by [Viktor Farcic](https://twitter.com/vfarcic) 
 
