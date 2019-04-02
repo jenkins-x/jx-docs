@@ -76,7 +76,9 @@ pipelineConfig:
             workingDir: "/workspace/workspace/jenkins-x-website"
             args:
               - push
+              - --set-upstream
               - origin
+              - master
 
     pullRequest:
       pipeline:
