@@ -13,9 +13,17 @@ weight: 5
 sections_weight: 5
 ---
 
+* [2019-07-04 Jenkins-X - CI/CD für die Kloud (German)](https://www.java-forum-stuttgart.de/de/Konferenz.html) at [Java Forum Stuttgart (Germany)](https://www.java-forum-stuttgart.de/de/Konferenz.html) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
+
+* [2019-06-24/25/26 GitOps by courtesy of Jenkins-X](https://www.containerdays.io/) at [Container Days, Hamburg (Germany)](https://www.containerdays.io/) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
+
 * [2019-06-06 Continuous Delivery mit Jenkins X und Kubernetes](https://www.devops-essentials.de/lecture.php?id=7929-continuous-delivery-mit-jenkins-x-und) at [DevOps Essentials 2019](https://www.devops-essentials.de/) by [Nicolas Byl](https://twitter.com/NicolasByl)
 
+* [2019-06-04 Jenkins X: Progressive Delivery for Kubernetes](https://jnation.pt/speakers/carlos-sanchez/) at [JNation (Coimbra, Portugal)](https://jnation.pt) by [Carlos Sanchez](https://csanchez.org)
+
 * [2019-05-27/28/29 GitOps by courtesy of Jenkins-X](https://gr8conf.eu/talks/760) at [gr8conf (Copenhagen/Denmark)](https://gr8conf.eu/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) 
+
+* [2019-05-23 CI/CD on Kubernetes with Jenkins X](https://docs.google.com/spreadsheets/d/1mA0FDySf2t2sSjKKG2VOta8vDDiGsQytgxJ2iHBeDIs/edit#gid=0&range=D52:E52) at [GlueCon](http://gluecon.com/) by [Nicholas Duffy](https://twitter.com/duffn)
 
 * [2019-05-07 Workshop: Continuous Deployment To Kubernetes](https://craft-conf.com/workshops) at [Craft (Budapest)](https://craft-conf.com/) by [Viktor Farcic](https://twitter.com/vfarcic)
 
@@ -27,7 +35,9 @@ sections_weight: 5
 
 * [2019-03-06 Cloud Native CI/CD for Kubernetes with JenkinsX](https://www.meetup.com/Dubai-Jenkins-Area-Meetup/events/258523035/) at [Jenkins Area Meetup(JAM) Dubai](https://www.meetup.com/Dubai-Jenkins-Area-Meetup/) by [Viktor Farcic](https://twitter.com/vfarcic) 
 
-* [2019-03-05 Cloud Native CI/CD with Jenkins X and Knative Pipelines](https://qconlondon.com/london2019/presentation/cloud-native-cicd-jenkins-x-and-knative-pipelines) at [QConLondon](https://qconlondon.com/) by [James Rawlings](https://twitter.com/jdrawlings) and [Christie Wilson](https://twitter.com/bobcatwilson) 
+* [2019-03-05 Cloud Native CI/CD with Jenkins X and Tekton Pipelines](https://qconlondon.com/london2019/presentation/cloud-native-cicd-jenkins-x-and-knative-pipelines) at [QConLondon](https://qconlondon.com/) by [James Rawlings](https://twitter.com/jdrawlings) and [Christie Wilson](https://twitter.com/bobcatwilson) [slides](https://qconlondon.com/system/files/presentation-slides/cloud_native_ci_cd_with_jenkins_x_and_knative_pipelines.pdf)
+
+* [2019-02-28 Jenkins X: Continuous Delivery for Kubernetes](https://www.youtube.com/watch?v=hrridH35y64&list=PLHsuXkXI4xdjGlGkCBdxIAmkzfWXqsUrO&t=0s&index=2) [YouTube 🎥](https://www.youtube.com/watch?v=hrridH35y64&list=PLHsuXkXI4xdjGlGkCBdxIAmkzfWXqsUrO&t=0s&index=2) by [Carlos Sanchez](https://csanchez.org)
 
 * [2019-02-26 GitOps by courtesy of Jenkins-X (German)](https://www.meetup.com/Agile-Testing-Munich/events/258881963/) at [Agile Testing @Munich (Germany)](https://www.meetup.com/Agile-Testing-Munich/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) 
 

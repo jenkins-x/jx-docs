@@ -29,7 +29,7 @@ other = "快速开始"
 other = "改善此页面"
 
 [hero]
-other = "该项目正在被提议作为 Jenkins 基金会的子项目"
+other = "Jenkins X 提供了流水线自动化、内置 GitOps 和预览环境，以帮助团队协作并在任何规模上加速软件交付。"
 
 [easy-install]
 other = "轻松地安装在任何云上"
