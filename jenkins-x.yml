@@ -54,9 +54,10 @@ pipelineConfig:
 
           - image: alpine:3.8
             name: sleep
-            command: sleep
+            workingDir: "/workspace/workspace/jenkins-x-website"
+            command: ls
             args:
-            - '5000'
+            - -al
 
           - image: gcr.io/jenkinsxio/builder-go:0.1.320
             command: git
