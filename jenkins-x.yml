@@ -16,6 +16,10 @@ pipelineConfig:
             value: jenkins-x@googlegroups.com
           - name: GIT_AUTHOR_NAME
             value: jenkins-x-bot
+          - name: HUGO_ENV
+            value: production
+          - name: HUGO_VERSION
+            value: '0.26'
           steps:
           
           - image: gcr.io/jenkinsxio/builder-go:0.1.320
