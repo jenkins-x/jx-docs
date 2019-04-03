@@ -185,7 +185,7 @@ You need to make sure you have the $HOME/.jx/bin folder in your $PATH.
 
 Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
 
-## Using Minikube (local)    
+## Using Minikube (local) 
     
 Some folks have trouble getting minikube to work for a variety of reasons:
 
@@ -193,6 +193,8 @@ Some folks have trouble getting minikube to work for a variety of reasons:
 * you may have an old Docker installation or old minikube / kubectl or helm binaries and so forth.
 
 So we **highly** recommend using one of the public clouds above to try out Jenkins X. They all have free tiers so it should not cost you any significant cash and it'll give you a chance to try out the cloud.
+
+**minikube does not produce a public-facing IP so webhooks will not be able to reach the cluster. As a result, only polling for changes works and it might take a long while for pipelines to fire.**
 
 If you still want to try minikube then we recommend letting jx create the cluster for you (as opposed to installing jx into an existing minikube cluster) by running:
 
@@ -228,6 +230,8 @@ Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
 ## Using Minishift (local)
 
 If you want to try out Jenkins X on a local OpenShift cluster then you can try using minishift.
+
+**minishift does not produce a public-facing IP so webhooks will not be able to reach the cluster. As a result, only polling for changes works and it might take a long while for pipelines to fire.**
 
 To create a minishift VM with Jenkins X installed on it try the [jx create cluster minishift](/commands/jx_create_cluster_minishift) command:
 
