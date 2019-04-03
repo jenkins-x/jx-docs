@@ -91,19 +91,19 @@ jx get applications
 If you want to hide the URLs or the pod counts you can use `u` or `-p`. e.g. to hide the URLs:
 
 ```shell
-jx get app -u
+jx get applications -u
 ```
 
 Or hide the pod counts:
 
 ```shell
-jx get app -p
+jx get applications -p
 ```
 
 You can also filter the apps by an environment:
 
 ```shell
-jx get app -e staging
+jx get applications -e staging
 ```
 
 
