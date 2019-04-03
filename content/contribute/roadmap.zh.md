@@ -81,7 +81,7 @@ toc: true
 | Theia IDE | | | | 1.3.x in [DevPods](/developing/devpods/#using-theia-ide) |
 | SonarQube  | | [已计划](https://github.com/jenkins-x/jx/issues/536) | |
 
-我们使用 [这个文档](https://docs.google.com/document/d/1bKAoae4B4cjzNsIQe0JpTWE5TReX_gLEveq04P4J_3k/edit?usp=sharing) 用来头脑风暴新的想法和工作主题。
+我们使用 [这个文档](https://docs.google.com/document/d/1bKAoae4B4cjzNsIQe0JpTWE5TReX_gLEveq04P4J_3k/edit?usp=sharing) 来记录头脑风暴上的想法和工作主题。
 
 如果你有兴趣帮忙，请查看上面的问题，或者 [加入我们的社区](/zh/community/)。
 
