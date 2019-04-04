@@ -1,5 +1,5 @@
 ---
-date: 2019-03-16T11:04:02Z
+date: 2019-04-04T07:21:00Z
 title: "jx create cluster aks"
 slug: jx_create_cluster_aks
 url: /commands/jx_create_cluster_aks/
@@ -41,18 +41,20 @@ jx create cluster aks [flags]
       --client-secret string                     Azure AD client secret to use an existing SP
       --cloud-environment-repo string            Cloud Environments Git repo (default "https://github.com/jenkins-x/cloud-environments")
   -c, --cluster-name string                      Name of the cluster
-      --default-admin-username='admin'           The default admin username to access Jenkins, Kubernetes Dashboard, ChartMuseum and Nexus
-      --default-admin-password string            The default admin password to access Jenkins, Kubernetes Dashboard, ChartMuseum and Nexus
+      --default-admin-password string            the default admin password to access Jenkins, Kubernetes Dashboard, ChartMuseum and Nexus
+      --default-admin-username string            the default admin username to access Jenkins, Kubernetes Dashboard, ChartMuseum and Nexus (default "admin")
       --default-environment-prefix string        Default environment repo prefix, your Git repos will be of the form 'environment-$prefix-$envName'
       --disk-size string                         Size in GB of the OS disk for each node in the node pool.
       --dns-name-prefix string                   Prefix for hostnames that are created
       --dns-service-ip string                    IP address assigned to the Kubernetes DNS service
       --docker-bridge-address string             An IP address and netmask assigned to the Docker bridge
       --docker-registry string                   The Docker Registry host or host:port which is used when tagging and pushing images. If not specified it defaults to the internal registry unless there is a better provider default (e.g. ECR on AWS/EKS)
+      --docker-registry-org string               The Docker Registry organiation/user to create images inside. On GCP this is typically your Google Project ID.
       --domain string                            Domain to expose ingress endpoints.  Example: jenkinsx.io
       --draft-client-only                        Only install draft client
       --environment-git-owner string             The Git provider organisation to create the environment Git repositories in
       --exposecontroller-pathmode path           The ExposeController path mode for how services should be exposed as URLs. Defaults to using subnets. Use a value of path to use relative paths within the domain host such as when using AWS ELB host names
+      --exposecontroller-urltemplate string      The ExposeController urltemplate for how services should be exposed as URLs. Defaults to being empty, which in turn defaults to "{{.Service}}.{{.Namespace}}.{{.Domain}}".
       --exposer string                           Used to describe which strategy exposecontroller should use to access applications (default "Ingress")
       --external-ip string                       The external IP used to access ingress endpoints from outside the Kubernetes cluster. For bare metal on premise clusters this is often the IP of the Kubernetes master. For cloud installations this is often the external IP of the ingress LoadBalancer.
       --git-api-token string                     The Git API token to use for creating new Git repositories
@@ -116,6 +118,7 @@ jx create cluster aks [flags]
   -u, --user-name string                         Azure user name
       --username string                          The Kubernetes username used to initialise helm. Usually your email address for your Kubernetes account
       --vault                                    Sets up a Hashicorp Vault for storing secrets during installation (supported only for GKE)
+      --vault-bucket-recreate                    If the vault bucket already exists delete it then create it empty (default true)
       --version string                           The specific platform version to install
       --versions-repo string                     Jenkins X versions Git repo (default "https://github.com/jenkins-x/jenkins-x-versions")
       --vnet-subnet-id string                    The ID of a subnet in an existing VNet into which to deploy the cluster
@@ -125,7 +128,7 @@ jx create cluster aks [flags]
 ### Options inherited from parent commands
 
 ```
-  -b, --batch-mode                Runs in batch mode without prompting for user input
+  -b, --batch-mode                Runs in batch mode without prompting for user input (default true)
       --install-dependencies      Enables automatic dependencies installation when required
       --log-level string          Sets the logging level (panic, fatal, error, warning, info, debug) (default "info")
       --no-brew                   Disables brew package manager on MacOS when installing binary dependencies
@@ -137,4 +140,4 @@ jx create cluster aks [flags]
 
 * [jx create cluster](/commands/jx_create_cluster/)	 - Create a new Kubernetes cluster
 
-###### Auto generated by spf13/cobra on 16-Mar-2019
+###### Auto generated by spf13/cobra on 4-Apr-2019

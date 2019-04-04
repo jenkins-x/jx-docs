@@ -53,6 +53,9 @@
  <LI class="nav-level-1"><A href="#commitstatus-v1-jenkins_io" class="nav-item">CommitStatus v1 jenkins_io</A></LI>
 </UL>
 <UL>
+ <LI class="nav-level-1"><A href="#fact-v1-jenkins_io" class="nav-item">Fact v1 jenkins_io</A></LI>
+</UL>
+<UL>
  <LI class="nav-level-1 strong-nav"><A href="#-strong-definitions-strong-" class="nav-item"><STRONG>DEFINITIONS</STRONG></A></LI>
 </UL>
  <UL id="-strong-definitions-strong--nav" style="display: none;">
@@ -187,9 +190,6 @@
  </UL>
   <UL>
    <LI class="nav-level-2"><A href="#fcvolumesource-v1-core" class="nav-item">FCVolumeSource v1 core</A></LI>
- </UL>
-  <UL>
-   <LI class="nav-level-2"><A href="#fact-v1-jenkins_io" class="nav-item">Fact v1 jenkins_io</A></LI>
  </UL>
   <UL>
    <LI class="nav-level-2"><A href="#flexvolumesource-v1-core" class="nav-item">FlexVolumeSource v1 core</A></LI>
@@ -1131,6 +1131,68 @@ notes on specific resource objects for details.</P>
 <TBODY>
 <TR><TD><CODE>Items</CODE><BR /><I><a href="#commitstatus-v1-jenkins_io">CommitStatus</a> array</I></TD><TD></TD></TR>
 <TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
+<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
+<TR><TD><CODE>metadata</CODE><BR /><I><a href="#listmeta-v1-meta">ListMeta</a></I></TD><TD></TD></TR>
+</TBODY>
+</TABLE>
+<H1 id="fact-v1-jenkins_io">Fact v1 jenkins_io</H1>
+<TABLE class="col-md-8">
+<THEAD><TR><TH>Group</TH><TH>Version</TH><TH>Kind</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>jenkins_io</CODE></TD><TD><CODE>v1</CODE></TD><TD><CODE>Fact</CODE></TD></TR>
+</TBODY>
+</TABLE>
+<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
+ <UL>
+  <LI><a href="#factlist-v1-jenkins_io">FactList [jenkins_io/v1]</a></LI>
+ </UL>
+</DIV>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
+<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
+<TR><TD><CODE>metadata</CODE><BR /><I><a href="#objectmeta-v1-meta">ObjectMeta</a></I></TD><TD>The Fact labels will be used to query the API for interesting Facts. The Apps responsible for creating Facts need to add the relevant labels. For example, creating Facts on a pipeline would create Facts with the following labels {   subjectkind: PipelineActivity   pipelineName: my-org-my-app-master-23   org: my-org   repo: my-app   branch: master   buildNumber: 23 }</TD></TR>
+<TR><TD><CODE>spec</CODE><BR /><I><a href="#factspec-v1-jenkins_io">FactSpec</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>status</CODE><BR /><I><a href="#factstatus-v1-jenkins_io">FactStatus</a></I></TD><TD></TD></TR>
+</TBODY>
+</TABLE>
+<H3 id="factspec-v1-jenkins_io">FactSpec v1 jenkins_io</H3>
+<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
+ <UL>
+  <LI><a href="#fact-v1-jenkins_io">Fact [jenkins_io/v1]</a></LI>
+ </UL>
+</DIV>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>factType</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>measurements</CODE><BR /><I><a href="#measurement-v1-jenkins_io">Measurement</a> array</I></TD><TD></TD></TR>
+<TR><TD><CODE>name</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>original</CODE><BR /><I><a href="#original-v1-jenkins_io">Original</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>statements</CODE><BR /><I><a href="#statement-v1-jenkins_io">Statement</a> array</I></TD><TD></TD></TR>
+<TR><TD><CODE>subject</CODE><BR /><I><a href="#resourcereference-v1-jenkins_io">ResourceReference</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>tags</CODE><BR /><I>string array</I></TD><TD></TD></TR>
+</TBODY>
+</TABLE>
+<H3 id="factstatus-v1-jenkins_io">FactStatus v1 jenkins_io</H3>
+<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
+ <UL>
+  <LI><a href="#fact-v1-jenkins_io">Fact [jenkins_io/v1]</a></LI>
+ </UL>
+</DIV>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>version</CODE><BR /><I>string</I></TD><TD></TD></TR>
+</TBODY>
+</TABLE>
+<H3 id="factlist-v1-jenkins_io">FactList v1 jenkins_io</H3>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
+<TR><TD><CODE>items</CODE><BR /><I><a href="#fact-v1-jenkins_io">Fact</a> array</I></TD><TD></TD></TR>
 <TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
 <TR><TD><CODE>metadata</CODE><BR /><I><a href="#listmeta-v1-meta">ListMeta</a></I></TD><TD></TD></TR>
 </TBODY>
@@ -2117,31 +2179,6 @@ For example to specify the binding of roles on all Preview environments or on al
 <TR><TD><CODE>readOnly</CODE><BR /><I>boolean</I></TD><TD>Optional: Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.</TD></TR>
 <TR><TD><CODE>targetWWNs</CODE><BR /><I>string array</I></TD><TD>Optional: FC target worldwide names (WWNs)</TD></TR>
 <TR><TD><CODE>wwids</CODE><BR /><I>string array</I></TD><TD>Optional: FC volume world wide identifiers (wwids) Either wwids or combination of targetWWNs and lun must be set, but not both simultaneously.</TD></TR>
-</TBODY>
-</TABLE>
-<H2 id="fact-v1-jenkins_io">Fact v1 jenkins_io</H2>
-<TABLE class="col-md-8">
-<THEAD><TR><TH>Group</TH><TH>Version</TH><TH>Kind</TH></TR></THEAD>
-<TBODY>
-<TR><TD><CODE>jenkins_io</CODE></TD><TD><CODE>v1</CODE></TD><TD><CODE>Fact</CODE></TD></TR>
-</TBODY>
-</TABLE>
-<P>Fact represents observed facts. Apps will generate Facts about the system. A naming schema is required since each Fact has a name that&#39;s unique for the whole system. Apps should prefix their generated Facts with the name of the App, like &lt;app-name&gt;-&lt;fact&gt;. This makes that different Apps can&#39;t possibly have conflicting Fact names.
-
-For an app generating facts on a pipeline, which will be have several different executions, we recommend &lt;app&gt;-&lt;fact&gt;-&lt;pipeline&gt;.</P>
-<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
- <UL>
-  <LI><a href="#factlist-v1-jenkins_io">FactList [jenkins_io/v1]</a></LI>
- </UL>
-</DIV>
-<TABLE>
-<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
-<TBODY>
-<TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
-<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
-<TR><TD><CODE>metadata</CODE><BR /><I><a href="#objectmeta-v1-meta">ObjectMeta</a></I></TD><TD>The Fact labels will be used to query the API for interesting Facts. The Apps responsible for creating Facts need to add the relevant labels. For example, creating Facts on a pipeline would create Facts with the following labels {   subjectkind: PipelineActivity   pipelineName: my-org-my-app-master-23   org: my-org   repo: my-app   branch: master   buildNumber: 23 }</TD></TR>
-<TR><TD><CODE>spec</CODE><BR /><I><a href="#factspec-v1-jenkins_io">FactSpec</a></I></TD><TD></TD></TR>
-<TR><TD><CODE>status</CODE><BR /><I><a href="#factstatus-v1-jenkins_io">FactStatus</a></I></TD><TD></TD></TR>
 </TBODY>
 </TABLE>
 <H2 id="flexvolumesource-v1-core">FlexVolumeSource v1 core</H2>
@@ -4164,6 +4201,7 @@ The contents of the target Secret&#39;s Data field will be presented in a volume
 <TR><TD><CODE>buildPackName</CODE><BR /><I>string</I></TD><TD></TD></TR>
 <TR><TD><CODE>buildPackRef</CODE><BR /><I>string</I></TD><TD></TD></TR>
 <TR><TD><CODE>buildPackUrl</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>deployKind</CODE><BR /><I>string</I></TD><TD></TD></TR>
 <TR><TD><CODE>dockerRegistryOrg</CODE><BR /><I>string</I></TD><TD></TD></TR>
 <TR><TD><CODE>envOrganisation</CODE><BR /><I>string</I></TD><TD></TD></TR>
 <TR><TD><CODE>forkBranchPatterns</CODE><BR /><I>string</I></TD><TD></TD></TR>
