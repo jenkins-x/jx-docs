@@ -105,3 +105,33 @@ metadata:
 
 If you want to inject the URL or host name of the external URL or your ingress just [use these annotations](https://github.com/jenkins-x/exposecontroller/blob/master/README.md#using-the-expose-url-in-other-resources).
 
+## How To Add Custom Annotations to Ingress Controller?
+
+There may be times when you need to add your custom annotations to the ingress controller or [exposecontroller](https://github.com/jenkins-x/exposecontroller) which `jx` uses to expose services.
+
+You can add a list of annotations to your application's service Helm Chart, which is found in your app's code repository.
+
+A custom annotation may be added to the `charts/myapp/values.yaml` and it may look as follows:
+
+```yaml
+# Default values for node projects.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+replicaCount: 1
+image:
+  repository: draft
+  tag: dev
+  pullPolicy: IfNotPresent
+service:
+  name: node-app
+  type: ClusterIP
+  externalPort: 80
+  internalPort: 8080
+  annotations:
+    fabric8.io/expose: "true"
+    fabric8.io/ingress.annotations: "kubernetes.io/ingress.class: nginx"
+
+```
+
+To see an example of where we add multiple annotations that the `exposecontroller` adds to generated ingress rules, take a look at this [values.yaml](https://github.com/jenkins-x/jenkins-x-platform/blob/08a304ff03a3e19a8eb270888d320b4336237005/values.yaml#L655)
+
