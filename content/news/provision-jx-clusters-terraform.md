@@ -12,10 +12,11 @@ author: omedina
 
 
 <figure>
-<img src="/images/jenkinsTerraform.png" />
+<img src="/images/jenkinsTerraform.png"/>
 <figcaption>
 <h5>Provision Jenkins X Kubernetes Clusters using Terraform</h5>
 </figcaption>
+</figure>
 
 {{% note %}}
 CAUTION: This approach is best suited for when not using GitOps in Jenkins X.  We recommend you do however use GitOps when available.  In addition, do not make updates to the cluster that require recreating the cluster, all data will be lost.  Only changes that update the cluster are supported.
