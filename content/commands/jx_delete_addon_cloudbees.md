@@ -1,5 +1,5 @@
 ---
-date: 2019-04-04T07:21:00Z
+date: 2019-04-04T11:48:40Z
 title: "jx delete addon cloudbees"
 slug: jx_delete_addon_cloudbees
 url: /commands/jx_delete_addon_cloudbees/

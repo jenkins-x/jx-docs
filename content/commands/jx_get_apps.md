@@ -1,5 +1,5 @@
 ---
-date: 2019-04-04T07:21:00Z
+date: 2019-04-04T11:48:40Z
 title: "jx get apps"
 slug: jx_get_apps
 url: /commands/jx_get_apps/
@@ -24,13 +24,24 @@ jx get apps [flags]
   
   # Display details about the app called cheese
   jx get app cheese
+  
+  # Display detailed status info about the app called cheese
+  jx get app cheese --status
+  
+  # Display detailed status info about the app called cheese in 'json' format
+  jx get app cheese --status -o json
+  
+  # Display details about the app called cheese in 'yaml' format
+  jx get app cheese -o yaml
 ```
 
 ### Options
 
 ```
-  -h, --help            help for apps
-  -o, --output string   The output format such as 'yaml'
+  -h, --help               help for apps
+  -n, --namespace string   The namespace where you want to search the apps in
+  -o, --output string      The output format such as 'yaml'
+  -s, --status             Shows detailed information about the state of the app
 ```
 
 ### Options inherited from parent commands
