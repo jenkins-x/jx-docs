@@ -18,31 +18,24 @@ aliases: [/contribute/apidocs/]
 toc: true
 ---
 
-Jenkins X 有两种类型的 API 文档：[Kubernetes Custom Resource Documentation](/apidocs) 和 [Godoc]
-(https://godoc.org/github.com/jenkins-x/jx)。这两种类型都是由 [jx](https://github.com/jenkins-x/jx) 的代码生成。
+Jenkins X 有两种类型的 API 文档：[Kubernetes Custom Resource Documentation](/apidocs) 和 [Godoc](https://godoc.org/github.com/jenkins-x/jx)。这两种类型都是由 [jx](https://github.com/jenkins-x/jx) 的代码生成。
 
 
 ## 设置你的开发环境
 
-最好在你的本地电脑上对 Jenkinx X 的代码进行修改。按照[开发](/development)指导文档进行配置。
+最好在你的本地电脑上对 Jenkinx X 的代码进行修改。按照 [开发](/development) 指导文档进行配置。
 
 ## 编写自定义资源文档
 
 自定义资源的文档大部分是由 [go structs that define the custom 
-resources]
-(https://github
-.com/jenkins-x/jx/tree/master/pkg/apis/jenkins.io/v1) 上的注释以及融合了 [introductory content](https://github
-.com/jenkins-x/jx/tree/master/docs/apidocs/static_includes) 和 [structure](https://github
-.com/jenkins-x/jx/blob/master/docs/apidocs/config.yaml) 而生成的。
+resources](https://github.com/jenkins-x/jx/tree/master/pkg/apis/jenkins.io/v1) 上的注释以及融合了 [introductory content](https://github.com/jenkins-x/jx/tree/master/docs/apidocs/static_includes) 和 [structure](https://github.com/jenkins-x/jx/blob/master/docs/apidocs/config.yaml) 而生成的。
 
 ### 工具链
 
 自定义资源文档是由与 Kubernetes [同样的工具链](https://kubernetes
 .io/docs/contribute/generate-ref-docs/kubernetes-api/)而生成的，但是一系列的 `jx` 的命令将其包装了起来，因此你不需要下载以及配置这些不同的工具。
 
-HTML 文档是由 [OpenAPI 说明](https://github
-.com/jenkins-x/jx/tree/master/docs/apidocs/openapi-spec) 生成的，依次的由 [Go 结构体](https://github
-.com/jenkins-x/jx/tree/master/pkg/client/openapi)生成，而这些结构体是由代码的注释生成的。想要生成结构体和 OpenAPI 说明执行命令：
+HTML 文档是由 [OpenAPI 说明](https://github.com/jenkins-x/jx/tree/master/docs/apidocs/openapi-spec) 生成的，依次的由 [Go 结构体](https://github.com/jenkins-x/jx/tree/master/pkg/client/openapi) 生成，而这些结构体是由代码的注释生成的。想要生成结构体和 OpenAPI 说明执行命令：
  ```bash
  $ make generate-openapi
  ```  
@@ -71,8 +64,7 @@ HTML 文档是由 [OpenAPI 说明](https://github
 
 ### 对文档进行修改
 
-对于每一个你想要生成文档的文件必须要在 [jenkins.io/v1](https://github
-.com/jenkins-x/jx/tree/master/pkg/apis/jenkins.io/v1) 目录中，并且在文件的头部必须有下面的注释：
+对于每一个你想要生成文档的文件必须要在 [jenkins.io/v1](https://github.com/jenkins-x/jx/tree/master/pkg/apis/jenkins.io/v1) 目录中，并且在文件的头部必须有下面的注释：
 
 ```go
 // +k8s:openapi-gen=true
@@ -85,10 +77,9 @@ HTML 文档是由 [OpenAPI 说明](https://github
 ``` 
 
 对类型的注释会被忽略。结构体中的字段的注释会被作为其描述信息。
-左侧的菜单栏是由 [config.yaml](https://github
-.com/jenkins-x/jx/blob/master/docs/apidocs/config.yaml) 中的 `resource_categories` 而生成。对于每一个种类的介绍文本信息由 [html](https://github.com/jenkins-x/jx/tree/master/docs/apidocs/static_includes) 编写。
+左侧的菜单栏是由 [config.yaml](https://github.com/jenkins-x/jx/blob/master/docs/apidocs/config.yaml) 中的 `resource_categories` 而生成。对于每一个种类的介绍文本信息由 [html](https://github.com/jenkins-x/jx/tree/master/docs/apidocs/static_includes) 编写。
 
-样式风格也可以[定制化](https://github.com/jenkins-x/jx/blob/master/docs/apidocs/static/stylesheet.css)。
+样式风格也可以 [定制化](https://github.com/jenkins-x/jx/blob/master/docs/apidocs/static/stylesheet.css)。
 
 ### OpenAPI
 
