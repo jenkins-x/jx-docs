@@ -1,10 +1,10 @@
 ---
-title: Source
-linktitle: Source
-description: The location of the various source code repositories
+title: 源码
+linktitle: 源码
+description: 多个源码仓库的位置
 date: 2019-01-08
 publishdate: 2019-01-08
-lastmod: 2019-01-08
+lastmod: 2019-04-04
 menu:
   docs:
     parent: "architecture"
@@ -15,38 +15,38 @@ draft: false
 toc: true
 ---
 
-Jenkins X is built on the shoulders of giants and also has lots of different source repositories to make various things from CLI tools, docker images, helm charts and [addon Apps](/apps/)
+Jenkins X 建立在巨人的肩膀上，并且拥有许多不同的源码仓库，从 CLI 工具、Docker 镜像、Helm 图表到 [插件应用](/apps/) 来做各种各样的事情。
 
-This page lists the main organisations and repositories.
+这个页面列出了主要的组织和仓库。
 
-## Organisations
+## 组织
 
-* [jenkins-x](https://github.com/jenkins-x) the main organisation for source code
-* [jenkins-x-apps](https://github.com/jenkins-x-apps) contains the standard  [addon Apps](/apps/) for Jenkins X
-* [jenkins-x-buildpacks](https://github.com/jenkins-x-buildpacks) contains the available [build packs](/architecture/build-packs/)
-* [jenkins-x-charts](https://github.com/jenkins-x-charts) the main helm charts we distribute
-* [jenkins-x-images](https://github.com/jenkins-x-images) contains some custom docker image builds
-* [jenkins-x-quickstarts](https://github.com/jenkins-x-quickstarts) the quickstart projects used by [create quickstart](/developing/create-quickstart/)
-* [jenkins-x-test-projects](https://github.com/jenkins-x-test-projects) test projects we use in test cases 
+* [jenkins-x](https://github.com/jenkins-x) 源码的主要组织
+* [jenkins-x-apps](https://github.com/jenkins-x-apps) 包括 Jenkins X 的标准 [插件应用](/apps/)
+* [jenkins-x-buildpacks](https://github.com/jenkins-x-buildpacks) 包括可用的 [构建打包](/architecture/build-packs/)
+* [jenkins-x-charts](https://github.com/jenkins-x-charts) 我们分发的主要 helm 图表
+* [jenkins-x-images](https://github.com/jenkins-x-images) 包括一些自定义的 docker 镜像构建
+* [jenkins-x-quickstarts](https://github.com/jenkins-x-quickstarts) 通过 [创建快速开始](/developing/create-quickstart/) 使用的快速开始项目
+* [jenkins-x-test-projects](https://github.com/jenkins-x-test-projects) 我们在测试用例中使用的项目
 
-## Repositories
+## 仓库
 
-Here we'll call out of some of the main repositories in the above organisations:
+在这里我们调出上面组织的一些主要仓库
 
-* [jenkins-x/jx](https://github.com/jenkins-x/jx) the main repository which creates the `jx` CLI and reusable pipeline steps
-* [jenkins-x/jx-docs](https://github.com/jenkins-x/jx-docs) the Hugo based documentation which generates this website
-* [jenkins-x/bdd-jx](https://github.com/jenkins-x/bdd-jx) the BDD tests we use to verify the platform changes and verify PRs on [jenkins-x/jx](https://github.com/jenkins-x/jx)
-* [jenkins-x/jenkins-x-platform](https://github.com/jenkins-x/jenkins-x-platform) the main composite helm chart for the Jenkins X platform
-* [jenkins-x/jenkins-x-versions](https://github.com/jenkins-x/jenkins-x-versions) contains the [version stream](/architecture/version-stream/) - the stable versions of all _charts_ and CLI _packages_
-* [jenkins-x/cloud-environments](https://github.com/jenkins-x/cloud-environments) the helm configurations for different cloud providers
+* [jenkins-x/jx](https://github.com/jenkins-x/jx) 创建 `jx` CLI 和可重用的流水线步骤的主要仓库
+* [jenkins-x/jx-docs](https://github.com/jenkins-x/jx-docs) 基于 Hugo 的文档，用来生成网站
+* [jenkins-x/bdd-jx](https://github.com/jenkins-x/bdd-jx)  我们用来验证平台变更以及用来验证 [jenkins-x/jx](https://github.com/jenkins-x/jx) 上 PR 的 BDD 测试
+* [jenkins-x/jenkins-x-platform](https://github.com/jenkins-x/jenkins-x-platform) Jenkins X 平台主要合成物的 helm 图表
+* [jenkins-x/jenkins-x-versions](https://github.com/jenkins-x/jenkins-x-versions) 包括 [版本流](/architecture/version-stream/) - 所有 _图表_ 和 CLI _包_ 的稳定版本
+* [jenkins-x/cloud-environments](https://github.com/jenkins-x/cloud-environments) 不同 cloud providers 的 helm 配置
  
-### Build pods and images
+### 构建 pods 和 镜像
 
-* [jenkins-x/jenkins-x-builders](https://github.com/jenkins-x/jenkins-x-builders) generates the static jenkins server build pod docker images        
-* [jenkins-x/jenkins-x-image](https://github.com/jenkins-x/jenkins-x-image) generates the docker image for the static jenkins server we use by default
-* [jenkins-x/jenkins-x-serverless](https://github.com/jenkins-x/jenkins-x-serverless) generates the [serverless jenkins](/news/serverless-jenkins/) docker images when using [prow](/architecture/prow)
+* [jenkins-x/jenkins-x-builders](https://github.com/jenkins-x/jenkins-x-builders) 生成静态 jenkins 服务的构建 pod 和 docker 镜像
+* [jenkins-x/jenkins-x-image](https://github.com/jenkins-x/jenkins-x-image) 为我们默认使用的静态 jenkins 服务器生成 docker 镜像
+* [jenkins-x/jenkins-x-serverless](https://github.com/jenkins-x/jenkins-x-serverless) 当使用 [prow](/architecture/prow) 时生成 [serverless jenkins](/news/serverless-jenkins/) docker 镜像
 
-### Tools
+### 工具
 
-* [jenkins-x/exposecontroller](https://github.com/jenkins-x/exposecontroller) a `Deployment` or `Job` that can be used to generate/update `Ingress` resources (or `Route` on OpenShift) if you change your DNS domain or enable TLS - it can also inject external URLs into your application via `ConfigMap` injection 
-* [jenkins-x/updatebot](https://github.com/jenkins-x/updatebot) a command line bot we use to perform Continuous Delivery of libraries, executables, charts and images. i.e. we it generates Pull Requests on downstream dependent git repositories when a new upstream release is done
+* [jenkins-x/exposecontroller](https://github.com/jenkins-x/exposecontroller) 用来生成或更新 `Ingress` 资源（或 OpenShift 中的 `Route` ）的 `Deployment` 或 `Job`。如果你修改了你的 DNS 域或开启了 TLS ，它可以通过 `ConfigMap` 注入用来注入外部 URLs 到你的应用中。
+* [jenkins-x/updatebot](https://github.com/jenkins-x/updatebot) 一个我们用来为库、可执行文件、图表和镜像执行持续交付的命令行机器人。例如：当一个新的上游发布完成后，我们在下游依赖的 git 仓库中生成 Pull Requests。
