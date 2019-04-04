@@ -1,5 +1,5 @@
 ---
-date: 2019-04-04T12:29:22Z
+date: 2019-04-04T13:04:50Z
 title: "jx upgrade ingress"
 slug: jx_upgrade_ingress
 url: /commands/jx_upgrade_ingress/
@@ -28,13 +28,14 @@ jx upgrade ingress [flags]
 ```
       --cluster                   Enable cluster wide Ingress upgrade
       --config-namespace string   Namespace where the ingress-config is stored (if empty, it will try to read it from Dev environment namespace)
+      --domain string             Domain to expose ingress endpoints (e.g., jenkinsx.io). Leave empty to preserve the current value.
       --force                     Forces upgrades of all webooks even if ingress URL has not changed
   -h, --help                      help for ingress
       --namespaces stringArray    Namespaces to upgrade
       --services stringArray      Services to upgrade
       --skip-certmanager          Skips cert-manager installation
       --skip-resources-update     Skips the update of jx related resources such as webhook or Jenkins URL
-      --urltemplate string        For ingress; exposers can set the urltemplate to expose. The default value is "{{.Service}}-{{.Namespace}}.{{.Domain}}". Leave empty to preserve the current value.
+      --urltemplate string        For ingress; exposers can set the urltemplate to expose. The default value is "{{.Service}}.{{.Namespace}}.{{.Domain}}". Leave empty to preserve the current value.
       --wait-for-certs            Waits for TLS certs to be issued by cert-manager (default true)
 ```
 
