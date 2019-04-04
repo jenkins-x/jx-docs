@@ -18,7 +18,7 @@ toc: true
 ---
 
 This is a short guide to setup EKS on AWS and the required resources for Jenkins X's setup of Vault
-using Terraform. It assumes access to AWS is configured and familiarity with AWS and Terraform.
+using Terraform. It assumes access to AWS is configured and familiarity with AWS, kubectl and Terraform.
 
 This snippet of Terraform code sets EKS and up needed resources on AWS. It outputs the parameters
 you then need to add to append to `jx install`.
@@ -83,13 +83,11 @@ resource "aws_s3_bucket" "vault-unseal" {
 }
 
 # Create KMS key
-
 resource "aws_kms_key" "bank_vault" {
     description = "KMS Key for bank vault unseal"
 }
 
 # Create DynamoDB table
-
 resource "aws_dynamodb_table" "vault-data" {
     name           = "vault-data"
     read_capacity  = 2
@@ -109,7 +107,6 @@ resource "aws_dynamodb_table" "vault-data" {
 }
 
 # Create service account for vault. Should the policy
-
 resource "aws_iam_user" "vault" {
   name = "vault_${var.region}"
 }
@@ -178,9 +175,12 @@ resource "aws_iam_access_key" "vault" {
 }
 
 # Output KMS key id, S3 bucket name and secret name in the form of jx install options
- 
 output "jx_params" {
     value = "--provider=eks --gitops --no-tiller --vault --aws-dynamodb-region=${var.region} --aws-dynamodb-table=${aws_dynamodb_table.vault-data.name} --aws-kms-region=${var.region} --aws-kms-key-id=${aws_kms_key.bank_vault.key_id} --aws-s3-region=${var.region}  --aws-s3-bucket=${aws_s3_bucket.vault-unseal.id} --aws-access-key-id=${aws_iam_access_key.vault.id} --aws-secret-access-key=${aws_iam_access_key.vault.secret}"
 }
 
 {{< /code >}}
+
+The module terraform-aws-modules/eks/aws will also store a kubeconfig file as `config`. This can be
+copied to or merged with your `~/.kube/config`. Then `jx install` can be run with the parameters
+output by the Terraform config above.
