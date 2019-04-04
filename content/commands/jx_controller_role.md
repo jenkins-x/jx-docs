@@ -1,5 +1,5 @@
 ---
-date: 2019-04-04T14:46:19Z
+date: 2019-04-04T15:16:41Z
 title: "jx controller role"
 slug: jx_controller_role
 url: /commands/jx_controller_role/
