@@ -1,6 +1,6 @@
 ---
-title: Jenkins X Sponsors
-linktitle: Sponsors
+title: Jenkins X 赞助商
+linktitle: 赞助商
 description: 
 date: 2019-01-21
 publishdate: 2019-01-21
@@ -14,7 +14,7 @@ slug:
 toc: true
 ---
 
-We thank the following organizations for their major commitments to support the Jenkins X project
+我们感谢以下组织对支持 Jenkins X 项目做出的一些主要承诺
 
 ## CloudBees
 
