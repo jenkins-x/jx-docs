@@ -19,42 +19,34 @@ toc: true
 ---
 
 Jenkins X has two types of API documentation: [Kubernetes Custom Resource Documentation](/apidocs) and [Godoc]
-(https://godoc.org/github.com/jenkins-x/jx). Both types are generated from the [jx](https://github.com/jenkins-x/jx) 
-code.  
+(https://godoc.org/github.com/jenkins-x/jx).
+Both types are generated from the `codegen` binary which is part of the jx [repository](https://github.com/jenkins-x/jx).  
 
 ## Setup your development environment
 
-It's best to make changes to the Jenkins X code on your local machine. Follow the [development](/development) guide 
+It's best to make changes to the Jenkins X code on your local machine. Follow the [development](../development) guide 
 to get set up.
 
 ## Writing custom resource documentation
 
-The custom resource documentation is mostly generated from the comments on the [go structs that define the custom 
-resources]
-(https://github
-.com/jenkins-x/jx/tree/master/pkg/apis/jenkins.io/v1), with the [introductory content](https://github
+The custom resource documentation is mostly generated from the comments on the [go structs](https://github.com/jenkins-x/jx/tree/master/pkg/apis/jenkins.io/v1) that define the custom resources, with the [introductory content](https://github
 .com/jenkins-x/jx/tree/master/docs/apidocs/static_includes) and [structure](https://github
 .com/jenkins-x/jx/blob/master/docs/apidocs/config.yaml) injected.
 
 ### Toolchain
 
-The custom resource documentation is generated using the [same toolchain](https://kubernetes
-.io/docs/contribute/generate-ref-docs/kubernetes-api/) as Kubernetes, but wrapped up in a series of `jx` commands so 
-that you don't have to download and setup the different tools yourself.
+The custom resource documentation is generated using the [same toolchain](https://kubernetes.io/docs/contribute/generate-ref-docs/kubernetes-api/) as Kubernetes, but wrapped up in a series of `codegen` commands so that you don't have to download and setup the different tools yourself.
 
-The HTML docs are generated via an [OpenAPI specification](https://github
-.com/jenkins-x/jx/tree/master/docs/apidocs/openapi-spec) which in turn is generated from [Go Structs](https://github
-.com/jenkins-x/jx/tree/master/pkg/client/openapi) which are generated from the code comments. To generate the structs
- and the OpenAPI specification run:
+The HTML docs are generated via an [OpenAPI specification](https://github.com/jenkins-x/jx/tree/master/docs/apidocs/openapi-spec) which in turn is generated from [Go Structs](https://github.com/jenkins-x/jx/tree/master/pkg/client/openapi) which are generated from the code comments.
+To generate the structs and the OpenAPI specification run:
  
  ```bash
  $ make generate-openapi
  ```  
  
  {{% note %}}
- `make generate-openapi` is just a wrapper for `jx create client openapi`, passing in package to generate 
- from, generate to, and the group (`jenkins.io`) and version (`v1`) to generate for. You can run this command 
- directly if you prefer.
+ `make generate-openapi` is just a wrapper for `codegen openapi`, passing in package to generate from, generate to, and the group (`jenkins.io`) and version (`v1`) to generate for.
+ You can run this command directly if you prefer.
  {{% /note %}} 
  
  and to generate the HTML run:
@@ -64,8 +56,7 @@ The HTML docs are generated via an [OpenAPI specification](https://github
  ```
 
 {{% note %}}
-`make generate-docs` is just a wrapper for `jx create client docs`. You can run this command directly if you 
-prefer.
+`make generate-docs` is just a wrapper for `codegen docs`. You can run this command directly if you prefer.
 {{% /note %}}
 
 You should run `make generate-openapi` whenever you change the custom resources, and check the generated changes into
