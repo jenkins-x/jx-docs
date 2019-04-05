@@ -1,5 +1,5 @@
 ---
-date: 2019-04-05T09:44:35Z
+date: 2019-04-05T10:24:38Z
 title: "jx console"
 slug: jx_console
 url: /commands/jx_console/
