@@ -30,13 +30,16 @@ If you do not already have an account created for the `kubernetes` workspace you
 
 ## Office Hours
 
-We meet every other Thursday at 4pm GMT / 11am US Eastern / 8am US Pacific
+We are **changing to meet every Thursday** at 4pm GMT / 11am US Eastern / 8am US Pacific
 [https://zoom.us/j/761659948](https://zoom.us/j/761659948).
 
 Feel free to [add your questions to the doc](https://docs.google.com/document/d/1wHdBlZAN-ndPELuBoM5HBnYiQLvcz92-euXne2mKOEI/edit) or hangout live and ask chat in person.
 
 Previous Videos:
-
+* [4th April, 2019](https://youtu.be/eYIaz_plUOw)
+  - Batching PRs with Prows Tide - Pete Muir
+  - Provisioning Jenkins X K8s Clusters Using Infrastructure as Code (Terraform) - Oscar Medina
+  - Knative Server with Gloo - James Strachan
 * [21st March, 2019](https://youtu.be/dDKK-ud7DWk)
   - Overview and demo of DevEnv - Cai Cooper
   - CLI plugins - Pete Muir
