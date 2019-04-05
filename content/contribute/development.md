@@ -398,6 +398,8 @@ You should **NOT** add `t.Parallel()` to an unencapsulated test as it may cause 
 A test is unencapsulated (not isolated) if it cannot be run (with repeatable success) without a certain surrounding state. Relying on external binaries that may not be present, writing or reading from the filesystem without care to specifically avoid collisions, or relying on other tests to run in a specific sequence for your test to pass are all examples of a test that you should carefully consider before committing. If you would like to easily check that your test is isolated before committing simply run: `make docker-test`, or if your test is marked as slow: `make docker-test-slow`. This will mount the jx project folder into a golang docker container that does not include any of your host machines environment. If your test passes here, then you can be happy that the test is encapsulated.
 
 ### Mocking / Stubbing
+<a name="mocking--stubbing"></a>
+
 Mocking or stubbing methods in your unit tests will get you a long way towards test isolation. Coupled with the use of interface based APIs you should be able to make your methods easily testable and useful to other packages that may need to import them.
 [Pegomock](https://github.com/petergtz/pegomock) is our current mocking library of choice, mainly because it is very easy to use and doesn't require you to write your own mocks (Yay!)
 We place all interfaces for each package in a file called `interface.go` in the relevant folder. So you can find all interfaces for `github.com/jenkins-x/jx/pkg/util` in `github.com/jenkins-x/jx/pkg/util/interface.go` 
@@ -535,6 +537,16 @@ dlv --listen=:2345 --headless=true --api-version=2 exec `which jx` -- $*
 
 Then you can change your `jx someArgs` CLI to `jxDebug someArgs` then debug it!
 
+### Enabling Kubernetes API tracing
+
+In some cases it can be useful to see the REST API calls made to the Kubernetes cluster. 
+You can enable trace by setting the environment variable `TRACE_KUBE_API` to the value "on" or "1".
+For example:
+
+```bash
+TRACE_KUBE_API=on jx get apps
+```
+
 ## Try a new version of jx inside a pipeline
 
 You can usually just run `jx` locally on your laptop and can simulate being in a pipeline using environment variables and run it inside a git clone of a sample project etc. However there are times you really want to test inside an actual running pipeline - here's how:
@@ -557,21 +569,28 @@ Another approach is you can make your own docker image, then pause a pipeline an
 
 ## Code Generation
 
-Jenkins X makes use of code generation to create [Mocks](#mocking--stubbing), Kubernetes Custom Resource clients, 
-[OpenAPI spec and API Documentation](../apidocs). The generated files are always committed.
+Jenkins X makes use of code generation to create [Mocks](#mocking--stubbing), Kubernetes Custom Resource clients, [OpenAPI spec and API Documentation](../apidocs).
+The generated files, except for the HTML docs, checked into version control.
+There are several `make` targets resposible for code generation. 
+They can be found in `Makefile.codegen`.
 
-• `make generate` runs all generation you need to do before commiting changes
-• `make generate-mocks` - generates the mocks only (run by `make generate`)
-• `make generate-client` - generates the Kubernetes Custom Resource clients only
-• `make generate-openapi` generates the OpenAPI spec only (run by `make generate`)
-• `make generate-docs` generates the HTML apidocs, and is not committed
+* `make generate` runs all generation you need to do before commiting changes
+* `make generate-mocks` - generates the [Pegomocks](https://github.com/petergtz/pegomock) only
+* `make generate-client` - generates the Kubernetes Custom Resource clientset only. 
+* `make generate-openapi` generates the [OpenAPI](https://swagger.io/specification/) spec only
+* `make generate-docs` generates the HTML apidocs, and is not committed
 
-If you get a conflict on any of these directories or files when committing, rebasing or merging your best bet is to 
-discard the changeset you have, and regenerate the clients:
+ {{% note %}}
+ Not all files under `pkg/client/clientset/versioned/typed/jenkins.io/v1` are generated.
+ The expansion files are manually maintained and need to be kept when re-generating the clientset.
+ See also [clientset generation](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-api-machingenerating-clientset.md) in the Kuberenetes Community repository.
+ {{% /note %}}
 
-* `pkg/client`
-* `docs/apidocs/openapi-spec`
-* `*/mocks/*`
+If you get a conflict on any of these directories or files when committing, rebasing or merging your best bet is to discard the changeset you have, and regenerate:
 
-As part of the PR builds we run a job to validate that the code generation is up to date. If the code generation is 
-not up to date (running `make generate` produces a `git diff` or untracked files) then your PR will be blocked.
+* `pkg/client` (`make generate-client`)
+* `docs/apidocs/openapi-spec` (`make generate-openapi`)
+* `**/mocks/**` (`make generate-mocks`)
+
+As part of the PR builds we run a job to validate that the code generation is up to date.
+If the code generation is not up to date (running `make generate` produces a `git diff` or untracked files) then your PR will be blocked.
