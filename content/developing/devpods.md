@@ -56,7 +56,7 @@ If you wish to use a desktop IDE then you need to sync your source code you can 
 
 This will open a shell (and create a DevPod, or re-use an existing one) and ensure the changes are synced up to the DevPod. Step 3: when  you run this then any changes you make locally will be pushed up to the DevPod, built, and then a temporary "edit" version of your application will be published. 
 
-When you run `jx get apps` you will see your "edit" application listed. You can open this in a browser, and edit away, and refresh, as if you were developing locally. 
+When you run `jx get applications` you will see your "edit" application listed. You can open this in a browser, and edit away, and refresh, as if you were developing locally. 
 
 _if you are using the Visual Studio code extension to do this, you don't need to worry about this, it will be done automatically for you_
 
