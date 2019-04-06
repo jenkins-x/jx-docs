@@ -25,7 +25,7 @@ CAUTION: This approach is best suited for when not using GitOps in Jenkins X.  W
 # Overview
 Many organizations have adopted DevOps practices in the last few years.  This is valuable as it relates to Jenkins X as we provide a way to manage the Kubernetes clusters  Infrastructure as Code which is one of the core concepts of DevOps practices as it relates to automation.  
 
-Many environments may only allow for creating cloud resources using IasC, therefore we provide you with guidance on how to get started using Terraform to manage your Jekins X clusters.
+Many environments may only allow for creating cloud resources using IaC, therefore we provide you with guidance on how to get started using Terraform to manage your Jekins X clusters.
 
 Our objective is to bring awareness to our Jenkins X users on know that they can manage the cluster changes and version them by placing the Terraform code source control and adopting the typical developer workflow which includes PRs in source control to make infrastructure changes in a controlled manner.
 
