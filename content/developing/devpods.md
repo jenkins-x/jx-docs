@@ -8,9 +8,9 @@ lastmod: 2017-02-01
 menu:
   docs:
     parent: "developing"
-    weight: 220
-weight: 220
-sections_weight: 220
+    weight: 195
+weight: 195
+sections_weight: 195
 draft: false
 toc: true
 aliases: [/developing/devpods/]

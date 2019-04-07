@@ -19,7 +19,7 @@ The Jenkins X Community is like no other, we are friendly, very open to feedback
 
 Please join us, we'd love to hear your feedback or have you participate and show some of the work you are doing with Jenkins X!
 
-### Slack
+## Slack
 
 The Kubernetes community [hangs out on Slack](http://slack.k8s.io/) at [kubernetes.slack.com](https://kubernetes.slack.com/) so we have rooms there to chat about all things Jenkins X:
 
@@ -32,23 +32,23 @@ If you do not already have an account created for the `kubernetes` workspace you
 
 
 
-### Reporting Issues
+## Reporting Issues
 
 Got any thoughts, ideas or feedback then please drop them in a [GitHub Issue](https://github.com/jenkins-x/jx/issues/new)
 
 You may also want to try [Stack Overflow](https://stackoverflow.com/questions/tagged/jenkins--x) with the tag `jenkins--x` though we prefer [GitHub Issues](https://github.com/jenkins-x/jx/issues)
 
-### Email
+## Email
 
 If you prefer email then join us on the [jenkins-developers mailing list](https://groups.google.com/forum/#!forum/jenkinsci-dev). Prefix posts with `[Jenkins X]` in the subject.
 
-### Want to contribute?
+## Want to contribute?
 
 It will be lots of fun!
 
 Check out the [contribution guide](/contribute/) for some tips on how to get started
 
-### Office Hours
+## Office Hours
 
 {{% note %}}
 We are **changing to meet every Thursday** at 4pm GMT / 11am US Eastern / 8am US Pacific

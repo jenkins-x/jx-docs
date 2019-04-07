@@ -8,9 +8,9 @@ lastmod: 2017-02-01
 menu:
   docs:
     parent: "developing"
-    weight: 50
-weight: 50
-sections_weight: 50
+    weight: 58
+weight: 58
+sections_weight: 58
 draft: false
 toc: true
 ---
