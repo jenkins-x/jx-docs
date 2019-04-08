@@ -108,6 +108,11 @@ pygmentsStyle = "friendly"
       url = "/zh/extending/"
       post = "break"
     [[languages.zh.menu.docs]]
+      name = "API"
+      weight = 40
+      identifier = "api"
+      url = "https://jenkins-x.io/apidocs/"
+    [[languages.zh.menu.docs]]
       name = "命令行"
       weight = 40
       identifier = "commands"
