@@ -66,6 +66,11 @@ pygmentsStyle = "friendly"
       identifier = "jenkins"
       post = "external"
       url = "https://jenkins.io/zh"
+    [[languages.zh.menu.global]]
+      name = "赞助商"
+      weight = 250
+      identifier = "sponsors"
+      url = "/zh/sponsors/"
 
     [[languages.zh.menu.docs]]
       name = "关于 Jenkins X"
@@ -102,6 +107,11 @@ pygmentsStyle = "friendly"
       identifier = "extending"
       url = "/zh/extending/"
       post = "break"
+    [[languages.zh.menu.docs]]
+      name = "API"
+      weight = 40
+      identifier = "api"
+      url = "https://jenkins-x.io/apidocs/"
     [[languages.zh.menu.docs]]
       name = "命令行"
       weight = 40
