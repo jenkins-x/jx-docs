@@ -1,10 +1,10 @@
 ---
-title: Triaging issues
-linktitle: Triaging issues
-description: How to triage issues on the Jenkins X project
+title: 分类问题
+linktitle: 分类问题
+description: 如何对 Jenkins X 项目中的问题进行分类
 date: 2018-12-18
 publishdate: 2018-12-18
-lastmod: 2018-12-18
+lastmod: 2019-04-09
 categories: [triage]
 keywords: [triage,issues]
 authors: [triage]
@@ -19,17 +19,17 @@ aliases: [/contribute/triage/]
 toc: true
 ---
 
-The main issue tracker for the Jenkins X project is https://github.com/jenkins-x/jx/issues.  This aims to capture issues, ideas and development work.  If in doubt please raise an issue and a Jenkins X team member will look to triage it as soon as possible.
+Jenkins X 项目主要的问题跟踪系统是 https://github.com/jenkins-x/jx/issues。这旨在捕捉问题、想法和开发工作。 如有疑问请提交一个问题，一名 Jenkins X 团队成员将考虑尽快给它分类。
 
-As Jenkins X is using [prow](/https://www.cloudbees.com/blog/serverless-jenkins-jenkins-x) from the Kubernetes ecosystem we figured we'd take their lead in traiaging a large number of issues to aid and encourage contributions.  We are reusing the style of labels including colours in an attempt to create familiarity across open source projects and reduce the barrier to contributing.
+由于 Jenkins X 使用来自 Kubernetes 生态的 [prow](/https://www.cloudbees.com/blog/serverless-jenkins-jenkins-x)，我们认为，我们应该带领他们参与处理分类大量问题，以帮助和鼓励贡献者。我们正在重用标签的样式，包括颜色，以尝试在跨开源项目时创建熟悉度，并减少贡献的障碍。
 
-# Triaging issues
+# 分类问题
 
-For a full list of available labels please see https://github.com/jenkins-x/jx/labels
+所有可用标签列表请参考：https://github.com/jenkins-x/jx/labels
 
-When triaging an issue, someone from the Jenkins X team will assign labels to describe the __area__ and __kind__ of issue.  Where possible they will also add a priority however these are subject to change after further analysis or wider visibility.
+当对问题进行分类时，来自 Jenkins X 团队的某个成员将分配标签用来描述问题的 __area__ 和 __kind__ 。有可能，他们还将增加一个 priority ，但是，在进一步分析或更广泛的可见性之后，这些 priority 可能会发生变化。
 
-Labels are added via the prow [label](https://prow.k8s.io/plugins) plugin using GitHub comments.  For example:
+标签通过 prow [label](https://prow.k8s.io/plugins) 插件使用 GitHub 评论被添加。例如：
 ```
 /kind bug
 /area prow
@@ -37,18 +37,18 @@ Labels are added via the prow [label](https://prow.k8s.io/plugins) plugin using 
 ```
 ![Triage](/images/contribute/triage.png)
 
-# Assigning issues
+# 分配问题
 
-When triaging we will attempt to assign someone to the issue.  This may change depending on the investigation or availability of people.
+当进行分类时我们尝试将问题分配给某个人。这可能会随着调查或人员的可用性而改变。
 
-# Investigating issues
+# 调查问题
 
-When anyone is working on an issue we aim to capture any analysis by adding comments.  This helps people learn tips on how to investigate similar problems, helps people understand the thought process and provides context for any linked fixes via pull requests.
+当任何人在处理一个问题时，我们的目的是通过添加注释来捕获任何分析。这有助于人们学习如何调查类似问题的技巧，帮助人们理解思考过程，并通过 pull request 为任何链接修复提供上下文。
 
-# New labels
+# 新建标签
 
-If you would like to request a new label be created please raise an issue with as much context as possible.
+如果你想要请求创建一个新的标签，那么请提交一个问题并附带尽可能多的内容。
 
-# Stale issues
+# 陈旧的问题
 
-As we encourrage a wide range of issue kinds like general ideas and thoughts the issue tracker can grow quite high.  We are going to be enabling the prow [lifecycle](https://prow.k8s.io/plugins) plugin to help manage stale issues.  This is not meant to be intrusive but instead allow us to continually rethink problems and keep momentum across issues.
+当我们鼓励广泛的问题类型，如一般的想法和想法，问题跟踪器可能增长得相当高。我们将启用 prow [lifecycle](https://prow.k8s.io/plugins) 插件来帮助管理陈旧的问题。这并不意味着具有侵入性，而是允许我们不断地重新思考问题，并保持跨问题的势头。
