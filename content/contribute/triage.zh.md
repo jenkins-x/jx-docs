@@ -19,7 +19,7 @@ aliases: [/contribute/triage/]
 toc: true
 ---
 
-Jenkins X 项目主要的问题跟踪系统是 https://github.com/jenkins-x/jx/issues。这旨在捕捉问题、想法和开发工作。 如有疑问请提交一个问题，一名 Jenkins X 团队成员将考虑尽快给它分类。
+Jenkins X 项目主要的问题跟踪系统是 https://github.com/jenkins-x/jx/issues。这旨在捕捉问题、想法和开发工作。如有疑问请提交一个问题，一名 Jenkins X 团队成员将考虑尽快给它分类。
 
 由于 Jenkins X 使用来自 Kubernetes 生态的 [prow](/https://www.cloudbees.com/blog/serverless-jenkins-jenkins-x)，我们认为，我们应该带领他们参与处理分类大量问题，以帮助和鼓励贡献者。我们正在重用标签的样式，包括颜色，以尝试在跨开源项目时创建熟悉度，并减少贡献的障碍。
 
