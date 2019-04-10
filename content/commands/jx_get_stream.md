@@ -1,35 +1,39 @@
 ---
 date: 2019-04-10T00:42:23Z
-title: "jx get secrets"
-slug: jx_get_secrets
-url: /commands/jx_get_secrets/
+title: "jx get stream"
+slug: jx_get_stream
+url: /commands/jx_get_stream/
 ---
-## jx get secrets
+## jx get stream
 
-Display one or more Secrets
+Displays the version of a chart, package or docker image from the Version Stream
 
 ### Synopsis
 
-Display one or more Vault Secrets
+Displays the version of a chart, package or docker image from the Version Stream 
+
+For more information see: https://jenkins-x.io/architecture/version-stream/
 
 ```
-jx get secrets [flags]
+jx get stream [flags]
 ```
 
 ### Examples
 
 ```
-  # List all secrets
-  jx get secrets
+  # List the version of a docker image
+  jx get stream -k docker gcr.io/jenkinsxio/builder-jx
+  
+  # List the version of a chart
+  jx get stream -k charts jenkins-x/tekton
 ```
 
 ### Options
 
 ```
-  -h, --help               help for secrets
-  -m, --name string        The name of the Vault to use
-  -n, --namespace string   Namespace from where to list the secrets
-  -o, --output string      The output format such as 'yaml'
+      --dir string    the directory containing a git clone of the jenkins-x/jenkins-x-versions git repository. Leave blank and a new clone will be made
+  -h, --help          help for stream
+  -k, --kind string   The kind of version. Possible values: charts, packages, docker (default "docker")
 ```
 
 ### Options inherited from parent commands

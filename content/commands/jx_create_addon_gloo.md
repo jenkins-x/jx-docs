@@ -1,34 +1,36 @@
 ---
 date: 2019-04-10T00:42:23Z
-title: "jx create addon owasp-zap"
-slug: jx_create_addon_owasp-zap
-url: /commands/jx_create_addon_owasp-zap/
+title: "jx create addon gloo"
+slug: jx_create_addon_gloo
+url: /commands/jx_create_addon_gloo/
 ---
-## jx create addon owasp-zap
+## jx create addon gloo
 
-Create the OWASP Zed Attack Proxy addon for dynamic security checks against running apps
+Create a Gloo and Knative Serve addon for creating serverless applications
 
 ### Synopsis
 
-Creates the Owasp dynamic security testing addon
+Create a Gloo and Knative Serve addon for creating serverless applications
 
 ```
-jx create addon owasp-zap [flags]
+jx create addon gloo [flags]
 ```
 
 ### Examples
 
 ```
-  # Create the owasp addon
-  jx create addon owasp-zap
+  # Create the Gloo addon
+  jx create addon gloo
 ```
 
 ### Options
 
 ```
-  -l, --backoff-limit int32   The backoff limit: how many times to retry the job before considering it failed) to run in the Job (default 2)
-  -h, --help                  help for owasp-zap
-  -i, --image string          The OWASP image to use to run the ZA Proxy baseline scan (default "owasp/zap2docker-live:latest")
+  -h, --help                       help for gloo
+  -i, --ingress string             The name of the gloo cluster ingress proxy Service (default "clusteringress-proxy")
+  -c, --knative-configmap string   The knative serving ConfigMap name (default "config-domain")
+  -k, --knative-namespace string   The knative serving namespace (default "knative-serving")
+  -n, --namespace string           The gloo system namespace (default "gloo-system")
 ```
 
 ### Options inherited from parent commands
