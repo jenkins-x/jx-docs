@@ -1,7 +1,7 @@
 ---
-title: Knative Serve
-linktitle: Knative Serve
-description: Develop serverless applications
+title: Serverless Apps
+linktitle: Serverless Apps
+description: Develop serverless applications with Knative
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01
@@ -14,6 +14,8 @@ sections_weight: 230
 draft: false
 toc: true
 ---
+
+You can build elastic serverless applications for Kubernetes easily with Jenkins X. We use an open source project called [Knative](https://www.knative.dev/) to provide the elastic scaling of your applications and functions.  
 
 [Knative Serve](https://www.knative.dev/) exposes functions in any programming language over HTTP with elastic scaling from zero to many pods. This lets you build serverless applications which run on any cloud or kubernetes cluster and make an efficient use of resources.
 
