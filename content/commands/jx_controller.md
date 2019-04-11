@@ -1,5 +1,5 @@
 ---
-date: 2019-04-11T16:17:00Z
+date: 2019-04-11T17:12:45Z
 title: "jx controller"
 slug: jx_controller
 url: /commands/jx_controller/
@@ -46,6 +46,7 @@ jx controller <command> [flags]
 * [jx controller build](/commands/jx_controller_build/)	 - Runs the build controller
 * [jx controller buildnumbers](/commands/jx_controller_buildnumbers/)	 - Runs the service to generate build numbers.
 * [jx controller commitstatus](/commands/jx_controller_commitstatus/)	 - Updates commit status
+* [jx controller environment](/commands/jx_controller_environment/)	 - A controller which takes a webhook and updates the environment via GitOps for remote clusters
 * [jx controller pipelinerunner](/commands/jx_controller_pipelinerunner/)	 - Runs the service to generate Tekton PipelineRun resources from source code webhooks such as from Prow
 * [jx controller role](/commands/jx_controller_role/)	 - Controller which mirrors Role & EnvironmentRoleBinding resources to Roles and RoleBindings in all matching Environment namespaces
 * [jx controller team](/commands/jx_controller_team/)	 - Runs the team controller

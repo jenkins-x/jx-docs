@@ -1,5 +1,5 @@
 ---
-date: 2019-04-11T16:17:00Z
+date: 2019-04-11T17:12:45Z
 title: "jx create addon"
 slug: jx_create_addon
 url: /commands/jx_create_addon/
@@ -45,6 +45,7 @@ jx create addon [flags]
 * [jx create addon ambassador](/commands/jx_create_addon_ambassador/)	 - Create an ambassador addon
 * [jx create addon anchore](/commands/jx_create_addon_anchore/)	 - Create the Anchore addon for verifying container images
 * [jx create addon cloudbees](/commands/jx_create_addon_cloudbees/)	 - Create the CloudBees app for Kubernetes (a web console for working with CI/CD, Environments and GitOps)
+* [jx create addon environment](/commands/jx_create_addon_environment/)	 - Create an Environment Controller to handle webhooks and promote changes from GitOps
 * [jx create addon flagger](/commands/jx_create_addon_flagger/)	 - Create the Flagger addon for Canary deployments
 * [jx create addon gitea](/commands/jx_create_addon_gitea/)	 - Create a Gitea addon for hosting Git repositories
 * [jx create addon gloo](/commands/jx_create_addon_gloo/)	 - Create a Gloo and Knative Serve addon for creating serverless applications

@@ -1,37 +1,43 @@
 ---
 date: 2019-04-11T17:12:45Z
-title: "jx controller pipelinerunner"
-slug: jx_controller_pipelinerunner
-url: /commands/jx_controller_pipelinerunner/
+title: "jx controller environment"
+slug: jx_controller_environment
+url: /commands/jx_controller_environment/
 ---
-## jx controller pipelinerunner
+## jx controller environment
 
-Runs the service to generate Tekton PipelineRun resources from source code webhooks such as from Prow
+A controller which takes a webhook and updates the environment via GitOps for remote clusters
 
 ### Synopsis
 
-Runs the service to generate Tekton PipelineRun resources from source code webhooks such as from Prow
+A controller which takes a webhook and updates the environment via GitOps for remote clusters
 
 ```
-jx controller pipelinerunner [flags]
+jx controller environment [flags]
 ```
 
 ### Examples
 
 ```
-  # run the pipeline runner controller
-  jx controller pipelinerunner
+  # run the environment controller
+  jx controller environment
 ```
 
 ### Options
 
 ```
       --bind string              The interface address to bind to (by default, will listen on all interfaces/addresses).
-  -h, --help                     help for pipelinerunner
+      --git-server-url string    The git server URL. If not specified defaults to $GIT_SERVER_URL
+  -h, --help                     help for environment
       --no-git-init              Disables checking we have setup git credentials on startup
+      --no-register-webhook      Disables checking to register the webhook on startup
+  -o, --owner string             The git repository owner. If not specified defaults to $OWNER
   -p, --path string              The path to listen on for requests to trigger a pipeline run. (default "/")
       --port int                 The TCP port to listen on. (default 8080)
+  -r, --repo string              The git repository name. If not specified defaults to $REPO
       --service-account string   The Kubernetes ServiceAccount to use to run the pipeline (default "tekton-bot")
+  -s, --source-url string        The source URL of the environment git repository
+  -w, --webhook-url string       The external WebHook URL of this controller to register with the git provider. If not specified defaults to $WEBHOOK_URL
 ```
 
 ### Options inherited from parent commands
