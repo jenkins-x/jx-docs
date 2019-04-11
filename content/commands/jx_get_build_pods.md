@@ -1,5 +1,5 @@
 ---
-date: 2019-04-11T14:44:29Z
+date: 2019-04-11T16:17:00Z
 title: "jx get build pods"
 slug: jx_get_build_pods
 url: /commands/jx_get_build_pods/
