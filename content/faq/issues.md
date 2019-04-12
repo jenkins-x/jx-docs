@@ -111,6 +111,51 @@ It basically happens if you have an old API token in `~/.jx/jenkinsAuth.yaml` fo
 
     jx delete jenkins token admin
 
+## errors with https://chartmuseum.build.cd.jenkins-x.io
+
+If you see errors like: 
+
+```error:failed to add the repository 'jenkins-x' with URL 'https://chartmuseum.build.cd.jenkins-x.io':```
+
+or 
+
+```Looks like "https://chartmuseum.build.cd.jenkins-x.io" is not a valid chart repository or cannot be reached```
+
+then it looks like you have a reference to an old chart museum URL for Jenkins X charts.
+
+The new URL is: http://chartmuseum.jenkins-x.io
+
+It could be your helm install has an old repository URL installed. You should see...
+
+``` 
+$ helm repo list
+NAME     	URL
+stable   	https://kubernetes-charts.storage.googleapis.com
+jenkins-x	http://chartmuseum.jenkins-x.io
+```
+
+If you see this...
+
+``` 
+$ helm repo list
+NAME     	URL
+jenkins-x	https://chartmuseum.build.cd.jenkins-x.io
+```
+
+then please run...
+
+``` 
+helm repo remove jenkins-x
+helm repo add jenkins-x	http://chartmuseum.jenkins-x.io
+```
+
+and you should be good to go again.
+
+
+Another possible cause is an old URL in your environment's git repository may have old references to the URL.
+
+So open your `env/requirements.yaml` in your staging/production git repositories and modify them to use the URL https://chartmuseum.build.cd.jenkins-x.io intsead of https://chartmuseum.build.cd.jenkins-x.io like this [env/requirements file](https://github.com/jenkins-x/default-environment-charts/blob/master/env/requirements.yaml)
+
 ## git errors: POST 401 Bad credentials
 
 This indicates your git API token either was input incorrectly or has been regenerated and is now incorrect.
