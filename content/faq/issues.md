@@ -115,11 +115,15 @@ It basically happens if you have an old API token in `~/.jx/jenkinsAuth.yaml` fo
 
 If you see errors like: 
 
-```error:failed to add the repository 'jenkins-x' with URL 'https://chartmuseum.build.cd.jenkins-x.io':```
+```
+error:failed to add the repository 'jenkins-x' with URL 'https://chartmuseum.build.cd.jenkins-x.io'
+```
 
 or 
 
-```Looks like "https://chartmuseum.build.cd.jenkins-x.io" is not a valid chart repository or cannot be reached```
+```
+Looks like "https://chartmuseum.build.cd.jenkins-x.io" is not a valid chart repository or cannot be reached
+```
 
 then it looks like you have a reference to an old chart museum URL for Jenkins X charts.
 
