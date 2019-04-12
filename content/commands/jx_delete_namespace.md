@@ -1,5 +1,5 @@
 ---
-date: 2019-04-12T17:33:44Z
+date: 2019-04-12T22:23:29Z
 title: "jx delete namespace"
 slug: jx_delete_namespace
 url: /commands/jx_delete_namespace/
