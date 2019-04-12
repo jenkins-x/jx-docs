@@ -19,7 +19,7 @@ There are several architectures based on how you choose to install Jenkins X. We
 <figure>
 <img src="/images/ArchitectureStaticJenkins.png"/>
 <figcaption>
-<h5>Architecture depicts a deployment with statick Jenkins instance</h5>
+<h5>Architecture depicts a deployment with static Jenkins instance</h5>
 </figcaption>
 </figure>
 
@@ -30,6 +30,6 @@ There are several architectures based on how you choose to install Jenkins X. We
 <img src="https://via.placeholder.com/728x500.png?text=Coming+Soon"
 
 <figcaption>
-<h5>Architecture depicts a deployment with statick Serverless and using Tekton Pipelines</h5>
+<h5>Architecture depicts a serverless deployment using Tekton Pipelines</h5>
 </figcaption>
 </figure>
