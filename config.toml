@@ -105,7 +105,7 @@ pygmentsStyle = "friendly"
       name = "扩展"
       weight = 30
       identifier = "extending"
-      url = "/zh/extending/"
+      url = "/extending/"
       post = "break"
     [[languages.zh.menu.docs]]
       name = "API"
