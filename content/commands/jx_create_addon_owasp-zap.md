@@ -1,5 +1,5 @@
 ---
-date: 2019-04-15T14:24:41Z
+date: 2019-04-15T14:30:46Z
 title: "jx create addon owasp-zap"
 slug: jx_create_addon_owasp-zap
 url: /commands/jx_create_addon_owasp-zap/
