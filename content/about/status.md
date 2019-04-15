@@ -19,6 +19,16 @@ toc: true
 
 This page describes any specific manual work arounds you may require above and beyond changes described in the [News section](/news/) or using [jx upgrade](/commands/jx_upgrade/) to upgrade the [CLI](/commands/jx_upgrade_cli/) or [platform](/commands/jx_upgrade_platform/)
 
+## 16th April 2019: Jenkins X 2.x
+
+We are pleased to announce 2.0.x of Jenkins X.
+
+We have changed some of the default CLI arguments when installing Jenkins X.
+ 
+* we are now deprecating the use of knative build with Prow / Serverless Jenkins in favour of [Jenkins X Pipelines and Tekton](/architecture/jenkins-x-pipelines/)
+* we default to using `--no-tiller`  to [disable the use of helm's tiller](/news/helm-without-tiller/). We recommend to avoid tiller. If you really still want to use it then use `--no-tiller false` on the CLI when installing Jenkins X.
+
+
 ## 6th Feb 2019: Regression in `jx-install-config` secret.
 
 We have spotted a regression in the install process that generates an invalid config file inside the secret `jx-install-config` secret.  Whilst the original defect has been fixed, the invalid secret will create an issue with `jx upgrade platform` causing the cluster to loose all secrets.

@@ -1,5 +1,5 @@
 ---
-date: 2019-04-15T14:30:46Z
+date: 2019-04-15T17:34:09Z
 title: "jx create terraform"
 slug: jx_create_terraform
 url: /commands/jx_create_terraform/
@@ -79,6 +79,7 @@ jx create terraform [flags]
       --jx-environment string                  The cluster name to install jx inside (default "dev")
       --kaniko                                 Use Kaniko for building docker images
       --keep-exposecontroller-job              Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
+      --knative-build                          Note this option is deprecated now in favour of tekton. If specified this will keep using the old knative build with Prow instead of the stratgegic tekton
       --local-cloud-environment                Ignores default cloud-environment-repo and uses current directory 
       --local-helm-repo-name string            The name of the helm repository for the installed ChartMuseum (default "releases")
       --local-organisation-repository string   Rather than cloning from a remote Git server, the local directory to use for the organisational folder
@@ -89,7 +90,7 @@ jx create terraform [flags]
       --no-gitops-env-repo                     When using GitOps to create the source code for the development environment this flag disables the creation of a git repository for the source code
       --no-gitops-env-setup                    When using GitOps to install the development environment this flag skips the post-install setup
       --no-gitops-vault                        When using GitOps to create the source code for the development environment this flag disables the creation of a vault
-      --no-tiller                              Whether to disable the use of tiller with helm. If disabled we use 'helm template' to generate the YAML from helm charts then we use 'kubectl apply' to install it to avoid using tiller completely.
+      --no-tiller                              Whether to disable the use of tiller with helm. If disabled we use 'helm template' to generate the YAML from helm charts then we use 'kubectl apply' to install it to avoid using tiller completely. (default true)
       --on-premise                             If installing on an on premise cluster then lets default the 'external-ip' to be the Kubernetes master IP address
   -o, --organisation-name string               The organisation name that will be used as the Git repo containing cluster details, the repo will be organisation-<org name>
       --prow                                   Enable Prow to implement Serverless Jenkins and support ChatOps on Pull Requests

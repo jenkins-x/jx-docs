@@ -1,5 +1,5 @@
 ---
-date: 2019-04-15T14:30:46Z
+date: 2019-04-15T17:34:09Z
 title: "jx create cluster aks"
 slug: jx_create_cluster_aks
 url: /commands/jx_create_cluster_aks/
@@ -75,6 +75,7 @@ jx create cluster aks [flags]
       --install-only                             Force the install command to fail if there is already an installation. Otherwise lets update the installation
       --kaniko                                   Use Kaniko for building docker images
       --keep-exposecontroller-job                Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
+      --knative-build                            Note this option is deprecated now in favour of tekton. If specified this will keep using the old knative build with Prow instead of the stratgegic tekton
   -v, --kubernetes-version az aks get-versions   Version of Kubernetes to use for creating the cluster, such as '1.8.11' or '1.9.6'.  Values from: az aks get-versions.
       --local-cloud-environment                  Ignores default cloud-environment-repo and uses current directory 
       --local-helm-repo-name string              The name of the helm repository for the installed ChartMuseum (default "releases")
@@ -86,7 +87,7 @@ jx create cluster aks [flags]
       --no-gitops-env-repo                       When using GitOps to create the source code for the development environment this flag disables the creation of a git repository for the source code
       --no-gitops-env-setup                      When using GitOps to install the development environment this flag skips the post-install setup
       --no-gitops-vault                          When using GitOps to create the source code for the development environment this flag disables the creation of a vault
-      --no-tiller                                Whether to disable the use of tiller with helm. If disabled we use 'helm template' to generate the YAML from helm charts then we use 'kubectl apply' to install it to avoid using tiller completely.
+      --no-tiller                                Whether to disable the use of tiller with helm. If disabled we use 'helm template' to generate the YAML from helm charts then we use 'kubectl apply' to install it to avoid using tiller completely. (default true)
   -s, --node-vm-size string                      Size of Virtual Machines to create as Kubernetes nodes
   -o, --nodes string                             Number of node
       --on-premise                               If installing on an on premise cluster then lets default the 'external-ip' to be the Kubernetes master IP address
