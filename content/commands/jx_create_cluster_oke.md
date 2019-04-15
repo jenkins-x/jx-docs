@@ -1,5 +1,5 @@
 ---
-date: 2019-04-15T15:56:13Z
+date: 2019-04-15T17:34:09Z
 title: "jx create cluster oke"
 slug: jx_create_cluster_oke
 url: /commands/jx_create_cluster_oke/
@@ -73,6 +73,7 @@ jx create cluster oke [flags]
       --isTillerEnabled                       Is Tiller Enabled.
       --kaniko                                Use Kaniko for building docker images
       --keep-exposecontroller-job             Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
+      --knative-build                         Note this option is deprecated now in favour of tekton. If specified this will keep using the old knative build with Prow instead of the stratgegic tekton
       --kubernetesVersion string              The version of Kubernetes to install into the cluster masters.
       --local-cloud-environment               Ignores default cloud-environment-repo and uses current directory 
       --local-helm-repo-name string           The name of the helm repository for the installed ChartMuseum (default "releases")
@@ -84,7 +85,7 @@ jx create cluster oke [flags]
       --no-gitops-env-repo                    When using GitOps to create the source code for the development environment this flag disables the creation of a git repository for the source code
       --no-gitops-env-setup                   When using GitOps to install the development environment this flag skips the post-install setup
       --no-gitops-vault                       When using GitOps to create the source code for the development environment this flag disables the creation of a vault
-      --no-tiller                             Whether to disable the use of tiller with helm. If disabled we use 'helm template' to generate the YAML from helm charts then we use 'kubectl apply' to install it to avoid using tiller completely.
+      --no-tiller                             Whether to disable the use of tiller with helm. If disabled we use 'helm template' to generate the YAML from helm charts then we use 'kubectl apply' to install it to avoid using tiller completely. (default true)
       --nodeImageName string                  The name of the image running on the nodes in the node pool.
       --nodePoolName string                   The name of the node pool.
       --nodePoolSubnetIds string              The OCIDs of the subnets in which to place nodes for this node pool.
