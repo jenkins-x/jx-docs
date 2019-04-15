@@ -1,5 +1,5 @@
 ---
-date: 2019-04-15T10:04:09Z
+date: 2019-04-15T10:59:51Z
 title: "jx update webhooks"
 slug: jx_update_webhooks
 url: /commands/jx_update_webhooks/
@@ -25,8 +25,10 @@ jx update webhooks [flags]
 ### Options
 
 ```
+      --endpoint string            Don't use the endpoint from the cluster, use the provided endpoint
       --exact-hook-url-match       Whether to exactly match the hook based on the URL (default true)
   -h, --help                       help for webhooks
+      --hmac string                Don't use the HMAC token from the cluster, use the provided token
   -o, --org string                 The name of the git organisation to query (default "jenkins-x")
       --previous-hook-url string   Whether to match based on an another URL
   -r, --repo string                The name of the repository to query
