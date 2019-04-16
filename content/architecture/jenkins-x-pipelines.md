@@ -76,4 +76,28 @@ For a quick way to add a new step into a pipeline lifecycle you can use the [jx 
 <figcaption>
 <h5>Create a new Jenkins X Pipeline Step via the CLI</h5>
 </figcaption>
+
+## Default environment variables
+
+The following environment variables are available for use in a step in Jenkins X Pipelines:
+
+| Name | Description |
+| --- | --- |
+| DOCKER_REGISTRY | the docker registry host (e.g. docker.io or gcr.io) |
+| BUILD_NUMBER | the build number |
+| PIPELINE_KIND | the kind of pipeline such as `release` or `pullrequest` |
+| PIPELINE_CONTEXT | the pipeline context if there are multiple pipelines per PR |
+| REPO_OWNER | the git repository owner |
+| REPO_NAME | the git repository name |
+| JOB_NAME | the job name which tyically looks like `$REPO_OWNER/$REPO_NAME/$BRANCH_NAME` |
+| APP_NAME | the name of the app which typically is the `$REPO_NAME`
+| BRANCH_NAME | the name of the branch such as `master` or `PR-123` |
+| JX_BATCH_MODE | indicates to jx to use batch mode if `true` |
+| VERSION | contains the version number being released or the PR's preview version |
+| BUILD_ID | same as `$BUILD_NUMBER`
+| JOB_TYPE | the prow job type such as `presubmit` for PR or `postsubmit` for release |
+| PULL_BASE_REF | the branch/ref of git |
+| PULL_BASE_SHA | the git sha being built |
+| PULL_NUMBER | for PRs this will be the number without the `PR-` prefix
+| PULL_REFS | for batch merging all the git refs |
  
