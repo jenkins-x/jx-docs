@@ -1,5 +1,5 @@
 ---
-date: 2019-04-16T10:00:01Z
+date: 2019-04-16T13:05:41Z
 title: "jx step create task"
 slug: jx_step_create_task
 url: /commands/jx_step_create_task/
@@ -36,7 +36,7 @@ jx step create task [flags]
       --clone-git-url string         Specify the git URL to clone to a temporary directory to get the source code
   -c, --context string               The pipeline context if there are multiple separate pipelines for a given branch
       --delete-temp-dir              Deletes the temporary directory of cloned files if using the 'clone-git-url' option (default true)
-  -d, --dir string                   The directory to query to find the projects .git directory (default "/workspace/source")
+  -d, --dir string                   The directory to query to find the projects .git directory
       --docker-registry string       The Docker Registry host name to use which is added as a prefix to docker images
       --docker-registry-org string   The Docker registry organisation. If blank the git repository owner is used
       --duration duration            Retry duration when trying to create a PipelineRun (default 30s)
