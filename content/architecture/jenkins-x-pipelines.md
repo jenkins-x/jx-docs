@@ -83,10 +83,10 @@ The following environment variables are available for use in a step in Jenkins X
 
 | Name | Description |
 | --- | --- |
-| DOCKER_REGISTRY | the docker registry host (e.g. docker.io or gcr.io) |
-| BUILD_NUMBER | the build number |
+| DOCKER_REGISTRY | the docker registry host (e.g. `docker.io` or `gcr.io`) |
+| BUILD_NUMBER | the build number (1, 2, 3) starts at `1` for each repo and branch |
 | PIPELINE_KIND | the kind of pipeline such as `release` or `pullrequest` |
-| PIPELINE_CONTEXT | the pipeline context if there are multiple pipelines per PR |
+| PIPELINE_CONTEXT | the pipeline context if there are multiple pipelines per PR (for different tests/governance/lint etc) |
 | REPO_OWNER | the git repository owner |
 | REPO_NAME | the git repository name |
 | JOB_NAME | the job name which tyically looks like `$REPO_OWNER/$REPO_NAME/$BRANCH_NAME` |
