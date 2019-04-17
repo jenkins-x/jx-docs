@@ -30,6 +30,7 @@
           {{ .Date.Format "January 2, 2006" }}
         </time>
         By: <strong>{{ .Params.author}}</strong>
+
         {{ if in .Params.categories "Releases" }}
         <p>
         Go to <a href="https://github.com/gohugoio/hugo/releases" class="link primary-color dim">Hugo Releases</a> for the release downloads.
