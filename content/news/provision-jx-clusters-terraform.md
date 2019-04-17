@@ -7,7 +7,7 @@ categories: [blog]
 keywords: [terraform,IaC,provisioning,k8s]
 slug: "terraform-jenkins-x"
 aliases: []
-author: omedina
+author: Oscar Medina
 ---
 
 
