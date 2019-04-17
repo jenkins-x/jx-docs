@@ -1,5 +1,5 @@
 ---
-date: 2019-04-17T18:19:31Z
+date: 2019-04-17T20:52:12Z
 title: "jx create step"
 slug: jx_create_step
 url: /commands/jx_create_step/
@@ -32,6 +32,7 @@ jx create step [flags]
 ### Options
 
 ```
+  -d, --dir string         The root project directory. Defaults to the current dir
   -h, --help               help for step
   -l, --lifecycle string   The lifecycle stage to add your step. Possible values: setup, setversion, prebuild, build, postbuild, promote
   -m, --mode string        The create mode for the new step. Possible values: pre, post, replace

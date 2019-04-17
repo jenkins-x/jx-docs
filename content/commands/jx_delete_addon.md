@@ -1,5 +1,5 @@
 ---
-date: 2019-04-17T18:19:31Z
+date: 2019-04-17T20:52:12Z
 title: "jx delete addon"
 slug: jx_delete_addon
 url: /commands/jx_delete_addon/
@@ -38,6 +38,7 @@ jx delete addon [flags]
 
 * [jx delete](/commands/jx_delete/)	 - Deletes one or more resources
 * [jx delete addon cloudbees](/commands/jx_delete_addon_cloudbees/)	 - Deletes the CloudBees app for Kubernetes addon
+* [jx delete addon environment](/commands/jx_delete_addon_environment/)	 - Deletes the Environment Controller 
 * [jx delete addon flagger](/commands/jx_delete_addon_flagger/)	 - Deletes the Flagger addon
 * [jx delete addon gitea](/commands/jx_delete_addon_gitea/)	 - Deletes the Gitea addon
 * [jx delete addon knative-build](/commands/jx_delete_addon_knative-build/)	 - Deletes the Knative Build app for Kubernetes addon

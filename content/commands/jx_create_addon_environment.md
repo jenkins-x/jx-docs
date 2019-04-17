@@ -1,5 +1,5 @@
 ---
-date: 2019-04-17T18:19:31Z
+date: 2019-04-17T20:52:12Z
 title: "jx create addon environment"
 slug: jx_create_addon_environment
 url: /commands/jx_create_addon_environment/
@@ -19,8 +19,8 @@ jx create addon environment controller [flags]
 ### Examples
 
 ```
-  # Create the Gloo addon
-  jx create addon gloo
+  # Creates the environment controller using a specific environment git repository
+  jx create addon envctl -s https://github.com/myorg/environment-production.git
 ```
 
 ### Options
@@ -29,7 +29,7 @@ jx create addon environment controller [flags]
       --git-kind string      The kind of git repository. Should be one of: bitbucketcloud, bitbucketserver, gitea, github, gitlab
   -h, --help                 help for environment
   -n, --namespace string     The namespace to install the controller
-  -r, --release string       The chart release name (default "jx")
+  -r, --release string       The chart release name (default "jxet")
       --set string           The chart set values (can specify multiple or separate values with commas: key1=val1,key2=val2)
   -s, --source-url string    The git URL of the environment repository to promote from
       --timeout int          The timeout value for how long to wait for the install to succeed (default 600000)

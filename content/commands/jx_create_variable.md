@@ -1,40 +1,41 @@
 ---
 date: 2019-04-17T20:52:12Z
-title: "jx create project"
-slug: jx_create_project
-url: /commands/jx_create_project/
+title: "jx create variable"
+slug: jx_create_variable
+url: /commands/jx_create_variable/
 ---
-## jx create project
+## jx create variable
 
-Create a new Project by importing code, using a Quickstart or custom wizard for Spring or Camel
+Creates an environment variable in the Jenkins X Pipeline
 
 ### Synopsis
 
-Create a new Project by importing code, using a Quickstart or custom wizard for Spring or Camel.
-  
-See Also: 
-
-  * jx create quickstart : https://jenkins-x.io/commands/jx_create_quickstart  
-  * jx create spring : https://jenkins-x.io/commands/jx_create_spring  
-  * jx create camel : https://jenkins-x.io/commands/jx_create_camel  
-  * jx create jhipster : https://jenkins-x.io/commands/jx_create_jhipster  
-  * jx import : https://jenkins-x.io/commands/jx_import
+Creates an environment variable in the Jenkins X Pipeline
 
 ```
-jx create project [flags]
+jx create variable [flags]
 ```
 
 ### Examples
 
 ```
-  # Create a project
-  jx create project
+  # Create a new environment variable with a name and value
+  jx create var -n CHEESE -v Edam
+  
+  # Create a new environment variable with a name and ask the user for the value
+  jx create var -n CHEESE
+  
+  # Overrides an environment variable from the build pack
+  jx create var
 ```
 
 ### Options
 
 ```
-  -h, --help   help for project
+  -d, --dir string     The root project directory. Defaults to the current dir
+  -h, --help           help for variable
+  -n, --name string    The name of the environment variable to set
+  -v, --value string   The value of the environment variable to set
 ```
 
 ### Options inherited from parent commands

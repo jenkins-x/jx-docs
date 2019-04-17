@@ -1,5 +1,5 @@
 ---
-date: 2019-04-17T18:19:31Z
+date: 2019-04-17T20:52:12Z
 title: "jx repository"
 slug: jx_repository
 url: /commands/jx_repository/
@@ -26,13 +26,17 @@ jx repository [flags]
   
   # Print the URL of the Git repository
   jx repo -u
+  
+  # Use the git URL in a script/pipeline
+  export URL="$(jx repo -q -b)"
 ```
 
 ### Options
 
 ```
-  -h, --help   help for repository
-  -u, --url    Only displays and the URL and does not open the browser
+  -h, --help    help for repository
+  -q, --quiet   Quiet mode just displays the git URL only for use in scripts
+  -u, --url     Only displays and the URL and does not open the browser
 ```
 
 ### Options inherited from parent commands

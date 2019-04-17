@@ -1,5 +1,5 @@
 ---
-date: 2019-04-17T18:19:31Z
+date: 2019-04-17T20:52:12Z
 title: "jx delete post"
 slug: jx_delete_post
 url: /commands/jx_delete_post/
