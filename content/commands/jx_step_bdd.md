@@ -1,5 +1,5 @@
 ---
-date: 2019-04-17T15:50:29Z
+date: 2019-04-17T17:21:59Z
 title: "jx step bdd"
 slug: jx_step_bdd
 url: /commands/jx_step_bdd/
@@ -105,6 +105,7 @@ jx step bdd [flags]
       --timeout string                        The number of seconds to wait for the helm install to complete (default "6000")
       --urltemplate string                    For ingress; exposers can set the urltemplate to expose
       --use-current-team                      If enabled lets use the current Team to run the tests
+      --use-revision                          Use the git revision from the current git clone instead of the Pull Request branch
       --user-cluster-role string              The cluster role for the current user to be able to administer helm (default "cluster-admin")
       --username string                       The Kubernetes username used to initialise helm. Usually your email address for your Kubernetes account
       --vault                                 Sets up a Hashicorp Vault for storing secrets during installation (supported only for GKE)

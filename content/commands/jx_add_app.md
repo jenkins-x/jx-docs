@@ -1,5 +1,5 @@
 ---
-date: 2019-04-17T15:50:29Z
+date: 2019-04-17T17:21:59Z
 title: "jx add app"
 slug: jx_add_app
 url: /commands/jx_add_app/
@@ -34,7 +34,6 @@ jx add app [flags]
   -h, --help                 help for app
   -n, --namespace string     The Namespace to install into (available when NOT using GitOps for your dev environment)
       --password string      The password for the repository
-  -r, --release string       The chart release name (by default the name of the app, available when NOT using GitOps for your dev environment)
       --repository string    The repository from which the app should be installed (default specified in your dev environment)
   -s, --set stringArray      The chart set values (can specify multiple or separate values with commas: key1=val1,key2=val2) (available when NOT using GitOps for your dev environment)
       --username string      The username for the repository
