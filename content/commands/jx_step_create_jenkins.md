@@ -1,5 +1,5 @@
 ---
-date: 2019-04-17T17:21:59Z
+date: 2019-04-17T18:19:31Z
 title: "jx step create jenkins"
 slug: jx_step_create_jenkins
 url: /commands/jx_step_create_jenkins/
