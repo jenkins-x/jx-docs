@@ -29,7 +29,11 @@
         <time class="f6 mt2 db ttu tracked" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
           {{ .Date.Format "January 2, 2006" }}
         </time>
+<<<<<<< HEAD
         By: <strong>{{ .Params.author}}</strong>
+=======
+        By: {{ .Params.author}}
+>>>>>>> 2aa35112e99ca4c2fa25c9c641585847b49cdfc1
         {{ if in .Params.categories "Releases" }}
         <p>
         Go to <a href="https://github.com/gohugoio/hugo/releases" class="link primary-color dim">Hugo Releases</a> for the release downloads.
