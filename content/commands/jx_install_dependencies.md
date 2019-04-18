@@ -1,5 +1,5 @@
 ---
-date: 2019-04-18T21:47:01Z
+date: 2019-04-18T22:20:26Z
 title: "jx install dependencies"
 slug: jx_install_dependencies
 url: /commands/jx_install_dependencies/
