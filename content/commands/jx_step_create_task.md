@@ -1,5 +1,5 @@
 ---
-date: 2019-04-18T18:55:28Z
+date: 2019-04-18T21:47:01Z
 title: "jx step create task"
 slug: jx_step_create_task
 url: /commands/jx_step_create_task/
@@ -35,6 +35,7 @@ jx step create task [flags]
       --branch string                The git branch to trigger the build in. Defaults to the current local branch name
       --clone-git-url string         Specify the git URL to clone to a temporary directory to get the source code
   -c, --context string               The pipeline context if there are multiple separate pipelines for a given branch
+      --default-image string         Specify the docker image to use if there is no image specified for a step and there's no Pod Template (default "gcr.io/jenkinsxio/builder-maven")
       --delete-temp-dir              Deletes the temporary directory of cloned files if using the 'clone-git-url' option (default true)
   -d, --dir string                   The directory to query to find the projects .git directory
       --docker-registry string       The Docker Registry host name to use which is added as a prefix to docker images

@@ -1,5 +1,5 @@
 ---
-date: 2019-04-18T18:55:28Z
+date: 2019-04-18T21:47:01Z
 title: "jx controller environment"
 slug: jx_controller_environment
 url: /commands/jx_controller_environment/
@@ -28,6 +28,7 @@ jx controller environment [flags]
 ```
       --bind string                  The interface address to bind to (by default, will listen on all interfaces/addresses).
   -c, --context string               The pipeline context if there are multiple separate pipelines for a given branch
+      --default-image string         Specify the docker image to use if there is no image specified for a step and there's no Pod Template (default "gcr.io/jenkinsxio/builder-maven")
       --delete-temp-dir              Deletes the temporary directory of cloned files if using the 'clone-git-url' option (default true)
       --docker-registry string       The Docker Registry host name to use which is added as a prefix to docker images
       --docker-registry-org string   The Docker registry organisation. If blank the git repository owner is used
@@ -45,11 +46,13 @@ jx controller environment [flags]
       --no-release-prepare           Disables creating the release version number and tagging git and triggering the release pipeline from the new tag
   -o, --owner string                 The git repository owner. If not specified defaults to $OWNER
   -p, --pack string                  The build pack name. If none is specified its discovered from the source code
-      --path string                  The path to listen on for requests to trigger a pipeline run. (default "/")
+      --path string                  The path to listen on for requests to trigger a pipeline run. (default "/hook")
       --port int                     The TCP port to listen on. (default 8080)
       --project-id string            The cloud project ID. If not specified we default to the install project
+      --push-ref string              The git ref passed from the WebHook which should trigger a new deploy pipeline to trigger. Defaults to only webhooks from the master branch (default "refs/heads/master")
   -r, --ref string                   The Git reference (branch,tag,sha) in the Git repository to use
       --repo string                  The git repository name. If not specified defaults to $REPO
+      --require-headers              If enabled we reject webhooks which do not have the github headers: 'X-GitHub-Event' and 'X-GitHub-Delivery' (default true)
       --service-account string       The Kubernetes ServiceAccount to use to run the pipeline (default "tekton-bot")
       --source string                The name of the source repository (default "source")
   -s, --source-url string            The source URL of the environment git repository
