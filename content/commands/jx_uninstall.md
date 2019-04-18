@@ -1,5 +1,5 @@
 ---
-date: 2019-04-18T13:38:01Z
+date: 2019-04-18T18:55:28Z
 title: "jx uninstall"
 slug: jx_uninstall
 url: /commands/jx_uninstall/

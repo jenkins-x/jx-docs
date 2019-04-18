@@ -1,5 +1,5 @@
 ---
-date: 2019-04-18T13:38:01Z
+date: 2019-04-18T18:55:28Z
 title: "jx create addon prow"
 slug: jx_create_addon_prow
 url: /commands/jx_create_addon_prow/
@@ -30,6 +30,7 @@ jx create addon prow [flags]
 
 ```
   -c, --chart string         The name of the chart to use (default "jenkins-x/prow")
+      --external-dns         Installs external-dns into the cluster. ExternalDNS manages service DNS records for your cluster, providing you've setup your domain record (default true)
       --helm-update          Should we run helm update first to ensure we use the latest version (default true)
   -h, --help                 help for prow
       --hmac-token string    OPTIONAL: The hmac-token is the token that you give to GitHub for validating webhooks. Generate it using any reasonable randomness-generator, eg openssl rand -hex 20

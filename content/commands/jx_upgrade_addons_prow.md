@@ -1,5 +1,5 @@
 ---
-date: 2019-04-18T13:38:01Z
+date: 2019-04-18T18:55:28Z
 title: "jx upgrade addons prow"
 slug: jx_upgrade_addons_prow
 url: /commands/jx_upgrade_addons_prow/
@@ -27,6 +27,7 @@ jx upgrade addons prow [flags]
 
 ```
       --cloud-environment-repo string      Cloud Environments Git repo (default "https://github.com/jenkins-x/cloud-environments")
+      --external-dns                       Installs external-dns into the cluster. ExternalDNS manages service DNS records for your cluster, providing you've setup your domain record (default true)
   -h, --help                               help for prow
       --local-cloud-environment            Ignores default cloud-environment-repo and uses current directory 
       --namespace string                   The Namespace to upgrade

@@ -1,5 +1,5 @@
 ---
-date: 2019-04-18T13:38:01Z
+date: 2019-04-18T18:55:28Z
 title: "jx create cluster aks"
 slug: jx_create_cluster_aks
 url: /commands/jx_create_cluster_aks/
@@ -56,6 +56,7 @@ jx create cluster aks [flags]
       --exposecontroller-pathmode path           The ExposeController path mode for how services should be exposed as URLs. Defaults to using subnets. Use a value of path to use relative paths within the domain host such as when using AWS ELB host names
       --exposecontroller-urltemplate string      The ExposeController urltemplate for how services should be exposed as URLs. Defaults to being empty, which in turn defaults to "{{.Service}}.{{.Namespace}}.{{.Domain}}".
       --exposer string                           Used to describe which strategy exposecontroller should use to access applications (default "Ingress")
+      --external-dns                             Installs external-dns into the cluster. ExternalDNS manages service DNS records for your cluster, providing you've setup your domain record
       --external-ip string                       The external IP used to access ingress endpoints from outside the Kubernetes cluster. For bare metal on premise clusters this is often the IP of the Kubernetes master. For cloud installations this is often the external IP of the ingress LoadBalancer.
       --git-api-token string                     The Git API token to use for creating new Git repositories
       --git-private                              Create new Git repositories as private
