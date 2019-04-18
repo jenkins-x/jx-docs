@@ -1,5 +1,5 @@
 ---
-date: 2019-04-18T22:21:07Z
+date: 2019-04-18T22:47:49Z
 title: "jx create gke-service-account"
 slug: jx_create_gke-service-account
 url: /commands/jx_create_gke-service-account/
