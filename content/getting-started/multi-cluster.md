@@ -17,7 +17,7 @@ draft: false
 toc: true
 ---
 
-A common requirement for a production setup is to isolate your Development, Staging and Production environments onto separate kubernetes clusters and to isolate the clusters from each other in separate cloud accounts.
+A common requirement for a production setup is to isolate your Development, Staging and Production environments onto separate kubernetes clusters and to isolate the clusters from each other in separate cloud accounts or VPNs etc.
 
 You can do this by installing the `Environment Controller` chart into your Staging or Production cluster.
 
@@ -53,3 +53,22 @@ On startup the Environment Controller registers itself into the github repositor
 Whenever there is a push to the `master` branch (PRs and feature branches are handled by your Development cluster) the Environment Controller triggers a new [Jenkins X Pipeline](/architecture/jenkins-x-pipelines/) for the Promotion.
 
 Then thanks to the tekton controller, this ges turned into one or more pods to run the pipeline (usually just one - but a deployment pipeline could use multiple separate tasks).
+
+## Known limitations
+
+The following things are not yet automatically configured for you:
+
+* currently you have to manually add the `CHART_REPOSITORY` environment variable into the `jenkins-x.yml` file in your environment git repository. e.g. a `jenkins-x.yml` file like this will do the trick - using the real URL to your chartmuseum (use `jx open` in your development cluster:
+
+```yaml 
+pipelineConfig:
+  env:
+  - name: CHART_REPOSITORY
+    value: http://chartmuseum.jx.1.2.3.4.nip.io
+ ```
+ 
+You can do the above via the [jx create var -n CHART_REPOSITORY](/commands/jx_create_variable/) command if you are inside a clone of the staging/production git repository - then git commit + merge the change.
+
+* You need to manually disable the release pipeline in the Dev cluster - e.g. by removing the `postsubmit` setting in your Prow configuration if you are using [serverless Jenkins X Pipelines and tekton](/architecture/jenkins-x-pipelines/) - or comment out the `jx step helm apply` command in your `Jenkinsfile`
+ 
+ 
