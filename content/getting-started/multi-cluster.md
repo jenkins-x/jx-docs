@@ -43,7 +43,7 @@ jx create addon envctl -s https://github.com/myorg/env-production.git --project-
 
 The installer needs a user + API token for the git repository which it will prompt you for the known values from your `~/.jx/gitAuth.yaml` file so if you already installed Jenkins X it should be able to default those values for you.
 
-If you need to you should be able to use the helm chart `jenkins-x/environment-controller` directly too if you properly configure the required `values.yaml`
+If you prefer you can install the helm chart `jenkins-x/environment-controller` directly with helm by specifying the [required values from the values.yaml file](https://github.com/jenkins-x-charts/environment-controller/blob/master/environment-controller/values.yaml#L3-L19) 
 
 
 ## How it works
