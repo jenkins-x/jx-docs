@@ -76,6 +76,9 @@ For a quick way to add a new step into a pipeline lifecycle you can use the [jx 
 <figcaption>
 <h5>Create a new Jenkins X Pipeline Step via the CLI</h5>
 </figcaption>
+</figure>
+
+You can also add or override an environment variable in your pipeline via the [jx create variable](/commands/jx_create_variable/) command
 
 ## Default environment variables
 

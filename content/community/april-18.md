@@ -12,14 +12,14 @@ author: rawlingsj
 
 # Agenda
 
-- Update on multi cluster - [James Strachan](https://twitter.com/jstrachan)
+- Update on [multi cluster](/getting-started/multi-cluster/) - [James Strachan](https://twitter.com/jstrachan)
 - Update on Dogfooding Jenkins X - [James Rawlings](https://twitter.com/)
 - Update on monitoring - [Gareth Evans](https://twitter.com/garethbryncyn)
 - Update on external dns - [Cai Cooper](https://twitter.com/cagiti)
 - Update on multiple git providers for Prow - [Will Refvem](https://twitter.com/wildwillberry)
 
 Demos:
-- Multi-cluster - [James Strachan](https://twitter.com/jstrachan)
+- [Multi-cluster](/getting-started/multi-cluster/) - [James Strachan](https://twitter.com/jstrachan)
 - Installing apps using GitOps, with private chart repos - [Pete Muir](https://twitter.com/plmuir) 
 - Creating optional questions for app install - [Dave Conde](https://twitter.com/davidconde)
 - Jx upgrade app - [Pete Muir](https://twitter.com/plmuir) 
