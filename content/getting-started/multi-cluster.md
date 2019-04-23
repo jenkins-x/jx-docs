@@ -56,6 +56,10 @@ Then thanks to the tekton controller, this set of Pipeline resources is turned i
 
 Because Environment Controller reacts purely to merges to the environment git repository and we are using canonical git source code; it works with both Static Jenkins Servers and [serverless Jenkins X Pipelines and tekton](/architecture/jenkins-x-pipelines/) in the Development cluster.
 
+## Demo
+
+There was a demo of using environment controller in the [April 19, 2019 Office Hours](https://jenkins-x.io/community/april-18/)
+
 ## Known limitations
 
 The following things are not yet automatically configured for you:
