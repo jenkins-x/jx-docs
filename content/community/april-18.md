@@ -19,6 +19,7 @@ author: rawlingsj
 - Update on multiple git providers for Prow - [Will Refvem](https://twitter.com/wildwillberry)
 
 Demos:
+
 - [Multi-cluster](/getting-started/multi-cluster/) - [James Strachan](https://twitter.com/jstrachan)
 - Installing apps using GitOps, with private chart repos - [Pete Muir](https://twitter.com/plmuir) 
 - Creating optional questions for app install - [Dave Conde](https://twitter.com/davidconde)
