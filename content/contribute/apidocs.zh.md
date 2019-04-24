@@ -86,11 +86,11 @@ HTML 文档是由 [OpenAPI 说明](https://github.com/jenkins-x/jx/tree/master/d
 OpenAPI 说明是由代码生成的。其结构由结构体以及字段生成。`json` [tags](https://golang.org/pkg/encoding/json/#Marshal) 被用于提供额外的信息包括：
 
 * `name` 由 `key` 生成
-* 如果没有设置 `omitempty` 的话，那么这个属性将是 `必须的`
+* 如果没有设置 `omitempty` 的话，那么这个属性将是 `必需的`
 * 如果 `key` 是 `-` 的话，那么将会跳过这个字段
 * 如果设置了 `inline` 的话，这些属性将会嵌入到父对象当中
 
-此外，注释可以用于阻止某一属性被设置为 `必须项`
+此外，注释可以用于阻止某一属性被设置为 `必需项`
 
 ```go
 // +optional
@@ -142,4 +142,4 @@ OpenAPI 说明是由代码生成的。其结构由结构体以及字段生成。
 
 ## 编写 Godoc
 
-Jenkins X 使用标准的方法来生成 Godoc，而且会由 [godoc.org](http://godoc.org) 自动生成。这一 [博客](https://blog.golang.org/godoc-documenting-go-code) 为编写 Godoc 提供了很好的介绍。
+Jenkins X 使用标准的方法来生成 Godoc，而且会由 [godoc.org](http://godoc.org) 自动生成。这一[博客](https://blog.golang.org/godoc-documenting-go-code) 为编写 Godoc 提供了很好的介绍。
