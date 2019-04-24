@@ -37,6 +37,8 @@ nexusServiceLink:
   externalName: "nexus.jx.svc.cluster.local"
 ```
 
+## ChartMuseum
+
 To disable and service link chart museum add:
 
 ```yaml
