@@ -19,7 +19,7 @@ author: Oscar Medina
 </figure>
 
 {{% note %}}
-CAUTION: This approach is best suited for when not using GitOps in Jenkins X.  We recommend you do however use GitOps when available.  In addition, do not make updates to the cluster that require recreating the cluster, all data will be lost.  Only changes that update the cluster are supported.
+CAUTION: Do not make updates to the cluster that require recreating the cluster resources, all data will be lost.  Only changes that update the cluster are supported at this time.
 {{% /note %}}
 
 # Overview
