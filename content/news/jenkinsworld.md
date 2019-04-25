@@ -8,7 +8,7 @@ categories: [blog]
 keywords: [Jenkins,Awards,Community,2019]
 slug: "jenkins-community-awards"
 aliases: []
-author: omedina
+author: Oscar Medina
 ---
 
 <figure>
