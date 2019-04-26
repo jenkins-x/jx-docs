@@ -639,11 +639,7 @@ Note that your first pipeline may take a few minutes to start while the necessar
 
 Final output from creating the Quickstart should look like above.
 
-<<<<<<< HEAD
 ##  First Pipeline Run
-=======
-##  First Time Pipeline Run
->>>>>>> ef772573ac2e61891e05f36371d0e78e9abbd911
 Since we just created the new app, if we check on the app activtiies, we will see that there is a pull request. `jx get activity -f node-widget-app -w` and the app is now version `0.0.1` and it has been deployed to our **Staging** environment.  
 
 ### Deployed to Staging
