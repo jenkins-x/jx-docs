@@ -31,12 +31,15 @@ In this tutorial, we walk you through a full setup of Jenkinx X in GKE, includin
 
 1. Install Jenkins X on GKE including the Jenkins Bot configuration for the full and proper experience
 2. Run an application through CI/CD and seeing the bot in action, executing approval commands (as the approver)
+<<<<<<< HEAD
 3. You wil have a **Serverless Jenkins X** cluster with **Tekton** Pipelines enabled.
 4. You will have a cluster that uses **GitOps**
 
 {{% note %}}
 **NOTE:**  If you've provisioned the cluster using Terraform, this should still work.  However you cannot run the command we outline below, instead you will have to run the `jx install --ng=true` command.
 {{% /note %}}
+=======
+>>>>>>> ef772573ac2e61891e05f36371d0e78e9abbd911
 
 # Prerequisites 
 
@@ -639,7 +642,11 @@ Note that your first pipeline may take a few minutes to start while the necessar
 
 Final output from creating the Quickstart should look like above.
 
+<<<<<<< HEAD
 ##  First Pipeline Run
+=======
+##  First Time Pipeline Run
+>>>>>>> ef772573ac2e61891e05f36371d0e78e9abbd911
 Since we just created the new app, if we check on the app activtiies, we will see that there is a pull request. `jx get activity -f node-widget-app -w` and the app is now version `0.0.1` and it has been deployed to our **Staging** environment.  
 
 ### Deployed to Staging

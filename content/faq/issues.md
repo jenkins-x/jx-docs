@@ -313,6 +313,25 @@ You'll see all the URs of the form `http://$(minikube ip):somePortNumber` which 
 Install [KSD](https://github.com/mfuentesg/ksd) by running `go get github.com/mfuentesg/ksd` and then run `kubectl get secret jenkins -o yaml | ksd`
 
 
+## How do I see the log of exposecontroller?
+
+Usually we run the [exposecontroller]() as a post install `Job` when we perform promotion to `Staging` or `Production` to expose services over Ingress and possibly inject external URLs into applications configuration.
+
+
+So the `Job` will trigger a short lived `Pod` to run in the namespace of your environment, then the pod will be deleted.
+
+If you want to view the logs of the `exposecontroller` you will need to watch for the logs using a selector then trigger the promotion pipeline to capture it.
+
+One way to do that is via the [kail](https://github.com/boz/kail) CLI:
+
+
+``` 
+kail -l  job-name=expose
+```
+
+This will watch for exposecontroller logs and then dump them to the console. Now trigger a promotion pipeline and you should see the output within a minute or so.
+
+
 ## Other issues
 
 Please [let us know](https://github.com/jenkins-x/jx/issues/new) and see if we can help? Good luck!
