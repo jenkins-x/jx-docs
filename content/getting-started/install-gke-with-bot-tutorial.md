@@ -31,6 +31,12 @@ In this tutorial, we walk you through a full setup of Jenkinx X in GKE, includin
 
 1. Install Jenkins X on GKE including the Jenkins Bot configuration for the full and proper experience
 2. Run an application through CI/CD and seeing the bot in action, executing approval commands (as the approver)
+3. You wil have a **Serverless Jenkins X** cluster with **Tekton** Pipelines enabled.
+4. You will have a cluster that uses **GitOps**
+
+{{% note %}}
+**NOTE:**  If you've provisioned the cluster using Terraform, this should still work.  However you cannot run the command we outline below, instead you will have to run the `jx install --ng=true` command.
+{{% /note %}}
 
 # Prerequisites 
 
@@ -61,11 +67,11 @@ Your Github Organization and user accounts should be setup similar to how it is 
 The first step we need to take, is execute the command which simultaneously will provision a cluster and install Jenkins X.  The following command should be issued on the terminal.  Change placeholders accordingly.
 
 ```bash
-> $ jx create cluster gke --default-admin-password=<YOURPASSWORD> -n <CLUSTERNAME> —ng=true
+> $ jx create cluster gke --default-admin-password=<YOURPASSWORD> -n <CLUSTERNAME> --ng=true
 ```
 
 {{% note %}}
-**NOTE:** The execution of this command with ONLY the `--ng=true` flag, ensures several things happen.  First, Tiller is not installed.  Second, this installs the **Serverless** topology and **Tekton** pipelines.
+**NOTE:** The execution of this command with ONLY the `--ng=true` flag, ensures several things happen.  It ensures the following features are configured **Prow**, **Tekton**, **No Tiller**, **HashiCorp Vault**, Dev **GitOps** on a **Serverless** topology.
 {{% /note %}}
 
 ## Output of the Command - lengthy but let's break it down!
@@ -633,7 +639,7 @@ Note that your first pipeline may take a few minutes to start while the necessar
 
 Final output from creating the Quickstart should look like above.
 
-##  First Time Pipeline Run
+##  First Pipeline Run
 Since we just created the new app, if we check on the app activtiies, we will see that there is a pull request. `jx get activity -f node-widget-app -w` and the app is now version `0.0.1` and it has been deployed to our **Staging** environment.  
 
 ### Deployed to Staging
@@ -658,7 +664,7 @@ Next we change the home page verbiabe a bit, then execute `git add . && git comm
 We should now see on Github UI the Pull Request dialog.  Click that familiar Pull Request button and create it!  This triggers a **Tekton** pipeline which you can see status by tailing the `activties` for that app with this command `jx get activity -f node-widget-app -w`
 
 ## Preview Environment
-Because we made a change to the app via a **Pull Request**, we are now shown the Bot in action, and it is telling us that the **PR needs approval** in addition, it has given us a way to see the changes, dope is that?
+Because we made a change to the app via a **Pull Request**, we are now shown the Bot in action, and it is telling us that the **PR needs approval** in addition, it has given us a way to see the changes, how dope is that?
 
 Our PR should look as shown on the video below.
 
