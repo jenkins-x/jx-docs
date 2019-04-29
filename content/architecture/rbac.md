@@ -28,9 +28,9 @@ The `role controller` is included by default inside Jenkins X or you can run it 
 
 Jenkins X ships with a bunch of default `Role` objects you can use in the `jenkins-x-platform` template. You can disable any of these roles via [configuration](/getting-started/config/) and and create your own if you wish.
 
-* [viewer](https://github.com/jenkins-x/jenkins-x-platform/blob/master/templates/viewer-role.yaml)
-* [committer](https://github.com/jenkins-x/jenkins-x-platform/blob/master/templates/committer-role.yaml)
-* [owner](https://github.com/jenkins-x/jenkins-x-platform/blob/master/templates/owner-role.yaml)
+* [viewer](https://github.com/jenkins-x/jenkins-x-platform/blob/master/jenkins-x-platform/templates/viewer-role.yaml)
+* [committer](https://github.com/jenkins-x/jenkins-x-platform/blob/master/jenkins-x-platform/templates/committer-role.yaml)
+* [owner](https://github.com/jenkins-x/jenkins-x-platform/blob/master/jenkins-x-platform/templates/owner-role.yaml)
 
 ## Adding Users
 
