@@ -13,7 +13,6 @@ menu:
 weight: 20
 sections_weight: 20
 draft: false
-aliases: [/quickstart/,/overview/quickstart/]
 toc: true
 ---
 

@@ -9,7 +9,6 @@ weight: 5
 sections_weight: 5
 draft: false
 slug:
-aliases: [/community/,/contribute/community/]
 toc: true
 ---
 
