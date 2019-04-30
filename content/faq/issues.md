@@ -158,7 +158,7 @@ and you should be good to go again.
 
 Another possible cause is an old URL in your environment's git repository may have old references to the URL.
 
-So open your `env/requirements.yaml` in your staging/production git repositories and modify them to use the URL https://chartmuseum.build.cd.jenkins-x.io intsead of https://chartmuseum.build.cd.jenkins-x.io like this [env/requirements file](https://github.com/jenkins-x/default-environment-charts/blob/master/env/requirements.yaml)
+So open your `env/requirements.yaml` in your staging/production git repositories and modify them to use the URL http://chartmuseum.jenkins-x.io instead of https://chartmuseum.build.cd.jenkins-x.io like this [env/requirements file](https://github.com/jenkins-x/default-environment-charts/blob/master/env/requirements.yaml)
 
 ## git errors: POST 401 Bad credentials
 
