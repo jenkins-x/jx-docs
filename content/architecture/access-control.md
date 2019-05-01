@@ -18,7 +18,7 @@ toc: true
 
 Jenkins X uses Role-Based Access Control (RBAC) policies to control access to its various resources.  The enforcement of the policies is provided by [Kubernetes' RBAC support](https://kubernetes.io/docs/reference/access-authn-authz/rbac/).
 
-As a given [Team](/about/features/#teams) can have a number of [Environments](/about/features/#environments) (e.g. Dev, Staging, Production) along with dynamic [Preview Environments](/developing/preview/) it can be a challenge keeping all the [`Role`](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/) and [`RoleBinding`](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/) resources from [Kubernetes RBAC](https://kubernetes.io/docs/reference/access-authn-authz/rbac/) in sync with all the various namespaces and members of your team.
+[Teams](/about/features/#teams) can have a number of [Environments](/about/features/#environments) (e.g., Dev, Staging, Production) along with dynamic [Preview Environments](/developing/preview/); keeping  the [`Role`](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/) and [`RoleBinding`](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/) resources from [Kubernetes RBAC](https://kubernetes.io/docs/reference/access-authn-authz/rbac/) in sync with all the various namespaces and members of your team can be challenging.
 
 To make this management easier, Jenkins X creates a new [Custom Resource](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/) called [`EnvironmentRoleBinding`](/architecture/custom-resources/#environmentrolebinding) which allows you to associate a `Role` labeled with `jenkins.io/kind=EnvironmentRole` with as many `Users` or `ServiceAccounts` as you like. As Environments are created or the `Role` or `EnvironmentRoleBinding` in the Dev environment is modified, the [`role controller`](/commands/jx_controller_role/#jx-controller-role) ensures that the configuration is replicated to all the environment namespaces by creating or updating all of the `Role` and `RoleBinding`s per namespace.
 
@@ -37,7 +37,7 @@ Jenkins X ships with a collection of default `Role` objects you can use in the `
 : The `viewer` role allows access to read projects, builds, and logs. It does not allow access to sensitive information
 
 [committer](https://github.com/jenkins-x/jenkins-x-platform/blob/master/jenkins-x-platform/templates/committer-role.yaml)
-: In addition to the `viewer` role `committer` allows the user to trigger builds and import new projects.
+: The`committer`role provides the same permissions as `viewer` and allows the user to trigger builds and import new projects.
 
 [owner](https://github.com/jenkins-x/jenkins-x-platform/blob/master/jenkins-x-platform/templates/owner-role.yaml)
 : The owner role allows users to modify all team resources.
@@ -72,4 +72,4 @@ jx edit userrole --login joe --role committer,viewer
 ```
 
 
-Once you modify the roles for a user this will modify the `EnvironmentRoleBinding` and then the [role controller](/commands/jx_controller_role/#jx-controller-role) will replicate these changes to all the underlying Environment namespaces.
+Modifying a user's roles changes the `EnvironmentRoleBinding`. The [role controller](/commands/jx_controller_role/#jx-controller-role) will replicate these changes to all the underlying Environment namespaces.
