@@ -238,6 +238,36 @@ kail -l job-name=expose -n jx-staging
 If you then promote to the Staging environment or retrigger the pipeline on the `master` branch of your Staging git repository (e.g. via [jx start pipeline](/commands/jx_start_pipeline/)) then you should see the output of the [exposecontroller](https://github.com/jenkins-x/exposecontroller) pod.
 
 
+## Why is promotion really slow?
+
+If you find you get lots of warnings in your pipelines like this...
+
+``` 
+"Failed to query the Pull Request last commit status for https://github.com/myorg/environment-mycluster-staging/pull/1 ref xyz Could not find a status for repository myorg/environment-mycluster-staging with ref xyz
+```
+
+and promotion takes 30 minutes from a release pipeline on an application starting to the change hitting `Staging` then its mostly probably due to Webhooks.
+
+When we [import projects](/developing/import/) or [create quickstarts](/developing/create-quickstart/) we automate the setup of CI/CD pipelines for the git repository. What this does is setup Webhooks on the git repository to trigger Jenkins X to trigger pipelines (either using Prow for [serverless Jenkins X Pipelines](/architecture/jenkins-x-pipelines/) or the static jenkins server if not).
+
+However sometimes your git provider (e.g. [GitHub](https://github.com/) may not be able to do connect to your Jenkins X installation (e.g. due to networking / firewall issues).
+
+The easiest way to diagnose this is opening the git repository (e.g. for your environment repository).
+
+``` 
+jx get env
+```
+
+Then: 
+
+* click on the generated URL for, say, your `Staging`  git repository 
+* click the `Settings` icon 
+* select the `Webhooks` tab on the left
+* select your Jenkins X webhook URL 
+* view the last webhook - did it succeed? Try re-trigger it? That should highlight any network issues etc
+
+If you cannot use public webhooks you could look at something like [ultrahook](http://www.ultrahook.com/)
+
 ## Cannot create cluster minikube
 
 If you are using a Mac then `hyperkit` is the best VM driver to use - but does require you to install a recent [Docker for Mac](https://docs.docker.com/docker-for-mac/install/) first. Maybe try that then retry `jx create cluster minikube`?
