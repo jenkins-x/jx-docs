@@ -14,7 +14,6 @@ menu:
 weight: 20
 sections_weight: 20
 draft: false
-aliases: [/contribute/docs/]
 toc: true
 ---
 

@@ -10,7 +10,6 @@ menu:
 keywords: [faqs]
 weight: 4
 toc: true
-aliases: [/faq/]
 ---
 
 我们已经试图把一些常见的问题整理到这里。如果你遇到的问题没有在这里列出来，请[让我们知道](https://github.com/jenkins-x/jx/issues/new)。
