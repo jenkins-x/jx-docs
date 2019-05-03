@@ -12,7 +12,6 @@ menu:
 weight: 10
 sections_weight: 0
 draft: false
-aliases: [/about/accelerate]
 categories: [fundamentals]
 toc: true
 ---

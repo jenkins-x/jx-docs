@@ -10,7 +10,6 @@ menu:
 keywords: [jenkins]
 weight: 2
 toc: true
-aliases: [/jenkins/]
 ---
 
 # 密码
