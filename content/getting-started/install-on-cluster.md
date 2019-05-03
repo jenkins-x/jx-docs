@@ -167,7 +167,7 @@ If you know the provider, you can specify the provider on the command line. e.g.
 
 Note: if you wish to use a different Git provider than GitHub for your environments, see [how to use a different Git provider](/developing/git/#using-a-different-git-provider-for-environments)
 
-## Installing Jenkins X on premise
+## Installing Jenkins X on premises
 
 __Prerequisits__
 - Kubernetes > 1.8
