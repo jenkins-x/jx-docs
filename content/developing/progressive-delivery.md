@@ -13,6 +13,8 @@ weight: 230
 sections_weight: 230
 draft: false
 toc: true
+aliases:
+    - progress-delivery/
 ---
 
 
