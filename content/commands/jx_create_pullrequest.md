@@ -1,5 +1,5 @@
 ---
-date: 2019-05-08T21:52:23Z
+date: 2019-05-08T22:42:24Z
 title: "jx create pullrequest"
 slug: jx_create_pullrequest
 url: /commands/jx_create_pullrequest/
@@ -10,7 +10,9 @@ Create a Pull Request on the git project for the current directory
 
 ### Synopsis
 
-Creates a Pull Request in a the git project of the current directory
+Creates a Pull Request in a the git project of the current directory. 
+
+If --push is specified the contents of the directory will be committed, pushed and used to create the pull request
 
 ```
 jx create pullrequest [flags]
@@ -41,6 +43,7 @@ jx create pullrequest [flags]
       --dir string          The source directory used to detect the Git repository. Defaults to the current directory
   -h, --help                help for pullrequest
   -l, --label stringArray   The labels to add to the pullrequest
+      --push                If true the contents of the source directory will be committed, pushed, and used to create the pull request
   -t, --title string        The title of the pullrequest to create
 ```
 

@@ -1,36 +1,35 @@
 ---
 date: 2019-05-08T22:42:24Z
-title: "jx step git envs"
-slug: jx_step_git_envs
-url: /commands/jx_step_git_envs/
+title: "jx step git fork-and-clone"
+slug: jx_step_git_fork-and-clone
+url: /commands/jx_step_git_fork-and-clone/
 ---
-## jx step git envs
+## jx step git fork-and-clone
 
-Creates the Git environment variables for the current pipeline Git credentials
+Forks and clones a git repo
 
 ### Synopsis
 
-This pipeline step generates a Git environment variables from the current Git provider pipeline Secrets
+This pipeline step will clone a git repo, creating a fork if required. The fork is created if the owner of the repo is not the current git user (and that forking the git repo is allowed).
 
 ```
-jx step git envs [flags]
+jx step git fork-and-clone [flags]
 ```
 
 ### Examples
 
 ```
-  # Sets the Git environment variables for the current GitHub provider
-  jx step git envs
-  
-  # Sets the Gie environment variables for the current Gtilab provider
-  jx step git envs --service-kind=gitlab
+  # Fork and clone the jx repo
+  jx step git fork-and-clone https://github.com/jenkins-x/jx.git
 ```
 
 ### Options
 
 ```
-  -h, --help                  help for envs
-      --service-kind string   The kind of git service (default "github")
+      --base string     The base ref to start from (default "master")
+      --dir string      The directory in which the git repo is checked out, by default the working directory
+  -h, --help            help for fork-and-clone
+      --print-out-dir   prints the directory the fork has been cloned to on stdout
 ```
 
 ### Options inherited from parent commands
