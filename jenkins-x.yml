@@ -45,6 +45,14 @@ pipelineConfig:
 
     pullRequest:
       pipeline:
+        options:
+          containerOptions:
+            env:
+              - name: DOMAIN
+                valueFrom:
+                  configMapKeyRef:
+                    name: ingress-config
+                    key: domain
         agent:
           image: gcr.io/kaniko-project
         stages:
@@ -68,6 +76,7 @@ pipelineConfig:
             - -d
             - tmp-website
             - --enableGitInfo
+            - --baseURL http://${APP_NAME}.jx-${REPO_OWNER}-${REPO_NAME}-pr-${PULL_NUMBER}.${DOMAIN}/
 
           - image: gcr.io/kaniko-project/executor:9912ccbf8d22bbafbf971124600fbb0b13b9cbd6
             name: build-and-push-image
