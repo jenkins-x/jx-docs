@@ -1,5 +1,5 @@
 ---
-date: 2019-05-08T10:46:01Z
+date: 2019-05-08T12:30:06Z
 title: "jx step syntax"
 slug: jx_step_syntax
 url: /commands/jx_step_syntax/
