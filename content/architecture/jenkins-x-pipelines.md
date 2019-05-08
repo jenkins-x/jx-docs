@@ -80,6 +80,33 @@ For a quick way to add a new step into a pipeline lifecycle you can use the [jx 
 
 You can also add or override an environment variable in your pipeline via the [jx create variable](/commands/jx_create_variable/) command
 
+## Editing in VS Code
+
+If you are using [VS Code](https://code.visualstudio.com/) you may want to install the [YAML Language Extension](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml) from Red Hat. 
+
+This extension lets you add JSON Schemas to validate YAML files.
+
+If you open your `Settings` in the `settings.json` page and add he following to the top of your file:
+
+```json
+{
+    "yaml.schemas": {
+        "https://jenkins-x.io/schemas/jx-schema.json": "jenkins-x*.yml"
+    },
+    ...
+```
+
+This will then register the [Jenkins X Json Schema file](https://jenkins-x.io/schemas/jx-schema.json) so that any file you open called `jenkins-x.yml` will get smart completion in the IDE as you can see in [this video](/images/architecture/yaml-edit.mp4):
+
+<figure>
+<embed src="/images/architecture/yaml-edit.mp4" autostart="false" height="400" width="600" />
+<figcaption>
+<h5>Edit Jenkins X Pipeline in VS Code</h5>
+</figcaption>
+</figure>
+
+We'd love to improve this UX if you fancy [helping out](/contribute/).
+
 ## Default environment variables
 
 The following environment variables are available for use in a step in Jenkins X Pipelines:
