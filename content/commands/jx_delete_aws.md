@@ -1,5 +1,5 @@
 ---
-date: 2019-05-08T21:10:02Z
+date: 2019-05-08T21:52:23Z
 title: "jx delete aws"
 slug: jx_delete_aws
 url: /commands/jx_delete_aws/
