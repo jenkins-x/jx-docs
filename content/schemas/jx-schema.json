@@ -199,6 +199,9 @@
           "$schema": "http://json-schema.org/draft-04/schema#",
           "$ref": "#/definitions/Agent"
         },
+        "containerOptions": {
+          "$ref": "#/definitions/Container"
+        },
         "env": {
           "items": {
             "$ref": "#/definitions/EnvVar"
