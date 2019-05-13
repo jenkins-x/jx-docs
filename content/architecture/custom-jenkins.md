@@ -15,7 +15,7 @@ draft: false
 toc: true
 ---
 
-Jenkins X provides automated CI/CD for your libraries and microservices you want to deploy on Kubernetes, but what about those other `Jenkisnfile` based pipelines you have already created on a custom Jenkins Server?
+Jenkins X provides automated CI/CD for your libraries and microservices you want to deploy on Kubernetes, but what about those other `Jenkinsfile` based pipelines you have already created on a custom Jenkins Server?
 
 Jenkins X now has a [Jenkins App](https://github.com/jenkins-x-apps/jx-app-jenkins) that makes it easy to add one or more custom Jenkins servers to your Team and use the custom Jenkins Server to implement any custom pipelines you have developed.
 
@@ -23,7 +23,7 @@ Jenkins X now has a [Jenkins App](https://github.com/jenkins-x-apps/jx-app-jenki
 
 ## Why Custom Jenkins?
 
-This app lets you maintain your investment in your existing Jenkins pipelines, invoking them in a custom Jenkins Server of your own choosing and configuration while you start to use more of the automated CI/CD in Jenkins X for new libraries and microservices using either [serverless Jenkins X Pipelines](/architecture/jenkins-x-pipelines/ or the embedded static jenkins server in Jenkins X. 
+This app lets you maintain your investment in your existing Jenkins pipelines, invoking them in a custom Jenkins Server of your own choosing and configuration while you start to use more of the automated CI/CD in Jenkins X for new libraries and microservices using either [serverless Jenkins X Pipelines](/architecture/jenkins-x-pipelines/) or the embedded static jenkins server in Jenkins X. 
 
 You can then mix and match between the automated CI/CD in Jenkins X and your custom Jenkins pipelines - all orchestrated nicely together with Jenkins X!
 
@@ -37,11 +37,11 @@ jx add app jenkins
 
 This will install a new Jenkins Server in your current Team. It should then show up via...
 
-```
+```shell
 jx open
 ```    
 
-This will also create an API token automatically so that the `jx` CLI can query or start pipelines in the custom Jenkins server. It can take a minite or so for the setup job to complete.
+This will also create an API token automatically so that the `jx` CLI can query or start pipelines in the custom Jenkins server. It can take a minute or so for the setup job to complete.
 
 ## Getting the login/password
 
@@ -52,7 +52,7 @@ So to find the password you will need to find it by hand I'm afraid.
 * download [ksd](https://github.com/mfuentesg/ksd) and add it to your $PATH
 * type the following (you may need to change the `Secret` name if you use a different alias for your Jenkins server):
 
-``` 
+```shell
 kubectl get secret jx-jx-app-jenkins | ksd
 ```
 
