@@ -37,11 +37,11 @@ jx add app jenkins
 
 This will install a new Jenkins Server in your current Team. It should then show up via...
 
-```
+```shell
 jx open
 ```    
 
-This will also create an API token automatically so that the `jx` CLI can query or start pipelines in the custom Jenkins server. It can take a minite or so for the setup job to complete.
+This will also create an API token automatically so that the `jx` CLI can query or start pipelines in the custom Jenkins server. It can take a minute or so for the setup job to complete.
 
 ## Getting the login/password
 
@@ -52,7 +52,7 @@ So to find the password you will need to find it by hand I'm afraid.
 * download [ksd](https://github.com/mfuentesg/ksd) and add it to your $PATH
 * type the following (you may need to change the `Secret` name if you use a different alias for your Jenkins server):
 
-``` 
+```shell
 kubectl get secret jx-jx-app-jenkins | ksd
 ```
 
