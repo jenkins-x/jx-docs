@@ -160,6 +160,9 @@
         "agent": {
           "$ref": "#/definitions/Agent"
         },
+        "dir": {
+          "type": "string"
+        },
         "env": {
           "items": {
             "$ref": "#/definitions/EnvVar"
@@ -504,6 +507,9 @@
       "properties": {
         "agent": {
           "$ref": "#/definitions/Agent"
+        },
+        "dir": {
+          "type": "string"
         },
         "env": {
           "items": {
