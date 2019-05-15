@@ -1,71 +1,79 @@
 ---
 date: 2019-05-15T12:55:34Z
-title: "jx create archetype"
-slug: jx_create_archetype
-url: /commands/jx_create_archetype/
+title: "jx create mlquickstart"
+slug: jx_create_mlquickstart
+url: /commands/jx_create_mlquickstart/
 ---
-## jx create archetype
+## jx create mlquickstart
 
-Create a new app from a Maven Archetype and import the generated code into Git and Jenkins for CI/CD
+Create a new app from a mlquickstart and import the generated code into Git and Jenkins for CI/CD
 
 ### Synopsis
 
-Creates a new Maven project using an Archetype 
+Create a new machine learning project from a sample/starter (found in https://github.com/machine-learning-quickstarts)
+  
+      This will create two new projects for you from the selected template. One for training and one for deploying a model as a service.
+      It will exclude any work-in-progress repos (containing the "WIP-" pattern)
+  
+      For more documentation see: [https://jenkins-x.io/developing/create-mlquickstart/](https://jenkins-x.io/developing/create-mlquickstart/)
+  
+See Also: 
 
-You then get the option to import the generated source code into a Git repository and Jenkins for CI/CD
+  * jx create project : https://jenkins-x.io/commands/jx_create_project
 
 ```
-jx create archetype [flags]
+jx create mlquickstart [flags]
 ```
 
 ### Examples
 
 ```
-  # Create a new application from a Maven Archetype using the UI to choose which archetype to use
-  jx create archetype
+  Create a new machine learning project from a sample/starter (found in https://github.com/machine-learning-quickstarts)
   
-  # Creates a Camel Archetype, filtering on the archetypes containing the text 'spring'
-  jx create archetype --filter-group  org.apache.camel.archetypes --filter-artifact spring
+  This will create a new machine learning project for you from the selected template.
+  It will exclude any work-in-progress repos (containing the "WIP-" pattern)
+  
+  jx create mlquickstart
+  
+  jx create mlquickstart -f pytorch
 ```
 
 ### Options
 
 ```
-  -a, --artifact string                The artifact ID for the new application
       --branches string                The branch pattern for branches to trigger CI/CD pipelines on
-  -c, --catalog string                 The Maven Archetype Catalog to use (default "http://central.maven.org/maven2/archetype-catalog.xml")
       --credentials string             The Jenkins credentials name used by the job
       --deploy-kind string             The kind of deployment to use for the project. Should be one of knative, default
       --disable-updatebot              disable updatebot-maven-plugin from attempting to fix/update the maven pom.xml
       --docker-registry-org string     The name of the docker registry organisation to use. If not specified then the Git provider organisation will be used
       --dry-run                        Performs local changes to the repo but skips the import into Jenkins X
       --external-jenkins-url string    The jenkins url that an external git provider needs to use
-      --filter-artifact string         Either the Artifact ID or a text filter of the artifact IDs to pick from
-  -f, --filter-group string            Filter the Group IDs to choose from for he Archetypes
-      --filter-version string          The Version of the Archetype to use
+  -f, --filter string                  The text filter
+      --framework string               The framework to filter on
       --git-api-token string           The Git API token to use for creating new Git repositories
+      --git-host string                The Git server host if not using GitHub when pushing created project
       --git-private                    Create new Git repositories as private
       --git-provider-kind string       Kind of Git server. If not specified, kind of server will be autodetected from Git provider URL. Possible values: bitbucketcloud, bitbucketserver, gitea, gitlab, github, fakegit
       --git-provider-url string        The Git server URL to create new Git repositories inside (default "https://github.com")
       --git-username string            The Git username to use for creating new Git repositories
-  -g, --group string                   The group ID for the new application (default "com.example")
-      --group-ids stringArray          The Group ID of the Archetypes to pick
-  -h, --help                           help for archetype
+  -h, --help                           help for mlquickstart
       --import-commit-message string   Specifies the initial commit message used when importing the project
   -m, --import-mode string             The import mode to use. Should be one of Jenkinsfile, YAML
-  -i, --interactive                    Allow interactive input into the maven archetype:generate command
       --jenkinsfile string             The name of the Jenkinsfile to use. If not specified then 'Jenkinsfile' will be used
+  -l, --language string                The language to filter on
       --list-packs                     list available draft packs
       --name string                    Specify the Git repository name to import the project into (if it is not already in one)
       --no-draft                       Disable Draft from trying to default a Dockerfile and Helm Chart
       --no-import                      Disable import after the creation
       --no-jenkinsfile                 Disable defaulting a Jenkinsfile if its missing
       --org string                     Specify the Git provider organisation to import the project into (if it is not already in one)
+  -g, --organisations stringArray      The GitHub organisations to query for quickstarts
   -o, --output-dir string              Directory to output the project to. Defaults to the current directory
+      --owner string                   The owner to filter on
       --pack string                    The name of the pack to use
-  -p, --pick                           Provide a list of versions to choose from
+  -p, --project-name string            The project name (for use with -b batch mode)
+  -t, --tag stringArray                The tags on the quickstarts to filter
       --use-default-git                use default git account
-  -v, --version string                 The version for the new application (default "1.0-SNAPSHOT")
 ```
 
 ### Options inherited from parent commands
