@@ -15,7 +15,7 @@ draft: false
 toc: true
 ---
 
-We [recently announced](/news/jenkins-x-next-gen-pipeline-engine) that we are working **Jenkins X Pipelines** which is a new serverless pipeline execution engine based on the [Tekton Pipelines](https://tekton.dev/) open source project. 
+We [recently announced](/news/jenkins-x-next-gen-pipeline-engine) that we are introducing **Jenkins X Pipelines**, a new serverless pipeline execution engine based on the [Tekton Pipelines](https://tekton.dev/) open source project. 
 
 Tekton has been designed to be a modern cloud native solution for running pipelines.
 
@@ -29,7 +29,7 @@ Right now to enable a Tekton based install you can create a new cluster using `j
 jx create cluster gke --tekton --no-tiller
 ```
 
-Or if you want to go all in on the next generation of Jenkins X with built in GitOps for your development environment, using Tekton and using Vault for storage of Secrets then use the following (only works on GCP and AWS right now):
+Or if you want to go all in on the next generation of Jenkins X with built-in GitOps for your development environment, using Tekton and using Vault for storage of Secrets then use the following (only works on GCP and AWS right now):
 
 ```
 jx create cluster gke --ng
@@ -45,21 +45,21 @@ Once your cluster is started you can create a new quickstart, we've been using t
 jx create quickstart
 ```
 
-A `prowjob` is created, a new prow pipeline controller watches for these jobs and when it receives and event will check if it has a `pipelinerun` spec present, if not it will post the `prowjob` to a new `pipelinerunner` service from Jenkins X which in turn clones the repo and revision then translates it's `jenkins-x.yml` into vanilla Tekton Pipeline resources.  Once they are created the `tekton-pipeline-controller` executes the builds.
+A `prowjob` is created, a new prow pipeline controller watches for these jobs and when it receives an event it will check if it has a `pipelinerun` spec present, if not it will post the `prowjob` to a new `pipelinerunner` service from Jenkins X which in turn clones the repo and revision then translates its `jenkins-x.yml` into vanilla Tekton Pipeline resources.  Once they are created the `tekton-pipeline-controller` executes the builds.
 
 ## Differences to Jenkins Pipelines
 
 Jenkins X Pipelines use a new `jenkins-x.yml` file which is YAML instead of the Groovy `Jenkinsfile` used by Jenkins.
 
-However its still reusing the same reusable and composable build packs under the covers. (The Jenkins X [build packs](/architecture/build-packs/) are actually written in Jenkins X Pipelines YAML).
+However it's still reusing the same reusable and composable build packs under the covers. (The Jenkins X [build packs](/architecture/build-packs/) are actually written in Jenkins X Pipelines YAML).
 
-One thing you will notice is that with Jenkins X Pipelines we don't need to copy/paste a large `Jenkisnfile` into each applications git repository; usually the generated `jenkins-x.yml` file is small, like this:
+One thing you will notice is that with Jenkins X Pipelines we don't need to copy/paste a large `Jenkisnfile` into each application's git repository; usually the generated `jenkins-x.yml` file is small, like this:
 
 ```yaml 
 buildPack: maven
 ```
 
-Thats it! What that basically means is at runtime the Jenkins X Pipeline will use the [build packs](/architecture/build-packs/) to generate the actual Tekton Pipeline.
+That's it! What that basically means is at runtime the Jenkins X Pipeline will use the [build packs](/architecture/build-packs/) to generate the actual Tekton Pipeline.
  
 ## Customising the Pipelines
 
@@ -79,6 +79,33 @@ For a quick way to add a new step into a pipeline lifecycle you can use the [jx 
 </figure>
 
 You can also add or override an environment variable in your pipeline via the [jx create variable](/commands/jx_create_variable/) command
+
+## Editing in VS Code
+
+If you are using [VS Code](https://code.visualstudio.com/) you may want to install the [YAML Language Extension](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml) from Red Hat. 
+
+This extension lets you add JSON Schemas to validate YAML files.
+
+If you open your `Settings` in the `settings.json` page and add the following to the top of your file:
+
+```json
+{
+    "yaml.schemas": {
+        "https://jenkins-x.io/schemas/jx-schema.json": "jenkins-x*.yml"
+    },
+    ...
+```
+
+This will then register the [Jenkins X Json Schema file](https://jenkins-x.io/schemas/jx-schema.json) so that any file you open called `jenkins-x.yml` will get smart completion in the IDE as you can see in [this video](/images/architecture/yaml-edit.mp4):
+
+<figure>
+<embed src="/images/architecture/yaml-edit.mp4" autostart="false" height="400" width="600" />
+<figcaption>
+<h5>Edit Jenkins X Pipeline in VS Code</h5>
+</figcaption>
+</figure>
+
+We'd love to improve this UX if you fancy [helping out](/contribute/).
 
 ## Default environment variables
 

@@ -43,7 +43,7 @@ jx create cluster gke --remote-environments --tekton
 
 When creating your Environments via [jx create environment](jx_create_environment) you can also specify the environment is remote via the `--remote` or answering `Y` to the question when prompted.
 
-What this means is that if an environment is remote to the development cluser then we don't register the release pipeline 
+What this means is that if an environment is remote to the development cluster then we don't register the release pipeline 
 of the environment in the Dev cluster; we leave that to the Environment Controller to perform running inside the remote cluster.
 
 
@@ -67,7 +67,7 @@ e.g. by removing the `postsubmit` setting in your Prow configuration if you are 
 
 First you need to connect to your remote kubernetes cluster for `Staging` or `Production` using your managed kubernetes provider's tooling.
 
-You also need to have RBAC karma to be able to [escalate roles](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#privilege-escalation-prevention-and-bootstrapping) for `Role` and/or `ClsuterRole` permissions.
+You also need to have RBAC karma to be able to [escalate roles](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#privilege-escalation-prevention-and-bootstrapping) for `Role` and/or `ClusterRole` permissions.
 
 Then to install the Environment Controller use [jx create addon envctl](/commands/jx_create_addon_environment/). 
 

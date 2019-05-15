@@ -58,11 +58,11 @@ Once you know the chart and the repository its in you can add it to your `charts
 dependencies:
 - alias: expose
   name: exposecontroller
-  repository: https://chartmuseum.build.cd.jenkins-x.io
+  repository: http://chartmuseum.jenkins-x.io
   version: 2.3.56
 - alias: cleanup
   name: exposecontroller
-  repository: https://chartmuseum.build.cd.jenkins-x.io
+  repository: http://chartmuseum.jenkins-x.io
   version: 2.3.56
 
   # Ephemeral PostgeSQL created in preview environment.

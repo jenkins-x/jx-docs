@@ -27,6 +27,8 @@ sections_weight: 5
 
 * [2019-05-07 Workshop: Continuous Deployment To Kubernetes](https://craft-conf.com/workshops) at [Craft (Budapest)](https://craft-conf.com/) by [Viktor Farcic](https://twitter.com/vfarcic)
 
+* [2019-03-28 Cloud-Native Kubernetes-First Continuous Delivery With Jenkins X](https://www.meetup.com/Lisbon-Jenkins-Area-Meetup/events/259936138/?_xtd=gatlbWFpbF9jbGlja9oAJDM3ODY0M2Q4LWY3ZmItNGQ5ZS05YWNhLTQ2ZTM3ODdkZGY0Yg) at [Lisbon Jenkins Area Meetup](https://www.meetup.com/Lisbon-Jenkins-Area-Meetup/) by [Viktor Farcic](https://twitter.com/vfarcic)
+
 * [2019-03-26 Ten Commandments Of GitOps Applied To Continuous Delivery](https://www.meetup.com/Barcelona-Jenkins-Area-Meetup/events/259869827/) at [Barcelona Jenkins Area Meetup](https://www.meetup.com/Barcelona-Jenkins-Area-Meetup/) by [Viktor Farcic](https://twitter.com/vfarcic)
 
 * [2019-03-20 Cloud-Native Kubernetes-First Continuous Delivery With Jenkins X](https://www.meetup.com/DevOps-Freiburg/events/259091235/) at [DevOps Meetup Freiburg](https://www.meetup.com/DevOps-Freiburg/) by [Viktor Farcic](https://twitter.com/vfarcic)
