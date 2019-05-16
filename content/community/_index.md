@@ -51,10 +51,10 @@ Check out the [contribution guide](/contribute/) for some tips on how to get sta
 ## Office Hours
 
 {{% note %}}
-We are **changing to meet every Thursday** at 4pm GMT / 11am US Eastern / 8am US Pacific
+We are **changing to meet every other Thursday** at 4pm GMT / 11am US Eastern / 8am US Pacific, next one 16th May 2019
 {{% /note %}}
 
-[https://zoom.us/j/761659948](https://zoom.us/j/761659948).
+[https://zoom.us/j/397862697](https://zoom.us/j/397862697).
 
 Feel free to [add your questions to the doc](https://docs.google.com/document/d/1wHdBlZAN-ndPELuBoM5HBnYiQLvcz92-euXne2mKOEI/edit) or hangout live and ask chat in person.
 
