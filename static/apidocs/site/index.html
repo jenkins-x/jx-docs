@@ -339,6 +339,9 @@
    <LI class="nav-level-2"><A href="#podtemplatespec-v1-core" class="nav-item">PodTemplateSpec v1 core</A></LI>
  </UL>
   <UL>
+   <LI class="nav-level-2"><A href="#policyrule-v1-rbac" class="nav-item">PolicyRule v1 rbac</A></LI>
+ </UL>
+  <UL>
    <LI class="nav-level-2"><A href="#portworxvolumesource-v1-core" class="nav-item">PortworxVolumeSource v1 core</A></LI>
  </UL>
   <UL>
@@ -388,6 +391,9 @@
  </UL>
   <UL>
    <LI class="nav-level-2"><A href="#resourcerequirements-v1-core" class="nav-item">ResourceRequirements v1 core</A></LI>
+ </UL>
+  <UL>
+   <LI class="nav-level-2"><A href="#role-v1-rbac" class="nav-item">Role v1 rbac</A></LI>
  </UL>
   <UL>
    <LI class="nav-level-2"><A href="#roleref-v1-rbac" class="nav-item">RoleRef v1 rbac</A></LI>
@@ -617,7 +623,8 @@ notes on specific resource objects for details.</P>
 <TABLE>
 <THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
 <TBODY>
-<TR><TD><CODE>exposedServices</CODE><BR /><I>string array</I></TD><TD>A list of services that this App exposes</TD></TR>
+<TR><TD><CODE>schemaPreprocessor</CODE><BR /><I><a href="#container-v1-core">Container</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>schemaPreprocessorRole</CODE><BR /><I><a href="#role-v1-rbac">Role</a></I></TD><TD></TD></TR>
 </TBODY>
 </TABLE>
 <H3 id="applist-v1-jenkins_io">AppList v1 jenkins_io</H3>
@@ -956,6 +963,7 @@ notes on specific resource objects for details.</P>
 <TR><TD><CODE>previewGitInfo</CODE><BR /><I><a href="#previewgitspec-v1-jenkins_io">PreviewGitSpec</a></I></TD><TD></TD></TR>
 <TR><TD><CODE>promotionStrategy</CODE><BR /><I>string</I></TD><TD></TD></TR>
 <TR><TD><CODE>pullRequestURL</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>remoteCluster</CODE><BR /><I>boolean</I></TD><TD>RemoteCluster flag indicates if the Environment is deployed in a separate cluster to the Development Environment</TD></TR>
 <TR><TD><CODE>source</CODE><BR /><I><a href="#environmentrepository-v1-jenkins_io">EnvironmentRepository</a></I></TD><TD></TD></TR>
 <TR><TD><CODE>teamSettings</CODE><BR /><I><a href="#teamsettings-v1-jenkins_io">TeamSettings</a></I></TD><TD></TD></TR>
 <TR><TD><CODE>webHookEngine</CODE><BR /><I>string</I></TD><TD></TD></TR>
@@ -1016,6 +1024,7 @@ notes on specific resource objects for details.</P>
 <TR><TD><CODE>description</CODE><BR /><I>string</I></TD><TD></TD></TR>
 <TR><TD><CODE>org</CODE><BR /><I>string</I></TD><TD></TD></TR>
 <TR><TD><CODE>provider</CODE><BR /><I>string</I></TD><TD>Provider stores the URL of the git provider such as https://github.com</TD></TR>
+<TR><TD><CODE>providerName</CODE><BR /><I>string</I></TD><TD>ProviderName is a logical name for the provider without any URL scheme which can be used in a label selector</TD></TR>
 <TR><TD><CODE>repo</CODE><BR /><I>string</I></TD><TD></TD></TR>
 </TBODY>
 </TABLE>
@@ -1630,6 +1639,7 @@ The contents of the target ConfigMap&#39;s Data field will be presented in a vol
 <P>A single application container that you want to run within a pod.</P>
 <DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
  <UL>
+  <LI><a href="#appspec-v1-jenkins_io">AppSpec [jenkins_io/v1]</a></LI>
   <LI><a href="#podspec-v1-core">PodSpec [core/v1]</a></LI>
  </UL>
 </DIV>
@@ -2924,6 +2934,7 @@ DEPRECATED: GitRepo is deprecated. To provision a container with a git repo, mou
   <LI><a href="#plugin-v1-jenkins_io">Plugin [jenkins_io/v1]</a></LI>
   <LI><a href="#podtemplatespec-v1-core">PodTemplateSpec [core/v1]</a></LI>
   <LI><a href="#release-v1-jenkins_io">Release [jenkins_io/v1]</a></LI>
+  <LI><a href="#role-v1-rbac">Role [rbac/v1]</a></LI>
   <LI><a href="#sourcerepository-v1-jenkins_io">SourceRepository [jenkins_io/v1]</a></LI>
   <LI><a href="#team-v1-jenkins_io">Team [jenkins_io/v1]</a></LI>
   <LI><a href="#user-v1-jenkins_io">User [jenkins_io/v1]</a></LI>
@@ -3322,6 +3333,29 @@ DEPRECATED: GitRepo is deprecated. To provision a container with a git repo, mou
 <TBODY>
 <TR><TD><CODE>metadata</CODE><BR /><I><a href="#objectmeta-v1-meta">ObjectMeta</a></I></TD><TD>Standard object&#39;s metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</TD></TR>
 <TR><TD><CODE>spec</CODE><BR /><I><a href="#podspec-v1-core">PodSpec</a></I></TD><TD>Specification of the desired behavior of the pod. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status</TD></TR>
+</TBODY>
+</TABLE>
+<H2 id="policyrule-v1-rbac">PolicyRule v1 rbac</H2>
+<TABLE class="col-md-8">
+<THEAD><TR><TH>Group</TH><TH>Version</TH><TH>Kind</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>rbac</CODE></TD><TD><CODE>v1</CODE></TD><TD><CODE>PolicyRule</CODE></TD></TR>
+</TBODY>
+</TABLE>
+<P>PolicyRule holds information that describes a policy rule, but does not contain information about who the rule applies to or which namespace the rule applies to.</P>
+<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
+ <UL>
+  <LI><a href="#role-v1-rbac">Role [rbac/v1]</a></LI>
+ </UL>
+</DIV>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>apiGroups</CODE><BR /><I>string array</I></TD><TD>APIGroups is the name of the APIGroup that contains the resources.  If multiple API groups are specified, any action requested against one of the enumerated resources in any API group will be allowed.</TD></TR>
+<TR><TD><CODE>nonResourceURLs</CODE><BR /><I>string array</I></TD><TD>NonResourceURLs is a set of partial urls that a user should have access to.  *s are allowed, but only as the full, final step in the path Since non-resource URLs are not namespaced, this field is only applicable for ClusterRoles referenced from a ClusterRoleBinding. Rules can either apply to API resources (such as &#34;pods&#34; or &#34;secrets&#34;) or non-resource URL paths (such as &#34;/api&#34;),  but not both.</TD></TR>
+<TR><TD><CODE>resourceNames</CODE><BR /><I>string array</I></TD><TD>ResourceNames is an optional white list of names that the rule applies to.  An empty set means that everything is allowed.</TD></TR>
+<TR><TD><CODE>resources</CODE><BR /><I>string array</I></TD><TD>Resources is a list of resources this rule applies to.  ResourceAll represents all resources.</TD></TR>
+<TR><TD><CODE>verbs</CODE><BR /><I>string array</I></TD><TD>Verbs is a list of Verbs that apply to ALL the ResourceKinds and AttributeRestrictions contained in this rule.  VerbAll represents all kinds.</TD></TR>
 </TBODY>
 </TABLE>
 <H2 id="portworxvolumesource-v1-core">PortworxVolumeSource v1 core</H2>
@@ -3744,6 +3778,28 @@ This format is intended to make it difficult to use these numbers without writin
 <TBODY>
 <TR><TD><CODE>limits</CODE><BR /><I>object</I></TD><TD>Limits describes the maximum amount of compute resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/</TD></TR>
 <TR><TD><CODE>requests</CODE><BR /><I>object</I></TD><TD>Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/</TD></TR>
+</TBODY>
+</TABLE>
+<H2 id="role-v1-rbac">Role v1 rbac</H2>
+<TABLE class="col-md-8">
+<THEAD><TR><TH>Group</TH><TH>Version</TH><TH>Kind</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>rbac</CODE></TD><TD><CODE>v1</CODE></TD><TD><CODE>Role</CODE></TD></TR>
+</TBODY>
+</TABLE>
+<P>Role is a namespaced, logical grouping of PolicyRules that can be referenced as a unit by a RoleBinding.</P>
+<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
+ <UL>
+  <LI><a href="#appspec-v1-jenkins_io">AppSpec [jenkins_io/v1]</a></LI>
+ </UL>
+</DIV>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
+<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
+<TR><TD><CODE>metadata</CODE><BR /><I><a href="#objectmeta-v1-meta">ObjectMeta</a></I></TD><TD>Standard object&#39;s metadata.</TD></TR>
+<TR><TD><CODE>rules</CODE><BR /><I><a href="#policyrule-v1-rbac">PolicyRule</a> array</I></TD><TD>Rules holds all the PolicyRules for this Role</TD></TR>
 </TBODY>
 </TABLE>
 <H2 id="roleref-v1-rbac">RoleRef v1 rbac</H2>
@@ -4197,6 +4253,7 @@ The contents of the target Secret&#39;s Data field will be presented in a volume
 <TABLE>
 <THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
 <TBODY>
+<TR><TD><CODE>appPrefixes</CODE><BR /><I>string array</I></TD><TD>AppsPrefixes is the list of prefixes for appNames</TD></TR>
 <TR><TD><CODE>appsRepository</CODE><BR /><I>string</I></TD><TD></TD></TR>
 <TR><TD><CODE>askOnCreate</CODE><BR /><I>boolean</I></TD><TD></TD></TR>
 <TR><TD><CODE>branchPatterns</CODE><BR /><I>string</I></TD><TD></TD></TR>
