@@ -1,5 +1,5 @@
 ---
-date: 2019-05-17T14:07:47Z
+date: 2019-05-17T20:47:32Z
 title: "jx step create task"
 slug: jx_step_create_task
 url: /commands/jx_step_create_task/
@@ -40,6 +40,7 @@ jx step create task [flags]
   -d, --dir string                   The directory to query to find the projects .git directory
       --docker-registry string       The Docker Registry host name to use which is added as a prefix to docker images
       --docker-registry-org string   The Docker registry organisation. If blank the git repository owner is used
+      --dry-run                      Disables creating the Pipeline resources in the kubernetes cluster and just outputs the generated Task to the console or output file, without side effects
       --duration duration            Retry duration when trying to create a PipelineRun (default 30s)
   -e, --env stringArray              List of custom environment variables to be applied to resources that are created
   -h, --help                         help for task

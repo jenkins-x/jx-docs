@@ -1,5 +1,5 @@
 ---
-date: 2019-05-17T14:07:47Z
+date: 2019-05-17T20:47:32Z
 title: "jx delete devpod"
 slug: jx_delete_devpod
 url: /commands/jx_delete_devpod/

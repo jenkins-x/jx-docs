@@ -1,5 +1,5 @@
 ---
-date: 2019-05-17T14:07:47Z
+date: 2019-05-17T20:47:32Z
 title: "jx add app"
 slug: jx_add_app
 url: /commands/jx_add_app/
@@ -30,6 +30,7 @@ jx add app [flags]
 
 ```
       --alias string         An alias to use for the app if you wish to install multiple instances of the same app
+      --auto-merge           Automatically merge GitOps pull requests that pass CI
       --helm-update          Should we run helm update first to ensure we use the latest version (available when NOT using GitOps for your dev environment) (default true)
   -h, --help                 help for app
   -n, --namespace string     The Namespace to install into (available when NOT using GitOps for your dev environment)

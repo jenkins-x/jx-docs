@@ -1,5 +1,5 @@
 ---
-date: 2019-05-17T14:07:47Z
+date: 2019-05-17T20:47:32Z
 title: "jx delete application"
 slug: jx_delete_application
 url: /commands/jx_delete_application/
@@ -34,6 +34,7 @@ jx delete application [flags]
 
 ```
   -a, --all                             Selects all the matched applications
+      --auto-merge                      Automatically merge GitOps pull requests that pass CI
   -f, --filter string                   Filter the list of applications to those containing this text
   -h, --help                            help for application
       --no-env                          Do not remove the application from any of the Environments

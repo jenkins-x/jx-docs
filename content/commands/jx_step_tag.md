@@ -1,5 +1,5 @@
 ---
-date: 2019-05-17T14:07:47Z
+date: 2019-05-17T20:47:32Z
 title: "jx step tag"
 slug: jx_step_tag
 url: /commands/jx_step_tag/
@@ -33,6 +33,7 @@ jx step tag [flags]
   -r, --charts-value-repository string   the fully qualified image name without the version tag. e.g. 'dockerregistry/myorg/myapp'
       --dir string                       the directory which may contain a 'jenkins-x.yml'
   -h, --help                             help for tag
+      --no-apply                         Do not push the tag to the server, this is used for example in dry runs
   -v, --version string                   version number for the tag [required]
       --version-file string              The file name used to load the version number from if no '--version' option is specified (default "VERSION")
 ```
