@@ -80,23 +80,13 @@ For a quick way to add a new step into a pipeline lifecycle you can use the [jx 
 
 You can also add or override an environment variable in your pipeline via the [jx create variable](/commands/jx_create_variable/) command
 
-## Editing in VS Code
+## Editing in VS Code 
 
-If you are using [VS Code](https://code.visualstudio.com/) you may want to install the [YAML Language Extension](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml) from Red Hat. 
+If you are using [VS Code](https://code.visualstudio.com/) we recommend you install the [YAML Language Extension](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml) from Red Hat. 
 
-This extension lets you add JSON Schemas to validate YAML files.
+This extension lets you edit YAML files with optional JSON Schema validation. 
 
-If you open your `Settings` in the `settings.json` page and add the following to the top of your file:
-
-```json
-{
-    "yaml.schemas": {
-        "https://jenkins-x.io/schemas/jx-schema.json": "jenkins-x*.yml"
-    },
-    ...
-```
-
-This will then register the [Jenkins X Json Schema file](https://jenkins-x.io/schemas/jx-schema.json) so that any file you open called `jenkins-x.yml` will get smart completion in the IDE as you can see in [this video](/images/architecture/yaml-edit.mp4):
+Jenkins X's JSON Schema is already registered with [schemastore.org](http://schemastore.org/json/) so editing your `jenkins-x.yml` file in VS Code will include smart completion and validation!
 
 <figure>
 <embed src="/images/architecture/yaml-edit.mp4" autostart="false" height="400" width="600" />
@@ -104,6 +94,12 @@ This will then register the [Jenkins X Json Schema file](https://jenkins-x.io/sc
 <h5>Edit Jenkins X Pipeline in VS Code</h5>
 </figcaption>
 </figure>
+
+We'd love to improve this UX if you fancy [helping out](/contribute/).
+
+## Editing in IDEA
+
+This should already be interested out of the box due to the Jenkins X JSON Schema being registered with [schemastore.org](http://schemastore.org/json/) so editing your `jenkins-x.yml` file in IDEA will include smart completion and validation!
 
 We'd love to improve this UX if you fancy [helping out](/contribute/).
 
