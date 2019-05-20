@@ -15,6 +15,8 @@ sections_weight: 5
 
 * [2019-07-04 Jenkins-X - CI/CD für die Kloud (German)](https://www.java-forum-stuttgart.de/de/Konferenz.html) at [Java Forum Stuttgart (Germany)](https://www.java-forum-stuttgart.de/de/Konferenz.html) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
 
+* [2019-06-24 Serverless Jenkins on Kubernetes - Jenkins X](https://sched.co/Nrmd) at [KubeCon CloudNativeCon 2019 (China)](https://www.lfasiallc.com/events/kubecon-cloudnativecon-china-2019/) by [RunZe Xia](https://github.com/runzexia)
+
 * [2019-06-24/25/26 GitOps by courtesy of Jenkins-X](https://www.containerdays.io/) at [Container Days, Hamburg (Germany)](https://www.containerdays.io/) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
 
 * [2019-06-06 Continuous Delivery mit Jenkins X und Kubernetes](https://www.devops-essentials.de/lecture.php?id=7929-continuous-delivery-mit-jenkins-x-und) at [DevOps Essentials 2019](https://www.devops-essentials.de/) by [Nicolas Byl](https://twitter.com/NicolasByl)
