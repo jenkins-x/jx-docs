@@ -21,7 +21,7 @@ This page describes any specific manual work arounds you may require above and b
 
 ## 21st May 2019: Skaffold upgrade to v0.29.0
 
-We have noticed an incompatibility with older skaffold configuration files and the new v0.29.0 skaffold release.  Newly generated applications will not suffer from this problem but updates to existing configuration files may be required.
+We have noticed an incompatibility with older skaffold configuration files and the new v0.29.0 skaffold release.  Freshly generated applications will not suffer from this problem, but for existing applications changes to the configuration file may be required.
 
 If you are running a static master or serverless (jenkins file runner) cluster and are having issues building existing applications with the following error `creating runner: invalid skaffold config: required value not set: image` you will need to modify your `skaffold.yaml`.
 
