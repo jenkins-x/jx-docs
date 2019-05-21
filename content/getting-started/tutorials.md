@@ -8,9 +8,9 @@ lastmod: 2018-08-01
 menu:
   docs:
     parent: "getting-started"
-    weight: 5
-weight: 5
-sections_weight: 0
+    weight: 25
+weight: 25
+sections_weight: 25
 draft: false
 aliases: [/about/tutorials]
 categories: [getting started]
