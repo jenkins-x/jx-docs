@@ -1,12 +1,12 @@
 ---
-date: 2019-05-21T07:19:41Z
+date: 2019-05-21T09:43:02Z
 title: "jx step create task"
 slug: jx_step_create_task
 url: /commands/jx_step_create_task/
 ---
 ## jx step create task
 
-Creates a Tekton Pipeline Run for the current folder or given build pack
+Creates a Tekton PipelineRun for the current folder or given build pack
 
 ### Synopsis
 
