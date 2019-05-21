@@ -19,6 +19,21 @@ toc: true
 
 This page describes any specific manual work arounds you may require above and beyond changes described in the [News section](/news/) or using [jx upgrade](/commands/jx_upgrade/) to upgrade the [CLI](/commands/jx_upgrade_cli/) or [platform](/commands/jx_upgrade_platform/)
 
+## 21st May 2019: Skaffold upgrade to v0.29.0
+
+We have noticed an incompatibility with older skaffold configuration files and the new v0.29.0 skaffold release.  Newly generated applications will not suffer from this problem but updates to existing configuration files may be required.
+
+If you are running a static master or serverless (jenkins file runner) cluster and are having issues building existing applications with the following error `creating runner: invalid skaffold config: required value not set: image` you will need to modify your `skaffold.yaml`.
+
+In the `dev` profile, remove the following section:
+
+```
+    artifacts:	
+    - docker: {}
+```
+
+For more information, refer to this [PR](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/pull/50/files)
+
 ## 16th April 2019: Jenkins X 2.x
 
 We are pleased to announce 2.0.x of Jenkins X.
