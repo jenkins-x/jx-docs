@@ -291,20 +291,17 @@
     },
     "PipelineOverride": {
       "properties": {
+        "agent": {
+          "$ref": "#/definitions/Agent"
+        },
         "name": {
           "type": "string"
         },
-        "pipelines": {
-          "items": {
-            "type": "string"
-          },
-          "type": "array"
+        "pipeline": {
+          "type": "string"
         },
-        "stages": {
-          "items": {
-            "type": "string"
-          },
-          "type": "array"
+        "stage": {
+          "type": "string"
         },
         "step": {
           "$ref": "#/definitions/Step"
@@ -314,6 +311,9 @@
             "$ref": "#/definitions/Step"
           },
           "type": "array"
+        },
+        "type": {
+          "type": "string"
         }
       },
       "additionalProperties": false,
@@ -321,6 +321,9 @@
     },
     "Pipelines": {
       "properties": {
+        "default": {
+          "$ref": "#/definitions/ParsedPipeline"
+        },
         "feature": {
           "$ref": "#/definitions/PipelineLifecycles"
         },
