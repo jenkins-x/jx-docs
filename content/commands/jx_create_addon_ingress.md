@@ -1,5 +1,5 @@
 ---
-date: 2019-05-22T15:58:52Z
+date: 2019-05-22T16:30:21Z
 title: "jx create addon ingress"
 slug: jx_create_addon_ingress
 url: /commands/jx_create_addon_ingress/
