@@ -13,6 +13,8 @@ weight: 5
 sections_weight: 5
 ---
 
+* [2019-07-04 Modern CI/CD with Tekton and Prow Automated via Jenkins X](https://www.youtube.com/watch?v=4EyTGYB7GvA) at [KubeCon (Barcelona)](https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2019/) by [Christie Wilson ](https://twitter.com/bobcatwilson) and [James Rawlings](https://twitter.com/jdrawlings)
+
 * [2019-07-04 Jenkins-X - CI/CD für die Kloud (German)](https://www.java-forum-stuttgart.de/de/Konferenz.html) at [Java Forum Stuttgart (Germany)](https://www.java-forum-stuttgart.de/de/Konferenz.html) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
 
 * [2019-06-24 Serverless Jenkins on Kubernetes - Jenkins X](https://sched.co/Nrmd) at [KubeCon CloudNativeCon 2019 (China)](https://www.lfasiallc.com/events/kubecon-cloudnativecon-china-2019/) by [RunZe Xia](https://github.com/runzexia)
