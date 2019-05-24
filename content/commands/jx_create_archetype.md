@@ -1,5 +1,5 @@
 ---
-date: 2019-05-24T10:19:27Z
+date: 2019-05-24T11:04:32Z
 title: "jx create archetype"
 slug: jx_create_archetype
 url: /commands/jx_create_archetype/
