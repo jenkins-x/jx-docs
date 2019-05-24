@@ -1,5 +1,5 @@
 ---
-date: 2019-05-24T11:04:32Z
+date: 2019-05-24T14:41:38Z
 title: "jx step create task"
 slug: jx_step_create_task
 url: /commands/jx_step_create_task/
@@ -37,7 +37,6 @@ jx step create task [flags]
   -c, --context string               The pipeline context if there are multiple separate pipelines for a given branch
       --default-image string         Specify the docker image to use if there is no image specified for a step and there's no Pod Template (default "gcr.io/jenkinsxio/builder-maven")
       --delete-temp-dir              Deletes the temporary directory of cloned files if using the 'clone-git-url' option (default true)
-  -d, --dir string                   The directory to query to find the projects .git directory
       --docker-registry string       The Docker Registry host name to use which is added as a prefix to docker images
       --docker-registry-org string   The Docker registry organisation. If blank the git repository owner is used
       --dry-run                      Disables creating the Pipeline resources in the kubernetes cluster and just outputs the generated Task to the console or output file, without side effects
