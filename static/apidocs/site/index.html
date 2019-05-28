@@ -81,6 +81,9 @@
    <LI class="nav-level-2"><A href="#azurefilevolumesource-v1-core" class="nav-item">AzureFileVolumeSource v1 core</A></LI>
  </UL>
   <UL>
+   <LI class="nav-level-2"><A href="#batchpipelineactivity-v1-jenkins_io" class="nav-item">BatchPipelineActivity v1 jenkins_io</A></LI>
+ </UL>
+  <UL>
    <LI class="nav-level-2"><A href="#binary-v1-jenkins_io" class="nav-item">Binary v1 jenkins_io</A></LI>
  </UL>
   <UL>
@@ -421,6 +424,9 @@
  </UL>
   <UL>
    <LI class="nav-level-2"><A href="#protectionpolicy-v1-jenkins_io" class="nav-item">ProtectionPolicy v1 jenkins_io</A></LI>
+ </UL>
+  <UL>
+   <LI class="nav-level-2"><A href="#pullrequestinfo-v1-jenkins_io" class="nav-item">PullRequestInfo v1 jenkins_io</A></LI>
  </UL>
   <UL>
    <LI class="nav-level-2"><A href="#quantity-resource-core" class="nav-item">Quantity resource core</A></LI>
@@ -968,6 +974,7 @@ notes on specific resource objects for details.</P>
 <TBODY>
 <TR><TD><CODE>attachments</CODE><BR /><I><a href="#attachment-v1-jenkins_io">Attachment</a> array</I></TD><TD></TD></TR>
 <TR><TD><CODE>author</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>batchPipelineActivity</CODE><BR /><I><a href="#batchpipelineactivity-v1-jenkins_io">BatchPipelineActivity</a></I></TD><TD></TD></TR>
 <TR><TD><CODE>build</CODE><BR /><I>string</I></TD><TD></TD></TR>
 <TR><TD><CODE>buildLogsUrl</CODE><BR /><I>string</I></TD><TD></TD></TR>
 <TR><TD><CODE>buildUrl</CODE><BR /><I>string</I></TD><TD></TD></TR>
@@ -1454,6 +1461,27 @@ The configuration for the approve plugin is defined as a list of these structure
 <TR><TD><CODE>readOnly</CODE><BR /><I>boolean</I></TD><TD>Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.</TD></TR>
 <TR><TD><CODE>secretName</CODE><BR /><I>string</I></TD><TD>the name of secret that contains Azure Storage Account Name and Key</TD></TR>
 <TR><TD><CODE>shareName</CODE><BR /><I>string</I></TD><TD>Share Name</TD></TR>
+</TBODY>
+</TABLE>
+<H2 id="batchpipelineactivity-v1-jenkins_io">BatchPipelineActivity v1 jenkins_io</H2>
+<TABLE class="col-md-8">
+<THEAD><TR><TH>Group</TH><TH>Version</TH><TH>Kind</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>jenkins_io</CODE></TD><TD><CODE>v1</CODE></TD><TD><CODE>BatchPipelineActivity</CODE></TD></TR>
+</TBODY>
+</TABLE>
+<P>BatchPipelineActivity contains information about a batch build, used by both the batch build and its comprising PRs for linking them together</P>
+<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
+ <UL>
+  <LI><a href="#pipelineactivityspec-v1-jenkins_io">PipelineActivitySpec [jenkins_io/v1]</a></LI>
+ </UL>
+</DIV>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>batchBranchName</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>batchBuildNumber</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>pullRequestInfo</CODE><BR /><I><a href="#pullrequestinfo-v1-jenkins_io">PullRequestInfo</a> array</I></TD><TD></TD></TR>
 </TBODY>
 </TABLE>
 <H2 id="binary-v1-jenkins_io">Binary v1 jenkins_io</H2>
@@ -4071,6 +4099,26 @@ DEPRECATED: GitRepo is deprecated. To provision a container with a git repo, mou
 <TR><TD><CODE>requiredPullRequestReviews</CODE><BR /><I><a href="#reviewpolicy-v1-jenkins_io">ReviewPolicy</a></I></TD><TD>RequiredPullRequestReviews specifies approval/review criteria.</TD></TR>
 <TR><TD><CODE>requiredStatusChecks</CODE><BR /><I><a href="#branchprotectioncontextpolicy-v1-jenkins_io">BranchProtectionContextPolicy</a></I></TD><TD>RequiredStatusChecks configures github contexts</TD></TR>
 <TR><TD><CODE>restrictions</CODE><BR /><I><a href="#restrictions-v1-jenkins_io">Restrictions</a></I></TD><TD>Restrictions limits who can merge</TD></TR>
+</TBODY>
+</TABLE>
+<H2 id="pullrequestinfo-v1-jenkins_io">PullRequestInfo v1 jenkins_io</H2>
+<TABLE class="col-md-8">
+<THEAD><TR><TH>Group</TH><TH>Version</TH><TH>Kind</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>jenkins_io</CODE></TD><TD><CODE>v1</CODE></TD><TD><CODE>PullRequestInfo</CODE></TD></TR>
+</TBODY>
+</TABLE>
+<P>PullRequestInfo contains information about a PR, like its PR and Build numbers</P>
+<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
+ <UL>
+  <LI><a href="#batchpipelineactivity-v1-jenkins_io">BatchPipelineActivity [jenkins_io/v1]</a></LI>
+ </UL>
+</DIV>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>lastBuildNumberForCommit</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>pullRequestNumber</CODE><BR /><I>string</I></TD><TD></TD></TR>
 </TBODY>
 </TABLE>
 <H2 id="quantity-resource-core">Quantity resource core</H2>
