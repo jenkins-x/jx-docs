@@ -115,7 +115,7 @@ The following environment variables are available for use in a step in Jenkins X
 | PIPELINE_CONTEXT | the pipeline context if there are multiple pipelines per PR (for different tests/governance/lint etc) |
 | REPO_OWNER | the git repository owner |
 | REPO_NAME | the git repository name |
-| JOB_NAME | the job name which tyically looks like `$REPO_OWNER/$REPO_NAME/$BRANCH_NAME` |
+| JOB_NAME | the job name which typically looks like `$REPO_OWNER/$REPO_NAME/$BRANCH_NAME` |
 | APP_NAME | the name of the app which typically is the `$REPO_NAME`
 | BRANCH_NAME | the name of the branch such as `master` or `PR-123` |
 | JX_BATCH_MODE | indicates to jx to use batch mode if `true` |
