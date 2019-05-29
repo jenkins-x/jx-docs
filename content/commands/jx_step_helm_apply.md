@@ -1,5 +1,5 @@
 ---
-date: 2019-05-29T13:12:51Z
+date: 2019-05-29T16:14:42Z
 title: "jx step helm apply"
 slug: jx_step_helm_apply
 url: /commands/jx_step_helm_apply/
