@@ -1,5 +1,5 @@
 ---
-date: 2019-05-29T16:14:42Z
+date: 2019-05-29T17:23:46Z
 title: "jx step bdd"
 slug: jx_step_bdd
 url: /commands/jx_step_bdd/
@@ -29,6 +29,7 @@ jx step bdd [flags]
 ### Options
 
 ```
+      --base-domain string                    the base domain to use when creating the cluster
       --binary string                         the binary location of the 'jx' executable for creating clusters (default "jx")
       --buildpack string                      The name of the build pack to use for the Team
       --cleanup-temp-files                    Cleans up any temporary values.yaml used by helm install [default true] (default true)
