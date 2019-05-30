@@ -1,5 +1,5 @@
 ---
-date: 2019-05-30T09:44:49Z
+date: 2019-05-30T14:43:40Z
 title: "jx step bdd"
 slug: jx_step_bdd
 url: /commands/jx_step_bdd/
@@ -29,6 +29,7 @@ jx step bdd [flags]
 ### Options
 
 ```
+      --advanced                              Advanced install options. This will prompt for advanced install options
       --base-domain string                    the base domain to use when creating the cluster
       --binary string                         the binary location of the 'jx' executable for creating clusters (default "jx")
       --buildpack string                      The name of the build pack to use for the Team

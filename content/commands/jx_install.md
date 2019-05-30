@@ -1,5 +1,5 @@
 ---
-date: 2019-05-30T09:44:49Z
+date: 2019-05-30T14:43:40Z
 title: "jx install"
 slug: jx_install
 url: /commands/jx_install/
@@ -42,6 +42,7 @@ jx install [flags]
 ### Options
 
 ```
+      --advanced                              Advanced install options. This will prompt for advanced install options
       --aws-access-key-id string              Access key id of service account to be used by vault
       --aws-dynamodb-region string            The region to use for storing values in AWS DynamoDB
       --aws-dynamodb-table string             The table in AWS DynamoDB to use for storing values (default "vault-data")

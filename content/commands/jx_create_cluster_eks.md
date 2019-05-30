@@ -1,5 +1,5 @@
 ---
-date: 2019-05-30T09:44:49Z
+date: 2019-05-30T14:43:40Z
 title: "jx create cluster eks"
 slug: jx_create_cluster_eks
 url: /commands/jx_create_cluster_eks/
@@ -31,6 +31,7 @@ jx create cluster eks [flags]
 ### Options
 
 ```
+      --advanced                              Advanced install options. This will prompt for advanced install options
       --aws-api-timeout duration              Duration of AWS API timeout (default 20m0s)
       --buildpack string                      The name of the build pack to use for the Team
       --cleanup-temp-files                    Cleans up any temporary values.yaml used by helm install [default true] (default true)
