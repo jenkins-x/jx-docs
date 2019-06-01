@@ -26,7 +26,7 @@ The work here is still experimental but we'd love feedback and help from the com
 Right now to enable a Tekton based install you can create a new cluster using `jx` along with these flags:
 
 ```
-jx create cluster gke --tekton --no-tiller
+jx create cluster gke --tekton 
 ```
 
 Or if you want to go all in on the next generation of Jenkins X with built-in GitOps for your development environment, using Tekton and using Vault for storage of Secrets then use the following (only works on GCP and AWS right now):
