@@ -13,7 +13,6 @@ menu:
     weight: 1
 weight: 1
 draft: false
-aliases: [/about-jx/,/docs/]
 toc: false
 ---
 

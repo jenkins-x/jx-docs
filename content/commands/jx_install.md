@@ -1,5 +1,5 @@
 ---
-date: 2019-04-24T18:26:24Z
+date: 2019-06-01T12:22:42Z
 title: "jx install"
 slug: jx_install
 url: /commands/jx_install/
@@ -42,6 +42,7 @@ jx install [flags]
 ### Options
 
 ```
+      --advanced                              Advanced install options. This will prompt for advanced install options
       --aws-access-key-id string              Access key id of service account to be used by vault
       --aws-dynamodb-region string            The region to use for storing values in AWS DynamoDB
       --aws-dynamodb-table string             The table in AWS DynamoDB to use for storing values (default "vault-data")
@@ -78,6 +79,7 @@ jx install [flags]
       --helm-tls                              Whether to use TLS with helm
       --helm3                                 Use helm3 to install Jenkins X which does not use Tiller
   -h, --help                                  help for install
+      --ingress-class string                  Used to set the ingress.class annotation in exposecontroller created ingress
       --ingress-cluster-role string           The cluster role for the Ingress controller (default "cluster-admin")
       --ingress-deployment string             The name of the Ingress controller Deployment (default "jxing-nginx-ingress-controller")
       --ingress-namespace string              The namespace for the Ingress controller (default "kube-system")
@@ -85,9 +87,11 @@ jx install [flags]
       --install-only                          Force the install command to fail if there is already an installation. Otherwise lets update the installation
       --kaniko                                Use Kaniko for building docker images
       --keep-exposecontroller-job             Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
-      --knative-build                         Note this option is deprecated now in favour of tekton. If specified this will keep using the old knative build with Prow instead of the stratgegic tekton
+      --knative-build                         Note this option is deprecated now in favour of tekton. If specified this will keep using the old knative build with Prow instead of the strategic tekton
       --local-cloud-environment               Ignores default cloud-environment-repo and uses current directory 
       --local-helm-repo-name string           The name of the helm repository for the installed ChartMuseum (default "releases")
+      --long-term-storage                     Enable the Long Term Storage option to save logs and other assets into a GCS bucket (supported only for GKE)
+      --lts-bucket string                     The bucket to use for Long Term Storage. If the bucket doesn't exist, an attempt will be made to create it, otherwise random naming will be used
       --namespace string                      The namespace the Jenkins X platform should be installed into (default "jx")
       --ng                                    Use the Next Generation Jenkins X features like Prow, Tekton, No Tiller, Vault, Dev GitOps
       --no-default-environments               Disables the creation of the default Staging and Production environments
@@ -97,14 +101,16 @@ jx install [flags]
       --no-gitops-vault                       When using GitOps to create the source code for the development environment this flag disables the creation of a vault
       --no-tiller                             Whether to disable the use of tiller with helm. If disabled we use 'helm template' to generate the YAML from helm charts then we use 'kubectl apply' to install it to avoid using tiller completely. (default true)
       --on-premise                            If installing on an on premise cluster then lets default the 'external-ip' to be the Kubernetes master IP address
-      --provider string                       Cloud service providing the Kubernetes cluster.  Supported providers: aks, aws, eks, gke, icp, iks, jx-infra, kubernetes, minikube, minishift, oke, openshift, pks
+      --provider string                       Cloud service providing the Kubernetes cluster.  Supported providers: aks, alibaba, aws, eks, gke, icp, iks, jx-infra, kubernetes, minikube, minishift, oke, openshift, pks
       --prow                                  Enable Prow to implement Serverless Jenkins and support ChatOps on Pull Requests
       --recreate-existing-draft-repos         Delete existing helm repos used by Jenkins X under ~/draft/packs
       --register-local-helmrepo               Registers the Jenkins X ChartMuseum registry with your helm client [default false]
+      --remote-environments                   Indicates you intend Staging and Production environments to run in remote clusters. See https://jenkins-x.io/getting-started/multi-cluster/
       --remote-tiller                         If enabled and we are using tiller for helm then run tiller remotely in the kubernetes cluster. Otherwise we run the tiller process locally. (default true)
       --skip-cluster-role                     Don't enable cluster admin role for user
       --skip-ingress                          Skips the installation of ingress controller. Note that a ingress controller must already be installed into the cluster in order for the installation to succeed
       --skip-setup-tiller                     Don't setup the Helm Tiller service - lets use whatever tiller is already setup for us.
+      --static-jenkins                        Install a static Jenkins master to use as the pipeline engine. Note this functionality is deprecated in favour of running serverless Tekton builds
       --tekton                                Enables the Tekton pipeline engine (which used to be called knative build pipeline) along with Prow to provide Serverless Jenkins. Otherwise we default to use Knative Build if you enable Prow
       --tiller-cluster-role string            The cluster role for Helm's tiller (default "cluster-admin")
       --tiller-namespace string               The namespace for the Tiller when using a global tiller (default "kube-system")
@@ -135,4 +141,4 @@ jx install [flags]
 * [jx](/commands/jx/)	 - jx is a command line tool for working with Jenkins X
 * [jx install dependencies](/commands/jx_install_dependencies/)	 - Install missing dependencies
 
-###### Auto generated by spf13/cobra on 24-Apr-2019
+###### Auto generated by spf13/cobra on 1-Jun-2019

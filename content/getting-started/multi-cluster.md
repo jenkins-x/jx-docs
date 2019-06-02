@@ -31,19 +31,68 @@ Our assumption with the Environment Controller is that we need something that:
 * does not require access to the development cluster or anything else in Jenkins X other than the environments git repository and a docker + chart repository
 
 
-## Installing
+## Creating your Dev cluster
 
-There is a single simple install command [jx create addon envctl](https://jenkins-x.io/commands/jx_create_addon_environment/). 
+If you are creating a new installation then when you use [jx create cluster](/commands/jx_create_cluster) or [jx install](/commands/jx_install) then please specify `--remote-environments` to indicate that `Staging/Production` environments will be remote from the development cluster.
 
-You need to specify the environments git repository and docker registry host and on GCP the project ID:
+e.g. 
 
 ``` 
-jx create addon envctl -s https://github.com/myorg/env-production.git --project-id myproject --docker-registry gcr.io --cluster-rbac true
+jx create cluster gke --remote-environments --tekton
+```
+
+When creating your Environments via [jx create environment](jx_create_environment) you can also specify the environment is remote via the `--remote` or answering `Y` to the question when prompted.
+
+What this means is that if an environment is remote to the development cluster then we don't register the release pipeline 
+of the environment in the Dev cluster; we leave that to the Environment Controller to perform running inside the remote cluster.
+
+
+## Configure an existing Dev cluster
+
+If you already have a Dev cluster that was setup with `Staging` and `Production` namespaces inside your Dev cluster then please do the following:
+
+Edit the environments to mark them as remote via [jx edit environment](jx_edit_environment):
+
+``` 
+jx edit env staging --remote 
+jx edit env production --remote 
+```
+
+You need to manually disable the release pipeline in the Dev cluster. 
+
+e.g. by removing the `postsubmit` setting in your Prow configuration if you are using [serverless Jenkins X Pipelines and tekton](/architecture/jenkins-x-pipelines/) - or comment out the `jx step helm apply` command in your `Jenkinsfile` if using static jenkins server
+
+
+## Installing Environment Controller
+
+First you need to connect to your remote kubernetes cluster for `Staging` or `Production` using your managed kubernetes provider's tooling.
+
+You also need to have RBAC karma to be able to [escalate roles](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#privilege-escalation-prevention-and-bootstrapping) for `Role` and/or `ClusterRole` permissions.
+
+Then to install the Environment Controller use [jx create addon envctl](/commands/jx_create_addon_environment/). 
+
+You need to specify the environments git repository and docker registry host and on GCP the project ID: 
+
+``` 
+jx create addon envctl -s https://github.com/myorg/env-production.git --project-id myproject --docker-registry gcr.io --cluster-rbac true --user mygituser --token mygittoken -
 ```
 
 The installer needs a user + API token for the git repository which it will prompt you for the known values from your `~/.jx/gitAuth.yaml` file so if you already installed Jenkins X it should be able to default those values for you.
 
 If you prefer you can install the helm chart `jenkins-x/environment-controller` directly with helm by specifying the [required values from the values.yaml file](https://github.com/jenkins-x-charts/environment-controller/blob/master/environment-controller/values.yaml#L3-L19) 
+
+
+## Installing Ingress Controller
+
+If you don't already have any kind of Ingress Controller in your remote `Staging` / `Production` cluster then it is recommend - particularly if you want to try out our [quickstarts](/developing/create-quickstart/) which depend on Ingress to be able to be used from a web browser.
+
+To install the default ingress controller into a remote cluster (which doesn't have Jenkins X installed) you can use the command [jx create addon ingctl](/commands/jx_create_addon_ingress/)
+
+``` 
+jx create addon ingctl
+```
+
+This will setup the Ingress Controller; find its external domain and then setup a Pull Request on the environments git repository so that future promotions in the environment will use the correct `domain` value on the generated `Ingress` resources.
 
 
 ## How it works
@@ -75,6 +124,4 @@ pipelineConfig:
  
 You can do the above via the [jx create var -n CHART_REPOSITORY](/commands/jx_create_variable/) command if you are inside a clone of the staging/production git repository - then git commit + merge the change.
 
-* You need to manually disable the release pipeline in the Dev cluster - e.g. by removing the `postsubmit` setting in your Prow configuration if you are using [serverless Jenkins X Pipelines and tekton](/architecture/jenkins-x-pipelines/) - or comment out the `jx step helm apply` command in your `Jenkinsfile`
- 
- 
+

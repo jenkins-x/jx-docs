@@ -14,7 +14,6 @@ menu:
 weight: 10
 sections_weight: 10
 draft: false
-aliases: [/overview/usage/,/extras/livereload/,/doc/usage/,/usage/]
 toc: true
 ---
 
