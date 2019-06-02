@@ -1,5 +1,5 @@
 ---
-date: 2019-06-02T21:33:47Z
+date: 2019-06-02T23:06:20Z
 title: "jx step create version"
 slug: jx_step_create_version
 url: /commands/jx_step_create_version/
