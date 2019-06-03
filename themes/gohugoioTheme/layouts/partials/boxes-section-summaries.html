@@ -3,7 +3,8 @@
   <div class="bg-white mb2 pa3 pa4-l gray">
     {{ if eq .context.Section "news" }}
       <date class="f6 db" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
-        {{ .context.Date.Format "January 2, 2006" }}
+        {{ .context.Date.Format "January 2, 2006" }} <br>
+        By: <strong>{{ .context.Params.author}}</strong>
       </date>
     {{ end }}
 

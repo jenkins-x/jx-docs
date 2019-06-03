@@ -12,7 +12,6 @@ menu:
 weight: 20
 sections_weight: 20
 draft: false
-aliases: [/about/concepts]
 categories: [fundamentals]
 toc: true
 ---

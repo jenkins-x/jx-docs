@@ -14,7 +14,6 @@ menu:
 weight: 0001	#rem
 sections_weight: 10
 draft: false
-aliases: [/overview/introduction/]
 toc: false
 ---
 

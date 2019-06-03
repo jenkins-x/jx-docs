@@ -1,5 +1,5 @@
 ---
-date: 2019-04-17T10:38:20Z
+date: 2019-06-03T16:28:43Z
 title: "jx create cluster gke"
 slug: jx_create_cluster_gke
 url: /commands/jx_create_cluster_gke/
@@ -31,6 +31,7 @@ jx create cluster gke [flags]
 ### Options
 
 ```
+      --advanced                              Advanced install options. This will prompt for advanced install options
       --buildpack string                      The name of the build pack to use for the Team
       --cleanup-temp-files                    Cleans up any temporary values.yaml used by helm install [default true] (default true)
       --cloud-environment-repo string         Cloud Environments Git repo (default "https://github.com/jenkins-x/cloud-environments")
@@ -51,6 +52,7 @@ jx create cluster gke [flags]
       --exposecontroller-pathmode path        The ExposeController path mode for how services should be exposed as URLs. Defaults to using subnets. Use a value of path to use relative paths within the domain host such as when using AWS ELB host names
       --exposecontroller-urltemplate string   The ExposeController urltemplate for how services should be exposed as URLs. Defaults to being empty, which in turn defaults to "{{.Service}}.{{.Namespace}}.{{.Domain}}".
       --exposer string                        Used to describe which strategy exposecontroller should use to access applications (default "Ingress")
+      --external-dns                          Installs external-dns into the cluster. ExternalDNS manages service DNS records for your cluster, providing you've setup your domain record
       --external-ip string                    The external IP used to access ingress endpoints from outside the Kubernetes cluster. For bare metal on premise clusters this is often the IP of the Kubernetes master. For cloud installations this is often the external IP of the ingress LoadBalancer.
       --git-api-token string                  The Git API token to use for creating new Git repositories
       --git-private                           Create new Git repositories as private
@@ -63,6 +65,8 @@ jx create cluster gke [flags]
       --helm-tls                              Whether to use TLS with helm
       --helm3                                 Use helm3 to install Jenkins X which does not use Tiller
   -h, --help                                  help for gke
+      --image-type string                     The image type for the nodes in the cluster
+      --ingress-class string                  Used to set the ingress.class annotation in exposecontroller created ingress
       --ingress-cluster-role string           The cluster role for the Ingress controller (default "cluster-admin")
       --ingress-deployment string             The name of the Ingress controller Deployment (default "jxing-nginx-ingress-controller")
       --ingress-namespace string              The namespace for the Ingress controller (default "kube-system")
@@ -70,11 +74,13 @@ jx create cluster gke [flags]
       --install-only                          Force the install command to fail if there is already an installation. Otherwise lets update the installation
       --kaniko                                Use Kaniko for building docker images
       --keep-exposecontroller-job             Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
-      --knative-build                         Note this option is deprecated now in favour of tekton. If specified this will keep using the old knative build with Prow instead of the stratgegic tekton
+      --knative-build                         Note this option is deprecated now in favour of tekton. If specified this will keep using the old knative build with Prow instead of the strategic tekton
   -v, --kubernetes-version string             The Kubernetes version to use for the master and nodes. Defaults to server-specified
       --labels string                         The labels to add to the cluster being created such as 'foo=bar,whatnot=123'. Label names must begin with a lowercase character ([a-z]), end with a lowercase alphanumeric ([a-z0-9]) with dashes (-), and lowercase alphanumeric ([a-z0-9]) between.
       --local-cloud-environment               Ignores default cloud-environment-repo and uses current directory 
       --local-helm-repo-name string           The name of the helm repository for the installed ChartMuseum (default "releases")
+      --long-term-storage                     Enable the Long Term Storage option to save logs and other assets into a GCS bucket (supported only for GKE)
+      --lts-bucket string                     The bucket to use for Long Term Storage. If the bucket doesn't exist, an attempt will be made to create it, otherwise random naming will be used
   -m, --machine-type string                   The type of machine to use for nodes
       --max-num-nodes string                  The maximum number of nodes to be created in each of the cluster's zones
       --min-num-nodes string                  The minimum number of nodes to be created in each of the cluster's zones
@@ -94,6 +100,7 @@ jx create cluster gke [flags]
       --recreate-existing-draft-repos         Delete existing helm repos used by Jenkins X under ~/draft/packs
   -r, --region string                         Compute region (e.g. us-central1) for the cluster
       --register-local-helmrepo               Registers the Jenkins X ChartMuseum registry with your helm client [default false]
+      --remote-environments                   Indicates you intend Staging and Production environments to run in remote clusters. See https://jenkins-x.io/getting-started/multi-cluster/
       --remote-tiller                         If enabled and we are using tiller for helm then run tiller remotely in the kubernetes cluster. Otherwise we run the tiller process locally. (default true)
       --scope stringArray                     The OAuth scopes to be added to the cluster
       --skip-cluster-role                     Don't enable cluster admin role for user
@@ -101,6 +108,7 @@ jx create cluster gke [flags]
       --skip-installation                     Provision cluster only, don't install Jenkins X into it
       --skip-login                            Skip Google auth if already logged in via gcloud auth
       --skip-setup-tiller                     Don't setup the Helm Tiller service - lets use whatever tiller is already setup for us.
+      --static-jenkins                        Install a static Jenkins master to use as the pipeline engine. Note this functionality is deprecated in favour of running serverless Tekton builds
       --subnetwork string                     The Google Compute Engine subnetwork to which the cluster is connected
       --tekton                                Enables the Tekton pipeline engine (which used to be called knative build pipeline) along with Prow to provide Serverless Jenkins. Otherwise we default to use Knative Build if you enable Prow
       --tiller-cluster-role string            The cluster role for Helm's tiller (default "cluster-admin")
@@ -113,7 +121,7 @@ jx create cluster gke [flags]
       --vault-bucket-recreate                 If the vault bucket already exists delete it then create it empty (default true)
       --version string                        The specific platform version to install
       --versions-ref string                   Jenkins X versions Git repository reference (tag, branch, sha etc)
-      --versions-repo string                  Jenkins X versions Git repo (default "https://github.com/jenkins-x/jenkins-x-versions")
+      --versions-repo string                  Jenkins X versions Git repo (default "https://github.com/jenkins-x/jenkins-x-versions.git")
   -z, --zone string                           The compute zone (e.g. us-central1-a) for the cluster
 ```
 
@@ -133,4 +141,4 @@ jx create cluster gke [flags]
 * [jx create cluster](/commands/jx_create_cluster/)	 - Create a new Kubernetes cluster
 * [jx create cluster gke terraform](/commands/jx_create_cluster_gke_terraform/)	 - Create a new Kubernetes cluster on GKE using Terraform: Runs on Google Cloud
 
-###### Auto generated by spf13/cobra on 17-Apr-2019
+###### Auto generated by spf13/cobra on 3-Jun-2019

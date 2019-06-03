@@ -13,7 +13,6 @@ weight: 1
 draft: false
 hidesectioncontents: false
 slug:
-aliases: [/faq/faqs/,/faqs/]
 toc: false
 notesforauthors:
 ---

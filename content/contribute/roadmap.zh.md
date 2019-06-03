@@ -14,7 +14,6 @@ menu:
 weight: 20
 sections_weight: 20
 draft: false
-aliases: [/contribute/roadmap/,/contribute/futures/]
 categories: [fundamentals, 基础]
 toc: true
 ---

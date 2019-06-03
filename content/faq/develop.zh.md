@@ -10,7 +10,6 @@ menu:
 keywords: [faqs]
 weight: 15
 toc: true
-aliases: [/faq/]
 ---
 
 ## 如何注入特定的环境配置
