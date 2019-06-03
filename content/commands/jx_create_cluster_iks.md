@@ -1,5 +1,5 @@
 ---
-date: 2019-04-17T10:38:20Z
+date: 2019-06-03T16:28:43Z
 title: "jx create cluster iks"
 slug: jx_create_cluster_iks
 url: /commands/jx_create_cluster_iks/
@@ -30,6 +30,7 @@ jx create cluster iks [flags]
 
 ```
   -c, --account string                        Account
+      --advanced                              Advanced install options. This will prompt for advanced install options
       --apikey string                         The IBM Cloud API Key.
       --buildpack string                      The name of the build pack to use for the Team
       --cleanup-temp-files                    Cleans up any temporary values.yaml used by helm install [default true] (default true)
@@ -48,6 +49,7 @@ jx create cluster iks [flags]
       --exposecontroller-pathmode path        The ExposeController path mode for how services should be exposed as URLs. Defaults to using subnets. Use a value of path to use relative paths within the domain host such as when using AWS ELB host names
       --exposecontroller-urltemplate string   The ExposeController urltemplate for how services should be exposed as URLs. Defaults to being empty, which in turn defaults to "{{.Service}}.{{.Namespace}}.{{.Domain}}".
       --exposer string                        Used to describe which strategy exposecontroller should use to access applications (default "Ingress")
+      --external-dns                          Installs external-dns into the cluster. ExternalDNS manages service DNS records for your cluster, providing you've setup your domain record
       --external-ip string                    The external IP used to access ingress endpoints from outside the Kubernetes cluster. For bare metal on premise clusters this is often the IP of the Kubernetes master. For cloud installations this is often the external IP of the ingress LoadBalancer.
       --git-api-token string                  The Git API token to use for creating new Git repositories
       --git-private                           Create new Git repositories as private
@@ -60,6 +62,7 @@ jx create cluster iks [flags]
       --helm-tls                              Whether to use TLS with helm
       --helm3                                 Use helm3 to install Jenkins X which does not use Tiller
   -h, --help                                  help for iks
+      --ingress-class string                  Used to set the ingress.class annotation in exposecontroller created ingress
       --ingress-cluster-role string           The cluster role for the Ingress controller (default "cluster-admin")
       --ingress-deployment string             The name of the Ingress controller Deployment (default "jxing-nginx-ingress-controller")
       --ingress-namespace string              The namespace for the Ingress controller (default "kube-system")
@@ -68,11 +71,13 @@ jx create cluster iks [flags]
       --isolation string                      The level of hardware isolation for your worker node. Use 'private' to have available physical resources dedicated to you only, or 'public' to allow physical resources to be shared with other IBM customers. For IBM Cloud Public accounts, the default value is public. (default "public")
       --kaniko                                Use Kaniko for building docker images
       --keep-exposecontroller-job             Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
-      --knative-build                         Note this option is deprecated now in favour of tekton. If specified this will keep using the old knative build with Prow instead of the stratgegic tekton
+      --knative-build                         Note this option is deprecated now in favour of tekton. If specified this will keep using the old knative build with Prow instead of the strategic tekton
   -k, --kube-version string                   Specify the Kubernetes version, including at least the major.minor version. If you do not include this flag, the default version is used. To see available versions, run ‘ibmcloud ks kube-versions’.
       --local-cloud-environment               Ignores default cloud-environment-repo and uses current directory 
       --local-helm-repo-name string           The name of the helm repository for the installed ChartMuseum (default "releases")
   -u, --login string                          Username
+      --long-term-storage                     Enable the Long Term Storage option to save logs and other assets into a GCS bucket (supported only for GKE)
+      --lts-bucket string                     The bucket to use for Long Term Storage. If the bucket doesn't exist, an attempt will be made to create it, otherwise random naming will be used
   -m, --machine-type string                   The machine type of the worker node. To see available machine types, run 'ibmcloud ks machine-types --zone <zone name>'. Default is 'b2c.4x16', 4 cores CPU, 16GB Memory
   -n, --name string                           Set the name of the cluster that will be created.
       --namespace string                      The namespace the Jenkins X platform should be installed into (default "jx")
@@ -93,6 +98,7 @@ jx create cluster iks [flags]
       --recreate-existing-draft-repos         Delete existing helm repos used by Jenkins X under ~/draft/packs
   -r, --region string                         The IBM Cloud Region. Default is 'us-east'
       --register-local-helmrepo               Registers the Jenkins X ChartMuseum registry with your helm client [default false]
+      --remote-environments                   Indicates you intend Staging and Production environments to run in remote clusters. See https://jenkins-x.io/getting-started/multi-cluster/
       --remote-tiller                         If enabled and we are using tiller for helm then run tiller remotely in the kubernetes cluster. Otherwise we run the tiller process locally. (default true)
       --skip-cluster-role                     Don't enable cluster admin role for user
       --skip-ingress                          Skips the installation of ingress controller. Note that a ingress controller must already be installed into the cluster in order for the installation to succeed
@@ -100,6 +106,7 @@ jx create cluster iks [flags]
       --skip-login ibmcloud login             Skip login if already logged in using ibmcloud login
       --skip-setup-tiller                     Don't setup the Helm Tiller service - lets use whatever tiller is already setup for us.
       --sso                                   SSO Passcode. See run 'ibmcloud login --sso'
+      --static-jenkins                        Install a static Jenkins master to use as the pipeline engine. Note this functionality is deprecated in favour of running serverless Tekton builds
       --tekton                                Enables the Tekton pipeline engine (which used to be called knative build pipeline) along with Prow to provide Serverless Jenkins. Otherwise we default to use Knative Build if you enable Prow
       --tiller-cluster-role string            The cluster role for Helm's tiller (default "cluster-admin")
       --tiller-namespace string               The namespace for the Tiller when using a global tiller (default "kube-system")
@@ -112,7 +119,7 @@ jx create cluster iks [flags]
       --vault-bucket-recreate                 If the vault bucket already exists delete it then create it empty (default true)
       --version string                        The specific platform version to install
       --versions-ref string                   Jenkins X versions Git repository reference (tag, branch, sha etc)
-      --versions-repo string                  Jenkins X versions Git repo (default "https://github.com/jenkins-x/jenkins-x-versions")
+      --versions-repo string                  Jenkins X versions Git repo (default "https://github.com/jenkins-x/jenkins-x-versions.git")
       --workers string                        The number of cluster worker nodes. Defaults to 3.
   -z, --zone string                           Specify the zone where you want to create the cluster, the options depend on what region that you are logged in to. To see available zones, run 'ibmcloud ks zones'. Default is 'wdc07'
 ```
@@ -132,4 +139,4 @@ jx create cluster iks [flags]
 
 * [jx create cluster](/commands/jx_create_cluster/)	 - Create a new Kubernetes cluster
 
-###### Auto generated by spf13/cobra on 17-Apr-2019
+###### Auto generated by spf13/cobra on 3-Jun-2019

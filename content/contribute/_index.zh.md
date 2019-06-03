@@ -14,7 +14,6 @@ menu:
 weight: 01	#rem
 draft: false
 slug:
-aliases: [/community/contributing/]
 toc: false
 ---
 

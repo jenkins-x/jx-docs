@@ -13,7 +13,6 @@ menu:
     weight: 60
 weight: 60
 sections_weight: 60
-aliases: [/meta/license]
 toc: true
 ---
 

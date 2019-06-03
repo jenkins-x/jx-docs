@@ -12,7 +12,6 @@ menu:
 weight: 5
 sections_weight: 5
 draft: false
-aliases: [/about/features]
 categories: [fundamentals, 基础]
 toc: true
 ---
