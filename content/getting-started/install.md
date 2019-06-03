@@ -32,8 +32,7 @@ brew install jx
 To install Jenkins X on macOS without brew, download the `.tar` file, and unarchive it in a directory where you can run the `jx` command.
 
 1.  Download the `jx` binary archive using `curl` (where
-    \[LATEST\_VERSION\] is the most current version of Jenkins X
-    released, which is 2.0.46) and pipe (`|`) the compressed archive to
+    \[LATEST\_VERSION\] is the most current version of Jenkins X on the [releases](https://github.com/jenkins-x/jx/releases/) page) and pipe (`|`) the compressed archive to
     the `tar` command:
 
         curl -L https://github.com/jenkins-x/jx/releases/download/[LATEST_VERSION]/jx-darwin-amd64.tar.gz | tar xzv
@@ -50,32 +49,22 @@ Installing Jenkins X on Linux involves the creation of directories and
 exporting `PATH` settings to ensure users can execute the `jx` commands
 in their environments:
 
-1.  Create a hidden directory for installing the `jx` binary archive:
-
-        mkdir -p ~/.jx/bin
-
-2.  Download the Jenkins X archive using the `curl` command (where
-    \[LATEST\_VERSION\] is the most current version of Jenkins X
-    released, which is 2.0.46), and unarchive to the hidden directory
+1.  Download the Jenkins X archive using the `curl` command (where
+    \[LATEST\_VERSION\] is the most current version of Jenkins X on the [releases](https://github.com/jenkins-x/jx/releases/) page), and unarchive to the hidden directory
     using the `tar` command:
 
         curl -L https://github.com/jenkins-x/jx/releases/download/[LATEST_VERSION]/jx-linux-amd64.tar.gz | tar xzv -C ~/.jx/bin
 
-3.  Create a system-wide `export` attribute to the `PATH` variable to
-    execute `jx` commands without having to memorize its location:
+2.  Install the uncompressed `jx` directory to an executable path with
+    the `mv` command:
 
-        export PATH=$PATH:~/.jx/bin
+        sudo mv jx /user/local/bin
 
-4.  Create a user-based `export` to the `jx` path directed to your local
-    `bash` shell configuration file so that your non-root user can
-    execute the program without root permissions:
-
-        echo 'export PATH=$PATH:~/.jx/bin' >> ~/.bashrc
 
 
 ### Windows
 
-- You can install Jenkins X on Windows through Chocolatey, a third-party package management system that provides convenient one-step commands for local Jenkins X installations and upgrades.
+You can install Jenkins X on Windows through Chocolatey, a third-party package management system that provides convenient one-step commands for local Jenkins X installations and upgrades.
 
 Install the Chocolatey package management system using an Administrative
 Shell:
@@ -128,8 +117,7 @@ commands:
     {{% /note %}}
 
 2.  In GCP Cloud Shell, download the Jenkins X command-line binaries
-    latest version (where \[LATEST\_VERSION\] is the most current
-    version of Jenkins X released, which is 2.0.46):
+    latest version (where \[LATEST\_VERSION\] is the most current version of Jenkins X on the [releases](https://github.com/jenkins-x/jx/releases/) page):
 
         curl -L https://github.com/jenkins-x/jx/releases/download/[LATEST_VERSION]/jx-linux-amd64.tar.gz | tar xzv
 
