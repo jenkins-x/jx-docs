@@ -125,7 +125,9 @@ kubectl delete secret jenkins-docker-cfg
 ```bash
  kubectl create secret jenkins-docker-cfg --from-file./config.json
 ```
-That should do it, you should not be able to run pipelines and store images in the jFrog BinTray Registry.
+
+That should do it, you should now be able to run pipelines and store images in the jFrog BinTray Registry.
+
 
 ### Mount a Secret for your registry
 
