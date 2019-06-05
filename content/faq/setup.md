@@ -145,10 +145,10 @@ Then modify the contents of `env/values.yaml` to include the `urlTemplate:` valu
 ```yaml 
 expose:
   config:
-    urlTemplate: "{{.Service}}-{{.Namespace}}.{{.Domain}}"
+    urltemplate: "{{.Service}}-{{.Namespace}}.{{.Domain}}"
 ```
     
-We've left out the other values of `expose:` and `config:` for brevity - the important thing is to ensure you specify a custom `expose.config.urlTemplate` value. The default is `{{.Service}}.{{.Namespace}}.{{.Domain}}` if none is specified.
+We've left out the other values of `expose:` and `config:` for brevity - the important thing is to ensure you specify a custom `expose.config.urltemplate` value. The default is `{{.Service}}.{{.Namespace}}.{{.Domain}}` if none is specified.
 
 Whenever you modify the git repository for an environment the GitOps pipeline will run to update your Ingress resources to match your `UrlTemplate`.
  
