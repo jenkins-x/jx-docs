@@ -1,5 +1,5 @@
 ---
-date: 2019-06-05T08:24:12Z
+date: 2019-06-05T11:54:13Z
 title: "jx create devpod"
 slug: jx_create_devpod
 url: /commands/jx_create_devpod/
@@ -46,6 +46,7 @@ jx create devpod [flags]
       --shell string              The name of the shell to invoke in the DevPod. If nothing is specified it will use 'bash'
   -s, --suffix string             The suffix to append the pod name
       --sync                      Also synchronise the local file system into the DevPod
+      --temp-dir                  If enabled and --import-url is supplied then create a temporary directory to clone the source to detect what kind of DevPod to create
       --tiller-namespace string   The optional tiller namespace to use within the DevPod.
       --username string           The username to create the DevPod. If not specified defaults to the current operating system user or $USER'
   -w, --working-dir string        The working directory of the DevPod
