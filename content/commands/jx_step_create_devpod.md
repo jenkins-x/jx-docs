@@ -1,32 +1,36 @@
 ---
 date: 2019-06-06T15:57:12Z
-title: "jx step create jenkins"
-slug: jx_step_create_jenkins
-url: /commands/jx_step_create_jenkins/
+title: "jx step create devpod"
+slug: jx_step_create_devpod
+url: /commands/jx_step_create_devpod/
 ---
-## jx step create jenkins
+## jx step create devpod
 
-Creates the Jenkins config.xml file from a number of ConfigMaps for Pod Templates
+Creates the DevPod workspace files
 
 ### Synopsis
 
-Creates the Jenkins config.xml file from a number of ConfigMaps for Pod Templates
+Creates the DevPod workspace files
 
 ```
-jx step create jenkins config [flags]
+jx step create devpod workspace [flags]
 ```
 
 ### Examples
 
 ```
-  jx step create jenkins config
+  # create the DevPod Workspace files
+  jx step create devpod workspace
 ```
 
 ### Options
 
 ```
-  -h, --help            help for jenkins
-  -o, --output string   the output file generated (default "config.xml")
+  -d, --dir string               The workspace directory to write to (default "/workspace")
+  -h, --help                     help for devpod
+      --vscode                   If enabled also setup the VS Code settings to enable the devpodsh Terminal script
+      --vscode-home string       The VS Code default home dir file relative to the workspace home dir (default "/root")
+      --vscode-settings string   The VS Code settings file relative to the workspace home dir (default ".local/share/code-server/User/settings.json")
 ```
 
 ### Options inherited from parent commands

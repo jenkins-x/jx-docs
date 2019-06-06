@@ -1,5 +1,5 @@
 ---
-date: 2019-06-06T15:04:54Z
+date: 2019-06-06T15:57:12Z
 title: "jx step create"
 slug: jx_step_create
 url: /commands/jx_step_create/
@@ -36,6 +36,7 @@ jx step create [flags]
 ### SEE ALSO
 
 * [jx step](/commands/jx_step/)	 - pipeline steps
+* [jx step create devpod](/commands/jx_step_create_devpod/)	 - Creates the DevPod workspace files
 * [jx step create jenkins](/commands/jx_step_create_jenkins/)	 - Creates the Jenkins config.xml file from a number of ConfigMaps for Pod Templates
 * [jx step create task](/commands/jx_step_create_task/)	 - Creates a Tekton PipelineRun for the current folder or given build pack
 * [jx step create version](/commands/jx_step_create_version/)	 - Creates a Pull Request on the versions git repository for a new version of a chart/package

@@ -1,5 +1,5 @@
 ---
-date: 2019-06-06T15:04:54Z
+date: 2019-06-06T15:57:12Z
 title: "jx create devpod"
 slug: jx_create_devpod
 url: /commands/jx_create_devpod/
@@ -47,6 +47,7 @@ jx create devpod [flags]
   -s, --suffix string             The suffix to append the pod name
       --sync                      Also synchronise the local file system into the DevPod
       --temp-dir                  If enabled and --import-url is supplied then create a temporary directory to clone the source to detect what kind of DevPod to create
+      --theia                     If enabled use Eclipse Theia as the web based IDE
       --tiller-namespace string   The optional tiller namespace to use within the DevPod.
       --username string           The username to create the DevPod. If not specified defaults to the current operating system user or $USER'
   -w, --working-dir string        The working directory of the DevPod
