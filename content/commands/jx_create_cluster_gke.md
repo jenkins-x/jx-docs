@@ -1,5 +1,5 @@
 ---
-date: 2019-06-06T11:26:28Z
+date: 2019-06-06T15:04:54Z
 title: "jx create cluster gke"
 slug: jx_create_cluster_gke
 url: /commands/jx_create_cluster_gke/
@@ -35,6 +35,8 @@ jx create cluster gke [flags]
       --buildpack string                      The name of the build pack to use for the Team
       --cleanup-temp-files                    Cleans up any temporary values.yaml used by helm install [default true] (default true)
       --cloud-environment-repo string         Cloud Environments Git repo (default "https://github.com/jenkins-x/cloud-environments")
+      --cloudbees-auth string                 Auth used when setting up a letter/tenant cluster, format: 'username:password'
+      --cloudbees-domain string               When setting up a letter/tenant cluster, this creates a tenant cluster on the cloudbees domain which is retrieved via the required URL
       --cluster-ipv4-cidr string              The IP address range for the pods in this cluster in CIDR notation (e.g. 10.0.0.0/14)
   -n, --cluster-name string                   The name of this cluster, default is a random generated name
       --default-admin-password string         the default admin password to access Jenkins, Kubernetes Dashboard, ChartMuseum and Nexus
