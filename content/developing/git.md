@@ -85,8 +85,8 @@ jx get git server
 To add a GitHub Enterprise server try:
 
 ``` 
-jx create git server github https://github.foo.com -n GHE
-jx create git token -n GHE myusername
+jx create git server -k github -u https://github.foo.com -n GHE
+jx create git token myusername -n GHE -t mytoken
 
 ```
 

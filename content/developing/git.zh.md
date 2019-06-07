@@ -41,7 +41,8 @@ jx create git server gitKind someURL
 要添加一个企业 GitHub 服务，尝试：
 
 ``` 
-jx create git server github https://github.foo.com -n GHE
+jx create git server -k github -u https://github.foo.com -n GHE
+jx create git token myusername -n GHE -t mytoken
 ```
 
 这里 `-n` 是 git 服务的名称。
