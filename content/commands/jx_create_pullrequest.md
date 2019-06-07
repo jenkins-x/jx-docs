@@ -1,5 +1,5 @@
 ---
-date: 2019-06-07T21:51:19Z
+date: 2019-06-07T22:27:41Z
 title: "jx create pullrequest"
 slug: jx_create_pullrequest
 url: /commands/jx_create_pullrequest/
@@ -41,6 +41,7 @@ jx create pullrequest [flags]
       --base string         The base branch to create the pull request into (default "master")
       --body string         The body of the pullrequest
       --dir string          The source directory used to detect the Git repository. Defaults to the current directory
+      --fork                If true, and the username configured to push the repo is different from the org name a PR is being created against, assume that this is a fork
   -h, --help                help for pullrequest
   -l, --label stringArray   The labels to add to the pullrequest
       --push                If true the contents of the source directory will be committed, pushed, and used to create the pull request
