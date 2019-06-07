@@ -1,7 +1,6 @@
 ---
 title: "DevOps World-Jenkins World 2019 San Francisco: Agenda is Live"
-date: 2019-06-06T12:20:42-07:00
-draft: false
+date: 2019-06-07T08:05:19+2:00
 description: >
   DevOps World | Jenkins World 2019 Agenda is live.
 categories: [blog]
