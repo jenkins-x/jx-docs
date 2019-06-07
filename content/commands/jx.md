@@ -1,5 +1,5 @@
 ---
-date: 2019-06-07T10:28:01Z
+date: 2019-06-07T12:05:37Z
 title: "jx"
 slug: jx
 url: /commands/jx/
@@ -19,6 +19,7 @@ jx [flags]
 ### Options
 
 ```
+      --advanced-mode             Advanced install options. This will prompt for advanced install options
   -b, --batch-mode                Runs in batch mode without prompting for user input (default true)
   -h, --help                      help for jx
       --install-dependencies      Enables automatic dependencies installation when required

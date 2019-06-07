@@ -1,5 +1,5 @@
 ---
-date: 2019-06-07T10:28:01Z
+date: 2019-06-07T12:05:37Z
 title: "jx init"
 slug: jx_init
 url: /commands/jx_init/
@@ -25,7 +25,6 @@ jx init [flags]
 ### Options
 
 ```
-      --advanced                        Advanced install options. This will prompt for advanced install options
       --domain string                   Domain to expose ingress endpoints.  Example: jenkinsx.io
       --draft-client-only               Only install draft client
       --external-ip string              The external IP used to access ingress endpoints from outside the Kubernetes cluster. For bare metal on premise clusters this is often the IP of the Kubernetes master. For cloud installations this is often the external IP of the ingress LoadBalancer.
@@ -55,6 +54,7 @@ jx init [flags]
 ### Options inherited from parent commands
 
 ```
+      --advanced-mode             Advanced install options. This will prompt for advanced install options
   -b, --batch-mode                Runs in batch mode without prompting for user input (default true)
       --install-dependencies      Enables automatic dependencies installation when required
       --log-level string          Sets the logging level (panic, fatal, error, warning, info, debug) (default "info")

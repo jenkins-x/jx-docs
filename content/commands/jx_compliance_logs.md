@@ -1,5 +1,5 @@
 ---
-date: 2019-06-07T10:28:01Z
+date: 2019-06-07T12:05:37Z
 title: "jx compliance logs"
 slug: jx_compliance_logs
 url: /commands/jx_compliance_logs/
@@ -33,6 +33,7 @@ jx compliance logs [flags]
 ### Options inherited from parent commands
 
 ```
+      --advanced-mode             Advanced install options. This will prompt for advanced install options
   -b, --batch-mode                Runs in batch mode without prompting for user input (default true)
       --install-dependencies      Enables automatic dependencies installation when required
       --log-level string          Sets the logging level (panic, fatal, error, warning, info, debug) (default "info")

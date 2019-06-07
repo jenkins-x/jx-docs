@@ -1,5 +1,5 @@
 ---
-date: 2019-06-07T10:28:01Z
+date: 2019-06-07T12:05:37Z
 title: "jx create cluster oke"
 slug: jx_create_cluster_oke
 url: /commands/jx_create_cluster_oke/
@@ -33,10 +33,11 @@ jx create cluster oke [flags]
 ### Options
 
 ```
-      --advanced                              Advanced install options. This will prompt for advanced install options
       --buildpack string                      The name of the build pack to use for the Team
       --cleanup-temp-files                    Cleans up any temporary values.yaml used by helm install [default true] (default true)
       --cloud-environment-repo string         Cloud Environments Git repo (default "https://github.com/jenkins-x/cloud-environments")
+      --cloudbees-auth string                 Auth used when setting up a letter/tenant cluster, format: 'username:password'
+      --cloudbees-domain string               When setting up a letter/tenant cluster, this creates a tenant cluster on the cloudbees domain which is retrieved via the required URL
       --clusterMaxWaitSeconds string          The maximum time to wait for the work request to reach the state defined by --wait-for-state. Defaults to 1200 seconds.
       --clusterWaitIntervalSeconds string     Check every --wait-interval-seconds to see whether the work request to see if it has reached the state defined by --wait-for-state.
       --compartmentId string                  The OCID of the compartment in which to create the cluster.
@@ -132,6 +133,7 @@ jx create cluster oke [flags]
 ### Options inherited from parent commands
 
 ```
+      --advanced-mode             Advanced install options. This will prompt for advanced install options
   -b, --batch-mode                Runs in batch mode without prompting for user input (default true)
       --install-dependencies      Enables automatic dependencies installation when required
       --log-level string          Sets the logging level (panic, fatal, error, warning, info, debug) (default "info")

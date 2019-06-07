@@ -1,5 +1,5 @@
 ---
-date: 2019-06-07T10:28:01Z
+date: 2019-06-07T12:05:37Z
 title: "jx get previews"
 slug: jx_get_previews
 url: /commands/jx_get_previews/
@@ -42,6 +42,7 @@ jx get previews [flags]
 ### Options inherited from parent commands
 
 ```
+      --advanced-mode             Advanced install options. This will prompt for advanced install options
   -b, --batch-mode                Runs in batch mode without prompting for user input (default true)
       --install-dependencies      Enables automatic dependencies installation when required
       --log-level string          Sets the logging level (panic, fatal, error, warning, info, debug) (default "info")

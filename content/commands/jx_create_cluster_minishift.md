@@ -1,5 +1,5 @@
 ---
-date: 2019-06-07T10:28:01Z
+date: 2019-06-07T12:05:37Z
 title: "jx create cluster minishift"
 slug: jx_create_cluster_minishift
 url: /commands/jx_create_cluster_minishift/
@@ -27,10 +27,11 @@ jx create cluster minishift [flags]
 ### Options
 
 ```
-      --advanced                              Advanced install options. This will prompt for advanced install options
       --buildpack string                      The name of the build pack to use for the Team
       --cleanup-temp-files                    Cleans up any temporary values.yaml used by helm install [default true] (default true)
       --cloud-environment-repo string         Cloud Environments Git repo (default "https://github.com/jenkins-x/cloud-environments")
+      --cloudbees-auth string                 Auth used when setting up a letter/tenant cluster, format: 'username:password'
+      --cloudbees-domain string               When setting up a letter/tenant cluster, this creates a tenant cluster on the cloudbees domain which is retrieved via the required URL
   -c, --cpu string                            Number of CPUs allocated to the Minishift VM (default "3")
       --default-admin-password string         the default admin password to access Jenkins, Kubernetes Dashboard, ChartMuseum and Nexus
       --default-admin-username string         the default admin username to access Jenkins, Kubernetes Dashboard, ChartMuseum and Nexus (default "admin")
@@ -108,6 +109,7 @@ jx create cluster minishift [flags]
 ### Options inherited from parent commands
 
 ```
+      --advanced-mode             Advanced install options. This will prompt for advanced install options
   -b, --batch-mode                Runs in batch mode without prompting for user input (default true)
       --install-dependencies      Enables automatic dependencies installation when required
       --log-level string          Sets the logging level (panic, fatal, error, warning, info, debug) (default "info")

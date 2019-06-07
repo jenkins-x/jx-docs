@@ -1,5 +1,5 @@
 ---
-date: 2019-06-07T10:28:01Z
+date: 2019-06-07T12:05:37Z
 title: "jx create codeship"
 slug: jx_create_codeship
 url: /commands/jx_create_codeship/
@@ -28,11 +28,12 @@ jx create codeship [flags]
 ### Options
 
 ```
-      --advanced                               Advanced install options. This will prompt for advanced install options
       --buildpack string                       The name of the build pack to use for the Team
       --cleanup-temp-files                     Cleans up any temporary values.yaml used by helm install [default true] (default true)
       --cloud-environment-repo string          Cloud Environments Git repo (default "https://github.com/jenkins-x/cloud-environments")
       --cloud-provider string                  The cloud provider (currently gke only) - cannot be used in conjunction with --cluster
+      --cloudbees-auth string                  Auth used when setting up a letter/tenant cluster, format: 'username:password'
+      --cloudbees-domain string                When setting up a letter/tenant cluster, this creates a tenant cluster on the cloudbees domain which is retrieved via the required URL
   -c, --cluster stringArray                    Name and Kubernetes provider (currently gke only) of clusters to be created in the form --cluster foo=gke
       --cluster-name string                    The name of a single cluster to create - cannot be used in conjunction with --cluster
       --codeship-organisation string           The Codeship organisation to use, this will not be stored anywhere
@@ -134,6 +135,7 @@ jx create codeship [flags]
 ### Options inherited from parent commands
 
 ```
+      --advanced-mode             Advanced install options. This will prompt for advanced install options
   -b, --batch-mode                Runs in batch mode without prompting for user input (default true)
       --install-dependencies      Enables automatic dependencies installation when required
       --log-level string          Sets the logging level (panic, fatal, error, warning, info, debug) (default "info")

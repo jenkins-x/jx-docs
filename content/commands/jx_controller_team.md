@@ -1,5 +1,5 @@
 ---
-date: 2019-06-07T10:28:01Z
+date: 2019-06-07T12:05:37Z
 title: "jx controller team"
 slug: jx_controller_team
 url: /commands/jx_controller_team/
@@ -19,10 +19,11 @@ jx controller team [flags]
 ### Options
 
 ```
-      --advanced                              Advanced install options. This will prompt for advanced install options
       --buildpack string                      The name of the build pack to use for the Team
       --cleanup-temp-files                    Cleans up any temporary values.yaml used by helm install [default true] (default true)
       --cloud-environment-repo string         Cloud Environments Git repo (default "https://github.com/jenkins-x/cloud-environments")
+      --cloudbees-auth string                 Auth used when setting up a letter/tenant cluster, format: 'username:password'
+      --cloudbees-domain string               When setting up a letter/tenant cluster, this creates a tenant cluster on the cloudbees domain which is retrieved via the required URL
       --default-admin-password string         the default admin password to access Jenkins, Kubernetes Dashboard, ChartMuseum and Nexus
       --default-admin-username string         the default admin username to access Jenkins, Kubernetes Dashboard, ChartMuseum and Nexus (default "admin")
       --default-environment-prefix string     Default environment repo prefix, your Git repos will be of the form 'environment-$prefix-$envName'
@@ -95,6 +96,7 @@ jx controller team [flags]
 ### Options inherited from parent commands
 
 ```
+      --advanced-mode             Advanced install options. This will prompt for advanced install options
   -b, --batch-mode                Runs in batch mode without prompting for user input (default true)
       --install-dependencies      Enables automatic dependencies installation when required
       --log-level string          Sets the logging level (panic, fatal, error, warning, info, debug) (default "info")
