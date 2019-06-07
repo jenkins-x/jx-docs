@@ -1,5 +1,5 @@
 ---
-date: 2019-06-07T19:28:39Z
+date: 2019-06-07T21:10:42Z
 title: "jx delete chat token"
 slug: jx_delete_chat_token
 url: /commands/jx_delete_chat_token/
