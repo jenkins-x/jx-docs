@@ -1,5 +1,5 @@
 ---
-date: 2019-06-07T12:05:37Z
+date: 2019-06-07T17:26:36Z
 title: "jx create codeship"
 slug: jx_create_codeship
 url: /commands/jx_create_codeship/
