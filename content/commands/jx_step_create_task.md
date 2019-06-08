@@ -1,5 +1,5 @@
 ---
-date: 2019-06-08T15:18:56Z
+date: 2019-06-08T15:56:35Z
 title: "jx step create task"
 slug: jx_step_create_task
 url: /commands/jx_step_create_task/
@@ -45,6 +45,7 @@ jx step create task [flags]
   -e, --env stringArray              List of custom environment variables to be applied to resources that are created
   -h, --help                         help for task
       --image string                 Specify a custom image to use for the steps which overrides the image in the PodTemplates
+      --interpret                    Enable interpret mode. Rather than spinning up Tekton CRDs to create a Pod just invoke the commands in the current shell directly. Useful for bootstrapping installations of Jenkins X and tekton using a pipeline before you have installed Tekton.
       --kaniko-image string          The docker image for Kaniko (default "gcr.io/kaniko-project/executor:9912ccbf8d22bbafbf971124600fbb0b13b9cbd6")
       --kaniko-secret string         The name of the kaniko secret (default "kaniko-secret")
       --kaniko-secret-key string     The key in the Kaniko Secret to mount (default "kaniko-secret")

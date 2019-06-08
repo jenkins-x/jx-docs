@@ -1,5 +1,5 @@
 ---
-date: 2019-06-08T15:18:56Z
+date: 2019-06-08T15:56:35Z
 title: "jx step helm list"
 slug: jx_step_helm_list
 url: /commands/jx_step_helm_list/
@@ -31,6 +31,7 @@ jx step helm list [flags]
       --git-provider string           The Git provider for the environment Git repository (default "github.com")
   -h, --help                          help for list
   -n, --namespace string              the namespace to look for the helm releases. Defaults to the current namespace
+      --remote                        If enabled assume we are in a remote cluster such as a stand alone Staging/Production cluster
 ```
 
 ### Options inherited from parent commands

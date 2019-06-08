@@ -1,5 +1,5 @@
 ---
-date: 2019-06-08T15:18:56Z
+date: 2019-06-08T15:56:35Z
 title: "jx step helm env"
 slug: jx_step_helm_env
 url: /commands/jx_step_helm_env/
@@ -30,6 +30,7 @@ jx step helm env [flags]
   -d, --dir string                    The directory containing the helm chart to apply (default ".")
       --git-provider string           The Git provider for the environment Git repository (default "github.com")
   -h, --help                          help for env
+      --remote                        If enabled assume we are in a remote cluster such as a stand alone Staging/Production cluster
 ```
 
 ### Options inherited from parent commands

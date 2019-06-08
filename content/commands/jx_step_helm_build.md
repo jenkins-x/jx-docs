@@ -1,5 +1,5 @@
 ---
-date: 2019-06-08T15:18:56Z
+date: 2019-06-08T15:56:35Z
 title: "jx step helm build"
 slug: jx_step_helm_build
 url: /commands/jx_step_helm_build/
@@ -33,6 +33,7 @@ jx step helm build [flags]
       --git-provider string           The Git provider for the environment Git repository (default "github.com")
   -h, --help                          help for build
   -r, --recursive                     Build recursively the dependent charts
+      --remote                        If enabled assume we are in a remote cluster such as a stand alone Staging/Production cluster
 ```
 
 ### Options inherited from parent commands

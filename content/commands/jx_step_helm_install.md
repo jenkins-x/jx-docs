@@ -1,5 +1,5 @@
 ---
-date: 2019-06-08T15:18:56Z
+date: 2019-06-08T15:56:35Z
 title: "jx step helm install"
 slug: jx_step_helm_install
 url: /commands/jx_step_helm_install/
@@ -32,6 +32,7 @@ jx step helm install [flags]
   -h, --help                          help for install
   -n, --name string                   The name of the release to install
       --namespace string              The namespace to install into. Defaults to the current namespace
+      --remote                        If enabled assume we are in a remote cluster such as a stand alone Staging/Production cluster
       --set stringArray               The values to override in the helm chart
       --set-file stringArray          The values files to override values in the helm chart
   -v, --version string                The version to install. Defaults to the latest

@@ -1,5 +1,5 @@
 ---
-date: 2019-06-08T15:18:56Z
+date: 2019-06-08T15:56:35Z
 title: "jx step helm delete"
 slug: jx_step_helm_delete
 url: /commands/jx_step_helm_delete/
@@ -32,6 +32,7 @@ jx step helm delete [releaseName] [flags]
   -h, --help                          help for delete
   -n, --namespace string              the namespace to look for the helm releases. Defaults to the current namespace
       --purge                         Whether to purge the helm release
+      --remote                        If enabled assume we are in a remote cluster such as a stand alone Staging/Production cluster
 ```
 
 ### Options inherited from parent commands
