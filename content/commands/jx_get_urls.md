@@ -1,5 +1,5 @@
 ---
-date: 2019-06-08T14:13:24Z
+date: 2019-06-08T15:18:56Z
 title: "jx get urls"
 slug: jx_get_urls
 url: /commands/jx_get_urls/
