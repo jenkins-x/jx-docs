@@ -75,7 +75,7 @@ Plank is a Kubernetes operator that reacts to ProwJob custom resources. It creat
 We are using knative build in Jenkins X, which uses the [prow-build controller](https://github.com/kubernetes/test-infra/blob/master/prow/cmd/build/controller.go), so you shouldn't have to worry about plank.
 
 #### [prow-build](https://github.com/kubernetes/test-infra/blob/master/prow/cmd/build/controller.go)
-Kubernetes operator that watches ProwJob objects, and reacts to those which agent field is the knative build agent. It will create [a Knative Build object](https://github.com/knative/docs/blob/master/build/builds.md) based on the build_spec field of the ProwJob object. 
+Kubernetes operator that watches ProwJob objects, and reacts to those whose agent field is the knative build agent. It will create [a Knative Build object](https://github.com/knative/docs/blob/master/build/builds.md) based on the build_spec field of the ProwJob object. 
 [The knative build controller](https://github.com/knative/build/blob/master/cmd/controller/main.go) reacts to it and creates a Pod to run the build. All the ProwJob, the Build and the Pod have the same name (a UUID).
 
 The Build object contains interesting fields:
