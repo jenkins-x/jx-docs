@@ -52,7 +52,7 @@ The life cycle of a [ProwJob](https://github.com/kubernetes/test-infra/blob/mast
 - error: means the job could not schedule (bad config, perhaps).
 
 #### Job Type
-In the Prow configuration you can configure per-repo Presubmits and Postsubmits jobs that are triggered by the trigger plugin. Presubmits are ran when the PR code changes (opening a new PR or pushing code to the PR’s branch), so you can test your new code changes. Postsubmits are ran whenever there is a new commit appearing on an origin branch (GH push event).
+In the Prow configuration you can configure per-repo Presubmits and Postsubmits jobs that are triggered by the trigger plugin. Presubmits are run when the PR code changes (opening a new PR or pushing code to the PR’s branch), so you can test your new code changes. Postsubmits are run whenever there is a new commit appearing on an origin branch (GH push event).
 
 The use-case for postsubmits is that there may be fewer than 100 merges a day to a really high-volume repo, but there could be ten or one hundred times that many presubmit jobs run. Postsubmits can be used when something is very expensive to test and is not necessarily blocking for merge, but you do want signal. Similarly, the way the system works is that your presubmit check will run with your code merged into the branch you're targeting, so technically the merge commit that ends up in `master` branch has effectively been tested already and often this means you may want a presubmit job but not to duplicate it also postsubmit as it gives you no more signal.
 
@@ -102,7 +102,7 @@ A template contains steps to be executed in the build. Instead of specifying the
 ###### Jenkins X Build Templates
 Jenkins X uses custom BuildTemplates to run the builds of the applications. [In this repository](https://github.com/jenkins-x/jenkins-x-serverless) you can find the different BuildTemplates available, depending on the application language. These BuildTemplates use a different Step builder image depending on the language, since they have to build the application using different tools like maven, go or gradle. So every Builder image has different tools installed, althought eventually all the builder images basically run [serverless Jenkins](https://jenkins-x.io/news/serverless-jenkins/) (AKA [Jenkinsfile-Runner](https://github.com/jenkinsci/jenkinsfile-runner)). That allows our builds to define the steps in a Jenkinsfile. All these steps are executed inside the same [Jenkinsfile Runner container](https://hub.docker.com/r/jenkins/jenkinsfile-runner/dockerfile/), which doesn't match the Knative Build steps model.
 
-##### The job is ran inside a Pod
+##### The job is run inside a Pod
 The Pod that’s created to run the actual build has a container that does nothing, but it has init containers to do the steps required to run the job:
 
 - [creds-init](https://github.com/knative/build/tree/master/cmd/creds-init): Service account secrets are mounted in /var/build-secrets/ so this container has access to them. It aggregates them into their respective credential files in $HOME, which is another volume shared between all the steps. Typically credentials for git server and docker registry.
