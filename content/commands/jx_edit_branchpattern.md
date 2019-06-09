@@ -24,7 +24,7 @@ jx edit branchpattern [flags]
 
 ```
   # Create a branch pattern for your team
-  jx create branch pattern "master|develop|PR-.*"
+  jx create branchpattern "master|develop|PR-.*"
 ```
 
 ### Options
