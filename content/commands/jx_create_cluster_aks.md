@@ -51,7 +51,7 @@ jx create cluster aks [flags]
       --dns-service-ip string                    IP address assigned to the Kubernetes DNS service
       --docker-bridge-address string             An IP address and netmask assigned to the Docker bridge
       --docker-registry string                   The Docker Registry host or host:port which is used when tagging and pushing images. If not specified it defaults to the internal registry unless there is a better provider default (e.g. ECR on AWS/EKS)
-      --docker-registry-org string               The Docker Registry organiation/user to create images inside. On GCP this is typically your Google Project ID.
+      --docker-registry-org string               The Docker Registry organization/user to create images inside. On GCP this is typically your Google Project ID.
       --domain string                            Domain to expose ingress endpoints.  Example: jenkinsx.io
       --draft-client-only                        Only install draft client
       --environment-git-owner string             The Git provider organisation to create the environment Git repositories in
