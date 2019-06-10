@@ -1,5 +1,5 @@
 ---
-date: 2019-06-10T12:32:32Z
+date: 2019-06-10T15:29:31Z
 title: "jx create cluster gke"
 slug: jx_create_cluster_gke
 url: /commands/jx_create_cluster_gke/
@@ -43,7 +43,7 @@ jx create cluster gke [flags]
       --default-environment-prefix string     Default environment repo prefix, your Git repos will be of the form 'environment-$prefix-$envName'
   -d, --disk-size string                      Size in GB for node VM boot disks. Defaults to 100GB
       --docker-registry string                The Docker Registry host or host:port which is used when tagging and pushing images. If not specified it defaults to the internal registry unless there is a better provider default (e.g. ECR on AWS/EKS)
-      --docker-registry-org string            The Docker Registry organization/user to create images inside. On GCP this is typically your Google Project ID.
+      --docker-registry-org string            The Docker Registry organiation/user to create images inside. On GCP this is typically your Google Project ID.
       --domain string                         Domain to expose ingress endpoints.  Example: jenkinsx.io
       --draft-client-only                     Only install draft client
       --enable-autoupgrade                    Sets autoupgrade feature for a cluster's default node-pool(s)

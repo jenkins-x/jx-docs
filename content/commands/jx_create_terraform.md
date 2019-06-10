@@ -1,5 +1,5 @@
 ---
-date: 2019-06-10T12:32:32Z
+date: 2019-06-10T15:29:31Z
 title: "jx create terraform"
 slug: jx_create_terraform
 url: /commands/jx_create_terraform/
@@ -40,7 +40,7 @@ jx create terraform [flags]
       --default-admin-username string          the default admin username to access Jenkins, Kubernetes Dashboard, ChartMuseum and Nexus (default "admin")
       --default-environment-prefix string      Default environment repo prefix, your Git repos will be of the form 'environment-$prefix-$envName'
       --docker-registry string                 The Docker Registry host or host:port which is used when tagging and pushing images. If not specified it defaults to the internal registry unless there is a better provider default (e.g. ECR on AWS/EKS)
-      --docker-registry-org string             The Docker Registry organization/user to create images inside. On GCP this is typically your Google Project ID.
+      --docker-registry-org string             The Docker Registry organiation/user to create images inside. On GCP this is typically your Google Project ID.
       --domain string                          Domain to expose ingress endpoints.  Example: jenkinsx.io
       --draft-client-only                      Only install draft client
       --environment-git-owner string           The Git provider organisation to create the environment Git repositories in
