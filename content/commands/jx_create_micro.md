@@ -1,5 +1,5 @@
 ---
-date: 2019-06-11T10:37:50Z
+date: 2019-06-11T13:10:03Z
 title: "jx create micro"
 slug: jx_create_micro
 url: /commands/jx_create_micro/
