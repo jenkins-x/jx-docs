@@ -1,5 +1,5 @@
 ---
-date: 2019-06-11T09:47:14Z
+date: 2019-06-11T10:37:50Z
 title: "jx step nexus drop"
 slug: jx_step_nexus_drop
 url: /commands/jx_step_nexus_drop/
@@ -34,7 +34,6 @@ jx step nexus drop [flags]
       --advanced-mode             Advanced install options. This will prompt for advanced install options
   -b, --batch-mode                Runs in batch mode without prompting for user input (default true)
       --install-dependencies      Enables automatic dependencies installation when required
-      --log-level string          Sets the logging level (panic, fatal, error, warning, info, debug) (default "info")
       --no-brew                   Disables brew package manager on MacOS when installing binary dependencies
       --skip-auth-secrets-merge   Skips merging the secrets from local files with the secrets from Kubernetes cluster
       --verbose                   Enables verbose output

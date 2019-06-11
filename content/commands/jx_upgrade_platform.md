@@ -1,5 +1,5 @@
 ---
-date: 2019-06-11T09:47:14Z
+date: 2019-06-11T10:37:50Z
 title: "jx upgrade platform"
 slug: jx_upgrade_platform
 url: /commands/jx_upgrade_platform/
@@ -47,7 +47,6 @@ jx upgrade platform [flags]
       --advanced-mode             Advanced install options. This will prompt for advanced install options
   -b, --batch-mode                Runs in batch mode without prompting for user input (default true)
       --install-dependencies      Enables automatic dependencies installation when required
-      --log-level string          Sets the logging level (panic, fatal, error, warning, info, debug) (default "info")
       --no-brew                   Disables brew package manager on MacOS when installing binary dependencies
       --skip-auth-secrets-merge   Skips merging the secrets from local files with the secrets from Kubernetes cluster
       --verbose                   Enables verbose output

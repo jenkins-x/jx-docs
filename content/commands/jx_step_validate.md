@@ -1,5 +1,5 @@
 ---
-date: 2019-06-11T09:47:14Z
+date: 2019-06-11T10:37:50Z
 title: "jx step validate"
 slug: jx_step_validate
 url: /commands/jx_step_validate/
@@ -22,7 +22,7 @@ jx step validate [flags]
 
 ```
   # Validates that the jx version is new enough
-  jx step validate --min-jx-version 2.0.262
+  jx step validate --min-jx-version 2.0.263
 ```
 
 ### Options
@@ -39,7 +39,6 @@ jx step validate [flags]
       --advanced-mode             Advanced install options. This will prompt for advanced install options
   -b, --batch-mode                Runs in batch mode without prompting for user input (default true)
       --install-dependencies      Enables automatic dependencies installation when required
-      --log-level string          Sets the logging level (panic, fatal, error, warning, info, debug) (default "info")
       --no-brew                   Disables brew package manager on MacOS when installing binary dependencies
       --skip-auth-secrets-merge   Skips merging the secrets from local files with the secrets from Kubernetes cluster
       --verbose                   Enables verbose output
