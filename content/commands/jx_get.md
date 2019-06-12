@@ -1,5 +1,5 @@
 ---
-date: 2019-06-12T12:51:02Z
+date: 2019-06-12T21:14:41Z
 title: "jx get"
 slug: jx_get
 url: /commands/jx_get/
@@ -76,7 +76,7 @@ jx get TYPE [flags]
 * [jx get plugins](/commands/jx_get_plugins/)	 - List all visible plugin executables on a user's PATH
 * [jx get post](/commands/jx_get_post/)	 - Create a job which is triggered after a Preview is created
 * [jx get previews](/commands/jx_get_previews/)	 - Display one or more Preview Environments
-* [jx get quickstartlocations](/commands/jx_get_quickstartlocations/)	 - Display one or more Quickstart Locations
+* [jx get quickstartlocation](/commands/jx_get_quickstartlocation/)	 - Display one or more Quickstart Locations
 * [jx get quickstarts](/commands/jx_get_quickstarts/)	 - Lists the available quickstarts
 * [jx get releases](/commands/jx_get_releases/)	 - Display the Release or Releases the current user is a member of
 * [jx get secrets](/commands/jx_get_secrets/)	 - Display one or more Secrets
