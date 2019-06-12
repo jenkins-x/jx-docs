@@ -95,6 +95,7 @@ Check out the [contribution guide](/contribute/) for some tips on how to get sta
 <iframe src="https://calendar.google.com/calendar/b/1/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FLos_Angeles&amp;src=Y2xvdWRiZWVzLmNvbV9nam51bGtnbDhrcjFyc2hhbjhqdGpyZnM1Y0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%238E24AA&amp;showCalendars=0&amp;showTabs=1&amp;showPrint=0&amp;showDate=1" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 {{% note %}}
 We meet for office hours **every other Thursday** at 4pm GMT / 11am US Eastern / 8am US Pacific.
+
 Next office hours: **13th June 2019**
 {{% /note %}}
 
