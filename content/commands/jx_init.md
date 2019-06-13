@@ -1,5 +1,5 @@
 ---
-date: 2019-06-13T13:12:21Z
+date: 2019-06-13T15:44:50Z
 title: "jx init"
 slug: jx_init
 url: /commands/jx_init/
@@ -25,6 +25,7 @@ jx init [flags]
 ### Options
 
 ```
+      --advanced-mode                   Advanced install options. This will prompt for advanced install options
       --domain string                   Domain to expose ingress endpoints.  Example: jenkinsx.io
       --draft-client-only               Only install draft client
       --external-dns                    Installs external-dns into the cluster. ExternalDNS manages service DNS records for your cluster, providing you've setup your domain record
@@ -55,7 +56,6 @@ jx init [flags]
 ### Options inherited from parent commands
 
 ```
-      --advanced-mode             Advanced install options. This will prompt for advanced install options
   -b, --batch-mode                Runs in batch mode without prompting for user input (default true)
       --install-dependencies      Enables automatic dependencies installation when required
       --no-brew                   Disables brew package manager on MacOS when installing binary dependencies

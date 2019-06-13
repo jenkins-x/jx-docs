@@ -1,5 +1,5 @@
 ---
-date: 2019-06-13T13:12:21Z
+date: 2019-06-13T15:44:50Z
 title: "jx compliance run"
 slug: jx_compliance_run
 url: /commands/jx_compliance_run/
@@ -32,7 +32,6 @@ jx compliance run [flags]
 ### Options inherited from parent commands
 
 ```
-      --advanced-mode             Advanced install options. This will prompt for advanced install options
   -b, --batch-mode                Runs in batch mode without prompting for user input (default true)
       --install-dependencies      Enables automatic dependencies installation when required
       --no-brew                   Disables brew package manager on MacOS when installing binary dependencies

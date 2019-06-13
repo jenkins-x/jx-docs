@@ -1,5 +1,5 @@
 ---
-date: 2019-06-13T13:12:21Z
+date: 2019-06-13T15:44:50Z
 title: "jx step bdd"
 slug: jx_step_bdd
 url: /commands/jx_step_bdd/
@@ -29,6 +29,7 @@ jx step bdd [flags]
 ### Options
 
 ```
+      --advanced-mode                         Advanced install options. This will prompt for advanced install options
       --base-domain string                    the base domain to use when creating the cluster
       --binary string                         the binary location of the 'jx' executable for creating clusters (default "jx")
       --buildpack string                      The name of the build pack to use for the Team
@@ -128,7 +129,6 @@ jx step bdd [flags]
 ### Options inherited from parent commands
 
 ```
-      --advanced-mode             Advanced install options. This will prompt for advanced install options
   -b, --batch-mode                Runs in batch mode without prompting for user input (default true)
       --install-dependencies      Enables automatic dependencies installation when required
       --no-brew                   Disables brew package manager on MacOS when installing binary dependencies

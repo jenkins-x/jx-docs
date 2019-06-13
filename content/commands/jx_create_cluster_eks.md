@@ -1,5 +1,5 @@
 ---
-date: 2019-06-13T13:12:21Z
+date: 2019-06-13T15:44:50Z
 title: "jx create cluster eks"
 slug: jx_create_cluster_eks
 url: /commands/jx_create_cluster_eks/
@@ -31,6 +31,7 @@ jx create cluster eks [flags]
 ### Options
 
 ```
+      --advanced-mode                         Advanced install options. This will prompt for advanced install options
       --aws-api-timeout duration              Duration of AWS API timeout (default 20m0s)
       --buildpack string                      The name of the build pack to use for the Team
       --cleanup-temp-files                    Cleans up any temporary values.yaml used by helm install [default true] (default true)
@@ -122,7 +123,6 @@ jx create cluster eks [flags]
 ### Options inherited from parent commands
 
 ```
-      --advanced-mode             Advanced install options. This will prompt for advanced install options
   -b, --batch-mode                Runs in batch mode without prompting for user input (default true)
       --install-dependencies      Enables automatic dependencies installation when required
       --no-brew                   Disables brew package manager on MacOS when installing binary dependencies
