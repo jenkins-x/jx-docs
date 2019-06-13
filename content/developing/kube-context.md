@@ -21,7 +21,7 @@ The kubernetes CLI tool [kubectl](https://kubernetes.io/docs/reference/kubectl/o
 If you want to change the namespace using the kubectl command line you can use:
 
 ```shell
-kubectl config set-context`kubectl config current-context` --namespace=foo
+kubectl config set-context `kubectl config current-context` --namespace=foo
 ```
 
 However [jx](/commands/jx) provides lots of helper commands for changing clusters, namespaces or environments:
