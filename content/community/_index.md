@@ -99,6 +99,8 @@ We meet for office hours **every other Thursday** at 4pm GMT / 11am US Eastern /
 Next office hours: **27th June 2019**
 {{% /note %}}
 
-[https://zoom.us/j/397862697](https://zoom.us/j/397862697).
+Join us: [https://zoom.us/j/397862697](https://zoom.us/j/397862697)
 
-Feel free to [add your questions to the doc](https://docs.google.com/document/d/1wHdBlZAN-ndPELuBoM5HBnYiQLvcz92-euXne2mKOEI/edit) or hangout live and ask chat in person.
+Feel free to [add your questions to the doc](https://docs.google.com/document/d/1wHdBlZAN-ndPELuBoM5HBnYiQLvcz92-euXne2mKOEI/edit) or ask your questions in person.
+
+[Add Jenkins X office hours to your calendar.](https://calendar.google.com/event?action=TEMPLATE&tmeid=MGUybjJxZmY3djI2YXU3cHVtYTNtZnV1MW5fMjAxOTA2MjdUMTUwMDAwWiBjbG91ZGJlZXMuY29tXzVrNnByaGxwaDEybzRvMmZhcjU5N2NqZHBnQGc&tmsrc=cloudbees.com_5k6prhlph12o4o2far597cjdpg%40group.calendar.google.com&scp=ALL)
