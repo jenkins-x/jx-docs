@@ -96,7 +96,7 @@ Check out the [contribution guide](/contribute/) for some tips on how to get sta
 {{% note %}}
 We meet for office hours **every other Thursday** at 4pm GMT / 11am US Eastern / 8am US Pacific.
 
-Next office hours: **13th June 2019**
+Next office hours: **27th June 2019**
 {{% /note %}}
 
 [https://zoom.us/j/397862697](https://zoom.us/j/397862697).
