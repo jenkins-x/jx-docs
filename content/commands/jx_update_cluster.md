@@ -1,5 +1,5 @@
 ---
-date: 2019-06-14T13:41:30Z
+date: 2019-06-14T16:41:44Z
 title: "jx update cluster"
 slug: jx_update_cluster
 url: /commands/jx_update_cluster/
@@ -10,22 +10,7 @@ Updates an existing Kubernetes cluster
 
 ### Synopsis
 
-This command updates an existing Kubernetes cluster, it can be used to apply minor changes to a cluster / node pool 
-
-Valid Kubernetes providers include:
-
-    * aks (Azure Container Service - https://docs.microsoft.com/en-us/azure/aks)
-    * aws (Amazon Web Services via kops - https://github.com/aws-samples/aws-workshop-for-kubernetes/blob/master/readme.adoc)
-    * eks (Amazon Web Services Elastic Container Service for Kubernetes - https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html)
-    * gke (Google Container Engine - https://cloud.google.com/kubernetes-engine)
-    # icp (IBM Cloud Private) - https://www.ibm.com/cloud/private
-    * iks (IBM Cloud Kubernetes Service - https://console.bluemix.net/docs/containers)
-    * oke (Oracle Cloud Infrastructure Container Engine for Kubernetes - https://docs.cloud.oracle.com/iaas/Content/ContEng/Concepts/contengoverview.htm)
-    * kubernetes for custom installations of Kubernetes
-    * minikube (single-node Kubernetes cluster inside a VM on your laptop)
-	* minishift (single-node OpenShift cluster inside a VM on your laptop)
-	* openshift for installing on 3.9.x or later clusters of OpenShift
-
+This command updates an existing Kubernetes cluster, it can be used to apply minor changes to a cluster / node pool.
 
 ```
 jx update cluster [kubernetes provider] [flags]
