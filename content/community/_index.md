@@ -92,13 +92,12 @@ Check out the [contribution guide](/contribute/) for some tips on how to get sta
 
 ## Office Hours
 
-<iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Europe%2FLondon&amp;src=Y2xvdWRiZWVzLmNvbV81azZwcmhscGgxMm80bzJmYXI1OTdjamRwZ0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%237CB342" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 {{% note %}}
 We meet for office hours **every other Thursday** at 4pm GMT / 11am US Eastern / 8am US Pacific.
 
 Next office hours: **27th June 2019**
 {{% /note %}}
 
-[https://zoom.us/j/397862697](https://zoom.us/j/397862697).
+Join us: [https://zoom.us/j/397862697](https://zoom.us/j/397862697)
 
-Feel free to [add your questions to the doc](https://docs.google.com/document/d/1wHdBlZAN-ndPELuBoM5HBnYiQLvcz92-euXne2mKOEI/edit) or hangout live and ask chat in person.
+Feel free to [add your questions to the doc](https://docs.google.com/document/d/1wHdBlZAN-ndPELuBoM5HBnYiQLvcz92-euXne2mKOEI/edit) or ask your questions in person.
