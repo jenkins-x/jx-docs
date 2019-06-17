@@ -12,7 +12,7 @@ author: Carlos Sanchez
 
 
 <figure>
-<img src="/images/alibaba-cloud-logo.png"/>
+<img src="/images/alibaba-cloud-logo.svg"/>
 <figcaption>
 <h5>Installing Jenkins X on Alibaba Cloud Container Service</h5>
 </figcaption>
