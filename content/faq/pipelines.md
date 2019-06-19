@@ -22,3 +22,11 @@ To add a new custom step to your `jenkins-x.yml` file see [how to use the jx cre
 ## How do Jenkins X Pipelines compare to Jenkins pipelines?
 
 See [the differences between Jenkins X and Jenkins Pipelines](/architecture/jenkins-x-pipelines/#customising-the-pipelines)
+
+## How do I get IDE completion editing `jenkins-x.yml`
+
+See the IDE guide for [IDEA](/architecture/jenkins-x-pipelines/#editing-in-vs-code) and [VS Code](/architecture/jenkins-x-pipelines/#editing-in-vs-code) 
+
+## What environment variables are available by default inside a pipeline?
+
+See the [default environment variables created for pipeline steps](/architecture/jenkins-x-pipelines/#default-environment-variables)
