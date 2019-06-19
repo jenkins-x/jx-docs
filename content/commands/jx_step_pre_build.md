@@ -1,5 +1,5 @@
 ---
-date: 2019-06-19T11:16:59Z
+date: 2019-06-19T12:16:23Z
 title: "jx step pre build"
 slug: jx_step_pre_build
 url: /commands/jx_step_pre_build/
