@@ -446,9 +446,6 @@
         "wiki": {
           "$schema": "http://json-schema.org/draft-04/schema#",
           "$ref": "#/definitions/WikiConfig"
-        },
-        "workflow": {
-          "type": "string"
         }
       },
       "additionalProperties": false,
