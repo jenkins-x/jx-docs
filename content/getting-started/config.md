@@ -23,7 +23,7 @@ However you can configure values in the underlying helm charts used by Jenkins X
 
 To do this you need to create a `myvalues.yaml` file in the current directory you are in when you run either [jx create cluster](/commands/jx_create_cluster) or [jx install](/commands/jx_install)
 
-Then this YAML file can be used to override any of the underlying `values.yaml` in any of the charts in Jenkins X.
+Then this YAML file can be used to override any of the underlying [`values.yaml`](https://github.com/jenkins-x/jenkins-x-platform/blob/master/jenkins-x-platform/values.yaml) in any of the [charts](https://github.com/jenkins-x/jenkins-x-platform/blob/master/jenkins-x-platform/requirements.yaml) in Jenkins X.
 
 ## Making changes after the install
 
