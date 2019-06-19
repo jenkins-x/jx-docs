@@ -97,11 +97,11 @@ Then pick the devpod to delete and confirm. Or pass in the name of the devpod yo
 
 ## Synchronizing source code
 
-If you are using one of our [IDE plugins](/develop/ide) for your desktop IDE then synchronisation of local files to your DevPod will already be included.
+If you are using one of our [IDE plugins](/developing/ide) for your desktop IDE then synchronisation of local files to your DevPod will already be included.
 
 Otherwise if you are using a desktop IDE you can synchronise your local source code into your DevPod via the [jx sync](/commands/jx_sync/) command.
 
-This will allow you to edit source code in your preferred [IDE](/develop/ide) like [VS Code](https://code.visualstudio.com/) or [IDEA](https://www.jetbrains.com/idea/).
+This will allow you to edit source code in your preferred [IDE](/developing/ide) like [VS Code](https://code.visualstudio.com/) or [IDEA](https://www.jetbrains.com/idea/).
 
 
 ```shell

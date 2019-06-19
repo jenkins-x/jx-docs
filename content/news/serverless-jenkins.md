@@ -12,7 +12,7 @@ author: jstrachan
 
 ## Serverless Jenkins
 
-[James Rawlings](https://medium.com/@jdrawlings/) as just published an excellent article on [Serverless Jenkins with Jenkins X](https://medium.com/@jdrawlings/serverless-jenkins-with-jenkins-x-9134cbfe6870) which is well worth a read.
+[James Rawlings](https://medium.com/@jdrawlings/) has just published an excellent article on [Serverless Jenkins with Jenkins X](https://medium.com/@jdrawlings/serverless-jenkins-with-jenkins-x-9134cbfe6870) that is well worth a read.
 
 It describes how you can use it via the `--prow` feature flag when using either [jx create cluster](/commands/jx_create_cluster) 
 

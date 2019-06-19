@@ -13,6 +13,7 @@ weight: 5
 sections_weight: 5
 ---
 
+* [Upgrading Ingress Rules And Adding TLS Certificates With Jenkins X](https://technologyconversations.com/2019/05/31/upgrading-ingress-rules-and-adding-tls-certificates-with-jenkins-x/) by [Viktor Farcic](https://technologyconversations.com), May 31th, 2019
 * [The Evolution Of Jenkins Jobs And How We Got To The YAML-Based jenkins-x.yml Format](https://technologyconversations.com/2019/05/09/the-evolution-of-jenkins-jobs-and-how-we-got-to-the-yaml-based-jenkins-x-yml-format/) by [Viktor Farcic](https://technologyconversations.com), May 9th, 2019
 * [Implementing ChatOps With Jenkins X](https://technologyconversations.com/2019/04/24/implementing-chatops-with-jenkins-x/) by [Viktor Farcic](https://technologyconversations.com), April 24th, 2019
 * [Going Serverless With Jenkins X: Exploring Prow, Jenkins X Pipeline Operator, And Tekton](https://technologyconversations.com/2019/04/15/going-serverless-with-jenkins-x-exploring-prow-jenkins-x-pipeline-operator-and-tekton/) by [Viktor Farcic](https://technologyconversations.com), April 15th, 2019

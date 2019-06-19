@@ -158,7 +158,8 @@ data "aws_iam_policy_document" "vault" {
         effect = "Allow"
         actions = [
             "kms:Encrypt",
-            "kms:Decrypt"
+            "kms:Decrypt",
+            "kms:DescribeKey"
         ]
         resources = ["${aws_kms_key.bank_vault.arn}"]
     }}

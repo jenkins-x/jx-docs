@@ -99,7 +99,7 @@ This will setup the Ingress Controller; find its external domain and then setup 
 
 On startup the Environment Controller registers itself into the github repository as a webhook endpoint using its LoadBalancer service IP address. If you are using a custom ingress/DNS endpoint you can override this via the `webhookUrl` chart value or [--webhook-url CLI option](https://jenkins-x.io/commands/jx_create_addon_environment/)
 
-Whenever there is a push to the `master` branch (PRs and feature branches are handled by your Development cluster) the Environment Controller triggers a new [Jenkins X Pipeline](/architecture/jenkins-x-pipelines/) for the Promotion. All other push events on other branches are ignored (as they are processed by the Developmnet cluster).
+Whenever there is a push to the `master` branch (PRs and feature branches are handled by your Development cluster) the Environment Controller triggers a new [Jenkins X Pipeline](/architecture/jenkins-x-pipelines/) for the Promotion. All other push events on other branches are ignored (as they are processed by the Development cluster).
 
 Then the tekton controller turns this set of Pipeline resources is turned into one or more Pods which run the pipeline. By default promotion pipelines just use a single pod - but you can [customise your deployment pipeline](/architecture/jenkins-x-pipelines/#customising-the-pipelines) which may use sequential/parallel tasks which result in multiple pods.
 
