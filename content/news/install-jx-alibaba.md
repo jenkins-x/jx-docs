@@ -22,7 +22,7 @@ author: Carlos Sanchez
 
 Jenkins X has just added initial support to install in [Alibaba Container Service](https://www.alibabacloud.com/product/container-service), its Kubernetes offering.
 
-The following instructions allow installation in a managed Kubernetes cluster in any region outside of mainland China, where more configuration is needed avoid using Google services blocked by chinese authorities (Helm charts and Docker images in GCR). There is a [pending issue](https://github.com/jenkins-x/jenkins-x-platform/issues/5551) for that.
+The following instructions allow installation in a managed Kubernetes cluster in any region outside of mainland China, where more configuration is needed avoid using Google services blocked by chinese authorities (Docker images in GCR). There is a [pending issue](https://github.com/jenkins-x/jenkins-x-platform/issues/5551) for that.
 
 ## Creating a Kubernetes Cluster
 
