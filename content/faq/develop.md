@@ -74,6 +74,27 @@ The PR triggers a CI pipeline to verify the changes are valid (e.g. the helm cha
 Jenkins X automates all of the above but given both these pipelines are defined in the environments git repository in a `Jenkinsfile` you are free to customise to add your own pre/post steps if you wish. e.g. you could analyse the YAML to pre-provision PVs for any PVCs using some custom disk snapshot tool you may have.  Or you can do that in a pre or post-install helm hook job. Though we'd prefer these tools to be created as part of the Jenkins X [extension model](/extending/) to avoid custom pipeline hacking which could break in future Jenkins X releases - though its not a huge biggie.
 
 
+## How do I change the owner of a docker image
+
+When using a docker registry like gcr.io then the docker image owner `gcr.io/owner/myname:1.2.3` can be different to your git owner/organisation.
+
+On Google's GCR this is usually your GCP Project ID; which you can have many different projects to group images together.
+
+There's a few options for defining which docker registry owner to use:
+
+* specify it in your `jenkins-x.yml` 
+
+```yaml 
+dockerRegistryHost: gcr.io
+dockerRegistryOwner: my-gcr-project-id
+```
+* specify it in the [Environment CRD](https://jenkins-x.io/architecture/custom-resources/) called `dev` at `env.spec.teamSettings.dockerRegistryOrg`
+* define the environment variable `DOCKER_REGISTRY_ORG`
+
+If none of those are found then the code defaults to the git repository owner. 
+
+For more details the code to resolve it is [here](https://github.com/jenkins-x/jx/blob/65962ff5ef1a6d1c4776daee0163434c9c2cb566/pkg/cmd/opts/docker.go#L14)
+
 ## What if my team does not want to use helm?
 
 To help automate CI/CD with GitOps we assume helm charts are created as part of the automated project setup and CI/CD. e.g. just [import your source code](https://jenkins-x.io/developing/import/) and a docker image + helm chart will be generated for you - the developers don't need to know or care if they don't want to use helm:
