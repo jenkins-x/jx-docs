@@ -42,14 +42,12 @@ If you already have an application in Jenkins X you know that you can promote it
 As the first step three Jenkins X addons need to be installed:
 
 * [Istio](https://istio.io/): [a service mesh](https://istio.io/docs/concepts/what-is-istio/) that allows us to manage traffic to our services.
-* [Prometheus](https://prometheus.io/): the most popular monitoring system in Kubernetes.
-* [Flagger](https://github.com/stefanprodan/flagger): a project that uses Istio to automate canarying and rollbacks using metrics from Prometheus.
+* [Flagger](https://github.com/weaveworks/flagger): a project that uses Istio to automate canarying and rollbacks using metrics from Prometheus.
 
 The addons can be installed with
 
 ```shell
-jx create addon istio
-jx create addon prometheus
+jx create addon istio --version 1.1.7
 jx create addon flagger
 ```
 
