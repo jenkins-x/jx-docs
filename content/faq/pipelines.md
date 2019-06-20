@@ -21,7 +21,7 @@ To add a new custom step to your `jenkins-x.yml` file see [how to use the jx cre
 
 ## How do Jenkins X Pipelines compare to Jenkins pipelines?
 
-See [the differences between Jenkins X and Jenkins Pipelines](/architecture/jenkins-x-pipelines/#customising-the-pipelines)
+See [the differences between Jenkins X and Jenkins Pipelines](/architecture/jenkins-x-pipelines/#differences-to-jenkins-pipelines)
 
 ## How do I get IDE completion editing `jenkins-x.yml`
 
