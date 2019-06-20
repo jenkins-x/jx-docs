@@ -1,5 +1,5 @@
 ---
-date: 2019-06-20T15:27:11Z
+date: 2019-06-20T15:56:25Z
 title: "jx delete git token"
 slug: jx_delete_git_token
 url: /commands/jx_delete_git_token/
