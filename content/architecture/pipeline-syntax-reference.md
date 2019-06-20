@@ -15,6 +15,8 @@ draft: false
 toc: true
 ---
 
+# Syntax for `jenkins-x.yml` and build packs
+
 ## Where to Define Your Pipelines
 
 Pipelines can either be defined in [build packs](build-packs.md), used for
@@ -168,4 +170,118 @@ inherited environment variables from the stage and pipeline.
 * **<a id='containerOptions'>`containerOptions`</a>**
     * See [Kubernetes container configuration](https://kubernetes.io/docs/concepts/containers).
     `name`, `command`, `args`, `image`, and `workingDir` cannot be specified.
+    * Common use cases for `containerOptions` include resource requests and
+    limits, and volume mounts.
 
+# Examples
+
+## Full pipeline definition in `jenkins-x.yml`
+
+```yaml
+# If a build pack is specified, the `pipeline` in `release`, `pullRequest`, and `feature` will be ignored.
+buildPack: none
+
+pipelineConfig:
+  pipelines:
+    release:
+    # While the legacy build pack built-in stages can be used in jenkins-x.yaml, pipeline is preferred.
+      pipeline:
+        # Define a default container image we'll use throughout the pipeline, unless an explicit agent is
+        # specified on a stage or step.
+        agent:
+          image: "some/image@version" # or "maven" - this means "use the maven pod template"
+        # Environment variables are either static key/value pairs or Kubernetes valueFrom EnvVarSources.
+        # See https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.14/#envvarsource-v1-core
+        # for more information on valueFrom.
+        # Environment variables defined at the top level can be overridden in stages and individual
+        # steps.
+        environment:
+          - name: SOME_VAR
+            value: A value for the env var
+          - name: SOME_OTHER_VAR
+            value: Another var
+          - name: SOME_API_KEY
+            valueFrom:
+              secretKeyRef:
+                name: mysecret
+                key: apikey
+        # Options contains other configuration for the pipeline.
+        options:
+          # containerOptions allows specifying more advanced default configuration for the containers
+          # used for all stages and steps in this scope, using the standard Kubernetes syntax for
+          # containers.
+          # See https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.14/#container-v1-core.
+          # Not all fields can be configured - e.g., name, command, arguments, image, and dir are all
+          # defined via the syntax - but everything else can be.
+          # Like with environment variables, containerOptions at the top level can be overridden and
+          # added to by stages.
+          containerOptions:
+            # Here we're setting the resource requests and limits for all step containers within this
+            # pipeline.
+            resources:
+              requests:
+                cpu: 0.1
+                memory: 64Mi
+              limits:
+                cpu: 0.2
+                memory: 128Mi
+          # timeout allows you to set the maximum duration for builds of this pipeline.
+          timeout:
+            time: 15
+            unit: minutes
+        # A pipeline must contain at least one stage, and each stage must have a unique name.
+        stages:
+          - name: Stage With Steps And Options Etc
+            # agent, options, and environment are valid on stages as well. For the parents of nested
+            # sequential or parallel stages, their children inherit the parent's agent, options,
+            # and environment.
+            # options on a stage currently only can contain containerOptions.
+            options:
+              containerOptions:
+                resources:
+                  limits:
+                    cpu: 0.4
+                    memory: 256Mi
+            # A stage must contain at least one of "steps", "stages", or "parallel"
+            # Steps must contain at least one command to be executed or a loop.
+            steps:
+              - command: mvn
+                # args are a YAML array, so can be specified either on multiple lines or in a []
+                args:
+                  - clean
+                  - install
+                dir: foo  # Optional, allows running this step in a subdirectory of the workspace, or
+                          # a different absolute directory.
+                # Steps can have their own images specified, overriding the stage and top-level images.
+                agent:
+                  image: some-other-image
+              # A loop allows you to specify a list of potential values for an environment variable and a
+              # set of one or more steps. Those steps will be run, sequentially, for each of the
+              # potential values. Loops can also be nested for more complex combinations.
+              - loop:
+                  variable: LANGUAGE
+                  values:
+                    - maven
+                    - gradle
+                    - nodejs
+                  steps:
+                    - command: echo
+                      args:
+                        - hello
+                        - ${LANGUAGE}
+          - name: Stage with nested sequential stages
+            # Any configuration of agent, options, or environment will apply to all child stages.
+            environment:
+              - name: SPECIFIC_TO_SEQUENTIAL_PARENT
+                value: something
+            # A list of nested stages to run sequentially. This is meant to allow for avoiding
+            # copy-pasting configuration across a set of stages that need to have the same configuration
+            # but where that configuration shouldn't be in place for *all* stages in the pipeline.
+            stages:
+              # ...insert stages here. =)
+          - name: Stage with nested parallel stages
+            # Works very similarly to sequential stages, except that the stages are executed in parallel,
+            # rather than sequentially.
+            parallel:
+              # ...insert stages here. =)
+```
