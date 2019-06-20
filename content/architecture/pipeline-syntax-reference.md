@@ -8,9 +8,9 @@ keywords: [tekton]
 menu:
   docs:
     parent: "architecture"
-    weight: 66
-weight: 66
-sections_weight: 66
+    weight: 67
+weight: 67
+sections_weight: 67
 draft: false
 toc: true
 ---
