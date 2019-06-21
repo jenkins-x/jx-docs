@@ -361,6 +361,56 @@ kail -l  job-name=expose
 
 This will watch for exposecontroller logs and then dump them to the console. Now trigger a promotion pipeline and you should see the output within a minute or so.
 
+## Cannot create TLS certificates during Ingress setup
+
+> [cert-manager](https://docs.cert-manager.io/en/latest/index.html) cert-manager is a seperate project from _Jenkins X_.
+
+Newly created GKE clusters or existing cluster running _kubernetes_ **v1.12** or older will encounter the following error when configuring Ingress with site-wide TLS:
+
+```
+Waiting for TLS certificates to be issued...
+Timeout reached while waiting for TLS certificates to be ready
+```
+
+This issue is caused by the _cert-manager_ pod not having the `disable-validation` label set, which is a known cert-manager issue which is [documented on their website](https://docs.cert-manager.io/en/latest/getting-started/install/kubernetes.html). The following steps, taken from the [cert-manager/troubleshooting-installation](https://docs.cert-manager.io/en/latest/getting-started/troubleshooting.html#troubleshooting-installation) webpage, should resolve the issue:
+
+Check if the _disable-validation_ label exists on the _cert-manager_ pod.
+```
+kubectl describe namespace cert-manager
+```
+
+If you cannot see the `certmanager.k8s.io/disable-validation=true` label on your namespace, you should add it with:
+```
+kubectl label namespace cert-manager certmanager.k8s.io/disable-validation=true
+```
+
+Confirm the label has been added to the _cert-manager_ pod.
+```
+kubectl describe namespace cert-manager
+
+Name:         cert-manager
+Labels:       certmanager.k8s.io/disable-validation=true
+Annotations:  <none>
+Status:       Active
+...
+```
+
+Now rerun _jx_ Ingress setup:
+```
+jx upgrade ingress
+```
+
+While the ingress command is running, you can tail the _cert-manager_ logs in another terminal and see what is happening. You will need to find the name of your _cert-manager_ pod using:
+```
+kubectl get pods --namespace cert-manager
+```
+
+Then tail the logs of the _cert-manager_ pod.
+```
+kubectl logs YOUR_CERT_MNG_POD --namespace cert-manager -f
+```
+
+Your TLS certificates should now be set up and working, otherwise checkout the [official _cert-manager_ troubleshooting](https://docs.cert-manager.io/en/latest/getting-started/troubleshooting.html) instructions.
 
 ## Other issues
 
