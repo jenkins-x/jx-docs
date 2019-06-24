@@ -106,9 +106,9 @@ If you have a developer who is fundamentally opposed to helm's configuration man
 
 Then if you wish to use another configuration management tool you can add it in - e.g. [kustomise support](https://github.com/jenkins-x/jx/issues/2302).
 
-## How do I change the domain of serverless apps?
+## How do I change the domain of serverless apps?
 
-If you use [serverless apps]() with Knative we don't use thee default exposecontroller mechanism for defaulting the `Ingress` resources since knative does not use kubernetes `Service` resources.
+If you use [serverless apps](/developing/serverless-apps/) with Knative we don't use thee default exposecontroller mechanism for defaulting the `Ingress` resources since knative does not use kubernetes `Service` resources.
 
 You can work around this by manually editing the _knative_ config via:
 
