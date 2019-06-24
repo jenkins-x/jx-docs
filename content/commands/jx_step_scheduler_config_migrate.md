@@ -1,32 +1,36 @@
 ---
 date: 2019-06-24T18:35:38Z
-title: "jx step scheduler config apply"
-slug: jx_step_scheduler_config_apply
-url: /commands/jx_step_scheduler_config_apply/
+title: "jx step scheduler config migrate"
+slug: jx_step_scheduler_config_migrate
+url: /commands/jx_step_scheduler_config_migrate/
 ---
-## jx step scheduler config apply
+## jx step scheduler config migrate
 
-scheduler config apply
+scheduler config migrate
 
 ### Synopsis
 
 This command will transform your pipeline schedulers in to prow config. If you are using gitops the prow config will be added to your environment repository. For non-gitops environments the prow config maps will applied to your dev environment.
 
 ```
-jx step scheduler config apply [flags]
+jx step scheduler config migrate [flags]
 ```
 
 ### Examples
 
 ```
-  jx step scheduler config apply
+  jx step scheduler config migrate
 ```
 
 ### Options
 
 ```
-      --agent string   The scheduler agent to use e.g. Prow (default "prow")
-  -h, --help           help for apply
+      --agent string               The scheduler agent to use e.g. Prow (default "prow")
+      --dryRun                     Do not apply the generated configuration (default true)
+  -h, --help                       help for migrate
+      --prow-config-file string    The location of the config file to use
+      --prow-plugins-file string   The location of the plugins file to use
+      --skipVerification           Skip verification of the new configuration
 ```
 
 ### Options inherited from parent commands
