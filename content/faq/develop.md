@@ -112,7 +112,9 @@ If you use [serverless apps](/developing/serverless-apps/) with Knative we don't
 
 You can work around this by manually editing the _knative_ config via:
 
-```kubectl edit cm config-domain --namespace knative-serving```
+```
+kubectl edit cm config-domain --namespace knative-serving
+```
 
 For more help see [using a custom domain with knative](https://knative.dev/docs/serving/using-a-custom-domain/)
 
