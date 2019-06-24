@@ -1,5 +1,5 @@
 ---
-date: 2019-06-24T14:11:51Z
+date: 2019-06-24T14:47:30Z
 title: "jx step create values"
 slug: jx_step_create_values
 url: /commands/jx_step_create_values/
@@ -37,8 +37,8 @@ jx step create values [flags]
       --name string               the kind of the file to create (and, by default, the schema name) (default "values")
       --out string                the path to the file to create, overrides --dir and --name
       --schema string             the path to the schema file, overrides --dir and --name
-      --secret-base-path string   the secret path used to store secrets in vault / file system. Typically a unique name per cluster+team
-      --secrets-scheme string     the scheme to store/reference any secrets in, valid options are vault and local (default "vault")
+      --secret-base-path string   the secret path used to store secrets in vault / file system. Typically a unique name per cluster+team. If none is specified we will default it to the cluster name from the jx-requirements.yml file in the current or a parent directory.
+      --secrets-scheme string     the scheme to store/reference any secrets in, valid options are vault and local. If none are specified we will default it from the jx-requirements.yml file in the current or a parent directory.
 ```
 
 ### Options inherited from parent commands

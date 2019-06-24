@@ -1,5 +1,5 @@
 ---
-date: 2019-06-24T14:11:51Z
+date: 2019-06-24T14:47:30Z
 title: "jx step verify install"
 slug: jx_step_verify_install
 url: /commands/jx_step_verify_install/
@@ -19,8 +19,9 @@ jx step verify install [flags]
 ### Options
 
 ```
-      --debug   Output logs of any failed pod
-  -h, --help    help for install
+      --debug        Output logs of any failed pod
+  -d, --dir string   the directory to look for the install requirements file (default ".")
+  -h, --help         help for install
 ```
 
 ### Options inherited from parent commands
