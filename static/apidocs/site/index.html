@@ -333,6 +333,12 @@
    <LI class="nav-level-2"><A href="#ownerreference-v1-meta" class="nav-item">OwnerReference v1 meta</A></LI>
  </UL>
   <UL>
+   <LI class="nav-level-2"><A href="#periodic-v1-jenkins_io" class="nav-item">Periodic v1 jenkins_io</A></LI>
+ </UL>
+  <UL>
+   <LI class="nav-level-2"><A href="#periodics-v1-jenkins_io" class="nav-item">Periodics v1 jenkins_io</A></LI>
+ </UL>
+  <UL>
    <LI class="nav-level-2"><A href="#persistentvolumeclaimvolumesource-v1-core" class="nav-item">PersistentVolumeClaimVolumeSource v1 core</A></LI>
  </UL>
   <UL>
@@ -577,6 +583,9 @@
  </UL>
   <UL>
    <LI class="nav-level-2"><A href="#weightedpodaffinityterm-v1-core" class="nav-item">WeightedPodAffinityTerm v1 core</A></LI>
+ </UL>
+  <UL>
+   <LI class="nav-level-2"><A href="#welcome-v1-jenkins_io" class="nav-item">Welcome v1 jenkins_io</A></LI>
  </UL>
   <UL>
    <LI class="nav-level-2"><A href="#workflow-v1-jenkins_io" class="nav-item">Workflow v1 jenkins_io</A></LI>
@@ -1409,6 +1418,7 @@ The configuration for the approve plugin is defined as a list of these structure
 <DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
  <UL>
   <LI><a href="#pipelineactivityspec-v1-jenkins_io">PipelineActivitySpec [jenkins_io/v1]</a></LI>
+  <LI><a href="#schedulerspec-v1-jenkins_io">SchedulerSpec [jenkins_io/v1]</a></LI>
  </UL>
 </DIV>
 <TABLE>
@@ -2895,6 +2905,7 @@ DEPRECATED: GitRepo is deprecated. To provision a container with a git repo, mou
 <P>JobBase contains attributes common to all job types</P>
 <DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
  <UL>
+  <LI><a href="#periodic-v1-jenkins_io">Periodic [jenkins_io/v1]</a></LI>
   <LI><a href="#postsubmit-v1-jenkins_io">Postsubmit [jenkins_io/v1]</a></LI>
   <LI><a href="#presubmit-v1-jenkins_io">Presubmit [jenkins_io/v1]</a></LI>
  </UL>
@@ -2908,6 +2919,7 @@ DEPRECATED: GitRepo is deprecated. To provision a container with a git repo, mou
 <TR><TD><CODE>maxConcurrency</CODE><BR /><I>integer</I></TD><TD>MaximumConcurrency of this job, 0 implies no limit.</TD></TR>
 <TR><TD><CODE>name</CODE><BR /><I>string</I></TD><TD>The name of the job. Must match regex [A-Za-z0-9-._]+ e.g. pull-test-infra-bazel-build</TD></TR>
 <TR><TD><CODE>namespace</CODE><BR /><I>string</I></TD><TD>Namespace is the namespace in which pods schedule.   empty: results in scheduler.DefaultNamespace</TD></TR>
+<TR><TD><CODE>spec</CODE><BR /><I><a href="#podspec-v1-core">PodSpec</a></I></TD><TD>Spec is the Kubernetes pod spec used if Agent is kubernetes.</TD></TR>
 </TBODY>
 </TABLE>
 <H2 id="jobcondition-v1-batch">JobCondition v1 batch</H2>
@@ -3376,6 +3388,48 @@ DEPRECATED: GitRepo is deprecated. To provision a container with a git repo, mou
 <TR><TD><CODE>uid</CODE><BR /><I>string</I></TD><TD>UID of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#uids</TD></TR>
 </TBODY>
 </TABLE>
+<H2 id="periodic-v1-jenkins_io">Periodic v1 jenkins_io</H2>
+<TABLE class="col-md-8">
+<THEAD><TR><TH>Group</TH><TH>Version</TH><TH>Kind</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>jenkins_io</CODE></TD><TD><CODE>v1</CODE></TD><TD><CODE>Periodic</CODE></TD></TR>
+</TBODY>
+</TABLE>
+<P>Periodic defines a job to be run periodically</P>
+<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
+ <UL>
+  <LI><a href="#periodics-v1-jenkins_io">Periodics [jenkins_io/v1]</a></LI>
+ </UL>
+</DIV>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>JobBase</CODE><BR /><I><a href="#jobbase-v1-jenkins_io">JobBase</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>cron</CODE><BR /><I>string</I></TD><TD>Cron representation of job trigger time</TD></TR>
+<TR><TD><CODE>interval</CODE><BR /><I>string</I></TD><TD>Interval to wait between two runs of the job.</TD></TR>
+<TR><TD><CODE>tags</CODE><BR /><I><a href="#replaceablesliceofstrings-v1-jenkins_io">ReplaceableSliceOfStrings</a></I></TD><TD>Tags for config entries</TD></TR>
+</TBODY>
+</TABLE>
+<H2 id="periodics-v1-jenkins_io">Periodics v1 jenkins_io</H2>
+<TABLE class="col-md-8">
+<THEAD><TR><TH>Group</TH><TH>Version</TH><TH>Kind</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>jenkins_io</CODE></TD><TD><CODE>v1</CODE></TD><TD><CODE>Periodics</CODE></TD></TR>
+</TBODY>
+</TABLE>
+<P>Periodics is a list of jobs to be run periodically</P>
+<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
+ <UL>
+  <LI><a href="#schedulerspec-v1-jenkins_io">SchedulerSpec [jenkins_io/v1]</a></LI>
+ </UL>
+</DIV>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>entries</CODE><BR /><I><a href="#periodic-v1-jenkins_io">Periodic</a> array</I></TD><TD>Items are the post submit configurations</TD></TR>
+<TR><TD><CODE>replace</CODE><BR /><I>boolean</I></TD><TD>Replace the existing entries</TD></TR>
+</TBODY>
+</TABLE>
 <H2 id="persistentvolumeclaimvolumesource-v1-core">PersistentVolumeClaimVolumeSource v1 core</H2>
 <TABLE class="col-md-8">
 <THEAD><TR><TH>Group</TH><TH>Version</TH><TH>Kind</TH></TR></THEAD>
@@ -3647,6 +3701,7 @@ DEPRECATED: GitRepo is deprecated. To provision a container with a git repo, mou
 <P>PodSpec is a description of a pod.</P>
 <DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
  <UL>
+  <LI><a href="#jobbase-v1-jenkins_io">JobBase [jenkins_io/v1]</a></LI>
   <LI><a href="#podtemplatespec-v1-core">PodTemplateSpec [core/v1]</a></LI>
  </UL>
 </DIV>
@@ -3836,7 +3891,7 @@ DEPRECATED: GitRepo is deprecated. To provision a container with a git repo, mou
 <TR><TD><CODE>mergeMethod</CODE><BR /><I>string</I></TD><TD>Override the default method of merge. Valid options are squash, rebase, and merge.</TD></TR>
 <TR><TD><CODE>optional</CODE><BR /><I>boolean</I></TD><TD>Optional indicates that the job&#39;s status context should not be required for merge. By default false.</TD></TR>
 <TR><TD><CODE>policy</CODE><BR /><I><a href="#protectionpolicies-v1-jenkins_io">ProtectionPolicies</a></I></TD><TD></TD></TR>
-<TR><TD><CODE>query</CODE><BR /><I><a href="#query-v1-jenkins_io">Query</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>queries</CODE><BR /><I><a href="#query-v1-jenkins_io">Query</a> array</I></TD><TD></TD></TR>
 <TR><TD><CODE>report</CODE><BR /><I>boolean</I></TD><TD>Report enables reporting the job status on the git provider</TD></TR>
 <TR><TD><CODE>rerunCommand</CODE><BR /><I>string</I></TD><TD>The RerunCommand to give users. Must match Trigger. Trigger must also be specified if this field is specified. (Default: `/test &lt;job name&gt;`)</TD></TR>
 <TR><TD><CODE>trigger</CODE><BR /><I>string</I></TD><TD>Trigger is the regular expression to trigger the job. e.g. `@k8s-bot e2e test this` RerunCommand must also be specified if this field is specified. (Default: `(?m)^/test (?:.*? )?&lt;job name&gt;(?: .*?)?$`)</TD></TR>
@@ -4361,6 +4416,7 @@ This format is intended to make it difficult to use these numbers without writin
   <LI><a href="#brancher-v1-jenkins_io">Brancher [jenkins_io/v1]</a></LI>
   <LI><a href="#contextpolicy-v1-jenkins_io">ContextPolicy [jenkins_io/v1]</a></LI>
   <LI><a href="#externalplugin-v1-jenkins_io">ExternalPlugin [jenkins_io/v1]</a></LI>
+  <LI><a href="#periodic-v1-jenkins_io">Periodic [jenkins_io/v1]</a></LI>
   <LI><a href="#query-v1-jenkins_io">Query [jenkins_io/v1]</a></LI>
   <LI><a href="#restrictions-v1-jenkins_io">Restrictions [jenkins_io/v1]</a></LI>
   <LI><a href="#schedulerspec-v1-jenkins_io">SchedulerSpec [jenkins_io/v1]</a></LI>
@@ -5328,6 +5384,25 @@ The configuration for the trigger plugin is defined as a list of these structure
 <TBODY>
 <TR><TD><CODE>podAffinityTerm</CODE><BR /><I><a href="#podaffinityterm-v1-core">PodAffinityTerm</a></I></TD><TD>Required. A pod affinity term, associated with the corresponding weight.</TD></TR>
 <TR><TD><CODE>weight</CODE><BR /><I>integer</I></TD><TD>weight associated with matching the corresponding podAffinityTerm, in the range 1-100.</TD></TR>
+</TBODY>
+</TABLE>
+<H2 id="welcome-v1-jenkins_io">Welcome v1 jenkins_io</H2>
+<TABLE class="col-md-8">
+<THEAD><TR><TH>Group</TH><TH>Version</TH><TH>Kind</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>jenkins_io</CODE></TD><TD><CODE>v1</CODE></TD><TD><CODE>Welcome</CODE></TD></TR>
+</TBODY>
+</TABLE>
+<P>Welcome welcome plugin config</P>
+<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
+ <UL>
+  <LI><a href="#schedulerspec-v1-jenkins_io">SchedulerSpec [jenkins_io/v1]</a></LI>
+ </UL>
+</DIV>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>message_template</CODE><BR /><I>string</I></TD><TD></TD></TR>
 </TBODY>
 </TABLE>
 <H2 id="workflow-v1-jenkins_io">Workflow v1 jenkins_io</H2>
