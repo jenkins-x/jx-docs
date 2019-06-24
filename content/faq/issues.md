@@ -21,7 +21,15 @@ If your install fails to start there could be a few different reasons why the Je
 
 Your cluster could be out of resources. You can check the spare resources on your cluster via [jx status](/commands/jx_status/):
 
-    jx status
+``` 
+jx status
+``` 
+
+We also have a diagnostic command that looks for common problems [jx step verify install](/commands/jx_step_verify_install/):
+
+``` 
+jx step verify install
+``` 
     
 A common issue for pods not starting is if your cluster does not have a [default storage class](https://kubernetes.io/docs/concepts/storage/storage-classes/) setup so that `Persistent Volume Claims` can be bound to `Persistent Volumes` as described in the [install instructions](/getting-started/install-on-cluster/).
 
