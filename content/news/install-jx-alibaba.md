@@ -166,29 +166,33 @@ Then we need to create a Container Registry namespace that allows us to push any
 
 From the web UI we can create a Docker login password that we will be using later.
 
-We could do it through the command line with the following instructions but unfortunately the API always returns a 500 error.
-
 ```shell
 NAMESPACE=jenkins-x-$(cat /dev/urandom | env LC_CTYPE=C tr -dc 'a-z' | fold -w 6 | head -n 1)
 cat << EOF > namespace.json
 {
     "Namespace": {
-        "Namespace": "jenkins-x-${NAMESPACE}",
+        "Namespace": "${NAMESPACE}"
     }
 }
 EOF
-aliyun cr POST /namespace/${NAMESPACE} \
+aliyun cr PUT /namespace \
     --header "Content-Type=application/json" \
     --body "$(cat namespace.json)"
 
 cat << EOF > namespace.json
 {
-    "Namespace": {
-        "AutoCreate": true,
-        "DefaultVisibility": "public"
+    "namespace": {
+        "namespace": "${NAMESPACE}",
+        "defaultVisibility": "PUBLIC",
+        "autoCreate": true
     }
 }
 EOF
+
+aliyun cr POST /namespace/${NAMESPACE} \
+    --header "Content-Type=application/json" \
+    --body "$(cat namespace.json)"
+
 ```
 
 Now we can install Jenkins X as usual, passing the `--provider alibaba` flag.
