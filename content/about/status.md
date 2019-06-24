@@ -17,7 +17,28 @@ categories: [fundamentals]
 toc: true
 ---
 
-This page describes any specific manual work arounds you may require above and beyond changes described in the [News section](/news/) or using [jx upgrade](/commands/jx_upgrade/) to upgrade the [CLI](/commands/jx_upgrade_cli/) or [platform](/commands/jx_upgrade_platform/)
+# Support Matrix
+
+| Install Kind | Supported Git Providers |
+| --- | ---  |
+| Serverless Jenkins X pipelines with Tekton | GitHub only (due to Prow restriction - we are working on it!) |
+| Static Jenkins Server | GitHub, GitHub Enterprise, BitBucket Cloud, BitBucket Server, GitLab. Gitea in beta |
+
+
+| Clouds with Kaniko Support |
+| --- | 
+| GKE |
+| EKS |
+
+| Clouds supporting bucket log storage |
+| --- | 
+| GKE |
+| EKS |
+
+
+# Status Reports
+
+This section describes any specific manual work arounds you may require above and beyond changes described in the [News section](/news/) or using [jx upgrade](/commands/jx_upgrade/) to upgrade the [CLI](/commands/jx_upgrade_cli/) or [platform](/commands/jx_upgrade_platform/)
 
 ## 12th June 2019: Knative Build now deprecated
 
