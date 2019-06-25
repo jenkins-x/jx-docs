@@ -55,7 +55,9 @@ kubectl scale deploy jenkins-x-monocular-prerender --replicas=0
 kubectl scale deploy jenkins-x-monocular-ui --replicas=0
 ``` 
 
-We should have a new release out soon that removes monocular. We can always add it back as an optional [App](/apps) later on when it works again.
+The latest [version stream release](/architecture/version-stream/) has removed monocular so if you upgrade your platform this issue should be resolved. 
+
+We can always add monocular back as an optional [App](/apps) later on when it works again.
 
 
 ## 12th June 2019: Knative Build now deprecated
