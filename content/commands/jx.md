@@ -1,5 +1,5 @@
 ---
-date: 2019-06-25T10:33:09Z
+date: 2019-06-25T11:32:25Z
 title: "jx"
 slug: jx
 url: /commands/jx/
@@ -30,6 +30,7 @@ jx [flags]
 ### SEE ALSO
 
 * [jx add](/commands/jx_add/)	 - Adds a new resource
+* [jx boot](/commands/jx_boot/)	 - Boots up Jenkins X in a Kubernetes cluster using GitOps and a Jenkins X Pipeline
 * [jx cloudbees](/commands/jx_cloudbees/)	 - Opens the CloudBees app for Kubernetes for visualising CI/CD and your environments
 * [jx completion](/commands/jx_completion/)	 - Output shell completion code for the given shell (bash or zsh)
 * [jx compliance](/commands/jx_compliance/)	 - Run compliance tests against Kubernetes cluster
