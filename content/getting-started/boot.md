@@ -83,6 +83,13 @@ You will now be prompted for any missing parameters required to install such as 
 
 Then Jenkins X should be installed and setup on your kubernetes cluster.
 
+### About 'jx boot'
+
+The [jx boot](/commands/jx_boot) interprets the boot pipeline using your local `jx` binary.
+ 
+Before ny installation is attempted it runs the [jx step verify preinstall](/commands/jx_step_verify_preinstall/) command to check everything looks OK. If you are using Terraform (so that your 'jx-requirements.yml' file has `terraform: true`) it will fail if Terraform has not created the required cloud resources. Otherwise they are lazily created for you if they don't exist.
+
+Once the installation has completed the [jx step verify install](/commands/jx_step_verify_install/) command is run to verify your installation is valid.
 
 ## Changing your installation
 
