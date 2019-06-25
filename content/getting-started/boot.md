@@ -92,7 +92,7 @@ So just edit anything in the configuration you like and re-run [jx boot](/comman
 
 ## Requirements
 
-There is a file called [jx-requirements.yaml](https://github.com/jstrachan/environment-simple-tekton/blob/master/jx-requirements.yml)) which is used to specify the logical requirements of your installation; such as:
+There is a file called [jx-requirements.yaml](https://github.com/jstrachan/environment-simple-tekton/blob/master/jx-requirements.yml) which is used to specify the logical requirements of your installation; such as:
 
 * what kubernetes provider to use
 * whether to store secrets in the local file system or vault
