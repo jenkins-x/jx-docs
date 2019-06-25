@@ -40,6 +40,24 @@ toc: true
 
 This section describes any specific manual work arounds you may require above and beyond changes described in the [News section](/news/) or using [jx upgrade](/commands/jx_upgrade/) to upgrade the [CLI](/commands/jx_upgrade_cli/) or [platform](/commands/jx_upgrade_platform/)
 
+
+## 25th June 2019: missing image: bitnami/monocular-api
+
+It looks like the monocular docker images got removed today! 
+
+It turns out that monocular is not an absolute requirement for Jenkins X; it works great without it.
+
+So a quick workaround to the problem is to scale down your monocular deployment
+
+``` 
+kubectl scale deploy jenkins-x-monocular-api --replicas=0
+kubectl scale deploy jenkins-x-monocular-prerender --replicas=0
+kubectl scale deploy jenkins-x-monocular-ui --replicas=0
+``` 
+
+We should have a new release out soon that removes monocular. We can always add it back as an optional [App](/apps) later on when it works again.
+
+
 ## 12th June 2019: Knative Build now deprecated
 
 Knative Build was our first attempt at building a serverles offering in Jenkins X. Since then Knative build got replaced with the more powerful Knative Build Pipelines which then got moved and renamed to [Tekton](https://tekton.dev/).
