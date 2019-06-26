@@ -1,4 +1,5 @@
 <header class="flex-none w-100">
+  {{ partial "page-edit.html" . }}
   {{ if .Params.categories }}
     {{ range .Params.categories }}
       <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}" class="f6 fw8 mb0 link mid-gray dim mr3">
