@@ -41,7 +41,7 @@ Its common when creating, for example, a web front end to need a backend or data
 
 For each application the preview environment is defined by a helm chart at: `charts/preview/Chart.yaml`. 
 
-### Charts
+## Charts
 
 So you can easily add any dependent helm charts to your preview environment by adding new entries in the file `charts/preview/requirements.yaml`.
 
@@ -79,7 +79,7 @@ dependencies:
 ```
 Note: `- alias: preview` must be last entry in dependecies array and `requirements.yaml` file must end with empty line.
 
-### Service Linking
+## Service Linking
 
 If you need any additional resources like `ConfigMap`, `Secret` or `Service` resources you can add them to `charts/preview/templates/*.yaml`.
 
