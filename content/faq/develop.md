@@ -48,6 +48,27 @@ We’re using sealed secrets ourselves to manage our production Jenkins X instal
 Though a nicer approach would be using a Vault operator which we’re investigating now - which would fetch + populate secrets (and recycle them etc) via Vault.
 
 
+## When do Preview Environments get removed?
+
+We have a background garbage collection job which removes Preview Environments after the Pull Request is closed/merged. You can run it any time you like via the [jx gc previews](/commands/jx_gc_previews/) command
+
+``` 
+jx gc previews
+```
+
+You can also view the current previews via  [jx get previews](/commands/jx_get_previews/):
+                                       
+  ``` 
+  jx get previews
+  ```
+
+
+and delete a preview by choosing one to delete via [jx delete preview](/commands/jx_delete_preview/):
+
+ ``` 
+ jx delete preview
+ ```
+
 ## How do I add other services into a Preview?
 
 When you create a Pull Request by default Jenkins X creates a new [Preview Environment](/about/features/#preview-environments). Since this is a new dynamic namespace you may want to configure additional microservices in the namespace so you can properly test your preview build.
