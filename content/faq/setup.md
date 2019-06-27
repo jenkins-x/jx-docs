@@ -132,6 +132,17 @@ jx install \
   --ingress-namespace=kube-system
 ```
 
+## How do I enable HTTPS URLs?
+
+In general use the [jx upgrade ingress](/commands/jx_upgrade_ingress/) command. 
+
+For more detail see these blogs posts:
+
+* [Upgrading Ingress Rules And Adding TLS Certificates With Jenkins X](https://technologyconversations.com/2019/05/31/upgrading-ingress-rules-and-adding-tls-certificates-with-jenkins-x/) by [Viktor Farcic](https://technologyconversations.com)
+* [Jenkins X — TLS enabled Previews](https://medium.com/@sboardwell/jenkins-x-tls-enabled-previews-d04fa68c7ce9) by [Steve Boardwell](https://medium.com/@sboardwell)
+* [Jenkins X — Securing the Cluster](https://medium.com/@sboardwell/jenkins-x-securing-the-cluster-e1b9fcd8dd05) by [Steve Boardwell](https://medium.com/@sboardwell)
+
+
 ## How do I change the URLs in an environment?
 
 We use [exposecontroller](https://github.com/jenkins-x/exposecontroller) to automate the setup of `Ingress` resources for exposed Services, enabling TLS and also injecting external URLs for services into code (e.g. so we can register webhooks).
