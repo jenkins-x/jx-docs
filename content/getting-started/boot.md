@@ -24,7 +24,6 @@ Jenkins X Boot is currently experimental but we hope will become the long term s
 
 Currently [unsupported features](https://github.com/jenkins-x/jx/issues/4326):
 
-* vault
 * external dns
 * environment git repositories are hard coded in the [values.yaml](https://github.com/jstrachan/environment-simple-tekton/blob/master/env/values.yaml#L11-L16) and the webhooks don't get automatically registered
 * we don't automate setting up your own dev, staging, production git repositories easily
@@ -85,7 +84,10 @@ Then Jenkins X should be installed and setup on your kubernetes cluster.
 
 ### About 'jx boot'
 
-The [jx boot](/commands/jx_boot) interprets the boot pipeline using your local `jx` binary.
+The [jx boot](/commands/jx_boot) interprets the boot pipeline using your local `jx` binary. The underlying pipeline for booting Jenkins X can later on be ran inside kubernetes via Tekton. If ever something goes wrong with tekton you can always `jx boot` again to get things back up and running (e.g. if someone accidentally deletes your cluster).
+
+
+#### Pre and Post Validation
  
 Before ny installation is attempted it runs the [jx step verify preinstall](/commands/jx_step_verify_preinstall/) command to check everything looks OK. If you are using Terraform (so that your 'jx-requirements.yml' file has `terraform: true`) it will fail if Terraform has not created the required cloud resources. Otherwise they are lazily created for you if they don't exist.
 
@@ -132,7 +134,7 @@ If you look at the current [env/parameters.yaml](https://github.com/jstrachan/en
 * `vault:` to load from a path + key from Vault
 * `local:` to load from a key in a YAML file at `~/.jx/localSecrets/$path.yml`
 
-This means we can populate all the Parameters we need on startup then refer to them from `values.yaml` to populate the tree of values to then inject those into Vault.
+This means we can populate all the Parameters we need on startup then refer to them from `values.tmpl.yaml` to populate the tree of values to then inject those into Vault.
 
 
 ### Populating the `parameters.yaml` file 
@@ -157,14 +159,14 @@ env/
   prow/
     values.yaml # prow specific config
   tekton/
-    vales.yaml  # tekton specific config 
+    values.yaml  # tekton specific config 
 ```
   
   
-#### values.yaml templates
+#### values.tmpl.yaml templates
 
-When using `jx step helm apply` we now allow `values.yaml` files to use go/helm templates just like `templates/foo.yaml` files support inside helm charts so that we can generate value/secret strings which can use templating to compose things from smaller secret values. e.g. creating a maven `settings.xml` file or docker `config.json` which includes many user/passwords for different registries.
+When using `jx step helm apply` we now allow `values.tmpl.yaml` files to use go/helm templates just like `templates/foo.yaml` files support inside helm charts so that we can generate value/secret strings which can use templating to compose things from smaller secret values. e.g. creating a maven `settings.xml` file or docker `config.json` which includes many user/passwords for different registries.
 
-We can then check in the `values.yaml` file which does all of this composition and reference the actual secret values via URLs (or template functions) to access vault or local vault files
+We can then check in the `values.tmpl.yaml` file which does all of this composition and reference the actual secret values via URLs (or template functions) to access vault or local vault files
 
-To do this we use expressions like: `{{ .Parameter.pipelineUser.token }}` somewhere in the `values.yaml` values file. So this is like injecting values into the helm templates; but it happens up front to help generate the `values.yaml` files.
+To do this we use expressions like: `{{ .Parameter.pipelineUser.token }}` somewhere in the `values.tmpl.yaml` values file. So this is like injecting values into the helm templates; but it happens up front to help generate the `values.yaml` files.
