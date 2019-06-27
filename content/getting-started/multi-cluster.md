@@ -74,7 +74,7 @@ Then to install the Environment Controller use [jx create addon envctl](/command
 You need to specify the environments git repository and docker registry host and on GCP the project ID: 
 
 ``` 
-jx create addon envctl -s https://github.com/myorg/env-production.git --project-id myproject --docker-registry gcr.io --cluster-rbac true --user mygituser --token mygittoken -
+jx create addon envctl -s https://github.com/myorg/env-production.git --project-id myproject --docker-registry gcr.io --cluster-rbac true --user mygituser --token mygittoken
 ```
 
 The installer needs a user + API token for the git repository which it will prompt you for the known values from your `~/.jx/gitAuth.yaml` file so if you already installed Jenkins X it should be able to default those values for you.
