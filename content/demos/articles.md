@@ -14,6 +14,7 @@ sections_weight: 5
 ---
 
 
+* [Jenkins X — TLS enabled Previews](https://medium.com/@sboardwell/jenkins-x-tls-enabled-previews-d04fa68c7ce9) by [Steve Boardwell](https://medium.com/@sboardwell), June 26th, 2019
 * [Jenkins X — Securing the Cluster](https://medium.com/@sboardwell/jenkins-x-securing-the-cluster-e1b9fcd8dd05) by [Steve Boardwell](https://medium.com/@sboardwell), June 22nd, 2019
 * [Upgrading Ingress Rules And Adding TLS Certificates With Jenkins X](https://technologyconversations.com/2019/05/31/upgrading-ingress-rules-and-adding-tls-certificates-with-jenkins-x/) by [Viktor Farcic](https://technologyconversations.com), May 31th, 2019
 * [The Evolution Of Jenkins Jobs And How We Got To The YAML-Based jenkins-x.yml Format](https://technologyconversations.com/2019/05/09/the-evolution-of-jenkins-jobs-and-how-we-got-to-the-yaml-based-jenkins-x-yml-format/) by [Viktor Farcic](https://technologyconversations.com), May 9th, 2019
