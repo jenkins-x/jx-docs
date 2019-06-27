@@ -132,7 +132,7 @@ jx install \
   --ingress-namespace=kube-system
 ```
 
-## How do I enable HTTPS URLs?
+## How do I enable HTTPS URLs?
 
 In general use the [jx upgrade ingress](/commands/jx_upgrade_ingress/) command. 
 
