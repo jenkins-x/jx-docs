@@ -17,4 +17,4 @@ aliases: [/about-jx/,/docs/]
 toc: false
 ---
 
-Jenkins X is a CI / CD platform for Kubernetes
+Jenkins X is a CI / CD platform on Kubernetes
