@@ -1,5 +1,5 @@
 ---
-date: 2019-06-28T15:54:47Z
+date: 2019-06-28T16:28:47Z
 title: "jx boot"
 slug: jx_boot
 url: /commands/jx_boot/
@@ -33,8 +33,9 @@ jx boot [flags]
 ### Options
 
 ```
-  -d, --dir string   the directory to look for the Jenkins X Pipeline, requirements and charts (default ".")
-  -h, --help         help for boot
+  -d, --dir string       the directory to look for the Jenkins X Pipeline, requirements and charts (default ".")
+  -u, --git-url string   the Git clone URL for the JX Boot source to boot up (default "https://github.com/jstrachan/environment-simple-tekton.git")
+  -h, --help             help for boot
 ```
 
 ### Options inherited from parent commands

@@ -1,5 +1,5 @@
 ---
-date: 2019-06-28T15:54:47Z
+date: 2019-06-28T16:28:47Z
 title: "jx create spring"
 slug: jx_create_spring
 url: /commands/jx_create_spring/
@@ -76,6 +76,7 @@ jx create spring [flags]
   -o, --output-dir string              Directory to output the project to. Defaults to the current directory
       --pack string                    The name of the pack to use
   -p, --packaging string               Packaging
+      --scheduler string               The name of the Scheduler configuration to use for ChatOps when using Prow
       --type string                    Project Type (such as maven-project or gradle-project)
       --use-default-git                use default git account
 ```

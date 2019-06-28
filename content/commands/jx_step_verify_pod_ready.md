@@ -1,5 +1,5 @@
 ---
-date: 2019-06-28T15:54:47Z
+date: 2019-06-28T16:28:47Z
 title: "jx step verify pod ready"
 slug: jx_step_verify_pod_ready
 url: /commands/jx_step_verify_pod_ready/
@@ -25,8 +25,9 @@ jx step verify pod ready [flags]
 ### Options
 
 ```
-      --debug   Output logs of any failed pod
-  -h, --help    help for ready
+      --debug                Output logs of any failed pod
+  -h, --help                 help for ready
+  -w, --wait-time duration   The default wait time to wait for the pods to be ready (default 1s)
 ```
 
 ### Options inherited from parent commands

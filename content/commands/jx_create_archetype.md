@@ -1,5 +1,5 @@
 ---
-date: 2019-06-28T15:54:47Z
+date: 2019-06-28T16:28:47Z
 title: "jx create archetype"
 slug: jx_create_archetype
 url: /commands/jx_create_archetype/
@@ -64,6 +64,7 @@ jx create archetype [flags]
   -o, --output-dir string              Directory to output the project to. Defaults to the current directory
       --pack string                    The name of the pack to use
   -p, --pick                           Provide a list of versions to choose from
+      --scheduler string               The name of the Scheduler configuration to use for ChatOps when using Prow
       --use-default-git                use default git account
   -v, --version string                 The version for the new application (default "1.0-SNAPSHOT")
 ```

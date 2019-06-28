@@ -1,5 +1,5 @@
 ---
-date: 2019-06-28T15:54:47Z
+date: 2019-06-28T16:28:47Z
 title: "jx import"
 slug: jx_import
 url: /commands/jx_import/
@@ -77,6 +77,7 @@ jx import [flags]
       --no-jenkinsfile                 Disable defaulting a Jenkinsfile if its missing
       --org string                     Specify the Git provider organisation to import the project into (if it is not already in one)
       --pack string                    The name of the pack to use
+      --scheduler string               The name of the Scheduler configuration to use for ChatOps when using Prow
   -u, --url string                     The git clone URL to clone into the current directory and then import
       --use-default-git                use default git account
 ```
