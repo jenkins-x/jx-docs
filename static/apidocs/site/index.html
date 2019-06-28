@@ -147,6 +147,9 @@
    <LI class="nav-level-2"><A href="#coreactivitystep-v1-jenkins_io" class="nav-item">CoreActivityStep v1 jenkins_io</A></LI>
  </UL>
   <UL>
+   <LI class="nav-level-2"><A href="#dependencyupdate-v1-jenkins_io" class="nav-item">DependencyUpdate v1 jenkins_io</A></LI>
+ </UL>
+  <UL>
    <LI class="nav-level-2"><A href="#downwardapiprojection-v1-core" class="nav-item">DownwardAPIProjection v1 core</A></LI>
  </UL>
   <UL>
@@ -346,6 +349,9 @@
  </UL>
   <UL>
    <LI class="nav-level-2"><A href="#pipelineactivitystep-v1-jenkins_io" class="nav-item">PipelineActivityStep v1 jenkins_io</A></LI>
+ </UL>
+  <UL>
+   <LI class="nav-level-2"><A href="#pipelineextension-v1-jenkins_io" class="nav-item">PipelineExtension v1 jenkins_io</A></LI>
  </UL>
   <UL>
    <LI class="nav-level-2"><A href="#pipelinestructure-v1-jenkins_io" class="nav-item">PipelineStructure v1 jenkins_io</A></LI>
@@ -728,6 +734,7 @@ notes on specific resource objects for details.</P>
 <TABLE>
 <THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
 <TBODY>
+<TR><TD><CODE>pipelineExtension</CODE><BR /><I><a href="#pipelineextension-v1-jenkins_io">PipelineExtension</a></I></TD><TD></TD></TR>
 <TR><TD><CODE>schemaPreprocessor</CODE><BR /><I><a href="#container-v1-core">Container</a></I></TD><TD></TD></TR>
 <TR><TD><CODE>schemaPreprocessorRole</CODE><BR /><I><a href="#role-v1-rbac">Role</a></I></TD><TD></TD></TR>
 </TBODY>
@@ -1177,6 +1184,7 @@ notes on specific resource objects for details.</P>
 <THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
 <TBODY>
 <TR><TD><CODE>commits</CODE><BR /><I><a href="#commitsummary-v1-jenkins_io">CommitSummary</a> array</I></TD><TD></TD></TR>
+<TR><TD><CODE>dependencyUpdates</CODE><BR /><I><a href="#dependencyupdate-v1-jenkins_io">DependencyUpdate</a> array</I></TD><TD></TD></TR>
 <TR><TD><CODE>gitCloneUrl</CODE><BR /><I>string</I></TD><TD></TD></TR>
 <TR><TD><CODE>gitHttpUrl</CODE><BR /><I>string</I></TD><TD></TD></TR>
 <TR><TD><CODE>gitOwner</CODE><BR /><I>string</I></TD><TD></TD></TR>
@@ -1975,6 +1983,35 @@ The contents of the target ConfigMap&#39;s Data field will be presented in a vol
 <TR><TD><CODE>name</CODE><BR /><I>string</I></TD><TD></TD></TR>
 <TR><TD><CODE>startedTimestamp</CODE><BR /><I><a href="#time-v1-meta">Time</a></I></TD><TD></TD></TR>
 <TR><TD><CODE>status</CODE><BR /><I>string</I></TD><TD></TD></TR>
+</TBODY>
+</TABLE>
+<H2 id="dependencyupdate-v1-jenkins_io">DependencyUpdate v1 jenkins_io</H2>
+<TABLE class="col-md-8">
+<THEAD><TR><TH>Group</TH><TH>Version</TH><TH>Kind</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>jenkins_io</CODE></TD><TD><CODE>v1</CODE></TD><TD><CODE>DependencyUpdate</CODE></TD></TR>
+</TBODY>
+</TABLE>
+<P>DependencyUpdate describes an dependency update message from the commit log</P>
+<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
+ <UL>
+  <LI><a href="#releasespec-v1-jenkins_io">ReleaseSpec [jenkins_io/v1]</a></LI>
+ </UL>
+</DIV>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>Component</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>FromReleaseHTMLURL</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>FromReleaseName</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>FromVersion</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>Host</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>Owner</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>Repo</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>ToReleaseHTMLURL</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>ToReleaseName</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>ToVersion</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>URL</CODE><BR /><I>string</I></TD><TD></TD></TR>
 </TBODY>
 </TABLE>
 <H2 id="downwardapiprojection-v1-core">DownwardAPIProjection v1 core</H2>
@@ -3490,6 +3527,28 @@ DEPRECATED: GitRepo is deprecated. To provision a container with a git repo, mou
 <TR><TD><CODE>preview</CODE><BR /><I><a href="#previewactivitystep-v1-jenkins_io">PreviewActivityStep</a></I></TD><TD></TD></TR>
 <TR><TD><CODE>promote</CODE><BR /><I><a href="#promoteactivitystep-v1-jenkins_io">PromoteActivityStep</a></I></TD><TD></TD></TR>
 <TR><TD><CODE>stage</CODE><BR /><I><a href="#stageactivitystep-v1-jenkins_io">StageActivityStep</a></I></TD><TD></TD></TR>
+</TBODY>
+</TABLE>
+<H2 id="pipelineextension-v1-jenkins_io">PipelineExtension v1 jenkins_io</H2>
+<TABLE class="col-md-8">
+<THEAD><TR><TH>Group</TH><TH>Version</TH><TH>Kind</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>jenkins_io</CODE></TD><TD><CODE>v1</CODE></TD><TD><CODE>PipelineExtension</CODE></TD></TR>
+</TBODY>
+</TABLE>
+<P>PipelineExtension defines the image and command of an app which wants to modify/extend the pipeline</P>
+<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
+ <UL>
+  <LI><a href="#appspec-v1-jenkins_io">AppSpec [jenkins_io/v1]</a></LI>
+ </UL>
+</DIV>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>args</CODE><BR /><I>string array</I></TD><TD>Arguments to the entrypoint.</TD></TR>
+<TR><TD><CODE>command</CODE><BR /><I>string</I></TD><TD>Entrypoint array. Not executed within a shell.</TD></TR>
+<TR><TD><CODE>image</CODE><BR /><I>string</I></TD><TD>Docker image name.</TD></TR>
+<TR><TD><CODE>name</CODE><BR /><I>string</I></TD><TD>Name of the container specified as a DNS_LABEL.</TD></TR>
 </TBODY>
 </TABLE>
 <H2 id="pipelinestructure-v1-jenkins_io">PipelineStructure v1 jenkins_io</H2>
