@@ -21,7 +21,17 @@ sections_weight: 5
 
 * [2019-06-24/25/26 GitOps by courtesy of Jenkins-X](https://www.containerdays.io/) at [Container Days, Hamburg (Germany)](https://www.containerdays.io/) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
 
+* [2019-06-11 The Recipe for Continuous Delivery](https://www.eventbrite.com/e/zurich-devops-and-hops-tickets-61928848854#) at [EuroDog Zurich](https://nadevops.com/eurodog) by [Viktor Farcic](https://twitter.com/vfarcic)
+
+* 2019-06-06 Talk: Jenkins X: Toward a Cloud-Native Jenkins at [WeAreDevelopers](https://events.wearedevelopers.com/) by [Viktor Farcic](https://twitter.com/vfarcic)
+
+* 2019-06-05 Workshop: Cloud-Native Kubernetes-First Continuous Delivery With Jenkins X, Kubernetes, And Friends at [WeAreDevelopers](https://events.wearedevelopers.com/) by [Viktor Farcic](https://twitter.com/vfarcic)
+
 * [2019-06-06 Continuous Delivery mit Jenkins X und Kubernetes](https://www.devops-essentials.de/lecture.php?id=7929-continuous-delivery-mit-jenkins-x-und) at [DevOps Essentials 2019](https://www.devops-essentials.de/) by [Nicolas Byl](https://twitter.com/NicolasByl)
+
+* 2019-05-30: Cloud-Native Kubernetes-First Continuous Delivery With Jenkins X, Kubernetes, And Friends at [ShiftDev](https://dev.shiftconf.co/) by [Viktor Farcic](https://twitter.com/vfarcic)
+
+* [2019-05-27: Running Serverless Continuous Delivery](http://www.jbcnconf.com/2019/infoTalk.html?id=5cd1f98438da161cb0381424) at [JBCNCconf](http://www.jbcnconf.com/2019/) by [Viktor Farcic](https://twitter.com/vfarcic)
 
 * [2019-06-04 Jenkins X: Progressive Delivery for Kubernetes](https://jnation.pt/speakers/carlos-sanchez/) at [JNation (Coimbra, Portugal)](https://jnation.pt) by [Carlos Sanchez](https://csanchez.org)
 
