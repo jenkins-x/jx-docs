@@ -32,7 +32,7 @@ Jenkins X comes with a default set of pod templates for supported languages and 
 
 For example the [maven build pack](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/blob/master/packs/maven/) uses the pod template `jenkins-maven`.
 
-We can then [refer to the pod template name in the Jenkinsfile](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/blob/master/packs/maven/Jenkinsfile#L1-L4) using the `agent { label "jenkins-$PACKNAME }` syntax in the declarative pipeline. e.g.
+We can then [refer to the pod template name in the Jenkinsfile](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/blob/master/packs/maven/Jenkinsfile#L1-L4) using the `agent { label "jenkins-$PACKNAME" }` syntax in the declarative pipeline. e.g.
 
 ```groovy
 // my declarative Jenkinsfile
