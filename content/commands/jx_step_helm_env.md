@@ -1,5 +1,5 @@
 ---
-date: 2019-07-01T09:40:44Z
+date: 2019-07-01T10:19:33Z
 title: "jx step helm env"
 slug: jx_step_helm_env
 url: /commands/jx_step_helm_env/
