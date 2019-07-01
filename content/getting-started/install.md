@@ -40,7 +40,7 @@ To install Jenkins X on macOS without brew, download the `.tar` file, and unarch
 2.  Install the uncompressed `jx` directory to an executable path with
     the `mv` command:
 
-        sudo mv jx /user/local/bin
+        sudo mv jx /usr/local/bin
 
 
 ### Linux
@@ -58,7 +58,7 @@ in their environments:
 2.  Install the uncompressed `jx` directory to an executable path with
     the `mv` command:
 
-        sudo mv jx /user/local/bin
+        sudo mv jx /usr/local/bin
 
 
 
