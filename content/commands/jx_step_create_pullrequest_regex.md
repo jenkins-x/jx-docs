@@ -1,5 +1,5 @@
 ---
-date: 2019-07-02T14:48:18Z
+date: 2019-07-02T17:47:32Z
 title: "jx step create pullrequest regex"
 slug: jx_step_create_pullrequest_regex
 url: /commands/jx_step_create_pullrequest_regex/
@@ -28,11 +28,12 @@ jx step create pullrequest regex [flags]
       --base string        The branch to create the pull request into (default "master")
       --branch string      Branch to clone and generate a pull request from (default "master")
       --component string   The component of the git repo which caused this change; useful if you have a complex or monorepo setup and want to differentiate between different components from the same repo
+      --dry-run            Perform a dry run, the change will be generated and committed, but not pushed or have a PR created
       --files string       A glob describing the files to change
   -h, --help               help for regex
       --regex string       The regex to use when doing updates
   -r, --repo stringArray   Git repo update
-      --srcRepo string     The git repo which caused this change; if this is a dependency update this will cause commit messages to be generated which can be parsed by jx step changelog. By default this will be read from the environment variable REPO_URL
+      --src-repo string    The git repo which caused this change; if this is a dependency update this will cause commit messages to be generated which can be parsed by jx step changelog. By default this will be read from the environment variable REPO_URL
   -v, --version string     The version to change. If no version is supplied the latest version is found
 ```
 
