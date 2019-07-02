@@ -1,5 +1,5 @@
 ---
-date: 2019-07-02T20:12:40Z
+date: 2019-07-02T22:11:08Z
 title: "jx delete"
 slug: jx_delete
 url: /commands/jx_delete/
@@ -55,6 +55,7 @@ jx delete TYPE [flags]
 * [jx delete environment](/commands/jx_delete_environment/)	 - Deletes one or more Environments
 * [jx delete extension](/commands/jx_delete_extension/)	 - Deletes one or more extensions
 * [jx delete git](/commands/jx_delete_git/)	 - Deletes one or more Git resources
+* [jx delete gke](/commands/jx_delete_gke/)	 - Deletes GKE cluster.
 * [jx delete jenkins](/commands/jx_delete_jenkins/)	 - Deletes one or more Jenkins resources
 * [jx delete namespace](/commands/jx_delete_namespace/)	 - Deletes one or more namespaces and their associated resources (Environments, Jenkins etc)
 * [jx delete post](/commands/jx_delete_post/)	 - Create a job which is triggered after a Preview is created

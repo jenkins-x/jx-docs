@@ -1,5 +1,5 @@
 ---
-date: 2019-07-02T20:12:40Z
+date: 2019-07-02T22:11:08Z
 title: "jx step"
 slug: jx_step
 url: /commands/jx_step/
@@ -44,6 +44,7 @@ jx step [flags]
 * [jx step create](/commands/jx_step_create/)	 - create [command]
 * [jx step credential](/commands/jx_step_credential/)	 - Returns a secret entry for easy scripting in pipeline steps
 * [jx step custom](/commands/jx_step_custom/)	 - Triggers a pipeline in a custom Jenkins server using the local Jenkinsfile
+* [jx step e2e](/commands/jx_step_e2e/)	 - e2e [command]
 * [jx step env](/commands/jx_step_env/)	 - env [command]
 * [jx step get](/commands/jx_step_get/)	 - get [command]
 * [jx step git](/commands/jx_step_git/)	 - git [command]
