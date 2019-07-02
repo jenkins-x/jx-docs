@@ -24,9 +24,6 @@ Jenkins X Boot is currently experimental but we hope will become the long term s
 
 Currently [unsupported features](https://github.com/jenkins-x/jx/issues/4326):
 
-* external dns
-* environment git repositories are hard coded in the [values.yaml](https://github.com/jstrachan/environment-simple-tekton/blob/master/env/values.yaml#L11-L16) and the webhooks don't get automatically registered
-* we don't automate setting up your own dev, staging, production git repositories easily
 * we don't yet support adding the changes from the [cloud-environments](https://github.com/jenkins-x/cloud-environments) repository for the different kinds of kubernetes provider
 
 ## Background
