@@ -17,7 +17,10 @@ toc: true
 
 The Jenkins X Community is like no other, we are friendly, very open to feedback, provide guidance, best practices and much more.  You can find us in various channels.
 
+We value respect and inclusiveness and follow the [CDF Code of Conduct](https://github.com/cdfoundation/toc/blob/master/CODE_OF_CONDUCT.md) in all interactions.
+
 Please join us, we'd love to hear your feedback or have you participate and show some of the work you are doing with Jenkins X!
+
 
 ## Slack
 
