@@ -60,7 +60,7 @@ Here's a [demo showing how to use web based VS Code in a DevPod](/images/develop
 
 ## Using Theia IDE
 
-If you don't use `--sync` then the DevPod will embed the [Theia IDE](https://www.theia-ide.org/) so that you can open the IDE in a browser and work on the source code inside your DevPod!
+If you don't use `--sync` and you use `--theia` then the DevPod will embed the [Theia IDE](https://www.theia-ide.org/) so that you can open the IDE in a browser and work on the source code inside your DevPod!
 
 The source code is mounted into the workspace of the DevPod in the folder `/workspace`.
  
