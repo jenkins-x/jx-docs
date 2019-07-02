@@ -1,5 +1,5 @@
 ---
-date: 2019-07-02T17:47:32Z
+date: 2019-07-02T20:12:40Z
 title: "jx create cluster gke terraform"
 slug: jx_create_cluster_gke_terraform
 url: /commands/jx_create_cluster_gke_terraform/
