@@ -80,3 +80,12 @@ jx step bdd --dir . --config jx/bdd/staticjenkins.yaml --gopath /tmp --git-provi
 ```
 
 The various YAML files in the [jx/bdd folder](https://github.com/jenkins-x/jenkins-x-versions/tree/master/jx/bdd) contains a selection of different cluster configurations that can be used
+
+## Proposed Improvements to the Version Stream
+
+<figure>
+<img src="/images/ProposedJXVersionStream.png"/>
+<figcaption>
+<h5>Diagram depicts how a new JX version will be propagated through the components.</h5>
+</figcaption>
+</figure>
