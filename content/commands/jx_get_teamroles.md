@@ -1,5 +1,5 @@
 ---
-date: 2019-07-03T03:57:13Z
+date: 2019-07-03T04:44:37Z
 title: "jx get teamroles"
 slug: jx_get_teamroles
 url: /commands/jx_get_teamroles/
