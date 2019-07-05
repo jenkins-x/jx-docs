@@ -42,6 +42,11 @@ pipelineConfig:
 
           - image: gcr.io/jenkinsxio/builder-go
             command: ./update-website.sh
+          
+          # Create the release notes
+          - name: changelog
+            image: gcr.io/jenkinsxio/builder-go:${inputs.params.version}
+            command: ./changelog.sh
 
     pullRequest:
       pipeline:
