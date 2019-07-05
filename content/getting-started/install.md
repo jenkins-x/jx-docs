@@ -59,7 +59,6 @@ To install Jenkins X on Linux, download the `.tar` file, and unarchive it in a d
         sudo mv jx /usr/local/bin
 
 
-
 ### Windows
 
 You can install Jenkins X on Windows through Chocolatey, a third-party package management system that provides convenient one-step commands for local Jenkins X installations and upgrades.
