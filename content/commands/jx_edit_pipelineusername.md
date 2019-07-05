@@ -1,5 +1,5 @@
 ---
-date: 2019-07-05T14:40:10Z
+date: 2019-07-05T14:08:37Z
 title: "jx edit pipelineusername"
 slug: jx_edit_pipelineusername
 url: /commands/jx_edit_pipelineusername/

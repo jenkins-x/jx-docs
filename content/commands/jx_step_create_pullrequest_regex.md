@@ -1,5 +1,5 @@
 ---
-date: 2019-07-05T14:40:10Z
+date: 2019-07-05T14:08:37Z
 title: "jx step create pullrequest regex"
 slug: jx_step_create_pullrequest_regex
 url: /commands/jx_step_create_pullrequest_regex/
