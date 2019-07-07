@@ -47,7 +47,7 @@ To get an incremental redeploy as you edit source inside VS Code then open a `Te
 
 inside the shell of the DevPod.
 
-Here's a [demo showing how to use web based VS Code in a DevPod](/images/developing/vscode-devpod.mp4):
+Here's a [demo showing how to use web based VS Code in a DevPod](https://github.com/jenkins-x/jx-docs/blob/master/static/images/developing/vscode-devpod.mp4):
 
 <figure>
 <embed src="/images/developing/vscode-devpod.mp4" autostart="false" height="400" width="600" />
