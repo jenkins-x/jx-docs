@@ -52,9 +52,24 @@ your-domain-com-zone           your-domain.com.           managed-zone utilised 
 
 Once the installation is complete, a list of name servers will be outputted to the terminal, please update your registrar using these name servers in order to delegate your domain onto Google CloudDNS.
 
+```bash
+
+        ********************************************************
+
+            External DNS: Please delegate your-domain.com via
+            your registrar onto the following name servers:
+                ns-cloud-d1.googledomains.com.
+                ns-cloud-d2.googledomains.com.
+                ns-cloud-d3.googledomains.com.
+                ns-cloud-d4.googledomains.com.
+
+        ********************************************************
+
 ```
-nameservers output
-```
+
+#### [google domains](https://domains.google)
+
+If you're using Google Domains as your domain registrar please see [here](https://support.google.com/domains/answer/3290309?hl=en-GB&ref_topic=9018335) for details on delegating to custom name servers.
 
 ### url template
 
