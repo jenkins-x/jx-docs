@@ -7,7 +7,7 @@ publishdate: 2019-07-10
 lastmod: 2019-07-10
 menu:
   docs:
-    parent: "contribute"
+    parent: "developing"
     weight: 230
 weight: 230
 sections_weight: 230
@@ -25,7 +25,7 @@ A Pull Request in the [jx repository](https://github.com/jenkins-x/jx) will auto
 
 The jobs all have a name and a context [in the configuration](https://github.com/jenkins-x/prow-config-tekton/blob/f1a74a38c2936722f8507769e5a30b56ca96fe45/prow/config.yaml#L902-L932). The name is the name what will show up on GitHub, and the context is the Jenkins X pipeline to execute.
 
-![Jobs executed during CI](/images/contribute/ci-jobs.png)
+![Jobs executed during CI](/images/developing/ci-jobs.png)
 
 These pipelines are defined in the root of the jx repository. For example, [here you can see the bdd pipeline](https://github.com/jenkins-x/jx/blob/master/jenkins-x-bdd.yml) that executes the end-to-end (e2e) tests that will get triggered when we tell Prow to execute the bdd job.
 
@@ -33,7 +33,7 @@ The pipelines that are executed are [Jenkins X pipelines](https://jenkins-x.io/a
 
 Following our bdd pipeline example, here are the steps executed as part of [the bdd pipeline](https://github.com/jenkins-x/jx/blob/master/jenkins-x-bdd.yml)
 
-![BDD Pipeline](/images/contribute/bdd-pipeline.png)
+![BDD Pipeline](/images/developing/bdd-pipeline.png)
 
 ## End to end tests
 For the e2e tests, the application binary is compiled with the changes on the pull request so that the tests use these changes. Docker images are also published to Google Cloud Registry (GCR) with the changes on the pull request, so testing locally is easier.
