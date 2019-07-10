@@ -25,7 +25,7 @@ jx create cluster gke [flags]
 ### Examples
 
 ```
-  # Non interactive creation of a gke cluster
+  # Non interactive creation of a gke cluster using sensible configuration defaults
   jx create cluster gke
   
   # Uses interactive prompts to configure the new cluster
