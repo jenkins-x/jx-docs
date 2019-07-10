@@ -59,9 +59,9 @@ jx create cluster gke --skip-installation
 ``` 
 kubectl get ns
 ```
-* fork or clone the git repository for the [install requirements and configuration](https://github.com/jstrachan/environment-simple-tekton):
+* fork or clone the git repository for the [install requirements and configuration](https://github.com/jenkins-x/jenkins-x-boot-config):
 ``` 
-  git clone https://github.com/jstrachan/environment-simple-tekton.git my-jx-config
+  git clone https://github.com/jenkins-x/jenkins-x-boot-config.git my-jx-config
   cd my-jx-config
 ```  
 * if you want to reset the existing parameters in the git repository just remove the parameters file:
@@ -98,19 +98,19 @@ So just edit anything in the configuration you like and re-run [jx boot](/comman
 
 ## Requirements
 
-There is a file called [jx-requirements.yaml](https://github.com/jstrachan/environment-simple-tekton/blob/master/jx-requirements.yml) which is used to specify the logical requirements of your installation; such as:
+There is a file called [jx-requirements.yaml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml) which is used to specify the logical requirements of your installation; such as:
 
 * what kubernetes provider to use
 * whether to store secrets in the local file system or vault
 * if you are using Terraform to manage your cloud resources
 * if you wish to use kaniko for container image builds
 
-You may want to review the  [jx-requirements.yaml](https://github.com/jstrachan/environment-simple-tekton/blob/master/jx-requirements.yml) file and make any changes you need.
+You may want to review the  [jx-requirements.yaml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml) file and make any changes you need.
 
 
 ## Pipeline
 
-The install/upgrade process is defined in a [Jenkins X Pipeline](/architecture/jenkins-x-pipelines/) in a file called [jenkins-x.yml](https://github.com/jstrachan/environment-simple-tekton/blob/master/jenkins-x.yml).
+The install/upgrade process is defined in a [Jenkins X Pipeline](/architecture/jenkins-x-pipelines/) in a file called [jenkins-x.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jenkins-x.yml).
 
 Typically you won't need to edit this file; though if you do see the [editing guide](http://localhost:1313/architecture/jenkins-x-pipelines/#customising-the-pipelines).
 
@@ -142,7 +142,7 @@ We can then use the new step to populate the `parameters.yaml` file in the Pipel
 jx step create values --name parameters
 ```
 
-This uses the [parameters.schema.json](https://github.com/jstrachan/environment-simple-tekton/blob/master/env/parameters.schema.json) file which powers the UI.
+This uses the [parameters.schema.json](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/env/parameters.schema.json) file which powers the UI.
 
 ### Improvements to values.yaml
 
