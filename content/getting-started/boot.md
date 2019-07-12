@@ -96,6 +96,14 @@ At any time you can re-run [jx boot](/commands/jx_boot) to re-apply any changes 
 
 So just edit anything in the configuration you like and re-run [jx boot](/commands/jx_boot) - whether thats to add or remove Apps, to change parameters or configuration or upgrade or downgrade versions of dependencies. 
 
+## Source Repositories
+
+Boot automatically sets up any source repositories which exist in the [repositories/templates](https://github.com/jenkins-x/jenkins-x-boot-config/tree/master/repositories/templates) folder as [SourceRepository](http://localhost:1313/architecture/custom-resources/#sourcerepository)  custom resources and uses any associated [Scheduler](http://localhost:1313/architecture/custom-resources/#scheduler) custom resources to regenerate the Prow configuration.
+
+Boot also automatically creates or updates any required webhooks on the git provider for your [SourceRepository](http://localhost:1313/architecture/custom-resources/#sourcerepository) resources.
+
+If you are using GitOps we hope to automate the population of the [repositories/templates](https://github.com/jenkins-x/jenkins-x-boot-config/tree/master/repositories/templates) folder as you import/create projects. Until then you can manually create a Pull Request on your boot git repository via [jx step create pullrequest repositories](/commands/jx_step_create_pullrequest_repositories/)
+
 ## Requirements
 
 There is a file called [jx-requirements.yaml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml) which is used to specify the logical requirements of your installation; such as:
