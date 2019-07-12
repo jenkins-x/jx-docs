@@ -21,7 +21,7 @@ So in Jenkins X, we have added a number of Custom Resources to help extend Kuber
 
 You can also [browse the Custom Resource API Reference](https://jenkins-x.io/apidocs/)
                 
-### Environments
+## Environments
 
 Jenkins X natively supports [environments](/about/features/#environments) allowing them to be defined for your team and then queried via [jx get environments](/commands/jx_get_environments):
 
@@ -46,7 +46,7 @@ kubectl edit env staging
 
 though you may prefer the easier to use [jx edit environment](/commands/jx_edit_environment) command.
 
-### Release
+## Release
 
 The Jenkins X pipelines generate a custom `Release` resource which we can use to keep track of:
 
@@ -54,19 +54,28 @@ The Jenkins X pipelines generate a custom `Release` resource which we can use to
 * what Jenkins pipeline URL and log was used to perform the release
 * which commits, issues and Pull Requests were part of each release so that we can implement [feedback as issues are fixed in Staging/Production](/about/features/#feedback)
 
-### SourceRepository
+## SourceRepository
 
 This stores information about source code repositories that Jenkins X is set to build.
 
 It is created by `jx import` and `jx create quickstart` and removed whenever a `jx delete application` is invoked.
 
-### PipelineActivity
+## Scheduler
+
+This is used to define a configuration for one or more `SourceRepository` and is used by [jx boot]() to generate the Prow configuration.
+
+This lets you setup a default `Scheduler` for a team and then you don't have to touch your prow configuration at all; all imported/created projects will inherit from the default `Scheduler`.
+
+Or when you perform `jx import` or `jx create quickstart` you can pass in a `--scheduler` command line argument to use a specific scheduler.
+
+
+## PipelineActivity
 
 This resource stores the pipeline status in terms of Jenkins Pipeline stages plus the [promotion activity](/about/features/#promotion).
 
 This resource is also used by the [jx get activities](/commands/jx_get_activities) command.
   
-### Team
+## Team
 
 The `Team` Custom Resource is created via the [jx create team](/commands/jx_create_team/) command and is used by the `team controller` to watch for new `Team` resources and then create an installation of Jenkins X in the `teams` namespace. For more background on teams see the [team feature](/about/features/#teams).
 
@@ -76,7 +85,7 @@ The `User` Custom Resource is used to support RBAC across the various [environme
 
 It is also used by the [jx edit userroles](/commands/jx_edit_userroles/) to change user roles.
 
-### EnvironmentRoleBinding
+## EnvironmentRoleBinding
 
 The `EnvironmentRoleBinding` resource is like the standard Kubernetes [RoleBinding](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.13/#rolebinding-v1-rbac-authorization-k8s-io) resource, but it allows mapping of a `Role` to multiple [environments](/about/features/#environments) and [preview environments](about/features/#preview-environments) in a team by using a selector of Environments on which to bind roles.
 
