@@ -150,6 +150,9 @@
    <LI class="nav-level-2"><A href="#dependencyupdate-v1-jenkins_io" class="nav-item">DependencyUpdate v1 jenkins_io</A></LI>
  </UL>
   <UL>
+   <LI class="nav-level-2"><A href="#dependencyupdatedetails-v1-jenkins_io" class="nav-item">DependencyUpdateDetails v1 jenkins_io</A></LI>
+ </UL>
+  <UL>
    <LI class="nav-level-2"><A href="#downwardapiprojection-v1-core" class="nav-item">DownwardAPIProjection v1 core</A></LI>
  </UL>
   <UL>
@@ -2001,17 +2004,47 @@ The contents of the target ConfigMap&#39;s Data field will be presented in a vol
 <TABLE>
 <THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
 <TBODY>
-<TR><TD><CODE>Component</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>FromReleaseHTMLURL</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>FromReleaseName</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>FromVersion</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>Host</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>Owner</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>Repo</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>ToReleaseHTMLURL</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>ToReleaseName</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>ToVersion</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>URL</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>component</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>fromReleaseHTMLURL</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>fromReleaseName</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>fromVersion</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>host</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>owner</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>paths</CODE><BR /><I><a href="#dependencyupdatedetails-v1-jenkins_io">DependencyUpdateDetails</a> array array</I></TD><TD></TD></TR>
+<TR><TD><CODE>repo</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>toReleaseHTMLURL</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>toReleaseName</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>toVersion</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>url</CODE><BR /><I>string</I></TD><TD></TD></TR>
+</TBODY>
+</TABLE>
+<H2 id="dependencyupdatedetails-v1-jenkins_io">DependencyUpdateDetails v1 jenkins_io</H2>
+<TABLE class="col-md-8">
+<THEAD><TR><TH>Group</TH><TH>Version</TH><TH>Kind</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>jenkins_io</CODE></TD><TD><CODE>v1</CODE></TD><TD><CODE>DependencyUpdateDetails</CODE></TD></TR>
+</TBODY>
+</TABLE>
+<P>DependencyUpdateDetails are the details of a dependency update</P>
+<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
+ <UL>
+  <LI><a href="#dependencyupdate-v1-jenkins_io">DependencyUpdate [jenkins_io/v1]</a></LI>
+ </UL>
+</DIV>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>component</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>fromReleaseHTMLURL</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>fromReleaseName</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>fromVersion</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>host</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>owner</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>repo</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>toReleaseHTMLURL</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>toReleaseName</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>toVersion</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>url</CODE><BR /><I>string</I></TD><TD></TD></TR>
 </TBODY>
 </TABLE>
 <H2 id="downwardapiprojection-v1-core">DownwardAPIProjection v1 core</H2>
