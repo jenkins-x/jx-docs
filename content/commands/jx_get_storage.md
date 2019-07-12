@@ -1,5 +1,5 @@
 ---
-date: 2019-07-12T18:14:07Z
+date: 2019-07-12T20:05:07Z
 title: "jx get storage"
 slug: jx_get_storage
 url: /commands/jx_get_storage/
