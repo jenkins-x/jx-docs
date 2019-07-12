@@ -1,5 +1,5 @@
 ---
-date: 2019-07-12T13:40:26Z
+date: 2019-07-12T16:17:57Z
 title: "jx step verify"
 slug: jx_step_verify
 url: /commands/jx_step_verify/
@@ -40,6 +40,7 @@ jx step verify [flags]
 * [jx step verify environments](/commands/jx_step_verify_environments/)	 - Verifies that the Environments have valid git repositories setup - lazily creating them if needed
 * [jx step verify git](/commands/jx_step_verify_git/)	 - 
 * [jx step verify install](/commands/jx_step_verify_install/)	 - Verifies that an installation is setup correctly
+* [jx step verify packages](/commands/jx_step_verify_packages/)	 - Verifies the versions of the required command line packages
 * [jx step verify pod](/commands/jx_step_verify_pod/)	 - pod [command]
 * [jx step verify preinstall](/commands/jx_step_verify_preinstall/)	 - Verifies all of the cloud infrastructure is setup before we try to boot up a cluster via 'jx boot'
 

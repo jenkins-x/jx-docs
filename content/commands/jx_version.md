@@ -1,5 +1,5 @@
 ---
-date: 2019-07-12T13:40:26Z
+date: 2019-07-12T16:17:57Z
 title: "jx version"
 slug: jx_version
 url: /commands/jx_version/
@@ -21,6 +21,7 @@ jx version [flags]
 ```
       --helm-tls           Whether to use TLS with helm
   -h, --help               help for version
+      --no-verify          Disable verification of package versions
   -n, --no-version-check   Disable checking of version upgrade checks
 ```
 
