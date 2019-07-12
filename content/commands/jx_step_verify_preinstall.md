@@ -1,5 +1,5 @@
 ---
-date: 2019-07-12T20:05:07Z
+date: 2019-07-12T23:16:13Z
 title: "jx step verify preinstall"
 slug: jx_step_verify_preinstall
 url: /commands/jx_step_verify_preinstall/
