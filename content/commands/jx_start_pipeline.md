@@ -1,5 +1,5 @@
 ---
-date: 2019-07-13T02:05:54Z
+date: 2019-07-13T12:11:10Z
 title: "jx start pipeline"
 slug: jx_start_pipeline
 url: /commands/jx_start_pipeline/
@@ -32,11 +32,15 @@ jx start pipeline [flags]
 ### Options
 
 ```
-  -m, --custom                Use a custom Jenkins App instead of the default execution engine in Jenkins X
-  -f, --filter string         Filters all the available jobs by those that contain the given text
-  -h, --help                  help for pipeline
-  -j, --jenkins-name string   The name of the custom Jenkins App if you don't wish to use the default execution engine in Jenkins X
-  -t, --tail                  Tails the build log to the current terminal
+  -c, --context string           An optional Prow pipeline context
+  -m, --custom                   Use a custom Jenkins App instead of the default execution engine in Jenkins X
+  -e, --env stringArray          List of custom environment variables to be applied to the generated PipelineRun that are created (can be use multiple times)
+  -f, --filter string            Filters all the available jobs by those that contain the given text
+  -h, --help                     help for pipeline
+  -j, --jenkins-name string      The name of the custom Jenkins App if you don't wish to use the default execution engine in Jenkins X
+  -l, --label stringArray        List of custom labels to be applied to the generated PipelineRun (can be use multiple times)
+      --service-account string   The Kubernetes ServiceAccount to use to run the meta pipeline (default "tekton-bot")
+  -t, --tail                     Tails the build log to the current terminal
 ```
 
 ### Options inherited from parent commands
