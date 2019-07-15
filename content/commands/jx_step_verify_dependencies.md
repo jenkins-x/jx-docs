@@ -1,5 +1,5 @@
 ---
-date: 2019-07-15T09:26:24Z
+date: 2019-07-15T15:36:08Z
 title: "jx step verify dependencies"
 slug: jx_step_verify_dependencies
 url: /commands/jx_step_verify_dependencies/
