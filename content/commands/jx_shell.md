@@ -1,5 +1,5 @@
 ---
-date: 2019-07-15T16:07:53Z
+date: 2019-07-15T17:13:07Z
 title: "jx shell"
 slug: jx_shell
 url: /commands/jx_shell/
