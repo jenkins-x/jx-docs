@@ -45,7 +45,7 @@ pipelineConfig:
           
           # Create the release notes
           - name: changelog
-            image: gcr.io/jenkinsxio/builder-go:0.1.550
+            image: gcr.io/jenkinsxio/builder-go:0.1.571
             command: ./changelog.sh
 
     pullRequest:
