@@ -1,38 +1,25 @@
 ---
-date: 2019-07-16T15:35:21Z
+date: 2019-07-16T19:36:21Z
 title: "jx step boot"
 slug: jx_step_boot
 url: /commands/jx_step_boot/
 ---
 ## jx step boot
 
-This step checks the version stream for updates to jenkins-x charts
+boot [command]
 
 ### Synopsis
 
-This step checks the version stream for updates to jenkins-x charts, by default the user is prompted to accept each update
+boot [command]
 
 ```
-jx step boot upgrade [flags]
-```
-
-### Examples
-
-```
-  # Checks the version stream for updates
-  jx step boot upgrade
-  
-  # Checks the version stream for updates
-  jx step boot upgrade --auto-upgrade
+jx step boot [flags]
 ```
 
 ### Options
 
 ```
-      --auto-upgrade       Auto apply upgrades
-  -d, --dir string         the directory to look for the requirements file: jx-requirements.yml (default ".")
-  -h, --help               help for boot
-      --namespace string   the namespace that Jenkins X will be booted into. If not specified it defaults to $DEPLOY_NAMESPACE
+  -h, --help   help for boot
 ```
 
 ### Options inherited from parent commands
