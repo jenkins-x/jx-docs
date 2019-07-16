@@ -1,5 +1,5 @@
 ---
-date: 2019-07-16T08:14:22Z
+date: 2019-07-16T11:18:49Z
 title: "jx"
 slug: jx
 url: /commands/jx/
@@ -55,6 +55,7 @@ jx [flags]
 * [jx open](/commands/jx_open/)	 - Open a service in a browser
 * [jx options](/commands/jx_options/)	 - 
 * [jx preview](/commands/jx_preview/)	 - Creates or updates a Preview Environment for the current version of an application
+* [jx profile](/commands/jx_profile/)	 - Set your jx profile
 * [jx promote](/commands/jx_promote/)	 - Promotes a version of an application to an Environment
 * [jx prompt](/commands/jx_prompt/)	 - Generate the command line prompt for the current team and environment
 * [jx repository](/commands/jx_repository/)	 - Opens the web page for the current Git repository in a browser
