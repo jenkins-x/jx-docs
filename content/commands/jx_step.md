@@ -1,5 +1,5 @@
 ---
-date: 2019-07-19T11:25:44Z
+date: 2019-07-16T11:18:49Z
 title: "jx step"
 slug: jx_step
 url: /commands/jx_step/
@@ -38,7 +38,8 @@ jx step [flags]
 * [jx](/commands/jx/)	 - jx is a command line tool for working with Jenkins X
 * [jx step bdd](/commands/jx_step_bdd/)	 - Performs the BDD tests on the current cluster, new clusters or teams
 * [jx step blog](/commands/jx_step_blog/)	 - Creates a blog post with changes, metrics and charts showing improvements
-* [jx step boot](/commands/jx_step_boot/)	 - boot [command]
+* [jx step boot](/commands/jx_step_boot/)	 - This step boots up Vault in the current cluster if its enabled in the 'jx-requirements.yml' file and is not already installed
+* [jx step boot](/commands/jx_step_boot/)	 - This step checks the version stream for updates to jenkins-x charts
 * [jx step buildpack](/commands/jx_step_buildpack/)	 - buildpack [command]
 * [jx step changelog](/commands/jx_step_changelog/)	 - Creates a changelog for a git tag
 * [jx step create](/commands/jx_step_create/)	 - create [command]
