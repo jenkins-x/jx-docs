@@ -47,15 +47,13 @@ provider "aws" {
 }
 
 module "eks" {
-    source                                     = "terraform-aws-modules/eks/aws"
-    cluster_name                               = "${var.region}"
-    subnets                                    = "${var.subnets}"
-    vpc_id                                     = "${var.vpc_id}"
-    worker_groups                              = [
+    source       = "terraform-aws-modules/eks/aws"
+    cluster_name = "${var.region}"
+    subnets      = "${var.subnets}"
+    vpc_id       = "${var.vpc_id}"
+    worker_groups = [
         {
             autoscaling_enabled   = true
-            protect_from_scale_in = true
-            suspended_processes   = "AZRebalance"
             asg_min_size          = 3
             asg_desired_capacity  = 3
             instance_type         = "t3.large"
@@ -63,7 +61,7 @@ module "eks" {
             key_name              = "${var.key_name}"
         }
     ]
-    version                                    = "2.3.1"
+    version = "5.0.0"
 }
 
 # Needed for cluster-autoscaler
@@ -94,16 +92,15 @@ resource "aws_dynamodb_table" "vault-data" {
     write_capacity = 2
     hash_key       = "Path"
     range_key      = "Key"
-    attribute      = [
-        {
-            name = "Path"
-            type = "S"
-        },
-        {
-            name = "Key"
-            type = "S"
-        }
-    ]
+    attribute {
+        name = "Path"
+        type = "S"
+    }
+
+    attribute {
+        name = "Key"
+        type = "S"
+    }
 }
 
 # Create service account for vault. Should the policy
@@ -115,7 +112,7 @@ data "aws_iam_policy_document" "vault" {
     statement {
         sid = "DynamoDB"
         effect = "Allow"
-        actions = [ 
+        actions = [
             "dynamodb:DescribeLimits",
             "dynamodb:DescribeTimeToLive",
             "dynamodb:ListTagsOfResource",
@@ -151,7 +148,7 @@ data "aws_iam_policy_document" "vault" {
         actions = [
             "s3:ListBucket"
         ]
-        resources = ["${aws_s3_bucket.vault-unseal.arn}"]        
+        resources = ["${aws_s3_bucket.vault-unseal.arn}"]
     }
     statement {
         sid = "KMS"
