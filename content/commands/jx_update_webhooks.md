@@ -1,5 +1,5 @@
 ---
-date: 2019-07-18T19:18:12Z
+date: 2019-07-16T11:18:49Z
 title: "jx update webhooks"
 slug: jx_update_webhooks
 url: /commands/jx_update_webhooks/
