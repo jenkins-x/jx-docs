@@ -1,5 +1,5 @@
 ---
-date: 2019-07-23T10:03:17Z
+date: 2019-07-16T11:18:49Z
 title: "jx get secrets"
 slug: jx_get_secrets
 url: /commands/jx_get_secrets/
