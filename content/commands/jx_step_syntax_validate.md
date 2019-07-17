@@ -1,5 +1,5 @@
 ---
-date: 2019-07-17T22:14:43Z
+date: 2019-07-17T23:41:08Z
 title: "jx step syntax validate"
 slug: jx_step_syntax_validate
 url: /commands/jx_step_syntax_validate/
