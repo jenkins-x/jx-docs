@@ -1,5 +1,5 @@
 ---
-date: 2019-07-16T19:36:21Z
+date: 2019-07-17T16:07:34Z
 title: "jx scan cluster"
 slug: jx_scan_cluster
 url: /commands/jx_scan_cluster/
