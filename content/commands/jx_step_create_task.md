@@ -1,5 +1,5 @@
 ---
-date: 2019-07-18T02:49:44Z
+date: 2019-07-18T14:38:07Z
 title: "jx step create task"
 slug: jx_step_create_task
 url: /commands/jx_step_create_task/
@@ -67,7 +67,6 @@ jx step create task [flags]
       --service-account string       The Kubernetes ServiceAccount to use to run the pipeline (default "tekton-bot")
       --source string                The name of the source repository (default "source")
       --target-path string           The target path appended to /workspace/${source} to clone the source code
-  -t, --trigger string               The kind of pipeline trigger (default "manual")
   -u, --url string                   The URL for the build pack Git repository
       --view                         Just view the steps that would be created
 ```
