@@ -1,5 +1,5 @@
 ---
-date: 2019-07-18T18:18:58Z
+date: 2019-07-18T19:18:12Z
 title: "jx get cve"
 slug: jx_get_cve
 url: /commands/jx_get_cve/
