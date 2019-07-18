@@ -162,7 +162,8 @@ data "aws_iam_policy_document" "vault" {
             "kms:DescribeKey"
         ]
         resources = ["${aws_kms_key.bank_vault.arn}"]
-    }}
+    }
+}
 
 resource "aws_iam_user_policy" "vault" {
     name = "vault_${var.region}"
