@@ -51,7 +51,7 @@ To install Jenkins X on Linux, download the `.tar` file, and unarchive it in a d
     the URL below is selecting the most current version of Jenkins X on the [releases](https://github.com/jenkins-x/jx/releases/) page) and pipe (`|`) the compressed archive to
     the `tar` command:
 
-        curl -L https://github.com/jenkins-x/jx/releases/download/latest/jx-linux-amd64.tar.gz | tar xzv
+        curl -L https://github.com/jenkins-x/jx/releases/latest/download/jx-linux-amd64.tar.gz | tar xzv
 
 2.  Install the `jx` binary by moving it to a location which should be on your environments PATH, using
     the `mv` command:
