@@ -16,7 +16,7 @@ author: Kara de la Marck
 <img src="/images/old-Jenkins-x-Contributor-Summit.png"/>
 </figure>
 
-[Register here](https://www.eventbrite.com/e/jenkins-x-contributor-summit-2019-san-francisco-tickets-65105473223) to participate in the Jenkins X Contributor Summit in San Francisco. Attendance at the Jenkins X Contributor Summit is free, and a [DevOps World | Jenkins World](https://www.cloudbees.com/devops-world/san-francisco) ticket is not necessary, but please [RSVP](https://www.eventbrite.com/e/jenkins-x-contributor-summit-2019-san-francisco-tickets-65105473223) if you are going to attend.
+[Register here](https://www.eventbrite.com/e/jenkins-x-contributor-summit-2019-san-francisco-tickets-65105473223) to participate in the Jenkins X Contributor Summit in San Francisco. Attendance at the Jenkins X Contributor Summit is free, and a [DevOps World | Jenkins World](https://www.cloudbees.com/devops-world/san-francisco) conference pass is not necessary, but please [RSVP](https://www.eventbrite.com/e/jenkins-x-contributor-summit-2019-san-francisco-tickets-65105473223) if you are going to attend.
 
 The Jenkins X Contributor Summit is an opportunity for current and future Jenkins X contributors to come together to discuss the project, learn and collaborate. There will be discussions on the latest exciting developments in Jenkins X and time to contribute to the project. We welcome new contributors: this is a great chance to learn more about the project, find out how to contribute and meet the core contributors!
 
@@ -35,8 +35,10 @@ The contributor summit is part of a joint [Continuous Delivery Foundation (CDF)]
 
 All levels of contributors are welcome! During the Birds-of-a-Feather sessions you are welcome to join in any session that interests you. At the end of the day, if you would like to share what you have learned or worked on, there will be Ignite lightning talks. After the summit, all attendees will be invited to a contributor appreciation social event.
 
-We've had [a fantastic time at past contributor summits](https://jenkins.io/blog/2018/10/18/contributor-summit-summary/), focused on Jenkins, and look forward to seeing you at this year's Jenkins X Contributor Summit as part of a bigger, broader CDF contributor summit.
+We've had [a fantastic time at past contributor summits](https://jenkins.io/blog/2018/10/18/contributor-summit-summary/), focused on Jenkins, and look forward to seeing you at this year's Jenkins X Contributor Summit as part of a bigger, broader CDF Contributor Summit.
 
 <figure>
 <img src="/images/contributor_summit_sf.jpg"/>
 </figure>
+
+A [DevOps World | Jenkins World](https://www.cloudbees.com/devops-world/san-francisco) conference pass is not necessary to attend the Contributor Summit, but if you don't want to miss out on the conference you can get yours using **JWFOSS** for a 30% discount.
