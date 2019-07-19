@@ -1,5 +1,5 @@
 ---
-date: 2019-07-19T12:52:37Z
+date: 2019-07-19T15:19:08Z
 title: "jx step scheduler config migrate"
 slug: jx_step_scheduler_config_migrate
 url: /commands/jx_step_scheduler_config_migrate/
