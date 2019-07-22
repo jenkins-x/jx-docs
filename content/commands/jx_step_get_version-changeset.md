@@ -1,5 +1,5 @@
 ---
-date: 2019-07-22T14:07:08Z
+date: 2019-07-22T14:58:16Z
 title: "jx step get version-changeset"
 slug: jx_step_get_version-changeset
 url: /commands/jx_step_get_version-changeset/
