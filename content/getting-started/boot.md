@@ -106,21 +106,115 @@ If you are using GitOps we hope to automate the population of the [repositories/
 
 ## Requirements
 
-There is a file called [jx-requirements.yaml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml) which is used to specify the logical requirements of your installation; such as:
+There is a file called [jx-requirements.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml) which is used to specify the logical requirements of your installation; such as:
 
 * what kubernetes provider to use
 * whether to store secrets in the local file system or vault
 * if you are using Terraform to manage your cloud resources
 * if you wish to use kaniko for container image builds
 
-You may want to review the  [jx-requirements.yaml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml) file and make any changes you need.
+You may want to review the  [jx-requirements.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml) file and make any changes you need.
 
+## Storage
+
+the [jx-requirements.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml) file can configure whether you want to use long term storage for logs + reports and what cloud storage buckets to use to store the data.
+
+e.g. the following `jx-requirements.yml` file enables long term storage:
+
+```yaml 
+cluster:
+  provider: gke
+environments:
+- key: dev
+- key: staging
+- key: production
+kaniko: true
+storage:
+  logs:
+    enabled: false
+  reports:
+    enabled: false
+  repository:
+    enabled: false
+```
+
+You can also specify the URLs of the storage buckets in the `storage` section. The following URL syntax is supported 
+
+* `gs://anotherBucket/mydir/something.txt` : using a GCS bucket on GCP
+* `s3://nameOfBucket/mydir/something.txt` : using S3 bucket on AWS
+* `azblob://thatBucket/mydir/something.txt` : using an Azure bucket
+* `http://foo/bar` : file stored in git not using HTTPS
+* `https://foo/bar` : file stored in a git repo using HTTPS
+
+e.g.
+
+```yaml 
+cluster:
+  provider: gke
+environments:
+- key: dev
+- key: staging
+- key: production
+kaniko: true
+storage:
+  logs:
+    enabled: false
+    url: gs://my-logs
+  reports:
+    enabled: false
+    url: gs://my-logs
+  repository:
+    enabled: false
+    url: gs://my-repo
+```
+
+For more details see the [Storage Guide](/architecture/storage).
+
+## Ingress
+
+If you don't specify anything in your [jx-requirements.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml) file then boot will default to using HTTP (rathter than HTTPS) and using [nip.io](https://nip.io/) as the DNS mechanism. 
+
+After running boot your `jx-requirements.yml` may look like:
+
+```yaml 
+cluster:
+  provider: gke
+  clusterName: my-cluster-name
+  environmentGitOwner: my-git-org
+  project: my-gke-project
+  zone: europe-west1-d
+environments:
+- key: dev
+- key: staging
+- key: production
+ingress:
+  domain: 1.2.3.4.nip.io
+  externalDNS: false
+  tls:
+    email: ""
+    enabled: false
+    production: false
+kaniko: true
+secretStorage: local
+storage:
+  logs:
+    enabled: false
+  reports:
+    enabled: false
+  repository:
+    enabled: false
+webhook: prow
+```
+
+If you wish tot enable external DNS (to automatically register DNS names for all of your exported services) a DNS domain name or TLS then modify the `ingress` section of your  `jx-requirements.yml` file and re-run `jx boot`
 
 ## Pipeline
 
 The install/upgrade process is defined in a [Jenkins X Pipeline](/architecture/jenkins-x-pipelines/) in a file called [jenkins-x.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jenkins-x.yml).
 
 Typically you won't need to edit this file; though if you do see the [editing guide](http://localhost:1313/architecture/jenkins-x-pipelines/#customising-the-pipelines).
+
+
 
 
 ## Configuration
