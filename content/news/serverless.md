@@ -12,7 +12,7 @@ author: Viktor Farcic
 ---
 
 <figure>
-[<img src="/images/2019-dwjw-san-fran-rev.png"/>](https://www.cloudbees.com/devops-world/san-francisco)
+<img src="/images/2019-dwjw-san-fran-rev.png"/>
 </figure>
 
 # Using Jenkins X To Define And Run Serverless Deployments
