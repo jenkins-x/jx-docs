@@ -1138,11 +1138,15 @@ notes on specific resource objects for details.</P>
 <THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
 <TBODY>
 <TR><TD><CODE>description</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>httpCloneURL</CODE><BR /><I>string</I></TD><TD>HTTPCloneURL is the git URL to clone this repository using HTTP/HTTPS</TD></TR>
 <TR><TD><CODE>org</CODE><BR /><I>string</I></TD><TD></TD></TR>
 <TR><TD><CODE>provider</CODE><BR /><I>string</I></TD><TD>Provider stores the URL of the git provider such as https://github.com</TD></TR>
+<TR><TD><CODE>providerKind</CODE><BR /><I>string</I></TD><TD>ProviderKind is the kind of provider (github / bitbucketcloud / bitbucketserver etc)</TD></TR>
 <TR><TD><CODE>providerName</CODE><BR /><I>string</I></TD><TD>ProviderName is a logical name for the provider without any URL scheme which can be used in a label selector</TD></TR>
 <TR><TD><CODE>repo</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>scheduler</CODE><BR /><I><a href="#resourcereference-v1-jenkins_io">ResourceReference</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>scheduler</CODE><BR /><I><a href="#resourcereference-v1-jenkins_io">ResourceReference</a></I></TD><TD>Scheduler a reference to a custom scheduler otherwise we default to the Team&#39;s Scededuler</TD></TR>
+<TR><TD><CODE>sshCloneURL</CODE><BR /><I>string</I></TD><TD>SSHCloneURL is the git URL to clone this repository using SSH</TD></TR>
+<TR><TD><CODE>url</CODE><BR /><I>string</I></TD><TD>URL is the web URL of the project page</TD></TR>
 </TBODY>
 </TABLE>
 <H3 id="sourcerepositorylist-v1-jenkins_io">SourceRepositoryList v1 jenkins_io</H3>
