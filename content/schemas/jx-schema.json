@@ -2,6 +2,24 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "$ref": "#/definitions/ProjectConfig",
   "definitions": {
+    "AWSElasticBlockStoreVolumeSource": {
+      "properties": {
+        "fsType": {
+          "type": "string"
+        },
+        "partition": {
+          "type": "integer"
+        },
+        "readOnly": {
+          "type": "boolean"
+        },
+        "volumeID": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
     "AddonConfig": {
       "properties": {
         "name": {
@@ -32,6 +50,72 @@
       "additionalProperties": false,
       "type": "object"
     },
+    "AzureDiskVolumeSource": {
+      "properties": {
+        "cachingMode": {
+          "type": "string"
+        },
+        "diskName": {
+          "type": "string"
+        },
+        "diskURI": {
+          "type": "string"
+        },
+        "fsType": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string"
+        },
+        "readOnly": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "AzureFileVolumeSource": {
+      "properties": {
+        "readOnly": {
+          "type": "boolean"
+        },
+        "secretName": {
+          "type": "string"
+        },
+        "shareName": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "CephFSVolumeSource": {
+      "properties": {
+        "monitors": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "path": {
+          "type": "string"
+        },
+        "readOnly": {
+          "type": "boolean"
+        },
+        "secretFile": {
+          "type": "string"
+        },
+        "secretRef": {
+          "$ref": "#/definitions/LocalObjectReference"
+        },
+        "user": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
     "ChatConfig": {
       "properties": {
         "developerChannel": {
@@ -44,6 +128,24 @@
           "type": "string"
         },
         "userChannel": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "CinderVolumeSource": {
+      "properties": {
+        "fsType": {
+          "type": "string"
+        },
+        "readOnly": {
+          "type": "boolean"
+        },
+        "secretRef": {
+          "$ref": "#/definitions/LocalObjectReference"
+        },
+        "volumeID": {
           "type": "string"
         }
       },
@@ -65,8 +167,105 @@
       "additionalProperties": false,
       "type": "object"
     },
+    "ConfigMapProjection": {
+      "properties": {
+        "items": {
+          "items": {
+            "$ref": "#/definitions/KeyToPath"
+          },
+          "type": "array"
+        },
+        "name": {
+          "type": "string"
+        },
+        "optional": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "ConfigMapVolumeSource": {
+      "properties": {
+        "defaultMode": {
+          "type": "integer"
+        },
+        "items": {
+          "items": {
+            "$ref": "#/definitions/KeyToPath"
+          },
+          "type": "array"
+        },
+        "name": {
+          "type": "string"
+        },
+        "optional": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
     "Container": {
       "additionalProperties": true,
+      "type": "object"
+    },
+    "DownwardAPIProjection": {
+      "properties": {
+        "items": {
+          "items": {
+            "$ref": "#/definitions/DownwardAPIVolumeFile"
+          },
+          "type": "array"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "DownwardAPIVolumeFile": {
+      "properties": {
+        "fieldRef": {
+          "$ref": "#/definitions/ObjectFieldSelector"
+        },
+        "mode": {
+          "type": "integer"
+        },
+        "path": {
+          "type": "string"
+        },
+        "resourceFieldRef": {
+          "$ref": "#/definitions/ResourceFieldSelector"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "DownwardAPIVolumeSource": {
+      "properties": {
+        "defaultMode": {
+          "type": "integer"
+        },
+        "items": {
+          "items": {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "$ref": "#/definitions/DownwardAPIVolumeFile"
+          },
+          "type": "array"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "EmptyDirVolumeSource": {
+      "properties": {
+        "medium": {
+          "type": "string"
+        },
+        "sizeLimit": {
+          "$ref": "#/definitions/Quantity"
+        }
+      },
+      "additionalProperties": false,
       "type": "object"
     },
     "EnvVar": {
@@ -107,6 +306,174 @@
       "additionalProperties": false,
       "type": "object"
     },
+    "FCVolumeSource": {
+      "properties": {
+        "fsType": {
+          "type": "string"
+        },
+        "lun": {
+          "type": "integer"
+        },
+        "readOnly": {
+          "type": "boolean"
+        },
+        "targetWWNs": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "wwids": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "FlexVolumeSource": {
+      "properties": {
+        "driver": {
+          "type": "string"
+        },
+        "fsType": {
+          "type": "string"
+        },
+        "options": {
+          "patternProperties": {
+            ".*": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "readOnly": {
+          "type": "boolean"
+        },
+        "secretRef": {
+          "$ref": "#/definitions/LocalObjectReference"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "FlockerVolumeSource": {
+      "properties": {
+        "datasetName": {
+          "type": "string"
+        },
+        "datasetUUID": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "GCEPersistentDiskVolumeSource": {
+      "properties": {
+        "fsType": {
+          "type": "string"
+        },
+        "partition": {
+          "type": "integer"
+        },
+        "pdName": {
+          "type": "string"
+        },
+        "readOnly": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "GitRepoVolumeSource": {
+      "properties": {
+        "directory": {
+          "type": "string"
+        },
+        "repository": {
+          "type": "string"
+        },
+        "revision": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "GlusterfsVolumeSource": {
+      "properties": {
+        "endpoints": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "readOnly": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "HostPathVolumeSource": {
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "ISCSIVolumeSource": {
+      "properties": {
+        "chapAuthDiscovery": {
+          "type": "boolean"
+        },
+        "chapAuthSession": {
+          "type": "boolean"
+        },
+        "fsType": {
+          "type": "string"
+        },
+        "initiatorName": {
+          "type": "string"
+        },
+        "iqn": {
+          "type": "string"
+        },
+        "iscsiInterface": {
+          "type": "string"
+        },
+        "lun": {
+          "type": "integer"
+        },
+        "portals": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "readOnly": {
+          "type": "boolean"
+        },
+        "secretRef": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/LocalObjectReference"
+        },
+        "targetPortal": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
     "IssueTrackerConfig": {
       "properties": {
         "kind": {
@@ -116,6 +483,30 @@
           "type": "string"
         },
         "url": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "KeyToPath": {
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "mode": {
+          "type": "integer"
+        },
+        "path": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "LocalObjectReference": {
+      "properties": {
+        "name": {
           "type": "string"
         }
       },
@@ -137,6 +528,21 @@
           "type": "array"
         },
         "variable": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "NFSVolumeSource": {
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "readOnly": {
+          "type": "boolean"
+        },
+        "server": {
           "type": "string"
         }
       },
@@ -191,6 +597,30 @@
             "$ref": "#/definitions/Stage"
           },
           "type": "array"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "PersistentVolumeClaimVolumeSource": {
+      "properties": {
+        "claimName": {
+          "type": "string"
+        },
+        "readOnly": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "PhotonPersistentDiskVolumeSource": {
+      "properties": {
+        "fsType": {
+          "type": "string"
+        },
+        "pdID": {
+          "type": "string"
         }
       },
       "additionalProperties": false,
@@ -294,6 +724,9 @@
         "agent": {
           "$ref": "#/definitions/Agent"
         },
+        "containerOptions": {
+          "$ref": "#/definitions/Container"
+        },
         "name": {
           "type": "string"
         },
@@ -314,6 +747,12 @@
         },
         "type": {
           "type": "string"
+        },
+        "volumes": {
+          "items": {
+            "$ref": "#/definitions/Volume"
+          },
+          "type": "array"
         }
       },
       "additionalProperties": false,
@@ -343,6 +782,21 @@
         },
         "release": {
           "$ref": "#/definitions/PipelineLifecycles"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "PortworxVolumeSource": {
+      "properties": {
+        "fsType": {
+          "type": "string"
+        },
+        "readOnly": {
+          "type": "boolean"
+        },
+        "volumeID": {
+          "type": "string"
         }
       },
       "additionalProperties": false,
@@ -451,7 +905,77 @@
       "additionalProperties": false,
       "type": "object"
     },
+    "ProjectedVolumeSource": {
+      "properties": {
+        "defaultMode": {
+          "type": "integer"
+        },
+        "sources": {
+          "items": {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "$ref": "#/definitions/VolumeProjection"
+          },
+          "type": "array"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
     "Quantity": {
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "QuobyteVolumeSource": {
+      "properties": {
+        "group": {
+          "type": "string"
+        },
+        "readOnly": {
+          "type": "boolean"
+        },
+        "registry": {
+          "type": "string"
+        },
+        "user": {
+          "type": "string"
+        },
+        "volume": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "RBDVolumeSource": {
+      "properties": {
+        "fsType": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "keyring": {
+          "type": "string"
+        },
+        "monitors": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "pool": {
+          "type": "string"
+        },
+        "readOnly": {
+          "type": "boolean"
+        },
+        "secretRef": {
+          "$ref": "#/definitions/LocalObjectReference"
+        },
+        "user": {
+          "type": "string"
+        }
+      },
       "additionalProperties": false,
       "type": "object"
     },
@@ -483,6 +1007,49 @@
         "timeout": {
           "$schema": "http://json-schema.org/draft-04/schema#",
           "$ref": "#/definitions/Timeout"
+        },
+        "volumes": {
+          "items": {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "$ref": "#/definitions/Volume"
+          },
+          "type": "array"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "ScaleIOVolumeSource": {
+      "properties": {
+        "fsType": {
+          "type": "string"
+        },
+        "gateway": {
+          "type": "string"
+        },
+        "protectionDomain": {
+          "type": "string"
+        },
+        "readOnly": {
+          "type": "boolean"
+        },
+        "secretRef": {
+          "$ref": "#/definitions/LocalObjectReference"
+        },
+        "sslEnabled": {
+          "type": "boolean"
+        },
+        "storageMode": {
+          "type": "string"
+        },
+        "storagePool": {
+          "type": "string"
+        },
+        "system": {
+          "type": "string"
+        },
+        "volumeName": {
+          "type": "string"
         }
       },
       "additionalProperties": false,
@@ -498,6 +1065,61 @@
         },
         "optional": {
           "type": "boolean"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "SecretProjection": {
+      "properties": {
+        "items": {
+          "items": {
+            "$ref": "#/definitions/KeyToPath"
+          },
+          "type": "array"
+        },
+        "name": {
+          "type": "string"
+        },
+        "optional": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "SecretVolumeSource": {
+      "properties": {
+        "defaultMode": {
+          "type": "integer"
+        },
+        "items": {
+          "items": {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "$ref": "#/definitions/KeyToPath"
+          },
+          "type": "array"
+        },
+        "optional": {
+          "type": "boolean"
+        },
+        "secretName": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "ServiceAccountTokenProjection": {
+      "properties": {
+        "audience": {
+          "type": "string"
+        },
+        "expirationSeconds": {
+          "type": "integer"
+        },
+        "path": {
+          "type": "string"
         }
       },
       "additionalProperties": false,
@@ -577,6 +1199,12 @@
         "unstash": {
           "$schema": "http://json-schema.org/draft-04/schema#",
           "$ref": "#/definitions/Unstash"
+        },
+        "volumes": {
+          "items": {
+            "$ref": "#/definitions/Volume"
+          },
+          "type": "array"
         },
         "workspace": {
           "type": "string"
@@ -666,6 +1294,27 @@
       "additionalProperties": false,
       "type": "object"
     },
+    "StorageOSVolumeSource": {
+      "properties": {
+        "fsType": {
+          "type": "string"
+        },
+        "readOnly": {
+          "type": "boolean"
+        },
+        "secretRef": {
+          "$ref": "#/definitions/LocalObjectReference"
+        },
+        "volumeName": {
+          "type": "string"
+        },
+        "volumeNamespace": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
     "Timeout": {
       "properties": {
         "time": {
@@ -684,6 +1333,163 @@
           "type": "string"
         },
         "name": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "Volume": {
+      "properties": {
+        "awsElasticBlockStore": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/AWSElasticBlockStoreVolumeSource"
+        },
+        "azureDisk": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/AzureDiskVolumeSource"
+        },
+        "azureFile": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/AzureFileVolumeSource"
+        },
+        "cephfs": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/CephFSVolumeSource"
+        },
+        "cinder": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/CinderVolumeSource"
+        },
+        "configMap": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/ConfigMapVolumeSource"
+        },
+        "downwardAPI": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/DownwardAPIVolumeSource"
+        },
+        "emptyDir": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/EmptyDirVolumeSource"
+        },
+        "fc": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/FCVolumeSource"
+        },
+        "flexVolume": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/FlexVolumeSource"
+        },
+        "flocker": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/FlockerVolumeSource"
+        },
+        "gcePersistentDisk": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/GCEPersistentDiskVolumeSource"
+        },
+        "gitRepo": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/GitRepoVolumeSource"
+        },
+        "glusterfs": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/GlusterfsVolumeSource"
+        },
+        "hostPath": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/HostPathVolumeSource"
+        },
+        "iscsi": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/ISCSIVolumeSource"
+        },
+        "name": {
+          "type": "string"
+        },
+        "nfs": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/NFSVolumeSource"
+        },
+        "persistentVolumeClaim": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/PersistentVolumeClaimVolumeSource"
+        },
+        "photonPersistentDisk": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/PhotonPersistentDiskVolumeSource"
+        },
+        "portworxVolume": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/PortworxVolumeSource"
+        },
+        "projected": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/ProjectedVolumeSource"
+        },
+        "quobyte": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/QuobyteVolumeSource"
+        },
+        "rbd": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/RBDVolumeSource"
+        },
+        "scaleIO": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/ScaleIOVolumeSource"
+        },
+        "secret": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/SecretVolumeSource"
+        },
+        "storageos": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/StorageOSVolumeSource"
+        },
+        "vsphereVolume": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/VsphereVirtualDiskVolumeSource"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "VolumeProjection": {
+      "properties": {
+        "configMap": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/ConfigMapProjection"
+        },
+        "downwardAPI": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/DownwardAPIProjection"
+        },
+        "secret": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/SecretProjection"
+        },
+        "serviceAccountToken": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/ServiceAccountTokenProjection"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "VsphereVirtualDiskVolumeSource": {
+      "properties": {
+        "fsType": {
+          "type": "string"
+        },
+        "storagePolicyID": {
+          "type": "string"
+        },
+        "storagePolicyName": {
+          "type": "string"
+        },
+        "volumePath": {
           "type": "string"
         }
       },
