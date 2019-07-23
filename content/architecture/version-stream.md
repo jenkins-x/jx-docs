@@ -15,7 +15,7 @@ draft: false
 toc: true
 ---
 
-Jenkins X is made up of a large number of command line _packages_ and helm _charts_, some of which are released by the Jenkins X community and others come from the wider open source ecosystem.
+Jenkins X is made up of a large number of command line _packages_, _images_ and helm _charts_, some of which are released by the Jenkins X community and others come from the wider open source ecosystem.
 
 To improve the stability of Jenkins X when lots of packages and charts are changing all the time we have introduced the Jenkins X `Version Stream`
 
