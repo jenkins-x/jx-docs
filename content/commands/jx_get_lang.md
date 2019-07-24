@@ -1,5 +1,5 @@
 ---
-date: 2019-07-24T00:01:44Z
+date: 2019-07-24T10:38:35Z
 title: "jx get lang"
 slug: jx_get_lang
 url: /commands/jx_get_lang/
