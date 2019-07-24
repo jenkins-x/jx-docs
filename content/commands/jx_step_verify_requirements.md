@@ -1,29 +1,29 @@
 ---
 date: 2019-07-24T22:15:36Z
-title: "jx step verify packages"
-slug: jx_step_verify_packages
-url: /commands/jx_step_verify_packages/
+title: "jx step verify requirements"
+slug: jx_step_verify_requirements
+url: /commands/jx_step_verify_requirements/
 ---
-## jx step verify packages
+## jx step verify requirements
 
-Verifies the versions of the required command line packages
+Verifies all the helm requirements.yaml files have a version number populated from the Version Stream
 
 ### Synopsis
 
-Verifies the versions of the required command line packages
+Verifies all the helm requirements.yaml files have a version number populated from the Version Stream.
   
 See Also: 
 
   * jx create project : https://jenkins-x.io/commands/jx_create_project
 
 ```
-jx step verify packages [flags]
+jx step verify requirements [flags]
 ```
 
 ### Examples
 
 ```
-  Verifies the versions of the required command line packages
+  Verifies all the helm requirements.yaml files have a version number populated from the Version Stream
   
   # verify packages and fail if any are not valid:
   jx step verify packages
@@ -36,10 +36,8 @@ jx step verify packages [flags]
 ### Options
 
 ```
-      --helm-tls               Whether to use TLS with helm
-  -h, --help                   help for packages
-  -n, --namespace string       The namespace to use to look for helm's tiller
-  -p, --packages stringArray   The packages to verify (default [jx,kubectl,git,helm,kaniko])
+  -d, --dir string   the directory to recursively look for 'requirements.yaml' files (default ".")
+  -h, --help         help for requirements
 ```
 
 ### Options inherited from parent commands
