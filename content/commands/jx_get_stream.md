@@ -1,5 +1,5 @@
 ---
-date: 2019-07-25T08:41:03Z
+date: 2019-07-25T11:36:39Z
 title: "jx get stream"
 slug: jx_get_stream
 url: /commands/jx_get_stream/
@@ -32,7 +32,7 @@ jx get stream [flags]
 
 ```
   -h, --help                  help for stream
-  -k, --kind string           The kind of version. Possible values: charts, packages, docker (default "docker")
+  -k, --kind string           The kind of version. Possible values: charts, packages, docker, git (default "docker")
   -r, --repo string           Jenkins X versions Git repo (default "https://github.com/jenkins-x/jenkins-x-versions.git")
       --versions-ref string   Jenkins X versions Git repository reference (tag, branch, sha etc)
 ```
