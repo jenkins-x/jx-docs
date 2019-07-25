@@ -1,5 +1,5 @@
 ---
-date: 2019-07-25T14:44:22Z
+date: 2019-07-25T15:59:38Z
 title: "jx step next-version"
 slug: jx_step_next-version
 url: /commands/jx_step_next-version/
@@ -23,6 +23,9 @@ jx step next-version [flags]
   jx step next-version --filename package.json
   jx step next-version --filename package.json --tag
   jx step next-version --filename package.json --tag --version 1.2.3
+  
+  # lets use git to create a new version from a tag and tag git
+  jx step next-version --use-git-tag-only --tag
 ```
 
 ### Options
