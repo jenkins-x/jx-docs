@@ -1,5 +1,5 @@
 ---
-date: 2019-07-25T08:41:03Z
+date: 2019-07-25T11:36:39Z
 title: "jx step verify packages"
 slug: jx_step_verify_packages
 url: /commands/jx_step_verify_packages/
@@ -36,6 +36,7 @@ jx step verify packages [flags]
 ### Options
 
 ```
+  -d, --dir string             the directory to recursively look upwards for any 'jx-requirements.yml' file to determine the version stream (default ".")
       --helm-tls               Whether to use TLS with helm
   -h, --help                   help for packages
   -n, --namespace string       The namespace to use to look for helm's tiller

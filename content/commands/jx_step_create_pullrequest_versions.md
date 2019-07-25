@@ -1,5 +1,5 @@
 ---
-date: 2019-07-25T08:41:03Z
+date: 2019-07-25T11:36:39Z
 title: "jx step create pullrequest versions"
 slug: jx_step_create_pullrequest_versions
 url: /commands/jx_step_create_pullrequest_versions/
@@ -43,7 +43,7 @@ jx step create pullrequest versions [flags]
   -f, --filter stringArray     The name patterns to include - such as '*' for all names
   -h, --help                   help for versions
       --images                 Update the tekton builder images for the Jenkins X Versions BDD tests
-  -k, --kind string            The kind of version. Possible values: charts, packages, docker (default "charts")
+  -k, --kind string            The kind of version. Possible values: charts, packages, docker, git (default "charts")
   -n, --name string            The name of the version to update. e.g. the name of the chart like 'jenkins-x/prow'
   -r, --repo string            Jenkins X versions Git repo (default "https://github.com/jenkins-x/jenkins-x-versions.git")
   -v, --version string         The version to change. If no version is supplied the latest version is found
