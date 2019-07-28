@@ -53,7 +53,7 @@ Jenkins X Pipelines use a new `jenkins-x.yml` file which is YAML instead of the 
 
 However it's still reusing the same reusable and composable build packs under the covers. (The Jenkins X [build packs](/architecture/build-packs/) are actually written in Jenkins X Pipelines YAML).
 
-One thing you will notice is that with Jenkins X Pipelines we don't need to copy/paste a large `Jenkisnfile` into each application's git repository; usually the generated `jenkins-x.yml` file is small, like this:
+One thing you will notice is that with Jenkins X Pipelines we don't need to copy/paste a large `Jenkinsfile` into each application's git repository; usually the generated `jenkins-x.yml` file is small, like this:
 
 ```yaml 
 buildPack: maven
