@@ -16,6 +16,7 @@ author: Oscar Medina
 </figcaption>
 </figure>
 Credit: [Minds Eye Creative](https://www.mindseyecreative.ca/) | [DevOps Days Toronto](https://devopsdays.org/events/2018-toronto/program/clay-smith/) 
+
 # Overview
 You might have heard of Observability given that folks have been talking about this for a while now.  Sure, you might think it is just the latest tech buzzword.  However, the practice has been around for a long time now.  
 
@@ -247,6 +248,10 @@ As you can see, we have a unique name for our build being traced, underneath tha
 # Conclusion
 
 Hopefully I’ve enticed you to at least look into why you might consider incorporating observability into your build and release process. There is a lot more that can be done.  In a future post, we will cover additional setup.
+
+
+## Jenkins World | DevOps World 2019
+I'll be demoing this solution at various times while at the conference this year.  You can still register and get a big discount by using code: **PREVIEW**.  You can find my full schedule on the [official website](https://www.cloudbees.com/devops-world/san-francisco/agenda)
 
 
 Cheers,<br/>
