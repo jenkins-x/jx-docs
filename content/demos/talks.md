@@ -13,11 +13,25 @@ weight: 5
 sections_weight: 5
 ---
 
+* [2019-07-04 Modern CI/CD with Tekton and Prow Automated via Jenkins X](https://www.youtube.com/watch?v=4EyTGYB7GvA) at [KubeCon (Barcelona)](https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2019/) by [Christie Wilson ](https://twitter.com/bobcatwilson) and [James Rawlings](https://twitter.com/jdrawlings)
+
 * [2019-07-04 Jenkins-X - CI/CD für die Kloud (German)](https://www.java-forum-stuttgart.de/de/Konferenz.html) at [Java Forum Stuttgart (Germany)](https://www.java-forum-stuttgart.de/de/Konferenz.html) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
+
+* [2019-06-24 Serverless Jenkins on Kubernetes - Jenkins X](https://sched.co/Nrmd) at [KubeCon CloudNativeCon 2019 (China)](https://www.lfasiallc.com/events/kubecon-cloudnativecon-china-2019/) by [RunZe Xia](https://github.com/runzexia)
 
 * [2019-06-24/25/26 GitOps by courtesy of Jenkins-X](https://www.containerdays.io/) at [Container Days, Hamburg (Germany)](https://www.containerdays.io/) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
 
+* [2019-06-11 The Recipe for Continuous Delivery](https://www.eventbrite.com/e/zurich-devops-and-hops-tickets-61928848854#) at [EuroDog Zurich](https://nadevops.com/eurodog) by [Viktor Farcic](https://twitter.com/vfarcic)
+
+* 2019-06-06 Talk: Jenkins X: Toward a Cloud-Native Jenkins at [WeAreDevelopers](https://events.wearedevelopers.com/) by [Viktor Farcic](https://twitter.com/vfarcic)
+
+* 2019-06-05 Workshop: Cloud-Native Kubernetes-First Continuous Delivery With Jenkins X, Kubernetes, And Friends at [WeAreDevelopers](https://events.wearedevelopers.com/) by [Viktor Farcic](https://twitter.com/vfarcic)
+
 * [2019-06-06 Continuous Delivery mit Jenkins X und Kubernetes](https://www.devops-essentials.de/lecture.php?id=7929-continuous-delivery-mit-jenkins-x-und) at [DevOps Essentials 2019](https://www.devops-essentials.de/) by [Nicolas Byl](https://twitter.com/NicolasByl)
+
+* 2019-05-30: Cloud-Native Kubernetes-First Continuous Delivery With Jenkins X, Kubernetes, And Friends at [ShiftDev](https://dev.shiftconf.co/) by [Viktor Farcic](https://twitter.com/vfarcic)
+
+* [2019-05-27: Running Serverless Continuous Delivery](http://www.jbcnconf.com/2019/infoTalk.html?id=5cd1f98438da161cb0381424) at [JBCNCconf](http://www.jbcnconf.com/2019/) by [Viktor Farcic](https://twitter.com/vfarcic)
 
 * [2019-06-04 Jenkins X: Progressive Delivery for Kubernetes](https://jnation.pt/speakers/carlos-sanchez/) at [JNation (Coimbra, Portugal)](https://jnation.pt) by [Carlos Sanchez](https://csanchez.org)
 
@@ -26,6 +40,8 @@ sections_weight: 5
 * [2019-05-23 CI/CD on Kubernetes with Jenkins X](https://docs.google.com/spreadsheets/d/1mA0FDySf2t2sSjKKG2VOta8vDDiGsQytgxJ2iHBeDIs/edit#gid=0&range=D52:E52) at [GlueCon](http://gluecon.com/) by [Nicholas Duffy](https://twitter.com/duffn)
 
 * [2019-05-07 Workshop: Continuous Deployment To Kubernetes](https://craft-conf.com/workshops) at [Craft (Budapest)](https://craft-conf.com/) by [Viktor Farcic](https://twitter.com/vfarcic)
+
+* [2019-03-28 Cloud-Native Kubernetes-First Continuous Delivery With Jenkins X](https://www.meetup.com/Lisbon-Jenkins-Area-Meetup/events/259936138/?_xtd=gatlbWFpbF9jbGlja9oAJDM3ODY0M2Q4LWY3ZmItNGQ5ZS05YWNhLTQ2ZTM3ODdkZGY0Yg) at [Lisbon Jenkins Area Meetup](https://www.meetup.com/Lisbon-Jenkins-Area-Meetup/) by [Viktor Farcic](https://twitter.com/vfarcic)
 
 * [2019-03-26 Ten Commandments Of GitOps Applied To Continuous Delivery](https://www.meetup.com/Barcelona-Jenkins-Area-Meetup/events/259869827/) at [Barcelona Jenkins Area Meetup](https://www.meetup.com/Barcelona-Jenkins-Area-Meetup/) by [Viktor Farcic](https://twitter.com/vfarcic)
 

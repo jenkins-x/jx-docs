@@ -21,7 +21,15 @@ If your install fails to start there could be a few different reasons why the Je
 
 Your cluster could be out of resources. You can check the spare resources on your cluster via [jx status](/commands/jx_status/):
 
-    jx status
+``` 
+jx status
+``` 
+
+We also have a diagnostic command that looks for common problems [jx step verify install](/commands/jx_step_verify_install/):
+
+``` 
+jx step verify install
+``` 
     
 A common issue for pods not starting is if your cluster does not have a [default storage class](https://kubernetes.io/docs/concepts/storage/storage-classes/) setup so that `Persistent Volume Claims` can be bound to `Persistent Volumes` as described in the [install instructions](/getting-started/install-on-cluster/).
 
@@ -158,7 +166,7 @@ and you should be good to go again.
 
 Another possible cause is an old URL in your environment's git repository may have old references to the URL.
 
-So open your `env/requirements.yaml` in your staging/production git repositories and modify them to use the URL https://chartmuseum.build.cd.jenkins-x.io intsead of https://chartmuseum.build.cd.jenkins-x.io like this [env/requirements file](https://github.com/jenkins-x/default-environment-charts/blob/master/env/requirements.yaml)
+So open your `env/requirements.yaml` in your staging/production git repositories and modify them to use the URL http://chartmuseum.jenkins-x.io instead of https://chartmuseum.build.cd.jenkins-x.io like this [env/requirements file](https://github.com/jenkins-x/default-environment-charts/blob/master/env/requirements.yaml)
 
 ## git errors: POST 401 Bad credentials
 
@@ -238,6 +246,36 @@ kail -l job-name=expose -n jx-staging
 If you then promote to the Staging environment or retrigger the pipeline on the `master` branch of your Staging git repository (e.g. via [jx start pipeline](/commands/jx_start_pipeline/)) then you should see the output of the [exposecontroller](https://github.com/jenkins-x/exposecontroller) pod.
 
 
+## Why is promotion really slow?
+
+If you find you get lots of warnings in your pipelines like this...
+
+``` 
+"Failed to query the Pull Request last commit status for https://github.com/myorg/environment-mycluster-staging/pull/1 ref xyz Could not find a status for repository myorg/environment-mycluster-staging with ref xyz
+```
+
+and promotion takes 30 minutes from a release pipeline on an application starting to the change hitting `Staging` then its mostly probably due to Webhooks.
+
+When we [import projects](/developing/import/) or [create quickstarts](/developing/create-quickstart/) we automate the setup of CI/CD pipelines for the git repository. What this does is setup Webhooks on the git repository to trigger Jenkins X to trigger pipelines (either using Prow for [serverless Jenkins X Pipelines](/architecture/jenkins-x-pipelines/) or the static jenkins server if not).
+
+However sometimes your git provider (e.g. [GitHub](https://github.com/) may not be able to do connect to your Jenkins X installation (e.g. due to networking / firewall issues).
+
+The easiest way to diagnose this is opening the git repository (e.g. for your environment repository).
+
+``` 
+jx get env
+```
+
+Then: 
+
+* click on the generated URL for, say, your `Staging`  git repository 
+* click the `Settings` icon 
+* select the `Webhooks` tab on the left
+* select your Jenkins X webhook URL 
+* view the last webhook - did it succeed? Try re-trigger it? That should highlight any network issues etc
+
+If you cannot use public webhooks you could look at something like [ultrahook](http://www.ultrahook.com/)
+
 ## Cannot create cluster minikube
 
 If you are using a Mac then `hyperkit` is the best VM driver to use - but does require you to install a recent [Docker for Mac](https://docs.docker.com/docker-for-mac/install/) first. Maybe try that then retry `jx create cluster minikube`?
@@ -312,6 +350,75 @@ You'll see all the URs of the form `http://$(minikube ip):somePortNumber` which 
 
 Install [KSD](https://github.com/mfuentesg/ksd) by running `go get github.com/mfuentesg/ksd` and then run `kubectl get secret jenkins -o yaml | ksd`
 
+
+## How do I see the log of exposecontroller?
+
+Usually we run the [exposecontroller]() as a post install `Job` when we perform promotion to `Staging` or `Production` to expose services over Ingress and possibly inject external URLs into applications configuration.
+
+
+So the `Job` will trigger a short lived `Pod` to run in the namespace of your environment, then the pod will be deleted.
+
+If you want to view the logs of the `exposecontroller` you will need to watch for the logs using a selector then trigger the promotion pipeline to capture it.
+
+One way to do that is via the [kail](https://github.com/boz/kail) CLI:
+
+
+``` 
+kail -l  job-name=expose
+```
+
+This will watch for exposecontroller logs and then dump them to the console. Now trigger a promotion pipeline and you should see the output within a minute or so.
+
+## Cannot create TLS certificates during Ingress setup
+
+> [cert-manager](https://docs.cert-manager.io/en/latest/index.html) cert-manager is a seperate project from _Jenkins X_.
+
+Newly created GKE clusters or existing cluster running _kubernetes_ **v1.12** or older will encounter the following error when configuring Ingress with site-wide TLS:
+
+```
+Waiting for TLS certificates to be issued...
+Timeout reached while waiting for TLS certificates to be ready
+```
+
+This issue is caused by the _cert-manager_ pod not having the `disable-validation` label set, which is a known cert-manager issue which is [documented on their website](https://docs.cert-manager.io/en/latest/getting-started/install/kubernetes.html). The following steps, taken from the [cert-manager/troubleshooting-installation](https://docs.cert-manager.io/en/latest/getting-started/troubleshooting.html#troubleshooting-installation) webpage, should resolve the issue:
+
+Check if the _disable-validation_ label exists on the _cert-manager_ pod.
+```
+kubectl describe namespace cert-manager
+```
+
+If you cannot see the `certmanager.k8s.io/disable-validation=true` label on your namespace, you should add it with:
+```
+kubectl label namespace cert-manager certmanager.k8s.io/disable-validation=true
+```
+
+Confirm the label has been added to the _cert-manager_ pod.
+```
+kubectl describe namespace cert-manager
+
+Name:         cert-manager
+Labels:       certmanager.k8s.io/disable-validation=true
+Annotations:  <none>
+Status:       Active
+...
+```
+
+Now rerun _jx_ Ingress setup:
+```
+jx upgrade ingress
+```
+
+While the ingress command is running, you can tail the _cert-manager_ logs in another terminal and see what is happening. You will need to find the name of your _cert-manager_ pod using:
+```
+kubectl get pods --namespace cert-manager
+```
+
+Then tail the logs of the _cert-manager_ pod.
+```
+kubectl logs YOUR_CERT_MNG_POD --namespace cert-manager -f
+```
+
+Your TLS certificates should now be set up and working, otherwise checkout the [official _cert-manager_ troubleshooting](https://docs.cert-manager.io/en/latest/getting-started/troubleshooting.html) instructions.
 
 ## Other issues
 

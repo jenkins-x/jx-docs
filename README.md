@@ -30,7 +30,7 @@ Press Ctrl+C to stop
 
 # Contribution
 
-Here is something about Jenkins X documents contribution.
+Please visit the contributing guide for the documentation available at [Jenkins X website](https://jenkins-x.io/contribute/documentation/).
 
 ## Localization
 

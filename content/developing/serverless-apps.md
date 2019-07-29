@@ -87,7 +87,7 @@ Now you have installed [Knative Serve](https://www.knative.dev/) snd [Gloo](http
 You can check if Knative Serve is being used on your application by doing:
 
 ```
-kubectl get ksvc-n jx-staging 
+kubectl get ksvc -n jx-staging 
 ```
 Which should show all of the Knative Service resources in your Staging environment.
 

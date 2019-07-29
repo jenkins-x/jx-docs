@@ -38,7 +38,7 @@ Jenkins X comes with configuration that wires these services together meaning ev
 1. __Jenkins__  — provides both CI and CD automation. There is an effort to decompose Jenkins over time to become more cloud native and make use of Kubernetes concepts around CRDs, storage and scaling for example.
 2. __Nexus__ — acts as a dependency cache for Nodejs and Java applications to dramatically improve build times. After an initial build of a SpringBoot application the build time is reduced from 12 mins to 4. We have not yet but intend to demonstrate swapping this with Artifactory soon.
 3. __Docker registry__  — an in cluster docker registry where our pipelines push application images, we will soon switch to using native cloud provider registries such as Google Container Registry, Azure Container Registry or Amazon Elastic Container Registry (ECR) for example.
-4. __ChartMuseum__ — a registry for publishing Helm charts
+4. __ChartMuseum__ — a Repository for publishing Helm charts
 5. __Monocular__  — a UI used for discovering and running Helm charts
 
 ## Permanent Environments
@@ -58,6 +58,5 @@ Also they are not permanent but created on a Pull Request to an applications git
 
 ## Ingress Custom Annotations
 
-To learn how to add custom annotations to the ingress controller, please see [How To Add Custom Annotations to Ingress Controller?](/faq/develop/#How-To-Add-Custom-Annotations-to-Ingress-Controller?)
-
+To learn how to add custom annotations to the ingress controller, please see [How To Add Custom Annotations to Ingress Controller?](/faq/develop/#how-to-add-custom-annotations-to-ingress-controller)
 

@@ -17,9 +17,4 @@ aliases: [/about-jx/,/docs/]
 toc: false
 ---
 
-Jenkins X is a CI / CD platform for Kubernetes.
-
-This project is a sub-project of <a href="https://jenkins.io/">Jenkins</a>.
-
-
-                    
+Jenkins X is a CI / CD platform on Kubernetes

@@ -17,7 +17,74 @@ categories: [fundamentals]
 toc: true
 ---
 
-This page describes any specific manual work arounds you may require above and beyond changes described in the [News section](/news/) or using [jx upgrade](/commands/jx_upgrade/) to upgrade the [CLI](/commands/jx_upgrade_cli/) or [platform](/commands/jx_upgrade_platform/)
+# Support Matrix
+
+| Install Kind | Supported Git Providers |
+| --- | ---  |
+| Serverless Jenkins X pipelines with Tekton | GitHub only (due to Prow restriction - we are working on it!) |
+| Static Jenkins Server | GitHub, GitHub Enterprise, BitBucket Cloud, BitBucket Server, GitLab. Gitea in beta |
+
+
+| Clouds with Kaniko Support |
+| --- | 
+| GKE |
+| EKS |
+
+| Clouds supporting bucket log storage |
+| --- | 
+| GKE |
+| EKS |
+
+
+# Status Reports
+
+This section describes any specific manual work arounds you may require above and beyond changes described in the [News section](/news/) or using [jx upgrade](/commands/jx_upgrade/) to upgrade the [CLI](/commands/jx_upgrade_cli/) or [platform](/commands/jx_upgrade_platform/)
+
+
+## 25th June 2019: missing image: bitnami/monocular-api
+
+It looks like the monocular docker images got removed today! 
+
+It turns out that monocular is not an absolute requirement for Jenkins X; it works great without it.
+
+So a quick workaround to the problem is to scale down your monocular deployment
+
+``` 
+kubectl scale deploy jenkins-x-monocular-api --replicas=0
+kubectl scale deploy jenkins-x-monocular-prerender --replicas=0
+kubectl scale deploy jenkins-x-monocular-ui --replicas=0
+``` 
+
+The latest [version stream release](/architecture/version-stream/) has removed monocular so if you [upgrade your platform
+](/getting-started/upgrade-jx/) this issue should be resolved. 
+
+We can always add monocular back as an optional [App](/apps) later on when it works again.
+
+
+## 12th June 2019: Knative Build now deprecated
+
+Knative Build was our first attempt at building a serverles offering in Jenkins X. Since then Knative build got replaced with the more powerful Knative Build Pipelines which then got moved and renamed to [Tekton](https://tekton.dev/).
+
+So we highly recommend anyone who has created a Jenkins X installation using knative build to move to a [Servlerless Jenkins X Pipelines](/architecture/jenkins-x-pipelines/) cluster using Tekton instead.
+
+Now the `jx` binary will warn that any attempt at using `--knative-build` when installing is deprecated.
+
+We will soon have a build pack for [Jenkinsfile runner](https://github.com/jenkinsci/jenkinsfile-runner) when using Tekton in case you need to reuse a Jenkisnfile within [Servlerless Jenkins X Pipelines](/architecture/jenkins-x-pipelines/) and Tekton along with support for orchestrating `Jenkinsfile` within a [custom Jenkins server](/architecture/custom-jenkins/) 
+
+## 21st May 2019: Skaffold upgrade to v0.29.0
+
+We have noticed an incompatibility with older skaffold configuration files and the new v0.29.0 skaffold release.  Freshly generated applications will not suffer from this problem, but for existing applications changes to the configuration file may be required.
+
+If you are running a static master or serverless (jenkins file runner) cluster and are having issues building existing applications with the following error `creating runner: invalid skaffold config: required value not set: image` you will need to modify your `skaffold.yaml`.
+
+In the `dev` profile, remove the following section:
+
+```
+    artifacts:	
+    - docker: {}
+```
+
+For more information, refer to this [PR](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/pull/50/files)
 
 ## 16th April 2019: Jenkins X 2.x
 

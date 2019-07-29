@@ -23,6 +23,7 @@ By default Jenkins X ships with a Docker Registry which is included in the syste
 
 If you are using the public cloud you may wish to take advantage of your cloud providers docker registry; or reuse your own existing docker registry.
 
+### If you are using Static Jenkins Master
 To specify the Docker Registry host/port you can use the Jenkins Console:
 
 ```
@@ -98,6 +99,35 @@ If you want to publish images to docker hub then you need to modify your `config
     }
 }
 ``` 
+
+## Usng jFrog BinTray (Artifactory)
+Using the jFrog BinTray as a private registry is possible.  This has only been tested when creating a new cluster and passing the `--docker-registry=private-reg.bintray.io`.  After creating your cluster, you will want to do the following:
+
+1. Delete the existing `Secret` called `jenkins-docker-cfg` by executing 
+
+```bash
+kubectl delete secret jenkins-docker-cfg
+```
+2. Create a local file called `config.json` and its value should be in this format (update values based on your registry user account and FQDN).
+
+```json
+{
+    "auths": {
+        "https://private-reg.bintray.io": {
+            "auth": "username:password (base64 encoded)",
+            "email": "myemail@acme.com"
+        }
+    }
+}
+```
+2. Create the new `jenkins-docker-cfg` `Secret` with the contents of the `config.json` as follows:
+
+```bash
+ kubectl create secret generic jenkins-docker-cfg --from-file./config.json
+```
+
+That should do it, you should now be able to run pipelines and store images in the jFrog BinTray Registry.
+
 
 ### Mount a Secret for your registry
 

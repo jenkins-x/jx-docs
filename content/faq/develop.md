@@ -48,6 +48,27 @@ We’re using sealed secrets ourselves to manage our production Jenkins X instal
 Though a nicer approach would be using a Vault operator which we’re investigating now - which would fetch + populate secrets (and recycle them etc) via Vault.
 
 
+## When do Preview Environments get removed?
+
+We have a background garbage collection job which removes Preview Environments after the Pull Request is closed/merged. You can run it any time you like via the [jx gc previews](/commands/jx_gc_previews/) command
+
+``` 
+jx gc previews
+```
+
+You can also view the current previews via  [jx get previews](/commands/jx_get_previews/):
+                                       
+  ``` 
+  jx get previews
+  ```
+
+
+and delete a preview by choosing one to delete via [jx delete preview](/commands/jx_delete_preview/):
+
+ ``` 
+ jx delete preview
+ ```
+
 ## How do I add other services into a Preview?
 
 When you create a Pull Request by default Jenkins X creates a new [Preview Environment](/about/features/#preview-environments). Since this is a new dynamic namespace you may want to configure additional microservices in the namespace so you can properly test your preview build.
@@ -73,6 +94,26 @@ The PR triggers a CI pipeline to verify the changes are valid (e.g. the helm cha
 
 Jenkins X automates all of the above but given both these pipelines are defined in the environments git repository in a `Jenkinsfile` you are free to customise to add your own pre/post steps if you wish. e.g. you could analyse the YAML to pre-provision PVs for any PVCs using some custom disk snapshot tool you may have.  Or you can do that in a pre or post-install helm hook job. Though we'd prefer these tools to be created as part of the Jenkins X [extension model](/extending/) to avoid custom pipeline hacking which could break in future Jenkins X releases - though its not a huge biggie.
 
+## How do I change the owner of a docker image
+
+When using a docker registry like gcr.io then the docker image owner `gcr.io/owner/myname:1.2.3` can be different to your git owner/organisation.
+
+On Google's GCR this is usually your GCP Project ID; which you can have many different projects to group images together.
+
+There's a few options for defining which docker registry owner to use:
+
+* specify it in your `jenkins-x.yml` 
+
+```yaml 
+dockerRegistryHost: gcr.io
+dockerRegistryOwner: my-gcr-project-id
+```
+* specify it in the [Environment CRD](https://jenkins-x.io/architecture/custom-resources/) called `dev` at `env.spec.teamSettings.dockerRegistryOrg`
+* define the environment variable `DOCKER_REGISTRY_ORG`
+
+If none of those are found then the code defaults to the git repository owner. 
+
+For more details the code to resolve it is [here](https://github.com/jenkins-x/jx/blob/65962ff5ef1a6d1c4776daee0163434c9c2cb566/pkg/cmd/opts/docker.go#L14)
 
 ## What if my team does not want to use helm?
 
@@ -85,6 +126,18 @@ By default things like resource limits are put in `values.yaml` so its easy to c
 If you have a developer who is fundamentally opposed to helm's configuration management solution for environment specific configuration you can just opt out of that and just use helm as a way to version and download immutable tarballs of YAML and just stick to vanilla YAML files in, say, `charts/myapp/templates/deployment.yaml`).
 
 Then if you wish to use another configuration management tool you can add it in - e.g. [kustomise support](https://github.com/jenkins-x/jx/issues/2302).
+
+## How do I change the domain of serverless apps?
+
+If you use [serverless apps](/developing/serverless-apps/) with Knative we don't use thee default exposecontroller mechanism for defaulting the `Ingress` resources since knative does not use kubernetes `Service` resources.
+
+You can work around this by manually editing the _knative_ config via:
+
+```
+kubectl edit cm config-domain --namespace knative-serving
+```
+
+For more help see [using a custom domain with knative](https://knative.dev/docs/serving/using-a-custom-domain/)
 
 ## Can I reuse exposecontroller for my apps?
 

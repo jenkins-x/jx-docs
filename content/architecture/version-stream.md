@@ -15,7 +15,7 @@ draft: false
 toc: true
 ---
 
-Jenkins X is made up of a large number of command line _packages_ and helm _charts_, some of which are released by the Jenkins X community and others come from the wider open source ecosystem.
+Jenkins X is made up of a large number of command line _packages_, _images_ and helm _charts_, some of which are released by the Jenkins X community and others come from the wider open source ecosystem.
 
 To improve the stability of Jenkins X when lots of packages and charts are changing all the time we have introduced the Jenkins X `Version Stream`
 
@@ -80,3 +80,12 @@ jx step bdd --dir . --config jx/bdd/staticjenkins.yaml --gopath /tmp --git-provi
 ```
 
 The various YAML files in the [jx/bdd folder](https://github.com/jenkins-x/jenkins-x-versions/tree/master/jx/bdd) contains a selection of different cluster configurations that can be used
+
+## Proposed Improvements to the Version Stream
+
+<figure>
+<img src="/images/ProposedJXVersionStream.png"/>
+<figcaption>
+<h5>Diagram depicts how a new JX version will be propagated through the components.</h5>
+</figcaption>
+</figure>

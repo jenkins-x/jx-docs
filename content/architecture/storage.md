@@ -81,11 +81,11 @@ If you need to you can unstash previously stored files via [jx step unstash](/co
 
 If you are in some Go source code and you have a URL from Jenkins X, such as a Build Log URL or Attachment from a [PipelineActivity Custom Resource](/architecture/custom-resources/) the URL could be in various forms such as:
 
+  * `gs://anotherBucket/mydir/something.txt` : using a GCS bucket on GCP
+  * `s3://nameOfBucket/mydir/something.txt` : using S3 bucket on AWS
+  * `azblob://thatBucket/mydir/something.txt` : using an Azure bucket
   * `http://foo/bar` : file stored in git not using HTTPS
   * `https://foo/bar` : file stored in a git repo using HTTPS
-  * `s3://nameOfBucket/mydir/something.txt` : using S3 bucket on AWS
-  * `gs://anotherBucket/mydir/something.txt` : using a GCS bucket on GCP
-  * `azblob://thatBucket/mydir/something.txt` : using an Azure bucket
    
 
 If you want to easily be able to read from the URL from Go source code you can use the [`ReadURL` function](https://github.com/jenkins-x/jx/blob/e5a7943dc0c3d79c27f30aea73235f18b3f5dcff/pkg/cloud/buckets/buckets.go#L44-L45).

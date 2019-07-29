@@ -132,4 +132,35 @@ jx install \
   --ingress-namespace=kube-system
 ```
 
+## How do I enable HTTPS URLs?
+
+In general use the [jx upgrade ingress](/commands/jx_upgrade_ingress/) command. 
+
+For more detail see these blogs posts:
+
+* [Upgrading Ingress Rules And Adding TLS Certificates With Jenkins X](https://technologyconversations.com/2019/05/31/upgrading-ingress-rules-and-adding-tls-certificates-with-jenkins-x/) by [Viktor Farcic](https://technologyconversations.com)
+* [Jenkins X — TLS enabled Previews](https://medium.com/@sboardwell/jenkins-x-tls-enabled-previews-d04fa68c7ce9) by [Steve Boardwell](https://medium.com/@sboardwell)
+* [Jenkins X — Securing the Cluster](https://medium.com/@sboardwell/jenkins-x-securing-the-cluster-e1b9fcd8dd05) by [Steve Boardwell](https://medium.com/@sboardwell)
+
+
+## How do I change the URLs in an environment?
+
+We use [exposecontroller](https://github.com/jenkins-x/exposecontroller) to automate the setup of `Ingress` resources for exposed Services, enabling TLS and also injecting external URLs for services into code (e.g. so we can register webhooks).
+
+The default `UrlTemplate` for each environment is of the form: `{{.Service}}.{{.Namespace}}.{{.Domain}}` where `Service` is the name of the service, `Namespace` is the kubernetes namespace and `Domain` is the configured DNS domain.
+
+If you want to modify the URL schemes of your service in an environment then edit the file `env/values.yaml` in your Environments git repository. To find the URLs to each source repository use the [jx get env]() command.
+
+Then modify the contents of `env/values.yaml` to include the `urlTemplate:` value as follows:
+
+```yaml 
+expose:
+  config:
+    urltemplate: "{{.Service}}-{{.Namespace}}.{{.Domain}}"
+```
+    
+We've left out the other values of `expose:` and `config:` for brevity - the important thing is to ensure you specify a custom `expose.config.urltemplate` value. The default is `{{.Service}}.{{.Namespace}}.{{.Domain}}` if none is specified.
+
+Whenever you modify the git repository for an environment the GitOps pipeline will run to update your Ingress resources to match your `UrlTemplate`.
+ 
 

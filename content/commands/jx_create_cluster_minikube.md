@@ -1,5 +1,5 @@
 ---
-date: 2019-04-24T18:26:24Z
+date: 2019-07-25T15:59:38Z
 title: "jx create cluster minikube"
 slug: jx_create_cluster_minikube
 url: /commands/jx_create_cluster_minikube/
@@ -27,9 +27,12 @@ jx create cluster minikube [flags]
 ### Options
 
 ```
+      --advanced-mode                         Advanced install options. This will prompt for advanced install options
       --buildpack string                      The name of the build pack to use for the Team
       --cleanup-temp-files                    Cleans up any temporary values.yaml used by helm install [default true] (default true)
       --cloud-environment-repo string         Cloud Environments Git repo (default "https://github.com/jenkins-x/cloud-environments")
+      --cloudbees-auth string                 Auth used when setting up a letter/tenant cluster, format: 'username:password'
+      --cloudbees-domain string               When setting up a letter/tenant cluster, this creates a tenant cluster on the cloudbees domain which is retrieved via the required URL
   -c, --cpu string                            Number of CPUs allocated to the Minikube VM. Defaults to 3.
       --default-admin-password string         the default admin password to access Jenkins, Kubernetes Dashboard, ChartMuseum and Nexus
       --default-admin-username string         the default admin username to access Jenkins, Kubernetes Dashboard, ChartMuseum and Nexus (default "admin")
@@ -57,6 +60,7 @@ jx create cluster minikube [flags]
       --helm3                                 Use helm3 to install Jenkins X which does not use Tiller
   -h, --help                                  help for minikube
   -v, --hyperv-virtual-switch string          Additional options for using HyperV with Minikube
+      --ingress-class string                  Used to set the ingress.class annotation in exposecontroller created ingress
       --ingress-cluster-role string           The cluster role for the Ingress controller (default "cluster-admin")
       --ingress-deployment string             The name of the Ingress controller Deployment (default "jxing-nginx-ingress-controller")
       --ingress-namespace string              The namespace for the Ingress controller (default "kube-system")
@@ -64,10 +68,12 @@ jx create cluster minikube [flags]
       --install-only                          Force the install command to fail if there is already an installation. Otherwise lets update the installation
       --kaniko                                Use Kaniko for building docker images
       --keep-exposecontroller-job             Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
-      --knative-build                         Note this option is deprecated now in favour of tekton. If specified this will keep using the old knative build with Prow instead of the stratgegic tekton
+      --knative-build                         Note this option is deprecated now in favour of tekton. If specified this will keep using the old knative build with Prow instead of the strategic tekton
       --kubernetes-version string             Kubernetes version
       --local-cloud-environment               Ignores default cloud-environment-repo and uses current directory 
       --local-helm-repo-name string           The name of the helm repository for the installed ChartMuseum (default "releases")
+      --long-term-storage                     Enable the Long Term Storage option to save logs and other assets into a GCS bucket (supported only for GKE)
+      --lts-bucket string                     The bucket to use for Long Term Storage. If the bucket doesn't exist, an attempt will be made to create it, otherwise random naming will be used
   -m, --memory string                         Amount of RAM allocated to the Minikube VM in MB. Defaults to 4096 MB.
       --namespace string                      The namespace the Jenkins X platform should be installed into (default "jx")
       --ng                                    Use the Next Generation Jenkins X features like Prow, Tekton, No Tiller, Vault, Dev GitOps
@@ -81,11 +87,13 @@ jx create cluster minikube [flags]
       --prow                                  Enable Prow to implement Serverless Jenkins and support ChatOps on Pull Requests
       --recreate-existing-draft-repos         Delete existing helm repos used by Jenkins X under ~/draft/packs
       --register-local-helmrepo               Registers the Jenkins X ChartMuseum registry with your helm client [default false]
+      --remote-environments                   Indicates you intend Staging and Production environments to run in remote clusters. See https://jenkins-x.io/getting-started/multi-cluster/
       --remote-tiller                         If enabled and we are using tiller for helm then run tiller remotely in the kubernetes cluster. Otherwise we run the tiller process locally. (default true)
       --skip-cluster-role                     Don't enable cluster admin role for user
       --skip-ingress                          Skips the installation of ingress controller. Note that a ingress controller must already be installed into the cluster in order for the installation to succeed
       --skip-installation                     Provision cluster only, don't install Jenkins X into it
       --skip-setup-tiller                     Don't setup the Helm Tiller service - lets use whatever tiller is already setup for us.
+      --static-jenkins                        Install a static Jenkins master to use as the pipeline engine. Note this functionality is deprecated in favour of running serverless Tekton builds
       --tekton                                Enables the Tekton pipeline engine (which used to be called knative build pipeline) along with Prow to provide Serverless Jenkins. Otherwise we default to use Knative Build if you enable Prow
       --tiller-cluster-role string            The cluster role for Helm's tiller (default "cluster-admin")
       --tiller-namespace string               The namespace for the Tiller when using a global tiller (default "kube-system")
@@ -105,8 +113,8 @@ jx create cluster minikube [flags]
 
 ```
   -b, --batch-mode                Runs in batch mode without prompting for user input (default true)
+      --config-file string        Configuration file used for installation
       --install-dependencies      Enables automatic dependencies installation when required
-      --log-level string          Sets the logging level (panic, fatal, error, warning, info, debug) (default "info")
       --no-brew                   Disables brew package manager on MacOS when installing binary dependencies
       --skip-auth-secrets-merge   Skips merging the secrets from local files with the secrets from Kubernetes cluster
       --verbose                   Enables verbose output
@@ -116,4 +124,4 @@ jx create cluster minikube [flags]
 
 * [jx create cluster](/commands/jx_create_cluster/)	 - Create a new Kubernetes cluster
 
-###### Auto generated by spf13/cobra on 24-Apr-2019
+###### Auto generated by spf13/cobra on 25-Jul-2019

@@ -1,7 +1,7 @@
 ---
 title: Overview
 linktitle: Apps Framework
-description: Extending Jenkins X with the App Framework
+description: Extending Jenkins X using the Apps Framework
 date: 2018-09-04
 publishdate: 2018-09-04
 lastmod: 2018-09-04
@@ -92,6 +92,12 @@ via client libraries for different platforms. Currently we offer clients for:
 ```bash
 $ go get github.com/jenkins-x/jx
 ``` 
+## `jx` app CLI Commands
+
+* [jx add app](/commands/jx_add_app/)	 - Adds an app to Jenkins X
+* [jx delete app](/commands/jx_delete_app/)	 - Deletes one or more apps from Jenkins X
+* [jx get apps](/commands/jx_get_apps/)	 - Display one or more installed apps
+* [jx upgrade apps](/commands/jx_upgrade_apps/)	 - Upgrades one or more apps to a newer release
 
 ## Source code management
 

@@ -13,7 +13,6 @@ weight: 100
 sections_weight: 100
 draft: false
 toc: true
-aliases: [/developing/promotion/]
 ---
 
 
