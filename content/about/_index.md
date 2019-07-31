@@ -1,7 +1,7 @@
 ---
 title: About Jenkins X
 linktitle: Overview
-description: Jenkins X's features, roadmap, license, and motivation.
+description: Jenkins X's features, license, and motivation.
 date: 2018-02-01
 publishdate: 2018-02-01
 lastmod: 2018-02-01
@@ -17,9 +17,4 @@ aliases: [/about-jx/,/docs/]
 toc: false
 ---
 
-Jenkins X is a CI / CD platform for Kubernetes.
-
-This project is a sub-project of <a href="https://jenkins.io/">Jenkins</a>.
-
-
-                    
+Jenkins X is a CI / CD platform on Kubernetes

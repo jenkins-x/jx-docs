@@ -1,5 +1,5 @@
 ---
-date: 2019-01-14T09:35:13Z
+date: 2019-07-25T15:59:38Z
 title: "jx create camel"
 slug: jx_create_camel
 url: /commands/jx_create_camel/
@@ -10,9 +10,13 @@ Create a new Camel based application and import the generated code into Git and 
 
 ### Synopsis
 
-Creates a new Apache Camel application using Spring Boot and then optionally sets up CI/CD pipelines and GitOps promotion. 
+Creates a new Apache Camel application using Spring Boot and then optionally sets up CI/CD pipelines and GitOps promotion.
+  
+      For more documentation about Camel see: [https://camel.apache.org/](https://camel.apache.org/)
+  
+See Also: 
 
-For more documentation about Camel see: https://camel.apache.org/
+  * jx create project : https://jenkins-x.io/commands/jx_create_project
 
 ```
 jx create camel [flags]
@@ -32,10 +36,11 @@ jx create camel [flags]
 
 ```
   -a, --artifact string                The artifact ID for the new application
-  -b, --batch-mode                     In batch mode the command never prompts for user input
       --branches string                The branch pattern for branches to trigger CI/CD pipelines on
   -c, --camel-version string           The Version of the Archetype to use (default "RELEASE")
       --credentials string             The Jenkins credentials name used by the job
+      --deploy-kind string             The kind of deployment to use for the project. Should be one of knative, default
+      --disable-updatebot              disable updatebot-maven-plugin from attempting to fix/update the maven pom.xml
       --docker-registry-org string     The name of the docker registry organisation to use. If not specified then the Git provider organisation will be used
       --dry-run                        Performs local changes to the repo but skips the import into Jenkins X
       --external-jenkins-url string    The jenkins url that an external git provider needs to use
@@ -45,30 +50,37 @@ jx create camel [flags]
       --git-provider-url string        The Git server URL to create new Git repositories inside (default "https://github.com")
       --git-username string            The Git username to use for creating new Git repositories
   -g, --group string                   The group ID for the new application (default "com.example")
-      --headless                       Enable headless operation if using browser automation
   -h, --help                           help for camel
       --import-commit-message string   Specifies the initial commit message used when importing the project
-      --install-dependencies           Should any required dependencies be installed automatically
+  -m, --import-mode string             The import mode to use. Should be one of Jenkinsfile, YAML
   -i, --interactive                    Allow interactive input into the maven archetype:generate command
       --jenkinsfile string             The name of the Jenkinsfile to use. If not specified then 'Jenkinsfile' will be used
       --list-packs                     list available draft packs
-      --log-level string               Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
       --name string                    Specify the Git repository name to import the project into (if it is not already in one)
-      --no-brew                        Disables the use of brew on macOS to install or upgrade command line dependencies
       --no-draft                       Disable Draft from trying to default a Dockerfile and Helm Chart
       --no-import                      Disable import after the creation
       --no-jenkinsfile                 Disable defaulting a Jenkinsfile if its missing
       --org string                     Specify the Git provider organisation to import the project into (if it is not already in one)
   -o, --output-dir string              Directory to output the project to. Defaults to the current directory
       --pack string                    The name of the pack to use
-      --pull-secrets string            The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
-      --skip-auth-secrets-merge        Skips merging a local git auth yaml file with any pipeline secrets that are found
-      --verbose                        Enable verbose logging
+      --scheduler string               The name of the Scheduler configuration to use for ChatOps when using Prow
+      --use-default-git                use default git account
   -v, --version string                 The version for the new application (default "1.0-SNAPSHOT")
+```
+
+### Options inherited from parent commands
+
+```
+  -b, --batch-mode                Runs in batch mode without prompting for user input (default true)
+      --config-file string        Configuration file used for installation
+      --install-dependencies      Enables automatic dependencies installation when required
+      --no-brew                   Disables brew package manager on MacOS when installing binary dependencies
+      --skip-auth-secrets-merge   Skips merging the secrets from local files with the secrets from Kubernetes cluster
+      --verbose                   Enables verbose output
 ```
 
 ### SEE ALSO
 
 * [jx create](/commands/jx_create/)	 - Create a new resource
 
-###### Auto generated by spf13/cobra on 14-Jan-2019
+###### Auto generated by spf13/cobra on 25-Jul-2019

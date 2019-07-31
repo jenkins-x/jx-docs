@@ -12,7 +12,6 @@ menu:
 weight: 20
 sections_weight: 20
 draft: false
-aliases: [/about/concepts]
 categories: [fundamentals]
 toc: true
 ---
@@ -83,7 +82,7 @@ Kubernetes 中的部署单元是 Pod，它包含一个或多个 Docker 容器以
 
 为了在本地网络以外的地方访问服务，Kubernetes 需要给每个服务创建一个入口。最常见的形式是利用一个或者多个负载均衡绑定静态 IP 地址，在 Kubernetes 外面的虚拟基础设施和路由网络请求映射到内部服务。给负载均衡的静态 IP 地址创建一个通配符的外部 DNS 纪录，就剋一把服务映射到外部的全称域名上。例如：如果我们的负载均衡映射到 `*.jenkins-x.io` ，那么我们负载的服务就可能暴露为 `http://payments.finance.jenkins-x.io` 。
 
-Kubernetes 为强大的不断提高的平台在部署服务上提供巨大的伸缩能力，但它同时也是复杂不容易理解的，而且要正确进行配置也有一定的困难。Jenkins X 给 Kubernetes引入了一系列默认约定遗迹简单的工具，为了优化 DevOps 并管理松耦合的服务。
+Kubernetes 为强大的不断提高的平台在部署服务上提供巨大的伸缩能力，但它同时也是复杂不容易理解的，而且要正确进行配置也有一定的困难。Jenkins X 给 Kubernetes引入了一系列默认约定以及简单的工具，为了优化 DevOps 并管理松耦合的服务。
 
 命令行工具 `jx` 提供了执行基于 Kubernetes 实例的简单方法，例如：查看日志、连接容器实例。另外，Jenkins X 扩展了 Kubernetes 的命名空间约定来创建环境，这样就把发布流水线串联起来了。
 

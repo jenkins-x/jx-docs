@@ -17,9 +17,9 @@ draft: false
 toc: true
 ---
 
-好的，现在你已经 [安装了 jx 命令](getting-started/install/) ，并完成了下面的步骤：
+好的，现在你已经 [安装了 jx 命令](/zh/getting-started/install/) ，并完成了下面的步骤：
 
-* [通过 Jenkins X 创建 Kubernetes 集群](/zh/getting-started/install-on-cluster/)
+* [通过 Jenkins X 创建 Kubernetes 集群](/zh/getting-started/create-cluster/)
 * [在已有的 kubernetes 集群上安装 Jenkins X](/zh/getting-started/install-on-cluster/)
 
 那么，下一步呢？
@@ -30,4 +30,6 @@ toc: true
 * [创建一个新的快速开始并导入 Jenkins X](/zh/developing/create-quickstart/)
 * [把已有的源码导入 Jenkins X](/zh/developing/import/)
 * [浏览](/zh/developing/browsing/) 可以浏览流水线，构建，应用和活动
+
+你也可以看看 [你可以用 Jenkins X 做什么的各种示例](/zh/demos/)
 

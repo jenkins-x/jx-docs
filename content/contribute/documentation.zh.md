@@ -14,7 +14,6 @@ menu:
 weight: 20
 sections_weight: 20
 draft: false
-aliases: [/contribute/docs/]
 toc: true
 ---
 
@@ -30,7 +29,7 @@ git checkout -b jon-doe-showcase-addition
 
 ## 添加新的内容
 
-Jenkins X 文档重用 Jenkins X 的[骨架][]特点。在 Jenkins X 文档中所有内容章节都分配了骨架。
+Jenkins X 文档重用 Jenkins X 的[骨架][archetypes]特点。在 Jenkins X 文档中所有内容章节都分配了骨架。
 
 向 Jenkins X 中添加新的内容遵循下面相似的模式，不用考虑内容章节：
 

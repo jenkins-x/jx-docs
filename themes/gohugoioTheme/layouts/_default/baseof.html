@@ -6,7 +6,8 @@
     <link rel="preload" href="{{ "files/muli-latin-200.woff2" | absURL }}" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="{{ "files/muli-latin-400.woff2" | absURL }}" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="{{ "files/muli-latin-800.woff2" | absURL }}" as="font" type="font/woff2" crossorigin>
-
+    {{/* create canonical URL in header, for SEO optimization due to duplicated/shared content with CloudBees.com docs*/}}
+    <link rel="canonical" href="{{ .Permalink }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
      {{/* NOTE: the Site's title, and if there is a page title, that is set too */}}
     <title>{{ block "title" . }}{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{ end }}</title>

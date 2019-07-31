@@ -10,7 +10,6 @@ menu:
 keywords: [faqs]
 weight: 2
 toc: true
-aliases: [/faq/]
 ---
 
 ## 如何在 Jenkins X 的安装当中添加用户？

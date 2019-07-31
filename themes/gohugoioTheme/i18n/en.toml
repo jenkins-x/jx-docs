@@ -23,13 +23,13 @@ other = "Get Help"
 other = "Discuss Source Code"
 
 [quick-start]
-other = "Get Started!"
+other = "Get Started"
 
 [improve-page]
 other = "Improve this page"
 
 [hero]
-other = "This project is being proposed as a sub project of the Jenkins Foundation"
+other = "Jenkins X provides pipeline automation, built-in GitOps and preview environments to help teams collaborate and accelerate their software delivery at any scale."
 
 [easy-install]
 other = "Easy to install on any cloud."

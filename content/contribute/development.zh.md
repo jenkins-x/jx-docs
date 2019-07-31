@@ -15,50 +15,50 @@ menu:
 weight: 10
 sections_weight: 10
 draft: false
-aliases: [/contribute/development/]
 toc: true
 ---
 
 ## 介绍
 
-Jenkins X is an open-source project and lives by the work of its [contributors][]. There are plenty of [open issues][issues], and we need your help to make Jenkins X even more awesome. You don't need to be a Go guru to contribute to the project's development.
+Jenkins X 是由众多[开发者][contributors]开发的开源项目。还有很多 [open issues][issues]，我们需要你的帮助来使 Jenkins X 变得更棒。即使你不是一个 Go 语言的专家，也可以对项目的开发贡献力量。
+
 
 ## 假设
 
-This contribution guide takes a step-by-step approach in hopes of helping newcomers. Therefore, we only assume the following:
+本篇指导文档将帮助新接触 Jenkins X 的读者逐步熟悉它，因此我们假定：
 
-* You are new to Git or open-source projects in general
-* You are a fan of Jenkins X and enthusiastic about contributing to the project
+* 你是刚刚接触 Git 或者开源项目
+* 你是 Jenkins X 的爱好者并乐于对项目的发展贡献力量
 
-{{% note "Additional Questions?" %}}
-If you're struggling at any point in this contribution guide, reach out to the Jenkins X community in [Jenkins X's Discussion forum](https://jenkins-x.io/community/).
+{{% note "有其它的问题？" %}}
+如果在阅读此指导文档过程中有任何问题，请向 Jenkins X 社区的[讨论组](https://jenkins-x.io/community/)寻求帮助。
 {{% /note %}}
 
 ## 安装 Go
 
-The installation of Go should take only a few minutes. You have more than one option to get Go up and running on your machine.
+Go 语言环境的安装仅需要几分钟。并且多种方式可供选择。
 
-If you are having trouble following the installation guides for go, check out [Go Bootcamp, which contains setups for every platform][gobootcamp] or reach out to the Jenkins X community in the [Jenkins X Discussion Forums][forums].
+如果在安装过程当中遇到问题，请查阅 [Go Bootcamp,which contains setups for every platform][gobootcamp] 或者向 Jenkins X [论坛][forums]中寻求帮助。
+
 
 ### 从源码安装 Go
 
-[Download the latest stable version of Go][godl] and follow the official [Golang installation guide][goinstall].
+[下载最新版 Go 源码][godl]并通过官方[安装文档][goinstall]进行安装。
 
-Once you're finished installing Go, let's confirm everything is working correctly. Open a terminal---or command line under Windows--and type the following:
+安装完成后，确认是否一切工作正常。打开一个新的终端或者在 Windows 上的命令行并输入:
 
 ```
 go version
 ```
 
-You should see something similar to the following written to the console. Note that the version here reflects the most recent version of Go as of the last update for this page:
+在终端的窗口上可以看到类似如下的信息。注意 `version` 表示的是在在更新此文档时最新的 Go 的版本信息:
 
 ```
 go version go1.8 darwin/amd64
 ```
 
-Next, make sure that you set up your `GOPATH` [as described in the installation guide][setupgopath].
-
-You can print the `GOPATH` with `echo $GOPATH`. You should see a non-empty string containing a valid path to your Go workspace; .e.g.:
+下一步，确保[根据安装文档][setupgopath] 设置了 `GOPATH` 环境变量。
+通过 `echo $GOPATH` 输出 `GOPATH`。应该是指向了你的合法的 Go 的工作目录的非空字符串，如:
 
 ```
 /Users/<yourusername>/Code/go
@@ -66,7 +66,7 @@ You can print the `GOPATH` with `echo $GOPATH`. You should see a non-empty strin
 
 ### 使用 Homebrew 安装 Go
 
-If you are a macOS user and have [Homebrew](https://brew.sh/) installed on your machine, installing Go is as simple as the following command:
+如果你是 MacOS 用户并且安装了 [Homebrew](https://brew.sh/)，安装过程将会很简单，在终端中执行以下命令:
 
 {{< code file="install-go.sh" >}}
 brew install go
@@ -74,72 +74,71 @@ brew install go
 
 ### 通过 GVM 安装 GO
 
-More experienced users can use the [Go Version Manager][gvm] (GVM). GVM allows you to switch between different Go versions *on the same machine*. If you're a beginner, you probably don't need this feature. However, GVM makes it easy to upgrade to a new released Go version with just a few commands.
+更有经验的用户可以使用 [Go Version Manager][gvm] (GVM)。GVM 允许你在 *同一台机器上* 安装并切换使用多种版本的 Go 语言环境。如果你是初学者，可能不太需要这个功能。然而， GVM 通过几条命令可以很简单的更新到新发布版本的 Go 语言。
 
-GVM comes in especially handy if you follow the development of Jenkins X over a longer period of time. Future versions of Jenkins X will usually be compiled with the latest version of Go. Sooner or later, you will have to upgrade if you want to keep up.
+在开发 Jenkins X很长一段时间后，GVM 使用起来将会特别的方便。Jenkins X 之后的版本将会用最新版版的 Go 语言进行编译，因此如果想与社区开发同步的话，将会需要更新 Go 环境。
 
 ## 创建一个 GitHub 账号
 
-If you're going to contribute code, you'll need to have an account on GitHub. Go to [www.github.com/join](https://github.com/join) and set up a personal account.
+如果你想要贡献代码的话，需要创建一个 Github 账号。登录 [www.github.com/join](https://github.com/join) 注册个人账号。
 
 ## 在你的系统上安装 Git
+Jenkins X 开发过程当中需要在本机安装 Git 客户端。Git 的使用学习不包含在 Jenkins X 的文档中，如果你不确定从哪里开始的话，我们推荐通过 [Git book][gitbook] 学习使用 Git 的基本知识。使用的词汇将会通过注解进行解释。
 
-You will need to have Git installed on your computer to contribute to Jenkins X development. Teaching git is outside the scope of the Jenkins X docs, but if you're looking for an excellent reference to learn the basics of Git, we recommend the [Git book][gitbook] if you are not sure where to begin. The used terminology will be explained with annotations.
+Git 是一个[版本控制系统](https://en.wikipedia.org/wiki/Version_control)，用于跟踪源代码的变化。为了不重复造轮子，Jenkins X 使用了第三方的软件包来扩展功能。
 
-Git is a [version control system](https://en.wikipedia.org/wiki/Version_control) to track the changes of source code. Jenkins X depends on smaller third-party packages that are used to extend the functionality. We use them because we don't want to reinvent the wheel.
+Go 提供了 `get` 的子命令来帮助下载软件包以配置工作环境。这些软件包的源码信息在 Git 中记录。`get` 会与承载这些软件包的 Git 服务器端进行交互来下载所有的依赖。
 
-Go ships with a sub-command called `get` that will download these packages for us when we setup our working environment. The source code of the packages is tracked with Git. `get` will interact with the Git servers of the package hosters in order to fetch all dependencies.
+回到终端中，输入 `git version` 并按回车，检验是否安装 Git。如果返回的是一个版本号信息，那么可以跳过下面的配置。否则的话[下载](https://git-scm.com/downloads)最新版的 Git 并根据[安装文档](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)进行安装。
 
-Move back to the terminal and check if Git is already installed. Type in `git version` and press enter. You can skip the rest of this section if the command returned a version number. Otherwise [download](https://git-scm.com/downloads) the lastest version of Git and follow this [installation guide](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
-
-Finally, check again with `git version` if Git was installed successfully.
+最后，再一次输入 `git version` 检验 Git 是否已经安装。
 
 ### Git 图形化前端
 
-There are several [GUI clients](https://git-scm.com/downloads/guis) that help you to operate Git. Not all are available for all operating systems and maybe differ in their usage. Thus, so we will use the command line since the commands are everywhere the same.
+有一些[图形界面客户端](https://git-scm.com/downloads/guis)可以帮助操作 Git。并不是所有的客户端在所有的操作系统上都有相应的版本，而且不同的客户端的使用方法也可能不同。因此，在以下的操作中，我们会以使用命令行的方式为基准。
 
 ### 在你的系统上安装 Hub（可选）
 
-Hub is a great tool for working with GitHub. The main site for it is [hub.github.com](https://hub.github.com/). Feel free to install this little Git wrapper.
+在与 GitHub 协同开发时，Hub 是个很好的工具。请访问 [hub.github.com](https://hub.github.com/)，来安装体验这个封装了 Git 的小工具。
 
-On a Mac, you can install [Hub](https://github.com/github/hub) using [Homebrew](https://brew.sh):
+在 Mac 系统上，可以通过 [Homebrew](https://brew.sh) 来安装 [Hub](https://github.com/github/hub)：
 
 ```
 brew install hub
 ```
 
-Now we'll create an [alias in Bash](http://tldp.org/LDP/abs/html/aliases.html) so that typing `git` actually runs `Hub`:
+安装之后，在 Bash 中创建[快捷键](http://tldp.org/LDP/abs/html/aliases.html)，以方便我们在执行 `git` 的时候，实际上执行的是 `hub`:
 
 ```
 echo "alias git='hub'" >> ~/.bash_profile
 ```
 
-Confirm the installation:
+确认安装配置是否正确：
 
 ```
 git version 2.6.3
 hub version 2.2.2
 ```
 
-## 设置你的工作备份
+## 设置你的工作副本
 
-The working copy is set up locally on your computer. It's what you'll edit, compile, and end up pushing back to GitHub. The main steps are cloning the repository and creating your fork as a remote.
+工作副本是在你的电脑中进行本地设置的。你将会对它进行编辑，编译以及最终推送回到 GitHub。主要的步骤是在远端对源 Git 代码库创建你的分支仓库并之后在本地进行克隆。
 
 ### 克隆仓库
 
-We assume that you've set up your `GOPATH` (see the section above if you're unsure about this). You should now copy the Jenkins X repository down to your computer. You'll hear this called "clone the repo". GitHub's [help pages](https://help.github.com/articles/cloning-a-repository/) give us a short explanation:
+我们假定你已经设置了 `GOPATH`（如果不确定的话查阅上面的相应部分）环境变量，现在以可以下载 Jenkins X 的代码库到本地电脑中。这一过程就是被称作“克隆仓库”。GitHub 的[帮助文档](https://help.github.com/articles/cloning-a-repository/)对其进行了简短的解释：
 
-> When you create a repository on GitHub, it exists as a remote repository. You can create a local clone of your repository on your computer and sync between the two locations.
+> When you create a repository on GitHub， it exists as a remote repository. You can create a local clone of your repository on your computer and sync between the two locations.
 
-We're going to clone the [master Jenkins X repository](https://github.com/jenkins-x/jx). That seems counter-intuitive, since you won't have commit rights on it. But it's required for the Go workflow. You'll work on a copy of the master and push your changes to your own repository on GitHub.
+我们会克隆 Jenkins X 代码库的[主版本](https://github.com/jenkins-x/jx)。由于你还没有对代码库的提交代码的权限，这看上去有些违反常理。但是这一步骤在 Go 的工作流当中是必须的一项。你将会在主版本的副本中进行工作，将修改的部分提交到你在 GitHub 上的仓库当中。
 
-So, let's clone that master repository:
+首先，我们克隆主版本库：
 
 ```
 go get -v -u github.com/jenkins-x/jx
 ```
 
-Jenkins X relies on [Testify](https://github.com/stretchr/testify) for testing Go code. If you don't already have it, get the Testify testing tools:
+Jenkins X 使用 [Testify](https://github.com/stretchr/testify) 进行 Go 代码的测试。如果还没有安装的话，使用下面的方式获得 Testify 测试工具：
 
 ```
 go get github.com/stretchr/testify
@@ -147,27 +146,26 @@ go get github.com/stretchr/testify
 
 ### 派生仓库
 
-If you're not fimiliar with this term, GitHub's [help pages](https://help.github.com/articles/fork-a-repo/) provide again a simple explanation:
+如果对这个术语感到陌生的话，GitHub 的[帮助文档](https://help.github.com/articles/fork-a-repo/) 提供了简单的说明：
 
 > A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.
 
 #### 手工派生
 
-Open the [Jenkins X repository](https://github.com/jenkins-x/jx) on GitHub and click on the "Fork" button in the top right.
+打开 [Jenkins X 仓库](https://github.com/jenkins-x/jx)，点击右上角的 "Fork" 按钮。
 
 ![Fork button](/images/contribute/development/forking-a-repository.png)
-
-Now open your fork repository on GitHub and copy the remote url of your fork. You can choose between HTTPS and SSH as protocol that Git should use for the following operations. HTTPS works always [if you're not sure](https://help.github.com/articles/which-remote-url-should-i-use/).
+现在打开你在 GitHub 中创建出的派生仓库， 拷贝远端连接。你可以在 HTTPS 和 SSH 协议间进行选择。 HTTPS 适用于任何情况。如果你不确定的话， 请[查阅](https://help.github.com/articles/which-remote-url-should-i-use/)。
 
 ![Copy remote url](/images/contribute/development/copy-remote-url.png)
 
-Switch back to the terminal and move into the directory of the cloned master repository from the last step.
+切换到命令窗口中，进入到刚才所克隆的主版本库的工作目录当中。
 
 ```
 cd $GOPATH/src/github.com/jenkins-x/jx
 ```
 
-Now Git needs to know that our fork exists by adding the copied remote url:
+现在 Git 需要知道我们刚刚创建出来的分之仓库的地址信息
 
 ```
 git remote add <YOUR-GITHUB-USERNAME> <COPIED REMOTE-URL>
@@ -175,23 +173,22 @@ git remote add <YOUR-GITHUB-USERNAME> <COPIED REMOTE-URL>
 
 #### 使用 Hub 派生
 
-Alternatively, you can use the Git wrapper Hub. Hub makes forking a repository easy:
-
+相类似的，可以使用 Git 的封装工具 Hub 进行操作。Hub 使得创建分之仓库变得容易：
 ```
 git fork
 ```
 
-That command will log in to GitHub using your account, create a fork of the repository that you're currently working in, and add it as a remote to your working copy.
+这一命令会使用你的账号登录到 GitHub 中，并对当前所在的工作目录的主仓库创建派生仓库，在之后会将新创建的连接信息添加到你的工作副本当中。
 
 #### 验证
 
-Let's check if everything went right by listing all known remotes:
+让我们通过列出所有已有的 remote 来检查是否一切就绪：
 
 ```
 git remote -v
 ```
 
-The output should look similar:
+输出应该类似如下内容：
 
 ```
 digitalcraftsman    git@github.com:digitalcraftsman/hugo.git (fetch)
@@ -204,52 +201,52 @@ origin  https://github.com/jenkins-x/jx (push)
 
 ### 创建新的分支
 
-You should never develop against the "master" branch. The development team will not accept a pull request against that branch. Instead, create a descriptive named branch and work on it.
+永远不要在 "master" 分支上进行代码的开发。开发团队也不会接受在此之上的 pull request。相反， 应该创建一个有描述信息的分之并在其之上进行开发。
 
-First, you should always pull the latest changes from the master repository:
+首先， 你需要获取在主版本上进行的最新的内容：
 
 ```
 git checkout master
 git pull
 ```
-
-Now we can create a new branch for your additions:
+现在，为你的附加功能创建一个新的版本：
 
 ```
 git checkout -b <BRANCH-NAME>
 ```
 
-You can check on which branch your are with `git branch`. You should see a list of all local branches. The current branch is indicated with a little asterisk.
+可以通过 `git branch` 来检查你当前所在的分支。你可以看到一个包含所有本地分支的列表。在当前所操作的版本之前会有 “*” 标识。
 
 ### 贡献文档
 
-Perhaps you want to start contributing to the Jenkins X docs. If so, you can ignore most of the following steps and focus on the `/docs` directory within your newly cloned repository. You can change directories into the Jenkins X docs using `cd docs`.
+也许你想先从 Jenkins X 的文档开始贡献。如果这样的话，你可以省略下面大部分的步骤，仅关注在刚克隆的代码库的 `/docs` 目录中的文件即可。 通过执行 `cd docs` 进入文档目录中。
 
-You can start Jenkins X's built-in server via `hugo server`. Browse the documentation by entering [http://localhost:1313](http://localhost:1313) in the address bar of your browser. The server automatically updates the page whenever you change content.
+可以通过 `hugo server` 启动 Jenxins X 内置的服务。 通过浏览器访问 [http://localhost:1313](http://localhost:1313) 进行浏览。Hugo 会监测所有文件内容的修改，并将其在浏览器中进行显示。
 
-We have developed a [separate Jenkins X documentation contribution guide][docscontrib] for more information on how the Jenkins X docs are built, organized, and improved by the generosity of people like you.
+想了解更多的信息，包括 Jenkins X 文档是如何构建、组织以及由众多像你一样无私的人如何对其进行改进的，请[参阅](docscontrib)。
 
 ### 构建 Jenkins X
 
-While making changes in the codebase it's a good idea to build the binary to test them:
+在代码库上进行更改的同时，创建相应的二进制文件来进行测试是很好的方法：
 
 ```
 go build -o hugo main.go
 ```
 
 ### 测试 
-Sometimes changes on the codebase can cause unintended side effects. Or they don't work as expected. Most functions have their own test cases. You can find them in files ending with `_test.go`.
+有时对代码的修改可能会带来没有注意到的负面影响。或者是并不像预期的那样工作。大部分的功能都有其相对应的测试用例。这些测试文件都以 `_test.go` 结尾。
 
-Make sure the commands `go test ./...` passes, and `go build` completes.
+请确保 `go test ./...` 命令通过没有异常以及 `go build` 执行完毕。
 
 ### 格式 
-The Go code styleguide maybe is opiniated but it ensures that the codebase looks the same, regardless who wrote the code. Go comes with its own formatting tool. Let's apply the styleguide to our addtions:
+
+Go 语言的代码格式也许根据人的意识会有所不同，但是不论是由谁编写的代码，Go 本身会确保代码看上去一致。Go 提供了格式化工具，使我们的修改风格统一：
 
 ```
 go fmt ./...
 ```
 
-Once you made your additions commit your changes. Make sure that you follow our [code contribution guidelines](https://github.com/jenkins-x/jx/blob/master/CONTRIBUTING.md):
+如果进行了修改，请确保遵循我们的[代码贡献指导说明](https://github.com/jenkins-x/jx/blob/master/CONTRIBUTING.MD)。
 
 ```
 # Add all changed files
@@ -257,30 +254,30 @@ git add --all
 git commit --message "YOUR COMMIT MESSAGE"
 ```
 
-The commit message should describe what the commit does (e.g. add feature XYZ), not how it is done.
+代码的提交记录信息应该描述提交做了那些工作（如，添加功能 XYZ）而不是描述如何完成的。
 
 ### 修改提交
 
-You noticed some commit messages don't fulfill the code contribution guidelines or you just forget something to add some files? No problem. Git provides the necessary tools to fix such problems. The next two methods cover all common cases.
+你也许注意到了一些提交记录信息并不遵守贡献指导说明或者你是在某些文件中忘记了什么。没关系，Git 提供了相应的工具来解决类似这样的问题。下面的两种方法将会覆盖所有的常见问题。
 
-If you are unsure what a command does leave the commit as it is. We can fix your commits later in the pull request.
+如果你不确定如何使用这些命令的话也可以保留不行改正，在之后提交 Pull Request 的时候，我们会对提交信息进行修改。
 
 #### 修改最后一次提交
 
-Let's say you want to modify the last commit message. Run the following command and replace the current message:
+让我们以你想要修改最后的一次提交信息为例。执行下面的命令以替换之前的提交信息：
 
 ```
-git commit --amend -m"YOUR NEW COMMIT MESSAGE"
+git commit --amend -m"新的提交信息"
 ```
 
-Take a look at the commit log to see the change:
+检查历史提交记录，查询修改信息：
 
 ```
 git log
-# Exit with q
+# 输入 q 退出
 ```
 
-After making the last commit you may forgot something. There is no need to create a new commit. Just add the latest changes and merge them into the intended commit:
+在做了最后的修改后，你也许忘记了什么。没有必要创建新的提交。只需要将最新的修改添加到 Git 记录当中并在之后将其合并到之前的修改中：
 
 ```
 git add --all
@@ -290,16 +287,17 @@ git commit --amend
 #### 修改多次提交
 
 {{% warning "Be Careful Modifying Multiple Commits"%}}
-Modifications such as those described in this section can have serious unintended consequences. Skip this section if you're not sure!
+对此章节中介绍的修改，可能会造成不可意料的后果。如果不确定的如何使用的话，跳过下面的部分！
 {{% /warning %}}
 
-This is a bit more advanced. Git allows you to [rebase](https://git-scm.com/docs/git-rebase) commits interactively. In other words: it allows you to rewrite the commit history.
+这一部分的操作需要更高的技能。Git 允许你对多次提交进行[修改](https://git-scm.com/docs/git-rebase)。换句话说：它允许你对历史的提交进行修改。
+
 
 ```
 git rebase --interactive @~6
 ```
 
-The `6` at the end of the command represents the number of commits that should be modified. An editor should open and present a list of last six commit messages:
+在命令结尾处的 `6` 表示的是想要进行修改的提交的编号。它会打开一个编辑器，其内容是之前6次的历史提交信息列表：
 
 ```
 pick 80d02a1 tpl: Add hasPrefix to the template funcs' "smoke test"
@@ -310,9 +308,8 @@ pick 33c8973 Begin workflow
 pick 3502f2e Refactoring and typo fixes
 ```
 
-In the case above we should merge the last to commits in the commit of this tutorial (`Add "How to contribute to Jenkins X" tutorial`). You can "squash" commits, i.e. merge two or more commits into a single one.
-
-All operations are written before the commit message. Replace "pick" with an operation. In this case `squash` or `s` for short:
+在上面的例子中，我们应该将最后的提交到本文档之间的提交(`Add "How to contribute to Jenkins X" tutorial`)历史提交进行合并。你可以“压缩”提交， 如，将两个及以上的提交合并为一个。
+在提交信息之前，所有的操作都将会执行。替换 `pick` 为想要进行的操作。在这个例子当中我们使用 `squash` 或者其省略版 `s`。
 
 ```
 pick 80d02a1 tpl: Add hasPrefix to the template funcs' "smoke test"
@@ -323,9 +320,9 @@ squash 33c8973 Begin workflow
 squash 3502f2e Refactoring and typo fixes
 ```
 
-We also want to rewrite the commits message of the third last commit. We forgot "docs:" as prefix according to the code contribution guidelines. The operation to rewrite a commit is called `reword` (or `r` as shortcut).
+根据代码贡献指导文档，在历史提交中的第三个提交忘记了添加前缀 "docs:"，因此想要对其进行修改。修改一个提交的操作是 `reword` 或者其省略版 `r`。
 
-You should end up with a similar setup:
+修改后，应该是类似如下的内容：
 
 ```
 pick 80d02a1 tpl: Add hasPrefix to the template funcs' "smoke test"
@@ -336,59 +333,60 @@ squash 33c8973 Begin workflow
 squash 3502f2e Refactoring and typo fixes
 ```
 
-Close the editor. It should open again with a new tab. A text is instructing you to define a new commit message for the last two commits that should be merged (aka "squashed"). Save the file with <kbd>CTRL</kbd>+<kbd>S</kbd> and close the editor again.
+此时关闭编辑器。它会打开新的窗口，将会有文本指导你对之前的两次提交进行的合并（即，“压缩”）设置新的提交信息。输入 <kbd>CTRL</kbd>+<kbd>S</kbd> 保存文件关闭编辑器。
 
-A last time a new tab opens. Enter a new commit message and save again. Your terminal should contain a status message. Hopefully this one:
+再一次，将会打开新的窗口。输入新的提交信息并且保存。你的终端将会显示如下类似的状态信息：
 
 ```
 Successfully rebased and updated refs/heads/<BRANCHNAME>.
 ```
 
-Check the commit log if everything looks as expected. Should an error occur you can abort this rebase with `git rebase --abort`.
+检查提交记录以确保修改成功。如果发生了错误的话，可以通过执行 `git rebase --abort` 来撤销操作。
 
 ### 推送提交
 
-To push our commits to the fork on GitHub we need to speficy a destination. A destination is defined by the remote and a branch name. Earlier, the defined that the remote url of our fork is the same as our GitHub handle, in my case `digitalcraftsman`. The branch should have the same as our local one. This makes it easy to identify corresponding branches.
+我们需要指定目标地址以使得将我们的提交推送回到在Github中的分支版本库。目标地址由 `remote` 和 `branch`名称所构成。在之前的操作中，`remote` 地址与我们的GitHub账号所对应，以我为例是 `digitalcraftsman`。分支（branch）应该和我们本地的一样。 这就使得识别相应的分支变得简单。
 
 ```
 git push --set-upstream <YOUR-GITHUB-USERNAME> <BRANCHNAME>
 ```
 
-Now Git knows the destination. Next time when you to push commits you just need to enter `git push`.
+现在Git知道了目标地址。在此之后，想要进行提交的时候，只需要输入 `git push`。
 
-If you modified your commit history in the last step GitHub will reject your try to push. This is a safety-feature because the commit history isn't the same and new commits can't be appended as usual. You can enforce this push explicitly with `git push --force`.
+如果你在上一步骤对历史提交记录进行了修改，GitHub 会拒绝你的推送。这是一个保护功能，因为历史提交记录不一致以及新的提交不能像往常一样进行追加。你可以通过 `git push --force` 强制的进行提交。
 
 ## 打开一个 Pull Request
 
-We made a lot of progress. Good work. In this step we finally open a pull request to submit our additions. Open the [Jenkins X master repository](https://github.com/jenkins-x/jx/) on GitHub in your browser.
+做的很好，我们有了很大的进展。在这一步，我们将会提出合并请求来提交我们的附加功能。在浏览器中打开 [Jenkins X 主代码库](https://github.com/jenkins-x/jx/)。
 
-You should find a green button labeld with "New pull request". But GitHub is clever and probably suggests you a pull request like in the beige box below:
+你会发现一个绿色按钮，上面标识 “New pull request”。GitHub 很智能，很有可能像如下图所示的那样，在一个米黄色窗口中建议你开 pull request：
 
 ![Open a pull request](/images/contribute/development/open-pull-request.png)
 
-The new page summaries the most important information of your pull request. Scroll down and you find the additions of all your commits. Make sure everything looks as expected and click on "Create pull request".
+在新的页面当中，将会包含你的 pull request 中的重要信息。滚动鼠标你会发现所有的提交信息。确保所有的一切与构想的一致并点击按钮 “Create pull request”。
+
 
 ### 同意贡献者授权协议
 
-Last but not least you should accept the contributor license agreement (CLA). A new comment should be added automatically to your pull request. Click on the yellow badge, accept the agreement and authenticate yourself with your GitHub account. It just takes a few clicks and only needs to be done once.
+最后也同样重要的是，你应该同意贡献者授权协议（CLA）。一个新的评论信息应该会自动的添加到你的 pull request 当中。点击黄色的徽章，同意协议并用你自己的 GitHub 账号进行认证。它仅需要几步点击之后即可完成。
 
 ![Accept the CLA](/images/contribute/development/accept-cla.png)
 
 ### 自动化构建
 
-We use the [Travis CI loop](https://travis-ci.org/jenkins-x/jx) (Linux and OS&nbsp;X) and [AppVeyor](https://ci.appveyor.com/project/jenkins-x/jx/branch/master) (Windows) to compile Jenkins X with your additions. This should ensure that everything works as expected before merging your pull request. This in most cases only relevant if you made changes to the codebase of Jenkins X.
+我们使用 [Travis CI loop](https://travis-ci.org/jenkins-x/jx) (Linux 和 OS&nbsp;X) 以及 [AppVeyor](https://ci.appveyor.com/project/jenkins-x/jx/branch/master) (Windows) 来对包含有你的提交的 Jenkins X 进行编译。 这可以确保在合并你的 pull request 之前，所有的都与所设想的工作一致。大部分情况下，如果你对 Jenkins X 的代码库进行了修改的话，这将很有意义。
 
 ![Automic builds and their status](/images/contribute/development/ci-errors.png)
 
-Above you can see that Travis wasn't able to compile the changes in this pull request. Click on "Details" and try to investigate why the build failed. But it doesn't have to be your fault. Mostly, the `master` branch that we used as foundation for your pull request should build without problems.
+在上图中，你可以看到 Travis 不能够对这个 pull request 进行编译。点击 “Details” 来查看失败的原因。但是这个错误并不一定是由你的提交所导致的。大部分情况下，我们使用 `master` 分支来作为基础来验证你的 pull request 是没有问题的。
 
-If you have questions, leave a comment in the pull request. We are willing to assist you.
+如果你遇到问题的话，在 pull request 当中进行评论。我们愿意对你进行帮助。
 
 ## 从哪里开始？
 
-Thank you for reading through this contribution guide. Hopefully, we will see you again soon on GitHub. There are plenty of [open issues][issues] for you to help with.
+感谢你阅读了本篇贡献指导文档。希望我们可以在 GitHub 中再次看到你。有很多 [open issues][issues] 需要你的帮助。
 
-Feel free to [open an issue][newissue] if you think you found a bug or you have a new idea to improve Jenkins X. We are happy to hear from you.
+如果你认为发现了 bug 或者有新的想法可以改进 Jenkins X，请随时的 [open an issue][newissue]，我们很乐于听取你的声音。
 
 ## 学习 Git 和 Golang 的参考
 

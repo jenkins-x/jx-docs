@@ -22,7 +22,7 @@ The CD Pipelines of Jenkins X automate the [promotion](/about/features/#promotio
 To manually Promote a version of your application to an environment use the [jx promote](/commands/jx_promote) command.
 
 ```shell 
-jx promote myapp --version 1.2.3 --env production
+jx promote --app myapp --version 1.2.3 --env production
 ```
 
 The command waits for the promotion to complete, logging details of its progress. You can specify the timeout to wait for the promotion to complete via the `--timeout` argument.
@@ -31,7 +31,7 @@ e.g. to wait for 5 hours
 
 
 ```shell 
-jx promote myapp --version 1.2.3 --env production --timeout 5h
+jx promote  --app myapp --version 1.2.3 --env production --timeout 5h
 ```
 
 You can use terms like `20m` or `10h30m` for the various duration expressions.

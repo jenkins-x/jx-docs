@@ -27,9 +27,9 @@ Jenkins X comes with a handy [jx](/commands/jx) command line tool to easily:
 * [import projects](/developing/import) into Jenkins X and their Continuous Delivery pipelines setup
 * [create new Spring Boot applications](/developing/create-spring) which get imported into Jenkins X and their Continuous Delivery pipelines setup
 
-## Pipelines
+## Automated Pipelines
 
-Rather than having to have deep knowledge of the internals of Jenkins Pipeline, Jenkins X will default awesome pipelines for your projects that implements fully CI and CD using [DevOps best practices](/about/concepts)
+Rather than having to have deep knowledge of the internals of Jenkins Pipeline, Jenkins X will automatically setup awesome pipelines for your projects that fully implements both CI and CD using [DevOps best practices](/about/concepts)
 
 ## Environments
 
@@ -104,6 +104,6 @@ To install an addon then use the [jx create addon](/commands/jx_create_addon/) c
 jx create addon grafana
 ```
  
-## Roadmap
+## Futures
  
- For a look at what features are coming soon please check out the [Jenkins X Roadmap](/contribute/roadmap/)
+ For a look at what features are coming soon please check out the [Jenkins X Futures](/contribute/roadmap/)

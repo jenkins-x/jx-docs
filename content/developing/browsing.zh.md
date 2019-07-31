@@ -8,9 +8,9 @@ lastmod: 2017-02-01
 menu:
   docs:
     parent: "developing"
-    weight: 50
-weight: 50
-sections_weight: 50
+    weight: 58
+weight: 58
+sections_weight: 58
 draft: false
 toc: true
 ---
@@ -92,19 +92,19 @@ jx get applications
 如果你想要隐藏 URL 或者 pod 数量，你可以使用 `u` 或 `-p`。例如：为了隐藏 URL：
 
 ```shell
-jx get app -u
+jx get applications -u
 ```
 
 或者隐藏 pod 数量：
 
 ```shell
-jx get app -p
+jx get applications -p
 ```
 
 你还可以根据环境来过滤应用：
 
 ```shell
-jx get app -e staging
+jx get applications -e staging
 ```
 
 

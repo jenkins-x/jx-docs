@@ -19,7 +19,7 @@ toc: true
 
 OK so you have [got the jx CLI](/getting-started/install/) and you either
 
-* [created a Kubernetes cluster with Jenkins X](/getting-started/install-on-cluster/)
+* [created a Kubernetes cluster with Jenkins X](/getting-started/create-cluster/)
 * [installed Jenkins X on an existing kubernetes cluster](/getting-started/install-on-cluster/)
 
 So whats next?

@@ -1,20 +1,27 @@
 ---
-date: 2019-01-14T09:35:13Z
+date: 2019-07-25T15:59:38Z
 title: "jx edit storage"
 slug: jx_edit_storage
 url: /commands/jx_edit_storage/
 ---
 ## jx edit storage
 
-Configures the storage location for a set of pipeline output data for your team
+Configures the storage location for stashing files or storing build logs for your team
 
 ### Synopsis
 
-Configures the storage location for a set of pipeline output data for your team 
+Configures the storage location used by your team to stashing files or storing build logs.
+  
+      If you don't specify any specific storage for a classifier it will try the classifier 'default'. If there is still no configuration then it will default to the git repository for a project.'
+  
+Currently Jenkins X supports storing files into a branch of a git repository or in cloud blob storage like S3, GCS, Azure blobs etc. 
 
-Per team you can specify a Git repository URL to store artifacts inside per classification or you can use a HTTP URL. 
+When using Cloud Storage we use URLs like 's3://nameOfBucket' on AWS, 'gs://anotherBucket' on GCP or on Azure 'azblob://thatBucket' 
 
-If you don't specify any specific storage for a classifier it will try the classifier 'default'.If there is still no configuration then it will default to the git repository for a project.'
+See Also: 
+
+  * jx step stash : https://jenkins-x.io/commands/jx_step_stash  
+  * jx get storage : https://jenkins-x.io/commands/jx_get_storage
 
 ```
 jx edit storage [flags]
@@ -26,35 +33,54 @@ jx edit storage [flags]
   # Be prompted what classification to edit
   jx edit storage
   
-  # Configure the git/http URLs of where to store logs
+  # Configure the where to store logs prompting the user to ask for more data
   jx edit storage -c logs
   
-  # Configure the git URL of where to store logs
+  
+  # Configure the git URL of where to store logs (defaults to gh-pages branch)
   jx edit storage -c logs --git-url https://github.com/myorg/mylogs.git'
+  
+  # Configure the git URL and branch of where to store logs
+  jx edit storage -c logs --git-url https://github.com/myorg/mylogs.git' --git-branch cheese
   
   # Configure the git URL of where all storage goes to by default unless a specific classifier has a config
   jx edit storage -c default --git-url https://github.com/myorg/mylogs.git'
+  
+  
+  # Configure the tests to be stored in cloud storage (using S3 / GCS / Azure Blobs etc)
+  jx edit storage -c tests --bucket-url s3://myExistingBucketName
+  
+  # Creates a new GCS bucket and configures the logs to be stored in it
+  jx edit storage -c logs --bucket myBucketName
 ```
 
 ### Options
 
 ```
-  -b, --batch-mode                In batch mode the command never prompts for user input
-  -c, --classifier string         A name which classifies this type of file. Example values: coverage, tests, logs
-      --git-url string            Specify the Git URL to populate in a gh-pages branch
-      --headless                  Enable headless operation if using browser automation
-  -h, --help                      help for storage
-      --http-url string           Specify the HTTP endpoint to send each file to
-      --install-dependencies      Should any required dependencies be installed automatically
-      --log-level string          Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
-      --no-brew                   Disables the use of brew on macOS to install or upgrade command line dependencies
-      --pull-secrets string       The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
-      --skip-auth-secrets-merge   Skips merging a local git auth yaml file with any pipeline secrets that are found
-      --verbose                   Enable verbose logging
+      --bucket string           Specify the name of the bucket to use
+      --bucket-kind string      The kind of bucket to use like 'gs, s3, azure' etc
+      --bucket-url string       Specify the cloud storage bucket URL to send each file to. e.g. use 's3://nameOfBucket' on AWS, gs://anotherBucket' on GCP or on Azure 'azblob://thatBucket'
+  -c, --classifier string       A name which classifies this type of file. Example values: coverage, tests, logs, reports
+      --git-branch string       The branch to use to store files in the git repository (default "gh-pages")
+      --git-url string          Specify the Git URL to of the repository to use for storage
+      --gke-project-id string   Google Project ID to use for a new bucket
+      --gke-zone string         The GKE zone (e.g. us-central1-a) where the new bucket will be created
+  -h, --help                    help for storage
+```
+
+### Options inherited from parent commands
+
+```
+  -b, --batch-mode                Runs in batch mode without prompting for user input (default true)
+      --config-file string        Configuration file used for installation
+      --install-dependencies      Enables automatic dependencies installation when required
+      --no-brew                   Disables brew package manager on MacOS when installing binary dependencies
+      --skip-auth-secrets-merge   Skips merging the secrets from local files with the secrets from Kubernetes cluster
+      --verbose                   Enables verbose output
 ```
 
 ### SEE ALSO
 
 * [jx edit](/commands/jx_edit/)	 - Edit a resource
 
-###### Auto generated by spf13/cobra on 14-Jan-2019
+###### Auto generated by spf13/cobra on 25-Jul-2019

@@ -13,12 +13,31 @@ weight: 5
 sections_weight: 5
 ---
 
+* [Overriding Pipelines, Stages, And Steps And Implementing Loops In Jenkins X Pipelines](https://technologyconversations.com/2019/06/30/overriding-pipelines-stages-and-steps-and-implementing-loops-in-jenkins-x-pipelines/) by [Viktor Farcic](https://technologyconversations.com), June 30th, 2019
+* [Jenkins X — TLS enabled Previews](https://medium.com/@sboardwell/jenkins-x-tls-enabled-previews-d04fa68c7ce9) by [Steve Boardwell](https://medium.com/@sboardwell), June 26th, 2019
+* [Jenkins X — Securing the Cluster](https://medium.com/@sboardwell/jenkins-x-securing-the-cluster-e1b9fcd8dd05) by [Steve Boardwell](https://medium.com/@sboardwell), June 22nd, 2019
+* [Ten Commandments Of GitOps Applied To Continuous Delivery](https://technologyconversations.com/2019/06/21/ten-commandments-of-gitops-applied-to-continuous-delivery/) by [Viktor Farcic](https://technologyconversations.com), June 21th, 2019
+* [Upgrading Ingress Rules And Adding TLS Certificates With Jenkins X](https://technologyconversations.com/2019/05/31/upgrading-ingress-rules-and-adding-tls-certificates-with-jenkins-x/) by [Viktor Farcic](https://technologyconversations.com), May 31th, 2019
+* [The Evolution Of Jenkins Jobs And How We Got To The YAML-Based jenkins-x.yml Format](https://technologyconversations.com/2019/05/09/the-evolution-of-jenkins-jobs-and-how-we-got-to-the-yaml-based-jenkins-x-yml-format/) by [Viktor Farcic](https://technologyconversations.com), May 9th, 2019
+* [Implementing ChatOps With Jenkins X](https://technologyconversations.com/2019/04/24/implementing-chatops-with-jenkins-x/) by [Viktor Farcic](https://technologyconversations.com), April 24th, 2019
+* [Going Serverless With Jenkins X: Exploring Prow, Jenkins X Pipeline Operator, And Tekton](https://technologyconversations.com/2019/04/15/going-serverless-with-jenkins-x-exploring-prow-jenkins-x-pipeline-operator-and-tekton/) by [Viktor Farcic](https://technologyconversations.com), April 15th, 2019
+* [Working With Pull Requests And Preview Environments](https://technologyconversations.com/2019/03/25/working-with-pull-requests-and-preview-environments/) by [Viktor Farcic](https://technologyconversations.com), March 25th, 2019
+* [Improving And Simplifying Software Development With Jenkins X](https://technologyconversations.com/2019/03/10/improving-and-simplifying-software-development-with-jenkins-x/) by [Viktor Farcic](https://technologyconversations.com), March 10th, 2019
+* [Exploring Jenkins X: DevPods](https://www.cloudbees.com/blog/exploring-jenkins-x-devpod) on March 6th, 2019 by [Nicolas DeLoof](https://www.cloudbees.com/blogs/nicolas-deloof)
+* [Setting up Jenkins X on Azure Kubernetes Service (AKS)](https://cloudblogs.microsoft.com/opensource/2019/03/06/jenkins-x-azure-kubernetes-service-setup/) on March 6th, 2019 by [Pui Chee Chan](https://cloudblogs.microsoft.com/opensource/author/pui-chee-chan/)
+* [Progressive Delivery with Jenkins X: Automatic Canary Deployments](https://blog.csanchez.org/2019/03/05/progressive-delivery-with-jenkins-x-automatic-canary-deployments/) on March 5th, 2019 by  [Carlos Sanchez](https://blog.csanchez.org/author/carlossanchez/)
+* [Jenkins X Environment Specific Variables](https://nicholasduffy.com/posts/jenkins-x-environment-specific-variables/) on March 4th, 2019 by [Nicholas Duffy](https://nicholasduffy.com/) 
+* [Creating Custom Jenkins X Build Packs](https://technologyconversations.com/2019/02/27/creating-custom-jenkins-x-build-packs/) by [Viktor Farcic](https://technologyconversations.com), February 27th, 2019
+* [Is Your Cluster Ready For Jenkins X?](https://technologyconversations.com/2019/02/05/is-your-cluster-ready-for-jenkins-x/) by [Viktor Farcic](https://technologyconversations.com), February 5th, 2019
+* [Zero cost preview environments on Kubernetes with Jenkins X and Osiris](https://medium.com/@vbehar/zero-cost-preview-environments-on-kubernetes-with-jenkins-x-and-osiris-bd9ce0148d03) by [Vincent Behar](https://medium.com/@vbehar), February 5th, 2019
+* [What Is Jenkins X?](https://technologyconversations.com/2019/01/29/what-is-jenkins-x/) by [Viktor Farcic](https://technologyconversations.com), January 29th, 2019
 * [Jenkins X: Preview Environment](https://medium.com/@MichalFoksa/jenkins-x-preview-environment-3bf2424a05e4) by [Michal Foksa](https://medium.com/@MichalFoksa), January 10th, 2019
 * [Continuous Delivery with Amazon EKS and Jenkins X](https://aws.amazon.com/blogs/opensource/continuous-delivery-eks-jenkins-x/) by [Henryk Konsek](https://twitter.com/hekonsek), 7th November, 2018
 * [Trying out Jenkins X on Azure Kubernetes Service(AKS)](https://medium.com/@puichan/trying-out-jenkins-x-on-azure-kubernetes-service-aks-20fe94bd72d2) by [PC Chan](https://medium.com/@puichan) on October 29th, 2018
 * [SetUp Jenkins X on Minikube kubernetes Cluster](https://medium.com/@mayank.023/setup-jenkinsx-on-minikube-kubernetes-cluster-c519264bb991) by [mayank verma](https://medium.com/@mayank.023) on September 30th, 2018  
+* [Installing Jenkins X on IBM Cloud Kubernetes Service](https://www.ibm.com/blogs/bluemix/2018/08/installing-jenkins-x-on-ibm-cloud-kubernetes-service/) on August 28th, 2018 by [Ram Vennam](https://www.ibm.com/blogs/bluemix/author/rvennamus-ibm-com/) 
 * [Jenkins X and Pivotal PKS](http://www.routetocloud.com/2018/08/1969/) on 1st August, 2018 by [Roie Ben-haim](https://twitter.com/roie9876)
-* [Accelerate with Jenkins X ](https://jenkins.io/blog/2018/07/19/jenkins-x-accelerate/) by [James Rawlings](https://twitter.com/jdrawlings/) on July 20, 2018 
+* [Accelerate with Jenkins X](https://jenkins.io/blog/2018/07/19/jenkins-x-accelerate/) by [James Rawlings](https://twitter.com/jdrawlings/) on July 20, 2018 
 * [Add CI/CD to Your Spring Boot App with Jenkins X and Kubernetes](https://developer.okta.com/blog/2018/07/11/ci-cd-spring-boot-jenkins-x-kubernetes) by [Matt Raible](https://twitter.com/mraible/) on July 11, 2018 
 * [Don't Install Developer Tools!](https://www.cloudbees.com/blog/don%E2%80%99t-install-development-tools) by Michael Neale on 30 May 2018
 * [Introducing Jenkins X: a CI/CD solution for modern cloud applications on Kubernetes](https://jenkins.io/blog/2018/03/19/introducing-jenkins-x/) by [James Strachan](https://twitter.com/jstrachan) on 19th March, 2018

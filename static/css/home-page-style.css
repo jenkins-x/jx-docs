@@ -192,3 +192,24 @@ div.owl-carousel blockquote {
 div.owl-carousel blockquote p {
     font-size: 20pt;
 }
+
+
+.carousel_633 {
+  background-size: cover !important;
+}
+
+.carousel_633 a {
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none !important;
+}
+
+.carousel_633 img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#ProjectCarousel_633 {
+  background: #000000 url(images/cdf-background-wide.jpg) no-repeat center !important;
+}

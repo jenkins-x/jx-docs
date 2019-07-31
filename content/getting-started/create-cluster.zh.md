@@ -13,7 +13,6 @@ menu:
 weight: 20
 sections_weight: 20
 draft: false
-aliases: [/quickstart/,/overview/quickstart/]
 toc: true
 ---
 
@@ -73,7 +72,7 @@ jx create cluster aws
 有些人在开始使用 minikube 时遇到问题，可能有几个原因：
 
 * minikube 需要更新你的机器以及虚拟化软件
-* 你可能已经安装了旧版本的 Docker 或者 minikube、kuberctl、helm等。
+* 你可能已经安装了旧版本的 Docker 或者 minikube、kubectl、helm等。
 
 因此，我们**强烈**建议使用上面的公有云来尝试 Jenkins X。他们都有免费体验，所以应该不会花费你的任何现金，而且还给了你体验云的机会。
 

@@ -1,5 +1,5 @@
 ---
-date: 2019-01-14T09:35:13Z
+date: 2019-07-25T15:59:38Z
 title: "jx create spring"
 slug: jx_create_spring
 url: /commands/jx_create_spring/
@@ -10,11 +10,15 @@ Create a new Spring Boot application and import the generated code into Git and 
 
 ### Synopsis
 
-Creates a new Spring Boot application and then optionally setups CI/CD pipelines and GitOps promotion. 
+Creates a new Spring Boot application and then optionally setups CI/CD pipelines and GitOps promotion.
+  
+      You can see a demo of this command here: [https://jenkins-x.io/demos/create_spring/](https://jenkins-x.io/demos/create_spring/)
+  
+      For more documentation see: [https://jenkins-x.io/developing/create-spring/](https://jenkins-x.io/developing/create-spring/)
+  
+See Also: 
 
-You can see a demo of this command here: https://jenkins-x.io/demos/create_spring/
-
-For more documentation see: https://jenkins-x.io/developing/create-spring/
+  * jx create project : https://jenkins-x.io/commands/jx_create_project
 
 ```
 jx create spring [flags]
@@ -41,11 +45,12 @@ jx create spring [flags]
 ```
   -x, --advanced                       Advanced mode can show more detailed forms for some resource kinds like springboot
   -a, --artifact string                Artifact ID to generate
-  -b, --batch-mode                     In batch mode the command never prompts for user input
   -t, --boot-version string            Spring Boot version
       --branches string                The branch pattern for branches to trigger CI/CD pipelines on
       --credentials string             The Jenkins credentials name used by the job
   -d, --dep stringArray                Spring Boot dependencies
+      --deploy-kind string             The kind of deployment to use for the project. Should be one of knative, default
+      --disable-updatebot              disable updatebot-maven-plugin from attempting to fix/update the maven pom.xml
       --docker-registry-org string     The name of the docker registry organisation to use. If not specified then the Git provider organisation will be used
       --dry-run                        Performs local changes to the repo but skips the import into Jenkins X
       --external-jenkins-url string    The jenkins url that an external git provider needs to use
@@ -55,18 +60,15 @@ jx create spring [flags]
       --git-provider-url string        The Git server URL to create new Git repositories inside (default "https://github.com")
       --git-username string            The Git username to use for creating new Git repositories
   -g, --group string                   Group ID to generate
-      --headless                       Enable headless operation if using browser automation
   -h, --help                           help for spring
       --import-commit-message string   Specifies the initial commit message used when importing the project
-      --install-dependencies           Should any required dependencies be installed automatically
+  -m, --import-mode string             The import mode to use. Should be one of Jenkinsfile, YAML
   -j, --java-version string            Java version
       --jenkinsfile string             The name of the Jenkinsfile to use. If not specified then 'Jenkinsfile' will be used
   -k, --kind stringArray               Default dependency kinds to choose from (default [Core,Web,Template Engines,SQL,I/O,Ops,Spring Cloud GCP,Azure,Cloud Contract,Cloud AWS,Cloud Messaging,Cloud Tracing])
   -l, --language string                Language to generate
       --list-packs                     list available draft packs
-      --log-level string               Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
       --name string                    Specify the Git repository name to import the project into (if it is not already in one)
-      --no-brew                        Disables the use of brew on macOS to install or upgrade command line dependencies
       --no-draft                       Disable Draft from trying to default a Dockerfile and Helm Chart
       --no-import                      Disable import after the creation
       --no-jenkinsfile                 Disable defaulting a Jenkinsfile if its missing
@@ -74,14 +76,24 @@ jx create spring [flags]
   -o, --output-dir string              Directory to output the project to. Defaults to the current directory
       --pack string                    The name of the pack to use
   -p, --packaging string               Packaging
-      --pull-secrets string            The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
-      --skip-auth-secrets-merge        Skips merging a local git auth yaml file with any pipeline secrets that are found
+      --scheduler string               The name of the Scheduler configuration to use for ChatOps when using Prow
       --type string                    Project Type (such as maven-project or gradle-project)
-      --verbose                        Enable verbose logging
+      --use-default-git                use default git account
+```
+
+### Options inherited from parent commands
+
+```
+  -b, --batch-mode                Runs in batch mode without prompting for user input (default true)
+      --config-file string        Configuration file used for installation
+      --install-dependencies      Enables automatic dependencies installation when required
+      --no-brew                   Disables brew package manager on MacOS when installing binary dependencies
+      --skip-auth-secrets-merge   Skips merging the secrets from local files with the secrets from Kubernetes cluster
+      --verbose                   Enables verbose output
 ```
 
 ### SEE ALSO
 
 * [jx create](/commands/jx_create/)	 - Create a new resource
 
-###### Auto generated by spf13/cobra on 14-Jan-2019
+###### Auto generated by spf13/cobra on 25-Jul-2019

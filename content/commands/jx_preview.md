@@ -1,5 +1,5 @@
 ---
-date: 2019-01-14T09:35:13Z
+date: 2019-07-25T15:59:38Z
 title: "jx preview"
 slug: jx_preview
 url: /commands/jx_preview/
@@ -30,7 +30,6 @@ jx preview [flags]
 ```
       --alias string                      The optional alias used in the 'requirements.yaml' file
   -a, --app string                        The Application to promote
-  -b, --batch-mode                        In batch mode the command never prompts for user input
       --build string                      The Build number which is used to update the PipelineActivity. If not specified its defaulted from  the '$BUILD_NUMBER' environment variable
   -c, --cluster string                    The Kubernetes cluster for the Environment. If blank and a namespace is specified assumes the current cluster
       --dev-namespace string              The Developer namespace where the preview command should run
@@ -38,19 +37,15 @@ jx preview [flags]
       --domain string                     Domain to expose ingress endpoints.  Example: jenkinsx.io
       --exposer string                    Used to describe which strategy exposecontroller should use to access applications (default "Ingress")
   -f, --filter string                     The search filter to find charts to promote
-      --headless                          Enable headless operation if using browser automation
   -r, --helm-repo-name string             The name of the helm repository that contains the app (default "releases")
   -u, --helm-repo-url string              The Helm Repository URL to use for the App (default "http://jenkins-x-chartmuseum:8080")
   -h, --help                              help for preview
-      --http string                       Toggle creating http or https ingress rules (default "true")
       --ignore-local-file                 Ignores the local file system when deducing the Git repository
-      --install-dependencies              Should any required dependencies be installed automatically
+      --ingress-class string              Used to set the ingress.class annotation in exposecontroller created ingress
       --keep-exposecontroller-job         Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
   -l, --label string                      The Environment label which is a descriptive string like 'Production' or 'Staging'
-      --log-level string                  Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
   -n, --name string                       The Environment resource name. Must follow the Kubernetes name conventions like Services, Namespaces
       --namespace string                  The Kubernetes namespace for the Environment
-      --no-brew                           Disables the use of brew on macOS to install or upgrade command line dependencies
       --no-comment                        Disables commenting on the Pull Request after preview is created.
       --no-helm-update                    Allows the 'helm repo update' command if you are sure your local helm cache is up to date with the version you wish to promote
       --no-merge                          Disables automatic merge of promote Pull Requests
@@ -62,19 +57,27 @@ jx preview [flags]
       --pr string                         The Pull Request Name (e.g. 'PR-23' or just '23'
       --pr-url string                     The Pull Request URL
       --pull-request-poll-time string     Poll time when waiting for a Pull Request to merge (default "20s")
-      --pull-secrets string               The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
       --release string                    The name of the helm release
-      --skip-auth-secrets-merge           Skips merging a local git auth yaml file with any pipeline secrets that are found
       --source-ref string                 The source code git ref (branch/sha)
   -s, --source-url string                 The source code git URL
   -t, --timeout string                    The timeout to wait for the promotion to succeed in the underlying Environment. The command fails if the timeout is exceeded or the promotion does not complete (default "1h")
-      --tls-acme string                   Used to enable automatic TLS for ingress
-      --verbose                           Enable verbose logging
+      --urltemplate string                For ingress; exposers can set the urltemplate to expose
   -v, --version string                    The Version to promote
+```
+
+### Options inherited from parent commands
+
+```
+  -b, --batch-mode                Runs in batch mode without prompting for user input (default true)
+      --config-file string        Configuration file used for installation
+      --install-dependencies      Enables automatic dependencies installation when required
+      --no-brew                   Disables brew package manager on MacOS when installing binary dependencies
+      --skip-auth-secrets-merge   Skips merging the secrets from local files with the secrets from Kubernetes cluster
+      --verbose                   Enables verbose output
 ```
 
 ### SEE ALSO
 
 * [jx](/commands/jx/)	 - jx is a command line tool for working with Jenkins X
 
-###### Auto generated by spf13/cobra on 14-Jan-2019
+###### Auto generated by spf13/cobra on 25-Jul-2019

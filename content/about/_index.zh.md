@@ -13,13 +13,12 @@ menu:
     weight: 1
 weight: 1
 draft: false
-aliases: [/about-jx/,/docs/]
 toc: false
 ---
 
 Jenkins X 是基于 Kubernetes 的持续集成、持续部署平台。
 
-该项目的目标是成为 <a href="https://jenkins.io/">Jenkins</a> 的子项目。
+该项目是 <a href="https://jenkins.io/">Jenkins</a> 的子项目。
 
 
                     

@@ -21,7 +21,15 @@ If your install fails to start there could be a few different reasons why the Je
 
 Your cluster could be out of resources. You can check the spare resources on your cluster via [jx status](/commands/jx_status/):
 
-    jx status
+``` 
+jx status
+``` 
+
+We also have a diagnostic command that looks for common problems [jx step verify install](/commands/jx_step_verify_install/):
+
+``` 
+jx step verify install
+``` 
     
 A common issue for pods not starting is if your cluster does not have a [default storage class](https://kubernetes.io/docs/concepts/storage/storage-classes/) setup so that `Persistent Volume Claims` can be bound to `Persistent Volumes` as described in the [install instructions](/getting-started/install-on-cluster/).
 
@@ -85,16 +93,19 @@ So a workaround is to use a real [external docker registry](/architecture/docker
 
 ## Helm fails with Error: UPGRADE FAILED: incompatible versions client[...] server[...]'
 
-This is a temporary issue we are hoping [to work around soon](https://github.com/jenkins-x/jx/issues/1304#issuecomment-405958831). 
+Generally speaking this happens when your laptop has a different version of helm to the version used in our build pack docker images and/or the version of tiller thats running in your server.
 
-Its basically a mismatch between the version of helm 2 installed on your laptop, the version of helm used in the build pods and the version of Tiller, the server side component in Helm 2 that is installed in the kubernetes cluster.
+The simplest fix for this is to just [not use tiller at all](https://jenkins-x.io/news/helm-without-tiller/) - which actually helps avoid this problem ever happening and solves a raft of security issues too.
 
-The issue goes away when we move to helm 3 as there's no Tiller component. Also we are looking at moving to use the [local plugin to avoid a server side Tiller component](https://github.com/jenkins-x/jx/issues/1341).
+However switching from using Tiller to No Tiller does require a re-install of Jenkins X (though you could try do that in separate set of namespaces then move projects across incrementally?).
 
-Until the the local plugin or helm 3 the manual workaround is:
+The manual workaround is to install the [exact same version of helm as used on the server](https://github.com/helm/helm/releases) 
 
-* [download the 2.10.0-rc1 version](https://github.com/helm/helm/releases) of helm and add it to your `PATH`
+Or you can try switch tiller to match your client version:
+
 * run `helm init --upgrade`
+
+Though as soon as a pipeline runs it'll switch the tiller version again so you'll have to keep repeating the above.
 
 
 ## error creating jenkins credential jenkins-x-chartmuseum 500 Server Error
@@ -108,6 +119,55 @@ It basically happens if you have an old API token in `~/.jx/jenkinsAuth.yaml` fo
 
     jx delete jenkins token admin
 
+## errors with https://chartmuseum.build.cd.jenkins-x.io
+
+If you see errors like: 
+
+```
+error:failed to add the repository 'jenkins-x' with URL 'https://chartmuseum.build.cd.jenkins-x.io'
+```
+
+or 
+
+```
+Looks like "https://chartmuseum.build.cd.jenkins-x.io" is not a valid chart repository or cannot be reached
+```
+
+then it looks like you have a reference to an old chart museum URL for Jenkins X charts.
+
+The new URL is: http://chartmuseum.jenkins-x.io
+
+It could be your helm install has an old repository URL installed. You should see...
+
+``` 
+$ helm repo list
+NAME     	URL
+stable   	https://kubernetes-charts.storage.googleapis.com
+jenkins-x	http://chartmuseum.jenkins-x.io
+```
+
+If you see this...
+
+``` 
+$ helm repo list
+NAME     	URL
+jenkins-x	https://chartmuseum.build.cd.jenkins-x.io
+```
+
+then please run...
+
+``` 
+helm repo remove jenkins-x
+helm repo add jenkins-x	http://chartmuseum.jenkins-x.io
+```
+
+and you should be good to go again.
+
+
+Another possible cause is an old URL in your environment's git repository may have old references to the URL.
+
+So open your `env/requirements.yaml` in your staging/production git repositories and modify them to use the URL http://chartmuseum.jenkins-x.io instead of https://chartmuseum.build.cd.jenkins-x.io like this [env/requirements file](https://github.com/jenkins-x/default-environment-charts/blob/master/env/requirements.yaml)
+
 ## git errors: POST 401 Bad credentials
 
 This indicates your git API token either was input incorrectly or has been regenerated and is now incorrect.
@@ -116,7 +176,7 @@ To recreate it with a new API token value try the following (changing the git se
 
 ```
 jx delete git token -n GitHub admin
-jx create token -n GitHub admin
+jx create git token -n GitHub admin
 ```
 
 More details on [using git and Jenkins X here](/developing/git/)
@@ -136,14 +196,25 @@ To recreate it with a new API token value try the following (changing the git se
 
 ```
 jx delete git token -n GitHub admin
-jx create token -n GitHub admin
+jx create git token -n GitHub admin
 ```
 
 More details on [using git and Jenkins X here](/developing/git/)
 
 ## What are the credentials to access core services?
 
-Authenticated core services of Jenkins X include Jenkins, Nexus, ChartMuseum.  The username is `admin` and the password by default is generated and printed out in the terminal after `jx create cluster` or `jx install`.  If you would like to set the default password yourself then you can set the flag `--default-admin-password=foo` to the two comamnds above.
+Authenticated core services of Jenkins X include Jenkins, Nexus, ChartMuseum.  The default username is `admin`and the password by default is generated and printed out in the terminal after `jx create cluster` or `jx install`.  
+
+### Set Admin Username and Password values for Core Services
+You can also set the admin username via the `--default-admin-username=username` flag.
+
+{{% note %}}
+Perhaps you are using the  Active Directory security realm in Jenkins.  It is in this scenario that setting the Admin Username via the `--default-admin-username` based on your existing service accounts makes sense.
+
+You may also pass this value via the `myvalues.yaml`.
+{{% /note %}}
+
+If you would like to set the default password yourself then you can set the flag `--default-admin-password=foo` to the two comamnds above.
 
 If you don't have the terminal console output anymore you can look in the local file `~/.jx/jenkinsAuth.yaml` and find the password that matches your Jenkins server URL for the desired cluster.
 
@@ -155,7 +226,58 @@ If you notice that the persistent volume claims created when installing Jenkins 
 
 The you should check that you have a cluster default storage class for dynamic persistent volume provisioning.  See [here](https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/) for more details.
 
+
+## How can I diagnose exposecontroller issues?
+
+When you [promote a new version of your application to an environment](/faq/develop/#how-does-promotion-actually-work), such as the Staging Environment a Pull Request is raised on the environment repository.
+
+When the master pipeline runs on an environment a Kubernetes `Job` is created for [exposecontroller](https://github.com/jenkins-x/exposecontroller) which runs a pod until it terminates.
+
+It can be tricky finding the log for temporary jobs since the pod is removed.
+
+One way to diagnose logs in your, say, Staging environment is to [download and install kail](https://github.com/boz/kail) and add it to your `PATH`.
+
+Then run this command:
+
+```shell 
+kail -l job-name=expose -n jx-staging
+```
+
+If you then promote to the Staging environment or retrigger the pipeline on the `master` branch of your Staging git repository (e.g. via [jx start pipeline](/commands/jx_start_pipeline/)) then you should see the output of the [exposecontroller](https://github.com/jenkins-x/exposecontroller) pod.
+
+
+## Why is promotion really slow?
+
+If you find you get lots of warnings in your pipelines like this...
+
+``` 
+"Failed to query the Pull Request last commit status for https://github.com/myorg/environment-mycluster-staging/pull/1 ref xyz Could not find a status for repository myorg/environment-mycluster-staging with ref xyz
+```
+
+and promotion takes 30 minutes from a release pipeline on an application starting to the change hitting `Staging` then its mostly probably due to Webhooks.
+
+When we [import projects](/developing/import/) or [create quickstarts](/developing/create-quickstart/) we automate the setup of CI/CD pipelines for the git repository. What this does is setup Webhooks on the git repository to trigger Jenkins X to trigger pipelines (either using Prow for [serverless Jenkins X Pipelines](/architecture/jenkins-x-pipelines/) or the static jenkins server if not).
+
+However sometimes your git provider (e.g. [GitHub](https://github.com/) may not be able to do connect to your Jenkins X installation (e.g. due to networking / firewall issues).
+
+The easiest way to diagnose this is opening the git repository (e.g. for your environment repository).
+
+``` 
+jx get env
+```
+
+Then: 
+
+* click on the generated URL for, say, your `Staging`  git repository 
+* click the `Settings` icon 
+* select the `Webhooks` tab on the left
+* select your Jenkins X webhook URL 
+* view the last webhook - did it succeed? Try re-trigger it? That should highlight any network issues etc
+
+If you cannot use public webhooks you could look at something like [ultrahook](http://www.ultrahook.com/)
+
 ## Cannot create cluster minikube
+
 If you are using a Mac then `hyperkit` is the best VM driver to use - but does require you to install a recent [Docker for Mac](https://docs.docker.com/docker-for-mac/install/) first. Maybe try that then retry `jx create cluster minikube`?
 
 If your minikube is failing to startup then you could try:
@@ -228,6 +350,75 @@ You'll see all the URs of the form `http://$(minikube ip):somePortNumber` which 
 
 Install [KSD](https://github.com/mfuentesg/ksd) by running `go get github.com/mfuentesg/ksd` and then run `kubectl get secret jenkins -o yaml | ksd`
 
+
+## How do I see the log of exposecontroller?
+
+Usually we run the [exposecontroller]() as a post install `Job` when we perform promotion to `Staging` or `Production` to expose services over Ingress and possibly inject external URLs into applications configuration.
+
+
+So the `Job` will trigger a short lived `Pod` to run in the namespace of your environment, then the pod will be deleted.
+
+If you want to view the logs of the `exposecontroller` you will need to watch for the logs using a selector then trigger the promotion pipeline to capture it.
+
+One way to do that is via the [kail](https://github.com/boz/kail) CLI:
+
+
+``` 
+kail -l  job-name=expose
+```
+
+This will watch for exposecontroller logs and then dump them to the console. Now trigger a promotion pipeline and you should see the output within a minute or so.
+
+## Cannot create TLS certificates during Ingress setup
+
+> [cert-manager](https://docs.cert-manager.io/en/latest/index.html) cert-manager is a seperate project from _Jenkins X_.
+
+Newly created GKE clusters or existing cluster running _kubernetes_ **v1.12** or older will encounter the following error when configuring Ingress with site-wide TLS:
+
+```
+Waiting for TLS certificates to be issued...
+Timeout reached while waiting for TLS certificates to be ready
+```
+
+This issue is caused by the _cert-manager_ pod not having the `disable-validation` label set, which is a known cert-manager issue which is [documented on their website](https://docs.cert-manager.io/en/latest/getting-started/install/kubernetes.html). The following steps, taken from the [cert-manager/troubleshooting-installation](https://docs.cert-manager.io/en/latest/getting-started/troubleshooting.html#troubleshooting-installation) webpage, should resolve the issue:
+
+Check if the _disable-validation_ label exists on the _cert-manager_ pod.
+```
+kubectl describe namespace cert-manager
+```
+
+If you cannot see the `certmanager.k8s.io/disable-validation=true` label on your namespace, you should add it with:
+```
+kubectl label namespace cert-manager certmanager.k8s.io/disable-validation=true
+```
+
+Confirm the label has been added to the _cert-manager_ pod.
+```
+kubectl describe namespace cert-manager
+
+Name:         cert-manager
+Labels:       certmanager.k8s.io/disable-validation=true
+Annotations:  <none>
+Status:       Active
+...
+```
+
+Now rerun _jx_ Ingress setup:
+```
+jx upgrade ingress
+```
+
+While the ingress command is running, you can tail the _cert-manager_ logs in another terminal and see what is happening. You will need to find the name of your _cert-manager_ pod using:
+```
+kubectl get pods --namespace cert-manager
+```
+
+Then tail the logs of the _cert-manager_ pod.
+```
+kubectl logs YOUR_CERT_MNG_POD --namespace cert-manager -f
+```
+
+Your TLS certificates should now be set up and working, otherwise checkout the [official _cert-manager_ troubleshooting](https://docs.cert-manager.io/en/latest/getting-started/troubleshooting.html) instructions.
 
 ## Other issues
 

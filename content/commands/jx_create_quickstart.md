@@ -1,5 +1,5 @@
 ---
-date: 2019-01-14T09:35:13Z
+date: 2019-07-25T15:59:38Z
 title: "jx create quickstart"
 slug: jx_create_quickstart
 url: /commands/jx_create_quickstart/
@@ -10,11 +10,16 @@ Create a new app from a Quickstart and import the generated code into Git and Je
 
 ### Synopsis
 
-Create a new project from a sample/starter (found in https://github.com/jenkins-x-quickstarts) 
+Create a new project from a sample/starter (found in https://github.com/jenkins-x-quickstarts)
+  
+      This will create a new project for you from the selected template.
+      It will exclude any work-in-progress repos (containing the "WIP-" pattern)
+  
+      For more documentation see: [https://jenkins-x.io/developing/create-quickstart/](https://jenkins-x.io/developing/create-quickstart/)
+  
+See Also: 
 
-This will create a new project for you from the selected template. It will exclude any work-in-progress repos (containing the "WIP-" pattern) 
-
-For more documentation see: https://jenkins-x.io/developing/create-quickstart/
+  * jx create project : https://jenkins-x.io/commands/jx_create_project
 
 ```
 jx create quickstart [flags]
@@ -36,9 +41,10 @@ jx create quickstart [flags]
 ### Options
 
 ```
-  -b, --batch-mode                     In batch mode the command never prompts for user input
       --branches string                The branch pattern for branches to trigger CI/CD pipelines on
       --credentials string             The Jenkins credentials name used by the job
+      --deploy-kind string             The kind of deployment to use for the project. Should be one of knative, default
+      --disable-updatebot              disable updatebot-maven-plugin from attempting to fix/update the maven pom.xml
       --docker-registry-org string     The name of the docker registry organisation to use. If not specified then the Git provider organisation will be used
       --dry-run                        Performs local changes to the repo but skips the import into Jenkins X
       --external-jenkins-url string    The jenkins url that an external git provider needs to use
@@ -50,16 +56,14 @@ jx create quickstart [flags]
       --git-provider-kind string       Kind of Git server. If not specified, kind of server will be autodetected from Git provider URL. Possible values: bitbucketcloud, bitbucketserver, gitea, gitlab, github, fakegit
       --git-provider-url string        The Git server URL to create new Git repositories inside (default "https://github.com")
       --git-username string            The Git username to use for creating new Git repositories
-      --headless                       Enable headless operation if using browser automation
   -h, --help                           help for quickstart
       --import-commit-message string   Specifies the initial commit message used when importing the project
-      --install-dependencies           Should any required dependencies be installed automatically
+  -m, --import-mode string             The import mode to use. Should be one of Jenkinsfile, YAML
       --jenkinsfile string             The name of the Jenkinsfile to use. If not specified then 'Jenkinsfile' will be used
   -l, --language string                The language to filter on
       --list-packs                     list available draft packs
-      --log-level string               Logging level. Possible values - panic, fatal, error, warning, info, debug. (default "info")
+      --machine-learning               Allow machine-learning quickstarts in results
       --name string                    Specify the Git repository name to import the project into (if it is not already in one)
-      --no-brew                        Disables the use of brew on macOS to install or upgrade command line dependencies
       --no-draft                       Disable Draft from trying to default a Dockerfile and Helm Chart
       --no-import                      Disable import after the creation
       --no-jenkinsfile                 Disable defaulting a Jenkinsfile if its missing
@@ -69,14 +73,24 @@ jx create quickstart [flags]
       --owner string                   The owner to filter on
       --pack string                    The name of the pack to use
   -p, --project-name string            The project name (for use with -b batch mode)
-      --pull-secrets string            The pull secrets the service account created should have (useful when deploying to your own private registry): provide multiple pull secrets by providing them in a singular block of quotes e.g. --pull-secrets "foo, bar, baz"
-      --skip-auth-secrets-merge        Skips merging a local git auth yaml file with any pipeline secrets that are found
+      --scheduler string               The name of the Scheduler configuration to use for ChatOps when using Prow
   -t, --tag stringArray                The tags on the quickstarts to filter
-      --verbose                        Enable verbose logging
+      --use-default-git                use default git account
+```
+
+### Options inherited from parent commands
+
+```
+  -b, --batch-mode                Runs in batch mode without prompting for user input (default true)
+      --config-file string        Configuration file used for installation
+      --install-dependencies      Enables automatic dependencies installation when required
+      --no-brew                   Disables brew package manager on MacOS when installing binary dependencies
+      --skip-auth-secrets-merge   Skips merging the secrets from local files with the secrets from Kubernetes cluster
+      --verbose                   Enables verbose output
 ```
 
 ### SEE ALSO
 
 * [jx create](/commands/jx_create/)	 - Create a new resource
 
-###### Auto generated by spf13/cobra on 14-Jan-2019
+###### Auto generated by spf13/cobra on 25-Jul-2019

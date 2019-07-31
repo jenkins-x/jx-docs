@@ -8,9 +8,9 @@ lastmod: 2017-02-01
 menu:
   docs:
     parent: "developing"
-    weight: 220
-weight: 220
-sections_weight: 220
+    weight: 195
+weight: 195
+sections_weight: 195
 draft: false
 toc: true
 aliases: [/developing/devpods/]
@@ -34,11 +34,35 @@ jx create devpod -l maven
 
 This will then create a new `DevPod` based on the maven based [pod template](/architecture/pod-templates/) and open your terminal inside that pod. You are now free to use the various tools like `git, docker, maven, skaffold, jx` which will all be using the same exact configuration as the CI/CD pipelines will.
 
+
+## Using web based VS Code
+
+If you don't use `--sync` then the DevPod will embed the [web based version of VS Code](https://github.com/cdr/code-server) in your DevPod so that you can open the IDE in a browser and work on the source code inside your DevPod!
+
+The source code is mounted into the workspace of the DevPod in the folder `/workspace`.
+ 
+To get an incremental redeploy as you edit source inside VS Code then open a `Terminal` in VS Code and type:
+
+`./watch.sh`
+
+inside the shell of the DevPod.
+
+Here's a [demo showing how to use web based VS Code in a DevPod](/images/developing/vscode-devpod.mp4):
+
+<figure>
+<embed src="/images/developing/vscode-devpod.mp4" autostart="false" height="400" width="600" />
+<figcaption>
+<h5>Use web based VS Code inside a DevPod</h5>
+</figcaption>
+</figure>
+
+
+
 ## Using Theia IDE
 
-If you don't use `--sync` then the DevPod will embed the [Theia IDE](https://www.theia-ide.org/) so that you can open the IDE in a browser and work on the source code inside your DevPod!
+If you don't use `--sync` and you use `--theia` then the DevPod will embed the [Theia IDE](https://www.theia-ide.org/) so that you can open the IDE in a browser and work on the source code inside your DevPod!
 
-The source code is mounted into the workspace of Theia in the folder `/workspace`.
+The source code is mounted into the workspace of the DevPod in the folder `/workspace`.
  
 To get an incremental redeploy as you edit source inside [Theia IDE](https://www.theia-ide.org/) then type:
 
@@ -56,7 +80,7 @@ If you wish to use a desktop IDE then you need to sync your source code you can 
 
 This will open a shell (and create a DevPod, or re-use an existing one) and ensure the changes are synced up to the DevPod. Step 3: when  you run this then any changes you make locally will be pushed up to the DevPod, built, and then a temporary "edit" version of your application will be published. 
 
-When you run `jx get apps` you will see your "edit" application listed. You can open this in a browser, and edit away, and refresh, as if you were developing locally. 
+When you run `jx get applications` you will see your "edit" application listed. You can open this in a browser, and edit away, and refresh, as if you were developing locally. 
 
 _if you are using the Visual Studio code extension to do this, you don't need to worry about this, it will be done automatically for you_
 
@@ -95,11 +119,13 @@ jx delete devpod
 Then pick the devpod to delete and confirm. Or pass in the name of the devpod you want to delete as an argument.
 
 
-## Synchronizing
+## Synchronizing source code
 
-So once you have a DevPod you can synchronise your local source code into your DevPod via the [jx sync](/commands/jx_sync/) command:
+If you are using one of our [IDE plugins](/developing/ide) for your desktop IDE then synchronisation of local files to your DevPod will already be included.
 
-This will allow you to edit source code in your preferred IDE like [VS Code](https://code.visualstudio.com/) or [IDEA](https://www.jetbrains.com/idea/).
+Otherwise if you are using a desktop IDE you can synchronise your local source code into your DevPod via the [jx sync](/commands/jx_sync/) command.
+
+This will allow you to edit source code in your preferred [IDE](/developing/ide) like [VS Code](https://code.visualstudio.com/) or [IDEA](https://www.jetbrains.com/idea/).
 
 
 ```shell

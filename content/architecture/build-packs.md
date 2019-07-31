@@ -37,7 +37,7 @@ For example the [jenkins-x-kubernetes](https://github.com/jenkins-x-buildpacks/j
 To do this we've introduced a simple new YAML file format for defining pipelines.
 
 
-# Pipelines 
+## Pipelines 
 
 Each Pipeline YAML file has a number of separate logical pipelines:
 
@@ -83,7 +83,7 @@ For example for [maven libraries we use this pipeline.yaml file](https://github.
 * defines the steps for the `pull request` pipeline [build steps](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/f7027df958eb385d50fec0c0368e606a6d5eb9df/packs/maven/pipeline.yaml#L7-L11)
 * defines the `release` pipeline [set version steps](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/f7027df958eb385d50fec0c0368e606a6d5eb9df/packs/maven/pipeline.yaml#L13-L18) and [build steps](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/f7027df958eb385d50fec0c0368e606a6d5eb9df/packs/maven/pipeline.yaml#L19-L21)
 
-Then the [maven kubernetes pipeline.yaml](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/blob/45819e05fa197d9069af682fbbcad0af8d8d605a/packs/maven/pipeline.yaml) then [extends](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/blob/45819e05fa197d9069af682fbbcad0af8d8d605a/packs/maven/pipeline.yaml#L2-L3) from the classic pipepeline to add the kubernetes steps
+Then the [maven kubernetes pipeline.yaml](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/blob/45819e05fa197d9069af682fbbcad0af8d8d605a/packs/maven/pipeline.yaml) then [extends](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/blob/45819e05fa197d9069af682fbbcad0af8d8d605a/packs/maven/pipeline.yaml#L2-L3) from the classic pipeline to add the kubernetes steps
 
 # Creating new build packs
 

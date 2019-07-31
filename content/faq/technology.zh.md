@@ -10,7 +10,6 @@ menu:
 keywords: [faqs]
 weight: 10
 toc: true
-aliases: [/faq/]
 ---
 
 ## 什么是 Helm?

@@ -1,7 +1,7 @@
 ---
 title: Create custom Builder
 linktitle: Create custom Builder
-description: How to create a custom Builder fo Jenkins X
+description: How to create a custom Builder for Jenkins X
 date: 2013-07-01
 publishdate: 2013-07-01
 categories: [getting started]

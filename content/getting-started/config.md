@@ -23,7 +23,13 @@ However you can configure values in the underlying helm charts used by Jenkins X
 
 To do this you need to create a `myvalues.yaml` file in the current directory you are in when you run either [jx create cluster](/commands/jx_create_cluster) or [jx install](/commands/jx_install)
 
-Then this YAML file can be used to override any of the underlying `values.yaml` in any of the charts in Jenkins X.
+Then this YAML file can be used to override any of the underlying [`values.yaml`](https://github.com/jenkins-x/jenkins-x-platform/blob/master/jenkins-x-platform/values.yaml) in any of the [charts](https://github.com/jenkins-x/jenkins-x-platform/blob/master/jenkins-x-platform/requirements.yaml) in Jenkins X.
+
+## Making changes after the install
+
+Once you have installed you can make more changes via [jx upgrade platform](https://jenkins-x.io/commands/jx_upgrade_platform/) which will reuse your `myvalues.yaml` file.
+
+Or if you use [GitOps management](/getting-started/manage-via-gitops/) you can just create a Pull Request on your Development environment git repository.
 
 ## Nexus
 
@@ -36,6 +42,8 @@ nexusServiceLink:
   enabled: true
   externalName: "nexus.jx.svc.cluster.local"
 ```
+
+## ChartMuseum
 
 To disable and service link chart museum add:
 
@@ -70,7 +78,7 @@ anotherplugin:4.5.6
 
 Once you have built and released your image via CI/CD you can then use it in your Jenkins X installation.
 
-To configure Jenkins X to use your customm image you can specify your own Jenkins image via a `myvalues.yaml` file:
+To configure Jenkins X to use your custom image you can specify your own Jenkins image via a `myvalues.yaml` file:
   
 ```yaml
 jenkins:

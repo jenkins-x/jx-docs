@@ -23,7 +23,7 @@ Here's some of the main highlights:
 * we now have a much more flexible mechanism of handling Secrets/Credentials so dealing with [other git providers is now much simpler](/contribute/roadmap/)
 * we finally got lots more [architecture documentation](/architecture/) on how Jenkins X fits together.
 
-The [roadmap has been updated](/contribute/roadmap/) to give a better feel for where we are.   
+The [Jenkins X Futures page has been updated](/contribute/roadmap/) to give a better feel for where we are.   
 
 Also if you are going to be at [KubeCon](https://kccnceu18.sched.com/) then please come to the session by [James Strachan on Jenkins X](https://kccnceu18.sched.com/event/Dquk?iframe=no) or pop by the CloudBees both and say hi! 
 

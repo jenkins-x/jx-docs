@@ -70,7 +70,7 @@ Taking this approach also means we will be able to support other pipeline engine
 
 [Prow](https://github.com/kubernetes/test-infra/tree/master/prow) handles Git events and can trigger workflows in Kubernetes.
 
-Prow can run in a highly available mode where multiple pods for a webhook ingress URL.  In contrast with Jenkins if you perform an upgrade then Jenkins has some downtime where webhook events can be missed.  This is on our roadmap and we hope to be available soon.
+Prow can run in a highly available mode where multiple pods for a webhook ingress URL.  In contrast with Jenkins if you perform an upgrade then Jenkins has some downtime where webhook events can be missed.  This is in our future plans and we hope to be available soon.
 
 ## Nexus
 

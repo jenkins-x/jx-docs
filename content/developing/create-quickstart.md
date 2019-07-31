@@ -30,13 +30,13 @@ You are then prompted for a list of quickstarts to choose from.
 If you know the language you wish to use you can filter the list of quickstarts shown via:
 
 ```shell
-$ jx create quickstart  -l go
+$ jx create quickstart -l go
 ```
 
 Or use a text filter to filter on the project names:
 
 ```shell
-$ jx create quickstart  -f http
+$ jx create quickstart -f http
 ```
 
 ### What happens when you create a quickstart
@@ -50,7 +50,7 @@ Once you have chosen the project to create and given it a name the following is 
 * adds default files:
   * `Dockerfile` to build your application as a docker image
   * `Jenkinsfile` to implement the CI / CD pipeline
-  * helm chart to run your application inside Kubernetes
+  * Helm chart to run your application inside Kubernetes
 * register a webhook on the remote git repository to your teams Jenkins
 * add the git repository to your teams Jenkins
 * trigger the first pipeline 
@@ -61,15 +61,21 @@ The source of these Quickstarts are maintained in [the jenkins-quickstarts GitHu
 
 When you create a quickstart we use the [Jenkins X build packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) to match the right pack for the project using the source code language kinds to pick the most suitable match.
 
-When you use [jx create](/getting-started/create-cluster/), [jx install](http://localhost:1313/getting-started/install-on-cluster/) or [jx init](/commands/jx_init/) the [Jenkins X build packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) are cloned into your `~/.jx/draft/packs` folder.
+When you use [jx create](/getting-started/create-cluster/), [jx install](/getting-started/install-on-cluster/) or [jx init](/commands/jx_init/) the [Jenkins X build packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) are cloned into your `~/.jx/draft/packs` folder.
 
-e.g. you can view all the languages supported via build packs on your machine via:
+Depending on your JenkinsX installation type (Serverless Jenkins vs. Static Master Jenkin), you can view all the languages supported via build packs on your machine via:
 
+*Serverless Jenkins*:
 ```shell
-ls -al ~/.jx/draft/packs/github.com/jenkins-x/draft-packs/packs
+ls -al ~/.jx/draft/packs/github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/packs
 ```
 
-Then when you create a quickstart, use [jx create spring](/developing/create-spring/) or [jx import](developing/import/) then the [Jenkins X build packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) are used to:
+*Static Master Jenkins*:
+```shell
+ls -al ~/.jx/draft/packs/github.com/jenkins-x-buildpacks/jenkins-x-classic/packs
+```
+
+Then when you create a quickstart, use [jx create spring](/developing/create-spring/) or [jx import](developing/import/) the [Jenkins X build packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) are used to:
 
 * find the right language pack. e.g. here are the current [list of language packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/tree/master/packs).
 * the language pack is then used to default these files if they don't already exist:
@@ -122,5 +128,5 @@ Or using an abbreviation
 $ jx get qsloc
 ```  
   
-There is also [jx delete quickstartlocation](http://localhost:1313/commands/jx_delete_quickstartlocation/) if you need to remove a git organisation.  
+There is also [jx delete quickstartlocation](/commands/jx_delete_quickstartlocation/) if you need to remove a git organisation.  
                                                                                                  

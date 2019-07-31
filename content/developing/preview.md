@@ -41,7 +41,7 @@ Its common when creating, for example, a web front end to need a backend or data
 
 For each application the preview environment is defined by a helm chart at: `charts/preview/Chart.yaml`. 
 
-### Charts
+## Charts
 
 So you can easily add any dependent helm charts to your preview environment by adding new entries in the file `charts/preview/requirements.yaml`.
 
@@ -58,11 +58,11 @@ Once you know the chart and the repository its in you can add it to your `charts
 dependencies:
 - alias: expose
   name: exposecontroller
-  repository: https://chartmuseum.build.cd.jenkins-x.io
+  repository: http://chartmuseum.jenkins-x.io
   version: 2.3.56
 - alias: cleanup
   name: exposecontroller
-  repository: https://chartmuseum.build.cd.jenkins-x.io
+  repository: http://chartmuseum.jenkins-x.io
   version: 2.3.56
 
   # Ephemeral PostgeSQL created in preview environment.
@@ -79,12 +79,18 @@ dependencies:
 ```
 Note: `- alias: preview` must be last entry in dependecies array and `requirements.yaml` file must end with empty line.
 
-### Service Linking
+## Service Linking
 
 If you need any additional resources like `ConfigMap`, `Secret` or `Service` resources you can add them to `charts/preview/templates/*.yaml`.
 
 You can always _service link_ from the Preview Environment namespace to other namespaces by creating a `Service` with an `externalName` which links to a `Service` running in another namespace (such as Staging or Production) or to point to a service running outside of the Kubernetes cluster completely. 
 
+We have a command [jx step service link](/commands/jx_step_link/) which does this for you:
+
+```
+jx step link services --from-namespace jx-staging --includes "*" --excludes "cheese*"
+ ```
+ 
 ### Configuration
 
 If you need to tweak your application when running in a Preview Environment you can add custom settings to the `charts/preview/values.yaml`file

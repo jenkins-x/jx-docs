@@ -14,7 +14,6 @@ menu:
 weight: 10
 sections_weight: 10
 draft: false
-aliases: [/overview/usage/,/extras/livereload/,/doc/usage/,/usage/]
 toc: true
 ---
 
@@ -39,9 +38,41 @@ sudo mv jx /usr/local/bin
 ### Linux
 
 ```shell
-curl -L https://github.com/jenkins-x/jx/releases/download/v{{< version >}}/jx-linux-amd64.tar.gz | tar xzv 
-sudo mv jx /usr/local/bin
+mkdir -p ~/.jx/bin
+curl -L https://github.com/jenkins-x/jx/releases/download/v{{< version >}}/jx-linux-amd64.tar.gz | tar xzv -C ~/.jx/bin
+export PATH=$PATH:~/.jx/bin
+echo 'export PATH=$PATH:~/.jx/bin' >> ~/.bashrc
 ```
+
+### Windows
+
+- 如果你使用 [Chocolatey](https://chocolatey.org/)，那么这里有一个 [可用的包](https://chocolatey.org/packages/jenkins-x)。
+
+  要安装 `jx` 二进制请运行：
+
+  ```cmd
+  choco install jenkins-x
+  ```
+
+  要升级 `jx` 二进制请运行：
+
+  ```cmd
+  choco upgrade jenkins-x
+  ```
+
+- 如果你使用 [scoop](https://scoop.sh)，那么这里有一个 [可用的清单](https://github.com/lukesampson/scoop/blob/master/bucket/jx.json)。
+
+  要安装 `jx` 二进制请运行：
+
+  ```cmd
+  scoop install jx
+  ```
+
+  要升级 `jx` 二进制请运行：
+
+  ```cmd
+  scoop update jx
+  ```
     
 ### 其他平台
     
