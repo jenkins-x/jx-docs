@@ -41,7 +41,7 @@ e.g.
 jx create cluster gke --remote-environments --tekton
 ```
 
-When creating your Environments via [jx create environment](jx_create_environment) you can also specify the environment is remote via the `--remote` or answering `Y` to the question when prompted.
+When creating your Environments via [jx create environment](/commands/jx_create_environment) you can also specify the environment is remote via the `--remote` or answering `Y` to the question when prompted.
 
 What this means is that if an environment is remote to the development cluster then we don't register the release pipeline 
 of the environment in the Dev cluster; we leave that to the Environment Controller to perform running inside the remote cluster.
@@ -51,7 +51,7 @@ of the environment in the Dev cluster; we leave that to the Environment Controll
 
 If you already have a Dev cluster that was setup with `Staging` and `Production` namespaces inside your Dev cluster then please do the following:
 
-Edit the environments to mark them as remote via [jx edit environment](jx_edit_environment):
+Edit the environments to mark them as remote via [jx edit environment](/commands/jx_edit_environment):
 
 ``` 
 jx edit env staging --remote 
