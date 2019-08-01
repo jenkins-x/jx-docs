@@ -1,5 +1,5 @@
 ---
-date: 2019-08-01T21:10:41Z
+date: 2019-08-01T23:12:13Z
 title: "jx create variable"
 slug: jx_create_variable
 url: /commands/jx_create_variable/
