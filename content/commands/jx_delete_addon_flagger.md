@@ -1,5 +1,5 @@
 ---
-date: 2019-08-01T19:20:44Z
+date: 2019-08-01T18:22:44Z
 title: "jx delete addon flagger"
 slug: jx_delete_addon_flagger
 url: /commands/jx_delete_addon_flagger/
