@@ -1,5 +1,5 @@
 ---
-date: 2019-08-01T21:10:41Z
+date: 2019-08-01T23:12:13Z
 title: "jx step verify preinstall"
 slug: jx_step_verify_preinstall
 url: /commands/jx_step_verify_preinstall/
@@ -24,6 +24,7 @@ jx step verify preinstall [flags]
   -h, --help                 help for preinstall
       --lazy-create string   Specify true/false as to whether to lazily create missing resources. If not specified it is enabled if Terraform is not specified in the jx-requirements.yml file
       --namespace string     the namespace that Jenkins X will be booted into. If not specified it defaults to $DEPLOY_NAMESPACE
+      --workload-identity    Enable this if using GKE Workload Identity to avoid reconnecting to the Cluster.
 ```
 
 ### Options inherited from parent commands
