@@ -1,5 +1,5 @@
 ---
-date: 2019-08-02T11:06:05Z
+date: 2019-08-02T13:44:58Z
 title: "jx step helm build"
 slug: jx_step_helm_build
 url: /commands/jx_step_helm_build/
@@ -28,10 +28,12 @@ jx step helm build [flags]
 ### Options
 
 ```
+      --boot                          In Boot mode we load the Version Stream from the 'jx-requirements.yml' and use that to replace any missing versions in the 'reuqirements.yaml' file from the Version Stream
       --clone-https git@foo/bar.git   Clone the environment Git repo over https rather than ssh which uses git@foo/bar.git (default true)
   -d, --dir string                    The directory containing the helm chart to apply (default ".")
       --git-provider string           The Git provider for the environment Git repository (default "github.com")
   -h, --help                          help for build
+      --provider-values-dir string    The optional directory of kubernetes provider specific override values.tmpl.yaml files a kubernetes provider specific folder
   -r, --recursive                     Build recursively the dependent charts
       --remote                        If enabled assume we are in a remote cluster such as a stand alone Staging/Production cluster
 ```
