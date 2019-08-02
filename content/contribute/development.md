@@ -339,6 +339,21 @@ You should find a green button labeled with "New pull request". But GitHub is cl
 
 The new page summaries the most important information of your pull request. Scroll down and you find the additions of all your commits. Make sure everything looks as expected and click on "Create pull request".
 
+There are a number of automated checks that will run on your PR:
+
+* Semantic Pull Request - validates that your commit messages meet the Conventional Commit format described above. 
+  Additionally your PR must also have a conventional message. The UX for this bot is a little odd as it doesn't go red 
+  if the messages are NOT correct, instead it goes yellow. You need it to go to a green tick!
+* DCO - see [Signoff](#Signoff)
+* Hound - lints the code and comments inline with any issues. You need this to go to a green tick and and say "No violations found. Woof!"
+* lint - runs a lot more lint checks but in a CI job so won't provide inline feedback. You need this to pass as a green tick. Check the log for any errors.
+* bdd - runs the end to end test [create-spring](https://github.com/jenkins-x/bdd-jx/blob/master/test/spring/jx_create_spring.go) in a new team on an existing cluster using static jenkins. Check the logs for errors.
+* tekton - runs the end to end test [create-spring](https://github.com/jenkins-x/bdd-jx/blob/master/test/spring/jx_create_spring.go), [test-quickstart-golang-http](https://github.com/jenkins-x/bdd-jx/blob/master/test/quickstart/helpers.go#L50) and [test-import-golang-http-from-jenkis-x-yml](https://github.com/jenkins-x/bdd-jx/blob/master/test/_import/jx_import.go#L37) in a new cluster using tekton. Check the logs for errors.
+* integration - runs all the tests that are inline in jx codebase. Check the logs for errors.
+* tide - performs the merge when all the checks pass. Don't worry about the state of this one, it doesn't add much info.
+  Clicking on the details link is very helpful as it will take you to the dashboard where you can navigate to the "Tide"
+  screen and check the status of your PR in the merge queue.
+  
 Then Jenkins X itself and the maintainers will review your PR, potentially initiate discussion around your change and finally, merge it successfully in Jenkins X jx. Congratulations !
 
 ## Getting a pull request merged
