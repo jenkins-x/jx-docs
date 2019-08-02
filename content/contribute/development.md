@@ -314,6 +314,63 @@ $ git rebase master
 ```
 Handle any conflicts and make sure your code builds and all tests pass. Then force push your branch to your remote.
 
+## Signoff
+
+A [Developer Certificate of Origin](https://en.wikipedia.org/wiki/Developer_Certificate_of_Origin) is required for all 
+commits. It can be proivided using the [signoff](https://git-scm.com/docs/git-commit#Documentation/git-commit.txt---signoff)
+option for `git commit` or by GPG signing the commit. The developer certificate is available at (https://developercertificate.org/).
+
+Jenkins X enforces the DCO using the a [bot](https://github.com/probot/dco). You can view the details on the DCO check
+by viewing the `Checks` tab in the GitHub pull request.
+
+![DCO signoff check](https://user-images.githubusercontent.com/13410355/42352794-85fe1c9c-8071-11e8-834a-05a4aeb8cc90.png])
+
+You can use a hook to make sure all your commits messages are signed off. 
+
+1. Run `mkdir -p ~/.git-templates/hooks`
+2. Run `git config --global init.templatedir ~/.git-templates`
+3. Add this to `~/.git-templates/hooks/prepare-commit-msg`:
+
+    ```bash
+    #!/bin/sh
+
+    COMMIT_MSG_FILE=$1  # The git commit file.
+    COMMIT_SOURCE=$2    # The current commit message.
+
+    # Add "Signed-off-by: <user> <email>" to every commit message.
+    SOB=$(git var GIT_COMMITTER_IDENT | sed -n 's/^\(.*>\).*$/Signed-off-by: \1/p')
+    git interpret-trailers --in-place --trailer "$SOB" "$COMMIT_MSG_FILE"
+    if test -z "$COMMIT_SOURCE"; then
+    /usr/bin/perl -i.bak -pe 'print "\n" if !$first_line++' "$COMMIT_MSG_FILE"
+    fi
+    ```
+
+4. Make sure this file executable `chmod u+x ~/.git-templates/hooks/prepare-commit-msg`
+5. Run `git init` on the repo you want to use the hook on
+
+Note that this will not override the hooks already defined on your local repo. It adds the `Signed-off-by: ...` line
+after the commit message has been created by the user.
+
+A better alternative is to GPG sign all your commits. This has the advantage that as well as stating your agreement to 
+the DCO it also creates a trust mechanism for your commits. It's a little harder to set up but there is a 
+good guide from GitHub:
+
+1. If you don't already have a GPG key then follow [this guide to create one](https://help.github.com/en/articles/generating-a-new-gpg-key)
+2. Now you have a GPG key follow [this guide to see how to sign your commit](https://help.github.com/en/articles/signing-commits)
+3. Next, tell [tell GitHub about your key so that it can verify your commits](https://help.github.com/en/articles/adding-a-new-gpg-key-to-your-github-account)
+4. Now, configure git to always use sign commits by running 
+
+    ```bash
+    $ git config --global user.signingkey <key id>
+    ``` 
+   
+   The process to find the key id is described in [https://help.github.com/en/articles/checking-for-existing-gpg-keys](https://help.github.com/en/articles/checking-for-existing-gpg-keys)
+
+5. Set up a keychain for your platform. This is entirely optional but means you don't need to type your passphrase every
+   time and allows git to run headless. If you are using a Mac GPG Suite is a good way to do this. If you are on another
+   platform please open a PR against this document and add your recommendations!
+
+
 ## The commit message
 
 Jenkins X uses [conventional commits](https://www.conventionalcommits.org/en/v1.0.0-beta.4/) as it's commit message format. These are particularly important as semantic releases are in use, and they use the commit messages to determine the type of changes in the codebase. Following formalized conventions for commit messages the semantic release automatically determines the next [semantic version](https://semver.org) number and generates a changelog based on the conventional commit.
