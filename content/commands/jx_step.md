@@ -1,5 +1,5 @@
 ---
-date: 2019-08-02T13:44:58Z
+date: 2019-08-02T14:55:42Z
 title: "jx step"
 slug: jx_step
 url: /commands/jx_step/
@@ -46,6 +46,7 @@ jx step [flags]
 * [jx step custom](/commands/jx_step_custom/)	 - Triggers a pipeline in a custom Jenkins server using the local Jenkinsfile
 * [jx step e2e](/commands/jx_step_e2e/)	 - e2e [command]
 * [jx step env](/commands/jx_step_env/)	 - env [command]
+* [jx step expose](/commands/jx_step_expose/)	 - This step generates Ingress resources for exposed services
 * [jx step get](/commands/jx_step_get/)	 - get [command]
 * [jx step git](/commands/jx_step_git/)	 - git [command]
 * [jx step gpg](/commands/jx_step_gpg/)	 - Creates the GPG credentials file for GPG signing releases

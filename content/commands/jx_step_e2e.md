@@ -1,5 +1,5 @@
 ---
-date: 2019-08-02T13:44:58Z
+date: 2019-08-02T14:55:42Z
 title: "jx step e2e"
 slug: jx_step_e2e
 url: /commands/jx_step_e2e/
