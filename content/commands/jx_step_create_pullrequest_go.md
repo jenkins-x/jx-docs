@@ -1,25 +1,31 @@
 ---
 date: 2019-08-03T12:13:53Z
-title: "jx step create pullrequest repositories"
-slug: jx_step_create_pullrequest_repositories
-url: /commands/jx_step_create_pullrequest_repositories/
+title: "jx step create pullrequest go"
+slug: jx_step_create_pullrequest_go
+url: /commands/jx_step_create_pullrequest_go/
 ---
-## jx step create pullrequest repositories
+## jx step create pullrequest go
 
-Creates a Pull Request on a 'jx boot' git repository to mirror all the SourceRepository CRDs into the repositories Chart
+Creates a Pull Request on a git repository updating a go module dependency
 
 ### Synopsis
 
-Creates a Pull Request on a 'jx boot' git repository to mirror all the SourceRepository CRDs into the repositories Chart
+Creates a Pull Request to change a go module dependency, updating the go.mod and go.sum files to use a new version 
+
+Files named Makefile or Makefile. * will be updated
 
 ```
-jx step create pullrequest repositories [flags]
+jx step create pullrequest go [flags]
 ```
 
 ### Examples
 
 ```
+  # update a go dependency
+  jx step create pr go --name github.com/myorg/myrepo --version v1.2.3 --repo https://github.com/jenkins-x/cloud-environments.git
   
+  # update a go dependency using a custom build step (to update the 'go.sum' file)
+  jx step create pr go --name github.com/myorg/myrepo --version v1.2.3 --build "make something" --repo https://github.com/jenkins-x/cloud-environments.git
 ```
 
 ### Options
@@ -27,9 +33,11 @@ jx step create pullrequest repositories [flags]
 ```
       --base string        The branch to create the pull request into (default "master")
       --branch string      Branch to clone and generate a pull request from (default "master")
+      --build string       The build command to update the 'go.sum' file after the change to the source (default "make build")
       --component string   The component of the git repo which caused this change; useful if you have a complex or monorepo setup and want to differentiate between different components from the same repo
       --dry-run            Perform a dry run, the change will be generated and committed, but not pushed or have a PR created
-  -h, --help               help for repositories
+  -h, --help               help for go
+      --name string        The name of the go module dependency to use when doing updates
   -r, --repo stringArray   Git repo update
       --src-repo string    The git repo which caused this change; if this is a dependency update this will cause commit messages to be generated which can be parsed by jx step changelog. By default this will be read from the environment variable REPO_URL
   -v, --version string     The version to change. If no version is supplied the latest version is found
