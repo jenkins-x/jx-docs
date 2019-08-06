@@ -108,6 +108,9 @@ pipeline.
     * **[`containerOptions`](#containerOptions)** - Default configuration for
     step containers within this pipeline, overriding any common settings with
     [build pack or project](#top-level-configuration) default configuration.
+    * **`volumes`** - One or more [Kubernetes volumes](https://kubernetes.io/docs/concepts/storage/volumes/)
+    which will be added to every stage in the pipeline, and can be mounted via
+    `containerOptions`.
 * **<a id='dir'>`dir`</a>** - Optional default working directory for stages and
 steps in this pipeline. Can either be relative, under the `/workspace/source`
 directory were the project source will be checked out, or absolute.
@@ -125,6 +128,8 @@ if one is specified.
     step containers within this stage, overriding any common settings with
     [the whole pipeline](#configuration-for-the-whole-pipeline) default
     configuration.
+    * **`volumes`** - One or more [Kubernetes volumes](https://kubernetes.io/docs/concepts/storage/volumes/)
+    which will be added to this stage's pod, and can be mounted via `containerOptions`.
 * **[`env`](#env)** - Environment variables set for all steps or nested stages,
 overriding any variables defined for [the whole pipeline](#configuration-for-the-whole-pipeline).
 * **<a id='nestedstages'>`stages`</a>** - A list of stages to run sequentially
