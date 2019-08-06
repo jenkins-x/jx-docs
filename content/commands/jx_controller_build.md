@@ -1,5 +1,5 @@
 ---
-date: 2019-08-06T09:21:14Z
+date: 2019-08-06T14:04:29Z
 title: "jx controller build"
 slug: jx_controller_build
 url: /commands/jx_controller_build/
