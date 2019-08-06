@@ -1,5 +1,5 @@
 ---
-date: 2019-08-06T14:04:29Z
+date: 2019-08-06T14:42:57Z
 title: "jx controller build"
 slug: jx_controller_build
 url: /commands/jx_controller_build/
@@ -19,9 +19,11 @@ jx controller build [flags]
 ### Options
 
 ```
-      --git-credentials    If enable then lets run the 'jx step git credentials' step to initialise git credentials
-  -h, --help               help for build
-  -n, --namespace string   The namespace to watch or defaults to the current namespace
+      --git-credentials              If enable then lets run the 'jx step git credentials' step to initialise git credentials
+      --git-reporting                If enabled then lets report pipeline success/failures to the git provider. Note this is purely tactical until we can do this natively inside tekton
+  -h, --help                         help for build
+  -n, --namespace string             The namespace to watch or defaults to the current namespace
+      --target-url-template string   The Go template for generating the target URL of pipeline logs/views if git reporting is enabled
 ```
 
 ### Options inherited from parent commands
