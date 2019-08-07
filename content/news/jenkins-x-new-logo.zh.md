@@ -10,14 +10,14 @@ aliases: []
 author: tracymiranda
 translator: donhui
 ---
-早在2018年3月，Jenkins X 项目作为 Kubernetes 自动化 CI/CD 的 Jenkins 对应项目突然出现。作为这次发行的一部分，它的 logo 是 Jenkins logo 的一个变种，一个穿燕尾服的船长，他的帽子上有 Kubernetes logo。
+早在2018年3月，Jenkins X 项目作为 Kubernetes 自动化 CI/CD 的 Jenkins 对应项目突然出现。作为这次发行的一部分，它的 logo 是 Jenkins logo 的一个变种，一个叼着烟斗的船长，他的帽子上有 Kubernetes logo。
 
 在软件中，我们喜欢说命名是困难的——因为确实如此。另一件同样困难的事情是试图在 logo 中捕捉项目的本质。Logo 在一个小空间里有很多意义。Icon ，例如 Jenkins logo，与许多开发人员建立强烈的情感联系。因此，考虑到这一点，我们总是密切听取有关新 logo 的反馈，以及人们如何看待这个项目。
 
 ## 为什么我们要改变 logo
 在听取各种不同来源的各种反馈时，我们听到了许多积极的事情，但也强调了一些问题和困惑。
 
-* 并不是每个人都喜欢这个 logo，我们听到了不少关于人们不喜欢它的方面的反馈意见，其中“吸烟”排在最前面。
+* 并不是每个人都喜欢这个 logo，我们听到了不少关于人们不喜欢它的方面的反馈意见，其中“叼着烟斗”这个反馈意见排在最前面。
 * 与 Jenkins 项目的混淆——我们也看到这个 logo 与 Jenkins 的其他吉祥物更加一致，这导致了关于 Jenkins X 是什么类型的项目的混淆——一些人认为这是生态系统中的另一个插件。
 * 我们还听说，使用 Kubernetes logo 令人困惑，或可能并非完全在 Kubernetes logo 指南的范围内。
 * 从实用的角度来看，我们也听说这个 logo 太详细了，因此不能很好地作为一个 icon，尤其是一个 favicon。它被看作是吉祥物而不是 logo。
