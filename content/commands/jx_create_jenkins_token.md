@@ -1,5 +1,5 @@
 ---
-date: 2019-08-07T10:12:06Z
+date: 2019-08-07T12:12:00Z
 title: "jx create jenkins token"
 slug: jx_create_jenkins_token
 url: /commands/jx_create_jenkins_token/
@@ -41,7 +41,7 @@ jx create jenkins token [username] [flags]
       --namespace string          The namespace of the secret where the Jenkins API token will be stored
       --no-rest                   Disables the use of REST calls to automatically find the API token if the user and password are known
   -p, --password string           The User password to try automatically create a new API Token
-      --recreate-token            Should we recreate teh API token if it already exists
+      --recreate-token            Should we recreate the API token if it already exists
       --timeout string            The timeout if using REST to generate the API token (by passing username and password)
   -u, --url string                The URL of the Git server to add a user
 ```
