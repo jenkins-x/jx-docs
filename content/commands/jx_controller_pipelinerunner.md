@@ -1,5 +1,5 @@
 ---
-date: 2019-08-07T12:12:00Z
+date: 2019-08-07T14:24:32Z
 title: "jx controller pipelinerunner"
 slug: jx_controller_pipelinerunner
 url: /commands/jx_controller_pipelinerunner/
@@ -34,7 +34,7 @@ jx controller pipelinerunner [flags]
       --port int                     The TCP port to listen on. (default 8080)
       --semantic-release             Enable semantic releases
       --service-account string       The Kubernetes ServiceAccount to use to run the pipeline. (default "tekton-bot")
-      --use-meta-pipeline            Uses the meta pipeline to create the pipeline.
+      --use-meta-pipeline            Uses the meta pipeline to create the pipeline. (default true)
 ```
 
 ### Options inherited from parent commands
