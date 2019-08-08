@@ -22,7 +22,7 @@
     /* Show it is fixed to the top */
     body {
       min-height: 75rem;
-      padding-top: 4.5rem;
+      padding: 4.5rem 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     }
 
@@ -77,6 +77,11 @@
     }
 
     /* Nav */
+
+    .navbar {
+      padding: 1rem 2rem;
+    }
+
     a.navbar-brand,
     a.navbar-brand:visited {
       font-family: SFProDisplay-Bold;
@@ -149,15 +154,15 @@
           src="https://raw.githubusercontent.com/cdfoundation/artwork/master/jenkinsx/stacked/color/jenkinsx-stacked-color.png">
         <div class="tag-line">Accelerate Your Continuous Delivery on Kubernetes</div>
         <p>
-          <a href="#" class="btn btn-lg btn-primary my-2">Get started</a>
+          <a href="#" class="btn btn-lg btn-primary my-4">Get started</a>
         </p>
       </div>
     </section>
     <section class="py-5 bg-light">
       <div class="container">
         <div class="row">
-          <div class="col col-lg-2">
-            <div class="tag-line-secondary">Jenkins X provides pipeline automation, built-in GitOps, and preview
+          <div class="col col-lg-12">
+            <div class="tag-line-secondary mx-auto">Jenkins X provides pipeline automation, built-in GitOps, and preview
               environments to help teams collaborate
               and accelerate their software delivery at any scale.</div>
           </div>
