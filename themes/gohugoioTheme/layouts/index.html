@@ -38,7 +38,6 @@
     }
 
     .tag-line {
-      height: 134px;
       color: #37373C;
       font-size: 56px;
       font-weight: 300;
@@ -46,15 +45,29 @@
       text-align: center;
     }
 
-    .tag-line-secondary {
-      height: 144px;
-      width: 935px;
-      color: #37373C;
+    @media (max-width: 576px) {
+      .tag-line {
+        font-size: 32px;
+        font-weight: 300;
+        line-height: 42px;
+      }
+    }
 
+    .tag-line-secondary {
+      color: #37373C;
       font-size: 40px;
       font-weight: 300;
       line-height: 48px;
       text-align: center;
+    }
+
+    @media (max-width: 576px) {
+      .tag-line-secondary {
+        font-size: 22px;
+        font-weight: 300;
+        line-height: 28px;
+        text-align: left;
+      }
     }
 
     /* Get started button */
@@ -403,11 +416,14 @@
           </div>
         </div>
         <div class="row">
-          <div class="col">
-            <iframe width="640" height="360" src="https://www.youtube.com/embed/kPes3rvT1UM" frameborder="0"
-              allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+          <div class="col-xs-12 col-lg-6">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/kPes3rvT1UM" frameborder="0"
+                allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+            </div>
           </div>
-          <div class="col col-lg-4">
+          <div class="col-sm-hidden col-lg-2"></div>
+          <div class="col-sm-12 col-lg-4">
             <div class="w-100 w-50-ns tc">
               <p class="f2 m0 p0 pt3">Mac OS</p>
               <div class="code f6 bg-black light-gray lh-copy pv3 ph3 br2 w-100 w-50-ns center mb2 tl">
@@ -433,7 +449,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col">
+          <div class="col-xs-12 col-md-6">
             <blockquote class="blockquote text-right">
               <p class="mb-0">I've been playing with @jenkinsxio lately, and I have this feeling that I might get fired
                 when I finish setting it up. This thing does everything for you, and automatically!
@@ -445,7 +461,7 @@
                   2019</cite></footer>
             </blockquote>
           </div>
-          <div class="col">
+          <div class="col-xs-12 col-md-6">
             <blockquote class="blockquote text-right">
               <p class="mb-0">Take a look at @jenkinsxio, github-based automatic k8es deployments, environments per
                 branch... It’s really cool!!</p>
