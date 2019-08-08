@@ -1,268 +1,338 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
 
-    <title>Jenkins X - Kubernetes Native CI/CD</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
 
+  <title>Jenkins X - Kubernetes Native CI/CD</title>
 
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- <link href="https://jenkins-x.io/dist/main.css" rel="stylesheet" type="text/css"> -->
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <!-- Custom styles for this template -->
-    <style>
+  <!-- Original CSS link for search styling -->
+  <link href="https://jenkins-x.io/dist/main.css" rel="stylesheet" type="text/css">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <!-- Custom styles for this template -->
+  <style>
     /* Show it is fixed to the top */
     body {
       min-height: 75rem;
       padding-top: 4.5rem;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     }
+
     /* Home page Hero, contains logo and main tag line */
     .jumbotron {
       background-color: #fff;
     }
+
     .tag-line {
-      height: 134px; color: #37373C;	
-      font-size: 56px;	
-      font-weight: 300;	
-      line-height: 67px;	
+      height: 134px;
+      color: #37373C;
+      font-size: 56px;
+      font-weight: 300;
+      line-height: 67px;
       text-align: center;
     }
-    .tag-line-secondary {	
-      height: 144px;	
-      width: 935px;	
-      color: #37373C;	
-  
-      font-size: 40px;	
-      font-weight: 300;	
-      line-height: 48px;	
+
+    .tag-line-secondary {
+      height: 144px;
+      width: 935px;
+      color: #37373C;
+
+      font-size: 40px;
+      font-weight: 300;
+      line-height: 48px;
       text-align: center;
     }
+
     /* Get started button */
-    .btn-primary.my-2 {	
-      height: 48px;	
-      width: 180px;	
-      border: 2px solid #289CE1;	
-      border-radius: 4px;	
+    .btn-primary.my-2 {
+      height: 48px;
+      width: 180px;
+      border: 2px solid #289CE1;
+      border-radius: 4px;
       background-color: #289CE1;
     }
-    .features {	height: 54px;	
- 
-      color: #37373C;	
-      font-size: 45px;	
-      font-weight: 300;	
+
+    .features {
+      height: 54px;
+
+      color: #37373C;
+      font-size: 45px;
+      font-weight: 300;
       line-height: 54px;
       margin-bottom: 70px;
     }
-    .shape {	height: 87.1px;	width: 78.38px;	fill: #73C3D5;}
- 
-    </style>
-    <script src="https://kit.fontawesome.com/6dd680123e.js"></script>
-  </head>
 
-  <body>
+    .shape {
+      height: 87.1px;
+      width: 78.38px;
+      fill: #73C3D5;
+    }
 
-<nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #fff">
-  <a class="navbar-brand" href="#">Jenkins X</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarCollapse">
-    <ul class="navbar-nav  ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#">What is Jenkins X?</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Documentation</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Community</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Blog</a>
-      </li>
-    </ul>
+    /* Nav */
+    a.navbar-brand,
+    a.navbar-brand:visited {
+      font-family: SFProDisplay-Bold;
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 0px;
+      line-height: 20px;
+      color: #1E252C;
+    }
 
-<form class="form-inline mt-2 mt-md-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
-<main role="main">
+    .nav-link {
+      color: #1E252C;
+    }
 
-  <section class="jumbotron text-center">
-    <div class="container">
-      <img class="img-fluid" style="max-width:70%" height="auto" src="https://raw.githubusercontent.com/cdfoundation/artwork/master/jenkinsx/stacked/color/jenkinsx-stacked-color.png">
-      <div class="tag-line">Accelerate Your Continuous Delivery on Kubernetes</div>
-      <p>
-        <a href="#" class="btn btn-lg btn-primary my-2">Get started</a>
-      </p>
-    </div>
-  </section>
-  <section class="py-5 bg-light">
-    <div class="container">
-      <div class="row">
-        <div class="col col-lg-2">
-          <div class="tag-line-secondary">Jenkins X provides pipeline automation, built-in GitOps, and preview environments to help teams collaborate 
-            and accelerate their software delivery at any scale.</div>
-        </div>
+    .nav-item {
+      margin-right: 8px;
+    }
+
+    #search-input {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+  
+  </style>
+  <script src="https://kit.fontawesome.com/6dd680123e.js"></script>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-md fixed-top" style="background-color: #fff">
+    <a class="navbar-brand" href="#">Jenkins X</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav  ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">What is Jenkins X?</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Documentation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Community</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Blog</a>
+        </li>
+      </ul>
+
+      <div class="db dib-ns pl3"><form id="site-search-form" action="" role="search">
+        <fieldset class="bn ma0 pa0">
+          <label class="clip" for="email-address">Search</label>
+          <span class="algolia-autocomplete" style="position: relative; display: inline-block; direction: ltr;"><input type="search" id="search-input" class="needs-js bg-left bg-transparent bn f5 input-reset lh-solid mt3 mt0-ns pl4 pv2 w5 white ds-input" placeholder="Search the Docs" name="email-address" value="" style="background-image: url(&quot;/images/icon-search.png&quot;); background-size: 16px 16px; position: relative; vertical-align: top;" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-labelledby="search-input" aria-owns="algolia-autocomplete-listbox-0" dir="auto"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: sans-serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: normal; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><span class="ds-dropdown-menu" role="listbox" id="algolia-autocomplete-listbox-0" style="position: absolute; top: 100%; z-index: 100; left: 0px; right: auto; display: none;"><div class="ds-dataset-1"></div></span></span>
+        </fieldset>
+      </form>
       </div>
-    </div>
-  </section>
 
-  <section class="py-5">
-    <div class="container">
-      <div class="row">
-          <div class="col">
-              <div class="features text-center">Features</div>
-          </div>
-      </div>
-      <div class="row">
-        <div class="col">
-            <div class="media">
-                <img class="align-self-start mr-3" src="https://jenkins-x.io/images/icon-fast.svg" alt="Jenkins X Pipelines">
-                <div class="media-body">
-                  <h2 class="mt-0">Pipelines<br/>Automated CI/CD</h2>
-                  <p>Rather than having to have deep knowledge of the internals of Jenkins Pipeline, Jenkins X will default awesome pipelines for your projects that implements fully CI and CD</p>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="media">
-                <img class="align-self-start mr-3" src="https://jenkins-x.io/images/icon-custom-outputs.svg" alt="GitOps">
-                <div class="media-body">
-                  <h2 class="mt-0">Environments<br/>Environment Promotion via GitOps</h2>
-                  <p>Each team gets a set of Environments. Jenkins X then automates the management of the Environments and the Promotion of new versions of Applications between Environments via GitOps</p>
-                </div>
-            </div>
-        </div>
-        <div class="w-100"><p class="h-75 d-inline-block"><br/></p></div>
-        <div class="col">
-            <div class="media">
-                <img class="align-self-start mr-3" src="https://jenkins-x.io/images/icon-built-in-templates.svg" alt="Preview Environments">
-                <div class="media-body">
-                  <h2 class="mt-0">Preview Environments<br/>Pull Request Preview Environments</h2>
-                  <p>Jenkins X automatically spins up Preview Environments for your Pull Requests so you can get fast feedback before changes are merged to master</p>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="media">
-                <img class="align-self-start mr-3" src="https://jenkins-x.io/images/icon-content-management.svg" alt="Feedback">
-                <div class="media-body">
-                  <h2 class="mt-0">Feedback<br/>Feedback on Issues and Pull Requests</h2>
-                  <p>Jenkins X automatically comments on your Commits, Issues and Pull Requests with feedback as code is ready to be previewed, is promoted to environments or if Pull Requests are generated automatically to upgrade versions.</p>
-                </div>
-            </div>
-        </div>
-      </div>
+      <span class="pl-4" style="font-size: 32px; color: #37373C;">
+        <i class="fab fa-github"></i>
+      </span>
     </div>
-  </section>
+  </nav>
+  <main role="main">
 
-  <section class="py-5 bg-light">
+    <section class="jumbotron text-center">
       <div class="container">
-          <div class="row">
-              <div class="col">
-                  <div class="features text-center">Getting started with Jenkins X is easy</div>
-              </div>
-          </div>
+        <img class="img-fluid" style="max-width:70%" height="auto"
+          src="https://raw.githubusercontent.com/cdfoundation/artwork/master/jenkinsx/stacked/color/jenkinsx-stacked-color.png">
+        <div class="tag-line">Accelerate Your Continuous Delivery on Kubernetes</div>
+        <p>
+          <a href="#" class="btn btn-lg btn-primary my-2">Get started</a>
+        </p>
+      </div>
+    </section>
+    <section class="py-5 bg-light">
+      <div class="container">
         <div class="row">
-            <div class="col">
-                <iframe width="640" height="360" src="https://www.youtube.com/embed/kPes3rvT1UM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
-              </div>
-              <div class="col col-lg-3">
-                  <div class="w-100 w-50-ns tc">
-                      <p class="f2 mid-gray m0 p0 pt3">Mac OS</p>
-                      <div class="code f6 bg-black light-gray lh-copy pv3 ph3 br2 w-100 w-50-ns center mb2 tl">
-                        $ brew tap jenkins-x/jx <br>
-                        $ brew install jx <br>
-                      </div>
-                      <p class="f2 mid-gray m0 p0 pt3">Other OS</p>
-                      <p class="f3 nested-links">
-                      See the <a href="https://jenkins-x.io/getting-started/" class="link">Getting started guide </a> for more<b></b>
-                      </p>
-    
-                </a></p>
-                    </div>
-              </div>
+          <div class="col col-lg-2">
+            <div class="tag-line-secondary">Jenkins X provides pipeline automation, built-in GitOps, and preview
+              environments to help teams collaborate
+              and accelerate their software delivery at any scale.</div>
+          </div>
         </div>
       </div>
-  </section>
+    </section>
 
     <section class="py-5">
-        <div class="container">
-          <div class="row">
-              <div class="col">
-                  <div class="features text-center">See what others are saying about Jenkins X</div>
-              </div>
-          </div>
-          <div class="row">
-            <div class="col">
-                <blockquote class="blockquote text-right">
-                    <p class="mb-0">I've been playing with @jenkinsxio lately, and I have this feeling that I might get fired when I finish setting it up. This thing does everything for you, and automatically!
-
-                        I just keep repeating to my self: this is bananas, how can this be so awesome?!</p>
-                    <footer class="blockquote-footer">Shailyn Oritz (@ROOT_OR_DEATH) <cite title="Source Title">July 26, 2019</cite></footer>
-                  </blockquote>
-            </div>
-            <div class="col">
-                <blockquote class="blockquote text-right">
-                    <p class="mb-0">Take a look at @jenkinsxio, github-based automatic k8es deployments, environments per branch... It’s really cool!!</p>
-                    <footer class="blockquote-footer">Ibai Ruiz (@iwomatic)<cite title="Source Title">July 24, 2019</cite></footer>
-                  </blockquote>
-            </div>
-            <div class="w-100"><p class="h-75 d-inline-block"><br/></p></div>
- 
-
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="features text-center">Features</div>
           </div>
         </div>
+        <div class="row">
+          <div class="col">
+            <div class="media">
+              <img class="align-self-start mr-3" src="https://jenkins-x.io/images/icon-fast.svg"
+                alt="Jenkins X Pipelines">
+              <div class="media-body">
+                <h2 class="mt-0">Pipelines<br />Automated CI/CD</h2>
+                <p>Rather than having to have deep knowledge of the internals of Jenkins Pipeline, Jenkins X will
+                  default awesome pipelines for your projects that implements fully CI and CD</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="media">
+              <img class="align-self-start mr-3" src="https://jenkins-x.io/images/icon-custom-outputs.svg" alt="GitOps">
+              <div class="media-body">
+                <h2 class="mt-0">Environments<br />Environment Promotion via GitOps</h2>
+                <p>Each team gets a set of Environments. Jenkins X then automates the management of the Environments and
+                  the Promotion of new versions of Applications between Environments via GitOps</p>
+              </div>
+            </div>
+          </div>
+          <div class="w-100">
+            <p class="h-75 d-inline-block"><br /></p>
+          </div>
+          <div class="col">
+            <div class="media">
+              <img class="align-self-start mr-3" src="https://jenkins-x.io/images/icon-built-in-templates.svg"
+                alt="Preview Environments">
+              <div class="media-body">
+                <h2 class="mt-0">Preview Environments<br />Pull Request Preview Environments</h2>
+                <p>Jenkins X automatically spins up Preview Environments for your Pull Requests so you can get fast
+                  feedback before changes are merged to master</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="media">
+              <img class="align-self-start mr-3" src="https://jenkins-x.io/images/icon-content-management.svg"
+                alt="Feedback">
+              <div class="media-body">
+                <h2 class="mt-0">Feedback<br />Feedback on Issues and Pull Requests</h2>
+                <p>Jenkins X automatically comments on your Commits, Issues and Pull Requests with feedback as code is
+                  ready to be previewed, is promoted to environments or if Pull Requests are generated automatically to
+                  upgrade versions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    
+
     <section class="py-5 bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 text-center">
-                    <span  style="font-size: 64px; color: #37373C;">
-                        <i class="fab fa-slack"></i>
-                      </span>
-                  <h2>Join the conversation</h2>
-                  <p>Have a question? Learn more by talking with other contributors.</p>
-                  <p><a class="btn btn-primary my-2" href="#" role="button">Join »</a></p>
-                </div><!-- /.col-lg-4 -->
-                <div class="col-lg-4 text-center">
-                    <span  style="font-size: 64px; color: #37373C;">
-                        <i class="fab fa-github"></i>
-                      </span>
-                  <h2>Contributors welcome</h2>
-                  <p>We value every contribution. Join us on GitHub to learn how you can help.</p>
-                  <p><a class="btn btn-primary my-2" href="#" role="button">Contribute »</a></p>
-                </div><!-- /.col-lg-4 -->
-             
-                <div class="col-lg-4 text-center">
-                    <span  style="font-size: 64px; color: #37373C;">
-                      <i class="fab fa-twitter"></i>
-                    </span>
-                  <h2>Follow us on Twitter</h2>
-                  <p>Don't miss out! Follow us for feature announcements and other news.</p>
-                  <p><a class="btn btn-primary my-2" href="#" role="button">Follow »</a></p>
-                </div><!-- /.col-lg-4 -->
-              </div>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="features text-center">Getting started with Jenkins X is easy</div>
+          </div>
         </div>
+        <div class="row">
+          <div class="col">
+            <iframe width="640" height="360" src="https://www.youtube.com/embed/kPes3rvT1UM" frameborder="0"
+              allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+          </div>
+          <div class="col col-lg-3">
+            <div class="w-100 w-50-ns tc">
+              <p class="f2 mid-gray m0 p0 pt3">Mac OS</p>
+              <div class="code f6 bg-black light-gray lh-copy pv3 ph3 br2 w-100 w-50-ns center mb2 tl">
+                $ brew tap jenkins-x/jx <br>
+                $ brew install jx <br>
+              </div>
+              <p class="f2 mid-gray m0 p0 pt3">Other OS</p>
+              <p class="f3 nested-links">
+                See the <a href="https://jenkins-x.io/getting-started/" class="link">Getting started guide </a> for
+                more<b></b>
+              </p>
+
+              </a></p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-  
-</main>
+
+    <section class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="features text-center">See what others are saying about Jenkins X</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <blockquote class="blockquote text-right">
+              <p class="mb-0">I've been playing with @jenkinsxio lately, and I have this feeling that I might get fired
+                when I finish setting it up. This thing does everything for you, and automatically!
+
+                I just keep repeating to my self: this is bananas, how can this be so awesome?!</p>
+              <footer class="blockquote-footer">Shailyn Oritz (@ROOT_OR_DEATH) <cite title="Source Title">July 26,
+                  2019</cite></footer>
+            </blockquote>
+          </div>
+          <div class="col">
+            <blockquote class="blockquote text-right">
+              <p class="mb-0">Take a look at @jenkinsxio, github-based automatic k8es deployments, environments per
+                branch... It’s really cool!!</p>
+              <footer class="blockquote-footer">Ibai Ruiz (@iwomatic)<cite title="Source Title">July 24, 2019</cite>
+              </footer>
+            </blockquote>
+          </div>
+          <div class="w-100">
+            <p class="h-75 d-inline-block"><br /></p>
+          </div>
 
 
-    <!-- Bootstrap core JavaScript
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 text-center">
+            <span style="font-size: 64px; color: #37373C;">
+              <i class="fab fa-slack"></i>
+            </span>
+            <h2>Join the conversation</h2>
+            <p>Have a question? Learn more by talking with other contributors.</p>
+            <p><a class="btn btn-primary my-2" href="#" role="button">Join »</a></p>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4 text-center">
+            <span style="font-size: 64px; color: #37373C;">
+              <i class="fab fa-github"></i>
+            </span>
+            <h2>Contributors welcome</h2>
+            <p>We value every contribution. Join us on GitHub to learn how you can help.</p>
+            <p><a class="btn btn-primary my-2" href="#" role="button">Contribute »</a></p>
+          </div><!-- /.col-lg-4 -->
+
+          <div class="col-lg-4 text-center">
+            <span style="font-size: 64px; color: #37373C;">
+              <i class="fab fa-twitter"></i>
+            </span>
+            <h2>Follow us on Twitter</h2>
+            <p>Don't miss out! Follow us for feature announcements and other news.</p>
+            <p><a class="btn btn-primary my-2" href="#" role="button">Follow »</a></p>
+          </div><!-- /.col-lg-4 -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- Bootstrap core JavaScript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
 
-  </body>
-  </html>
+</body>
+
+</html>
