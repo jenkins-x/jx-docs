@@ -1,5 +1,5 @@
 ---
-date: 2019-08-09T17:34:03Z
+date: 2019-08-10T10:05:39Z
 title: "jx install"
 slug: jx_install
 url: /commands/jx_install/
@@ -58,6 +58,7 @@ jx install [flags]
       --cloud-environment-repo string         Cloud Environments Git repo (default "https://github.com/jenkins-x/cloud-environments")
       --cloudbees-auth string                 Auth used when setting up a letter/tenant cluster, format: 'username:password'
       --cloudbees-domain string               When setting up a letter/tenant cluster, this creates a tenant cluster on the cloudbees domain which is retrieved via the required URL
+      --config-file string                    Configuration file used for installation
       --default-admin-password string         the default admin password to access Jenkins, Kubernetes Dashboard, ChartMuseum and Nexus
       --default-admin-username string         the default admin username to access Jenkins, Kubernetes Dashboard, ChartMuseum and Nexus (default "admin")
       --default-environment-prefix string     Default environment repo prefix, your Git repos will be of the form 'environment-$prefix-$envName'
@@ -87,6 +88,7 @@ jx install [flags]
       --ingress-deployment string             The name of the Ingress controller Deployment (default "jxing-nginx-ingress-controller")
       --ingress-namespace string              The namespace for the Ingress controller (default "kube-system")
       --ingress-service string                The name of the Ingress controller Service (default "jxing-nginx-ingress-controller")
+      --install-dependencies                  Enables automatic dependencies installation when required
       --install-only                          Force the install command to fail if there is already an installation. Otherwise lets update the installation
       --kaniko                                Use Kaniko for building docker images
       --keep-exposecontroller-job             Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
@@ -97,6 +99,7 @@ jx install [flags]
       --lts-bucket string                     The bucket to use for Long Term Storage. If the bucket doesn't exist, an attempt will be made to create it, otherwise random naming will be used
       --namespace string                      The namespace the Jenkins X platform should be installed into (default "jx")
       --ng                                    Use the Next Generation Jenkins X features like Prow, Tekton, No Tiller, Vault, Dev GitOps
+      --no-brew                               Disables brew package manager on MacOS when installing binary dependencies
       --no-default-environments               Disables the creation of the default Staging and Production environments
       --no-gitops-env-apply                   When using GitOps to create the source code for the development environment and installation, don't run 'jx step env apply' to perform the install
       --no-gitops-env-repo                    When using GitOps to create the source code for the development environment this flag disables the creation of a git repository for the source code
@@ -110,6 +113,7 @@ jx install [flags]
       --register-local-helmrepo               Registers the Jenkins X ChartMuseum registry with your helm client [default false]
       --remote-environments                   Indicates you intend Staging and Production environments to run in remote clusters. See https://jenkins-x.io/getting-started/multi-cluster/
       --remote-tiller                         If enabled and we are using tiller for helm then run tiller remotely in the kubernetes cluster. Otherwise we run the tiller process locally. (default true)
+      --skip-auth-secrets-merge               Skips merging the secrets from local files with the secrets from Kubernetes cluster
       --skip-cluster-role                     Don't enable cluster admin role for user
       --skip-ingress                          Skips the installation of ingress controller. Note that a ingress controller must already be installed into the cluster in order for the installation to succeed
       --skip-setup-tiller                     Don't setup the Helm Tiller service - lets use whatever tiller is already setup for us.
@@ -131,12 +135,8 @@ jx install [flags]
 ### Options inherited from parent commands
 
 ```
-  -b, --batch-mode                Runs in batch mode without prompting for user input (default true)
-      --config-file string        Configuration file used for installation
-      --install-dependencies      Enables automatic dependencies installation when required
-      --no-brew                   Disables brew package manager on MacOS when installing binary dependencies
-      --skip-auth-secrets-merge   Skips merging the secrets from local files with the secrets from Kubernetes cluster
-      --verbose                   Enables verbose output
+  -b, --batch-mode   Runs in batch mode without prompting for user input (default true)
+      --verbose      Enables verbose output
 ```
 
 ### SEE ALSO
@@ -144,4 +144,4 @@ jx install [flags]
 * [jx](/commands/jx/)	 - jx is a command line tool for working with Jenkins X
 * [jx install dependencies](/commands/jx_install_dependencies/)	 - Install missing dependencies
 
-###### Auto generated by spf13/cobra on 9-Aug-2019
+###### Auto generated by spf13/cobra on 10-Aug-2019
