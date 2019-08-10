@@ -1,5 +1,5 @@
 ---
-date: 2019-08-08T18:23:15Z
+date: 2019-08-10T10:05:39Z
 title: "jx create cluster oke"
 slug: jx_create_cluster_oke
 url: /commands/jx_create_cluster_oke/
@@ -43,6 +43,7 @@ jx create cluster oke [flags]
       --clusterMaxWaitSeconds string          The maximum time to wait for the work request to reach the state defined by --wait-for-state. Defaults to 1200 seconds.
       --clusterWaitIntervalSeconds string     Check every --wait-interval-seconds to see whether the work request to see if it has reached the state defined by --wait-for-state.
       --compartmentId string                  The OCID of the compartment in which to create the cluster.
+      --config-file string                    Configuration file used for installation
       --default-admin-password string         the default admin password to access Jenkins, Kubernetes Dashboard, ChartMuseum and Nexus
       --default-admin-username string         the default admin username to access Jenkins, Kubernetes Dashboard, ChartMuseum and Nexus (default "admin")
       --default-environment-prefix string     Default environment repo prefix, your Git repos will be of the form 'environment-$prefix-$envName'
@@ -74,6 +75,7 @@ jx create cluster oke [flags]
       --ingress-namespace string              The namespace for the Ingress controller (default "kube-system")
       --ingress-service string                The name of the Ingress controller Service (default "jxing-nginx-ingress-controller")
       --initialNodeLabels string              A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
+      --install-dependencies                  Enables automatic dependencies installation when required
       --install-only                          Force the install command to fail if there is already an installation. Otherwise lets update the installation
       --isKubernetesDashboardEnabled          Is KubernetesDashboard Enabled. (default true)
       --isTillerEnabled                       Is Tiller Enabled.
@@ -88,6 +90,7 @@ jx create cluster oke [flags]
       --name string                           The name of the cluster. Avoid entering confidential information.
       --namespace string                      The namespace the Jenkins X platform should be installed into (default "jx")
       --ng                                    Use the Next Generation Jenkins X features like Prow, Tekton, No Tiller, Vault, Dev GitOps
+      --no-brew                               Disables brew package manager on MacOS when installing binary dependencies
       --no-default-environments               Disables the creation of the default Staging and Production environments
       --no-gitops-env-apply                   When using GitOps to create the source code for the development environment and installation, don't run 'jx step env apply' to perform the install
       --no-gitops-env-repo                    When using GitOps to create the source code for the development environment this flag disables the creation of a git repository for the source code
@@ -110,6 +113,7 @@ jx create cluster oke [flags]
       --remote-tiller                         If enabled and we are using tiller for helm then run tiller remotely in the kubernetes cluster. Otherwise we run the tiller process locally. (default true)
       --serviceLbSubnetIds string             Kubernetes Service LB Subnets. Optional but nice to have it as Jenkins X will create ingress controller based on it.
       --servicesCidr string                   Kubernetes Service CIDR Block.
+      --skip-auth-secrets-merge               Skips merging the secrets from local files with the secrets from Kubernetes cluster
       --skip-cluster-role                     Don't enable cluster admin role for user
       --skip-ingress                          Skips the installation of ingress controller. Note that a ingress controller must already be installed into the cluster in order for the installation to succeed
       --skip-installation                     Provision cluster only, don't install Jenkins X into it
@@ -135,16 +139,12 @@ jx create cluster oke [flags]
 ### Options inherited from parent commands
 
 ```
-  -b, --batch-mode                Runs in batch mode without prompting for user input (default true)
-      --config-file string        Configuration file used for installation
-      --install-dependencies      Enables automatic dependencies installation when required
-      --no-brew                   Disables brew package manager on MacOS when installing binary dependencies
-      --skip-auth-secrets-merge   Skips merging the secrets from local files with the secrets from Kubernetes cluster
-      --verbose                   Enables verbose output
+  -b, --batch-mode   Runs in batch mode without prompting for user input (default true)
+      --verbose      Enables verbose output
 ```
 
 ### SEE ALSO
 
 * [jx create cluster](/commands/jx_create_cluster/)	 - Create a new Kubernetes cluster
 
-###### Auto generated by spf13/cobra on 8-Aug-2019
+###### Auto generated by spf13/cobra on 10-Aug-2019
