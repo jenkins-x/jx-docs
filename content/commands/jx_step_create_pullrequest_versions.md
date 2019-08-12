@@ -1,16 +1,16 @@
 ---
-date: 2019-08-12T12:49:57Z
+date: 2019-08-12T18:53:06Z
 title: "jx step create pullrequest versions"
 slug: jx_step_create_pullrequest_versions
 url: /commands/jx_step_create_pullrequest_versions/
 ---
 ## jx step create pullrequest versions
 
-Creates a Pull Request on the versions git repository for a new version of a chart/package
+Creates a Pull Request on the versions git repository for a new versionstream of a chart/package
 
 ### Synopsis
 
-Creates a Pull Request on the versions git repository for a new version of a chart/package
+Creates a Pull Request on the versions git repository for a new versionstream of a chart/package
 
 ```
 jx step create pullrequest versions [flags]
@@ -19,10 +19,10 @@ jx step create pullrequest versions [flags]
 ### Examples
 
 ```
-  # create a Pull Request to update a chart version
+  # create a Pull Request to update a chart versionstream
   jx step create pr versions -n jenkins-x/prow -v 1.2.3
   
-  # create a Pull Request to update a chart version to the latest found in the helm repo
+  # create a Pull Request to update a chart versionstream to the latest found in the helm repo
   jx step create pr versions -n jenkins-x/prow
   
   # create a Pull Request to update all charts matching a filter to the latest found in the helm repo
@@ -38,14 +38,18 @@ jx step create pullrequest versions [flags]
 ### Options
 
 ```
-      --branch string          the versions git repository branch to clone and generate a pull request from (default "master")
+      --base string            The branch to create the pull request into (default "master")
+      --branch string          Branch to clone and generate a pull request from (default "master")
+      --component string       The component of the git repo which caused this change; useful if you have a complex or monorepo setup and want to differentiate between different components from the same repo
+      --dry-run                Perform a dry run, the change will be generated and committed, but not pushed or have a PR created
   -x, --excludes stringArray   The name patterns to exclude
   -f, --filter stringArray     The name patterns to include - such as '*' for all names
   -h, --help                   help for versions
       --images                 Update the tekton builder images for the Jenkins X Versions BDD tests
-  -k, --kind string            The kind of version. Possible values: charts, packages, docker, git (default "charts")
-  -n, --name string            The name of the version to update. e.g. the name of the chart like 'jenkins-x/prow'
-  -r, --repo string            Jenkins X versions Git repo (default "https://github.com/jenkins-x/jenkins-x-versions.git")
+  -k, --kind string            The kind of versionstream. Possible values: charts, packages, docker, git (default "charts")
+  -n, --name string            The name of the versionstream to update. e.g. the name of the chart like 'jenkins-x/prow'
+  -r, --repo stringArray       Git repo update
+      --src-repo string        The git repo which caused this change; if this is a dependency update this will cause commit messages to be generated which can be parsed by jx step changelog. By default this will be read from the environment variable REPO_URL
   -v, --version string         The version to change. If no version is supplied the latest version is found
 ```
 
