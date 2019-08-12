@@ -1,5 +1,5 @@
 ---
-date: 2019-08-12T18:53:06Z
+date: 2019-08-12T12:49:57Z
 title: "jx upgrade crd"
 slug: jx_upgrade_crd
 url: /commands/jx_upgrade_crd/
