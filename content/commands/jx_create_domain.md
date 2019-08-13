@@ -1,5 +1,5 @@
 ---
-date: 2019-08-13T12:07:28Z
+date: 2019-08-13T15:34:41Z
 title: "jx create domain"
 slug: jx_create_domain
 url: /commands/jx_create_domain/
