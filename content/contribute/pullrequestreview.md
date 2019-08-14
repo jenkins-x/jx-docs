@@ -112,7 +112,6 @@ must be updated when new non-functional areas for review are identified.
   but sometimes we have to write code in a certain way to deal with external circumstances. You can easily identify this
   kind of code - if your reactions is "WTF" then it probably needs a comment. On the other hand if your reaction is 
   "I don't understand this" then that's not a good indication of non-intuitive code! 
-* OPEN ISSUE: tests
 
 Non automated checks currently include:
 * for a PR that includes a new feature, ensure that there is an associated PR for documentation
@@ -144,3 +143,6 @@ but to check it won't cause a problem.
 
 * Switch config on all repos to use `lgtm` plugin not `approval` plugin, except those with the `proof-of-concept` label
 * Consider using something like https://pullpanda.com/assigner to allocate reviewers automatically 
+* Add code coverage tools and implement a ratchet. For example, if the overall coverage is 40% then the coverage of the 
+  change would have to be 50%. We will decide the size of the ratchet as part of this. The goal here is to steadily 
+  improve the coverage
