@@ -121,12 +121,12 @@ canary:
     # percentage (0-100)
     stepWeight: 10
     metrics:
-    - name: istio_requests_total
+    - name: request-success-rate
       # minimum req success rate (non 5xx responses)
       # percentage (0-100)
       threshold: 99
       interval: 60s
-    - name: istio_request_duration_seconds_bucket
+    - name: request-duration
       # maximum req duration P99
       # milliseconds
       threshold: 500
