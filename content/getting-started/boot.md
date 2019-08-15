@@ -18,14 +18,6 @@ aliases: [/overview/usage/,/extras/livereload/,/doc/usage/,/usage/]
 toc: true
 ---
 
-## NOTE: Experimental!
-
-Jenkins X Boot is currently experimental but we hope will become the long term strategic way to install, configure and upgrade Jenkins X
-
-Currently [unsupported features](https://github.com/jenkins-x/jx/issues/4326):
-
-* we don't yet support adding the changes from the [cloud-environments](https://github.com/jenkins-x/cloud-environments) repository for the different kinds of kubernetes provider
-
 ## Background
 
 We've learnt over the last 1-2 years that there are many different kinds of Kubernetes cluster and ways of setting up things like Ingress, DNS, domains, certificates which leads to complexity in the current [jx create cluster](/commands/jx_create_cluster) and [jx install](/commands/jx_install/) commands.
