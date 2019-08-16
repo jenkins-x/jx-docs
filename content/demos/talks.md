@@ -17,9 +17,10 @@ sections_weight: 5
 
 * [2019-07-04 Jenkins-X - CI/CD für die Kloud (German)](https://www.java-forum-stuttgart.de/de/Konferenz.html) at [Java Forum Stuttgart (Germany)](https://www.java-forum-stuttgart.de/de/Konferenz.html) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
 
-* [2019-06-24 Serverless Jenkins on Kubernetes - Jenkins X](https://sched.co/Nrmd) at [KubeCon CloudNativeCon 2019 (China)](https://www.lfasiallc.com/events/kubecon-cloudnativecon-china-2019/) by [RunZe Xia](https://github.com/runzexia)
 
-* [2019-06-24/25/26 GitOps by courtesy of Jenkins-X](https://www.containerdays.io/) at [Container Days, Hamburg (Germany)](https://www.containerdays.io/) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
+* [2019-06-25 GitOps by courtesy of Jenkins-X](https://containerdays.sched.com/event/Q4Oc/gitops-by-courtesy-of-jenkins-x) at [Container Days, Hamburg (Germany)](https://www.containerdays.io/¡) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
+
+* [2019-06-24 Serverless Jenkins on Kubernetes - Jenkins X](https://sched.co/Nrmd) at [KubeCon CloudNativeCon 2019 (China)](https://www.lfasiallc.com/events/kubecon-cloudnativecon-china-2019/) by [RunZe Xia](https://github.com/runzexia)
 
 * [2019-06-11 The Recipe for Continuous Delivery](https://www.eventbrite.com/e/zurich-devops-and-hops-tickets-61928848854#) at [EuroDog Zurich](https://nadevops.com/eurodog) by [Viktor Farcic](https://twitter.com/vfarcic)
 
