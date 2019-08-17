@@ -15,7 +15,7 @@ sections_weight: 5
 
 * [2019-07-04 Modern CI/CD with Tekton and Prow Automated via Jenkins X](https://www.youtube.com/watch?v=4EyTGYB7GvA) at [KubeCon (Barcelona)](https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2019/) by [Christie Wilson ](https://twitter.com/bobcatwilson) and [James Rawlings](https://twitter.com/jdrawlings)
 
-* [2019-07-04 Jenkins-X - CI/CD für die Kloud (German)](https://www.java-forum-stuttgart.de/de/Konferenz.html) at [Java Forum Stuttgart (Germany)](https://www.java-forum-stuttgart.de/de/Konferenz.html) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
+* [2019-07-04 Jenkins-X - CI/CD für die Kloud (German)](https://www.java-forum-stuttgart.de/de/Vortr%E4ge+von+16.40+-+17.25+Uhr.html#D7) at [Java Forum Stuttgart (Germany)](https://www.java-forum-stuttgart.de/de/Konferenz.html) by [Gerd Aschemann](https://twitter.com/GerdAschemann) ([Slides](http://aschemann.net/gerd/publications/jx-talk-javaforum-stuttgart-2019/))
 
 * [2019-06-25 GitOps by courtesy of Jenkins-X](https://containerdays.sched.com/event/Q4Oc/gitops-by-courtesy-of-jenkins-x) at [Container Days, Hamburg (Germany)](https://www.containerdays.io/¡) by [Gerd Aschemann](https://twitter.com/GerdAschemann) ([Slides](http://aschemann.net/gerd/publications/jx-talk-condays-2019/))
 
