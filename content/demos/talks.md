@@ -12,6 +12,13 @@ menu:
 weight: 5
 sections_weight: 5
 ---
+* [2019-12-02/3/4/5 GitOps by courtesy of Jenkins-X](https://devopsconference.de/kubernetes-ecosystem/gitops-by-courtesy-of-jenkins-x/) at [DevOpsCon 2019, München (Germany)](https://devopsconference.de/) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
+
+* [2019-09-12 Dev and Run Small Projects on K8S with GitOps and Jenkins-X](https://helmsummit2019.sched.com/event/S8sk/dev-and-run-small-projects-on-k8s-with-gitops-and-jenkins-x-gerd-aschemann-independent) at [Helm Summit, Amsterdam (The Netherlands))](https://events.linuxfoundation.org/events/helm-summit-2019/) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
+
+* [2019-09-02 Jenkins X - Continuously Driving the Kloud](https://programm.doag.org/godevops/2019/#/scheduledEvent/587266) at [GoDevOps 2019, Berlin (Germany)](https://godevops.doag.org/de/home/) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
+
+* [2019-08-21 Jenkins X - Continuously Delivery for the Kloud](http://java.de/roller/blog/page/stammtisch_goettingen) at [Java User Group Deutschland/Göttingen (Germany)](http://java.de/) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
 
 * [2019-08-08 Jenkins-X - CD for the Kloud](https://www.meetup.com/Java-User-Group-Saarland-jugsaar/events/262962734/) at [Java User Group Saarland (Germany)](https://www.meetup.com/Java-User-Group-Saarland-jugsaar/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) ([Slides](http://aschemann.net/gerd/publications/jx-talk-jugsb-2019))
 
