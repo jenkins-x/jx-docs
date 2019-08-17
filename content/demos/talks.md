@@ -13,6 +13,8 @@ weight: 5
 sections_weight: 5
 ---
 
+* [2019-08-08 Jenkins-X - CD for the Kloud](https://www.meetup.com/Java-User-Group-Saarland-jugsaar/events/262962734/) at [Java User Group Saarland (Germany)](https://www.meetup.com/Java-User-Group-Saarland-jugsaar/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) ([Slides](http://aschemann.net/gerd/publications/jx-talk-jugsb-2019))
+
 * [2019-07-04 Modern CI/CD with Tekton and Prow Automated via Jenkins X](https://www.youtube.com/watch?v=4EyTGYB7GvA) at [KubeCon (Barcelona)](https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2019/) by [Christie Wilson ](https://twitter.com/bobcatwilson) and [James Rawlings](https://twitter.com/jdrawlings)
 
 * [2019-07-04 Jenkins-X - CI/CD für die Kloud (German)](https://www.java-forum-stuttgart.de/de/Vortr%E4ge+von+16.40+-+17.25+Uhr.html#D7) at [Java Forum Stuttgart (Germany)](https://www.java-forum-stuttgart.de/de/Konferenz.html) by [Gerd Aschemann](https://twitter.com/GerdAschemann) ([Slides](http://aschemann.net/gerd/publications/jx-talk-javaforum-stuttgart-2019/))
