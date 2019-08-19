@@ -20,7 +20,25 @@ sections_weight: 5
 
 * [2019-08-21 Jenkins X - Continuously Delivery for the Kloud](http://java.de/roller/blog/page/stammtisch_goettingen) at [Java User Group Deutschland/Göttingen (Germany)](http://java.de/) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
 
+* [2019-08-14 GitOps](https://devopsworldjenkinsworld2019.sched.com/event/TQb8/gitops) at [DevOps World San Francisco](https://www.cloudbees.com/devops-world/san-francisco) by [Viktor Farcic](https://twitter.com/vfarcic)
+
+* [2019-08-14 Ten Commandments Of GitOps Applied To Continuous Delivery](https://devopsworldjenkinsworld2019.sched.com/event/SeVd/ten-commandments-of-gitops-applied-to-continuous-delivery) at [DevOps World San Francisco](https://www.cloudbees.com/devops-world/san-francisco) by [Viktor Farcic](https://twitter.com/vfarcic)
+
+* [2019-08-13 Continuous Delivery with Jenkins X](https://devopsworldjenkinsworld2019.sched.com/event/S6hP/400-continuous-delivery-with-jenkins-x) at [DevOps World San Francisco](https://www.cloudbees.com/devops-world/san-francisco) by [Viktor Farcic](https://twitter.com/vfarcic)
+
+* [2019-08-12 Continuous Delivery with Jenkins X](https://devopsworldjenkinsworld2019.sched.com/event/S6hG/400-continuous-delivery-with-jenkins-x) at [DevOps World San Francisco](https://www.cloudbees.com/devops-world/san-francisco) by [Viktor Farcic](https://twitter.com/vfarcic)
+
 * [2019-08-08 Jenkins-X - CD for the Kloud](https://www.meetup.com/Java-User-Group-Saarland-jugsaar/events/262962734/) at [Java User Group Saarland (Germany)](https://www.meetup.com/Java-User-Group-Saarland-jugsaar/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) ([Slides](http://aschemann.net/gerd/publications/jx-talk-jugsb-2019))
+
+* 2019-07-06 Jenkins X: Why, What, And How at DOIS Beijing by [Viktor Farcic](https://twitter.com/vfarcic)
+
+* 2019-07-04 Jenkins X Workshop at DOIS Beijing by [Viktor Farcic](https://twitter.com/vfarcic)
+
+* 2019-06-19 The recipe for continuous delivery at [EuroDog Brussels](https://nadevops.com/eurodog) by [Viktor Farcic](https://twitter.com/vfarcic)
+
+* [2019-06-13 The recipe for continuous delivery](https://www.meetup.com/Cloud-Native-Computing-Bern/events/260536132/) at [Cloud Native Bern](https://www.meetup.com/Cloud-Native-Computing-Bern/) by [Viktor Farcic](https://twitter.com/vfarcic)
+
+* [2019-06-12 The recipe for continuous delivery](https://www.meetup.com/Lausanne-CI-CD-and-DevOps/events/261586221/) at [Lausanne CI/CD and DevOps](https://www.meetup.com/Lausanne-CI-CD-and-DevOps/) by [Viktor Farcic](https://twitter.com/vfarcic)
 
 * [2019-07-04 Modern CI/CD with Tekton and Prow Automated via Jenkins X](https://www.youtube.com/watch?v=4EyTGYB7GvA) at [KubeCon (Barcelona)](https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2019/) by [Christie Wilson ](https://twitter.com/bobcatwilson) and [James Rawlings](https://twitter.com/jdrawlings)
 

@@ -13,6 +13,7 @@ weight: 5
 sections_weight: 5
 ---
 
+* [Defining And Running Serverless Deployments With Knative And Jenkins X](https://technologyconversations.com/2019/07/17/defining-and-running-serverless-deployments-with-knative-and-jenkins-x/) by [Viktor Farcic](https://technologyconversations.com), July 17th, 2019
 * [Overriding Pipelines, Stages, And Steps And Implementing Loops In Jenkins X Pipelines](https://technologyconversations.com/2019/06/30/overriding-pipelines-stages-and-steps-and-implementing-loops-in-jenkins-x-pipelines/) by [Viktor Farcic](https://technologyconversations.com), June 30th, 2019
 * [Jenkins X — TLS enabled Previews](https://medium.com/@sboardwell/jenkins-x-tls-enabled-previews-d04fa68c7ce9) by [Steve Boardwell](https://medium.com/@sboardwell), June 26th, 2019
 * [Jenkins X — Securing the Cluster](https://medium.com/@sboardwell/jenkins-x-securing-the-cluster-e1b9fcd8dd05) by [Steve Boardwell](https://medium.com/@sboardwell), June 22nd, 2019
