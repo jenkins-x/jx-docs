@@ -323,7 +323,7 @@ option for `git commit` or by GPG signing the commit. The developer certificate 
 Jenkins X enforces the DCO using the a [bot](https://github.com/probot/dco). You can view the details on the DCO check
 by viewing the `Checks` tab in the GitHub pull request.
 
-![DCO signoff check](https://user-images.githubusercontent.com/13410355/42352794-85fe1c9c-8071-11e8-834a-05a4aeb8cc90.png])
+![DCO signoff check](https://user-images.githubusercontent.com/13410355/42352794-85fe1c9c-8071-11e8-834a-05a4aeb8cc90.png)
 
 You can use a hook to make sure all your commits messages are signed off. 
 

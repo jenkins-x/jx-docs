@@ -12,14 +12,23 @@ menu:
 weight: 5
 sections_weight: 5
 ---
+* [2019-12-02/3/4/5 GitOps by courtesy of Jenkins-X](https://devopsconference.de/kubernetes-ecosystem/gitops-by-courtesy-of-jenkins-x/) at [DevOpsCon 2019, München (Germany)](https://devopsconference.de/) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
+
+* [2019-09-12 Dev and Run Small Projects on K8S with GitOps and Jenkins-X](https://helmsummit2019.sched.com/event/S8sk/dev-and-run-small-projects-on-k8s-with-gitops-and-jenkins-x-gerd-aschemann-independent) at [Helm Summit, Amsterdam (The Netherlands))](https://events.linuxfoundation.org/events/helm-summit-2019/) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
+
+* [2019-09-02 Jenkins X - Continuously Driving the Kloud](https://programm.doag.org/godevops/2019/#/scheduledEvent/587266) at [GoDevOps 2019, Berlin (Germany)](https://godevops.doag.org/de/home/) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
+
+* [2019-08-21 Jenkins X - Continuously Delivery for the Kloud](http://java.de/roller/blog/page/stammtisch_goettingen) at [Java User Group Deutschland/Göttingen (Germany)](http://java.de/) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
+
+* [2019-08-08 Jenkins-X - CD for the Kloud](https://www.meetup.com/Java-User-Group-Saarland-jugsaar/events/262962734/) at [Java User Group Saarland (Germany)](https://www.meetup.com/Java-User-Group-Saarland-jugsaar/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) ([Slides](http://aschemann.net/gerd/publications/jx-talk-jugsb-2019))
 
 * [2019-07-04 Modern CI/CD with Tekton and Prow Automated via Jenkins X](https://www.youtube.com/watch?v=4EyTGYB7GvA) at [KubeCon (Barcelona)](https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2019/) by [Christie Wilson ](https://twitter.com/bobcatwilson) and [James Rawlings](https://twitter.com/jdrawlings)
 
-* [2019-07-04 Jenkins-X - CI/CD für die Kloud (German)](https://www.java-forum-stuttgart.de/de/Konferenz.html) at [Java Forum Stuttgart (Germany)](https://www.java-forum-stuttgart.de/de/Konferenz.html) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
+* [2019-07-04 Jenkins-X - CI/CD für die Kloud (German)](https://www.java-forum-stuttgart.de/de/Vortr%E4ge+von+16.40+-+17.25+Uhr.html#D7) at [Java Forum Stuttgart (Germany)](https://www.java-forum-stuttgart.de/de/Konferenz.html) by [Gerd Aschemann](https://twitter.com/GerdAschemann) ([Slides](http://aschemann.net/gerd/publications/jx-talk-javaforum-stuttgart-2019/))
+
+* [2019-06-25 GitOps by courtesy of Jenkins-X](https://containerdays.sched.com/event/Q4Oc/gitops-by-courtesy-of-jenkins-x) at [Container Days, Hamburg (Germany)](https://www.containerdays.io/¡) by [Gerd Aschemann](https://twitter.com/GerdAschemann) ([Slides](http://aschemann.net/gerd/publications/jx-talk-condays-2019/))
 
 * [2019-06-24 Serverless Jenkins on Kubernetes - Jenkins X](https://sched.co/Nrmd) at [KubeCon CloudNativeCon 2019 (China)](https://www.lfasiallc.com/events/kubecon-cloudnativecon-china-2019/) by [RunZe Xia](https://github.com/runzexia)
-
-* [2019-06-24/25/26 GitOps by courtesy of Jenkins-X](https://www.containerdays.io/) at [Container Days, Hamburg (Germany)](https://www.containerdays.io/) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
 
 * [2019-06-11 The Recipe for Continuous Delivery](https://www.eventbrite.com/e/zurich-devops-and-hops-tickets-61928848854#) at [EuroDog Zurich](https://nadevops.com/eurodog) by [Viktor Farcic](https://twitter.com/vfarcic)
 
@@ -35,7 +44,7 @@ sections_weight: 5
 
 * [2019-06-04 Jenkins X: Progressive Delivery for Kubernetes](https://jnation.pt/speakers/carlos-sanchez/) at [JNation (Coimbra, Portugal)](https://jnation.pt) by [Carlos Sanchez](https://csanchez.org)
 
-* [2019-05-27/28/29 GitOps by courtesy of Jenkins-X](https://gr8conf.eu/talks/760) at [gr8conf (Copenhagen/Denmark)](https://gr8conf.eu/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) 
+* [2019-05-28 GitOps by courtesy of Jenkins-X](https://gr8conf.eu/talks/760) at [gr8conf (Copenhagen/Denmark)](https://gr8conf.eu/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) ([Slides](http://aschemann.net/gerd/publications/jx-talk-gr8conf-2019/))
 
 * [2019-05-23 CI/CD on Kubernetes with Jenkins X](https://docs.google.com/spreadsheets/d/1mA0FDySf2t2sSjKKG2VOta8vDDiGsQytgxJ2iHBeDIs/edit#gid=0&range=D52:E52) at [GlueCon](http://gluecon.com/) by [Nicholas Duffy](https://twitter.com/duffn)
 
@@ -47,7 +56,7 @@ sections_weight: 5
 
 * [2019-03-20 Cloud-Native Kubernetes-First Continuous Delivery With Jenkins X](https://www.meetup.com/DevOps-Freiburg/events/259091235/) at [DevOps Meetup Freiburg](https://www.meetup.com/DevOps-Freiburg/) by [Viktor Farcic](https://twitter.com/vfarcic)
 
-* [2019-03-19 Jenkins X - Continuously Driving the Kloud (German)](https://programm.javaland.eu/2019/#/scheduledEvent/569771) at [Javaland 2019 (Germany)](https://www.javaland.eu) by [Gerd Aschemann](https://twitter.com/GerdAschemann) 
+* [2019-03-19 Jenkins X - Continuously Driving the Kloud (German)](https://programm.javaland.eu/2019/#/scheduledEvent/569771) at [Javaland 2019 (Germany)](https://www.javaland.eu) by [Gerd Aschemann](https://twitter.com/GerdAschemann) ([Slides](http://aschemann.net/gerd/publications/jx-talk-javaland-2019/))
 
 * [2019-03-06 Cloud Native CI/CD for Kubernetes with JenkinsX](https://www.meetup.com/Dubai-Jenkins-Area-Meetup/events/258523035/) at [Jenkins Area Meetup(JAM) Dubai](https://www.meetup.com/Dubai-Jenkins-Area-Meetup/) by [Viktor Farcic](https://twitter.com/vfarcic) 
 
@@ -55,7 +64,7 @@ sections_weight: 5
 
 * [2019-02-28 Jenkins X: Continuous Delivery for Kubernetes](https://www.youtube.com/watch?v=hrridH35y64&list=PLHsuXkXI4xdjGlGkCBdxIAmkzfWXqsUrO&t=0s&index=2) [YouTube 🎥](https://www.youtube.com/watch?v=hrridH35y64&list=PLHsuXkXI4xdjGlGkCBdxIAmkzfWXqsUrO&t=0s&index=2) by [Carlos Sanchez](https://csanchez.org)
 
-* [2019-02-26 GitOps by courtesy of Jenkins-X (German)](https://www.meetup.com/Agile-Testing-Munich/events/258881963/) at [Agile Testing @Munich (Germany)](https://www.meetup.com/Agile-Testing-Munich/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) 
+* [2019-02-26 GitOps by courtesy of Jenkins-X (German)](https://www.meetup.com/Agile-Testing-Munich/events/258881963/) at [Agile Testing @Munich (Germany)](https://www.meetup.com/Agile-Testing-Munich/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) ([Slides](http://aschemann.net/gerd/publications/jx-talk-munich-agile-testing-2019/))
 
 * [2019-02-19 Cloud Native Computing Paris: CI/CD with Jenkins X](https://www.meetup.com/Cloud-Native-Computing-Paris/events/258880938/) by [Viktor Farcic](https://twitter.com/vfarcic)
 

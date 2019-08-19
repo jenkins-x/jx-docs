@@ -18,14 +18,6 @@ aliases: [/overview/usage/,/extras/livereload/,/doc/usage/,/usage/]
 toc: true
 ---
 
-## NOTE: Experimental!
-
-Jenkins X Boot is currently experimental but we hope will become the long term strategic way to install, configure and upgrade Jenkins X
-
-Currently [unsupported features](https://github.com/jenkins-x/jx/issues/4326):
-
-* we don't yet support adding the changes from the [cloud-environments](https://github.com/jenkins-x/cloud-environments) repository for the different kinds of kubernetes provider
-
 ## Background
 
 We've learnt over the last 1-2 years that there are many different kinds of Kubernetes cluster and ways of setting up things like Ingress, DNS, domains, certificates which leads to complexity in the current [jx create cluster](/commands/jx_create_cluster) and [jx install](/commands/jx_install/) commands.
@@ -86,7 +78,7 @@ The [jx boot](/commands/jx_boot) interprets the boot pipeline using your local `
 
 #### Pre and Post Validation
  
-Before ny installation is attempted it runs the [jx step verify preinstall](/commands/jx_step_verify_preinstall/) command to check everything looks OK. If you are using Terraform (so that your 'jx-requirements.yml' file has `terraform: true`) it will fail if Terraform has not created the required cloud resources. Otherwise they are lazily created for you if they don't exist.
+Before any installation is attempted it runs the [jx step verify preinstall](/commands/jx_step_verify_preinstall/) command to check everything looks OK. If you are using Terraform (so that your 'jx-requirements.yml' file has `terraform: true`) it will fail if Terraform has not created the required cloud resources. Otherwise they are lazily created for you if they don't exist.
 
 Once the installation has completed the [jx step verify install](/commands/jx_step_verify_install/) command is run to verify your installation is valid.
 

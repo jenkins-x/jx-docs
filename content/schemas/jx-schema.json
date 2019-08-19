@@ -1001,6 +1001,9 @@
           "$schema": "http://json-schema.org/draft-04/schema#",
           "$ref": "#/definitions/Container"
         },
+        "distributeParallelAcrossNodes": {
+          "type": "boolean"
+        },
         "retry": {
           "type": "integer"
         },
@@ -1185,6 +1188,9 @@
       "properties": {
         "containerOptions": {
           "$ref": "#/definitions/Container"
+        },
+        "distributeParallelAcrossNodes": {
+          "type": "boolean"
         },
         "retry": {
           "type": "integer"
