@@ -34,7 +34,9 @@ If you wish to use a different git provider for your environments then when you 
 
 
 {{% note %}}
-NOTE: All of the Git Providers mentioned here are supported if you are using Jenkins Static Masters.  However, if you are using Jenkins X Serverless with Tekton, only GitHub is supported.  This means that all other Git Providers including GitHub Enterprise are not currently supported due to how Prow communicates with the APIs.
+NOTE: All of the Git Providers mentioned here are supported if you are using Jenkins Static Masters.  However, if you are using **Jenkins X Serverless with Tekton**, only GitHub is supported.  This means that all other Git Providers including GitHub Enterprise are not currently supported due to how Prow communicates with the APIs.
+
+However, we are integrating Lighthouse to ensure support for the Git Providers listed on this page in a Jenkins X Serverless environment very soon.
 
 {{% /note %}}
 
