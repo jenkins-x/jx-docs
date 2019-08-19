@@ -32,6 +32,13 @@ When you install Jenkins X it will create git repositories for `Staging` and `Pr
 
 If you wish to use a different git provider for your environments then when you install Jenkins X add the `--no-default-environments` argument on [jx create cluster](/commands/jx_create_cluster/) or [jx install](/commands/jx_install/)
 
+
+{{% note %}}
+NOTE: All of the Git Providers mentioned here are supported if you are using Jenkins Static Masters.  However, if you are using Jenkins X Serverless with Tekton, only GitHub is supported.  This means that all other Git Providers including GitHub Enterprise are not currently supported due to how Prow communicates with the APIs.
+
+{{% /note %}}
+
+
 e.g. to [create a new cluster](/getting-started/create-cluster/)
  
 ``` 
