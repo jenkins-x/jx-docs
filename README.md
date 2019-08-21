@@ -13,6 +13,16 @@ To edit the docs locally and try out what the [website](http://jenkins-x.io/) wi
 $ git clone https://github.com/jenkins-x/jx-docs.git
 ```
 
+### Dockerized Hugo
+
+Instead of installing Hugo locally, you can use the included `local.Dockerfile` to spin up the Hugo server. Make sure you have Docker installed.
+
+* Build the image (only needed once): `docker build -t jx-docs/dev -f local.Dockerfile .`
+* Run the server: `docker run -v $PWD:/src -p 1313:1313 jx-docs/dev server -D --bind 0.0.0.0`
+* go to http://localhost:1313 to view the site
+
+### Local Hugo install
+
 Then to view the docs in your browser, [install Hugo](https://gohugo.io/getting-started/installing).
 Navigate to the directory, run hugo server, and open up the link:
 
