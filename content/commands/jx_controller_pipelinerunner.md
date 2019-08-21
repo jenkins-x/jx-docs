@@ -1,5 +1,5 @@
 ---
-date: 2019-08-21T09:57:46Z
+date: 2019-08-21T18:39:47Z
 title: "jx controller pipelinerunner"
 slug: jx_controller_pipelinerunner
 url: /commands/jx_controller_pipelinerunner/
@@ -30,7 +30,7 @@ jx controller pipelinerunner [flags]
   -h, --help                         help for pipelinerunner
       --meta-pipeline-image string   Specify the docker image to use if there is no image specified for a step.
       --no-git-init                  Disables checking we have setup git credentials on startup.
-  -p, --path string                  The path to listen on for requests to trigger a pipeline run. (default "/")
+      --path string                  The path to listen on for requests to trigger a pipeline run. (default "/")
       --port int                     The TCP port to listen on. (default 8080)
       --semantic-release             Enable semantic releases
       --service-account string       The Kubernetes ServiceAccount to use to run the pipeline. (default "tekton-bot")
