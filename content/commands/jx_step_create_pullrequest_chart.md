@@ -1,5 +1,5 @@
 ---
-date: 2019-08-22T16:30:16Z
+date: 2019-08-22T17:42:02Z
 title: "jx step create pullrequest chart"
 slug: jx_step_create_pullrequest_chart
 url: /commands/jx_step_create_pullrequest_chart/
