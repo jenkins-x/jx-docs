@@ -147,10 +147,10 @@ If you need to push more commits to the same branch, you can just use `git push`
 
 Github is generally very helpful in letting you raise a pull request from your fork to the main `jx-docs` repo. You'll need to add a few labels etc. though, so make sure your PR is seen and reviewed:
 
-* add a label of `area/docs`
+* assign the PR to yourself
 * add the PR to the `Jenkins X Documentation` project
 
-You can leave the rest blank; reviewers and other labels will be added automatically.
+You can leave the rest blank; reviewers and labels will be added automatically.
 
 ### Review Process
 
