@@ -1,5 +1,5 @@
 ---
-date: 2019-08-22T17:42:02Z
+date: 2019-08-22T19:17:15Z
 title: "jx step env apply"
 slug: jx_step_env_apply
 url: /commands/jx_step_env_apply/
