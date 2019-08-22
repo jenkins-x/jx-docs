@@ -18,8 +18,7 @@ aliases: [/contribute/apidocs/]
 toc: true
 ---
 
-Jenkins X has two types of API documentation: [Kubernetes Custom Resource Documentation](/apidocs) and [Godoc]
-(https://godoc.org/github.com/jenkins-x/jx).
+Jenkins X has two types of API documentation: [Kubernetes Custom Resource Documentation](/apidocs) and [Godoc](https://godoc.org/github.com/jenkins-x/jx).
 Both types are generated from the `codegen` binary which is part of the jx [repository](https://github.com/jenkins-x/jx).  
 
 ## Setup your development environment
@@ -29,9 +28,7 @@ to get set up.
 
 ## Writing custom resource documentation
 
-The custom resource documentation is mostly generated from the comments on the [go structs](https://github.com/jenkins-x/jx/tree/master/pkg/apis/jenkins.io/v1) that define the custom resources, with the [introductory content](https://github
-.com/jenkins-x/jx/tree/master/docs/apidocs/static_includes) and [structure](https://github
-.com/jenkins-x/jx/blob/master/docs/apidocs/config.yaml) injected.
+The custom resource documentation is mostly generated from the comments on the [go structs](https://github.com/jenkins-x/jx/tree/master/pkg/apis/jenkins.io/v1) that define the custom resources, with the [introductory content](https://github.com/jenkins-x/jx/tree/master/docs/apidocs/static_includes) and [structure](https://github.com/jenkins-x/jx/blob/master/docs/apidocs/config.yaml) injected.
 
 ### Toolchain
 
@@ -72,8 +69,7 @@ as openapi)
 
 ### Making changes to the documentation
 
-Each file for which you want to generate docs must be located in the [jenkins.io/v1](https://github
-.com/jenkins-x/jx/tree/master/pkg/apis/jenkins.io/v1) directory, and must have a the 
+Each file for which you want to generate docs must be located in the [jenkins.io/v1](https://github.com/jenkins-x/jx/tree/master/pkg/apis/jenkins.io/v1) directory, and must have a the
 
 ```go
 // +k8s:openapi-gen=true
@@ -91,8 +87,7 @@ to it.
 
 Comments on types are ignored. Comments on struct fields are used as the description for each field.
 
-The left hand menu is generated from the `resource_categories` in [config.yaml](https://github
-.com/jenkins-x/jx/blob/master/docs/apidocs/config.yaml). The introductory text for each category is authored as 
+The left hand menu is generated from the `resource_categories` in [config.yaml](https://github.com/jenkins-x/jx/blob/master/docs/apidocs/config.yaml). The introductory text for each category is authored as
 [html](https://github.com/jenkins-x/jx/tree/master/docs/apidocs/static_includes).
 
 The styles can [also be customized](https://github.com/jenkins-x/jx/blob/master/docs/apidocs/static/stylesheet.css).

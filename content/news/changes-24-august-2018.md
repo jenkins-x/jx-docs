@@ -1111,7 +1111,7 @@ These commits did not use [Conventional Commits](https://conventionalcommits.org
 * [#1400](https://github.com/jenkins-x/jx/issues/1400) allow `jx logs` to take a label selector ([jstrachan](https://github.com/jstrachan))
 * [#1352](https://github.com/jenkins-x/jx/issues/1352) import/create with `--jenkinsfile` does not create/use named file ([ascheman](https://github.com/ascheman))
 * [#1344](https://github.com/jenkins-x/jx/issues/1344) InvalidParameterException: Invalid parameter at 'repositoryName' failed to satisfy constraint: 'must satisfy regular expression ([gregpardo](https://github.com/gregpardo))
-* [#1304](https://github.com/jenkins-x/jx/issues/1304) helm version not compatible with new clusters: UPGRADE FAILED: incompatible versions client[v2.10.0-rc.1] server[v2.9.1] ([michaelneale](https://github.com/michaelneale))
+* [#1304](https://github.com/jenkins-x/jx/issues/1304) helm version not compatible with new clusters: UPGRADE FAILED: incompatible versions client\[v2.10.0-rc.1\] server\[v2.9.1\] ([michaelneale](https://github.com/michaelneale))
 * [#1337](https://github.com/jenkins-x/jx/issues/1337) jx should download `2.10.0-rc.1` until we move to a regular 2.10.x release of helm ([jstrachan](https://github.com/jstrachan))
 * [#1187](https://github.com/jenkins-x/jx/issues/1187) Make survey.AskOne for lb subnets and public key for oce provider ([hhuiliu](https://github.com/hhuiliu))
 * [#87](https://github.com/jenkins-x/jx/issues/87) add: jx create cluster eks ([jstrachan](https://github.com/jstrachan))
