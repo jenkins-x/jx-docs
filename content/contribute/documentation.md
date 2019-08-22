@@ -139,7 +139,6 @@ If everything is good, you can commit your changes, and push them to your fork:
 
 ```bash
 $ git push --set-upstream origin <BRANCH-NAME>
-
 ```
 
 If you need to push more commits to the same branch, you can just use `git push` going forward.
