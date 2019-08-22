@@ -4,7 +4,7 @@ linktitle: Documentation
 description: How to help improve the Jenkins X documentation
 date: 2017-02-01
 publishdate: 2017-02-01
-lastmod: 2017-02-01
+lastmod: 2019-08-22
 categories: [contribute]
 keywords: [docs,documentation,community, contribute]
 menu:
@@ -18,17 +18,104 @@ aliases: [/contribute/docs/]
 toc: true
 ---
 
-## Create Your Fork
+Contributing to the documentation is easy, and a great way to get involved. Plus, you don't have to contribute code to be able to contribute to the documentation.
 
-It's best to make changes to the Jenkins X docs on your local machine to check for consistent visual styling. Make sure you've created a fork of [jx-docs](https://github.com/jenkins-x/jx-docs) on GitHub and cloned the repository locally on your machine. For more information, you can see [GitHub's documentation on "forking"][ghforking] or follow along with [Jenkins X's development contribution guide][hugodev].
+## Getting Started
 
-You can then create a separate branch for your additions. Be sure to choose a descriptive branch name that best fits the type of content. The following is an example of a branch name you might use for adding a new website to the showcase:
+The first thing you'll need to do, is get your local environment setup so that you can add/change content and make sure it looks right, before raising a Pull Request.
+
+We'll go through each step below, but here's what you need to get started:
+
+* Install Docker
+* Fork the `jx/jx-docs` repo
+* Build a Hugo docker image to preview changes
+
+### Install Docker
+
+How to install a Docker engine depends on your platform etc., so best to head over to [Docker](https://docs.docker.com/install/) to find the right one.
+
+### Fork the repo
+
+To fork the `jx-docs` repo, simply go to [https://github.com/jenkins-x/jx-docs](https://github.com/jenkins-x/jx-docs) and click the "Fork" button in the top right-hand corner.
+Make sure you're logged in to Github first.
+
+You'll also need to create a git reference to the main `jx-docs` repo for when you're creating new branches:
+
+```shell
+$ git remote add upstream https://github.com/jenkins-x/jx-docs.git
+```
+
+If you want to know more about forking repos, see [GitHub's documentation on "forking"][ghforking]
+
+### Build the Hugo docker image
+
+The documentation (and the rest of the website) is generated using the static site generator [Hugo](https://gohugo.io), and you'll need a copy of that locally to be able to preview the site.
+
+To make this as easy as possible, we've created a Dockerfile that you can use to build a Docker image, which in turn can be used to run Hugo locally; without having to install a bunch of other software.
+
+Run the following command and wait for it to finish:
+
+```bash
+$ docker build -t jx-docs/dev -f local.Dockerfile .
+```
+
+## Typical Workflow
+
+Once you've completed the initial steps to get started, you can begin to make changes and add new content.
+
+At a high level, your workflow will likely look something like this:
+
+* Create a new branch for you work
+* Start the Hugo server to preview your changes (updates the site live)
+* Make changes/add new content
+* Commit and push your changes to your fork of `jx-docs`
+* Raise a Pull Request (PR) to have your changes merged into the main `jx-docs` repo
+* Wait for and then participate in a review of your changes
+  * might involve making adjustments or adding a bit more
+* See your changes go live on the [Jenkins X site](https://jenkins-x.io)
+
+We'll go though each of the steps below in more detail
+
+### Create a new branch
+
+You should generally create a branch for each "chunk of work" that you take on. If you wanted to update two completely different parts of the site, you should create two separate branches instead of one (unless it's the same change across a bunch of files...there are always exceptions to the rule).
+
+The reason for the separate branches is to make it easier to get each change merged into the main repo. If one of your changes required no changes, but your second change required a lot of changes, having two branches instead of one would allow your first change to be merged separately from your second.
+
+Naming is also important when creating branches ("blabla 24" is not as meaningful as "minor grammatical fixes") and so is the process of creating a branch. You'd want to start off on at the right spot, so that your changes don't get mixed up. Here's how to do that:
 
 ```
-git checkout -b jon-doe-showcase-addition
+$ git fetch upstream
+$ git checkout master
+$ git merge upstream/master
 ```
 
-## Add New Content
+This ensures that you're starting from where ever the live website is, so you avoid including other commits you might have added since the last update of the site.
+
+Now create your branch with a meaningful name:
+
+```bash
+$ git checkout -b <BRANCH-NAME>
+```
+
+### Start the Hugo server
+
+First make sure you're in the folder with the cloned repo (if you haven't done anything in your terminal since cloning the repo, just run `cd jx-docs`), then run the following command to start the Hugo server:
+
+```shell
+$ docker run -v $PWD:/src -p 1313:1313 jx-docs/dev server -D --bind 0.0.0.0
+```
+
+This will make the site available on http://localhost:1313/
+
+### Make Changed
+
+All pages are written in GitHub-flavored markdown (see [below](#syntax-reference) for details on syntax).
+
+Some things, like the footer etc. are in the `/themes/gohugoioTheme` structure, but most likely you'll just be adding/changing things in the various page structures.
+
+
+### Add new Content
 
 The Jenkins X docs make heavy use of Jenkins X's [archetypes][] feature. All content sections in Jenkins X documentation have an assigned archetype.
 
@@ -38,14 +125,84 @@ Adding new content to the Jenkins X docs follows the same pattern, regardless of
 hugo new <DOCS-SECTION>/<new-content-lowercase>.md
 ```
 
+### Commit and push your changes
+
+When you've finished, and verified that everything looks good (using the Hugo server), you should run one last check to verify that you didn't break anything.
+
+We're using a tool called [htmltest](https://github.com/wjdp/htmltest) to check that links are still valid etc. so you just need to run the following command to verify that everything looks good:
+
+```bash
+$ docker run -v $(pwd):/test --rm wjdp/htmltest htmltest
+```
+
+If everything is good, you can commit your changes, and push them to your fork:
+
+```bash
+$ git push --set-upstream origin <BRANCH-NAME>
+
+```
+
+If you need to push more commits to the same branch, you can just use `git push` going forward.
+
+### Raise a Pull Request
+
+Github is generally very helpful in letting you raise a pull request from your fork to the main `jx-docs` repo. You'll need to add a few labels etc. though, so make sure your PR is seen and reviewed:
+
+* add a label of `area/docs`
+* add the PR to the `Jenkins X Documentation` project
+
+You can leave the rest blank; reviewers and other labels will be added automatically.
+
+### Review Process
+
+The final part of all of this, is letting others review your work and provide feedback. As a rule of thumb, the conversation should happen on the PR, but sometimes things will be sorted out via Slack or a video call.
+
+Sometimes it may take a few days for a review to happen (depends on how many are monitoring the [Jenkins X Documentation]() project). If you feel it's an urgent change, jump on the community slack channel `#jenkins-x-user` and ask for someone to review your PR.
+
+Once the review is done, your changes will be merged into the master branch, and the site will be updated.
+
+## Syntax Reference
+
 ### Standard Syntax
 
 Across all pages on the Jenkins X docs, the typical triple-back-tick markdown syntax is used. If you do not want to take the extra time to implement the following code block shortcodes, please use standard GitHub-flavored markdown. The Jenkins X docs use a version of [highlight.js](https://highlightjs.org/) with a specific set of languages.
 
 Your options for languages are `xml`/`html`, `go`/`golang`, `md`/`markdown`/`mkd`, `handlebars`, `apache`, `toml`, `yaml`, `json`, `css`, `asciidoc`, `ruby`, `powershell`/`ps`, `scss`, `sh`/`zsh`/`bash`/`git`, `http`/`https`, and `javascript`/`js`.
-
+````md
+```go
+// CommandInterface defines the interface for a Command
+//go:generate pegomock generate github.com/jenkins-x/jx/pkg/util CommandInterface -o mocks/command_interface.go
+type CommandInterface interface {
+	DidError() bool
+	DidFail() bool
+	Error() error
+	Run() (string, error)
+	RunWithoutRetry() (string, error)
+	SetName(string)
+	SetDir(string)
+	SetArgs(\[]string)
+	SetTimeout(time.Duration)
+	SetExponentialBackOff(\*backoff.ExponentialBackOff)
+}
 ```
-<h1>Hello world!</h1>
+````
+becomes
+
+```go
+// CommandInterface defines the interface for a Command
+//go:generate pegomock generate github.com/jenkins-x/jx/pkg/util CommandInterface -o mocks/command_interface.go
+type CommandInterface interface {
+	DidError() bool
+	DidFail() bool
+	Error() error
+	Run() (string, error)
+	RunWithoutRetry() (string, error)
+	SetName(string)
+	SetDir(string)
+	SetArgs(\[]string)
+	SetTimeout(time.Duration)
+	SetExponentialBackOff(\*backoff.ExponentialBackOff)
+}
 ```
 
 ### Code Block Shortcode
