@@ -108,7 +108,7 @@ $ docker run -v $PWD:/src -p 1313:1313 jx-docs/dev server -D --bind 0.0.0.0
 
 This will make the site available on http://localhost:1313/
 
-### Make Changed
+### Make Changes
 
 All pages are written in GitHub-flavored markdown (see [below](#syntax-reference) for details on syntax).
 
@@ -122,16 +122,17 @@ The Jenkins X docs make heavy use of Jenkins X's [archetypes][] feature. All con
 Adding new content to the Jenkins X docs follows the same pattern, regardless of the content section:
 
 ```
-hugo new <DOCS-SECTION>/<new-content-lowercase>.md
+$ docker run -v $PWD:/src jx-docs/dev new <DOCS-SECTION>/<new-content-lowercase>.md
 ```
 
 ### Commit and push your changes
 
 When you've finished, and verified that everything looks good (using the Hugo server), you should run one last check to verify that you didn't break anything.
 
-We're using a tool called [htmltest](https://github.com/wjdp/htmltest) to check that links are still valid etc. so you just need to run the following command to verify that everything looks good:
+We're using a tool called [htmltest](https://github.com/wjdp/htmltest) to check that links are still valid etc. so you just need to run the following commands to build the site locally, and verify that everything looks good:
 
 ```bash
+$ docker run -v $PWD:/src jx-docs/dev
 $ docker run -v $(pwd):/test --rm wjdp/htmltest htmltest
 ```
 
