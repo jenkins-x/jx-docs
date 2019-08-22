@@ -1,5 +1,5 @@
 ---
-date: 2019-08-22T13:59:53Z
+date: 2019-08-22T16:30:16Z
 title: "jx step verify pod ready"
 slug: jx_step_verify_pod_ready
 url: /commands/jx_step_verify_pod_ready/
