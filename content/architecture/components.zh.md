@@ -36,10 +36,10 @@ Jenkins X 安装的包括：
 Jenkins X 的配置把这些服务连接起来，就可以直接工作了。这样就神奇地把 Kubernetes 的密码、环境遍历和配置文件全部配置好并可以工作了。
 
 1. __Jenkins__  — 提供 CI 和 CD 自动化。这样对 Jenkins 的解耦变得更加云原生，并利用 Kubernetes 的概念，例如：CRDs（自定义资源定义）、存储和伸缩。
-2. __Nexus__ — 作为 Nodejs 和 Java 程序的依赖缓存，可以减少构建时间。一个 SpringBoot 应用的初始化构建后，构建时间能从12分钟减少到4分钟。我们还没有实现，但是已经计划很快用 Artifactory 来替换。
+2. __Nexus__ — 作为 NodeJS 和 Java 程序的依赖缓存，可以减少构建时间。一个 SpringBoot 应用的初始化构建后，构建时间能从12分钟减少到4分钟。我们还没有实现，但是已经计划很快用 Artifactory 来替换。
 3. __Docker registry__  — 一个集群中的 docker 注册表（registry），用于我们的流水线推送应用的镜像，我们将很快使用原生的云提供商，例如：Google Container Registry, Azure Container Registry 或 Amazon Elastic Container Registry (ECR)。
 4. __ChartMuseum__ — 一个发布 Helm charts 的 registry
-5. __Monocular__  — 一个用于发现和运行 Helml charts 的 UI
+5. __Monocular__  — 一个用于发现和运行 Helm charts 的 UI
 
 ## 永久环境
 

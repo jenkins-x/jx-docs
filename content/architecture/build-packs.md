@@ -30,7 +30,7 @@ The `jx` command line clones the build packs to your `.~/.jx/draft/packs/` folde
 
 ## Pipeline extension model
 
-As part of the move to [cloud native jenkins](/architecture/cloud-native-jenkins/) we've refactored our [build packs](https://github.com/jenkins-x-buildpacks/) so that they are more modular and easier to compose and reuse across workloads.
+As part of the move to [cloud native Jenkins](/architecture/cloud-native-jenkins/) we've refactored our [build packs](https://github.com/jenkins-x-buildpacks/) so that they are more modular and easier to compose and reuse across workloads.
 
 For example the [jenkins-x-kubernetes](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) build pack inherits from the [jenkins-x-classic](https://github.com/jenkins-x-buildpacks/jenkins-x-classic) build pack, reusing the CI and release pipelines but then adding the kubernetes specific workloads (e.g. building docker images, creating helm charts, [Preview Environments](/about/features/#preview-environments) and [Promotion via GitOps](/about/features/#promotion))
 
@@ -45,11 +45,11 @@ Each Pipeline YAML file has a number of separate logical pipelines:
 * `pullRequest` for processing Pull Requests
 * `feature` for processing merges to a feature branch. Though note that the [accelerate book](/about/accelerate/) recommends against long term feature branches. Instead consider using trunk based development which is a practice of high performing teams. 
 
-## Lifecycles
+## Life Cycles
 
-Then each pipeline has a number of distinct lifecycle phases - rather like maven has `clean`, `compile`, `compile-test`, `package` etc. 
+Then each pipeline has a number of distinct life cycle phases - rather like maven has `clean`, `compile`, `compile-test`, `package` etc. 
 
-The lifecycle phases in Jenkins X Pipeline YAML are:
+The life cycle phases in Jenkins X Pipeline YAML are:
 
 * `setup`
 * `preBuild`
@@ -66,13 +66,13 @@ A Pipeline YAML can extend another YAML file. You can reference a base pipeline 
 
 ## Overriding steps
 
-Rather like classes in languages like Java you can override steps in a Pipeline YAML from a base Pipeline YAML. This lets you reuse the steps in a base pipeline's lifecycle then add your own additional steps.
+Rather like classes in languages like Java you can override steps in a Pipeline YAML from a base Pipeline YAML. This lets you reuse the steps in a base pipeline's life cycle then add your own additional steps.
 
 By default any steps you define are added after the base pipeline YAML steps like in [this example](https://github.com/jenkins-x/jx/blob/0520fe3d9740cbcb1cc9754e173fe7726219f58e/pkg/jx/cmd/test_data/step_buildpack_apply/inheritence/pipeline.yaml#L7). 
 
 You can add steps before the base pipeline steps using the `preSteps: ` property like [this example](https://github.com/jenkins-x/jx/blob/0520fe3d9740cbcb1cc9754e173fe7726219f58e/pkg/jx/cmd/test_data/step_buildpack_apply/inheritence2/pipeline.yaml#L6)
 
-If you want to completely replace all the steps from a base pipeline for a particular lifecycle you can use `replace: true` like in [this example](https://github.com/jenkins-x/jx/blob/0520fe3d9740cbcb1cc9754e173fe7726219f58e/pkg/jx/cmd/test_data/step_buildpack_apply/inheritence2/pipeline.yaml#L11-L14)
+If you want to completely replace all the steps from a base pipeline for a particular life cycle you can use `replace: true` like in [this example](https://github.com/jenkins-x/jx/blob/0520fe3d9740cbcb1cc9754e173fe7726219f58e/pkg/jx/cmd/test_data/step_buildpack_apply/inheritence2/pipeline.yaml#L11-L14)
 
 ## Example Pipeline
 

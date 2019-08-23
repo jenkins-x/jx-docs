@@ -55,7 +55,7 @@ The following best practices are considered key to operating a successful DevOps
 * Comprehensive configuration management
 * Trunk based development and feature flags
 
-Jenkins X brings together a number of familiar methodologies and components into an integrated approach that minimises complexity.
+Jenkins X brings together a number of familiar methodologies and components into an integrated approach that minimizes complexity.
 
 ## Architecture
 
@@ -73,9 +73,9 @@ Jenkins X builds upon the following core components:
   
 ### Kubernetes & Docker
 ---
-At the heart of the system is Kubernetes, which has become the defacto virtual infrastructure platform for DevOps. Every major Cloud provider now offers Kubernetes infrastructure on demand and the platform may also be installed in-house on private infrastructure, if required. Test environments may also be created on local development hardware using the Minikube installer.
+At the heart of the system is Kubernetes, which has become the de facto virtual infrastructure platform for DevOps. Every major Cloud provider now offers Kubernetes infrastructure on demand and the platform may also be installed in-house on private infrastructure, if required. Test environments may also be created on local development hardware using the Minikube installer.
 
-Functionally, the Kubernetes platform extends the basic Containerisation principles provided by Docker to span across multiple physical Nodes. 
+Functionally, the Kubernetes platform extends the basic Containerization principles provided by Docker to span across multiple physical Nodes. 
 
 In brief, Kubernetes provides a homogeneous virtual infrastructure that can be scaled dynamically by adding or removing Nodes. Each Node participates in a single large flat private virtual network space. 
 
@@ -85,9 +85,9 @@ To impose some structure, Kubernetes allows for the creation of virtual Namespac
 
 In the Jenkins X model, a Pod equates to a deployed instance of a Microservice (in most cases). Where horizontal scaling of the Microservice is required, Kubernetes allows multiple identical instances of a given Pod to be deployed, each with its own virtual IP address. These can be aggregated into a single virtual endpoint known as a Service which has a unique and static IP address and a local DNS entry that matches the Service name. Calls to the Service are dynamically remapped to the IP of one of the healthy Pod instances on a random basis. Services can also be used to remap ports. Within the Kubernetes virtual network, services can be referred to with a fully qualified domain name of the form: `<service-name>.<namespace-name>.svc.cluster.local` which may be shortened to `<service-name>.<namespace-name>` or just `<service-name>` in the case of services which fall within the same namespace. Hence, a RESTful service called 'payments' deployed in a namespace called 'finance' could be referred to in code via `http://payments.finance.svc.cluster.local`, `http://payments.finance` or just `http://payments`, dependent upon the location of the calling code.
 
-To access Services from outside the local network, Kubernetes requires the creation of an Ingress for each Service. The most common form of this utilises one or more load balancers with static IP addresses, which sit outside the Kubernetes virtual infrastructure and route network requests to mapped internal Services. By creating a wildcard external DNS entry for the static IP address of the load balancer, it becomes possible to map services to external fully-qualified domain names. For example, if our load balancer is mapped to `*.jenkins-x.io` then our payments service could be exposed as `http://payments.finance.jenkins-x.io`.
+To access Services from outside the local network, Kubernetes requires the creation of an Ingress for each Service. The most common form of this utilizes one or more load balancers with static IP addresses, which sit outside the Kubernetes virtual infrastructure and route network requests to mapped internal Services. By creating a wildcard external DNS entry for the static IP address of the load balancer, it becomes possible to map services to external fully-qualified domain names. For example, if our load balancer is mapped to `*.jenkins-x.io` then our payments service could be exposed as `http://payments.finance.jenkins-x.io`.
 
-Kubernetes represents a powerful and constantly improving platform for deploying services at massive scale, but is also complex to understand and can be difficult to configure correctly. Jenkins X brings to Kubernetes a set of default conventions and some simplified tooling, optimised for the purposes of DevOps and the management of loosely-coupled services. 
+Kubernetes represents a powerful and constantly improving platform for deploying services at massive scale, but is also complex to understand and can be difficult to configure correctly. Jenkins X brings to Kubernetes a set of default conventions and some simplified tooling, optimized for the purposes of DevOps and the management of loosely-coupled services. 
 
 The `jx` command line tool provides simple ways to perform common operations upon Kubernetes instances like viewing logs and connecting to container instances. In addition, Jenkins X extends the Kubernetes Namespace convention to create Environments which may be chained together to form a promotion hierarchy for the release pipeline. 
 
@@ -95,12 +95,12 @@ A Jenkins X Environment can represent a virtual infrastructure environment such 
 
 Kubernetes clusters can be created directly using the `jx create cluster` command, making it simple to reproduce clusters in the event of a failure. Similarly, the Jenkins X platform can be upgraded on an existing cluster using `jx upgrade platform`. Jenkins X supports working with multiple Kubernetes clusters through `jx context` and switching between multiple Environments within a cluster with `jx environment`.
 
-Developers should be aware of the capabilities that Kubernetes provides for distributing configuration data and security credentials across the cluster. ConfigMaps can be used to create sets of name/value pairs for non-confidential configuration meta-data and Secrets perform a similar but encrypted mechanism for security credentials and tokens. Kubernetes also provides a mechanism for specifying Resource Quotas for Pods which is necessary for optimising deployments across Nodes and which we shall discuss shortly.
+Developers should be aware of the capabilities that Kubernetes provides for distributing configuration data and security credentials across the cluster. ConfigMaps can be used to create sets of name/value pairs for non-confidential configuration meta-data and Secrets perform a similar but encrypted mechanism for security credentials and tokens. Kubernetes also provides a mechanism for specifying Resource Quotas for Pods which is necessary for optimizing deployments across Nodes and which we shall discuss shortly.
 
 By default, Pod state is transient. Any data written to the local file system of a Pod is lost when that Pod is deleted. Developers should be aware that Kubernetes may unilaterally decide to delete instances of Pods and recreate them at any time as part of the general load balancing process for Nodes so local data may be lost at any time. Where stateful data is required, Persistent Volumes should be declared and mounted within the file system of specific Pods.
 
 ### Helm and Draft
 ---
-Interacting directly with Kubernetes involves either manual configuration using the `kubectl` command line utility, or passing various flavours of YAML data to the API. This can be complex and is open to human error creeping in. In keeping with the DevOps principle of 'configuration as code', Jenkins X leverages Helm and Draft to create atomic blocks of configuration for your applications.
+Interacting directly with Kubernetes involves either manual configuration using the `kubectl` command line utility, or passing various flavors of YAML data to the API. This can be complex and is open to human error creeping in. In keeping with the DevOps principle of 'configuration as code', Jenkins X leverages Helm and Draft to create atomic blocks of configuration for your applications.
 
 Helm simplifies Kubernetes configuration through the concept of a Chart, which is a set of files that together specify the meta-data necessary to deploy a given application or service into Kubernetes. Rather than maintain a series of boilerplate YAML files based upon the Kubernetes API, Helm uses a templating language to create the required YAML specifications from a single shared set of values. This makes it possible to specify re-usable Kubernetes applications where configuration can be selectively over-ridden at deployment time.

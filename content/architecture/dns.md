@@ -22,7 +22,7 @@ However, for users who want services in the cluster to be available on a persona
 ## external-dns
 **NOTE**: *Currently only supported on GKE*
 
-[ExternalDNS](https://github.com/kubernetes-incubator/external-dns) can be used to help expose Kubernetes Services and Ingresses by syncronising with DNS providers. To setup your cluster using ExternalDNS:
+[ExternalDNS](https://github.com/kubernetes-incubator/external-dns) can be used to help expose Kubernetes Services and Ingresses by synchronizing with DNS providers. To setup your cluster using ExternalDNS:
 
 ```
 jx install --provider gke --tekton --external-dns
@@ -67,11 +67,11 @@ Once the installation is complete, a list of name servers will be outputted to t
 
 ```
 
-#### [google domains](https://domains.google)
+#### [Google domains](https://domains.google)
 
 If you're using Google Domains as your domain registrar please see [here](https://support.google.com/domains/answer/3290309?hl=en-GB&ref_topic=9018335) for details on delegating to custom name servers.
 
-### url template
+### URL template
 
 All services should be available on the same domain, of which is derived as follows:
 
