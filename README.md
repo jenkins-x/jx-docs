@@ -37,6 +37,24 @@ Serving pages from memory
 Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
 Press Ctrl+C to stop
 ```
+### Running spell check
+
+We're not all masters of spelling, so luckily there's tools to help us fix that. We'll be using [node-markdown-spellcheck](https://github.com/lukeapage/node-markdown-spellcheck) to run through all our markdown files and list any spelling issue or unknown word it can find.
+
+To make this as simple as possible, just run the following command
+
+```bash
+$ docker run -ti -v $(pwd):/workdir tmaier/markdown-spellcheck:latest --en-us --ignore-numbers --ignore-acronyms --report "**/*.md"
+```
+
+**Hint**: remove `--report` to go through the issues one-by-one in interactive mode
+
+It's likely that the report includes words that are spelled correctly, but that just means the spell checker is not aware of the correct spelling (happens a lot for technical terms, commands, etc.). There are two options to correct this:
+
+1. Edit the `.spelling` file and add the unknown word
+1. Run the command above without `--report` and use the interactive mode to provide the new word
+
+Regardless of how you add the new word, please try and keep the list alphabetically sorted; makes it easier to navigate when you're looking for something
 
 # Contribution
 
