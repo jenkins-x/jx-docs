@@ -1,5 +1,5 @@
 ---
-date: 2019-08-23T14:28:07Z
+date: 2019-08-23T16:25:59Z
 title: "jx cloudbees pipeline"
 slug: jx_cloudbees_pipeline
 url: /commands/jx_cloudbees_pipeline/
