@@ -63,8 +63,8 @@ Your five principal tasks as an approver are to:
 * spot potential functional or non-functional problems with a PR
 * ensure any non-automated checks pass
 * signal when a PR needs security review by applying the `needs-security-review` label and wait with the approval 
-until a security person review the changes and removes the label
-* identify when a PR requires some documentation by adding the `needs-docs` label and also request to the author 
+until a security person reviews the changes and removes the label
+* identify when a PR requires some documentation by adding the `needs-docs` label and also request to author 
 to create a follow up issue with label `area/docs`  
 
 Verifying that the change is of **overall benefit** is your most important responsibility as a PR approver. By default 
