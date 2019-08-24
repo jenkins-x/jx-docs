@@ -21,7 +21,7 @@ toc: true
 
 The main issue tracker for the Jenkins X project is https://github.com/jenkins-x/jx/issues.  This aims to capture issues, ideas and development work.  If in doubt please raise an issue and a Jenkins X team member will look to triage it as soon as possible.
 
-As Jenkins X is using [prow](https://www.cloudbees.com/blog/serverless-jenkins-jenkins-x) from the Kubernetes ecosystem we figured we'd take their lead in traiaging a large number of issues to aid and encourage contributions.  We are reusing the style of labels including colours in an attempt to create familiarity across open source projects and reduce the barrier to contributing.
+As Jenkins X is using [prow](https://www.cloudbees.com/blog/serverless-jenkins-jenkins-x) from the Kubernetes ecosystem we figured we'd take their lead in triaging a large number of issues to aid and encourage contributions.  We are reusing the style of labels including colours in an attempt to create familiarity across open source projects and reduce the barrier to contributing.
 
 # Triaging issues
 
