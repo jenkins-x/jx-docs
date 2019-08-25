@@ -13,9 +13,11 @@ weight: 5
 sections_weight: 5
 ---
 
+* [Jenkins X — Managing Nexus](https://itnext.io/jenkins-x-managing-nexus-17d31ad493d6?source=friends_link&sk=8bfb32a5e9bf1170c0b3430731144adf) by [Steve Boardwell](https://medium.com/@sboardwell), August 23th, 2019
+* [Jenkins X — Managing Jenkins](https://itnext.io/jenkins-x-managing-jenkins-926f0e0f8bcf?source=friends_link&sk=3dcd9c4a8c028661f0b09156c14c271e) by [Steve Boardwell](https://medium.com/@sboardwell), August 8th, 2019
 * [Overriding Pipelines, Stages, And Steps And Implementing Loops In Jenkins X Pipelines](https://technologyconversations.com/2019/06/30/overriding-pipelines-stages-and-steps-and-implementing-loops-in-jenkins-x-pipelines/) by [Viktor Farcic](https://technologyconversations.com), June 30th, 2019
-* [Jenkins X — TLS enabled Previews](https://medium.com/@sboardwell/jenkins-x-tls-enabled-previews-d04fa68c7ce9) by [Steve Boardwell](https://medium.com/@sboardwell), June 26th, 2019
-* [Jenkins X — Securing the Cluster](https://medium.com/@sboardwell/jenkins-x-securing-the-cluster-e1b9fcd8dd05) by [Steve Boardwell](https://medium.com/@sboardwell), June 22nd, 2019
+* [Jenkins X — TLS enabled Previews](https://itnext.io/jenkins-x-tls-enabled-previews-d04fa68c7ce9?source=friends_link&sk=c13828b223f56ed662fd7ec0872c3d1e) by [Steve Boardwell](https://medium.com/@sboardwell), June 26th, 2019
+* [Jenkins X — Securing the Cluster](https://itnext.io/jenkins-x-securing-the-cluster-e1b9fcd8dd05?source=friends_link&sk=e1e46e780908b2e3c8415c3191e82c56) by [Steve Boardwell](https://medium.com/@sboardwell), June 22nd, 2019
 * [Ten Commandments Of GitOps Applied To Continuous Delivery](https://technologyconversations.com/2019/06/21/ten-commandments-of-gitops-applied-to-continuous-delivery/) by [Viktor Farcic](https://technologyconversations.com), June 21th, 2019
 * [Upgrading Ingress Rules And Adding TLS Certificates With Jenkins X](https://technologyconversations.com/2019/05/31/upgrading-ingress-rules-and-adding-tls-certificates-with-jenkins-x/) by [Viktor Farcic](https://technologyconversations.com), May 31th, 2019
 * [The Evolution Of Jenkins Jobs And How We Got To The YAML-Based jenkins-x.yml Format](https://technologyconversations.com/2019/05/09/the-evolution-of-jenkins-jobs-and-how-we-got-to-the-yaml-based-jenkins-x-yml-format/) by [Viktor Farcic](https://technologyconversations.com), May 9th, 2019
