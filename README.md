@@ -2,7 +2,7 @@
 
 Documentation site for [Jenkins X](http://jenkins-x.io/)
 
-**Please browse these docs** on the [http://jenkins-x.io/](http://jenkins-x.io/) site as the links don't all work when browsing the markdown files inside github 
+**Please browse these docs** on the [http://jenkins-x.io/](http://jenkins-x.io/) site as the links don't all work when browsing the markdown files inside github
 
 
 ## Build the docs locally
@@ -15,10 +15,9 @@ $ git clone https://github.com/jenkins-x/jx-docs.git
 
 ### Dockerized Hugo
 
-Instead of installing Hugo locally, you can use the included `local.Dockerfile` to spin up the Hugo server. Make sure you have Docker installed.
+Instead of installing Hugo locally, you can use the included `docker-compose.yml` to spin up the Hugo server. Make sure you have Docker installed.
 
-* Build the image (only needed once): `docker build -t jx-docs/dev -f local.Dockerfile .`
-* Run the server: `docker run -v $PWD:/src -p 1313:1313 jx-docs/dev server -D --bind 0.0.0.0`
+* Build and run the preview server: `docker-compose up -d server`
 * go to http://localhost:1313 to view the site
 
 ### Local Hugo install
@@ -44,17 +43,13 @@ We're not all masters of spelling, so luckily there's tools to help us fix that.
 To make this as simple as possible, just run the following command
 
 ```bash
-$ docker run -ti -v $(pwd):/workdir tmaier/markdown-spellcheck:latest --en-us --ignore-numbers --ignore-acronyms --report "**/*.md"
+$ docker-compose up spellchecker
 ```
 
-**Hint**: remove `--report` to go through the issues one-by-one in interactive mode
+This will output any issue the spell checker have found.
 
-It's likely that the report includes words that are spelled correctly, but that just means the spell checker is not aware of the correct spelling (happens a lot for technical terms, commands, etc.). There are two options to correct this:
-
-1. Edit the `.spelling` file and add the unknown word
-1. Run the command above without `--report` and use the interactive mode to provide the new word
-
-Regardless of how you add the new word, please try and keep the list alphabetically sorted; makes it easier to navigate when you're looking for something
+It's likely that the report includes words that are spelled correctly, but that just means the spell checker is not aware of the correct spelling (happens a lot for technical terms, commands, etc.). Please edit the `.spelling` file and add the unknown word.
+Also, please try and keep the list alphabetically sorted; makes it easier to navigate when you're looking for something
 
 # Contribution
 
