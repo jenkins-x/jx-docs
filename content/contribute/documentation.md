@@ -47,18 +47,6 @@ $ git remote add upstream https://github.com/jenkins-x/jx-docs.git
 
 If you want to know more about forking repos, see [GitHub's documentation on "forking"][ghforking]
 
-### Build the Hugo docker image
-
-The documentation (and the rest of the website) is generated using the static site generator [Hugo](https://gohugo.io), and you'll need a copy of that locally to be able to preview the site.
-
-To make this as easy as possible, we've created a Dockerfile that you can use to build a Docker image, which in turn can be used to run Hugo locally; without having to install a bunch of other software.
-
-Run the following command and wait for it to finish:
-
-```bash
-$ docker build -t jx-docs/dev -f local.Dockerfile .
-```
-
 ## Typical Workflow
 
 Once you've completed the initial steps to get started, you can begin to make changes and add new content.
@@ -100,13 +88,19 @@ $ git checkout -b <BRANCH-NAME>
 
 ### Start the Hugo server
 
-First make sure you're in the folder with the cloned repo (if you haven't done anything in your terminal since cloning the repo, just run `cd jx-docs`), then run the following command to start the Hugo server:
+The documentation (and the rest of the website) is generated using the static site generator [Hugo](https://gohugo.io), and you'll need a copy of that locally to be able to preview the site.
 
-```shell
-$ docker run -v $PWD:/src -p 1313:1313 jx-docs/dev server -D --bind 0.0.0.0
+To make this as easy as possible, we've created a Dockerfile and a docker-compose.yml file that you can use spin up a preview server without having to install a bunch of other software.
+
+First make sure you're in the folder with the cloned repo (if you haven't done anything in your terminal since cloning the repo, just run `cd jx-docs`), then run the following command to build and start the Hugo server:
+
+```bash
+$ docker-compose up -d server
 ```
 
-This will make the site available on http://localhost:1313/
+This will make the site available on http://localhost:1313/ and it will auto-update when you save changes to any of the files in the repo.
+
+**Note**: if you want to stop the server or if it stops auto-rebuilding and you want to restart it, simply run `docker-compose down server` and wait for it to finish. This will shut down the server and kill the container as well.
 
 ### Make Changes
 
@@ -122,19 +116,38 @@ The Jenkins X docs make heavy use of Jenkins X's [archetypes][] feature. All con
 Adding new content to the Jenkins X docs follows the same pattern, regardless of the content section:
 
 ```
-$ docker run -v $PWD:/src jx-docs/dev new <DOCS-SECTION>/<new-content-lowercase>.md
+$ docker-compose run server new <DOCS-SECTION>/<new-content-lowercase>.md
 ```
 
 ### Commit and push your changes
 
 When you've finished, and verified that everything looks good (using the Hugo server), you should run one last check to verify that you didn't break anything.
 
+**Checking References and Links**
+
 We're using a tool called [htmltest](https://github.com/wjdp/htmltest) to check that links are still valid etc. so you just need to run the following commands to build the site locally, and verify that everything looks good:
 
 ```bash
-$ docker run -v $PWD:/src jx-docs/dev
-$ docker run -v $(pwd):/test --rm wjdp/htmltest htmltest
+$ docker-compose run server hugo
+$ docker-compose up linkchecker
 ```
+
+**Checking Spelling**
+
+For spell checking, we're using [node-markdown-spellcheck](https://github.com/lukeapage/node-markdown-spellcheck) to run through all our markdown files and list any spelling issue or unknown word it can find.
+
+To make this as simple as possible, just run the following command
+
+```bash
+$ docker-compose up spellchecker
+```
+
+This will output any issue the spell checker have found.
+
+It's likely that the report includes words that are spelled correctly, but that just means the spell checker is not aware of the correct spelling (happens a lot for technical terms, commands, etc.). Please edit the `.spelling` file and add the unknown word.
+Also, please try and keep the list alphabetically sorted; makes it easier to navigate when you're looking for something
+
+**Commit & Push**
 
 If everything is good, you can commit your changes, and push them to your fork:
 
@@ -142,7 +155,7 @@ If everything is good, you can commit your changes, and push them to your fork:
 $ git push --set-upstream origin <BRANCH-NAME>
 ```
 
-If you need to push more commits to the same branch, you can just use `git push` going forward.
+If you need to push more commits to the same branch, you can just use `git push` going forward; set-upstream is only needed once.
 
 ### Raise a Pull Request
 
