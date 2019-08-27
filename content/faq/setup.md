@@ -139,8 +139,8 @@ In general use the [jx upgrade ingress](/commands/jx_upgrade_ingress/) command.
 For more detail see these blogs posts:
 
 * [Upgrading Ingress Rules And Adding TLS Certificates With Jenkins X](https://technologyconversations.com/2019/05/31/upgrading-ingress-rules-and-adding-tls-certificates-with-jenkins-x/) by [Viktor Farcic](https://technologyconversations.com)
-* [Jenkins X — TLS enabled Previews](https://medium.com/@sboardwell/jenkins-x-tls-enabled-previews-d04fa68c7ce9) by [Steve Boardwell](https://medium.com/@sboardwell)
-* [Jenkins X — Securing the Cluster](https://medium.com/@sboardwell/jenkins-x-securing-the-cluster-e1b9fcd8dd05) by [Steve Boardwell](https://medium.com/@sboardwell)
+* [Jenkins X — TLS enabled Previews](https://itnext.io/jenkins-x-tls-enabled-previews-d04fa68c7ce9?source=friends_link&sk=c13828b223f56ed662fd7ec0872c3d1e) by [Steve Boardwell](https://medium.com/@sboardwell)
+* [Jenkins X — Securing the Cluster](https://itnext.io/jenkins-x-securing-the-cluster-e1b9fcd8dd05?source=friends_link&sk=e1e46e780908b2e3c8415c3191e82c56) by [Steve Boardwell](https://medium.com/@sboardwell)
 
 
 ## How do I change the URLs in an environment?
