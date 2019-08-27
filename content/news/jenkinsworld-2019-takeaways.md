@@ -1,8 +1,21 @@
-This year at the DevOps World | Jenkins World conference I concentrated on two topics: Jenkins X and security. Here is what I learned about Jenkins X. My [companion article discusses security](\"https://www.linkedin.com/pulse/container-security-devops-world-jenkins-2019-john-mcgehee\").
+---
+title: "Jenkins X Key Takeaways from Jenkins World 2019"
+date: 2019-09-01
+draft: true
+description: >
+  What I learned about Jenkins X at DevOps World | Jenkins World 2019.
+categories: [blog]
+keywords: [Jenkins X,DevOps World,Jenkins World,2019]
+slug: "jenkins-x-key-takeaways-2019"
+aliases: []
+author: John McGehee
+---
+This year at the DevOps World | Jenkins World conference I concentrated on learning everything I could about Jenkins X.
 
-Even if you do not use it for CI/CD, Jenkins X provides an excellent example of how to architect a cloud native application.
+Even if you never use it for CI/CD, Jenkins X provides an excellent example of how to architect a cloud native application on Kubernetes.
 
-If you need help with this kind of stuff, I'm looking for a new opportunity--leave a comment or contact me directly at dwjw-2019@johnnado.com.
+If you need help with this kind of stuff, I'm looking for a new opportunity--contact me at
+`jenkins-x@johnnado.com`.
 
 ## Continuous Delivery Foundation
 
@@ -17,7 +30,7 @@ Of these, I concentrated on Tekton and Jenkins X.
 
 ## Tekton
 
-[Vic Iglesias](\"https://twitter.com/vicnastea\"), Google Cloud Solutions Architect at Google presented the technical details of Tekton.
+[Vic Iglesias](\"https://twitter.com/vicnastea\"), Cloud Solutions Architect at Google presented the technical details of Tekton.
 
 ### Goals
 
