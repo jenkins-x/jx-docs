@@ -57,11 +57,15 @@ And above all, remember that as a PR author it's your responsibility to get your
 
 # Approving a PR
 
-Your three principal tasks as an approver are to:
+Your five principal tasks as an approver are to:
  
 * verify that the change is of overall benefit to Jenkins X
 * spot potential functional or non-functional problems with a PR
 * ensure any non-automated checks pass
+* signal when a PR needs security review by applying the `needs-security-review` label and wait with the approval 
+until a security person reviews the changes and removes the label
+* identify when a PR requires some documentation by adding the `needs-docs` label and also request to author 
+to create a follow up issue with label `area/docs`  
 
 Verifying that the change is of **overall benefit** is your most important responsibility as a PR approver. By default 
 we assume that changes are beneficial and that it is the responsibility of the approver to identify if the change would 
@@ -112,6 +116,10 @@ must be updated when new non-functional areas for review are identified.
   but sometimes we have to write code in a certain way to deal with external circumstances. You can easily identify this
   kind of code - if your reactions is "WTF" then it probably needs a comment. On the other hand if your reaction is 
   "I don't understand this" then that's not a good indication of non-intuitive code! 
+
+**Security review** should be requested for any changes in security sensitive areas such as secrets handling with or without 
+vault, authentication/authorization, cloud service accounts and permissions, commands dealing with credentials, changes to 
+RBAC rules in various helm charts, changes to TLS configuration and so on.
 
 Non automated checks currently include:
 * for a PR that includes a new feature, ensure that there is an associated PR for documentation
