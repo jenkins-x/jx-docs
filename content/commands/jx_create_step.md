@@ -1,5 +1,5 @@
 ---
-date: 2019-08-28T17:38:20Z
+date: 2019-08-28T19:33:43Z
 title: "jx create step"
 slug: jx_create_step
 url: /commands/jx_create_step/
@@ -26,7 +26,7 @@ jx create step [flags]
   jx create step -sh "echo hello world"
   
   # Creates a step on the command line: adding a pre step to the pullRequest promote lifecycle
-  jx create step -p pullRequest -l promote -m pre "echo before promote"
+  jx create step -p pullrequest -l promote -m pre -c "echo before promote"
 ```
 
 ### Options

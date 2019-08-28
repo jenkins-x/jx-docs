@@ -1,5 +1,5 @@
 ---
-date: 2019-08-28T17:38:20Z
+date: 2019-08-28T19:33:43Z
 title: "jx diagnose"
 slug: jx_diagnose
 url: /commands/jx_diagnose/
