@@ -1,5 +1,5 @@
 ---
-date: 2019-08-28T15:49:56Z
+date: 2019-08-28T17:38:20Z
 title: "jx profile"
 slug: jx_profile
 url: /commands/jx_profile/
@@ -13,7 +13,7 @@ Set your jx profile
 Sets the profile for the jx install
 
 ```
-jx profile TYPE [flags]
+jx profile <type> [flags]
 ```
 
 ### Examples

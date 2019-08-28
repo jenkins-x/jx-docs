@@ -1,5 +1,5 @@
 ---
-date: 2019-08-28T15:49:56Z
+date: 2019-08-28T17:38:20Z
 title: "jx step create pullrequest docker"
 slug: jx_step_create_pullrequest_docker
 url: /commands/jx_step_create_pullrequest_docker/
