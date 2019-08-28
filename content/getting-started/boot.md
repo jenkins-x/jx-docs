@@ -24,7 +24,7 @@ We've learnt over the last 1-2 years that there are many different kinds of Kube
 
 Plus its now recommended to use tools like Terraform to manage all of your cloud resources: creating/updating Kubernetes clusters, cloud storage buckets, service accounts, KMS etc.
 
-We found we had lots of different bits of install logic spread across all kinds of different ways of installing (e.g. [jx create cluster](/commands/jx_create_cluster), [jx install](/commands/jx_install/), the use of the [--gitops flag](http://localhost:1313/getting-started/manage-via-gitops/) together with the different ways of managing production secrets - that were hard to test and keep solid.
+We found we had lots of different bits of install logic spread across all kinds of different ways of installing (e.g. [jx create cluster](/commands/jx_create_cluster), [jx install](/commands/jx_install/), the use of the [--gitops flag](/getting-started/manage-via-gitops/) together with the different ways of managing production secrets - that were hard to test and keep solid.
 
 We also hit issues that the [jx create cluster](/commands/jx_create_cluster) and [jx install](/commands/jx_install/) commands would install things like ingress controller and not give users the chance to configure/override their installation.
 
@@ -90,9 +90,9 @@ So just edit anything in the configuration you like and re-run [jx boot](/comman
 
 ## Source Repositories
 
-Boot automatically sets up any source repositories which exist in the [repositories/templates](https://github.com/jenkins-x/jenkins-x-boot-config/tree/master/repositories/templates) folder as [SourceRepository](http://localhost:1313/architecture/custom-resources/#sourcerepository)  custom resources and uses any associated [Scheduler](http://localhost:1313/architecture/custom-resources/#scheduler) custom resources to regenerate the Prow configuration.
+Boot automatically sets up any source repositories which exist in the [repositories/templates](https://github.com/jenkins-x/jenkins-x-boot-config/tree/master/repositories/templates) folder as [SourceRepository](/architecture/custom-resources/#sourcerepository)  custom resources and uses any associated [Scheduler](/architecture/custom-resources/#scheduler) custom resources to regenerate the Prow configuration.
 
-Boot also automatically creates or updates any required webhooks on the git provider for your [SourceRepository](http://localhost:1313/architecture/custom-resources/#sourcerepository) resources.
+Boot also automatically creates or updates any required webhooks on the git provider for your [SourceRepository](/architecture/custom-resources/#sourcerepository) resources.
 
 If you are using GitOps we hope to automate the population of the [repositories/templates](https://github.com/jenkins-x/jenkins-x-boot-config/tree/master/repositories/templates) folder as you import/create projects. Until then you can manually create a Pull Request on your boot git repository via [jx step create pullrequest repositories](/commands/jx_step_create_pullrequest_repositories/)
 
@@ -204,7 +204,7 @@ If you wish tot enable external DNS (to automatically register DNS names for all
 
 The install/upgrade process is defined in a [Jenkins X Pipeline](/architecture/jenkins-x-pipelines/) in a file called [jenkins-x.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jenkins-x.yml).
 
-Typically you won't need to edit this file; though if you do see the [editing guide](http://localhost:1313/architecture/jenkins-x-pipelines/#customising-the-pipelines).
+Typically you won't need to edit this file; though if you do see the [editing guide](/architecture/jenkins-x-pipelines/#customising-the-pipelines).
 
 
 
