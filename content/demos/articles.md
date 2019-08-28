@@ -13,6 +13,7 @@ weight: 5
 sections_weight: 5
 ---
 
+* [Defining And Running Serverless Deployments With Knative And Jenkins X](https://technologyconversations.com/2019/07/17/defining-and-running-serverless-deployments-with-knative-and-jenkins-x/) by [Viktor Farcic](https://technologyconversations.com), July 17th, 2019
 * [Jenkins X — Managing Nexus](https://itnext.io/jenkins-x-managing-nexus-17d31ad493d6?source=friends_link&sk=8bfb32a5e9bf1170c0b3430731144adf) by [Steve Boardwell](https://medium.com/@sboardwell), August 23th, 2019
 * [Jenkins X — Managing Jenkins](https://itnext.io/jenkins-x-managing-jenkins-926f0e0f8bcf?source=friends_link&sk=3dcd9c4a8c028661f0b09156c14c271e) by [Steve Boardwell](https://medium.com/@sboardwell), August 8th, 2019
 * [Overriding Pipelines, Stages, And Steps And Implementing Loops In Jenkins X Pipelines](https://technologyconversations.com/2019/06/30/overriding-pipelines-stages-and-steps-and-implementing-loops-in-jenkins-x-pipelines/) by [Viktor Farcic](https://technologyconversations.com), June 30th, 2019
