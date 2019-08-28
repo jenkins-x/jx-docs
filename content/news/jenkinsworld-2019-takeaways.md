@@ -1,6 +1,6 @@
 ---
 title: "Jenkins X Key Takeaways from Jenkins World 2019"
-date: 2019-09-01
+date: 2019-08-28
 draft: false
 description: >
   What I learned about Jenkins X at DevOps World | Jenkins World 2019.
