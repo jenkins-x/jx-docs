@@ -1,5 +1,5 @@
 ---
-date: 2019-08-29T16:40:04Z
+date: 2019-08-29T18:09:24Z
 title: "jx step create pullrequest regex"
 slug: jx_step_create_pullrequest_regex
 url: /commands/jx_step_create_pullrequest_regex/
@@ -48,7 +48,7 @@ jx step create pullrequest regex [flags]
       --files stringArray   A glob describing the files to change
   -h, --help                help for regex
       --regex string        The regex to use when doing updates
-  -r, --repo stringArray    Git repo update
+  -r, --repo stringArray    Git repo to update
       --src-repo string     The git repo which caused this change; if this is a dependency update this will cause commit messages to be generated which can be parsed by jx step changelog. By default this will be read from the environment variable REPO_URL
   -v, --version string      The version to change. If no version is supplied the latest version is found
 ```
