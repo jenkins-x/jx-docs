@@ -1,5 +1,5 @@
 ---
-date: 2019-08-29T16:40:04Z
+date: 2019-08-29T18:09:24Z
 title: "jx step create pullrequest repositories"
 slug: jx_step_create_pullrequest_repositories
 url: /commands/jx_step_create_pullrequest_repositories/
@@ -30,7 +30,7 @@ jx step create pullrequest repositories [flags]
       --component string   The component of the git repo which caused this change; useful if you have a complex or monorepo setup and want to differentiate between different components from the same repo
       --dry-run            Perform a dry run, the change will be generated and committed, but not pushed or have a PR created
   -h, --help               help for repositories
-  -r, --repo stringArray   Git repo update
+  -r, --repo stringArray   Git repo to update
       --src-repo string    The git repo which caused this change; if this is a dependency update this will cause commit messages to be generated which can be parsed by jx step changelog. By default this will be read from the environment variable REPO_URL
   -v, --version string     The version to change. If no version is supplied the latest version is found
 ```

@@ -1,5 +1,5 @@
 ---
-date: 2019-08-29T16:40:04Z
+date: 2019-08-29T18:09:24Z
 title: "jx step create pullrequest versions"
 slug: jx_step_create_pullrequest_versions
 url: /commands/jx_step_create_pullrequest_versions/
@@ -46,9 +46,9 @@ jx step create pullrequest versions [flags]
   -f, --filter stringArray     The name patterns to include - such as '*' for all names
   -h, --help                   help for versions
       --images                 Update the tekton builder images for the Jenkins X Versions BDD tests
-  -k, --kind string            The kind of versionstream. Possible values: charts, packages, docker, git (default "charts")
+  -k, --kind stringArray       The kinds of versionstream. Possible values: charts, packages, docker, git. (default [charts,git])
   -n, --name string            The name of the versionstream to update. e.g. the name of the chart like 'jenkins-x/prow'
-  -r, --repo stringArray       Git repo update
+  -r, --repo stringArray       Git repo to update
       --src-repo string        The git repo which caused this change; if this is a dependency update this will cause commit messages to be generated which can be parsed by jx step changelog. By default this will be read from the environment variable REPO_URL
   -v, --version string         The version to change. If no version is supplied the latest version is found
 ```
