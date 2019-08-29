@@ -1,5 +1,5 @@
 ---
-date: 2019-08-30T17:52:03Z
+date: 2019-08-29T16:40:04Z
 title: "jx create lile"
 slug: jx_create_lile
 url: /commands/jx_create_lile/
