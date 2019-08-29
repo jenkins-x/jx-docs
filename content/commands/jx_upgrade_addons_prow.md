@@ -1,5 +1,5 @@
 ---
-date: 2019-08-30T19:57:13Z
+date: 2019-08-29T16:40:04Z
 title: "jx upgrade addons prow"
 slug: jx_upgrade_addons_prow
 url: /commands/jx_upgrade_addons_prow/
