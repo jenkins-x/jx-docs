@@ -1,5 +1,5 @@
 ---
-date: 2019-08-29T11:50:36Z
+date: 2019-08-29T13:59:07Z
 title: "jx sync"
 slug: jx_sync
 url: /commands/jx_sync/
