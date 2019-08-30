@@ -1,5 +1,5 @@
 ---
-date: 2019-08-30T19:03:21Z
+date: 2019-08-30T19:57:13Z
 title: "jx step create task"
 slug: jx_step_create_task
 url: /commands/jx_step_create_task/
@@ -66,6 +66,7 @@ jx step create task [flags]
       --semantic-release             Enable semantic releases
       --service-account string       The Kubernetes ServiceAccount to use to run the pipeline (default "tekton-bot")
       --source string                The name of the source repository (default "source")
+      --start-step string            When in interpret mode this specifies the step to start at
       --target-path string           The target path appended to /workspace/${source} to clone the source code
   -u, --url string                   The URL for the build pack Git repository
       --view                         Just view the steps that would be created

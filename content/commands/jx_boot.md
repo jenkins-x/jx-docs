@@ -1,5 +1,5 @@
 ---
-date: 2019-08-30T19:03:21Z
+date: 2019-08-30T19:57:13Z
 title: "jx boot"
 slug: jx_boot
 url: /commands/jx_boot/
@@ -24,12 +24,12 @@ jx boot [flags]
   # create a kubernetes cluster via Terraform or via jx
   jx create cluster gke --skip-installation
   
-  # lets get the GitOps repository source code
-  git clone https://github.com/jenkins-x/jenkins-x-boot-config.git my-jx-config
-  cd my-jx-config
-  
   # now lets boot up Jenkins X installing/upgrading whatever is needed
   jx boot
+  
+  # if we have already booted and just want to apply some environment changes without
+  # re-applying ingress and so forth we can start at the environment step:
+  jx boot --start-step install-env
 ```
 
 ### Options
@@ -39,6 +39,7 @@ jx boot [flags]
       --git-ref string         override the Git ref for the JX Boot source to start from, ignoring the versions stream. Normally specified with git-url as well
   -u, --git-url string         override the Git clone URL for the JX Boot source to start from, ignoring the versions stream. Normally specified with git-ref as well
   -h, --help                   help for boot
+  -s, --start-step string      the step in the pipeline to start from
       --versions-ref string    the bootstrap ref for the versions repo. Once the boot config is cloned, the repo will be then read from the jx-requirements.yaml (default "master")
       --versions-repo string   the bootstrap URL for the versions repo. Once the boot config is cloned, the repo will be then read from the jx-requirements.yaml (default "https://github.com/jenkins-x/jenkins-x-versions.git")
 ```
