@@ -107,6 +107,108 @@ There is a file called [jx-requirements.yml](https://github.com/jenkins-x/jenkin
 
 You may want to review the  [jx-requirements.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml) file and make any changes you need.
 
+## Secrets
+
+Boot currently supports the following options for managing secrets:
+
+### Local Storage
+
+This is the default or can be explicitly configured via `secretStorage: local`:
+
+```yaml 
+cluster:
+  provider: gke
+environments:
+- key: dev
+- key: staging
+- key: production
+kaniko: true
+secretStorage: local
+webhook: prow
+```
+
+If enabled secrets are loaded/saved into the folder `~/.jx/localSecrets/$clusterName`. You can use `$JX_HOME` to change the location of `~/.jx`.
+
+### Vault
+
+This is the recommended approach when using GKE or EKS providers. It can be explicitly configured via `secretStorage: vault`:
+
+```yaml 
+cluster:
+  provider: gke
+environments:
+- key: dev
+- key: staging
+- key: production
+kaniko: true
+secretStorage: vault
+webhook: prow
+```
+
+This configuration will cause `jx boot`'s pipeline to install a Vault using KMS and a cloud storage bucket to load/save secrets.
+
+The big advantage of Vault is it means a team of folks can then easily run `jx boot` on the same cluster. Even if you accidentally delete your kubernetes cluster, its easy to restore from the KMS + cloud bucket.
+
+## Webhook
+
+Jenkins X supports a number of engines for handling webhooks and optionally supporting ChatOps.
+
+[Prow](/architecture/prow/) and [Lighthouse](/architecture/lighthouse/) support webhooks and ChatOps whereas Jenkins just supports webhooks.
+
+### Prow
+
+[Prow](/architecture/prow/) is currently the default webhook and ChatOps engine when using [Serverless Jenkins X Pipelines](/architecture/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/) and GitHub. 
+ 
+Its configured via the `webhook: prow` in `jx-requirements.yml`
+
+```yaml 
+cluster:
+  provider: gke
+environments:
+- key: dev
+- key: staging
+- key: production
+kaniko: true
+storage:
+  logs:
+    enabled: false
+  reports:
+    enabled: false
+  repository:
+    enabled: false
+webhook: prow
+``` 
+
+### Lighthouse
+
+[Lighthouse](/architecture/lighthouse/) is currently the default webhook and ChatOps engine when using [Serverless Jenkins X Pipelines](/architecture/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/) and a git server other than https://github.com. 
+
+Once Lighthouse is more stable and well tested we'll make it the default for all installations using [Serverless Jenkins X Pipelines](/architecture/jenkins-x-pipelines/). 
+ 
+Its configured via the `webhook: lighthouse` in `jx-requirements.yml`
+
+```yaml 
+cluster:
+  provider: gke
+environments:
+- key: dev
+- key: staging
+- key: production
+kaniko: true
+storage:
+  logs:
+    enabled: false
+  reports:
+    enabled: false
+  repository:
+    enabled: false
+webhook: lighthouse
+``` 
+
+### Jenkins
+
+To use a Jenkins server in boot for processing webhooks and pipelines configure it via `webhook: jenkins` in `jx-requirements.yml`
+
 ## Storage
 
 the [jx-requirements.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml) file can configure whether you want to use long term storage for logs + reports and what cloud storage buckets to use to store the data.
@@ -198,7 +300,47 @@ storage:
 webhook: prow
 ```
 
-If you wish tot enable external DNS (to automatically register DNS names for all of your exported services) a DNS domain name or TLS then modify the `ingress` section of your  `jx-requirements.yml` file and re-run `jx boot`
+If you wish to enable external DNS (to automatically register DNS names for all of your exported services) a DNS domain name or TLS then modify the `ingress` section of your to add `ingress.domain` and `ingress.externalDNS = true` in `jx-requirements.yml` file and re-run `jx boot`. There's a complete example below.
+
+You can also update your configuration to enable TLS via `ingress.lts.enabled = true`. Here's an example:
+
+```yaml 
+cluster:
+  clusterName: mycluster
+  environmentGitOwner: myorg
+  gitKind: github
+  gitName: github
+  gitServer: https://github.com
+  namespace: jx
+  provider: gke
+  vaultName: jx-vault-myname
+environments:
+- key: dev
+- key: staging
+- key: production
+gitops: true
+ingress:
+  domain: my.domain.com
+  externalDNS: true
+  namespaceSubDomain: -jx.
+  tls:
+    email: someone@acme.com
+    enabled: true
+    production: true
+kaniko: true
+secretStorage: vault
+storage:
+  logs:
+    enabled: true
+    url: gs://jx-prod-logs
+  reports:
+    enabled: false
+    url: ""
+  repository:
+    enabled: false
+    url: ""
+webhook: prow
+```
 
 ## Pipeline
 
