@@ -1,5 +1,5 @@
 ---
-date: 2019-08-30T13:08:36Z
+date: 2019-08-30T15:21:42Z
 title: "jx edit gitserver"
 slug: jx_edit_gitserver
 url: /commands/jx_edit_gitserver/
