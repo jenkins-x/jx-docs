@@ -3,46 +3,59 @@ title: "Jenkins X Key Takeaways from Jenkins World 2019"
 date: 2019-08-30
 draft: false
 description: >
-  Compilation of Jenkins X information presented at DevOps World | Jenkins World 2019.
+  The top 12 things I learned about Jenkins X at DevOps World | Jenkins World
 categories: [blog]
 keywords: [Jenkins X,DevOps World,Jenkins World,2019]
 slug: "jenkins-x-key-takeaways-2019"
 aliases: []
 author: John McGehee
 ---
-Jenkins X was the star of the show at the DevOps World | Jenkins World conference. In this article I will share with you the nine key things I learned about Jenkins X. Even if you never use it for CI/CD, Jenkins X provides an excellent example of how to architect a cloud native application on Kubernetes.
+Jenkins X was the star of the show at DevOps World | Jenkins World 2019. In this article I will 
+share with you the dozen key things I learned about this exciting new cloud native CI/CD tool.
+Even if you never use it for CI/CD, Jenkins X provides an excellent example of how to architect 
+a cloud native application on Kubernetes.
 
 If you need help with this kind of stuff, I'm looking for a new opportunity--connect with me at
 [@johnmcgehee](https://twitter.com/johnmcgehee) or jenkins-x@johnnado.com.
 
 ## Tekton
 
-[Vic Iglesias](https://twitter.com/vicnastea), Cloud Solutions Architect at Google presented the technical details of Tekton.
-[Tekton](https://github.com/tektoncd) is an open API spec for describing CI/CD pipelines on Kubernetes. Kubernetes is the portable, open-source container orchestration system. Tekton grew out of Knative build. The goals of Tekton are:
+[Vic Iglesias](https://twitter.com/vicnastea), Cloud Solutions Architect at Google presented the 
+technical details of Tekton.
+[Tekton](https://github.com/tektoncd) is an open API spec for describing CI/CD pipelines on 
+Kubernetes. Kubernetes is the portable, open-source container orchestration system. Tekton grew 
+out of Knative build. The goals of Tekton are:
+
 *   Make CI/CD pipelines composable across the organization
 *   Declarative
 *   Reproducible
 *   Cloud native: a stateless infrastructure that easily scales out
 
-Tekton is an API spec and implementation, not a finished CI/CD tool. Jenkins X is the most prominent tool based on Tekton.
+Tekton is an API spec and implementation, not a finished CI/CD tool. Jenkins X is the most 
+prominent tool based on Tekton.
 
 Tekton also has some useful subprojects:
-*   [Tekton dashboard](https://github.com/tektoncd/dashboard) helps you visualize what is going on when you start out, but it is not a full featured Jenkins-style UI
-*   The [Tekton catalog](https://github.com/tektoncd/catalog) contains various reusable Tekton _Tasks_. This is your opportunity to contribute to Tekton.
+
+* [Tekton dashboard](https://github.com/tektoncd/dashboard) helps you visualize what is going 
+  on when you start out, but it is not a full featured Jenkins-style UI
+* The [Tekton catalog](https://github.com/tektoncd/catalog) contains various reusable Tekton
+  _Tasks_. This is your opportunity to contribute to Tekton.
 
 ### The future of Tekton
 
 The Tekton near term roadmap calls for:
-*   Event triggering
-*   Log uploading
-*   SCM support
+
+* Event triggering
+* Log uploading
+* SCM support
 
 Longer term:
-*   Pause and resume
-*   partial execution
-*   Access control
-*   Configuration as code
-*   Notifications
+
+* Pause and resume
+* partial execution
+* Access control
+* Configuration as code
+* Notifications
 
 Find out how to get involved at the [Tekton Community project on GitHub](https://github.com/tektoncd/community).
 
@@ -83,12 +96,12 @@ For a stable build of Jenkins X, get the
 
 Jenkins X has two modes:
 
-*   Static traditional Jenkins master with Jenkins pipelines. Use this if you want to continue 
-    using your existing Jenkinsfiles.
-*   Jenkins X pipelines based on [Tekton pipelines](https://github.com/tektoncd/pipeline).
-    This is now the default, and is recommended for the long term. This mode is controlled by
-    the new `jenkins-x.yml` file, whose syntax resembles the Jenkinsfile declarative pipeline
-    syntax.
+* Static traditional Jenkins master with Jenkins pipelines. Use this if you want to continue 
+  using your existing Jenkinsfiles.
+* Jenkins X pipelines based on [Tekton pipelines](https://github.com/tektoncd/pipeline).
+  This is now the default, and is recommended for the long term. This mode is controlled by
+  the new `jenkins-x.yml` file, whose syntax resembles the Jenkinsfile declarative pipeline
+  syntax.
 
 There are two interactive quick start commands. The older and presumably more reliable is:
 ```
@@ -141,8 +154,8 @@ A stage is a unit of work in a pipeline. A step contains either steps or nested 
 
 There are two types of pipelines:
 
-*   Release pipelines merge into master, create a release and trigger promotion
-*   As the name implies, pull request pipelines are used to create a merge request preview environment
+* Release pipelines merge into master, create a release and trigger promotion
+* As the name implies, pull request pipelines are used to create a merge request preview environment
 
 A pipeline is controlled by a `jenkins-x.yml` file at the top of the source control repository.
 
@@ -154,20 +167,25 @@ Jenkins X has a bootstrapping problem: how to create a pipeline? The meta pipeli
 
 There are three ways to define a Jenkins X pipeline:
 
-*   Automatically via a build pack. The build pacl automatically detects the source code language.
-*   Specify a build pack and then override portions in `jenkins-x.yml`
-*   Fully define an entirely new pipeline in `jenkins-x.yml`. This is only useful for a pipeline that will not be reused. Define a reusable pipeline as a build pack.
+* Automatically via a build pack. The build pacl automatically detects the source code language.
+* Specify a build pack and then override portions in `jenkins-x.yml`
+* Fully define an entirely new pipeline in `jenkins-x.yml`. This is only useful for a pipeline 
+  that will not be reused. Define a reusable pipeline as a build pack.
 
-Build packs are standard, opinionated pipelines for languages. They consist of a predefined sequence of steps, run in a consistent order. They are similar to stages in that they can be overridden and extended.
+Build packs are standard, opinionated pipelines for languages. They consist of a predefined 
+sequence of steps, run in a consistent order. They are similar to stages in that they can be 
+overridden and extended.
 
-Jenkins X is controlled by a `jenkins-x.yml` file that lives at the root of the Git repository. In `jenkins-x.yml`, you can:
+Jenkins X is controlled by a `jenkins-x.yml` file that lives at the root of the Git repository. 
+In `jenkins-x.yml`, you can:
 
-*   Override build packs
-*   Run steps before existing step using setup
-*   Use `type: replace` to replace a step
-*   To add a step to the end of the stage, leave the step name unspecified
-*   To apply an override to all pipelines, leave the pipeline name unspecified
-*   Modify container configuration or environment variables. Override environment variables using the same syntax as Kubernetes.
+* Override build packs
+* Run steps before existing step using setup
+* Use `type: replace` to replace a step
+* To add a step to the end of the stage, leave the step name unspecified
+* To apply an override to all pipelines, leave the pipeline name unspecified
+* Modify container configuration or environment variables. Override environment variables
+  using the same syntax as Kubernetes.
 
 You can also define a completely new pipeline in `jenkins-x.yml`, but this is useful chiefly for debugging and testing. Create a reusable pipeline as a build pack.
 
@@ -236,19 +254,29 @@ On the development cluster, install Jenkins X. Install the Jenkins X [environmen
 
 Jenkins X is rapidly evolving. Upcoming features are:
 
-*   Conditional execution of stages
-*   Jenkins X apps to inject steps and stages
-*   More advanced config of stage pods
-*   More advanced solution for pipeline and stage sharing across repos
+* Conditional execution of stages
+* Jenkins X apps to inject steps and stages
+* More advanced config of stage pods
+* More advanced solution for pipeline and stage sharing across repos
 
 ## How to learn Jenkins X
 
 Many fine examples with source code on GitHub were presented:
 
-*   Mauricio Salatino presented what was by far [the most extensive example](https://salaboy.com/2019/08/12/building-cloud-native-platforms-with-jenkins-x/). Starting with a monolithic application, he decomposed it into microservices, built it with Jenkins X and deployed it on Kubernetes.
-*   For instruction on how to use Kubernetes itself, Mauricio recommends [learnk8s.io](https://learnk8s.io/academy/).
-*   Kurt Madel's CloudBees Technologists Group gave [several lightning talks](https://cb-technologists.github.io/posts/lightning-talks-dw-jw-2019/) that discuss Jenkins X. [GitOps for Jenkins Infrastructure](https://cb-technologists.github.io/posts/gitops-series-part-1/) contained great Terraform tips for regular Jenkins (not Jenkins X). Whether or not you really
-want to use GitOps for your blog, [GitOps for Blogging, Why Not?](https://github.com/cb-technologists/blog) demonstrates a nice GitOps example.
+* Mauricio Salatino presented what was by far
+  [the most extensive example](https://salaboy.com/2019/08/12/building-cloud-native-platforms-with-jenkins-x/).
+  Starting with a monolithic application, he decomposed it into microservices, built it with
+  Jenkins X and deployed it on Kubernetes.
+* For instruction on how to use Kubernetes itself, Mauricio recommends
+  [learnk8s.io](https://learnk8s.io/academy/).
+* Kurt Madel's CloudBees Technologists Group gave
+  [several lightning talks](https://cb-technologists.github.io/posts/lightning-talks-dw-jw-2019/)
+  that discuss Jenkins X.
+  [GitOps for Jenkins Infrastructure](https://cb-technologists.github.io/posts/gitops-series-part-1/)
+  contained great Terraform tips for regular Jenkins (not Jenkins X). Whether or not you really
+  want to use GitOps for your blog,
+  [GitOps for Blogging, Why Not?](https://github.com/cb-technologists/blog)
+  demonstrates a nice GitOps example.
 
 ## Get involved with the Jenkins Community
 
