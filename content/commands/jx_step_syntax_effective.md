@@ -1,5 +1,5 @@
 ---
-date: 2019-08-30T09:26:53Z
+date: 2019-08-30T13:08:36Z
 title: "jx step syntax effective"
 slug: jx_step_syntax_effective
 url: /commands/jx_step_syntax_effective/
