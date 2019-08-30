@@ -1,5 +1,5 @@
 ---
-date: 2019-08-30T17:52:03Z
+date: 2019-08-30T19:03:21Z
 title: "jx boot"
 slug: jx_boot
 url: /commands/jx_boot/
@@ -10,7 +10,9 @@ Boots up Jenkins X in a Kubernetes cluster using GitOps and a Jenkins X Pipeline
 
 ### Synopsis
 
-Boots up Jenkins X in a Kubernetes cluster using GitOps and a Jenkins X Pipeline
+Boots up Jenkins X in a Kubernetes cluster using GitOps and a Jenkins X Pipeline 
+
+For more documentation see: https://jenkins-x.io/getting-started/boot/
 
 ```
 jx boot [flags]
