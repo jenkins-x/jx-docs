@@ -6,7 +6,7 @@ description: >
   The top 12 things I learned about Jenkins X at DevOps World | Jenkins World
 categories: [blog]
 keywords: [Jenkins X,DevOps World,Jenkins World,2019]
-slug: "jenkins-x-key-takeaways-2019"
+slug: "jenkinsworld-2019-takeaways"
 aliases: []
 author: John McGehee
 ---
@@ -61,19 +61,17 @@ Find out how to get involved at the [Tekton Community project on GitHub](https:/
 
 ## Jenkins X
 
-Jenkins X is a completely new CI/CD system that shares little but its name with the existing Jenkins. Jenkins X incorporates the best practices from the _State of DevOps_ reports and the seminal book, _Accelerate_ by [Nicole Forsgren](https://twitter.com/nicolefv), [Jez Humble](https://twitter.com/jezhumble) and [Gene Kim](https://twitter.com/RealGeneKim).
+Jenkins X is a completely new CI/CD system that shares little but its name with the existing Jenkins. Jenkins X incorporates the best practices from the *State of DevOps* reports and the seminal book, *Accelerate* by [Nicole Forsgren](https://twitter.com/nicolefv), [Jez Humble](https://twitter.com/jezhumble) and [Gene Kim](https://twitter.com/RealGeneKim).
 
 <img width="70%" height="70%" alt="Capabilities of Jenkins X" src="https://www.cloudbees.com/sites/default/files/jenkinsx_capabilities.png">
 
-I attended multiple presentations by [James Strachan](https://twitter.com/jstrachan), Andrew Bayer and [James Rawlings](https://twitter.com/jdrawlings) of CloudBees, and [Mauricio Salatino](https://twitter.com/salaboy). Mr. Rawlings even gave two presentations. Each presentation covered Jenkins X from a different view, so here I compose everything into a unified summary.
-
-<img width="100%" height="100%" alt="Capabilities of Jenkins X" src="../../static/news/jenkinsworld-2019-takeaways/jenkins-x-architecture.png">
+I attended multiple presentations by [James Strachan](https://twitter.com/jstrachan), Andrew Bayer and [James Rawlings](https://twitter.com/jdrawlings) of CloudBees, and [Mauricio Salatino](https://twitter.com/salaboy). Mr. Rawlings even gave two presentations. Each presentation covered Jenkins X from a different perspective, so here I compose everything into a unified summary.
 
 ## Setting up Kubernetes
 
 [Terraform is recommended](https://cb-technologists.github.io/posts/gitops-series-part-1/) for 
-setting up the required Kubernetes cluster and storage buckets. As explained below, you can also 
-run jx boot from within Terraform.
+setting up the required Kubernetes cluster and storage buckets. As explained below, you may find it
+useful to run `jx boot` from within Terraform.
 
 By default, Terraform stores its state in local file `terraform.tfstate`. In an ephemeral cloud 
 environment, this state gets lost and you would create a new cluster each time you applied 
@@ -85,8 +83,8 @@ Presenters recommended nginx as an ingress controller and
 [cert-manager](https://cb-technologists.github.io/posts/gitops-series-part-1/) to manage TLS 
 (HTTPS SSL) certificates.
 
-[VMWare's Octant UI tool](https://github.com/vmware/octant) enables introspection, navigation 
-and object mahagement of your Kubernetes cluster. It runs on your local client just like 
+For introspection, navigation and object management of your Kubernetes cluster, try
+[VMWare's Octant UI tool](https://github.com/vmware/octant). It runs on your local client just like 
 `kubectl`. An advantage of Octant is that it authenticates the same way as `kubectl`: if `kubectl` works, octant works.
 
 ## Setting up Jenkins X
@@ -108,7 +106,7 @@ There are two interactive quick start commands. The older and presumably more re
 jx create quickstart
 ```
 
-The newest command to install, configure and upgrade Jenkins X is:
+The new way to install, configure and upgrade Jenkins X is:
 ```
 jx boot
 ```
@@ -117,7 +115,8 @@ jx boot
 
 Jenkins X evolves quickly, so `jx boot` records the Jenkinx X version to use in field 
 `versionStream` within `jx-requirements.yml`. This establishes the version to use on subsequent 
-invocations of `jx boot`. Update `versionStream` when you want to start using a newer version.
+invocations of `jx boot`. Update `versionStream` when you want to start using a newer version of
+Jenkins X.
 
 ## Getting status
 
@@ -144,7 +143,7 @@ At this point a little vocabulary lession is in order.
 
 A step is a command that runs in a separate container, sharing a workspace with other steps. Once a step fails, subsequent steps will not run. Step names must be unique within a stage. There is also a loop step, which runs the same command for each value in a list.
 
-All the usual Kubernetes container configuration of resources, limits, volume mounts and so on are available to steps.
+All the usual Kubernetes container configuration of resources, limits, volume mounts and so on are available in steps.
 
 ### Stage
 
@@ -170,7 +169,7 @@ There are three ways to define a Jenkins X pipeline:
 * Automatically via a build pack. The build pacl automatically detects the source code language.
 * Specify a build pack and then override portions in `jenkins-x.yml`
 * Fully define an entirely new pipeline in `jenkins-x.yml`. This is only useful for a pipeline 
-  that will not be reused. Define a reusable pipeline as a build pack.
+  that will not be reused. For reusable pipelines, define a build pack.
 
 Build packs are standard, opinionated pipelines for languages. They consist of a predefined 
 sequence of steps, run in a consistent order. They are similar to stages in that they can be 
@@ -187,11 +186,12 @@ In `jenkins-x.yml`, you can:
 * Modify container configuration or environment variables. Override environment variables
   using the same syntax as Kubernetes.
 
-You can also define a completely new pipeline in `jenkins-x.yml`, but this is useful chiefly for debugging and testing. Create a reusable pipeline as a build pack.
+You can also define a completely new pipeline in `jenkins-x.yml`, but this is useful chiefly for debugging and testing. Again, make a pipeline reusable by defining it as a build pack.
 
 ### Default pipeline
 
-Pull request and release pipelines are often very similar, so define a default for both.
+Pull request and release pipelines are often very similar, so define common attributes for both
+in a default pipeline.
 
 ## Syntax validation and IDE autocomplete
 
@@ -205,7 +205,7 @@ Pipelines are usually defined by multiple YAML files. See how they fit together 
 jx step syntax effective
 ```
 
-The Jenkins X YAML schema is available on schemastore.org, where amazingly IntelliJ and the VS Code YAML Language Extension pick it up automatically.
+The Jenkins X YAML schema is uploaded to [schemastore.org](https://schemastore.org), where amazingly IntelliJ and the VS Code YAML Language Extension automatically pick it up.
 
 ## GitOps, Prow and Lighthouse
 
@@ -234,19 +234,23 @@ It is difficult to get HTTPS to work in preview environments because each previe
 
 1. Specify that you want to use DNS for HTTPS in jx boot. This will cause [external-dns](https://github.com/kubernetes-incubator/external-dns) to be installed automatically.
 2. Add `externalDNS` in `requirements.yml`:
+
    ```
    ingress:
      externalDNS: true
    ```
+
 3. Then, create the domain (this example assumes you are using GKE):
+   
    ```
    jx create domain gke --domain rawlingsdemo.co.uk
    ```
+
 4. Finally, go to your domain registrar and replace their name servers with Google's name servers
 
 ### Using Jenkins X in multiple clusters
 
-Strictly speaking, Jenkins X does not require its own cluster, but things work out better operationally if you use separate clusters for testing, staging and production.
+Strictly speaking, Jenkins X does not require its own cluster, but things work better operationally if you use separate clusters for testing, staging and production.
 
 On the development cluster, install Jenkins X. Install the Jenkins X [environment controller](https://github.com/jenkins-x-charts/environment-controller) on staging and production clusters. This is further explained in the article [Multiple Clusters](https://jenkins-x.io/getting-started/multi-cluster/).
 
@@ -273,11 +277,11 @@ Many fine examples with source code on GitHub were presented:
   [several lightning talks](https://cb-technologists.github.io/posts/lightning-talks-dw-jw-2019/)
   that discuss Jenkins X.
   [GitOps for Jenkins Infrastructure](https://cb-technologists.github.io/posts/gitops-series-part-1/)
-  contained great Terraform tips for regular Jenkins (not Jenkins X). Whether or not you really
+  contains great Terraform tips for regular Jenkins (not Jenkins X). Whether or not you really
   want to use GitOps for your blog,
   [GitOps for Blogging, Why Not?](https://github.com/cb-technologists/blog)
   demonstrates a nice GitOps example.
 
 ## Get involved with the Jenkins Community
 
-Multiple presenters recommended the [Jenkins X slack channels](https://jenkins-x.io/community/) as the best source of help and information. For more ways to get involved, see the [Jenkins X community page](https://jenkins-x.io/community/).
+Multiple presenters recommended the [Jenkins X slack channels](https://jenkins-x.io/community/) as the best source of help and information. For more ways to get involved, see the [Jenkins X community page](https://jenkins-x.io/community/). I'll see you there.
