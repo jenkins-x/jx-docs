@@ -234,14 +234,12 @@ It is difficult to get HTTPS to work in preview environments because each previe
 
 1. Specify that you want to use DNS for HTTPS in jx boot. This will cause [external-dns](https://github.com/kubernetes-incubator/external-dns) to be installed automatically.
 2. Add `externalDNS` in `requirements.yml`:
-
    ```
    ingress:
      externalDNS: true
    ```
 
 3. Then, create the domain (this example assumes you are using GKE):
-   
    ```
    jx create domain gke --domain rawlingsdemo.co.uk
    ```
