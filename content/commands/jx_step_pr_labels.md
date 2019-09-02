@@ -1,5 +1,5 @@
 ---
-date: 2019-09-02T20:40:56Z
+date: 2019-09-02T22:23:40Z
 title: "jx step pr labels"
 slug: jx_step_pr_labels
 url: /commands/jx_step_pr_labels/
