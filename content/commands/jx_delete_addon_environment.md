@@ -1,5 +1,5 @@
 ---
-date: 2019-09-02T18:23:26Z
+date: 2019-09-02T20:40:56Z
 title: "jx delete addon environment"
 slug: jx_delete_addon_environment
 url: /commands/jx_delete_addon_environment/
@@ -26,9 +26,10 @@ jx delete addon environment controller [flags]
 ### Options
 
 ```
-  -h, --help             help for environment
-  -p, --purge            Removes the release name from helm so it can be reused again (default true)
-  -r, --release string   The chart release name (default "jxet")
+  -h, --help               help for environment
+  -n, --namespace string   The Namespace to delete from (default "jx")
+  -p, --purge              Removes the release name from helm so it can be reused again (default true)
+  -r, --release string     The chart release name (default "jxet")
 ```
 
 ### Options inherited from parent commands
