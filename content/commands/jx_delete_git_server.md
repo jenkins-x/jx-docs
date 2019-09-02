@@ -1,5 +1,5 @@
 ---
-date: 2019-09-02T11:18:07Z
+date: 2019-09-02T12:25:34Z
 title: "jx delete git server"
 slug: jx_delete_git_server
 url: /commands/jx_delete_git_server/
