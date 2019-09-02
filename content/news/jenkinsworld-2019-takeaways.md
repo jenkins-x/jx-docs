@@ -1,6 +1,6 @@
 ---
 title: "Jenkins X Key Takeaways from Jenkins World 2019"
-date: 2019-08-30
+date: 2019-09-03
 draft: false
 description: >
   The top 12 things I learned about Jenkins X at DevOps World | Jenkins World
@@ -14,52 +14,6 @@ Jenkins X was the star of the show at DevOps World | Jenkins World 2019. In this
 share with you the dozen key things I learned about this exciting new cloud native CI/CD tool.
 Even if you never use it for CI/CD, Jenkins X provides an excellent example of how to architect 
 a cloud native application on Kubernetes.
-
-If you need help with this kind of stuff, I'm looking for a new opportunity--connect with me at
-[@johnmcgehee](https://twitter.com/johnmcgehee) or jenkins-x@johnnado.com.
-
-## Tekton
-
-[Vic Iglesias](https://twitter.com/vicnastea), Cloud Solutions Architect at Google presented the 
-technical details of Tekton.
-[Tekton](https://github.com/tektoncd) is an open API spec for describing CI/CD pipelines on 
-Kubernetes. Kubernetes is the portable, open-source container orchestration system. Tekton grew 
-out of Knative build. The goals of Tekton are:
-
-*   Make CI/CD pipelines composable across the organization
-*   Declarative
-*   Reproducible
-*   Cloud native: a stateless infrastructure that easily scales out
-
-Tekton is an API spec and implementation, not a finished CI/CD tool. Jenkins X is the most 
-prominent tool based on Tekton.
-
-Tekton also has some useful subprojects:
-
-* [Tekton dashboard](https://github.com/tektoncd/dashboard) helps you visualize what is going 
-  on when you start out, but it is not a full featured Jenkins-style UI
-* The [Tekton catalog](https://github.com/tektoncd/catalog) contains various reusable Tekton
-  _Tasks_. This is your opportunity to contribute to Tekton.
-
-### The future of Tekton
-
-The Tekton near term roadmap calls for:
-
-* Event triggering
-* Log uploading
-* SCM support
-
-Longer term:
-
-* Pause and resume
-* partial execution
-* Access control
-* Configuration as code
-* Notifications
-
-Find out how to get involved at the [Tekton Community project on GitHub](https://github.com/tektoncd/community).
-
-## Jenkins X
 
 Jenkins X is a completely new CI/CD system that shares little but its name with the existing Jenkins. Jenkins X incorporates the best practices from the *State of DevOps* reports and the seminal book, *Accelerate* by [Nicole Forsgren](https://twitter.com/nicolefv), [Jez Humble](https://twitter.com/jezhumble) and [Gene Kim](https://twitter.com/RealGeneKim).
 
@@ -193,7 +147,7 @@ You can also define a completely new pipeline in `jenkins-x.yml`, but this is us
 Pull request and release pipelines are often very similar, so define common attributes for both
 in a default pipeline.
 
-## Syntax validation and IDE autocomplete
+## Validating syntax using IDE autocompletion
 
 Check your pipelines using:
 ```
@@ -228,7 +182,7 @@ It can be difficult to avoid commiting secrets to Git. Thus separate file `param
 
 The Helm chart `values.yml` files are separated into individual `values.tmpl.yml` files. These are templates so you can easily add secrets to them.
 
-## HTTPS for preview environments
+## Implementing HTTPS in preview environments
 
 It is difficult to get HTTPS to work in preview environments because each preview environment gets a different URL. James Rawlings demonstrated the solution:
 
@@ -261,7 +215,7 @@ Jenkins X is rapidly evolving. Upcoming features are:
 * More advanced config of stage pods
 * More advanced solution for pipeline and stage sharing across repos
 
-## How to learn Jenkins X
+## Learning Jenkins X
 
 Many fine examples with source code on GitHub were presented:
 
@@ -280,6 +234,6 @@ Many fine examples with source code on GitHub were presented:
   [GitOps for Blogging, Why Not?](https://github.com/cb-technologists/blog)
   demonstrates a nice GitOps example.
 
-## Get involved with the Jenkins Community
+## Getting involved with the Jenkins Community
 
-Multiple presenters recommended the [Jenkins X slack channels](https://jenkins-x.io/community/) as the best source of help and information. For more ways to get involved, see the [Jenkins X community page](https://jenkins-x.io/community/). I'll see you there.
+Multiple presenters recommended the [Jenkins X Slack channels](https://jenkins-x.io/community/) as the best source of help and information. For more ways to get involved, see the [Jenkins X community page](https://jenkins-x.io/community/). I'll see you there.
