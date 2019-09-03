@@ -200,7 +200,7 @@ It is difficult to get HTTPS to work in preview environments because each previe
 
 4. Finally, go to your domain registrar and replace their name servers with Google's name servers
 
-### Using Jenkins X in multiple clusters
+## Using Jenkins X in multiple clusters
 
 Strictly speaking, Jenkins X does not require its own cluster, but things work better operationally if you use separate clusters for testing, staging and production.
 
