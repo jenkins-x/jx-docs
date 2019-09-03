@@ -58,14 +58,10 @@ description = "Jenkins X documentation site"
 languageName ="English"
 # Weight used for sorting.
 weight = 1
-[languages.no]
-title = "Goldydocs"
-description = "Docsy er operativsystem for skyen"
-languageName ="Norsk"
-contentDir = "content/no"
-time_format_default = "02.01.2006"
-time_format_blog = "02.01.2006"
-
+[languages.zh]
+	languageCode = "zh-CN"
+	weight = 2
+	languageName = "中文"
 
 # Everything below this are Site Params
 
@@ -117,34 +113,29 @@ no = 'Sorry to hear that. Please <a href="https://github.com/USERNAME/REPOSITORY
 [params.links]
 # End user relevant links. These will show up on left side of footer and in the community page if you have one.
 [[params.links.user]]
-	name = "User mailing list"
-	url = "https://example.org/mail"
-	icon = "fa fa-envelope"
+	name = "User Slack Channel"
+	url = "https://kubernetes.slack.com/messages/C9MBGQJRH"
+	icon = "fab fa-slack"
         desc = "Discussion and help from your fellow users"
 [[params.links.user]]
 	name ="Twitter"
-	url = "https://example.org/twitter"
+	url = "https://twitter.com/jenkinsxio"
 	icon = "fab fa-twitter"
         desc = "Follow us on Twitter to get the latest news!"
 [[params.links.user]]
-	name = "Stack Overflow"
-	url = "https://example.org/stack"
-	icon = "fab fa-stack-overflow"
-        desc = "Practical questions and curated answers"
+	name = "Newsletter"
+	url = "/community"
+	icon = "fa fa-envelope"
+        desc = "Subscribe to the newsletter"
+
 # Developer relevant links. These will show up on right side of footer and in the community page if you have one.
 [[params.links.developer]]
 	name = "GitHub"
-	url = "https://github.com/google/docsy"
+	url = "https://github.com/jenkins-x/jx"
 	icon = "fab fa-github"
         desc = "Development takes place here!"
 [[params.links.developer]]
-	name = "Slack"
-	url = "https://example.org/slack"
+	name = "Developer Slack Channel"
+	url = "https://kubernetes.slack.com/messages/C9LTHT2BB"
 	icon = "fab fa-slack"
         desc = "Chat with other project developers"
-[[params.links.developer]]
-	name = "Developer mailing list"
-	url = "https://example.org/mail"
-	icon = "fa fa-envelope"
-        desc = "Discuss development issues around the project"
-
