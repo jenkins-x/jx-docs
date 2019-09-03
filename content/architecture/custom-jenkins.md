@@ -23,7 +23,7 @@ Jenkins X now has a [Jenkins App](https://github.com/jenkins-x-apps/jx-app-jenki
 
 ## Why Custom Jenkins?
 
-This app lets you maintain your investment in your existing Jenkins pipelines, invoking them in a custom Jenkins Server of your own choosing and configuration while you start to use more of the automated CI/CD in Jenkins X for new libraries and microservices using either [serverless Jenkins X Pipelines](/architecture/jenkins-x-pipelines/) or the embedded static jenkins server in Jenkins X. 
+This app lets you maintain your investment in your existing Jenkins pipelines, invoking them in a custom Jenkins Server of your own choosing and configuration while you start to use more of the automated CI/CD in Jenkins X for new libraries and microservices using either [serverless Jenkins X Pipelines](/architecture/jenkins-x-pipelines/) or the embedded static Jenkins server in Jenkins X. 
 
 You can then mix and match between the automated CI/CD in Jenkins X and your custom Jenkins pipelines - all orchestrated nicely together with Jenkins X!
 

@@ -27,7 +27,7 @@ First is why Jenkins X is purely focused on Kubernetes and is only intended to r
 
 Kubernetes has won the cloud wars, every major cloud provider now either supports Kubernetes or is actively working on a Kubernetes solution.  Google, Microsoft, Amazon, Red Hat, Oracle, IBM, Alibaba, Digital Ocean, Docker, Mesos and Cloud Foundry to name a few.  We now have one deployment platform to target and develop first class portable applications for.
 
-The Kuberetes ecosystem is rich with innovation and with a vibrant, forward thinking, diverse open source community which is inviting only suggests great things for all involved.
+The Kubernetes ecosystem is rich with innovation and with a vibrant, forward thinking, diverse open source community which is inviting only suggests great things for all involved.
 
 Jenkins X strongly recommends using public cloud managed Kubernetes clusters where possible. GKE, AKS and EKS all manage and run your Kubernetes masters for __free__ you pay for the worker resources required to run your applications.  This dramatically reduces risk of installing, upgrading and maintaining your Kubernetes cluster.  
 
@@ -54,7 +54,7 @@ The Helm project came from Deis who were acquired by Microsoft and continue to i
 
 ## Skaffold
 
-Jenkins X uses [Skaffold](https://github.com/GoogleContainerTools/skaffold) to perform the build and push image actions in a pipeline.  Skaffold allows us to implement different image builder and registries services like [Google Container Buidler](https://cloud.google.com/container-builder/), [Azure Container Builder](https://github.com/Azure/acr-builder) and [ECR](https://aws.amazon.com/ecr/).  
+Jenkins X uses [Skaffold](https://github.com/GoogleContainerTools/skaffold) to perform the build and push image actions in a pipeline.  Skaffold allows us to implement different image builder and registries services like [Google Container Builder](https://cloud.google.com/container-builder/), [Azure Container Builder](https://github.com/Azure/acr-builder) and [ECR](https://aws.amazon.com/ecr/).  
 
 For folks that aren't running on a public cloud with container builder or registry services then Skaffold can also work with [kaniko](https://github.com/GoogleContainerTools/kaniko), this allows pipelines to build docker images using rootless containers.  This is significantly more secure than mounting the docker socket from each node in the cluster.
 
@@ -78,11 +78,11 @@ Prow can run in a highly available mode where multiple pods for a webhook ingres
 
 If someone developed an open source artifact repository server in a more cloud friendly language like Go then Jenkins X would likely switch to save on cloud bills.
 
-Right now Jenkins X doesn't use the docker registry from Nexus.  The main reason was we needed to do some work to setup pod definitions with image pull secrets so we can use the authenticated registry.  Our preferred approach however is to switch to using native cloud provider registries like Amazon's [ECR](https://aws.amazon.com/ecr/), [Google Container Regitry](https://cloud.google.com/container-registry/) or Dockerhub for example with the help of Skaffold.
+Right now Jenkins X doesn't use the docker registry from Nexus.  The main reason was we needed to do some work to setup pod definitions with image pull secrets so we can use the authenticated registry.  Our preferred approach however is to switch to using native cloud provider registries like Amazon's [ECR](https://aws.amazon.com/ecr/), [Google Container Registry](https://cloud.google.com/container-registry/) or Dockerhub for example with the help of Skaffold.
 
 ## Docker registry
 
-As above, we don't intend to use [this registry](https://github.com/kubernetes/charts/tree/master/stable/docker-registry) long term as we prefer using cloud provider registries like Amazon's [ECR](https://aws.amazon.com/ecr/), [Google Container Regitry](https://cloud.google.com/container-registry/) or Dockerhub for example with the help of Skaffold.
+As above, we don't intend to use [this registry](https://github.com/kubernetes/charts/tree/master/stable/docker-registry) long term as we prefer using cloud provider registries like Amazon's [ECR](https://aws.amazon.com/ecr/), [Google Container Registry](https://cloud.google.com/container-registry/) or Dockerhub for example with the help of Skaffold.
 
 ## ChartMuseum
 
@@ -98,7 +98,7 @@ Jenkins X only works with Git.  There are a lot of dependencies and client imple
 
 ## Programming languages
 
-Jenkins X aims to help provide the right level of feedback for developers to understand how their applications are performing and give them easy ways to experiment with other languages which may suit both the feature and running on the Cloud better.  For example there are a lot of Java based organisations that only know how to write, run and maintain Java applications.  Java is extremely resource intensive compared with Golang, Rust, Swift, NodeJS to name a few, this results in much much higher cloud bills each month.  With Jenkins X we aim to help developers experiment with other options using quickstarts and metrics addons like Grafana and Prometheus to see how they behave in the cloud.
+Jenkins X aims to help provide the right level of feedback for developers to understand how their applications are performing and give them easy ways to experiment with other languages which may suit both the feature and running on the Cloud better.  For example there are a lot of Java based organizations that only know how to write, run and maintain Java applications.  Java is extremely resource intensive compared with Golang, Rust, Swift, NodeJS to name a few, this results in much much higher cloud bills each month.  With Jenkins X we aim to help developers experiment with other options using quickstarts and metrics addons like Grafana and Prometheus to see how they behave in the cloud.
 
 For example any new microservice that we build on the Jenkins X project tends to be in either Golang or NodeJS given the huge effect is has on our cloud billing.  It does take time to shift to a new programming language but with Jenkins X we hope we can mitigate a lot of risk using quickstarts, automated CI/CD and a relatively consistent way of working on all languages.
 

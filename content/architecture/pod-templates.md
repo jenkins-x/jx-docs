@@ -96,7 +96,7 @@ jx console
 
 That will open the Jenkins console. Then navigate to `Manage Jenkins` (on the left hand menu) then `Configure System`. 
 
-You will now be faced with a large page of configuration options ;) The pod templates are usually towards the bottom; you should see all the current pod templates for things like maven, nodejs etc.
+You will now be faced with a large page of configuration options ;) The pod templates are usually towards the bottom; you should see all the current pod templates for things like maven, NodeJS etc.
 
 You can edit/add/remove pod templates in that page and hit Save.
 

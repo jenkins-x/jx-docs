@@ -274,10 +274,10 @@ We need a place to store the reports. A simple Go program will suffice for now.
     ```yaml
               containerPort: {{ .Values.serviceUpload.internalPort }}
     ```
-1. Run this as an app on your Jenkins X cluster by pushing your code changes to github. The app will build and can be tested in the staging environment.
+1. Run this as an app on your Jenkins X cluster by pushing your code changes to GitHub. The app will build and can be tested in the staging environment.
 1. Validate you can upload and download files. In the DevPod for the sample app run `curl -F upload=@target/site/surefire-report.html http://jenkins-x-reports-upload.jx-staging/test/1` and then validate that the file is there by running `curl http://jenkins-x-reports.jx-staging/test/1`.
 2. Promote the app to production using `jx promote -a jenkins-x-reports -e production -v 0.0.1` (assuming you are still on your first version of the app)
-1. To POST all the junit artifacts to the reports server use this script
+1. To POST all the JUnit artifacts to the reports server use this script
    
     ```bash
     #!/bin/bash
@@ -360,9 +360,9 @@ We'll use one `ConfigMap` per app, and we'll use a standard naming pattern so th
     }
     ```
 
-### Visualise the test results
+### Visualize the test results
 
-We'll use Kibana and ElasticSearch to create dashboards to visualise the test results. 
+We'll use Kibana and ElasticSearch to create dashboards to visualize the test results. 
 
 1. Install ElasticSearch by running `helm install --name jenkins-x-reports-elasticsearch incubator/elasticsearch`
 2. Install Kibana by running `helm install stable/kibana --name=jenkins-x-reports-kibana --set service.annotations."fabric8\.io/expose"=true --set files."kibana\.yml"."elasticsearch\.url"=http://jenkins-x-reports-elasticsearch-client:9200 --set  && jx upgrade ingress`.
@@ -541,7 +541,7 @@ Just above where we write the success message to the HTTP stream, add this code 
       version = "kubernetes-1.11.0"
     ```
 
-8. Now we can add this function to create the Kubernetnes client:
+8. Now we can add this function to create the Kubernetes client:
 
     ```go
     func createKubernetesClient() (*kubernetes.Clientset, error) {
@@ -672,7 +672,7 @@ Just above where we write the success message to the HTTP stream, add this code 
 		}
     ```
 1. We can also improve the way we are storing the files now, using the headers to create the path rather than just copying the path that was used for upload by changing the variable `dir` to look more like `dir := filepath.Join(uploadPath, org, app, version)`
-2. Finally, let's tidy up `junit.sh` by removing the remanants of the patching code and adding the version header. Your final curl command should look like: `    curl -H "X-Content-Type: text/vnd.junit-xml" -H "X-Org: ${ORG}" -H "X-App: ${APP_NAME}" -H "X-Version: ${VERSION}" -s -F upload=@$1 http://jenkins-x-reports-upload.jx-production/$filename`
+2. Finally, let's tidy up `junit.sh` by removing the remnants of the patching code and adding the version header. Your final curl command should look like: `    curl -H "X-Content-Type: text/vnd.junit-xml" -H "X-Org: ${ORG}" -H "X-App: ${APP_NAME}" -H "X-Version: ${VERSION}" -s -F upload=@$1 http://jenkins-x-reports-upload.jx-production/$filename`
 
 ## Progress Review
 
@@ -681,7 +681,7 @@ We still have some steps to complete.
 * Add token based authentication for the upload endpoint to prevent random pieces of code updating it (it's only accessible in the cluster anyway)
 * Allow contribution to build health (requires additional JX support `jx step post` and `jx step pre`)
 
-At this point the JX team have also learnt that we want to build some additional extension points into Jenkins X:
+At this point the JX team have also learned that we want to build some additional extension points into Jenkins X:
 
 * A `jx step post` support for a 'post build` steps. This will allow us to implement build health, as it will allow us to:
    * Inject additional steps into the build that allow us to run e.g. `mvn surefire-report:report` without modifying the build

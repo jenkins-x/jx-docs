@@ -37,7 +37,7 @@ Jenkins X ships with a collection of default `Role` objects you can use in the `
 : The `viewer` role allows access to read projects, builds, and logs. It does not allow access to sensitive information
 
 [committer](https://github.com/jenkins-x/jenkins-x-platform/blob/master/jenkins-x-platform/templates/committer-role.yaml)
-: The`committer`role provides the same permissions as `viewer` and allows the user to trigger builds and import new projects.
+: The `committer` role provides the same permissions as `viewer` and allows the user to trigger builds and import new projects.
 
 [owner](https://github.com/jenkins-x/jenkins-x-platform/blob/master/jenkins-x-platform/templates/owner-role.yaml)
 : The owner role allows users to modify all team resources.

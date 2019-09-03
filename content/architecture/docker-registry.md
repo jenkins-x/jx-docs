@@ -32,7 +32,7 @@ jx console
 
 Then navigate to `Manage Jenkins -> Configure System` and change the `DOCKER_REGISTRY` environment variable to point to your docker registry of choice.
 
-Another approach is to add the following to your `values.yaml` file for your customisation of the Jenkins X platform helm charts:
+Another approach is to add the following to your `values.yaml` file for your customization of the Jenkins X platform helm charts:
 
 ```yaml 
 jenkins:
@@ -100,7 +100,7 @@ If you want to publish images to docker hub then you need to modify your `config
 }
 ``` 
 
-## Usng jFrog BinTray (Artifactory)
+## Using jFrog BinTray (Artifactory)
 Using the jFrog BinTray as a private registry is possible.  This has only been tested when creating a new cluster and passing the `--docker-registry=private-reg.bintray.io`.  After creating your cluster, you will want to do the following:
 
 1. Delete the existing `Secret` called `jenkins-docker-cfg` by executing 

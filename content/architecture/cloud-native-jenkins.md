@@ -15,9 +15,9 @@ draft: false
 toc: true
 ---
 
-Jenkins X helps to support _cloud native jenkins_ via:
+Jenkins X helps to support _cloud native Jenkins_ via:
 
-* orchestrating either [serverless jenkins](/news/serverless-jenkins/) using [prow](/architecture/prow) or a Static Jenkins masters per team. This lets teams move towards servlerless while bring along static masters too.
+* orchestrating either [serverless Jenkins](/news/serverless-jenkins/) using [prow](/architecture/prow) or a Static Jenkins masters per team. This lets teams move towards serverless while bring along static masters too.
 * each team can install its own Jenkins X in its own namespace (via `jx install --namespace myteam`)
 * support for different workloads per team (see [jx edit buildpack](/commands/jx_edit_buildpack/)). 
 
@@ -43,7 +43,7 @@ By default just hit enter to stick to the `kubernetes workloads` option. Though 
 
 ## Current workloads 
 
-We store our build packs in [jenkins-x-buildpacks](https://github.com/jenkins-x-buildpacks/) organisation at github. Currently we support: 
+We store our build packs in [jenkins-x-buildpacks](https://github.com/jenkins-x-buildpacks/) organization at GitHub. Currently we support: 
  
 * the [jenkins-x-classic](https://github.com/jenkins-x-buildpacks/jenkins-x-classic) build pack supports CI+Releases but does not include CD. e.g. do CI and release of your Java libraries or Node modules but don't deploy to Kubernetes
 * the [jenkins-x-kubernetes](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) build pack supports automated CI+CD with GitOps promotion and Preview Environments for `kubernetes workloads`

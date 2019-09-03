@@ -21,7 +21,7 @@ toc: true
 
 * `Dockerfile` 把代码构建为不可变的 docker 镜像，准备在 Kubernetes 中运行
 * `Jenkinsfile` 为应用使用申明式 Jenkins 流水线定义 CI/CD 步骤
-* helm chart 在文件夹 `charts` 中生成可以在 Kubernets 中运行的 Kubernetes 资源
+* helm chart 在文件夹 `charts` 中生成可以在 Kubernetes 中运行的 Kubernetes 资源
 * 在 `charts/preview` 文件夹中的 _preview chart_ 定义了基于 Pull Request 部署一个[预览环境](/zh/about/features/#preview-environments)的所有依赖
 
 默认的构建包在 [https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes)，每个语言或者构建工具在一个文件夹中。
@@ -75,6 +75,6 @@ cp Dockerfile Jenkinsfile  ~/.jx/draft/packs/github.com/jenkins-x/draft-packs/pa
 cp -r charts/somefoo ~/.jx/draft/packs/github.com/jenkins-x/draft-packs/packs/$PACK/charts
 ```   
 
-当你的构建包在 `~/.jx/draft/packs/github.com/jenkins-x/draft-packs/packs/` 文件夹中，就可以通过命令 [jx import](/commands/jx_import) 来导入工程，使用编程语言来检测并查找最合适的构建包。如果你的构建包自定义检测逻辑的话，请让我们指导，我们可以帮助改进 [jx import](/commands/jx_import) 使得在你的构建包上做的更好。例如：我们有一些自定义逻辑更好地处理 [maven 和 gradle](https://github.com/jenkins-x/jx/blob/master/pkg/jx/cmd/import.go#L383-L397)。
+当你的构建包在 `~/.jx/draft/packs/github.com/jenkins-x/draft-packs/packs/` 文件夹中，就可以通过命令 [jx import](/commands/jx_import) 来导入工程，使用编程语言来检测并查找最合适的构建包。如果你的构建包自定义检测逻辑的话，请让我们指导，我们可以帮助改进 [jx import](/commands/jx_import) 使得在你的构建包上做的更好。例如：我们有一些自定义逻辑更好地处理 [maven 和 Gradle](https://github.com/jenkins-x/jx/blob/master/pkg/jx/cmd/import.go#L383-L397)。
           
 如果你需要任何帮助 [请加入社区](/zh/community/) 。

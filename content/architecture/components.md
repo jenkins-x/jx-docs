@@ -36,7 +36,7 @@ We also support [addons](/about/features/#applications) to extend this core set.
 Jenkins X comes with configuration that wires these services together meaning everything works together straight away. This dramatically reduces the time to get started with Kubernetes as all the passwords, environment variables and config files are all setup up to work with each other.
 
 1. __Jenkins__  — provides both CI and CD automation. There is an effort to decompose Jenkins over time to become more cloud native and make use of Kubernetes concepts around CRDs, storage and scaling for example.
-2. __Nexus__ — acts as a dependency cache for Nodejs and Java applications to dramatically improve build times. After an initial build of a SpringBoot application the build time is reduced from 12 mins to 4. We have not yet but intend to demonstrate swapping this with Artifactory soon.
+2. __Nexus__ — acts as a dependency cache for NodeJS and Java applications to dramatically improve build times. After an initial build of a SpringBoot application the build time is reduced from 12 minutes to 4. We have not yet but intend to demonstrate swapping this with Artifactory soon.
 3. __Docker registry__  — an in cluster docker registry where our pipelines push application images, we will soon switch to using native cloud provider registries such as Google Container Registry, Azure Container Registry or Amazon Elastic Container Registry (ECR) for example.
 4. __ChartMuseum__ — a Repository for publishing Helm charts
 5. __Monocular__  — a UI used for discovering and running Helm charts

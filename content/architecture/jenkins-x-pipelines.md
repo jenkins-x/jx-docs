@@ -39,7 +39,7 @@ The general developer experience, CLI and IDE plugins should work as before - bu
 
 ## Using a quickstart
  
-Once your cluster is started you can create a new quickstart, we've been using the nodejs one reliably.
+Once your cluster is started you can create a new quickstart, we've been using the NodeJS one reliably.
 
 ```
 jx create quickstart
@@ -61,15 +61,15 @@ buildPack: maven
 
 That's it! What that basically means is at runtime the Jenkins X Pipeline will use the [build packs](/architecture/build-packs/) to generate the actual Tekton Pipeline.
  
-## Customising the Pipelines
+## Customizing the Pipelines
 
 Having automated [build packs](/architecture/build-packs/) to do all of your CI+CD is pretty awesome - as most of the time your microservices will all be compiled, tested, packaged, released and promoted in the same way. CI+CD is often undifferentiated heavy lifting we should just automate!
 
-However there are times you want to customise a [particular pipeline](/architecture/build-packs/#pipelines) (release, pull request, feature etc) and a particular [lifecycle](/architecture/build-packs/#lifecycles) to change the actual steps invoked.
+However there are times you want to customize a [particular pipeline](/architecture/build-packs/#pipelines) (release, pull request, feature etc) and a particular [life cycle](/architecture/build-packs/#lifecycles) to change the actual steps invoked.
 
-You can read more about the [extension model](/architecture/build-packs/#pipeline-extension-model) to find out all you can do. Basically you can add steps before/after any lifecycle or completely replace a set of lifecycles or even opt out of the build pack completely and inline your pipelines inside your `jenkins-x.yml`
+You can read more about the [extension model](/architecture/build-packs/#pipeline-extension-model) to find out all you can do. Basically you can add steps before/after any life cycle or completely replace a set of life cycles or even opt out of the build pack completely and inline your pipelines inside your `jenkins-x.yml`
 
-For a quick way to add a new step into a pipeline lifecycle you can use the [jx create step](/commands/jx_create_step/) command:
+For a quick way to add a new step into a pipeline life cycle you can use the [jx create step](/commands/jx_create_step/) command:
 
 <figure>
 <img src="/images/architecture/create-step.gif" />
@@ -123,7 +123,7 @@ The following environment variables are available for use in a step in Jenkins X
 | BUILD_ID | same as `$BUILD_NUMBER`
 | JOB_TYPE | the prow job type such as `presubmit` for PR or `postsubmit` for release |
 | PULL_BASE_REF | the branch/ref of git |
-| PULL_BASE_SHA | the git sha being built |
+| PULL_BASE_SHA | the git SHA being built |
 | PULL_NUMBER | for PRs this will be the number without the `PR-` prefix
 | PULL_REFS | for batch merging all the git refs |
  

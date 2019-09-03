@@ -21,7 +21,7 @@ toc: true
 
 Jenkins X is a reimagined CI/CD implementation for the Cloud which is heavily influence by the State of DevOps reports and more recently the [Accelerate](https://www.amazon.co.uk/Accelerate-Software-Performing-Technology-Organizations/dp/1942788339) book from [Nicole Forsgren](https://twitter.com/nicolefv), [Jez Humble](https://twitter.com/jezhumble) and [Gene Kim](https://twitter.com/RealGeneKim?).  
 
-Years of gathering data from real world teams and organisations which has been analyzed by inspiring thought leaders and data scientists from the DevOps world.  The Accelerate book recommends a number of capabilities that Jenkins X is implementing so users gain the scientifically proven benefits, out of the box.  We've started documenting the capabilities that are available today and will continue as more become available.
+Years of gathering data from real world teams and organizations which has been analyzed by inspiring thought leaders and data scientists from the DevOps world.  The Accelerate book recommends a number of capabilities that Jenkins X is implementing so users gain the scientifically proven benefits, out of the box.  We've started documenting the capabilities that are available today and will continue as more become available.
 
 <img src="/images/capabilities.png" class="img-thumbnail">
 
@@ -37,7 +37,7 @@ _Related Accelerate capability:  Use version control for all production artifact
 
 Jenkins X will automatically create Git backed environments during installation and makes it easy to add new ones using `jx create environment`.  Additionally when creating new applications via a quickstart (`jx create quickstart`), Java based SpringBoot (`jx create spring`) or importing existing applications (`jx import`), Jenkins X will both automatically add CI / CD pipelines and setup the jobs, git repos and webhooks to enable an automated deployment process.
 
-Out of the box Jenkins X creates Staging and Production (this is customisable) permanent environments as well as temporary environments for preview applications from Pull Requests.
+Out of the box Jenkins X creates Staging and Production (this is customizable) permanent environments as well as temporary environments for preview applications from Pull Requests.
 
 ### Previews Environments
 
@@ -45,7 +45,7 @@ We are trying to move as much testing, security, validation and experimentation 
 
 Ultimately Jenkins X wants to provide a way that developers, testers, designers and product managers can be as sure as they can that when a change is merged to master it works as expected.  We want to be confident the proposed change does not negatively affect any service or feature as well as deliver the value it is intended to.
 
-Where Preview Environments get really interesting is when we are able to progress a short term PR through various stages of maturity and confidence where we begin to direct a percentage of real production traffic (either shadow traffic or even beta users).  We can then analyse the value of the proposed change and possible run multiple automated experiments over time using Hypothesis Driven Development.  This helps give us better understanding of how the change will perform when released to all users. Though we need to make sure PRs stay short lived for trunk based development; lets try avoid PRs turning into long term feature branches! 
+Where Preview Environments get really interesting is when we are able to progress a short term PR through various stages of maturity and confidence where we begin to direct a percentage of real production traffic (either shadow traffic or even beta users).  We can then analyze the value of the proposed change and possible run multiple automated experiments over time using Hypothesis Driven Development.  This helps give us better understanding of how the change will perform when released to all users. Though we need to make sure PRs stay short lived for trunk based development; lets try avoid PRs turning into long term feature branches! 
 
 _Related Accelerate capability: Foster and enable team experimentation_
 
@@ -60,9 +60,9 @@ In software development we're used to working with multiple environments in the 
 
 As above Jenkins X wants any changes and experiments to be validated before it is merged to master.  We would like changes in a staging environment to be held there for a short amount of time before being promoted, ideally in an automated fashion.
 
-The default Jenkins X pipelines provide deployment automation via environments.  These are customisable to suite your own CI / CD pipeline requirements.
+The default Jenkins X pipelines provide deployment automation via environments.  These are customizable to suite your own CI / CD pipeline requirements.
 
-Jenkins X recommends Staging should act as a near as possible reflection on production, ideally with real production data shadowed to it using a service mesh to understand the behaviour.  This also helps when developing changes in preview where we can link to non production services in staging.
+Jenkins X recommends Staging should act as a near as possible reflection on production, ideally with real production data shadowed to it using a service mesh to understand the behavior.  This also helps when developing changes in preview where we can link to non production services in staging.
 
 _Related Accelerate capability: Automate your deployment process_
 
@@ -90,7 +90,7 @@ By targeting Kubernetes users of Jenkins X can take advantage of many of the clo
 
 Jenkins X aims to help polyglot application developers.  Right now Jenkins X has quickstarts and automated CI/CD setup with language detection for Golang, Java, NodeJS, .Net, React, Angular, Rust, Swift and more to come.  What this also does is provide a consistent Way Of Working so developers can concentrate on developing.
 
-Jenkins X also provides many addons, for example Grafana and Prometheus for automated metrics collection and visualisation.  In this example centralised metrics help understand how your applications behave when built and deployed on Kubernetes.
+Jenkins X also provides many addons, for example Grafana and Prometheus for automated metrics collection and visualization.  In this example centralized metrics help understand how your applications behave when built and deployed on Kubernetes.
 
 [DevPods](https://jenkins-x.io/developing/devpods/) are another feature which enables developers to edit source code in their local IDE, behind the scenes it is then synced to the cloud and rapidly built and redeployed.
 
