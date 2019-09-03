@@ -1,12 +1,8 @@
+
 ---
 title: 社区
 linktitle: 社区
-description: 
-menu:
-  main:
-    weight: 01
-weight: 5
-sections_weight: 5
+description:
 draft: false
 slug:
 toc: true
