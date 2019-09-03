@@ -1,0 +1,21 @@
+version: "2"
+services:
+  server:
+    build:
+      context: .
+      dockerfile: local.Dockerfile
+    command: ["server", "-D", "--bind", "0.0.0.0"]
+    volumes:
+      - .:/src
+    ports:
+      - "1313:1313"
+  spellchecker:
+    image: tmaier/markdown-spellcheck:latest
+    command: "--en-us --ignore-numbers --ignore-acronyms --report \"**/*.md\""
+    volumes:
+      - .:/workdir
+  linkchecker:
+    image: wjdp/htmltest
+    command: "htmltest"
+    volumes:
+      - .:/test
