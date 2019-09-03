@@ -1,23 +1,15 @@
 {
-  "name": "tech-doc-hugo",
-  "version": "0.0.1",
-  "description": "Hugo theme for technical documentation.",
-  "main": "none.js",
+  "name": "jx-docs",
+  "version": "1.0.0",
+  "description": "Jenkins X Documentation",
+  "author": "budparr",
+  "license": "Apache",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "algolia": "atomic-algolia"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bep/tech-doc-hugo.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/bep/tech-doc-hugo/issues"
-  },
-  "homepage": "https://github.com/bep/tech-doc-hugo#readme",
   "dependencies": {},
   "devDependencies": {
+    "atomic-algolia": "^0.3.15",
     "autoprefixer": "^9.6.1",
     "postcss-cli": "^5.0.1"
   }
