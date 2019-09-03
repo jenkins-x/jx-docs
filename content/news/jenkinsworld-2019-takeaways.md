@@ -12,7 +12,7 @@ author: John McGehee
 ---
 Jenkins X was the star of the show at DevOps World | Jenkins World 2019. In this article I will 
 share with you the dozen key things I learned about this exciting new cloud native CI/CD tool.
-Even if you never use it for CI/CD, Jenkins X provides an excellent example of how to architect 
+Beyond its capabilities as a CI/CD tool, Jenkins X also provides an excellent example of how to architect 
 a cloud native application on Kubernetes.
 
 Jenkins X is a completely new CI/CD system that shares little but its name with the existing Jenkins. Jenkins X incorporates the best practices from the *State of DevOps* reports and the seminal book, *Accelerate* by [Nicole Forsgren](https://twitter.com/nicolefv), [Jez Humble](https://twitter.com/jezhumble) and [Gene Kim](https://twitter.com/RealGeneKim).
@@ -55,7 +55,7 @@ Jenkins X has two modes:
   the new `jenkins-x.yml` file, whose syntax resembles the Jenkinsfile declarative pipeline
   syntax.
 
-There are two interactive quick start commands. The older and presumably more reliable is:
+There are two interactive quick start commands. The older and presumably more stable is:
 ```
 jx create quickstart
 ```
@@ -97,11 +97,11 @@ At this point a little vocabulary lession is in order.
 
 A step is a command that runs in a separate container, sharing a workspace with other steps. Once a step fails, subsequent steps will not run. Step names must be unique within a stage. There is also a loop step, which runs the same command for each value in a list.
 
-All the usual Kubernetes container configuration of resources, limits, volume mounts and so on are available in steps.
+All the usual Kubernetes container configuration of resources, limits, volume mounts and so on are available within steps.
 
 ### Stage
 
-A stage is a unit of work in a pipeline. A step contains either steps or nested stages. Each stage with steps runs in its own pod. The workspace is copied from one stage's pod to the next.
+A stage is a unit of work in a pipeline. A stage contains either steps or nested stages. Each stage with steps runs in its own pod. The workspace is copied from one stage's pod to the next.
 
 ### Pipeline
 
@@ -120,13 +120,13 @@ Jenkins X has a bootstrapping problem: how to create a pipeline? The meta pipeli
 
 There are three ways to define a Jenkins X pipeline:
 
-* Automatically via a build pack. The build pacl automatically detects the source code language.
-* Specify a build pack and then override portions in `jenkins-x.yml`
+* Automatically via a build pack. The build pack automatically detects the source code language.
+* Specify a build pack and then override portions of it in `jenkins-x.yml`
 * Fully define an entirely new pipeline in `jenkins-x.yml`. This is only useful for a pipeline 
   that will not be reused. For reusable pipelines, define a build pack.
 
 Build packs are standard, opinionated pipelines for languages. They consist of a predefined 
-sequence of steps, run in a consistent order. They are similar to stages in that they can be 
+sequence of steps that run in a consistent order. They are similar to stages in that they can be 
 overridden and extended.
 
 Jenkins X is controlled by a `jenkins-x.yml` file that lives at the root of the Git repository. 
@@ -147,14 +147,14 @@ You can also define a completely new pipeline in `jenkins-x.yml`, but this is us
 Pull request and release pipelines are often very similar, so define common attributes for both
 in a default pipeline.
 
-## Validating syntax using IDE autocompletion
+## Validating syntax and IDE autocompletion
 
 Check your pipelines using:
 ```
 jx step syntax validate
 ```
 
-Pipelines are usually defined by multiple YAML files. See how they fit together into one pipeline using:
+Pipelines are usually defined by multiple YAML files. See how they fit together in a single flat pipeline file:
 ```
 jx step syntax effective
 ```
@@ -180,13 +180,13 @@ As an aside, adding a [new Git provider for Lighthouse](https://github.com/jenki
 
 It can be difficult to avoid commiting secrets to Git. Thus separate file `parameters.yml` contains URL references to a secret. Also, Jenkins X runs Helm in a temporary directory.
 
-The Helm chart `values.yml` files are separated into individual `values.tmpl.yml` files. These are templates so you can easily add secrets to them.
+The Helm chart `values.yml` files are separated into individual `values.tmpl.yml` files. These are templates so you can easily interpolate secrets into them.
 
 ## Implementing HTTPS in preview environments
 
 It is difficult to get HTTPS to work in preview environments because each preview environment gets a different URL. James Rawlings demonstrated the solution:
 
-1. Specify that you want to use DNS for HTTPS in jx boot. This will cause [external-dns](https://github.com/kubernetes-incubator/external-dns) to be installed automatically.
+1. Specify that you want to use DNS for HTTPS in `jx boot`. This will cause [external-dns](https://github.com/kubernetes-incubator/external-dns) to be installed automatically.
 2. Add `externalDNS` in `requirements.yml`:
    ```
    ingress:
@@ -204,15 +204,15 @@ It is difficult to get HTTPS to work in preview environments because each previe
 
 Strictly speaking, Jenkins X does not require its own cluster, but things work better operationally if you use separate clusters for testing, staging and production.
 
-On the development cluster, install Jenkins X. Install the Jenkins X [environment controller](https://github.com/jenkins-x-charts/environment-controller) on staging and production clusters. This is further explained in the article [Multiple Clusters](https://jenkins-x.io/getting-started/multi-cluster/).
+You only need to install Jenkins X on the development cluster. Install the Jenkins X [environment controller](https://github.com/jenkins-x-charts/environment-controller) on the staging and production clusters. This is further explained in the article [Multiple Clusters](https://jenkins-x.io/getting-started/multi-cluster/).
 
 ## Upcoming Jenkins X features
 
-Jenkins X is rapidly evolving. Upcoming features are:
+Jenkins X is evolving rapidly. Upcoming features are:
 
 * Conditional execution of stages
 * Jenkins X apps to inject steps and stages
-* More advanced config of stage pods
+* More advanced configuration of stage pods
 * More advanced solution for pipeline and stage sharing across repos
 
 ## Learning Jenkins X
@@ -232,7 +232,7 @@ Many fine examples with source code on GitHub were presented:
   contains great Terraform tips for regular Jenkins (not Jenkins X). Whether or not you really
   want to use GitOps for your blog,
   [GitOps for Blogging, Why Not?](https://github.com/cb-technologists/blog)
-  demonstrates a nice GitOps example.
+  demonstrates GitOps principles.
 
 ## Getting involved with the Jenkins Community
 
