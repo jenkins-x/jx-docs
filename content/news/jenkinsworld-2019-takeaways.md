@@ -19,7 +19,7 @@ Jenkins X is a completely new CI/CD system that shares little but its name with 
 
 <img width="70%" height="70%" alt="Capabilities of Jenkins X" src="https://www.cloudbees.com/sites/default/files/jenkinsx_capabilities.png">
 
-I attended multiple presentations by [James Strachan](https://twitter.com/jstrachan), Andrew Bayer and [James Rawlings](https://twitter.com/jdrawlings) of CloudBees, and [Mauricio Salatino](https://twitter.com/salaboy). Mr. Rawlings even gave two presentations. Each presentation covered Jenkins X from a different perspective, so here I compose everything into a unified summary.
+I attended multiple presentations by [James Strachan](https://twitter.com/jstrachan), [Andrew Bayer](https://twitter.com/abayer) and [James Rawlings](https://twitter.com/jdrawlings) of CloudBees, and [Mauricio Salatino](https://twitter.com/salaboy). Mr. Rawlings even gave two presentations. Each presentation covered Jenkins X from a different perspective, so here I compose everything into a unified summary.
 
 ## Setting up Kubernetes
 
