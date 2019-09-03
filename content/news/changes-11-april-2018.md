@@ -404,7 +404,7 @@ These commits did not use [Conventional Commits](https://conventionalcommits.org
 * [#523](https://github.com/jenkins-x/jx/pull/523) fix: promote on github ([jstrachan](https://github.com/jstrachan))
 * [#522](https://github.com/jenkins-x/jx/pull/522) various fixes so we can use canonical git provider URLs ([jstrachan](https://github.com/jstrachan))
 * [#520](https://github.com/jenkins-x/jx/pull/520) More tests for Bitbucket GitProvider, re-organization of some test data ([wbrefvem](https://github.com/wbrefvem))
-* [#506](https://github.com/jenkins-x/jx/pull/506) Gitlab integration [WIP] ([jlordiales](https://github.com/jlordiales))
+* [#506](https://github.com/jenkins-x/jx/pull/506) Gitlab integration \[WIP\] ([jlordiales](https://github.com/jlordiales))
 * [#516](https://github.com/jenkins-x/jx/pull/516) fixes for gitea ([jstrachan](https://github.com/jstrachan))
 * [#514](https://github.com/jenkins-x/jx/pull/514) Implements API mocking in Bitbucket tests, includes some test data  ([wbrefvem](https://github.com/wbrefvem))
 * [#509](https://github.com/jenkins-x/jx/pull/509) more fixes ([jstrachan](https://github.com/jstrachan))

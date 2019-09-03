@@ -70,8 +70,7 @@ Planned features include:
 APIs can be consumed from a microservice deployed to Kubernetes, from outside the cluster (with appropriate 
 configuration for authentication) or from inside pipeline extensions.
 
-Jenkins X APIs uses [Kubernetes Custom Resources](https://kubernetes
-.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/) to expose its API. The API is declarative, and 
+Jenkins X APIs uses [Kubernetes Custom Resources](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/) to expose its API. The API is declarative, and
 Jenkins X uses controllers to try to match the actual state to the desired state. Jenkins X continually takes action 
 to achieve and maintain the desired state.
 
@@ -86,8 +85,7 @@ via client libraries for different platforms. Currently we offer clients for:
 
 ## Using `jx` as a library
 
-[jx](https://github.com/jenkins-x/jx) contains many useful functions and is documented on [godoc.org](https://godoc
-.org/github.com/jenkins-x/jx). The easiest way to consume it is is as a go module:
+[jx](https://github.com/jenkins-x/jx) contains many useful functions and is documented on [godoc.org](https://godoc.org/github.com/jenkins-x/jx). The easiest way to consume it is is as a go module:
 
 ```bash
 $ go get github.com/jenkins-x/jx
