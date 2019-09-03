@@ -1,0 +1,12 @@
+jenkins-x-website
+node_modules
+tmp-website
+
+# idea stuff
+.idea
+*.iml
+
+# generated files
+/public
+nohup.out
+.DS_Store
