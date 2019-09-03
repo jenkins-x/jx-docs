@@ -1,5 +1,5 @@
 ---
-date: 2019-09-03T15:22:18Z
+date: 2019-09-03T20:47:16Z
 title: "jx step create values"
 slug: jx_step_create_values
 url: /commands/jx_step_create_values/
@@ -35,7 +35,7 @@ jx step create values [flags]
   -d, --dir string                the directory to look for the <kind>.schema.json and write the <kind>.yaml, defaults to the current directory
   -h, --help                      help for values
       --name string               the kind of the file to create (and, by default, the schema name) (default "values")
-      --namespace string          the namespace Jenkins X is installed into. If not specified it defaults to $DEPLOY_NAMESPACE or else defaults to the current kubernetes namespace
+      --namespace string          the namespace Jenkins X is installed into. If not specified it defaults to cluster.namespace in jx-requirements.yaml or $DEPLOY_NAMESPACE or else defaults to the current kubernetes namespace
       --out string                the path to the file to create, overrides --dir and --name
       --schema string             the path to the schema file, overrides --dir and --name
       --secret-base-path string   the secret path used to store secrets in vault / file system. Typically a unique name per cluster+team. If none is specified we will default it to the cluster name from the jx-requirements.yml file in the current or a parent directory.
