@@ -1,39 +1,58 @@
-# Jenkins X Docs
+# Docsy Example
 
-Documentation site for [Jenkins X](http://jenkins-x.io/)
+[Docsy](https://github.com/google/docsy) is a Hugo theme for technical documentation sites, providing easy site navigation, structure, and more. This **Docsy Example Project** uses the Docsy theme, as well as providing a skeleton documentation structure for you to use. You can either copy this project and edit it with your own content, or use the theme in your projects like any other [Hugo theme](https://gohugo.io/themes/installing-and-using-themes/).
 
-**Please browse these docs** on the [http://jenkins-x.io/](http://jenkins-x.io/) site as the links don't all work when browsing the markdown files inside github 
+This Docsy Example Project is hosted at [https://example.docsy.dev/](https://example.docsy.dev/).
 
+You can find detailed theme instructions in the Docsy user guide: https://docsy.dev/docs/
 
-## Build the docs locally
+This is not an officially supported Google product. This project is currently maintained.
 
-To edit the docs locally and try out what the [website](http://jenkins-x.io/) will look like then you need to clone this repository:
+## Cloning the Docsy Example Project
 
-```bash
-$ git clone https://github.com/jenkins-x/jx-docs.git
-```
-
-Then to view the docs in your browser, [install Hugo](https://gohugo.io/getting-started/installing).
-Navigate to the directory, run hugo server, and open up the link:
+The following will give you a project that is set up and ready to use (don't forget to use `--recurse-submodules` or you won't pull down some of the code you need to generate a working site). The `hugo server` command builds and serves the site. If you just want to build the site, run `hugo` instead.
 
 ```bash
-$ cd jx-docs
-$ hugo server
-
-Started building sites ...
-.
-.
-Serving pages from memory
-Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
-Press Ctrl+C to stop
+git clone --recurse-submodules --depth 1 https://github.com/google/docsy-example.git
+cd docsy-example
+hugo server
 ```
 
-# Contribution
+The theme is included as a Git submodule:
 
-Here is something about Jenkins X documents contribution.
+```bash
+▶ git submodule
+ a053131a4ebf6a59e4e8834a42368e248d98c01d themes/docsy (heads/master)
+```
 
-## Localization
+If you want to do SCSS edits and want to publish these, you need to install `PostCSS` (not needed for `hugo server`):
 
-In order to let more people know Jenkins X better, localization is very important and meaningful. And we should keep some rules about this, please read related languages below:
+```bash
+npm install
+```
 
-* [Chinese](Localization_Chinese.md)
+<!--### Cloning the Example from the Theme Project
+
+
+```bash
+git clone --recurse-submodules --depth 1 https://github.com/docsy.git
+cd tech-doc-hugo-theme/exampleSite
+HUGO_THEMESDIR="../.." hugo server
+```
+
+
+Note that the Hugo Theme Site requires the `exampleSite` to live in a subfolder of the theme itself. To avoid recursive duplication, the example site is added as a Git subtree:
+
+```bash
+git subtree add --prefix exampleSite https://github.com/google/docsy.git  master --squash
+```
+
+To pull in changes, see `pull-deps.sh` script in the theme.-->
+
+## Running the website locally
+
+Once you've cloned the site repo, from the repo root folder, run:
+
+```
+hugo server
+```
