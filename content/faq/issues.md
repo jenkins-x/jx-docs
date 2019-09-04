@@ -227,6 +227,22 @@ If you notice that the persistent volume claims created when installing Jenkins 
 The you should check that you have a cluster default storage class for dynamic persistent volume provisioning.  See [here](https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/) for more details.
 
 
+## I cannot connect to nodes on AWS
+
+If you don't see any valid nodes returned by `kubectl get node` or you get errors running `jx status` something like:
+
+``` 
+Unable to connect to the server: dial tcp: lookup abc.def.regino.eks.amazonaws.com on 10.0.0.2:53: no such host
+```
+
+it could be your kube config is stale. Try
+
+``` 
+aws eks --region <CLUSTER_REGION> update-kubeconfig --name <CLUSTER_NAME>
+```
+
+That should regenerate your local `~/kube/config` file and so `kubectl get node` or `jx status` should find your nodes
+
 ## How can I diagnose exposecontroller issues?
 
 When you [promote a new version of your application to an environment](/faq/develop/#how-does-promotion-actually-work), such as the Staging Environment a Pull Request is raised on the environment repository.
