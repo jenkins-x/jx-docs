@@ -1,5 +1,5 @@
 ---
-date: 2019-09-05T20:48:34Z
+date: 2019-09-04T15:02:12Z
 title: "jx step git fork-and-clone"
 slug: jx_step_git_fork-and-clone
 url: /commands/jx_step_git_fork-and-clone/
