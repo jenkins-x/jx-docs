@@ -1,5 +1,5 @@
 ---
-date: 2019-09-04T18:39:56Z
+date: 2019-09-04T20:44:32Z
 title: "jx gc pods"
 slug: jx_gc_pods
 url: /commands/jx_gc_pods/
