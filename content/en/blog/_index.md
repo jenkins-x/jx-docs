@@ -1,5 +1,5 @@
 ---
-title: "Docsy Blog"
+title: "Jenkins X Blog"
 linkTitle: "Blog"
 menu:
   main:
