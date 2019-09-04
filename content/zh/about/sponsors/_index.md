@@ -7,6 +7,7 @@ publishdate: 2019-01-21
 draft: false
 slug:
 toc: true
+type: docs
 ---
 
 我们感谢以下组织对支持 Jenkins X 项目做出的一些主要承诺

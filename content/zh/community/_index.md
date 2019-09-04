@@ -1,11 +1,9 @@
-
 ---
 title: 社区
 linktitle: 社区
-description:
-draft: false
-slug:
-toc: true
+menu:
+  main:
+    weight: 40
 ---
 
 请加入我们的社区，我们希望听到您的反馈！
