@@ -1,5 +1,5 @@
 ---
-date: 2019-09-04T08:03:08Z
+date: 2019-09-04T11:08:32Z
 title: "jx step create pullrequest repositories"
 slug: jx_step_create_pullrequest_repositories
 url: /commands/jx_step_create_pullrequest_repositories/
