@@ -1,5 +1,5 @@
 ---
-date: 2019-09-04T15:02:12Z
+date: 2019-09-04T18:39:56Z
 title: "jx step create install"
 slug: jx_step_create_install
 url: /commands/jx_step_create_install/
@@ -32,7 +32,7 @@ jx step create install values [flags]
       --ingress-namespace string   The namespace for the Ingress controller (default "kube-system")
       --ingress-service string     The name of the Ingress controller Service (default "jxing-nginx-ingress-controller")
       --lazy-create string         Specify true/false as to whether to lazily create missing resources. If not specified it is enabled if Terraform is not specified in the jx-requirements.yml file
-  -n, --namespace string           the namespace to install into. Defaults to cluster.namespace in jx-requirements.yaml or $DEPLOY_NAMESPACE if not
+  -n, --namespace string           the namespace to install into. Defaults to $DEPLOY_NAMESPACE if not
       --provider string            Cloud service providing the Kubernetes cluster.  Supported providers: aks, alibaba, aws, eks, gke, icp, iks, jx-infra, kubernetes, minikube, minishift, oke, openshift, pks
 ```
 

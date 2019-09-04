@@ -1,5 +1,5 @@
 ---
-date: 2019-09-04T15:02:12Z
+date: 2019-09-04T18:39:56Z
 title: "jx step boot vault"
 slug: jx_step_boot_vault
 url: /commands/jx_step_boot_vault/
@@ -30,7 +30,7 @@ jx step boot vault [flags]
 ```
   -d, --dir string         the directory to look for the requirements file: jx-requirements.yml (default ".")
   -h, --help               help for vault
-      --namespace string   the namespace that Jenkins X will be booted into. If not specified it defaults  to cluster.namespace in jx-requirements.yaml or DEPLOY_NAMESPACE
+      --namespace string   the namespace that Jenkins X will be booted into. If not specified it defaults to $DEPLOY_NAMESPACE
 ```
 
 ### Options inherited from parent commands
