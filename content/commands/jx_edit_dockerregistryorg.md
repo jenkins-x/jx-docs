@@ -1,5 +1,5 @@
 ---
-date: 2019-09-04T15:02:12Z
+date: 2019-09-04T18:39:56Z
 title: "jx edit dockerregistryorg"
 slug: jx_edit_dockerregistryorg
 url: /commands/jx_edit_dockerregistryorg/
