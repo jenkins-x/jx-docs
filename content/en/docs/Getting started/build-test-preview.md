@@ -1,15 +1,14 @@
 ---
-title: "Another Task"
+title: "Build, test and preview an app"
 date: 2017-01-05
-weight: 5
+weight: 4
 description: >
-  A short lead descripton about this content page. It can be **bold** or _italic_ and can be split over multiple paragraphs.
+  This walkthrough helps you understand how to build, test and preview your app in various built-in **environments** in Jenkins X
 ---
 
 {{% pageinfo %}}
 This is a placeholder page. Replace it with your own content.
 {{% /pageinfo %}}
-
 
 Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://gohugo.io) should be blue with no underlines (unless hovered over).
 

@@ -1,7 +1,7 @@
 
 ---
-title: "Working with Ponycopters"
-linkTitle: "Working with Ponycopters"
+title: "Importing exsiting apps"
+linkTitle: "Importing existing apps"
 date: 2017-01-05
 description: >
   A short lead descripton about this section page. Text here can also be **bold** or _italic_ and can even be split over multiple paragraphs.
