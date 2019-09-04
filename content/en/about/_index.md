@@ -2,26 +2,11 @@
 title: About
 linktitle: About
 description: An overview of the concepts in Jenkins X
-date: 2018-02-01
-publishdate: 2018-02-01
-lastmod: 2018-02-01
+type: docs
 menu:
   main:
-    weight: 20
-weight: 20
-sections_weight: 20
-draft: false
-aliases: [/about/concepts]
-categories: [fundamentals]
-toc: true
+    weight: 10
 ---
-
-{{< blocks/cover title="About Jenkins X" image_anchor="bottom" height="min" >}}
-
-<p class="lead mt-5">Jenkins X is designed to make it simple for developers to work to DevOps principles and best practices.
-</p>
-
-{{< /blocks/cover >}}
 
 ## Concepts
 ---
