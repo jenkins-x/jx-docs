@@ -73,7 +73,10 @@ pipelineConfig:
             command: hugo
             args:
             - version
-
+          - image: gcr.io/cloud-builders/npm
+            name: node:10.15.1
+            entrypoint: npm
+            args: ['install']
           - image: gcr.io/jenkinsxio/builder-go
             name: build-website
             command: hugo
