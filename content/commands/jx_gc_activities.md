@@ -1,5 +1,5 @@
 ---
-date: 2019-09-05T12:53:53Z
+date: 2019-09-05T14:28:20Z
 title: "jx gc activities"
 slug: jx_gc_activities
 url: /commands/jx_gc_activities/
@@ -31,10 +31,11 @@ jx gc activities [flags]
 ```
   -d, --dry-run                     Dry run mode. If enabled just list the resources that would be removed
   -h, --help                        help for activities
-      --pr-history-limit int        Minimum number of PipelineActivities and PipelineRuns to keep around per repository Pull Request (default 2)
-  -p, --pull-request-age duration   Maximum age to keep PipelineActivities and PipelineRun's for Pull Requests (default 48h0m0s)
-  -r, --release-age duration        Maximum age to keep PipelineActivities and PipelineRun's for Releases (default 720h0m0s)
-  -l, --release-history-limit int   Maximum number of PipelineActivities and PipelineRuns to keep around per repository release (default 5)
+      --pipelinerun-age duration    Maximum age to keep completed PipelineRuns for all pipelines (default 2h0m0s)
+      --pr-history-limit int        Minimum number of PipelineActivities to keep around per repository Pull Request (default 2)
+  -p, --pull-request-age duration   Maximum age to keep PipelineActivities for Pull Requests (default 48h0m0s)
+  -r, --release-age duration        Maximum age to keep PipelineActivities for Releases (default 720h0m0s)
+  -l, --release-history-limit int   Maximum number of PipelineActivities to keep around per repository release (default 5)
 ```
 
 ### Options inherited from parent commands
