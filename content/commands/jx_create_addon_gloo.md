@@ -1,5 +1,5 @@
 ---
-date: 2019-09-05T14:28:20Z
+date: 2019-09-05T18:51:49Z
 title: "jx create addon gloo"
 slug: jx_create_addon_gloo
 url: /commands/jx_create_addon_gloo/
