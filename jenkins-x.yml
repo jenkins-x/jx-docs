@@ -19,7 +19,7 @@ pipelineConfig:
           - name: HUGO_ENV
             value: production
           - name: HUGO_VERSION
-            value: '0.26'
+            value: '0.57.2/extended'
           steps:
           
           - image: gcr.io/jenkinsxio/builder-go
