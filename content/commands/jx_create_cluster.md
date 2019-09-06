@@ -16,7 +16,7 @@ You can see a demo of this command here: https://jenkins-x.io/demos/create_clust
 
 Valid Kubernetes providers include:
 
-    * aks (Azure Container Service - https://docs.microsoft.com/en-us/azure/aks)
+    * aks (Azure Kubernetes Service - https://docs.microsoft.com/en-us/azure/aks)
     * aws (Amazon Web Services via kops - https://github.com/aws-samples/aws-workshop-for-kubernetes/blob/master/readme.adoc)
     * eks (Amazon Web Services Elastic Container Service for Kubernetes - https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html)
     * gke (Google Container Engine - https://cloud.google.com/kubernetes-engine)
