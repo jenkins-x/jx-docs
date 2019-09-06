@@ -1,5 +1,5 @@
 ---
-date: 2019-09-06T12:59:13Z
+date: 2019-09-06T14:54:23Z
 title: "jx step"
 slug: jx_step
 url: /commands/jx_step/
@@ -56,7 +56,7 @@ jx step [flags]
 * [jx step pr](/commands/jx_step_pr/)	 - pipeline step pr
 * [jx step pre](/commands/jx_step_pre/)	 - pre step actions
 * [jx step release](/commands/jx_step_release/)	 - performs a release on the current Git repository
-* [jx step report](/commands/jx_step_report/)	 - Creates a HTML report from junit files
+* [jx step report](/commands/jx_step_report/)	 - report [kind]
 * [jx step scheduler](/commands/jx_step_scheduler/)	 - scheduler [command]
 * [jx step split](/commands/jx_step_split/)	 - Mirrors the code from a monorepo into separate microservice style Git repositories so its easier to do finer grained releases
 * [jx step stash](/commands/jx_step_stash/)	 - Stashes local files generated as part of a pipeline into long term storage

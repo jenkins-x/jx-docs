@@ -1,5 +1,5 @@
 ---
-date: 2019-09-06T12:59:13Z
+date: 2019-09-06T14:54:23Z
 title: "jx step create pullrequest brew"
 slug: jx_step_create_pullrequest_brew
 url: /commands/jx_step_create_pullrequest_brew/
