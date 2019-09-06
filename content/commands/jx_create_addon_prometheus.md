@@ -1,5 +1,5 @@
 ---
-date: 2019-09-06T12:19:56Z
+date: 2019-09-06T12:59:13Z
 title: "jx create addon prometheus"
 slug: jx_create_addon_prometheus
 url: /commands/jx_create_addon_prometheus/
