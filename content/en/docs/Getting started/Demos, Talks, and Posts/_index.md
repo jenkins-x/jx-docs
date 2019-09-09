@@ -1,9 +1,10 @@
 ---
-title: "Build, test and preview an app"
+title: "Demos, talks and blog posts"
 date: 2017-01-05
-weight: 4
+weight: 5
+parent: "Getting Started"
 description: >
-  This walkthrough helps you understand how to build, test and preview your app in various built-in **environments** in Jenkins X
+  A list of useful demos, talks and blog posts to continue on your getting started journey.
 ---
 
 {{% pageinfo %}}

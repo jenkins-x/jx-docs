@@ -5,13 +5,14 @@ description: How to install the jx binary on your machine
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01
-categories: [getting started]
+parent: "Setup Jenkins X"
+weight: 1
 keywords: [install]
 ---
 
 Pick the most suitable instructions for your operating system:
 
-### macOS
+## macOS
 
 On a Mac you can use [brew](https://brew.sh/):
 
@@ -34,7 +35,7 @@ To install Jenkins X on macOS without brew, download the `.tar` file, and unarch
         sudo mv jx /usr/local/bin
 
 
-### Linux
+## Linux
 
 To install Jenkins X on Linux, download the `.tar` file, and unarchive it in a directory where you can run the `jx` command.
 
@@ -50,7 +51,7 @@ To install Jenkins X on Linux, download the `.tar` file, and unarchive it in a d
         sudo mv jx /usr/local/bin
 
 
-### Windows
+## Windows
 
 You can install Jenkins X on Windows through Chocolatey, a third-party package management system that provides convenient one-step commands for local Jenkins X installations and upgrades.
 
@@ -88,7 +89,7 @@ You can update to the latest version of Jenkins X using Chocolatey:
   scoop update jx
   ```
 
-### Google Cloud Platform (GCP)
+## Google Cloud Platform (GCP)
 
 To run `jx` commands from the GCP Cloud Shell, install the Jenkins X
 binaries from the GitHub repository and install it via GCP shell
@@ -116,7 +117,7 @@ commands:
 Once you have the `jx` binary installed you can then [configure a Jenkins X cluster on Google Kubernetes Engine](/getting-started/create-cluster/).
 
 
-### Other platforms
+## Other platforms
 
 [download the binary](https://github.com/jenkins-x/jx/releases) for `jx` and add it to your `$PATH`
 

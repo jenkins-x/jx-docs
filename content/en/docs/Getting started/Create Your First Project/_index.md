@@ -1,9 +1,10 @@
 ---
-title: "Demos, talks and blog posts"
+title: "Create your first project"
 date: 2017-01-05
-weight: 4
+weight: 2
+parent: "Getting Started"
 description: >
-  A list of useful demos, talks and blog posts to continue on your getting started journey.
+  Now that you've setup the platform, let's create your first project.
 ---
 
 {{% pageinfo %}}

@@ -2,6 +2,7 @@
 title: "Promotion and Environments"
 date: 2017-01-05
 weight: 4
+parent: "Getting Started"
 description: >
   How Environment promotions work...
 ---

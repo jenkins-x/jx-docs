@@ -1,7 +1,7 @@
 ---
 title: "Setup Jenkins X"
 linkTitle: "Setup Jenkins X"
-weight: 8
+weight: 1
 parent: "Setting Started"
 date: 2017-01-04
 description: >
