@@ -23,7 +23,7 @@ brew install jx
 或者，如果您尚未安装 [brew](https://brew.sh/) ，并且喜欢手动安装的话，请执行如下指令安装:
 
 ```shell
-curl -L https://github.com/jenkins-x/jx/releases/download/v{{< version >}}/jx-darwin-amd64.tar.gz | tar xzv 
+curl -L https://github.com/jenkins-x/jx/releases/download/v{{.Site.Params.release}}/jx-darwin-amd64.tar.gz | tar xzv 
 sudo mv jx /usr/local/bin
 ```
 
@@ -31,7 +31,7 @@ sudo mv jx /usr/local/bin
 
 ```shell
 mkdir -p ~/.jx/bin
-curl -L https://github.com/jenkins-x/jx/releases/download/v{{< version >}}/jx-linux-amd64.tar.gz | tar xzv -C ~/.jx/bin
+curl -L https://github.com/jenkins-x/jx/releases/download/v{{.Site.Params.release}}/jx-linux-amd64.tar.gz | tar xzv -C ~/.jx/bin
 export PATH=$PATH:~/.jx/bin
 echo 'export PATH=$PATH:~/.jx/bin' >> ~/.bashrc
 ```

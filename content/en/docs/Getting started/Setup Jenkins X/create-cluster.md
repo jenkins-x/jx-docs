@@ -53,7 +53,7 @@ First you need to open the Google Cloud Shell via the button in the toolbar:
 Then you need to download the `jx` binary:
 
 ```shell
-curl -L https://github.com/jenkins-x/jx/releases/download/v{{< version >}}/jx-linux-amd64.tar.gz | tar xzv
+curl -L https://github.com/jenkins-x/jx/releases/download/v{{.Site.Params.release}}/jx-linux-amd64.tar.gz | tar xzv
 sudo mv jx /usr/local/bin
 ```
 
@@ -258,7 +258,7 @@ To try this out we recommend you follow the [AWS Workshop for Kubernetes](https:
 Then create a new terminal in Cloud9 and try these commands:
 
 ```shell
-curl -L https://github.com/jenkins-x/jx/releases/download/v{{< version >}}/jx-linux-amd64.tar.gz | tar xzv
+curl -L https://github.com/jenkins-x/jx/releases/download/v{{.Site.Params.release}}/jx-linux-amd64.tar.gz | tar xzv
 sudo mv jx /usr/local/bin
 jx create cluster aws
 ```

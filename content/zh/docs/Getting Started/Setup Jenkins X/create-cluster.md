@@ -43,7 +43,7 @@ __为了最好的入门体验，我们目前推荐使用 Google Container Engine
 然后，在 Cloud9 中打开一个新的终端，试试这些命令：
 
 ```shell 
-curl -L https://github.com/jenkins-x/jx/releases/download/v{{< version >}}/jx-linux-amd64.tar.gz | tar xzv
+curl -L https://github.com/jenkins-x/jx/releases/download/v{{.Site.Params.release}}/jx-linux-amd64.tar.gz | tar xzv
 sudo mv jx /usr/local/bin
 jx create cluster aws
 ```
