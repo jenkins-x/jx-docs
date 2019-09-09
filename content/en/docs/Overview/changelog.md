@@ -1,20 +1,12 @@
 ---
-title: Status
-linktitle: Status
+title: Changelog
+linktitle: Changelog
 description: Current status of Jenkins X
 date: 2018-02-01
 publishdate: 2018-02-01
 lastmod: 2018-02-01
-menu:
-  docs:
-    parent: "about"
-    weight: 120
 weight: 120
-sections_weight: 120
-draft: false
-aliases: [/about/status]
-categories: [fundamentals]
-toc: true
+type: docs
 ---
 
 # Support Matrix

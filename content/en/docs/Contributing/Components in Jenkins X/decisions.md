@@ -5,16 +5,6 @@ description: Documented decisions made by the Jenkins X project
 date: 2018-06-29
 publishdate: 2017-06-29
 lastmod: 2018-06-29
-menu:
-  docs:
-    parent: "about"
-    weight: 40
-weight: 40
-sections_weight: 40
-draft: false
-aliases: [/about/decisions]
-categories: [fundamentals]
-toc: true
 ---
 
 # Decisions

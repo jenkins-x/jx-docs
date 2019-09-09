@@ -5,16 +5,10 @@ description: Jenkins X uses Capabilities identified by the Accelerate book
 date: 2018-07-01
 publishdate: 2018-07-01
 lastmod: 2018-07-01
+type: docs
 menu:
-  docs:
-    parent: "about"
-    weight: 10
-weight: 10
-sections_weight: 0
-draft: false
-aliases: [/about/accelerate]
-categories: [fundamentals]
-toc: true
+  about:
+    weight: 20
 ---
 
 <img src="/images/accelerate.jpg" class="img-thumbnail">
