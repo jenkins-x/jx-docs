@@ -1,7 +1,7 @@
 ---
 title: "Components in Jenkins X"
 linkTitle: "Components in Jenkins X"
-weight: 10
+weight: 2
 description: >
-  The various Jenkins X Components
+  What Jenkins X is made of.
 ---
