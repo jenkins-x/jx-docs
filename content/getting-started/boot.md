@@ -88,14 +88,6 @@ At any time you can re-run [jx boot](/commands/jx_boot) to re-apply any changes 
 
 So just edit anything in the configuration you like and re-run [jx boot](/commands/jx_boot) - whether thats to add or remove Apps, to change parameters or configuration or upgrade or downgrade versions of dependencies. 
 
-## Source Repositories
-
-Boot automatically sets up any source repositories which exist in the [repositories/templates](https://github.com/jenkins-x/jenkins-x-boot-config/tree/master/repositories/templates) folder as [SourceRepository](/architecture/custom-resources/#sourcerepository)  custom resources and uses any associated [Scheduler](/architecture/custom-resources/#scheduler) custom resources to regenerate the Prow configuration.
-
-Boot also automatically creates or updates any required webhooks on the git provider for your [SourceRepository](/architecture/custom-resources/#sourcerepository) resources.
-
-If you are using GitOps we hope to automate the population of the [repositories/templates](https://github.com/jenkins-x/jenkins-x-boot-config/tree/master/repositories/templates) folder as you import/create projects. Until then you can manually create a Pull Request on your boot git repository via [jx step create pullrequest repositories](/commands/jx_step_create_pullrequest_repositories/)
-
 ## Requirements
 
 There is a file called [jx-requirements.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml) which is used to specify the logical requirements of your installation; such as:
@@ -105,7 +97,7 @@ There is a file called [jx-requirements.yml](https://github.com/jenkins-x/jenkin
 * if you are using Terraform to manage your cloud resources
 * if you wish to use kaniko for container image builds
 
-You may want to review the  [jx-requirements.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml) file and make any changes you need.
+This is the main configuration file for `jx boot` and where you make most of your changes. You may want to review the  [jx-requirements.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml) file and make any changes you need.
 
 ## Secrets
 
@@ -208,6 +200,154 @@ webhook: lighthouse
 ### Jenkins
 
 To use a Jenkins server in boot for processing webhooks and pipelines configure it via `webhook: jenkins` in `jx-requirements.yml`
+
+## Git 
+
+Jenkins X supports a number of different git providers. You can specify the git provider you wish to use and the organisation to use for the git providers for each environment in your [jx-requirements.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml) file.
+
+### GitHub
+
+This is the default if you don't specify anything.
+
+ 
+```yaml 
+cluster:
+  environmentGitOwner: myorg
+  provider: gke
+environments:
+- key: dev
+- key: staging
+- key: production
+kaniko: true
+storage:
+  logs:
+    enabled: false
+  reports:
+    enabled: false
+  repository:
+    enabled: false
+webhook: prow
+``` 
+
+### GitHub Enterprise
+
+The configuration is similar to the above but you need to specify the URL of the `gitServer` (if it differs from https://github.com) and `gitKind: github`
+
+```yaml   
+cluster:
+  provider: gke
+  environmentGitOwner: myorg
+  gitKind: github
+  gitName: ghe
+  gitServer: https://github.myserver.com
+environments:
+  - key: dev
+  - key: staging
+  - key: production
+kaniko: true
+secretStorage: local
+storage:
+  logs:
+    enabled: true
+    url: "gs://jx-logs"
+  reports:
+    enabled: true
+    url: "gs://jx-logs"
+  repository:
+    enabled: true
+    url: "gs://jx-logs"
+webhook: lighthouse
+``` 
+
+### Bitbucket Server
+
+For this specify the URL of the `gitServer` and `gitKind: bitbucketserver`. If you want to use [Serverless Jenkins X Pipelines](/architecture/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/) then make sure you specify the [lighthouse webhook](#webhook) via `webhook: lighthouse`.
+
+```yaml   
+cluster:
+  provider: gke
+  environmentGitOwner: myorg
+  gitKind: bitbucketserver
+  gitName: bs
+  gitServer: https://bitbucket.myserver.com
+environments:
+  - key: dev
+  - key: staging
+  - key: production
+kaniko: true
+secretStorage: local
+storage:
+  logs:
+    enabled: true
+    url: "gs://jx-logs"
+  reports:
+    enabled: true
+    url: "gs://jx-logs"
+  repository:
+    enabled: true
+    url: "gs://jx-logs"
+webhook: lighthouse
+``` 
+
+### Bitbucket Cloud
+
+For this specify`gitKind: bitbucketcloud`. If you want to use [Serverless Jenkins X Pipelines](/architecture/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/) then make sure you specify the [lighthouse webhook](#webhook) via `webhook: lighthouse`.
+
+```yaml   
+cluster:
+  provider: gke
+  environmentGitOwner: myorg
+  gitKind: bitbucketcloud
+  gitName: bc
+environments:
+  - key: dev
+  - key: staging
+  - key: production
+kaniko: true
+secretStorage: local
+storage:
+  logs:
+    enabled: true
+    url: "gs://jx-logs"
+  reports:
+    enabled: true
+    url: "gs://jx-logs"
+  repository:
+    enabled: true
+    url: "gs://jx-logs"
+webhook: lighthouse
+``` 
+
+
+### Gitlab
+
+For this specify the URL of the `gitServer` and `gitKind: gitlab`. If you want to use [Serverless Jenkins X Pipelines](/architecture/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/) then make sure you specify the [lighthouse webhook](#webhook) via `webhook: lighthouse`.
+
+```yaml   
+cluster:
+  provider: gke
+  environmentGitOwner: myorg
+  gitKind: gitlab
+  gitName: gl
+  gitServer: https://gitlab.com
+environments:
+  - key: dev
+  - key: staging
+  - key: production
+kaniko: true
+secretStorage: local
+storage:
+  logs:
+    enabled: true
+    url: "gs://jx-logs"
+  reports:
+    enabled: true
+    url: "gs://jx-logs"
+  repository:
+    enabled: true
+    url: "gs://jx-logs"
+webhook: lighthouse
+``` 
 
 ## Storage
 
@@ -341,6 +481,15 @@ storage:
     url: ""
 webhook: prow
 ```
+
+## Source Repositories
+
+Boot automatically sets up any source repositories which exist in the [repositories/templates](https://github.com/jenkins-x/jenkins-x-boot-config/tree/master/repositories/templates) folder as [SourceRepository](/architecture/custom-resources/#sourcerepository)  custom resources and uses any associated [Scheduler](/architecture/custom-resources/#scheduler) custom resources to regenerate the Prow configuration.
+
+Boot also automatically creates or updates any required webhooks on the git provider for your [SourceRepository](/architecture/custom-resources/#sourcerepository) resources.
+
+If you are using GitOps we hope to automate the population of the [repositories/templates](https://github.com/jenkins-x/jenkins-x-boot-config/tree/master/repositories/templates) folder as you import/create projects. Until then you can manually create a Pull Request on your boot git repository via [jx step create pullrequest repositories](/commands/jx_step_create_pullrequest_repositories/)
+
 
 ## Pipeline
 
