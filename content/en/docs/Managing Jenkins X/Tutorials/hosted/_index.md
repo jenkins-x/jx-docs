@@ -5,16 +5,6 @@ description: Tutorials using Google Kubernetes Engine & Cloud Shell
 date: 2018-08-01
 publishdate: 2018-08-01
 lastmod: 2018-08-01
-menu:
-  docs:
-    parent: "Tutorials"
-    weight: 5
-weight: 5
-sections_weight: 0
-draft: false
-aliases: [/about/tutorials,tutorials]
-categories: []
-toc: true
 ---
 
 

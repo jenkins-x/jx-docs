@@ -4,16 +4,6 @@ description: In this video we walk you through the process of deploying a Java G
 date: 2018-08-01
 publishdate: 2018-08-01
 lastmod: 2018-08-01
-# menu:
-#   docs:
-#     parent: "tutorials"
-#     weight: 5
-weight: 5
-sections_weight: 0
-draft: false
-aliases: [/about/tutorials,tutorials]
-categories: []
-toc: false
 ---
 
 </br>
