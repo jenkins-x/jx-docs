@@ -68,9 +68,9 @@ go version go1.8 darwin/amd64
 
 如果你是 MacOS 用户并且安装了 [Homebrew](https://brew.sh/)，安装过程将会很简单，在终端中执行以下命令:
 
-{{< code file="install-go.sh" >}}
+```
 brew install go
-{{< /code >}}
+```
 
 ### 通过 GVM 安装 GO
 

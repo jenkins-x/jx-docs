@@ -218,110 +218,6 @@ type CommandInterface interface {
 }
 ```
 
-### Code Block Shortcode
-
-The Jenkins X documentation comes with a very robust shortcode for adding interactive code blocks.
-
-{{% note %}}
-With the `code` shortcodes, *you must include triple back ticks and a language declaration*. This was done by design so that the shortcode wrappers were easily added to legacy documentation and will be that much easier to remove if needed in future versions of the Jenkins X docs.
-{{% /note %}}
-
-### `code`
-
-`code` is the Jenkins X docs shortcode you'll use most often. `code` requires has only one named parameter: `file`. Here is the pattern:
-
-```
-{{%/* code file="smart/file/name/with/path.html" download="download.html" copy="true" */%}}
-```
-A whole bunch of coding going on up in here!
-```
-{{%/* /code */%}}
-```
-
-The following are the arguments passed into `code`:
-
-***`file`***
-: the only *required* argument. `file` is needed for styling but also plays an important role in helping users create a mental model around Jenkins X's directory structure. Visually, this will be displayed as text in the top left of the code block.
-
-`download`
-: if omitted, this will have no effect on the rendered shortcode. When a value is added to `download`, it's used as the filename for a downloadable version of the code block.
-
-`copy`
-: a copy button is added automatically to all `code` shortcodes. If you want to keep the filename and styling of `code` but don't want to encourage readers to copy the code (e.g., a "Do not do" snippet in a tutorial), use `copy="false"`.
-
-#### Example `code` Input
-
-This example HTML code block tells Jenkins X users the following:
-
-1. This file *could* live in `layouts/_default`, as demonstrated by `layouts/_default/single.html` as the value for `file`.
-2. This snippet is complete enough to be downloaded and implemented in a Jenkins X project, as demonstrated by `download="single.html"`.
-
-```
-{{</* code file="layouts/_default/single.html" download="single.html" */>}}
-{{ define "main" }}
-<main>
-    <article>
-        <header>
-            <h1>{{.Title}}</h1>
-            {{with .Params.subtitle}}
-            <span>{{.}}</span>
-        </header>
-        <div>
-            {{.Content}}
-        </div>
-        <aside>
-            {{.TableOfContents}}
-        </aside>
-    </article>
-</main>
-{{ end }}
-{{</* /code */>}}
-```
-
-##### Example 'code' Display
-
-The output of this example will render to the Jenkins X docs as follows:
-
-{{< code file="layouts/_default/single.html" download="single.html" >}}
-{{ define "main" }}
-<main>
-    <article>
-        <header>
-            <h1>{{.Title}}</h1>
-            {{with .Params.subtitle}}
-            <span>{{.}}</span>
-        </header>
-        <div>
-            {{.Content}}
-        </div>
-        <aside>
-            {{.TableOfContents}}
-        </aside>
-    </article>
-</main>
-{{ end }}
-{{< /code >}}
-
-<!-- #### Output Code Block
-
-The `output` shortcode is almost identical to the `code` shortcode but only takes and requires `file`. The purpose of `output` is to show *rendered* HTML and therefore almost always follows another basic code block *or* and instance of the `code` shortcode:
-
-```
-{{%/* output file="post/my-first-post/index.html" */%}}
-```
-<h1>This is my First Jenkins X Blog Post</h1>
-<p>I am excited to be using Jenkins X.</p>
-```
-{{%/* /output */%}}
-```
-
-The preceding `output` example will render as follows to the Jenkins X docs:
-
-{{< output file="post/my-first-post/index.html" >}}
-<h1>This is my First Jenkins X Blog Post</h1>
-<p>I am excited to be using Jenkins X.</p>
-{{< /output >}} -->
-
 ## Blockquotes
 
 Blockquotes can be added to the Jenkins X documentation using [typical Markdown blockquote syntax][bqsyntax]:
@@ -362,19 +258,19 @@ Use the `note` shortcode when you want to draw attention to information subtly. 
 
 #### Example `note` Input
 
-{{< code file="note-with-heading.md" >}}
+```
 {{%/* note */%}}
 Here is a piece of information I would like to draw your **attention** to.
 {{%/* /note */%}}
-{{< /code >}}
+```
 
 #### Example `note` Output
 
-{{< output file="note-with-heading.html" >}}
+```
 {{% note %}}
 Here is a piece of information I would like to draw your **attention** to.
 {{% /note %}}
-{{< /output >}}
+```
 
 #### Example `note` Display
 
@@ -386,21 +282,13 @@ Here is a piece of information I would like to draw your **attention** to.
 
 Use the `tip` shortcode when you want to give the reader advice. `tip`, like `note`, is intended to be less of an interruption in content than is `warning`.
 
-#### Example `tip` Input
+#### Example `tip`
 
-{{< code file="using-tip.md" >}}
-{{%/* tip */%}}
-Here's a bit of advice to improve your productivity with Jenkins X.
-{{%/* /tip */%}}
-{{< /code >}}
-
-#### Example `tip` Output
-
-{{< output file="tip-output.html" >}}
+```
 {{% tip %}}
 Here's a bit of advice to improve your productivity with Jenkins X.
 {{% /tip %}}
-{{< /output >}}
+```
 
 #### Example `tip` Display
 
@@ -412,21 +300,13 @@ Here's a bit of advice to improve your productivity with Jenkins X.
 
 Use the `warning` shortcode when you want to draw the user's attention to something important. A good usage example is for articulating breaking changes in Jenkins X versions, known bugs, or templating "gotchas."
 
-#### Example `warning` Input
+#### Example `warning`
 
-{{< code file="warning-admonition-input.md" >}}
-{{%/* warning */%}}
-This is a warning, which should be reserved for *important* information like breaking changes.
-{{%/* /warning */%}}
-{{< /code >}}
-
-#### Example `warning` Output
-
-{{< output file="warning-admonition-output.html" >}}
+```
 {{% warning %}}
 This is a warning, which should be reserved for *important* information like breaking changes.
 {{% /warning %}}
-{{< /output >}}
+```
 
 #### Example `warning` Display
 

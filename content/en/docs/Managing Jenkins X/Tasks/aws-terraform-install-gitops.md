@@ -15,7 +15,7 @@ using Terraform. It assumes access to AWS is configured and familiarity with AWS
 This snippet of Terraform code sets EKS and up needed resources on AWS. It outputs the parameters
 you then need to add to append to `jx install`.
 
-{{< code file="eks.tf" download="eks.tf" >}}
+```tf
 variable "region" {
 }
 
@@ -169,8 +169,9 @@ resource "aws_iam_access_key" "vault" {
 output "jx_params" {
     value = "--provider=eks --gitops --no-tiller --vault --aws-dynamodb-region=${var.region} --aws-dynamodb-table=${aws_dynamodb_table.vault-data.name} --aws-kms-region=${var.region} --aws-kms-key-id=${aws_kms_key.bank_vault.key_id} --aws-s3-region=${var.region}  --aws-s3-bucket=${aws_s3_bucket.vault-unseal.id} --aws-access-key-id=${aws_iam_access_key.vault.id} --aws-secret-access-key=${aws_iam_access_key.vault.secret}"
 }
+```
 
-{{< /code >}}
+Save as `eks.tf`
 
 The module terraform-aws-modules/eks/aws will also store a kubeconfig file as `config`. This can be
 copied to or merged with your `~/.kube/config`. Then `jx install` can be run with the parameters
