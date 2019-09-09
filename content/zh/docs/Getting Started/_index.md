@@ -1,20 +1,9 @@
 ---
-title: 入门
-linktitle: 入门概览
-description: Jenkins X 的入门向导
-date: 2018-04-21
-publishdate: 2018-04-21
-lastmod: 2018-04-21
-categories: [getting started, fundamentals, 基础]
-keywords: [usage,docs]
-menu:
-  docs:
-    parent: "getting-started"
-    weight: 1
-weight: 0001	#rem
-sections_weight: 10
-draft: false
-toc: false
+title: "入门"
+linkTitle: "入门概览"
+weight: 2
+description: >
+  Jenkins X 的入门向导
 ---
 
 首先，需要在你本地的机器上[安装 jx 命令行工具](install) 。

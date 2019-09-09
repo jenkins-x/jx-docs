@@ -7,14 +7,6 @@ publishdate: 2016-11-01
 lastmod: 2018-04-04
 categories: [getting started]
 keywords: [install,kubernetes]
-menu:
-  docs:
-    parent: "getting-started"
-    weight: 45
-weight: 45
-sections_weight: 45
-draft: false
-toc: true
 ---
 
 我们推荐你使用 GitOps 管理你的 Jenkins X 设施，升级它、配置它、以及添加或移除扩展[应用](/apps/)，这样容易审计谁在你的设施上做了什么变更并且容易恢复坏的变更。

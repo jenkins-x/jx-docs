@@ -5,15 +5,6 @@ description: Jenkins X 如何帮助你做持续交付
 date: 2018-04-21
 publishdate: 2018-04-21
 lastmod: 2018-04-30
-menu:
-  docs:
-    parent: "about"
-    weight: 5
-weight: 5
-sections_weight: 5
-draft: false
-categories: [fundamentals, 基础]
-toc: true
 ---
 
 ## 命令行

@@ -5,20 +5,12 @@ description: Jenkins X 用到了哪些在《Accelerate》一书中提及的能�
 date: 2018-07-01
 publishdate: 2018-07-01
 lastmod: 2018-07-01
-menu:
-  docs:
-    parent: "about"
-    weight: 10
 weight: 10
-sections_weight: 0
-draft: false
-categories: [fundamentals]
-toc: true
 ---
 
 <img src="/images/accelerate.jpg" class="img-thumbnail">
 
-Jenkins X 重新构思了云原生时代下的 CI/CD 实现，这些想法受到了 DevOps 状态报告和近来大热的[《Accelerate》](https://www.amazon.co.uk/Accelerate-Software-Performing-Technology-Organizations/dp/1942788339)一书的深刻影响，这本书的三位合著者分别是：[Nicole Forsgren](https://twitter.com/nicolefv)、[Jez Humble](https://twitter.com/jezhumble)以及[Gene Kim](https://twitter.com/RealGeneKim?)。 
+Jenkins X 重新构思了云原生时代下的 CI/CD 实现，这些想法受到了 DevOps 状态报告和近来大热的[《Accelerate》](https://www.amazon.co.uk/Accelerate-Software-Performing-Technology-Organizations/dp/1942788339)一书的深刻影响，这本书的三位合著者分别是：[Nicole Forsgren](https://twitter.com/nicolefv)、[Jez Humble](https://twitter.com/jezhumble)以及[Gene Kim](https://twitter.com/RealGeneKim?)。
 
 经年累月基于真实世界中的团队和组织收集上来的数据被 DevOps 领域的思想领袖和数据科学家们进行了深入的分析。《Accelerate》一书总结了一组有助于实施 DevOps 的能力，这些能力被 Jenkins X 实现以帮助用户以开箱即用的方式获取到科学证明过的收益。我们会从已经实现的能力项入手，并不断整合更多的能力进来。
 

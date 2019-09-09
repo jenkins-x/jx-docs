@@ -7,14 +7,6 @@ publishdate: 2018-07-20
 lastmod: 2018-07-20
 categories: [getting started]
 keywords: [install,kubernetes]
-menu:
-  docs:
-    parent: "getting-started"
-    weight: 70
-weight: 70
-sections_weight: 70
-draft: false
-toc: true
 ---
 
 Jenkins X 应该为你的云服务商提供默认可用的配置。例如：如果你使用 AWS 或 EKS，Jenkins X 自动地使用 ECR。

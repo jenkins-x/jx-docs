@@ -5,15 +5,6 @@ description: Jenkins X 中的概念
 date: 2018-04-21
 publishdate: 2018-04-21
 lastmod: 2018-04-21
-menu:
-  docs:
-    parent: "about"
-    weight: 20
-weight: 20
-sections_weight: 20
-draft: false
-categories: [fundamentals]
-toc: true
 ---
 
 Jenkins X 旨在使得 DevOps 原则和最佳实践对于研发人员来说简单。

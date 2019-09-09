@@ -7,14 +7,6 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [getting started]
 keywords: [install]
-menu:
-  docs:
-    parent: "getting-started"
-    weight: 10
-weight: 10
-sections_weight: 10
-draft: false
-toc: true
 ---
 
 根据你的操作系统选择最适合的指令：

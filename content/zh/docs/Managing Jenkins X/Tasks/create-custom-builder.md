@@ -6,14 +6,6 @@ date: 2018-09-22
 publishdate: 2018-09-22
 categories: [getting started]
 keywords: [install,builder]
-menu:
-  docs:
-    parent: "getting-started"
-    weight: 25
-weight: 25
-sections_weight: 25
-draft: false
-toc: true
 ---
 
 在 Jenkins X 中，可以创建字段自定义的 Builder （也就是 [POD templates](https://github.com/jenkinsci/kubernetes-plugin)）或覆盖已有的。你只需要基于 [builder-base](https://github.com/jenkins-x/builder-base/blob/master/Dockerfile.common) 或它的 [slim](https://github.com/jenkins-x/builder-base/blob/master/Dockerfile.slim) 版本的镜像。
