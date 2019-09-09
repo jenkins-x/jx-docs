@@ -1,4 +1,3 @@
-
 ---
 title: Vault
 linktitle: Vault
@@ -6,14 +5,6 @@ description: Manage your secrets
 date: 2019-01-08
 publishdate: 2019-01-08
 lastmod: 2019-01-08
-menu:
-  docs:
-    parent: "architecture"
-    weight: 76
-weight: 76
-sections_weight: 79
-draft: false
-toc: true
 ---
 
 [Vault](https://www.vaultproject.io) is an open source project for securely managing secrets and is our preferred way to manage secrets across your environments in Jenkins X.
