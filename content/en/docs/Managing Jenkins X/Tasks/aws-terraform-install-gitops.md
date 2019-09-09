@@ -7,14 +7,6 @@ publishdate: 2019-04-03
 lastmod: 2019-04-03
 categories: [getting started]
 keywords: [install,kubernetes,aws,terraform]
-menu:
-  docs:
-    parent: "getting-started"
-    weight: 90
-weight: 90
-sections_weight: 90
-draft: false
-toc: true
 ---
 
 This is a short guide to setup EKS on AWS and the required resources for Jenkins X's setup of Vault

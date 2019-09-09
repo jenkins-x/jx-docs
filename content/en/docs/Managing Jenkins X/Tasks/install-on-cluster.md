@@ -7,14 +7,6 @@ publishdate: 2016-11-01
 lastmod: 2018-01-02
 categories: [getting started]
 keywords: [install,kubernetes]
-menu:
-  docs:
-    parent: "getting-started"
-    weight: 30
-weight: 30
-sections_weight: 30
-draft: false
-toc: true
 ---
 
 Jenkins X can be installed on 1.8 or later of Kubernetes. The requirements are:

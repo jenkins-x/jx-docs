@@ -6,15 +6,6 @@ date: 2013-07-01
 publishdate: 2013-07-01
 categories: [getting started]
 keywords: [install]
-menu:
-  docs:
-    parent: "getting-started"
-    weight: 15
-weight: 15
-sections_weight: 15
-draft: false
-aliases: [/quickstart/,/overview/quickstart/]
-toc: true
 ---
 
 

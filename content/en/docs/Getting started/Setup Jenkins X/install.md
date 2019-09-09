@@ -7,15 +7,6 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [getting started]
 keywords: [install]
-menu:
-  docs:
-    parent: "getting-started"
-    weight: 10
-weight: 10
-sections_weight: 10
-draft: false
-aliases: [/overview/usage/,/extras/livereload/,/doc/usage/,/usage/]
-toc: true
 ---
 
 Pick the most suitable instructions for your operating system:

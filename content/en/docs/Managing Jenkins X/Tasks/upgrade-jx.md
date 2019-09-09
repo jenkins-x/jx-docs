@@ -7,15 +7,6 @@ publishdate: 2019-05-01
 lastmod: 2019-05-01
 categories: [tutorials]
 keywords: [usage,docs]
-menu:
-  docs:
-    parent: "getting-started"
-    weight: 25
-weight: 25	#rem
-sections_weight: 25
-draft: false
-aliases: [/getting-started/upgrading/]
-toc: false
 ---
 
 Keeping your Jenkins X environment updated can be done by command line

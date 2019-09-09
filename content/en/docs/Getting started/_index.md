@@ -3,34 +3,15 @@ title: "Getting Started"
 linkTitle: "Getting Started"
 weight: 2
 description: >
-  What does your user need to know to try your project?
+  How to get quickly up and running with Jenkins X
 ---
 
-{{% pageinfo %}}
-This is a placeholder page that shows you how to use this template site.
-{{% /pageinfo %}}
+The simplest way to get started is via the [Google Cloud Tutorials](tutorials).
 
-Information in this section helps your user try your project themselves.
+Otherwise first you will need to [get the jx command line tool](install) locally on your machine.
 
-* What do your users need to do to start using your project? This could include downloading/installation instructions, including any prerequisites or system requirements.
+You can use the [jx command line](/commands/jx/#jx) to [create a new kubernetes cluster](create-cluster) with Jenkins X  installed automatically.
 
-* Introductory “Hello World” example, if appropriate. More complex tutorials should live in the Tutorials section.
+If you already have an existing kubernetes cluster then [install Jenkins X on your kubernetes cluster](install-on-cluster)
 
-Consider using the headings below for your getting started page. You can delete any that are not applicable to your project.
-
-## Prerequisites
-
-Are there any system requirements for using your project? What languages are supported (if any)? Do users need to already have any software or tools installed?
-
-## Installation
-
-Where can your user find your project code? How can they install it (binaries, installable package, build from source)? Are there multiple options/versions they can install and how should they choose the right one for them?
-
-## Setup
-
-Is there any initial setup users need to do after installation to try your project?
-
-## Try it out!
-
-Can your users test their installation, for example by running a commmand or deploying a Hello World example?
-
+When you have a kubernetes cluster with Jenkins X installed, check out [your next steps](/getting-started/next/)

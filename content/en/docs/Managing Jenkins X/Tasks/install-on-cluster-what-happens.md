@@ -7,14 +7,6 @@ publishdate: 2018-07-10
 lastmod: 2018-07-10
 categories: [getting started]
 keywords: [install,kubernetes]
-menu:
-  docs:
-    parent: "getting-started"
-    weight: 40
-weight: 40
-sections_weight: 40
-draft: false
-toc: true
 ---
 
 The Jenkins X CLI will do the following when installing the Jenkins X platform:

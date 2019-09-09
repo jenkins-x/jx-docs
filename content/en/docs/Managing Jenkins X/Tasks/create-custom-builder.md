@@ -6,15 +6,6 @@ date: 2013-07-01
 publishdate: 2013-07-01
 categories: [getting started]
 keywords: [install,builder]
-menu:
-  docs:
-    parent: "getting-started"
-    weight: 85
-weight: 85
-sections_weight: 85
-draft: false
-aliases: [/quickstart/,/overview/quickstart/]
-toc: true
 ---
 
 In Jenkins X, it is possible to create your custom Builders (aka [POD templates](https://github.com/jenkinsci/kubernetes-plugin)) or overwrite existing onces. You just need to base your Docker

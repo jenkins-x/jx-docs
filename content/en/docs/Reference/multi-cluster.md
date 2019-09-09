@@ -7,14 +7,6 @@ publishdate: 2016-11-01
 lastmod: 2018-01-02
 categories: [getting started]
 keywords: [install,kubernetes]
-menu:
-  docs:
-    parent: "getting-started"
-    weight: 47
-weight: 47
-sections_weight: 48
-draft: false
-toc: true
 ---
 
 A common requirement for a production setup is to isolate your Development, Staging and Production environments onto separate kubernetes clusters and to isolate the clusters from each other in separate cloud accounts or VPNs etc.
