@@ -62,7 +62,7 @@ There now follows instructions on how to do this - please if anything is not cle
 To submit a new build pack: 
 
 * fork the [jenkins-x-platform](https://github.com/jenkins-x/jenkins-x-platform/) repository
-* add your build pack to the [values.yaml file in the jenkins-x-platform repository](https://github.com/jenkins-x/jenkins-x-platform/blob/master/values.yaml#L194-L431) in the `jenkins.Agent.PodTemplates` section of the YAML
+* add your build pack to the [values.yaml file in the jenkins-x-platform repository](https://github.com/jenkins-x/jenkins-x-platform/blob/master/jenkins-x-platform/values.yaml) in the `jenkins.Agent.PodTemplates` section of the YAML
 * you may want to start by copy/pasting the most similar existing pod template (e.g. copy `Maven` if you are working on a Java based build pod) and just configuring the name, label and `Image` etc.
 * now submit a Pull Request on the [jenkins-x-platform](https://github.com/jenkins-x/jenkins-x-platform/) repository for your pod template 
 
