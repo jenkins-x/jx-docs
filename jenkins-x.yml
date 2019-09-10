@@ -69,6 +69,11 @@ pipelineConfig:
             value: jx-docs
           steps:
           - image: dennisnewel/hugo-extended:0.58.0
+            name: git-submodules
+            command: git
+            args:
+            - submodule update --init --recursive
+          - image: dennisnewel/hugo-extended:0.58.0
             name: version
             command: hugo
             args:
