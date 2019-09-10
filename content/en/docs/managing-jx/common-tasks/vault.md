@@ -213,7 +213,7 @@ created in [the Cluster creation
 process](/docs/cloudbees-jenkins-x-distribution/boot/) such as
 `192.168.1.100.nip.io`.
 
-6.  The program will ask for an `URLTemplate`. Press btn:\[Enter\] to
+6.  The program will ask for an `URLTemplate`. Press `Enter` to
 use the default value.
 
 7.  The program will verify your answers to the previous questions in
