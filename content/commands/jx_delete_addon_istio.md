@@ -1,5 +1,5 @@
 ---
-date: 2019-09-10T12:44:37Z
+date: 2019-09-10T13:56:00Z
 title: "jx delete addon istio"
 slug: jx_delete_addon_istio
 url: /commands/jx_delete_addon_istio/
