@@ -12,5 +12,5 @@ tmp-website
 # generated files
 /public
 nohup.out
-.DS_Store
+**/.DS_Store
 
