@@ -1,5 +1,5 @@
 ---
-date: 2019-09-10T17:17:24Z
+date: 2019-09-10T18:21:16Z
 title: "jx step boot vault"
 slug: jx_step_boot_vault
 url: /commands/jx_step_boot_vault/
