@@ -151,9 +151,9 @@ values for your domain for for *TTL* (`5`) and *TTL Unit*
 
   4.  Add the first nameserver to the *Name server* field
 
-  5.  Click btn:\[Add item\] and add any subsequent nameservers.
+  5.  Click `Add item` and add any subsequent nameservers.
 
-  6.  Click btn:\[Create\].
+  6.  Click `Create`.
 
   7.  Configure Jenkins X for the new domain names:
 
