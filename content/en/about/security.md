@@ -1,17 +1,9 @@
 ---
 title: Jenkins X Security
 linktitle: Security
-description: 
-date: 2019-01-15
-publishdate: 2019-01-15
-menu:
-  main:
-    weight: 01
-weight: 5
-sections_weight: 5
-draft: false
-slug:
-toc: true
+description:
+weight: 40
+type: docs
 ---
 
 The Jenkins X project takes security seriously. We make every possible effort to ensure users can adequately secure their automation infrastructure. 
