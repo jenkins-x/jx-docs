@@ -55,9 +55,11 @@ FROM: gcr.io/jenkinsxio/builder-base:0.0.56
 ENV JX_VERSION 2.0.693
 RUN curl -f -L https://github.com/jenkins-x/jx/releases/download/v${JX_VERSION}/jx-linux-amd64.tar.gz | tar xzv && \
   mv jx /usr/bin/
-  ```  
+  ```
 
 In between these two things is where you'll add what your builder needs.
+
+**Note**: To get the correct version of the `builder-base` image, look at `Dockerfile.gobase` in the root of the repo and use the base image version from that.
 
 ### Test
 
@@ -88,7 +90,8 @@ Once your files are in place, and you have verified locally that your image buil
 
 ## Inform the update bot
 
-The `update-bot.sh` script is used to create a PR that includes all the updated builder images. Edit the file (it's in the root of the `jenkins-x-builders` repo) and add appropriate command to this section:
+The `update-bot.sh` script is used to create a PR that includes all the updated builder images. Edit the file (it's in the root of the `jenkins-x-builders` repo) and add the appropriate argument to this existing command
+:
 
 ```
 jx step create pr chart --name gcr.io/jenkinsxio/builder-ruby --name gcr.io/jenkinsxio/builder-swift \
@@ -126,7 +129,6 @@ In the `values.yaml` file mentioned above, add the following section for each ne
 ```yaml
       Nodejs10x:
         Name: nodejs10x
-        # ServiceAccount: fooo
         Label: jenkins-nodejs10x
         DevPodPorts: 9229, 3000, 8080
         volumes:
@@ -163,7 +165,8 @@ In the `values.yaml` file mentioned above, add the following section for each ne
 ```
 
 **Note**: you can copy-paste from the above and just update the places where it mentions `nodejs10x` to your builder name (assuming your builder doesn't need more resources etc. than the example above)
-**Note 2**: If you don't know the exact image version, find your image on gcr.io/jenkinsxio/
+
+**Note 2**: If you don't know the exact image version, find your image on [gcr.io/jenkinsxio/](gcr.io/jenkinsxio/)
 
 ## Update Jenkins X Versions
 
