@@ -2,11 +2,7 @@
 title: Concepts
 linktitle: Concepts
 description: An overview of the concepts in Jenkins X
-date: 2018-02-01
-publishdate: 2018-02-01
-lastmod: 2018-02-01
 weight: 5
-type: docs
 ---
 
 Jenkins X is designed to make it simple for developers to work to DevOps principles and best practices. The approaches taken

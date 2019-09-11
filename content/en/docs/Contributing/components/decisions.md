@@ -2,9 +2,6 @@
 title: Decisions
 linktitle: Decisions
 description: Documented decisions made by the Jenkins X project
-date: 2018-06-29
-publishdate: 2017-06-29
-lastmod: 2018-06-29
 ---
 
 # Decisions

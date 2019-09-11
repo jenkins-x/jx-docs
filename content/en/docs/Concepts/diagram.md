@@ -2,7 +2,6 @@
 title: Diagram
 linktitle: Diagram
 description: A diagram of the Jenkins X architecture
-parent: "concepts"
 ---
 
 There are several architectures based on how you choose to install Jenkins X. We show you two common architectures below.

@@ -2,9 +2,6 @@
 title: Features
 linktitle: Features
 description: How Jenkins X can help you deliver continuously
-date: 2018-02-01
-publishdate: 2018-02-01
-lastmod: 2018-02-01
 ---
 
 
