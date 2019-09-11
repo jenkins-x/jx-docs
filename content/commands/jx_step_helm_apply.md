@@ -1,5 +1,5 @@
 ---
-date: 2019-09-11T19:37:08Z
+date: 2019-09-11T22:27:06Z
 title: "jx step helm apply"
 slug: jx_step_helm_apply
 url: /commands/jx_step_helm_apply/
@@ -28,7 +28,7 @@ jx step helm apply [flags]
 ### Options
 
 ```
-      --boot                          In Boot mode we load the Version Stream from the 'jx-requirements.yml' and use that to replace any missing versions in the 'reuqirements.yaml' file from the Version Stream
+      --boot                          In Boot mode we load the Version Stream from the 'jx-requirements.yml' and use that to replace any missing versions in the 'requirements.yaml' file from the Version Stream
       --clone-https git@foo/bar.git   Clone the environment Git repo over https rather than ssh which uses git@foo/bar.git (default true)
   -d, --dir string                    The directory containing the helm chart to apply (default ".")
   -f, --force                         Whether to to pass '--force' to helm to help deal with upgrading if a previous promote failed (default true)

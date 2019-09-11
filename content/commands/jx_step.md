@@ -1,5 +1,5 @@
 ---
-date: 2019-09-11T19:37:08Z
+date: 2019-09-11T22:27:06Z
 title: "jx step"
 slug: jx_step
 url: /commands/jx_step/
@@ -37,6 +37,7 @@ jx step [flags]
 * [jx step boot](/commands/jx_step_boot/)	 - boot [command]
 * [jx step buildpack](/commands/jx_step_buildpack/)	 - buildpack [command]
 * [jx step changelog](/commands/jx_step_changelog/)	 - Creates a changelog for a git tag
+* [jx step cluster](/commands/jx_step_cluster/)	 - cluster [kind]
 * [jx step create](/commands/jx_step_create/)	 - create [command]
 * [jx step credential](/commands/jx_step_credential/)	 - Returns a secret entry for easy scripting in pipeline steps
 * [jx step custom](/commands/jx_step_custom/)	 - Triggers a pipeline in a custom Jenkins server using the local Jenkinsfile

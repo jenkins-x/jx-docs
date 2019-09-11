@@ -1,5 +1,5 @@
 ---
-date: 2019-09-11T19:37:08Z
+date: 2019-09-11T22:27:06Z
 title: "jx get"
 slug: jx_get
 url: /commands/jx_get/
@@ -57,6 +57,7 @@ jx get TYPE [flags]
 * [jx get build](/commands/jx_get_build/)	 - Display one or more build resources
 * [jx get buildpack](/commands/jx_get_buildpack/)	 - Display the teams build pack Git repository and references used for the current Team used on creating and importing projects
 * [jx get chat](/commands/jx_get_chat/)	 - Display the current registered chat service URLs
+* [jx get clusters](/commands/jx_get_clusters/)	 - Display the current clusters
 * [jx get config](/commands/jx_get_config/)	 - Display the project configuration
 * [jx get cve](/commands/jx_get_cve/)	 - Display Common Vulnerabilities and Exposures (CVEs)
 * [jx get devpod](/commands/jx_get_devpod/)	 - Lists the DevPods
