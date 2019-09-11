@@ -3,7 +3,6 @@ title: Jenkins X Security
 linktitle: Security
 description:
 weight: 40
-type: docs
 ---
 
 The Jenkins X project takes security seriously. We make every possible effort to ensure users can adequately secure their automation infrastructure. 

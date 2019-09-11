@@ -2,10 +2,6 @@
 title: Continuous Integrating JX itself
 linktitle: Continuous Integrating JX itself
 description: How we use jx to test every change into jx
-date: 2019-07-10
-publishdate: 2019-07-10
-lastmod: 2019-07-10
-type: docs
 weight: 30
 ---
 

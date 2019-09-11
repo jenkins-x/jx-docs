@@ -6,6 +6,8 @@ type: docs
 menu:
   main:
     weight: 10
+cascade:
+  type: docs
 ---
 
 ## Concepts

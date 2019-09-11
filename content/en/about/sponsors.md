@@ -2,9 +2,6 @@
 title: Jenkins X Sponsors
 linktitle: Sponsors
 description:
-date: 2019-01-21
-publishdate: 2019-01-21
-type: docs
 weight: 200
 ---
 

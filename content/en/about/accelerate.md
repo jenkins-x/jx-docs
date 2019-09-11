@@ -2,10 +2,6 @@
 title: Accelerate
 linktitle: Accelerate
 description: Jenkins X uses Capabilities identified by the Accelerate book
-date: 2018-07-01
-publishdate: 2018-07-01
-lastmod: 2018-07-01
-type: docs
 weight: 20
 ---
 
