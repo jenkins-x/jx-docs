@@ -2,16 +2,6 @@
 title: "Create MLquickstart"
 linktitle: Create MLquickstart
 description: How to create a new machine-learning quickstart application and import it into Jenkins X
-date: 2019-07-14T20:34:02+01:00
-menu:
-  docs:
-    parent: "developing"
-    weight: 45
-weight: 45
-sections_weight: 45
-categories: [fundamentals]
-draft: false
-toc: true
 ---
 
 Machine learning quickstarts are pre-made machine-learning applications you can leverage to start your own projects.

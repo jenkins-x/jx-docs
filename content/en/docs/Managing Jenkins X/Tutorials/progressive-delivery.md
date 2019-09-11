@@ -2,19 +2,6 @@
 title: Progressive Delivery
 linktitle: Progressive Delivery
 description: Gradually rollout changes and canary releases
-date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
-menu:
-  docs:
-    parent: "developing"
-    weight: 230
-weight: 230
-sections_weight: 230
-draft: false
-toc: true
-aliases:
-    - progress-delivery/
 ---
 
 

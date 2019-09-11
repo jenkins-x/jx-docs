@@ -2,18 +2,6 @@
 title: 创建 Spring Boot
 linktitle: 创建 Spring Boot
 description: 如何创建Spring Boot应用并导入Jenkins X
-date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
-menu:
-  docs:
-    parent: "developing"
-    weight: 40
-weight: 40
-sections_weight: 40
-categories: [fundamentals, 基础]
-draft: false
-toc: true
 ---
 
                 

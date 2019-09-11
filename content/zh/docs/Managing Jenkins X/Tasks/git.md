@@ -2,17 +2,6 @@
 title: Git 服务器
 linktitle: Git 服务器
 description: 使用不同的 Git 服务器 
-date: 2018-05-15
-publishdate: 2018-05-15
-lastmod: 2018-05-15
-menu:
-  docs:
-    parent: "developing"
-    weight: 210
-weight: 210
-sections_weight: 210
-draft: false
-toc: true
 ---
 
 

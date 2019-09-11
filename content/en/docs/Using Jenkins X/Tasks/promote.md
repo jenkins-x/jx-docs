@@ -2,18 +2,6 @@
 title: Promote
 linktitle: Promote
 description: Promote new versions of your application to environments 
-date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
-menu:
-  docs:
-    parent: "developing"
-    weight: 100
-weight: 100
-sections_weight: 100
-draft: false
-toc: true
-aliases: [/developing/promotion/]
 ---
 
 

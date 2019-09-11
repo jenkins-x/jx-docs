@@ -2,17 +2,6 @@
 title: Import
 linktitle: Import
 description: How to import existing projects into Jenkins X
-date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
-menu:
-  docs:
-    parent: "developing"
-    weight: 50
-weight: 50
-sections_weight: 50
-draft: false
-toc: true
 ---
 
                 

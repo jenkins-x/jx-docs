@@ -2,17 +2,6 @@
 title: IDE
 linktitle: IDE
 description: 在你的 IDE 中使用 Jenkins X
-date: 2018-05-23
-publishdate: 2018-05-23
-lastmod: 2018-05-23
-menu:
-  docs:
-    parent: "developing"
-    weight: 190
-weight: 190
-sections_weight: 190
-draft: false
-toc: true
 ---
 
 

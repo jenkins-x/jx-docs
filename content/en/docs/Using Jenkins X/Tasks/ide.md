@@ -2,17 +2,6 @@
 title: IDE
 linktitle: IDE
 description: Working with Jenkins X from your IDE
-date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
-menu:
-  docs:
-    parent: "developing"
-    weight: 190
-weight: 190
-sections_weight: 190
-draft: false
-toc: true
 ---
 
 

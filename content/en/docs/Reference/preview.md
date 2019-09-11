@@ -2,17 +2,6 @@
 title: Preview Environments
 linktitle: Preview Environments
 description: Preview pull requests before changes merge to master
-date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
-menu:
-  docs:
-    parent: "developing"
-    weight: 110
-weight: 110
-sections_weight: 110
-draft: false
-toc: true
 ---
 
 

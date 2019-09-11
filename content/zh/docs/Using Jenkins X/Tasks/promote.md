@@ -2,17 +2,6 @@
 title: 升级
 linktitle: 升级
 description: 升级你的应用新版本到环境
-date: 2018-05-15
-publishdate: 2018-05-15
-lastmod: 2018-05-15
-menu:
-  docs:
-    parent: "developing"
-    weight: 100
-weight: 100
-sections_weight: 100
-draft: false
-toc: true
 ---
 
 

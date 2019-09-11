@@ -2,17 +2,6 @@
 title: Browsing
 linktitle: Browsing
 description: Browsing resources in Jenkins X 
-date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
-menu:
-  docs:
-    parent: "developing"
-    weight: 58
-weight: 58
-sections_weight: 58
-draft: false
-toc: true
 ---
 
                 

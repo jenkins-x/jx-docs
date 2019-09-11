@@ -1,18 +1,7 @@
 ---
 title: Kubernetes Context
 linktitle: Kubernetes Context
-description: Working with Kubernetes context 
-date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
-menu:
-  docs:
-    parent: "developing"
-    weight: 60
-weight: 60
-sections_weight: 60
-draft: false
-toc: true
+description: Working with Kubernetes context
 ---
 
                 

@@ -1,19 +1,7 @@
 ---
 title: Dev Pods
 linktitle: Dev Pods
-description: Develop in a pod on your cloud 
-date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
-menu:
-  docs:
-    parent: "developing"
-    weight: 195
-weight: 195
-sections_weight: 195
-draft: false
-toc: true
-aliases: [/developing/devpods/]
+description: Develop in a pod on your cloud
 ---
 
 The initial focus of Jenkins X is around automating and improving CI/CD for kubernetes. The use of [Preview Environments](/about/features/#preview-environments) really helps to validate and approve Pull Requests before they get merged to `master`; but how do you try things out before you are ready submit a Pull Request?

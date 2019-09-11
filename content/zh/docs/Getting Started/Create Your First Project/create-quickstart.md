@@ -2,18 +2,6 @@
 title: 快速开始
 linktitle: 快速开始
 description: 如何创建快速开始应用并导入 Jenkins X
-date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
-menu:
-  docs:
-    parent: "developing"
-    weight: 45
-weight: 45
-sections_weight: 45
-categories: [fundamentals, 基础]
-draft: false
-toc: true
 ---
 
 你可以由预制的应用开始一个项目，而不是从头开始。 

@@ -2,17 +2,6 @@
 title: 预览
 linktitle: 预览
 description: 在变更合并到 master 之前预览 Pull Requests
-date: 2018-05-15
-publishdate: 2018-05-15
-lastmod: 2018-05-15
-menu:
-  docs:
-    parent: "developing"
-    weight: 110
-weight: 110
-sections_weight: 110
-draft: false
-toc: true
 ---
 
 

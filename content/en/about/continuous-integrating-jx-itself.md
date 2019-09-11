@@ -5,18 +5,8 @@ description: How we use jx to test every change into jx
 date: 2019-07-10
 publishdate: 2019-07-10
 lastmod: 2019-07-10
-menu:
-  docs:
-    parent: "contribute"
-    weight: 230
-weight: 230
-sections_weight: 230
-draft: false
-toc: true
-aliases:
-    - continuous-integrating-jx/
+parent: "about"
 ---
-
 
 You may be wondering how Jenkins X introduce changes to Jenkins X. Of course, Jenkins X is built using Jenkins X itself! That means that new changes to the project go through a CI process, and are built and tested using pipelines that run on a Jenkins X Kubernetes cluster.
 

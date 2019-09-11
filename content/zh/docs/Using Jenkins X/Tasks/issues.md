@@ -2,17 +2,6 @@
 title: 问题
 linktitle: 问题
 description: 问题处理 
-date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
-menu:
-  docs:
-    parent: "developing"
-    weight: 200
-weight: 200
-sections_weight: 200
-draft: false
-toc: true
 ---
 
 

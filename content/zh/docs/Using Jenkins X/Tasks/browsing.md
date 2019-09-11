@@ -2,17 +2,6 @@
 title: 浏览
 linktitle: 浏览
 description: 浏览 Jenkins X 中的资源
-date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
-menu:
-  docs:
-    parent: "developing"
-    weight: 58
-weight: 58
-sections_weight: 58
-draft: false
-toc: true
 ---
 
                 

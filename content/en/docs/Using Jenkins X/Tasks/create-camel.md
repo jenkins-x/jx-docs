@@ -2,18 +2,6 @@
 title: Create Camel
 linktitle: Create Camel
 description: How to create a new Apache Camel microservice and import it into Jenkins X
-date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
-menu:
-  docs:
-    parent: "developing"
-    weight: 46
-weight: 46
-sections_weight: 46
-categories: [fundamentals]
-draft: false
-toc: true
 ---
 
 If you want to create a new Spring Boot based microservice using [Apache Camel](http://camel.apache.org/) you can use the [jx create camel](/commands/jx_create_camel) command.

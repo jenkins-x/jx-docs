@@ -2,17 +2,6 @@
 title: Issues
 linktitle: Issues
 description: Working with issues 
-date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
-menu:
-  docs:
-    parent: "developing"
-    weight: 215
-weight: 215
-sections_weight: 215
-draft: false
-toc: true
 ---
 
 

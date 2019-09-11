@@ -2,18 +2,6 @@
 title: Create Spring Boot
 linktitle: Create Spring Boot
 description: How to create new Spring Boot applications and import them into Jenkins X
-date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
-menu:
-  docs:
-    parent: "developing"
-    weight: 40
-weight: 40
-sections_weight: 40
-categories: [fundamentals]
-draft: false
-toc: true
 ---
 
                 
