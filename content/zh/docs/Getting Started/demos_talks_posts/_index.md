@@ -6,14 +6,7 @@ date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [fundamentals, 基础]
-keywords: []
-menu:
-  docs:
-    parent: "demos"
-    weight: 1
 weight: 1
-draft: false
-toc: false
 ---
 
 

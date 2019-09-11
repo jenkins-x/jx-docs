@@ -2,15 +2,6 @@
 title: Talks and Conferences
 date: 2018-05-05T10:36:00+02:00
 description: Talks at Meetups and Conferences
-keywords: []
-aliases: []
-url: /talks/
-menu:
-  docs:
-    parent: demos
-    weight: 5
-weight: 5
-sections_weight: 5
 ---
 * [2019-12-02/3/4/5 GitOps by courtesy of Jenkins-X](https://devopsconference.de/kubernetes-ecosystem/gitops-by-courtesy-of-jenkins-x/) at [DevOpsCon 2019, München (Germany)](https://devopsconference.de/) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
 
