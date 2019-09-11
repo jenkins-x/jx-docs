@@ -1,5 +1,5 @@
 ---
-date: 2019-09-12T09:07:55Z
+date: 2019-09-11T23:40:20Z
 title: "jx step get subdomain"
 slug: jx_step_get_subdomain
 url: /commands/jx_step_get_subdomain/

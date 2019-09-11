@@ -1,5 +1,5 @@
 ---
-date: 2019-09-12T09:07:55Z
+date: 2019-09-11T23:40:20Z
 title: "jx create pullrequest"
 slug: jx_create_pullrequest
 url: /commands/jx_create_pullrequest/
