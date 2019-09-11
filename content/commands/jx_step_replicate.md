@@ -1,5 +1,5 @@
 ---
-date: 2019-09-11T22:27:06Z
+date: 2019-09-11T23:40:20Z
 title: "jx step replicate"
 slug: jx_step_replicate
 url: /commands/jx_step_replicate/
@@ -37,7 +37,7 @@ jx step replicate [flags]
 
 ```
   -h, --help                                 help for replicate
-  -r, --replicate-to-namespace stringArray   Specify a lilst of namespaces to replicate data into
+  -r, --replicate-to-namespace stringArray   Specify a list of namespaces to replicate data into
 ```
 
 ### Options inherited from parent commands

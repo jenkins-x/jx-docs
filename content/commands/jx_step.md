@@ -1,5 +1,5 @@
 ---
-date: 2019-09-11T22:27:06Z
+date: 2019-09-11T23:40:20Z
 title: "jx step"
 slug: jx_step
 url: /commands/jx_step/
@@ -52,6 +52,7 @@ jx step [flags]
 * [jx step next-buildnumber](/commands/jx_step_next-buildnumber/)	 - Generates the next build unique number for a pipeline.
 * [jx step next-version](/commands/jx_step_next-version/)	 - Writes next semantic version
 * [jx step nexus](/commands/jx_step_nexus/)	 - nexus [command]
+* [jx step override-requirements](/commands/jx_step_override-requirements/)	 - Overrides requirements with environment variables to be persisted in the `jx-requirements.yml`
 * [jx step patch-config](/commands/jx_step_patch-config/)	 - Modifies a ConfigMap with the given json patch
 * [jx step post](/commands/jx_step_post/)	 - post step actions
 * [jx step pr](/commands/jx_step_pr/)	 - pipeline step pr
