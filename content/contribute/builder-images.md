@@ -111,8 +111,72 @@ Once everything is merged you can continue to the next step.
 
 ## Update Jenkins X Platform
 
-(WiP) add the new builders to jenkins-x-platform (like https://github.com/jenkins-x/jenkins-x-platform/blob/master/jenkins-x-platform/values.yaml#L1124-L1179).
+Once everything is merged into `jenkins-x-builders` and the merge has finished. We need to update the helm charts used by Jenkins X, to make it aware of the new builder.
+
+1. Fork/setup/checkout `jenkins-x-platform`
+1. update the file `/jenkins-x-platform/values.yaml` (see details below)
+1. commit/push/raise a PR
+
+### Adding values for new builder
+
+In the `values.yaml` file mentioned above, add the following section for each new builder you're adding:
+
+```yaml
+      Nodejs10x:
+        Name: nodejs10x
+        # ServiceAccount: fooo
+        Label: jenkins-nodejs10x
+        DevPodPorts: 9229, 3000, 8080
+        volumes:
+        - type: Secret
+          secretName: jenkins-docker-cfg
+          mountPath: /home/jenkins/.docker
+        EnvVars:
+          JENKINS_URL: http://jenkins:8080
+          GIT_COMMITTER_EMAIL: jenkins-x@googlegroups.com
+          GIT_AUTHOR_EMAIL: jenkins-x@googlegroups.com
+          GIT_AUTHOR_NAME: jenkins-x-bot
+          GIT_COMMITTER_NAME: jenkins-x-bot
+          XDG_CONFIG_HOME: /home/jenkins
+          DOCKER_CONFIG: /home/jenkins/.docker/
+        ServiceAccount: jenkins
+        Containers:
+          Jnlp:
+            Image: jenkinsci/jnlp-slave:3.26-1-alpine
+            RequestCpu: "100m"
+            RequestMemory: "128Mi"
+            Args: '${computer.jnlpmac} ${computer.name}'
+          Nodejs:
+            Image: gcr.io/jenkinsxio/builder-nodejs10x:0.1.755
+            Privileged: true
+            RequestCpu: "400m"
+            RequestMemory: "512Mi"
+            LimitCpu: "2"
+            LimitMemory: "2048Mi"
+            # You may want to change this to true while testing a new image
+            # AlwaysPullImage: true
+            Command: "/bin/sh -c"
+            Args: "cat"
+            Tty: true
+```
+
+**Note**: you can copy-paste from the above and just update the places where it mentions `nodejs10x` to your builder name (assuming your builder doesn't need more resources etc. than the example above)
+**Note 2**: If you don't know the exact image version, find your image on gcr.io/jenkinsxio/
 
 ## Update Jenkins X Versions
 
-(WiP) add yaml files for the new builders in https://github.com/jenkins-x/jenkins-x-versions/tree/master/docker/gcr.io/jenkinsxio.
+Finally, we need to tell Jenkins X which version of the new builder to use. This will make Jenkins X use the helm chart we defined above, which in tern pulls down the image we built in the first set of steps.
+
+1. Fork/setup/checkout `jenkins-x-versions`
+1. Add yaml file for each buidler (see below) to `/docker/gcr.io/jenkinsxio/`
+1. Commit/push/raise a PR
+
+### Adding builder version yml file
+
+Each file should be named like the builder, e.g. `builder-nodejs12x.yml` and should just contain one line:
+
+```yml
+version: 0.1.755
+```
+
+**Note** make sure to use the image version you specified in the previous step
