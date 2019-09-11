@@ -5,9 +5,7 @@ description:
 date: 2019-01-21
 publishdate: 2019-01-21
 type: docs
-menu:
-  about:
-    weight: 70
+weight: 200
 ---
 
 We thank the following organizations for their major commitments to support the Jenkins X project

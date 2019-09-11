@@ -6,9 +6,7 @@ date: 2018-07-01
 publishdate: 2018-07-01
 lastmod: 2018-07-01
 type: docs
-menu:
-  about:
-    weight: 20
+weight: 20
 ---
 
 <img src="/images/accelerate.jpg" class="img-thumbnail">
