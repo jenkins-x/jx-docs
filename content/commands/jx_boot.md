@@ -1,5 +1,5 @@
 ---
-date: 2019-09-11T18:43:24Z
+date: 2019-09-11T19:37:08Z
 title: "jx boot"
 slug: jx_boot
 url: /commands/jx_boot/
@@ -38,6 +38,7 @@ jx boot [flags]
   -d, --dir string             the directory to look for the Jenkins X Pipeline, requirements and charts (default ".")
       --git-ref string         override the Git ref for the JX Boot source to start from, ignoring the versions stream. Normally specified with git-url as well
   -u, --git-url string         override the Git clone URL for the JX Boot source to start from, ignoring the versions stream. Normally specified with git-ref as well
+  -v, --helm-log string        sets the helm logging level from 0 to 9. Passed into the helm CLI via the '-v' argument. Useful to diagnose helm related issues
   -h, --help                   help for boot
   -s, --start-step string      the step in the pipeline to start from
       --versions-ref string    the bootstrap ref for the versions repo. Once the boot config is cloned, the repo will be then read from the jx-requirements.yaml (default "master")
