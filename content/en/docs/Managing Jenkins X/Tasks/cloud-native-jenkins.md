@@ -2,17 +2,6 @@
 title: Cloud Native Jenkins
 linktitle: Cloud Native Jenkins
 description: Lets make Jenkins cloud native
-date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
-menu:
-  docs:
-    parent: "architecture"
-    weight: 75
-weight: 75
-sections_weight: 75
-draft: false
-toc: true
 ---
 
 Jenkins X helps to support _cloud native Jenkins_ via:

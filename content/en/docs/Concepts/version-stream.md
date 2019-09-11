@@ -2,17 +2,7 @@
 title: Version Stream
 linktitle: Version Stream
 description: How we improve stability of Jenkins X and its Apps
-date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
-menu:
-  docs:
-    parent: "architecture"
-    weight: 79
-weight: 79
-sections_weight: 79
-draft: false
-toc: true
+parent: "concepts"
 ---
 
 Jenkins X is made up of a large number of command line _packages_, _images_ and helm _charts_, some of which are released by the Jenkins X community and others come from the wider open source ecosystem.

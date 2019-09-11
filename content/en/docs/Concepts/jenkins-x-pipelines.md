@@ -5,14 +5,7 @@ description: cloud native serverless pipelines
 date: 2019-03-04
 publishdate: 2019-03-04
 keywords: [tekton]
-menu:
-  docs:
-    parent: "architecture"
-    weight: 66
-weight: 66
-sections_weight: 66
-draft: false
-toc: true
+parent: "concepts"
 ---
 
 We [recently announced](/news/jenkins-x-next-gen-pipeline-engine) that we are introducing **Jenkins X Pipelines**, a new serverless pipeline execution engine based on the [Tekton Pipelines](https://tekton.dev/) open source project. 

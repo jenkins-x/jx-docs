@@ -2,17 +2,6 @@
 title: 自定义资源
 linktitle: 自定义资源
 description: 由 Jenkins X 自定的资源
-date: 2018-05-27
-publishdate: 2018-05-27
-lastmod: 2018-05-27
-menu:
-  docs:
-    parent: "architecture"
-    weight: 50
-weight: 50
-sections_weight: 50
-draft: false
-toc: true
 ---
 
 Kubernetes 提供了一个叫做[自定义资源](https://kubernetes.io/docs/concepts/api-extension/custom-resources/)的扩展机制，它允许微服务扩展 Kubernetes 平台来解决更高级的问题。

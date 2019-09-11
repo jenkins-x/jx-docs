@@ -2,17 +2,6 @@
 title: 源码
 linktitle: 源码
 description: 多个源码仓库的位置
-date: 2019-01-08
-publishdate: 2019-01-08
-lastmod: 2019-04-04
-menu:
-  docs:
-    parent: "architecture"
-    weight: 42
-weight: 42
-sections_weight: 42
-draft: false
-toc: true
 ---
 
 Jenkins X 建立在巨人的肩膀上，并且拥有许多不同的源码仓库，从 CLI 工具、Docker 镜像、Helm 图表到[插件应用](/apps/)来做各种各样的事情。

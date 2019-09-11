@@ -3,17 +3,6 @@ title: Access Control
 linktitle: Access Control
 aliases: [/rbac/]
 description: Managing Access Control
-date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
-menu:
-  docs:
-    parent: "architecture"
-    weight: 101
-weight: 110
-sections_weight: 101
-draft: false
-toc: true
 ---
 
 Jenkins X uses Role-Based Access Control (RBAC) policies to control access to its various resources.  The enforcement of the policies is provided by [Kubernetes' RBAC support](https://kubernetes.io/docs/reference/access-authn-authz/rbac/).

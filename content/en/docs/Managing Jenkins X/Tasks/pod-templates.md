@@ -2,17 +2,6 @@
 title: Pod Templates
 linktitle: Pod Templates
 description: Pods used to implement Jenkins pipelines 
-date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
-menu:
-  docs:
-    parent: "architecture"
-    weight: 76
-weight: 76
-sections_weight: 76
-draft: false
-toc: true
 ---
 
 We implement CI/CD pipelines using declarative Jenkins pipelines using a `Jenkinsfile` in the source of each application or environment git repository.

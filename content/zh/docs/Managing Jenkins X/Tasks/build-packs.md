@@ -2,17 +2,6 @@
 title: 构建打包
 linktitle: 构建打包
 description: 打包源码为 kubernetes 应用
-date: 2018-05-27
-publishdate: 2018-05-27
-lastmod: 2018-05-27
-menu:
-  docs:
-    parent: "architecture"
-    weight: 70
-weight: 70
-sections_weight: 70
-draft: false
-toc: true
 ---
 
 我们使用 [draft](https://draft.sh/) 风格为不同的语言_构建打包_ ，我们通过[导入](/zh/developing/import/)或者[创建](/zh/developing/create-spring/)[他们](/zh/developing/create-quickstart/)，运行时和构建工具添加必要的配置文件，因此我们可以在 Kubernetes 中构建和部署他们。

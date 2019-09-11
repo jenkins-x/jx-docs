@@ -2,17 +2,6 @@
 title: Docker Registry
 linktitle: Docker Registry
 description: Configuring your docker registry 
-date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
-menu:
-  docs:
-    parent: "architecture"
-    weight: 100
-weight: 100
-sections_weight: 100
-draft: false
-toc: true
 ---
 
 To be able to create and publish docker images we need to use a Docker Registry.

@@ -2,17 +2,6 @@
 title: Build Packs
 linktitle: Build Packs
 description: Turning source code into applications on kubernetes
-date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
-menu:
-  docs:
-    parent: "architecture"
-    weight: 70
-weight: 70
-sections_weight: 70
-draft: false
-toc: true
 ---
 
 We use [draft](https://draft.sh/) style _build packs_ for different languages, runtimes and build tools to add the necessary configuration files to projects as we [import them](/developing/import/) or [create](/developing/create-spring/) [them](/developing/create-quickstart/) so that we can build and deploy them in kubernetes.

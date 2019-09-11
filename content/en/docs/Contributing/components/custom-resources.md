@@ -2,17 +2,7 @@
 title: Custom Resources
 linktitle: Custom Resources
 description: Custom Resources defined by Jenkins X 
-date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
-menu:
-  docs:
-    parent: "architecture"
-    weight: 72
-weight: 72
-sections_weight: 72
-draft: false
-toc: true
+parent: "components"
 ---
 
 Kubernetes provides an extension mechanism called [Custom Resources](https://kubernetes.io/docs/concepts/api-extension/custom-resources/) which allows microservices to extend the Kubernetes platform to solve higher order problems.

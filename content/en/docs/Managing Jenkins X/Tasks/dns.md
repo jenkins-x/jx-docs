@@ -2,17 +2,6 @@
 title: DNS
 linktitle: DNS
 description: Configuring DNS for external access to cluster services
-date: 2019-06-24
-publishdate: 2019-06-24
-lastmod: 2019-06-24
-menu:
-  docs:
-    parent: "architecture"
-    weight: 100
-weight: 100
-sections_weight: 100
-draft: false
-toc: true
 ---
 
 To be able to access services hosted within your cluster we default to an [nip.io](https://nip.io/) domain. This makes it super easy to setup and manage DNS.

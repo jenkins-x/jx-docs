@@ -2,17 +2,6 @@
 title: Components
 linktitle: Components
 description: Component overview of a typical Jenkins X installation
-date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
-menu:
-  docs:
-    parent: "architecture"
-    weight: 40
-weight: 40
-sections_weight: 40
-draft: false
-toc: true
 ---
 
 An installation of Jenkins X consists of:

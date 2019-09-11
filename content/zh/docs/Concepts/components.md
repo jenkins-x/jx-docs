@@ -2,17 +2,6 @@
 title: 组件
 linktitle: 组件
 description: 典型 Jenkins X 安装中的组件概览
-date: 2018-05-27
-publishdate: 2018-05-27
-lastmod: 2018-05-27
-menu:
-  docs:
-    parent: "architecture"
-    weight: 40
-weight: 40
-sections_weight: 40
-draft: false
-toc: true
 ---
 
 Jenkins X 安装的包括：

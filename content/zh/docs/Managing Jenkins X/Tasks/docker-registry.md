@@ -1,18 +1,7 @@
 ---
 title: Docker Registry
 linktitle: Docker Registry
-description: 配置你的 docker registry 
-date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
-menu:
-  docs:
-    parent: "architecture"
-    weight: 100
-weight: 100
-sections_weight: 100
-draft: false
-toc: true
+description: 配置你的 docker registry
 ---
 
 为了能够创建和发布 docker 镜像，我们需要使用 Docker Registry。

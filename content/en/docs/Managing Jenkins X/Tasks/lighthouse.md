@@ -2,17 +2,6 @@
 title: Lighthouse
 linktitle: Lighthouse
 description: lightweight webhook and ChatOps handling for multiple git providers
-date: 2019-01-08
-publishdate: 2019-01-08
-lastmod: 2019-01-08
-menu:
-  docs:
-    parent: "architecture"
-    weight: 76
-weight: 76
-sections_weight: 76
-draft: false
-toc: true
 ---
 
 [Prow](prow.html) is a great way to do ChatOps with [Jenkins X Pipelines](/architecture/jenkins-x-pipelines/) though unfortunately its only supported for GitHub.com and is quite heavy and complex. To work around this we've created [Lighthouse](https://github.com/jenkins-x/lighthouse). 

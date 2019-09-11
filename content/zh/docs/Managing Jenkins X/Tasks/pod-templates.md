@@ -2,17 +2,6 @@
 title: Pod 模板
 linktitle: Pod 模板
 description: 用于实现 Jenkins 流水线的 Pods
-date: 2018-05-27
-publishdate: 2018-05-27
-lastmod: 2018-05-27
-menu:
-  docs:
-    parent: "architecture"
-    weight: 80
-weight: 80
-sections_weight: 80
-draft: false
-toc: true
 ---
 
 我们使用申明式（declarative）Jenkins 流水线实现 CI/CD ，每个应用或者环境的 git 库源码中有 `Jenkinsfile`。
