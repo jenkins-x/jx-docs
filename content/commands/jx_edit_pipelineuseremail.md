@@ -1,33 +1,25 @@
 ---
 date: 2019-09-12T09:07:55Z
-title: "jx edit app"
-slug: jx_edit_app
-url: /commands/jx_edit_app/
+title: "jx edit pipelineuseremail"
+slug: jx_edit_pipelineuseremail
+url: /commands/jx_edit_pipelineuseremail/
 ---
-## jx edit app
+## jx edit pipelineuseremail
 
-Edits the Jenkins Plugins for a Jenkins App
+Users email used by pipeline. Is given write permission on new repositories.
 
 ### Synopsis
 
-Edits a Jenkins App's plugins
+Users email used by pipeline. Is given write permission on new repositories.
 
 ```
-jx edit app jenkins plugins [flags]
-```
-
-### Examples
-
-```
-  # Edits the plugins for a Jenkins App
-  jx edit app jenkins plugins
+jx edit pipelineuseremail [flags]
 ```
 
 ### Options
 
 ```
-  -e, --enabled string   Enables or disables the addon
-  -h, --help             help for app
+  -h, --help   help for pipelineuseremail
 ```
 
 ### Options inherited from parent commands
