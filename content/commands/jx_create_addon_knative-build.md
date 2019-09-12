@@ -1,5 +1,5 @@
 ---
-date: 2019-09-12T12:43:22Z
+date: 2019-09-12T13:19:55Z
 title: "jx create addon knative-build"
 slug: jx_create_addon_knative-build
 url: /commands/jx_create_addon_knative-build/
