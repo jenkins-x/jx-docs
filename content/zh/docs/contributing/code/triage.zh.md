@@ -2,20 +2,6 @@
 title: 分类问题
 linktitle: 分类问题
 description: 如何对 Jenkins X 项目中的问题进行分类
-date: 2018-12-18
-publishdate: 2018-12-18
-lastmod: 2019-04-09
-categories: [triage]
-keywords: [triage,issues]
-authors: [triage]
-menu:
-  docs:
-    parent: "contribute"
-    weight: 30
-weight: 30
-sections_weight: 30
-draft: false
-toc: true
 ---
 
 Jenkins X 项目主要的问题跟踪系统是 https://github.com/jenkins-x/jx/issues。这旨在捕捉问题、想法和开发工作。如有疑问请提交一个问题，一名 Jenkins X 团队成员将考虑尽快给它分类。

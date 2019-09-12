@@ -2,19 +2,6 @@
 title: 给 API 文档做贡献
 linktitle: API 文档
 description: 如何帮助改善 Jenkins X 的 API 文档
-date: 2019-04-02
-publishdate: 2019-04-02
-lastmod: 2019-04-02
-categories: [contribute]
-keywords: [docs,documentation,community, contribute]
-menu:
-  docs:
-    parent: "contribute"
-    weight: 20
-weight: 20
-sections_weight: 20
-draft: false
-toc: true
 ---
 
 Jenkins X 有两种类型的 API 文档：[Kubernetes Custom Resource Documentation](/apidocs) 和 [Godoc](https://godoc.org/github.com/jenkins-x/jx)。这两种类型都是由 [jx](https://github.com/jenkins-x/jx) 的代码生成。
@@ -26,7 +13,7 @@ Jenkins X 有两种类型的 API 文档：[Kubernetes Custom Resource Documentat
 
 ## 编写自定义资源文档
 
-自定义资源的文档大部分是由 [go structs that define the custom 
+自定义资源的文档大部分是由 [go structs that define the custom
 resources](https://github.com/jenkins-x/jx/tree/master/pkg/apis/jenkins.io/v1) 上的注释以及融合了 [introductory content](https://github.com/jenkins-x/jx/tree/master/docs/apidocs/static_includes) 和 [structure](https://github.com/jenkins-x/jx/blob/master/docs/apidocs/config.yaml) 而生成的。
 
 ### 工具链
@@ -36,14 +23,14 @@ resources](https://github.com/jenkins-x/jx/tree/master/pkg/apis/jenkins.io/v1) �
 HTML 文档是由 [OpenAPI 说明](https://github.com/jenkins-x/jx/tree/master/docs/apidocs/openapi-spec) 生成的，依次的由 [Go 结构体](https://github.com/jenkins-x/jx/tree/master/pkg/client/openapi) 生成，而这些结构体是由代码的注释生成的。想要生成结构体和 OpenAPI 说明执行命令：
  ```bash
  $ make generate-openapi
- ```  
- 
+ ```
+
  {{% note %}}
  `make generate-openapi` 仅仅是对 `jx create client openapi` 进行了包装，通过传入参数：从哪个包来生成、生成的目标包的名称和组（`jenkins.io`）以及版本(`v1`)来生成最终的文件。如果你愿意的话，也可以直接运行这个命令。
- {{% /note %}} 
- 
+ {{% /note %}}
+
  生成 HTML 运行：
- 
+
  ```bash
  make generate-docs
  ```
@@ -57,7 +44,7 @@ HTML 文档是由 [OpenAPI 说明](https://github.com/jenkins-x/jx/tree/master/d
 {{% note %}}
 你也可以运行 `make generate` 它会进行所有 Jenins X（mocks、client 以及 OpenAPI）所需要的代码生成工作。
 {{% /note %}}
- 
+
 构建版本时会运行 `make generate-docs`，并且对于每一个版本，更新都会自动的上传到 Jenkins X 的网站上。在版本构建结束的几分钟后会生效。
 
 ### 对文档进行修改
@@ -72,7 +59,7 @@ HTML 文档是由 [OpenAPI 说明](https://github.com/jenkins-x/jx/tree/master/d
 
 ```go
 // +k8s:openapi-gen=false
-``` 
+```
 
 对类型的注释会被忽略。结构体中的字段的注释会被作为其描述信息。
 左侧的菜单栏是由 [config.yaml](https://github.com/jenkins-x/jx/blob/master/docs/apidocs/config.yaml) 中的 `resource_categories` 而生成。对于每一个种类的介绍文本信息由 [html](https://github.com/jenkins-x/jx/tree/master/docs/apidocs/static_includes) 编写。

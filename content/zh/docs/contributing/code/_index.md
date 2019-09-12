@@ -2,20 +2,7 @@
 title: 贡献代码
 linktitle: 开发
 description: 如何为 Jenkins X 的发展做贡献
-date: 2018-05-16
-publishdate: 2018-05-16
-lastmod: 2018-05-16
-categories: [contribute]
-keywords: [dev,open source]
 authors: [digitalcraftsman]
-menu:
-  docs:
-    parent: "contribute"
-    weight: 10
-weight: 10
-sections_weight: 10
-draft: false
-toc: true
 ---
 
 ## 介绍
@@ -233,12 +220,12 @@ git checkout -b <BRANCH-NAME>
 go build -o hugo main.go
 ```
 
-### 测试 
+### 测试
 有时对代码的修改可能会带来没有注意到的负面影响。或者是并不像预期的那样工作。大部分的功能都有其相对应的测试用例。这些测试文件都以 `_test.go` 结尾。
 
 请确保 `go test ./...` 命令通过没有异常以及 `go build` 执行完毕。
 
-### 格式 
+### 格式
 
 Go 语言的代码格式也许根据人的意识会有所不同，但是不论是由谁编写的代码，Go 本身会确保代码看上去一致。Go 提供了格式化工具，使我们的修改风格统一：
 

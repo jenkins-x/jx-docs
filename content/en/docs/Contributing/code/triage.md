@@ -2,21 +2,6 @@
 title: Triaging issues
 linktitle: Triaging issues
 description: How to triage issues on the Jenkins X project
-date: 2018-12-18
-publishdate: 2018-12-18
-lastmod: 2018-12-18
-categories: [triage]
-keywords: [triage,issues]
-authors: [triage]
-menu:
-  docs:
-    parent: "contribute"
-    weight: 30
-weight: 30
-sections_weight: 30
-draft: false
-aliases: [/contribute/triage/]
-toc: true
 ---
 
 The main issue tracker for the Jenkins X project is https://github.com/jenkins-x/jx/issues.  This aims to capture issues, ideas and development work.  If in doubt please raise an issue and a Jenkins X team member will look to triage it as soon as possible.

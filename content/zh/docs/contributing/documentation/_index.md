@@ -2,19 +2,6 @@
 title: 文档贡献
 linktitle: 文档
 description: 如何完善 Jenkins X 文档
-date: 2018-05-15
-publishdate: 2018-05-15
-lastmod: 2018-05-15
-categories: [contribute]
-keywords: [docs, documentation, community, contribute]
-menu:
-  docs:
-    parent: "contribute"
-    weight: 20
-weight: 20
-sections_weight: 20
-draft: false
-toc: true
 ---
 
 ## 创建派生库
