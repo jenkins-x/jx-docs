@@ -1,10 +1,8 @@
-
 ---
-title: "Importing exsiting apps"
+title: "Importing exiting apps"
 linkTitle: "Importing existing apps"
-date: 2017-01-05
 description: >
-  A short lead descripton about this section page. Text here can also be **bold** or _italic_ and can even be split over multiple paragraphs.
+  A short lead description about this section page. Text here can also be **bold** or _italic_ and can even be split over multiple paragraphs.
 ---
 
 {{% pageinfo %}}

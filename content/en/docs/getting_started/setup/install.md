@@ -2,10 +2,6 @@
 title: Install Jenkins X
 linktitle: Install Jenkins X
 description: How to install the jx binary on your machine
-date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
-parent: "Setup Jenkins X"
 weight: 1
 keywords: [install]
 ---

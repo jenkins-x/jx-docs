@@ -1,10 +1,9 @@
 ---
-title: "Create your first project"
+title: "Demos, talks and blog posts"
 date: 2017-01-05
-weight: 2
-parent: "Getting Started"
+weight: 5
 description: >
-  Now that you've setup the platform, let's create your first project.
+  A list of useful demos, talks and blog posts to continue on your getting started journey.
 ---
 
 {{% pageinfo %}}
@@ -44,7 +43,7 @@ Scenester tumeric pickled, authentic crucifix post-ironic fam freegan VHS pork b
 This is a code block following a header.
 ```
 
-Next level leggings before they sold out, PBR&B church-key shaman echo park. Kale chips occupy godard whatever pop-up freegan pork belly selfies. Gastropub Belinda subway tile woke post-ironic seitan. Shabby chic man bun semiotics vape, chia messenger bag plaid cardigan. 
+Next level leggings before they sold out, PBR&B church-key shaman echo park. Kale chips occupy godard whatever pop-up freegan pork belly selfies. Gastropub Belinda subway tile woke post-ironic seitan. Shabby chic man bun semiotics vape, chia messenger bag plaid cardigan.
 
 #### Header 4
 

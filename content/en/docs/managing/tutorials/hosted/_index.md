@@ -2,9 +2,6 @@
 title: Google Cloud Hosted Tutorials
 linktitle: Google Cloud Hosted
 description: Tutorials using Google Kubernetes Engine & Cloud Shell
-date: 2018-08-01
-publishdate: 2018-08-01
-lastmod: 2018-08-01
 ---
 
 

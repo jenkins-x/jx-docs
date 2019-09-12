@@ -1,10 +1,9 @@
 ---
-title: "Demos, talks and blog posts"
+title: "Build, test and preview an app"
 date: 2017-01-05
-weight: 5
-parent: "Getting Started"
+weight: 3
 description: >
-  A list of useful demos, talks and blog posts to continue on your getting started journey.
+  This walkthrough helps you understand how to build, test and preview your app in various built-in **environments** in Jenkins X
 ---
 
 {{% pageinfo %}}
@@ -44,7 +43,7 @@ Scenester tumeric pickled, authentic crucifix post-ironic fam freegan VHS pork b
 This is a code block following a header.
 ```
 
-Next level leggings before they sold out, PBR&B church-key shaman echo park. Kale chips occupy godard whatever pop-up freegan pork belly selfies. Gastropub Belinda subway tile woke post-ironic seitan. Shabby chic man bun semiotics vape, chia messenger bag plaid cardigan. 
+Next level leggings before they sold out, PBR&B church-key shaman echo park. Kale chips occupy godard whatever pop-up freegan pork belly selfies. Gastropub Belinda subway tile woke post-ironic seitan. Shabby chic man bun semiotics vape, chia messenger bag plaid cardigan.
 
 #### Header 4
 

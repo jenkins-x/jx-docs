@@ -2,9 +2,6 @@
 title: Create new Cluster
 linktitle: Create new Cluster
 description: How to create a new Kubernetes cluster with Jenkins X installed
-date: 2013-07-01
-publishdate: 2013-07-01
-parent: "Setup Jenkins X"
 weight: 2
 keywords: [install]
 ---
@@ -12,7 +9,7 @@ keywords: [install]
 
 To create a new Kubernetes cluster with Jenkins X installed use the  [jx create cluster](/commands/jx_create_cluster) command.
 
-A number of different public cloud providers are supported as shown below.  
+A number of different public cloud providers are supported as shown below.
 
 __For the best getting started experience we currently recommend using Google Container Engine (GKE)__. The Google Cloud Platform offers a $300 free credit if you don't have a Google Cloud account.  See https://console.cloud.google.com/freetrial
 
@@ -38,11 +35,11 @@ Now use the [jx create cluster gke](/commands/jx_create_cluster_gke) command:
 If you wish to name your cluster and provide your own admin password you can run:
 
     jx create cluster gke --default-admin-password=mySecretPassWord123 -n myclustername
-   
+
 Then follow all the prompts on the console (mostly just hitting enter will do).
 
 Note if you wish to use a different git provider than GitHub for your environments see [how to use a different git provider](/developing/git/#using-a-different-git-provider-for-environments)
- 
+
 ## Using the Google Cloud Shell
 
 The simplest way to install Jenkins X on Google Cloud is using the [Google Cloud Shell](https://console.cloud.google.com/) as it already comes with most of the things you may need to install (`git, gcloud, kubectl` etc).
@@ -201,7 +198,7 @@ Or if you are already logged in by previously using `gcloud init` or `gcloud aut
 
     jx create cluster gke --skip-login --verbose
 
-Those commands assume you have a google account and you've set up a default project that you can use to create the kubernetes cluster within.         
+Those commands assume you have a google account and you've set up a default project that you can use to create the kubernetes cluster within.
 Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
 
 
