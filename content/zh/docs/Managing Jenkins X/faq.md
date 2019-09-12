@@ -2,14 +2,6 @@
 title: 开发问题
 linktitle: 开发问题
 description: 有关如何使用 Kubernetes， Helm 和 Jenkins X 构建云原生应用
-date: 2018-02-10
-categories: [faq]
-menu:
-  docs:
-    parent: "faq"
-keywords: [faqs]
-weight: 15
-toc: true
 ---
 
 ## 如何注入特定的环境配置

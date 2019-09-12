@@ -2,28 +2,19 @@
 title: Setup Questions
 linktitle: Setup Questions
 description: Questions about installing or configuring Jenkins X
-date: 2018-02-10
-categories: [faq]
-menu:
-  docs:
-    parent: "faq"
-keywords: [faqs]
-weight: 2
-toc: true
-aliases: [/faq/]
 ---
 
 ## How do I add a user to my Jenkins X installation?
 
 Jenkins X assumes each user has access to the same development kubernetes cluster that Jenkins X is running on.
 
-If your user does not have access to the kubernetes cluster we need to setup their `~/.kube/config` file so that they can access it. 
+If your user does not have access to the kubernetes cluster we need to setup their `~/.kube/config` file so that they can access it.
 
 If you are using Google's GKE then you can browse the [GKE Console](https://console.cloud.google.com) to view all the clusters and click on the `Connect` button next to your development cluster and then that lets you copy/paste the command to connect to the cluster.
 
 For other clusters we are planning on writing some [CLI commands to export and import the kube config](https://github.com/jenkins-x/jx/issues/1406).
 
-Also [CloudBees](https://www.cloudbees.com/) are working on a distribution of Jenkins X which will include single sign on together with an awesome web UI to visualise teams, pipelines, logs, environments, applications, versions and infrastructure. The CloudBees UI provides an easy way for anyone in your team to login to Jenkins X from the command line with the `Connect` button on the `Teams` page which uses [jx login](/commands/jx_login/) 
+Also [CloudBees](https://www.cloudbees.com/) are working on a distribution of Jenkins X which will include single sign on together with an awesome web UI to visualise teams, pipelines, logs, environments, applications, versions and infrastructure. The CloudBees UI provides an easy way for anyone in your team to login to Jenkins X from the command line with the `Connect` button on the `Teams` page which uses [jx login](/commands/jx_login/)
 
 ### Once the user has access to the kubernetes cluster
 
@@ -44,15 +35,15 @@ To view the environments and any development tools like the Jenkins or Nexus con
 
 ## How do I upgrade my Jenkins X installation?
 
-You can upgrade via the [jx upgrade](/commands/jx_upgrade/) commands. Start with 
+You can upgrade via the [jx upgrade](/commands/jx_upgrade/) commands. Start with
 
-```shell 
+```shell
 jx upgrade cli
 ```
 
 to get you on the latest CLI then you can upgrade the platform:
 
-```shell 
+```shell
 jx upgrade platform
 ```
 
@@ -121,11 +112,11 @@ Image:       jenkinsxio/jenkins-go:256.0.50
 
 By default when you [install Jenkins X into an existing kubernetes cluster](/getting-started/install-on-cluster/) it prompts you if you want to install an Ingress controller. Jenkins X needs an Ingress controller of some kind so that we can setup `Ingress` resources for each `Service` so we can access web applications via URLs outside of the kubneretes cluster (e.g. inside web browsers).
 
-The [jx install](/commands/jx_install/) command takes a number of CLI arguments starting with `--ingress` where you can point to the namespace, deployment name and service name of the ingress controller you wish to use for the installation. 
+The [jx install](/commands/jx_install/) command takes a number of CLI arguments starting with `--ingress` where you can point to the namespace, deployment name and service name of the ingress controller you wish to use for the installation.
 
 We do recommend you use the default ingress controller if you can - as we know it works really well and only uses a single LoadBalancer IP for the whole cluster (your cloud provider often charges per IP address). However if you want to point at a different ingress controller just specify those arguments on install:
 
-```shell 
+```shell
 jx install \
   --ingress-service=$(yoursvcname) \
   --ingress-deployment=$(yourdeployname) \
@@ -134,7 +125,7 @@ jx install \
 
 ## How do I enable HTTPS URLs?
 
-In general use the [jx upgrade ingress](/commands/jx_upgrade_ingress/) command. 
+In general use the [jx upgrade ingress](/commands/jx_upgrade_ingress/) command.
 
 For more detail see these blogs posts:
 
@@ -153,14 +144,14 @@ If you want to modify the URL schemes of your service in an environment then edi
 
 Then modify the contents of `env/values.yaml` to include the `urlTemplate:` value as follows:
 
-```yaml 
+```yaml
 expose:
   config:
     urltemplate: "{{.Service}}-{{.Namespace}}.{{.Domain}}"
 ```
-    
+
 We've left out the other values of `expose:` and `config:` for brevity - the important thing is to ensure you specify a custom `expose.config.urltemplate` value. The default is `{{.Service}}.{{.Namespace}}.{{.Domain}}` if none is specified.
 
 Whenever you modify the git repository for an environment the GitOps pipeline will run to update your Ingress resources to match your `UrlTemplate`.
- 
+
 

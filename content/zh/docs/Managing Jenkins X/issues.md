@@ -2,14 +2,6 @@
 title: 常见问题解答
 linktitle: Issues
 description: Issues using Jenkins X 常见问题的解决方案。
-date: 2018-05-20
-categories: [faq]
-menu:
-  docs:
-    parent: "faq"
-keywords: [faqs]
-weight: 4
-toc: true
 ---
 
 我们已经试图把一些常见的问题整理到这里。如果你遇到的问题没有在这里列出来，请[让我们知道](https://github.com/jenkins-x/jx/issues/new)。

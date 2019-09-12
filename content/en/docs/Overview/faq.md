@@ -2,15 +2,6 @@
 title: General Questions
 linktitle: General Questions
 description: General questions about the Jenkins X project
-date: 2018-02-10
-categories: [faq]
-menu:
-  docs:
-    parent: "faq"
-keywords: [faqs]
-weight: 2
-toc: true
-aliases: [/faq/]
 ---
 
 We have tried to collate common issues here with work arounds. If your issue isn't listed here please [let us know](https://github.com/jenkins-x/jx/issues/new).
@@ -25,7 +16,7 @@ Yes! All of Jenkins X source code and artifacts are open source; either Apache o
 Jenkins X provides [automated CI + CD](/about/features/#automated-pipelines) for applications on kubernetes with [GitOps promotion through environments](/about/features/#promotion) and [preview environments on Pull Requests
 ](/about/features/#preview-environments). (See the [features for more details](/about/features/)).
 
-Jenkins is a general purpose CI/CD server that can be configured to do anything you like by adding plugins, changing configuration and writing your own pipelines. 
+Jenkins is a general purpose CI/CD server that can be configured to do anything you like by adding plugins, changing configuration and writing your own pipelines.
 
 With Jenkins X you just [install Jenkins X](/getting-started/) which automatically sets up all of the various tools (helm, docker registry, nexus etc) and then [create](/developing/create-spring/)/[import](/developing/import/) projects and you get fully automated CI/CD and previews. This lets your developers focus on building applications while you delegate to Jenkins X to manage your CI+CD.
 
@@ -34,7 +25,7 @@ Jenkins X supports different execution engines; so it can orchestrate a Jenkins 
 
 ## Is Jenkins X a fork of Jenkins?
 
-No! Jenkins X can orchestrate Jenkins by reusing it inside a container and configures it to be as kubernetes native as possible. 
+No! Jenkins X can orchestrate Jenkins by reusing it inside a container and configures it to be as kubernetes native as possible.
 
 Though when using [serverless Jenkins X Pipelines](/architecture/jenkins-x-pipelines/) we use [Tekton](https://tekton.dev/) rather than Jenkins as the underlying CI/CD engine to provide a modern highly available cloud native architecture.
 
@@ -51,5 +42,5 @@ case and let the core Jenkins project focus on the classic java approach.
 
 One of Jenkins big strengths has always been its flexibility and huge ecosystem of different
 plugins and capabilities. The separate Jenkins X sub project helps the community iterate and go fast
-improving both the Cloud Native and the classic distributions of Jenkins in parallel.                   
+improving both the Cloud Native and the classic distributions of Jenkins in parallel.
 

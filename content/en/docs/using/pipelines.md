@@ -2,15 +2,6 @@
 title: Jenkins X Pipelines Questions
 linktitle: Jenkins X Pipelines Questions
 description: Questions on how to use Serverless Jenkins X Pipelines
-date: 2018-02-10
-categories: [faqs, tekton]
-menu:
-  docs:
-    parent: "faq"
-keywords: [faqs, tekton]
-weight: 21
-toc: true
-aliases: [/faq/]
 ---
 
 For more background see the guide on [Serverless Jenkins X Pipelines](/architecture/jenkins-x-pipelines/) using [Tekton](https://tekton.dev/). There is also the [Jenkins X Pipelines Syntax Reference](/architecture/pipeline-syntax-reference/)
@@ -25,7 +16,7 @@ See [the differences between Jenkins X and Jenkins Pipelines](/architecture/jenk
 
 ## How do I get IDE completion editing `jenkins-x.yml`
 
-See the IDE guide for [IDEA](/architecture/jenkins-x-pipelines/#editing-in-vs-code) and [VS Code](/architecture/jenkins-x-pipelines/#editing-in-vs-code) 
+See the IDE guide for [IDEA](/architecture/jenkins-x-pipelines/#editing-in-vs-code) and [VS Code](/architecture/jenkins-x-pipelines/#editing-in-vs-code)
 
 ## What environment variables are available by default inside a pipeline?
 
@@ -47,9 +38,8 @@ If you are inside a shell script you can also use the [jx step credential](/comm
 
 Tekton already mounts a separate Persistent Volume for each build pod at `/workspace` so the build results are kept around for a while until they are garbage collected.
 
-On most kubernetes clusters you cannot easily share a single Persistent Volume across multiple pods; so having a shared PV across builds isn't generally easy or compatible. You can however add a step to populate your PV on startup from a cloud bucket and at the end of a pipeline copy data into a bucket to speed up caching. 
+On most kubernetes clusters you cannot easily share a single Persistent Volume across multiple pods; so having a shared PV across builds isn't generally easy or compatible. You can however add a step to populate your PV on startup from a cloud bucket and at the end of a pipeline copy data into a bucket to speed up caching.
 
-You can also do things like use Nexus as a network cache for fetching maven dependencies (which happens OOTB with Maven builds in Jenkins X) or add the Athens proxy for Go. 
+You can also do things like use Nexus as a network cache for fetching maven dependencies (which happens OOTB with Maven builds in Jenkins X) or add the Athens proxy for Go.
 
 Hopefully the Tekton community will figure out some even better caching solutions to speed up builds.
- 

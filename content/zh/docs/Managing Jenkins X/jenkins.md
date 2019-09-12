@@ -2,14 +2,6 @@
 title: Jenkins 相关问题
 linktitle: Jenkins 相关问题
 description: Jenkins 相关问题。
-date: 2018-05-20
-categories: [faq]
-menu:
-  docs:
-    parent: "faq"
-keywords: [jenkins]
-weight: 2
-toc: true
 ---
 
 # 密码

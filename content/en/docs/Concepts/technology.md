@@ -2,15 +2,6 @@
 title: Technology Questions
 linktitle: Technology Questions
 description: Technology questions on Kubernetes and the associated opens source projects
-date: 2018-02-10
-categories: [faq]
-menu:
-  docs:
-    parent: "faq"
-keywords: [faqs]
-weight: 10
-toc: true
-aliases: [/faq/]
 ---
 
 ## What is Helm?
@@ -49,9 +40,9 @@ Jenkins X uses `skaffold` in its CI/CD pipelines to create docker images. We rel
 
 ## Whats is exposecontroller?
 
-It turns out that exposing services outside of the Kubernetes cluster can be complex. e.g. 
+It turns out that exposing services outside of the Kubernetes cluster can be complex. e.g.
 
-* What domain to use? 
+* What domain to use?
 * Should you use TLS & generate certificates and associate them with the domains?
 * Are you using OpenShift if so then maybe using `Route` is better than using `Ingress`?
 
@@ -59,7 +50,7 @@ So we simplify microservices in Jenkins X by delegation to a microservice called
 
 If you look inside your environment git repository you may notice 2 `exposecontroller` [charts are there by default](https://github.com/jenkins-x/default-environment-charts/blob/master/env/requirements.yaml)
 
-Those are 2 jobs we use by default to automate generating or cleaning `Ingress` resources to expose labeled `Services`resources that you want to access from outside of the cluster. Eg web apps or rest apis. 
+Those are 2 jobs we use by default to automate generating or cleaning `Ingress` resources to expose labeled `Services`resources that you want to access from outside of the cluster. Eg web apps or rest apis.
 
 You can opt out of exposecontroller if you want - just don’t use the exposecontroller labels on your services. You could remove the exposecontroller job from an environment if you want - though none of our QuickStarts will be accessible from outside the cluster if you do!
 

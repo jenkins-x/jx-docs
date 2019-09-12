@@ -2,14 +2,6 @@
 title: 安装问题
 linktitle: 安装问题
 description: Jenkins X 的安装和配置问题
-date: 2018-02-10
-categories: [faq]
-menu:
-  docs:
-    parent: "faq"
-keywords: [faqs]
-weight: 2
-toc: true
 ---
 
 ## 如何在 Jenkins X 的安装当中添加用户？

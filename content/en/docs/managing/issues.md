@@ -2,15 +2,6 @@
 title: Common Problems
 linktitle: Common Problems
 description: Questions on common issues setting up Jenkins X.
-date: 2018-02-10
-categories: [faq]
-menu:
-  docs:
-    parent: "faq"
-keywords: [faqs]
-weight: 4
-toc: true
-aliases: [/faq/]
 ---
 
 We have tried to collate common issues here with work arounds. If your issue isn't listed here please [let us know](https://github.com/jenkins-x/jx/issues/new).
@@ -21,27 +12,27 @@ If your install fails to start there could be a few different reasons why the Je
 
 Your cluster could be out of resources. You can check the spare resources on your cluster via [jx status](/commands/jx_status/):
 
-``` 
+```
 jx status
-``` 
+```
 
 We also have a diagnostic command that looks for common problems [jx step verify install](/commands/jx_step_verify_install/):
 
-``` 
+```
 jx step verify install
-``` 
-    
+```
+
 A common issue for pods not starting is if your cluster does not have a [default storage class](https://kubernetes.io/docs/concepts/storage/storage-classes/) setup so that `Persistent Volume Claims` can be bound to `Persistent Volumes` as described in the [install instructions](/getting-started/install-on-cluster/).
 
 You can check your storage class and persistent volume setup via:
 
-``` 
+```
 kubectl get pvc
-```    
+```
 
 If things are working you should see something like:
 
-``` 
+```
 $ kubectl get pvc
 NAME                        STATUS    VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
 jenkins                     Bound     pvc-680b39b5-94f1-11e8-b93d-42010a840238   30Gi       RWO            standard       12h
@@ -49,7 +40,7 @@ jenkins-x-chartmuseum       Bound     pvc-6808fb5e-94f1-11e8-b93d-42010a840238  
 jenkins-x-docker-registry   Bound     pvc-680a415c-94f1-11e8-b93d-42010a840238   100Gi      RWO            standard       12h
 jenkins-x-mongodb           Bound     pvc-680d6fd9-94f1-11e8-b93d-42010a840238   8Gi        RWO            standard       12h
 jenkins-x-nexus             Bound     pvc-680fc692-94f1-11e8-b93d-42010a840238   8Gi        RWO            standard       12h
-```    
+```
 
 If you see `status` of `Pending` then this indicates that you have no [default storage class](https://kubernetes.io/docs/concepts/storage/storage-classes/) setup on your kubnernetes cluster or you have ran out of persistent volume space.
 
@@ -99,7 +90,7 @@ The simplest fix for this is to just [not use tiller at all](https://jenkins-x.i
 
 However switching from using Tiller to No Tiller does require a re-install of Jenkins X (though you could try do that in separate set of namespaces then move projects across incrementally?).
 
-The manual workaround is to install the [exact same version of helm as used on the server](https://github.com/helm/helm/releases) 
+The manual workaround is to install the [exact same version of helm as used on the server](https://github.com/helm/helm/releases)
 
 Or you can try switch tiller to match your client version:
 
@@ -121,13 +112,13 @@ It basically happens if you have an old API token in `~/.jx/jenkinsAuth.yaml` fo
 
 ## errors with https://chartmuseum.build.cd.jenkins-x.io
 
-If you see errors like: 
+If you see errors like:
 
 ```
 error:failed to add the repository 'jenkins-x' with URL 'https://chartmuseum.build.cd.jenkins-x.io'
 ```
 
-or 
+or
 
 ```
 Looks like "https://chartmuseum.build.cd.jenkins-x.io" is not a valid chart repository or cannot be reached
@@ -139,7 +130,7 @@ The new URL is: http://chartmuseum.jenkins-x.io
 
 It could be your helm install has an old repository URL installed. You should see...
 
-``` 
+```
 $ helm repo list
 NAME     	URL
 stable   	https://kubernetes-charts.storage.googleapis.com
@@ -148,7 +139,7 @@ jenkins-x	http://chartmuseum.jenkins-x.io
 
 If you see this...
 
-``` 
+```
 $ helm repo list
 NAME     	URL
 jenkins-x	https://chartmuseum.build.cd.jenkins-x.io
@@ -156,7 +147,7 @@ jenkins-x	https://chartmuseum.build.cd.jenkins-x.io
 
 then please run...
 
-``` 
+```
 helm repo remove jenkins-x
 helm repo add jenkins-x	http://chartmuseum.jenkins-x.io
 ```
@@ -186,7 +177,7 @@ More details on [using git and Jenkins X here](/developing/git/)
 
 If you get an error in Jenkins when it tries to scan your repositories for branches something like:
 
-``` 
+```
 hudson.AbortException: Invalid scan credentials *****/****** (API Token for acccessing https://github.com git service inside pipelines) to connect to https://api.github.com, skipping
 ```
 
@@ -203,7 +194,7 @@ More details on [using git and Jenkins X here](/developing/git/)
 
 ## What are the credentials to access core services?
 
-Authenticated core services of Jenkins X include Jenkins, Nexus, ChartMuseum.  The default username is `admin`and the password by default is generated and printed out in the terminal after `jx create cluster` or `jx install`.  
+Authenticated core services of Jenkins X include Jenkins, Nexus, ChartMuseum.  The default username is `admin`and the password by default is generated and printed out in the terminal after `jx create cluster` or `jx install`.
 
 ### Set Admin Username and Password values for Core Services
 You can also set the admin username via the `--default-admin-username=username` flag.
@@ -231,13 +222,13 @@ The you should check that you have a cluster default storage class for dynamic p
 
 If you don't see any valid nodes returned by `kubectl get node` or you get errors running `jx status` something like:
 
-``` 
+```
 Unable to connect to the server: dial tcp: lookup abc.def.regino.eks.amazonaws.com on 10.0.0.2:53: no such host
 ```
 
 it could be your kube config is stale. Try
 
-``` 
+```
 aws eks --region <CLUSTER_REGION> update-kubeconfig --name <CLUSTER_NAME>
 ```
 
@@ -255,7 +246,7 @@ One way to diagnose logs in your, say, Staging environment is to [download and i
 
 Then run this command:
 
-```shell 
+```shell
 kail -l job-name=expose -n jx-staging
 ```
 
@@ -266,7 +257,7 @@ If you then promote to the Staging environment or retrigger the pipeline on the 
 
 If you find you get lots of warnings in your pipelines like this...
 
-``` 
+```
 "Failed to query the Pull Request last commit status for https://github.com/myorg/environment-mycluster-staging/pull/1 ref xyz Could not find a status for repository myorg/environment-mycluster-staging with ref xyz
 ```
 
@@ -278,16 +269,16 @@ However sometimes your git provider (e.g. [GitHub](https://github.com/) may not 
 
 The easiest way to diagnose this is opening the git repository (e.g. for your environment repository).
 
-``` 
+```
 jx get env
 ```
 
-Then: 
+Then:
 
-* click on the generated URL for, say, your `Staging`  git repository 
-* click the `Settings` icon 
+* click on the generated URL for, say, your `Staging`  git repository
+* click the `Settings` icon
 * select the `Webhooks` tab on the left
-* select your Jenkins X webhook URL 
+* select your Jenkins X webhook URL
 * view the last webhook - did it succeed? Try re-trigger it? That should highlight any network issues etc
 
 If you cannot use public webhooks you could look at something like [ultrahook](http://www.ultrahook.com/)
@@ -379,7 +370,7 @@ If you want to view the logs of the `exposecontroller` you will need to watch fo
 One way to do that is via the [kail](https://github.com/boz/kail) CLI:
 
 
-``` 
+```
 kail -l  job-name=expose
 ```
 
