@@ -1,5 +1,5 @@
 ---
-date: 2019-09-12T15:47:36Z
+date: 2019-09-12T23:46:21Z
 title: "jx create vault"
 slug: jx_create_vault
 url: /commands/jx_create_vault/
@@ -41,13 +41,16 @@ jx create vault [flags]
       --aws-s3-prefix string           The prefix to use for storing values in AWS S3 (default "vault-operator")
       --aws-s3-region string           The region to use for storing values in AWS S3
       --aws-secret-access-key string   Secret access key of service account to be used by vault
+      --bucket-name string             Specify the bucket name. If empty then the bucket name will be based on the vault name
       --gke-project-id string          Google Project ID to use for Vault backend
       --gke-zone string                The zone (e.g. us-central1-a) where Vault will store the encrypted data
   -h, --help                           help for vault
+      --keyring-name string            Specify the KMS Keyring name. If empty then tehe keyring name will be based on the vault name
   -n, --namespace string               Namespace where the Vault is created
       --no-expose                      If enabled disable the exposing of the vault
       --recreate                       If the bucket already exists delete it so its created empty for the vault (default true)
   -p, --secrets-path-prefix string     Path prefix for secrets used for access control config (default "secret/*")
+      --service-account-name string    Specify Service Account name used. If empty then the service account name will be based on the vault name
 ```
 
 ### Options inherited from parent commands
