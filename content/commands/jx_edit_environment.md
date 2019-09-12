@@ -1,5 +1,5 @@
 ---
-date: 2019-09-12T13:19:55Z
+date: 2019-09-12T14:51:14Z
 title: "jx edit environment"
 slug: jx_edit_environment
 url: /commands/jx_edit_environment/
@@ -42,9 +42,9 @@ jx edit environment [flags]
       --exposer string               Used to describe which strategy exposecontroller should use to access applications (default "Ingress")
   -f, --fork-git-repo string         The Git repository used as the fork when creating new Environment Git repos (default "https://github.com/jenkins-x/default-environment-charts.git")
       --git-api-token string         The Git API token to use for creating new Git repositories
-      --git-private                  Create new Git repositories as private
       --git-provider-kind string     Kind of Git server. If not specified, kind of server will be autodetected from Git provider URL. Possible values: bitbucketcloud, bitbucketserver, gitea, gitlab, github, fakegit
       --git-provider-url string      The Git server URL to create new Git repositories inside (default "https://github.com")
+      --git-public                   Create new Git repositories as public
   -r, --git-ref string               The Git repo reference for the source code for GitOps based Environments
   -g, --git-url string               The Git clone URL for the source code for GitOps based Environments
       --git-username string          The Git username to use for creating new Git repositories

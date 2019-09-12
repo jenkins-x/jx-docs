@@ -1,5 +1,5 @@
 ---
-date: 2019-09-12T13:19:55Z
+date: 2019-09-12T14:51:14Z
 title: "jx create mlquickstart"
 slug: jx_create_mlquickstart
 url: /commands/jx_create_mlquickstart/
@@ -52,9 +52,9 @@ jx create mlquickstart [flags]
       --framework string               The framework to filter on
       --git-api-token string           The Git API token to use for creating new Git repositories
       --git-host string                The Git server host if not using GitHub when pushing created project
-      --git-private                    Create new Git repositories as private
       --git-provider-kind string       Kind of Git server. If not specified, kind of server will be autodetected from Git provider URL. Possible values: bitbucketcloud, bitbucketserver, gitea, gitlab, github, fakegit
       --git-provider-url string        The Git server URL to create new Git repositories inside (default "https://github.com")
+      --git-public                     Create new Git repositories as public
       --git-username string            The Git username to use for creating new Git repositories
   -h, --help                           help for mlquickstart
       --import-commit-message string   Specifies the initial commit message used when importing the project
