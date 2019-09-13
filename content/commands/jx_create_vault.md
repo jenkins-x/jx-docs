@@ -1,5 +1,5 @@
 ---
-date: 2019-09-13T06:23:35Z
+date: 2019-09-13T09:23:09Z
 title: "jx create vault"
 slug: jx_create_vault
 url: /commands/jx_create_vault/
@@ -42,6 +42,7 @@ jx create vault [flags]
       --aws-s3-region string           The region to use for storing values in AWS S3
       --aws-secret-access-key string   Secret access key of service account to be used by vault
       --bucket-name string             Specify the bucket name. If empty then the bucket name will be based on the vault name
+      --cluster-name string            Name of the cluster to install vault
       --gke-project-id string          Google Project ID to use for Vault backend
       --gke-zone string                The zone (e.g. us-central1-a) where Vault will store the encrypted data
   -h, --help                           help for vault

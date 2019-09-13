@@ -1,5 +1,5 @@
 ---
-date: 2019-09-13T06:23:35Z
+date: 2019-09-13T09:23:09Z
 title: "jx step verify install"
 slug: jx_step_verify_install
 url: /commands/jx_step_verify_install/
