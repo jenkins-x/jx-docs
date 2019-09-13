@@ -17,7 +17,7 @@ Some teams develop cloud native applications on kubernetes and so should use the
 
 For teams that do not deploy applications to kubernetes - such as delivering libraries or binaries - there's a new `library workloads` option which has CI and automated releases but no CD.
 
-When you [create a cluster](getting-started/create-cluster/) or [install Jenkins X](/getting-started/install-on-cluster/) you are prompted to pick between the available build packs.
+When you [create a cluster](getting-started/create-cluster/) or [install Jenkins X](/docs/managing/tasks/install-on-cluster/) you are prompted to pick between the available build packs.
   
 ```shell 
 ? Pick workload build pack:   [Use arrows to move, type to filter]

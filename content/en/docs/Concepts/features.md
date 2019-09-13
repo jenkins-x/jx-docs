@@ -9,7 +9,7 @@ description: How Jenkins X can help you deliver continuously
 
 Jenkins X comes with a handy [jx](/commands/jx) command line tool to easily:
 
-* [install Jenkins X](/getting-started/install) inside your existing kubernetes cluster
+* [install Jenkins X](/docs/getting_started/setup/install inside your existing kubernetes cluster
 * [create a new kubernetes cluster](/getting-started/create-cluster) and install Jenkins X into it
 * [import projects](/developing/import) into Jenkins X and their Continuous Delivery pipelines setup
 * [create new Spring Boot applications](/developing/create-spring) which get imported into Jenkins X and their Continuous Delivery pipelines setup

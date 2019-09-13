@@ -16,14 +16,14 @@ Currently Lighthouse supports the common [prow plugins](https://github.com/jenki
     
 Lighthouse uses the same `config.yaml` and `plugins.yaml` file structure from Prow so that we can easily migrate from `prow <-> lighthouse`. 
 
-This also means we get to reuse the clean generation of Prow configuration from the `SourceRepository`, `SourceRepositoryGroup` and `Scheduler` CRDs integrated into [jx boot](https://jenkins-x.io/getting-started/boot/). e.g. here's the [default scheduler configuration](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/env/templates/default-scheduler.yaml) which is used for any project imported into your Jenkins X cluster; without you having to touch the actual prow configuration files. You can create many schedulers and associate them to different `SourceRepository` resources.   
+This also means we get to reuse the clean generation of Prow configuration from the `SourceRepository`, `SourceRepositoryGroup` and `Scheduler` CRDs integrated into [jx boot](/docs/reference/boot/). e.g. here's the [default scheduler configuration](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/env/templates/default-scheduler.yaml) which is used for any project imported into your Jenkins X cluster; without you having to touch the actual prow configuration files. You can create many schedulers and associate them to different `SourceRepository` resources.   
 
 We can also reuse Prow's capability of defining many separate pipelines on a repository (for PRs or releases) via having separate `contexts`. Then on a Pull Request we can use `/test something` or `/test all` to trigger pipelines and use the `/ok-to-test` and `/approve` or `/lgtm` commands 
 
 
 ## Using Lighthouse with boot
 
-We have integrated [lighthouse](https://github.com/jenkins-x/lighthouse) into [jx boot](/getting-started/boot/). To switch to `lighthouse` from `prow` you need to add something like this to your `jx-requirements.yml` file:
+We have integrated [lighthouse](https://github.com/jenkins-x/lighthouse) into [jx boot](/docs/reference/boot/). To switch to `lighthouse` from `prow` you need to add something like this to your `jx-requirements.yml` file:
 
 ```yaml 
 webhook: lighthouse

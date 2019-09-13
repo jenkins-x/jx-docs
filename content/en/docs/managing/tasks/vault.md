@@ -11,7 +11,7 @@ lastmod: 2019-01-08
 
 ## Using Vault with boot
 
-We have integrated [Vault](https://www.vaultproject.io) into [jx boot](/getting-started/boot/). 
+We have integrated [Vault](https://www.vaultproject.io) into [jx boot](/docs/reference/boot/). 
 
 To switch to `vault` you need to add `secretStorage: vault` in your `jx-requirements.yml` file:
 
@@ -29,7 +29,7 @@ webhook: prow
 
 Once you have modified your `jx-requirements.yml` file you just need to run `jx boot`.
 
-For more details see [configuring secrets with boot](/getting-started/boot/#secrets). 
+For more details see [configuring secrets with boot](/docs/reference/boot/#secrets). 
 
 ## Using Vault on the CLI
 

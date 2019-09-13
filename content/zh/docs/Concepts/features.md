@@ -11,7 +11,7 @@ lastmod: 2018-04-30
 
 Jenkins X 带来了一个方便使用的命令行工具 [jx](/commands/jx) ：
 
-* [安装 Jenkins X](/zh/getting-started/install) 到你已经存在的 Kubernetes 集群
+* [安装 Jenkins X](/zh/docs/getting_started/setup/install) 到你已经存在的 Kubernetes 集群
 * [创建一个新的 kubernetes 集群](/zh/getting-started/create-cluster) 并把 Jenkins X 安装进去
 * [导入项目](/zh/developing/import) 到 Jenkins X 中以及他们的持续部署流水线设置
 * [创建新的 Spring Boot 应用](/zh/developing/create-spring) 并导入 Jenkins X 中，以及他们的持续部署流水线设置

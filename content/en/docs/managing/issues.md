@@ -22,7 +22,7 @@ We also have a diagnostic command that looks for common problems [jx step verify
 jx step verify install
 ```
 
-A common issue for pods not starting is if your cluster does not have a [default storage class](https://kubernetes.io/docs/concepts/storage/storage-classes/) setup so that `Persistent Volume Claims` can be bound to `Persistent Volumes` as described in the [install instructions](/getting-started/install-on-cluster/).
+A common issue for pods not starting is if your cluster does not have a [default storage class](https://kubernetes.io/docs/concepts/storage/storage-classes/) setup so that `Persistent Volume Claims` can be bound to `Persistent Volumes` as described in the [install instructions](/docs/managing/tasks/install-on-cluster/).
 
 You can check your storage class and persistent volume setup via:
 
@@ -77,7 +77,7 @@ By default docker wants all docker registries to be exposed over `https` and to 
 
 We try to automate this setting when using `jx create cluster`  e.g. on AWS we default this value to the IP range `100.64.0.0/10` to match most kubernetes service IP addresses.
 
-On [EKS](https://jenkins-x.io/commands/jx_create_cluster_eks/) we default to using ECR to avoid this issue. Similarly we will soon default to GCR and ACR on GKE and AKS respectively.
+On [EKS](/commands/jx_create_cluster_eks/) we default to using ECR to avoid this issue. Similarly we will soon default to GCR and ACR on GKE and AKS respectively.
 
 So a workaround is to use a real [external docker registry](/architecture/docker-registry/) or enable `insecure-registry` on your docker daemons on your compute nodes on your Kubernetes cluster.
 
@@ -86,7 +86,7 @@ So a workaround is to use a real [external docker registry](/architecture/docker
 
 Generally speaking this happens when your laptop has a different version of helm to the version used in our build pack docker images and/or the version of tiller thats running in your server.
 
-The simplest fix for this is to just [not use tiller at all](https://jenkins-x.io/news/helm-without-tiller/) - which actually helps avoid this problem ever happening and solves a raft of security issues too.
+The simplest fix for this is to just [not use tiller at all](/news/helm-without-tiller/) - which actually helps avoid this problem ever happening and solves a raft of security issues too.
 
 However switching from using Tiller to No Tiller does require a re-install of Jenkins X (though you could try do that in separate set of namespaces then move projects across incrementally?).
 
@@ -106,7 +106,7 @@ This is a [pending issue](https://github.com/jenkins-x/jx/issues/1234) which we 
 It basically happens if you have an old API token in `~/.jx/jenkinsAuth.yaml` for your jenkins server URL. You can either:
 
 * remove it from that file by hand
-* run the following command [jx delete jenkins token](https://jenkins-x.io/commands/jx_delete_jenkins_user/):
+* run the following command [jx delete jenkins token](/commands/jx_delete_jenkins_user/):
 
     jx delete jenkins token admin
 
