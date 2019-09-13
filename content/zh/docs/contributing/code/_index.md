@@ -18,7 +18,7 @@ Jenkins X 是由众多[开发者][contributors]开发的开源项目。还有很
 * 你是 Jenkins X 的爱好者并乐于对项目的发展贡献力量
 
 {{% note "有其它的问题？" %}}
-如果在阅读此指导文档过程中有任何问题，请向 Jenkins X 社区的[讨论组](https://jenkins-x.io/community/)寻求帮助。
+如果在阅读此指导文档过程中有任何问题，请向 Jenkins X 社区的[讨论组](/community/)寻求帮助。
 {{% /note %}}
 
 ## 安装 Go

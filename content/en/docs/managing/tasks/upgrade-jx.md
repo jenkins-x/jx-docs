@@ -13,7 +13,7 @@ Keeping your Jenkins X environment updated can be done by command line
 using the `jx upgrade` command. Here are the most common resources that
 can be upgraded. A comprehensive list of upgradeable resources are
 available at [the Jenkins X documentation site for the
-command.](https://jenkins-x.io/commands/jx_upgrade/)
+command.](/commands/jx_upgrade/)
 
 Upgrading the CLI binary
 ------------------------

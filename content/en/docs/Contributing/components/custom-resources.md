@@ -9,7 +9,7 @@ Kubernetes provides an extension mechanism called [Custom Resources](https://kub
 
 So in Jenkins X, we have added a number of Custom Resources to help extend Kubernetes to support CI/CD.
 
-You can also [browse the Custom Resource API Reference](https://jenkins-x.io/apidocs/)
+You can also [browse the Custom Resource API Reference](/apidocs/)
                 
 ## Environments
 

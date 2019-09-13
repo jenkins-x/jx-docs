@@ -18,7 +18,7 @@ This contribution guide takes a step-by-step approach in hopes of helping newcom
 * You are a fan of Jenkins X and enthusiastic about contributing to the project
 
 {{% note %}}
-If you're struggling at any point in this contribution guide, reach out to the Jenkins X community in [Jenkins X's Discussion forum](https://jenkins-x.io/community/).
+If you're struggling at any point in this contribution guide, reach out to the Jenkins X community in [Jenkins X's Discussion forum](/community/).
 {{% /note %}}
 
 # Prerequisites

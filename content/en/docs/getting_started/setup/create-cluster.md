@@ -26,7 +26,7 @@ First make sure you have created/selected a Project in the [Google Cloud Console
 
 Currently the best experience for running Jenkins X is on Google Container Engine (GKE).
 
-Now [download](http://jenkins-x.io/getting-started/install/) the `jx` CLI which is used to create and interact with the Jenkins X cluster.
+Now [download](/docs/getting_started/setup/install//) the `jx` CLI which is used to create and interact with the Jenkins X cluster.
 
 Now use the [jx create cluster gke](/commands/jx_create_cluster_gke) command:
 

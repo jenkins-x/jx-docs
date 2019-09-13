@@ -89,7 +89,7 @@ This will setup the Ingress Controller; find its external domain and then setup 
 
 ## How it works
 
-On startup the Environment Controller registers itself into the github repository as a webhook endpoint using its LoadBalancer service IP address. If you are using a custom ingress/DNS endpoint you can override this via the `webhookUrl` chart value or [--webhook-url CLI option](https://jenkins-x.io/commands/jx_create_addon_environment/)
+On startup the Environment Controller registers itself into the github repository as a webhook endpoint using its LoadBalancer service IP address. If you are using a custom ingress/DNS endpoint you can override this via the `webhookUrl` chart value or [--webhook-url CLI option](/commands/jx_create_addon_environment/)
 
 Whenever there is a push to the `master` branch (PRs and feature branches are handled by your Development cluster) the Environment Controller triggers a new [Jenkins X Pipeline](/architecture/jenkins-x-pipelines/) for the Promotion. All other push events on other branches are ignored (as they are processed by the Development cluster).
 
@@ -99,7 +99,7 @@ Because Environment Controller reacts purely to merges to the environment git re
 
 ## Demo
 
-There was a demo of using environment controller in the [April 19, 2019 Office Hours](https://jenkins-x.io/community/april-18/)
+There was a demo of using environment controller in the [April 19, 2019 Office Hours](/community/april-18/)
 
 ## Known limitations
 

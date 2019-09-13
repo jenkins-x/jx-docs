@@ -19,7 +19,7 @@ Then this YAML file can be used to override any of the underlying [`values.yaml`
 
 ## Making changes after the install
 
-Once you have installed you can make more changes via [jx upgrade platform](https://jenkins-x.io/commands/jx_upgrade_platform/) which will reuse your `myvalues.yaml` file.
+Once you have installed you can make more changes via [jx upgrade platform](/commands/jx_upgrade_platform/) which will reuse your `myvalues.yaml` file.
 
 Or if you use [GitOps management](/getting-started/manage-via-gitops/) you can just create a Pull Request on your Development environment git repository.
 
