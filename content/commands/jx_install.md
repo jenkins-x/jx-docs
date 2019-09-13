@@ -1,5 +1,5 @@
 ---
-date: 2019-09-13T16:09:29Z
+date: 2019-09-13T17:26:34Z
 title: "jx install"
 slug: jx_install
 url: /commands/jx_install/
@@ -44,7 +44,7 @@ jx install [flags]
 ```
       --advanced-mode                         Advanced install options. This will prompt for advanced install options
       --aws-access-key-id string              Access key id of service account to be used by vault
-      --aws-auto-create                       Whether to skip creating resource preresiquites automatically
+      --aws-auto-create                       Whether to skip creating resource prerequisites automatically
       --aws-dynamodb-region string            The region to use for storing values in AWS DynamoDB
       --aws-dynamodb-table string             The table in AWS DynamoDB to use for storing values (default "vault-data")
       --aws-kms-key-id string                 The ID or ARN of the AWS KMS key to encrypt values

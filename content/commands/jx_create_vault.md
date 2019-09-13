@@ -1,5 +1,5 @@
 ---
-date: 2019-09-13T16:09:29Z
+date: 2019-09-13T17:26:34Z
 title: "jx create vault"
 slug: jx_create_vault
 url: /commands/jx_create_vault/
@@ -32,7 +32,7 @@ jx create vault [flags]
 
 ```
       --aws-access-key-id string       Access key id of service account to be used by vault
-      --aws-auto-create                Whether to skip creating resource preresiquites automatically
+      --aws-auto-create                Whether to skip creating resource prerequisites automatically
       --aws-dynamodb-region string     The region to use for storing values in AWS DynamoDB
       --aws-dynamodb-table string      The table in AWS DynamoDB to use for storing values (default "vault-data")
       --aws-kms-key-id string          The ID or ARN of the AWS KMS key to encrypt values
@@ -46,7 +46,7 @@ jx create vault [flags]
       --gke-project-id string          Google Project ID to use for Vault backend
       --gke-zone string                The zone (e.g. us-central1-a) where Vault will store the encrypted data
   -h, --help                           help for vault
-      --keyring-name string            Specify the KMS Keyring name. If empty then tehe keyring name will be based on the vault name
+      --keyring-name string            Specify the KMS Keyring name. If empty then the keyring name will be based on the vault name
   -n, --namespace string               Namespace where the Vault is created
       --no-expose                      If enabled disable the exposing of the vault
       --recreate                       If the bucket already exists delete it so its created empty for the vault (default true)
