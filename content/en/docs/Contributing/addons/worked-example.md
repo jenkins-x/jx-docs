@@ -2,17 +2,6 @@
 title: Worked Example
 linktitle: Worked Example
 description: Implement support for JUnit Test reports in Jenkins X
-date: 2018-09-06
-publishdate: 2018-09-06
-lastmod: 2018-09-06
-menu:
-  docs:
-    parent: "apps"
-    weight: 70
-weight: 70
-sections_weight: 70
-draft: true
-toc: true
 ---
 
 In this worked example we will implement the functionality of the classic [JUnit Plugin](https://wiki.jenkins.io/display/JENKINS/JUnit+Plugin) from Jenkins in Jenkins X as a series of extensions to Jenkins X.

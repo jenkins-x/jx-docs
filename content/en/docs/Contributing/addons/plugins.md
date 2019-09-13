@@ -2,17 +2,6 @@
 title: Binary Plugins for the Jenkins X CLI
 linktitle: Binary Plugins
 description: Binary Plugins for the Jenkins X CLI
-date: 2018-09-06
-publishdate: 2018-09-06
-lastmod: 2018-09-06
-menu:
-  docs:
-    parent: "apps"
-    weight: 70
-weight: 70
-sections_weight: 70
-draft: false
-toc: true
 ---
 
 This guide shows you how to write plugins for the `jx` CLI. Plugins extend the `jx` CLI with new sub-commands allowing for new 
