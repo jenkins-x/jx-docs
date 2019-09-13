@@ -13,4 +13,4 @@ tmp-website
 /public
 nohup.out
 **/.DS_Store
-
+/tmp

@@ -13,7 +13,7 @@ services:
     volumes:
       - .:/workdir
   linkchecker:
-    image: wjdp/htmltest
-    command: "htmltest"
+    image: dennisnewel/htmltest:latest
+    command: "htmltest -c /test/.htmltest.yml"
     volumes:
       - .:/test
