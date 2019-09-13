@@ -162,7 +162,7 @@ You can view the enabled addons via [jx get addons](/commands/jx_get_addons):
 jx get addons
 ``` 
 
-Now when you [install Jenkins X](/getting-started/) it will also install the `gitea` addon. 
+Now when you [install Jenkins X](/docs/getting_started/) it will also install the `gitea` addon. 
 
 Then whenever Jenkins X needs to create a git repository for an Environment or for a new Project the gitea server will appear in the pick list.
 

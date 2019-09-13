@@ -48,7 +48,7 @@ kubectl scale deploy jenkins-x-monocular-ui --replicas=0
 ``` 
 
 The latest [version stream release](/architecture/version-stream/) has removed monocular so if you [upgrade your platform
-](/getting-started/upgrade-jx/) this issue should be resolved. 
+](/docs/managing/tasks/upgrade-jx/) this issue should be resolved. 
 
 We can always add monocular back as an optional [App](/apps) later on when it works again.
 

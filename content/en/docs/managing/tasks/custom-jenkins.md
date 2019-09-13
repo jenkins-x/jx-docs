@@ -70,6 +70,6 @@ jx start pipeline -m
 
 ## Managing custom Jenkins Servers via GitOps 
 
-We have designed the Jenkins App for Jenkins X using the [App extension framework](/apps/) which means you can manage your custom Jenkins servers via [GitOps](/getting-started/manage-via-gitops/) - keeping all of the apps, their version and configuration in git and using the Jenkins X tooling to add/update/configure/delete apps.
+We have designed the Jenkins App for Jenkins X using the [App extension framework](/apps/) which means you can manage your custom Jenkins servers via [GitOps](/docs/managing/tasks/manage-via-gitops/) - keeping all of the apps, their version and configuration in git and using the Jenkins X tooling to add/update/configure/delete apps.
 
  

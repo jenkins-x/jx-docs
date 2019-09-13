@@ -395,7 +395,7 @@ git push --set-upstream <YOUR-GITHUB-USERNAME> <BRANCHNAME>
 [gvm]: https://github.com/moovweb/gvm
 [issues]: https://github.com/jenkins-x/jx/issues
 [newissue]: https://github.com/jenkins-x/jx/issues/new
-[releases]: /getting-started/
+[releases]: /docs/getting_started/
 [setupgopath]: https://golang.org/doc/code.html#Workspaces
 [thinkful]: https://www.thinkful.com/learn/github-pull-request-tutorial/
 [trygit]: https://try.github.io/levels/1/challenges/1

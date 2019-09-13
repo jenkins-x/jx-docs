@@ -29,7 +29,7 @@ Submit that change as a Pull Request so it can go through the CI tests and any p
 
 You can use vanilla helm to do things like injecting the current namespace if you need that.
 
-To see a more complex example of how you can use a `values.yaml` file to inject into charts, see how we use these files to [configure Jenkins X itself](/getting-started/config/)
+To see a more complex example of how you can use a `values.yaml` file to inject into charts, see how we use these files to [configure Jenkins X itself](/docs/managing/tasks/config/)
 
 
 ## How do I manage secrets in each environment?
