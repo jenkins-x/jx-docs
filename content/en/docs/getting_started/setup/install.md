@@ -110,7 +110,7 @@ commands:
 
         sudo mv jx /usr/local/bin
 
-Once you have the `jx` binary installed you can then [configure a Jenkins X cluster on Google Kubernetes Engine](/getting-started/create-cluster/).
+Once you have the `jx` binary installed you can then [configure a Jenkins X cluster on Google Kubernetes Engine](/docs/getting_started/setup/create-cluster/).
 
 
 ## Other platforms

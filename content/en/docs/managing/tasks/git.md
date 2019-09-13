@@ -38,7 +38,7 @@ When you install Jenkins X it will create git repositories for `Staging` and `Pr
 If you wish to use a different git provider for your environments then when you install Jenkins X add the `--no-default-environments` argument on [jx create cluster](/commands/jx_create_cluster/) or [jx install](/commands/jx_install/)
 
 
-e.g. to [create a new cluster](/getting-started/create-cluster/)
+e.g. to [create a new cluster](/docs/getting_started/setup/create-cluster/)
  
 ``` 
 jx create cluster gke --no-default-environments

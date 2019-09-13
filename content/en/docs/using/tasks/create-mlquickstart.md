@@ -84,7 +84,7 @@ The source of these Quickstarts are maintained in [the machine-learning-quicksta
 
 As with conventional Jenkins-X quickstarts, we use the [Jenkins X build packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) to match the right pack for the project using the source code language and machine learning framework kinds to pick the most suitable match.
 
-When you use [jx create](/getting-started/create-cluster/), [jx install](/docs/managing/tasks/install-on-cluster/) or [jx init](/commands/jx_init/) the [Jenkins X build packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) are cloned into your `~/.jx/draft/packs` folder.
+When you use [jx create](/docs/getting_started/setup/create-cluster/), [jx install](/docs/managing/tasks/install-on-cluster/) or [jx init](/commands/jx_init/) the [Jenkins X build packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) are cloned into your `~/.jx/draft/packs` folder.
 
 Then when you create a machine learning quickstart, the [Jenkins X build packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) are used to:
 
