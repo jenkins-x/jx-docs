@@ -1,5 +1,5 @@
 ---
-date: 2019-09-15T12:26:54Z
+date: 2019-09-15T21:16:39Z
 title: "jx step replicate"
 slug: jx_step_replicate
 url: /commands/jx_step_replicate/
@@ -36,6 +36,7 @@ jx step replicate [flags]
 ### Options
 
 ```
+      --create-namespace                     Should create any missing namespaces
   -h, --help                                 help for replicate
   -r, --replicate-to-namespace stringArray   Specify a list of namespaces to replicate data into
 ```

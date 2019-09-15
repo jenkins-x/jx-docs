@@ -1,5 +1,5 @@
 ---
-date: 2019-09-15T12:26:54Z
+date: 2019-09-15T21:16:39Z
 title: "jx boot"
 slug: jx_boot
 url: /commands/jx_boot/
