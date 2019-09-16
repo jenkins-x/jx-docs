@@ -2,8 +2,8 @@
 title: Preview Environments
 linktitle: Preview Environments
 description: Preview pull requests before changes merge to master
+weight: 50
 ---
-
 
 We highly recommend the use of [Preview Environments](/docs/concepts/features/#preview-environments) to get early feedback on changes to applications before the changes are merged into master.
   

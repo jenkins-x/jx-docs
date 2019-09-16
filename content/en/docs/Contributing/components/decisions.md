@@ -2,6 +2,7 @@
 title: Decisions
 linktitle: Decisions
 description: Documented decisions made by the Jenkins X project
+weight: 20
 ---
 
 # Decisions

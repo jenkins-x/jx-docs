@@ -4,6 +4,7 @@ description: In this video we walk you through the process of deploying a Java G
 date: 2018-08-01
 publishdate: 2018-08-01
 lastmod: 2018-08-01
+weight: 20
 ---
 
 </br>

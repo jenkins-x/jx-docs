@@ -2,6 +2,7 @@
 title: Features
 linktitle: Features
 description: How Jenkins X can help you deliver continuously
+weight: 30
 ---
 
 

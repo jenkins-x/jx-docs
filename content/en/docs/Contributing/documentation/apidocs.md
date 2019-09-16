@@ -2,6 +2,7 @@
 title: Contribute to the API Documentation
 linktitle: API Documentation
 description: How to help improve the Jenkins X API documentation
+weight: 10
 ---
 
 Jenkins X has two types of API documentation: [Kubernetes Custom Resource Documentation](/apidocs) and [Godoc](https://godoc.org/github.com/jenkins-x/jx).

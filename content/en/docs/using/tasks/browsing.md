@@ -2,6 +2,7 @@
 title: Browsing
 linktitle: Browsing
 description: Browsing resources in Jenkins X 
+weight: 10
 ---
 
                 

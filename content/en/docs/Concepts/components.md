@@ -2,6 +2,7 @@
 title: Components
 linktitle: Components
 description: Component overview of a typical Jenkins X installation
+weight: 10
 ---
 
 An installation of Jenkins X consists of:

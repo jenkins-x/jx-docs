@@ -2,6 +2,7 @@
 title: Diagram
 linktitle: Diagram
 description: A diagram of the Jenkins X architecture
+weight: 20
 ---
 
 There are several architectures based on how you choose to install Jenkins X. We show you two common architectures below.

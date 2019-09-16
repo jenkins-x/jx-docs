@@ -7,6 +7,7 @@ publishdate: 2019-05-01
 lastmod: 2019-05-01
 categories: [tutorials]
 keywords: [usage,docs]
+weight: 190
 ---
 
 Keeping your Jenkins X environment updated can be done by command line

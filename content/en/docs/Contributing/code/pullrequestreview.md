@@ -3,6 +3,7 @@ title: Pull Request Reviews
 linktitle: Pull Request Reviews
 description: How to get your pull request reviewed and how to review a pull request
 authors: [pmuir]
+weight: 20
 ---
 
 The pull request is the main place we gate changes in Jenkins X. It's here we:

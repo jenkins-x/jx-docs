@@ -7,7 +7,7 @@ publishdate: 2018-02-01
 lastmod: 2018-03-02
 categories: ["about jenkins x"]
 keywords: ["License","apache"]
-weight: 60
+weight: 30
 ---
 
 {{% pageinfo %}}

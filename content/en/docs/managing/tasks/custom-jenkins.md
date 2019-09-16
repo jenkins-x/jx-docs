@@ -2,6 +2,7 @@
 title: Custom Jenkins Servers
 linktitle: Custom Jenkins Servers
 description: How to work with Custom Jenkins Servers in Jenkins X
+weight: 70
 ---
 
 Jenkins X provides automated CI/CD for your libraries and microservices you want to deploy on Kubernetes, but what about those other `Jenkinsfile` based pipelines you have already created on a custom Jenkins Server?

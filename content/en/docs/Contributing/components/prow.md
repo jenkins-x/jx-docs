@@ -3,6 +3,7 @@ title: Prow
 linktitle: Prow
 description: The CI/CD system that Kubernetes uses to build itself
 parent: "components"
+weight: 30
 ---
 
 Prow is a Kubernetes based CI/CD system. Jobs can be triggered by various types of events and report their status to many different services. In addition to job execution, Prow provides GitHub automation in the form of policy enforcement, chat-ops via /foo style commands, and automatic PR merging.

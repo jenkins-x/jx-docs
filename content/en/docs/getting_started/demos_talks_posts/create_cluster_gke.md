@@ -2,6 +2,7 @@
 title: Create Cluster GKE
 linktitle: Create Cluster GKE
 description: How to create a Kubernetes cluster on GKE and install Jenkins X
+weight: 40
 ---
 
 This [demo](https://www.youtube.com/watch?v=r8-J9Qg-p9U) uses the [jx create cluster gke](/commands/jx_create_cluster_gke) command to [create a new kubernetes cluster](/docs/getting_started/setup/create-cluster/):

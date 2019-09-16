@@ -2,6 +2,7 @@
 title: Create Cluster
 linktitle: Create Cluster
 description: How to create a Kubernetes cluster and install Jenkins X
+weight: 30
 ---
 
 This [demo](https://www.youtube.com/watch?v=ELA4tytdFeA) [creates a new kubernetes cluster](/docs/getting_started/setup/create-cluster/) using these commands in parallel:

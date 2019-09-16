@@ -5,6 +5,7 @@ description: cloud native serverless pipelines
 date: 2019-06-20
 publishdate: 2019-06-20
 keywords: [tekton]
+weight: 40
 ---
 
 # Syntax for `jenkins-x.yml` and build packs

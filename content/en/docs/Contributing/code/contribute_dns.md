@@ -4,6 +4,7 @@ linktitle: DNS for contributors
 description: How to configure DNS for developing features, reproducing issues and demos
 keywords: [dns]
 authors: [pmuir]
+weight: 10
 ---
 
 Some features and issues require DNS to be configured. The domain name `jenkins-x.rocks` is available for

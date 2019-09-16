@@ -2,6 +2,7 @@
 title: Articles
 date: 2018-05-05T10:36:00+02:00
 description: See what folks have written about Jenkins X
+weight: 10
 ---
 
 * [Defining And Running Serverless Deployments With Knative And Jenkins X](https://technologyconversations.com/2019/07/17/defining-and-running-serverless-deployments-with-knative-and-jenkins-x/) by [Viktor Farcic](https://technologyconversations.com), July 17th, 2019

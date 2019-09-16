@@ -2,6 +2,7 @@
 title: Docker Registry
 linktitle: Docker Registry
 description: Configuring your docker registry 
+weight: 90
 ---
 
 To be able to create and publish docker images we need to use a Docker Registry.

@@ -7,6 +7,7 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [getting started]
 keywords: [install]
+weight: 10
 ---
 
 ## Background

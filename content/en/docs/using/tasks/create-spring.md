@@ -2,9 +2,9 @@
 title: Create Spring Boot
 linktitle: Create Spring Boot
 description: How to create new Spring Boot applications and import them into Jenkins X
+weight: 40
 ---
 
-                
 If you are developing Java microservices then you may well be using the popular [Spring Boot](https://projects.spring.io/spring-boot/). 
 
 You can create new Spring Boot applications using the [Spring Boot Initializr](http://start.spring.io/) and then [import them into Jenkins X](/developing/import) via the [jx import](/commands/jx_import) command.

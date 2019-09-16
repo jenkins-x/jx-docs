@@ -2,8 +2,8 @@
 title: IDE
 linktitle: IDE
 description: Working with Jenkins X from your IDE
+weight: 60
 ---
-
 
 As developers we often spend lots of time in our IDE of choice working on code. Jenkins X is all about helping developers deliver business value faster through software; so we want to make Jenkins X super easy to work with from inside your IDE.
 

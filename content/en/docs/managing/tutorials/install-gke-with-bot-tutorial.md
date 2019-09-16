@@ -8,6 +8,7 @@ keywords: [jenkins-x-bot,GKE,Install,Tutorial]
 slug: "jenkins-x-gke-install-with-bot"
 aliases: []
 author: Oscar Medina
+weight: 20
 ---
 
 {{% note %}}

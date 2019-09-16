@@ -2,10 +2,10 @@
 title: Issues
 linktitle: Issues
 description: Working with issues 
+weight: 80
 ---
 
-
-Jenkins X defaults to using the issue tracker in your git provider for creating and browsing issues. 
+Jenkins X defaults to using the issue tracker in your git provider for creating and browsing issues.
 
 e.g. if you are inside the source code of a github project then you can type [jx create issue](/commands/jx_create_issue):
 

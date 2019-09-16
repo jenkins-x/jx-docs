@@ -2,6 +2,7 @@
 title: FAQ
 linktitle: FAQ
 description: Questions on how to use Kubernetes, Helm and Jenkins X to build cloud native applications
+weight: 10
 ---
 
 ## How do I inject environment specific configuration?

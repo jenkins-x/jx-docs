@@ -1,18 +1,8 @@
 ---
 title: Git Servers
 linktitle: Git Servers
-description: Working with different Git servers 
-date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
-menu:
-  docs:
-    parent: "developing"
-    weight: 210
-weight: 210
-sections_weight: 210
-draft: false
-toc: true
+description: Working with different Git servers
+weight: 100
 ---
 
 
@@ -162,7 +152,7 @@ You can view the enabled addons via [jx get addons](/commands/jx_get_addons):
 jx get addons
 ``` 
 
-Now when you [install Jenkins X](/docs/getting_started/) it will also install the `gitea` addon. 
+Now when you [install Jenkins X](/docs/getting_started/) it will also install the `gitea` addon.
 
 Then whenever Jenkins X needs to create a git repository for an Environment or for a new Project the gitea server will appear in the pick list.
 

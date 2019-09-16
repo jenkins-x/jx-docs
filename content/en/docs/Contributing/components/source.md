@@ -3,6 +3,7 @@ title: Source
 linktitle: Source
 description: The location of the various source code repositories
 parent: "components"
+weight: 40
 ---
 
 Jenkins X is built on the shoulders of giants and also has lots of different source repositories to make various things from CLI tools, docker images, helm charts and [addon Apps](/docs/contributing/addons/)

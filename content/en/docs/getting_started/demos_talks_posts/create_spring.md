@@ -2,6 +2,7 @@
 title: Create Spring
 linktitle: Create Spring
 description: How to create a new Spring Boot application with CI / CD and GitOps Promotion
+weight: 50
 ---
 
 This [demo](https://www.youtube.com/watch?v=kPes3rvT1UM) uses the [jx create spring](/commands/jx_create_spring) command to [create a new Spring Boot application with CI / CD pipelines](/developing/create-spring) with [GitOps promotions](/docs/concepts/features/#promotion):

@@ -2,6 +2,7 @@
 title: "DevOxx UK 2018 Demo"
 date: 2018-05-05T10:36:00+02:00
 description: "Jenkins X live demo on GKE at DevOxx UK, 2018" 
+weight: 60
 ---
 
 Here is the [video of a talk by James Strachan: Jenkins X: Continuous Delivery for Kubernetes](https://youtu.be/BF3MhFjvBTU?list=PLRsbF2sD7JVpRvLpv_Cub94zsM1aHm-Op) at [DevOxx UK, 2018](https://www.devoxx.co.uk/). 

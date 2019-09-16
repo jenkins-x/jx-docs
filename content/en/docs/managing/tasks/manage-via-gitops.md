@@ -7,6 +7,7 @@ publishdate: 2016-11-01
 lastmod: 2018-01-02
 categories: [getting started]
 keywords: [install,kubernetes]
+weight: 150
 ---
 
 We recommend you use GitOps to manage your installation of Jenkins X, to upgrade it, configure it and add or remove extension [Apps](/docs/contributing/addons/) so it’s easy to audit who changes what in your installation and to easily revert bad changes.

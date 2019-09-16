@@ -2,6 +2,7 @@
 title: Developing Using DevPods
 linktitle: DevPods
 description: Using Jenkins X to continuously deliver value to your customers
+weight: 50
 ---
 
 Jenkins X allows you to edit app code by using a Kubernetes Pod which we call `DevPod`.  This helps you develop inside the cloud with the same software tools, platform, container images and pod templates as the CI/CD pipelines. This helps keep everyone in the team and your CI/CD pipelines using the same platform and tools all the time to reduce waste and avoid those pesky 'it works on my laptop but not in production' issues.  

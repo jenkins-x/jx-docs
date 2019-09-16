@@ -5,7 +5,7 @@ description: Current status of Jenkins X
 date: 2018-02-01
 publishdate: 2018-02-01
 lastmod: 2018-02-01
-weight: 120
+weight: 10
 type: docs
 ---
 

@@ -2,9 +2,9 @@
 title: Kubernetes Context
 linktitle: Kubernetes Context
 description: Working with Kubernetes context
+weight: 90
 ---
 
-                
 The kubernetes CLI tool [kubectl](https://kubernetes.io/docs/reference/kubectl/overview/) keeps track of the kubernetes cluster and namespace you are using via a local file `~/.kube/config` (or a file at `$KUBECONFIG`).
 
 If you want to change the namespace using the kubectl command line you can use:
