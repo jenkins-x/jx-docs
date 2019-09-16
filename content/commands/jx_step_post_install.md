@@ -1,5 +1,5 @@
 ---
-date: 2019-09-16T18:24:37Z
+date: 2019-09-16T20:02:58Z
 title: "jx step post install"
 slug: jx_step_post_install
 url: /commands/jx_step_post_install/
