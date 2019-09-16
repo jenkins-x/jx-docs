@@ -1,5 +1,5 @@
 ---
-date: 2019-09-17T14:22:58Z
+date: 2019-09-16T11:55:10Z
 title: "jx step replicate"
 slug: jx_step_replicate
 url: /commands/jx_step_replicate/
