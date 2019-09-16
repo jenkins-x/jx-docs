@@ -34,7 +34,7 @@ e.g. to [create a new cluster](/docs/getting_started/setup/create-cluster/)
 jx create cluster gke --no-default-environments
 ```
 
-or to [install in an existing cluster](/docs/managing-jx/tasks/install-on-cluster/)
+or to [install in an existing cluster](/docs/managing-jx/common-tasks/install-on-cluster/)
 
 ``` 
 jx install --no-default-environments

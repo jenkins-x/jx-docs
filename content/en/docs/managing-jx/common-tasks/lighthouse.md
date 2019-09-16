@@ -9,7 +9,7 @@ weight: 140
  
 [Lighthouse](https://github.com/jenkins-x/lighthouse) is a lightweight ChatOps based webhook handler which can trigger [Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) on webhooks from multiple git providers such as: GitHub, GitHub Enterprise, BitBucket Server, BitBucket Cloud, GitLab, Gogs and Gitea.
 
-Currently Lighthouse is focussed on using [Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) with tekton though longer term it could be reused with tekton orchestrating Jenkins pipelines via the [Custom Jenkins Server App](/docs/managing-jx/tasks/custom-jenkins/)
+Currently Lighthouse is focussed on using [Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) with tekton though longer term it could be reused with tekton orchestrating Jenkins pipelines via the [Custom Jenkins Server App](/docs/managing-jx/common-tasks/custom-jenkins/)
 
 ## Features 
 

@@ -50,7 +50,7 @@ The source of these Quickstarts are maintained in [the jenkins-quickstarts GitHu
 
 When you create a quickstart we use the [Jenkins X build packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) to match the right pack for the project using the source code language kinds to pick the most suitable match.
 
-When you use [jx create](/docs/getting_started/setup/create-cluster/), [jx install](/docs/managing-jx/tasks/install-on-cluster/) or [jx init](/commands/jx_init/) the [Jenkins X build packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) are cloned into your `~/.jx/draft/packs` folder.
+When you use [jx create](/docs/getting_started/setup/create-cluster/), [jx install](/docs/managing-jx/common-tasks/install-on-cluster/) or [jx init](/commands/jx_init/) the [Jenkins X build packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) are cloned into your `~/.jx/draft/packs` folder.
 
 Depending on your JenkinsX installation type (Serverless Jenkins vs. Static Master Jenkin), you can view all the languages supported via build packs on your machine via:
 
@@ -64,7 +64,7 @@ ls -al ~/.jx/draft/packs/github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/pa
 ls -al ~/.jx/draft/packs/github.com/jenkins-x-buildpacks/jenkins-x-classic/packs
 ```
 
-Then when you create a quickstart, use [jx create spring](/docs/using-jx/tasks/create-spring/) or [jx import](developing/import/) the [Jenkins X build packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) are used to:
+Then when you create a quickstart, use [jx create spring](/docs/using-jx/common-tasks/create-spring/) or [jx import](developing/import/) the [Jenkins X build packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) are used to:
 
 * find the right language pack. e.g. here are the current [list of language packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/tree/master/packs).
 * the language pack is then used to default these files if they don't already exist:

@@ -18,7 +18,7 @@ Jenkins X 通过[跨环境的 GitOps 部署升级](/zh/docs/concepts/features/#�
 
 Jenkins是一个通用的 CI/CD 服务器，可以通过添加插件、更改配置和编写自己的流水线来配置它来做你喜欢的任何事情。
 
-对于 Jenkins X 仅仅[安装 Jenkins X ](/zh/dosc/getting_started/)，它将自动配置所有各种不同的工具（ helm，docker registry，nexus 等等），然后[创建](/zh/docs/using-jx/tasks/create-spring/)/导入(/zh/docs/using-jx/tasks/import/)，你将获得全面的自动化 CI/CD 和预发环境。这使得当你委托 Jenkins X 管理您的 CI + CD 时，开发人员可以集中精力构建应用程序。
+对于 Jenkins X 仅仅[安装 Jenkins X ](/zh/dosc/getting_started/)，它将自动配置所有各种不同的工具（ helm，docker registry，nexus 等等），然后[创建](/zh/docs/using-jx/common-tasks/create-spring/)/导入(/zh/docs/using-jx/common-tasks/import/)，你将获得全面的自动化 CI/CD 和预发环境。这使得当你委托 Jenkins X 管理您的 CI + CD 时，开发人员可以集中精力构建应用程序。
 
 Jenkins X 支持不同的执行引擎；因此它可以通过在 Docker 容器中重用 Jenkins 来为每个团队编排 Jenkins 服务器。然而当使用[无服务 Jenkins X 流水线](/zh/docs/concepts/jenkins-x-pipelines/)时，我们使用 [Tekton](https://tekton.dev/) 而不是 Jenkins 作为底层的 CI/CD 引擎来提供一个新式的、高可用的云原生架构。
 

@@ -28,7 +28,7 @@ In this scenario, you are using a desktop IDE such as VS Code or Intellij which 
 </figcaption>
 
 {{% note %}}
-See [IDE](/docs/using-jx/tasks/ide/#vs-code) for more details on using VSCode
+See [IDE](/docs/using-jx/common-tasks/ide/#vs-code) for more details on using VSCode
 {{% /note %}}
 
 To get started using this approach, simply execute the following command in the root of your app directory.  We are using a `NodeJS` app for this example, therefore we specify the language using the `-l` parameter.

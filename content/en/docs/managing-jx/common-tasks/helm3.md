@@ -50,7 +50,7 @@ You can view the current settings for your team via [jx get helmbin](/commands/j
 jx get helmbin
 ```
 
-Basically the [pod templates](/docs/managing-jx/tasks/pod-templates/) contain both the binaries:
+Basically the [pod templates](/docs/managing-jx/common-tasks/pod-templates/) contain both the binaries:
 
 * `helm` which is a 2.x distro of helm
 * `helm3` which is a 3.x distro of helm
