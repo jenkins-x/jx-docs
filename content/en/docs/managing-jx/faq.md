@@ -30,7 +30,7 @@ Submit that change as a Pull Request so it can go through the CI tests and any p
 
 You can use vanilla helm to do things like injecting the current namespace if you need that.
 
-To see a more complex example of how you can use a `values.yaml` file to inject into charts, see how we use these files to [configure Jenkins X itself](/docs/managing/tasks/config/)
+To see a more complex example of how you can use a `values.yaml` file to inject into charts, see how we use these files to [configure Jenkins X itself](/docs/managing-jx/tasks/config/)
 
 
 ## How do I manage secrets in each environment?
@@ -121,7 +121,7 @@ Then if you wish to use another configuration management tool you can add it in 
 
 ## How do I change the domain of serverless apps?
 
-If you use [serverless apps](/docs/managing/tutorials/serverless-apps/) with Knative we don't use thee default exposecontroller mechanism for defaulting the `Ingress` resources since knative does not use kubernetes `Service` resources.
+If you use [serverless apps](/docs/managing-jx/tutorials/serverless-apps/) with Knative we don't use thee default exposecontroller mechanism for defaulting the `Ingress` resources since knative does not use kubernetes `Service` resources.
 
 You can work around this by manually editing the _knative_ config via:
 

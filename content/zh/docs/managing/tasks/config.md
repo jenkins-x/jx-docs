@@ -84,4 +84,4 @@ We try and use the best defaults for each platform for the Docker Registry; e.g.
 jx create cluster gke --docker-registry eu.gcr.io
 ```   
 
-但是，如果你使用了不同的 Docker Registry 的话，你可能需要[修改 secret 才能连接到 docker](/docs/managing/tasks/docker-registry/#update-the-config-json-secret)。
+但是，如果你使用了不同的 Docker Registry 的话，你可能需要[修改 secret 才能连接到 docker](/docs/managing-jx/tasks/docker-registry/#update-the-config-json-secret)。

@@ -111,7 +111,7 @@ Image:       jenkinsxio/jenkins-go:256.0.50
 
 ## How do I reuse my existing Ingress controller?
 
-By default when you [install Jenkins X into an existing kubernetes cluster](/docs/managing/tasks/install-on-cluster/) it prompts you if you want to install an Ingress controller. Jenkins X needs an Ingress controller of some kind so that we can setup `Ingress` resources for each `Service` so we can access web applications via URLs outside of the kubneretes cluster (e.g. inside web browsers).
+By default when you [install Jenkins X into an existing kubernetes cluster](/docs/managing-jx/tasks/install-on-cluster/) it prompts you if you want to install an Ingress controller. Jenkins X needs an Ingress controller of some kind so that we can setup `Ingress` resources for each `Service` so we can access web applications via URLs outside of the kubneretes cluster (e.g. inside web browsers).
 
 The [jx install](/commands/jx_install/) command takes a number of CLI arguments starting with `--ingress` where you can point to the namespace, deployment name and service name of the ingress controller you wish to use for the installation.
 

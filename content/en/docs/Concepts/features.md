@@ -43,7 +43,7 @@ You can install Jenkins X into different namespaces in the same cluster if you w
 
 You can also use the [jx create team](/commands/jx_create_team/) CLI which creates a new `Team` [Custom Resource](/docs/contributing/components/custom-resources/) then in the background the team controller will create a new Jenkins X install in the teams namespaces, by default reusing the same underlying nexus and docker registry.
 
-See the [configuration guide](/docs/managing/tasks/config/) for more details on how to share resources like Nexus across Teams.
+See the [configuration guide](/docs/managing-jx/tasks/config/) for more details on how to share resources like Nexus across Teams.
 
  
 ## Promotion

@@ -44,7 +44,7 @@ All the resources created by the conformance tests can be cleaned up with:
 If you are using AWS, be sure to check out the detailed blog on [Continuous Delivery with Amazon EKS and Jenkins X](https://aws.amazon.com/blogs/opensource/continuous-delivery-eks-jenkins-x/) by [Henryk Konsek](https://twitter.com/hekonsek) which goes into lots of detail on how to setup AWS + EKS with Jenkins X.
 
 If you want to go further with infrastructure as code you can follow this
-[guide](/docs/managing/tasks/aws-terraform-install-gitops/) about setting up an EKS cluster and other
+[guide](/docs/managing-jx/tasks/aws-terraform-install-gitops/) about setting up an EKS cluster and other
 requirements in AWS with Terraform and then installing Jenkins X on it using GitOps for the
 installation.
 
@@ -158,7 +158,7 @@ If you know the provider, you can specify the provider on the command line. e.g.
 
     jx install --provider=aws
 
-Note: if you wish to use a different Git provider than GitHub for your environments, see [how to use a different Git provider](/docs/managing/tasks/git/#using-a-different-git-provider-for-environments)
+Note: if you wish to use a different Git provider than GitHub for your environments, see [how to use a different Git provider](/docs/managing-jx/tasks/git/#using-a-different-git-provider-for-environments)
 
 ## Installing Jenkins X on premises
 
