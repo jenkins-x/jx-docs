@@ -1,5 +1,6 @@
 ---
 title: "Docker Image CVE Scanning"
+linkTitle: "CVE Scanning"
 date: 2018-05-05T10:36:00+02:00
 description: "Detect security vulnerabilities in your Docker images using Anchore" 
 weight: 10

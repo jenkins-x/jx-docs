@@ -2,7 +2,7 @@
 title: Setup Questions
 linktitle: Setup Questions
 description: Questions about installing or configuring Jenkins X
-weight: 30
+weight: 60
 ---
 
 ## How do I add a user to my Jenkins X installation?

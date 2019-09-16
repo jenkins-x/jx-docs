@@ -2,7 +2,7 @@
 title: Common Problems
 linktitle: Common Problems
 description: Questions on common issues setting up Jenkins X.
-weight: 20
+weight: 50
 ---
 
 We have tried to collate common issues here with work arounds. If your issue isn't listed here please [let us know](https://github.com/jenkins-x/jx/issues/new).

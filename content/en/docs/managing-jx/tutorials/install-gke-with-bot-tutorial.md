@@ -1,5 +1,6 @@
 ---
 title: "Install Jenkins X on GKE Properly"
+linkTitle: "Install Jenkins X on GKE"
 date: 2019-04-25T07:36:00+02:00
 description: >
    A comprehensive tutorial on how to install and configure Jenkins X so that you have a Jenkins X Bot working properly.  This ensures your experience as a Developer interacting with Jenkinx X is more realistic.  
@@ -11,9 +12,9 @@ author: Oscar Medina
 weight: 20
 ---
 
-{{% note %}}
-**NOTE:** This tutorial is based on the following jx version 
+**NOTE:** This tutorial is based on the following jx version
 
+```cmd
     NAME               VERSION
     jx                 2.0.33
     jenkins x platform 2.0.108
@@ -22,8 +23,7 @@ weight: 20
     helm client        Client: v2.13.1+g618447c
     git                git version 2.21.0
     Operating System   Mac OS X 10.14.3 build 18D42
-   
-{{% /note %}}
+```  
 
 # Overview
 In this tutorial, we walk you through a full setup of Jenkinx X in GKE, including setup of the Bot.  We will install Jenkins X Serverless topology which also brings Tekton pipelines for us to use in this scenario.  We walk through putting an app via CI/CD and ensuring the Jenkins X Bot is working as expected.
@@ -537,7 +537,7 @@ Jenkins X installation completed successfully
 Your Kubernetes context is now set to the namespace: jx 
 To switch back to your original namespace use: jx namespace default
 Or to use this context/namespace in just one terminal use: jx shell
-For help on switching contexts see: https://jenkins-x.io/docs/using-jx/common-tasks/kube-context/
+For help on switching contexts see: https://jenkins-x.io/docs/using/tasks/kube-context/
 
 To import existing projects into Jenkins:       jx import
 To create a new Spring Boot microservice:       jx create spring -d web -d actuator
@@ -632,7 +632,7 @@ Open the Jenkins console via    jx console
 You can list the pipelines via: jx get pipelines
 When the pipeline is complete:  jx get applications
 
-For more help on available commands see: https://jenkins-x.io/docs/using-jx/common-tasks/browsing/
+For more help on available commands see: https://jenkins-x.io/docs/using/tasks/browsing/
 
 Note that your first pipeline may take a few minutes to start while the necessary images get downloaded!
 

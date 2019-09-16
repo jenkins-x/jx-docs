@@ -1,7 +1,7 @@
 ---
 title: "Tutorials"
 linkTitle: "Tutorials"
-weight: 6
+weight: 30
 description: >
   Tutorials on how to setup Jenkins X
 ---
