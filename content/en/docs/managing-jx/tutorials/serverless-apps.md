@@ -20,7 +20,7 @@ And you are then good to go. Any new projects you create will be created in this
 
 ## Converting existing applications 
 
-If you already have a microservice and you want to convert it over to Knative Serve just [import the source repository into Jenkins X](/docs/using/tasks/import/) and you should be all done.
+If you already have a microservice and you want to convert it over to Knative Serve just [import the source repository into Jenkins X](/docs/using-jx/tasks/import/) and you should be all done.
 
 If your application was imported recently into Jenkins X but before you installed and enabled Knative Serve you can use [jx edit deploy](/commands/jx_edit_deploy) to switch between the `default` deployment kind (using kubernetes `Deployment` and `Service` resources) and the `knative` kind (using Knative `Service` resource)
 

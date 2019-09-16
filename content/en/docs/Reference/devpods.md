@@ -161,7 +161,7 @@ Now if you edit code and trigger a docker rebuild, which for most languages is j
 
 ## Using an IDE
 
-One of the easiest ways to get started with DevPods is via an IDE such as [VS Code](https://code.visualstudio.com/). Check out the [Jenkins X plugins for IDEs](/docs/using/tasks/ide/)
+One of the easiest ways to get started with DevPods is via an IDE such as [VS Code](https://code.visualstudio.com/). Check out the [Jenkins X plugins for IDEs](/docs/using-jx/tasks/ide/)
 
 VS Code has support which automates all the above so you can run a shell/sync quite easily. 
 

@@ -58,7 +58,7 @@ $ jx create quickstart  -f http
 ls -al ~/.jx/draft/packs/github.com/jenkins-x/draft-packs/packs
 ```
 
-你可以使用 [jx create spring](/zh/docs/using/tasks/create-spring/) 或 [jx import](developing/import/) 来快速创建，这时 [Jenkins X build packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) 会进行下面的步骤：
+你可以使用 [jx create spring](/zh/docs/using-jx/tasks/create-spring/) 或 [jx import](developing/import/) 来快速创建，这时 [Jenkins X build packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) 会进行下面的步骤：
 
 * 找到对应的语言包。当前包括 [list of language packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/tree/master/packs)。
 * 当文件不存在时，语言包会实现默认的：
