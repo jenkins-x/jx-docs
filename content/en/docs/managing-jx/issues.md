@@ -264,7 +264,7 @@ If you find you get lots of warnings in your pipelines like this...
 
 and promotion takes 30 minutes from a release pipeline on an application starting to the change hitting `Staging` then its mostly probably due to Webhooks.
 
-When we [import projects](/docs/using-jx/common-tasks/import/) or [create quickstarts](/docs/getting_started/first_project/create-quickstart/) we automate the setup of CI/CD pipelines for the git repository. What this does is setup Webhooks on the git repository to trigger Jenkins X to trigger pipelines (either using Prow for [serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) or the static jenkins server if not).
+When we [import projects](/docs/using-jx/common-tasks/import/) or [create quickstarts](/docs/getting-started/first_project/create-quickstart/) we automate the setup of CI/CD pipelines for the git repository. What this does is setup Webhooks on the git repository to trigger Jenkins X to trigger pipelines (either using Prow for [serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) or the static jenkins server if not).
 
 However sometimes your git provider (e.g. [GitHub](https://github.com/) may not be able to do connect to your Jenkins X installation (e.g. due to networking / firewall issues).
 

@@ -10,8 +10,8 @@ weight: 30
 
 Jenkins X comes with a handy [jx](/commands/jx) command line tool to easily:
 
-* [install Jenkins X](/docs/getting_started/setup/install inside your existing kubernetes cluster
-* [create a new kubernetes cluster](/docs/getting_started/setup/create-cluster/) and install Jenkins X into it
+* [install Jenkins X](/docs/getting-started/setup/install inside your existing kubernetes cluster
+* [create a new kubernetes cluster](/docs/getting-started/setup/create-cluster/) and install Jenkins X into it
 * [import projects](/developing/import) into Jenkins X and their Continuous Delivery pipelines setup
 * [create new Spring Boot applications](/developing/create-spring) which get imported into Jenkins X and their Continuous Delivery pipelines setup
 

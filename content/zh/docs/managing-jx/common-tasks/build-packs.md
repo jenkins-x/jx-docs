@@ -4,7 +4,7 @@ linktitle: 构建打包
 description: 打包源码为 kubernetes 应用
 ---
 
-我们使用 [draft](https://draft.sh/) 风格为不同的语言_构建打包_ ，我们通过[导入](/zh/docs/using-jx/common-tasks/import/)或者[创建](/zh/docs/using-jx/common-tasks/create-spring/)[他们](/zh/docs/getting_started/first_project/create-quickstart/)，运行时和构建工具添加必要的配置文件，因此我们可以在 Kubernetes 中构建和部署他们。
+我们使用 [draft](https://draft.sh/) 风格为不同的语言_构建打包_ ，我们通过[导入](/zh/docs/using-jx/common-tasks/import/)或者[创建](/zh/docs/using-jx/common-tasks/create-spring/)[他们](/zh/docs/getting-started/first_project/create-quickstart/)，运行时和构建工具添加必要的配置文件，因此我们可以在 Kubernetes 中构建和部署他们。
 
 如果由于工程没有被创建或导入而不存在的话，构建包会默认使用下面的文件：
 

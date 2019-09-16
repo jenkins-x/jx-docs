@@ -14,4 +14,4 @@ You can use the [jx command line](/commands/jx/#jx) to [create a new kubernetes 
 
 If you already have an existing kubernetes cluster then [install Jenkins X on your kubernetes cluster](install-on-cluster)
 
-When you have a kubernetes cluster with Jenkins X installed, check out [your next steps](/docs/getting_started/next/)
+When you have a kubernetes cluster with Jenkins X installed, check out [your next steps](/docs/getting-started/next/)

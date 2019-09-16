@@ -14,7 +14,7 @@ To improve the stability of Jenkins X when lots of packages and charts are chang
 
 The version stream is stored in the [jenkins-x/jenkins-x-versions](https://github.com/jenkins-x/jenkins-x-versions) git repository and stores the stable version of all packages and charts used by Jenkins X.
 
-When you run a command, such as to [create a cluster](/docs/getting_started/setup/create-cluster/), [install on an existing cluster](/docs/managing-jx/common-tasks/install-on-cluster/) or run a [jx upgrade](/commands/jx_upgrade/) command the `jx` command will ensure you have a local clone of the  [jenkins-x/jenkins-x-versions](https://github.com/jenkins-x/jenkins-x-versions) git repository and it will then pull the stable version of any chart or package from that source - or log a warning if a version is not yet being maintained.
+When you run a command, such as to [create a cluster](/docs/getting-started/setup/create-cluster/), [install on an existing cluster](/docs/managing-jx/common-tasks/install-on-cluster/) or run a [jx upgrade](/commands/jx_upgrade/) command the `jx` command will ensure you have a local clone of the  [jenkins-x/jenkins-x-versions](https://github.com/jenkins-x/jenkins-x-versions) git repository and it will then pull the stable version of any chart or package from that source - or log a warning if a version is not yet being maintained.
 
 ## How we upgrade the Version Stream
 

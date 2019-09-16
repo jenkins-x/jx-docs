@@ -28,7 +28,7 @@ Jenkins X will install the [helm](https://github.com/kubernetes/helm) client - (
 
 ### Install cloud provider CLI
 
-If you are using a public cloud, there will be an associated CLI for interacting with it. When install is called via the [jx create cluster](/docs/getting_started/setup/create-cluster/) command, the associated binary to your cloud provider will also be installed, if not present on your command shell path.
+If you are using a public cloud, there will be an associated CLI for interacting with it. When install is called via the [jx create cluster](/docs/getting-started/setup/create-cluster/) command, the associated binary to your cloud provider will also be installed, if not present on your command shell path.
 
 - `az` for AKS cluster (Azure)
 - `gcloud` for GKE cluster (Google Cloud)

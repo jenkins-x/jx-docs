@@ -16,7 +16,7 @@ Jenkins X 可以在 Kubernetes 1.8 以及更高版本上安装。需要的依赖
 
 ### 通过 kops 启用私有仓库
 
-注意，如果你是在 AWS 环境中，你可能会想使用 [jx create aws](/zh/docs/getting_started/setup/create-cluster/) 命令来帮你自动化完成所有步骤！
+注意，如果你是在 AWS 环境中，你可能会想使用 [jx create aws](/zh/docs/getting-started/setup/create-cluster/) 命令来帮你自动化完成所有步骤！
 
 如果你是通过 [kops](https://github.com/kubernetes/kops) 创建的 kubernetes 集群，那么你可以这么做：
 

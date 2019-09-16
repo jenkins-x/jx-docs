@@ -76,7 +76,7 @@ When using `jx install --provider=(aws|eks)`, you are prompted if you want to us
 
 The default on AWS is to use ECR as the Docker container registry. For this to work, the nodes need permission to upload images to ECR. If you instead want to use the embedded Docker registry of Jenkins X inside your Kubernetes cluster, you will need to enable insecure Docker registries.
 
-Note that you may want to use the [jx create cluster aws](/docs/getting_started/setup/create-cluster/#using-amazon-aws) command which automates all of this for you!
+Note that you may want to use the [jx create cluster aws](/docs/getting-started/setup/create-cluster/#using-amazon-aws) command which automates all of this for you!
 
 #### Give nodes permission to use ECR
 

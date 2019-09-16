@@ -21,7 +21,7 @@ Also [CloudBees](https://www.cloudbees.com/) are working on a distribution of Je
 
 Once your user has access to the kubernetes cluster:
 
-* [install the jx binary](/docs/getting_started/setup/install//)
+* [install the jx binary](/docs/getting-started/setup/install//)
 
 If Jenkins X was installed in the namespace `jx` then the following should [switch your context](/docs/using-jx/common-tasks/kube-context/) to the `jx` namespace:
 

@@ -22,6 +22,6 @@ I won't go into details of everything Jenkins X does. That will come later. For 
 
 Give your users next steps from the Overview. For example:
 
-* [Getting Started](/docs/getting_started/): Get started with $project
+* [Getting Started](/docs/getting-started/): Get started with $project
 * [Examples](/examples/): Check out some example code!
 

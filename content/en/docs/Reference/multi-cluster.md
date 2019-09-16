@@ -77,7 +77,7 @@ If you prefer you can install the helm chart `jenkins-x/environment-controller` 
 
 ## Installing Ingress Controller
 
-If you don't already have any kind of Ingress Controller in your remote `Staging` / `Production` cluster then it is recommend - particularly if you want to try out our [quickstarts](/docs/getting_started/first_project/create-quickstart/) which depend on Ingress to be able to be used from a web browser.
+If you don't already have any kind of Ingress Controller in your remote `Staging` / `Production` cluster then it is recommend - particularly if you want to try out our [quickstarts](/docs/getting-started/first_project/create-quickstart/) which depend on Ingress to be able to be used from a web browser.
 
 To install the default ingress controller into a remote cluster (which doesn't have Jenkins X installed) you can use the command [jx create addon ingctl](/commands/jx_create_addon_ingress/)
 

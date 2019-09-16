@@ -71,7 +71,7 @@ jx edit addon gitea -e true
 jx get addons
 ``` 
 
-现在，当你 [安装 Jenkins X](/zh/docs/getting_started/) 时，也会安装 `gitea` 插件。 
+现在，当你 [安装 Jenkins X](/zh/docs/getting-started/) 时，也会安装 `gitea` 插件。 
 
 无论什么时候，Jenkins X 需要为一个环境或者新项目创建一个 git 库时，gitea 服务都会出现在选择列表中。
 

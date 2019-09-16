@@ -72,7 +72,7 @@ Or you can follow the [Knative install guide](https://www.knative.dev/docs/insta
 
 ## Using Knative Serve
 
-Now you have installed [Knative Serve](https://www.knative.dev/) snd [Gloo](https://gloo.solo.io/) you can [create a new quicktart](/docs/getting_started/first_project/create-quickstart/) or [create a new spring boot application](developing/create-spring/) and it will default to using Knative Serve to elastically scale your microservice based on its load over HTTP.
+Now you have installed [Knative Serve](https://www.knative.dev/) snd [Gloo](https://gloo.solo.io/) you can [create a new quicktart](/docs/getting-started/first_project/create-quickstart/) or [create a new spring boot application](developing/create-spring/) and it will default to using Knative Serve to elastically scale your microservice based on its load over HTTP.
 
 You can check if Knative Serve is being used on your application by doing:
 

@@ -28,7 +28,7 @@ When you install Jenkins X it will create git repositories for `Staging` and `Pr
 If you wish to use a different git provider for your environments then when you install Jenkins X add the `--no-default-environments` argument on [jx create cluster](/commands/jx_create_cluster/) or [jx install](/commands/jx_install/)
 
 
-e.g. to [create a new cluster](/docs/getting_started/setup/create-cluster/)
+e.g. to [create a new cluster](/docs/getting-started/setup/create-cluster/)
  
 ``` 
 jx create cluster gke --no-default-environments
@@ -152,7 +152,7 @@ You can view the enabled addons via [jx get addons](/commands/jx_get_addons):
 jx get addons
 ``` 
 
-Now when you [install Jenkins X](/docs/getting_started/) it will also install the `gitea` addon.
+Now when you [install Jenkins X](/docs/getting-started/) it will also install the `gitea` addon.
 
 Then whenever Jenkins X needs to create a git repository for an Environment or for a new Project the gitea server will appear in the pick list.
 

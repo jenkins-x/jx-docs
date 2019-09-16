@@ -26,7 +26,7 @@ First make sure you have created/selected a Project in the [Google Cloud Console
 
 Currently the best experience for running Jenkins X is on Google Container Engine (GKE).
 
-Now [download](/docs/getting_started/setup/install//) the `jx` CLI which is used to create and interact with the Jenkins X cluster.
+Now [download](/docs/getting-started/setup/install//) the `jx` CLI which is used to create and interact with the Jenkins X cluster.
 
 Now use the [jx create cluster gke](/commands/jx_create_cluster_gke) command:
 
@@ -177,7 +177,7 @@ browser.
 Note if you wish to use a different git provider than GitHub for your environments see [how to use a different git provider](/docs/managing-jx/common-tasks/git/#using-a-different-git-provider-for-environments)
 
 
-Now **[develop apps faster with Jenkins X](/docs/getting_started/next/)**.
+Now **[develop apps faster with Jenkins X](/docs/getting-started/next/)**.
 
 ### Connecting to the cluster from your laptop
 
@@ -199,7 +199,7 @@ Or if you are already logged in by previously using `gcloud init` or `gcloud aut
     jx create cluster gke --skip-login --verbose
 
 Those commands assume you have a google account and you've set up a default project that you can use to create the kubernetes cluster within.
-Now **[develop apps faster with Jenkins X](/docs/getting_started/next/)**.
+Now **[develop apps faster with Jenkins X](/docs/getting-started/next/)**.
 
 
 
@@ -261,7 +261,7 @@ sudo mv jx /usr/local/bin
 jx create cluster aws
 ```
 
-Now **[develop apps faster with Jenkins X](/docs/getting_started/next/)**.
+Now **[develop apps faster with Jenkins X](/docs/getting-started/next/)**.
 
 
 ## Using Azure (AKS)
@@ -272,7 +272,7 @@ Use the [jx create cluster aks](/commands/jx_create_cluster_aks) command:
 
     jx create cluster aks
 
-Now **[develop apps faster with Jenkins X](/docs/getting_started/next/)**.
+Now **[develop apps faster with Jenkins X](/docs/getting-started/next/)**.
 
 
 ## Using Oracle (OKE)
@@ -285,7 +285,7 @@ This will use [oci](https://github.com/oracle/oci-cli) on your Oracle Cloud Infr
 
 Please add your $HOME/bin to $PATH otherwise jx will have issue invoking OCI CLI command. If you have already installed OCI CLI, please make sure it is in $PATH.
 
-Now **[develop apps faster with Jenkins X](/docs/getting_started/next/)**.
+Now **[develop apps faster with Jenkins X](/docs/getting-started/next/)**.
 
 ## Using IBM Cloud Kubernetes Service (IKS)
 
@@ -297,7 +297,7 @@ This will use [IBM Cloud CLI](https://console.bluemix.net/docs/cli/index.html#ov
 
 You need to make sure you have the $HOME/.jx/bin folder in your $PATH.
 
-Now **[develop apps faster with Jenkins X](/docs/getting_started/next/)**.
+Now **[develop apps faster with Jenkins X](/docs/getting-started/next/)**.
 
 ## Using Minikube (local)
 
@@ -339,7 +339,7 @@ If the above proceeds OK, you'll be greeted with `Please enter the name you wish
 
 * you can specify more cores than you actually have!
 
-Now **[develop apps faster with Jenkins X](/docs/getting_started/next/)**.
+Now **[develop apps faster with Jenkins X](/docs/getting-started/next/)**.
 
 ## Using Minishift (local)
 
@@ -351,7 +351,7 @@ To create a minishift VM with Jenkins X installed on it try the [jx create clust
 
     jx create cluster minishift
 
-Now **[develop apps faster with Jenkins X](/docs/getting_started/next/)**.
+Now **[develop apps faster with Jenkins X](/docs/getting-started/next/)**.
 
 
 ## Troubleshooting

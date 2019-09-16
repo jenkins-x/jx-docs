@@ -17,7 +17,7 @@ This page lists the main organisations and repositories.
 * [jenkins-x-buildpacks](https://github.com/jenkins-x-buildpacks) contains the available [build packs](/docs/managing-jx/common-tasks/build-packs/)
 * [jenkins-x-charts](https://github.com/jenkins-x-charts) the main helm charts we distribute
 * [jenkins-x-images](https://github.com/jenkins-x-images) contains some custom docker image builds
-* [jenkins-x-quickstarts](https://github.com/jenkins-x-quickstarts) the quickstart projects used by [create quickstart](/docs/getting_started/first_project/create-quickstart/)
+* [jenkins-x-quickstarts](https://github.com/jenkins-x-quickstarts) the quickstart projects used by [create quickstart](/docs/getting-started/first_project/create-quickstart/)
 * [jenkins-x-test-projects](https://github.com/jenkins-x-test-projects) test projects we use in test cases 
 
 ## Repositories

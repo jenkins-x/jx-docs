@@ -11,7 +11,7 @@ You can create new Spring Boot applications using the [Spring Boot Initializr](h
  
 However another alternative is to use the [jx create spring](/commands/jx_create_spring) command which provides a fast automated path.
 
-There is a [demo of using the command: jx create spring](/docs/getting_started/demos_talks_posts/create_spring/) or you can try it out yourself in a terminal:
+There is a [demo of using the command: jx create spring](/docs/getting-started/demos_talks_posts/create_spring/) or you can try it out yourself in a terminal:
 
 
 ```shell
