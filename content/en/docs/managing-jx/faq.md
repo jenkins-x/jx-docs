@@ -100,7 +100,7 @@ There's a few options for defining which docker registry owner to use:
 dockerRegistryHost: gcr.io
 dockerRegistryOwner: my-gcr-project-id
 ```
-* specify it in the [Environment CRD](/docs/contributing/components/custom-resources/) called `dev` at `env.spec.teamSettings.dockerRegistryOrg`
+* specify it in the [Environment CRD](/docs/reference/components/custom-resources/) called `dev` at `env.spec.teamSettings.dockerRegistryOrg`
 * define the environment variable `DOCKER_REGISTRY_ORG`
 
 If none of those are found then the code defaults to the git repository owner.

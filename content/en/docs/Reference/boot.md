@@ -137,11 +137,11 @@ The big advantage of Vault is it means a team of folks can then easily run `jx b
 
 Jenkins X supports a number of engines for handling webhooks and optionally supporting ChatOps.
 
-[Prow](/docs/contributing/components/prow/) and [Lighthouse](/architecture/lighthouse/) support webhooks and ChatOps whereas Jenkins just supports webhooks.
+[Prow](/docs/reference/components/prow/) and [Lighthouse](/architecture/lighthouse/) support webhooks and ChatOps whereas Jenkins just supports webhooks.
 
 ### Prow
 
-[Prow](/docs/contributing/components/prow/) is currently the default webhook and ChatOps engine when using [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/) and GitHub. 
+[Prow](/docs/reference/components/prow/) is currently the default webhook and ChatOps engine when using [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/) and GitHub. 
  
 Its configured via the `webhook: prow` in `jx-requirements.yml`
 
@@ -476,9 +476,9 @@ webhook: prow
 
 ## Source Repositories
 
-Boot automatically sets up any source repositories which exist in the [repositories/templates](https://github.com/jenkins-x/jenkins-x-boot-config/tree/master/repositories/templates) folder as [SourceRepository](/docs/contributing/components/custom-resources/#sourcerepository)  custom resources and uses any associated [Scheduler](/docs/contributing/components/custom-resources/#scheduler) custom resources to regenerate the Prow configuration.
+Boot automatically sets up any source repositories which exist in the [repositories/templates](https://github.com/jenkins-x/jenkins-x-boot-config/tree/master/repositories/templates) folder as [SourceRepository](/docs/reference/components/custom-resources/#sourcerepository)  custom resources and uses any associated [Scheduler](/docs/reference/components/custom-resources/#scheduler) custom resources to regenerate the Prow configuration.
 
-Boot also automatically creates or updates any required webhooks on the git provider for your [SourceRepository](/docs/contributing/components/custom-resources/#sourcerepository) resources.
+Boot also automatically creates or updates any required webhooks on the git provider for your [SourceRepository](/docs/reference/components/custom-resources/#sourcerepository) resources.
 
 If you are using GitOps we hope to automate the population of the [repositories/templates](https://github.com/jenkins-x/jenkins-x-boot-config/tree/master/repositories/templates) folder as you import/create projects. Until then you can manually create a Pull Request on your boot git repository via [jx step create pullrequest repositories](/commands/jx_step_create_pullrequest_repositories/)
 

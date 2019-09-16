@@ -88,7 +88,7 @@ Then all quickstarts found in `my-github-org` will be listed in addition to the 
 
 ## Customising your teams quickstarts
 
-You can configure at a team level the quickstarts which are presented to you in the `jx create quickstart` command. These settings are stored in the [Environment Custom Resource](/docs/contributing/components/custom-resources/) in Kubernetes.
+You can configure at a team level the quickstarts which are presented to you in the `jx create quickstart` command. These settings are stored in the [Environment Custom Resource](/docs/reference/components/custom-resources/) in Kubernetes.
 
 To add the location of a set of quickstarts you can use the [jx create quickstartlocation](/commands/jx_create_quickstartlocation/) command.
 
