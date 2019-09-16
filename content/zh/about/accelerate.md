@@ -84,6 +84,6 @@ Jenkins X 旨在帮助多语言的应用开发者。目前 Jenkins X 具备自�
 
 Jenkins X 同样提供了很多插件，比如自动化度量数据收集和可视化工具：Grafana 和 Prometheus。集中化的度量可以帮助我们查看构建和部署在 Kubernetes 上的应用指标。
 
-[DevPods](/developing/devpods/) 是一个全新的特性，可以帮助开发人员在本地 IDE 中编辑代码，并自动化同步到云环境上进行构建和重新部署。
+[DevPods](/docs/reference/devpods/) 是一个全新的特性，可以帮助开发人员在本地 IDE 中编辑代码，并自动化同步到云环境上进行构建和重新部署。
 
 Jenkins X 相信自动化可以帮助开发者在云环境下进行试验，使用不同的技术，并通过反馈让他们更快的做出最佳决策。

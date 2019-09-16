@@ -62,9 +62,9 @@ and delete a preview by choosing one to delete via [jx delete preview](/commands
 
 ## How do I add other services into a Preview?
 
-When you create a Pull Request by default Jenkins X creates a new [Preview Environment](/about/features/#preview-environments). Since this is a new dynamic namespace you may want to configure additional microservices in the namespace so you can properly test your preview build.
+When you create a Pull Request by default Jenkins X creates a new [Preview Environment](/docs/concepts/features/#preview-environments). Since this is a new dynamic namespace you may want to configure additional microservices in the namespace so you can properly test your preview build.
 
-To find out more see [how to add dependent charts, services or configuration to your preview environment](/developing/preview/#adding-more-resources)
+To find out more see [how to add dependent charts, services or configuration to your preview environment](/docs/reference/preview/#adding-more-resources)
 
 
 ## Can I use my existing release pipeline?
@@ -79,7 +79,7 @@ The kubernetes resources being deployed are defined as YAML files in the source 
 
 Then the Jenkins X release pipeline automatically tars up the YAML files into an immutable versioned tarball (using the same version number as the docker image, git tag and release notes) and deploys it into a chart repository of your choice (defaults to chartmuseum but you can easily switch that to cloud storage/nexus/whatever) so that the immutable release can be easily used by any promotion.
 
-Promotion in Jenkins X is completely separate to Release & we support promoting any releases if packaged as a helm chart. Promotion via [jx promote](/developing/promote/) CLI generates a Pull Request in the git repository for an environment (Staging, Canary, Production or whatever). This is GitOps basically - specifying which versions and configurations of which apps are in each environment using a git repository and configuration as code.
+Promotion in Jenkins X is completely separate to Release & we support promoting any releases if packaged as a helm chart. Promotion via [jx promote](/docs/using/tasks/promote/) CLI generates a Pull Request in the git repository for an environment (Staging, Canary, Production or whatever). This is GitOps basically - specifying which versions and configurations of which apps are in each environment using a git repository and configuration as code.
 
 The PR triggers a CI pipeline to verify the changes are valid (e.g. the helm chart exists and can be downloaded, the docker images exist etc). Whenever the PR gets merged (could be automatically or may require additional reviews/+1s/JIRA/ServiceNow tickets or whatever) - then another pipeline is triggered to apply the helm charts from the master branch to the destination k8s cluster and namespace.
 
@@ -99,7 +99,7 @@ There's a few options for defining which docker registry owner to use:
 dockerRegistryHost: gcr.io
 dockerRegistryOwner: my-gcr-project-id
 ```
-* specify it in the [Environment CRD](/architecture/custom-resources/) called `dev` at `env.spec.teamSettings.dockerRegistryOrg`
+* specify it in the [Environment CRD](/docs/contributing/components/custom-resources/) called `dev` at `env.spec.teamSettings.dockerRegistryOrg`
 * define the environment variable `DOCKER_REGISTRY_ORG`
 
 If none of those are found then the code defaults to the git repository owner.
@@ -108,7 +108,7 @@ For more details the code to resolve it is [here](https://github.com/jenkins-x/j
 
 ## What if my team does not want to use helm?
 
-To help automate CI/CD with GitOps we assume helm charts are created as part of the automated project setup and CI/CD. e.g. just [import your source code](/developing/import/) and a docker image + helm chart will be generated for you - the developers don't need to know or care if they don't want to use helm:
+To help automate CI/CD with GitOps we assume helm charts are created as part of the automated project setup and CI/CD. e.g. just [import your source code](/docs/using/tasks/import/) and a docker image + helm chart will be generated for you - the developers don't need to know or care if they don't want to use helm:
 
 If a developer wants to specifically create a specific resource (e.g. `Secret, ConfigMap` etc) they can just hack the YAML directly in `charts/myapp/templates/*.yaml`. Increasingly most IDEs now have UI wizards for creating + editing kubernetes resources.
 
@@ -120,7 +120,7 @@ Then if you wish to use another configuration management tool you can add it in 
 
 ## How do I change the domain of serverless apps?
 
-If you use [serverless apps](/developing/serverless-apps/) with Knative we don't use thee default exposecontroller mechanism for defaulting the `Ingress` resources since knative does not use kubernetes `Service` resources.
+If you use [serverless apps](/docs/managing/tutorials/serverless-apps/) with Knative we don't use thee default exposecontroller mechanism for defaulting the `Ingress` resources since knative does not use kubernetes `Service` resources.
 
 You can work around this by manually editing the _knative_ config via:
 

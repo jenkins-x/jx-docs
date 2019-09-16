@@ -120,5 +120,5 @@ That should do it, you should now be able to run pipelines and store images in t
 
 ### Mount a Secret for your registry
 
-Your docker registry will require a Secret to be mounted into the [Pod Templates](/architecture/pod-templates/).
+Your docker registry will require a Secret to be mounted into the [Pod Templates](/docs/managing/tasks/pod-templates/).
 

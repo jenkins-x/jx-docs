@@ -84,7 +84,7 @@ If you prefer email then join us on the [jenkins-developers mailing list](https:
 
 It will be lots of fun!
 
-Check out the [contribution guide](/contribute/) for some tips on how to get started
+Check out the [contribution guide](/docs/contributing/) for some tips on how to get started
 
 ### Office Hours
 

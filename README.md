@@ -70,7 +70,7 @@ Make sure you've built the dockerized Hugo mentioned above. If you called it som
 
 # Contribution
 
-Please visit the contributing guide for the documentation available at [Jenkins X website](https://jenkins-x.io/contribute/documentation/).
+Please visit the contributing guide for the documentation available at [Jenkins X website](https://jenkins-x.io/docs/contributing/documentation/).
 
 ## Localization
 

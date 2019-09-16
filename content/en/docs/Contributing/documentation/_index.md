@@ -161,6 +161,38 @@ Sometimes it may take a few days for a review to happen (depends on how many are
 
 Once the review is done, your changes will be merged into the master branch, and the site will be updated.
 
+## Working With The Local Hugo Server
+
+As you're changing things and adding new content, your local Hugo server might get a bit wonky at times or you'll want to see what errors it's throwing. Here's a few simple commands to work with your local Hugo:
+
+### See the Hugo Logs
+
+```cmd
+$ docker-compose logs -f server
+```
+
+Leave `-f` off if you don't want new log entries to show up in your console. (ctrl-c to escape when `-f` is on)
+
+### Restart the Hugo Server
+
+```cmd
+$ docker-compose restart server
+```
+
+### Stop the Hugo Server
+
+```cmd
+$ docker-compose stop server
+```
+
+or
+
+```cmd
+$ docker-compose down
+```
+
+to shut down everything started by docker-compose
+
 ## Syntax Reference
 
 ### Standard Syntax
@@ -302,7 +334,7 @@ This is a warning, which should be reserved for *important* information like bre
 {{% /warning %}}
 
 {{% note "Pull Requests and Branches" %}}
-Similar to [contributing to Jenkins X development](/contribute/development/), the Jenkins X team expects you to create a separate branch/fork when you make your contributions to the Jenkins X docs.
+Similar to [contributing to Jenkins X development](/docs/contributing/code/), the Jenkins X team expects you to create a separate branch/fork when you make your contributions to the Jenkins X docs.
 {{% /note %}}
 
 [abe]: https://en.wikipedia.org/wiki/Kobo_Abe
@@ -311,7 +343,7 @@ Similar to [contributing to Jenkins X development](/contribute/development/), th
 [charcount]: http://www.lettercount.com/
 [`docs/static/images/showcase/`]: https://github.com/jenkins-x/jx/tree/master/docs/static/images/showcase/
 [ghforking]: https://help.github.com/articles/fork-a-repo/
-[hugodev]: /contribute/development/
+[hugodev]: /docs/contributing/code/
 [shortcodeparams]: content-management/shortcodes/#shortcodes-without-markdown
 [sourceforge]: http://docutils.sourceforge.net/docs/ref/rst/directives.html#admonitions
 [templating function]: /functions/

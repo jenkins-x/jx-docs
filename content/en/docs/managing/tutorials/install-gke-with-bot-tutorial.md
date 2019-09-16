@@ -536,7 +536,7 @@ Jenkins X installation completed successfully
 Your Kubernetes context is now set to the namespace: jx 
 To switch back to your original namespace use: jx namespace default
 Or to use this context/namespace in just one terminal use: jx shell
-For help on switching contexts see: https://jenkins-x.io/developing/kube-context/
+For help on switching contexts see: https://jenkins-x.io/docs/using/tasks/kube-context/
 
 To import existing projects into Jenkins:       jx import
 To create a new Spring Boot microservice:       jx create spring -d web -d actuator
@@ -631,7 +631,7 @@ Open the Jenkins console via    jx console
 You can list the pipelines via: jx get pipelines
 When the pipeline is complete:  jx get applications
 
-For more help on available commands see: https://jenkins-x.io/developing/browsing/
+For more help on available commands see: https://jenkins-x.io/docs/using/tasks/browsing/
 
 Note that your first pipeline may take a few minutes to start while the necessary images get downloaded!
 

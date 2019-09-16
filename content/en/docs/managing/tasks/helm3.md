@@ -4,7 +4,7 @@ linktitle: Helm 3
 description: Using Helm 3 with Jenkins X 
 ---
 
-Jenkins X uses [Helm](https://www.helm.sh/) to install both Jenkins X and to install the applications you create in each of the [Environments](/about/features/#environments) (like `Staging` and `Production`)
+Jenkins X uses [Helm](https://www.helm.sh/) to install both Jenkins X and to install the applications you create in each of the [Environments](/docs/concepts/features/#environments) (like `Staging` and `Production`)
 
 **NOTE** until Helm 3 is GA we highly recommend folks use [Helm 2.x without Tiller](/news/helm-without-tiller/)
 
@@ -49,7 +49,7 @@ You can view the current settings for your team via [jx get helmbin](/commands/j
 jx get helmbin
 ```
 
-Basically the [pod templates](/architecture/pod-templates/) contain both the binaries:
+Basically the [pod templates](/docs/managing/tasks/pod-templates/) contain both the binaries:
 
 * `helm` which is a 2.x distro of helm
 * `helm3` which is a 3.x distro of helm

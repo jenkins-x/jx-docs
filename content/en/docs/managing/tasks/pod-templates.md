@@ -44,7 +44,7 @@ pipeline {
  
 ## Submitting new Pod Templates
 
-If you are working on a new [build pack](/architecture/build-packs) then we'd love you to [submit](/contribute/) a new pod template and we can include it in the Jenkins X distribution!
+If you are working on a new [build pack](/architecture/build-packs) then we'd love you to [submit](/docs/contributing/) a new pod template and we can include it in the Jenkins X distribution!
 
 There now follows instructions on how to do this - please if anything is not clear come [join the community and just ask](/community/) we are happy to help!
 
@@ -69,7 +69,7 @@ e.g. [builder-maven](https://github.com/jenkins-x/builder-maven) uses a [Dockerf
 
 So the simplest thing could be to copy a similar builder - like [builder-maven](https://github.com/jenkins-x/builder-maven) and then edit the `Dockerfile` to add whatever build tools you need. 
 
-We love Pull Requests and [contributions](/contribute/) so please submit Pull Requests for new build containers and Pod Templates and we're more than happy to [help](/contribute/)!
+We love Pull Requests and [contributions](/docs/contributing/) so please submit Pull Requests for new build containers and Pod Templates and we're more than happy to [help](/docs/contributing/)!
 
 ## Adding your own Pod Templates
 

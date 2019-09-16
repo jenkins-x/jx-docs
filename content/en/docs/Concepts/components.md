@@ -7,10 +7,10 @@ description: Component overview of a typical Jenkins X installation
 An installation of Jenkins X consists of:
 
 * a Development Environment per team which is a [kubernetes namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/)
-* zero to many other [Permanent Environments](/about/features/#environments) 
+* zero to many other [Permanent Environments](/docs/concepts/features/#environments) 
   * the out of the box is for each team to get their own `Staging` and `Production` environments
   * each team can have as many environments as they wish and can call them whatever they like 
-* optional [Preview Environments](/about/features/#preview-environments) 
+* optional [Preview Environments](/docs/concepts/features/#preview-environments) 
 
 Typically each environment is associated with its own [kubernetes namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/) which are usually different to ensure clean isolation between the environments. 
 
@@ -20,7 +20,7 @@ Though technically 2 teams could share the same underlying namespace for, say, `
 
 In the dev environment we have installed a number of core applications we believe are required at a minimum to start folks off with CI/CD on Kubernetes. 
 
-We also support [addons](/about/features/#applications) to extend this core set. 
+We also support [addons](/docs/concepts/features/#applications) to extend this core set. 
 
 Jenkins X comes with configuration that wires these services together meaning everything works together straight away. This dramatically reduces the time to get started with Kubernetes as all the passwords, environment variables and config files are all setup up to work with each other.
 
@@ -32,13 +32,13 @@ Jenkins X comes with configuration that wires these services together meaning ev
 
 ## Permanent Environments
 
-These [environments](/about/features/#environments), like `Staging` and `Production` use GitOps to manage themselves and so each have a git repository containing the source code to configure all the applications and services which are deployed there.
+These [environments](/docs/concepts/features/#environments), like `Staging` and `Production` use GitOps to manage themselves and so each have a git repository containing the source code to configure all the applications and services which are deployed there.
 
 Typically we use Helm charts in these git repositories to define which charts are to be installed, which versions of them and any environment specific configuration and additional resources (e.g. Secrets or operational applications like Prometheus etc)
 
 ## Preview Environments
 
-[Preview Environments](/about/features/#preview-environments) are similar to [Permanent Environments](/about/features/#environments) in that they are defined in source code using Helm charts.
+[Preview Environments](/docs/concepts/features/#preview-environments) are similar to [Permanent Environments](/docs/concepts/features/#environments) in that they are defined in source code using Helm charts.
 
 The main difference is preview environments are configured inside the application source code in the `./chart/preview` folder.
 
@@ -47,5 +47,5 @@ Also they are not permanent but created on a Pull Request to an applications git
 
 ## Ingress Custom Annotations
 
-To learn how to add custom annotations to the ingress controller, please see [How To Add Custom Annotations to Ingress Controller?](/faq/develop/#how-to-add-custom-annotations-to-ingress-controller)
+To learn how to add custom annotations to the ingress controller, please see [How To Add Custom Annotations to Ingress Controller?](/docs/managing/faq/#how-to-add-custom-annotations-to-ingress-controller)
 

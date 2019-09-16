@@ -30,7 +30,7 @@ description: 在你的 IDE 中使用 Jenkins X
 * 轻松地浏览 Jenkins 流水线页面、git 仓库、构建日志或者应用
   * Jenkins X 浏览器的右键点击
   * 还有启动（停止）流水线！
-* 通过一个命令打开 [DevPods](/zh/developing/devpods/) ，保持源码与云上的相同容器镜像和 pod 模板同步
+* 通过一个命令打开 [DevPods](/zh/docs/reference/devpods/) ，保持源码与云上的相同容器镜像和 pod 模板同步
 
 
 

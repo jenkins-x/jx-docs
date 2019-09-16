@@ -19,7 +19,7 @@ And you are then good to go. Any new projects you create will be created in this
 
 ## Converting existing applications 
 
-If you already have a microservice and you want to convert it over to Knative Serve just [import the source repository into Jenkins X](/developing/import/) and you should be all done.
+If you already have a microservice and you want to convert it over to Knative Serve just [import the source repository into Jenkins X](/docs/using/tasks/import/) and you should be all done.
 
 If your application was imported recently into Jenkins X but before you installed and enabled Knative Serve you can use [jx edit deploy](/commands/jx_edit_deploy) to switch between the `default` deployment kind (using kubernetes `Deployment` and `Service` resources) and the `knative` kind (using Knative `Service` resource)
 
@@ -71,7 +71,7 @@ Or you can follow the [Knative install guide](https://www.knative.dev/docs/insta
 
 ## Using Knative Serve
 
-Now you have installed [Knative Serve](https://www.knative.dev/) snd [Gloo](https://gloo.solo.io/) you can [create a new quicktart](/developing/create-quickstart/) or [create a new spring boot application](developing/create-spring/) and it will default to using Knative Serve to elastically scale your microservice based on its load over HTTP.
+Now you have installed [Knative Serve](https://www.knative.dev/) snd [Gloo](https://gloo.solo.io/) you can [create a new quicktart](/docs/getting_started/first_project/create-quickstart/) or [create a new spring boot application](developing/create-spring/) and it will default to using Knative Serve to elastically scale your microservice based on its load over HTTP.
 
 You can check if Knative Serve is being used on your application by doing:
 

@@ -17,7 +17,7 @@ kubectl config set-context`kubectl config current-context` --namespace=foo
 
 ### 切换环境
 
-使用 [jx environment](/commands/jx_environment) 来切换 [环境](/zh/about/features/#environments)
+使用 [jx environment](/commands/jx_environment) 来切换 [环境](/zh/docs/concepts/features/#environments)
 
 ```shell
 jx environment

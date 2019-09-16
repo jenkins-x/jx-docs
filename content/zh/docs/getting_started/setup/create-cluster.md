@@ -28,7 +28,7 @@ __为了最好的入门体验，我们目前推荐使用 Google Container Engine
 
 该命令假设你有一个谷歌账户，并且已经设置了一个默认项目，可以再里面创建 Kubernetes 集群。
      
-现在 **[使用 Jenkins X 更快速地开发应用](/zh/getting-started/next/)**。
+现在 **[使用 Jenkins X 更快速地开发应用](/zh/docs/getting_started/next/)**。
        
 ### 使用亚马逊 (AWS)
 
@@ -48,7 +48,7 @@ sudo mv jx /usr/local/bin
 jx create cluster aws
 ```
 
-现在 **[使用 Jenkins X 更快速地开发应用](/zh/getting-started/next/)**。
+现在 **[使用 Jenkins X 更快速地开发应用](/zh/docs/getting_started/next/)**。
 
         
 ### 使用 Azure (AKS)
@@ -57,7 +57,7 @@ jx create cluster aws
 
     jx create cluster aks
     
-现在 **[使用 Jenkins X 更快速地开发应用](/zh/getting-started/next/)**。
+现在 **[使用 Jenkins X 更快速地开发应用](/zh/docs/getting_started/next/)**。
     
 ### 使用 Minikube (local)    
     
@@ -72,7 +72,7 @@ jx create cluster aws
 
     jx create cluster minikube
 
-现在 **[使用 Jenkins X 更快速地开发应用](/zh/getting-started/next/)**。
+现在 **[使用 Jenkins X 更快速地开发应用](/zh/docs/getting_started/next/)**。
 
 ### 故障排除
 

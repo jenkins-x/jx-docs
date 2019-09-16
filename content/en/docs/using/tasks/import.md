@@ -83,7 +83,7 @@ $ jx import --branches ".*"
 
 Usually a team uses the same naming conventions for branches so you may wish to configure the branch patterns at a team level so that they will be used by default if anyone in your team runs [jx import](/commands/jx_import), [jx create spring](/commands/jx_create_spring) or [jx create quickstart](/commands/jx_create_quickstart). 
 
-These settings are stored in the [Environment Custom Resource](/architecture/custom-resources/) in Kubernetes.
+These settings are stored in the [Environment Custom Resource](/docs/contributing/components/custom-resources/) in Kubernetes.
 
 To set the branch patterns for your team  [jx edit branchpattern](/commands/jx_edit_branchpattern/) command.
 

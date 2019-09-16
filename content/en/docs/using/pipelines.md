@@ -4,33 +4,33 @@ linktitle: Jenkins X Pipelines Questions
 description: Questions on how to use Serverless Jenkins X Pipelines
 ---
 
-For more background see the guide on [Serverless Jenkins X Pipelines](/architecture/jenkins-x-pipelines/) using [Tekton](https://tekton.dev/). There is also the [Jenkins X Pipelines Syntax Reference](/architecture/pipeline-syntax-reference/)
+For more background see the guide on [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) using [Tekton](https://tekton.dev/). There is also the [Jenkins X Pipelines Syntax Reference](/docs/reference/pipeline-syntax-reference/)
 
 ## How do I add a custom step?
 
-To add a new custom step to your `jenkins-x.yml` file see [how to use the jx create step](/architecture/jenkins-x-pipelines/#customising-the-pipelines)
+To add a new custom step to your `jenkins-x.yml` file see [how to use the jx create step](/docs/concepts/jenkins-x-pipelines/#customising-the-pipelines)
 
 ## How do Jenkins X Pipelines compare to Jenkins pipelines?
 
-See [the differences between Jenkins X and Jenkins Pipelines](/architecture/jenkins-x-pipelines/#differences-to-jenkins-pipelines)
+See [the differences between Jenkins X and Jenkins Pipelines](/docs/concepts/jenkins-x-pipelines/#differences-to-jenkins-pipelines)
 
 ## How do I get IDE completion editing `jenkins-x.yml`
 
-See the IDE guide for [IDEA](/architecture/jenkins-x-pipelines/#editing-in-vs-code) and [VS Code](/architecture/jenkins-x-pipelines/#editing-in-vs-code)
+See the IDE guide for [IDEA](/docs/concepts/jenkins-x-pipelines/#editing-in-vs-code) and [VS Code](/docs/concepts/jenkins-x-pipelines/#editing-in-vs-code)
 
 ## What environment variables are available by default inside a pipeline?
 
-See the [default environment variables created for pipeline steps](/architecture/jenkins-x-pipelines/#default-environment-variables)
+See the [default environment variables created for pipeline steps](/docs/concepts/jenkins-x-pipelines/#default-environment-variables)
 
 ## Is there a reference for the syntax?
 
-See the [Jenkins X Pipelines Syntax Reference](/architecture/pipeline-syntax-reference/)
+See the [Jenkins X Pipelines Syntax Reference](/docs/reference/pipeline-syntax-reference/)
 
 ## How do I mount a Secret or ConfigMap?
 
 Each step in a Jenkins X Pipeline in the `jenkins-x.yml` file is basically a [Container](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.15/#container-v1-core) from kubernetes so you can specify the image, resource limitts, environment variables and mount them from a `ConfigMap` or `Secret`
 
-You can see [an example of mounting a Secrett to an environment variable here](/architecture/pipeline-syntax-reference/#full-pipeline-definition-in-jenkins-x-yml)
+You can see [an example of mounting a Secrett to an environment variable here](/docs/reference/pipeline-syntax-reference/#full-pipeline-definition-in-jenkins-x-yml)
 
 If you are inside a shell script you can also use the [jx step credential](/commands/jx_step_credential/)
 

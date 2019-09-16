@@ -52,7 +52,7 @@ jx edit env production --remote
 
 You need to manually disable the release pipeline in the Dev cluster. 
 
-e.g. by removing the `postsubmit` setting in your Prow configuration if you are using [serverless Jenkins X Pipelines and tekton](/architecture/jenkins-x-pipelines/) - or comment out the `jx step helm apply` command in your `Jenkinsfile` if using static jenkins server
+e.g. by removing the `postsubmit` setting in your Prow configuration if you are using [serverless Jenkins X Pipelines and tekton](/docs/concepts/jenkins-x-pipelines/) - or comment out the `jx step helm apply` command in your `Jenkinsfile` if using static jenkins server
 
 
 ## Installing Environment Controller
@@ -76,7 +76,7 @@ If you prefer you can install the helm chart `jenkins-x/environment-controller` 
 
 ## Installing Ingress Controller
 
-If you don't already have any kind of Ingress Controller in your remote `Staging` / `Production` cluster then it is recommend - particularly if you want to try out our [quickstarts](/developing/create-quickstart/) which depend on Ingress to be able to be used from a web browser.
+If you don't already have any kind of Ingress Controller in your remote `Staging` / `Production` cluster then it is recommend - particularly if you want to try out our [quickstarts](/docs/getting_started/first_project/create-quickstart/) which depend on Ingress to be able to be used from a web browser.
 
 To install the default ingress controller into a remote cluster (which doesn't have Jenkins X installed) you can use the command [jx create addon ingctl](/commands/jx_create_addon_ingress/)
 
@@ -91,11 +91,11 @@ This will setup the Ingress Controller; find its external domain and then setup 
 
 On startup the Environment Controller registers itself into the github repository as a webhook endpoint using its LoadBalancer service IP address. If you are using a custom ingress/DNS endpoint you can override this via the `webhookUrl` chart value or [--webhook-url CLI option](/commands/jx_create_addon_environment/)
 
-Whenever there is a push to the `master` branch (PRs and feature branches are handled by your Development cluster) the Environment Controller triggers a new [Jenkins X Pipeline](/architecture/jenkins-x-pipelines/) for the Promotion. All other push events on other branches are ignored (as they are processed by the Development cluster).
+Whenever there is a push to the `master` branch (PRs and feature branches are handled by your Development cluster) the Environment Controller triggers a new [Jenkins X Pipeline](/docs/concepts/jenkins-x-pipelines/) for the Promotion. All other push events on other branches are ignored (as they are processed by the Development cluster).
 
-Then the tekton controller turns this set of Pipeline resources is turned into one or more Pods which run the pipeline. By default promotion pipelines just use a single pod - but you can [customise your deployment pipeline](/architecture/jenkins-x-pipelines/#customising-the-pipelines) which may use sequential/parallel tasks which result in multiple pods.
+Then the tekton controller turns this set of Pipeline resources is turned into one or more Pods which run the pipeline. By default promotion pipelines just use a single pod - but you can [customise your deployment pipeline](/docs/concepts/jenkins-x-pipelines/#customising-the-pipelines) which may use sequential/parallel tasks which result in multiple pods.
 
-Because Environment Controller reacts purely to merges to the environment git repository and we are using canonical git source code; it works with both Static Jenkins Servers and [serverless Jenkins X Pipelines and tekton](/architecture/jenkins-x-pipelines/) in the Development cluster.
+Because Environment Controller reacts purely to merges to the environment git repository and we are using canonical git source code; it works with both Static Jenkins Servers and [serverless Jenkins X Pipelines and tekton](/docs/concepts/jenkins-x-pipelines/) in the Development cluster.
 
 ## Demo
 

@@ -8,7 +8,7 @@ weight: 30
 You may be wondering how Jenkins X introduce changes to Jenkins X. Of course, Jenkins X is built using Jenkins X itself! That means that new changes to the project go through a CI process, and are built and tested using pipelines that run on a Jenkins X Kubernetes cluster.
 
 ## Pipelines
-A Pull Request in the [jx repository](https://github.com/jenkins-x/jx) will automatically trigger some jobs to do CI. The jobs are triggered [by Prow](/architecture/prow/), and we can [configure which jobs to execute](https://github.com/jenkins-x/prow-config-tekton/blob/f1a74a38c2936722f8507769e5a30b56ca96fe45/prow/config.yaml#L902-L932). The jobs with always_run configured to be true, will be ran when the PR is opened. All jobs (independently of having always_run set to true or false) can be manually triggered writing a comment in the PR. The comment needed to trigger the job is also in the configuration, in the trigger key. For example, to trigger the end-to-end tests manually, you may write a new comment in the PR containing "/test bdd", and the bdd job will be triggered.
+A Pull Request in the [jx repository](https://github.com/jenkins-x/jx) will automatically trigger some jobs to do CI. The jobs are triggered [by Prow](/docs/contributing/components/prow/), and we can [configure which jobs to execute](https://github.com/jenkins-x/prow-config-tekton/blob/f1a74a38c2936722f8507769e5a30b56ca96fe45/prow/config.yaml#L902-L932). The jobs with always_run configured to be true, will be ran when the PR is opened. All jobs (independently of having always_run set to true or false) can be manually triggered writing a comment in the PR. The comment needed to trigger the job is also in the configuration, in the trigger key. For example, to trigger the end-to-end tests manually, you may write a new comment in the PR containing "/test bdd", and the bdd job will be triggered.
 
 The jobs all have a name and a context [in the configuration](https://github.com/jenkins-x/prow-config-tekton/blob/f1a74a38c2936722f8507769e5a30b56ca96fe45/prow/config.yaml#L902-L932). The name is the name what will show up on GitHub, and the context is the Jenkins X pipeline to execute.
 
@@ -16,7 +16,7 @@ The jobs all have a name and a context [in the configuration](https://github.com
 
 These pipelines are defined in the root of the jx repository. For example, [here you can see the bdd pipeline](https://github.com/jenkins-x/jx/blob/master/jenkins-x-bdd.yml) that executes the end-to-end (e2e) tests that will get triggered when we tell Prow to execute the bdd job.
 
-The pipelines that are executed are [Jenkins X pipelines](/architecture/jenkins-x-pipelines/), that underneath use [Tekton pipelines](https://cloud.google.com/tekton/). These pipelines execute tests to make sure everything still works. Typically, they execute unit tests and functional e2e tests.
+The pipelines that are executed are [Jenkins X pipelines](/docs/concepts/jenkins-x-pipelines/), that underneath use [Tekton pipelines](https://cloud.google.com/tekton/). These pipelines execute tests to make sure everything still works. Typically, they execute unit tests and functional e2e tests.
 
 Following our bdd pipeline example, here are the steps executed as part of [the bdd pipeline](https://github.com/jenkins-x/jx/blob/master/jenkins-x-bdd.yml)
 

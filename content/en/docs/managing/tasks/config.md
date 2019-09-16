@@ -93,4 +93,4 @@ e.g.
 jx create cluster gke --docker-registry eu.gcr.io
 ```   
 
-Though if you use a different Docker Registry you will probably need to [also modify the secret for connecting to docker](/architecture/docker-registry/#update-the-config-json-secret).
+Though if you use a different Docker Registry you will probably need to [also modify the secret for connecting to docker](/docs/managing/tasks/docker-registry/#update-the-config-json-secret).

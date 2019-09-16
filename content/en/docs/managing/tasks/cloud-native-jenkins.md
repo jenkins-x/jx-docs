@@ -41,4 +41,4 @@ However you should be able to extend either of these build packs to add alternat
 
 ## Writing your own build pack
 
-We want you to [extend Jenkins X](/extending/) so please check out the [documentation on creating your own build packs](/architecture/build-packs/#creating-new-build-packs)
+We want you to [extend Jenkins X](/extending/) so please check out the [documentation on creating your own build packs](/docs/managing/tasks/build-packs/#creating-new-build-packs)

@@ -79,7 +79,7 @@ We try to automate this setting when using `jx create cluster`  e.g. on AWS we d
 
 On [EKS](/commands/jx_create_cluster_eks/) we default to using ECR to avoid this issue. Similarly we will soon default to GCR and ACR on GKE and AKS respectively.
 
-So a workaround is to use a real [external docker registry](/architecture/docker-registry/) or enable `insecure-registry` on your docker daemons on your compute nodes on your Kubernetes cluster.
+So a workaround is to use a real [external docker registry](/docs/managing/tasks/docker-registry/) or enable `insecure-registry` on your docker daemons on your compute nodes on your Kubernetes cluster.
 
 
 ## Helm fails with Error: UPGRADE FAILED: incompatible versions client[...] server[...]'
@@ -170,7 +170,7 @@ jx delete git token -n GitHub admin
 jx create git token -n GitHub admin
 ```
 
-More details on [using git and Jenkins X here](/developing/git/)
+More details on [using git and Jenkins X here](/docs/managing/tasks/git/)
 
 
 ## Invalid git token to scan a project
@@ -190,7 +190,7 @@ jx delete git token -n GitHub admin
 jx create git token -n GitHub admin
 ```
 
-More details on [using git and Jenkins X here](/developing/git/)
+More details on [using git and Jenkins X here](/docs/managing/tasks/git/)
 
 ## What are the credentials to access core services?
 
@@ -236,7 +236,7 @@ That should regenerate your local `~/kube/config` file and so `kubectl get node`
 
 ## How can I diagnose exposecontroller issues?
 
-When you [promote a new version of your application to an environment](/faq/develop/#how-does-promotion-actually-work), such as the Staging Environment a Pull Request is raised on the environment repository.
+When you [promote a new version of your application to an environment](/docs/managing/faq/#how-does-promotion-actually-work), such as the Staging Environment a Pull Request is raised on the environment repository.
 
 When the master pipeline runs on an environment a Kubernetes `Job` is created for [exposecontroller](https://github.com/jenkins-x/exposecontroller) which runs a pod until it terminates.
 
@@ -263,7 +263,7 @@ If you find you get lots of warnings in your pipelines like this...
 
 and promotion takes 30 minutes from a release pipeline on an application starting to the change hitting `Staging` then its mostly probably due to Webhooks.
 
-When we [import projects](/developing/import/) or [create quickstarts](/developing/create-quickstart/) we automate the setup of CI/CD pipelines for the git repository. What this does is setup Webhooks on the git repository to trigger Jenkins X to trigger pipelines (either using Prow for [serverless Jenkins X Pipelines](/architecture/jenkins-x-pipelines/) or the static jenkins server if not).
+When we [import projects](/docs/using/tasks/import/) or [create quickstarts](/docs/getting_started/first_project/create-quickstart/) we automate the setup of CI/CD pipelines for the git repository. What this does is setup Webhooks on the git repository to trigger Jenkins X to trigger pipelines (either using Prow for [serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) or the static jenkins server if not).
 
 However sometimes your git provider (e.g. [GitHub](https://github.com/) may not be able to do connect to your Jenkins X installation (e.g. due to networking / firewall issues).
 

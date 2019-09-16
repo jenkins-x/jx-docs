@@ -22,7 +22,7 @@ Once your user has access to the kubernetes cluster:
 
 * [install the jx binary](/docs/getting_started/setup/install//)
 
-If Jenkins X was installed in the namespace `jx` then the following should [switch your context](/developing/kube-context/) to the `jx` namespace:
+If Jenkins X was installed in the namespace `jx` then the following should [switch your context](/docs/using/tasks/kube-context/) to the `jx` namespace:
 
     jx ns jx
 

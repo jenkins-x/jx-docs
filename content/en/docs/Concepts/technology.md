@@ -27,7 +27,7 @@ One of the challenges of building docker images inside a kubernetes cluster is t
 
 Whats nice about skaffold is it abstracts your code or CLI away from those details; you can define the policy for building docker images in your `skaffold.yaml` file to switch between docker daemon, GCB or kaniko etc.
 
-Skaffold is also really useful inside [DevPods](/developing/devpods/) for doing fast incremental builds if you change the source code.
+Skaffold is also really useful inside [DevPods](/docs/reference/devpods/) for doing fast incremental builds if you change the source code.
 
 
 ## How does Helm compare to Skaffold?

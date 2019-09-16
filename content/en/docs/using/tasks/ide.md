@@ -30,7 +30,7 @@ If you then expand the `JENKINS X` navigation window you should see UI that upda
 * browse the Jenkins pipeline page, git repository, build logs or applications easily
   * right click on the Jenkins X explorer
   * start/stop pipelines too! 
-* open [DevPods](/developing/devpods/) with source code synchronisation in a single command in VS Code for developing inside the cloud with the same container images and pod templates as the CI/CD pipelines  
+* open [DevPods](/docs/reference/devpods/) with source code synchronisation in a single command in VS Code for developing inside the cloud with the same container images and pod templates as the CI/CD pipelines  
 
 ## IntelliJ
 

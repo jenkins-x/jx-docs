@@ -43,7 +43,7 @@ A `prowjob` is created, a new prow pipeline controller watches for these jobs an
 
 Jenkins X Pipelines use a new `jenkins-x.yml` file which is YAML instead of the Groovy `Jenkinsfile` used by Jenkins.
 
-However it's still reusing the same reusable and composable build packs under the covers. (The Jenkins X [build packs](/architecture/build-packs/) are actually written in Jenkins X Pipelines YAML).
+However it's still reusing the same reusable and composable build packs under the covers. (The Jenkins X [build packs](/docs/managing/tasks/build-packs/) are actually written in Jenkins X Pipelines YAML).
 
 One thing you will notice is that with Jenkins X Pipelines we don't need to copy/paste a large `Jenkinsfile` into each application's git repository; usually the generated `jenkins-x.yml` file is small, like this:
 
@@ -51,15 +51,15 @@ One thing you will notice is that with Jenkins X Pipelines we don't need to copy
 buildPack: maven
 ```
 
-That's it! What that basically means is at runtime the Jenkins X Pipeline will use the [build packs](/architecture/build-packs/) to generate the actual Tekton Pipeline.
+That's it! What that basically means is at runtime the Jenkins X Pipeline will use the [build packs](/docs/managing/tasks/build-packs/) to generate the actual Tekton Pipeline.
  
 ## Customizing the Pipelines
 
-Having automated [build packs](/architecture/build-packs/) to do all of your CI+CD is pretty awesome - as most of the time your microservices will all be compiled, tested, packaged, released and promoted in the same way. CI+CD is often undifferentiated heavy lifting we should just automate!
+Having automated [build packs](/docs/managing/tasks/build-packs/) to do all of your CI+CD is pretty awesome - as most of the time your microservices will all be compiled, tested, packaged, released and promoted in the same way. CI+CD is often undifferentiated heavy lifting we should just automate!
 
-However there are times you want to customize a [particular pipeline](/architecture/build-packs/#pipelines) (release, pull request, feature etc) and a particular [life cycle](/architecture/build-packs/#lifecycles) to change the actual steps invoked.
+However there are times you want to customize a [particular pipeline](/docs/managing/tasks/build-packs/#pipelines) (release, pull request, feature etc) and a particular [life cycle](/docs/managing/tasks/build-packs/#lifecycles) to change the actual steps invoked.
 
-You can read more about the [extension model](/architecture/build-packs/#pipeline-extension-model) to find out all you can do. Basically you can add steps before/after any life cycle or completely replace a set of life cycles or even opt out of the build pack completely and inline your pipelines inside your `jenkins-x.yml`
+You can read more about the [extension model](/docs/managing/tasks/build-packs/#pipeline-extension-model) to find out all you can do. Basically you can add steps before/after any life cycle or completely replace a set of life cycles or even opt out of the build pack completely and inline your pipelines inside your `jenkins-x.yml`
 
 For a quick way to add a new step into a pipeline life cycle you can use the [jx create step](/commands/jx_create_step/) command:
 
@@ -87,13 +87,13 @@ Jenkins X's JSON Schema is already registered with [schemastore.org](http://sche
 </figcaption>
 </figure>
 
-We'd love to improve this UX if you fancy [helping out](/contribute/).
+We'd love to improve this UX if you fancy [helping out](/docs/contributing/).
 
 ## Editing in IDEA
 
 This should already be interested out of the box due to the Jenkins X JSON Schema being registered with [schemastore.org](http://schemastore.org/json/) so editing your `jenkins-x.yml` file in IDEA will include smart completion and validation!
 
-We'd love to improve this UX if you fancy [helping out](/contribute/).
+We'd love to improve this UX if you fancy [helping out](/docs/contributing/).
 
 ## Default environment variables
 

@@ -26,7 +26,7 @@ Helm 通过文件 `requirements.yaml` 支持组合（一个 chart 可以包含�
 
 Skaffold 的好处是把你的代码或 CLI 从细节中抽象出来；你可以在文件 `skaffold.yaml` 中配置构建 docker 镜像的策略，切换 docker daemon、GCB 或 kaniko等。
 
-Skaffold 在 [DevPods](/developing/devpods/) 中也很有用，当你改变代码后可以执行快速增量构建。
+Skaffold 在 [DevPods](/docs/reference/devpods/) 中也很有用，当你改变代码后可以执行快速增量构建。
 
 ## Helm 和 Skaffold 比较？
 

@@ -80,6 +80,6 @@ Jenkins X aims to help polyglot application developers.  Right now Jenkins X has
 
 Jenkins X also provides many addons, for example Grafana and Prometheus for automated metrics collection and visualization.  In this example centralized metrics help understand how your applications behave when built and deployed on Kubernetes.
 
-[DevPods](/developing/devpods/) are another feature which enables developers to edit source code in their local IDE, behind the scenes it is then synced to the cloud and rapidly built and redeployed.
+[DevPods](/docs/reference/devpods/) are another feature which enables developers to edit source code in their local IDE, behind the scenes it is then synced to the cloud and rapidly built and redeployed.
 
 Jenkins X believes providing developers automation that helps them experiment in the cloud, with different technologies and  feedback empowers them to make the best decisions - faster.

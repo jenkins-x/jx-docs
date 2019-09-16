@@ -92,7 +92,7 @@ Then when you create a machine learning quickstart, the [Jenkins X build packs](
 * the language pack is then used to default these files if they don't already exist:
   * `Dockerfile` to package the application as a docker image
   * `jenkins-x.yml` to implement the CI / CD pipelines using declarative pipeline as code
-  * Helm Charts to deploy the application on Kubernetes and to implement [Preview Environments](/about/features/#preview-environments)
+  * Helm Charts to deploy the application on Kubernetes and to implement [Preview Environments](/docs/concepts/features/#preview-environments)
    
 ## Adding your own Quickstarts
 
@@ -136,7 +136,7 @@ Inside your project set repository, create a single file named `projectset` whic
 
 ## Customising your teams quickstarts
 
-You can configure at a team level the quickstarts which are presented to you in the `jx create mlquickstart` command. These settings are stored in the [Environment Custom Resource](/architecture/custom-resources/) in Kubernetes.
+You can configure at a team level the quickstarts which are presented to you in the `jx create mlquickstart` command. These settings are stored in the [Environment Custom Resource](/docs/contributing/components/custom-resources/) in Kubernetes.
 
 To add the location of a set of machine learning quickstarts you can use the [jx create quickstartlocation](/commands/jx_create_quickstartlocation/) command.
 

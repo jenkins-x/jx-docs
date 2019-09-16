@@ -123,7 +123,7 @@ This is a warning, which should be reserved for *important* information like bre
 {{% /warning %}}
 
 {{% note "Pull Requests and Branches" %}}
-和 [给 Jenkins X 贡献开发](/zh/contribute/development/)相似，当你想要给 Jenkins X 文档贡献时 Jenkins X 团队期望你创建一个独立的分支（派生）。
+和 [给 Jenkins X 贡献开发](/zh/docs/contributing/code/)相似，当你想要给 Jenkins X 文档贡献时 Jenkins X 团队期望你创建一个独立的分支（派生）。
 {{% /note %}}
 
 [abe]: https://en.wikipedia.org/wiki/Kobo_Abe
@@ -132,7 +132,7 @@ This is a warning, which should be reserved for *important* information like bre
 [charcount]: http://www.lettercount.com/
 [`docs/static/images/showcase/`]: https://github.com/jenkins-x/jx/tree/master/docs/static/images/showcase/
 [ghforking]: https://help.github.com/articles/fork-a-repo/
-[hugodev]: /contribute/development/
+[hugodev]: /docs/contributing/code/
 [shortcodeparams]: content-management/shortcodes/#shortcodes-without-markdown
 [sourceforge]: http://docutils.sourceforge.net/docs/ref/rst/directives.html#admonitions
 [templating function]: /functions/

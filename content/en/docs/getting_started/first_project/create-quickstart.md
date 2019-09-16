@@ -63,13 +63,13 @@ ls -al ~/.jx/draft/packs/github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/pa
 ls -al ~/.jx/draft/packs/github.com/jenkins-x-buildpacks/jenkins-x-classic/packs
 ```
 
-Then when you create a quickstart, use [jx create spring](/developing/create-spring/) or [jx import](developing/import/) the [Jenkins X build packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) are used to:
+Then when you create a quickstart, use [jx create spring](/docs/using/tasks/create-spring/) or [jx import](developing/import/) the [Jenkins X build packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) are used to:
 
 * find the right language pack. e.g. here are the current [list of language packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/tree/master/packs).
 * the language pack is then used to default these files if they don't already exist:
   * `Dockerfile` to package the application as a docker image
   * `Jenkinsfile` to implement the CI / CD pipelines using declarative pipeline as code
-  * Helm Charts to deploy the application on Kubernetes and to implement [Preview Environments](/about/features/#preview-environments)
+  * Helm Charts to deploy the application on Kubernetes and to implement [Preview Environments](/docs/concepts/features/#preview-environments)
    
 ## Adding your own Quickstarts
 
@@ -87,7 +87,7 @@ Then all quickstarts found in `my-github-org` will be listed in addition to the 
 
 ## Customising your teams quickstarts
 
-You can configure at a team level the quickstarts which are presented to you in the `jx create quickstart` command. These settings are stored in the [Environment Custom Resource](/architecture/custom-resources/) in Kubernetes.
+You can configure at a team level the quickstarts which are presented to you in the `jx create quickstart` command. These settings are stored in the [Environment Custom Resource](/docs/contributing/components/custom-resources/) in Kubernetes.
 
 To add the location of a set of quickstarts you can use the [jx create quickstartlocation](/commands/jx_create_quickstartlocation/) command.
 

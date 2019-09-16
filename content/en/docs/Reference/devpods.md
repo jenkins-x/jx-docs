@@ -4,9 +4,9 @@ linktitle: Dev Pods
 description: Develop in a pod on your cloud
 ---
 
-The initial focus of Jenkins X is around automating and improving CI/CD for kubernetes. The use of [Preview Environments](/about/features/#preview-environments) really helps to validate and approve Pull Requests before they get merged to `master`; but how do you try things out before you are ready submit a Pull Request?
+The initial focus of Jenkins X is around automating and improving CI/CD for kubernetes. The use of [Preview Environments](/docs/concepts/features/#preview-environments) really helps to validate and approve Pull Requests before they get merged to `master`; but how do you try things out before you are ready submit a Pull Request?
 
-Jenkins X has a concept of `Dev Pods` which are pods for developers to use as a terminal/shell which are based on the exact same operating system, docker containers and tools installed as the [pod templates](/architecture/pod-templates/) used in the Jenkins X CI/CD pipelines.
+Jenkins X has a concept of `Dev Pods` which are pods for developers to use as a terminal/shell which are based on the exact same operating system, docker containers and tools installed as the [pod templates](/docs/managing/tasks/pod-templates/) used in the Jenkins X CI/CD pipelines.
  
 This lets build, run tests or redeploy apps before you commit to git safe in the knowledge you're using the exact same tools as the CI/CD pipelines!
 
@@ -20,7 +20,7 @@ For example if you want to create a `maven` based DevPod use:
 jx create devpod -l maven
 ```     
 
-This will then create a new `DevPod` based on the maven based [pod template](/architecture/pod-templates/) and open your terminal inside that pod. You are now free to use the various tools like `git, docker, maven, skaffold, jx` which will all be using the same exact configuration as the CI/CD pipelines will.
+This will then create a new `DevPod` based on the maven based [pod template](/docs/managing/tasks/pod-templates/) and open your terminal inside that pod. You are now free to use the various tools like `git, docker, maven, skaffold, jx` which will all be using the same exact configuration as the CI/CD pipelines will.
 
 
 ## Using web based VS Code
@@ -160,7 +160,7 @@ Now if you edit code and trigger a docker rebuild, which for most languages is j
 
 ## Using an IDE
 
-One of the easiest ways to get started with DevPods is via an IDE such as [VS Code](https://code.visualstudio.com/). Check out the [Jenkins X plugins for IDEs](/developing/ide/)
+One of the easiest ways to get started with DevPods is via an IDE such as [VS Code](https://code.visualstudio.com/). Check out the [Jenkins X plugins for IDEs](/docs/using/tasks/ide/)
 
 VS Code has support which automates all the above so you can run a shell/sync quite easily. 
 

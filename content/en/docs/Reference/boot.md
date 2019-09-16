@@ -21,7 +21,7 @@ We also hit issues that the [jx create cluster](/commands/jx_create_cluster) and
 
 Users often struggled with understanding how to easily configure and override things; or upgrade values after things have been installed. 
 
-So we wanted to come up with a new cleaner approach which worked for every kind of installation and provided a standard way to extend and customise the configuration via [Jenkins X Pipelines](/architecture/jenkins-x-pipelines/) and helm style configuration.
+So we wanted to come up with a new cleaner approach which worked for every kind of installation and provided a standard way to extend and customise the configuration via [Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) and helm style configuration.
 
 
 ## Overview
@@ -136,11 +136,11 @@ The big advantage of Vault is it means a team of folks can then easily run `jx b
 
 Jenkins X supports a number of engines for handling webhooks and optionally supporting ChatOps.
 
-[Prow](/architecture/prow/) and [Lighthouse](/architecture/lighthouse/) support webhooks and ChatOps whereas Jenkins just supports webhooks.
+[Prow](/docs/contributing/components/prow/) and [Lighthouse](/architecture/lighthouse/) support webhooks and ChatOps whereas Jenkins just supports webhooks.
 
 ### Prow
 
-[Prow](/architecture/prow/) is currently the default webhook and ChatOps engine when using [Serverless Jenkins X Pipelines](/architecture/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/) and GitHub. 
+[Prow](/docs/contributing/components/prow/) is currently the default webhook and ChatOps engine when using [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/) and GitHub. 
  
 Its configured via the `webhook: prow` in `jx-requirements.yml`
 
@@ -164,9 +164,9 @@ webhook: prow
 
 ### Lighthouse
 
-[Lighthouse](/architecture/lighthouse/) is currently the default webhook and ChatOps engine when using [Serverless Jenkins X Pipelines](/architecture/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/) and a git server other than https://github.com. 
+[Lighthouse](/architecture/lighthouse/) is currently the default webhook and ChatOps engine when using [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/) and a git server other than https://github.com. 
 
-Once Lighthouse is more stable and well tested we'll make it the default for all installations using [Serverless Jenkins X Pipelines](/architecture/jenkins-x-pipelines/). 
+Once Lighthouse is more stable and well tested we'll make it the default for all installations using [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/). 
  
 Its configured via the `webhook: lighthouse` in `jx-requirements.yml`
 
@@ -252,7 +252,7 @@ webhook: lighthouse
 
 ### Bitbucket Server
 
-For this specify the URL of the `gitServer` and `gitKind: bitbucketserver`. If you want to use [Serverless Jenkins X Pipelines](/architecture/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/) then make sure you specify the [lighthouse webhook](#webhook) via `webhook: lighthouse`.
+For this specify the URL of the `gitServer` and `gitKind: bitbucketserver`. If you want to use [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/) then make sure you specify the [lighthouse webhook](#webhook) via `webhook: lighthouse`.
 
 ```yaml   
 cluster:
@@ -282,7 +282,7 @@ webhook: lighthouse
 
 ### Bitbucket Cloud
 
-For this specify`gitKind: bitbucketcloud`. If you want to use [Serverless Jenkins X Pipelines](/architecture/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/) then make sure you specify the [lighthouse webhook](#webhook) via `webhook: lighthouse`.
+For this specify`gitKind: bitbucketcloud`. If you want to use [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/) then make sure you specify the [lighthouse webhook](#webhook) via `webhook: lighthouse`.
 
 ```yaml   
 cluster:
@@ -312,7 +312,7 @@ webhook: lighthouse
 
 ### Gitlab
 
-For this specify the URL of the `gitServer` and `gitKind: gitlab`. If you want to use [Serverless Jenkins X Pipelines](/architecture/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/) then make sure you specify the [lighthouse webhook](#webhook) via `webhook: lighthouse`.
+For this specify the URL of the `gitServer` and `gitKind: gitlab`. If you want to use [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/) then make sure you specify the [lighthouse webhook](#webhook) via `webhook: lighthouse`.
 
 ```yaml   
 cluster:
@@ -475,18 +475,18 @@ webhook: prow
 
 ## Source Repositories
 
-Boot automatically sets up any source repositories which exist in the [repositories/templates](https://github.com/jenkins-x/jenkins-x-boot-config/tree/master/repositories/templates) folder as [SourceRepository](/architecture/custom-resources/#sourcerepository)  custom resources and uses any associated [Scheduler](/architecture/custom-resources/#scheduler) custom resources to regenerate the Prow configuration.
+Boot automatically sets up any source repositories which exist in the [repositories/templates](https://github.com/jenkins-x/jenkins-x-boot-config/tree/master/repositories/templates) folder as [SourceRepository](/docs/contributing/components/custom-resources/#sourcerepository)  custom resources and uses any associated [Scheduler](/docs/contributing/components/custom-resources/#scheduler) custom resources to regenerate the Prow configuration.
 
-Boot also automatically creates or updates any required webhooks on the git provider for your [SourceRepository](/architecture/custom-resources/#sourcerepository) resources.
+Boot also automatically creates or updates any required webhooks on the git provider for your [SourceRepository](/docs/contributing/components/custom-resources/#sourcerepository) resources.
 
 If you are using GitOps we hope to automate the population of the [repositories/templates](https://github.com/jenkins-x/jenkins-x-boot-config/tree/master/repositories/templates) folder as you import/create projects. Until then you can manually create a Pull Request on your boot git repository via [jx step create pullrequest repositories](/commands/jx_step_create_pullrequest_repositories/)
 
 
 ## Pipeline
 
-The install/upgrade process is defined in a [Jenkins X Pipeline](/architecture/jenkins-x-pipelines/) in a file called [jenkins-x.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jenkins-x.yml).
+The install/upgrade process is defined in a [Jenkins X Pipeline](/docs/concepts/jenkins-x-pipelines/) in a file called [jenkins-x.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jenkins-x.yml).
 
-Typically you won't need to edit this file; though if you do see the [editing guide](/architecture/jenkins-x-pipelines/#customising-the-pipelines).
+Typically you won't need to edit this file; though if you do see the [editing guide](/docs/concepts/jenkins-x-pipelines/#customising-the-pipelines).
 
 
 

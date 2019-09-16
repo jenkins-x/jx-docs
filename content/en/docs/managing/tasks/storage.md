@@ -68,7 +68,7 @@ By default [jx step stash](/commands/jx_step_stash/) will use your team's config
 
 If you need to you can unstash previously stored files via [jx step unstash](/commands/jx_step_unstash/)
 
-If you are in some Go source code and you have a URL from Jenkins X, such as a Build Log URL or Attachment from a [PipelineActivity Custom Resource](/architecture/custom-resources/) the URL could be in various forms such as:
+If you are in some Go source code and you have a URL from Jenkins X, such as a Build Log URL or Attachment from a [PipelineActivity Custom Resource](/docs/contributing/components/custom-resources/) the URL could be in various forms such as:
 
   * `gs://anotherBucket/mydir/something.txt` : using a GCS bucket on GCP
   * `s3://nameOfBucket/mydir/something.txt` : using S3 bucket on AWS

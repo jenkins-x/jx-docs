@@ -38,7 +38,7 @@ If you wish to name your cluster and provide your own admin password you can run
 
 Then follow all the prompts on the console (mostly just hitting enter will do).
 
-Note if you wish to use a different git provider than GitHub for your environments see [how to use a different git provider](/developing/git/#using-a-different-git-provider-for-environments)
+Note if you wish to use a different git provider than GitHub for your environments see [how to use a different git provider](/docs/managing/tasks/git/#using-a-different-git-provider-for-environments)
 
 ## Using the Google Cloud Shell
 
@@ -174,10 +174,10 @@ browser.
 
 
 
-Note if you wish to use a different git provider than GitHub for your environments see [how to use a different git provider](/developing/git/#using-a-different-git-provider-for-environments)
+Note if you wish to use a different git provider than GitHub for your environments see [how to use a different git provider](/docs/managing/tasks/git/#using-a-different-git-provider-for-environments)
 
 
-Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
+Now **[develop apps faster with Jenkins X](/docs/getting_started/next/)**.
 
 ### Connecting to the cluster from your laptop
 
@@ -199,7 +199,7 @@ Or if you are already logged in by previously using `gcloud init` or `gcloud aut
     jx create cluster gke --skip-login --verbose
 
 Those commands assume you have a google account and you've set up a default project that you can use to create the kubernetes cluster within.
-Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
+Now **[develop apps faster with Jenkins X](/docs/getting_started/next/)**.
 
 
 
@@ -231,7 +231,7 @@ This is not really intended for real production installations; but can be a quic
 
 When using `jx create cluster aws`, `jx create cluster eks` or `jx install --provider=(aws|eks)` you are prompted if you want to use DNS and optionally setup a wildcard DNS CNAME record on Route 53; if not we are assuming you're gonna avoid DNS to kick the tires on a single availability zone IP address by resolving the NLB host name to one of the availability zone IP addresses.
 
-Note if you wish to use a different git provider than GitHub for your environments see [how to use a different git provider](/developing/git/#using-a-different-git-provider-for-environments)
+Note if you wish to use a different git provider than GitHub for your environments see [how to use a different git provider](/docs/managing/tasks/git/#using-a-different-git-provider-for-environments)
 
 
 ### EKS
@@ -261,7 +261,7 @@ sudo mv jx /usr/local/bin
 jx create cluster aws
 ```
 
-Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
+Now **[develop apps faster with Jenkins X](/docs/getting_started/next/)**.
 
 
 ## Using Azure (AKS)
@@ -272,7 +272,7 @@ Use the [jx create cluster aks](/commands/jx_create_cluster_aks) command:
 
     jx create cluster aks
 
-Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
+Now **[develop apps faster with Jenkins X](/docs/getting_started/next/)**.
 
 
 ## Using Oracle (OKE)
@@ -285,7 +285,7 @@ This will use [oci](https://github.com/oracle/oci-cli) on your Oracle Cloud Infr
 
 Please add your $HOME/bin to $PATH otherwise jx will have issue invoking OCI CLI command. If you have already installed OCI CLI, please make sure it is in $PATH.
 
-Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
+Now **[develop apps faster with Jenkins X](/docs/getting_started/next/)**.
 
 ## Using IBM Cloud Kubernetes Service (IKS)
 
@@ -297,7 +297,7 @@ This will use [IBM Cloud CLI](https://console.bluemix.net/docs/cli/index.html#ov
 
 You need to make sure you have the $HOME/.jx/bin folder in your $PATH.
 
-Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
+Now **[develop apps faster with Jenkins X](/docs/getting_started/next/)**.
 
 ## Using Minikube (local)
 
@@ -339,7 +339,7 @@ If the above proceeds OK, you'll be greeted with `Please enter the name you wish
 
 * you can specify more cores than you actually have!
 
-Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
+Now **[develop apps faster with Jenkins X](/docs/getting_started/next/)**.
 
 ## Using Minishift (local)
 
@@ -351,7 +351,7 @@ To create a minishift VM with Jenkins X installed on it try the [jx create clust
 
     jx create cluster minishift
 
-Now **[develop apps faster with Jenkins X](/getting-started/next/)**.
+Now **[develop apps faster with Jenkins X](/docs/getting_started/next/)**.
 
 
 ## Troubleshooting

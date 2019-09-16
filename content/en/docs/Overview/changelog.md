@@ -47,7 +47,7 @@ kubectl scale deploy jenkins-x-monocular-prerender --replicas=0
 kubectl scale deploy jenkins-x-monocular-ui --replicas=0
 ``` 
 
-The latest [version stream release](/architecture/version-stream/) has removed monocular so if you [upgrade your platform
+The latest [version stream release](/docs/concepts/version-stream/) has removed monocular so if you [upgrade your platform
 ](/docs/managing/tasks/upgrade-jx/) this issue should be resolved. 
 
 We can always add monocular back as an optional [App](/apps) later on when it works again.
@@ -57,11 +57,11 @@ We can always add monocular back as an optional [App](/apps) later on when it wo
 
 Knative Build was our first attempt at building a serverless offering in Jenkins X. Since then Knative build got replaced with the more powerful Knative Build Pipelines which then got moved and renamed to [Tekton](https://tekton.dev/).
 
-So we highly recommend anyone who has created a Jenkins X installation using Knative build to move to a [Serverless Jenkins X Pipelines](/architecture/jenkins-x-pipelines/) cluster using Tekton instead.
+So we highly recommend anyone who has created a Jenkins X installation using Knative build to move to a [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) cluster using Tekton instead.
 
 Now the `jx` binary will warn that any attempt at using `--knative-build` when installing is deprecated.
 
-We will soon have a build pack for [Jenkinsfile runner](https://github.com/jenkinsci/jenkinsfile-runner) when using Tekton in case you need to reuse a Jenkinsfile within [Serverless Jenkins X Pipelines](/architecture/jenkins-x-pipelines/) and Tekton along with support for orchestrating `Jenkinsfile` within a [custom Jenkins server](/architecture/custom-jenkins/) 
+We will soon have a build pack for [Jenkinsfile runner](https://github.com/jenkinsci/jenkinsfile-runner) when using Tekton in case you need to reuse a Jenkinsfile within [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) and Tekton along with support for orchestrating `Jenkinsfile` within a [custom Jenkins server](/docs/managing/tasks/custom-jenkins/) 
 
 ## 21st May 2019: Skaffold upgrade to v0.29.0
 
@@ -84,7 +84,7 @@ We are pleased to announce 2.0.x of Jenkins X.
 
 We have changed some of the default CLI arguments when installing Jenkins X.
  
-* we are now deprecating the use of Knative build with Prow / Serverless Jenkins in favor of [Jenkins X Pipelines and Tekton](/architecture/jenkins-x-pipelines/)
+* we are now deprecating the use of Knative build with Prow / Serverless Jenkins in favor of [Jenkins X Pipelines and Tekton](/docs/concepts/jenkins-x-pipelines/)
 * we default to using `--no-tiller`  to [disable the use of helm's tiller](/news/helm-without-tiller/). We recommend to avoid tiller. If you really still want to use it then use `--no-tiller false` on the CLI when installing Jenkins X.
 
 

@@ -2,7 +2,6 @@
 title: Developing Using DevPods
 linktitle: DevPods
 description: Using Jenkins X to continuously deliver value to your customers
-weight: 45
 ---
 
 Jenkins X allows you to edit app code by using a Kubernetes Pod which we call `DevPod`.  This helps you develop inside the cloud with the same software tools, platform, container images and pod templates as the CI/CD pipelines. This helps keep everyone in the team and your CI/CD pipelines using the same platform and tools all the time to reduce waste and avoid those pesky 'it works on my laptop but not in production' issues.  
@@ -28,7 +27,7 @@ In this scenario, you are using a desktop IDE such as VS Code or Intellij which 
 </figcaption>
 
 {{% note %}}
-See [IDE](/developing/ide/#vs-code) for more details on using VSCode
+See [IDE](/docs/using/tasks/ide/#vs-code) for more details on using VSCode
 {{% /note %}}
 
 To get started using this approach, simply execute the following command in the root of your app directory.  We are using a `NodeJS` app for this example, therefore we specify the language using the `-l` parameter.
