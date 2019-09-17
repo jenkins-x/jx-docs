@@ -1,5 +1,5 @@
 ---
-date: 2019-09-17T11:41:27Z
+date: 2019-09-17T14:22:58Z
 title: "jx create codeship"
 slug: jx_create_codeship
 url: /commands/jx_create_codeship/
@@ -58,9 +58,9 @@ jx create codeship [flags]
   -f, --fork-git-repo string                   The Git repository used as the fork when creating new Organisation Git repos (default "https://github.com/jenkins-x/default-organisation.git")
       --git-api-token string                   The Git API token to use for creating new Git repositories
       --git-email string                       The email to use for any git commits (default "codeship@jenkins-x.io")
+      --git-private                            Create new Git repositories as private
       --git-provider-kind string               Kind of Git server. If not specified, kind of server will be autodetected from Git provider URL. Possible values: bitbucketcloud, bitbucketserver, gitea, gitlab, github, fakegit
       --git-provider-url string                The Git server URL to create new Git repositories inside (default "https://github.com")
-      --git-public                             Create new Git repositories as public
       --git-user string                        The name to use for any git commits (default "Codeship")
       --git-username string                    The Git username to use for creating new Git repositories
       --gitops                                 Creates a git repository for the Dev environment to manage the installation, configuration, upgrade and addition of Apps in Jenkins X all via GitOps
