@@ -1,5 +1,5 @@
 ---
-date: 2019-09-17T06:42:17Z
+date: 2019-09-17T10:36:28Z
 title: "jx delete addon knative-build"
 slug: jx_delete_addon_knative-build
 url: /commands/jx_delete_addon_knative-build/
