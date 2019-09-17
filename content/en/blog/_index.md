@@ -6,8 +6,4 @@ menu:
     weight: 30
 ---
 
-
-This is the **blog** section. It has two categories: News and Releases.
-
-Files in these directories will be listed in reverse chronological order.
-
+Also see [what others are writing about Jenkins X on the web](/docs/getting-started/demos-talks-posts/articles/) and [Talks and Conferences](/docs/getting-started/demos-talks-posts/talks/)
