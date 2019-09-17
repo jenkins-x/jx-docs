@@ -1,5 +1,5 @@
 ---
-date: 2019-09-17T11:41:27Z
+date: 2019-09-17T16:28:17Z
 title: "jx edit"
 slug: jx_edit
 url: /commands/jx_edit/
@@ -48,7 +48,7 @@ jx edit [flags]
 * [jx edit envOrganisation](/commands/jx_edit_envorganisation/)	 - Default git organisation for new environment repositories
 * [jx edit environment](/commands/jx_edit_environment/)	 - Edits an Environment which is used to promote your Team's Applications via Continuous Delivery
 * [jx edit extensionsrepository](/commands/jx_edit_extensionsrepository/)	 - Sets Extensions Repository in use
-* [jx edit gitpublic](/commands/jx_edit_gitpublic/)	 - Are new repositories public by default
+* [jx edit gitprivate](/commands/jx_edit_gitprivate/)	 - Are new repositories private by default
 * [jx edit gitserver](/commands/jx_edit_gitserver/)	 - Default git server for new repositories
 * [jx edit helmbin](/commands/jx_edit_helmbin/)	 - Configures the helm binary version used by your team
 * [jx edit organisation](/commands/jx_edit_organisation/)	 - Default git organisation for new repositories
