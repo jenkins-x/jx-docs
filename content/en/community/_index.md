@@ -1,10 +1,10 @@
 ---
 title: Community
 linktitle: Community
-description:
 menu:
-  main:
-    weight: 40
+  community:
+    weight: 1
+    name: Join the community
 ---
 
 The Jenkins X Community is like no other, we are friendly, very open to feedback, provide guidance, best practices and much more.  You can find us in various channels.
@@ -12,6 +12,10 @@ The Jenkins X Community is like no other, we are friendly, very open to feedback
 We value respect and inclusiveness and follow the [CDF Code of Conduct](https://github.com/cdfoundation/toc/blob/master/CODE_OF_CONDUCT.md) in all interactions.
 
 Please join us, we'd love to hear your feedback or have you participate and show some of the work you are doing with Jenkins X!
+
+## Events
+
+See the [events page](/community/events/) for details of the next Jenkins X event!
 
 ## Joining the Community
 
@@ -85,15 +89,3 @@ If you prefer email then join us on the [jenkins-developers mailing list](https:
 It will be lots of fun!
 
 Check out the [contribution guide](/docs/contributing/) for some tips on how to get started
-
-### Office Hours
-
-We meet for office hours **every other Thursday** at 4pm GMT / 11am US Eastern / 8am US Pacific.
-
-Next office hours: **19 September 2019**
-
-Join us: [https://zoom.us/j/397862697](https://zoom.us/j/397862697)
-
-Feel free to [add your questions to the doc](https://docs.google.com/document/d/1wHdBlZAN-ndPELuBoM5HBnYiQLvcz92-euXne2mKOEI/edit) or ask your questions in person.
-
-Previous office hour agendas and recordings can be found in the [archives]({{< relref path="/community/office_hours/_index.md" >}})
