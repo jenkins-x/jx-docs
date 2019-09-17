@@ -1,5 +1,5 @@
 ---
-date: 2019-09-16T20:02:58Z
+date: 2019-09-17T06:42:17Z
 title: "jx create addon pipeline-events"
 slug: jx_create_addon_pipeline-events
 url: /commands/jx_create_addon_pipeline-events/
