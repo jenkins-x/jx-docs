@@ -4,6 +4,8 @@ linktitle: Install Jenkins X
 description: How to install the jx binary on your machine
 weight: 1
 keywords: [install]
+aliases:
+  - /getting-started/install
 ---
 
 Pick the most suitable instructions for your operating system:

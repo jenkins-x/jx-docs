@@ -2,6 +2,8 @@
 title: Kubernetes Context
 linktitle: Kubernetes Context
 description: Working with Kubernetes context
+aliases:
+  - /developing/kube-context
 weight: 90
 ---
 

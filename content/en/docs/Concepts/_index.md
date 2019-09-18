@@ -3,6 +3,8 @@ title: Concepts
 linktitle: Concepts
 description: An overview of the concepts in Jenkins X
 weight: 5
+aliases:
+  - /about/concepts
 ---
 
 Jenkins X is designed to make it simple for developers to work to DevOps principles and best practices. The approaches taken

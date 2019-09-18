@@ -5,7 +5,6 @@ description: "Jenkins X Pipelines are Serverless"
 categories: [blog]
 keywords: []
 slug: "jenkins-x-next-gen-pipeline-engine"
-aliases: []
 author: rawlingsj
 ---
 

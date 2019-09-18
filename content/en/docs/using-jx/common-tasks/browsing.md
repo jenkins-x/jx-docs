@@ -1,8 +1,10 @@
 ---
 title: Browsing
 linktitle: Browsing
-description: Browsing resources in Jenkins X 
+description: Browsing resources in Jenkins X
 weight: 10
+aliases:
+  - /developing/browsing
 ---
 
                 

@@ -4,6 +4,8 @@ linktitle: Create new Cluster
 description: How to create a new Kubernetes cluster with Jenkins X installed
 weight: 2
 keywords: [install]
+aliases:
+  - /getting-started/create-cluster
 ---
 
 

@@ -7,6 +7,8 @@ publishdate: 2016-11-01
 lastmod: 2018-01-02
 categories: [getting started]
 keywords: [install,kubernetes]
+aliases:
+  - /getting-started/config
 weight: 50
 ---
 

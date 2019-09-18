@@ -4,6 +4,8 @@ linkTitle: "Getting Started"
 weight: 2
 description: >
   How to get quickly up and running with Jenkins X
+aliases:
+  - /getting-started
 ---
 
 The simplest way to get started is via the [Google Cloud Tutorials](tutorials).

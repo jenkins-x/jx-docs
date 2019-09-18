@@ -7,7 +7,8 @@ description: >
 categories: [blog]
 keywords: [Jenkins X, Serverless, Knative, 2019]
 slug: "serverless-deployments"
-aliases: []
+aliases:
+  - /news/serverless-jenkins
 author: Viktor Farcic
 ---
 
