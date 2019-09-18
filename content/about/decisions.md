@@ -29,7 +29,8 @@ Kubernetes has won the cloud wars, every major cloud provider now either support
 
 The Kubernetes ecosystem is rich with innovation and with a vibrant, forward thinking, diverse open source community which is inviting only suggests great things for all involved.
 
-Jenkins X strongly recommends using public cloud managed Kubernetes clusters where possible. GKE, AKS and EKS all manage and run your Kubernetes masters for __free__ you pay for the worker resources required to run your applications.  This dramatically reduces risk of installing, upgrading and maintaining your Kubernetes cluster.  
+Jenkins X strongly recommends using public cloud managed Kubernetes clusters where possible. GKE, AKS and EKS all offer managed Kubernetes services, This dramatically reduces risk of installing, upgrading and maintaining your Kubernetes cluster so you can focus on developing awesome code.
+
 
 i.e. let folks that know how to run containers and manage clusters at scale so you can focus on adding value to your business.
 
