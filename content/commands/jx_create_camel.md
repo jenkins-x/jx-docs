@@ -1,5 +1,5 @@
 ---
-date: 2019-09-18T16:21:52Z
+date: 2019-09-18T17:33:16Z
 title: "jx create camel"
 slug: jx_create_camel
 url: /commands/jx_create_camel/
@@ -45,9 +45,9 @@ jx create camel [flags]
       --dry-run                        Performs local changes to the repo but skips the import into Jenkins X
       --external-jenkins-url string    The jenkins url that an external git provider needs to use
       --git-api-token string           The Git API token to use for creating new Git repositories
-      --git-private                    Create new Git repositories as private
       --git-provider-kind string       Kind of Git server. If not specified, kind of server will be autodetected from Git provider URL. Possible values: bitbucketcloud, bitbucketserver, gitea, gitlab, github, fakegit
       --git-provider-url string        The Git server URL to create new Git repositories inside (default "https://github.com")
+      --git-public                     Create new Git repositories as public
       --git-username string            The Git username to use for creating new Git repositories
   -g, --group string                   The group ID for the new application (default "com.example")
   -h, --help                           help for camel

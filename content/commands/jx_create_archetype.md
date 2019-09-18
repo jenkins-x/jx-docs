@@ -1,5 +1,5 @@
 ---
-date: 2019-09-18T16:21:52Z
+date: 2019-09-18T17:33:16Z
 title: "jx create archetype"
 slug: jx_create_archetype
 url: /commands/jx_create_archetype/
@@ -44,9 +44,9 @@ jx create archetype [flags]
   -f, --filter-group string            Filter the Group IDs to choose from for he Archetypes
       --filter-version string          The Version of the Archetype to use
       --git-api-token string           The Git API token to use for creating new Git repositories
-      --git-private                    Create new Git repositories as private
       --git-provider-kind string       Kind of Git server. If not specified, kind of server will be autodetected from Git provider URL. Possible values: bitbucketcloud, bitbucketserver, gitea, gitlab, github, fakegit
       --git-provider-url string        The Git server URL to create new Git repositories inside (default "https://github.com")
+      --git-public                     Create new Git repositories as public
       --git-username string            The Git username to use for creating new Git repositories
   -g, --group string                   The group ID for the new application (default "com.example")
       --group-ids stringArray          The Group ID of the Archetypes to pick

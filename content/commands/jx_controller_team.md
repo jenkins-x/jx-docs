@@ -1,5 +1,5 @@
 ---
-date: 2019-09-18T16:21:52Z
+date: 2019-09-18T17:33:16Z
 title: "jx controller team"
 slug: jx_controller_team
 url: /commands/jx_controller_team/
@@ -41,9 +41,9 @@ jx controller team [flags]
       --external-dns                          Installs external-dns into the cluster. ExternalDNS manages service DNS records for your cluster, providing you've setup your domain record
       --external-ip string                    The external IP used to access ingress endpoints from outside the Kubernetes cluster. For bare metal on premise clusters this is often the IP of the Kubernetes master. For cloud installations this is often the external IP of the ingress LoadBalancer.
       --git-api-token string                  The Git API token to use for creating new Git repositories
-      --git-private                           Create new Git repositories as private
       --git-provider-kind string              Kind of Git server. If not specified, kind of server will be autodetected from Git provider URL. Possible values: bitbucketcloud, bitbucketserver, gitea, gitlab, github, fakegit
       --git-provider-url string               The Git server URL to create new Git repositories inside (default "https://github.com")
+      --git-public                            Create new Git repositories as public
       --git-username string                   The Git username to use for creating new Git repositories
       --gitops                                Creates a git repository for the Dev environment to manage the installation, configuration, upgrade and addition of Apps in Jenkins X all via GitOps
       --global-tiller                         Whether or not to use a cluster global tiller (default true)
