@@ -7,6 +7,8 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [getting started]
 keywords: [install]
+aliases: 
+  - /getting-started/boot/
 weight: 10
 ---
 
