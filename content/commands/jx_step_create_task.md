@@ -1,5 +1,5 @@
 ---
-date: 2019-09-19T19:31:19Z
+date: 2019-09-19T21:19:55Z
 title: "jx step create task"
 slug: jx_step_create_task
 url: /commands/jx_step_create_task/
@@ -44,6 +44,7 @@ jx step create task [flags]
       --dry-run                      Disables creating the Pipeline resources in the kubernetes cluster and just outputs the generated Task to the console or output file, without side effects
       --duration duration            Retry duration when trying to create a PipelineRun (default 30s)
       --effective-pipeline           Just view the effective pipeline definition that would be created
+      --end-step string              When in interpret mode this specifies the step to end at
   -e, --env stringArray              List of custom environment variables to be applied to resources that are created
   -h, --help                         help for task
       --image string                 Specify a custom image to use for the steps which overrides the image in the PodTemplates
