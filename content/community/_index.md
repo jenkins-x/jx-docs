@@ -97,9 +97,8 @@ Check out the [contribution guide](/contribute/) for some tips on how to get sta
 
 {{% note %}}
 We meet for office hours every other Thursday at 4pm GMT / 11am US Eastern / 8am US Pacific.
-
-Unfortunately, today's office hours are cancelled.
-
+{{% /note %}}
+{{% note %}}
 Next office hours: 3 October
 {{% /note %}}
 
