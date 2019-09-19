@@ -41,6 +41,9 @@ To install Jenkins X on macOS without brew, download the `.tar` file, and unarch
 
         sudo mv jx /usr/local/bin
 
+3. Run `jx version` to make sure you're on the latest stable version
+
+        jx version
 
 ### Linux
 
@@ -55,6 +58,10 @@ To install Jenkins X on Linux, download the `.tar` file, and unarchive it in a d
     the `mv` command:
 
         sudo mv jx /usr/local/bin
+
+3. Run `jx version` to make sure you're on the latest stable version
+
+        jx version
 
 
 ### Windows
@@ -121,6 +128,10 @@ commands:
     command:
 
         sudo mv jx /usr/local/bin
+
+4. Run `jx version` to make sure you're on the latest stable version
+
+        jx version
 
 Once you have the `jx` binary installed you can then [configure a Jenkins X cluster on Google Kubernetes Engine](/getting-started/create-cluster/).
 
