@@ -1,5 +1,5 @@
 ---
-date: 2019-09-19T14:40:20Z
+date: 2019-09-19T19:31:19Z
 title: "jx profile"
 slug: jx_profile
 url: /commands/jx_profile/
