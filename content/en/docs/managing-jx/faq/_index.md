@@ -1,184 +1,160 @@
 ---
 title: FAQ
 linktitle: FAQ
-description: Questions on how to use Kubernetes, Helm and Jenkins X to build cloud native applications
-weight: 40
+description: Questions about managing Jenkins X
+weight: 60
 aliases: 
-  - /faq/
+  - /faq/setup/
 ---
 
-## How do I inject environment specific configuration?
+## How do I add a user to my Jenkins X installation?
 
-Each environment in Jenkins X is defined in a git repository; we use GitOps to manage all changes in each environment such as:
+Jenkins X assumes each user has access to the same development kubernetes cluster that Jenkins X is running on.
 
-* adding/removing apps
-* changing the version of an app (up or down)
-* configuring any app with environment specific values
+If your user does not have access to the kubernetes cluster we need to setup their `~/.kube/config` file so that they can access it.
 
-The first two items are defined in the `env/requirements.yaml`  file in the git repository for your environment. the latter is defined in the `env/values.yaml` file.
+If you are using Google's GKE then you can browse the [GKE Console](https://console.cloud.google.com) to view all the clusters and click on the `Connect` button next to your development cluster and then that lets you copy/paste the command to connect to the cluster.
 
-Helm charts use a [values.yaml file](https://github.com/helm/helm/blob/master/docs/chart_template_guide/values_files.md) so that you can override any configuration inside your Chart to modify settings such as labels or annotations on any resource or configurations of resources (e.g. `replicaCount`) or to pass in things like environment variables into a `Deployment`.
+For other clusters we are planning on writing some [CLI commands to export and import the kube config](https://github.com/jenkins-x/jx/issues/1406).
 
-So if you wish to change, say, the `replicaCount` of an app `foo` in `Staging` then find the git repository for the `Staging` environment via [jx get env](/commands/jx_get_environments/) to find the git URL.
+Also [CloudBees](https://www.cloudbees.com/) are working on a distribution of Jenkins X which will include single sign on together with an awesome web UI to visualise teams, pipelines, logs, environments, applications, versions and infrastructure. The CloudBees UI provides an easy way for anyone in your team to login to Jenkins X from the command line with the `Connect` button on the `Teams` page which uses [jx login](/commands/jx_login/)
 
-Navigate to the `env/values.yaml` file and add/edit a bit of YAML like this:
+### Once the user has access to the kubernetes cluster
+
+Once your user has access to the kubernetes cluster:
+
+* [install the jx binary](/docs/getting-started/setup/install//)
+
+If Jenkins X was installed in the namespace `jx` then the following should [switch your context](/docs/using-jx/common-tasks/kube-context/) to the `jx` namespace:
+
+    jx ns jx
+
+To test you should be able to type:
+
+    jx get env
+    jx open
+
+To view the environments and any development tools like the Jenkins or Nexus consoles.
+
+## How do I upgrade my Jenkins X installation?
+
+You can upgrade via the [jx upgrade](/commands/jx_upgrade/) commands. Start with
+
+```shell
+jx upgrade cli
+```
+
+to get you on the latest CLI then you can upgrade the platform:
+
+```shell
+jx upgrade platform
+```
+
+## How do I upgrade the jx binary used inside the builds when using serverless jenkins?
+
+We use specific `BuildTemplates` for different programming languages. These `BuildTemplates` describe the steps that will be executed as part of the job, which in case of the Jenkins X BuildTemplates, they all execute the `JenkinsfileRunner` to execute the project's Jenkinsfile.
+
+```
+$ kubectl get buildtemplates
+NAME                        AGE
+environment-apply           9d
+environment-build           9d
+jenkins-base                9d
+jenkins-csharp              9d
+jenkins-cwp                 9d
+jenkins-elixir              9d
+jenkins-filerunner          9d
+jenkins-go                  9d
+jenkins-go-nodocker         9d
+jenkins-go-script-bdd       1d
+jenkins-go-script-ci        1d
+jenkins-go-script-release   1d
+jenkins-gradle              9d
+jenkins-javascript          9d
+jenkins-jenkins             9d
+jenkins-maven               9d
+jenkins-python              9d
+jenkins-rust                9d
+jenkins-scala               9d
+jenkins-test                9d
+knative-chart-ci            9d
+knative-chart-release       9d
+knative-deploy              9d
+knative-maven-ci            9d
+knative-maven-release       9d
+```
+
+The docker image that has the `Jenkinsfile` runner has also other tools installed, like the `jx` binary. If you need to update jx to a newer version, you need to modify [the base Dockerfile used for the Jenkinsfile runner step of the BuildTemplate](https://github.com/jenkins-x/jenkins-x-serverless/blob/def939f559b6b0e6735c043ce032686397053a6e/Dockerfile.base#L120-L123), so that it uses the jx version that you want. Althought [this is normally done automatically](https://github.com/jenkins-x/jenkins-x-serverless/commits/def939f559b6b0e6735c043ce032686397053a6e/Dockerfile.base).
+
+Once this is done, you need to change the BuildTemplate in your cluster so that it starts using the new version of the docker image. For example, you can see the current version of this image for the Go BuildTemplate in your cluster
+
+```
+$ kubectl describe buildtemplate jenkins-go | grep Image
+Image:       jenkinsxio/jenkins-go:256.0.44
+```
+
+If you want to use a different version that uses a newer jx version you could manually change all the BuildTemplates but instead let's jx take care of it
+
+```
+$ jx upgrade addon jx-build-templates
+```
+
+Check that the change has been done
+
+```
+$ kubectl describe buildtemplate jenkins-go | grep Image
+Image:       jenkinsxio/jenkins-go:256.0.50
+```
+
+## How does `--prow` differ from `--gitops`
+
+* `--prow` uses [serverless jenkins](/news/serverless-jenkins/) and uses [prow](https://github.com/kubernetes/test-infra/tree/master/prow) to implement ChatOps on Pull Requests.
+*  `--gitops` is still work in progress but will use GitOps to manage the Jenkins X installation (the dev environment) so that the platform installation is all stored in a git repo and upgrading / adding Apps / changing config is all changed via Pull Requests like changes to promotion of applications to the Staging or Production environments
+
+## How do I reuse my existing Ingress controller?
+
+By default when you [install Jenkins X into an existing kubernetes cluster](/docs/managing-jx/common-tasks/install-on-cluster/) it prompts you if you want to install an Ingress controller. Jenkins X needs an Ingress controller of some kind so that we can setup `Ingress` resources for each `Service` so we can access web applications via URLs outside of the kubneretes cluster (e.g. inside web browsers).
+
+The [jx install](/commands/jx_install/) command takes a number of CLI arguments starting with `--ingress` where you can point to the namespace, deployment name and service name of the ingress controller you wish to use for the installation.
+
+We do recommend you use the default ingress controller if you can - as we know it works really well and only uses a single LoadBalancer IP for the whole cluster (your cloud provider often charges per IP address). However if you want to point at a different ingress controller just specify those arguments on install:
+
+```shell
+jx install \
+  --ingress-service=$(yoursvcname) \
+  --ingress-deployment=$(yourdeployname) \
+  --ingress-namespace=kube-system
+```
+
+## How do I enable HTTPS URLs?
+
+In general use the [jx upgrade ingress](/commands/jx_upgrade_ingress/) command.
+
+For more detail see these blogs posts:
+
+* [Upgrading Ingress Rules And Adding TLS Certificates With Jenkins X](https://technologyconversations.com/2019/05/31/upgrading-ingress-rules-and-adding-tls-certificates-with-jenkins-x/) by [Viktor Farcic](https://technologyconversations.com)
+* [Jenkins X — TLS enabled Previews](https://itnext.io/jenkins-x-tls-enabled-previews-d04fa68c7ce9?source=friends_link&sk=c13828b223f56ed662fd7ec0872c3d1e) by [Steve Boardwell](https://medium.com/@sboardwell)
+* [Jenkins X — Securing the Cluster](https://itnext.io/jenkins-x-securing-the-cluster-e1b9fcd8dd05?source=friends_link&sk=e1e46e780908b2e3c8415c3191e82c56) by [Steve Boardwell](https://medium.com/@sboardwell)
+
+
+## How do I change the URLs in an environment?
+
+We use [exposecontroller](https://github.com/jenkins-x/exposecontroller) to automate the setup of `Ingress` resources for exposed Services, enabling TLS and also injecting external URLs for services into code (e.g. so we can register webhooks).
+
+The default `UrlTemplate` for each environment is of the form: `{{.Service}}.{{.Namespace}}.{{.Domain}}` where `Service` is the name of the service, `Namespace` is the kubernetes namespace and `Domain` is the configured DNS domain.
+
+If you want to modify the URL schemes of your service in an environment then edit the file `env/values.yaml` in your Environments git repository. To find the URLs to each source repository use the [jx get env]() command.
+
+Then modify the contents of `env/values.yaml` to include the `urlTemplate:` value as follows:
 
 ```yaml
-foo:
-  replicaCount: 5
+expose:
+  config:
+    urltemplate: "{{.Service}}-{{.Namespace}}.{{.Domain}}"
 ```
 
-Submit that change as a Pull Request so it can go through the CI tests and any peer review/approval required; then when its merged it master it will modify the `replicaCount` of the `foo` application (assuming there's a chart called `foo` in the `env/requirements.yaml` file)
+We've left out the other values of `expose:` and `config:` for brevity - the important thing is to ensure you specify a custom `expose.config.urltemplate` value. The default is `{{.Service}}.{{.Namespace}}.{{.Domain}}` if none is specified.
 
-You can use vanilla helm to do things like injecting the current namespace if you need that.
+Whenever you modify the git repository for an environment the GitOps pipeline will run to update your Ingress resources to match your `UrlTemplate`.
 
-To see a more complex example of how you can use a `values.yaml` file to inject into charts, see how we use these files to [configure Jenkins X itself](/docs/managing-jx/common-tasks/config/)
-
-
-## How do I manage secrets in each environment?
-
-We’re using sealed secrets ourselves to manage our production Jenkins X install for all of our CI/CD - so the secrets get encrypted and checked into the git repo of each environment. We use the [helm-secrets](https://github.com/futuresimple/helm-secrets) plugin to do this.
-
-Though a nicer approach would be using a Vault operator which we’re investigating now - which would fetch + populate secrets (and recycle them etc) via Vault.
-
-
-## When do Preview Environments get removed?
-
-We have a background garbage collection job which removes Preview Environments after the Pull Request is closed/merged. You can run it any time you like via the [jx gc previews](/commands/jx_gc_previews/) command
-
-```
-jx gc previews
-```
-
-You can also view the current previews via  [jx get previews](/commands/jx_get_previews/):
-
-  ```
-  jx get previews
-  ```
-
-
-and delete a preview by choosing one to delete via [jx delete preview](/commands/jx_delete_preview/):
-
- ```
- jx delete preview
- ```
-
-## How do I add other services into a Preview?
-
-When you create a Pull Request by default Jenkins X creates a new [Preview Environment](/docs/concepts/features/#preview-environments). Since this is a new dynamic namespace you may want to configure additional microservices in the namespace so you can properly test your preview build.
-
-To find out more see [how to add dependent charts, services or configuration to your preview environment](/docs/reference/preview/#adding-more-resources)
-
-
-## Can I use my existing release pipeline?
-
-With Jenkins X you are free to create your own pipeline to do the release if you wish; though doing so means you miss out on our [extension model](/extending/) which lets you easily enable various extension Apps like Governance, Compliance, code quality, code coverage, security scanning, vulnerability testing and various other extensions which are being added all the time through our community.
-
-We've specifically built this extension model to minimise the work your teams have in having to edit + maintain pipelines across many separate microservices; the idea is we're trying to automate both the pipelines and the extensions to the pipelines so teams can focus on their actual code and less on the CI/CD plumbing which is pretty much all undifferentiated heavy lifting these days.
-
-## How does promotion actually work?
-
-The kubernetes resources being deployed are defined as YAML files in the source code of your application in `charts/myapp/templates/*.yaml`. If you don't specify anything then Jenkins X creates default resources (a `Service + Deployment`) but you are free to add any k8s resources as YAML into that folder (`PVCs, ConfigMaps, Services`, etc).
-
-Then the Jenkins X release pipeline automatically tars up the YAML files into an immutable versioned tarball (using the same version number as the docker image, git tag and release notes) and deploys it into a chart repository of your choice (defaults to chartmuseum but you can easily switch that to cloud storage/nexus/whatever) so that the immutable release can be easily used by any promotion.
-
-Promotion in Jenkins X is completely separate to Release & we support promoting any releases if packaged as a helm chart. Promotion via [jx promote](/docs/using-jx/common-tasks/promote/) CLI generates a Pull Request in the git repository for an environment (Staging, Canary, Production or whatever). This is GitOps basically - specifying which versions and configurations of which apps are in each environment using a git repository and configuration as code.
-
-The PR triggers a CI pipeline to verify the changes are valid (e.g. the helm chart exists and can be downloaded, the docker images exist etc). Whenever the PR gets merged (could be automatically or may require additional reviews/+1s/JIRA/ServiceNow tickets or whatever) - then another pipeline is triggered to apply the helm charts from the master branch to the destination k8s cluster and namespace.
-
-Jenkins X automates all of the above but given both these pipelines are defined in the environments git repository in a `Jenkinsfile` you are free to customise to add your own pre/post steps if you wish. e.g. you could analyse the YAML to pre-provision PVs for any PVCs using some custom disk snapshot tool you may have.  Or you can do that in a pre or post-install helm hook job. Though we'd prefer these tools to be created as part of the Jenkins X [extension model](/extending/) to avoid custom pipeline hacking which could break in future Jenkins X releases - though its not a huge biggie.
-
-## How do I change the owner of a docker image
-
-When using a docker registry like gcr.io then the docker image owner `gcr.io/owner/myname:1.2.3` can be different to your git owner/organisation.
-
-On Google's GCR this is usually your GCP Project ID; which you can have many different projects to group images together.
-
-There's a few options for defining which docker registry owner to use:
-
-* specify it in your `jenkins-x.yml`
-
-```yaml
-dockerRegistryHost: gcr.io
-dockerRegistryOwner: my-gcr-project-id
-```
-* specify it in the [Environment CRD](/docs/reference/components/custom-resources/) called `dev` at `env.spec.teamSettings.dockerRegistryOrg`
-* define the environment variable `DOCKER_REGISTRY_ORG`
-
-If none of those are found then the code defaults to the git repository owner.
-
-For more details the code to resolve it is [here](https://github.com/jenkins-x/jx/blob/65962ff5ef1a6d1c4776daee0163434c9c2cb566/pkg/cmd/opts/docker.go#L14)
-
-## What if my team does not want to use helm?
-
-To help automate CI/CD with GitOps we assume helm charts are created as part of the automated project setup and CI/CD. e.g. just [import your source code](/docs/using-jx/common-tasks/import/) and a docker image + helm chart will be generated for you - the developers don't need to know or care if they don't want to use helm:
-
-If a developer wants to specifically create a specific resource (e.g. `Secret, ConfigMap` etc) they can just hack the YAML directly in `charts/myapp/templates/*.yaml`. Increasingly most IDEs now have UI wizards for creating + editing kubernetes resources.
-
-By default things like resource limits are put in `values.yaml` so its easy to customise those as needed in different environments (requests/limits, liveness probe timeouts and the like).
-
-If you have a developer who is fundamentally opposed to helm's configuration management solution for environment specific configuration you can just opt out of that and just use helm as a way to version and download immutable tarballs of YAML and just stick to vanilla YAML files in, say, `charts/myapp/templates/deployment.yaml`).
-
-Then if you wish to use another configuration management tool you can add it in - e.g. [kustomise support](https://github.com/jenkins-x/jx/issues/2302).
-
-## How do I change the domain of serverless apps?
-
-If you use [serverless apps](/docs/managing-jx/tutorials/serverless-apps/) with Knative we don't use thee default exposecontroller mechanism for defaulting the `Ingress` resources since knative does not use kubernetes `Service` resources.
-
-You can work around this by manually editing the _knative_ config via:
-
-```
-kubectl edit cm config-domain --namespace knative-serving
-```
-
-For more help see [using a custom domain with knative](https://knative.dev/docs/serving/using-a-custom-domain/)
-
-## Can I reuse exposecontroller for my apps?
-
-You should be able to use [exposecontroller](https://github.com/jenkins-x/exposecontroller/blob/master/README.md) directly in any app you deploy in any environment (e.g. Staging or Production) as we already trigger exposecontroller on each new release.
-
-We use [exposecontroller](https://github.com/jenkins-x/exposecontroller/blob/master/README.md) for Jenkins X to handle the generation of `Ingress` resources so that we can support wildcard DNS on a domain or automate the setup of HTTPS/TLS along with injecting external endpoints into applications in ConfigMaps via [annotations](https://github.com/jenkins-x/exposecontroller/blob/master/README.md#using-the-expose-url-in-other-resources).
-
-To get [exposecontroller](https://github.com/jenkins-x/exposecontroller/blob/master/README.md) to generate the `Ingress` for a `Service` just [add the label to your Service](https://github.com/jenkins-x/exposecontroller/blob/master/README.md#label). e.g. add this to your `charts/myapp/templates/service.yaml`:
-
-```yaml
-apiVersion: v1
-kind: Service
-metadata:
-  name: myapp
-  annotations:
-    fabric8.io/expose: "true"
-```
-
-If you want to inject the URL or host name of the external URL or your ingress just [use these annotations](https://github.com/jenkins-x/exposecontroller/blob/master/README.md#using-the-expose-url-in-other-resources).
-
-## How To Add Custom Annotations to Ingress Controller?
-
-There may be times when you need to add your custom annotations to the ingress controller or [exposecontroller](https://github.com/jenkins-x/exposecontroller) which `jx` uses to expose services.
-
-You can add a list of annotations to your application's service Helm Chart, which is found in your app's code repository.
-
-A custom annotation may be added to the `charts/myapp/values.yaml` and it may look as follows:
-
-```yaml
-# Default values for node projects.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
-replicaCount: 1
-image:
-  repository: draft
-  tag: dev
-  pullPolicy: IfNotPresent
-service:
-  name: node-app
-  type: ClusterIP
-  externalPort: 80
-  internalPort: 8080
-  annotations:
-    fabric8.io/expose: "true"
-    fabric8.io/ingress.annotations: "kubernetes.io/ingress.class: nginx"
-
-```
-
-To see an example of where we add multiple annotations that the `exposecontroller` adds to generated ingress rules, take a look at this [values.yaml](https://github.com/jenkins-x/jenkins-x-platform/blob/08a304ff03a3e19a8eb270888d320b4336237005/values.yaml#L655)
 
