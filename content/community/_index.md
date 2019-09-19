@@ -96,9 +96,11 @@ Check out the [contribution guide](/contribute/) for some tips on how to get sta
 ## Office Hours
 
 {{% note %}}
-We meet for office hours **every other Thursday** at 4pm GMT / 11am US Eastern / 8am US Pacific.
+We meet for office hours every other Thursday at 4pm GMT / 11am US Eastern / 8am US Pacific.
 
-Next office hours: **19 September 2019**
+Unfortunately, today's office hours are cancelled.
+
+Next office hours: 3 October
 {{% /note %}}
 
 Join us: [https://zoom.us/j/397862697](https://zoom.us/j/397862697)
