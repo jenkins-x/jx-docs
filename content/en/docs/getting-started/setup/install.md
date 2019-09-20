@@ -103,11 +103,11 @@ commands:
 1.  Open the [GCP Cloud Shell](https://cloud.google.com/shell/docs/starting-cloud-shell),
     and choose your GCP project for Jenkins X.
 
-    {{% note %}}
+    {{% alert %}}
     It is highly recommended that you use Google Chrome browser with
     GCP Cloud Shell, as you may experience issues using other
     browsers.
-    {{% /note %}}
+    {{% /alert %}}
 
 2.  In GCP Cloud Shell, download the `jx` binary archive using `curl` and pipe (`|`) the compressed archive to
     the `tar` command:

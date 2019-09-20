@@ -35,9 +35,9 @@ In this tutorial, we walk you through a full setup of Jenkinx X in GKE, includin
 3. You wil have a **Serverless Jenkins X** cluster with **Tekton** Pipelines enabled.
 4. You will have a cluster that uses **GitOps**
 
-{{% note %}}
+{{% alert %}}
 **NOTE:**  If you've provisioned the cluster using Terraform, this should still work.  However you cannot run the command we outline below, instead you will have to run the `jx install --ng=true` command.
-{{% /note %}}
+{{% /alert %}}
 
 # Prerequisites 
 
@@ -50,9 +50,9 @@ In this tutorial, we walk you through a full setup of Jenkinx X in GKE, includin
 7. Github account - used as the *Developer* working on code [  Github account: `sharepointoscar`]
 8. Both Github accounts should belong to the Github Organization. [ Github Org: `jenkins-oscar`]
 
-{{% warning %}}
+{{% alert color="warning" %}}
 Lastly, clean up after yourself!  If you've tried multiple installs, best approach is to remove the `~/.jx` folder as there are sometimes things that are saved and reused for new installs obviously.
-{{% /warning %}}
+{{% /alert %}}
 
 Your Github Organization and user accounts should be setup similar to how it is shown on **Figure 1** below.
 
@@ -71,9 +71,9 @@ The first step we need to take, is execute the command which simultaneously will
 > $ jx create cluster gke --default-admin-password=<YOURPASSWORD> -n <CLUSTERNAME> --ng=true
 ```
 
-{{% note %}}
+{{% alert %}}
 **NOTE:** The execution of this command with ONLY the `--ng=true` flag, ensures several things happen.  It ensures the following features are configured **Prow**, **Tekton**, **No Tiller**, **HashiCorp Vault**, Dev **GitOps** on a **Serverless** topology.
-{{% /note %}}
+{{% /alert %}}
 
 ## Output of the Command - lengthy but let's break it down!
 The output below is quite insightful, we include it here for you to see all of what happens as the install is happening.
@@ -164,9 +164,9 @@ If you do not have a custom domain setup yet, Ingress rules will be set for magi
 
 Once you have a custom domain ready, you can update with the command jx upgrade ingress --cluster
 ```
-{{% note %}}
+{{% alert %}}
 At this point, we have already set our DNS settings to point to the IP listed above for the ingress controller and gave it a bit of time to propagate before hitting **enter** `sharepointoscar.com` for the Domain, and letting it configure ingress and other endpoints.
-{{% /note %}}
+{{% /alert %}}
 
 ```bash
 If you don't have a wildcard DNS setup then setup a DNS (A) record and point it at: 34.83.54.46 then use the DNS domain in the next input...
@@ -556,9 +556,9 @@ tide              tide.jx.sharepointoscar.com              34.83.54.46   80     
 
 ```
 
-{{% note %}}
+{{% alert %}}
 **NOTE:** The final and successful output should always show us the endpoint URLs.  If you see something else, most likely your installation did not finish properly.  Typically, it helps to delete the `~/.jx` folder before trying another install.  Especially if you've run this command multiple times, there are multiple environments created and you should **only** have the ones Jenkins X is actually using to keep things working properly in my opinion.
-{{% /note %}}
+{{% /alert %}}
 
 So we now have a clean environment, one thing we can do to simply test our endpoints, is do an **nslookup** against any of the urls in the final output.  This helps ensure that at least DNS is setup properly.
 
@@ -576,7 +576,7 @@ Using Git provider GitHub at https://github.com
 ```
 You will select the personal Github account in this step.  
 
-{{% warning %}}
+{{% alert color="warning" %}}
 However, if you get a *warning* message stating that the Github server username is not set, then the setup somehow was not set correctly.
 
 <img src="/images/getting-started/warning_no_username_git_server.png"/>
@@ -585,7 +585,7 @@ However, if you get a *warning* message stating that the Github server username 
 </figcaption>
 You can verify that the bot account is setup by checking the values of the secret called `jx-pipeline-git-github-github`.  In this scenario, it is `jenkinsx-bot-sposcar` as expected.
 
-{{% /warning %}}
+{{% /alert %}}
 
 ```bash
 About to create repository  on server https://github.com with user sharepointoscar
@@ -654,9 +654,9 @@ jx-testapp2        0.0.2   1/1  http://testapp2.jx-staging.sharepointoscar.com
 ```
 Our app is indeed in our Staging environment and accessible at (in this scenario) `http://node-widget-app.jx-staging.sharepointoscar.com`
 
-{{% note %}}
+{{% alert %}}
 **NOTE:** There is a command `jx get apps`.  Do not confuse the command we executed with this one.  This command actually obtains `apps` that have been installed.  For example, on our serverless topology, we may opt to install a static jenkins as well by executing `jx add app jx-app-jenkins-x` and this will deploy a static jenkins which can now be used to put some apps thourgh either Tekton or this static jenkins master.
-{{% /note %}}
+{{% /alert %}}
 
 ## Modifying The App
 Let's modify the app to trigger a PR and see how the Bot reacts.  To make a change, we create a feature branch as per the usual developer workflow and execute `git checkout -b feature1`.
