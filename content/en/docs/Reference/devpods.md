@@ -39,7 +39,7 @@ inside the shell of the DevPod.
 Here's a [demo showing how to use web based VS Code in a DevPod](/images/developing/vscode-devpod.mp4):
 
 <figure>
-<embed src="/images/developing/vscode-devpod.mp4" autostart="false" height="400" width="600" />
+<embed src="https://jenkins-x.io/images/developing/vscode-devpod.mp4" autostart="false" height="400" width="600" />
 <figcaption>
 <h5>Use web based VS Code inside a DevPod</h5>
 </figcaption>
