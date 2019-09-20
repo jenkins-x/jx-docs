@@ -20,7 +20,7 @@ cascade:
 
 We meet for office hours **every other Thursday** at 4pm GMT / 11am US Eastern / 8am US Pacific.
 
-Next office hours: **19 September 2019**
+Next office hours: **3 October 2019**
 
 Join us: <https://zoom.us/j/397862697>
 
