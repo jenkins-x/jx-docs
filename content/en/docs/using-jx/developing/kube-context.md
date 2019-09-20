@@ -1,7 +1,7 @@
 ---
 title: Kubernetes Context
 linktitle: Kubernetes Context
-description: Working with Kubernetes context
+description: How to switch between different Kubernetes clusters, environments and namespaces
 aliases:
   - /developing/kube-context
 weight: 90

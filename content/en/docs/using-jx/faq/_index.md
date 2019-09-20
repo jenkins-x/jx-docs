@@ -1,7 +1,7 @@
 ---
 title: FAQ
 linktitle: FAQ
-description: Questions on how to use Kubernetes, Helm and Jenkins X to build cloud native applications
+description: Questions on how to develop cloud native application with Jenkins X
 weight: 40
 aliases: 
   - /faq/

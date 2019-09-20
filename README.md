@@ -11,7 +11,22 @@ To edit the docs locally and try out what the [website](http://jenkins-x.io/) wi
 
 ```bash
 $ git clone  --recurse-submodules --depth 1 https://github.com/jenkins-x/jx-docs.git
-```
+```   
+
+If you already have a git clone then run
+
+```bash
+$ git git submodule update --init --recursive
+```   
+
+## Download npm modules
+
+Then you need to run this command to download the requirerd npm modules:
+                                                                 
+
+```bash
+$ npm install
+```   
 
 ### Dockerized Hugo
 
