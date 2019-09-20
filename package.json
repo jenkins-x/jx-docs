@@ -1,14 +1,19 @@
 {
   "name": "jx-docs",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Jenkins X Documentation",
   "author": "budparr",
   "license": "Apache",
   "scripts": {
     "algolia": "atomic-algolia"
   },
-  "devDependencies": {},
   "dependencies": {
-    "atomic-algolia": "^0.3.15"
+    "autoprefixer": "^9.6.1",
+    "postcss-cli": "^5.0.1"
+  },
+  "devDependencies": {
+    "atomic-algolia": "^0.3.15",
+    "autoprefixer": "^9.6.1",
+    "postcss-cli": "^5.0.1"
   }
 }

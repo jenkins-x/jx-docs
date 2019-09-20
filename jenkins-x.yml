@@ -19,21 +19,29 @@ pipelineConfig:
           - name: HUGO_ENV
             value: production
           - name: HUGO_VERSION
-            value: '0.26'
+            value: '0.57.2/extended'
           steps:
           
-          - image: gcr.io/jenkinsxio/builder-go
+          - image: dennisnewel/hugo-extended:0.58.0
+            name: git-clone
             command: git
             args:
               - clone
               - https://github.com/jenkins-x/jenkins-x-website.git
 
-          - image: gcr.io/jenkinsxio/builder-go
+          - image: dennisnewel/hugo-extended:0.58.0
+            name: git-submodules
+            command: git
+            args:
+            - submodule update --init --recursive
+
+          - image: dennisnewel/hugo-extended:0.58.0
             command: hugo
             args:
               - version
 
-          - image: gcr.io/jenkinsxio/builder-go
+          - image: dennisnewel/hugo-extended:0.58.0
+            name: build-website
             command: hugo
             args:
               - -d
@@ -41,6 +49,7 @@ pipelineConfig:
               - --enableGitInfo
 
           - image: gcr.io/jenkinsxio/builder-go
+            name: update-website
             command: ./update-website.sh
           
           # Create the release notes
@@ -68,13 +77,21 @@ pipelineConfig:
           - name: APP_NAME
             value: jx-docs
           steps:
-          - image: gcr.io/jenkinsxio/builder-go
+          - image: dennisnewel/hugo-extended:0.58.0
+            name: git-submodules
+            command: git
+            args:
+            - submodule update --init --recursive
+          - image: dennisnewel/hugo-extended:0.58.0
             name: version
             command: hugo
             args:
             - version
-
-          - image: gcr.io/jenkinsxio/builder-go
+          - image: gcr.io/cloud-builders/npm
+            name: install-dependencies
+            command: npm
+            args: ['install']
+          - image: dennisnewel/hugo-extended:0.58.0
             name: build-website
             command: hugo
             args:

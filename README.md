@@ -10,7 +10,7 @@ Documentation site for [Jenkins X](http://jenkins-x.io/)
 To edit the docs locally and try out what the [website](http://jenkins-x.io/) will look like then you need to clone this repository:
 
 ```bash
-$ git clone https://github.com/jenkins-x/jx-docs.git
+$ git clone  --recurse-submodules --depth 1 https://github.com/jenkins-x/jx-docs.git
 ```
 
 ### Dockerized Hugo
@@ -51,9 +51,26 @@ This will output any issue the spell checker have found.
 It's likely that the report includes words that are spelled correctly, but that just means the spell checker is not aware of the correct spelling (happens a lot for technical terms, commands, etc.). Please edit the `.spelling` file and add the unknown word.
 Also, please try and keep the list alphabetically sorted; makes it easier to navigate when you're looking for something
 
+### Checking links, images, etc
+
+To get help in checking all the links etc. we'll use the awesome tool [htmltest](https://github.com/wjdp/htmltest).
+
+Make sure you've built the dockerized Hugo mentioned above. If you called it something else than `jx-docs/dev` adjust the first command to use your image tag
+* Generate the resulting HTML:
+  ```
+  docker-compose run server -d public -s /src
+  ```
+* Run htmltest:
+  ```
+  docker-compose run linkchecker
+  ```
+  * note that initial run is really slow (due to external link checks) and that the cache is only build up when it finishes. You should run this before making changes
+
+**Note**: It's safe to ignore the `... x509: certificate ...` errors for now
+
 # Contribution
 
-Please visit the contributing guide for the documentation available at [Jenkins X website](https://jenkins-x.io/contribute/documentation/).
+Please visit the contributing guide for the documentation available at [Jenkins X website](https://jenkins-x.io/docs/contributing/documentation/).
 
 ## Localization
 
