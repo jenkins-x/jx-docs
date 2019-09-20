@@ -273,7 +273,7 @@ git commit --amend
 
 #### 修改多次提交
 
-{{% alert color="warning" "Be Careful Modifying Multiple Commits"%}}
+{{% alert color="warning" title="Be Careful Modifying Multiple Commits"%}}
 对此章节中介绍的修改，可能会造成不可意料的后果。如果不确定的如何使用的话，跳过下面的部分！
 {{% /alert %}}
 
