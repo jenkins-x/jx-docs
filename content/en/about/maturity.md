@@ -2,15 +2,7 @@
 title: Feature Maturity
 linktitle: Feature Maturity
 description: Definitions and processes around how features mature or are deprecated
-menu:
-  docs:
-    parent: "about"
-    weight: 125
-weight: 125
-sections_weight: 125
-draft: false
-categories: [fundamentals]
-toc: true
+weight: 50
 ---
 
 # Maturity levels and Definitions
