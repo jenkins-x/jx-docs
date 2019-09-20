@@ -21,7 +21,7 @@ pipelineConfig:
           - name: HUGO_VERSION
             value: '0.57.2/extended'
           steps:
-          
+
           - image: dennisnewel/hugo-extended:0.58.0
             name: git-clone
             command: git
@@ -40,6 +40,11 @@ pipelineConfig:
             args:
               - version
 
+          - image: gcr.io/cloud-builders/npm
+            name: install-dependencies
+            command: npm
+            args: ['install']
+
           - image: dennisnewel/hugo-extended:0.58.0
             name: build-website
             command: hugo
@@ -51,7 +56,7 @@ pipelineConfig:
           - image: gcr.io/jenkinsxio/builder-go
             name: update-website
             command: ./update-website.sh
-          
+
           # Create the release notes
           - name: changelog
             image: gcr.io/jenkinsxio/builder-go:0.1.571
