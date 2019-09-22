@@ -170,8 +170,8 @@ $ git remote -v
 The output should look similar:
 
 ```
-digitalcraftsman    git@github.com:digitalcraftsman/jx.git (fetch)
-digitalcraftsman    git@github.com:digitalcraftsman/jx.git (push)
+digitalcraftsperson    git@github.com:digitalcraftsperson/jx.git (fetch)
+digitalcraftsperson    git@github.com:digitalcraftsperson/jx.git (push)
 origin  https://github.com/jenkins-x/jx (fetch)
 origin  https://github.com/jenkins-x/jx (push)
 ```
