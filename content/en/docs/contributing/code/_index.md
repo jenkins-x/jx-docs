@@ -170,8 +170,8 @@ $ git remote -v
 The output should look similar:
 
 ```
-digitalcraftsman    git@github.com:digitalcraftsman/jx.git (fetch)
-digitalcraftsman    git@github.com:digitalcraftsman/jx.git (push)
+digitalcraftsperson    git@github.com:digitalcraftsperson/jx.git (fetch)
+digitalcraftsperson    git@github.com:digitalcraftsperson/jx.git (push)
 origin  https://github.com/jenkins-x/jx (fetch)
 origin  https://github.com/jenkins-x/jx (push)
 ```
@@ -218,7 +218,7 @@ Bear in mind when developing that the code can (and will) run on different archi
 
 ### Push commits
 
-To push our commits to the fork on GitHub you need to specify a destination. A destination is defined by the remote and a branch name. Earlier, you defined that the remote url of our fork is the same as our GitHub handle, in this case `digitalcraftsman`. The branch should have the same as our local one. This makes it easy to identify corresponding branches.
+To push our commits to the fork on GitHub you need to specify a destination. A destination is defined by the remote and a branch name. Earlier, you defined that the remote url of our fork is the same as our GitHub handle, in this case `digitalcraftsperson`. The branch should have the same as our local one. This makes it easy to identify corresponding branches.
 
 ```shell
 $ git push --set-upstream origin <BRANCH-NAME>
