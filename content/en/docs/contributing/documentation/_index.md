@@ -26,9 +26,21 @@ How to install a Docker engine depends on your platform etc., so best to head ov
 To fork the `jx-docs` repo, simply go to [https://github.com/jenkins-x/jx-docs](https://github.com/jenkins-x/jx-docs) and click the "Fork" button in the top right-hand corner.
 Make sure you're logged in to Github first.
 
+Once you've forked the repo, clone it to your local environment (replace the [username] with your git user name):
+
+```bash
+$ git clone  --recurse-submodules --depth 1 https://github.com/[username]/jx-docs.git
+```
+
+In case you already have a git clone locally (from before the theme change) then run the following to pull the Docsy theme and dependencies
+
+```bash
+$ git submodule update --init --recursive
+```
+
 You'll also need to create a git reference to the main `jx-docs` repo for when you're creating new branches:
 
-```shell
+```bash
 $ git remote add upstream https://github.com/jenkins-x/jx-docs.git
 ```
 
