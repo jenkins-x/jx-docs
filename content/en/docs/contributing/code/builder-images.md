@@ -1,12 +1,8 @@
 ---
 title: "Builder Images"
+linktitle: "Builder Images"
 date: 2019-09-06T20:00:23Z
-draft: true
-menu:
-  docs:
-    parent: "contribute"
-draft: false
-toc: true
+weight: 60
 ---
 
 Jenkins X relies on a set of Docker images to run the actual builds. You can find the list here: https://github.com/jenkins-x/jenkins-x-builders
