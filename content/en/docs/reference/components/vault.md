@@ -6,6 +6,8 @@ date: 2019-01-08
 publishdate: 2019-01-08
 lastmod: 2019-01-08
 weight: 200
+aliases:
+  - /docs/managing-jx/common-tasks/vault
 ---
 
 [Vault](https://www.vaultproject.io) is an open source project for securely managing secrets and is our preferred way to manage secrets across your environments in Jenkins X.

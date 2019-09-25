@@ -3,6 +3,8 @@ title: Helm 3
 linktitle: Helm 3
 description: Using Helm 3 with Jenkins X 
 weight: 110
+aliases:
+  - /docs/managing-jx/common-tasks/helm3
 ---
 
 Jenkins X uses [Helm](https://www.helm.sh/) to install both Jenkins X and to install the applications you create in each of the [Environments](/docs/concepts/features/#environments) (like `Staging` and `Production`)

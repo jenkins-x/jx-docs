@@ -5,6 +5,7 @@ description: Turning source code into applications on kubernetes
 weight: 30
 aliases:
   - /architecture/build-packs
+  - /docs/managing-jx/common-tasks/build-packs
 ---
 
 We use [draft](https://draft.sh/) style _build packs_ for different languages, runtimes and build tools to add the necessary configuration files to projects as we [import them](/docs/using-jx/common-tasks/import/) or [create](/docs/using-jx/common-tasks/create-spring/) [them](/docs/getting-started/first-project/create-quickstart/) so that we can build and deploy them in kubernetes.
