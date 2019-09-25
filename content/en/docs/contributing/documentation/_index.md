@@ -5,7 +5,7 @@ description: How to help improve the Jenkins X documentation
 weight: 10
 ---
 
-We appreciate your contributions to Jenkins X documentation whether you are a developer, an end user of Jenins X, or someone who can't stand seeing typos!
+We welcome your contributions to Jenkins X documentation whether you are a developer, an end user of Jenins X, or someone who can't stand seeing typos!
 
 # Assumptions
 
@@ -96,11 +96,11 @@ upstream  https://github.com/jenkins-x/jx-docs.git (fetch)
 upstream  https://github.com/jenkins-x/jx-docs.git (push)
 ```
 
-### Install Docker
+## Install Docker
 
 How to install a Docker engine depends on your platform etc., so best to head over to [Docker](https://docs.docker.com/install/) to find the right one.
 
-## Typical Workflow
+## Contribution Workflow
 
 Once you've completed the initial steps to get started, you can begin to make changes and add new content.
 
@@ -117,8 +117,6 @@ At a high level, your workflow will likely look something like this:
 
 We'll go though each of the steps below in more detail
 
-## Contribution Workflow
-
 ### Create a new branch
 
 First, ensure that your local repository is up-to-date with the latest version of `jx-docs`. More details on [GitHub help](https://help.github.com/articles/syncing-a-fork/)
@@ -129,13 +127,13 @@ $ git checkout master
 $ git merge upstream/master
 ```
 
-You've now updated your local copy of the repository. To update your fork on GitHub, you can push your changes:
+You've now updated your local copy of the repository. To update your fork on GitHub, push your changes:
 
 ```shell
 $ git push origin master
 ```
 
-Now you can create a new branch for your change:
+Create a new branch for the changes you'd like to make:
 
 ```shell
 $ git checkout -b <BRANCH-NAME>
@@ -214,22 +212,32 @@ $ git push --set-upstream origin <BRANCH-NAME>
 
 If you need to push more commits to the same branch, you can just use `git push` going forward; set-upstream is only needed once.
 
-### Raise a Pull Request
+## Open a pull request 🎉
 
-Github is generally very helpful in letting you raise a pull request from your fork to the main `jx-docs` repo. You'll need to add a few labels etc. though, so make sure your PR is seen and reviewed:
+In this step, you'll open a pull request to submit your additions. Open either the [Jenkins X documentation master repository](https://github.com/jenkins-x/jx-docs) or your own fork of the respository on GitHub in your browser.
 
-* assign the PR to yourself
-* add the PR to the `Jenkins X Documentation` project
+You should find a green button labeled with "New pull request". But GitHub is clever and probably suggests you a pull request like in the beige box below:
 
-You can leave the rest blank; reviewers and labels will be added automatically.
+![Open a pull request](/images/contribute/development/open-pull-request.png)
+
+Click on the green "Compare and pull request" button. A new page will open which summaries the most important information of your pull request. Scroll down and you'll find the additions of all your commits. Make sure everything looks as expected and click on "Create pull request".
+
+There are a number of automated checks that will run on your PR:
+
+* Semantic Pull Request - validates that your commit messages meet the Conventional Commit format described above.
+  Additionally your PR must also have a conventional message. The UX for this bot is a little odd as it doesn't go red
+  if the messages are NOT correct, instead it goes yellow. You need it to go to a green tick!
+* tide - performs the merge when all the checks pass. Don't worry about the state of this one, it doesn't add much info.
+  Clicking on the details link is very helpful as it will take you to the dashboard where you can navigate to the "Tide"
+  screen and check the status of your PR in the merge queue.
 
 ### Review Process
 
 The final part of all of this, is letting others review your work and provide feedback. As a rule of thumb, the conversation should happen on the PR, but sometimes things will be sorted out via Slack or a video call.
 
-Sometimes it may take a few days for a review to happen (depends on how many are monitoring the [Jenkins X Documentation]() project). If you feel it's an urgent change, jump on the community slack channel `#jenkins-x-user` and ask for someone to review your PR.
+Sometimes it may take a few days for a review to happen. If you feel it's an urgent change, jump on the community slack channel `#jenkins-x-user` and ask for someone to review your PR.
 
-Once the review is done, your changes will be merged into the master branch, and the site will be updated.
+Once the review is done, your changes will be merged into the master branch, and the site will be updated. 
 
 ## Working With The Local Hugo Server
 
