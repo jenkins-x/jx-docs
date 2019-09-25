@@ -3,6 +3,8 @@ title: Docker Registry
 linktitle: Docker Registry
 description: Configuring your docker registry 
 weight: 90
+aliases:
+  - /docs/managing-jx/common-tasks/docker-registry
 ---
 
 To be able to create and publish docker images we need to use a Docker Registry.
@@ -113,7 +115,7 @@ kubectl delete secret jenkins-docker-cfg
 2. Create the new `jenkins-docker-cfg` `Secret` with the contents of the `config.json` as follows:
 
 ```bash
- kubectl create secret generic jenkins-docker-cfg --from-file./config.json
+ kubectl create secret generic jenkins-docker-cfg --from-file=./config.json
 ```
 
 That should do it, you should now be able to run pipelines and store images in the jFrog BinTray Registry.
