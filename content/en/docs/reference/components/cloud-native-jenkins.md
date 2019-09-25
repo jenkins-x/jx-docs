@@ -2,7 +2,9 @@
 title: Cloud Native Jenkins
 linktitle: Cloud Native Jenkins
 description: Lets make Jenkins cloud native
-weight: 40
+weight: 31
+aliases:
+  - /docs/managing-jx/common-tasks/cloud-native-jenkins
 ---
 
 Jenkins X helps to support _cloud native Jenkins_ via:
