@@ -3,12 +3,24 @@ title: Git Servers
 linktitle: Git Servers
 description: Working with different Git servers
 weight: 100
+aliases:
+  - /docs/managing-jx/common-tasks/git
 ---
 
 
 Jenkins X defaults to using [GitHub](https://github.com/), the free public git hosting solution for open source projects.
  
 However when working in the enterprise you may wish to use different git servers.
+
+
+## Configuring git servers via boot
+
+We highly recommend you use [boot](/docs/getting-started/setup/boot/) to install and configure Jenkins X.
+
+If you are using boot then use [these instructions for configuring git](/docs/getting-started/setup/boot/#git)
+
+
+## Listing git servers
 
 You can list the git servers configured via [jx get git](/commands/jx_get_git):
 

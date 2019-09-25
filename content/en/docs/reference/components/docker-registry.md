@@ -3,6 +3,8 @@ title: Docker Registry
 linktitle: Docker Registry
 description: Configuring your docker registry 
 weight: 90
+aliases:
+  - /docs/managing-jx/common-tasks/docker-registry
 ---
 
 To be able to create and publish docker images we need to use a Docker Registry.
