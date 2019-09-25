@@ -5,7 +5,7 @@ description: How to help improve the Jenkins X documentation
 weight: 10
 ---
 
-Contributing to the documentation is a great way to get involved, and we appreciate your help in improving the Jenkins X docs! You can choose an [open issue](https://github.com/jenkins-x/jx-docs/issues), or contribute to the documentation as you find areas to augment or fix.
+We appreciate your contributions to Jenkins X documentation whether you are a developer, an end user of Jenins X, or someone who can't stand seeing typos!
 
 # Assumptions
 
@@ -20,7 +20,7 @@ If you're struggling at any point in this contribution guide, reach out to the J
 
 ## Getting Started
 
-The first thing you'll need to do, is get your local environment setup so that you can add/change content and make sure it looks right, before raising a Pull Request.
+The first thing you'll need to do is get your local environment setup, so that you can add/change content and make sure it looks right before raising a Pull Request.
 
 We'll go through each step below, but here's what you need to get started:
 
@@ -35,9 +35,11 @@ Git is a [version control system](https://en.wikipedia.org/wiki/Version_control)
 
 You will need to have Git installed on your computer to contribute to Jenkins X development. Teaching Git is outside the scope of the Jenkins X docs, but if you're looking for an excellent reference to learn the basics of Git, we recommend the [Git book](https://git-scm.com/book/) if you are not sure where to begin.
 
-Move back to the terminal and check if Git is already installed. Type in `git version` and press enter. You can skip the rest of this section if the command returned a version number. Otherwise [download](https://git-scm.com/downloads) the latest version and follow this [installation guide](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+Move back to the terminal and check if Git is already installed. Type `git version` and press enter. If the command returned a version number, you can skip the rest of this section.
 
-Finally, check again with `git version` if Git was installed successfully.
+Otherwise, [download](https://git-scm.com/downloads) the latest version and follow this [installation guide](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+
+Finally, run `git version` again to check if Git was installed successfully.
 
 ### Git Graphical Front Ends
 
@@ -45,7 +47,7 @@ There are several [GUI clients](https://git-scm.com/downloads/guis) that help yo
 
 ## Create a GitHub Account
 
-If you're going to contribute code, you'll need to have an account on GitHub. Go to [www.github.com/join](https://github.com/join) and set up a personal account.
+If you're going to contribute to the docs, you'll need to have an account on GitHub. Go to [www.github.com/join](https://github.com/join) and set up a personal account.
 
 ## Set up your working copy
 
@@ -53,7 +55,7 @@ The working copy is set up locally on your computer. It's what you'll edit, comp
 
 ### Fork the repository
 
-If you're not familiar with this term, GitHub's [help pages](https://help.github.com/articles/fork-a-repo/) provide again a simple explanation:
+If you're not familiar with this term, GitHub's [help pages](https://help.github.com/articles/fork-a-repo/) provide a simple explanation:
 
 > A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.
 
@@ -68,11 +70,11 @@ Now open your fork repository on GitHub and copy the remote url of your fork. Yo
 Then go back to your terminal, `cd` to where you would like to place your local copy of the `jx-docs` repo, and then clone your fork.
 
 ```shell
-$ git clone git@github.com:<username>/jx-docs.git
+$ git clone git@github.com:<YOUR_USERNAME>/jx-docs.git
 $ cd jx-docs
 ```
 
-Add the conventional upstream `git` remote in order to fetch changes from `jx-docs` main master
+Add the conventional upstream `git` remote in order to fetch changes from the `jx-docs` master
 branch and to create pull requests:
 
 ```shell
@@ -88,10 +90,10 @@ $ git remote -v
 The output should look similar to:
 
 ```
-origin    git@github.com:<username>/jx-docs.git (fetch)
-origin    git@github.com:<username>/jx-docs.git (push)
-upstream  https://github.com/jenkins-x/jx-docs (fetch)
-upstream  https://github.com/jenkins-x/jx-docs (push)
+origin    git@github.com:<YOUR_USERNAME>/jx-docs.git (fetch)
+origin    git@github.com:<YOUR_USERNAME>/jx-docs.git (push)
+upstream  https://github.com/jenkins-x/jx-docs.git (fetch)
+upstream  https://github.com/jenkins-x/jx-docs.git (push)
 ```
 
 ### Install Docker
@@ -115,27 +117,31 @@ At a high level, your workflow will likely look something like this:
 
 We'll go though each of the steps below in more detail
 
+## Contribution Workflow
+
 ### Create a new branch
 
-You should generally create a branch for each "chunk of work" that you take on. If you wanted to update two completely different parts of the site, you should create two separate branches instead of one (unless it's the same change across a bunch of files...there are always exceptions to the rule).
+First, ensure that your local repository is up-to-date with the latest version of `jx-docs`. More details on [GitHub help](https://help.github.com/articles/syncing-a-fork/)
 
-The reason for the separate branches is to make it easier to get each change merged into the main repo. If one of your changes required no changes, but your second change required a lot of changes, having two branches instead of one would allow your first change to be merged separately from your second.
-
-Naming is also important when creating branches ("blabla 24" is not as meaningful as "minor grammatical fixes") and so is the process of creating a branch. You'd want to start off on at the right spot, so that your changes don't get mixed up. Here's how to do that:
-
-```
+```shell
 $ git fetch upstream
 $ git checkout master
 $ git merge upstream/master
 ```
 
-This ensures that you're starting from where ever the live website is, so you avoid including other commits you might have added since the last update of the site.
+You've now updated your local copy of the repository. To update your fork on GitHub, you can push your changes:
 
-Now create your branch with a meaningful name:
+```shell
+$ git push origin master
+```
 
-```bash
+Now you can create a new branch for your change:
+
+```shell
 $ git checkout -b <BRANCH-NAME>
 ```
+
+You can check on which branch your are with `git branch`. You should see a list of all local branches. The current branch is indicated with a little asterisk.
 
 ### Start the Hugo server
 
@@ -143,7 +149,7 @@ The documentation (and the rest of the website) is generated using the static si
 
 To make this as easy as possible, we've created a Dockerfile and a docker-compose.yml file that you can use spin up a preview server without having to install a bunch of other software.
 
-First make sure you're in the folder with the cloned repo (if you haven't done anything in your terminal since cloning the repo, just run `cd jx-docs`), then run the following command to build and start the Hugo server:
+First make sure you're in the folder with your local cloned copy of the `jx-docs` repo,  then run the following command to build and start the Hugo server:
 
 ```bash
 $ docker-compose up -d server
