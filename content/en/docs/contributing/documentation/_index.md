@@ -5,7 +5,18 @@ description: How to help improve the Jenkins X documentation
 weight: 10
 ---
 
-Contributing to the documentation is easy, and a great way to get involved. Plus, you don't have to contribute code to be able to contribute to the documentation.
+Contributing to the documentation is a great way to get involved, and we appreciate your help in improving the Jenkins X docs! You can choose an [open issue](https://github.com/jenkins-x/jx-docs/issues), or contribute to the documentation as you find areas to augment or fix.
+
+# Assumptions
+
+This contribution guide takes a step-by-step approach in hopes of helping newcomers. Therefore, we only assume the following:
+
+* You are new to Git or open-source projects in general
+* You are a fan of Jenkins X and enthusiastic about contributing to the project
+
+{{% alert %}}
+If you're struggling at any point in this contribution guide, reach out to the Jenkins X community in [Jenkins X's Discussion forum](/community/).
+{{% /alert %}}
 
 ## Getting Started
 
@@ -13,26 +24,79 @@ The first thing you'll need to do, is get your local environment setup so that y
 
 We'll go through each step below, but here's what you need to get started:
 
+* [Git](https://git-scm.com) and a [GitHub](https://github.com) account
+* Fork and clone the `jx/jx-docs` repo
 * Install Docker
-* Fork the `jx/jx-docs` repo
 * Build a Hugo docker image to preview changes
 
-### Install Docker
+## Install Git on your system
 
-How to install a Docker engine depends on your platform etc., so best to head over to [Docker](https://docs.docker.com/install/) to find the right one.
+Git is a [version control system](https://en.wikipedia.org/wiki/Version_control) to track the changes of source code.
 
-### Fork the repo
+You will need to have Git installed on your computer to contribute to Jenkins X development. Teaching Git is outside the scope of the Jenkins X docs, but if you're looking for an excellent reference to learn the basics of Git, we recommend the [Git book](https://git-scm.com/book/) if you are not sure where to begin.
 
-To fork the `jx-docs` repo, simply go to [https://github.com/jenkins-x/jx-docs](https://github.com/jenkins-x/jx-docs) and click the "Fork" button in the top right-hand corner.
-Make sure you're logged in to Github first.
+Move back to the terminal and check if Git is already installed. Type in `git version` and press enter. You can skip the rest of this section if the command returned a version number. Otherwise [download](https://git-scm.com/downloads) the latest version and follow this [installation guide](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
-You'll also need to create a git reference to the main `jx-docs` repo for when you're creating new branches:
+Finally, check again with `git version` if Git was installed successfully.
+
+### Git Graphical Front Ends
+
+There are several [GUI clients](https://git-scm.com/downloads/guis) that help you to operate Git. Not all are available for all operating systems and maybe differ in their usage. Thus, we will use the command line since the commands are everywhere the same.
+
+## Create a GitHub Account
+
+If you're going to contribute code, you'll need to have an account on GitHub. Go to [www.github.com/join](https://github.com/join) and set up a personal account.
+
+## Set up your working copy
+
+The working copy is set up locally on your computer. It's what you'll edit, compile, and end up pushing back to GitHub. The main steps are cloning the repository and creating your fork as a remote.
+
+### Fork the repository
+
+If you're not familiar with this term, GitHub's [help pages](https://help.github.com/articles/fork-a-repo/) provide again a simple explanation:
+
+> A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.
+
+Open the [Jenkins X docs repository](https://github.com/jenkins-x/jx-docs) on GitHub and click on the "Fork" button in the top right.
+
+### Clone your fork locally
+
+Now open your fork repository on GitHub and copy the remote url of your fork. You can choose between HTTPS and SSH as protocol that Git should use for the following operations. HTTPS works always [if you're not sure](https://help.github.com/articles/which-remote-url-should-i-use/).
+
+![Copy remote url](/images/contribute/development/copy-remote-url.png)
+
+Then go back to your terminal, `cd` to where you would like to place your local copy of the `jx-docs` repo, and then clone your fork.
+
+```shell
+$ git clone git@github.com:<username>/jx-docs.git
+$ cd jx-docs
+```
+
+Add the conventional upstream `git` remote in order to fetch changes from `jx-docs` main master
+branch and to create pull requests:
 
 ```shell
 $ git remote add upstream https://github.com/jenkins-x/jx-docs.git
 ```
 
-If you want to know more about forking repos, see [GitHub's documentation on "forking"][ghforking]
+Let's check if everything went right by listing all known remotes:
+
+```shell
+$ git remote -v
+```
+
+The output should look similar to:
+
+```
+origin    git@github.com:<username>/jx-docs.git (fetch)
+origin    git@github.com:<username>/jx-docs.git (push)
+upstream  https://github.com/jenkins-x/jx-docs (fetch)
+upstream  https://github.com/jenkins-x/jx-docs (push)
+```
+
+### Install Docker
+
+How to install a Docker engine depends on your platform etc., so best to head over to [Docker](https://docs.docker.com/install/) to find the right one.
 
 ## Typical Workflow
 
