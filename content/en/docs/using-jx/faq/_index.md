@@ -76,6 +76,26 @@ With Jenkins X you are free to create your own pipeline to do the release if you
 
 We've specifically built this extension model to minimise the work your teams have in having to edit + maintain pipelines across many separate microservices; the idea is we're trying to automate both the pipelines and the extensions to the pipelines so teams can focus on their actual code and less on the CI/CD plumbing which is pretty much all undifferentiated heavy lifting these days.
 
+## How can I handle custom branches with tekton
+
+We don't use `branch patterns` with tekton; they are a jenkins specific configuration.
+
+For Tekton we use the [prow](/docs/reference/components/prow/) / [lighthouse](/docs/reference/components/lighthouse/) configuration to specify which branches trigger which pipeline contexts.
+
+If you are using [boot](/docs/getting-started/setup/boot/) to install Jenkins X then you can create your own custom `Scheduler` custom resource in `env/templates/myscheduler.yaml` based on the [default one that is included](https://github.com/jenkins-x-charts/jxboot-resources/blob/master/jxboot-resources/templates/default-scheduler.yaml).
+
+e.g. here is how we specify the [branches used to create releases](https://github.com/jenkins-x-charts/jxboot-resources/blob/master/jxboot-resources/templates/default-scheduler.yaml#L48).  
+
+You can also create additional pipeline contexts; e.g. here's how we add multiple parallel testing pipelines on the [version stream](/docs/concepts/version-stream/) via a [custom Scheduler](https://github.com/jenkins-x/environment-tekton-weasel-dev/blob/master/env/templates/jx-versions-scheduler.yaml#L21) so that we can have many integration tests run in parallel on a single PR. Then each named context listed has an associated `jenkins-x-$context.yml` file in the source repository to define the pipeline to run [like this example which defines the `boot-lh` context](https://github.com/jenkins-x/jenkins-x-versions/blob/master/jenkins-x-boot-lh.yml)
+
+You can then associate your `SourceRepository` resources with your custom scheduler by: 
+
+* specifying the scheduler name on the `spec.scheduler.name` property of your `SourceRepository` via `kubectl edit sr my-repo-name`)
+* specifying the scheduler name when you import a project via `jx import --scheduler myname`
+* specifying the default scheduler name in your `dev` `Environment` at `spec.teamSettings.defaultScheduler.name` before you import projects
+
+If you are not using [boot](/docs/getting-started/setup/boot/) then you can use `kubectl edit cm config` and modify the prow configuration by hand - though we highly recommend using [boot](/docs/getting-started/setup/boot/) and GitOps instead; the prow configuration is easy to break if changing it by hand.
+
 ## How does promotion actually work?
 
 The kubernetes resources being deployed are defined as YAML files in the source code of your application in `charts/myapp/templates/*.yaml`. If you don't specify anything then Jenkins X creates default resources (a `Service + Deployment`) but you are free to add any k8s resources as YAML into that folder (`PVCs, ConfigMaps, Services`, etc).
