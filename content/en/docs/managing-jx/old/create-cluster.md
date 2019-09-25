@@ -1,8 +1,8 @@
 ---
-title: Old create cluster documentation
-linktitle: Old instructions
-description: Deprecated - How to create a new Kubernetes cluster with Jenkins X installed
-weight: 500
+title: Create cluster documentation
+linktitle: Create cluster
+description: How to create a new Kubernetes cluster with Jenkins X installed
+weight: 110
 ---
 
 
