@@ -6,4 +6,4 @@ date: 2019-08-28
 weight: 190
 ---
 
-Placeholder for TLS documentation.
+Please see the [boot ingress documentation](/docs/getting-started/setup/boot/#ingress)
