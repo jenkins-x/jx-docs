@@ -1,8 +1,8 @@
 ---
-title: Install Jenkins X
-linktitle: Install Jenkins X
+title: Install jx
+linktitle: Install jx
 description: How to install the jx binary on your machine
-weight: 100
+weight: 5
 keywords: [install]
 aliases:
   - /getting-started/install
