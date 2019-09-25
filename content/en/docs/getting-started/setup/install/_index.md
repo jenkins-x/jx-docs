@@ -26,6 +26,11 @@ To install Jenkins X on macOS without brew, download the `.tar` file, and unarch
 
         curl -L "https://github.com/jenkins-x/jx/releases/download/$(curl --silent https://api.github.com/repos/jenkins-x/jx/releases/latest | jq -r '.tag_name')/jx-darwin-amd64.tar.gz" | tar xzv "jx"
 
+    or, if you don't have `jq` installed:
+
+        curl -L "https://github.com/jenkins-x/jx/releases/download/$(curl --silent "https://github.com/jenkins-x/jx/releases/latest" | sed 's#.*tag/\(.*\)\".*#\1#')/jx-darwin-amd64.tar.gz" | tar xzv "jx"
+
+
 2.  Install the `jx` binary by moving it to a location which should be on your environments PATH, using
     the `mv` command:
 
@@ -43,6 +48,11 @@ To install Jenkins X on Linux, download the `.tar` file, and unarchive it in a d
     the `tar` command:
 
         curl -L "https://github.com/jenkins-x/jx/releases/download/$(curl --silent https://api.github.com/repos/jenkins-x/jx/releases/latest | jq -r '.tag_name')/jx-linux-amd64.tar.gz" | tar xzv "jx"
+
+    or, if you don't have `jq` installed:
+
+        curl -L "https://github.com/jenkins-x/jx/releases/download/$(curl --silent "https://github.com/jenkins-x/jx/releases/latest" | sed 's#.*tag/\(.*\)\".*#\1#')/jx-linux-amd64.tar.gz" | tar xzv "jx"
+
 
 2.  Install the `jx` binary by moving it to a location which should be on your environments PATH, using
     the `mv` command:
