@@ -11,6 +11,12 @@ aliases:
   - /architecture/vault
 ---
 
+{{% pageinfo %}}
+Note that currently Vault only works on Google Cloud Platform (GCP) with Google Kubernetes Engine (GKE). We're working on expanding support to other cloud providers.
+{{% /pageinfo %}}
+
+# What is Vault?
+
 [Vault](https://www.vaultproject.io) is an open source project for securely managing secrets and is our preferred way to manage secrets across your environments in Jenkins X.
 
 In traditional computing infrastructures, all of the resources and
@@ -39,7 +45,7 @@ securely store and manage all aspects of their development platform.
 Jenkins X installs and configures Vault for your
 cluster by default through the cluster creation process.
 
-### Vault features
+## Vault features
 
 Vault is a tool for accessing and storing user secrets. It manages the
 complexity of secure resource access:
@@ -74,7 +80,32 @@ Vaults are provisioned in kubernetes using `vault-operator`, an
 open-source Kubernetes controller installed when Vault is configured
 during cluster creation and Jenkins X installation on the cluster.
 
-## Configuring DNS and TLS settings for Vault
+# Using Vault on the CLI
+
+First you need to download an install the [safe](https://github.com/starkandwayne/safe) CLI for Vault.
+
+Once you have installed [safe](https://github.com/starkandwayne/safe) you can run:
+
+```
+eval `jx get vault-config`
+```
+
+you should now be able to use the [safe](https://github.com/starkandwayne/safe) CLI to  access your vault.
+
+You can then get a secret via:
+
+
+```
+safe get /secret/my-cluster-name/creds/my-secret
+```
+
+or you can update a secret via:
+
+```
+safe set /secret/my-cluster-name/creds/my-secret username=myname password=mytoken
+```
+
+# Configuring DNS and TLS settings for Vault
 
 For a secure Jenkins X installation, you must
 enable TLS when interacting with the vault service. To configure TLS,
@@ -82,7 +113,7 @@ you must first configure Zone DNS settings within Google Cloud Platform,
 and then configure external DNS settings for Ingress and TLS in the
 `jx-requirements.yaml` configuration file.
 
-### Configuring Google Cloud DNS
+## Configuring Google Cloud DNS
 
 In order to configure Vault for the proper DNS and TLS access, you must
 configure Google Cloud DNS settings appropriately.
@@ -119,7 +150,7 @@ Once created, the *Zone Details* page loads. *NS* (Name server) and
 domain (for example `acmecorp.example`)
 
 
-### Configuring External DNS in Jenkins X
+## Configuring External DNS in Jenkins X
 
 Once you have configured Google Cloud DNS, you can use browse the
 [Zones](https://console.cloud.google.com/net-services/dns/zones) page in
@@ -185,7 +216,7 @@ secretStorage: vault
 Run `jx boot` for the changes to take effect in your
 environment.
 
-## Creating a Vault
+# Creating a Vault
 
 A vault is created by default using [jx boot](/getting-started/boot/) to create your cluster, unless you specified during the cluster configuration not to create the vault. In this case, you can create one post-installation
 with the `jx create` command-line interface:
@@ -222,50 +253,3 @@ use the default value.
 7.  The program will verify your answers to the previous questions in
 summary and prompt you to approve the Vault creation (default is
 `Yes`).
-
-## Using Vault with boot
-
-We have integrated [Vault](https://www.vaultproject.io) into [jx boot](/docs/reference/boot/).
-
-To switch to `vault` you need to add `secretStorage: vault` in your `jx-requirements.yml` file:
-
-```yaml
-cluster:
-  provider: gke
-environments:
-- key: dev
-- key: staging
-- key: production
-kaniko: true
-secretStorage: vault
-webhook: prow
-```
-
-Once you have modified your `jx-requirements.yml` file you just need to run `jx boot`.
-
-For more details see [configuring secrets with boot](/docs/reference/boot/#secrets).
-
-## Using Vault on the CLI
-
-First you need to download an install the [safe](https://github.com/starkandwayne/safe) CLI for Vault.
-
-Once you have installed [safe](https://github.com/starkandwayne/safe) you can run:
-
-```
-eval `jx get vault-config`
-```
-
-you should now be able to use the [safe](https://github.com/starkandwayne/safe) CLI to  access your vault.
-
-You can then get a secret via:
-
-
-```
-safe get /secret/my-cluster-name/creds/my-secret
-```
-
-or you can update a secret via:
-
-```
-safe set /secret/my-cluster-name/creds/my-secret username=myname password=mytoken
-```
