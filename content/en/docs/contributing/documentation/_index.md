@@ -5,7 +5,7 @@ description: How to help improve the Jenkins X documentation
 weight: 10
 ---
 
-We welcome your contributions to Jenkins X documentation whether you are a developer, an end user of Jenins X, or someone who can't stand seeing typos!
+We welcome your contributions to Jenkins X documentation whether you are a developer, an end user of Jenkins X, or someone who can't stand seeing typos!
 
 # Assumptions
 
@@ -70,14 +70,22 @@ Now open your fork repository on GitHub and copy the remote url of your fork. Yo
 Then go back to your terminal, `cd` to where you would like to place your local copy of the `jx-docs` repo, and then clone your fork.
 
 ```shell
-$ git clone git@github.com:<YOUR_USERNAME>/jx-docs.git
+$ git clone --recurse-submodules --depth 1 git@github.com:<YOUR_USERNAME>/jx-docs.git
 $ cd jx-docs
 ```
+
+{{% alert %}}
+In case you already have a git clone locally (from before the theme change) then run the following to pull the Docsy theme and dependencies
+
+```bash
+$ git submodule update --init --recursive
+```
+{{% /alert %}}
 
 Add the conventional upstream `git` remote in order to fetch changes from the `jx-docs` master
 branch and to create pull requests:
 
-```shell
+```bash
 $ git remote add upstream https://github.com/jenkins-x/jx-docs.git
 ```
 
@@ -224,7 +232,7 @@ Click on the green "Compare and pull request" button. A new page will open which
 
 There are a number of automated checks that will run on your PR:
 
-* Semantic Pull Request - validates that your commit messages meet the Conventional Commit format described above.
+* Semantic Pull Request - validates that your commit messages meet the [Conventional Commit format](https://github.com/probot/semantic-pull-requests#semantic-pull-requests).
   Additionally your PR must also have a conventional message. The UX for this bot is a little odd as it doesn't go red
   if the messages are NOT correct, instead it goes yellow. You need it to go to a green tick!
 * tide - performs the merge when all the checks pass. Don't worry about the state of this one, it doesn't add much info.
@@ -235,7 +243,7 @@ There are a number of automated checks that will run on your PR:
 
 The final part of all of this, is letting others review your work and provide feedback. As a rule of thumb, the conversation should happen on the PR, but sometimes things will be sorted out via Slack or a video call.
 
-Sometimes it may take a few days for a review to happen. If you feel it's an urgent change, jump on the community slack channel `#jenkins-x-user` and ask for someone to review your PR.
+Sometimes it may take a few days for a review to happen. If you feel it's an urgent change, jump on the [community slack channel](https://jenkins-x.io/community/#slack) `#jenkins-x-user` and ask for someone to review your PR.
 
 Once the review is done, your changes will be merged into the master branch, and the site will be updated. 
 
