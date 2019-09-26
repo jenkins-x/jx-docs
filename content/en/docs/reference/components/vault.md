@@ -6,6 +6,9 @@ date: 2019-01-08
 publishdate: 2019-01-08
 lastmod: 2019-01-08
 weight: 200
+aliases:
+  - /docs/managing-jx/common-tasks/vault
+  - /architecture/vault
 ---
 
 [Vault](https://www.vaultproject.io) is an open source project for securely managing secrets and is our preferred way to manage secrets across your environments in Jenkins X.
@@ -222,7 +225,7 @@ summary and prompt you to approve the Vault creation (default is
 
 ## Using Vault with boot
 
-We have integrated [Vault](https://www.vaultproject.io) into [jx boot](/getting-started/boot/).
+We have integrated [Vault](https://www.vaultproject.io) into [jx boot](/docs/reference/boot/).
 
 To switch to `vault` you need to add `secretStorage: vault` in your `jx-requirements.yml` file:
 
@@ -240,7 +243,7 @@ webhook: prow
 
 Once you have modified your `jx-requirements.yml` file you just need to run `jx boot`.
 
-For more details see [configuring secrets with boot](/getting-started/boot/#secrets).
+For more details see [configuring secrets with boot](/docs/reference/boot/#secrets).
 
 ## Using Vault on the CLI
 

@@ -5,36 +5,110 @@ description: How to help improve the Jenkins X documentation
 weight: 10
 ---
 
-Contributing to the documentation is easy, and a great way to get involved. Plus, you don't have to contribute code to be able to contribute to the documentation.
+We welcome your contributions to Jenkins X documentation whether you are a developer, an end user of Jenkins X, or someone who can't stand seeing typos!
+
+# Assumptions
+
+This contribution guide takes a step-by-step approach in hopes of helping newcomers. Therefore, we only assume the following:
+
+* You are new to Git or open-source projects in general
+* You are a fan of Jenkins X and enthusiastic about contributing to the project
+
+{{% alert %}}
+If you're struggling at any point in this contribution guide, reach out to the Jenkins X community in [Jenkins X's Discussion forum](/community/).
+{{% /alert %}}
 
 ## Getting Started
 
-The first thing you'll need to do, is get your local environment setup so that you can add/change content and make sure it looks right, before raising a Pull Request.
+The first thing you'll need to do is get your local environment setup, so that you can add/change content and make sure it looks right before raising a Pull Request.
 
 We'll go through each step below, but here's what you need to get started:
 
+* [Git](https://git-scm.com) and a [GitHub](https://github.com) account
+* Fork and clone the `jx/jx-docs` repo
 * Install Docker
-* Fork the `jx/jx-docs` repo
 * Build a Hugo docker image to preview changes
 
-### Install Docker
+## Install Git on your system
 
-How to install a Docker engine depends on your platform etc., so best to head over to [Docker](https://docs.docker.com/install/) to find the right one.
+Git is a [version control system](https://en.wikipedia.org/wiki/Version_control) to track the changes of source code.
 
-### Fork the repo
+You will need to have Git installed on your computer to contribute to Jenkins X development. Teaching Git is outside the scope of the Jenkins X docs, but if you're looking for an excellent reference to learn the basics of Git, we recommend the [Git book](https://git-scm.com/book/) if you are not sure where to begin.
 
-To fork the `jx-docs` repo, simply go to [https://github.com/jenkins-x/jx-docs](https://github.com/jenkins-x/jx-docs) and click the "Fork" button in the top right-hand corner.
-Make sure you're logged in to Github first.
+Move back to the terminal and check if Git is already installed. Type `git version` and press enter. If the command returned a version number, you can skip the rest of this section.
 
-You'll also need to create a git reference to the main `jx-docs` repo for when you're creating new branches:
+Otherwise, [download](https://git-scm.com/downloads) the latest version and follow this [installation guide](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+
+Finally, run `git version` again to check if Git was installed successfully.
+
+### Git Graphical Front Ends
+
+There are several [GUI clients](https://git-scm.com/downloads/guis) that help you to operate Git. Not all are available for all operating systems and maybe differ in their usage. Thus, we will use the command line since the commands are everywhere the same.
+
+## Create a GitHub Account
+
+If you're going to contribute to the docs, you'll need to have an account on GitHub. Go to [www.github.com/join](https://github.com/join) and set up a personal account.
+
+## Set up your working copy
+
+The working copy is set up locally on your computer. It's what you'll edit, compile, and end up pushing back to GitHub. The main steps are cloning the repository and creating your fork as a remote.
+
+### Fork the repository
+
+If you're not familiar with this term, GitHub's [help pages](https://help.github.com/articles/fork-a-repo/) provide a simple explanation:
+
+> A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.
+
+Open the [Jenkins X docs repository](https://github.com/jenkins-x/jx-docs) on GitHub and click on the "Fork" button in the top right.
+
+### Clone your fork locally
+
+Now open your fork repository on GitHub and copy the remote url of your fork. You can choose between HTTPS and SSH as protocol that Git should use for the following operations. HTTPS works always [if you're not sure](https://help.github.com/articles/which-remote-url-should-i-use/).
+
+![Copy remote url](/images/contribute/development/copy-remote-url.png)
+
+Then go back to your terminal, `cd` to where you would like to place your local copy of the `jx-docs` repo, and then clone your fork.
 
 ```shell
+$ git clone --recurse-submodules --depth 1 git@github.com:<YOUR_USERNAME>/jx-docs.git
+$ cd jx-docs
+```
+
+{{% alert %}}
+In case you already have a git clone locally (from before the theme change) then run the following to pull the Docsy theme and dependencies
+
+```bash
+$ git submodule update --init --recursive
+```
+{{% /alert %}}
+
+Add the conventional upstream `git` remote in order to fetch changes from the `jx-docs` master
+branch and to create pull requests:
+
+```bash
 $ git remote add upstream https://github.com/jenkins-x/jx-docs.git
 ```
 
-If you want to know more about forking repos, see [GitHub's documentation on "forking"][ghforking]
+Let's check if everything went right by listing all known remotes:
 
-## Typical Workflow
+```shell
+$ git remote -v
+```
+
+The output should look similar to:
+
+```
+origin    git@github.com:<YOUR_USERNAME>/jx-docs.git (fetch)
+origin    git@github.com:<YOUR_USERNAME>/jx-docs.git (push)
+upstream  https://github.com/jenkins-x/jx-docs.git (fetch)
+upstream  https://github.com/jenkins-x/jx-docs.git (push)
+```
+
+## Install Docker
+
+How to install a Docker engine depends on your platform etc., so best to head over to [Docker](https://docs.docker.com/install/) to find the right one.
+
+## Contribution Workflow
 
 Once you've completed the initial steps to get started, you can begin to make changes and add new content.
 
@@ -53,25 +127,27 @@ We'll go though each of the steps below in more detail
 
 ### Create a new branch
 
-You should generally create a branch for each "chunk of work" that you take on. If you wanted to update two completely different parts of the site, you should create two separate branches instead of one (unless it's the same change across a bunch of files...there are always exceptions to the rule).
+First, ensure that your local repository is up-to-date with the latest version of `jx-docs`. More details on [GitHub help](https://help.github.com/articles/syncing-a-fork/)
 
-The reason for the separate branches is to make it easier to get each change merged into the main repo. If one of your changes required no changes, but your second change required a lot of changes, having two branches instead of one would allow your first change to be merged separately from your second.
-
-Naming is also important when creating branches ("blabla 24" is not as meaningful as "minor grammatical fixes") and so is the process of creating a branch. You'd want to start off on at the right spot, so that your changes don't get mixed up. Here's how to do that:
-
-```
+```shell
 $ git fetch upstream
 $ git checkout master
 $ git merge upstream/master
 ```
 
-This ensures that you're starting from where ever the live website is, so you avoid including other commits you might have added since the last update of the site.
+You've now updated your local copy of the repository. To update your fork on GitHub, push your changes:
 
-Now create your branch with a meaningful name:
+```shell
+$ git push origin master
+```
 
-```bash
+Create a new branch for the changes you'd like to make:
+
+```shell
 $ git checkout -b <BRANCH-NAME>
 ```
+
+You can check on which branch your are with `git branch`. You should see a list of all local branches. The current branch is indicated with a little asterisk.
 
 ### Start the Hugo server
 
@@ -79,7 +155,7 @@ The documentation (and the rest of the website) is generated using the static si
 
 To make this as easy as possible, we've created a Dockerfile and a docker-compose.yml file that you can use spin up a preview server without having to install a bunch of other software.
 
-First make sure you're in the folder with the cloned repo (if you haven't done anything in your terminal since cloning the repo, just run `cd jx-docs`), then run the following command to build and start the Hugo server:
+First make sure you're in the folder with your local cloned copy of the `jx-docs` repo,  then run the following command to build and start the Hugo server:
 
 ```bash
 $ docker-compose up -d server
@@ -144,22 +220,32 @@ $ git push --set-upstream origin <BRANCH-NAME>
 
 If you need to push more commits to the same branch, you can just use `git push` going forward; set-upstream is only needed once.
 
-### Raise a Pull Request
+## Open a pull request 🎉
 
-Github is generally very helpful in letting you raise a pull request from your fork to the main `jx-docs` repo. You'll need to add a few labels etc. though, so make sure your PR is seen and reviewed:
+In this step, you'll open a pull request to submit your additions. Open either the [Jenkins X documentation master repository](https://github.com/jenkins-x/jx-docs) or your own fork of the respository on GitHub in your browser.
 
-* assign the PR to yourself
-* add the PR to the `Jenkins X Documentation` project
+You should find a green button labeled with "New pull request". But GitHub is clever and probably suggests you a pull request like in the beige box below:
 
-You can leave the rest blank; reviewers and labels will be added automatically.
+![Open a pull request](/images/contribute/development/open-pull-request.png)
+
+Click on the green "Compare and pull request" button. A new page will open which summaries the most important information of your pull request. Scroll down and you'll find the additions of all your commits. Make sure everything looks as expected and click on "Create pull request".
+
+There are a number of automated checks that will run on your PR:
+
+* Semantic Pull Request - validates that your commit messages meet the [Conventional Commit format](https://github.com/probot/semantic-pull-requests#semantic-pull-requests).
+  Additionally your PR must also have a conventional message. The UX for this bot is a little odd as it doesn't go red
+  if the messages are NOT correct, instead it goes yellow. You need it to go to a green tick!
+* tide - performs the merge when all the checks pass. Don't worry about the state of this one, it doesn't add much info.
+  Clicking on the details link is very helpful as it will take you to the dashboard where you can navigate to the "Tide"
+  screen and check the status of your PR in the merge queue.
 
 ### Review Process
 
 The final part of all of this, is letting others review your work and provide feedback. As a rule of thumb, the conversation should happen on the PR, but sometimes things will be sorted out via Slack or a video call.
 
-Sometimes it may take a few days for a review to happen (depends on how many are monitoring the [Jenkins X Documentation]() project). If you feel it's an urgent change, jump on the community slack channel `#jenkins-x-user` and ask for someone to review your PR.
+Sometimes it may take a few days for a review to happen. If you feel it's an urgent change, jump on the [community slack channel](https://jenkins-x.io/community/#slack) `#jenkins-x-user` and ask for someone to review your PR.
 
-Once the review is done, your changes will be merged into the master branch, and the site will be updated.
+Once the review is done, your changes will be merged into the master branch, and the site will be updated. 
 
 ## Working With The Local Hugo Server
 

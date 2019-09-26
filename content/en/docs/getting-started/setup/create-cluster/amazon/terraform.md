@@ -1,6 +1,6 @@
 ---
-title: Create EKS cluster on AWS
-linktitle: Create EKS cluster on AWS
+title: Create EKS cluster with Terraform
+linktitle: Terraform
 description: How to setup EKS cluster and other requirements in AWS with Terraform and install Jenkins X on it
 date: 2019-04-03
 publishdate: 2019-04-03

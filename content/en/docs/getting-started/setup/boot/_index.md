@@ -1,35 +1,23 @@
 ---
 title: Jenkins X Boot
 linktitle: Jenkins X Boot
-description: A new consistent way to install, configure or upgrade Jenkins X via GitOps and a Jenkins X Pipeline
+description: Install, configure or upgrade Jenkins X via GitOps and a Jenkins X Pipeline
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [getting started]
 keywords: [install]
-aliases: 
-  - /getting-started/boot/
 weight: 10
+aliases: 
+  - /getting-started/boot
+  - /docs/reference/boot
 ---
 
-## Background
-
-We've learnt over the last 1-2 years that there are many different kinds of Kubernetes cluster and ways of setting up things like Ingress, DNS, domains, certificates which leads to complexity in the current [jx create cluster](/commands/jx_create_cluster) and [jx install](/commands/jx_install/) commands.
-
-Plus its now recommended to use tools like Terraform to manage all of your cloud resources: creating/updating Kubernetes clusters, cloud storage buckets, service accounts, KMS etc.
-
-We found we had lots of different bits of install logic spread across all kinds of different ways of installing (e.g. [jx create cluster](/commands/jx_create_cluster), [jx install](/commands/jx_install/), the use of the [--gitops flag](/docs/managing-jx/common-tasks/manage-via-gitops/) together with the different ways of managing production secrets - that were hard to test and keep solid.
-
-We also hit issues that the [jx create cluster](/commands/jx_create_cluster) and [jx install](/commands/jx_install/) commands would install things like ingress controller and not give users the chance to configure/override their installation.
-
-Users often struggled with understanding how to easily configure and override things; or upgrade values after things have been installed. 
-
-So we wanted to come up with a new cleaner approach which worked for every kind of installation and provided a standard way to extend and customise the configuration via [Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) and helm style configuration.
 
 
 ## Overview
 
-The new _Jenkins X Boot_ mechanism uses the following approach:
+_Jenkins X Boot_ uses the following approach:
 
 * create your kubernetes cluster however you want:
   * use Terraform to create your kubernetes clusters + the associated cloud resources
@@ -45,16 +33,7 @@ jx create cluster gke --skip-installation
 ``` 
 kubectl get ns
 ```
-* fork or clone the git repository for the [install requirements and configuration](https://github.com/jenkins-x/jenkins-x-boot-config):
-``` 
-  git clone https://github.com/jenkins-x/jenkins-x-boot-config.git my-jx-config
-  cd my-jx-config
-```  
-* if you want to reset the existing parameters in the git repository just remove the parameters file:
-``` 
-rm env/parameters.yaml
-```
-* review the configuration to see if there's anything you want to change in the `values.yaml` files - you can always skip this step and come back later.
+
 * run the [jx boot](/commands/jx_boot) command:
 ``` 
 jx boot
@@ -476,73 +455,3 @@ storage:
 webhook: prow
 ```
 
-## Source Repositories
-
-Boot automatically sets up any source repositories which exist in the [repositories/templates](https://github.com/jenkins-x/jenkins-x-boot-config/tree/master/repositories/templates) folder as [SourceRepository](/docs/reference/components/custom-resources/#sourcerepository)  custom resources and uses any associated [Scheduler](/docs/reference/components/custom-resources/#scheduler) custom resources to regenerate the Prow configuration.
-
-Boot also automatically creates or updates any required webhooks on the git provider for your [SourceRepository](/docs/reference/components/custom-resources/#sourcerepository) resources.
-
-If you are using GitOps we hope to automate the population of the [repositories/templates](https://github.com/jenkins-x/jenkins-x-boot-config/tree/master/repositories/templates) folder as you import/create projects. Until then you can manually create a Pull Request on your boot git repository via [jx step create pullrequest repositories](/commands/jx_step_create_pullrequest_repositories/)
-
-
-## Pipeline
-
-The install/upgrade process is defined in a [Jenkins X Pipeline](/docs/concepts/jenkins-x-pipelines/) in a file called [jenkins-x.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jenkins-x.yml).
-
-Typically you won't need to edit this file; though if you do see the [editing guide](/docs/concepts/jenkins-x-pipelines/#customising-the-pipelines).
-
-
-
-
-## Configuration
-
-The boot process is configured using helm style configuration in `values.yaml` files. Though we support a few [extensions to helm](https://github.com/jenkins-x/jx/issues/4328).
-
-
-### Parameters file
-
-We define a [env/parameters.yaml](https://github.com/jstrachan/environment-simple-tekton/blob/master/env/parameters.yaml) file which defines all the parameters either checked in or loaded from Vault or a local file system secrets location.
-
-#### Injecting secrets into the parameters
-
-If you look at the current [env/parameters.yaml](https://github.com/jstrachan/environment-simple-tekton/blob/master/env/parameters.yaml) file you will see some values inlined and others use URIs of the form `local:my-cluster-folder/nameofSecret/key`. This currently supports 2 schemes:
-
-* `vault:` to load from a path + key from Vault
-* `local:` to load from a key in a YAML file at `~/.jx/localSecrets/$path.yml`
-
-This means we can populate all the Parameters we need on startup then refer to them from `values.tmpl.yaml` to populate the tree of values to then inject those into Vault.
-
-
-### Populating the `parameters.yaml` file 
-
-We can then use the new step to populate the `parameters.yaml` file in the Pipeline via this command in the `env` folder:
-
-``` 
-jx step create values --name parameters
-```
-
-This uses the [parameters.schema.json](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/env/parameters.schema.json) file which powers the UI.
-
-### Improvements to values.yaml
-
-#### Support a tree of values.yaml files
-
-Rather than a huge huge deeply nested values.yaml file we can have a tree of files for each App only include the App specific configuration in each folder. e.g.
-
-``` 
-env/
-  values.yaml   # top level configuration
-  prow/
-    values.yaml # prow specific config
-  tekton/
-    values.yaml  # tekton specific config 
-```
-  
-  
-#### values.tmpl.yaml templates
-
-When using `jx step helm apply` we now allow `values.tmpl.yaml` files to use go/helm templates just like `templates/foo.yaml` files support inside helm charts so that we can generate value/secret strings which can use templating to compose things from smaller secret values. e.g. creating a maven `settings.xml` file or docker `config.json` which includes many user/passwords for different registries.
-
-We can then check in the `values.tmpl.yaml` file which does all of this composition and reference the actual secret values via URLs (or template functions) to access vault or local vault files
-
-To do this we use expressions like: `{{ .Parameter.pipelineUser.token }}` somewhere in the `values.tmpl.yaml` values file. So this is like injecting values into the helm templates; but it happens up front to help generate the `values.yaml` files.

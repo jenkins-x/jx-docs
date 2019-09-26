@@ -9,7 +9,7 @@ For more background see the guide on [Serverless Jenkins X Pipelines](/docs/conc
 
 ## How do I add a custom step?
 
-To add a new custom step to your `jenkins-x.yml` file see [how to use the jx create step](/docs/concepts/jenkins-x-pipelines/#customising-the-pipelines)
+To add a new custom step to your `jenkins-x.yml` file see [how to use the jx create step](/docs/concepts/jenkins-x-pipelines/#customizing-the-pipelines)
 
 ## How do Jenkins X Pipelines compare to Jenkins pipelines?
 
