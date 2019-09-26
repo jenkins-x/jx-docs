@@ -8,17 +8,9 @@
     "type": "git",
     "url": "https://github.com/jenkins-x/jx-docs.git"
   },
-  "scripts": {
-    "algolia": "atomic-algolia"
-  },
   "dependencies": {
     "autoprefixer": "^9.6.1",
     "docsearch.js": "^2.6.3",
-    "postcss-cli": "^5.0.1"
-  },
-  "devDependencies": {
-    "atomic-algolia": "^0.3.15",
-    "autoprefixer": "^9.6.1",
-    "postcss-cli": "^5.0.1"
+    "postcss-cli": "^6.1.3"
   }
 }
