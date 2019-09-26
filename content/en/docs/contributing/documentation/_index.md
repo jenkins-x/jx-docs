@@ -5,7 +5,7 @@ description: How to help improve the Jenkins X documentation
 weight: 10
 ---
 
-We welcome your contributions to Jenkins X documentation whether you are a developer, an end user of Jenins X, or someone who can't stand seeing typos!
+We welcome your contributions to Jenkins X documentation whether you are a developer, an end user of Jenkins X, or someone who can't stand seeing typos!
 
 # Assumptions
 
@@ -224,7 +224,7 @@ Click on the green "Compare and pull request" button. A new page will open which
 
 There are a number of automated checks that will run on your PR:
 
-* Semantic Pull Request - validates that your commit messages meet the Conventional Commit format described above.
+* Semantic Pull Request - validates that your commit messages meet the [Conventional Commit format](https://github.com/probot/semantic-pull-requests#semantic-pull-requests).
   Additionally your PR must also have a conventional message. The UX for this bot is a little odd as it doesn't go red
   if the messages are NOT correct, instead it goes yellow. You need it to go to a green tick!
 * tide - performs the merge when all the checks pass. Don't worry about the state of this one, it doesn't add much info.
@@ -235,7 +235,7 @@ There are a number of automated checks that will run on your PR:
 
 The final part of all of this, is letting others review your work and provide feedback. As a rule of thumb, the conversation should happen on the PR, but sometimes things will be sorted out via Slack or a video call.
 
-Sometimes it may take a few days for a review to happen. If you feel it's an urgent change, jump on the community slack channel `#jenkins-x-user` and ask for someone to review your PR.
+Sometimes it may take a few days for a review to happen. If you feel it's an urgent change, jump on the [community slack channel](https://jenkins-x.io/community/#slack) `#jenkins-x-user` and ask for someone to review your PR.
 
 Once the review is done, your changes will be merged into the master branch, and the site will be updated. 
 
