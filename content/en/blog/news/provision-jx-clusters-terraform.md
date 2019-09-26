@@ -18,9 +18,9 @@ author: Oscar Medina
 </figcaption>
 </figure>
 
-{{% note %}}
+{{% alert %}}
 CAUTION: Do not make updates to the cluster that require recreating the cluster resources, all data will be lost.  Only changes that update the cluster are supported at this time.
-{{% /note %}}
+{{% /alert %}}
 
 # Overview
 Many organizations have adopted DevOps practices in the last few years.  This is valuable as it relates to Jenkins X as we provide a way to manage the Kubernetes clusters  Infrastructure as Code which is one of the core concepts of DevOps practices as it relates to automation.  
@@ -95,10 +95,10 @@ Running the previous command, outputs the following folder structure wherever we
 ```
 We now have a great code-base to create our clusters on GKE for three different environments. 
 
-{{% note %}}
+{{% alert %}}
 NOTE: On this Post, we will only create the Dev Cluster, although the process is the same for creating the other Kubernetes clusters.
 First we need to make sure we have credentials to execute our Terraform code.
-{{% /note %}}
+{{% /alert %}}
 
 # Step 2 - Get GKE Credentials
 
@@ -302,9 +302,9 @@ We are now ready to install Jenkins X on our cluster!
 
 To install Jenkins X, we simply run jx intall and follow the prompts.
 
-{{ note }}
+{{ alert }}
 NOTE that can pass additional flags as per your prefernces.  For example set the default admin password like so `--default-admin-password=MyPassw0rd` (see other options by typing `jx install --help`
-{{ /note }}
+{{ /alert }}
 
 Now that we have Jenkins X installed, we can deploy an app etc.  We make sure it is up and running.
 
@@ -382,9 +382,9 @@ can't guarantee that exactly these actions will be performed if
 
 Now that our change has taken effect on our cluster, lets access the Dashboard.
 
-{{ note }}
+{{ alert }}
 NOTE: This dashboard is deprecated, and we are only showing you in the context of modifying your cluster to add an add-on.  Please use the GKE built-in UI
-{{ /note }}
+{{ /alert }}
 
 ### Get Access token
 ```

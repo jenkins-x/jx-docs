@@ -16,7 +16,7 @@ $ git clone  --recurse-submodules --depth 1 https://github.com/jenkins-x/jx-docs
 If you already have a git clone then run
 
 ```bash
-$ git git submodule update --init --recursive
+$ git submodule update --init --recursive
 ```   
 
 ## Download npm modules

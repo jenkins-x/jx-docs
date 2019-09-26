@@ -76,6 +76,26 @@ With Jenkins X you are free to create your own pipeline to do the release if you
 
 We've specifically built this extension model to minimise the work your teams have in having to edit + maintain pipelines across many separate microservices; the idea is we're trying to automate both the pipelines and the extensions to the pipelines so teams can focus on their actual code and less on the CI/CD plumbing which is pretty much all undifferentiated heavy lifting these days.
 
+## How can I handle custom branches with tekton
+
+We don't use `branch patterns` with tekton; they are a jenkins specific configuration.
+
+For Tekton we use the [prow](/docs/reference/components/prow/) / [lighthouse](/docs/reference/components/lighthouse/) configuration to specify which branches trigger which pipeline contexts.
+
+If you are using [boot](/docs/getting-started/setup/boot/) to install Jenkins X then you can create your own custom `Scheduler` custom resource in `env/templates/myscheduler.yaml` based on the [default one that is included](https://github.com/jenkins-x-charts/jxboot-resources/blob/master/jxboot-resources/templates/default-scheduler.yaml).
+
+e.g. here is how we specify the [branches used to create releases](https://github.com/jenkins-x-charts/jxboot-resources/blob/master/jxboot-resources/templates/default-scheduler.yaml#L48).  
+
+You can also create additional pipeline contexts; e.g. here's how we add multiple parallel testing pipelines on the [version stream](/docs/concepts/version-stream/) via a [custom Scheduler](https://github.com/jenkins-x/environment-tekton-weasel-dev/blob/master/env/templates/jx-versions-scheduler.yaml#L21) so that we can have many integration tests run in parallel on a single PR. Then each named context listed has an associated `jenkins-x-$context.yml` file in the source repository to define the pipeline to run [like this example which defines the `boot-lh` context](https://github.com/jenkins-x/jenkins-x-versions/blob/master/jenkins-x-boot-lh.yml)
+
+You can then associate your `SourceRepository` resources with your custom scheduler by: 
+
+* specifying the scheduler name on the `spec.scheduler.name` property of your `SourceRepository` via `kubectl edit sr my-repo-name`)
+* specifying the scheduler name when you import a project via `jx import --scheduler myname`
+* specifying the default scheduler name in your `dev` `Environment` at `spec.teamSettings.defaultScheduler.name` before you import projects
+
+If you are not using [boot](/docs/getting-started/setup/boot/) then you can use `kubectl edit cm config` and modify the prow configuration by hand - though we highly recommend using [boot](/docs/getting-started/setup/boot/) and GitOps instead; the prow configuration is easy to break if changing it by hand.
+
 ## How does promotion actually work?
 
 The kubernetes resources being deployed are defined as YAML files in the source code of your application in `charts/myapp/templates/*.yaml`. If you don't specify anything then Jenkins X creates default resources (a `Service + Deployment`) but you are free to add any k8s resources as YAML into that folder (`PVCs, ConfigMaps, Services`, etc).
@@ -181,4 +201,22 @@ service:
 ```
 
 To see an example of where we add multiple annotations that the `exposecontroller` adds to generated ingress rules, take a look at this [values.yaml](https://github.com/jenkins-x/jenkins-x-platform/blob/08a304ff03a3e19a8eb270888d320b4336237005/values.yaml#L655)
+
+
+## Should I use a monorepo
+
+We are all trying to [Accelerate](/docs/overview/accelerate/) and deliver business value to our customers faster. This is why we often use the 2 pizza teams and microservices as a way to empower teams to go fast; releasing microservices independently with no cross-team coordination required to speed things up.
+
+If you are developing microservices across separate 2 pizza teams then like [others](https://medium.com/@mattklein123/monorepos-please-dont-e9a279be011b) we don't think you should use monorepos - instead use a repository per microservice so that each mciroservice can release at its own individual release cadence.
+
+Monorepo's generally work better when a single team is working on a monolith that releases everything periodically after changing a single repository.
+
+## How can I use a monorepo
+
+We have focused the automated CI/CD in Jenkins X around helping teams [Accelerate](/docs/overview/accelerate/) using microservices to build cloud native applications. So we assume separate repositories for each microservice.
+
+If you have an existing monorepo you want to import into Jenkins X you can; just be aware that you'll have to create and maintain your own pipelines for your monorepo. So just modify them `jenkins-x.yml` file after you import your monorepo.
+
+See how to [add a custom step to your pipeline](/docs/concepts/jenkins-x-pipelines/#customizing-the-pipelines).
+
 
