@@ -2,7 +2,7 @@ version: "2"
 services:
   server:
     image: dennisnewel/hugo-extended:0.58.3
-    command: ["server", "-s", "/src", "-D", "--bind", "0.0.0.0", "--ignoreCache"]
+    command: ["hugo", "server", "-s", "/src", "-D", "--bind", "0.0.0.0", "--ignoreCache"]
     volumes:
       - .:/src
     ports:
