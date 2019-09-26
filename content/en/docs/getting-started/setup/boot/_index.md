@@ -122,7 +122,7 @@ Jenkins X supports a number of engines for handling webhooks and optionally supp
 
 ### Prow
 
-[Prow](/docs/reference/components/prow/) is currently the default webhook and [ChatOps](/docs/using-jx/faq/chatops) engine when using [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/) and GitHub. 
+[Prow](/docs/reference/components/prow/) is currently the default webhook and ChatOps engine when using [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/) and GitHub.
  
 Its configured via the `webhook: prow` in `jx-requirements.yml`
 
@@ -146,7 +146,7 @@ webhook: prow
 
 ### Lighthouse
 
-[Lighthouse](/architecture/lighthouse/) is currently the default webhook and [ChatOps](/docs/using-jx/faq/chatops) engine when using [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/) and a git server other than https://github.com. 
+[Lighthouse](/architecture/lighthouse/) is currently the default webhook and ChatOps engine when using [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/) and a git server other than https://github.com.
 
 Once Lighthouse is more stable and well tested we'll make it the default for all installations using [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/). 
  
@@ -174,9 +174,16 @@ webhook: lighthouse
 
 To use a Jenkins server in boot for processing webhooks and pipelines configure it via `webhook: jenkins` in `jx-requirements.yml`
 
-## Git 
+## Git
 
 Jenkins X supports a number of different git providers. You can specify the git provider you wish to use and the organisation to use for the git providers for each environment in your [jx-requirements.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml) file.
+
+{{% pageinfo %}}
+**NOTE** Jenkins X creates repositories per default as private. This can cause issues when evaluating Jenkins X with GitHub, using a free GitHub _organisation_ to hold the various created (environment) repositories as free organization accounts do not have access to private repos. Using a personal Github account is not an issue though, as free private accounts have unlimited private repos.
+
+For evaluation purposes you could use a private GitHub account as the owner of the repositories, and switch to a paid organizational account once you're ready to go all in. Alternatively, you can enable public environment repositories by setting `environmentGitPublic` to true in your jx boot configuration. In case you're using `jx create` or `jx install`, you'll need to add the `--git-public` option as part of the command to enable public repo
+{{% /pageinfo %}}
+
 
 ### GitHub
 
