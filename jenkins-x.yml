@@ -22,20 +22,20 @@ pipelineConfig:
             value: '0.57.2/extended'
           steps:
 
-          - image: dennisnewel/hugo-extended:0.58.0
+          - image: dennisnewel/hugo-extended:0.58.3
             name: git-clone
             command: git
             args:
               - clone
               - https://github.com/jenkins-x/jenkins-x-website.git
 
-          - image: dennisnewel/hugo-extended:0.58.0
+          - image: dennisnewel/hugo-extended:0.58.3
             name: git-submodules
             command: git
             args:
             - submodule update --init --recursive
 
-          - image: dennisnewel/hugo-extended:0.58.0
+          - image: dennisnewel/hugo-extended:0.58.3
             command: hugo
             args:
               - version
@@ -45,7 +45,7 @@ pipelineConfig:
             command: npm
             args: ['install']
 
-          - image: dennisnewel/hugo-extended:0.58.0
+          - image: dennisnewel/hugo-extended:0.58.3
             name: build-website
             command: hugo
             args:
@@ -82,12 +82,12 @@ pipelineConfig:
           - name: APP_NAME
             value: jx-docs
           steps:
-          - image: dennisnewel/hugo-extended:0.58.0
+          - image: dennisnewel/hugo-extended:0.58.3
             name: git-submodules
             command: git
             args:
             - submodule update --init --recursive
-          - image: dennisnewel/hugo-extended:0.58.0
+          - image: dennisnewel/hugo-extended:0.58.3
             name: version
             command: hugo
             args:
@@ -96,7 +96,7 @@ pipelineConfig:
             name: install-dependencies
             command: npm
             args: ['install']
-          - image: dennisnewel/hugo-extended:0.58.0
+          - image: dennisnewel/hugo-extended:0.58.3
             name: build-website
             command: hugo
             args:
