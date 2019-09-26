@@ -3,7 +3,9 @@ title: Source
 linktitle: Source
 description: The location of the various source code repositories
 parent: "components"
-weight: 40
+weight: 400
+aliases:
+  - /docs/managing-jx/common-tasks/source
 ---
 
 Jenkins X is built on the shoulders of giants and also has lots of different source repositories to make various things from CLI tools, docker images, helm charts and [addon Apps](/docs/contributing/addons/)
@@ -39,5 +41,5 @@ Here we'll call out of some of the main repositories in the above organisations:
 
 ### Tools
 
+* [jenkins-x/lighthouse](https://github.com/jenkins-x/lighthouse) the strategic solution for webhooks and ChatOps for multiple git providers. For more details see  
 * [jenkins-x/exposecontroller](https://github.com/jenkins-x/exposecontroller) a `Deployment` or `Job` that can be used to generate/update `Ingress` resources (or `Route` on OpenShift) if you change your DNS domain or enable TLS - it can also inject external URLs into your application via `ConfigMap` injection 
-* [jenkins-x/updatebot](https://github.com/jenkins-x/updatebot) a command line bot we use to perform Continuous Delivery of libraries, executables, charts and images. i.e. we it generates Pull Requests on downstream dependent git repositories when a new upstream release is done
