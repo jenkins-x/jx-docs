@@ -1,6 +1,6 @@
 ---
 title: "Contribute to Jenkins X as part of Hacktoberfest"
-date: 2019-09-26
+date: 2019-09-27
 draft: false
 description: >
   Join us in celebrating Hacktoberfest 
