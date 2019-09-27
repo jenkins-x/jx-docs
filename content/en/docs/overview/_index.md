@@ -18,10 +18,3 @@ If we are about to start working on a new project, Jenkins X will create the str
 
 I won't go into details of everything Jenkins X does. That will come later. For now, I hope I got your attention. The critical thing to note is that you need to clear your mind from any Jenkins experience you might already have. Sure, Jenkins is there, but it is only a part of the package. Jenkins X is very different from the "traditional Jenkins". The differences are so massive that the only way for you to embrace it is to forget what you know about Jenkins and start from scratch.
 
-## Where should I go next?
-
-Give your users next steps from the Overview. For example:
-
-* [Getting Started](/docs/getting-started/): Get started with $project
-* [Examples](/examples/): Check out some example code!
-
