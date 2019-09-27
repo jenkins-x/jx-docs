@@ -25,9 +25,8 @@ The first thing you'll need to do is get your local environment setup, so that y
 We'll go through each step below, but here's what you need to get started:
 
 * [Git](https://git-scm.com) and a [GitHub](https://github.com) account
-* Fork and clone the `jx/jx-docs` repo
-* Install Docker
-* Build a Hugo docker image to preview changes
+* A local workign copy of the code
+* A way to run the site locally to check your changes before submitting them
 
 ## Install Git on your system
 
@@ -104,9 +103,79 @@ upstream  https://github.com/jenkins-x/jx-docs.git (fetch)
 upstream  https://github.com/jenkins-x/jx-docs.git (push)
 ```
 
-## Install Docker
+## Local preview environment
 
-How to install a Docker engine depends on your platform etc., so best to head over to [Docker](https://docs.docker.com/install/) to find the right one.
+The documentation (and the rest of the website) is generated using the static site generator [Hugo](https://gohugo.io), and you'll need a copy of that locally to be able to preview the site.
+
+Although Jenkins X offers preview environments, and they're used as part of the process of contributing documentation, it's usually faster to run the site locally and check that everything looks good for you, before you push your changes.
+
+There are two different ways that you can run the site locally: using a locally installed version of Hugo or using a pre-baked Docker image that includes what's normally needed. Which approach you choose is fully up to you.
+
+### Docker/docker-compose method
+
+If you haven't worked with Hugo before, or don't want to install it locally, this is your best option.
+
+The first thing you'll need to make use of this approach is Docker installed on your local environment. How to install a Docker engine depends on your platform etc., so best to head over to [Docker](https://docs.docker.com/install/) to find the right one.
+
+To make it as simple as possible, we've created and published Docker images installed with what's normally needed to run and work with Hugo, and have setup a `docker-compose.yml` file that will help you start up a preview server with a few helpful options.
+
+In order to use this setup, first make sure you're in the folder with your local cloned copy of the `jx-docs` repo, then run the following command to download and start the Hugo server:
+
+```bash
+$ docker-compose up -d server
+```
+
+This will make the site available on http://localhost:1313/ and it will auto-update when you save changes to any of the files in the repo.
+
+To be able to see what's going on, and know when the site is ready (can take a bit to process when you first start up), you can run this command (ctrl-c to stop watching the logs):
+
+```bash
+$ docker-compose logs -f server
+```
+
+You'll know the site is ready when you see something like:
+
+```
+server_1        | Watching for changes in /src/{assets,content,layouts,static,themes}
+server_1        | Watching for config changes in /src/config.toml, /src/themes/docsy/config.toml
+server_1        | Environment: "development"
+server_1        | Serving pages from memory
+server_1        | Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+server_1        | Web Server is available at //localhost:1313/ (bind address 0.0.0.0)
+server_1        | Press Ctrl+C to stop
+```
+
+As you're changing things and adding new content, your local Hugo server might get a bit wonky at times or you'll want to see what errors it's throwing. Here's a few simple commands to work with your local Hugo:
+
+#### See the Hugo Logs
+
+```cmd
+$ docker-compose logs -f server
+```
+
+Leave `-f` off if you don't want new log entries to show up in your console. (ctrl-c to escape when `-f` is on)
+
+#### Restart the Hugo Server
+
+```cmd
+$ docker-compose restart server
+```
+
+#### Stop the Hugo Server
+
+```cmd
+$ docker-compose stop server
+```
+
+or
+
+```cmd
+$ docker-compose down
+```
+
+### Locally installed Hugo
+
+Work in Progress; check back again soon
 
 ## Contribution Workflow
 
@@ -151,26 +220,15 @@ You can check on which branch your are with `git branch`. You should see a list 
 
 ### Start the Hugo server
 
-The documentation (and the rest of the website) is generated using the static site generator [Hugo](https://gohugo.io), and you'll need a copy of that locally to be able to preview the site.
+In case you don't already have it running, this is a good time to start your local Hugo server. See the previous sections on how to do this, as it depends on how you installed Hugo (locally, or using docker).
 
-To make this as easy as possible, we've created a Dockerfile and a docker-compose.yml file that you can use spin up a preview server without having to install a bunch of other software.
-
-First make sure you're in the folder with your local cloned copy of the `jx-docs` repo,  then run the following command to build and start the Hugo server:
-
-```bash
-$ docker-compose up -d server
-```
-
-This will make the site available on http://localhost:1313/ and it will auto-update when you save changes to any of the files in the repo.
-
-**Note**: if you want to stop the server or if it stops auto-rebuilding and you want to restart it, simply run `docker-compose down server` and wait for it to finish. This will shut down the server and kill the container as well.
+If you already have Hugo running, it's usually best to double check that the site looks as you'd expect it (basically the same as the live site) and if something's off, do a quick restart of Hugo.
 
 ### Make Changes
 
 All pages are written in GitHub-flavored markdown (see [below](#syntax-reference) for details on syntax).
 
-Some things, like the footer etc. are in the `/themes/gohugoioTheme` structure, but most likely you'll just be adding/changing things in the various page structures.
-
+Some things, like the footer etc. are in the `/themes/docsy` structure, but most likely you'll just be adding/changing things in the various page structures. If you do make changes that involve the theme, remember to copy-paste the theme file to the appropriate folder in the `/layouts` structure, and make your changes there. If you make changes to files in the `/themes/docsy` structure, they will likely be deleted when we update the theme.
 
 ### Add new Content
 
@@ -245,41 +303,25 @@ The final part of all of this, is letting others review your work and provide fe
 
 Sometimes it may take a few days for a review to happen. If you feel it's an urgent change, jump on the [community slack channel](https://jenkins-x.io/community/#slack) `#jenkins-x-user` and ask for someone to review your PR.
 
-Once the review is done, your changes will be merged into the master branch, and the site will be updated. 
+Once the review is done, your changes will be merged into the master branch, and the site will be updated.
 
-## Working With The Local Hugo Server
+{{% alert %}}
+In case you need to update your PR/branch because js-docs/master have been updated since you submitted your PR, run the followin `git` command to pull all the changes to your local environment and then push them to your PR/branch:
 
-As you're changing things and adding new content, your local Hugo server might get a bit wonky at times or you'll want to see what errors it's throwing. Here's a few simple commands to work with your local Hugo:
-
-### See the Hugo Logs
-
-```cmd
-$ docker-compose logs -f server
+```bash
+$ git fetch upstream
+$ git merge upstream/master
+$ git push
 ```
 
-Leave `-f` off if you don't want new log entries to show up in your console. (ctrl-c to escape when `-f` is on)
+If you experience Merge Conflicts, there's a good [article on GitHub](https://help.github.com/en/articles/resolving-a-merge-conflict-using-the-command-line) that helps explain what to do
+{{% /alert %}}
 
-### Restart the Hugo Server
+## Reference
 
-```cmd
-$ docker-compose restart server
-```
+The following sections contains other information that's helpful when working with Hugo and the Jenkins X site; you don't necessary need to go through this if this is your first time.
 
-### Stop the Hugo Server
-
-```cmd
-$ docker-compose stop server
-```
-
-or
-
-```cmd
-$ docker-compose down
-```
-
-to shut down everything started by docker-compose
-
-## Search by Algolia/DocSearch
+### Search by Algolia/DocSearch
 
 We're using [DocSearch](https://community.algolia.com/docsearch/) by Algolia to power the internal search.
 
@@ -287,9 +329,9 @@ We're using [DocSearch](https://community.algolia.com/docsearch/) by Algolia to 
 * Styling is included via `/layouts/partials/head-css.html`
 * The configuration of the search index is managed via [docsearch-configs](https://github.com/algolia/docsearch-configs/blob/master/configs/jenkins_x.json) which can be updated via a PR
 
-## Syntax Reference
+### Markdown Syntax Reference
 
-### Standard Syntax
+#### Code examples
 
 Across all pages on the Jenkins X docs, the typical triple-back-tick markdown syntax is used. If you do not want to take the extra time to implement the following code block shortcodes, please use standard GitHub-flavored markdown. The Jenkins X docs use a version of [highlight.js](https://highlightjs.org/) with a specific set of languages.
 
@@ -331,7 +373,7 @@ type CommandInterface interface {
 }
 ```
 
-## Blockquotes
+#### Blockquotes
 
 Blockquotes can be added to the Jenkins X documentation using [typical Markdown blockquote syntax][bqsyntax]:
 
