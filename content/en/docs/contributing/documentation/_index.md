@@ -175,7 +175,62 @@ $ docker-compose down
 
 ### Locally installed Hugo
 
-Work in Progress; check back again soon
+This assumes that you have already [installed Hugo](https://gohugo.io/getting-started/installing).
+
+First off, make sure you're using `Hugo extended` and a version higher than `0.58.0` (we've seen odd errors with older versions):
+
+```bash
+$ hugo version
+```
+
+It should look something like `Hugo Static Site Generator v0.58.3/extended darwin/amd64 BuildDate: unknown`
+
+#### Install NPM dependencies
+
+Some of the features of the site or theme relies on some Nodejs modules that will need to be installed before Hugo can generate the site properly. To do this run:
+
+```bash
+$ npm install
+```
+
+It will output quite a lot of information in your terminal, but there should be no errors showing up.
+
+#### Starting the preview server
+
+Starting the preview server is simply:
+
+```bash
+$ hugo server
+```
+
+It's ready when you see something like this:
+
+```bash
+Environment: "development"
+Serving pages from memory
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at //localhost:1313/ (bind address 127.0.0.1)
+Press Ctrl+C to stop
+```
+
+and you can view it on http://localhost:1313
+
+It may be a good idea to run the server in a separate terminal so that you can keep it running while also using git or other commands.
+
+#### Using spellchecker and linkchecker
+
+In a later section we'll go over how to use other tools to check for spelling errors or typos, as well as checking that all links are working as expected. If you don't want to use the supplied docker approach, these tools will need to be installed locally as well:
+
+```bash
+$ npm i markdown-spellcheck -g
+$ curl https://htmltest.wjdp.uk | sudo bash -s -- -b /usr/local/bin
+```
+
+See [markdown-spellcheck install](https://github.com/lukeapage/node-markdown-spellcheck#cli-usage) and [htmltest install](https://github.com/wjdp/htmltest#system-wide-install) pages for more details on other ways to install them.
+
+{{% alert %}}
+Note that at this point in time, htmltest installs as version 0.10.3, which does not include the option `IgnoreSSLVerify` which results in a lot of `x509` errors in the output. The docker option is based on a newer build that's not yet available as an official version
+{{% /alert %}}
 
 ## Contribution Workflow
 
@@ -244,7 +299,7 @@ $ docker-compose run server new <DOCS-SECTION>/<new-content-lowercase>.md
 
 When you've finished, and verified that everything looks good (using the Hugo server), you should run one last check to verify that you didn't break anything.
 
-**Checking References and Links**
+#### Checking References and Links
 
 We're using a tool called [htmltest](https://github.com/wjdp/htmltest) to check that links are still valid etc. so you just need to run the following commands to build the site locally, and verify that everything looks good:
 
@@ -253,7 +308,14 @@ $ docker-compose run server hugo
 $ docker-compose up linkchecker
 ```
 
-**Checking Spelling**
+If using a locally installed Hugo/htmltest, use these commands instead:
+
+```bash
+$ hugo
+$ htmltest -c .htmltest.yml
+```
+
+#### Checking Spelling
 
 For spell checking, we're using [node-markdown-spellcheck](https://github.com/lukeapage/node-markdown-spellcheck) to run through all our markdown files and list any spelling issue or unknown word it can find.
 
@@ -263,12 +325,18 @@ To make this as simple as possible, just run the following command
 $ docker-compose up spellchecker
 ```
 
+If using a locally installed Hugo/markdown-spellcheck, use these commands instead:
+
+```bash
+$  mdspell --en-us --ignore-numbers --ignore-acronyms --report "content/**/*.md"
+```
+
 This will output any issue the spell checker have found.
 
 It's likely that the report includes words that are spelled correctly, but that just means the spell checker is not aware of the correct spelling (happens a lot for technical terms, commands, etc.). Please edit the `.spelling` file and add the unknown word.
 Also, please try and keep the list alphabetically sorted; makes it easier to navigate when you're looking for something
 
-**Commit & Push**
+#### Commit & Push
 
 If everything is good, you can commit your changes, and push them to your fork:
 
