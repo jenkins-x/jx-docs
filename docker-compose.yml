@@ -9,7 +9,7 @@ services:
       - "1313:1313"
   spellchecker:
     image: tmaier/markdown-spellcheck:latest
-    command: "--en-us --ignore-numbers --ignore-acronyms --report \"**/*.md\""
+    command: "--en-us --ignore-numbers --ignore-acronyms --report \"content/**/*.md\""
     volumes:
       - .:/workdir
   linkchecker:
