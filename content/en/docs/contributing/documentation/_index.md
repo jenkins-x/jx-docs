@@ -173,31 +173,38 @@ or
 $ docker-compose down
 ```
 
-### Locally installed Hugo
+### Install Hugo
 
-This assumes that you have already [installed Hugo](https://gohugo.io/getting-started/installing).
+You need a recent extended version (we recommend version 0.58 or later) of Hugo to do local builds and previews of the Jenkins X documentation site. If you install from the release page, make sure to get the extended Hugo version, which supports SCSS; you may need to scroll down the list of releases to see it.
 
-First off, make sure you're using `Hugo extended` and a version higher than `0.58.0` (we've seen odd errors with older versions):
+[Install Hugo following the gohugo.io instructions](https://gohugo.io/getting-started/installing).
+
+Check you're using `Hugo extended` and a version higher than `0.58.0` :
 
 ```bash
 $ hugo version
 ```
 
-It should look something like `Hugo Static Site Generator v0.58.3/extended darwin/amd64 BuildDate: unknown`
+The output should look something like `Hugo Static Site Generator v0.58.3/extended darwin/amd64 BuildDate: unknown`
 
-#### Install NPM dependencies
+#### Install PostCSS
 
-Some of the features of the site or theme relies on some Nodejs modules that will need to be installed before Hugo can generate the site properly. To do this run:
+To build or update your site’s CSS resources, you also need [PostCSS](https://postcss.org/) to create the final assets. If you need to install it, you must have a recent version of `NodeJS` installed on your machine so you can use `npm`, the Node package manager. By default `npm` installs tools under the directory where you run `npm install`:
 
 ```bash
-$ npm install
+$ sudo npm install -D --save autoprefixer
+$ sudo npm install -D --save postcss-cli
 ```
 
-It will output quite a lot of information in your terminal, but there should be no errors showing up.
+Get local copies of the project submodules so you can build and run your site locally:
+
+```bash
+git submodule update --init --recursive
+```
 
 #### Starting the preview server
 
-Starting the preview server is simply:
+Build the site:
 
 ```bash
 $ hugo server
@@ -213,7 +220,7 @@ Web Server is available at //localhost:1313/ (bind address 127.0.0.1)
 Press Ctrl+C to stop
 ```
 
-and you can view it on http://localhost:1313
+Preview your site in your browser at: http://localhost:1313. You can use `Ctrl + c` to stop the Hugo server whenever you like.
 
 It may be a good idea to run the server in a separate terminal so that you can keep it running while also using git or other commands.
 
