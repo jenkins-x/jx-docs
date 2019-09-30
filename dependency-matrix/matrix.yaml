@@ -8,6 +8,6 @@ dependencies:
 - host: github.com
   owner: jenkins-x
   repo: jenkins-x-versions
-  url: https://github.com/jenkins-x/jenkins-x-versions.git
-  version: 2.0.802
+  url: https://github.com/jenkins-x/jenkins-x-versions
+  version: 2.0.803
   versionURL: ""
