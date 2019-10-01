@@ -7,6 +7,12 @@ aliases:
   - /faq/
 ---
 
+## How do I enable bash completion?
+
+Using bash completion really helps using the `jx` command line letting you `TAB`-complete commands and command line arguments.
+
+To see how to enable bash completion check out the [jx completion](/commands/jx_completion/)
+
 ## How do I inject environment specific configuration?
 
 Each environment in Jenkins X is defined in a git repository; we use GitOps to manage all changes in each environment such as:
