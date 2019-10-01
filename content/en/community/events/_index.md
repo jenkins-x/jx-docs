@@ -10,7 +10,9 @@ cascade:
   type: docs
 ---
 
-## Upcoming Events
+## Current and Upcoming Events
+
+* [Join us in celebrating Hacktoberfest 2019](/blog/2019/09/27/hacktoberfest2019/)
 
 * [2019 DevOps World/Jenkins World EU - Lisbon, Portugal](/community/events/2019-12-dwjw)
 
@@ -18,7 +20,7 @@ cascade:
 
 ### Office Hours
 
-We meet for office hours **every other Thursday** at 4pm GMT / 11am US Eastern / 8am US Pacific.
+We meet for office hours **every other Thursday** at 4pm UK / 11am US Eastern / 8am US Pacific.
 
 Next office hours: **3 October 2019**
 
