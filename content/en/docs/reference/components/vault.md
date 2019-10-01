@@ -105,6 +105,14 @@ or you can update a secret via:
 safe set /secret/my-cluster-name/creds/my-secret username=myname password=mytoken
 ```
 
+If you have a blob of JSON to encode as a secret, such as a service account key then convert the file to base64 first then set it...
+
+```                                                              
+cat my-service-account.json | base64 > myfile.txt
+safe set /secret/my-cluster-name/creds/my-secret json=@myfile.txt
+```
+
+
 # Configuring DNS and TLS settings for Vault
 
 For a secure Jenkins X installation, you must
