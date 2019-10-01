@@ -16,7 +16,7 @@ There are a few ways to setup clusters on Amazon:
 
 If you wish to use EKS on AWS then the preferred tool is [eksctl](https://eksctl.io)
 
-First you will need to [install the elsctl CLI](https://eksctl.io/introduction/installation/)
+First you will need to [install the eksctl CLI](https://eksctl.io/introduction/installation/)
 
 Then follow the instructions to [create an EKS cluster with eksctl](https://eksctl.io/usage/creating-and-managing-clusters/)
 
