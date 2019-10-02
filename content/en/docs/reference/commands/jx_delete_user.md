@@ -1,5 +1,5 @@
 ---
-date: 2019-10-02T02:18:14Z
+date: 2019-10-02T22:23:42Z
 title: "jx delete user"
 slug: jx_delete_user
 url: /commands/jx_delete_user/
@@ -27,7 +27,7 @@ jx delete user [flags]
 
 ```
   -a, --all             Should we default to selecting all the matched users for deletion
-  -f, --filter string   Fitlers the list of users you can pick from
+  -f, --filter string   Filters the list of users you can pick from
   -h, --help            help for user
   -y, --yes             Confirms we should uninstall this installation
 ```

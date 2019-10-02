@@ -1,5 +1,5 @@
 ---
-date: 2019-10-02T02:18:14Z
+date: 2019-10-02T22:23:42Z
 title: "jx step syntax schema"
 slug: jx_step_syntax_schema
 url: /commands/jx_step_syntax_schema/
@@ -25,10 +25,11 @@ schema --pipeline
 ### Options
 
 ```
-      --buildpack    Output the JSON schema for build pack pipeline.yaml files
-  -h, --help         help for schema
-  -o, --out string   the name of the output file for the generated JSON schema
-      --pipeline     Output the JSON schema for jenkins-x.yml files. Defaults to this option if '--buildpack' is not specified
+      --buildpack      Output the JSON schema for build pack pipeline.yaml files
+  -h, --help           help for schema
+  -o, --out string     the name of the output file for the generated JSON schema
+      --pipeline       Output the JSON schema for jenkins-x.yml files. Defaults to this option if '--buildpack' is not specified
+      --requirements   Output the JSON schema for jx-requirements.yml files
 ```
 
 ### Options inherited from parent commands
