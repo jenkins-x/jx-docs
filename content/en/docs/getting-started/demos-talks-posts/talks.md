@@ -4,9 +4,17 @@ date: 2018-05-05T10:36:00+02:00
 description: Talks at Meetups and Conferences
 weight: 20
 ---
+* [2019-12-05 Progressive Delivery with Jenkins X](https://devopsworldjenkinsworld2019lisbo.sched.com/event/VDQ0/progressive-delivery-with-jenkins-x) at [Devops World, Lisboa](https://www.cloudbees.com/devops-world) by [Carlos Sanchez](https://csanchez.org)
+
 * [2019-12-02/3/4/5 GitOps by courtesy of Jenkins-X](https://devopsconference.de/kubernetes-ecosystem/gitops-by-courtesy-of-jenkins-x/) at [DevOpsCon 2019, München (Germany)](https://devopsconference.de/) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
 
+* [2019-11-13 Progressive Delivery: Continuous Delivery the Right Way](https://cfp.devoxx.ma/2019/speaker/carlos_sanchez) at [Devoxx Morocco, Agadir](https://www.devoxx.ma/) by [Carlos Sanchez](https://csanchez.org)
+
+* [2019-11-06 Jenkins X: Progressive Delivery for Kubernetes](https://oredev.org/line-up/carlos-sanchez) at [Oredev, Malmo](https://oredev.org) by [Carlos Sanchez](https://csanchez.org)
+
 * [2019-09-12 Dev and Run Small Projects on K8S with GitOps and Jenkins-X](https://helmsummit2019.sched.com/event/S8sk/dev-and-run-small-projects-on-k8s-with-gitops-and-jenkins-x-gerd-aschemann-independent) at [Helm Summit, Amsterdam (The Netherlands))](https://events.linuxfoundation.org/events/helm-summit-2019/) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
+
+* [2019-09-11 Jenkins X: Progressive Delivery for Kubernetes](https://2019.javazone.no/program/d8f893f0-3e08-41ef-9ec6-fe2fa93cd4ce) at [JavaZone](https://2019.javazone.no) [Vimeo 🎥](https://vimeo.com/362768726) by [Carlos Sanchez](https://csanchez.org)
 
 * [2019-09-02 Jenkins X - Continuously Driving the Kloud](https://programm.doag.org/godevops/2019/#/scheduledEvent/587266) at [GoDevOps 2019, Berlin (Germany)](https://godevops.doag.org/de/home/) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
 
@@ -22,11 +30,15 @@ weight: 20
 
 * [2019-08-08 Jenkins-X - CD for the Kloud](https://www.meetup.com/Java-User-Group-Saarland-jugsaar/events/262962734/) at [Java User Group Saarland (Germany)](https://www.meetup.com/Java-User-Group-Saarland-jugsaar/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) ([Slides](http://aschemann.net/gerd/publications/jx-talk-jugsb-2019))
 
+* 2019-07-18 Progressive Delivery en Kubernetes (Spanish) [YouTube 🎥](https://www.youtube.com/watch?v=u7Z1V_NcmPY&list=PLHsuXkXI4xdjGlGkCBdxIAmkzfWXqsUrO&index=3) by [Carlos Sanchez](https://csanchez.org)
+
 * 2019-07-06 Jenkins X: Why, What, And How at DOIS Beijing by [Viktor Farcic](https://twitter.com/vfarcic)
 
 * 2019-07-04 Jenkins X Workshop at DOIS Beijing by [Viktor Farcic](https://twitter.com/vfarcic)
 
 * 2019-06-19 The recipe for continuous delivery at [EuroDog Brussels](https://nadevops.com/eurodog) by [Viktor Farcic](https://twitter.com/vfarcic)
+
+* [2019-06-24 Progressive Delivery: Continuous Delivery the Right Way](https://cdsummitchina19.sched.com/event/QaSO/progressive-delivery-continuous-delivery-the-right-way) at [CDSummit China](https://cdsummitchina19.sched.com) [YouTube 🎥](https://www.youtube.com/watch?v=-3VHVsgBTyo&list=PLHsuXkXI4xdjGlGkCBdxIAmkzfWXqsUrO&index=2) by [Carlos Sanchez](https://csanchez.org)
 
 * [2019-06-13 The recipe for continuous delivery](https://www.meetup.com/Cloud-Native-Computing-Bern/events/260536132/) at [Cloud Native Bern](https://www.meetup.com/Cloud-Native-Computing-Bern/) by [Viktor Farcic](https://twitter.com/vfarcic)
 
@@ -55,6 +67,8 @@ weight: 20
 * [2019-06-04 Jenkins X: Progressive Delivery for Kubernetes](https://jnation.pt/speakers/carlos-sanchez/) at [JNation (Coimbra, Portugal)](https://jnation.pt) by [Carlos Sanchez](https://csanchez.org)
 
 * [2019-05-28 GitOps by courtesy of Jenkins-X](https://gr8conf.eu/talks/760) at [gr8conf (Copenhagen/Denmark)](https://gr8conf.eu/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) ([Slides](http://aschemann.net/gerd/publications/jx-talk-gr8conf-2019/))
+
+* [2019-04-24 Jenkins X: Continous Delivery for Kubernetes](https://voxxeddays.com/minsk/) [YouTube 🎥](https://www.youtube.com/watch?v=wb2PK5uf5uI&list=PLHsuXkXI4xdjGlGkCBdxIAmkzfWXqsUrO&index=4) at [Voxxed Days Minsk](https://voxxeddays.com/minsk/) by [Carlos Sanchez](https://csanchez.org)
 
 * [2019-05-23 CI/CD on Kubernetes with Jenkins X](https://docs.google.com/spreadsheets/d/1mA0FDySf2t2sSjKKG2VOta8vDDiGsQytgxJ2iHBeDIs/edit#gid=0&range=D52:E52) at [GlueCon](http://gluecon.com/) by [Nicholas Duffy](https://twitter.com/duffn)
 

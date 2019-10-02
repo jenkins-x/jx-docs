@@ -129,3 +129,6 @@ pipelineConfig:
             - preview
             - --app jx-docs
             - --dir ../../
+            env:
+              - name: DOCKER_REGISTRY
+                value: gcr.io
