@@ -36,8 +36,23 @@ To test you should be able to type:
 
 To view the environments and any development tools like the Jenkins or Nexus consoles.
 
+## How does access control and security work?
+
+See the [access control documentation](/docs/managing-jx/common-tasks/access-control/)
+
 ## How do I upgrade my Jenkins X installation?
 
+Our strategic direction for installing, configuring and upgrading Jenkins X is[jx boot](/docs/getting-started/setup/boot/).
+
+If you are using [jx boot](/docs/getting-started/setup/boot/) you can enable [automatic upgrades](/docs/getting-started/setup/boot/#auto-upgrades) or [manually trigger them yourself](/docs/getting-started/setup/boot/#manual-upgrades).
+
+If anything ever goes wrong (e.g. your cluster, namespace or tekton gets deleted), you can always re-run [jx boot](/docs/getting-started/setup/boot/) on your laptop to restore your cluster.
+
+Otherwise the older approach is as follows:
+
+### If not using boot
+
+ 
 You can upgrade via the [jx upgrade](/commands/jx_upgrade/) commands. Start with
 
 ```shell
