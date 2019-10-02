@@ -1,5 +1,5 @@
 ---
-date: 2019-10-02T02:18:14Z
+date: 2019-10-02T22:23:42Z
 title: "jx upgrade"
 slug: jx_upgrade
 url: /commands/jx_upgrade/
@@ -48,6 +48,7 @@ jx upgrade [flags]
 * [jx upgrade addons](/commands/jx_upgrade_addons/)	 - Upgrades any Addons added to Jenkins X if there are any new releases available
 * [jx upgrade apps](/commands/jx_upgrade_apps/)	 - Upgrades any Apps to the latest release
 * [jx upgrade binaries](/commands/jx_upgrade_binaries/)	 - Upgrades the command line binaries (like helm or eksctl) - if there are new versions available
+* [jx upgrade boot](/commands/jx_upgrade_boot/)	 - Upgrades jx boot config
 * [jx upgrade cli](/commands/jx_upgrade_cli/)	 - Upgrades the jx command line application if there are is a new version available in the version stream
 * [jx upgrade cluster](/commands/jx_upgrade_cluster/)	 - Upgrades the Kubernetes master to the specified version
 * [jx upgrade crd](/commands/jx_upgrade_crd/)	 - Upgrades the Jenkins X Custom Resource Definitions in the Kubernetes Cluster
