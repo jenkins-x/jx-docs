@@ -487,21 +487,3 @@ Once that merges the boot configuration is upgraded and boot will be re-run insi
 ### Recovering
 
 If anything ever goes wrong (e.g. your cluster, namespace or tekton gets deleted) and your installation is incabable of running tekton pipelines you can always re-run [jx boot](/docs/getting-started/setup/boot/) on your laptop to restore your cluster.
-
-
-## Backups
-
-Jenkins X is integrated with [velero](https://velero.io) to support backing up the state of Jenkins X (the kubernetes and custom resources together with persistent volumes).
-
-To enable velero add the following to your `jx-requirements.yml`:
-
-```yaml 
-storage:
-  backup:
-    enabled: true
-    url: gs://my-backup-bucket
-velero:
-  namespace: velero
-```
-
-Using whatever your cloud providers bucket URLs are. For more background checkout the [storage guide](/docs/managing-jx/common-tasks/storage/) 
