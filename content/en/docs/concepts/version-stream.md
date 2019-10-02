@@ -22,7 +22,7 @@ The version stream is stored in the [jenkins-x/jenkins-x-versions](https://githu
 
 When you run a command, such as to [create a cluster](/docs/getting-started/setup/create-cluster/), [install on an existing cluster](/docs/managing-jx/common-tasks/install-on-cluster/) or run a [jx upgrade](/commands/jx_upgrade/) command the `jx` command will ensure you have a local clone of the  [jenkins-x/jenkins-x-versions](https://github.com/jenkins-x/jenkins-x-versions) git repository and it will then pull the stable version of any chart or package from that source - or log a warning if a version is not yet being maintained.
 
-The [jx](https://github.com/jenkins-x/jx) release now defaults to being released as a [prerelease](https://help.github.com/en/articles/creating-releases). Each release of jx is only updated to a full release so long as that released version successfully makes its way to the jenkins-x-versions repository where it also needs to pass another round of BDD tests (_see diagram above for more information_).
+The jx binary now defaults to being released as a prerelease. Each release of jx is only updated to a full release so long as that released version successfully makes its way to the jenkins-x-versions repository where it also needs to pass another round of BDD tests (_see diagram above for more information_).
 
 ## How we upgrade the Version Stream
 
