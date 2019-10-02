@@ -42,7 +42,7 @@ See the [access control documentation](/docs/managing-jx/common-tasks/access-con
 
 ## How do I upgrade my Jenkins X installation?
 
-Our strategic direction for installing, configuring and upgrading Jenkins X is[jx boot](/docs/getting-started/setup/boot/).
+Our strategic direction for installing, configuring and upgrading Jenkins X is [jx boot](/docs/getting-started/setup/boot/).
 
 If you are using [jx boot](/docs/getting-started/setup/boot/) you can enable [automatic upgrades](/docs/getting-started/setup/boot/#auto-upgrades) or [manually trigger them yourself](/docs/getting-started/setup/boot/#manual-upgrades).
 
@@ -51,7 +51,6 @@ If anything ever goes wrong (e.g. your cluster, namespace or tekton gets deleted
 Otherwise the older approach is as follows:
 
 ### If not using boot
-
  
 You can upgrade via the [jx upgrade](/commands/jx_upgrade/) commands. Start with
 
