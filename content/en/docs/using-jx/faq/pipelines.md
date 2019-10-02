@@ -44,3 +44,13 @@ On most kubernetes clusters you cannot easily share a single Persistent Volume a
 You can also do things like use Nexus as a network cache for fetching maven dependencies (which happens OOTB with Maven builds in Jenkins X) or add the Athens proxy for Go.
 
 Hopefully the Tekton community will figure out some even better caching solutions to speed up builds.
+
+
+## How do I define an environment variable inside a step for other steps to use?
+
+Files are the easiest approach as the `/workspace` directory is shared with all steps. So write in one step and use the value from other steps etc.
+
+The other option is mounting a `ConfigMap` as environment variables into each step and modifying that on one step; but files are easier really.
+
+
+
