@@ -1,5 +1,5 @@
 ---
-date: 2019-10-02T02:18:14Z
+date: 2019-10-02T22:23:42Z
 title: "jx delete vault"
 slug: jx_delete_vault
 url: /commands/jx_delete_vault/
