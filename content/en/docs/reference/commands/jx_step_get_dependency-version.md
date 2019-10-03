@@ -1,5 +1,5 @@
 ---
-date: 2019-10-03T00:50:52Z
+date: 2019-10-03T13:02:17Z
 title: "jx step get dependency-version"
 slug: jx_step_get_dependency-version
 url: /commands/jx_step_get_dependency-version/
