@@ -82,7 +82,7 @@ pygmentsStyle = "tango"
 
 [params]
 ## Used for views in rendered HTML (i.e., rather than using the .Hugo variable)
-release = "2.0.814"
+release = "2.0.816"
 
 copyright = "The Jenkins X Authors."
 privacy_policy = "https://policies.google.com/privacy"
