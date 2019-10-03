@@ -101,7 +101,7 @@ Add `--allow-experimental` to the command that uses experimental features
 To highlight deprecated features and make it easy to see which to avoid, the documentation (this site) will include a warning like this:
 
 {{% alert color="warning" %}}
-Deprecated in jx since 2.0.134
+Deprecated in jx since 2.0.134. Will be removed on 2nd December 2019.
 {{% /alert %}}
 
 in pages that concern deprecated features. The warning will note the version where the feature will stop/stopped being included.
