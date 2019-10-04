@@ -69,8 +69,8 @@ Now open your fork repository on GitHub and copy the remote url of your fork. Yo
 Then go back to your terminal, `cd` to where you would like to place your local copy of the `jx-docs` repo, and then clone your fork.
 
 ```shell
-$ git clone --recurse-submodules --depth 1 git@github.com:<YOUR_USERNAME>/jx-docs.git
-$ cd jx-docs
+git clone --recurse-submodules --depth 1 git@github.com:<YOUR_USERNAME>/jx-docs.git
+cd jx-docs
 ```
 
 {{% alert %}}
