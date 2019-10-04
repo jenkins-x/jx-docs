@@ -289,6 +289,20 @@ data:
 
 Notice how we encode the secret value in Base64, as this is the format expected in a Secret yaml.
 
+Also, make sure to add a default value for the same key in your app's `/charts/myapp/values.yaml`:
+
+```
+mysecrets:
+  password: ""
+```
+
+That allows Helm to resolve to some value during linting of your `mysecrets.yaml`, as linting seems not to consider values from the environment. Otherwise, you might get something like:
+
+```
+error: failed to build dependencies for chart from directory '.': failed to lint the chart '.': failed to run 'helm lint --values values.yaml' command in directory '.', output: '==> Linting .
+[ERROR] templates/: render error in "myapp/templates/secrets.yaml": template: myapp/templates/secrets.yaml:6:21: executing "myapp/templates/secrets.yaml" at <.Values.mysecrets.password>: nil pointer evaluating interface {}.password
+```
+
 Finally, mount the Secret yaml as environment variables in your app's `/charts/myapp/templates/deployment.yaml`:
 
 ```
