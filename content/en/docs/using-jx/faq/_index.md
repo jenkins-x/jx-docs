@@ -225,4 +225,32 @@ If you have an existing monorepo you want to import into Jenkins X you can; just
 
 See how to [add a custom step to your pipeline](/docs/concepts/jenkins-x-pipelines/#customizing-the-pipelines).
 
+## How do I inject Vault secrets into staging/production/preview environments?
 
+### Staging/Production
+
+By default, [enabling Vault](/docs/getting-started/setup/boot/#vault) via `jx boot`'s `jx-requirements.yaml` will only activate it in your pipeline and preview environments, not in staging and production. To also activate it in those environments, simply add a `jx-requirements.yaml` file to the root of their repo, with at least the following content:
+
+```
+secretStorage: vault
+```
+
+Then, assuming you have a secret in Vault with path `secret/path/to/mysecret` containing key `password`, you can inject it into service `myapp` (for instance, as a `PASSWORD` environment variable) by adding the following to your staging repo's `/env/values.yaml`:
+
+```
+myapp:
+  env:
+    PASSWORD: vault:path/to/mysecret:password
+```
+
+Notice the prefixing with `vault:` URL scheme and also that we omit first path component (`secret/`), as it gets added automatically. Finally, the key name is separated from path by a colon (`:`).
+
+### Preview
+
+Vault does not need to be explicitly enabled for preview environment. To inject same secret as above into your preview, simply add the following to your app's `/charts/preview/values.yaml`:
+
+```
+preview:
+  env:
+    PASSWORD: vault:path/to/mysecret:password
+```
