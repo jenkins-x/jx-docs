@@ -254,3 +254,41 @@ preview:
   env:
     PASSWORD: vault:path/to/mysecret:password
 ```
+
+## How do I inject a Vault secret via a Kubernetes Secret?
+
+When you inject secrets directly into environment variables, they appear in Deployment yaml as plain text, which is not advisable. It is recommended to rather inject them into a Secret yaml that will itself be mounted as environment variables.
+
+For example, start by injecting the secret into your staging repo's `/env/values.yaml`:
+
+```
+myapp
+  mysecrets:
+    password: vault:path/to/mysecret:password
+```
+
+Then, in your app's `/charts/myapp/templates`, create a `mysecrets.yaml` file, in which you refer to the secret you just added:
+
+```
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mysecrets
+data:
+  PASSWORD: {{ .Values.mysecrets.password | b64enc }}
+```
+
+Notice how we encode the secret value in Base64, as this is the format expected in a Secret yaml.
+
+Finally, mount the Secret yaml as environment variables in your app's `/charts/myapp/templates/deployment.yaml`:
+
+```
+...
+    spec:
+      containers:
+      - name: {{ .Chart.Name }}
+        envFrom:
+        - secretRef:
+            name: mysecrets
+...
+```
