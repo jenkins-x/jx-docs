@@ -245,6 +245,15 @@ myapp:
 
 Notice the prefixing with `vault:` URL scheme and also that we omit first path component (`secret/`), as it gets added automatically. Finally, the key name is separated from path by a colon (`:`).
 
+If your secret is not environment-specific, you can also inject it directly into your app's `/charts/myapp/values.yaml`:
+
+```
+env:
+  PASSWORD: vault:path/to/mysecret:password
+```
+
+However, note that this value would be overriden at the environment level if the same key is also present there.
+
 ### Preview
 
 Vault does not need to be explicitly enabled for preview environment. To inject same secret as above into your preview, simply add the following to your app's `/charts/preview/values.yaml`:
