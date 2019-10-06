@@ -12,7 +12,7 @@ The simplest way to get started is via the [Google Cloud Tutorials](/docs/managi
 
 Otherwise first you will need to [get the jx command line tool](/docs/getting-started/setup/install/) locally on your machine.
 
-You can use the [jx command line](/commands/jx/#jx) to [create a new kubernetes cluster](/docs/getting-started/setup/create-cluster) with Jenkins X  installed automatically.
+You can use the [jx command line](/commands/jx/#jx) to [create a new kubernetes cluster](/docs/getting-started/setup/create-cluster) with Jenkins X installed automatically.
 
 If you already have an existing kubernetes cluster then [install Jenkins X on your kubernetes cluster](install-on-cluster)
 
