@@ -16,6 +16,8 @@ cascade:
 
 * [2019 DevOps World/Jenkins World EU - Lisbon, Portugal](/community/events/2019-12-dwjw)
 
+* [Application modernization with Anthos and Jenkins X, meetup on October 22, 2019](/community/events/22-10-2019-anthos-jx)
+
 ## Recurring Events
 
 ### Office Hours
