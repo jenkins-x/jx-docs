@@ -225,4 +225,93 @@ If you have an existing monorepo you want to import into Jenkins X you can; just
 
 See how to [add a custom step to your pipeline](/docs/concepts/jenkins-x-pipelines/#customizing-the-pipelines).
 
+## How do I inject Vault secrets into staging/production/preview environments?
 
+### Staging/Production
+
+By default, [enabling Vault](/docs/getting-started/setup/boot/#vault) via `jx boot`'s `jx-requirements.yaml` will only activate it in your pipeline and preview environments, not in staging and production. To also activate it in those environments, simply add a `jx-requirements.yaml` file to the root of their repo, with at least the following content:
+
+```
+secretStorage: vault
+```
+
+Then, assuming you have a secret in Vault with path `secret/path/to/mysecret` containing key `password`, you can inject it into service `myapp` (for instance, as a `PASSWORD` environment variable) by adding the following to your staging repo's `/env/values.yaml`:
+
+```
+myapp:
+  env:
+    PASSWORD: vault:path/to/mysecret:password
+```
+
+Notice the prefixing with `vault:` URL scheme and also that we omit first path component (`secret/`), as it gets added automatically. Finally, the key name is separated from path by a colon (`:`).
+
+If your secret is not environment-specific, you can also inject it directly into your app's `/charts/myapp/values.yaml`:
+
+```
+env:
+  PASSWORD: vault:path/to/mysecret:password
+```
+
+However, note that this value would be overriden at the environment level if the same key is also present there.
+
+### Preview
+
+Vault does not need to be explicitly enabled for preview environment. To inject same secret as above into your preview, simply add the following to your app's `/charts/preview/values.yaml`:
+
+```
+preview:
+  env:
+    PASSWORD: vault:path/to/mysecret:password
+```
+
+## How do I inject a Vault secret via a Kubernetes Secret?
+
+When you inject secrets directly into environment variables, they appear in Deployment yaml as plain text, which is not advisable. It is recommended to rather inject them into a Secret yaml that will itself be mounted as environment variables.
+
+For example, start by injecting the secret into your staging repo's `/env/values.yaml`:
+
+```
+myapp
+  mysecrets:
+    password: vault:path/to/mysecret:password
+```
+
+Then, in your app's `/charts/myapp/templates`, create a `mysecrets.yaml` file, in which you refer to the secret you just added:
+
+```
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mysecrets
+data:
+  PASSWORD: {{ .Values.mysecrets.password | b64enc }}
+```
+
+Notice how we encode the secret value in Base64, as this is the format expected in a Secret yaml.
+
+Also, make sure to add a default value for the same key in your app's `/charts/myapp/values.yaml`:
+
+```
+mysecrets:
+  password: ""
+```
+
+That allows Helm to resolve to some value during linting of your `mysecrets.yaml`, as linting seems not to consider values from the environment. Otherwise, you might get something like:
+
+```
+error: failed to build dependencies for chart from directory '.': failed to lint the chart '.': failed to run 'helm lint --values values.yaml' command in directory '.', output: '==> Linting .
+[ERROR] templates/: render error in "myapp/templates/secrets.yaml": template: myapp/templates/secrets.yaml:6:21: executing "myapp/templates/secrets.yaml" at <.Values.mysecrets.password>: nil pointer evaluating interface {}.password
+```
+
+Finally, mount the Secret yaml as environment variables in your app's `/charts/myapp/templates/deployment.yaml`:
+
+```
+...
+    spec:
+      containers:
+      - name: {{ .Chart.Name }}
+        envFrom:
+        - secretRef:
+            name: mysecrets
+...
+```
