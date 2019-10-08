@@ -21,8 +21,8 @@ resources](https://github.com/jenkins-x/jx/tree/master/pkg/apis/jenkins.io/v1) �
 自定义资源文档是由与 Kubernetes [同样的工具链](https://kubernetes.io/docs/contribute/generate-ref-docs/kubernetes-api/)而生成的，但是一系列的 `jx` 的命令将其包装了起来，因此你不需要下载以及配置这些不同的工具。
 
 HTML 文档是由 [OpenAPI 说明](https://github.com/jenkins-x/jx/tree/master/docs/apidocs/openapi-spec) 生成的，依次的由 [Go 结构体](https://github.com/jenkins-x/jx/tree/master/pkg/client/openapi) 生成，而这些结构体是由代码的注释生成的。想要生成结构体和 OpenAPI 说明执行命令：
- ```bash
- $ make generate-openapi
+ ```sh
+ make generate-openapi
  ```
 
  {{% alert %}}
@@ -31,7 +31,7 @@ HTML 文档是由 [OpenAPI 说明](https://github.com/jenkins-x/jx/tree/master/d
 
  生成 HTML 运行：
 
- ```bash
+ ```sh
  make generate-docs
  ```
 

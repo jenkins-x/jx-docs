@@ -16,7 +16,7 @@ keywords: [install,builder]
 
 首先，您需要为 Builder 创建一个 docker 镜像。从 `Dockerfile` 开始的一个实例可能类似于：
 
-```
+```dockerfile
 FROM jenkinsxio/builder-base:latest
 
 # Install your tools and libraries
@@ -27,15 +27,15 @@ CMD ["gcc"]
 
 现在，您可以构建并发布这个镜像到您的 registry：
 
-```shell
-export BUILDER_IMAGE=<YOUR_REGISTRY>/<YOUR_BUILDER_IMAGE>:<VERSION> 
+```sh
+export BUILDER_IMAGE=<YOUR_REGISTRY>/<YOUR_BUILDER_IMAGE>:<VERSION>
 docker build -t ${BUILDER_IMAGE} .
-docker push ${BUILDER_IMAGE} 
+docker push ${BUILDER_IMAGE}
 ```
 
 别担心，当新的镜像需要构建时，您无需每次手动执行这些步骤。Jenkins X 可以为您管理这些。您只需要把 `Dockerfile` 推送到类似于[这个](https://github.com/jenkins-x/builder-go)代码仓库中。然后，根据您的组织名称来调整 `Jenkinsfile` ，并使用下面的命令导入 Jenkins X 平台：
 
-```
+```sh
 jx import --url <REPOSITORY_URL>
 ```
 
@@ -74,7 +74,7 @@ jenkins:
             RequestMemory: "128Mi"
             Args: '${computer.jnlpmac} ${computer.name}'
           Dlang:
-            Image: <YOUR_BUILDER_IMAGE> 
+            Image: <YOUR_BUILDER_IMAGE>
             Privileged: true
             RequestCpu: "400m"
             RequestMemory: "512Mi"
@@ -126,7 +126,7 @@ Jenkins X 自带了很多[预安装的 Builder](https://raw.githubusercontent.co
 
 然后，您可以在目录 `~/.jx/` 中创建文件 `myvalues.yaml` ，并写入一下内容：
 
-```
+```yaml
 jenkins:
   Agent:
     PodTemplates:

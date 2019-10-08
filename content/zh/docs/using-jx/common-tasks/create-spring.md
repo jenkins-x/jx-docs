@@ -4,15 +4,15 @@ linktitle: 创建 Spring Boot
 description: 如何创建Spring Boot应用并导入Jenkins X
 ---
 
-                
+
 如果你在开发基于Java的微服务，那么，你可能正在用流行的[Spring Boot](https://projects.spring.io/spring-boot/)。
 
 你可以利用[Spring Boot Initializr](http://start.spring.io/)创建Spring Boot应用，然后通过执行命令 [jx import](/commands/jx_import) 来[导入Jenkins X](/developing/import)。
- 
+
 然而，另外一个快速自动化的方式，是通过执行 [jx create spring](/commands/jx_create_spring) 命令实现：
 
-```shell
-$ jx create spring -d web -d actuator
+```sh
+jx create spring -d web -d actuator
 ```
 
 参数 `-d` 允许你指定希望添加到 Spring Boot 应用中的依赖。
@@ -31,5 +31,5 @@ $ jx create spring -d web -d actuator
   * 在 Kubernetes 中通过 helm chart 运行你的应用
 * 为你的 Jenkins 在 git 远程库上注册 webhook
 * 为你的 Jenkins 添加 git 库
-* 首次触发流水线 
+* 首次触发流水线
 

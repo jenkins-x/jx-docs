@@ -5,8 +5,8 @@ description: Binary Plugins for the Jenkins X CLI
 weight: 10
 ---
 
-This guide shows you how to write plugins for the `jx` CLI. Plugins extend the `jx` CLI with new sub-commands allowing for new 
-features not included in Jenkins X. `jx` plugins can be managed by Jenkins X meaning neither the plugin developer nor 
+This guide shows you how to write plugins for the `jx` CLI. Plugins extend the `jx` CLI with new sub-commands allowing for new
+features not included in Jenkins X. `jx` plugins can be managed by Jenkins X meaning neither the plugin developer nor
 the plugin user has to worry about how to install the plugin onto the user's computer.
 
 You might want to write a plugin for the `jx` CLI if you developed some new functionality for Jenkins X and wanted to provide a
@@ -23,7 +23,7 @@ You can write a plugin in any programming language or script that allows you to 
 
 There is no plugin installation or pre-loading required. Plugin executables receive the inherited environment from the
  `jx` binary.
- 
+
 ### Example plugin
 
 Here is a simple plugin that simply outputs a log statement.
@@ -41,27 +41,32 @@ func main() {
 	os.Exit(0)
 }
 ```
- 
-We strongly recommend using Go and the [Cobra CLI framework](https://github.com/spf13/cobra). This allows you to easily 
-build a well structured plugin with subcommands and argument handling.  
 
-We [plan](https://github.com/jenkins-x/jx/issues/2832) to build a quickstart and build pack that allows you to 
+We strongly recommend using Go and the [Cobra CLI framework](https://github.com/spf13/cobra). This allows you to easily
+build a well structured plugin with subcommands and argument handling.
+
+We [plan](https://github.com/jenkins-x/jx/issues/2832) to build a quickstart and build pack that allows you to
 quickly create a new Cobra based plugin.
 
 ### Using the plugin
 
 1. Build a binary
-  
-    ```$ go build -o jx-brie brie.go```
-2. Add it to your path
 
-    ```$ sudo mv ./jx-brie /usr/local/bin```
+```sh
+go build -o jx-brie brie.go
+```
+
+2. Add it to your path
+```sh
+sudo mv ./jx-brie /usr/local/bin
+```
+
 3. You can now use the plugin
 
-    ```
+```sh
 $ jx brie
 Have some tasty brie
-    ```
+```
 
 ## Plugin Management
 
@@ -69,7 +74,7 @@ Whilst being able to run a plugin is useful you'll normally want to make it avai
 
 Jenkins X provides binary plugin management via the `plugin` custom resource.
 
-TODO 
+TODO
 
 ## Distributing your plugin using Apps
 

@@ -9,7 +9,7 @@ aliases:
 
 
 Jenkins X defaults to using [GitHub](https://github.com/), the free public git hosting solution for open source projects.
- 
+
 However when working in the enterprise you may wish to use different git servers.
 
 
@@ -41,14 +41,14 @@ If you wish to use a different git provider for your environments then when you 
 
 
 e.g. to [create a new cluster](/docs/getting-started/setup/create-cluster/)
- 
-``` 
+
+```sh
 jx create cluster gke --no-default-environments
 ```
 
 or to [install in an existing cluster](/docs/managing-jx/common-tasks/install-on-cluster/)
 
-``` 
+```sh
 jx install --no-default-environments
 ```
 
@@ -57,14 +57,14 @@ Then once Jenkins X is installed you can then [add a new git provider](#adding-a
 
 Then when the git provider is setup you can verify it is available and has the right `gitKind` via:
 
-``` 
+```sh
 jx get git server
 ```
 
 
 Now create the `Staging` and `Production` environments using whatever git provider you wish via:
 
-``` 
+```sh
 jx create env staging --git-provider-url=https://gitproviderhostname.com
 jx create env production --git-provider-url=https://gitproviderhostname.com
 ```
@@ -73,8 +73,8 @@ jx create env production --git-provider-url=https://gitproviderhostname.com
 ## Adding a new git provider
 
 If you already have a git server somewhere you can add it into Jenkins X via [jx create git server](/commands/jx_create_git_server):
-                                    
-``` 
+
+```sh
 jx create git server gitKind someURL
 ```
 
@@ -82,20 +82,19 @@ Where the `gitKind` is one of the supported git provider kinds like `github, git
 
 You can verify what server URLs and `gitKind` values are setup via
 
-``` 
+```sh
 jx get git server
 ```
 
-**NOTE** please make sure you set the right `gitKind` for your git provider otherwise the wrong underlying REST API provider will be invoked! 
+**NOTE** please make sure you set the right `gitKind` for your git provider otherwise the wrong underlying REST API provider will be invoked!
 
 ## GitHub Enterprise
 
 To add a GitHub Enterprise server try:
 
-``` 
+```sh
 jx create git server github https://github.foo.com -n GHE
 jx create git token -n GHE myusername
-
 ```
 
 Where `-n` is the name for the git service.
@@ -104,14 +103,14 @@ Where `-n` is the name for the git service.
 
 To add BitBucket Cloud try:
 
-```
+```sh
 jx create git server bitbucketcloud -n BitBucket https://bitbucket.org
 jx create git token -n BitBucket myusername
 ```
 
 Please make sure that the `gitKind` is properly set to `bitbucketcloud` via the following command
 
-``` 
+```sh
 jx get git server
 ```
 
@@ -121,7 +120,7 @@ and look in the `Kind` column.
 
 To add BitBucket Standalone Server try:
 
-```
+```sh
 jx create git server bitbucketserver -n BitBucket https://your_server_address
 jx create git token -n BitBucket myusername
 ```
@@ -130,39 +129,38 @@ jx create git token -n BitBucket myusername
 
 To add a git server for Gitlab and a token try:
 
-```
+```sh
 jx create git server gitlab https://gitlab.com/ -n gitlab
 jx create git token -n gitlab myusername
 ```
-   
-   
+
 ### Adding user tokens
 
 To use a git server you need to add a user name and API token via [jx create git token](/commands/jx_create_git_token):
 
-``` 
+```sh
 jx create git token -n myProviderName myUserName
 ```
 
-You will then be prompted for the API token 
+You will then be prompted for the API token
 
 ### Kubernetes hosted git providers
 
-You can install git providers inside the kubernetes cluster running Jenkins X. 
+You can install git providers inside the kubernetes cluster running Jenkins X.
 
 e.g. there is an addon for [gitea](https://gitea.io/en-us/) that lets you install gitea as part of your Jenkins X installation.
 
 To use [gitea](https://gitea.io/en-us/) with Jenkins X then you need to enable the `gitea` addon before installing Jenkins X:
 
-``` 
+```sh
 jx edit addon gitea -e true
-``` 
+```
 
 You can view the enabled addons via [jx get addons](/commands/jx_get_addons):
 
-``` 
+```sh
 jx get addons
-``` 
+```
 
 Now when you [install Jenkins X](/docs/getting-started/) it will also install the `gitea` addon.
 
@@ -173,5 +171,5 @@ Then whenever Jenkins X needs to create a git repository for an Environment or f
 
 At the time of writing the [gitea plugin for Jenkins](https://issues.jenkins-ci.org/browse/JENKINS-50459) does not correctly update Pull Request and git commit build statuses which breaks the GitOps promotion pipelines. Promotion can work through manual approval, but the pipeline reports a failure.
 
-Another issue is new projects created by `jx` inside `gitea` do not get the [merge buttons enabled on Pull Requests](https://github.com/go-gitea/go-sdk/issues/100). The work around is after a project is created on github you go to the `Settings` page for the repository inside the `gitea` web console and enable the merge buttons there. 
+Another issue is new projects created by `jx` inside `gitea` do not get the [merge buttons enabled on Pull Requests](https://github.com/go-gitea/go-sdk/issues/100). The work around is after a project is created on github you go to the `Settings` page for the repository inside the `gitea` web console and enable the merge buttons there.
 

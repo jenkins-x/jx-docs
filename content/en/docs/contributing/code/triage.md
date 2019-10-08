@@ -16,7 +16,7 @@ For a full list of available labels please see https://github.com/jenkins-x/jx/l
 When triaging an issue, someone from the Jenkins X team will assign labels to describe the __area__ and __kind__ of issue.  Where possible they will also add a priority however these are subject to change after further analysis or wider visibility.
 
 Labels are added via the prow [label](https://prow.k8s.io/plugins) plugin using GitHub comments.  For example:
-```
+```text
 /kind bug
 /area prow
 /priority important-soon

@@ -6,13 +6,13 @@ weight: 30
 ---
 
 
-It's likely you have heard of "blue green deployment" or "canary deployment". The idea is to carefully roll out new versions of your application, if problems happen (gasp!) in production, then the system will automatically roll them back, and the majority of users will not be impacted. 
+It's likely you have heard of "blue green deployment" or "canary deployment". The idea is to carefully roll out new versions of your application, if problems happen (gasp!) in production, then the system will automatically roll them back, and the majority of users will not be impacted.
 
-This has become a popular CD technique over the years. 
+This has become a popular CD technique over the years.
 
 As Jenkins X runs on top of Kubernetes, there are some additional built in protections about starting new versions: if a new application fails to start, it is likely that it will never really make it to production, this is a good thing! And you get it for free!
 
-Progressive Delivery takes this a bit further: changes can be rolled out to a small percentage of users or traffic (say 1%) and then progressively released to more users (say 5%) before the delivery is considered complete. 
+Progressive Delivery takes this a bit further: changes can be rolled out to a small percentage of users or traffic (say 1%) and then progressively released to more users (say 5%) before the delivery is considered complete.
 
 > **Progressive Delivery** makes it easier to adopt Continuous Delivery, by deploying new versions to a subset of users and evaluating their correctness and performance before rolling them to the totality of the users, and rolled back if not matching some key metrics.
 
@@ -34,7 +34,7 @@ As the first step three Jenkins X addons need to be installed:
 
 The addons can be installed with
 
-```shell
+```sh
 jx create addon istio --version 1.1.7
 jx create addon flagger
 ```
@@ -43,7 +43,7 @@ This will enable Istio in the **jx-production** namespace for metrics gathering.
 
 Now get the ip of the Istio ingress and point a wildcard domain to it (e.g. `*.example.com`), so we can use it to route multiple services based on host names. The Istio ingress provides the routing capabilities needed for Canary releases (traffic shifting) that the traditional Kubernetes ingress objects do not support.
 
-```shell
+```sh
 kubectl -n istio-system get service istio-ingressgateway \
 -o jsonpath='{.status.loadBalancer.ingress[0].ip}'
 ```
@@ -135,7 +135,7 @@ If the metrics we have configured (request duration over 500 milliseconds or mor
 
 To get the Canary events run
 
-```shell
+```sh
 $ kubectl -n jx-production get events --watch \
   --field-selector involvedObject.kind=Canary
 LAST SEEN   FIRST SEEN   COUNT   NAME                                                  KIND     SUBOBJECT   TYPE     REASON   SOURCE    MESSAGE
@@ -154,7 +154,7 @@ LAST SEEN   FIRST SEEN   COUNT   NAME                                           
 
 Flagger includes a Grafana dashboard for visualization purposes as it is not needed for the Canary releases. It can be accessed locally using Kubernetes port forwarding
 
-```shell
+```sh
 kubectl --namespace istio-system port-forward deploy/flagger-grafana 3000
 ```
 

@@ -73,6 +73,6 @@ Jenkins X 允许你给 Pull Requests 设置一个预发环境，这样就可以�
 
 要安装插件的话，使用命令[jx create addon](/commands/jx_create_addon/)。例如：
 
-```
+```sh
 jx create addon grafana
 ```

@@ -10,15 +10,15 @@ Machine learning quickstarts are pre-made machine-learning applications you can 
 You can create new applications from our list of curated machine learning quickstart applications via the [jx create mlquickstart](/commands/jx_create_mlquickstart) command.
 
 
-```shell
-$ jx create mlquickstart
+```sh
+jx create mlquickstart
 ```
 
 You are then prompted for a list of quickstarts to choose from.
 
 You will see that these come in groups of three:
 
-```shell
+```sh
 ? select the quickstart you wish to create  [Use arrows to move, space to select, type to filter]
 > machine-learning-quickstarts/ML-python-pytorch-cpu
   machine-learning-quickstarts/ML-python-pytorch-cpu-service
@@ -41,8 +41,8 @@ If you create these individually, it is important that your projects share the s
 
 You can use a text filter to filter on the project names:
 
-```shell
-$ jx create mlquickstart -f gpu
+```sh
+jx create mlquickstart -f gpu
 ```
 
 ### What happens when you create a quickstart
@@ -66,8 +66,8 @@ Meanwhile the training project will start work on training the model and once tr
 
 You can restart training with the command:
 
-```shell
-$ jx start pipeline
+```sh
+jx start pipeline
 ```
 and then select the name of the training project you wish to run again, or you may edit your training script, commit your changes and push them to automatically trigger another training run.
 
@@ -94,7 +94,7 @@ Then when you create a machine learning quickstart, the [Jenkins X build packs](
   * `Dockerfile` to package the application as a docker image
   * `jenkins-x.yml` to implement the CI / CD pipelines using declarative pipeline as code
   * Helm Charts to deploy the application on Kubernetes and to implement [Preview Environments](/docs/concepts/features/#preview-environments)
-   
+
 ## Adding your own Quickstarts
 
 If you would like to submit a new Quickstart to Jenkins X please just [raise an issue](https://github.com/jenkins-x/jx/issues/new?labels=quickstart&title=Add%20mlquickstart&body=Please%20add%20this%20github%20mlquickstart:) with the URL in GitHub of your quickstart and we can fork it it into the [quickstart organisation](https://github.com/machine-learning-quickstarts) so it appears in the `jx create mlquickstart` menu.
@@ -103,8 +103,8 @@ Or if you are part of an open source project and wish to curate your own set of 
 
 Until we do that you can still use your own Quickstarts in the `jx create mlquickstart` command via the `-g` or `--organisations` command line argument. e.g.
 
-```shell
-$ jx create mlquickstart  --organisations my-github-org
+```sh
+jx create mlquickstart  --organisations my-github-org
 ```
 
 Then all machine learning quickstarts found in `my-github-org` will be listed in addition to the defaults.
@@ -122,7 +122,7 @@ Try to pick explanatory names so that it is clear what language, frameworks and 
 
 Inside your project set repository, create a single file named `projectset` which has the following format:
 
-```
+```yaml
 [
    {
       "Repo":"ML-python-pytorch-cpu-service",
@@ -142,31 +142,31 @@ You can configure at a team level the quickstarts which are presented to you in 
 To add the location of a set of machine learning quickstarts you can use the [jx create quickstartlocation](/commands/jx_create_quickstartlocation/) command.
 
 
-```shell
-$ jx create quickstartlocation --url https://mygit.server.com --owner my-mlquickstarts --includes=[ML-*]
-```  
+```sh
+jx create quickstartlocation --url https://mygit.server.com --owner my-mlquickstarts --includes=[ML-*]
+```
 
 Note that you MUST specify the `--includes=[ML-*]` option or your quickstarts will be added to the conventional quickstart list rather than the machine learning list.
 
 If you omit the `--url` argument the command will assume its a [GitHub](https://github.com/) repository. Note that both public and private repositories are supported.
 
-This means you can have your own shared private quickstarts to reuse within your organisation. Of course we'd obviously prefer you to [share your quickstarts with us via open source](https://github.com/jenkins-x/jx/issues/new?labels=quickstart&title=Add%20mlquickstart&body=Please%20add%20this%20github%20mlquickstart:) then we can include your quickstart with the entire [community](/community) - but there may be times you want to curate your own internal quickstarts using proprietary software. 
+This means you can have your own shared private quickstarts to reuse within your organisation. Of course we'd obviously prefer you to [share your quickstarts with us via open source](https://github.com/jenkins-x/jx/issues/new?labels=quickstart&title=Add%20mlquickstart&body=Please%20add%20this%20github%20mlquickstart:) then we can include your quickstart with the entire [community](/community) - but there may be times you want to curate your own internal quickstarts using proprietary software.
 
-You can also specify other `--includes` or `--excludes` patterns to filter the names of the repositories where `*` matches anything and `foo*` matches anything starting with `foo`. e.g. you could just include the languages and technologies your organisation supports and exclude the rest etc. 
+You can also specify other `--includes` or `--excludes` patterns to filter the names of the repositories where `*` matches anything and `foo*` matches anything starting with `foo`. e.g. you could just include the languages and technologies your organisation supports and exclude the rest etc.
 
 Also note that you can use the alias of `qsloc` instead of `quickstartlocation` if you like shorter aliases ;)
 
 You can then view the current quickstart locations for your team via the [jx get quickstartlocations](/commands/jx_get_quickstartlocations/) command:
 
-```shell
-$ jx get quickstartlocations
-```  
+```sh
+jx get quickstartlocations
+```
 
 Or using an abbreviation
-  
-```shell
-$ jx get qsloc
-```  
-  
-There is also [jx delete quickstartlocation](/commands/jx_delete_quickstartlocation/) if you need to remove a git organisation.  
-                                                                                                 
+
+```sh
+jx get qsloc
+```
+
+There is also [jx delete quickstartlocation](/commands/jx_delete_quickstartlocation/) if you need to remove a git organisation.
+

@@ -67,7 +67,7 @@ Experimental
 
 The `--help` command will include the information in the description of a command, like this:
 
-```cmd
+```sh
 Installing:
   profile          Set your jx profile
   boot             (Experimental) Boots up Jenkins X in a Kubernetes cluster using GitOps and a Jenkins X Pipeline

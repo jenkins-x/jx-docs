@@ -33,7 +33,7 @@ description: Issues using Jenkins X 常见问题的解决方案。
 
 如果你在 Mac 上通过 hyperkit 使用 minikube，并发现 minikube 启动失败的日志如下：
 
-```
+```sh
 Temporary Error: Could not find an IP address for 46:0:41:86:41:6e
 Temporary Error: Could not find an IP address for 46:0:41:86:41:6e
 Temporary Error: Could not find an IP address for 46:0:41:86:41:6e
@@ -44,7 +44,7 @@ Temporary Error: Could not find an IP address for 46:0:41:86:41:6e
 
 解决的办法是请尝试下面的操作：
 
-```
+```sh
 rm ~/.minikube/machines/minikube/hyperkit.pid
 ```
 
@@ -71,7 +71,7 @@ expose:
 
 因此，如果你输入：
 
-```
+```sh
 jx open
 ```
 

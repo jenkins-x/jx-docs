@@ -15,7 +15,7 @@ Jenkins X now has a [Jenkins App](https://github.com/jenkins-x-apps/jx-app-jenki
 
 ## Why Custom Jenkins?
 
-This app lets you maintain your investment in your existing Jenkins pipelines, invoking them in a custom Jenkins Server of your own choosing and configuration while you start to use more of the automated CI/CD in Jenkins X for new libraries and microservices using either [serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) or the embedded static Jenkins server in Jenkins X. 
+This app lets you maintain your investment in your existing Jenkins pipelines, invoking them in a custom Jenkins Server of your own choosing and configuration while you start to use more of the automated CI/CD in Jenkins X for new libraries and microservices using either [serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) or the embedded static Jenkins server in Jenkins X.
 
 You can then mix and match between the automated CI/CD in Jenkins X and your custom Jenkins pipelines - all orchestrated nicely together with Jenkins X!
 
@@ -23,15 +23,15 @@ You can then mix and match between the automated CI/CD in Jenkins X and your cus
 
 To install the custom Jenkins server you need to run the following command:
 
-```shell 
+```sh
 jx add app jenkins
 ```
 
 This will install a new Jenkins Server in your current Team. It should then show up via...
 
-```shell
+```sh
 jx open
-```    
+```
 
 This will also create an API token automatically so that the `jx` CLI can query or start pipelines in the custom Jenkins server. It can take a minute or so for the setup job to complete.
 
@@ -39,12 +39,12 @@ This will also create an API token automatically so that the `jx` CLI can query 
 
 Unfortunately there is a limitation on the current Jenkins app that it does not prompt you with the password as you add the Jenkins App.
 
-So to find the password you will need to find it by hand I'm afraid. 
+So to find the password you will need to find it by hand I'm afraid.
 
 * download [ksd](https://github.com/mfuentesg/ksd) and add it to your $PATH
 * type the following (you may need to change the `Secret` name if you use a different alias for your Jenkins server):
 
-```shell
+```sh
 kubectl get secret jx-jx-app-jenkins -o yaml | ksd
 ```
 
@@ -57,8 +57,8 @@ The `jx` command which work with Jenkins servers can all work directly with your
 
 If you only have one custom Jenkins App in your Team you can use `-m` to specify you want to work with a custom Jenkins server. Otherwise you can specify `-n myjenkinsname`.
 
-```shell
-# view the pipelines 
+```sh
+# view the pipelines
 jx get pipeline -m
 
 # view the log of a pipeline
@@ -71,8 +71,8 @@ jx console -m
 jx start pipeline -m
 ```
 
-## Managing custom Jenkins Servers via GitOps 
+## Managing custom Jenkins Servers via GitOps
 
 We have designed the Jenkins App for Jenkins X using the [App extension framework](/docs/contributing/addons/) which means you can manage your custom Jenkins servers via [GitOps](/docs/managing-jx/common-tasks/manage-via-gitops/) - keeping all of the apps, their version and configuration in git and using the Jenkins X tooling to add/update/configure/delete apps.
 
- 
+

@@ -11,11 +11,11 @@ We use the phrase _ChatOps_ to mean operating code changes and GitOPs promotion 
 
 ## What are the benefits of ChatOps?
 
-ChatOps helps developers collaborate on Pull Requests and speeds up merging of Pull Requests. We want to be able to merge changes as quickly as possible into master so that we continuously integrate code which minimises the downsides of long term feature branching and merge hell. 
+ChatOps helps developers collaborate on Pull Requests and speeds up merging of Pull Requests. We want to be able to merge changes as quickly as possible into master so that we continuously integrate code which minimises the downsides of long term feature branching and merge hell.
 
-ChatOps (and [tide in particular](#what-does-hook-do)) also helps automate and speeds up tasks e.g. 
+ChatOps (and [tide in particular](#what-does-hook-do)) also helps automate and speeds up tasks e.g.
 
-* developers don't have to keep hitting reload on a Pull Request page waiting for all the tests to pass so that they can click `Merge`. Just add a `/lgtm` comment or approve the code review and the Pull Request will automatically get merged once its tests go green. This also avoids developers accidentally hitting `Merge` before all the test pass! 
+* developers don't have to keep hitting reload on a Pull Request page waiting for all the tests to pass so that they can click `Merge`. Just add a `/lgtm` comment or approve the code review and the Pull Request will automatically get merged once its tests go green. This also avoids developers accidentally hitting `Merge` before all the test pass!
 * all Pull Request are automatically rebased and tested against master before merging - further ensuring we don't accidentally break master
 * batch merging of Pull Request is supported to speed up merging Pull Requests.
 
@@ -37,33 +37,33 @@ For more detail see [what does tide do](#what-does-hook-do)
 * if a Pull Request has passed all of its review + CI tests (e.g. its got the `approved` and/or `lgtm` labels applied or has passed a github code review) and is green and is based off of master it is automatically merged.
 * if a Pull Request has passed all of its review + CI tests but is not based off of master its pipelines are re-triggered based off of master to ensure the Pull Request will be valid if it were merged.
 * if batching is enabled and there are multiple pending Pull Requests which are approved and green, a batch pipeline is triggered which combines multiple Pull Requests together into a single change - if all those pipelines go green then all the PRs are merged together at once and closed. This greatly speeds up getting multiple Pull Requests merged together (as it avoids re-triggering each PR's tests after each one is merged).
- 
+
 ## How can I make ChatOps HA?
 
 To make ChatOps highly avialable scale up the deployments which listen for http requests to, say, 3 replicas.
 
 When using [Lighthouse](/architecture/lighthouse/) that just means modifying the replicas for the `lighthouse` deployment. e.g. in your [boot](/docs/getting-started/setup/boot/) git repository try changing `env/lighthouse/values.tmpl.yaml` to:
 
-```yaml 
+```yaml
 replicaCount: 3
-``` 
- 
- 
+```
+
+
 When using [Prow](/docs/reference/components/prow/) you need to scale up `hook` and `pipelinerunner`. e.g. in your [boot](/docs/getting-started/setup/boot/) git repository try changing `env/prow/values.tmpl.yaml` to:
 
-```yaml      
+```yaml
 hook:
   replicaCount: 3
 pipelinerunner:
   replicaCount: 3
-``` 
+```
 
 
 ## Should I use prow or lighthouse?
 
 If you are using a git server other than https://github.com then we recommend [Lighthouse](/architecture/lighthouse/).
 
-If you are using https://github.com then for your git server then for now we recommend [Prow](/docs/reference/components/prow/) as it has had more testing than [Lighthouse](/architecture/lighthouse/). 
+If you are using https://github.com then for your git server then for now we recommend [Prow](/docs/reference/components/prow/) as it has had more testing than [Lighthouse](/architecture/lighthouse/).
 
 Though [Lighthouse](/architecture/lighthouse/) is our strategic direction. We are starting to incrementally move our open source repositories over to [Lighthouse](/architecture/lighthouse/). At some point in the future once we've been using [Lighthouse](/architecture/lighthouse/) in production for all of our open source and commercial repositories [Lighthouse](/architecture/lighthouse/) will become our recommended solution for all git providers so that we can have a single, simpler & smaller codebase to maintain.
 
@@ -75,7 +75,7 @@ If you have a pending Pull Request which is blocked on a flaky test or an incorr
 
 [Prow](/docs/reference/components/prow/) and [Lighthouse](/architecture/lighthouse/) use an `OWNERS` file stored in each git repository to define which developers are allowed to review and approve changes. You can even limit those roles to different folders.
 
-If a non-reviewer submits a Pull Request it won't trigger CI pipelines by default until a reviewer adds an `/ok-to-test` comment on the Pull Request. 
+If a non-reviewer submits a Pull Request it won't trigger CI pipelines by default until a reviewer adds an `/ok-to-test` comment on the Pull Request.
 
 If you have public git repositories this also avoids the security issue of a non-approver submitting a Pull Request to change the pipeline to email them your security credentials in the CI pipeline ;)
 

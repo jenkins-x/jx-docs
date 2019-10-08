@@ -42,13 +42,13 @@ chart for running as a package in Kubernetes.
 
 1.  Change into your Spring Boot project directory:
 
-```shell
+```sh
 cd my-springapp/
 ```
 
 2.  Run the import from a command-line:
 
-```shell
+```sh
 jx import
 ```
 
@@ -72,7 +72,7 @@ If you are evaluating Spring Boot in your Jenkins X environment and need an appl
 
 1.  Run the Spring Boot creation via command-line:
 
-```shell
+```sh
 jx create spring
 ```
 
@@ -103,8 +103,8 @@ There is a [demo of using the command: jx create spring](/demos/create_spring/).
 
 You can also pass certain options to the `jx create` command, such as specifying Spring Boot dependencies:
 
-```shell
-$ jx create spring -d web -d actuator
+```sh
+jx create spring -d web -d actuator
 ```
 
 The `-d` argument lets you specify the Spring Boot dependencies you wish to add to your spring boot application. In the above example, the command calls the `web` argument, which passes in the Web Starter dependency to create RESTful web applications; the `actuator` dependency for monitoring the health and metrics your application.  When you omit the `-d` arguments and let the `jx` command prompt you to pick the dependencies via a CLI wizard

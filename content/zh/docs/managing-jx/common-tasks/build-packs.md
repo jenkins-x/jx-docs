@@ -47,7 +47,7 @@ pipeline {
           container('foo') {
             sh "foo deploy"
           }
-```          
+```
 
 一旦你的 `Jenkinsfile` 可以在你的示例工程为你的语言实现 CI/CD 的话，我们因该把 `Dockerfile`, `Jenkinsfile` 和 charts 文件夹拷贝到你的派生 [jenkins-x/draft-packs 仓库](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) 中。
 
@@ -55,15 +55,15 @@ pipeline {
 
 例如：
 
-```shell 
+```sh
 export PACK="foo"
 mkdir ~/.jx/draft/packs/github.com/jenkins-x/draft-packs/packs/$PACK
 cp Dockerfile Jenkinsfile  ~/.jx/draft/packs/github.com/jenkins-x/draft-packs/packs/$PACK
 
 # the charts will be in some folder charts/somefoo
 cp -r charts/somefoo ~/.jx/draft/packs/github.com/jenkins-x/draft-packs/packs/$PACK/charts
-```   
+```
 
 当你的构建包在 `~/.jx/draft/packs/github.com/jenkins-x/draft-packs/packs/` 文件夹中，就可以通过命令 [jx import](/commands/jx_import) 来导入工程，使用编程语言来检测并查找最合适的构建包。如果你的构建包自定义检测逻辑的话，请让我们指导，我们可以帮助改进 [jx import](/commands/jx_import) 使得在你的构建包上做的更好。例如：我们有一些自定义逻辑更好地处理 [maven 和 Gradle](https://github.com/jenkins-x/jx/blob/master/pkg/jx/cmd/import.go#L383-L397)。
-          
+
 如果你需要任何帮助 [请加入社区](/zh/community/) 。
