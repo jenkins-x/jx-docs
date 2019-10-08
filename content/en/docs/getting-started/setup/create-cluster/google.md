@@ -1,7 +1,7 @@
 ---
 title: Google 
 linktitle: Google
-description: How to create a kubernetes cluster on Google Cloud (GCP)
+description: How to create a kubernetes cluster on the Google Cloud Platform (GCP)
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01
