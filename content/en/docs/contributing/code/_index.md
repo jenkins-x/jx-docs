@@ -29,7 +29,7 @@ To contribute to Jenkins X jx binary, you will need:
  - [Go](https://golang.org/) `1.11.4`, with support for compiling to `linux/amd64`
  - [pre-commit](https://pre-commit.com/#install) - once installed, ensure you're at the root of the repository which contains a `.pre-commit-config.yaml` configuration file, then:
 
-```bash
+```sh
 pre-commit install
 ```
 
@@ -45,8 +45,8 @@ If you are having trouble following the installation guides for go, check out [G
 
 If you are a macOS user and have [Homebrew](https://brew.sh/) installed on your machine, installing Go is as simple as the following command:
 
-```shell
-$ brew install go
+```sh
+brew install go
 ```
 
 ### Install Go via GVM
@@ -64,7 +64,7 @@ Simply install the latest version by downloading the [installer](https://golang.
 
 If you have used an older version of go you may have old versions of go modules. So its good to run this command to clear your cache if you are having go build issues:
 
-```shell
+```sh
 go clean -modcache
 ```
 
@@ -72,13 +72,13 @@ go clean -modcache
 
 Once you're finished installing Go, let's confirm everything is working correctly. Open a terminal - or command line under Windows - and type the following:
 
-```shell
-$ go version
+```sh
+go version
 ```
 
 You should see something similar to the following written to the console (on macOS). Note that the version here reflects the most recent version of Go as of the last update for this page:
 
-```
+```sh
 go version go1.11 darwin/amd64
 ```
 
@@ -86,7 +86,7 @@ Next, make sure that you set up your `GOPATH` [as described in the installation 
 
 You can print the `GOPATH` with `echo $GOPATH`. You should see a non-empty string containing a valid path to your Go workspace; .e.g.:
 
-```shell
+```sh
 $ echo $GOPATH
 /Users/<yourusername>/Code/go
 ```
@@ -111,14 +111,14 @@ Hub is a great tool for working with GitHub. The main site for it is [hub.github
 
 On a Mac, you can install [Hub](https://github.com/github/hub) using [Homebrew](https://brew.sh):
 
-```shell
-$ brew install hub
+```sh
+brew install hub
 ```
 
 Now we'll create an [alias in Bash](http://tldp.org/LDP/abs/html/aliases.html) so that typing `git` actually runs `Hub`:
 
-```shell
-$ echo "alias git='hub'" >> ~/.bash_profile
+```sh
+echo "alias git='hub'" >> ~/.bash_profile
 ```
 
 ## Create a GitHub Account
@@ -147,29 +147,29 @@ Now open your fork repository on GitHub and copy the remote url of your fork. Yo
 
 Then go back to your terminal and clone your fork locally. Since jx is a Go package, it should be located at `$GOPATH/src/github.com/jenkins-x/jx`.
 
-```shell
-$ mkdir -p $GOPATH/src/github.com/jenkins-x
-$ cd $GOPATH/src/github.com/jenkins-x
-$ git clone git@github.com:<YOUR_USERNAME>/jx.git
-$ cd jx
+```sh
+mkdir -p $GOPATH/src/github.com/jenkins-x
+cd $GOPATH/src/github.com/jenkins-x
+git clone git@github.com:<YOUR_USERNAME>/jx.git
+cd jx
 ```
 
 Add the conventional upstream `git` remote in order to fetch changes from jx's main master
 branch and to create pull requests:
 
-```shell
-$ git remote add upstream https://github.com/jenkins-x/jx.git
+```sh
+git remote add upstream https://github.com/jenkins-x/jx.git
 ```
 
 Let's check if everything went right by listing all known remotes:
 
-```shell
-$ git remote -v
+```sh
+git remote -v
 ```
 
 The output should look similar to:
 
-```
+```sh
 origin    git@github.com:<YOUR_USERNAME>/jx.git (fetch)
 origin    git@github.com:<YOUR_USERNAME>/jx.git (push)
 upstream  https://github.com/jenkins-x/jx.git (fetch)
@@ -180,7 +180,7 @@ upstream  https://github.com/jenkins-x/jx.git (push)
 
 Alternatively, you can use the Git wrapper Hub. Hub makes forking a repository easy:
 
-```
+```sh
 hub fork
 ```
 
@@ -192,16 +192,16 @@ That command will log in to GitHub using your account, create a fork of the repo
 
 First, ensure that your local repository is up-to-date with the latest version of jx. More details on [GitHub help](https://help.github.com/articles/syncing-a-fork/)
 
-```shell
-$ git fetch upstream
-$ git checkout master
-$ git merge upstream/master
+```sh
+git fetch upstream
+git checkout master
+git merge upstream/master
 ```
 
 Now you can create a new branch for your change:
 
-```shell
-$ git checkout -b <BRANCH-NAME>
+```sh
+git checkout -b <BRANCH-NAME>
 ```
 
 You can check on which branch your are with `git branch`. You should see a list of all local branches. The current branch is indicated with a little asterisk.
@@ -220,8 +220,8 @@ Bear in mind when developing that the code can (and will) run on different archi
 
 To push our commits to the fork on GitHub you need to specify a destination. A destination is defined by the remote and a branch name. Earlier, the remote url of our fork was given the default name of `origin`. The branch should be given the same name as our local one. This makes it easy to identify corresponding branches.
 
-```shell
-$ git push --set-upstream origin <BRANCH-NAME>
+```sh
+git push --set-upstream origin <BRANCH-NAME>
 ```
 
 Now Git knows the destination. Next time when you to push commits you just need to enter `git push`.
@@ -232,8 +232,8 @@ With the prerequisites installed and your fork of jx cloned, you can make change
 
 Run `make` to build the `jx` binaries:
 
-```shell
-$ make build
+```sh
+make build
 ```
 See below to get some advises on how to [test](#testing) and [debug](#debugging).
 
@@ -245,13 +245,13 @@ This is a bit more advanced but required to ensure a proper Git history of Jenki
 
 Let's take an example.
 
-```shell
-$ git rebase --interactive @~3
+```sh
+git rebase --interactive @~3
 ```
 
 The `3` at the end of the command represents the number of commits that should be modified. An editor should open and present a list of last three commit messages:
 
-```
+```sh
 pick 911c35b Add "How to contribute to Jenkins X" tutorial
 pick 33c8973 Begin workflow
 pick 3502f2e Refactoring and typo fixes
@@ -261,7 +261,7 @@ In the case above we should merge the last 2 commits in the commit of this tutor
 
 All operations are written before the commit message. Replace `pick` with an operation. In this case `squash` or `s` for short:
 
-```
+```sh
 pick 911c35b Add "How to contribute to Jenkins X" tutorial
 squash 33c8973 Begin workflow
 squash 3502f2e Refactoring and typo fixes
@@ -271,7 +271,7 @@ We also want to rewrite the commits message of the third last commit. We forgot 
 
 You should end up with a similar setup:
 
-```
+```sh
 reword 911c35b Add "How to contribute to Jenkins X" tutorial
 squash 33c8973 Begin workflow
 squash 3502f2e Refactoring and typo fixes
@@ -281,7 +281,7 @@ Close the editor. It should open again with a new tab. A text is instructing you
 
 A last time a new tab opens. Enter a new commit message and save again. Your terminal should contain a status message. Hopefully this one:
 
-```
+```sh
 Successfully rebased and updated refs/heads/<BRANCH-NAME>.
 ```
 
@@ -289,18 +289,17 @@ Check the commit log if everything looks as expected. Should an error occur you 
 
 In case you already pushed your work to your fork, you need to make a force push
 
-```shell
-$ git push --force
+```sh
+git push --force
 ```
 Last step, to ensure that your change would not conflict with other changes done in parallel by other contributors, you need to rebase your work on the latest changes done on jx master branch. Simply:
 
-```shell
-$ git checkout master #Move to local master branch
-$ git fetch upstream #Retrieve change from jx master bracnch
-$ git merge upstream/master #Merge the change into your local master
-$ git checkout <BRANCH-NAME> #Move back to your local branch where you did your development
-$ git rebase master
-
+```sh
+git checkout master #Move to local master branch
+git fetch upstream #Retrieve change from jx master bracnch
+git merge upstream/master #Merge the change into your local master
+git checkout <BRANCH-NAME> #Move back to your local branch where you did your development
+git rebase master
 ```
 Handle any conflicts and make sure your code builds and all tests pass. Then force push your branch to your remote.
 
@@ -350,9 +349,9 @@ good guide from GitHub:
 3. Next, tell [tell GitHub about your key so that it can verify your commits](https://help.github.com/en/articles/adding-a-new-gpg-key-to-your-github-account)
 4. Now, configure git to always use sign commits by running
 
-    ```bash
-    $ git config --global user.signingkey <key id>
-    ```
+```sh
+git config --global user.signingkey <key id>
+```
 
    The process to find the key id is described in [https://help.github.com/en/articles/checking-for-existing-gpg-keys](https://help.github.com/en/articles/checking-for-existing-gpg-keys)
 
@@ -421,23 +420,23 @@ The jx test suite is divided into three sections:
  - Integration tests
 
 To run the standard test suite:
-```shell
-$ make test
+```sh
+make test
 ```
 
 To run the standard test suite including slow running tests:
-```shell
-$ make test-slow
+```sh
+make test-slow
 ```
 
 To run all tests including integration tests (NOTE These tests are not encapsulated):
-```shell
-$ make test-slow-integration
+```sh
+make test-slow-integration
 ```
 
 To get a nice HTML report on the tests:
-```shell
-$ make test-report-html
+```sh
+make test-report-html
 ```
 
 ### Writing tests
@@ -500,12 +499,12 @@ type CommandInterface interface {
 In the example you can see that we pass the generator to use: `pegomock generate` the package path name: `github.com/jenkins-x/jx/pkg/util` the name of the interface: `CommandInterface` and finally an output directive to write the generated file to a mock sub-folder. To keep things nice and tidy it's best to write each mocked interface to a separate file in this folder. So in this case: `-o mocks/command_interface.go`
 
 Now simply run:
-```shell
-$ go generate ./...
+```sh
+go generate ./...
 ```
 or
-```shell
-$ make generate-mocks
+```sh
+make generate-mocks
 ```
 
 You now have a mock to test your new interface!
@@ -551,7 +550,7 @@ Now when we can set up our  test using the mock interface and make assertions as
 
 Lots of the test have debug output to try figure out when things fail. You can enable verbose debug logging for tests via:
 
-```shell
+```sh
 export JX_TEST_DEBUG=true
 ```
 
@@ -561,13 +560,13 @@ First you need to [install Delve](https://github.com/derekparker/delve/blob/mast
 
 Then build a version of `jx` that is optimised for debugging
 
-```shell
+```sh
 DEBUG=on make
 ```
 
 Then you should be able to run a debug version of a jx command:
 
-```shell
+```sh
 dlv --listen=:2345 --headless=true --api-version=2 exec ./build/jx -- some arguments
 ```
 
@@ -580,7 +579,7 @@ If you want to debug using `jx` with `stdin` to test out terminal interaction, y
 1. Find the `pid` of the jx command via something like `ps -elaf | grep jx`
 2. Start Delve, attaching to the pid:
 
-	```shell
+	```sh
 	dlv --listen=:2345 --headless=true --api-version=2 attach SomePID
 	```
 
@@ -588,14 +587,14 @@ If you want to debug using `jx` with `stdin` to test out terminal interaction, y
 
 You can run a single unit test via:
 
-```shell
+```sh
 export TEST="TestSomething"
 make test1
 ```
 
 You can then start a Delve debug session on a unit test via:
 
-```shell
+```sh
 export TEST="TestSomething"
 make debugtest1
 ```
@@ -620,7 +619,7 @@ In some cases it can be useful to see the REST API calls made to the Kubernetes 
 You can enable trace by setting the environment variable `TRACE_KUBE_API` to the value "on" or "1".
 For example:
 
-```bash
+```sh
 TRACE_KUBE_API=on jx get apps
 ```
 

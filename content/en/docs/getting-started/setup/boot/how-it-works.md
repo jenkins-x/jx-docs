@@ -45,11 +45,11 @@ If you look at the current [env/parameters.yaml](https://github.com/jstrachan/en
 This means we can populate all the Parameters we need on startup then refer to them from `values.tmpl.yaml` to populate the tree of values to then inject those into Vault.
 
 
-### Populating the `parameters.yaml` file 
+### Populating the `parameters.yaml` file
 
 We can then use the new step to populate the `parameters.yaml` file in the Pipeline via this command in the `env` folder:
 
-``` 
+```sh
 jx step create values --name parameters
 ```
 
@@ -61,16 +61,16 @@ This uses the [parameters.schema.json](https://github.com/jenkins-x/jenkins-x-bo
 
 Rather than a huge huge deeply nested values.yaml file we can have a tree of files for each App only include the App specific configuration in each folder. e.g.
 
-``` 
+```sh
 env/
   values.yaml   # top level configuration
   prow/
     values.yaml # prow specific config
   tekton/
-    values.yaml  # tekton specific config 
+    values.yaml  # tekton specific config
 ```
-  
-  
+
+
 #### values.tmpl.yaml templates
 
 When using `jx step helm apply` we now allow `values.tmpl.yaml` files to use go/helm templates just like `templates/foo.yaml` files support inside helm charts so that we can generate value/secret strings which can use templating to compose things from smaller secret values. e.g. creating a maven `settings.xml` file or docker `config.json` which includes many user/passwords for different registries.

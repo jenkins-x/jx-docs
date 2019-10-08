@@ -4,7 +4,7 @@ linktitle: Boot Questions
 description: Questions on using 'jx boot'
 weight: 20
 aliases:
-  - /faq/issues/ 
+  - /faq/issues/
 ---
 
 For more detail check out how to use [jx boot](/docs/getting-started/setup/boot/).
@@ -24,12 +24,12 @@ Add more resources (e.g. `Ingress, ConfigMap, Secret`) to your development envir
 
 Add a new `SourceRepository` and `Environment` resource to the `env/templates` folder for each new environment you want tto create. We’ve only added `dev, staging, production` currently.
 
-From your running cluster you can always grab the staging `SourceRepository` and `Environment` resource via the following (where XXX is the name of the staging repository returned via `kubectl get sr`): 
+From your running cluster you can always grab the staging `SourceRepository` and `Environment` resource via the following (where XXX is the name of the staging repository returned via `kubectl get sr`):
 
-``` 
+```sh
 kubectl get env staging -oyaml > env/templates/myenv.yaml
 kubectl get sr XXX -oyaml > env/templates/myenv-sr.yaml
-```                 
+```
 
 then modify the YAML to suit, changing the names of the resources to avoid clashing with your staging repository.
 
@@ -42,7 +42,7 @@ See how to update your [boot configuration with the latest SourceRepository reso
 It depends on which namespace you want the charts to be installed.
 
 If its in the development environment (the `jx` namespace by default) then `env/requirements.yaml` is where to add the chart and for a chart `foo` you can add `env/foo/values.yaml` to configure it. (or `env/foo/values.tmpl.yaml` if you want to use some [templating](docs/getting-started/setup/boot/how-it-works/#improvements-to-values-yaml) of the `values.yaml`)
- 
+
 
 Though if you want our chart to be in another namespace then we use the convention of adding a folder in the `system` directory in the boot configuration (e.g. like we do for ingress, cert manager, velero, service mesh etc). So make a new folder in `system` and add the `jx step helm apply` step in the pipeline in `jenkins-x.yml` like we do for `cert-manager`, `nginx`, `velero` etc.
 

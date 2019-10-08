@@ -89,7 +89,7 @@ Once your files are in place, and you have verified locally that your image buil
 The `update-bot.sh` script is used to create a PR that includes all the updated builder images. Edit the file (it's in the root of the `jenkins-x-builders` repo) and add the appropriate argument to this existing command
 :
 
-```
+```sh
 jx step create pr chart --name gcr.io/jenkinsxio/builder-ruby --name gcr.io/jenkinsxio/builder-swift \
   --name gcr.io/jenkinsxio/builder-dlang --name gcr.io/jenkinsxio/builder-go --name gcr.io/jenkinsxio/builder-go-maven \
   --name gcr.io/jenkinsxio/builder-gradle --name gcr.io/jenkinsxio/builder-gradle4 --name gcr.io/jenkinsxio/builder-gradle5 \

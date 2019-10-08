@@ -36,7 +36,7 @@ Jenkins X ships with a collection of default `Role` objects you can use in the `
 
 To add users use the [jx create user](/commands/jx_create_user/) command:
 
-```shell
+```sh
 jx create user --email "joe@example.com" --login joe --name "Joe Bloggs"
 ```
 
@@ -44,20 +44,20 @@ jx create user --email "joe@example.com" --login joe --name "Joe Bloggs"
 
 To modify the roles for a user, use [jx edit userroles](/commands/jx_edit_userroles/):
 
-```shell
+```sh
 jx edit userrole --login joe
 ```
- 
+
 If you omit the `--login` (`-l`) flag, you will be prompted to pick the user to edit.
 
 For example, to make a user `joe` have the `committer` Role (and remove any existing roles):
 
-```shell
+```sh
 jx edit userrole --login joe --role committer
 ```
 
 If you have fine-grained roles and want to grant multiple roles to a user, you can specify the roles as a comma-separated list:
-```shell
+```sh
 jx edit userrole --login joe --role committer,viewer
 ```
 

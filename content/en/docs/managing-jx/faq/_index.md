@@ -3,7 +3,7 @@ title: FAQ
 linktitle: FAQ
 description: Questions about managing Jenkins X
 weight: 60
-aliases: 
+aliases:
   - /faq/setup/
 ---
 
@@ -51,16 +51,16 @@ If anything ever goes wrong (e.g. your cluster, namespace or tekton gets deleted
 Otherwise the older approach is as follows:
 
 ### If not using boot
- 
+
 You can upgrade via the [jx upgrade](/commands/jx_upgrade/) commands. Start with
 
-```shell
+```sh
 jx upgrade cli
 ```
 
 to get you on the latest CLI then you can upgrade the platform:
 
-```shell
+```sh
 jx upgrade platform
 ```
 
@@ -68,7 +68,7 @@ jx upgrade platform
 
 We use specific `BuildTemplates` for different programming languages. These `BuildTemplates` describe the steps that will be executed as part of the job, which in case of the Jenkins X BuildTemplates, they all execute the `JenkinsfileRunner` to execute the project's Jenkinsfile.
 
-```
+```sh
 $ kubectl get buildtemplates
 NAME                        AGE
 environment-apply           9d
@@ -102,20 +102,20 @@ The docker image that has the `Jenkinsfile` runner has also other tools installe
 
 Once this is done, you need to change the BuildTemplate in your cluster so that it starts using the new version of the docker image. For example, you can see the current version of this image for the Go BuildTemplate in your cluster
 
-```
+```sh
 $ kubectl describe buildtemplate jenkins-go | grep Image
 Image:       jenkinsxio/jenkins-go:256.0.44
 ```
 
 If you want to use a different version that uses a newer jx version you could manually change all the BuildTemplates but instead let's jx take care of it
 
-```
-$ jx upgrade addon jx-build-templates
+```sh
+jx upgrade addon jx-build-templates
 ```
 
 Check that the change has been done
 
-```
+```sh
 $ kubectl describe buildtemplate jenkins-go | grep Image
 Image:       jenkinsxio/jenkins-go:256.0.50
 ```
@@ -133,7 +133,7 @@ The [jx install](/commands/jx_install/) command takes a number of CLI arguments 
 
 We do recommend you use the default ingress controller if you can - as we know it works really well and only uses a single LoadBalancer IP for the whole cluster (your cloud provider often charges per IP address). However if you want to point at a different ingress controller just specify those arguments on install:
 
-```shell
+```sh
 jx install \
   --ingress-service=$(yoursvcname) \
   --ingress-deployment=$(yourdeployname) \

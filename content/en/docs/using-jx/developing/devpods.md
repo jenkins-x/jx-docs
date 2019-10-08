@@ -5,10 +5,10 @@ description: Using Jenkins X to continuously deliver value to your customers
 weight: 50
 ---
 
-Jenkins X allows you to edit app code by using a Kubernetes Pod which we call `DevPod`.  This helps you develop inside the cloud with the same software tools, platform, container images and pod templates as the CI/CD pipelines. This helps keep everyone in the team and your CI/CD pipelines using the same platform and tools all the time to reduce waste and avoid those pesky 'it works on my laptop but not in production' issues.  
+Jenkins X allows you to edit app code by using a Kubernetes Pod which we call `DevPod`.  This helps you develop inside the cloud with the same software tools, platform, container images and pod templates as the CI/CD pipelines. This helps keep everyone in the team and your CI/CD pipelines using the same platform and tools all the time to reduce waste and avoid those pesky 'it works on my laptop but not in production' issues.
 
 
-There are a couple of ways that you as a developer can quickly become productive when editing an app, and add value ultra fast. 
+There are a couple of ways that you as a developer can quickly become productive when editing an app, and add value ultra fast.
 
 There are specific steps for each approach, and we provide you a visual representation of each workflow, as well as the specific steps to quickly get started.
 
@@ -33,8 +33,8 @@ See [IDE](/docs/using-jx/common-tasks/ide/#vs-code) for more details on using VS
 
 To get started using this approach, simply execute the following command in the root of your app directory.  We are using a `NodeJS` app for this example, therefore we specify the language using the `-l` parameter.
 
-```bash
-  jx create devpod -l nodejs --reuse --sync 
+```sh
+jx create devpod -l nodejs --reuse --sync
 ```
 A successful execution will ensures the following happened:
 
@@ -44,7 +44,7 @@ A successful execution will ensures the following happened:
 
 Once this happens, you must execute one more command within your ssh session to the Pod to ensure any changes are synchronized.
 
-```bash
+```sh
 ./watch.sh
 ```
 
@@ -67,9 +67,9 @@ If you prefer not to use an IDE on your desktop using a similar workflow as abov
 
 Using this approach, you execute the following on your terminal.
 
-```bash
+```sh
 
-jx create devpod --verbose true                                 
+jx create devpod --verbose true
 
 # some output us removed for brevity
 Creating a DevPod of label: nodejs
@@ -103,11 +103,11 @@ A succesful execution of the command above, will ensure the following has happen
 
 To see your changes in real-time, you must also execute the following command within your terminal session connected to the Pod:
 
-```bash
+```sh
 ./watch.sh
 ```
 
-### Promote to Staging 
+### Promote to Staging
 Once you are happy with the changes you made to the app, you can simply check-in your code and create a `pull request`.  This will trigger the pipeline to promote your changes to the `Staging` environment (**Step 2 and 3 in diagram**)
 
 ### Promote to Production
@@ -115,14 +115,16 @@ Most of the time,the Production environment in **Jenkins X** will have its `Prom
 
 To promote the app to production, you can execute the following commands:
 
-```bash
-# first get the app version from this output
-jx get apps
+1. first get the app version from this output
 
-# promote app version 0.0.2 from staging to production
-jx promote --version 0.0.2 --env production
+```sh
+jx get apps
 ```
 
+2. promote app version 0.0.2 from staging to production
 
+```sh
+jx promote --version 0.0.2 --env production
+```
 
 # Additional Learning

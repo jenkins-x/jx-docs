@@ -12,7 +12,7 @@ Kubernetes 提供了一个叫做[自定义资源](https://kubernetes.io/docs/con
 
 Jenkins X 原生地支持[环境](/zh/docs/concepts/features/#environments)，允许为你们团队定义环境，并通过 [jx get environments](/commands/jx_get_environments) 查询：
 
-```shell
+```sh
 jx get environments
 ```
 
@@ -20,13 +20,13 @@ jx get environments
 
 因此，你还可以通过 [kubectl](https://kubernetes.io/docs/reference/kubectl/overview/) 查询环境：
 
-```shell
+```sh
 kubectl get environments
 ```
 
 或者你想要通过 `YAML` 直接编辑它们的话：
 
-```shell
+```sh
 kubectl edit env staging
 ```
 

@@ -52,12 +52,12 @@ chartmuseumServiceLink:
 
 ## Jenkins Image
 
-We ship with a default Jenkins docker image [jenkinsxio/jenkinsx](https://hub.docker.com/r/jenkinsxio/jenkinsx/) with Jenkins X which has all of our required plugins inside. 
+We ship with a default Jenkins docker image [jenkinsxio/jenkinsx](https://hub.docker.com/r/jenkinsxio/jenkinsx/) with Jenkins X which has all of our required plugins inside.
 
 If you wish to add your own plugins you can create your own `Dockerfile` and image using our base image like this:
 
-```
-# Dockerfile for adding plugins to Jenkins X 
+```dockerfile
+# Dockerfile for adding plugins to Jenkins X
 FROM jenkinsxio/jenkinsx:latest
 
 COPY plugins.txt /usr/share/jenkins/ref/openshift-plugins.txt
@@ -66,7 +66,7 @@ RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/openshift-plugins
 
 Then add your custom plugins to `plugins.txt` locally of the form:
 
-``` 
+```txt
 myplugin:1.2.3
 anotherplugin:4.5.6
 ```
@@ -74,7 +74,7 @@ anotherplugin:4.5.6
 Once you have built and released your image via CI/CD you can then use it in your Jenkins X installation.
 
 To configure Jenkins X to use your custom image you can specify your own Jenkins image via a `myvalues.yaml` file:
-  
+
 ```yaml
 jenkins:
   Master:
@@ -86,14 +86,14 @@ There is an example OSS project [jenkins-x/jenkins-x-openshift-image](https://gi
 
 ## Docker Registry
 
-We try and use the best defaults for each platform for the Docker Registry; e.g. using ECR on AWS. 
+We try and use the best defaults for each platform for the Docker Registry; e.g. using ECR on AWS.
 
 However you can also specify this via the `--docker-registry` option when running  [jx create cluster](/commands/jx_create_cluster) or [jx install](/commands/jx_install)
 
 e.g.
 
-``` 
+```sh
 jx create cluster gke --docker-registry eu.gcr.io
-```   
+```
 
 Though if you use a different Docker Registry you will probably need to [also modify the secret for connecting to docker](/docs/managing-jx/common-tasks/docker-registry/#update-the-config-json-secret).

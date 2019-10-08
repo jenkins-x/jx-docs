@@ -68,7 +68,7 @@ Now open your fork repository on GitHub and copy the remote url of your fork. Yo
 
 Then go back to your terminal, `cd` to where you would like to place your local copy of the `jx-docs` repo, and then clone your fork.
 
-```shell
+```sh
 git clone --recurse-submodules --depth 1 git@github.com:<YOUR_USERNAME>/jx-docs.git
 cd jx-docs
 ```
@@ -76,27 +76,27 @@ cd jx-docs
 {{% alert %}}
 In case you already have a git clone locally (from before the theme change) then run the following to pull the Docsy theme and dependencies
 
-```bash
-$ git submodule update --init --recursive
+```sh
+git submodule update --init --recursive
 ```
 {{% /alert %}}
 
 Add the conventional upstream `git` remote in order to fetch changes from the `jx-docs` master
 branch and to create pull requests:
 
-```bash
-$ git remote add upstream https://github.com/jenkins-x/jx-docs.git
+```sh
+git remote add upstream https://github.com/jenkins-x/jx-docs.git
 ```
 
 Let's check if everything went right by listing all known remotes:
 
-```shell
-$ git remote -v
+```sh
+git remote -v
 ```
 
 The output should look similar to:
 
-```
+```sh
 origin    git@github.com:<YOUR_USERNAME>/jx-docs.git (fetch)
 origin    git@github.com:<YOUR_USERNAME>/jx-docs.git (push)
 upstream  https://github.com/jenkins-x/jx-docs.git (fetch)
@@ -121,21 +121,21 @@ To make it as simple as possible, we've created and published Docker images inst
 
 In order to use this setup, first make sure you're in the folder with your local cloned copy of the `jx-docs` repo, then run the following command to download and start the Hugo server:
 
-```bash
-$ docker-compose up -d server
+```sh
+docker-compose up -d server
 ```
 
 This will make the site available on http://localhost:1313/ and it will auto-update when you save changes to any of the files in the repo.
 
 To be able to see what's going on, and know when the site is ready (can take a bit to process when you first start up), you can run this command (ctrl-c to stop watching the logs):
 
-```bash
-$ docker-compose logs -f server
+```sh
+docker-compose logs -f server
 ```
 
 You'll know the site is ready when you see something like:
 
-```
+```sh
 server_1        | Watching for changes in /src/{assets,content,layouts,static,themes}
 server_1        | Watching for config changes in /src/config.toml, /src/themes/docsy/config.toml
 server_1        | Environment: "development"
@@ -149,28 +149,28 @@ As you're changing things and adding new content, your local Hugo server might g
 
 #### See the Hugo Logs
 
-```cmd
-$ docker-compose logs -f server
+```sh
+docker-compose logs -f server
 ```
 
 Leave `-f` off if you don't want new log entries to show up in your console. (ctrl-c to escape when `-f` is on)
 
 #### Restart the Hugo Server
 
-```cmd
-$ docker-compose restart server
+```sh
+docker-compose restart server
 ```
 
 #### Stop the Hugo Server
 
-```cmd
-$ docker-compose stop server
+```sh
+docker-compose stop server
 ```
 
 or
 
-```cmd
-$ docker-compose down
+```sh
+docker-compose down
 ```
 
 ### Install Hugo
@@ -181,8 +181,8 @@ You need a recent extended version (we recommend version 0.58 or later) of Hugo 
 
 Check you're using `Hugo extended` and a version higher than `0.58.0` :
 
-```bash
-$ hugo version
+```sh
+hugo version
 ```
 
 The output should look something like `Hugo Static Site Generator v0.58.3/extended darwin/amd64 BuildDate: unknown`
@@ -191,14 +191,14 @@ The output should look something like `Hugo Static Site Generator v0.58.3/extend
 
 To build or update your site’s CSS resources, you also need [PostCSS](https://postcss.org/) to create the final assets. If you need to install it, you must have a recent version of `NodeJS` installed on your machine so you can use `npm`, the Node package manager. By default `npm` installs tools under the directory where you run `npm install`:
 
-```bash
-$ sudo npm install -D --save autoprefixer
-$ sudo npm install -D --save postcss-cli
+```sh
+sudo npm install -D --save autoprefixer
+sudo npm install -D --save postcss-cli
 ```
 
 Get local copies of the project submodules so you can build and run your site locally:
 
-```bash
+```sh
 git submodule update --init --recursive
 ```
 
@@ -206,13 +206,13 @@ git submodule update --init --recursive
 
 Build the site:
 
-```bash
-$ hugo server
+```sh
+hugo server
 ```
 
 It's ready when you see something like this:
 
-```bash
+```sh
 Environment: "development"
 Serving pages from memory
 Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
@@ -228,9 +228,9 @@ It may be a good idea to run the server in a separate terminal so that you can k
 
 In a later section we'll go over how to use other tools to check for spelling errors or typos, as well as checking that all links are working as expected. If you don't want to use the supplied docker approach, these tools will need to be installed locally as well:
 
-```bash
-$ npm i markdown-spellcheck -g
-$ curl https://htmltest.wjdp.uk | sudo bash -s -- -b /usr/local/bin
+```sh
+npm i markdown-spellcheck -g
+curl https://htmltest.wjdp.uk | sudo bash -s -- -b /usr/local/bin
 ```
 
 See [markdown-spellcheck install](https://github.com/lukeapage/node-markdown-spellcheck#cli-usage) and [htmltest install](https://github.com/wjdp/htmltest#system-wide-install) pages for more details on other ways to install them.
@@ -260,22 +260,22 @@ We'll go though each of the steps below in more detail
 
 First, ensure that your local repository is up-to-date with the latest version of `jx-docs`. More details on [GitHub help](https://help.github.com/articles/syncing-a-fork/)
 
-```shell
-$ git fetch upstream
-$ git checkout master
-$ git merge upstream/master
+```sh
+git fetch upstream
+git checkout master
+git merge upstream/master
 ```
 
 You've now updated your local copy of the repository. To update your fork on GitHub, push your changes:
 
-```shell
-$ git push origin master
+```sh
+git push origin master
 ```
 
 Create a new branch for the changes you'd like to make:
 
-```shell
-$ git checkout -b <BRANCH-NAME>
+```sh
+git checkout -b <BRANCH-NAME>
 ```
 
 You can check on which branch your are with `git branch`. You should see a list of all local branches. The current branch is indicated with a little asterisk.
@@ -298,8 +298,8 @@ The Jenkins X docs make heavy use of Jenkins X's [archetypes][] feature. All con
 
 Adding new content to the Jenkins X docs follows the same pattern, regardless of the content section:
 
-```
-$ docker-compose run server new <DOCS-SECTION>/<new-content-lowercase>.md
+```sh
+docker-compose run server new <DOCS-SECTION>/<new-content-lowercase>.md
 ```
 
 ### Commit and push your changes
@@ -310,16 +310,16 @@ When you've finished, and verified that everything looks good (using the Hugo se
 
 We're using a tool called [htmltest](https://github.com/wjdp/htmltest) to check that links are still valid etc. so you just need to run the following commands to build the site locally, and verify that everything looks good:
 
-```bash
-$ docker-compose run server hugo
-$ docker-compose up linkchecker
+```sh
+docker-compose run server hugo
+docker-compose up linkchecker
 ```
 
 If using a locally installed Hugo/htmltest, use these commands instead:
 
-```bash
-$ hugo
-$ htmltest -c .htmltest.yml
+```sh
+hugo
+htmltest -c .htmltest.yml
 ```
 
 #### Checking Spelling
@@ -328,14 +328,14 @@ For spell checking, we're using [node-markdown-spellcheck](https://github.com/lu
 
 To make this as simple as possible, just run the following command
 
-```bash
-$ docker-compose up spellchecker
+```sh
+docker-compose up spellchecker
 ```
 
 If using a locally installed Hugo/markdown-spellcheck, use these commands instead:
 
-```bash
-$  mdspell --en-us --ignore-numbers --ignore-acronyms --report "content/**/*.md"
+```sh
+mdspell --en-us --ignore-numbers --ignore-acronyms --report "content/**/*.md"
 ```
 
 This will output any issue the spell checker have found.
@@ -347,8 +347,8 @@ Also, please try and keep the list alphabetically sorted; makes it easier to nav
 
 If everything is good, you can commit your changes, and push them to your fork:
 
-```bash
-$ git push --set-upstream origin <BRANCH-NAME>
+```sh
+git push --set-upstream origin <BRANCH-NAME>
 ```
 
 If you need to push more commits to the same branch, you can just use `git push` going forward; set-upstream is only needed once.
@@ -383,10 +383,10 @@ Once the review is done, your changes will be merged into the master branch, and
 {{% alert %}}
 In case you need to update your PR/branch because js-docs/master have been updated since you submitted your PR, run the followin `git` command to pull all the changes to your local environment and then push them to your PR/branch:
 
-```bash
-$ git fetch upstream
-$ git merge upstream/master
-$ git push
+```sh
+git fetch upstream
+git merge upstream/master
+git push
 ```
 
 If you experience Merge Conflicts, there's a good [article on GitHub](https://help.github.com/en/articles/resolving-a-merge-conflict-using-the-command-line) that helps explain what to do
@@ -452,7 +452,7 @@ type CommandInterface interface {
 
 Blockquotes can be added to the Jenkins X documentation using [typical Markdown blockquote syntax][bqsyntax]:
 
-```
+```text
 > Without the threat of punishment, there is no joy in flight.
 ```
 
@@ -462,7 +462,7 @@ The preceding blockquote will render as follows in the Jenkins X docs:
 
 However, you can add a quick and easy `<cite>` element (added on the client via JavaScript) by separating your main blockquote and the citation with a hyphen with a single space on each side:
 
-```
+```text
 > Without the threat of punishment, there is no joy in flight. - [Kobo Abe](https://en.wikipedia.org/wiki/Kobo_Abe)
 ```
 

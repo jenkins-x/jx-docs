@@ -14,9 +14,9 @@ We recommend you use GitOps to manage your installation of Jenkins X, to upgrade
 
 Currently this only works on AWS and Google cloud as it requires our vault operator (which needs cloud storage & KMS) to store secrets while all other configuration is stored in the development environment git repository.
 
-## Using GitOps to manage Jenkins X 
+## Using GitOps to manage Jenkins X
 
-If you are creating a cluster or installing on an existing cluster there is a quick and handy way to use GitOps to manage Jenkins X itself - it’s `—ng` for the next generation of Jenkins X. We’ll make this feature flags options the default when we release 2.x of Jenkins X later this year. 
+If you are creating a cluster or installing on an existing cluster there is a quick and handy way to use GitOps to manage Jenkins X itself - it’s `—ng` for the next generation of Jenkins X. We’ll make this feature flags options the default when we release 2.x of Jenkins X later this year.
 
 
 The `—ng` flag is an alias for these flags: `—gitops —vault —no-tiller —tekton`. So it also comes with baked in support for [Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) - the modern cloud native pipeline engine based on Tekton.
@@ -30,10 +30,10 @@ Once you have installed Jenkins X using GitOps to manage the dev environment- th
 
 Generally speaking Jenkins X can upgrade itself quite easily when using tekton. However if an upgrade breaks Jenkins X from implementing CI/CD then the GitOps to revert the change won’t work ;)
 
-if you hit any issues upgrading Jenkins X there is a manual way to apply the contents of the development environment’s git repository 
+if you hit any issues upgrading Jenkins X there is a manual way to apply the contents of the development environment’s git repository
 
-``` 
+```sh
 git clone $MY_DEV_GIT_CLONE_URL jenkins-x-dev-env
 cd jenkins-x-dev-env/env
-jx step env apply 
+jx step env apply
 ```

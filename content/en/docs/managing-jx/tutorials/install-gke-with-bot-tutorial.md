@@ -3,7 +3,7 @@ title: "Install Jenkins X on GKE Properly"
 linkTitle: "Install Jenkins X on GKE"
 date: 2019-04-25T07:36:00+02:00
 description: >
-   A comprehensive tutorial on how to install and configure Jenkins X so that you have a Jenkins X Bot working properly.  This ensures your experience as a Developer interacting with Jenkinx X is more realistic.  
+   A comprehensive tutorial on how to install and configure Jenkins X so that you have a Jenkins X Bot working properly.  This ensures your experience as a Developer interacting with Jenkinx X is more realistic.
 categories: [blog]
 keywords: [jenkins-x-bot,GKE,Install,Tutorial]
 slug: "jenkins-x-gke-install-with-bot"
@@ -14,7 +14,7 @@ weight: 20
 
 **NOTE:** This tutorial is based on the following jx version
 
-```cmd
+```sh
     NAME               VERSION
     jx                 2.0.33
     jenkins x platform 2.0.108
@@ -23,7 +23,7 @@ weight: 20
     helm client        Client: v2.13.1+g618447c
     git                git version 2.21.0
     Operating System   Mac OS X 10.14.3 build 18D42
-```  
+```
 
 # Overview
 In this tutorial, we walk you through a full setup of Jenkinx X in GKE, including setup of the Bot.  We will install Jenkins X Serverless topology which also brings Tekton pipelines for us to use in this scenario.  We walk through putting an app via CI/CD and ensuring the Jenkins X Bot is working as expected.
@@ -39,7 +39,7 @@ In this tutorial, we walk you through a full setup of Jenkinx X in GKE, includin
 **NOTE:**  If you've provisioned the cluster using Terraform, this should still work.  However you cannot run the command we outline below, instead you will have to run the `jx install --ng=true` command.
 {{% /alert %}}
 
-# Prerequisites 
+# Prerequisites
 
 1. A GCP account along with a **Project** already created.
 2. You should be able to create resources via the `gcloud` CLI
@@ -67,8 +67,8 @@ Your Github Organization and user accounts should be setup similar to how it is 
 ## Creating GKE Cluster and Installing Jenkins X
 The first step we need to take, is execute the command which simultaneously will provision a cluster and install Jenkins X.  The following command should be issued on the terminal.  Change placeholders accordingly.
 
-```bash
-> $ jx create cluster gke --default-admin-password=<YOURPASSWORD> -n <CLUSTERNAME> --ng=true
+```sh
+jx create cluster gke --default-admin-password=<YOURPASSWORD> -n <CLUSTERNAME> --ng=true
 ```
 
 {{% alert %}}
@@ -78,7 +78,7 @@ The first step we need to take, is execute the command which simultaneously will
 ## Output of the Command - lengthy but let's break it down!
 The output below is quite insightful, we include it here for you to see all of what happens as the install is happening.
 
-```bash
+```sh
 
 Using the only Google Cloud Project jenkinsx-dev to create the cluster
 Updated property [core/project].
@@ -95,8 +95,8 @@ No apis to enable
 Creating cluster...
 Initialising cluster ...
 Setting the dev namespace to: jx
-Namespace jx created 
- 
+Namespace jx created
+
 Using helmBinary helm with feature flag: none
 Context "gke_jenkinsx-dev_us-west1-a_sposcar" modified.
 Storing the kubernetes provider gke in the TeamSettings
@@ -108,20 +108,20 @@ Created ClusterRoleBinding omedina-cloudbees-com-cluster-admin-binding
 Using helm2
 Skipping tiller
 ```
+
 ### Key Things happened above...
-- Basic cluster configuration such as max and min nodes are configured.  
+- Basic cluster configuration such as max and min nodes are configured.
 - Kubectl context is set to new cluster so you can access cluster via both `kubectl` and `jx`
 - Sets cluster admin via ClusterRoleBinding created
 
-```bash
-
+```sh
 Using helmBinary helm with feature flag: template-mode
 Initialising Helm 'init --client-only'
 helm installed and configured
 ? No existing ingress controller found in the kube-system namespace, shall we install one? Yes
 
 Current configuration dir: /Users/omedina/.jx
-versionRepository: https://github.com/jenkins-x/jenkins-x-versions.git git ref: 
+versionRepository: https://github.com/jenkins-x/jenkins-x-versions.git git ref:
 Deleting and cloning the Jenkins X versions repo
 Cloning the Jenkins X versions repo https://github.com/jenkins-x/jenkins-x-versions.git with ref refs/heads/master to /Users/omedina/.jx/jenkins-x-versions
 Enumerating objects: 206, done.
@@ -131,7 +131,7 @@ Total 1096 (delta 109), reused 185 (delta 101), pack-reused 890
 using stable version 1.3.1 from charts of stable/nginx-ingress from /Users/omedina/.jx/jenkins-x-versions
 Installing using helm binary: helm
 Current configuration dir: /Users/omedina/.jx
-versionRepository: https://github.com/jenkins-x/jenkins-x-versions.git git ref: 
+versionRepository: https://github.com/jenkins-x/jenkins-x-versions.git git ref:
 Deleting and cloning the Jenkins X versions repo
 Cloning the Jenkins X versions repo https://github.com/jenkins-x/jenkins-x-versions.git with ref refs/heads/master to /Users/omedina/.jx/jenkins-x-versions
 Enumerating objects: 206, done.
@@ -164,11 +164,12 @@ If you do not have a custom domain setup yet, Ingress rules will be set for magi
 
 Once you have a custom domain ready, you can update with the command jx upgrade ingress --cluster
 ```
+
 {{% alert %}}
 At this point, we have already set our DNS settings to point to the IP listed above for the ingress controller and gave it a bit of time to propagate before hitting **enter** `sharepointoscar.com` for the Domain, and letting it configure ingress and other endpoints.
 {{% /alert %}}
 
-```bash
+```sh
 If you don't have a wildcard DNS setup then setup a DNS (A) record and point it at: 34.83.54.46 then use the DNS domain in the next input...
 ? Domain sharepointoscar.com
 nginx ingress controller installed and configured
@@ -180,7 +181,7 @@ Select the CI/CD pipelines Git server and user
 Setting the pipelines Git server https://github.com and user name jenkinsx-bot-sposcar.
 Saving the Git authentication configuration
 Current configuration dir: /Users/omedina/.jx
-versionRepository: https://github.com/jenkins-x/jenkins-x-versions.git git ref: 
+versionRepository: https://github.com/jenkins-x/jenkins-x-versions.git git ref:
 Deleting and cloning the Jenkins X versions repo
 Cloning the Jenkins X versions repo https://github.com/jenkins-x/jenkins-x-versions.git with ref refs/heads/master to /Users/omedina/.jx/jenkins-x-versions
 Enumerating objects: 206, done.
@@ -199,16 +200,15 @@ Cloning the Jenkins X cloud environments repo to /Users/omedina/.jx/cloud-enviro
 Enumerating objects: 1382, done.
 Total 1382 (delta 0), reused 0 (delta 0), pack-reused 1382
 ? Select Jenkins installation type: Serverless Jenkins X Pipelines with Tekton
-
 ```
+
 ### Key Things happened above...
 - We specified `sharepointoscar.com` as the domain for the ingress controller and endpoints.
 - GitHub server account is set to `jenkinsx-bot-sposcar` and which is part of the Organization `jenkins-oscar`
 - We were prompted to enter an **API token** for the bot account **(we are signed into Github with the bot account)**
 - Jenkins Installation Type is set to **Serverless Jenkins X Pipelines with Tekton**
 
-
-```bash
+```sh
 Configuring Kaniko service account jxkaniko-sposcar for project jenkinsx-dev
 Unable to find service account jxkaniko-sposcar, checking if we have enough permission to create
 Creating service account jxkaniko-sposcar
@@ -225,7 +225,7 @@ Setting the current namespace to: jx
 
 Installing knative into namespace jx
 Current configuration dir: /Users/omedina/.jx
-versionRepository: https://github.com/jenkins-x/jenkins-x-versions.git git ref: 
+versionRepository: https://github.com/jenkins-x/jenkins-x-versions.git git ref:
 Deleting and cloning the Jenkins X versions repo
 Cloning the Jenkins X versions repo https://github.com/jenkins-x/jenkins-x-versions.git with ref refs/heads/master to /Users/omedina/.jx/jenkins-x-versions
 Enumerating objects: 206, done.
@@ -266,7 +266,7 @@ Removing Kubernetes resources from older releases using selector: jenkins.io/cha
 
 Installing Prow into namespace jx
 Current configuration dir: /Users/omedina/.jx
-versionRepository: https://github.com/jenkins-x/jenkins-x-versions.git git ref: 
+versionRepository: https://github.com/jenkins-x/jenkins-x-versions.git git ref:
 Deleting and cloning the Jenkins X versions repo
 Cloning the Jenkins X versions repo https://github.com/jenkins-x/jenkins-x-versions.git with ref refs/heads/master to /Users/omedina/.jx/jenkins-x-versions
 Enumerating objects: 206, done.
@@ -338,7 +338,7 @@ Adding values file /Users/omedina/.jx/adminSecrets.yaml
 Adding values file /Users/omedina/.jx/extraValues.yaml
 Adding values file /Users/omedina/.jx/cloud-environments/env-gke/secrets.yaml
 Current configuration dir: /Users/omedina/.jx
-versionRepository: https://github.com/jenkins-x/jenkins-x-versions.git git ref: 
+versionRepository: https://github.com/jenkins-x/jenkins-x-versions.git git ref:
 Deleting and cloning the Jenkins X versions repo
 Cloning the Jenkins X versions repo https://github.com/jenkins-x/jenkins-x-versions.git with ref refs/heads/master to /Users/omedina/.jx/jenkins-x-versions
 Enumerating objects: 206, done.
@@ -489,7 +489,7 @@ Configuring the TeamSettings for ImportMode YAML
 
 	********************************************************
 
-	
+
 Creating default staging and production environments
 ? Select the organization where you want to create the environment repository: jenkins-oscar
 Using Git provider GitHub at https://github.com
@@ -504,8 +504,8 @@ Pushed Git repository to https://github.com/jenkins-oscar/environment-sposcar-st
 
 Creating staging Environment in namespace jx
 Created environment staging
-Namespace jx-staging created 
- 
+Namespace jx-staging created
+
 Creating GitHub webhook for jenkins-oscar/environment-sposcar-staging for url http://hook.jx.sharepointoscar.com/hook
 Using Git provider GitHub at https://github.com
 
@@ -519,8 +519,8 @@ Pushed Git repository to https://github.com/jenkins-oscar/environment-sposcar-pr
 
 Creating production Environment in namespace jx
 Created environment production
-Namespace jx-production created 
- 
+Namespace jx-production created
+
 Creating GitHub webhook for jenkins-oscar/environment-sposcar-production for url http://hook.jx.sharepointoscar.com/hook
 
 Jenkins X installation completed successfully
@@ -532,9 +532,9 @@ Jenkins X installation completed successfully
 
 	********************************************************
 
-	
 
-Your Kubernetes context is now set to the namespace: jx 
+
+Your Kubernetes context is now set to the namespace: jx
 To switch back to your original namespace use: jx namespace default
 Or to use this context/namespace in just one terminal use: jx shell
 For help on switching contexts see: https://jenkins-x.io/docs/using/tasks/kube-context/
@@ -566,7 +566,7 @@ So we now have a clean environment, one thing we can do to simply test our endpo
 
 We are ready to try out the entire CI/CD process, which includes seeing the Bot work properly.  To get started, we will create a `quickstart` based on the `NodeJS` language.
 
-```bash
+```sh
 > $ omedina$ jx create quickstart
 Using Git provider GitHub at https://github.com
 ? Git user name?  [Use arrows to move, space to select, type to filter]
@@ -574,7 +574,7 @@ Using Git provider GitHub at https://github.com
   jenkinsx-bot-sposcar
 
 ```
-You will select the personal Github account in this step.  
+You will select the personal Github account in this step.
 
 {{% alert color="warning" %}}
 However, if you get a *warning* message stating that the Github server username is not set, then the setup somehow was not set correctly.
@@ -587,7 +587,7 @@ You can verify that the bot account is setup by checking the values of the secre
 
 {{% /alert %}}
 
-```bash
+```sh
 About to create repository  on server https://github.com with user sharepointoscar
 ? Which organisation do you want to use?  [Use arrows to move, space to select, type to filter]
   SPRWD
@@ -598,7 +598,7 @@ About to create repository  on server https://github.com with user sharepointosc
 ```
 Select the Github Organization.  In this scenario, it is `jenkins-oscar` where the bot account and the personal github accounts are members.
 
-```bash
+```sh
 Creating repository jenkins-oscar/node-widget-app
 ? select the quickstart you wish to create  [Use arrows to move, space to select, type to filter]
   golang-http
@@ -612,12 +612,11 @@ Creating repository jenkins-oscar/node-widget-app
 The directory /Users/omedina/git-repos/node-widget-app is not yet using git
 ? Would you like to initialise git now? Yes
 ? Commit message:  Initial import
-
-
 ```
+
 Select `node-http` for the quickstart builder type. Hit enter for both of the following questions.
 
-```bash
+```sh
 replacing placeholders in directory /Users/omedina/git-repos/node-widget-app
 app name: node-widget-app, git server: github.com, org: jenkins-oscar, Docker registry org: jenkins-oscar
 skipping directory "/Users/omedina/git-repos/node-widget-app/.git"
@@ -635,19 +634,17 @@ When the pipeline is complete:  jx get applications
 For more help on available commands see: https://jenkins-x.io/docs/using/tasks/browsing/
 
 Note that your first pipeline may take a few minutes to start while the necessary images get downloaded!
-
 ```
 
 Final output from creating the Quickstart should look like above.
 
-
 ##  First Pipeline Run
-Since we just created the new app, if we check on the app activtiies, we will see that there is a pull request. `jx get activity -f node-widget-app -w` and the app is now version `0.0.1` and it has been deployed to our **Staging** environment.  
+Since we just created the new app, if we check on the app activtiies, we will see that there is a pull request. `jx get activity -f node-widget-app -w` and the app is now version `0.0.1` and it has been deployed to our **Staging** environment.
 
 ### Deployed to Staging
 
 We can also check what applications are deployed, we should have version `0.0.1` in our staging environment.
-```bash
+```sh
 APPLICATION        STAGING PODS URL
 jx-node-widget-app 0.0.1   1/1  http://node-widget-app.jx-staging.sharepointoscar.com
 jx-testapp2        0.0.2   1/1  http://testapp2.jx-staging.sharepointoscar.com
@@ -685,10 +682,9 @@ We can take a quick look at what the bot has been up to.  Here is all the activi
 
 <img src="/images/getting-started/bot_in_action.png">
 
-
 # Conclusion
 
-In this tutorial, we walked through a full setup of Jenkins X on GKE.  We ensured that the bot account was specified at setup time.  We then created an app, and put it through CI/CD which allowed us to see the Bot in action, execute an approval command and deploy the app changes to our Staging environment. 
+In this tutorial, we walked through a full setup of Jenkins X on GKE.  We ensured that the bot account was specified at setup time.  We then created an app, and put it through CI/CD which allowed us to see the Bot in action, execute an approval command and deploy the app changes to our Staging environment.
 
 It is always best to properly setup Jenkins with the correct Github accounts and Organization as this will give you the exact experience as a developer when interacting with Jenkins X via Github PRs.
 
