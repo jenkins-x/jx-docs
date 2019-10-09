@@ -28,9 +28,9 @@ The [jx](https://github.com/jenkins-x/jx) release now defaults to being released
 
 We use GitOps and CI/CD to manage the Version Stream.
 
-As new packages or charts are released we generate Pull Requests on the [jenkins-x/jenkins-x-versions](https://github.com/jenkins-x/jenkins-x-versions) git repository. We then trigger our [BDD tests](https://github.com/jenkins-x/bdd-jx) via [jx step bdd](/commands/jx_step_bdd/) and verify the new chart/package version works before merging changes. Currently we manually trigger the BDD tests via a comment of `/test this` - but we hope to move to periodic triggering of the BDD tests (e.g. once per day). 
+As new packages or charts are released we generate Pull Requests on the [jenkins-x/jenkins-x-versions](https://github.com/jenkins-x/jenkins-x-versions) git repository. We then trigger our [BDD tests](https://github.com/jenkins-x/bdd-jx) via [jx step bdd](/commands/jx_step_bdd/) and verify the new chart/package version works before merging changes. Currently we manually trigger the BDD tests via a comment of `/test this` - but we hope to move to periodic triggering of the BDD tests (e.g. once per day).
 
-Pull Request approvers can also choose to run their own manual tests on Pull Requests if they want. 
+Pull Request approvers can also choose to run their own manual tests on Pull Requests if they want.
 
 Upon the successful completion of all BDD tests executed on the PR it will merge the change and execute an update to all jx dependencies (homebrew-jx, jx-docs, jx-tutorial and dev-env-base).
 
@@ -40,8 +40,7 @@ We have a simple CLI command [jx step create version pr](/commands/jx_step_creat
 
 If you are the maintainer of an upstream chart that is used by Jenkins X it would be awesome to add this command at the end of your release pipeline to generate a Pull Request for us to upgrade Jenkins X to use your new release (after the BDD tests have run to verify things still work):
 
-```shell 
-
+```sh
 jx step create version pr -n mychartName -v 1.2.3
 ```
 
@@ -54,8 +53,7 @@ Its not always easy/possible to update upstream pipelines to push version change
 e.g. to upgrade the versions of all the `jenkins-x` maintained charts you can run this command:
 
 
-```shell 
-
+```sh
 jx step create version pr -f "jenkins-x/*"
 ```
 
@@ -65,7 +63,7 @@ From a git clone of master or a Pull Request you can run the BDD tests against t
 
 e.g. you can run the BDD tests yourself via...
 
-```shell 
+```sh
 git clone https://github.com/jenkins-x/jenkins-x-versions.git
 
 # env vars for the git / jenkins secrets

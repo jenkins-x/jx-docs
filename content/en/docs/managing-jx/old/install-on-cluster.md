@@ -85,7 +85,7 @@ Note that you may want to use the [jx create cluster aws](/docs/getting-started/
 
 Do the following:
 
-```
+```sh
 kops edit cluster
 ```
 
@@ -107,7 +107,7 @@ spec:
 
 Now to make this change active on your cluster type:
 
-```
+```sh
 kops update cluster --yes
 ```
 
@@ -118,7 +118,7 @@ You should now be good to go!
 
 Do the following:
 
-```
+```sh
 kops edit cluster
 ```
 
@@ -136,7 +136,7 @@ That IP range, `100.64.0.0/10`, works on AWS, but you may need to change it on o
 
 Then save the changes. You can verify your changes via:
 
-```
+```sh
 kops get cluster -oyaml
 ```
 
@@ -144,7 +144,7 @@ and looking for the `insecureRegistry` section.
 
 Now to make this change active on your cluster type:
 
-```
+```sh
 kops update cluster --yes
 kops rolling-update cluster --yes
 ```
@@ -155,11 +155,15 @@ You should now be good to go!
 
 To install Jenkins X on an existing Kubernetes cluster, you can then use the [jx install](/commands/jx_install) command:
 
-    jx install
+```sh
+jx install
+```
 
 If you know the provider, you can specify the provider on the command line. e.g.
 
-    jx install --provider=aws
+```sh
+jx install --provider=aws
+```
 
 Note: if you wish to use a different Git provider than GitHub for your environments, see [how to use a different Git provider](/docs/managing-jx/common-tasks/git/#using-a-different-git-provider-for-environments)
 
@@ -172,29 +176,37 @@ __Prerequisits__
 
 When using an on premise Kubernetes cluster, you can use this command line:
 
-    jx install --provider=kubernetes --on-premise
+```sh
+jx install --provider=kubernetes --on-premise
+```
 
 This will default the argument for `--external-ip` to access services inside your cluster to use the Kubernetes master IP address.
 
 If you wish to use a different external IP address, you can use:
 
-    jx install --provider=kubernetes --external-ip 1.2.3.4
+```sh
+jx install --provider=kubernetes --external-ip 1.2.3.4
+```
 
-Otherwise, the `jx install` will try and wait for the Ingress Controllers `Service.Status.LoadBalancer.Ingress` to resolve to an IP address - which can fail on premise.   
+Otherwise, the `jx install` will try and wait for the Ingress Controllers `Service.Status.LoadBalancer.Ingress` to resolve to an IP address - which can fail on premise.
 
 If you already have an ingress controller installed, then try:
 
-    jx install --provider=kubernetes \
-    --skip-ingress \
-    --external-ip=10.20.30.40 \
-    --domain=10.20.30.40.nip.io
+```sh
+jx install --provider=kubernetes \
+  --skip-ingress \
+  --external-ip=10.20.30.40 \
+  --domain=10.20.30.40.nip.io
+```
 
 If you do not know the domain or want it extracted from your Ingress deployment, try
 
-    jx install --provider=kubernetes --external-ip 10.123.0.17 \
-    --ingress-service=$(yoursvcname) \
-    --ingress-deployment=$(yourdeployname) \
-    --ingress-namespace=kube-system
+```sh
+jx install --provider=kubernetes --external-ip 10.123.0.17 \
+  --ingress-service=$(yoursvcname) \
+  --ingress-deployment=$(yourdeployname) \
+  --ingress-namespace=kube-system
+```
 
 If you want an explanation of what the [jx install](/commands/jx_install) command does, you can read [what happens with the install](../install-on-cluster-what-happens)
 
@@ -206,7 +218,7 @@ __Prerequisites__
 
 IBM Cloud Private includes a Docker registry and ingress controller. You can install Jenkins X into IBM Cloud Private with the following command:
 
-```
+```sh
 jx install --provider=icp
 ```
 
@@ -214,7 +226,7 @@ The installation process prompts for the master IP address in your Kubernetes cl
 
 Create `ClusterImagePolicies` on IBM Cloud Private version 3.1.0 and set the following permissions:
 
-```
+```txt
 - name: docker.io/*
 - name: gcr.io/*
 - name: quay.io/*

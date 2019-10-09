@@ -107,7 +107,7 @@ safe set /secret/my-cluster-name/creds/my-secret username=myname password=mytoke
 
 If you have a blob of JSON to encode as a secret, such as a service account key then convert the file to base64 first then set it...
 
-```                                                              
+```sh
 cat my-service-account.json | base64 > myfile.txt
 safe set /secret/my-cluster-name/creds/my-secret json=@myfile.txt
 ```

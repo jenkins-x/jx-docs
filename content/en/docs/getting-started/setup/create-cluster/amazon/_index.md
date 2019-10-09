@@ -1,5 +1,5 @@
 ---
-title: Amazon 
+title: Amazon
 linktitle: Amazon
 description: How to create a kubernetes cluster on Amazon (AWS)
 date: 2017-02-01
@@ -31,12 +31,12 @@ Then follow the instructions to [create a cluster on AWS with kops](https://kube
 Ensure you [have installed the jx CLI](/docs/getting-started/setup/install/) then for kops use:
 
 
-```
+```sh
 jx create cluster aws --skip-installation
 ```
 
 or for EKS use:
 
-```
+```sh
 jx create cluster eks --skip-installation
 ```

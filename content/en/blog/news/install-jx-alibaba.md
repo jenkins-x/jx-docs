@@ -2,7 +2,7 @@
 title: "Installing Jenkins X on Alibaba Cloud Container Service"
 date: 2019-06-17T07:36:00+02:00
 description: >
-    Install Jenkins X on Alibaba Cloud Container Service. 
+    Install Jenkins X on Alibaba Cloud Container Service.
 categories: [blog]
 keywords: [alibaba,container,install,k8s]
 slug: "alibaba-container-service-jenkins-x"
@@ -32,7 +32,7 @@ The following services need to be activated: Container Service, Resource Orchest
 
 If we want to use the command line we can install the [`aliyun`](https://github.com/aliyun/aliyun-cli) cli. I have added all the steps needed below in case you want to use it.
 
-```shell
+```sh
 brew install aliyun-cli
 aliyun configure
 REGION=ap-southeast-1
@@ -40,7 +40,7 @@ REGION=ap-southeast-1
 
 The clusters need to be created in a VPC, so that needs to be created with VSwitches for each zone to be used.
 
-```shell
+```sh
 aliyun vpc CreateVpc \
     --VpcName jx \
     --Description "Jenkins X" \
@@ -75,7 +75,7 @@ VSWITCH=vsw-t4n7uxycbwgtg14maaaaa
 
 Next, a keypair (or password) is needed for the cluster instances.
 
-```shell
+```sh
 aliyun ecs ImportKeyPair \
     --KeyPairName jx \
     --RegionId ${REGION} \
@@ -84,7 +84,7 @@ aliyun ecs ImportKeyPair \
 
 The last step is to create the cluster using the just created VPC, VSwitch and Keypair. It's important to select the option *Expose API Server with EIP* (`public_slb` in the API json) to be able to connect to the API from the internet.
 
-```shell
+```sh
 echo << EOF > cluster.json
 {
     "name": "jx-rocks",
@@ -125,14 +125,14 @@ CLUSTER=cb643152f97ae4e44980f6199f298f223
 
 We can now download `kubectl` configuration with
 
-```shell
+```sh
 aliyun cs GET /k8s/${CLUSTER}/user_config | jq -r .config > ~/.kube/config-alibaba
 export KUBECONFIG=$KUBECONFIG:~/.kube/config-alibaba
 ```
 
 Another detail before being able to install applications that use `PersistentVolumeClaims` is to [configure a default storage class](https://www.alibabacloud.com/help/doc-detail/86612.htm#a2c63.p38356.879954.i0.11497ec4J5rKJd). There are several volume options that can be listed with `kubectl get storageclass`.
 
-```shell
+```sh
 NAME                          PROVISIONER     AGE
 alicloud-disk-available       alicloud/disk   44h
 alicloud-disk-common          alicloud/disk   44h
@@ -149,7 +149,7 @@ Each of them matches the following cloud disks:
 
 To set SSDs as the default:
 
-```shell
+```sh
 kubectl patch storageclass alicloud-disk-ssd \
     -p '{"metadata": {"annotations": {"storageclass.kubernetes.io/is-default-class":"true"}}}'
 ```
@@ -166,7 +166,7 @@ Then we need to create a Container Registry namespace that allows us to push any
 
 From the web UI we can create a Docker login password that we will be using later.
 
-```shell
+```sh
 NAMESPACE=jenkins-x-$(cat /dev/urandom | env LC_CTYPE=C tr -dc 'a-z' | fold -w 6 | head -n 1)
 cat << EOF > namespace.json
 {
@@ -197,7 +197,7 @@ aliyun cr POST /namespace/${NAMESPACE} \
 
 Now we can install Jenkins X as usual, passing the `--provider alibaba` flag.
 
-```shell
+```sh
 jx install \
     --provider alibaba \
     --default-admin-password=admin \
@@ -240,7 +240,7 @@ Addons can be installed normally with the caveat mentioned above about PVC minim
 
 For instance to install Prometheus with 20Gi disks:
 
-```shell
+```sh
 jx create addon prometheus \
     -s alertmanager.persistentVolume.size=20Gi,pushgateway.persistentVolume.size=20Gi,server.persistentVolume.size=20Gi
 ```
@@ -249,7 +249,7 @@ jx create addon prometheus \
 
 Tekton builds need to be configured to use PVCs bigger than 20Gi due to the same reasons. The default is to use 5GiB PVCs.
 
-```shell
+```sh
 cat << EOF | kubectl apply -f -
 apiVersion: v1
 kind: ConfigMap

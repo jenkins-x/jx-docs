@@ -4,20 +4,20 @@ linktitle: 浏览
 description: 浏览 Jenkins X 中的资源
 ---
 
-                
+
 如果你之前用过 Kubernetes，你可能使用过 [kubectl](https://kubernetes.io/docs/reference/kubectl/overview/) 命令查看 Kubernetes 资源：
 
-```shell
+```sh
 kubectl get pods
 ```
 
 Jenkins X 的命令行工具，[jx](/commands/jx)，和 [kubectl](https://kubernetes.io/docs/reference/kubectl/overview/) 看起来相似，并且可以让你看到所有的 Jenkins X 资源。
 
 ### 查看 Jenkins 控制台
- 
+
 如果你熟悉 Jenkins 控制台，那么你可以使用 [jx console](/commands/jx_console) ：
 
-```shell
+```sh
 jx console
 ```
 
@@ -27,7 +27,7 @@ jx console
 
 要查看当前流水线使用 [jx get pipelines](/commands/jx_get_pipelines):
 
-```shell
+```sh
 jx get pipelines
 ```
 
@@ -35,7 +35,7 @@ jx get pipelines
 
 通过 [jx get build logs](/commands/jx_get_build_logs) 查看当前流水线构建日志：
 
-```shell
+```sh
 jx get build logs
 ```
 
@@ -43,13 +43,13 @@ jx get build logs
 
 你可以通过下面快速过滤
 
-```shell
+```sh
 jx get build logs -f myapp
 ```
 
 或者，你希望指定
 
-```shell
+```sh
 jx get build logs myorg/myapp/master
 ```
 
@@ -57,13 +57,13 @@ jx get build logs myorg/myapp/master
 
 为了查看当前流水线的活动 [jx get activities](/commands/jx_get_activities)：
 
-```shell
+```sh
 jx get activities
 ```
 
 如果你想要观察你的应用 `myapp`，你可以使用：
 
-```shell
+```sh
 jx get activities -f myapp -w
 ```
 
@@ -74,25 +74,25 @@ jx get activities -f myapp -w
 为了查看你的团队所有环境的所有应用的URL和 pod 数量，使用 [jx get applications](/commands/applications)：
 
 
-```shell
+```sh
 jx get applications
 ```
 
 如果你想要隐藏 URL 或者 pod 数量，你可以使用 `u` 或 `-p`。例如：为了隐藏 URL：
 
-```shell
+```sh
 jx get applications -u
 ```
 
 或者隐藏 pod 数量：
 
-```shell
+```sh
 jx get applications -p
 ```
 
 你还可以根据环境来过滤应用：
 
-```shell
+```sh
 jx get applications -e staging
 ```
 
@@ -102,7 +102,7 @@ jx get applications -e staging
 
 为了查看你们团队中的 [环境](/zh/docs/concepts/features/#environments)，使用 [jx get environments](/commands/jx_get_environments)：
 
-```shell
+```sh
 jx get environments
 ```
 

@@ -14,7 +14,7 @@ Pick the most suitable instructions for your operating system:
 
 On a Mac you can use [brew](https://brew.sh/):
 
-```shell
+```sh
 brew tap jenkins-x/jx
 brew install jx
 ```
@@ -24,21 +24,29 @@ To install Jenkins X on macOS without brew, download the `.tar` file, and unarch
 1.  Download the `jx` binary archive using `curl` and pipe (`|`) the compressed archive to
     the `tar` command:
 
-        curl -L "https://github.com/jenkins-x/jx/releases/download/$(curl --silent https://api.github.com/repos/jenkins-x/jx/releases/latest | jq -r '.tag_name')/jx-darwin-amd64.tar.gz" | tar xzv "jx"
+```sh
+curl -L "https://github.com/jenkins-x/jx/releases/download/$(curl --silent https://api.github.com/repos/jenkins-x/jx/releases/latest | jq -r '.tag_name')/jx-darwin-amd64.tar.gz" | tar xzv "jx"
+```
 
     or, if you don't have `jq` installed:
 
-        curl -L "https://github.com/jenkins-x/jx/releases/download/$(curl --silent "https://github.com/jenkins-x/jx/releases/latest" | sed 's#.*tag/\(.*\)\".*#\1#')/jx-darwin-amd64.tar.gz" | tar xzv "jx"
+```sh
+curl -L "https://github.com/jenkins-x/jx/releases/download/$(curl --silent "https://github.com/jenkins-x/jx/releases/latest" | sed 's#.*tag/\(.*\)\".*#\1#')/jx-darwin-amd64.tar.gz" | tar xzv "jx"
+```
 
 
 2.  Install the `jx` binary by moving it to a location which should be on your environments PATH, using
     the `mv` command:
 
-        sudo mv jx /usr/local/bin
+```sh
+sudo mv jx /usr/local/bin
+```
 
 3. Run `jx version` to make sure you're on the latest stable version
 
-        jx version
+```sh
+jx version
+```
 
 ## Linux
 
@@ -47,21 +55,28 @@ To install Jenkins X on Linux, download the `.tar` file, and unarchive it in a d
 1.  Download the `jx` binary archive using `curl` and pipe (`|`) the compressed archive to
     the `tar` command:
 
-        curl -L "https://github.com/jenkins-x/jx/releases/download/$(curl --silent https://api.github.com/repos/jenkins-x/jx/releases/latest | jq -r '.tag_name')/jx-linux-amd64.tar.gz" | tar xzv "jx"
+```sh
+curl -L "https://github.com/jenkins-x/jx/releases/download/$(curl --silent https://api.github.com/repos/jenkins-x/jx/releases/latest | jq -r '.tag_name')/jx-linux-amd64.tar.gz" | tar xzv "jx"
+```
 
     or, if you don't have `jq` installed:
 
-        curl -L "https://github.com/jenkins-x/jx/releases/download/$(curl --silent "https://github.com/jenkins-x/jx/releases/latest" | sed 's#.*tag/\(.*\)\".*#\1#')/jx-linux-amd64.tar.gz" | tar xzv "jx"
-
+```sh
+curl -L "https://github.com/jenkins-x/jx/releases/download/$(curl --silent "https://github.com/jenkins-x/jx/releases/latest" | sed 's#.*tag/\(.*\)\".*#\1#')/jx-linux-amd64.tar.gz" | tar xzv "jx"
+```
 
 2.  Install the `jx` binary by moving it to a location which should be on your environments PATH, using
     the `mv` command:
 
-        sudo mv jx /usr/local/bin
+```sh
+sudo mv jx /usr/local/bin
+```
 
 3. Run `jx version` to make sure you're on the latest stable version
 
-        jx version
+```sh
+jx version
+```
 
 ## Windows
 
@@ -84,7 +99,7 @@ Shell:
 
 You can update to the latest version of Jenkins X using Chocolatey:
 
-```cmd
+```sh
 choco upgrade jenkins-x
 ```
 
@@ -92,13 +107,13 @@ choco upgrade jenkins-x
 
   To install the `jx` binary run:
 
-  ```cmd
+  ```sh
   scoop install jx
   ```
 
   To upgrade the `jx` binary run:
 
-  ```cmd
+  ```sh
   scoop update jx
   ```
 
@@ -111,25 +126,31 @@ commands:
 1.  Open the [GCP Cloud Shell](https://cloud.google.com/shell/docs/starting-cloud-shell),
     and choose your GCP project for Jenkins X.
 
-    {{% alert %}}
-    It is highly recommended that you use Google Chrome browser with
-    GCP Cloud Shell, as you may experience issues using other
-    browsers.
-    {{% /alert %}}
+{{% alert %}}
+It is highly recommended that you use Google Chrome browser with
+GCP Cloud Shell, as you may experience issues using other
+browsers.
+{{% /alert %}}
 
 2.  In GCP Cloud Shell, download the `jx` binary archive using `curl` and pipe (`|`) the compressed archive to
     the `tar` command:
 
-        curl -L "https://github.com/jenkins-x/jx/releases/download/$(curl --silent https://api.github.com/repos/jenkins-x/jx/releases/latest | jq -r '.tag_name')/jx-linux-amd64.tar.gz" | tar xzv "jx"
+```sh
+curl -L "https://github.com/jenkins-x/jx/releases/download/$(curl --silent https://api.github.com/repos/jenkins-x/jx/releases/latest | jq -r '.tag_name')/jx-linux-amd64.tar.gz" | tar xzv "jx"
+```
 
 3.  Move the `jx` exectutable into the executable directory with this
     command:
 
-        sudo mv jx /usr/local/bin
+```sh
+sudo mv jx /usr/local/bin
+```
 
 4. Run `jx version` to make sure you're on the latest stable version
 
-        jx version
+```sh
+jx version
+```
 
 Once you have the `jx` binary installed you can then [configure a Jenkins X cluster on Google Kubernetes Engine](/getting-started/create-cluster/).
 
@@ -143,10 +164,14 @@ Or you can try [build it yourself](https://github.com/jenkins-x/jx/blob/master/d
 
 To find out the available commands type:
 
-    jx
+```sh
+jx
+```
 
 Or to get help on a specific command, say, `create` then type:
 
-    jx help create
+```sh
+jx help create
+```
 
 You can also browse the [jx command reference documentation](/commands/jx)

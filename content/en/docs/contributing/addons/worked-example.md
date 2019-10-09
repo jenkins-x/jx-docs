@@ -46,7 +46,7 @@ We'll start by creating a sample Java project which will run some tests.
 
 1. Create the file `src/test/java/jenkinsx/example/springboot/WelcomeControllerTest.java`.
 1. Copy and paste this code into the `WelcomeControllerTest`
-   
+
     ```java
     package jenkinsx.example.springboot;
 
@@ -189,8 +189,8 @@ We need a place to store the reports. A simple Go program will suffice for now.
     }
     ```
 
-    This code will create an HTTP server that listens on two ports. It listens on 8080 to serve files from the `/reports` directory, and listens on 8081 for file uploads (using the URL path as the path as the location under `/reports` to store the file). By listening on different ports for download and upload we can easily expose the downloads service outside the cluster, but restrict the uploads service to inside the cluster meaning we have no need to secure the transport. 
-    
+    This code will create an HTTP server that listens on two ports. It listens on 8080 to serve files from the `/reports` directory, and listens on 8081 for file uploads (using the URL path as the path as the location under `/reports` to store the file). By listening on different ports for download and upload we can easily expose the downloads service outside the cluster, but restrict the uploads service to inside the cluster meaning we have no need to secure the transport.
+
     We'll add authentication to the upload endpoint at a later point.
 1. We need to store the reports somewhere, and in Kubernetes this means using a volume. Add this snippet to the bottom of `charts/jenkins-x-reports/templates/deployment.yaml`:
 
@@ -217,7 +217,7 @@ We need a place to store the reports. A simple Go program will suffice for now.
     You'll notice that we've used `emptyDir{}` to store the reports - this is transient and reports will be lost when the pod dies. We'll replace this with a persistent volume later.
 1. Modify the `Dockerfile` to expose port `8081` as well by adding the line `EXPOSE 8081` just after `EXPOSE 8080`.
 2. Modify `charts/jenkins-x-reports/values.yaml` and add the values for the upload service just after the existing service:
-   
+
     ```yaml
     serviceUpload:
       name: jenkins-x-reports-upload
@@ -229,7 +229,7 @@ We need a place to store the reports. A simple Go program will suffice for now.
     Notice how we've given it a unique name, set the internal port correctly and removed the annotations that instruct Jenkins X to expose the service outside the cluster.
 
     We now need to create a template for these values. Add the file `charts/jenkins-x-reports/templates/service-upload.yaml`:
-   
+
       ```
       apiVersion: v1
       kind: Service
@@ -268,7 +268,7 @@ We need a place to store the reports. A simple Go program will suffice for now.
 1. Validate you can upload and download files. In the DevPod for the sample app run `curl -F upload=@target/site/surefire-report.html http://jenkins-x-reports-upload.jx-staging/test/1` and then validate that the file is there by running `curl http://jenkins-x-reports.jx-staging/test/1`.
 2. Promote the app to production using `jx promote -a jenkins-x-reports -e production -v 0.0.1` (assuming you are still on your first version of the app)
 1. To POST all the JUnit artifacts to the reports server use this script
-   
+
     ```bash
     #!/bin/bash
 
@@ -352,7 +352,7 @@ We'll use one `ConfigMap` per app, and we'll use a standard naming pattern so th
 
 ### Visualize the test results
 
-We'll use Kibana and ElasticSearch to create dashboards to visualize the test results. 
+We'll use Kibana and ElasticSearch to create dashboards to visualize the test results.
 
 1. Install ElasticSearch by running `helm install --name jenkins-x-reports-elasticsearch incubator/elasticsearch`
 2. Install Kibana by running `helm install stable/kibana --name=jenkins-x-reports-kibana --set service.annotations."fabric8\.io/expose"=true --set files."kibana\.yml"."elasticsearch\.url"=http://jenkins-x-reports-elasticsearch-client:9200 --set  && jx upgrade ingress`.
@@ -362,11 +362,11 @@ We'll use Kibana and ElasticSearch to create dashboards to visualize the test re
 3. Create a mapping for the JUnit XML format in Kibana by pasting this code into the Kibana console:
 
     ```json
-    PUT tests 
+    PUT tests
     {
         "mappings": {
-          "junit": { 
-            "properties": { 
+          "junit": {
+            "properties": {
             "errors": { "type": "integer" },
             "failures": { "type": "integer" },
             "name": { "type": "keyword" },
@@ -385,7 +385,7 @@ We'll use Kibana and ElasticSearch to create dashboards to visualize the test re
     }
     ```
 
-1. An initial client for sending data to Kibana is available at (https://github.com/pmuir/junit-runner). Download it and get it building. 
+1. An initial client for sending data to Kibana is available at (https://github.com/pmuir/junit-runner). Download it and get it building.
 As we start to convert the functionality we've built so far to a Jenkins X extension, we'll move the scripted code we've written so far into this Go program. For now, we can just use the current version.
 1. Add this function to `junit.sh`:
 
@@ -491,7 +491,7 @@ Let's open that project up, and move the code which transforms the JUnit XML and
       "github.com/clbanning/mxj"
       "github.com/clbanning/mxj/x2j"
       json2 "encoding/json"
-    ```   
+    ```
 
     And then add this by running `dep init` which will detect our dependency and set it up properly.
 4. We'll also need to call it for each JUnit XML file we receive. And only for JUnit files. We can use the HTTP headers for this:
@@ -517,7 +517,7 @@ Just above where we write the success message to the HTTP stream, add this code 
     If you are wondering why we use `X-Content-Type` it is to avoid breaking the multipart form upload for the file!
 6. And of course we need to remove `junit-runner`. Delete the `dashboard()` function and remove the call to it from `upload()`.
 7. Now, let's clean things up a bit more by moving the code creating the configmap from the `junit.sh` script into the `jenkins-x-reports` code. First, we need to add a dependency on kubernetes-client to our code. Edit `Gopkg.toml` and add:
-    
+
     ```toml
     [[constraint]]
       name = "k8s.io/api"
@@ -637,11 +637,11 @@ Just above where we write the success message to the HTTP stream, add this code 
     if version == "" {
       renderError(w, "MUST_PROVIDE_X-VERSION_HEADER", http.StatusInternalServerError)
       log.Println("No X-VERSION HEADER provided")
-    }	
+    }
     ```
 
     And add just above the success message:
-    
+
     ```go
     cm, err := getOrCreateConfigMap(org, app, client)
 		if err != nil {
@@ -678,4 +678,4 @@ At this point the JX team have also learned that we want to build some additiona
 * `jx step collect` for collecting build artifact that will run even if the build fails
   * Add URLs to the `PipelineActivity` CRD
 
-TODO complete the guide 
+TODO complete the guide

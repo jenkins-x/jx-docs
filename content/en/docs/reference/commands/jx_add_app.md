@@ -12,23 +12,23 @@ Adds an app
 
 Adds an app to Jenkins X.
 
-```
+```sh
 jx add app [flags]
 ```
 
 ### Examples
 
-```
+```sh
   # Add an app
   jx add app jx-app-jacoco
-  
+
   # Add an app from a local path
   jx add app .
 ```
 
 ### Options
 
-```
+```sh
       --alias string         An alias to use for the app if you wish to install multiple instances of the same app
       --auto-merge           Automatically merge GitOps pull requests that pass CI
       --helm-update          Should we run helm update first to ensure we use the latest version (available when NOT using GitOps for your dev environment) (default true)
@@ -44,7 +44,7 @@ jx add app [flags]
 
 ### Options inherited from parent commands
 
-```
+```sh
   -b, --batch-mode   Runs in batch mode without prompting for user input (default true)
       --verbose      Enables verbose output
 ```

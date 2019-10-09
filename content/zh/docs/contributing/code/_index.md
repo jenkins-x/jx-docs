@@ -34,20 +34,20 @@ Go 语言环境的安装仅需要几分钟。并且多种方式可供选择。
 
 安装完成后，确认是否一切工作正常。打开一个新的终端或者在 Windows 上的命令行并输入:
 
-```
+```sh
 go version
 ```
 
 在终端的窗口上可以看到类似如下的信息。注意 `version` 表示的是在在更新此文档时最新的 Go 的版本信息:
 
-```
+```sh
 go version go1.8 darwin/amd64
 ```
 
 下一步，确保[根据安装文档][setupgopath] 设置了 `GOPATH` 环境变量。
 通过 `echo $GOPATH` 输出 `GOPATH`。应该是指向了你的合法的 Go 的工作目录的非空字符串，如:
 
-```
+```sh
 /Users/<yourusername>/Code/go
 ```
 
@@ -55,7 +55,7 @@ go version go1.8 darwin/amd64
 
 如果你是 MacOS 用户并且安装了 [Homebrew](https://brew.sh/)，安装过程将会很简单，在终端中执行以下命令:
 
-```
+```sh
 brew install go
 ```
 
@@ -90,19 +90,19 @@ Go 提供了 `get` 的子命令来帮助下载软件包以配置工作环境。�
 
 在 Mac 系统上，可以通过 [Homebrew](https://brew.sh) 来安装 [Hub](https://github.com/github/hub)：
 
-```
+```sh
 brew install hub
 ```
 
 安装之后，在 Bash 中创建[快捷键](http://tldp.org/LDP/abs/html/aliases.html)，以方便我们在执行 `git` 的时候，实际上执行的是 `hub`:
 
-```
+```sh
 echo "alias git='hub'" >> ~/.bash_profile
 ```
 
 确认安装配置是否正确：
 
-```
+```sh
 git version 2.6.3
 hub version 2.2.2
 ```
@@ -121,13 +121,13 @@ hub version 2.2.2
 
 首先，我们克隆主版本库：
 
-```
+```sh
 go get -v -u github.com/jenkins-x/jx
 ```
 
 Jenkins X 使用 [Testify](https://github.com/stretchr/testify) 进行 Go 代码的测试。如果还没有安装的话，使用下面的方式获得 Testify 测试工具：
 
-```
+```sh
 go get github.com/stretchr/testify
 ```
 
@@ -148,20 +148,20 @@ go get github.com/stretchr/testify
 
 切换到命令窗口中，进入到刚才所克隆的主版本库的工作目录当中。
 
-```
+```sh
 cd $GOPATH/src/github.com/jenkins-x/jx
 ```
 
 现在 Git 需要知道我们刚刚创建出来的分之仓库的地址信息
 
-```
+```sh
 git remote add <YOUR-GITHUB-USERNAME> <COPIED REMOTE-URL>
 ```
 
 #### 使用 Hub 派生
 
 相类似的，可以使用 Git 的封装工具 Hub 进行操作。Hub 使得创建分之仓库变得容易：
-```
+```sh
 git fork
 ```
 
@@ -171,13 +171,13 @@ git fork
 
 让我们通过列出所有已有的 remote 来检查是否一切就绪：
 
-```
+```sh
 git remote -v
 ```
 
 输出应该类似如下内容：
 
-```
+```sh
 digitalcraftsman    git@github.com:digitalcraftsman/hugo.git (fetch)
 digitalcraftsman    git@github.com:digitalcraftsman/hugo.git (push)
 origin  https://github.com/jenkins-x/jx (fetch)
@@ -192,13 +192,13 @@ origin  https://github.com/jenkins-x/jx (push)
 
 首先， 你需要获取在主版本上进行的最新的内容：
 
-```
+```sh
 git checkout master
 git pull
 ```
 现在，为你的附加功能创建一个新的版本：
 
-```
+```sh
 git checkout -b <BRANCH-NAME>
 ```
 
@@ -216,7 +216,7 @@ git checkout -b <BRANCH-NAME>
 
 在代码库上进行更改的同时，创建相应的二进制文件来进行测试是很好的方法：
 
-```
+```sh
 go build -o hugo main.go
 ```
 
@@ -229,13 +229,13 @@ go build -o hugo main.go
 
 Go 语言的代码格式也许根据人的意识会有所不同，但是不论是由谁编写的代码，Go 本身会确保代码看上去一致。Go 提供了格式化工具，使我们的修改风格统一：
 
-```
+```sh
 go fmt ./...
 ```
 
 如果进行了修改，请确保遵循我们的[代码贡献指导说明](https://github.com/jenkins-x/jx/blob/master/CONTRIBUTING.MD)。
 
-```
+```sh
 # Add all changed files
 git add --all
 git commit --message "YOUR COMMIT MESSAGE"
@@ -253,20 +253,20 @@ git commit --message "YOUR COMMIT MESSAGE"
 
 让我们以你想要修改最后的一次提交信息为例。执行下面的命令以替换之前的提交信息：
 
-```
+```sh
 git commit --amend -m"新的提交信息"
 ```
 
 检查历史提交记录，查询修改信息：
 
-```
+```sh
 git log
 # 输入 q 退出
 ```
 
 在做了最后的修改后，你也许忘记了什么。没有必要创建新的提交。只需要将最新的修改添加到 Git 记录当中并在之后将其合并到之前的修改中：
 
-```
+```sh
 git add --all
 git commit --amend
 ```
@@ -280,13 +280,13 @@ git commit --amend
 这一部分的操作需要更高的技能。Git 允许你对多次提交进行[修改](https://git-scm.com/docs/git-rebase)。换句话说：它允许你对历史的提交进行修改。
 
 
-```
+```sh
 git rebase --interactive @~6
 ```
 
 在命令结尾处的 `6` 表示的是想要进行修改的提交的编号。它会打开一个编辑器，其内容是之前6次的历史提交信息列表：
 
-```
+```sh
 pick 80d02a1 tpl: Add hasPrefix to the template funcs' "smoke test"
 pick aaee038 tpl: Sort the smoke tests
 pick f0dbf2c tpl: Add the other test case for hasPrefix
@@ -298,7 +298,7 @@ pick 3502f2e Refactoring and typo fixes
 在上面的例子中，我们应该将最后的提交到本文档之间的提交(`Add "How to contribute to Jenkins X" tutorial`)历史提交进行合并。你可以“压缩”提交， 如，将两个及以上的提交合并为一个。
 在提交信息之前，所有的操作都将会执行。替换 `pick` 为想要进行的操作。在这个例子当中我们使用 `squash` 或者其省略版 `s`。
 
-```
+```sh
 pick 80d02a1 tpl: Add hasPrefix to the template funcs' "smoke test"
 pick aaee038 tpl: Sort the smoke tests
 pick f0dbf2c tpl: Add the other test case for hasPrefix
@@ -311,7 +311,7 @@ squash 3502f2e Refactoring and typo fixes
 
 修改后，应该是类似如下的内容：
 
-```
+```sh
 pick 80d02a1 tpl: Add hasPrefix to the template funcs' "smoke test"
 pick aaee038 tpl: Sort the smoke tests
 pick f0dbf2c tpl: Add the other test case for hasPrefix
@@ -324,7 +324,7 @@ squash 3502f2e Refactoring and typo fixes
 
 再一次，将会打开新的窗口。输入新的提交信息并且保存。你的终端将会显示如下类似的状态信息：
 
-```
+```sh
 Successfully rebased and updated refs/heads/<BRANCHNAME>.
 ```
 
@@ -334,7 +334,7 @@ Successfully rebased and updated refs/heads/<BRANCHNAME>.
 
 我们需要指定目标地址以使得将我们的提交推送回到在Github中的分支版本库。目标地址由 `remote` 和 `branch`名称所构成。在之前的操作中，`remote` 地址与我们的GitHub账号所对应，以我为例是 `digitalcraftsman`。分支（branch）应该和我们本地的一样。 这就使得识别相应的分支变得简单。
 
-```
+```sh
 git push --set-upstream <YOUR-GITHUB-USERNAME> <BRANCHNAME>
 ```
 

@@ -24,8 +24,8 @@ The custom resource documentation is generated using the [same toolchain](https:
 The HTML docs are generated via an [OpenAPI specification](https://github.com/jenkins-x/jx/tree/master/docs/apidocs/openapi-spec) which in turn is generated from [Go Structs](https://github.com/jenkins-x/jx/tree/master/pkg/client/openapi) which are generated from the code comments.
 To generate the structs and the OpenAPI specification run:
 
- ```bash
- $ make generate-openapi
+ ```sh
+ make generate-openapi
  ```
 
  {{% alert %}}
@@ -35,7 +35,7 @@ To generate the structs and the OpenAPI specification run:
 
  and to generate the HTML run:
 
- ```bash
+ ```sh
  make generate-docs
  ```
 

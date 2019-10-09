@@ -41,7 +41,7 @@ pipeline {
           }
           ...
 ```
- 
+
 ## 提交新的 Pod 模板
 
 如果你正在使用一个新的 [build pack](/zh/architecture/build-packs)，那么，我们欢迎你 [提交](/zh/docs/contributing/) 一个新的 pod 模板，而且我们可以把它包含在 Jenkins X 的发行版中！
@@ -79,7 +79,7 @@ pipeline {
 
 现在，添加新的 Pod 模板最简单的方式就是通过 Jenkins 控制台。例如：
 
-```bash 
+```sh
 jx console
 ```
 
