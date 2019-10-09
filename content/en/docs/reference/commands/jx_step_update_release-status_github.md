@@ -1,5 +1,5 @@
 ---
-date: 2019-10-09T02:28:14Z
+date: 2019-10-09T13:03:39Z
 title: "jx step update release-status github"
 slug: jx_step_update_release-status_github
 url: /commands/jx_step_update_release-status_github/
