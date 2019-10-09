@@ -56,6 +56,9 @@
  <LI class="nav-level-1"><A href="#fact-v1-jenkins_io" class="nav-item">Fact v1 jenkins_io</A></LI>
 </UL>
 <UL>
+ <LI class="nav-level-1"><A href="#scheduler-v1-jenkins_io" class="nav-item">Scheduler v1 jenkins_io</A></LI>
+</UL>
+<UL>
  <LI class="nav-level-1 strong-nav"><A href="#-strong-definitions-strong-" class="nav-item"><STRONG>DEFINITIONS</STRONG></A></LI>
 </UL>
  <UL id="-strong-definitions-strong--nav" style="display: none;">
@@ -502,9 +505,6 @@
  </UL>
   <UL>
    <LI class="nav-level-2"><A href="#scaleiovolumesource-v1-core" class="nav-item">ScaleIOVolumeSource v1 core</A></LI>
- </UL>
-  <UL>
-   <LI class="nav-level-2"><A href="#scheduler-v1-jenkins_io" class="nav-item">Scheduler v1 jenkins_io</A></LI>
  </UL>
   <UL>
    <LI class="nav-level-2"><A href="#scheduleragent-v1-jenkins_io" class="nav-item">SchedulerAgent v1 jenkins_io</A></LI>
@@ -1328,6 +1328,62 @@ notes on specific resource objects for details.</P>
 <TBODY>
 <TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
 <TR><TD><CODE>items</CODE><BR /><I><a href="#fact-v1-jenkins_io">Fact</a> array</I></TD><TD></TD></TR>
+<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
+<TR><TD><CODE>metadata</CODE><BR /><I><a href="#listmeta-v1-meta">ListMeta</a></I></TD><TD></TD></TR>
+</TBODY>
+</TABLE>
+<H1 id="scheduler-v1-jenkins_io">Scheduler v1 jenkins_io</H1>
+<TABLE class="col-md-8">
+<THEAD><TR><TH>Group</TH><TH>Version</TH><TH>Kind</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>jenkins_io</CODE></TD><TD><CODE>v1</CODE></TD><TD><CODE>Scheduler</CODE></TD></TR>
+</TBODY>
+</TABLE>
+<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
+ <UL>
+  <LI><a href="#schedulerlist-v1-jenkins_io">SchedulerList [jenkins_io/v1]</a></LI>
+ </UL>
+</DIV>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
+<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
+<TR><TD><CODE>metadata</CODE><BR /><I><a href="#objectmeta-v1-meta">ObjectMeta</a></I></TD><TD>Standard object&#39;s metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</TD></TR>
+<TR><TD><CODE>spec</CODE><BR /><I><a href="#schedulerspec-v1-jenkins_io">SchedulerSpec</a></I></TD><TD></TD></TR>
+</TBODY>
+</TABLE>
+<H3 id="schedulerspec-v1-jenkins_io">SchedulerSpec v1 jenkins_io</H3>
+<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
+ <UL>
+  <LI><a href="#scheduler-v1-jenkins_io">Scheduler [jenkins_io/v1]</a></LI>
+ </UL>
+</DIV>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>approve</CODE><BR /><I><a href="#approve-v1-jenkins_io">Approve</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>attachments</CODE><BR /><I><a href="#attachment-v1-jenkins_io">Attachment</a> array</I></TD><TD></TD></TR>
+<TR><TD><CODE>configUpdater</CODE><BR /><I><a href="#configupdater-v1-jenkins_io">ConfigUpdater</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>externalPlugins</CODE><BR /><I><a href="#replaceablesliceofexternalplugins-v1-jenkins_io">ReplaceableSliceOfExternalPlugins</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>lgtm</CODE><BR /><I><a href="#lgtm-v1-jenkins_io">Lgtm</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>merger</CODE><BR /><I><a href="#merger-v1-jenkins_io">Merger</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>periodics</CODE><BR /><I><a href="#periodics-v1-jenkins_io">Periodics</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>plugins</CODE><BR /><I><a href="#replaceablesliceofstrings-v1-jenkins_io">ReplaceableSliceOfStrings</a></I></TD><TD>Plugins is a list of plugin names enabled for a repo</TD></TR>
+<TR><TD><CODE>policy</CODE><BR /><I><a href="#globalprotectionpolicy-v1-jenkins_io">GlobalProtectionPolicy</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>postsubmits</CODE><BR /><I><a href="#postsubmits-v1-jenkins_io">Postsubmits</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>presubmits</CODE><BR /><I><a href="#presubmits-v1-jenkins_io">Presubmits</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>schedulerAgent</CODE><BR /><I><a href="#scheduleragent-v1-jenkins_io">SchedulerAgent</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>trigger</CODE><BR /><I><a href="#trigger-v1-jenkins_io">Trigger</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>welcome</CODE><BR /><I><a href="#welcome-v1-jenkins_io">Welcome</a> array</I></TD><TD></TD></TR>
+</TBODY>
+</TABLE>
+<H3 id="schedulerlist-v1-jenkins_io">SchedulerList v1 jenkins_io</H3>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
+<TR><TD><CODE>items</CODE><BR /><I><a href="#scheduler-v1-jenkins_io">Scheduler</a> array</I></TD><TD></TD></TR>
 <TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
 <TR><TD><CODE>metadata</CODE><BR /><I><a href="#listmeta-v1-meta">ListMeta</a></I></TD><TD></TD></TR>
 </TBODY>
@@ -4750,28 +4806,6 @@ This format is intended to make it difficult to use these numbers without writin
 <TR><TD><CODE>storagePool</CODE><BR /><I>string</I></TD><TD>The ScaleIO Storage Pool associated with the protection domain.</TD></TR>
 <TR><TD><CODE>system</CODE><BR /><I>string</I></TD><TD>The name of the storage system as configured in ScaleIO.</TD></TR>
 <TR><TD><CODE>volumeName</CODE><BR /><I>string</I></TD><TD>The name of a volume already created in the ScaleIO system that is associated with this volume source.</TD></TR>
-</TBODY>
-</TABLE>
-<H2 id="scheduler-v1-jenkins_io">Scheduler v1 jenkins_io</H2>
-<TABLE class="col-md-8">
-<THEAD><TR><TH>Group</TH><TH>Version</TH><TH>Kind</TH></TR></THEAD>
-<TBODY>
-<TR><TD><CODE>jenkins_io</CODE></TD><TD><CODE>v1</CODE></TD><TD><CODE>Scheduler</CODE></TD></TR>
-</TBODY>
-</TABLE>
-<P>Scheduler is configuration for a pipeline scheduler</P>
-<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
- <UL>
-  <LI><a href="#schedulerlist-v1-jenkins_io">SchedulerList [jenkins_io/v1]</a></LI>
- </UL>
-</DIV>
-<TABLE>
-<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
-<TBODY>
-<TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
-<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
-<TR><TD><CODE>metadata</CODE><BR /><I><a href="#objectmeta-v1-meta">ObjectMeta</a></I></TD><TD>Standard object&#39;s metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</TD></TR>
-<TR><TD><CODE>spec</CODE><BR /><I><a href="#schedulerspec-v1-jenkins_io">SchedulerSpec</a></I></TD><TD></TD></TR>
 </TBODY>
 </TABLE>
 <H2 id="scheduleragent-v1-jenkins_io">SchedulerAgent v1 jenkins_io</H2>
