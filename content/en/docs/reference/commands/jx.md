@@ -24,6 +24,12 @@ jx [flags]
       --verbose      Enables verbose output
 ```
 
+#### Environment variables
+
+Use `JX_LOG_LEVEL` to set jx's logging level to any value supported by `logrus.ParseLevel()`.
+
+It has the precedence over the `--verbose` flag.
+
 ### SEE ALSO
 
 * [jx add](/commands/jx_add/)	 - Adds a new resource
@@ -49,7 +55,7 @@ jx [flags]
 * [jx logs](/commands/jx_logs/)	 - Tails the log of the latest pod for a deployment
 * [jx namespace](/commands/jx_namespace/)	 - View or change the current namespace context in the current Kubernetes cluster
 * [jx open](/commands/jx_open/)	 - Open a service in a browser
-* [jx options](/commands/jx_options/)	 - 
+* [jx options](/commands/jx_options/)	 -
 * [jx preview](/commands/jx_preview/)	 - Creates or updates a Preview Environment for the current version of an application
 * [jx profile](/commands/jx_profile/)	 - Set your jx profile
 * [jx promote](/commands/jx_promote/)	 - Promotes a version of an application to an Environment
