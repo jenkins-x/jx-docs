@@ -35,7 +35,7 @@ If you think the pipeline failed due to some temporary infrastructure reason the
 * `/test all` reruns all failed pipelines.
 * `/test foo` reruns the pipeline called `foo` only
 
-Note that you need to be in the `OWNERS` file as an approver for this to work. 
+Note that you need to be in the `OWNERS` file as an [approver for this to work](#why-did-a-pullrequest-have-no-pipeline-triggered). 
 
 ## How do I add multiple parallel pipelines to a project?
 
