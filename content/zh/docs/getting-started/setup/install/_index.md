@@ -1,12 +1,13 @@
 ---
-title: 获取 jx
-linktitle: 获取 jx
+title: 安装 jx
+linktitle: 安装 jx
 description: 如何在你的机器上安装jx二进制包
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [getting started]
 keywords: [install]
+weight: 2
 ---
 
 根据你的操作系统选择最适合的指令：

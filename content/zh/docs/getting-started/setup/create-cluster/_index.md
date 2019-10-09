@@ -6,8 +6,18 @@ date: 2018-04-21
 publishdate: 2018-04-21
 categories: [getting started]
 keywords: [install]
+weight: 1
 ---
 
+Jenkins X 可以通过jx的命令行界面CLI安装到Kubernetes集群里。
+
+创建Kubernetes集群的方法有很多种。
+
+我们推荐的方法是使用Terraform设置所有云基础架构（kubernetes集群，服务帐户，存储桶，日志记录等），并使用云提供商来创建和管理kubernetes集群。
+
+---
+
+或者您可以使用kubernetes提供程序特定的方法：
                 
 通过已经安装的 Jenkins X 创建一个新的集群，使用命令  [jx create cluster](/commands/jx_create_cluster) 。
     
