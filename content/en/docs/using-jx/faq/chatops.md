@@ -21,10 +21,31 @@ ChatOps (and [tide in particular](#what-does-hook-do)) also helps automate and s
 
 For more detail see [what does tide do](#what-does-hook-do)
 
-
 ## Which kinds of webhook support ChatOps?
 
 [Prow](/docs/reference/components/prow/) and [Lighthouse](/architecture/lighthouse/) support both webhooks and [ChatOps](/docs/using-jx/faq/chatops) whereas Jenkins just supports webhooks only.
+
+## How do I re-trigger a PR pipeline?
+
+If a pipeline fails due to some compile error or failing test - fix the code and push your changes and the Pull Request pipeline will rerun.
+
+If you think the pipeline failed due to some temporary infrastructure reason then you can use ChatOps to re-trigger the pipeline via commenting on the Pull Request:
+
+* `/retest` reruns only failed pipelines
+* `/test all` reruns all failed pipelines.
+* `/test foo` reruns the pipeline called `foo` only
+
+Note that you need to be in the `OWNERS` file as an approver for this to work. 
+
+## How do I add multiple parallel pipelines to a project?
+
+It can be useful to have multiple pipelines to perform different kinds of long running tests on Pull Requests. e.g. running the same test suite using different databases, microsevice configurations or underlying infrastructure.
+
+In Jenkins X you can create a custom `Scheduler` resource in your [jx boot](/docs/getting-started/setup/boot/) configuration (in `env/templates/myscheduler.yaml`) which you can add multiple named contexts in the `presubmits` section. Then for each context name make sure you have a file called `jenkins-x-${context}.yml` in your project. 
+
+Then Jenkins X will invoke each context on demand via `/test mycontext` or automatically if you enable `alwaysRun: true`.
+
+You can see how we define lots of [parallel testing contexts in the version stream here](https://github.com/jenkins-x/environment-tekton-weasel-dev/blob/f377a72498282de9ee49b807b4d5ba74321a4fab/env/templates/jx-versions-scheduler.yaml#L18) which all run in parallel and report their status on each pull request on the [version stream](/docs/concepts/version-stream/)
 
 ## What does hook do?
 
