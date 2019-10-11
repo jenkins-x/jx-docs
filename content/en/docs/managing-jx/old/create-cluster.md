@@ -49,20 +49,22 @@ First you need to open the Google Cloud Shell via the button in the toolbar:
 
 Then you need to download the `jx` binary:
 
-```shell
+```sh
 curl -L https://github.com/jenkins-x/jx/releases/download/v{{.Site.Params.release}}/jx-linux-amd64.tar.gz | tar xzv
 sudo mv jx /usr/local/bin
 ```
 
 Now use the [jx create cluster gke](/commands/jx_create_cluster_gke) command:
 
-    jx create cluster gke --skip-login
-
+```sh
+jx create cluster gke --skip-login
+```
 
 If you wish to name your cluster and provide your own admin password you can run:
 
-    jx create cluster gke --skip-login  --default-admin-password=mySecretPassWord123 -n myclustername
-
+```sh
+jx create cluster gke --skip-login  --default-admin-password=mySecretPassWord123 -n myclustername
+```
 
 ## The `jx create cluster gke` process
 
@@ -75,7 +77,9 @@ browser.
     In this example, the Google Kubernetes Engine is used as the
     Kubernetes provider:
 
-        jx create cluster gke
+```sh
+jx create cluster gke
+```
 
 2.  The installation is interactive, stepping you through the entire
     installation and configuration of the Kubernetes cluster creation
@@ -191,16 +195,18 @@ You should now be able to use the `kubectl` and `jx` CLI tools on your laptop to
 
 Use the [jx create cluster gke](/commands/jx_create_cluster_gke) command:
 
-    jx create cluster gke --verbose
+```sh
+jx create cluster gke --verbose
+```
 
 Or if you are already logged in by previously using `gcloud init` or `gcloud auth login`:
 
-    jx create cluster gke --skip-login --verbose
+```sh
+jx create cluster gke --skip-login --verbose
+```
 
 Those commands assume you have a google account and you've set up a default project that you can use to create the kubernetes cluster within.
 Now **[develop apps faster with Jenkins X](/docs/getting-started/next/)**.
-
-
 
 ## Using Amazon (AWS)
 
@@ -218,7 +224,7 @@ Using wildcard DNS pointing to your ELB/NLB also means you'll be able to use all
 
 The `jx` command will ask you if you want to automate the setup fo the Route 53 wildcard CNAME. If you want to do it yourself you need to point to the ELB host name defined via:
 
-```
+```sh
 kubectl get service -n kube-system jxing-nginx-ingress-controller  -oyaml | grep hostname
 ```
 
@@ -237,16 +243,19 @@ Note if you wish to use a different git provider than GitHub for your environmen
 
 Use the [jx create cluster eks](/commands/jx_create_cluster_eks) command:
 
-    jx create cluster eks
+```sh
+jx create cluster eks
+```
 
 Under the covers this will download and use the [eksctl](https://eksctl.io/) tool to create a new EKS cluster, then it'll install Jenkins X on top.
-
 
 ### Kops
 
 Use the [jx create cluster aws](/commands/jx_create_cluster_aws) command:
 
-    jx create cluster aws
+```sh
+jx create cluster aws
+```
 
 This will use [kops](https://github.com/kubernetes/kops) on your Amazon account to create a new kubernetes cluster and install Jenkins X.
 
@@ -254,7 +263,7 @@ To try this out we recommend you follow the [AWS Workshop for Kubernetes](https:
 
 Then create a new terminal in Cloud9 and try these commands:
 
-```shell
+```sh
 curl -L https://github.com/jenkins-x/jx/releases/download/v{{.Site.Params.release}}/jx-linux-amd64.tar.gz | tar xzv
 sudo mv jx /usr/local/bin
 jx create cluster aws
@@ -262,23 +271,25 @@ jx create cluster aws
 
 Now **[develop apps faster with Jenkins X](/docs/getting-started/next/)**.
 
-
 ## Using Azure (AKS)
 
 Before you start you may find [this blog helpful](https://cloudblogs.microsoft.com/opensource/2019/03/06/jenkins-x-azure-kubernetes-service-setup/).
 
 Use the [jx create cluster aks](/commands/jx_create_cluster_aks) command:
 
-    jx create cluster aks
+```sh
+jx create cluster aks
+```
 
 Now **[develop apps faster with Jenkins X](/docs/getting-started/next/)**.
-
 
 ## Using Oracle (OKE)
 
 Use the [jx create cluster oke](/commands/jx_create_cluster_oke) command:
 
-    jx create cluster oke
+```sh
+jx create cluster oke
+```
 
 This will use [oci](https://github.com/oracle/oci-cli) on your Oracle Cloud Infrastructure account to create a new OKE cluster and install Jenkins X.
 
@@ -290,7 +301,9 @@ Now **[develop apps faster with Jenkins X](/docs/getting-started/next/)**.
 
 Use the [jx create cluster iks](/commands/jx_create_cluster_iks) command:
 
-    jx create cluster iks --apikey=<IBM Cloud API Key>
+```sh
+jx create cluster iks --apikey=<IBM Cloud API Key>
+```
 
 This will use [IBM Cloud CLI](https://console.bluemix.net/docs/cli/index.html#overview) on your IBM Cloud Infrastructure account to create a new IKS cluster and install Jenkins X.
 
@@ -311,7 +324,9 @@ So we **highly** recommend using one of the public clouds above to try out Jenki
 
 If you still want to try minikube then we recommend letting jx create the cluster for you (as opposed to installing jx into an existing minikube cluster) by running:
 
-    jx create cluster minikube
+```sh
+jx create cluster minikube
+```
 
 You'll be prompted for the amount of memory, cores, and disk size to use, and also the driver.
 
@@ -319,7 +334,7 @@ A known good configuration on a 2015 model Macbook Pro is to use 8 GB of RAM, 8 
 
 The disk size is particularly large as a number of images will need to be downloaded. These are used by jx and here are the sizes at the time of this document:
 
-```
+```sh
 jxpv1                           8Gi        RWO            Recycle          Bound       jx/jenkins-x-nexus                                                               5d
 jxpv2                           100Gi      RWO            Recycle          Bound       jx/jenkins-x-docker-registry                                                     6d
 jxpv3                           8Gi        RWO            Recycle          Bound       jx/jenkins-x-mongodb                                                             22h
@@ -348,10 +363,11 @@ If you want to try out Jenkins X on a local OpenShift cluster then you can try u
 
 To create a minishift VM with Jenkins X installed on it try the [jx create cluster minishift](/commands/jx_create_cluster_minishift) command:
 
-    jx create cluster minishift
+```sh
+jx create cluster minishift
+```
 
 Now **[develop apps faster with Jenkins X](/docs/getting-started/next/)**.
-
 
 ## Troubleshooting
 

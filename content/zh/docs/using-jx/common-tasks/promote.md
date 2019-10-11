@@ -10,7 +10,7 @@ Jenkins X 的升级策略配置为 `Auto` 时，持续部署流水线通过配�
 
 要手动升级应用的一个版本到特定环境上，可以使用命令 [jx promote](/commands/jx_promote)。
 
-```shell 
+```sh
 jx promote myapp --version 1.2.3 --env production
 ```
 
@@ -19,7 +19,7 @@ jx promote myapp --version 1.2.3 --env production
 例如：等待5小时
 
 
-```shell 
+```sh
 jx promote myapp --version 1.2.3 --env production --timeout 5h
 ```
 

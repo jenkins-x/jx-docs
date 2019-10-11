@@ -1,7 +1,7 @@
 ---
 title: 创建新集群
 linktitle: 创建新集群
-description: 如何通过 Jenkins X 创建新的 Kubernetes 集群 
+description: 如何通过 Jenkins X 创建新的 Kubernetes 集群
 date: 2018-04-21
 publishdate: 2018-04-21
 categories: [getting started]
@@ -20,7 +20,7 @@ Jenkins X 可以通过jx的命令行界面CLI安装到Kubernetes集群里。
 或者您可以使用kubernetes提供程序特定的方法：
                 
 通过已经安装的 Jenkins X 创建一个新的集群，使用命令  [jx create cluster](/commands/jx_create_cluster) 。
-    
+
 如下所示，支持很多不同的公有云提供商。
 
 __为了最好的入门体验，我们目前推荐使用 Google Container Engine (GKE)__。如果你没有谷歌云账号的话，谷歌云平台提供三百美元的额度。查看 https://console.cloud.google.com/freetrial
@@ -32,19 +32,21 @@ __为了最好的入门体验，我们目前推荐使用 Google Container Engine
 
 ### 使用谷歌云 (GKE)
 
-使用命令 [jx create cluster gke](/commands/jx_create_cluster_gke) ： 
+使用命令 [jx create cluster gke](/commands/jx_create_cluster_gke) ：
 
     jx create cluster gke
 
 该命令假设你有一个谷歌账户，并且已经设置了一个默认项目，可以再里面创建 Kubernetes 集群。
-     
+
 现在 **[使用 Jenkins X 更快速地开发应用](/zh/docs/getting-started/next/)**。
-       
+
 ### 使用亚马逊 (AWS)
 
-使用命令 [jx create cluster aws](/commands/x_create_cluster_aws) ： 
+使用命令 [jx create cluster aws](/commands/x_create_cluster_aws) ：
 
-    jx create cluster aws
+```sh
+jx create cluster aws
+```
 
 这会通过你的亚马逊账户，使用命令 [kops](https://github.com/kubernetes/kops) 创建一个新的 Kubernetes 集群并安装 Jenkins X。
 
@@ -52,7 +54,7 @@ __为了最好的入门体验，我们目前推荐使用 Google Container Engine
 
 然后，在 Cloud9 中打开一个新的终端，试试这些命令：
 
-```shell 
+```sh
 curl -L https://github.com/jenkins-x/jx/releases/download/v{{.Site.Params.release}}/jx-linux-amd64.tar.gz | tar xzv
 sudo mv jx /usr/local/bin
 jx create cluster aws
@@ -60,17 +62,19 @@ jx create cluster aws
 
 现在 **[使用 Jenkins X 更快速地开发应用](/zh/docs/getting-started/next/)**。
 
-        
+
 ### 使用 Azure (AKS)
 
-使用命令 [jx create cluster aks](/commands/jx_create_cluster_aks) ： 
+使用命令 [jx create cluster aks](/commands/jx_create_cluster_aks) ：
 
-    jx create cluster aks
-    
+```sh
+jx create cluster aks
+```
+
 现在 **[使用 Jenkins X 更快速地开发应用](/zh/docs/getting-started/next/)**。
-    
-### 使用 Minikube (local)    
-    
+
+### 使用 Minikube (local)
+
 有些人在开始使用 minikube 时遇到问题，可能有几个原因：
 
 * minikube 需要更新你的机器以及虚拟化软件
@@ -80,7 +84,9 @@ jx create cluster aws
 
 如果你还是想尝试 minikube，那么，我们建议从头开始，并让 jx 帮你创建
 
-    jx create cluster minikube
+```sh
+jx create cluster minikube
+```
 
 现在 **[使用 Jenkins X 更快速地开发应用](/zh/docs/getting-started/next/)**。
 

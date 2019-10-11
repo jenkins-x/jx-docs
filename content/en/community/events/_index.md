@@ -10,9 +10,13 @@ cascade:
   type: docs
 ---
 
-## Upcoming Events
+## Current and Upcoming Events
+
+* [Join us in celebrating Hacktoberfest 2019](/blog/2019/09/27/hacktoberfest2019/)
 
 * [2019 DevOps World/Jenkins World EU - Lisbon, Portugal](/community/events/2019-12-dwjw)
+
+* [Application modernization with Anthos and Jenkins X, meetup on October 22, 2019](/community/events/22-10-2019-anthos-jx)
 
 ## Recurring Events
 
@@ -20,7 +24,7 @@ cascade:
 
 We meet for office hours **every other Thursday** at 4pm UK / 11am US Eastern / 8am US Pacific.
 
-Next office hours: **3 October 2019**
+Next office hours: **17 October 2019**
 
 Join us: <https://zoom.us/j/397862697>
 

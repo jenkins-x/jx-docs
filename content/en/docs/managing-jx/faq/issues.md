@@ -4,7 +4,7 @@ linktitle: Common Problems
 description: Questions on common issues setting up Jenkins X.
 weight: 50
 aliases:
-  - /faq/issues/ 
+  - /faq/issues/
 ---
 
 We have tried to collate common issues here with work arounds. If your issue isn't listed here please [let us know](https://github.com/jenkins-x/jx/issues/new).
@@ -15,13 +15,13 @@ If your install fails to start there could be a few different reasons why the Je
 
 Your cluster could be out of resources. You can check the spare resources on your cluster via [jx status](/commands/jx_status/):
 
-```
+```sh
 jx status
 ```
 
 We also have a diagnostic command that looks for common problems [jx step verify install](/commands/jx_step_verify_install/):
 
-```
+```sh
 jx step verify install
 ```
 
@@ -29,13 +29,13 @@ A common issue for pods not starting is if your cluster does not have a [default
 
 You can check your storage class and persistent volume setup via:
 
-```
+```sh
 kubectl get pvc
 ```
 
 If things are working you should see something like:
 
-```
+```sh
 $ kubectl get pvc
 NAME                        STATUS    VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
 jenkins                     Bound     pvc-680b39b5-94f1-11e8-b93d-42010a840238   30Gi       RWO            standard       12h
@@ -51,13 +51,13 @@ Please try create a [default storage class](https://kubernetes.io/docs/concepts/
 
 If the `Persistent Volume Claims` are all `Bound` and things still have not started then try
 
-```
+```sh
 kubectl get pod
 ```
 
 If a pod cannot start try
 
-```
+```sh
 kubectl describe pod some-pod-name
 ```
 
@@ -69,7 +69,7 @@ If you are still stuck try [create an issue](https://github.com/jenkins-x/jx/iss
 
 If your pipeline fails with something like this:
 
-```
+```sh
 The push refers to a repository [100.71.203.90:5000/lgil3/jx-test-app]
 time="2018-07-09T21:18:31Z" level=fatal msg="build step: pushing [100.71.203.90:5000/lgil3/jx-test-app:0.0.2]: Get https://100.71.203.90:5000/v1/_ping: http: server gave HTTP response to HTTPS client"
 ```
@@ -117,13 +117,13 @@ It basically happens if you have an old API token in `~/.jx/jenkinsAuth.yaml` fo
 
 If you see errors like:
 
-```
+```sh
 error:failed to add the repository 'jenkins-x' with URL 'https://chartmuseum.build.cd.jenkins-x.io'
 ```
 
 or
 
-```
+```sh
 Looks like "https://chartmuseum.build.cd.jenkins-x.io" is not a valid chart repository or cannot be reached
 ```
 
@@ -133,7 +133,7 @@ The new URL is: http://chartmuseum.jenkins-x.io
 
 It could be your helm install has an old repository URL installed. You should see...
 
-```
+```sh
 $ helm repo list
 NAME     	URL
 stable   	https://kubernetes-charts.storage.googleapis.com
@@ -142,7 +142,7 @@ jenkins-x	http://chartmuseum.jenkins-x.io
 
 If you see this...
 
-```
+```sh
 $ helm repo list
 NAME     	URL
 jenkins-x	https://chartmuseum.build.cd.jenkins-x.io
@@ -150,7 +150,7 @@ jenkins-x	https://chartmuseum.build.cd.jenkins-x.io
 
 then please run...
 
-```
+```sh
 helm repo remove jenkins-x
 helm repo add jenkins-x	http://chartmuseum.jenkins-x.io
 ```
@@ -168,7 +168,7 @@ This indicates your git API token either was input incorrectly or has been regen
 
 To recreate it with a new API token value try the following (changing the git server name to match your git provider):
 
-```
+```sh
 jx delete git token -n GitHub admin
 jx create git token -n GitHub admin
 ```
@@ -180,7 +180,7 @@ More details on [using git and Jenkins X here](/docs/managing-jx/common-tasks/gi
 
 If you get an error in Jenkins when it tries to scan your repositories for branches something like:
 
-```
+```sh
 hudson.AbortException: Invalid scan credentials *****/****** (API Token for acccessing https://github.com git service inside pipelines) to connect to https://api.github.com, skipping
 ```
 
@@ -188,7 +188,7 @@ Then your git API token was probably wrong or has expired.
 
 To recreate it with a new API token value try the following (changing the git server name to match your git provider):
 
-```
+```sh
 jx delete git token -n GitHub admin
 jx create git token -n GitHub admin
 ```
@@ -225,13 +225,13 @@ The you should check that you have a cluster default storage class for dynamic p
 
 If you don't see any valid nodes returned by `kubectl get node` or you get errors running `jx status` something like:
 
-```
+```sh
 Unable to connect to the server: dial tcp: lookup abc.def.regino.eks.amazonaws.com on 10.0.0.2:53: no such host
 ```
 
 it could be your kube config is stale. Try
 
-```
+```sh
 aws eks --region <CLUSTER_REGION> update-kubeconfig --name <CLUSTER_NAME>
 ```
 
@@ -249,7 +249,7 @@ One way to diagnose logs in your, say, Staging environment is to [download and i
 
 Then run this command:
 
-```shell
+```sh
 kail -l job-name=expose -n jx-staging
 ```
 
@@ -260,7 +260,7 @@ If you then promote to the Staging environment or retrigger the pipeline on the 
 
 If you find you get lots of warnings in your pipelines like this...
 
-```
+```sh
 "Failed to query the Pull Request last commit status for https://github.com/myorg/environment-mycluster-staging/pull/1 ref xyz Could not find a status for repository myorg/environment-mycluster-staging with ref xyz
 ```
 
@@ -272,7 +272,7 @@ However sometimes your git provider (e.g. [GitHub](https://github.com/) may not 
 
 The easiest way to diagnose this is opening the git repository (e.g. for your environment repository).
 
-```
+```sh
 jx get env
 ```
 
@@ -292,12 +292,16 @@ If you are using a Mac then `hyperkit` is the best VM driver to use - but does r
 
 If your minikube is failing to startup then you could try:
 
-    minikube delete
-    rm -rf ~/.minikube
+```sh
+minikube delete
+rm -rf ~/.minikube
+```
 
 If the `rm` fails you may need to do:
 
-    sudo rm -rf ~/.minikube
+```sh
+sudo rm -rf ~/.minikube
+```
 
 Now try `jx create cluster minikube` again - did that help? Sometimes there are stale certs or files hanging around from old installations of minikube that can break things.
 
@@ -312,7 +316,7 @@ Otherwise you could try follow the minikube instructions
 
 If you are using minikube on a mac with hyperkit and find minikube fails to start with a log like:
 
-```
+```sh
 Temporary Error: Could not find an IP address for 46:0:41:86:41:6e
 Temporary Error: Could not find an IP address for 46:0:41:86:41:6e
 Temporary Error: Could not find an IP address for 46:0:41:86:41:6e
@@ -323,7 +327,7 @@ It could be you have hit [this issue in minikube and hyperkit](https://github.co
 
 The work around is to try the following:
 
-```
+```sh
 rm ~/.minikube/machines/minikube/hyperkit.pid
 ```
 
@@ -350,7 +354,7 @@ Then re-run `jx install` and this will switch the services to be exposed on `nod
 
 So if you type:
 
-```
+```sh
 jx open
 ```
 
@@ -373,7 +377,7 @@ If you want to view the logs of the `exposecontroller` you will need to watch fo
 One way to do that is via the [kail](https://github.com/boz/kail) CLI:
 
 
-```
+```sh
 kail -l  job-name=expose
 ```
 
@@ -385,7 +389,7 @@ This will watch for exposecontroller logs and then dump them to the console. Now
 
 Newly created GKE clusters or existing cluster running _kubernetes_ **v1.12** or older will encounter the following error when configuring Ingress with site-wide TLS:
 
-```
+```sh
 Waiting for TLS certificates to be issued...
 Timeout reached while waiting for TLS certificates to be ready
 ```
@@ -393,17 +397,17 @@ Timeout reached while waiting for TLS certificates to be ready
 This issue is caused by the _cert-manager_ pod not having the `disable-validation` label set, which is a known cert-manager issue which is [documented on their website](https://docs.cert-manager.io/en/latest/getting-started/install/kubernetes.html). The following steps, taken from the [cert-manager/troubleshooting-installation](https://docs.cert-manager.io/en/latest/getting-started/troubleshooting.html#troubleshooting-installation) webpage, should resolve the issue:
 
 Check if the _disable-validation_ label exists on the _cert-manager_ pod.
-```
+```sh
 kubectl describe namespace cert-manager
 ```
 
 If you cannot see the `certmanager.k8s.io/disable-validation=true` label on your namespace, you should add it with:
-```
+```sh
 kubectl label namespace cert-manager certmanager.k8s.io/disable-validation=true
 ```
 
 Confirm the label has been added to the _cert-manager_ pod.
-```
+```sh
 kubectl describe namespace cert-manager
 
 Name:         cert-manager
@@ -414,17 +418,17 @@ Status:       Active
 ```
 
 Now rerun _jx_ Ingress setup:
-```
+```sh
 jx upgrade ingress
 ```
 
 While the ingress command is running, you can tail the _cert-manager_ logs in another terminal and see what is happening. You will need to find the name of your _cert-manager_ pod using:
-```
+```sh
 kubectl get pods --namespace cert-manager
 ```
 
 Then tail the logs of the _cert-manager_ pod.
-```
+```sh
 kubectl logs YOUR_CERT_MNG_POD --namespace cert-manager -f
 ```
 

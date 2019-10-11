@@ -8,16 +8,16 @@ weight: 20
 If you want to create a new Spring Boot based microservice using [Apache Camel](http://camel.apache.org/) you can use the [jx create camel](/commands/jx_create_camel) command.
 
 
-```shell
-$ jx create camel
+```sh
+jx create camel
 ```
 
 You are then prompted for the project name.
 
 If you want you can specify this on the command line:
 
-```shell
-$ jx create camel -a myapp
+```sh
+jx create camel -a myapp
 ```
 
 
@@ -26,7 +26,7 @@ $ jx create camel -a myapp
 Once you have chosen the project to create and given it a name the following is automated for you:
 
 * creates a new camel microservice in a sub directory
-* add your source code into a git repository 
+* add your source code into a git repository
 * create a remote git repository on a git service, such as [GitHub](https://github.com)
 * push your code to the remote git service
 * adds default files:
@@ -35,4 +35,4 @@ Once you have chosen the project to create and given it a name the following is 
   * helm chart to run your application inside Kubernetes
 * register a webhook on the remote git repository to your teams Jenkins
 * add the git repository to your teams Jenkins
-* trigger the first pipeline 
+* trigger the first pipeline

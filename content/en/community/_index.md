@@ -13,22 +13,34 @@ We value respect and inclusiveness and follow the [CDF Code of Conduct](https://
 
 Please join us, we'd love to hear your feedback or have you participate and show some of the work you are doing with Jenkins X!
 
-## Events
-
-See the [events page](/community/events/) for details of the next Jenkins X event!
-
 ## Joining the Community
+
+### Want to contribute?
+
+It will be lots of fun!
+
+Check out the [contribution guide](/docs/contributing/) for some tips on how to get started
 
 ### Slack
 
-The Kubernetes community [hangs out on Slack](http://slack.k8s.io/) at [kubernetes.slack.com](https://kubernetes.slack.com/) so we have rooms there to chat about all things Jenkins X:
+We'd love to talk with you about Jenkins X and are happy to help if you have any questions. 
+
+Talk to us on our slack channels, which are part of the Kubernetes slack. Join Kubernetes slack [here](http://slack.k8s.io/) and find us on our channels:
 
 * [\#jenkins-x-user](https://kubernetes.slack.com/messages/C9MBGQJRH) for users of Jenkins X
 * [\#jenkins-x-dev](https://kubernetes.slack.com/messages/C9LTHT2BB) for developers of Jenkins X
 
-{{% alert color="info" %}}
-If you do not already have an account created for the `kubernetes` workspace you can create one by clicking [`GET MY INVITE`](http://slack.k8s.io/)
-{{% /alert %}}
+### Office Hours
+
+We meet for office hours **every other Thursday** at 4pm UK / 11am US Eastern / 8am US Pacific.
+
+Next office hours: **17 October 2019**
+
+Join us: <https://zoom.us/j/397862697>
+
+Feel free to [add your questions to the doc](https://docs.google.com/document/d/1wHdBlZAN-ndPELuBoM5HBnYiQLvcz92-euXne2mKOEI/edit) or ask your questions in person.
+
+Previous office hour agendas and recordings can be found in the [archives](/community/office_hours/)
 
 ### Subscribe to the Jenkins X Newsletter
 Our newsletter is filled with various topics and relevant content for people just starting, or folks who have been using the platform for a while.
@@ -84,8 +96,6 @@ You may also want to try [Stack Overflow](https://stackoverflow.com/questions/ta
 
 If you prefer email then join us on the [jenkins-developers mailing list](https://groups.google.com/forum/#!forum/jenkinsci-dev). Prefix posts with `[Jenkins X]` in the subject.
 
-### Want to contribute?
+## Events
 
-It will be lots of fun!
-
-Check out the [contribution guide](/docs/contributing/) for some tips on how to get started
+See the [events page](/community/events/) for details of the next Jenkins X event!

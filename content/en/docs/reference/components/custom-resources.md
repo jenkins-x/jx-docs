@@ -1,7 +1,7 @@
 ---
 title: Custom Resources
 linktitle: Custom Resources
-description: Custom Resources defined by Jenkins X 
+description: Custom Resources defined by Jenkins X
 parent: "components"
 weight: 10
 aliases:
@@ -13,27 +13,27 @@ Kubernetes provides an extension mechanism called [Custom Resources](https://kub
 So in Jenkins X, we have added a number of Custom Resources to help extend Kubernetes to support CI/CD.
 
 You can also [browse the Custom Resource API Reference](/apidocs/)
-                
+
 ## Environments
 
 Jenkins X natively supports [environments](/docs/concepts/features/#environments) allowing them to be defined for your team and then queried via [jx get environments](/commands/jx_get_environments):
 
-```shell
+```sh
 jx get environments
 ```
 
-Under the covers that command uses the custom Kubernetes resource `Environments`. 
+Under the covers that command uses the custom Kubernetes resource `Environments`.
 
 So you can also query the environments via [kubectl](https://kubernetes.io/docs/reference/kubectl/overview/) as well:
 
-  
-```shell
+
+```sh
 kubectl get environments
 ```
 
 Or edit them via `YAML` directly if you want:
 
-```shell
+```sh
 kubectl edit env staging
 ```
 
@@ -67,7 +67,7 @@ Or when you perform `jx import` or `jx create quickstart` you can pass in a `--s
 This resource stores the pipeline status in terms of Jenkins Pipeline stages plus the [promotion activity](/docs/concepts/features/#promotion).
 
 This resource is also used by the [jx get activities](/commands/jx_get_activities) command.
-  
+
 ## Team
 
 The `Team` Custom Resource is created via the [jx create team](/commands/jx_create_team/) command and is used by the `team controller` to watch for new `Team` resources and then create an installation of Jenkins X in the `teams` namespace. For more background on teams see the [team feature](/docs/concepts/features/#teams).
@@ -84,4 +84,4 @@ The `EnvironmentRoleBinding` resource is like the standard Kubernetes [RoleBindi
 
 This makes it easy to bind a `Role` to either all environments, all preview environments or both or a given set of users.
 
- 
+

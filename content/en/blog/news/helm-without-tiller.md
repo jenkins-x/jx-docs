@@ -10,7 +10,7 @@ aliases: []
 author: jstrachan
 ---
 
-## How to avoid Tiller 
+## How to avoid Tiller
 
 Helm 2.x uses a server side component called _tiller_. Typically Tiller is installed in a global namespace; or you can install a Tiller in each namespace and configure your `helm` CLI to talk to the right tiller in the right namespace.
 
@@ -19,7 +19,7 @@ However Tiller has a number of issues...
 ### The problem with Tiller
 
 * complicates RBAC since its not using the RBAC of the user or pod running the helm commands to read/write kubernetes resources - helm is talking to the remote tiller pod to do the work. If you are using a global tiller then thats often got something like the `cluster-admin` role which means anyone running helm commands effectively side steps RBAC completely! :).
-* helm forces all releases to have a unique name within a tiller. This means if you have one global tiller then each release name must be globally unique across all namespaces. This leads to very long release names since they must typically append the namespace too. This means often service names are very different between environments as the release name is often included in the service name in many charts which [breaks lots of the promise of using canonical service discovery in kubernetes](https://kubernetes.io/docs/concepts/services-networking/service/#discovering-services). 
+* helm forces all releases to have a unique name within a tiller. This means if you have one global tiller then each release name must be globally unique across all namespaces. This leads to very long release names since they must typically append the namespace too. This means often service names are very different between environments as the release name is often included in the service name in many charts which [breaks lots of the promise of using canonical service discovery in kubernetes](https://kubernetes.io/docs/concepts/services-networking/service/#discovering-services).
   * We prefer to use same service names in every environment (development, testing, staging, production) - to minimise the amount of per-environment configuration that is required which avoids manual effort and reduces errors. e.g. refer to http://my-service/ in your app and it should just work in every namespace/environment your app is deployed in without wiring up special configuration.
 * can cause lots of version conflicts between helm clients + tiller versions. We've seen this a lot in Jenkins X this year. e.g. a user has, say, helm 2.9 installed locally and installs Jenkins X. Then a build pod with helm 2.10 runs and barfs as the tiller and helm versions don't match.
 
@@ -29,17 +29,17 @@ Whenever Helm 3 shows up Tiller will be a thing of the past - which is awesome -
 
 ### Going tiller-less on Helm 2.x
 
-Until Helm 3 the Jenkins X community needed a nice workaround for tiller on helm 2.x. 
+Until Helm 3 the Jenkins X community needed a nice workaround for tiller on helm 2.x.
 
 So now if you want to use Jenkins X without tiller there's a new magic command line argument `--no-tiller` you can use when [creating a cluster](/getting-started/create-cluster/):
 
-``` 
- jx create cluster gke --no-tiller 
+```sh
+ jx create cluster gke --no-tiller
 ```
 
 or if you are [installing on an existing kubernetes cluster](/docs/managing/tasks/install-on-cluster/):
- 
-``` 
+
+```sh
  jx install --no-tiller
 ```
 
@@ -47,15 +47,15 @@ or if you are [installing on an existing kubernetes cluster](/docs/managing/task
 
 To be able to change the helm behaviour via feature flags we abstracted away the low level calls to the helm CLI behind some [jx step helm](/commands/jx_step_helm/) commands. e.g. to apply a helm chart in an environment pipeline we use...
 
-``` 
+```sh
 jx step helm apply
-``` 
+```
 
-This lets us use feature flags to use different helm behaviours. 
+This lets us use feature flags to use different helm behaviours.
 
 What `--no-tiller`  means is to switch helm to use `template mode` which means we no longer internally use `helm install mychart` to install a chart, we actually use `helm template mychart` instead which generates the YAML using the same helm charts and the standard helm confiugration management via `--set` and `values.yaml` files.
 
-Then we use `kubectl apply` to apply the YAML. 
+Then we use `kubectl apply` to apply the YAML.
 
 Since we are using [GitOps](/about/features/#promotion) in Jenkins X it turns out we don't really need to rely on Helm's use of kubernetes resources to store environment specific configuration values; since everything is already in git!
 
@@ -73,7 +73,7 @@ metadata:
     jenkins.io/version: 1.2.3
 ```
 * after an upgrade we remove any resources for the same helm release name but different version (to remove any old resources) via the selector `jenkins.io/chart-release=my-release,jenkins.io/version!=1.2.3`
-* to remove a release completely we just delete all resources with the label selector: `jenkins.io/chart-release=my-release`  
+* to remove a release completely we just delete all resources with the label selector: `jenkins.io/chart-release=my-release`
 
 ### Kustomize?
 
@@ -90,14 +90,14 @@ Another feature flag we added was allowing different helm binaries to be used; s
 
 Though its looking like helm 3 is still some way off so its not recommended any time soon but as helm 3 gets near to RC stage we'll be able to reuse the helm 3 feature flag again to let folks experiment with helm 3 until its GA and we make it the default in Jenkins X.
 
- 
+
 ### Summary
 
-If you use helm then we highly recommend you avoid tiller! 
+If you use helm then we highly recommend you avoid tiller!
 
 If you are using Jenkins X then please consider using the `--no-tiller`  option when you're [creating a cluster](/getting-started/create-cluster/) or [install Jenkins X on an existing cluster](/docs/managing/tasks/install-on-cluster/).
 
 We're working  on Jenkins X 2.0 - most of its features are already available hidden behind feature flags. So in Jenkins X 2.0 we will default disable tiller by default along with enabling other things like Prow integration and using _serverless_ Jenkins by default (more on those in a separate blog!).
 
-We are also really looking forward to helm 3! :). Helm rocks, but tiller does not! 
+We are also really looking forward to helm 3! :). Helm rocks, but tiller does not!
 

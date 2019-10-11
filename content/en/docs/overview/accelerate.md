@@ -60,7 +60,7 @@ The Accelerate book found that teams which use trunk based development with shor
 
 # Implement Continuous Integration
 
-Jenkins X sees CI as the effort of validating a proposed change via Pull Requests before it is merged to master.  Jenkins X will automatically configure source code repositories, Jenkins and Kubernetes to provide Continuous Integration of the box.
+Jenkins X sees CI as the effort of validating a proposed change via Pull Requests before it is merged to master.  Jenkins X will automatically configure source code repositories, Jenkins and Kubernetes to provide Continuous Integration out of the box.
 
 # Implement Continuous Delivery
 

@@ -75,8 +75,8 @@ via client libraries for different platforms. Currently we offer clients for:
 
 [jx](https://github.com/jenkins-x/jx) contains many useful functions and is documented on [godoc.org](https://godoc.org/github.com/jenkins-x/jx). The easiest way to consume it is is as a go module:
 
-```bash
-$ go get github.com/jenkins-x/jx
+```sh
+go get github.com/jenkins-x/jx
 ```
 ## `jx` app CLI Commands
 

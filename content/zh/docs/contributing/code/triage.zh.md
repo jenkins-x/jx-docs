@@ -15,7 +15,7 @@ Jenkins X 项目主要的问题跟踪系统是 https://github.com/jenkins-x/jx/i
 当对问题进行分类时，来自 Jenkins X 团队的某个成员将分配标签用来描述问题的 __area__ 和 __kind__ 。有可能，他们还将增加一个 priority ，但是，在进一步分析或更广泛的可见性之后，这些 priority 可能会发生变化。
 
 标签通过 prow [label](https://prow.k8s.io/plugins) 插件使用 GitHub 评论被添加。例如：
-```
+```text
 /kind bug
 /area prow
 /priority important-soon
