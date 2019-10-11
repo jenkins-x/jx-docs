@@ -23,18 +23,61 @@ brew install jx
 
 或者，如果您尚未安装 [brew](https://brew.sh/) ，并且喜欢手动安装的话，请执行如下指令安装:
 
+1.  Download the `jx` binary archive using `curl` and pipe (`|`) the compressed archive to
+    the `tar` command:
+
 ```sh
-curl -L https://github.com/jenkins-x/jx/releases/download/v{{.Site.Params.release}}/jx-darwin-amd64.tar.gz | tar xzv
+curl -L "https://github.com/jenkins-x/jx/releases/download/$(curl --silent https://api.github.com/repos/jenkins-x/jx/releases/latest | jq -r '.tag_name')/jx-darwin-amd64.tar.gz" | tar xzv "jx"
+```
+
+    or, if you don't have `jq` installed:
+
+```sh
+curl -L "https://github.com/jenkins-x/jx/releases/download/$(curl --silent "https://github.com/jenkins-x/jx/releases/latest" | sed 's#.*tag/\(.*\)\".*#\1#')/jx-darwin-amd64.tar.gz" | tar xzv "jx"
+```
+
+
+2.  Install the `jx` binary by moving it to a location which should be on your environments PATH, using
+    the `mv` command:
+
+```sh
 sudo mv jx /usr/local/bin
+```
+
+3. Run `jx version` to make sure you're on the latest stable version
+
+```sh
+jx version
 ```
 
 ### Linux
 
+To install Jenkins X on Linux, download the `.tar` file, and unarchive it in a directory where you can run the `jx` command.
+
+1.  Download the `jx` binary archive using `curl` and pipe (`|`) the compressed archive to
+    the `tar` command:
+
 ```sh
-mkdir -p ~/.jx/bin
-curl -L https://github.com/jenkins-x/jx/releases/download/v{{.Site.Params.release}}/jx-linux-amd64.tar.gz | tar xzv -C ~/.jx/bin
-export PATH=$PATH:~/.jx/bin
-echo 'export PATH=$PATH:~/.jx/bin' >> ~/.bashrc
+curl -L "https://github.com/jenkins-x/jx/releases/download/$(curl --silent https://api.github.com/repos/jenkins-x/jx/releases/latest | jq -r '.tag_name')/jx-linux-amd64.tar.gz" | tar xzv "jx"
+```
+
+    or, if you don't have `jq` installed:
+
+```sh
+curl -L "https://github.com/jenkins-x/jx/releases/download/$(curl --silent "https://github.com/jenkins-x/jx/releases/latest" | sed 's#.*tag/\(.*\)\".*#\1#')/jx-linux-amd64.tar.gz" | tar xzv "jx"
+```
+
+2.  Install the `jx` binary by moving it to a location which should be on your environments PATH, using
+    the `mv` command:
+
+```sh
+sudo mv jx /usr/local/bin
+```
+
+3. Run `jx version` to make sure you're on the latest stable version
+
+```sh
+jx version
 ```
 
 ### Windows
