@@ -422,7 +422,7 @@ webhook: prow
 
 If you wish to enable external DNS (to automatically register DNS names for all of your exported services) a DNS domain name or TLS then modify the `ingress` section of your to add `ingress.domain` and `ingress.externalDNS = true` in `jx-requirements.yml` file and re-run `jx boot`. There's a complete example below.
 
-You can also update your configuration to enable TLS via `ingress.lts.enabled = true`. Here's an example:
+You can also update your configuration to enable TLS via `ingress.tls.enabled = true`. Here's an example:
 
 ```yaml
 cluster:
