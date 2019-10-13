@@ -1,0 +1,299 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/RequirementsConfig",
+  "definitions": {
+    "AutoUpdateConfig": {
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "schedule": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "AzureConfig": {
+      "properties": {
+        "registrySubscription": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "ClusterConfig": {
+      "properties": {
+        "azure": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/AzureConfig"
+        },
+        "clusterName": {
+          "type": "string"
+        },
+        "environmentGitOwner": {
+          "type": "string"
+        },
+        "environmentGitPublic": {
+          "type": "boolean"
+        },
+        "externalDNSSAName": {
+          "type": "string"
+        },
+        "gitKind": {
+          "type": "string"
+        },
+        "gitName": {
+          "type": "string"
+        },
+        "gitPublic": {
+          "type": "boolean"
+        },
+        "gitServer": {
+          "type": "string"
+        },
+        "helmMajorVersion": {
+          "type": "string"
+        },
+        "kanikoSAName": {
+          "type": "string"
+        },
+        "namespace": {
+          "type": "string"
+        },
+        "project": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        },
+        "registry": {
+          "type": "string"
+        },
+        "vaultName": {
+          "type": "string"
+        },
+        "vaultSAName": {
+          "type": "string"
+        },
+        "zone": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "EnvironmentConfig": {
+      "properties": {
+        "gitKind": {
+          "type": "string"
+        },
+        "gitServer": {
+          "type": "string"
+        },
+        "ingress": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/IngressConfig"
+        },
+        "key": {
+          "type": "string"
+        },
+        "owner": {
+          "type": "string"
+        },
+        "remotetCluster": {
+          "type": "boolean"
+        },
+        "repository": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "IngressConfig": {
+      "properties": {
+        "cloud_dns_secret_name": {
+          "type": "string"
+        },
+        "domain": {
+          "type": "string"
+        },
+        "domainIssuerURL": {
+          "type": "string"
+        },
+        "externalDNS": {
+          "type": "boolean"
+        },
+        "namespaceSubDomain": {
+          "type": "string"
+        },
+        "tls": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/TLSConfig"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "RequirementsConfig": {
+      "properties": {
+        "autoUpdate": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/AutoUpdateConfig"
+        },
+        "bootConfigURL": {
+          "type": "string"
+        },
+        "cluster": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/ClusterConfig"
+        },
+        "environments": {
+          "items": {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "$ref": "#/definitions/EnvironmentConfig"
+          },
+          "type": "array"
+        },
+        "gitops": {
+          "type": "boolean"
+        },
+        "ingress": {
+          "$ref": "#/definitions/IngressConfig"
+        },
+        "kaniko": {
+          "type": "boolean"
+        },
+        "secretStorage": {
+          "type": "string"
+        },
+        "storage": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/StorageConfig"
+        },
+        "terraform": {
+          "type": "boolean"
+        },
+        "vault": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/VaultConfig"
+        },
+        "velero": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/VeleroConfig"
+        },
+        "versionStream": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/VersionStreamConfig"
+        },
+        "webhook": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "StorageConfig": {
+      "properties": {
+        "backup": {
+          "$ref": "#/definitions/StorageEntryConfig"
+        },
+        "logs": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/StorageEntryConfig"
+        },
+        "reports": {
+          "$ref": "#/definitions/StorageEntryConfig"
+        },
+        "repository": {
+          "$ref": "#/definitions/StorageEntryConfig"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "StorageEntryConfig": {
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "TLSConfig": {
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "production": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "VaultConfig": {
+      "properties": {
+        "bucket": {
+          "type": "string"
+        },
+        "disableURLDiscovery": {
+          "type": "boolean"
+        },
+        "key": {
+          "type": "string"
+        },
+        "keyring": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "recreateBucket": {
+          "type": "boolean"
+        },
+        "serviceAccount": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "VeleroConfig": {
+      "properties": {
+        "namespace": {
+          "type": "string"
+        },
+        "serviceAccount": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "VersionStreamConfig": {
+      "properties": {
+        "ref": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    }
+  }
+}
