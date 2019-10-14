@@ -13,6 +13,8 @@ weight: 20
 
 * [2019-11-06 Jenkins X: Progressive Delivery for Kubernetes](https://oredev.org/line-up/carlos-sanchez) at [Oredev, Malmo](https://oredev.org) by [Carlos Sanchez](https://csanchez.org)
 
+* [2019-10-22 Application modernization with Anthos and Jenkins X](https://www.meetup.com/Zurich-CI-CD/events/265073168/) by Andy Tzou and [Cosmin Cojocar](https://github.com/ccojocar)
+
 * [2019-09-12 Dev and Run Small Projects on K8S with GitOps and Jenkins-X](https://helmsummit2019.sched.com/event/S8sk/dev-and-run-small-projects-on-k8s-with-gitops-and-jenkins-x-gerd-aschemann-independent) at [Helm Summit, Amsterdam (The Netherlands))](https://events.linuxfoundation.org/events/helm-summit-2019/) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
 
 * [2019-09-11 Jenkins X: Progressive Delivery for Kubernetes](https://2019.javazone.no/program/d8f893f0-3e08-41ef-9ec6-fe2fa93cd4ce) at [JavaZone](https://2019.javazone.no) [Vimeo 🎥](https://vimeo.com/362768726) by [Carlos Sanchez](https://csanchez.org)
