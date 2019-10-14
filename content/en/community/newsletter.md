@@ -2,9 +2,6 @@
 title: Jenkins X Community Newsletter
 linktitle: Newsletter
 type: docs
-
-# cascade:
-#   type: docs
 ---
 
 <img src="https://gallery.mailchimp.com/d0c128ac1f69ba2bb20742976/images/279a413a-a5ac-4762-83ef-36e82133a9b9.png" class="img-fluid mx-auto d-block"/>
