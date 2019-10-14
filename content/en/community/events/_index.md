@@ -18,7 +18,6 @@ cascade:
 
 * [Application modernization with Anthos and Jenkins X, meetup on October 22, 2019](/community/events/22-10-2019-anthos-jx)
 
-## Recurring Events
 
 ### Office Hours
 
@@ -31,5 +30,3 @@ Join us: <https://zoom.us/j/397862697>
 Feel free to [add your questions to the doc](https://docs.google.com/document/d/1wHdBlZAN-ndPELuBoM5HBnYiQLvcz92-euXne2mKOEI/edit) or ask your questions in person.
 
 Previous office hour agendas and recordings can be found in the [archives](/community/office_hours/)
-
-## Past Events

@@ -13,6 +13,10 @@ We value respect and inclusiveness and follow the [CDF Code of Conduct](https://
 
 Please join us, we'd love to hear your feedback or have you participate and show some of the work you are doing with Jenkins X!
 
+### Events
+
+For details of the next Jenkins X talk or demo checkout our [talks at meetups and conferences](/community/events/) page!
+
 ## Joining the Community
 
 ### Want to contribute?
@@ -96,6 +100,3 @@ You may also want to try [Stack Overflow](https://stackoverflow.com/questions/ta
 
 If you prefer email then join us on the [jenkins-developers mailing list](https://groups.google.com/forum/#!forum/jenkinsci-dev). Prefix posts with `[Jenkins X]` in the subject.
 
-## Events
-
-See the [events page](/community/events/) for details of the next Jenkins X event!
