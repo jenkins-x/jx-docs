@@ -13,17 +13,11 @@ We value respect and inclusiveness and follow the [CDF Code of Conduct](https://
 
 Please join us, we'd love to hear your feedback or have you participate and show some of the work you are doing with Jenkins X!
 
-### Events
-
-For details of the next Jenkins X talk or demo checkout our [talks at meetups and conferences](/community/events/) page!
-
 ## Joining the Community
 
-### Want to contribute?
+### Events
 
-It will be lots of fun!
-
-Check out the [contribution guide](/docs/contributing/) for some tips on how to get started
+For details of the next Jenkins X demo or talk checkout our [talks at conferences and meetups](/community/talksdemos) page!
 
 ### Slack
 
@@ -33,6 +27,12 @@ Talk to us on our slack channels, which are part of the Kubernetes slack. Join K
 
 * [\#jenkins-x-user](https://kubernetes.slack.com/messages/C9MBGQJRH) for users of Jenkins X
 * [\#jenkins-x-dev](https://kubernetes.slack.com/messages/C9LTHT2BB) for developers of Jenkins X
+
+### Want to contribute?
+
+It will be lots of fun!
+
+Check out the [contribution guide](/docs/contributing/) for some tips on how to get started.
 
 ### Office Hours
 
@@ -44,7 +44,9 @@ Join us: <https://zoom.us/j/397862697>
 
 Feel free to [add your questions to the doc](https://docs.google.com/document/d/1wHdBlZAN-ndPELuBoM5HBnYiQLvcz92-euXne2mKOEI/edit) or ask your questions in person.
 
-Previous office hour agendas and recordings can be found in the [archives](/community/office_hours/)
+Previous office hour recordings can be found on our [Jenkins X YouTube channel](https://www.youtube.com/channel/UCN2kblPjXKMcjjVYmwvquvg/playlists) in the Office Hours playlist. 
+
+Alternatively, see our office hours [archives](/community/office_hours/).
 
 ### Subscribe to the Jenkins X Newsletter
 Our newsletter is filled with various topics and relevant content for people just starting, or folks who have been using the platform for a while.

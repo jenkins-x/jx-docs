@@ -5,18 +5,20 @@ type: docs
 no_list: true
 menu:
   community:
-    weight: 10
-cascade:
-  type: docs
+    weight: 20
 ---
 
-## Current and Upcoming Events
+## Talks and Demos
+
+For details of the next Jenkins X talk or demo checkout our [talks at meetups and conferences](/community/talksdemos) page!
+
+### Other Current and Upcoming Events
 
 * [Join us in celebrating Hacktoberfest 2019](/blog/2019/09/27/hacktoberfest2019/)
 
 * [2019 DevOps World/Jenkins World EU - Lisbon, Portugal](/community/events/2019-12-dwjw)
 
-* [Join us at the CI/CD Devroom at FOSDEM 2020 -- CFP now open!](/blog/2019/10/09/fosdem2020/)
+* [Join us at the CI/CD Devroom at FOSDEM 2020 -- CFP now open!](blog/2019/10/09/fosdem2020/)
 
 * [Application modernization with Anthos and Jenkins X, meetup on October 22, 2019](/community/events/22-10-2019-anthos-jx)
 

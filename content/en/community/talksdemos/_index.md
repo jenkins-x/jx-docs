@@ -1,9 +1,12 @@
 ---
-title: Talks and Demos
-linktitle: Talks and Demos
+title: Demos and Talks
+linktitle: Demos and Talks
+description: At conferences and meetups
 type: docs
-description: Talks at conferences and meetups
-weight: 20
+no_list: true
+menu:
+  community:
+    weight: 10
 ---
 * [2019-12-05 Progressive Delivery with Jenkins X](https://devopsworldjenkinsworld2019lisbo.sched.com/event/VDQ0/progressive-delivery-with-jenkins-x) at [Devops World, Lisboa](https://www.cloudbees.com/devops-world) by [Carlos Sanchez](https://csanchez.org)
 
