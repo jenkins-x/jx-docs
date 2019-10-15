@@ -41,6 +41,16 @@ You can use vanilla helm to do things like injecting the current namespace if yo
 To see a more complex example of how you can use a `values.yaml` file to inject into charts, see how we use these files to [configure Jenkins X itself](/docs/managing-jx/common-tasks/config/)
 
 
+## How do I inject preview specific configuration?
+
+See the [above question on how to inject environment specific configuration into environments](/#how-do-i-inject-environment-specific-configuration) 
+
+Preview Environments are similar to eother environments like `Staging` and `Production` only instead of storing the environments in a separate git repository the preview environment is defined inside each applications `charts/preview` folder.
+
+So to inject any custom configuration into your Preview environment you can modify the `charts/preview/values.yaml` file in your applications git repository to override any helm template parameters defined in your chart (in the `charts/myapp` folder).
+
+You may need to modify your helm charts to add extra helm configuration if the configuration you wish to configure is not easily changed via the `values.yaml` file.
+
 ## How do I manage secrets in each environment?
 
 We’re using sealed secrets ourselves to manage our production Jenkins X install for all of our CI/CD - so the secrets get encrypted and checked into the git repo of each environment. We use the [helm-secrets](https://github.com/futuresimple/helm-secrets) plugin to do this.
