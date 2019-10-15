@@ -1,5 +1,5 @@
 ---
-date: 2019-10-15T09:17:22Z
+date: 2019-10-15T13:44:42Z
 title: "jx create cluster gke"
 slug: jx_create_cluster_gke
 url: /commands/jx_create_cluster_gke/
@@ -122,6 +122,7 @@ jx create cluster gke [flags]
       --tiller-namespace string               The namespace for the Tiller when using a global tiller (default "kube-system")
       --timeout string                        The number of seconds to wait for the helm install to complete (default "6000")
       --urltemplate string                    For ingress; exposers can set the urltemplate to expose
+      --use-stackdriver-monitoring            Enable Stackdriver Kubernetes Engine Monitoring (default true)
       --user-cluster-role string              The cluster role for the current user to be able to administer helm (default "cluster-admin")
       --username string                       The Kubernetes username used to initialise helm. Usually your email address for your Kubernetes account
       --vault                                 Sets up a Hashicorp Vault for storing secrets during installation (supported only for GKE)
