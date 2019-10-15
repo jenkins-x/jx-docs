@@ -4,13 +4,23 @@ date: 2018-05-05T10:36:00+02:00
 description: Talks at Meetups and Conferences
 weight: 20
 ---
-* [2019-12-05 Progressive Delivery with Jenkins X](https://devopsworldjenkinsworld2019lisbo.sched.com/event/VDQ0/progressive-delivery-with-jenkins-x) at [Devops World, Lisboa](https://www.cloudbees.com/devops-world) by [Carlos Sanchez](https://csanchez.org)
+* [2019-12-05 Progressive Delivery   with Jenkins X](https://devopsworldjenkinsworld2019lisbo.sched.com/event/VDQ0/progressive-delivery-with-jenkins-x) at [Devops World, Lisboa](https://www.cloudbees.com/devops-world) by [Carlos Sanchez](https://csanchez.org)
 
 * [2019-12-02/3/4/5 GitOps by courtesy of Jenkins-X](https://devopsconference.de/kubernetes-ecosystem/gitops-by-courtesy-of-jenkins-x/) at [DevOpsCon 2019, München (Germany)](https://devopsconference.de/) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
 
 * [2019-11-13 Progressive Delivery: Continuous Delivery the Right Way](https://cfp.devoxx.ma/2019/speaker/carlos_sanchez) at [Devoxx Morocco, Agadir](https://www.devoxx.ma/) by [Carlos Sanchez](https://csanchez.org)
 
 * [2019-11-06 Jenkins X: Progressive Delivery for Kubernetes](https://oredev.org/line-up/carlos-sanchez) at [Oredev, Malmo](https://oredev.org) by [Carlos Sanchez](https://csanchez.org)
+
+* [2019-10-03 The Recipe For Continuous Delivery](https://2019.devopsunicorns.com/sessions/the-recipe-to-continuous-delivery/) at [DevOps Unicorns](https://2019.devopsunicorns.com/) by [Viktor Farcic](https://twitter.com/vfarcic)
+
+* [2019-10-02 Cloud-Native Kubernetes-First Serverless Continuous Delivery With Jenkins X, Kubernetes, And Friends](https://2019.devopsunicorns.com/sessions/cloud-native-kubernetes-first-serverless-continuous-delivery-with-jenkins-x-kubernetes-and-friends/) at [DevOps Unicorns](https://2019.devopsunicorns.com/) by [Viktor Farcic](https://twitter.com/vfarcic)
+
+* [2019-10-01 Choosing The Right Deployment Strategy](https://www.devclub.lv/announcement-of-devops-unicorns-warmup-79th-devclub-lv/) at [DevClub Riga](https://www.devclub.lv/) by [Viktor Farcic](https://twitter.com/vfarcic)
+
+* [2019-09-28 Creating And Managing Serverless Deployments With Knative And Jenkins X](https://www.changecon.com/speaker/153) at [ChangeCon Zagreb](https://www.changecon.com) by [Viktor Farcic](https://twitter.com/vfarcic)
+
+* [2019-09-19 Combining Serverless Continuous Delivery With ChatOps](https://www.meetup.com/es/SVQJUG/events/263195348/) at [Sevilla Java User Group](https://www.meetup.com/es/SVQJUG/) by [Viktor Farcic](https://twitter.com/vfarcic)
 
 * [2019-09-12 Dev and Run Small Projects on K8S with GitOps and Jenkins-X](https://helmsummit2019.sched.com/event/S8sk/dev-and-run-small-projects-on-k8s-with-gitops-and-jenkins-x-gerd-aschemann-independent) at [Helm Summit, Amsterdam (The Netherlands))](https://events.linuxfoundation.org/events/helm-summit-2019/) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
 
