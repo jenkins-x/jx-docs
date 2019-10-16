@@ -13,7 +13,7 @@ keywords: [install,kubernetes]
 
 当前这仅在 AWS 和 Google 云可用，因为它要求我们的 vault 操作员（需要云存储和 KMS ）存储凭据，而所有其他配置都存储在开发环境 git 仓库中。
 
-## 使用 GitOps 管理 Jenkins X 
+## 使用 GitOps 管理 Jenkins X
 
 如果你正在创建一个集群或者在已经存在的集群安装，这里有一种快速简便的方法来使用 GitOps 来管理 Jenkins X 本身。它是 `—ng` ，为下一代 Jenkins X 而来。在我们今年晚些时候发布 Jenkins X 2.x 时，我们会将此功能标记设为默认选项。
 
@@ -31,8 +31,8 @@ keywords: [install,kubernetes]
 
 如果你在升级 Jenkins X 过程中遇到任何问题，这里有一种手动方法可以应用开发环境的 git 存储库的内容：
 
-``` 
+```sh
 git clone $MY_DEV_GIT_CLONE_URL jenkins-x-dev-env
 cd jenkins-x-dev-env/env
-jx step env apply 
+jx step env apply
 ```

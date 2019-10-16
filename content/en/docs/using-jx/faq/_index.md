@@ -3,9 +3,15 @@ title: FAQ
 linktitle: FAQ
 description: Questions on how to develop cloud native application with Jenkins X
 weight: 40
-aliases: 
+aliases:
   - /faq/
 ---
+
+## How do I enable bash completion?
+
+Using bash completion really helps using the `jx` command line letting you `TAB`-complete commands and command line arguments.
+
+To see how to enable bash completion check out the [jx completion](/commands/jx_completion/)
 
 ## How do I inject environment specific configuration?
 
@@ -35,6 +41,16 @@ You can use vanilla helm to do things like injecting the current namespace if yo
 To see a more complex example of how you can use a `values.yaml` file to inject into charts, see how we use these files to [configure Jenkins X itself](/docs/managing-jx/common-tasks/config/)
 
 
+## How do I inject preview specific configuration?
+
+See the [above question on how to inject environment specific configuration into environments](/#how-do-i-inject-environment-specific-configuration) 
+
+Preview Environments are similar to eother environments like `Staging` and `Production` only instead of storing the environments in a separate git repository the preview environment is defined inside each applications `charts/preview` folder.
+
+So to inject any custom configuration into your Preview environment you can modify the `charts/preview/values.yaml` file in your applications git repository to override any helm template parameters defined in your chart (in the `charts/myapp` folder).
+
+You may need to modify your helm charts to add extra helm configuration if the configuration you wish to configure is not easily changed via the `values.yaml` file.
+
 ## How do I manage secrets in each environment?
 
 We’re using sealed secrets ourselves to manage our production Jenkins X install for all of our CI/CD - so the secrets get encrypted and checked into the git repo of each environment. We use the [helm-secrets](https://github.com/futuresimple/helm-secrets) plugin to do this.
@@ -46,22 +62,22 @@ Though a nicer approach would be using a Vault operator which we’re investigat
 
 We have a background garbage collection job which removes Preview Environments after the Pull Request is closed/merged. You can run it any time you like via the [jx gc previews](/commands/jx_gc_previews/) command
 
-```
+```sh
 jx gc previews
 ```
 
 You can also view the current previews via  [jx get previews](/commands/jx_get_previews/):
 
-  ```
-  jx get previews
-  ```
+```sh
+jx get previews
+```
 
 
 and delete a preview by choosing one to delete via [jx delete preview](/commands/jx_delete_preview/):
 
- ```
- jx delete preview
- ```
+```sh
+jx delete preview
+```
 
 ## How do I add other services into a Preview?
 
@@ -84,11 +100,11 @@ For Tekton we use the [prow](/docs/reference/components/prow/) / [lighthouse](/d
 
 If you are using [boot](/docs/getting-started/setup/boot/) to install Jenkins X then you can create your own custom `Scheduler` custom resource in `env/templates/myscheduler.yaml` based on the [default one that is included](https://github.com/jenkins-x-charts/jxboot-resources/blob/master/jxboot-resources/templates/default-scheduler.yaml).
 
-e.g. here is how we specify the [branches used to create releases](https://github.com/jenkins-x-charts/jxboot-resources/blob/master/jxboot-resources/templates/default-scheduler.yaml#L48).  
+e.g. here is how we specify the [branches used to create releases](https://github.com/jenkins-x-charts/jxboot-resources/blob/master/jxboot-resources/templates/default-scheduler.yaml#L48).
 
 You can also create additional pipeline contexts; e.g. here's how we add multiple parallel testing pipelines on the [version stream](/docs/concepts/version-stream/) via a [custom Scheduler](https://github.com/jenkins-x/environment-tekton-weasel-dev/blob/master/env/templates/jx-versions-scheduler.yaml#L21) so that we can have many integration tests run in parallel on a single PR. Then each named context listed has an associated `jenkins-x-$context.yml` file in the source repository to define the pipeline to run [like this example which defines the `boot-lh` context](https://github.com/jenkins-x/jenkins-x-versions/blob/master/jenkins-x-boot-lh.yml)
 
-You can then associate your `SourceRepository` resources with your custom scheduler by: 
+You can then associate your `SourceRepository` resources with your custom scheduler by:
 
 * specifying the scheduler name on the `spec.scheduler.name` property of your `SourceRepository` via `kubectl edit sr my-repo-name`)
 * specifying the scheduler name when you import a project via `jx import --scheduler myname`
@@ -147,7 +163,7 @@ If you use [serverless apps](/docs/managing-jx/tutorials/serverless-apps/) with 
 
 You can work around this by manually editing the _knative_ config via:
 
-```
+```sh
 kubectl edit cm config-domain --namespace knative-serving
 ```
 
@@ -219,4 +235,93 @@ If you have an existing monorepo you want to import into Jenkins X you can; just
 
 See how to [add a custom step to your pipeline](/docs/concepts/jenkins-x-pipelines/#customizing-the-pipelines).
 
+## How do I inject Vault secrets into staging/production/preview environments?
 
+### Staging/Production
+
+By default, [enabling Vault](/docs/getting-started/setup/boot/#vault) via `jx boot`'s `jx-requirements.yaml` will only activate it in your pipeline and preview environments, not in staging and production. To also activate it in those environments, simply add a `jx-requirements.yaml` file to the root of their repo, with at least the following content:
+
+```yaml
+secretStorage: vault
+```
+
+Then, assuming you have a secret in Vault with path `secret/path/to/mysecret` containing key `password`, you can inject it into service `myapp` (for instance, as a `PASSWORD` environment variable) by adding the following to your staging repo's `/env/values.yaml`:
+
+```yaml
+myapp:
+  env:
+    PASSWORD: vault:path/to/mysecret:password
+```
+
+Notice the prefixing with `vault:` URL scheme and also that we omit first path component (`secret/`), as it gets added automatically. Finally, the key name is separated from path by a colon (`:`).
+
+If your secret is not environment-specific, you can also inject it directly into your app's `/charts/myapp/values.yaml`:
+
+```yaml
+env:
+  PASSWORD: vault:path/to/mysecret:password
+```
+
+However, note that this value would be overriden at the environment level if the same key is also present there.
+
+### Preview
+
+Vault does not need to be explicitly enabled for preview environment. To inject same secret as above into your preview, simply add the following to your app's `/charts/preview/values.yaml`:
+
+```yaml
+preview:
+  env:
+    PASSWORD: vault:path/to/mysecret:password
+```
+
+## How do I inject a Vault secret via a Kubernetes Secret?
+
+When you inject secrets directly into environment variables, they appear in Deployment yaml as plain text, which is not advisable. It is recommended to rather inject them into a Secret yaml that will itself be mounted as environment variables.
+
+For example, start by injecting the secret into your staging repo's `/env/values.yaml`:
+
+```yaml
+myapp
+  mysecrets:
+    password: vault:path/to/mysecret:password
+```
+
+Then, in your app's `/charts/myapp/templates`, create a `mysecrets.yaml` file, in which you refer to the secret you just added:
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mysecrets
+data:
+  PASSWORD: {{ .Values.mysecrets.password | b64enc }}
+```
+
+Notice how we encode the secret value in Base64, as this is the format expected in a Secret yaml.
+
+Also, make sure to add a default value for the same key in your app's `/charts/myapp/values.yaml`:
+
+```yaml
+mysecrets:
+  password: ""
+```
+
+That allows Helm to resolve to some value during linting of your `mysecrets.yaml`, as linting seems not to consider values from the environment. Otherwise, you might get something like:
+
+```sh
+error: failed to build dependencies for chart from directory '.': failed to lint the chart '.': failed to run 'helm lint --values values.yaml' command in directory '.', output: '==> Linting .
+[ERROR] templates/: render error in "myapp/templates/secrets.yaml": template: myapp/templates/secrets.yaml:6:21: executing "myapp/templates/secrets.yaml" at <.Values.mysecrets.password>: nil pointer evaluating interface {}.password
+```
+
+Finally, mount the Secret yaml as environment variables in your app's `/charts/myapp/templates/deployment.yaml`:
+
+```yaml
+...
+    spec:
+      containers:
+      - name: {{ .Chart.Name }}
+        envFrom:
+        - secretRef:
+            name: mysecrets
+...
+```

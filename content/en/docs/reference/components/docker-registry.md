@@ -1,7 +1,7 @@
 ---
 title: Docker Registry
 linktitle: Docker Registry
-description: Configuring your docker registry 
+description: Configuring your docker registry
 weight: 90
 aliases:
   - /docs/managing-jx/common-tasks/docker-registry
@@ -18,15 +18,15 @@ If you are using the public cloud you may wish to take advantage of your cloud p
 ### If you are using Static Jenkins Master
 To specify the Docker Registry host/port you can use the Jenkins Console:
 
-```
+```sh
 jx console
-``` 
+```
 
 Then navigate to `Manage Jenkins -> Configure System` and change the `DOCKER_REGISTRY` environment variable to point to your docker registry of choice.
 
 Another approach is to add the following to your `values.yaml` file for your customization of the Jenkins X platform helm charts:
 
-```yaml 
+```yaml
 jenkins:
   Servers:
     Global:
@@ -36,7 +36,7 @@ jenkins:
 
 ## Update the config.json secret
 
-Next you will need to update the `config.json` secret for docker. 
+Next you will need to update the `config.json` secret for docker.
 
 You can do this via the [jx create docker auth](/commands/jx_create_docker/) command line tool:
 
@@ -73,7 +73,7 @@ Then to update the `jenkins-docker-cfg` secret you can do the following:
 ```
 kubectl delete secret jenkins-docker-cfg
 kubectl create secret generic jenkins-docker-cfg --from-file=./config.json
-```   
+```
 
 **NOTE** that the file must be called `config.json` as the file name is used in the key of the underlying `Secret` in kubernetes
 
@@ -81,7 +81,7 @@ kubectl create secret generic jenkins-docker-cfg --from-file=./config.json
 
 If you want to publish images to docker hub then you need to modify your `config.json` as described above to something like:
 
-```json 
+```json
 {
     "auths": {
         "https://index.docker.io/v1/": {
@@ -90,14 +90,14 @@ If you want to publish images to docker hub then you need to modify your `config
         }
     }
 }
-``` 
+```
 
 ## Using jFrog BinTray (Artifactory)
 Using the jFrog BinTray as a private registry is possible.  This has only been tested when creating a new cluster and passing the `--docker-registry=private-reg.bintray.io`.  After creating your cluster, you will want to do the following:
 
-1. Delete the existing `Secret` called `jenkins-docker-cfg` by executing 
+1. Delete the existing `Secret` called `jenkins-docker-cfg` by executing
 
-```bash
+```sh
 kubectl delete secret jenkins-docker-cfg
 ```
 2. Create a local file called `config.json` and its value should be in this format (update values based on your registry user account and FQDN).
@@ -114,8 +114,8 @@ kubectl delete secret jenkins-docker-cfg
 ```
 2. Create the new `jenkins-docker-cfg` `Secret` with the contents of the `config.json` as follows:
 
-```bash
- kubectl create secret generic jenkins-docker-cfg --from-file=./config.json
+```sh
+kubectl create secret generic jenkins-docker-cfg --from-file=./config.json
 ```
 
 That should do it, you should now be able to run pipelines and store images in the jFrog BinTray Registry.

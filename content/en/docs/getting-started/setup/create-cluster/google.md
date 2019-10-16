@@ -1,7 +1,7 @@
 ---
-title: Google 
+title: Google
 linktitle: Google
-description: How to create a kubernetes cluster on Google Cloud (GCP)
+description: How to create a kubernetes cluster on the Google Cloud Platform (GCP)
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01
@@ -22,7 +22,7 @@ Now you can click the `create cluster` button on the [kubernetets clusters](http
 
 
 
-## Using gcloud                                                                            
+## Using gcloud
 
 The CLI tool for working with google cloud is called `gcloud`. If you have not done so already please [install gcloud](https://cloud.google.com/sdk/install)
 
@@ -41,7 +41,7 @@ You can then create a cluster with `gcloud` by [following these instructions](ht
 
 ## Connecting to your cluster
 
-Once you have created a cluster, you need to connect to it so you can access it via the `kubectl` or [jx](/docs/getting-started/setup/install/) command line tools. 
+Once you have created a cluster, you need to connect to it so you can access it via the `kubectl` or [jx](/docs/getting-started/setup/install/) command line tools.
 
 To do this click on the `Connect` button on the [Kubernetes Engine page](https://console.cloud.google.com/kubernetes/list) in the [Google Console](https://console.cloud.google.com/)
 
@@ -49,6 +49,6 @@ To do this click on the `Connect` button on the [Kubernetes Engine page](https:/
 
 You should now be able to use the `kubectl` and `jx` CLI tools on your laptop to talk to the GKE cluster. e.g. this command should list the nodes in your cluster:
 
-``` 
+```sh
 kubectl get node
 ```

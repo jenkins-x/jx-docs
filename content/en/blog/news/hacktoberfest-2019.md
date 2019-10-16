@@ -15,7 +15,7 @@ author: Kara de la Marck
 <img src="/images/community/events/2019-hacktoberfest.png" class="img-thumbnail"/>
 </figure>
 
-# What is Hacktoberfest
+# Hacktoberfest
 
 Hacktoberfest is a month-long global celebration of open source software. 
 
@@ -45,7 +45,7 @@ We're happy to help if you have any questions. Talk to us on our slack channels,
 * #jenkins-x-dev for developers of Jenkins X
 * #jenkins-x-user for users of Jenkins X
 
-We also have online office hours, where we talk about new developments in Jenkins X and you are welcome to ask us questions, every other Thursday at 4pm GMT / 11am US Eastern / 8am US Pacific. 
+We also have online office hours, where we talk about new developments in Jenkins X and you are welcome to ask us questions, every other Thursday at 4pm UK (BST) / 11am US Eastern / 8am US Pacific. 
 
 Next office hours are on **3 October**. Join us here: https://zoom.us/j/397862697
 
