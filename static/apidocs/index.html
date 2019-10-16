@@ -26,28 +26,28 @@
  <LI class="nav-level-1"><A href="#plugin-v1-jenkins_io" class="nav-item">Plugin v1 jenkins_io</A></LI>
 </UL>
 <UL>
- <LI class="nav-level-1 strong-nav"><A href="#-strong-user-management-strong-" class="nav-item"><STRONG>USER MANAGEMENT</STRONG></A></LI>
-</UL>
-<UL>
- <LI class="nav-level-1"><A href="#user-v1-jenkins_io" class="nav-item">User v1 jenkins_io</A></LI>
-</UL>
-<UL>
- <LI class="nav-level-1"><A href="#team-v1-jenkins_io" class="nav-item">Team v1 jenkins_io</A></LI>
-</UL>
-<UL>
  <LI class="nav-level-1 strong-nav"><A href="#-strong-pipelines-&-environments-strong-" class="nav-item"><STRONG>PIPELINES & ENVIRONMENTS</STRONG></A></LI>
-</UL>
-<UL>
- <LI class="nav-level-1"><A href="#pipelineactivity-v1-jenkins_io" class="nav-item">PipelineActivity v1 jenkins_io</A></LI>
 </UL>
 <UL>
  <LI class="nav-level-1"><A href="#environment-v1-jenkins_io" class="nav-item">Environment v1 jenkins_io</A></LI>
 </UL>
 <UL>
- <LI class="nav-level-1"><A href="#sourcerepository-v1-jenkins_io" class="nav-item">SourceRepository v1 jenkins_io</A></LI>
+ <LI class="nav-level-1"><A href="#pipelineactivity-v1-jenkins_io" class="nav-item">PipelineActivity v1 jenkins_io</A></LI>
 </UL>
 <UL>
  <LI class="nav-level-1"><A href="#release-v1-jenkins_io" class="nav-item">Release v1 jenkins_io</A></LI>
+</UL>
+<UL>
+ <LI class="nav-level-1"><A href="#scheduler-v1-jenkins_io" class="nav-item">Scheduler v1 jenkins_io</A></LI>
+</UL>
+<UL>
+ <LI class="nav-level-1"><A href="#sourcerepository-v1-jenkins_io" class="nav-item">SourceRepository v1 jenkins_io</A></LI>
+</UL>
+<UL>
+ <LI class="nav-level-1"><A href="#sourcerepositorygroup-v1-jenkins_io" class="nav-item">SourceRepositoryGroup v1 jenkins_io</A></LI>
+</UL>
+<UL>
+ <LI class="nav-level-1 strong-nav"><A href="#-strong-pipelines-extensions-strong-" class="nav-item"><STRONG>PIPELINES EXTENSIONS</STRONG></A></LI>
 </UL>
 <UL>
  <LI class="nav-level-1"><A href="#commitstatus-v1-jenkins_io" class="nav-item">CommitStatus v1 jenkins_io</A></LI>
@@ -56,7 +56,13 @@
  <LI class="nav-level-1"><A href="#fact-v1-jenkins_io" class="nav-item">Fact v1 jenkins_io</A></LI>
 </UL>
 <UL>
- <LI class="nav-level-1"><A href="#scheduler-v1-jenkins_io" class="nav-item">Scheduler v1 jenkins_io</A></LI>
+ <LI class="nav-level-1 strong-nav"><A href="#-strong-user-management-strong-" class="nav-item"><STRONG>USER MANAGEMENT</STRONG></A></LI>
+</UL>
+<UL>
+ <LI class="nav-level-1"><A href="#user-v1-jenkins_io" class="nav-item">User v1 jenkins_io</A></LI>
+</UL>
+<UL>
+ <LI class="nav-level-1"><A href="#team-v1-jenkins_io" class="nav-item">Team v1 jenkins_io</A></LI>
 </UL>
 <UL>
  <LI class="nav-level-1 strong-nav"><A href="#-strong-definitions-strong-" class="nav-item"><STRONG>DEFINITIONS</STRONG></A></LI>
@@ -528,9 +534,6 @@
    <LI class="nav-level-2"><A href="#serviceaccounttokenprojection-v1-core" class="nav-item">ServiceAccountTokenProjection v1 core</A></LI>
  </UL>
   <UL>
-   <LI class="nav-level-2"><A href="#sourcerepositorygroup-v1-jenkins_io" class="nav-item">SourceRepositoryGroup v1 jenkins_io</A></LI>
- </UL>
-  <UL>
    <LI class="nav-level-2"><A href="#stageactivitystep-v1-jenkins_io" class="nav-item">StageActivityStep v1 jenkins_io</A></LI>
  </UL>
   <UL>
@@ -846,6 +849,486 @@ notes on specific resource objects for details.</P>
 <TR><TD><CODE>metadata</CODE><BR /><I><a href="#listmeta-v1-meta">ListMeta</a></I></TD><TD></TD></TR>
 </TBODY>
 </TABLE>
+<H1 id="-strong-pipelines-apis-strong-"><STRONG>PIPELINES</STRONG></H1>
+
+
+<HR />
+<H1 id="environment-v1-jenkins_io">Environment v1 jenkins_io</H1>
+<TABLE class="col-md-8">
+<THEAD><TR><TH>Group</TH><TH>Version</TH><TH>Kind</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>jenkins_io</CODE></TD><TD><CODE>v1</CODE></TD><TD><CODE>Environment</CODE></TD></TR>
+</TBODY>
+</TABLE>
+<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
+ <UL>
+  <LI><a href="#environmentlist-v1-jenkins_io">EnvironmentList [jenkins_io/v1]</a></LI>
+ </UL>
+</DIV>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
+<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
+<TR><TD><CODE>metadata</CODE><BR /><I><a href="#objectmeta-v1-meta">ObjectMeta</a></I></TD><TD>Standard object&#39;s metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</TD></TR>
+<TR><TD><CODE>spec</CODE><BR /><I><a href="#environmentspec-v1-jenkins_io">EnvironmentSpec</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>status</CODE><BR /><I><a href="#environmentstatus-v1-jenkins_io">EnvironmentStatus</a></I></TD><TD></TD></TR>
+</TBODY>
+</TABLE>
+<H3 id="environmentspec-v1-jenkins_io">EnvironmentSpec v1 jenkins_io</H3>
+<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
+ <UL>
+  <LI><a href="#environment-v1-jenkins_io">Environment [jenkins_io/v1]</a></LI>
+ </UL>
+</DIV>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>cluster</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>label</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>namespace</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>order</CODE><BR /><I>integer</I></TD><TD></TD></TR>
+<TR><TD><CODE>previewGitInfo</CODE><BR /><I><a href="#previewgitspec-v1-jenkins_io">PreviewGitSpec</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>promotionStrategy</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>pullRequestURL</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>remoteCluster</CODE><BR /><I>boolean</I></TD><TD>RemoteCluster flag indicates if the Environment is deployed in a separate cluster to the Development Environment</TD></TR>
+<TR><TD><CODE>source</CODE><BR /><I><a href="#environmentrepository-v1-jenkins_io">EnvironmentRepository</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>teamSettings</CODE><BR /><I><a href="#teamsettings-v1-jenkins_io">TeamSettings</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>webHookEngine</CODE><BR /><I>string</I></TD><TD></TD></TR>
+</TBODY>
+</TABLE>
+<H3 id="environmentstatus-v1-jenkins_io">EnvironmentStatus v1 jenkins_io</H3>
+<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
+ <UL>
+  <LI><a href="#environment-v1-jenkins_io">Environment [jenkins_io/v1]</a></LI>
+ </UL>
+</DIV>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>version</CODE><BR /><I>string</I></TD><TD></TD></TR>
+</TBODY>
+</TABLE>
+<H3 id="environmentlist-v1-jenkins_io">EnvironmentList v1 jenkins_io</H3>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
+<TR><TD><CODE>items</CODE><BR /><I><a href="#environment-v1-jenkins_io">Environment</a> array</I></TD><TD></TD></TR>
+<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
+<TR><TD><CODE>metadata</CODE><BR /><I><a href="#listmeta-v1-meta">ListMeta</a></I></TD><TD></TD></TR>
+</TBODY>
+</TABLE>
+<H1 id="pipelineactivity-v1-jenkins_io">PipelineActivity v1 jenkins_io</H1>
+<TABLE class="col-md-8">
+<THEAD><TR><TH>Group</TH><TH>Version</TH><TH>Kind</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>jenkins_io</CODE></TD><TD><CODE>v1</CODE></TD><TD><CODE>PipelineActivity</CODE></TD></TR>
+</TBODY>
+</TABLE>
+<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
+ <UL>
+  <LI><a href="#pipelineactivitylist-v1-jenkins_io">PipelineActivityList [jenkins_io/v1]</a></LI>
+ </UL>
+</DIV>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
+<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
+<TR><TD><CODE>metadata</CODE><BR /><I><a href="#objectmeta-v1-meta">ObjectMeta</a></I></TD><TD>Standard object&#39;s metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</TD></TR>
+<TR><TD><CODE>spec</CODE><BR /><I><a href="#pipelineactivityspec-v1-jenkins_io">PipelineActivitySpec</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>status</CODE><BR /><I><a href="#pipelineactivitystatus-v1-jenkins_io">PipelineActivityStatus</a></I></TD><TD></TD></TR>
+</TBODY>
+</TABLE>
+<H3 id="pipelineactivityspec-v1-jenkins_io">PipelineActivitySpec v1 jenkins_io</H3>
+<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
+ <UL>
+  <LI><a href="#pipelineactivity-v1-jenkins_io">PipelineActivity [jenkins_io/v1]</a></LI>
+ </UL>
+</DIV>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>attachments</CODE><BR /><I><a href="#attachment-v1-jenkins_io">Attachment</a> array</I></TD><TD></TD></TR>
+<TR><TD><CODE>author</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>baseSHA</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>batchPipelineActivity</CODE><BR /><I><a href="#batchpipelineactivity-v1-jenkins_io">BatchPipelineActivity</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>build</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>buildLogsUrl</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>buildUrl</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>completedTimestamp</CODE><BR /><I><a href="#time-v1-meta">Time</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>context</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>gitBranch</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>gitOwner</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>gitRepository</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>gitUrl</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>lastCommitMessage</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>lastCommitSHA</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>lastCommitURL</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>pipeline</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>postExtensions</CODE><BR /><I><a href="#extensionexecution-v1-jenkins_io">ExtensionExecution</a> array</I></TD><TD></TD></TR>
+<TR><TD><CODE>pullTitle</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>releaseNotesURL</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>startedTimestamp</CODE><BR /><I><a href="#time-v1-meta">Time</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>status</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>steps</CODE><BR /><I><a href="#pipelineactivitystep-v1-jenkins_io">PipelineActivityStep</a> array</I></TD><TD></TD></TR>
+<TR><TD><CODE>version</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>workflow</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>workflowMessage</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>workflowStatus</CODE><BR /><I>string</I></TD><TD></TD></TR>
+</TBODY>
+</TABLE>
+<H3 id="pipelineactivitystatus-v1-jenkins_io">PipelineActivityStatus v1 jenkins_io</H3>
+<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
+ <UL>
+  <LI><a href="#pipelineactivity-v1-jenkins_io">PipelineActivity [jenkins_io/v1]</a></LI>
+ </UL>
+</DIV>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>version</CODE><BR /><I>string</I></TD><TD></TD></TR>
+</TBODY>
+</TABLE>
+<H3 id="pipelineactivitylist-v1-jenkins_io">PipelineActivityList v1 jenkins_io</H3>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
+<TR><TD><CODE>items</CODE><BR /><I><a href="#pipelineactivity-v1-jenkins_io">PipelineActivity</a> array</I></TD><TD></TD></TR>
+<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
+<TR><TD><CODE>metadata</CODE><BR /><I><a href="#listmeta-v1-meta">ListMeta</a></I></TD><TD></TD></TR>
+</TBODY>
+</TABLE>
+<H1 id="release-v1-jenkins_io">Release v1 jenkins_io</H1>
+<TABLE class="col-md-8">
+<THEAD><TR><TH>Group</TH><TH>Version</TH><TH>Kind</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>jenkins_io</CODE></TD><TD><CODE>v1</CODE></TD><TD><CODE>Release</CODE></TD></TR>
+</TBODY>
+</TABLE>
+<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
+ <UL>
+  <LI><a href="#releaselist-v1-jenkins_io">ReleaseList [jenkins_io/v1]</a></LI>
+ </UL>
+</DIV>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
+<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
+<TR><TD><CODE>metadata</CODE><BR /><I><a href="#objectmeta-v1-meta">ObjectMeta</a></I></TD><TD>Standard object&#39;s metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</TD></TR>
+<TR><TD><CODE>spec</CODE><BR /><I><a href="#releasespec-v1-jenkins_io">ReleaseSpec</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>status</CODE><BR /><I><a href="#releasestatus-v1-jenkins_io">ReleaseStatus</a></I></TD><TD></TD></TR>
+</TBODY>
+</TABLE>
+<H3 id="releasespec-v1-jenkins_io">ReleaseSpec v1 jenkins_io</H3>
+<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
+ <UL>
+  <LI><a href="#release-v1-jenkins_io">Release [jenkins_io/v1]</a></LI>
+ </UL>
+</DIV>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>commits</CODE><BR /><I><a href="#commitsummary-v1-jenkins_io">CommitSummary</a> array</I></TD><TD></TD></TR>
+<TR><TD><CODE>dependencyUpdates</CODE><BR /><I><a href="#dependencyupdate-v1-jenkins_io">DependencyUpdate</a> array</I></TD><TD></TD></TR>
+<TR><TD><CODE>gitCloneUrl</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>gitHttpUrl</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>gitOwner</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>gitRepository</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>issues</CODE><BR /><I><a href="#issuesummary-v1-jenkins_io">IssueSummary</a> array</I></TD><TD></TD></TR>
+<TR><TD><CODE>name</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>pullRequests</CODE><BR /><I><a href="#issuesummary-v1-jenkins_io">IssueSummary</a> array</I></TD><TD></TD></TR>
+<TR><TD><CODE>releaseNotesURL</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>version</CODE><BR /><I>string</I></TD><TD></TD></TR>
+</TBODY>
+</TABLE>
+<H3 id="releasestatus-v1-jenkins_io">ReleaseStatus v1 jenkins_io</H3>
+<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
+ <UL>
+  <LI><a href="#release-v1-jenkins_io">Release [jenkins_io/v1]</a></LI>
+ </UL>
+</DIV>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>status</CODE><BR /><I>string</I></TD><TD></TD></TR>
+</TBODY>
+</TABLE>
+<H3 id="releaselist-v1-jenkins_io">ReleaseList v1 jenkins_io</H3>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
+<TR><TD><CODE>items</CODE><BR /><I><a href="#release-v1-jenkins_io">Release</a> array</I></TD><TD></TD></TR>
+<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
+<TR><TD><CODE>metadata</CODE><BR /><I><a href="#listmeta-v1-meta">ListMeta</a></I></TD><TD></TD></TR>
+</TBODY>
+</TABLE>
+<H1 id="scheduler-v1-jenkins_io">Scheduler v1 jenkins_io</H1>
+<TABLE class="col-md-8">
+<THEAD><TR><TH>Group</TH><TH>Version</TH><TH>Kind</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>jenkins_io</CODE></TD><TD><CODE>v1</CODE></TD><TD><CODE>Scheduler</CODE></TD></TR>
+</TBODY>
+</TABLE>
+<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
+ <UL>
+  <LI><a href="#schedulerlist-v1-jenkins_io">SchedulerList [jenkins_io/v1]</a></LI>
+ </UL>
+</DIV>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
+<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
+<TR><TD><CODE>metadata</CODE><BR /><I><a href="#objectmeta-v1-meta">ObjectMeta</a></I></TD><TD>Standard object&#39;s metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</TD></TR>
+<TR><TD><CODE>spec</CODE><BR /><I><a href="#schedulerspec-v1-jenkins_io">SchedulerSpec</a></I></TD><TD></TD></TR>
+</TBODY>
+</TABLE>
+<H3 id="schedulerspec-v1-jenkins_io">SchedulerSpec v1 jenkins_io</H3>
+<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
+ <UL>
+  <LI><a href="#scheduler-v1-jenkins_io">Scheduler [jenkins_io/v1]</a></LI>
+ </UL>
+</DIV>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>approve</CODE><BR /><I><a href="#approve-v1-jenkins_io">Approve</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>attachments</CODE><BR /><I><a href="#attachment-v1-jenkins_io">Attachment</a> array</I></TD><TD></TD></TR>
+<TR><TD><CODE>configUpdater</CODE><BR /><I><a href="#configupdater-v1-jenkins_io">ConfigUpdater</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>externalPlugins</CODE><BR /><I><a href="#replaceablesliceofexternalplugins-v1-jenkins_io">ReplaceableSliceOfExternalPlugins</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>lgtm</CODE><BR /><I><a href="#lgtm-v1-jenkins_io">Lgtm</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>merger</CODE><BR /><I><a href="#merger-v1-jenkins_io">Merger</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>periodics</CODE><BR /><I><a href="#periodics-v1-jenkins_io">Periodics</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>plugins</CODE><BR /><I><a href="#replaceablesliceofstrings-v1-jenkins_io">ReplaceableSliceOfStrings</a></I></TD><TD>Plugins is a list of plugin names enabled for a repo</TD></TR>
+<TR><TD><CODE>policy</CODE><BR /><I><a href="#globalprotectionpolicy-v1-jenkins_io">GlobalProtectionPolicy</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>postsubmits</CODE><BR /><I><a href="#postsubmits-v1-jenkins_io">Postsubmits</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>presubmits</CODE><BR /><I><a href="#presubmits-v1-jenkins_io">Presubmits</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>schedulerAgent</CODE><BR /><I><a href="#scheduleragent-v1-jenkins_io">SchedulerAgent</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>trigger</CODE><BR /><I><a href="#trigger-v1-jenkins_io">Trigger</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>welcome</CODE><BR /><I><a href="#welcome-v1-jenkins_io">Welcome</a> array</I></TD><TD></TD></TR>
+</TBODY>
+</TABLE>
+<H3 id="schedulerlist-v1-jenkins_io">SchedulerList v1 jenkins_io</H3>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
+<TR><TD><CODE>items</CODE><BR /><I><a href="#scheduler-v1-jenkins_io">Scheduler</a> array</I></TD><TD></TD></TR>
+<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
+<TR><TD><CODE>metadata</CODE><BR /><I><a href="#listmeta-v1-meta">ListMeta</a></I></TD><TD></TD></TR>
+</TBODY>
+</TABLE>
+<H1 id="sourcerepository-v1-jenkins_io">SourceRepository v1 jenkins_io</H1>
+<TABLE class="col-md-8">
+<THEAD><TR><TH>Group</TH><TH>Version</TH><TH>Kind</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>jenkins_io</CODE></TD><TD><CODE>v1</CODE></TD><TD><CODE>SourceRepository</CODE></TD></TR>
+</TBODY>
+</TABLE>
+<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
+ <UL>
+  <LI><a href="#sourcerepositorylist-v1-jenkins_io">SourceRepositoryList [jenkins_io/v1]</a></LI>
+ </UL>
+</DIV>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
+<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
+<TR><TD><CODE>metadata</CODE><BR /><I><a href="#objectmeta-v1-meta">ObjectMeta</a></I></TD><TD>Standard object&#39;s metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</TD></TR>
+<TR><TD><CODE>spec</CODE><BR /><I><a href="#sourcerepositoryspec-v1-jenkins_io">SourceRepositorySpec</a></I></TD><TD></TD></TR>
+</TBODY>
+</TABLE>
+<H3 id="sourcerepositoryspec-v1-jenkins_io">SourceRepositorySpec v1 jenkins_io</H3>
+<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
+ <UL>
+  <LI><a href="#sourcerepository-v1-jenkins_io">SourceRepository [jenkins_io/v1]</a></LI>
+ </UL>
+</DIV>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>description</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>httpCloneURL</CODE><BR /><I>string</I></TD><TD>HTTPCloneURL is the git URL to clone this repository using HTTP/HTTPS</TD></TR>
+<TR><TD><CODE>org</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>provider</CODE><BR /><I>string</I></TD><TD>Provider stores the URL of the git provider such as https://github.com</TD></TR>
+<TR><TD><CODE>providerKind</CODE><BR /><I>string</I></TD><TD>ProviderKind is the kind of provider (github / bitbucketcloud / bitbucketserver etc)</TD></TR>
+<TR><TD><CODE>providerName</CODE><BR /><I>string</I></TD><TD>ProviderName is a logical name for the provider without any URL scheme which can be used in a label selector</TD></TR>
+<TR><TD><CODE>repo</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>scheduler</CODE><BR /><I><a href="#resourcereference-v1-jenkins_io">ResourceReference</a></I></TD><TD>Scheduler a reference to a custom scheduler otherwise we default to the Team&#39;s Scededuler</TD></TR>
+<TR><TD><CODE>sshCloneURL</CODE><BR /><I>string</I></TD><TD>SSHCloneURL is the git URL to clone this repository using SSH</TD></TR>
+<TR><TD><CODE>url</CODE><BR /><I>string</I></TD><TD>URL is the web URL of the project page</TD></TR>
+</TBODY>
+</TABLE>
+<H3 id="sourcerepositorylist-v1-jenkins_io">SourceRepositoryList v1 jenkins_io</H3>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
+<TR><TD><CODE>items</CODE><BR /><I><a href="#sourcerepository-v1-jenkins_io">SourceRepository</a> array</I></TD><TD></TD></TR>
+<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
+<TR><TD><CODE>metadata</CODE><BR /><I><a href="#listmeta-v1-meta">ListMeta</a></I></TD><TD></TD></TR>
+</TBODY>
+</TABLE>
+<H1 id="sourcerepositorygroup-v1-jenkins_io">SourceRepositoryGroup v1 jenkins_io</H1>
+<TABLE class="col-md-8">
+<THEAD><TR><TH>Group</TH><TH>Version</TH><TH>Kind</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>jenkins_io</CODE></TD><TD><CODE>v1</CODE></TD><TD><CODE>SourceRepositoryGroup</CODE></TD></TR>
+</TBODY>
+</TABLE>
+<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
+ <UL>
+  <LI><a href="#sourcerepositorygrouplist-v1-jenkins_io">SourceRepositoryGroupList [jenkins_io/v1]</a></LI>
+ </UL>
+</DIV>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
+<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
+<TR><TD><CODE>metadata</CODE><BR /><I><a href="#objectmeta-v1-meta">ObjectMeta</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>spec</CODE><BR /><I><a href="#sourcerepositorygroupspec-v1-jenkins_io">SourceRepositoryGroupSpec</a></I></TD><TD></TD></TR>
+</TBODY>
+</TABLE>
+<H3 id="sourcerepositorygroupspec-v1-jenkins_io">SourceRepositoryGroupSpec v1 jenkins_io</H3>
+<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
+ <UL>
+  <LI><a href="#sourcerepositorygroup-v1-jenkins_io">SourceRepositoryGroup [jenkins_io/v1]</a></LI>
+ </UL>
+</DIV>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
+<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
+<TR><TD><CODE>metadata</CODE><BR /><I><a href="#objectmeta-v1-meta">ObjectMeta</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>repositories</CODE><BR /><I><a href="#resourcereference-v1-jenkins_io">ResourceReference</a> array</I></TD><TD></TD></TR>
+<TR><TD><CODE>scheduler</CODE><BR /><I><a href="#resourcereference-v1-jenkins_io">ResourceReference</a></I></TD><TD></TD></TR>
+</TBODY>
+</TABLE>
+<H3 id="sourcerepositorygrouplist-v1-jenkins_io">SourceRepositoryGroupList v1 jenkins_io</H3>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
+<TR><TD><CODE>items</CODE><BR /><I><a href="#sourcerepositorygroup-v1-jenkins_io">SourceRepositoryGroup</a> array</I></TD><TD></TD></TR>
+<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
+<TR><TD><CODE>metadata</CODE><BR /><I><a href="#listmeta-v1-meta">ListMeta</a></I></TD><TD></TD></TR>
+</TBODY>
+</TABLE>
+<H1 id="-strong-pipelines-extensions-strong-"><STRONG>Pipelines Extensions</STRONG></H1>
+<H1 id="commitstatus-v1-jenkins_io">CommitStatus v1 jenkins_io</H1>
+<TABLE class="col-md-8">
+<THEAD><TR><TH>Group</TH><TH>Version</TH><TH>Kind</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>jenkins_io</CODE></TD><TD><CODE>v1</CODE></TD><TD><CODE>CommitStatus</CODE></TD></TR>
+</TBODY>
+</TABLE>
+<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
+ <UL>
+  <LI><a href="#commitstatuslist-v1-jenkins_io">CommitStatusList [jenkins_io/v1]</a></LI>
+ </UL>
+</DIV>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
+<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
+<TR><TD><CODE>metadata</CODE><BR /><I><a href="#objectmeta-v1-meta">ObjectMeta</a></I></TD><TD>Standard object&#39;s metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</TD></TR>
+<TR><TD><CODE>spec</CODE><BR /><I><a href="#commitstatusspec-v1-jenkins_io">CommitStatusSpec</a></I></TD><TD></TD></TR>
+</TBODY>
+</TABLE>
+<H3 id="commitstatusspec-v1-jenkins_io">CommitStatusSpec v1 jenkins_io</H3>
+<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
+ <UL>
+  <LI><a href="#commitstatus-v1-jenkins_io">CommitStatus [jenkins_io/v1]</a></LI>
+ </UL>
+</DIV>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>items</CODE><BR /><I><a href="#commitstatusdetails-v1-jenkins_io">CommitStatusDetails</a> array</I></TD><TD></TD></TR>
+</TBODY>
+</TABLE>
+<H3 id="commitstatuslist-v1-jenkins_io">CommitStatusList v1 jenkins_io</H3>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>Items</CODE><BR /><I><a href="#commitstatus-v1-jenkins_io">CommitStatus</a> array</I></TD><TD></TD></TR>
+<TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
+<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
+<TR><TD><CODE>metadata</CODE><BR /><I><a href="#listmeta-v1-meta">ListMeta</a></I></TD><TD></TD></TR>
+</TBODY>
+</TABLE>
+<H1 id="fact-v1-jenkins_io">Fact v1 jenkins_io</H1>
+<TABLE class="col-md-8">
+<THEAD><TR><TH>Group</TH><TH>Version</TH><TH>Kind</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>jenkins_io</CODE></TD><TD><CODE>v1</CODE></TD><TD><CODE>Fact</CODE></TD></TR>
+</TBODY>
+</TABLE>
+<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
+ <UL>
+  <LI><a href="#factlist-v1-jenkins_io">FactList [jenkins_io/v1]</a></LI>
+ </UL>
+</DIV>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
+<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
+<TR><TD><CODE>metadata</CODE><BR /><I><a href="#objectmeta-v1-meta">ObjectMeta</a></I></TD><TD>The Fact labels will be used to query the API for interesting Facts. The Apps responsible for creating Facts need to add the relevant labels. For example, creating Facts on a pipeline would create Facts with the following labels {   subjectkind: PipelineActivity   pipelineName: my-org-my-app-master-23   org: my-org   repo: my-app   branch: master   buildNumber: 23 }</TD></TR>
+<TR><TD><CODE>spec</CODE><BR /><I><a href="#factspec-v1-jenkins_io">FactSpec</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>status</CODE><BR /><I><a href="#factstatus-v1-jenkins_io">FactStatus</a></I></TD><TD></TD></TR>
+</TBODY>
+</TABLE>
+<H3 id="factspec-v1-jenkins_io">FactSpec v1 jenkins_io</H3>
+<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
+ <UL>
+  <LI><a href="#fact-v1-jenkins_io">Fact [jenkins_io/v1]</a></LI>
+ </UL>
+</DIV>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>factType</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>measurements</CODE><BR /><I><a href="#measurement-v1-jenkins_io">Measurement</a> array</I></TD><TD></TD></TR>
+<TR><TD><CODE>name</CODE><BR /><I>string</I></TD><TD></TD></TR>
+<TR><TD><CODE>original</CODE><BR /><I><a href="#original-v1-jenkins_io">Original</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>statements</CODE><BR /><I><a href="#statement-v1-jenkins_io">Statement</a> array</I></TD><TD></TD></TR>
+<TR><TD><CODE>subject</CODE><BR /><I><a href="#resourcereference-v1-jenkins_io">ResourceReference</a></I></TD><TD></TD></TR>
+<TR><TD><CODE>tags</CODE><BR /><I>string array</I></TD><TD></TD></TR>
+</TBODY>
+</TABLE>
+<H3 id="factstatus-v1-jenkins_io">FactStatus v1 jenkins_io</H3>
+<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
+ <UL>
+  <LI><a href="#fact-v1-jenkins_io">Fact [jenkins_io/v1]</a></LI>
+ </UL>
+</DIV>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>version</CODE><BR /><I>string</I></TD><TD></TD></TR>
+</TBODY>
+</TABLE>
+<H3 id="factlist-v1-jenkins_io">FactList v1 jenkins_io</H3>
+<TABLE>
+<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
+<TBODY>
+<TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
+<TR><TD><CODE>items</CODE><BR /><I><a href="#fact-v1-jenkins_io">Fact</a> array</I></TD><TD></TD></TR>
+<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
+<TR><TD><CODE>metadata</CODE><BR /><I><a href="#listmeta-v1-meta">ListMeta</a></I></TD><TD></TD></TR>
+</TBODY>
+</TABLE>
 <H1 id="-strong-user_management-apis-strong-"><STRONG>USER MANAGEMENT</STRONG></H1>
 
 
@@ -952,438 +1435,6 @@ notes on specific resource objects for details.</P>
 <TBODY>
 <TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
 <TR><TD><CODE>items</CODE><BR /><I><a href="#team-v1-jenkins_io">Team</a> array</I></TD><TD></TD></TR>
-<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
-<TR><TD><CODE>metadata</CODE><BR /><I><a href="#listmeta-v1-meta">ListMeta</a></I></TD><TD></TD></TR>
-</TBODY>
-</TABLE>
-<H1 id="-strong-pipelines-apis-strong-"><STRONG>PIPELINES</STRONG></H1>
-
-
-<HR />
-<H1 id="pipelineactivity-v1-jenkins_io">PipelineActivity v1 jenkins_io</H1>
-<TABLE class="col-md-8">
-<THEAD><TR><TH>Group</TH><TH>Version</TH><TH>Kind</TH></TR></THEAD>
-<TBODY>
-<TR><TD><CODE>jenkins_io</CODE></TD><TD><CODE>v1</CODE></TD><TD><CODE>PipelineActivity</CODE></TD></TR>
-</TBODY>
-</TABLE>
-<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
- <UL>
-  <LI><a href="#pipelineactivitylist-v1-jenkins_io">PipelineActivityList [jenkins_io/v1]</a></LI>
- </UL>
-</DIV>
-<TABLE>
-<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
-<TBODY>
-<TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
-<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
-<TR><TD><CODE>metadata</CODE><BR /><I><a href="#objectmeta-v1-meta">ObjectMeta</a></I></TD><TD>Standard object&#39;s metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</TD></TR>
-<TR><TD><CODE>spec</CODE><BR /><I><a href="#pipelineactivityspec-v1-jenkins_io">PipelineActivitySpec</a></I></TD><TD></TD></TR>
-<TR><TD><CODE>status</CODE><BR /><I><a href="#pipelineactivitystatus-v1-jenkins_io">PipelineActivityStatus</a></I></TD><TD></TD></TR>
-</TBODY>
-</TABLE>
-<H3 id="pipelineactivityspec-v1-jenkins_io">PipelineActivitySpec v1 jenkins_io</H3>
-<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
- <UL>
-  <LI><a href="#pipelineactivity-v1-jenkins_io">PipelineActivity [jenkins_io/v1]</a></LI>
- </UL>
-</DIV>
-<TABLE>
-<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
-<TBODY>
-<TR><TD><CODE>attachments</CODE><BR /><I><a href="#attachment-v1-jenkins_io">Attachment</a> array</I></TD><TD></TD></TR>
-<TR><TD><CODE>author</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>baseSHA</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>batchPipelineActivity</CODE><BR /><I><a href="#batchpipelineactivity-v1-jenkins_io">BatchPipelineActivity</a></I></TD><TD></TD></TR>
-<TR><TD><CODE>build</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>buildLogsUrl</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>buildUrl</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>completedTimestamp</CODE><BR /><I><a href="#time-v1-meta">Time</a></I></TD><TD></TD></TR>
-<TR><TD><CODE>context</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>gitBranch</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>gitOwner</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>gitRepository</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>gitUrl</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>lastCommitMessage</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>lastCommitSHA</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>lastCommitURL</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>pipeline</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>postExtensions</CODE><BR /><I><a href="#extensionexecution-v1-jenkins_io">ExtensionExecution</a> array</I></TD><TD></TD></TR>
-<TR><TD><CODE>pullTitle</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>releaseNotesURL</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>startedTimestamp</CODE><BR /><I><a href="#time-v1-meta">Time</a></I></TD><TD></TD></TR>
-<TR><TD><CODE>status</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>steps</CODE><BR /><I><a href="#pipelineactivitystep-v1-jenkins_io">PipelineActivityStep</a> array</I></TD><TD></TD></TR>
-<TR><TD><CODE>version</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>workflow</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>workflowMessage</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>workflowStatus</CODE><BR /><I>string</I></TD><TD></TD></TR>
-</TBODY>
-</TABLE>
-<H3 id="pipelineactivitystatus-v1-jenkins_io">PipelineActivityStatus v1 jenkins_io</H3>
-<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
- <UL>
-  <LI><a href="#pipelineactivity-v1-jenkins_io">PipelineActivity [jenkins_io/v1]</a></LI>
- </UL>
-</DIV>
-<TABLE>
-<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
-<TBODY>
-<TR><TD><CODE>version</CODE><BR /><I>string</I></TD><TD></TD></TR>
-</TBODY>
-</TABLE>
-<H3 id="pipelineactivitylist-v1-jenkins_io">PipelineActivityList v1 jenkins_io</H3>
-<TABLE>
-<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
-<TBODY>
-<TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
-<TR><TD><CODE>items</CODE><BR /><I><a href="#pipelineactivity-v1-jenkins_io">PipelineActivity</a> array</I></TD><TD></TD></TR>
-<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
-<TR><TD><CODE>metadata</CODE><BR /><I><a href="#listmeta-v1-meta">ListMeta</a></I></TD><TD></TD></TR>
-</TBODY>
-</TABLE>
-<H1 id="environment-v1-jenkins_io">Environment v1 jenkins_io</H1>
-<TABLE class="col-md-8">
-<THEAD><TR><TH>Group</TH><TH>Version</TH><TH>Kind</TH></TR></THEAD>
-<TBODY>
-<TR><TD><CODE>jenkins_io</CODE></TD><TD><CODE>v1</CODE></TD><TD><CODE>Environment</CODE></TD></TR>
-</TBODY>
-</TABLE>
-<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
- <UL>
-  <LI><a href="#environmentlist-v1-jenkins_io">EnvironmentList [jenkins_io/v1]</a></LI>
- </UL>
-</DIV>
-<TABLE>
-<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
-<TBODY>
-<TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
-<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
-<TR><TD><CODE>metadata</CODE><BR /><I><a href="#objectmeta-v1-meta">ObjectMeta</a></I></TD><TD>Standard object&#39;s metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</TD></TR>
-<TR><TD><CODE>spec</CODE><BR /><I><a href="#environmentspec-v1-jenkins_io">EnvironmentSpec</a></I></TD><TD></TD></TR>
-<TR><TD><CODE>status</CODE><BR /><I><a href="#environmentstatus-v1-jenkins_io">EnvironmentStatus</a></I></TD><TD></TD></TR>
-</TBODY>
-</TABLE>
-<H3 id="environmentspec-v1-jenkins_io">EnvironmentSpec v1 jenkins_io</H3>
-<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
- <UL>
-  <LI><a href="#environment-v1-jenkins_io">Environment [jenkins_io/v1]</a></LI>
- </UL>
-</DIV>
-<TABLE>
-<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
-<TBODY>
-<TR><TD><CODE>cluster</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>label</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>namespace</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>order</CODE><BR /><I>integer</I></TD><TD></TD></TR>
-<TR><TD><CODE>previewGitInfo</CODE><BR /><I><a href="#previewgitspec-v1-jenkins_io">PreviewGitSpec</a></I></TD><TD></TD></TR>
-<TR><TD><CODE>promotionStrategy</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>pullRequestURL</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>remoteCluster</CODE><BR /><I>boolean</I></TD><TD>RemoteCluster flag indicates if the Environment is deployed in a separate cluster to the Development Environment</TD></TR>
-<TR><TD><CODE>source</CODE><BR /><I><a href="#environmentrepository-v1-jenkins_io">EnvironmentRepository</a></I></TD><TD></TD></TR>
-<TR><TD><CODE>teamSettings</CODE><BR /><I><a href="#teamsettings-v1-jenkins_io">TeamSettings</a></I></TD><TD></TD></TR>
-<TR><TD><CODE>webHookEngine</CODE><BR /><I>string</I></TD><TD></TD></TR>
-</TBODY>
-</TABLE>
-<H3 id="environmentstatus-v1-jenkins_io">EnvironmentStatus v1 jenkins_io</H3>
-<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
- <UL>
-  <LI><a href="#environment-v1-jenkins_io">Environment [jenkins_io/v1]</a></LI>
- </UL>
-</DIV>
-<TABLE>
-<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
-<TBODY>
-<TR><TD><CODE>version</CODE><BR /><I>string</I></TD><TD></TD></TR>
-</TBODY>
-</TABLE>
-<H3 id="environmentlist-v1-jenkins_io">EnvironmentList v1 jenkins_io</H3>
-<TABLE>
-<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
-<TBODY>
-<TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
-<TR><TD><CODE>items</CODE><BR /><I><a href="#environment-v1-jenkins_io">Environment</a> array</I></TD><TD></TD></TR>
-<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
-<TR><TD><CODE>metadata</CODE><BR /><I><a href="#listmeta-v1-meta">ListMeta</a></I></TD><TD></TD></TR>
-</TBODY>
-</TABLE>
-<H1 id="sourcerepository-v1-jenkins_io">SourceRepository v1 jenkins_io</H1>
-<TABLE class="col-md-8">
-<THEAD><TR><TH>Group</TH><TH>Version</TH><TH>Kind</TH></TR></THEAD>
-<TBODY>
-<TR><TD><CODE>jenkins_io</CODE></TD><TD><CODE>v1</CODE></TD><TD><CODE>SourceRepository</CODE></TD></TR>
-</TBODY>
-</TABLE>
-<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
- <UL>
-  <LI><a href="#sourcerepositorylist-v1-jenkins_io">SourceRepositoryList [jenkins_io/v1]</a></LI>
- </UL>
-</DIV>
-<TABLE>
-<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
-<TBODY>
-<TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
-<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
-<TR><TD><CODE>metadata</CODE><BR /><I><a href="#objectmeta-v1-meta">ObjectMeta</a></I></TD><TD>Standard object&#39;s metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</TD></TR>
-<TR><TD><CODE>spec</CODE><BR /><I><a href="#sourcerepositoryspec-v1-jenkins_io">SourceRepositorySpec</a></I></TD><TD></TD></TR>
-</TBODY>
-</TABLE>
-<H3 id="sourcerepositoryspec-v1-jenkins_io">SourceRepositorySpec v1 jenkins_io</H3>
-<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
- <UL>
-  <LI><a href="#sourcerepository-v1-jenkins_io">SourceRepository [jenkins_io/v1]</a></LI>
- </UL>
-</DIV>
-<TABLE>
-<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
-<TBODY>
-<TR><TD><CODE>description</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>httpCloneURL</CODE><BR /><I>string</I></TD><TD>HTTPCloneURL is the git URL to clone this repository using HTTP/HTTPS</TD></TR>
-<TR><TD><CODE>org</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>provider</CODE><BR /><I>string</I></TD><TD>Provider stores the URL of the git provider such as https://github.com</TD></TR>
-<TR><TD><CODE>providerKind</CODE><BR /><I>string</I></TD><TD>ProviderKind is the kind of provider (github / bitbucketcloud / bitbucketserver etc)</TD></TR>
-<TR><TD><CODE>providerName</CODE><BR /><I>string</I></TD><TD>ProviderName is a logical name for the provider without any URL scheme which can be used in a label selector</TD></TR>
-<TR><TD><CODE>repo</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>scheduler</CODE><BR /><I><a href="#resourcereference-v1-jenkins_io">ResourceReference</a></I></TD><TD>Scheduler a reference to a custom scheduler otherwise we default to the Team&#39;s Scededuler</TD></TR>
-<TR><TD><CODE>sshCloneURL</CODE><BR /><I>string</I></TD><TD>SSHCloneURL is the git URL to clone this repository using SSH</TD></TR>
-<TR><TD><CODE>url</CODE><BR /><I>string</I></TD><TD>URL is the web URL of the project page</TD></TR>
-</TBODY>
-</TABLE>
-<H3 id="sourcerepositorylist-v1-jenkins_io">SourceRepositoryList v1 jenkins_io</H3>
-<TABLE>
-<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
-<TBODY>
-<TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
-<TR><TD><CODE>items</CODE><BR /><I><a href="#sourcerepository-v1-jenkins_io">SourceRepository</a> array</I></TD><TD></TD></TR>
-<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
-<TR><TD><CODE>metadata</CODE><BR /><I><a href="#listmeta-v1-meta">ListMeta</a></I></TD><TD></TD></TR>
-</TBODY>
-</TABLE>
-<H1 id="release-v1-jenkins_io">Release v1 jenkins_io</H1>
-<TABLE class="col-md-8">
-<THEAD><TR><TH>Group</TH><TH>Version</TH><TH>Kind</TH></TR></THEAD>
-<TBODY>
-<TR><TD><CODE>jenkins_io</CODE></TD><TD><CODE>v1</CODE></TD><TD><CODE>Release</CODE></TD></TR>
-</TBODY>
-</TABLE>
-<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
- <UL>
-  <LI><a href="#releaselist-v1-jenkins_io">ReleaseList [jenkins_io/v1]</a></LI>
- </UL>
-</DIV>
-<TABLE>
-<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
-<TBODY>
-<TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
-<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
-<TR><TD><CODE>metadata</CODE><BR /><I><a href="#objectmeta-v1-meta">ObjectMeta</a></I></TD><TD>Standard object&#39;s metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</TD></TR>
-<TR><TD><CODE>spec</CODE><BR /><I><a href="#releasespec-v1-jenkins_io">ReleaseSpec</a></I></TD><TD></TD></TR>
-<TR><TD><CODE>status</CODE><BR /><I><a href="#releasestatus-v1-jenkins_io">ReleaseStatus</a></I></TD><TD></TD></TR>
-</TBODY>
-</TABLE>
-<H3 id="releasespec-v1-jenkins_io">ReleaseSpec v1 jenkins_io</H3>
-<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
- <UL>
-  <LI><a href="#release-v1-jenkins_io">Release [jenkins_io/v1]</a></LI>
- </UL>
-</DIV>
-<TABLE>
-<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
-<TBODY>
-<TR><TD><CODE>commits</CODE><BR /><I><a href="#commitsummary-v1-jenkins_io">CommitSummary</a> array</I></TD><TD></TD></TR>
-<TR><TD><CODE>dependencyUpdates</CODE><BR /><I><a href="#dependencyupdate-v1-jenkins_io">DependencyUpdate</a> array</I></TD><TD></TD></TR>
-<TR><TD><CODE>gitCloneUrl</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>gitHttpUrl</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>gitOwner</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>gitRepository</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>issues</CODE><BR /><I><a href="#issuesummary-v1-jenkins_io">IssueSummary</a> array</I></TD><TD></TD></TR>
-<TR><TD><CODE>name</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>pullRequests</CODE><BR /><I><a href="#issuesummary-v1-jenkins_io">IssueSummary</a> array</I></TD><TD></TD></TR>
-<TR><TD><CODE>releaseNotesURL</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>version</CODE><BR /><I>string</I></TD><TD></TD></TR>
-</TBODY>
-</TABLE>
-<H3 id="releasestatus-v1-jenkins_io">ReleaseStatus v1 jenkins_io</H3>
-<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
- <UL>
-  <LI><a href="#release-v1-jenkins_io">Release [jenkins_io/v1]</a></LI>
- </UL>
-</DIV>
-<TABLE>
-<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
-<TBODY>
-<TR><TD><CODE>status</CODE><BR /><I>string</I></TD><TD></TD></TR>
-</TBODY>
-</TABLE>
-<H3 id="releaselist-v1-jenkins_io">ReleaseList v1 jenkins_io</H3>
-<TABLE>
-<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
-<TBODY>
-<TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
-<TR><TD><CODE>items</CODE><BR /><I><a href="#release-v1-jenkins_io">Release</a> array</I></TD><TD></TD></TR>
-<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
-<TR><TD><CODE>metadata</CODE><BR /><I><a href="#listmeta-v1-meta">ListMeta</a></I></TD><TD></TD></TR>
-</TBODY>
-</TABLE>
-<H1 id="commitstatus-v1-jenkins_io">CommitStatus v1 jenkins_io</H1>
-<TABLE class="col-md-8">
-<THEAD><TR><TH>Group</TH><TH>Version</TH><TH>Kind</TH></TR></THEAD>
-<TBODY>
-<TR><TD><CODE>jenkins_io</CODE></TD><TD><CODE>v1</CODE></TD><TD><CODE>CommitStatus</CODE></TD></TR>
-</TBODY>
-</TABLE>
-<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
- <UL>
-  <LI><a href="#commitstatuslist-v1-jenkins_io">CommitStatusList [jenkins_io/v1]</a></LI>
- </UL>
-</DIV>
-<TABLE>
-<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
-<TBODY>
-<TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
-<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
-<TR><TD><CODE>metadata</CODE><BR /><I><a href="#objectmeta-v1-meta">ObjectMeta</a></I></TD><TD>Standard object&#39;s metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</TD></TR>
-<TR><TD><CODE>spec</CODE><BR /><I><a href="#commitstatusspec-v1-jenkins_io">CommitStatusSpec</a></I></TD><TD></TD></TR>
-</TBODY>
-</TABLE>
-<H3 id="commitstatusspec-v1-jenkins_io">CommitStatusSpec v1 jenkins_io</H3>
-<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
- <UL>
-  <LI><a href="#commitstatus-v1-jenkins_io">CommitStatus [jenkins_io/v1]</a></LI>
- </UL>
-</DIV>
-<TABLE>
-<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
-<TBODY>
-<TR><TD><CODE>items</CODE><BR /><I><a href="#commitstatusdetails-v1-jenkins_io">CommitStatusDetails</a> array</I></TD><TD></TD></TR>
-</TBODY>
-</TABLE>
-<H3 id="commitstatuslist-v1-jenkins_io">CommitStatusList v1 jenkins_io</H3>
-<TABLE>
-<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
-<TBODY>
-<TR><TD><CODE>Items</CODE><BR /><I><a href="#commitstatus-v1-jenkins_io">CommitStatus</a> array</I></TD><TD></TD></TR>
-<TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
-<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
-<TR><TD><CODE>metadata</CODE><BR /><I><a href="#listmeta-v1-meta">ListMeta</a></I></TD><TD></TD></TR>
-</TBODY>
-</TABLE>
-<H1 id="fact-v1-jenkins_io">Fact v1 jenkins_io</H1>
-<TABLE class="col-md-8">
-<THEAD><TR><TH>Group</TH><TH>Version</TH><TH>Kind</TH></TR></THEAD>
-<TBODY>
-<TR><TD><CODE>jenkins_io</CODE></TD><TD><CODE>v1</CODE></TD><TD><CODE>Fact</CODE></TD></TR>
-</TBODY>
-</TABLE>
-<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
- <UL>
-  <LI><a href="#factlist-v1-jenkins_io">FactList [jenkins_io/v1]</a></LI>
- </UL>
-</DIV>
-<TABLE>
-<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
-<TBODY>
-<TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
-<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
-<TR><TD><CODE>metadata</CODE><BR /><I><a href="#objectmeta-v1-meta">ObjectMeta</a></I></TD><TD>The Fact labels will be used to query the API for interesting Facts. The Apps responsible for creating Facts need to add the relevant labels. For example, creating Facts on a pipeline would create Facts with the following labels {   subjectkind: PipelineActivity   pipelineName: my-org-my-app-master-23   org: my-org   repo: my-app   branch: master   buildNumber: 23 }</TD></TR>
-<TR><TD><CODE>spec</CODE><BR /><I><a href="#factspec-v1-jenkins_io">FactSpec</a></I></TD><TD></TD></TR>
-<TR><TD><CODE>status</CODE><BR /><I><a href="#factstatus-v1-jenkins_io">FactStatus</a></I></TD><TD></TD></TR>
-</TBODY>
-</TABLE>
-<H3 id="factspec-v1-jenkins_io">FactSpec v1 jenkins_io</H3>
-<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
- <UL>
-  <LI><a href="#fact-v1-jenkins_io">Fact [jenkins_io/v1]</a></LI>
- </UL>
-</DIV>
-<TABLE>
-<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
-<TBODY>
-<TR><TD><CODE>factType</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>measurements</CODE><BR /><I><a href="#measurement-v1-jenkins_io">Measurement</a> array</I></TD><TD></TD></TR>
-<TR><TD><CODE>name</CODE><BR /><I>string</I></TD><TD></TD></TR>
-<TR><TD><CODE>original</CODE><BR /><I><a href="#original-v1-jenkins_io">Original</a></I></TD><TD></TD></TR>
-<TR><TD><CODE>statements</CODE><BR /><I><a href="#statement-v1-jenkins_io">Statement</a> array</I></TD><TD></TD></TR>
-<TR><TD><CODE>subject</CODE><BR /><I><a href="#resourcereference-v1-jenkins_io">ResourceReference</a></I></TD><TD></TD></TR>
-<TR><TD><CODE>tags</CODE><BR /><I>string array</I></TD><TD></TD></TR>
-</TBODY>
-</TABLE>
-<H3 id="factstatus-v1-jenkins_io">FactStatus v1 jenkins_io</H3>
-<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
- <UL>
-  <LI><a href="#fact-v1-jenkins_io">Fact [jenkins_io/v1]</a></LI>
- </UL>
-</DIV>
-<TABLE>
-<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
-<TBODY>
-<TR><TD><CODE>version</CODE><BR /><I>string</I></TD><TD></TD></TR>
-</TBODY>
-</TABLE>
-<H3 id="factlist-v1-jenkins_io">FactList v1 jenkins_io</H3>
-<TABLE>
-<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
-<TBODY>
-<TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
-<TR><TD><CODE>items</CODE><BR /><I><a href="#fact-v1-jenkins_io">Fact</a> array</I></TD><TD></TD></TR>
-<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
-<TR><TD><CODE>metadata</CODE><BR /><I><a href="#listmeta-v1-meta">ListMeta</a></I></TD><TD></TD></TR>
-</TBODY>
-</TABLE>
-<H1 id="scheduler-v1-jenkins_io">Scheduler v1 jenkins_io</H1>
-<TABLE class="col-md-8">
-<THEAD><TR><TH>Group</TH><TH>Version</TH><TH>Kind</TH></TR></THEAD>
-<TBODY>
-<TR><TD><CODE>jenkins_io</CODE></TD><TD><CODE>v1</CODE></TD><TD><CODE>Scheduler</CODE></TD></TR>
-</TBODY>
-</TABLE>
-<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
- <UL>
-  <LI><a href="#schedulerlist-v1-jenkins_io">SchedulerList [jenkins_io/v1]</a></LI>
- </UL>
-</DIV>
-<TABLE>
-<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
-<TBODY>
-<TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
-<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
-<TR><TD><CODE>metadata</CODE><BR /><I><a href="#objectmeta-v1-meta">ObjectMeta</a></I></TD><TD>Standard object&#39;s metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</TD></TR>
-<TR><TD><CODE>spec</CODE><BR /><I><a href="#schedulerspec-v1-jenkins_io">SchedulerSpec</a></I></TD><TD></TD></TR>
-</TBODY>
-</TABLE>
-<H3 id="schedulerspec-v1-jenkins_io">SchedulerSpec v1 jenkins_io</H3>
-<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
- <UL>
-  <LI><a href="#scheduler-v1-jenkins_io">Scheduler [jenkins_io/v1]</a></LI>
- </UL>
-</DIV>
-<TABLE>
-<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
-<TBODY>
-<TR><TD><CODE>approve</CODE><BR /><I><a href="#approve-v1-jenkins_io">Approve</a></I></TD><TD></TD></TR>
-<TR><TD><CODE>attachments</CODE><BR /><I><a href="#attachment-v1-jenkins_io">Attachment</a> array</I></TD><TD></TD></TR>
-<TR><TD><CODE>configUpdater</CODE><BR /><I><a href="#configupdater-v1-jenkins_io">ConfigUpdater</a></I></TD><TD></TD></TR>
-<TR><TD><CODE>externalPlugins</CODE><BR /><I><a href="#replaceablesliceofexternalplugins-v1-jenkins_io">ReplaceableSliceOfExternalPlugins</a></I></TD><TD></TD></TR>
-<TR><TD><CODE>lgtm</CODE><BR /><I><a href="#lgtm-v1-jenkins_io">Lgtm</a></I></TD><TD></TD></TR>
-<TR><TD><CODE>merger</CODE><BR /><I><a href="#merger-v1-jenkins_io">Merger</a></I></TD><TD></TD></TR>
-<TR><TD><CODE>periodics</CODE><BR /><I><a href="#periodics-v1-jenkins_io">Periodics</a></I></TD><TD></TD></TR>
-<TR><TD><CODE>plugins</CODE><BR /><I><a href="#replaceablesliceofstrings-v1-jenkins_io">ReplaceableSliceOfStrings</a></I></TD><TD>Plugins is a list of plugin names enabled for a repo</TD></TR>
-<TR><TD><CODE>policy</CODE><BR /><I><a href="#globalprotectionpolicy-v1-jenkins_io">GlobalProtectionPolicy</a></I></TD><TD></TD></TR>
-<TR><TD><CODE>postsubmits</CODE><BR /><I><a href="#postsubmits-v1-jenkins_io">Postsubmits</a></I></TD><TD></TD></TR>
-<TR><TD><CODE>presubmits</CODE><BR /><I><a href="#presubmits-v1-jenkins_io">Presubmits</a></I></TD><TD></TD></TR>
-<TR><TD><CODE>schedulerAgent</CODE><BR /><I><a href="#scheduleragent-v1-jenkins_io">SchedulerAgent</a></I></TD><TD></TD></TR>
-<TR><TD><CODE>trigger</CODE><BR /><I><a href="#trigger-v1-jenkins_io">Trigger</a></I></TD><TD></TD></TR>
-<TR><TD><CODE>welcome</CODE><BR /><I><a href="#welcome-v1-jenkins_io">Welcome</a> array</I></TD><TD></TD></TR>
-</TBODY>
-</TABLE>
-<H3 id="schedulerlist-v1-jenkins_io">SchedulerList v1 jenkins_io</H3>
-<TABLE>
-<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
-<TBODY>
-<TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
-<TR><TD><CODE>items</CODE><BR /><I><a href="#scheduler-v1-jenkins_io">Scheduler</a> array</I></TD><TD></TD></TR>
 <TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
 <TR><TD><CODE>metadata</CODE><BR /><I><a href="#listmeta-v1-meta">ListMeta</a></I></TD><TD></TD></TR>
 </TBODY>
@@ -4963,28 +5014,6 @@ The contents of the target Secret&#39;s Data field will be presented in a volume
 <TR><TD><CODE>audience</CODE><BR /><I>string</I></TD><TD>Audience is the intended audience of the token. A recipient of a token must identify itself with an identifier specified in the audience of the token, and otherwise should reject the token. The audience defaults to the identifier of the apiserver.</TD></TR>
 <TR><TD><CODE>expirationSeconds</CODE><BR /><I>integer</I></TD><TD>ExpirationSeconds is the requested duration of validity of the service account token. As the token approaches expiration, the kubelet volume plugin will proactively rotate the service account token. The kubelet will start trying to rotate the token if the token is older than 80 percent of its time to live or if the token is older than 24 hours.Defaults to 1 hour and must be at least 10 minutes.</TD></TR>
 <TR><TD><CODE>path</CODE><BR /><I>string</I></TD><TD>Path is the path relative to the mount point of the file to project the token into.</TD></TR>
-</TBODY>
-</TABLE>
-<H2 id="sourcerepositorygroup-v1-jenkins_io">SourceRepositoryGroup v1 jenkins_io</H2>
-<TABLE class="col-md-8">
-<THEAD><TR><TH>Group</TH><TH>Version</TH><TH>Kind</TH></TR></THEAD>
-<TBODY>
-<TR><TD><CODE>jenkins_io</CODE></TD><TD><CODE>v1</CODE></TD><TD><CODE>SourceRepositoryGroup</CODE></TD></TR>
-</TBODY>
-</TABLE>
-<P>SourceRepositoryGroup is the metadata for an Application/Project/SourceRepository</P>
-<DIV class="alert alert-info col-md-8"><I class="fa fa-info-circle"></I> Appears In:
- <UL>
-  <LI><a href="#sourcerepositorygrouplist-v1-jenkins_io">SourceRepositoryGroupList [jenkins_io/v1]</a></LI>
- </UL>
-</DIV>
-<TABLE>
-<THEAD><TR><TH>Field</TH><TH>Description</TH></TR></THEAD>
-<TBODY>
-<TR><TD><CODE>apiVersion</CODE><BR /><I>string</I></TD><TD>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</TD></TR>
-<TR><TD><CODE>kind</CODE><BR /><I>string</I></TD><TD>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</TD></TR>
-<TR><TD><CODE>metadata</CODE><BR /><I><a href="#objectmeta-v1-meta">ObjectMeta</a></I></TD><TD></TD></TR>
-<TR><TD><CODE>spec</CODE><BR /><I><a href="#sourcerepositorygroupspec-v1-jenkins_io">SourceRepositoryGroupSpec</a></I></TD><TD></TD></TR>
 </TBODY>
 </TABLE>
 <H2 id="stageactivitystep-v1-jenkins_io">StageActivityStep v1 jenkins_io</H2>
