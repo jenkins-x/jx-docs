@@ -561,7 +561,7 @@ First you need to [install Delve](https://github.com/derekparker/delve/blob/mast
 Then build a version of `jx` that is optimised for debugging
 
 ```sh
-DEBUG=on make
+DEBUG=on make build
 ```
 
 Then you should be able to run a debug version of a jx command:
