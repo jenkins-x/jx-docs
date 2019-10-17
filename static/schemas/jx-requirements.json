@@ -239,6 +239,9 @@
         },
         "production": {
           "type": "boolean"
+        },
+        "secretName": {
+          "type": "string"
         }
       },
       "additionalProperties": false,
