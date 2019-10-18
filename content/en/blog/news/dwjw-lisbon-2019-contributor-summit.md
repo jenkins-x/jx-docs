@@ -16,9 +16,9 @@ author: Kara de la Marck
 <img src="/images/community/events/jxcontribsummitlisbon.png"/>
 </figure>
 
-Attendance at the Jenkins X Contributor Summit is free, and a [DevOps World | Jenkins World](https://www.cloudbees.com/devops-world/lisbon) conference pass is not necessary, but please [RSVP](https://www.eventbrite.com/e/jenkins-x-contributor-summit-2019-lisbon-portugal-tickets-77484886381) if you are going to attend.
-
 [Register here](https://www.eventbrite.com/e/jenkins-x-contributor-summit-2019-lisbon-portugal-tickets-77484886381) to participate in the Jenkins X Contributor Summit in Lisbon, Portugal!
+
+Attendance at the Jenkins X Contributor Summit is free, and a [DevOps World | Jenkins World](https://www.cloudbees.com/devops-world/lisbon) conference pass is not necessary, but please [RSVP](https://www.eventbrite.com/e/jenkins-x-contributor-summit-2019-lisbon-portugal-tickets-77484886381) if you are going to attend.
 
 The Jenkins X Contributor Summit is an opportunity for current and future Jenkins X contributors to come together to discuss the project, learn and collaborate. There will be discussions on the latest exciting developments in Jenkins X and time to contribute to the project. We welcome new contributors: this is a great chance to learn more about the project, find out how to contribute and meet the core contributors!
 
