@@ -46,7 +46,7 @@ Once you have chosen the project to create and given it a name the following is 
 
 ### How do quickstarts work?
 
-The source of these Quickstarts are maintained in [the jenkins-quickstarts GitHub organisation](https://github.com/jenkins-x-quickstarts).
+The source of these Quickstarts are maintained in [the jenkins-quickstarts GitHub organization](https://github.com/jenkins-x-quickstarts).
 
 When you create a quickstart we use the [Jenkins X build packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) to match the right pack for the project using the source code language kinds to pick the most suitable match.
 
