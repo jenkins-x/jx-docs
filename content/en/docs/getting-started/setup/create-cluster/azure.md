@@ -1,7 +1,7 @@
 ---
 title: Azure
 linktitle: Azure
-description: How to create a kubernetes cluster on Azure
+description: How to create a kubernetes cluster on Azure?
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01

@@ -1,7 +1,7 @@
 ---
 title: Create cluster
 linktitle: Create cluster
-description: How to create a Kubernetes cluster
+description: How to create a Kubernetes cluster?
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01
