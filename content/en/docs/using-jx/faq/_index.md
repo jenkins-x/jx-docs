@@ -43,7 +43,7 @@ To see a more complex example of how you can use a `values.yaml` file to inject 
 
 ## How do I inject preview specific configuration?
 
-See the [above question on how to inject environment specific configuration into environments](/#how-do-i-inject-environment-specific-configuration) 
+See the [above question on how to inject environment specific configuration into environments](/#how-do-i-inject-environment-specific-configuration)
 
 Preview Environments are similar to eother environments like `Staging` and `Production` only instead of storing the environments in a separate git repository the preview environment is defined inside each applications `charts/preview` folder.
 
@@ -118,7 +118,7 @@ The kubernetes resources being deployed are defined as YAML files in the source 
 
 Then the Jenkins X release pipeline automatically tars up the YAML files into an immutable versioned tarball (using the same version number as the docker image, git tag and release notes) and deploys it into a chart repository of your choice (defaults to chartmuseum but you can easily switch that to cloud storage/nexus/whatever) so that the immutable release can be easily used by any promotion.
 
-Promotion in Jenkins X is completely separate to Release & we support promoting any releases if packaged as a helm chart. Promotion via [jx promote](/docs/using-jx/common-tasks/promote/) CLI generates a Pull Request in the git repository for an environment (Staging, Canary, Production or whatever). This is GitOps basically - specifying which versions and configurations of which apps are in each environment using a git repository and configuration as code.
+Promotion in Jenkins X is completely separate to Release & we support promoting any releases if packaged as a helm chart. Promotion via [jx promote](/docs/getting-started/promotion/) CLI generates a Pull Request in the git repository for an environment (Staging, Canary, Production or whatever). This is GitOps basically - specifying which versions and configurations of which apps are in each environment using a git repository and configuration as code.
 
 The PR triggers a CI pipeline to verify the changes are valid (e.g. the helm chart exists and can be downloaded, the docker images exist etc). Whenever the PR gets merged (could be automatically or may require additional reviews/+1s/JIRA/ServiceNow tickets or whatever) - then another pipeline is triggered to apply the helm charts from the master branch to the destination k8s cluster and namespace.
 
