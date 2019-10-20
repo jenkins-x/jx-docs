@@ -93,7 +93,7 @@ Kubernetes meta/v1.ObjectMeta
 <td>
 <em>(Optional)</em>
 <p>Standard object&rsquo;s metadata.
-More info: <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</a></p>
+More info: <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata</a></p>
 Refer to the Kubernetes API documentation for the fields of the
 <code>metadata</code> field.
 </td>
@@ -194,7 +194,7 @@ Kubernetes meta/v1.ObjectMeta
 <td>
 <em>(Optional)</em>
 <p>Standard object&rsquo;s metadata.
-More info: <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</a></p>
+More info: <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata</a></p>
 Refer to the Kubernetes API documentation for the fields of the
 <code>metadata</code> field.
 </td>
@@ -301,7 +301,7 @@ Kubernetes meta/v1.ObjectMeta
 <td>
 <em>(Optional)</em>
 <p>Standard object&rsquo;s metadata.
-More info: <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</a></p>
+More info: <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata</a></p>
 Refer to the Kubernetes API documentation for the fields of the
 <code>metadata</code> field.
 </td>
@@ -378,7 +378,7 @@ Kubernetes meta/v1.ObjectMeta
 <td>
 <em>(Optional)</em>
 <p>Standard object&rsquo;s metadata.
-More info: <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</a></p>
+More info: <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata</a></p>
 Refer to the Kubernetes API documentation for the fields of the
 <code>metadata</code> field.
 </td>
@@ -590,7 +590,7 @@ Kubernetes meta/v1.ObjectMeta
 <td>
 <em>(Optional)</em>
 <p>Standard object&rsquo;s metadata.
-More info: <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</a></p>
+More info: <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata</a></p>
 Refer to the Kubernetes API documentation for the fields of the
 <code>metadata</code> field.
 </td>
@@ -707,7 +707,7 @@ Kubernetes meta/v1.ObjectMeta
 <td>
 <em>(Optional)</em>
 <p>Standard object&rsquo;s metadata.
-More info: <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</a></p>
+More info: <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata</a></p>
 Refer to the Kubernetes API documentation for the fields of the
 <code>metadata</code> field.
 </td>
@@ -1049,7 +1049,7 @@ Kubernetes meta/v1.ObjectMeta
 <td>
 <em>(Optional)</em>
 <p>Standard object&rsquo;s metadata.
-More info: <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</a></p>
+More info: <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata</a></p>
 Refer to the Kubernetes API documentation for the fields of the
 <code>metadata</code> field.
 </td>
@@ -1144,7 +1144,7 @@ Kubernetes meta/v1.ObjectMeta
 <td>
 <em>(Optional)</em>
 <p>Standard object&rsquo;s metadata.
-More info: <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</a></p>
+More info: <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata</a></p>
 Refer to the Kubernetes API documentation for the fields of the
 <code>metadata</code> field.
 </td>
@@ -1510,7 +1510,7 @@ Kubernetes meta/v1.ObjectMeta
 <td>
 <em>(Optional)</em>
 <p>Standard object&rsquo;s metadata.
-More info: <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</a></p>
+More info: <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata</a></p>
 Refer to the Kubernetes API documentation for the fields of the
 <code>metadata</code> field.
 </td>
@@ -1591,7 +1591,7 @@ Kubernetes meta/v1.ObjectMeta
 <td>
 <em>(Optional)</em>
 <p>Standard object&rsquo;s metadata.
-More info: <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</a></p>
+More info: <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata</a></p>
 Refer to the Kubernetes API documentation for the fields of the
 <code>metadata</code> field.
 </td>
@@ -1718,7 +1718,7 @@ Kubernetes meta/v1.ObjectMeta
 <td>
 <em>(Optional)</em>
 <p>Standard object&rsquo;s metadata.
-More info: <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</a></p>
+More info: <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata</a></p>
 Refer to the Kubernetes API documentation for the fields of the
 <code>metadata</code> field.
 </td>
@@ -1913,7 +1913,7 @@ Kubernetes meta/v1.ObjectMeta
 <td>
 <em>(Optional)</em>
 <p>Standard object&rsquo;s metadata.
-More info: <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</a></p>
+More info: <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata</a></p>
 Refer to the Kubernetes API documentation for the fields of the
 <code>metadata</code> field.
 </td>
@@ -2147,7 +2147,7 @@ Kubernetes meta/v1.ObjectMeta
 <td>
 <em>(Optional)</em>
 <p>Standard object&rsquo;s metadata.
-More info: <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</a></p>
+More info: <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata</a></p>
 Refer to the Kubernetes API documentation for the fields of the
 <code>metadata</code> field.
 </td>
@@ -2421,7 +2421,7 @@ Kubernetes meta/v1.ObjectMeta
 <td>
 <em>(Optional)</em>
 <p>Standard object&rsquo;s metadata.
-More info: <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</a></p>
+More info: <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata</a></p>
 Refer to the Kubernetes API documentation for the fields of the
 <code>metadata</code> field.
 </td>
@@ -2530,7 +2530,7 @@ Kubernetes meta/v1.ObjectMeta
 <td>
 <em>(Optional)</em>
 <p>Standard object&rsquo;s metadata.
-More info: <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</a></p>
+More info: <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata</a></p>
 Refer to the Kubernetes API documentation for the fields of the
 <code>metadata</code> field.
 </td>
@@ -2702,7 +2702,7 @@ Kubernetes meta/v1.ObjectMeta
 <td>
 <em>(Optional)</em>
 <p>Standard object&rsquo;s metadata.
-More info: <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata</a></p>
+More info: <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata">https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata</a></p>
 Refer to the Kubernetes API documentation for the fields of the
 <code>metadata</code> field.
 </td>
@@ -2802,7 +2802,7 @@ string
 (<code>string</code> alias)</p></h3>
 <p>
 (<em>Appears on:</em>
-<a href="#jenkins.io/v1.CoreActivityStep">CoreActivityStep</a>, 
+<a href="#jenkins.io/v1.CoreActivityStep">CoreActivityStep</a>,
 <a href="#jenkins.io/v1.PipelineActivitySpec">PipelineActivitySpec</a>)
 </p>
 <p>
@@ -3127,7 +3127,7 @@ bool
 </h3>
 <p>
 (<em>Appears on:</em>
-<a href="#jenkins.io/v1.Postsubmit">Postsubmit</a>, 
+<a href="#jenkins.io/v1.Postsubmit">Postsubmit</a>,
 <a href="#jenkins.io/v1.Presubmit">Presubmit</a>)
 </p>
 <p>
@@ -3719,7 +3719,7 @@ ConfigMapSpec
 </h3>
 <p>
 (<em>Appears on:</em>
-<a href="#jenkins.io/v1.Merger">Merger</a>, 
+<a href="#jenkins.io/v1.Merger">Merger</a>,
 <a href="#jenkins.io/v1.RepoContextPolicy">RepoContextPolicy</a>)
 </p>
 <p>
@@ -3797,10 +3797,10 @@ bool
 </h3>
 <p>
 (<em>Appears on:</em>
-<a href="#jenkins.io/v1.PreviewActivityStep">PreviewActivityStep</a>, 
-<a href="#jenkins.io/v1.PromoteActivityStep">PromoteActivityStep</a>, 
-<a href="#jenkins.io/v1.PromotePullRequestStep">PromotePullRequestStep</a>, 
-<a href="#jenkins.io/v1.PromoteUpdateStep">PromoteUpdateStep</a>, 
+<a href="#jenkins.io/v1.PreviewActivityStep">PreviewActivityStep</a>,
+<a href="#jenkins.io/v1.PromoteActivityStep">PromoteActivityStep</a>,
+<a href="#jenkins.io/v1.PromotePullRequestStep">PromotePullRequestStep</a>,
+<a href="#jenkins.io/v1.PromoteUpdateStep">PromoteUpdateStep</a>,
 <a href="#jenkins.io/v1.StageActivityStep">StageActivityStep</a>)
 </p>
 <p>
@@ -4111,7 +4111,7 @@ EnvironmentKindType
 (<code>string</code> alias)</p></h3>
 <p>
 (<em>Appears on:</em>
-<a href="#jenkins.io/v1.EnvironmentFilter">EnvironmentFilter</a>, 
+<a href="#jenkins.io/v1.EnvironmentFilter">EnvironmentFilter</a>,
 <a href="#jenkins.io/v1.EnvironmentSpec">EnvironmentSpec</a>)
 </p>
 <p>
@@ -4846,8 +4846,8 @@ string
 (<code>string</code> alias)</p></h3>
 <p>
 (<em>Appears on:</em>
-<a href="#jenkins.io/v1.ExtensionDefinition">ExtensionDefinition</a>, 
-<a href="#jenkins.io/v1.ExtensionExecution">ExtensionExecution</a>, 
+<a href="#jenkins.io/v1.ExtensionDefinition">ExtensionDefinition</a>,
+<a href="#jenkins.io/v1.ExtensionExecution">ExtensionExecution</a>,
 <a href="#jenkins.io/v1.ExtensionSpec">ExtensionSpec</a>)
 </p>
 <p>
@@ -4857,7 +4857,7 @@ string
 </h3>
 <p>
 (<em>Appears on:</em>
-<a href="#jenkins.io/v1.ExtensionDefinition">ExtensionDefinition</a>, 
+<a href="#jenkins.io/v1.ExtensionDefinition">ExtensionDefinition</a>,
 <a href="#jenkins.io/v1.ExtensionSpec">ExtensionSpec</a>)
 </p>
 <p>
@@ -5126,7 +5126,7 @@ string
 (<code>string</code> alias)</p></h3>
 <p>
 (<em>Appears on:</em>
-<a href="#jenkins.io/v1.ExtensionDefinition">ExtensionDefinition</a>, 
+<a href="#jenkins.io/v1.ExtensionDefinition">ExtensionDefinition</a>,
 <a href="#jenkins.io/v1.ExtensionSpec">ExtensionSpec</a>)
 </p>
 <p>
@@ -5645,8 +5645,8 @@ Kubernetes meta/v1.Time
 </h3>
 <p>
 (<em>Appears on:</em>
-<a href="#jenkins.io/v1.Periodic">Periodic</a>, 
-<a href="#jenkins.io/v1.Postsubmit">Postsubmit</a>, 
+<a href="#jenkins.io/v1.Periodic">Periodic</a>,
+<a href="#jenkins.io/v1.Postsubmit">Postsubmit</a>,
 <a href="#jenkins.io/v1.Presubmit">Presubmit</a>)
 </p>
 <p>
@@ -6676,7 +6676,7 @@ PipelineStructureStage
 </h3>
 <p>
 (<em>Appears on:</em>
-<a href="#jenkins.io/v1.PipelineStructure">PipelineStructure</a>, 
+<a href="#jenkins.io/v1.PipelineStructure">PipelineStructure</a>,
 <a href="#jenkins.io/v1.PipelineStageAndChildren">PipelineStageAndChildren</a>)
 </p>
 <p>
@@ -7676,7 +7676,7 @@ map[string]*github.com/jenkins-x/jx/pkg/apis/jenkins.io/v1.ProtectionPolicy
 </h3>
 <p>
 (<em>Appears on:</em>
-<a href="#jenkins.io/v1.GlobalProtectionPolicy">GlobalProtectionPolicy</a>, 
+<a href="#jenkins.io/v1.GlobalProtectionPolicy">GlobalProtectionPolicy</a>,
 <a href="#jenkins.io/v1.ProtectionPolicies">ProtectionPolicies</a>)
 </p>
 <p>
@@ -7905,7 +7905,7 @@ bool
 </h3>
 <p>
 (<em>Appears on:</em>
-<a href="#jenkins.io/v1.BuildPackSpec">BuildPackSpec</a>, 
+<a href="#jenkins.io/v1.BuildPackSpec">BuildPackSpec</a>,
 <a href="#jenkins.io/v1.TeamSettings">TeamSettings</a>)
 </p>
 <p>
@@ -7975,7 +7975,7 @@ string
 </h3>
 <p>
 (<em>Appears on:</em>
-<a href="#jenkins.io/v1.Postsubmit">Postsubmit</a>, 
+<a href="#jenkins.io/v1.Postsubmit">Postsubmit</a>,
 <a href="#jenkins.io/v1.Presubmit">Presubmit</a>)
 </p>
 <p>
@@ -8309,13 +8309,13 @@ bool
 </h3>
 <p>
 (<em>Appears on:</em>
-<a href="#jenkins.io/v1.BranchProtectionContextPolicy">BranchProtectionContextPolicy</a>, 
-<a href="#jenkins.io/v1.Brancher">Brancher</a>, 
-<a href="#jenkins.io/v1.ContextPolicy">ContextPolicy</a>, 
-<a href="#jenkins.io/v1.ExternalPlugin">ExternalPlugin</a>, 
-<a href="#jenkins.io/v1.Periodic">Periodic</a>, 
-<a href="#jenkins.io/v1.Query">Query</a>, 
-<a href="#jenkins.io/v1.Restrictions">Restrictions</a>, 
+<a href="#jenkins.io/v1.BranchProtectionContextPolicy">BranchProtectionContextPolicy</a>,
+<a href="#jenkins.io/v1.Brancher">Brancher</a>,
+<a href="#jenkins.io/v1.ContextPolicy">ContextPolicy</a>,
+<a href="#jenkins.io/v1.ExternalPlugin">ExternalPlugin</a>,
+<a href="#jenkins.io/v1.Periodic">Periodic</a>,
+<a href="#jenkins.io/v1.Query">Query</a>,
+<a href="#jenkins.io/v1.Restrictions">Restrictions</a>,
 <a href="#jenkins.io/v1.SchedulerSpec">SchedulerSpec</a>)
 </p>
 <p>
@@ -8401,10 +8401,10 @@ ReplaceableMapOfStringContextPolicy
 </h3>
 <p>
 (<em>Appears on:</em>
-<a href="#jenkins.io/v1.CommitStatusDetails">CommitStatusDetails</a>, 
-<a href="#jenkins.io/v1.FactSpec">FactSpec</a>, 
-<a href="#jenkins.io/v1.SourceRepositoryGroupSpec">SourceRepositoryGroupSpec</a>, 
-<a href="#jenkins.io/v1.SourceRepositorySpec">SourceRepositorySpec</a>, 
+<a href="#jenkins.io/v1.CommitStatusDetails">CommitStatusDetails</a>,
+<a href="#jenkins.io/v1.FactSpec">FactSpec</a>,
+<a href="#jenkins.io/v1.SourceRepositoryGroupSpec">SourceRepositoryGroupSpec</a>,
+<a href="#jenkins.io/v1.SourceRepositorySpec">SourceRepositorySpec</a>,
 <a href="#jenkins.io/v1.TeamSettings">TeamSettings</a>)
 </p>
 <p>
@@ -8437,7 +8437,7 @@ string
 </td>
 <td>
 <p>Kind of the referent.
-More info: <a href="https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds">https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</a></p>
+More info: <a href="https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds">https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds</a></p>
 </td>
 </tr>
 <tr>
@@ -8470,7 +8470,7 @@ More info: <a href="http://kubernetes.io/docs/user-guide/identifiers#uids">http:
 </h3>
 <p>
 (<em>Appears on:</em>
-<a href="#jenkins.io/v1.ProtectionPolicy">ProtectionPolicy</a>, 
+<a href="#jenkins.io/v1.ProtectionPolicy">ProtectionPolicy</a>,
 <a href="#jenkins.io/v1.ReviewPolicy">ReviewPolicy</a>)
 </p>
 <p>
@@ -9701,8 +9701,8 @@ This is a security mitigation to only allow testing from trusted users.</p>
 </h3>
 <p>
 (<em>Appears on:</em>
-<a href="#jenkins.io/v1.User">User</a>, 
-<a href="#jenkins.io/v1.CommitSummary">CommitSummary</a>, 
+<a href="#jenkins.io/v1.User">User</a>,
+<a href="#jenkins.io/v1.CommitSummary">CommitSummary</a>,
 <a href="#jenkins.io/v1.IssueSummary">IssueSummary</a>)
 </p>
 <p>
