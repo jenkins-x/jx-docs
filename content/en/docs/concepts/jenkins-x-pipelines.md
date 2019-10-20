@@ -95,7 +95,7 @@ We'd love to improve this UX if you fancy [helping out](/docs/contributing/).
 
 ## Editing in IDEA
 
-This should already be interested out of the box due to the Jenkins X JSON Schema being registered with [schemastore.org](http://schemastore.org/json/) so editing your `jenkins-x.yml` file in IDEA will include smart completion and validation!
+This should already be included out of the box due to the Jenkins X JSON Schema being registered with [schemastore.org](http://schemastore.org/json/) so editing your `jenkins-x.yml` file in IDEA will include smart completion and validation!
 
 We'd love to improve this UX if you fancy [helping out](/docs/contributing/).
 
