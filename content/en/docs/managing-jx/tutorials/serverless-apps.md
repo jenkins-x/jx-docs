@@ -5,7 +5,7 @@ description: Develop serverless applications with Knative
 weight: 40
 ---
 
-Serverless appications are regular applications that "scale to zero". This means when your application isn't in use - no resources at all will be used. You only pay for what you use. These applications scale up elastically to meet the workload.
+Serverless applications are regular applications that "scale to zero". This means when your application isn't in use - no resources at all will be used. You only pay for what you use. These applications scale up elastically to meet the workload.
 
 Once you have this feature enabled - all new apps you import or quickstarts you use by default will be serverless style (you can override as needed - see below). You don't have to change the way you build web apps. This is currently in a preview state (but works well), and in future most web apps will work in this fashion (and this will be the default).
 
