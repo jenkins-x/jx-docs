@@ -334,7 +334,7 @@ environments:
 kaniko: true
 storage:
   logs:
-    enabled: false
+    enabled: true
   reports:
     enabled: false
   repository:
