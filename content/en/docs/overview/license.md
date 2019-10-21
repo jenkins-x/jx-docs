@@ -156,4 +156,4 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ```
 
-Add this as a file called `apache-notice.txt` to the root of your repo
+Add this as a file called `apache-notice.txt` to the root of your repo.

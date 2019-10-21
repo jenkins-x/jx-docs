@@ -30,7 +30,7 @@ type: docs
 
 # Status Reports
 
-This section describes any specific manual work arounds you may require above and beyond changes described in the [News section](/news/) or using [jx upgrade](/commands/jx_upgrade/) to upgrade the [CLI](/commands/jx_upgrade_cli/) or [platform](/commands/jx_upgrade_platform/)
+This section describes any specific manual work arounds you may require above and beyond changes described in the [News section](/news/) or using [jx upgrade](/commands/jx_upgrade/) to upgrade the [CLI](/commands/jx_upgrade_cli/) or [platform](/commands/jx_upgrade_platform/).
 
 
 ## 25th June 2019: missing image: bitnami/monocular-api
@@ -39,7 +39,7 @@ It looks like the monocular docker images got removed today!
 
 It turns out that monocular is not an absolute requirement for Jenkins X; it works great without it.
 
-So a quick workaround to the problem is to scale down your monocular deployment
+So a quick workaround to the problem is to scale down your monocular deployment:
 
 ```sh
 kubectl scale deploy jenkins-x-monocular-api --replicas=0
@@ -61,7 +61,7 @@ So we highly recommend anyone who has created a Jenkins X installation using Kna
 
 Now the `jx` binary will warn that any attempt at using `--knative-build` when installing is deprecated.
 
-We will soon have a build pack for [Jenkinsfile runner](https://github.com/jenkinsci/jenkinsfile-runner) when using Tekton in case you need to reuse a Jenkinsfile within [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) and Tekton along with support for orchestrating `Jenkinsfile` within a [custom Jenkins server](/docs/managing-jx/common-tasks/custom-jenkins/)
+We will soon have a build pack for [Jenkinsfile runner](https://github.com/jenkinsci/jenkinsfile-runner) when using Tekton in case you need to reuse a Jenkinsfile within [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) and Tekton along with support for orchestrating `Jenkinsfile` within a [custom Jenkins server](/docs/managing-jx/common-tasks/custom-jenkins/).
 
 ## 21st May 2019: Skaffold upgrade to v0.29.0
 
@@ -76,7 +76,7 @@ In the `dev` profile, remove the following section:
     - docker: {}
 ```
 
-For more information, refer to this [PR](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/pull/50/files)
+For more information, refer to this [PR](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/pull/50/files).
 
 ## 16th April 2019: Jenkins X 2.x
 
@@ -84,7 +84,7 @@ We are pleased to announce 2.0.x of Jenkins X.
 
 We have changed some of the default CLI arguments when installing Jenkins X.
 
-* we are now deprecating the use of Knative build with Prow / Serverless Jenkins in favor of [Jenkins X Pipelines and Tekton](/docs/concepts/jenkins-x-pipelines/)
+* we are now deprecating the use of Knative build with Prow / Serverless Jenkins in favor of [Jenkins X Pipelines and Tekton](/docs/concepts/jenkins-x-pipelines/).
 * we default to using `--no-tiller`  to [disable the use of helm's tiller](/news/helm-without-tiller/). We recommend to avoid tiller. If you really still want to use it then use `--no-tiller false` on the CLI when installing Jenkins X.
 
 
@@ -159,9 +159,9 @@ But this means any existing builds or custom changes to `BuildTemplate` resource
 
 ## 5 Jan 2019: environment git repository issue
 
-There was a regression added a few weeks ago which led to new installations setting up invalid `exposecontroller` configuration in your `Staging/Production` git repositories. See the [issue and workaround](https://github.com/jenkins-x/jx/issues/2591#issuecomment-451516674)
+There was a regression added a few weeks ago which led to new installations setting up invalid `exposecontroller` configuration in your `Staging/Production` git repositories. See the [issue and workaround](https://github.com/jenkins-x/jx/issues/2591#issuecomment-451516674).
 
 Make sure that the `env/values.yaml` file for your environment git repository uses `expose:` as the key in the YAML and not `exposecontroller:` - if it uses `exposecontroller:` just edit it back to `expose:` and you should be good to go!
 
-Also we have noticed a possible regression with helm where if you have multiple `expose:` sections in your environment `env/values.yaml` it can disable the `exposecontroller` post install helm hook which can break the creation of `Ingress` resources in your environment - if you have more than one `expose:` sections please combine them into a single entry
+Also we have noticed a possible regression with helm where if you have multiple `expose:` sections in your environment `env/values.yaml` it can disable the `exposecontroller` post install helm hook which can break the creation of `Ingress` resources in your environment - if you have more than one `expose:` sections please combine them into a single entry.
 
