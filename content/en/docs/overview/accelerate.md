@@ -3,6 +3,8 @@ title: Accelerate
 linktitle: Accelerate
 description: Jenkins X uses Capabilities identified by the Accelerate book
 weight: 20
+aliases:
+  - /about/accelerate
 ---
 
 <img src="/images/accelerate.jpg" class="img-thumbnail">
