@@ -10,7 +10,7 @@ Both types are generated from the `codegen` binary which is part of the jx [repo
 
 ## Setup your development environment
 
-It's best to make changes to the Jenkins X code on your local machine. Follow the [development](../development) guide
+It's best to make changes to the Jenkins X code on your local machine. Follow the [development](../../development) guide
 to get set up.
 
 ## Writing custom resource documentation
