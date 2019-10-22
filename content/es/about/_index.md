@@ -1,7 +1,7 @@
 ---
-title: About
-linktitle: About
-description: An overview of the concepts in Jenkins X
+title: Acerca de
+linktitle: Acerca de
+description: Un resumen de los conceptos en Jenkins X
 type: docs
 menu:
   main:

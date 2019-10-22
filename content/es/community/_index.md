@@ -1,10 +1,9 @@
 ---
-title: Community
-linktitle: Community
+title: Comunidad
+linktitle: Comunidad
 menu:
-  community:
-    weight: 1
-    name: Join the community
+  main:
+    weight: 40
 ---
 
 The Jenkins X Community is like no other, we are friendly, very open to feedback, provide guidance, best practices and much more.  You can find us in various channels.
