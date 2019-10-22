@@ -211,9 +211,10 @@ You can check on which branch your are with `git branch`. You should see a list 
 #### Cross-platform Development
 
 Bear in mind when developing that the code can (and will) run on different architectures/operating systems from your own. You may develop on a *nix platform, but other users will also be using Windows. Keep other platforms in mind when developing your code, eg:
+
 * Not all platforms use the `HOME` environment variable for your home directory. Use [`user.Current`](https://golang.org/pkg/os/user/#Current)[`.HomeDir`](https://golang.org/pkg/os/user/#User) instead of looking up `$HOME` to get the user's home directory
 * Different platforms use different places for temporary directories/files. Use [`ioutil.TempDir`](https://golang.org/pkg/io/ioutil/#TempDir) instead of creating directories/files under `/tmp`
-* Be aware of path separators (*nix uses `/`, Windows uses `\`) - do not just concantenate strings when using filepaths; instead use [`filepath.Join`](https://golang.org/pkg/path/filepath/#Join) to concatenate file paths safely
+* Be aware of path separators (*nix uses `/`, Windows uses `\`) - do not just concatenate strings when using filepaths; instead use [`filepath.Join`](https://golang.org/pkg/path/filepath/#Join) to concatenate file paths safely
 * Be aware of default line endings (*nix uses `LF`, Windows uses `CRLF`)
 
 ### Push commits
