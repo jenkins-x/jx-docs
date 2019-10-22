@@ -32,6 +32,11 @@ languageCode = "zh-CN"
 weight = 2
 languageName = "中文"
 contentDir = "content/zh"
+[languages.es]
+languageCode = "es-ES"
+weight = 3
+languageName = "Español"
+contentDir = "content/es"
 
 disableKinds = ["taxonomy", "taxonomyTerm"]
 
