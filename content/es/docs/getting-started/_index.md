@@ -8,7 +8,7 @@ aliases:
   - /getting-started
 ---
 
-La forma más sencilla de comenzar es a través de los [Tutoriales de Google Cloud](/docs/managing-jx/tutorials/google-hosted/).
+La forma más sencilla de comenzar es a través de los [Tutoriales de Google Cloud](/es/docs/managing-jx/tutorials/google-hosted/).
 
 De lo contrario, primero deberá instalar la [herramienta de línea de comandos jx](/docs/getting-started/setup/install/) en su máquina.
 

@@ -1,8 +1,8 @@
 ---
-title: "Setup Jenkins X"
-linkTitle: "Setup Jenkins X"
+title: "Configurar Jenkins X"
+linkTitle: "Configurar Jenkins X"
 weight: 1
 description: >
-  How to setup Jenkins X?
+  ¿Cómo configurar Jenkins X?
 ---
 
