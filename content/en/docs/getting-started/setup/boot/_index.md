@@ -476,11 +476,11 @@ autoUpdate:
   schedule: "0 0 23 1/1 * ? *"
 ```
 
-When auto upgrades are enabled a `CronJob` is run which periodically checks for changes in the [version stream](/docs/concepts/version-stream/) or [boot configuration](https://github.com/jenkins-x/jenkins-x-boot-config). If changes are detected the [jx step boot upgrade](/commands/jx_step_boot_upgrade/) will create a Pull Request on your development git repository. Once that merges the boot configuration is upgraded and boot will be re-run inside a tekton pipeline to upgrade your installation.
+When auto upgrades are enabled a `CronJob` is run which periodically checks for changes in the [version stream](/docs/concepts/version-stream/) or [boot configuration](https://github.com/jenkins-x/jenkins-x-boot-config). If changes are detected the [jx upgrade boot](/commands/jx_upgrade_boot/) will create a Pull Request on your development git repository. Once that merges the boot configuration is upgraded and boot will be re-run inside a tekton pipeline to upgrade your installation.
 
 ### Manual upgrades
 
-You can manually run the [jx step boot upgrade](/commands/jx_step_boot_upgrade/) command at any time which if there have been changes in [version stream](/docs/concepts/version-stream/) or [boot configuration](https://github.com/jenkins-x/jenkins-x-boot-config) will create a Pull Request on your development git repository.
+You can manually run the [jx upgrade boot](/commands/jx_upgrade_boot/) command at any time which if there have been changes in [version stream](/docs/concepts/version-stream/) or [boot configuration](https://github.com/jenkins-x/jenkins-x-boot-config) will create a Pull Request on your development git repository.
 
 Once that merges the boot configuration is upgraded and boot will be re-run inside a tekton pipeline to upgrade your installation.
 
