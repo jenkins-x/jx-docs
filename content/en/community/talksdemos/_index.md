@@ -16,6 +16,8 @@ menu:
 
 * [2019-11-06 Jenkins X: Progressive Delivery for Kubernetes](https://oredev.org/line-up/carlos-sanchez) at [Oredev, Malmo](https://oredev.org) by [Carlos Sanchez](https://csanchez.org)
 
+* [2019-10-24 Jenkins X – Continuously Driving the Kloud](https://www.meetup.com/mannheim-java-usergroup/events/264585188/) at [Mannheim Java User Group (Germany))](https://www.meetup.com/mannheim-java-usergroup/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) ([Slides](http://aschemann.net/gerd/publications/jx-talk-majug-2019/))
+
 * [2019-10-22 Application modernization with Anthos and Jenkins X](https://www.meetup.com/Zurich-CI-CD/events/265073168/) by Andy Tzou and [Cosmin Cojocar](https://github.com/ccojocar)
 
 * [2019-10-17 Jenkins X, Spring Cloud & Zeebe: From Monolith to Kubernetes](https://salaboy.com/2019/10/17/jenkins-x-spring-cloud-zeebe-geecon-prague-2019/) by [Mauricio Salatino](https://salaboy.com/)
