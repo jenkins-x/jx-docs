@@ -8,12 +8,12 @@ aliases:
   - /getting-started
 ---
 
-The simplest way to get started is via the [Google Cloud Tutorials](/docs/managing-jx/tutorials/google-hosted/).
+La forma más sencilla de comenzar es a través de los [Tutoriales de Google Cloud](/docs/managing-jx/tutorials/google-hosted/).
 
-Otherwise first you will need to [get the jx command line tool](/docs/getting-started/setup/install/) locally on your machine.
+De lo contrario, primero deberá instalar la [herramienta de línea de comandos jx](/docs/getting-started/setup/install/) en su máquina.
 
-You can use the [jx command line](/commands/jx/#jx) to [create a new kubernetes cluster](/docs/getting-started/setup/create-cluster) with Jenkins X installed automatically.
+Puede utilizar la [línea de comando jx](/commands/jx/#jx) para [crear un nuevo clúster de kubernetes](/docs/getting-started/setup/create-cluster) con Jenkins X instalado automáticamente.
 
-If you already have an existing kubernetes cluster then [install Jenkins X on your kubernetes cluster](install-on-cluster).
+Si ya tiene un clúster de kubernetes existente, [instale Jenkins X en su clúster de kubernetes](/docs/managing-jx/old/install-on-cluster/).
 
-When you have a kubernetes cluster with Jenkins X installed, check out [your next steps](/docs/getting-started/next/).
+Cuando tenga un clúster kubernetes con Jenkins X instalado, consulte sus [próximos pasos](/es/docs/getting-started/next/).
