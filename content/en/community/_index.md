@@ -92,6 +92,8 @@ Our newsletter is filled with various topics and relevant content for people jus
 <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='MMERGE3';ftypes[3]='imageurl';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
 <!--End mc_embed_signup-->
 
+You can also sign up using [this link](https://us7.campaign-archive.com/home/?u=d0c128ac1f69ba2bb20742976&id=84d053b0a0). The previous newsletters are also available there.
+
 ### Reporting Issues
 
 Got any thoughts, ideas or feedback then please drop them in a [GitHub Issue](https://github.com/jenkins-x/jx/issues/new)
