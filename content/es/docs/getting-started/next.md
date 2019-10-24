@@ -1,22 +1,22 @@
 ---
-title: What's next?
-linktitle: What's next?
-description: What to do after Jenkins X is installed on a Kubernetes cluster
+title: ¿Que sigue?
+linktitle: ¿Que sigue?
+description: Qué hacer después de instalar Jenkins X en un clúster de Kubernetes
 weight: 6
 ---
 
-OK so you have [got the jx CLI](/getting-started/install/) and you either
+Perfecto, entonces ya [tienes la CLI jx](/getting-started/install/) y también has logrado realizar al menos uno de estos dos objetivos:
 
-* [created a Kubernetes cluster with Jenkins X](/getting-started/create-cluster/)
-* [installed Jenkins X on an existing kubernetes cluster](/getting-started/install-on-cluster/)
+* [crear un clúster de Kubernetes con Jenkins X](/getting-started/create-cluster/)
+* [instalar Jenkins X en un clúster de Kubernete existente](/getting-started/install-on-cluster/)
 
-So whats next?
+¿Qué es lo siguiente?
 
-Well the [Using Jenkins X](/docs/using-jx/) section contains the next steps you may want to try out, such as
+Bueno, la sección [Utilizando de Jenkins X](/docs/using-jx/) contiene los siguientes pasos que puede probar, como por ejemplo:
 
-* [create a new Spring Boot application and import it into Jenkins X](/docs/using-jx/common-tasks/create-spring/)
-* [create a new quickstart and import it into Jenkins X](/docs/getting-started/first-project/create-quickstart/)
-* [import existing source code into Jenkins X](/docs/using-jx/common-tasks/import/)
-* [browsing](/docs/using-jx/common-tasks/browsing/) for browsing pipelines, builds, apps and activity
+* [cree una nueva aplicación Spring Boot e impórtela a Jenkins X](/docs/using-jx/creating/create-spring/)
+* [cree un nuevo inicio e impórtelo a Jenkins X](/docs/getting-started/first-project/create-quickstart/)
+* [importe un proyecto existente (código fuente) en Jenkins X](/docs/using-jx/creating/import/)
+* [navegue](/docs/using-jx/developing/browsing/) por canales, compilaciones, aplicaciones y actividades
 
-You may also want to check out the [various demonstrations of what you can do with Jenkins X](/demos/)
+También puede consultar las [diversas demostraciones de lo que puede hacer con Jenkins X](/docs/getting-started/demos-talks-posts/).
