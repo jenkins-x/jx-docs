@@ -10,7 +10,7 @@ menu:
 ---
 * [2019-12-05 Progressive Delivery with Jenkins X](https://devopsworldjenkinsworld2019lisbo.sched.com/event/VDQ0/progressive-delivery-with-jenkins-x) at [Devops World, Lisboa](https://www.cloudbees.com/devops-world) by [Carlos Sanchez](https://csanchez.org)
 
-* [2019-12-02/3/4/5 GitOps by courtesy of Jenkins-X](https://devopsconference.de/kubernetes-ecosystem/gitops-by-courtesy-of-jenkins-x/) at [DevOpsCon 2019, München (Germany)](https://devopsconference.de/) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
+* [2019-12-04 GitOps by courtesy of Jenkins-X](https://devopsconference.de/kubernetes-ecosystem/gitops-by-courtesy-of-jenkins-x/) at [DevOpsCon 2019, München (Germany)](https://devopsconference.de/) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
 
 * [2019-11-13 Progressive Delivery: Continuous Delivery the Right Way](https://cfp.devoxx.ma/2019/speaker/carlos_sanchez) at [Devoxx Morocco, Agadir](https://www.devoxx.ma/) by [Carlos Sanchez](https://csanchez.org)
 
