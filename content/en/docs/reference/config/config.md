@@ -16,8 +16,6 @@ weight: 9
 Resource Types:
 <ul><li>
 <a href="#config.jenkins.io/v1.ProjectConfig">ProjectConfig</a>
-</li><li>
-<a href="#config.jenkins.io/v1.RequirementsConfig">RequirementsConfig</a>
 </li></ul>
 <h3 id="config.jenkins.io/v1.ProjectConfig">ProjectConfig
 </h3>
@@ -192,214 +190,6 @@ string
 </em>
 </td>
 <td>
-</td>
-</tr>
-</tbody>
-</table>
-<h3 id="config.jenkins.io/v1.RequirementsConfig">RequirementsConfig
-</h3>
-<p>
-<p>RequirementsConfig contains the logical installation requirements in the <code>jx-requirements.yml</code> file when
-installing, configuring or upgrading Jenkins X via <code>jx boot</code></p>
-</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code>apiVersion</code></br>
-string</td>
-<td>
-<code>
-config.jenkins.io/v1
-</code>
-</td>
-</tr>
-<tr>
-<td>
-<code>kind</code></br>
-string
-</td>
-<td><code>RequirementsConfig</code></td>
-</tr>
-<tr>
-<td>
-<code>autoUpdate</code></br>
-<em>
-<a href="#config.jenkins.io/v1.AutoUpdateConfig">
-AutoUpdateConfig
-</a>
-</em>
-</td>
-<td>
-<p>AutoUpdate contains auto update config</p>
-</td>
-</tr>
-<tr>
-<td>
-<code>bootConfigURL</code></br>
-<em>
-string
-</em>
-</td>
-<td>
-<p>BootConfigURL contains the url to which the dev environment is associated with</p>
-</td>
-</tr>
-<tr>
-<td>
-<code>cluster</code></br>
-<em>
-<a href="#config.jenkins.io/v1.ClusterConfig">
-ClusterConfig
-</a>
-</em>
-</td>
-<td>
-<p>Cluster contains cluster specific requirements</p>
-</td>
-</tr>
-<tr>
-<td>
-<code>environments</code></br>
-<em>
-<a href="#config.jenkins.io/v1.EnvironmentConfig">
-[]EnvironmentConfig
-</a>
-</em>
-</td>
-<td>
-<p>Environments the requirements for the environments</p>
-</td>
-</tr>
-<tr>
-<td>
-<code>gitops</code></br>
-<em>
-bool
-</em>
-</td>
-<td>
-<p>GitOps if enabled we will setup a webhook in the boot configuration git repository so that we can
-re-run &lsquo;jx boot&rsquo; when changes merge to the master branch</p>
-</td>
-</tr>
-<tr>
-<td>
-<code>kaniko</code></br>
-<em>
-bool
-</em>
-</td>
-<td>
-<p>Kaniko whether to enable kaniko for building docker images</p>
-</td>
-</tr>
-<tr>
-<td>
-<code>ingress</code></br>
-<em>
-<a href="#config.jenkins.io/v1.IngressConfig">
-IngressConfig
-</a>
-</em>
-</td>
-<td>
-<p>Ingress contains ingress specific requirements</p>
-</td>
-</tr>
-<tr>
-<td>
-<code>secretStorage</code></br>
-<em>
-<a href="#config.jenkins.io/v1.SecretStorageType">
-SecretStorageType
-</a>
-</em>
-</td>
-<td>
-<p>SecretStorage how should we store secrets for the cluster</p>
-</td>
-</tr>
-<tr>
-<td>
-<code>storage</code></br>
-<em>
-<a href="#config.jenkins.io/v1.StorageConfig">
-StorageConfig
-</a>
-</em>
-</td>
-<td>
-<p>Storage contains storage requirements</p>
-</td>
-</tr>
-<tr>
-<td>
-<code>terraform</code></br>
-<em>
-bool
-</em>
-</td>
-<td>
-<p>Terraform specifies if  we are managing the kubernetes cluster and cloud resources with Terraform</p>
-</td>
-</tr>
-<tr>
-<td>
-<code>vault</code></br>
-<em>
-<a href="#config.jenkins.io/v1.VaultConfig">
-VaultConfig
-</a>
-</em>
-</td>
-<td>
-<p>Vault the configuration for vault</p>
-</td>
-</tr>
-<tr>
-<td>
-<code>velero</code></br>
-<em>
-<a href="#config.jenkins.io/v1.VeleroConfig">
-VeleroConfig
-</a>
-</em>
-</td>
-<td>
-<p>Velero the configuration for running velero for backing up the cluster resources</p>
-</td>
-</tr>
-<tr>
-<td>
-<code>versionStream</code></br>
-<em>
-<a href="#config.jenkins.io/v1.VersionStreamConfig">
-VersionStreamConfig
-</a>
-</em>
-</td>
-<td>
-<p>VersionStream contains version stream info</p>
-</td>
-</tr>
-<tr>
-<td>
-<code>webhook</code></br>
-<em>
-<a href="#config.jenkins.io/v1.WebhookType">
-WebhookType
-</a>
-</em>
-</td>
-<td>
-<p>Webhook specifies what engine we should use for webhooks</p>
 </td>
 </tr>
 </tbody>
@@ -1892,6 +1682,58 @@ string
 </tr>
 </tbody>
 </table>
+<h3 id="config.jenkins.io/v1.GithubAppConfig">GithubAppConfig
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#config.jenkins.io/v1.RequirementsConfig">RequirementsConfig</a>)
+</p>
+<p>
+<p>GithubAppConfig contains github app config</p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>enabled</code></br>
+<em>
+bool
+</em>
+</td>
+<td>
+<p>Enabled this determines whether this install should use the jenkins x github app for access tokens</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>schedule</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Schedule cron of the github app token refresher</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>url</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>URL contains a URL to the github app</p>
+</td>
+</tr>
+</tbody>
+</table>
 <h3 id="config.jenkins.io/v1.Grafana">Grafana
 </h3>
 <p>
@@ -2190,8 +2032,8 @@ string
 </h3>
 <p>
 (<em>Appears on:</em>
-<a href="#config.jenkins.io/v1.RequirementsConfig">RequirementsConfig</a>, 
-<a href="#config.jenkins.io/v1.EnvironmentConfig">EnvironmentConfig</a>)
+<a href="#config.jenkins.io/v1.EnvironmentConfig">EnvironmentConfig</a>, 
+<a href="#config.jenkins.io/v1.RequirementsConfig">RequirementsConfig</a>)
 </p>
 <p>
 <p>IngressConfig contains dns specific requirements</p>
@@ -3747,6 +3589,210 @@ string
 </tr>
 </tbody>
 </table>
+<h3 id="config.jenkins.io/v1.RequirementsConfig">RequirementsConfig
+</h3>
+<p>
+<p>RequirementsConfig contains the logical installation requirements in the <code>jx-requirements.yml</code> file when
+installing, configuring or upgrading Jenkins X via <code>jx boot</code></p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>autoUpdate</code></br>
+<em>
+<a href="#config.jenkins.io/v1.AutoUpdateConfig">
+AutoUpdateConfig
+</a>
+</em>
+</td>
+<td>
+<p>AutoUpdate contains auto update config</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>bootConfigURL</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>BootConfigURL contains the url to which the dev environment is associated with</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>cluster</code></br>
+<em>
+<a href="#config.jenkins.io/v1.ClusterConfig">
+ClusterConfig
+</a>
+</em>
+</td>
+<td>
+<p>Cluster contains cluster specific requirements</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>environments</code></br>
+<em>
+<a href="#config.jenkins.io/v1.EnvironmentConfig">
+[]EnvironmentConfig
+</a>
+</em>
+</td>
+<td>
+<p>Environments the requirements for the environments</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>githubApp</code></br>
+<em>
+<a href="#config.jenkins.io/v1.GithubAppConfig">
+GithubAppConfig
+</a>
+</em>
+</td>
+<td>
+<p>GithubApp contains github app config</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>gitops</code></br>
+<em>
+bool
+</em>
+</td>
+<td>
+<p>GitOps if enabled we will setup a webhook in the boot configuration git repository so that we can
+re-run &lsquo;jx boot&rsquo; when changes merge to the master branch</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>kaniko</code></br>
+<em>
+bool
+</em>
+</td>
+<td>
+<p>Kaniko whether to enable kaniko for building docker images</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>ingress</code></br>
+<em>
+<a href="#config.jenkins.io/v1.IngressConfig">
+IngressConfig
+</a>
+</em>
+</td>
+<td>
+<p>Ingress contains ingress specific requirements</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>secretStorage</code></br>
+<em>
+<a href="#config.jenkins.io/v1.SecretStorageType">
+SecretStorageType
+</a>
+</em>
+</td>
+<td>
+<p>SecretStorage how should we store secrets for the cluster</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>storage</code></br>
+<em>
+<a href="#config.jenkins.io/v1.StorageConfig">
+StorageConfig
+</a>
+</em>
+</td>
+<td>
+<p>Storage contains storage requirements</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>terraform</code></br>
+<em>
+bool
+</em>
+</td>
+<td>
+<p>Terraform specifies if  we are managing the kubernetes cluster and cloud resources with Terraform</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>vault</code></br>
+<em>
+<a href="#config.jenkins.io/v1.VaultConfig">
+VaultConfig
+</a>
+</em>
+</td>
+<td>
+<p>Vault the configuration for vault</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>velero</code></br>
+<em>
+<a href="#config.jenkins.io/v1.VeleroConfig">
+VeleroConfig
+</a>
+</em>
+</td>
+<td>
+<p>Velero the configuration for running velero for backing up the cluster resources</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>versionStream</code></br>
+<em>
+<a href="#config.jenkins.io/v1.VersionStreamConfig">
+VersionStreamConfig
+</a>
+</em>
+</td>
+<td>
+<p>VersionStream contains version stream info</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>webhook</code></br>
+<em>
+<a href="#config.jenkins.io/v1.WebhookType">
+WebhookType
+</a>
+</em>
+</td>
+<td>
+<p>Webhook specifies what engine we should use for webhooks</p>
+</td>
+</tr>
+</tbody>
+</table>
 <h3 id="config.jenkins.io/v1.RootOptions">RootOptions
 </h3>
 <p>
@@ -4793,5 +4839,5 @@ string
 <hr/>
 <p><em>
 Generated with <code>gen-crd-api-reference-docs</code>
-on git commit <code>a6773c72f</code>.
+on git commit <code>1d501d3b5</code>.
 </em></p>
