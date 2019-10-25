@@ -128,6 +128,21 @@
       "additionalProperties": false,
       "type": "object"
     },
+    "GithubAppConfig": {
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "schedule": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
     "IngressConfig": {
       "properties": {
         "cloud_dns_secret_name": {
@@ -172,6 +187,10 @@
             "$ref": "#/definitions/EnvironmentConfig"
           },
           "type": "array"
+        },
+        "githubApp": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/GithubAppConfig"
         },
         "gitops": {
           "type": "boolean"
