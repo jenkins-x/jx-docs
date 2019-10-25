@@ -53,6 +53,10 @@
         "gitServer": {
           "type": "string"
         },
+        "gke": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/GKEConfig"
+        },
         "helmMajorVersion": {
           "type": "string"
         },
@@ -109,6 +113,15 @@
           "type": "boolean"
         },
         "repository": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "GKEConfig": {
+      "properties": {
+        "projectNumber": {
           "type": "string"
         }
       },
