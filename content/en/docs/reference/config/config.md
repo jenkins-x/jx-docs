@@ -1139,6 +1139,19 @@ AzureConfig
 </tr>
 <tr>
 <td>
+<code>gke</code></br>
+<em>
+<a href="#config.jenkins.io/v1.GKEConfig">
+GKEConfig
+</a>
+</em>
+</td>
+<td>
+<p>GKEConfig the gke specific configuration</p>
+</td>
+</tr>
+<tr>
+<td>
 <code>environmentGitOwner</code></br>
 <em>
 string
@@ -1845,6 +1858,36 @@ string
 </em>
 </td>
 <td>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="config.jenkins.io/v1.GKEConfig">GKEConfig
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#config.jenkins.io/v1.ClusterConfig">ClusterConfig</a>)
+</p>
+<p>
+<p>GKEConfig contains GKE specific requirements</p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>projectNumber</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>ProjectNumber the unique project number GKE assigns to a project (required for workload identity).</p>
 </td>
 </tr>
 </tbody>
@@ -4750,5 +4793,5 @@ string
 <hr/>
 <p><em>
 Generated with <code>gen-crd-api-reference-docs</code>
-on git commit <code>422d550fc</code>.
+on git commit <code>a6773c72f</code>.
 </em></p>
