@@ -40,8 +40,12 @@ Once you have chosen the project to create and given it a name the following is 
   * `Dockerfile` to build your application as a docker image
   * `Jenkinsfile` to implement the CI / CD pipeline
   * Helm chart to run your application inside Kubernetes
-* register a webhook on the remote git repository to your teams Jenkins
-* add the git repository to your teams Jenkins
+* if you are using Jenkins X Pipelines and tekton then:
+  * a webhook is registered on the remote git repository which triggers prow/lighthouse to trigger a tekton pipeline
+  * add the repository to the prow configuration
+* if you are using a Jenkins Server then:  
+  * a webhook is registered on the remote git repository which triggers a pipeline in Jenkins
+  * create a multi-branch project in your Jenkins server
 * trigger the first pipeline
 
 ### How do quickstarts work?
