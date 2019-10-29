@@ -1,5 +1,5 @@
 ---
-date: 2019-10-29T13:37:53Z
+date: 2019-10-29T17:41:34Z
 title: "jx step wait-for-chart"
 slug: jx_step_wait-for-chart
 url: /commands/jx_step_wait-for-chart/
