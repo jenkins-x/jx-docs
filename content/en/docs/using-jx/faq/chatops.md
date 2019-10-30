@@ -47,6 +47,8 @@ Then Jenkins X will invoke each context on demand via `/test mycontext` or autom
 
 You can see how we define lots of [parallel testing contexts in the version stream here](https://github.com/jenkins-x/environment-tekton-weasel-dev/blob/f377a72498282de9ee49b807b4d5ba74321a4fab/env/templates/jx-versions-scheduler.yaml#L18) which all run in parallel and report their status on each pull request on the [version stream](/docs/concepts/version-stream/)
 
+See also [How do I map SourceRepository to a custom Scheduler?](/docs/managing-jx/faq/boot/#how-do-i-map-sourcerepository-to-a-custom-scheduler)
+
 ## What does hook do?
 
 `hook` is the name of the microservice in [Prow](/docs/reference/components/prow/) and the http endpoint in [Lighthouse](/architecture/lighthouse/) which listens to webhooks coming in from your git provider which then gets processed as either a ChatOps command or a trigger of a pipeline.
