@@ -1,5 +1,5 @@
 ---
-date: 2019-10-30T01:43:27Z
+date: 2019-10-30T19:57:15Z
 title: "jx create addon flagger"
 slug: jx_create_addon_flagger
 url: /commands/jx_create_addon_flagger/
