@@ -46,3 +46,6 @@ If its in the development environment (the `jx` namespace by default) then `env/
 
 Though if you want our chart to be in another namespace then we use the convention of adding a folder in the `system` directory in the boot configuration (e.g. like we do for ingress, cert manager, velero, service mesh etc). So make a new folder in `system` and add the `jx step helm apply` step in the pipeline in `jenkins-x.yml` like we do for `cert-manager`, `nginx`, `velero` etc.
 
+## How do I disable the ingress controller?
+
+If you already have your own ingress controller and do not want `jx boot` to install another one you can just delete the `install-nginx-controller` step in your dev environment git repository. e.g. [remove this step](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jenkins-x.yml#L85-L99)
