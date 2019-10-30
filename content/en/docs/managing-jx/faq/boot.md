@@ -48,4 +48,4 @@ Though if you want our chart to be in another namespace then we use the conventi
 
 ## How do I disable the ingress controller?
 
-If you already have your own ingress controller and do not want `jx boot` to install another one you can just delete the `install-nginx-controller` step in your dev environment git repository. e.g. [remove this step](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jenkins-x.yml#L85-L99)
+If you already have your own ingress controller and do not want `jx boot` to install another one you can just delete the `install-nginx-controller` step in your dev environment git repository. e.g. [remove this step](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jenkins-x.yml#L85-L99) from the `jenkins-x.yml` in your dev environment git repository
