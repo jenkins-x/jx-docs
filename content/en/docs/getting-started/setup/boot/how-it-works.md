@@ -33,11 +33,11 @@ The boot process is configured using helm style configuration in `values.yaml` f
 
 ### Parameters file
 
-We define a [env/parameters.yaml](https://github.com/jstrachan/environment-simple-tekton/blob/master/env/parameters.yaml) file which defines all the parameters either checked in or loaded from Vault or a local file system secrets location.
+We define a [env/parameters.yaml](https://github.com/jenkins-x/environment-tekton-weasel-dev/blob/master/env/parameters.yaml) file which defines all the parameters either checked in or loaded from Vault or a local file system secrets location.
 
 #### Injecting secrets into the parameters
 
-If you look at the current [env/parameters.yaml](https://github.com/jstrachan/environment-simple-tekton/blob/master/env/parameters.yaml) file you will see some values inlined and others use URIs of the form `local:my-cluster-folder/nameofSecret/key`. This currently supports 2 schemes:
+If you look at the current [env/parameters.yaml](https://github.com/jenkins-x/environment-tekton-weasel-dev/blob/master/env/parameters.yaml) file you will see some values inlined and others use URIs of the form `local:my-cluster-folder/nameofSecret/key`. This currently supports 2 schemes:
 
 * `vault:` to load from a path + key from Vault
 * `local:` to load from a key in a YAML file at `~/.jx/localSecrets/$path.yml`
