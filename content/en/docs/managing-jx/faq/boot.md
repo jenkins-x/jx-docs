@@ -37,6 +37,12 @@ then modify the YAML to suit, changing the names of the resources to avoid clash
 
 See how to update your [boot configuration with the latest SourceRepository resources](/docs/getting-started/setup/boot/how-it-works/#source-repositories)
 
+## How do I map SourceRepository to a custom Scheduler
+
+You need to map your `SourceRepository` to a `Scheduler` via either specifying `--scheduler` when you `jx create quickstart / jx import` your repository or modifying the `SourceRepository` CRD's `spec.scheduler.name` in your development git repository or specifying a different default scheduler on the `dev environment.spec.teamSettings.defaultScheduler.name` then the next time the prow configuration is generated (on `jx create quickstart / jx import / jx boot` it'll update the prow config to use your scheduler
+
+See also [How do I add multiple parallel pipelines to a project?](/docs/using-jx/faq/chatops/#how-do-i-add-multiple-parallel-pipelines-to-a-project)
+
 ## How do I add more charts to Jenkins X?
 
 It depends on which namespace you want the charts to be installed.
@@ -45,4 +51,8 @@ If its in the development environment (the `jx` namespace by default) then `env/
 
 
 Though if you want our chart to be in another namespace then we use the convention of adding a folder in the `system` directory in the boot configuration (e.g. like we do for ingress, cert manager, velero, service mesh etc). So make a new folder in `system` and add the `jx step helm apply` step in the pipeline in `jenkins-x.yml` like we do for `cert-manager`, `nginx`, `velero` etc.
+
+## How do I disable the ingress controller?
+
+If you already have your own ingress controller and do not want `jx boot` to install another one you can just delete the `install-nginx-controller` step in your dev environment git repository. e.g. [remove this step](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jenkins-x.yml#L85-L99) from the `jenkins-x.yml` in your dev environment git repository
 
