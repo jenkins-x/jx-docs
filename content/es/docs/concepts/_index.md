@@ -7,90 +7,90 @@ aliases:
   - /about/concepts
 ---
 
-Jenkins X is designed to make it simple for developers to work to DevOps principles and best practices. The approaches taken
-are based on the comprehensive research done for the book [*ACCELERATE: Building and Scaling High Performing Technology Organsiations*](https://goo.gl/vZ8BFN). You can read why we use [Accelerate](../accelerate) for the principals behind Jenkins X.
+Jenkins X está diseñado para simplificar el trabajo de los desarrolladores según los principios y las mejores prácticas de DevOps. Los enfoques adoptados se basan en la investigación exhaustiva realizada para el libro [*ACCELERATE: Building and Scaling High Performing Technology Organsiations*](https://goo.gl/vZ8BFN). Puedes leer por qué usamos [Accelerate](../overview/accelerate) como base para los principios de Jenkins X.
 
-
-## Principles
+## Principios
 ---
-*"DevOps is a set of practices intended to reduce the time between committing a change to a system and the change being placed into normal production, while ensuring high quality."*
 
-The goals of DevOps projects are:
+*"DevOps es un conjunto de prácticas destinadas a reducir el tiempo entre la confirmación de un cambio en un sistema y el momento en que se aplica en producción, al tiempo que garantiza una alta calidad."*
 
-* Faster time to market
-* Improved deployment frequency
-* Shorter time between fixes
-* Lower failure rate of releases
-* Faster Mean Time To Recovery
+Los objetivos de los proyectos DevOps son:
 
-High performing teams should be able to deploy multiple times per day compared to the industry average that falls between once per week and once per month. 
+* Rápidos tiempos de comercialización
+* Mejoras en la frecuencia de despliegues
+* Disminución de tiempo entre correcciones
+* Disminución del índice de errores por liberaciones
+* Aumento del Tiempo Medio de recuperación
 
-The lead time for code to migrate from 'code committed' to 'code in production' should be less than one hour and the change failure rate should be less than 15%, compared to an average of between 31-45%.
+Los equipos de alto rendimiento deberían poder desplegarse varias veces al día en comparación con el promedio de la industria que cae entre una vez por semana y una vez por mes.
 
-The Mean Time To Recover from a failure should also be less than one hour. 
+El tiempo de espera para que el código migre de 'código comprometido' a 'código en producción' debe ser inferior a una hora y la tasa de falla de cambio debe ser inferior al 15%, en comparación con un promedio de entre 31 y 45%.
 
-Jenkins X has been designed from first principles to allow teams to apply DevOps best practices to hit top-of-industry performance goals. 
+El tiempo medio para recuperarse de una falla también debe ser inferior a una hora.
 
-## Practices
+Jenkins X ha sido diseñado desde los primeros principios para permitir que los equipos apliquen las mejores prácticas de DevOps para alcanzar los objetivos de rendimiento más importantes de la industria.
+
+## Prácticas
 ---
-The following best practices are considered key to operating a successful DevOps approach:
+Las siguientes mejores prácticas son consideradas clave para manjar una estrategia exitosa de DevOps:
 
-* Loosely-coupled Architectures
-* Self-service Configuration
-* Automated Provisioning
-* Continuous Build / Integration and Delivery
-* Automated Release Management
-* Incremental Testing
-* Infrastructure Configuration as Code
-* Comprehensive configuration management
-* Trunk based development and feature flags
+* Arquitectura con Bajo Acoplamiento
+* Auto-servicio de Configuración
+* Abastecimiento Automático
+* Construcción, Integración y Entrega Continuas
+* Gestión Automática de Liberaciones
+* Pruebas Incrementales
+* Configuración de Infraestructura como Código
+* Gestión de la Configuración Integral
+* Desarrollo basado en un troncos/bases y características con marcas
 
-Jenkins X brings together a number of familiar methodologies and components into an integrated approach that minimizes complexity.
+Jenkins X reúne una serie de metodologías y componentes ya existentes en un enfoque integrado que minimiza la complejidad.
 
-## Architecture
+## Arquitectura
 
-Jenkins X builds upon the DevOps model of loosely-coupled architectures and is designed to support you in deploying large numbers of distributed microservices in a repeatable and manageable fashion, across multiple teams.
+Jenkins X se basa en el modelo DevOps de arquitecturas con bajo acoplamiento y está diseñado para ayudar a desplegar grandes cantidades de microservicios distribuidos de manera repetible y manejable a lo largo de múltiples equipos.
 
 <img src="/images/jx-arch.png" class="img-thumbnail">
 
-### Conceptual model
+### Modelo conceptual
 
 <img src="/images/model.png" class="img-thumbnail">
 
-## Building Blocks
+## Construyendo Bloques
 
-Jenkins X builds upon the following core components:  
-  
+Jenkins X se basa en los siguientes principales componentes:
+
 ### Kubernetes & Docker
 ---
-At the heart of the system is Kubernetes, which has become the de facto virtual infrastructure platform for DevOps. Every major Cloud provider now offers Kubernetes infrastructure on demand and the platform may also be installed in-house on private infrastructure, if required. Test environments may also be created on local development hardware using the Minikube installer.
 
-Functionally, the Kubernetes platform extends the basic Containerization principles provided by Docker to span across multiple physical Nodes. 
+En el corazón del sistema está Kubernetes, que se ha convertido en la plataforma de infraestructura virtual de facto para DevOps. Todos los principales proveedores de Cloud ahora ofrecen Kubernetes como servicio bajo demanda y la plataforma también se puede instalar internamente en una infraestructura privada, si es necesario. Los entornos de prueba también se pueden crear en el hardware de desarrollo local utilizando el instalador de Minikube.
 
-In brief, Kubernetes provides a homogeneous virtual infrastructure that can be scaled dynamically by adding or removing Nodes. Each Node participates in a single large flat private virtual network space. 
+Funcionalmente, la plataforma Kubernetes extiende los principios básicos de los Contenedores proporcionados por Docker para abarcar múltiples Nodos físicos.
 
-The unit of deployment in Kubernetes is the Pod, which comprises one or more Docker containers and some meta-data. All containers within a Pod share the same virtual IP address and port space. Deployments within Kubernetes are declarative, so the user specifies the number of instances of a given version of a Pod to be deployed and Kubernetes calculates the actions required to get from the current state to the desired state by deploying or deleting Pods across Nodes. The decision as to where specific instances of Pods will be instantiated is influenced by available resources, desired resources and label-matching. Once deployed, Kubernetes undertakes to ensure that the desired number of Pods of each type remain operational by performing periodic health checks and terminating and replacing non-responsive Pods.
+En resumen, Kubernetes proporciona una infraestructura virtual homogénea que se puede escalar dinámicamente agregando o eliminando nodos. Cada nodo participa en un único espacio grande de red virtual privada plana.
 
-To impose some structure, Kubernetes allows for the creation of virtual Namespaces which can be used to separate Pods logically, and to potentially associate groups of Pods with specific resources. Resources in a Namespace can share a single security policy, for example. Resource names are required to be unique within a Namespace but may be reused across Namespaces.
+La unidad de despliegue en Kubernetes es el Pod, que comprende uno o más contenedores Docker y algunos metadatos. Todos los contenedores dentro de un Pod comparten la misma dirección IP virtual y espacio de puerto. Los despliegues dentro de Kubernetes son declarativos, por lo que el usuario especifica el número de instancias de una versión determinada de un Pod que se desea desplegar y Kubernetes calcula las acciones necesarias para pasar del estado actual al estado deseado mediante el despliegue o eliminación de Pods en todos los nodos. La decisión de dónde se colocar cada instancia de Pods está influenciada por los recursos disponibles, los recursos deseados y la coincidencia de etiquetas. Una vez desplegados, Kubernetes se compromete a garantizar que el número deseado de Pods de cada tipo permanezca operativo realizando controles de estado periódicos y finalizando/reemplazando los Pods que no responden.
 
-In the Jenkins X model, a Pod equates to a deployed instance of a Microservice (in most cases). Where horizontal scaling of the Microservice is required, Kubernetes allows multiple identical instances of a given Pod to be deployed, each with its own virtual IP address. These can be aggregated into a single virtual endpoint known as a Service which has a unique and static IP address and a local DNS entry that matches the Service name. Calls to the Service are dynamically remapped to the IP of one of the healthy Pod instances on a random basis. Services can also be used to remap ports. Within the Kubernetes virtual network, services can be referred to with a fully qualified domain name of the form: `<service-name>.<namespace-name>.svc.cluster.local` which may be shortened to `<service-name>.<namespace-name>` or just `<service-name>` in the case of services which fall within the same namespace. Hence, a RESTful service called 'payments' deployed in a namespace called 'finance' could be referred to in code via `http://payments.finance.svc.cluster.local`, `http://payments.finance` or just `http://payments`, dependent upon the location of the calling code.
+Para imponer cierta estructura, Kubernetes permite la creación de espacios de nombres virtuales que se pueden utilizar para separar los pods lógicamente y para asociar potencialmente grupos de pods con recursos específicos. Los recursos en un espacio de nombres pueden compartir una política de seguridad única, por ejemplo. Se requiere que los nombres de recursos sean únicos dentro de un espacio de nombres, pero se pueden reutilizar en espacios de nombres.
 
-To access Services from outside the local network, Kubernetes requires the creation of an Ingress for each Service. The most common form of this utilizes one or more load balancers with static IP addresses, which sit outside the Kubernetes virtual infrastructure and route network requests to mapped internal Services. By creating a wildcard external DNS entry for the static IP address of the load balancer, it becomes possible to map services to external fully-qualified domain names. For example, if our load balancer is mapped to `*.jenkins-x.io` then our payments service could be exposed as `http://payments.finance.jenkins-x.io`.
+En el modelo Jenkins X, un Pod equivale a una instancia desplegada de un Microservicio (en la mayoría de los casos). Cuando se requiere el escalado horizontal del Microservicio, Kubernetes permite que se desplieguen múltiples instancias idénticas de un Pod determinado, cada una con su propia dirección IP virtual. Estos se pueden agregar en un único punto final virtual conocido como Servicio que tiene una dirección IP única y estática y una entrada DNS local que coincide con el nombre del Servicio. Las llamadas al Servicio se reasignan dinámicamente a la IP de una de las instancias de Pod saludables de forma aleatoria. Los servicios también se pueden usar para reasignar puertos. Dentro de la red virtual de Kubernetes, se puede hacer referencia a los servicios con un nombre de dominio completo en este formato: `<service-name>.<namespace-name>.svc.cluster.local`, que se puede acortar a `<service-name>.<namespace-name>` o simplemente `<service-name>` en el caso de servicios que se encuentran dentro del mismo espacio de nombres. Por lo tanto, un servicio RESTful llamado 'payments' desplegado en un espacio de nombres llamado 'finance' podría referirse en código a través de `http://payments.finance.svc.cluster.local`, `http://payments.finance` o simplemente `http://payments`, dependiendo de la ubicación del código donde se hace la llamada.
 
-Kubernetes represents a powerful and constantly improving platform for deploying services at massive scale, but is also complex to understand and can be difficult to configure correctly. Jenkins X brings to Kubernetes a set of default conventions and some simplified tooling, optimized for the purposes of DevOps and the management of loosely-coupled services. 
+Para acceder a los Servicios desde fuera de la red local, Kubernetes necesita la creación de un Ingress para cada Servicio. La forma más común de hacerlo es utilizando uno o más balanceadores de carga con direcciones IP estáticas, que se encuentran fuera de la infraestructura virtual de Kubernetes y redirigen las solicitudes de red a los servicios internos asignados. Al crear una entrada DNS externa para la dirección IP estática del balanceador de carga, es posible asignar servicios a nombres de dominio externos correctamente verificados. Por ejemplo, si nuestro balanceador de carga está asignado a `*.jenkins-x.io`, nuestro servicio de 'payments' podría quedar expuesto como `http://payments.finance.jenkins-x.io`.
 
-The `jx` command line tool provides simple ways to perform common operations upon Kubernetes instances like viewing logs and connecting to container instances. In addition, Jenkins X extends the Kubernetes Namespace convention to create Environments which may be chained together to form a promotion hierarchy for the release pipeline. 
+Kubernetes representa una plataforma poderosa en constante mejora para desplegar servicios a gran escala, pero también es compleja de entender y puede ser difícil de configurar correctamente. Jenkins X trae a Kubernetes un conjunto de acuerdos predeterminados y algunas herramientas simplificadas con el objetivo de optimizar los propósitos de DevOps y de gestionar los servicios de bajo-acoplamiento.
 
-A Jenkins X Environment can represent a virtual infrastructure environment such as Dev, Staging, Production etc for a given code team. Promotion rules between Environments can be defined so that releases may be moved automatically or manually through the pipeline. Each Environment is managed following the GitOps methodology - the desired state of an Environment is maintained in a Git repository and committing or rolling back changes to the repository triggers an associated change of state in the given Environment in Kubernetes.
+La herramienta de línea de comandos `jx` proporciona una forma simple de realizar operaciones comunes en instancias de Kubernetes, como ver registros y conectarse a instancias de contenedor. Además, Jenkins X amplía la convención de Kubernetes Namespace para crear entornos (Environments) que se pueden encadenar entre sí y formar una jerarquía de promoción en los flujos de liberación.
 
-Kubernetes clusters can be created directly using the `jx create cluster` command, making it simple to reproduce clusters in the event of a failure. Similarly, the Jenkins X platform can be upgraded on an existing cluster using `jx upgrade platform`. Jenkins X supports working with multiple Kubernetes clusters through `jx context` and switching between multiple Environments within a cluster with `jx environment`.
+Un Entorno (Environment) en Jenkins X puede representar un entorno de infraestructura virtual como Dev, Staging, Production, etc para un equipo de desarrollo determinado. Las reglas de promoción entre entornos se pueden definir para que las versiones se puedan mover de forma automática o manual a través de los diferentes flujos (pipelines). Cada entorno se gestiona siguiendo la metodología GitOps: el estado deseado de un entorno se mantiene en un repositorio de Git y la confirmación o la reversión de los cambios en el repositorio desencadena un cambio de estado asociado en el entorno dado en Kubernetes.
 
-Developers should be aware of the capabilities that Kubernetes provides for distributing configuration data and security credentials across the cluster. ConfigMaps can be used to create sets of name/value pairs for non-confidential configuration meta-data and Secrets perform a similar but encrypted mechanism for security credentials and tokens. Kubernetes also provides a mechanism for specifying Resource Quotas for Pods which is necessary for optimizing deployments across Nodes and which we shall discuss shortly.
+Los clústeres de Kubernetes se pueden crear directamente utilizando el comando `jx create cluster`, lo que facilita la reproducción de clústeres en caso de fallo. Del mismo modo, la plataforma Jenkins X se puede actualizar en un clúster existente utilizando `jx upgrade platform`. Jenkins X admite trabajar con múltiples clústeres de Kubernetes a través de `jx context` y cambiar entre múltiples entornos dentro de un clúster con `jx environment`.
 
-By default, Pod state is transient. Any data written to the local file system of a Pod is lost when that Pod is deleted. Developers should be aware that Kubernetes may unilaterally decide to delete instances of Pods and recreate them at any time as part of the general load balancing process for Nodes so local data may be lost at any time. Where stateful data is required, Persistent Volumes should be declared and mounted within the file system of specific Pods.
+Los desarrolladores deben conocer las capacidades que proporciona Kubernetes para distribuir datos de configuración y credenciales de seguridad en todo el clúster. Los ConfigMaps se puede utilizar para crear conjuntos de llave/valor para metadatos de configuración no confidenciales y los Secrets realizan un mecanismo similar pero encriptado para credenciales de seguridad y tokens. Kubernetes también proporciona un mecanismo para especificar Cuotas de recursos para los Pods, esto es necesario para optimizar los despliegues en todos los nodos y que discutiremos en breve.
 
-### Helm and Draft
+Por defecto, el estado del Pod es efímero. Cualquier dato escrito en el sistema de archivos local de un Pod se pierde cuando se elimina ese Pod. Los desarrolladores deben tener en cuenta que Kubernetes puede decidir de forma unilateral eliminar instancias de Pods y volver a crearlos en cualquier momento como parte del proceso general de balanceo de carga para los nodos, por lo que los datos locales pueden perderse en cualquier momento. Cuando se requieren datos con estado, los volúmenes persistentes deben declararse y montarse dentro del sistema de archivos de Pods específicos.
+
+### Helm y Draft
 ---
-Interacting directly with Kubernetes involves either manual configuration using the `kubectl` command line utility, or passing various flavors of YAML data to the API. This can be complex and is open to human error creeping in. In keeping with the DevOps principle of 'configuration as code', Jenkins X leverages Helm and Draft to create atomic blocks of configuration for your applications.
+La interacción directa con Kubernetes implica realizar configuraciones de forma manual utilizando la línea de comandos `kubectl` o pasando varios tipos de datos YAML a la API. Esto puede ser complejo y está abierto a la aparición de errores humanos. De acuerdo con el principio de DevOps de 'configuración como código', Jenkins X aprovecha Helm y Draft para crear bloques atómicos de configuración para sus aplicaciones.
 
-Helm simplifies Kubernetes configuration through the concept of a Chart, which is a set of files that together specify the meta-data necessary to deploy a given application or service into Kubernetes. Rather than maintain a series of boilerplate YAML files based upon the Kubernetes API, Helm uses a templating language to create the required YAML specifications from a single shared set of values. This makes it possible to specify re-usable Kubernetes applications where configuration can be selectively over-ridden at deployment time.
+Helm simplifica la configuración de Kubernetes a través del concepto de Gráficos (Charts). Las Gráficos son un conjunto de archivos que juntos especifican los metadatos necesarios para implementar una aplicación o servicio en Kubernetes. En lugar de mantener una serie de archivos YAML repetitivos basados en la API de Kubernetes, Helm utiliza un lenguaje de plantillas para crear las especificaciones YAML necesarias a partir de un único conjunto compartido de valores. Esto hace posible especificar aplicaciones Kubernetes reutilizables donde la configuración se puede modificada en el momento del despliegue.
