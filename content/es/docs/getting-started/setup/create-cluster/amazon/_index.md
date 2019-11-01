@@ -13,24 +13,23 @@ Si deseas EKS en AWS, entonces la herramienta preferida es [eksctl](https://eksc
 
 Primero debes instalar [eksctl CLI](https://eksctl.io/introduction/installation/).
 
-Luego sigue las instruciones para [crear un clúster EKS con eksctl](https://eksctl.io/usage/creating-and-managing-clusters/).
+Luego sigue las instrucciones para [crear un clúster EKS con eksctl](https://eksctl.io/usage/creating-and-managing-clusters/).
 
-## Using EC2 and kops
+## Utilizando EC2 y Kops
 
-If you wish to use EC2 and kops then you will need to download a [kops release](https://github.com/kubernetes/kops/releases).
-Then follow the instructions to [create a cluster on AWS with kops](https://kubernetes.io/docs/setup/production-environment/tools/kops/).
+Si deseas utilizar EC2 y Kops debes descargar la [liberación de Kops](https://github.com/kubernetes/kops/releases).
+Luego debes seguir las instrucciones para [crear un clúster en AWS utilizando Kops](https://kubernetes.io/docs/setup/production-environment/tools/kops/).
 
 
-## Using the jx CLI
+## Utilizando jx CLI
 
-Ensure you [have installed the jx CLI](/docs/getting-started/setup/install/) then for kops use:
-
+Asegúrese de [tener instalado la CLI jx](/es/docs/getting-started/setup/install/) para luego poder utilizar Kops:
 
 ```sh
 jx create cluster aws --skip-installation
 ```
 
-or for EKS use:
+o puedes utilizar el servicio EKS:
 
 ```sh
 jx create cluster eks --skip-installation

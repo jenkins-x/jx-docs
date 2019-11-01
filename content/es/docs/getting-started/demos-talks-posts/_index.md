@@ -1,9 +1,8 @@
 ---
-title: "Demos, talks and blog posts"
-date: 2017-01-05
+title: "Demos, charlas y artículos"
 weight: 5
 aliases:
-  - /demos/  
+  - /demos/
 description: >
-  A list of useful demos, talks and blog posts to continue on your getting started journey.
+  Una lista de demostraciones, charlas y publicaciones útiles para continuar en su viaje de inicio.
 ---

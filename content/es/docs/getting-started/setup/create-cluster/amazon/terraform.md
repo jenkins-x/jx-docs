@@ -1,20 +1,15 @@
 ---
-title: Create EKS cluster with Terraform
+title: Crear clúster EKS con Terraform
 linktitle: Terraform
-description: How to setup EKS cluster and other requirements in AWS with Terraform and install Jenkins X on it
-date: 2019-04-03
-publishdate: 2019-04-03
-lastmod: 2019-04-03
+description: ¿Cómo configurar un clúster EKS, requerimientos y Jenkins X con Terraform en AWS?
 categories: [getting started]
 keywords: [install,kubernetes,aws,terraform]
 weight: 65
 ---
 
-This is a short guide to setup EKS on AWS and the required resources for Jenkins X's setup of Vault
-using Terraform. It assumes access to AWS is configured and familiarity with AWS, kubectl and Terraform.
+Esta es una guía corta para configurar EKS en AWS utilizando Terraform donde se incluyen los requisitos necesarios para instalar Jenkins X y Vault. Se asume que está configurado el acceso a AWS y que está familiarizado con AWS, kubectl y Terraform.
 
-This snippet of Terraform code sets EKS and up needed resources on AWS. It outputs the parameters
-you then need to add to append to `jx install`.
+El fragmento de código de Terraform agrupa los recursos necesarios para EKS en AWS. El resultado (output) de la ejecución será utilizado como parámetros en el comando `jx install`.
 
 ```tf
 variable "region" {
@@ -172,8 +167,6 @@ output "jx_params" {
 }
 ```
 
-Save as `eks.tf`
+Salvar como `eks.tf`
 
-The module terraform-aws-modules/eks/aws will also store a kubeconfig file as `config`. This can be
-copied to or merged with your `~/.kube/config`. Then `jx install` can be run with the parameters
-output by the Terraform config above.
+El módulo terraform-aws-modules/eks/aws va a guardar el fichero kubeconfig como `config`. Este podrá ser copiado o mezclado con el suyo `~/.kube/config`. Con esta configuración `jx install` puede ser iniciado utilizando los parámetros de salida de Terraform.

@@ -1,50 +1,45 @@
 ---
 title: Google
 linktitle: Google
-description: How to create a kubernetes cluster on the Google Cloud Platform (GCP)?
+description: Cómo crear un clúster de Kubernetes en la Plataforma Google Cloud (GCP)?
 weight: 50
 ---
 
+## Utilizando la Consola de Google Cloud
 
-## Using the Google Cloud Console
+Puedes crear un clúster de Kubernetes in pocos clics en la [Consolo de Google Cloud](https://console.cloud.google.com/).
 
-You can create Kubernetes clusters in a few clicks on the [Google Cloud Console](https://console.cloud.google.com/).
-
-First make sure you have created/selected a Project:
+Primero garantiza tener creado/seleccionado un proyecto:
 
 <img src="/images/quickstart/gke-select-project.png" class="img-thumbnail">
 
+Luego puedes dar clic en el botón `create cluster` en la página de los [clústeres de Kubernetes](https://console.cloud.google.com/kubernetes/list) o intentar [crear un clúster](https://console.cloud.google.com/kubernetes/add) directamente.
 
-Now you can click the `create cluster` button on the [kubernetets clusters](https://console.cloud.google.com/kubernetes/list) page or try [create cluster](https://console.cloud.google.com/kubernetes/add).
+## Utilizando gcloud
 
+La interfaz de líneas de comandos (CLI) para trabajar con Google Cloud es `gcloud`. Si no la tienes instalada entonces por favor [instale gcloud](https://cloud.google.com/sdk/install).
 
+Para crear un cluster con gcloud siga [las siguientes instrucciones](https://cloud.google.com/kubernetes-engine/docs/how-to/creating-a-cluster).
 
-## Using gcloud
+## Utilizando Google Cloud Shell
 
-The CLI tool for working with google cloud is called `gcloud`. If you have not done so already please [install gcloud](https://cloud.google.com/sdk/install).
+Si no quieres instalar `gcloud` puedes utilizar [Google Cloud Shell](https://console.cloud.google.com/) porque tiene incluidos la mayoría de los componentes que necesitarás para la instalación (`git, gcloud, kubectl`, etc).
 
-To create a cluster with gcloud [follow these instructions](https://cloud.google.com/kubernetes-engine/docs/how-to/creating-a-cluster).
-
-
-## Using Google Cloud Shell
-
-To avoid having to install `gcloud` you can use the [Google Cloud Shell](https://console.cloud.google.com/) as it already comes with most of the things you may need to install (`git, gcloud, kubectl` etc).
-
-First you need to open the Google Cloud Shell via the button in the toolbar:
+Primero necesitas abrir utilizar el botón de la barra de herramientas para abrir Google Cloud Shell:
 
 <img src="/images/quickstart/gke-start-shell.png" class="img-thumbnail">
 
-You can then create a cluster with `gcloud` by [following these instructions](https://cloud.google.com/kubernetes-engine/docs/how-to/creating-a-cluster).
+Una veza abierto podrás crear el clúster utilizando `gcloud` juanto a [las siguientes instrucciones](https://cloud.google.com/kubernetes-engine/docs/how-to/creating-a-cluster).
 
-## Connecting to your cluster
+## Conectando con el clúster
 
-Once you have created a cluster, you need to connect to it so you can access it via the `kubectl` or [jx](/docs/getting-started/setup/install/) command line tools.
+Una vez creado el clúster vas a necesitar conectarte a él a través de las herramienas `kubectl` o [jx](/es/docs/getting-started/setup/install/).
 
-To do this click on the `Connect` button on the [Kubernetes Engine page](https://console.cloud.google.com/kubernetes/list) in the [Google Console](https://console.cloud.google.com/).
+Para lograrlo, has clic en el botón `Connect` en la página [Kubernetes Engine page](https://console.cloud.google.com/kubernetes/list) en la [Consola de Google](https://console.cloud.google.com/).
 
 <img src="/images/quickstart/gke-connect.png" class="img-thumbnail">
 
-You should now be able to use the `kubectl` and `jx` CLI tools on your laptop to talk to the GKE cluster. e.g. this command should list the nodes in your cluster:
+Ahora deberías poder utilizar las herramientas CLI `kubectl` y `jx` desde su laptop para comunicarte con el clúster GKE. Por ejemplo, el siguiente comando debería listar los nodos presentes en su clúster:
 
 ```sh
 kubectl get node

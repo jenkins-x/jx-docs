@@ -1,7 +1,6 @@
 ---
-title: "Create your first project"
-date: 2017-01-05
+title: "Crea tu primer proyecto"
 weight: 2
 description: >
-  Now that you've setup the platform, let's create your first project.
+  Ahora que que tienes configurada la plataforma, pasemos a crear su primer proyecto.
 ---
