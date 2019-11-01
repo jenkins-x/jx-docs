@@ -38,7 +38,7 @@ Check out the [contribution guide](/docs/contributing/) for some tips on how to 
 
 We meet for office hours **every other Thursday** at 4pm UK / 11am US Eastern / 8am US Pacific.
 
-Next office hours: **31 October 2019**
+Next office hours: **14 November 2019**
 
 Join us: <https://zoom.us/j/397862697>
 
