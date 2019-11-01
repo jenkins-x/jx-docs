@@ -2,6 +2,7 @@
 title: Office Hours
 linktitle: Office Hours
 type: docs
+weight: 30
 ---
 
 Join us for office hours **every other Thursday** at 4pm UK / 11am US Eastern / 8am US Pacific.
