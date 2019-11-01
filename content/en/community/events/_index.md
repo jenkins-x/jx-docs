@@ -19,7 +19,7 @@ For details of the next Jenkins X talk or demo checkout our [talks at meetups an
 
 * [2019 DevOps World/Jenkins World EU - Lisbon, Portugal](/community/events/2019-12-dwjw)
 
-* [Join us at the CI/CD Devroom at FOSDEM 2020 -- CFP now open!](blog/2019/10/09/fosdem2020/)
+* [Join us at the CI/CD Devroom at FOSDEM 2020 -- CFP now open!](/blog/2019/10/09/fosdem2020/)
 
 * [Application modernization with Anthos and Jenkins X, meetup on October 22, 2019](/community/events/22-10-2019-anthos-jx)
 

@@ -52,3 +52,27 @@ The final schedule for the CI/CD devroom at FOSDEM 2020 will be announced on 15t
 We're excited to hear all the talks and discussions in the CI/CD devroom and look forward to seeing you there!
 
 
+<div class="event-wrapper" itemscope itemtype="http://schema.org/Event">
+  <link itemprop="image" content="https://jenkins-x.io/images/community/events/2020-fosdem.png" />
+  <meta itemprop="description" content="For the first time, there will be a Continuous Integration and Continuous 
+  Deployment (CI/CD) devroom at FOSDEM! The CI/CD devroom will take place on 2nd of February 2020 in Brussels, Belgium." />
+  <meta class="event-date" itemprop="startDate" content="2020-02-02" />
+  <meta class="event-date" itemprop="endDate" content="2020-02-02" />
+  <meta class="event-title" itemprop="name" content="CI/CD Devroom at FOSDEM 2020" />
+  <div class="event-venue" itemprop="location" itemscope itemtype="http://schema.org/Place">
+      <meta itemprop="name" content="Université libre de Bruxelles" />
+      <div class="address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+          <meta itemprop="streetAddress" content="Avenue Franklin D. Roosevelt 50" />
+          <meta itemprop="postalCode" content="1050" />
+          <meta itemprop="addressLocality" content="Brussels" />
+          <meta itemprop="addressCountry" content="BE" />
+          <meta itemprop="latitude" content=50.812375 />
+          <meta itemprop="longitude" content=4.380734 />
+          <meta itemprop="isAccessibleForFree" content=true />
+          <meta itemprop="audience" content="IT professionals" />
+      </div>
+  </div>
+  <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+    <link itemprop="url" content="https://fosdem.org/2020/" />
+  </div>
+</div>
