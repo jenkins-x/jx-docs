@@ -11,6 +11,53 @@ For more background see the guide on [Serverless Jenkins X Pipelines](/docs/conc
 
 To add a new custom step to your `jenkins-x.yml` file see [how to use the jx create step](/docs/concepts/jenkins-x-pipelines/#customizing-the-pipelines)
 
+## How do I override a step?
+
+If there is a named step in the pipeline you wish to override you can add some YAML to your `jenkins-x.yml` file as 
+ follows:
+
+In this case were are going to replace the step called `helm-release` in the `release` pipeline
+
+``` 
+pipelineConfig:
+  pipelines:
+    overrides:
+      - pipeline: release
+        name: helm-release
+        step: 
+          image: busybox
+          sh: echo "this command is replaced"
+```   
+
+You can see the effect of this change locally before you commit it to git via the [jx step syntax effective](/commands/jx_step_syntax_effective/) command:
+
+``` 
+jx step syntax effective -s
+```
+
+You can override whole Stages or replace a specific step with a single step or a sequence of steps. You can also add steps before/after another step.
+
+For more detail check out [how to override steps](/architecture/pipeline-syntax-reference/#specifying-and-overriding-release-pull-request-and-feature-pipelines)
+
+## How can I override the default container image?
+
+As you can see above you can override any step in any build pack; but you can also override the container image used by default in all the steps by adding this YAML to your `jenkins-x.yml`:
+
+``` 
+pipelineConfig:
+  agent:
+    label: jenkins-go
+    container: somerepo/my-container-image:1.2.3
+```
+
+You can see the effect of this change locally before you commit it to git via the [jx step syntax effective](/commands/jx_step_syntax_effective/) command:
+
+``` 
+jx step syntax effective -s
+```         
+
+For more detail check out [how to override steps](/architecture/pipeline-syntax-reference/#specifying-and-overriding-release-pull-request-and-feature-pipelines)
+
 ## How do Jenkins X Pipelines compare to Jenkins pipelines?
 
 See [the differences between Jenkins X and Jenkins Pipelines](/docs/concepts/jenkins-x-pipelines/#differences-to-jenkins-pipelines)
