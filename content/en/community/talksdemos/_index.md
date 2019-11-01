@@ -4,6 +4,7 @@ linktitle: Demos and Talks
 description: At conferences and meetups
 type: docs
 no_list: true
+weight: 10
 menu:
   community:
     weight: 10

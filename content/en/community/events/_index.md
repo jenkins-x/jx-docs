@@ -3,6 +3,7 @@ title: Events
 linktitle: Events
 type: docs
 no_list: true
+weight: 20
 menu:
   community:
     weight: 20
