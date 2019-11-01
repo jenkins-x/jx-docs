@@ -10,23 +10,25 @@ menu:
 ---
 * [2019-12-05 Progressive Delivery with Jenkins X](https://devopsworldjenkinsworld2019lisbo.sched.com/event/VDQ0/progressive-delivery-with-jenkins-x) at [Devops World, Lisboa](https://www.cloudbees.com/devops-world) by [Carlos Sanchez](https://csanchez.org)
 
-* [2019-12-02/3/4/5 GitOps by courtesy of Jenkins-X](https://devopsconference.de/kubernetes-ecosystem/gitops-by-courtesy-of-jenkins-x/) at [DevOpsCon 2019, München (Germany)](https://devopsconference.de/) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
+* [2019-12-04 GitOps by courtesy of Jenkins-X](https://devopsconference.de/kubernetes-ecosystem/gitops-by-courtesy-of-jenkins-x/) at [DevOpsCon 2019, München (Germany)](https://devopsconference.de/) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
 
 * [2019-11-13 Progressive Delivery: Continuous Delivery the Right Way](https://cfp.devoxx.ma/2019/speaker/carlos_sanchez) at [Devoxx Morocco, Agadir](https://www.devoxx.ma/) by [Carlos Sanchez](https://csanchez.org)
 
 * [2019-11-06 Jenkins X: Progressive Delivery for Kubernetes](https://oredev.org/line-up/carlos-sanchez) at [Oredev, Malmo](https://oredev.org) by [Carlos Sanchez](https://csanchez.org)
 
+* [2019-10-24 Jenkins X – Continuously Driving the Kloud](https://www.meetup.com/mannheim-java-usergroup/events/264585188/) at [Mannheim Java User Group (Germany))](https://www.meetup.com/mannheim-java-usergroup/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) ([Slides](http://aschemann.net/gerd/publications/jx-talk-majug-2019/))
+
 * [2019-10-22 Application modernization with Anthos and Jenkins X](https://www.meetup.com/Zurich-CI-CD/events/265073168/) by Andy Tzou and [Cosmin Cojocar](https://github.com/ccojocar)
 
 * [2019-10-17 Jenkins X, Spring Cloud & Zeebe: From Monolith to Kubernetes](https://salaboy.com/2019/10/17/jenkins-x-spring-cloud-zeebe-geecon-prague-2019/) by [Mauricio Salatino](https://salaboy.com/)
 
-* [2019-09-12 Dev and Run Small Projects on K8S with GitOps and Jenkins-X](https://helmsummit2019.sched.com/event/S8sk/dev-and-run-small-projects-on-k8s-with-gitops-and-jenkins-x-gerd-aschemann-independent) at [Helm Summit, Amsterdam (The Netherlands))](https://events.linuxfoundation.org/events/helm-summit-2019/) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
+* [2019-09-12 Dev and Run Small Projects on K8S with GitOps and Jenkins-X](https://helmsummit2019.sched.com/event/S8sk/dev-and-run-small-projects-on-k8s-with-gitops-and-jenkins-x-gerd-aschemann-independent) at [Helm Summit, Amsterdam (The Netherlands))](https://events.linuxfoundation.org/events/helm-summit-2019/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) ([Slides](http://aschemann.net/gerd/publications/jx-talk-helmsummit-2019/))
 
 * [2019-09-11 Jenkins X: Progressive Delivery for Kubernetes](https://2019.javazone.no/program/d8f893f0-3e08-41ef-9ec6-fe2fa93cd4ce) at [JavaZone](https://2019.javazone.no) [Vimeo 🎥](https://vimeo.com/362768726) by [Carlos Sanchez](https://csanchez.org)
 
-* [2019-09-02 Jenkins X - Continuously Driving the Kloud](https://programm.doag.org/godevops/2019/#/scheduledEvent/587266) at [GoDevOps 2019, Berlin (Germany)](https://godevops.doag.org/de/home/) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
+* [2019-09-02 Jenkins X - Continuously Driving the Kloud](https://programm.doag.org/godevops/2019/#/scheduledEvent/587266) at [GoDevOps 2019, Berlin (Germany)](https://godevops.doag.org/de/home/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) ([Slides](http://aschemann.net/gerd/publications/jx-talk-godevops-2019/))
 
-* [2019-08-21 Jenkins X - Continuously Delivery for the Kloud](http://java.de/roller/blog/page/stammtisch_goettingen) at [Java User Group Deutschland/Göttingen (Germany)](http://java.de/) by [Gerd Aschemann](https://twitter.com/GerdAschemann)
+* [2019-08-21 Jenkins X - Continuously Delivery for the Kloud](http://java.de/roller/blog/page/stammtisch_goettingen) at [Java User Group Deutschland/Göttingen (Germany)](http://java.de/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) ([Slides](http://aschemann.net/gerd/publications/jx-talk-jug-d-2019/))
 
 * [2019-08-14 GitOps](https://devopsworldjenkinsworld2019.sched.com/event/TQb8/gitops) at [DevOps World San Francisco](https://www.cloudbees.com/devops-world/san-francisco) by [Viktor Farcic](https://twitter.com/vfarcic)
 
