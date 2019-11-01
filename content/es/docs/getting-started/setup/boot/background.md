@@ -1,21 +1,18 @@
 ---
-title: Background
-linktitle: Background
-description: Why we created Jenkins X Boot
-date: 2017-02-01
-publishdate: 2017-02-01
-lastmod: 2017-02-01
+title: Antecedentes
+linktitle: Antecedentes
+description: ¿Por qué se ha creado Jenkins X Boot?
 weight: 50
 ---
 
-We've learnt over the last 1-2 years that there are many different kinds of Kubernetes cluster and ways of setting up things like Ingress, DNS, domains, certificates which leads to complexity in the current [jx create cluster](/commands/jx_create_cluster) and [jx install](/commands/jx_install/) commands.
+En los últimos 1-2 años, hemos aprendido que hay muchos tipos diferentes de clúster de Kubernetes y formas de configurar cosas como Ingress, DNS, dominios, certificados. Esta gran diversidad implica el aumento de la complejidad en los comandos actuales [jx create cluster](/commands/jx_create_cluster) y [jx install](/commands/jx_install/).
 
-Plus its now recommended to use tools like Terraform to manage all of your cloud resources: creating/updating Kubernetes clusters, cloud storage buckets, service accounts, KMS etc.
+Además, ahora se recomienda usar herramientas como Terraform para administrar todos sus recursos en la nube: crear / actualizar clústeres de Kubernetes, buckets de almacenamiento en la nube, cuentas de servicio, KMS, etc.
 
-We found we had lots of different bits of install logic spread across all kinds of different ways of installing (e.g. [jx create cluster](/commands/jx_create_cluster), [jx install](/commands/jx_install/), the use of the [--gitops flag](/docs/managing-jx/common-tasks/manage-via-gitops/) together with the different ways of managing production secrets - that were hard to test and keep solid.
+Detectamos también que teníamos muchos segmentos diferentes de lógica de instalación distribuidos por distintos comandos, por ejemplo, [jx create cluster](/commands/jx_create_cluster), [jx install](/commands/jx_install/), el uso del [parámetro --gitops](/docs/managing-jx/common-tasks/manage-via-gitops/). A esto le podemos sumar las diferentes formas de gestionar la información sensible (Secrets). Esta gran matrix de combinaciones hace muy difícil el poder probar y mantener de forma sólida cada comando.
 
-We also hit issues that the [jx create cluster](/commands/jx_create_cluster) and [jx install](/commands/jx_install/) commands would install things like ingress controller and not give users the chance to configure/override their installation.
+Además, nos topamos con problemas en los comandos [jx create cluster](/commands/jx_create_cluster) y [jx install](/commands/jx_install/) porque estos deben instalar componentes como el Ingerss Controller y no se estaba dando la posibilidad de modificar/quitar su instalación.
 
-Users often struggled with understanding how to easily configure and override things; or upgrade values after things have been installed. 
+Los usuarios a menudo tuvieron dificultades para comprender cómo configurar y anular fácilmente las cosas; o actualizar valores después de que las cosas se hayan instalado.
 
-So we wanted to come up with a new cleaner approach which worked for every kind of installation and provided a standard way to extend and customise the configuration via [Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) and helm style configuration.
+Por lo tanto, queríamos llegar a un nuevo enfoque limpio, libre de los problemas mencionados anteriormente. Este nuevo enfoque funcionara para todo tipo de instalación y proporcionará una forma estándar de ampliar y personalizar la configuración a través de [Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) y del estilo de configuración de Helm.

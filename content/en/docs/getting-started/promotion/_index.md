@@ -65,7 +65,7 @@ helm repo add myrepo https://something.acme.com/charts/
 for example to add the stable community charts:
 
 ```sh
-helm repo add incubator https://kubernetes-charts.storage.googleapis.com/
+helm repo add stable https://kubernetes-charts.storage.googleapis.com/
 "stable" has been added to your repositories
 ```
 

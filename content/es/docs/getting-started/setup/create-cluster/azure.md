@@ -1,14 +1,13 @@
 ---
 title: Azure
 linktitle: Azure
-description: How to create a kubernetes cluster on Azure?
+description: ¿Cómo crear un clúster de Kubernetes en Azure?
 weight: 40
 ---
 
-You may find [this blog helpful](https://cloudblogs.microsoft.com/opensource/2019/03/06/jenkins-x-azure-kubernetes-service-setup/).
+Debes utilizar [este provechoso blog](https://cloudblogs.microsoft.com/opensource/2019/03/06/jenkins-x-azure-kubernetes-service-setup/).
 
-
-Otherwise ensure you [have installed the jx CLI](/docs/getting-started/setup/install/) then run:
+De lo contrario garantice [tener instalado jx CLI](/es/docs/getting-started/setup/install/) y ejecute el siguiente comando:
 
 ```sh
 jx create cluster aks --skip-installation
