@@ -1,7 +1,7 @@
 ---
 title: Crear un inicio rápido
 linktitle: Crear un inicio rápido
-description: Cómo crear e importar una nueva aplicación de forma rápida en Jenkins
+description: ¿Cómo crear e importar una nueva aplicación de forma rápida en Jenkins?
 weight: 10
 ---
 

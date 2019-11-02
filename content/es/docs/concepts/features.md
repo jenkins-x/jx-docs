@@ -1,7 +1,7 @@
 ---
 title: Características
 linktitle: Características
-description: Cómo Jenkins X puede ayudarte con las entregas continuas?
+description: ¿Cómo Jenkins X puede ayudarte con las entregas continuas?
 weight: 30
 ---
 
