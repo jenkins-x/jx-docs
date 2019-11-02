@@ -40,6 +40,8 @@ Here is a one-day event with start and end times. Google assumes the timezone of
   Deployment (CI/CD) devroom at FOSDEM! The CI/CD devroom will take place on 2nd of February 2020 in Brussels, Belgium." />
   <meta class="event-date" itemprop="startDate" content="2020-02-02T09:00:00" />
   <meta class="event-date" itemprop="endDate" content="2020-02-02T17:00:00" />
+  <meta itemprop="isAccessibleForFree" content=true />
+  <meta itemprop="audience" content="IT professionals" />
   <meta class="event-title" itemprop="name" content="CI/CD Devroom at FOSDEM 2020" />
   <div class="event-venue" itemprop="location" itemscope itemtype="http://schema.org/Place">
       <meta itemprop="name" content="Université libre de Bruxelles" />
@@ -50,8 +52,6 @@ Here is a one-day event with start and end times. Google assumes the timezone of
           <meta itemprop="addressCountry" content="BE" />
           <meta itemprop="latitude" content=50.812375 />
           <meta itemprop="longitude" content=4.380734 />
-          <meta itemprop="isAccessibleForFree" content=true />
-          <meta itemprop="audience" content="IT professionals" />
       </div>
   </div>
   <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
