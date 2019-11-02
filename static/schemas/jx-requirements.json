@@ -157,6 +157,9 @@
         "externalDNS": {
           "type": "boolean"
         },
+        "ignoreLoadBalancer": {
+          "type": "boolean"
+        },
         "namespaceSubDomain": {
           "type": "string"
         },
@@ -200,6 +203,9 @@
         },
         "kaniko": {
           "type": "boolean"
+        },
+        "repository": {
+          "type": "string"
         },
         "secretStorage": {
           "type": "string"
