@@ -30,18 +30,18 @@ Jenkins X viene con una configuración que conecta estos servicios entre sí, lo
 1. __Jenkins__ — proporciona la automatización de flujos CI/CD. Hay un esfuerzo para descomponer Jenkins con el tiempo para volverlo más nativo de la nube y hacer mayor uso de los conceptos de Kubernetes en torno a: CRD, almacenamiento, escalado, entre otros.
 2. __Nexus__ — actúa como un caché de dependencia para aplicaciones NodeJS y Java para mejorar dramáticamente los tiempos de compilación. Después de una compilación inicial de una aplicación SpringBoot, el tiempo de compilación se reduce de 12 minutos a 4. Todavía no hemos intentado demostrar, pero lo haremos pronto, el intercambiarlo con Artifactory.
 3. __Docker registry__  — un registro de docker dentro del clúster donde nuestros pipelines envían imágenes de aplicaciones, pronto pasaremos a utilizar registros de proveedores nativos de la nube, como Google Container Registry, Azure Container Registry o Amazon Elastic Container Registry (ECR), por ejemplo.
-4. __ChartMuseum__ — un Repositorio para publicar las gráficos de Helm
-5. __Monocular__  — una interfaz de usuario utilizada para obtener y ejecutar gráficos de Helm
+4. __ChartMuseum__ — un Repositorio para publicar los charts de Helm
+5. __Monocular__  — una interfaz de usuario utilizada para obtener y ejecutar charts de Helm
 
 ## Entornos Permanentes
 
 Estos [entornos](/docs/concepts/features/#environments), como `Staging` y `Production` utilizan GitOps para auto-gestionarse, por lo que cada uno tiene asociado un repositorio git con el código necesario para configurar todas las aplicaciones y servicios que son desplegados en el.
 
-Normalmente se utilizan gráficos de Helm dentro del repositorio para definir qué gráfico será instalado, que versión utilizar y cualquier otra configuración específica necesaria del entorno, así como recurso adicionales. p.ej. Información sensible (Secrets) o aplicaciones como Prometheus, etc.
+Normalmente se utilizan charts de Helm dentro del repositorio para definir qué chart será instalado, que versión utilizar y cualquier otra configuración específica necesaria del entorno, así como recurso adicionales. p.ej. Información sensible (Secrets) o aplicaciones como Prometheus, etc.
 
 ## Entornos de Vista Previa
 
-Los [Entornos de Vista Previa](/docs/concepts/features/#preview-environments) son similares a los [Entornos Permanentes](/docs/concepts/features/#environments) en el punto donde ambos están definidos en el código fuente utilizando los gráficos de Helm.
+Los [Entornos de Vista Previa](/docs/concepts/features/#preview-environments) son similares a los [Entornos Permanentes](/docs/concepts/features/#environments) en el punto donde ambos están definidos en el código fuente utilizando los charts de Helm.
 
 La principal diferencia es que los entornos de vista previa están configurados dentro del código fuente de la aplicación, en la carpeta `./chart/preview`.
 
