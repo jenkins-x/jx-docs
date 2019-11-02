@@ -215,9 +215,9 @@ ingress:
   externalDNS: true
   namespaceSubDomain: -jx.
   tls:
-email: certifiable@acmecorp.example
-enabled: true
-production: true
+    email: certifiable@acmecorp.example
+    enabled: true
+    production: true
 secretStorage: vault
 ```
 
