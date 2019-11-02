@@ -2082,6 +2082,19 @@ string
 </tr>
 <tr>
 <td>
+<code>ignoreLoadBalancer</code></br>
+<em>
+bool
+</em>
+</td>
+<td>
+<p>IgnoreLoadBalancer if the nginx-controller LoadBalancer service should not be used to detect and update the
+domain if you are using a dynamic domain resolver like <code>.nip.io</code> rather than a real DNS configuration.
+With this flag enabled the <code>Domain</code> value will be used and never re-created based on the current LoadBalancer IP address.</p>
+</td>
+</tr>
+<tr>
+<td>
 <code>namespaceSubDomain</code></br>
 <em>
 string
@@ -3589,6 +3602,15 @@ string
 </tr>
 </tbody>
 </table>
+<h3 id="config.jenkins.io/v1.RepositoryType">RepositoryType
+(<code>string</code> alias)</p></h3>
+<p>
+(<em>Appears on:</em>
+<a href="#config.jenkins.io/v1.RequirementsConfig">RequirementsConfig</a>)
+</p>
+<p>
+<p>RepositoryType is the type of a repository we use to store artifacts (jars, tarballs, npm packages etc)</p>
+</p>
 <h3 id="config.jenkins.io/v1.RequirementsConfig">RequirementsConfig
 </h3>
 <p>
@@ -3700,6 +3722,19 @@ IngressConfig
 </td>
 <td>
 <p>Ingress contains ingress specific requirements</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>repository</code></br>
+<em>
+<a href="#config.jenkins.io/v1.RepositoryType">
+RepositoryType
+</a>
+</em>
+</td>
+<td>
+<p>Repository specifies what kind of artifact repository you wish to use for storing artifacts (jars, tarballs, npm modules etc)</p>
 </td>
 </tr>
 <tr>
@@ -4839,5 +4874,5 @@ string
 <hr/>
 <p><em>
 Generated with <code>gen-crd-api-reference-docs</code>
-on git commit <code>79feabc14</code>.
+on git commit <code>b4f45ef4a</code>.
 </em></p>
