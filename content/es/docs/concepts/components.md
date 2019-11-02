@@ -47,6 +47,6 @@ La principal diferencia es que los entornos de vista previa están configurados 
 
 Además, estos entornos no son permanentes, sino que se crean a partir de un PR en el repositorio git de la aplicaciones y luego se eliminan un tiempo después (manualmente o mediante la recolección automática de basura).
 
-## Ingress Custom Annotations
+## Anotaciones Personalizadas de Entrada
 
 Para obtener información sobre cómo agregar anotaciones personalizadas al controlador de entradas, consulte [¿Cómo agregar anotaciones personalizadas al controlador de Entradas?](/docs/managing-jx/faq/#how-to-add-custom-annotations-to-ingress-controller)

@@ -44,7 +44,7 @@ También puede utilizar la CLI [jx create team](/commands/jx_create_team/) para 
 
 Lea la [guía de configuración](/docs/managing-jx/common-tasks/config/) para ampliar los detalles sobre cómo compartir recursos como Nexus entre equipos.
 
-## Promover
+## Promoción
 
 La promoción es implementada con GitOps generando una PR en el repositorio git del entorno para que todos los cambios pasen por git para su revisión, aprobación y para que cualquier cambio sea fácil de revertir.
 
