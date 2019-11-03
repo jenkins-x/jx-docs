@@ -929,6 +929,17 @@ AzureConfig
 </tr>
 <tr>
 <td>
+<code>chartRepository</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>ChartRepository the repository URL to deploy charts to</p>
+</td>
+</tr>
+<tr>
+<td>
 <code>gke</code></br>
 <em>
 <a href="#config.jenkins.io/v1.GKEConfig">
@@ -4874,5 +4885,5 @@ string
 <hr/>
 <p><em>
 Generated with <code>gen-crd-api-reference-docs</code>
-on git commit <code>b4f45ef4a</code>.
+on git commit <code>b5292cc7d</code>.
 </em></p>
