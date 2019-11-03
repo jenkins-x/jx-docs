@@ -29,6 +29,9 @@
           "$schema": "http://json-schema.org/draft-04/schema#",
           "$ref": "#/definitions/AzureConfig"
         },
+        "chartRepository": {
+          "type": "string"
+        },
         "clusterName": {
           "type": "string"
         },
@@ -157,6 +160,9 @@
         "externalDNS": {
           "type": "boolean"
         },
+        "ignoreLoadBalancer": {
+          "type": "boolean"
+        },
         "namespaceSubDomain": {
           "type": "string"
         },
@@ -200,6 +206,9 @@
         },
         "kaniko": {
           "type": "boolean"
+        },
+        "repository": {
+          "type": "string"
         },
         "secretStorage": {
           "type": "string"
