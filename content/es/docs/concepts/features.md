@@ -1,6 +1,6 @@
 ---
-title: Características
-linktitle: Características
+title: Funcionalidades
+linktitle: Funcionalidades
 description: ¿Cómo Jenkins X puede ayudarte con las entregas continuas?
 weight: 30
 ---
@@ -58,7 +58,7 @@ Para promover manualmente una versión de la aplicación hacia un entorno debes 
 
 ## Entornos de Vista Previa
 
-Jenkins X le permite activar Entornos de Vista Previa para los PR, de esta forma podrá obtener rápida retroalimentación antes de mezclar los cambios en la rama master. Además de una rápida retroalimentación, esta característica le permite evitar la aprobación humana dentro de su pipeline de liberación para acelerar las entregas de cambios mezclados a master.
+Jenkins X le permite activar Entornos de Vista Previa para los PR, de esta forma podrá obtener rápida retroalimentación antes de mezclar los cambios en la rama master. Además de una rápida retroalimentación, esta funcionalidad le permite evitar la aprobación humana dentro de su pipeline de liberación para acelerar las entregas de cambios mezclados a master.
 
 Cuando el Entorno de Vista Previa esté en funcionamiento, Jenkins X comentará su PR con un enlace para que, con un solo clic, los miembros de su equipo puedan probar la vista previa.
 
