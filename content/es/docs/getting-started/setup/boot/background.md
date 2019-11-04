@@ -15,4 +15,4 @@ Además, nos topamos con problemas en los comandos [jx create cluster](/commands
 
 Los usuarios a menudo tuvieron dificultades para comprender cómo configurar y anular fácilmente las cosas; o actualizar valores después de que las cosas se hayan instalado.
 
-Por lo tanto, queríamos llegar a un nuevo enfoque limpio, libre de los problemas mencionados anteriormente. Este nuevo enfoque funcionara para todo tipo de instalación y proporcionará una forma estándar de ampliar y personalizar la configuración a través de [Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) y del estilo de configuración de Helm.
+Por lo tanto, queríamos llegar a un nuevo enfoque limpio, libre de los problemas mencionados anteriormente. Este nuevo enfoque funcionara para todo tipo de instalación y proporcionará una forma estándar de ampliar y personalizar la configuración a través de [Jenkins X Pipelines](/es/docs/concepts/jenkins-x-pipelines/) y del estilo de configuración de Helm.
