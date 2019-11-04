@@ -169,8 +169,8 @@ This indicates your git API token either was input incorrectly or has been regen
 To recreate it with a new API token value try the following (changing the git server name to match your git provider):
 
 ```sh
-jx delete git token -n GitHub admin
-jx create git token -n GitHub admin
+jx delete git token -n github <yourUserName>
+jx create git token -n github <yourUserName>
 ```
 
 More details on [using git and Jenkins X here](/docs/managing-jx/common-tasks/git/)
