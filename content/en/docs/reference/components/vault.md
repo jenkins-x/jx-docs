@@ -164,51 +164,47 @@ Once you have configured Google Cloud DNS, you can use browse the
 [Zones](https://console.cloud.google.com/net-services/dns/zones) page in
 your Google Cloud Platform project to setup your external domain.
 
- NOTE: External DNS will automatically updates DNS records if you reuse the
- domain name, so if you delete an old cluster and create a new one it
- will preserve the same domain configuration for the new cluster.
+{{% alert %}}
+NOTE: External DNS will automatically updates DNS records if you reuse the
+domain name, so if you delete an old cluster and create a new one it
+will preserve the same domain configuration for the new cluster.
+{{% /alert %}}
+
+To setup External DNS:
 
 1.  Choose a unique DNS name; you can use nested domains (for example,
  `cluster1.acmecorp.example`). Enter the name in the `DNS Name`
 field
 
-2.  Run the `jx create domain` command against your domain name:
+2.  Run the `jx create domain` command against your domain name, for example:
 
 ```
 jx create domain gke --domain cluster1.acmecorp.example
 ```
 
-  1.  The program prompts you to choose your Google Cloud Platform
-project from the available list.
+    You will be prompted for information as needed during the setup:
 
-  2.  The program prompts you to update your existing managed servers
-to use the displayed list of Cloud DNS nameservers. Copy the
-list for use in the next steps.
+    1.  Choose your Google Cloud Platform project from the available list.
 
-  3.  From the Google Cloud Platform
-[Zones](https://console.cloud.google.com/net-services/dns/zones)
-page, change the *Resource Record Type* to `NS`) and use the default
-values for your domain for for *TTL* (`5`) and *TTL Unit*
-(`minutes`).
+    2.  Update your existing managed servers to use the displayed list of Cloud DNS nameservers. Copy the list for use in the next steps.
 
-  4.  Add the first nameserver to the *Name server* field
+Next up is configuring GCP:
 
-  5.  Click `Add item` and add any subsequent nameservers.
+1.  From the Google Cloud Platform [Zones](https://console.cloud.google.com/net-services/dns/zones) page, change the *Resource Record Type* to `NS`) and use the default values for your domain for for *TTL* (`5`) and *TTL Unit* (`minutes`).
 
-  6.  Click `Create`.
+4.  Add the first nameserver to the *Name server* field
 
-  7.  Configure Jenkins X for the new domain names:
-  
-    - Edit the `jx-requirements.yaml` file and update the `domain` field (in `ingress`) to your domain name, for example `cluster1.acmecorp.example`
-    
-    - In the *tls* setting, enable TLS with `enabled: true`
-    
-    - The resulting `jx-requirements.yaml` entries for these settings should look similar to the example below:
+5.  Click `Add item` and add any subsequent nameservers.
 
-Run `jx boot` for the changes to take effect in your
-environment.
+6.  Click `Create`.
 
-## Example Configuration
+Finally, configure Jenkins X for the new domain names:
+
+1. Edit the `jx-requirements.yaml` file and update the `domain` field (in `ingress`) to your domain name, for example `cluster1.acmecorp.example`
+
+1. In the *tls* setting, enable TLS with `enabled: true`
+
+The resulting `jx-requirements.yaml` entries for these settings should look similar to the example below:
 
 ```yaml
 gitops: true
@@ -222,6 +218,11 @@ ingress:
     production: true
 secretStorage: vault
 ```
+
+{{% alert %}}
+Remember to run `jx boot` for the changes to take effect in your
+environment.
+{{% /alert %}}
 
 # Creating a Vault
 
