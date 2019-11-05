@@ -205,6 +205,10 @@ values for your domain for for *TTL* (`5`) and *TTL Unit*
     
     - The resulting `jx-requirements.yaml` entries for these settings should look similar to the example below:
 
+Run `jx boot` for the changes to take effect in your
+environment.
+
+## Example Configuration
 
 ```yaml
 gitops: true
@@ -218,9 +222,6 @@ ingress:
     production: true
 secretStorage: vault
 ```
-
-Run `jx boot` for the changes to take effect in your
-environment.
 
 # Creating a Vault
 
