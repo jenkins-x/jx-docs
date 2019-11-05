@@ -1,5 +1,5 @@
 ---
-date: 2019-11-05T07:28:23Z
+date: 2019-11-05T20:26:01Z
 title: "jx compliance run"
 slug: jx_compliance_run
 url: /commands/jx_compliance_run/
