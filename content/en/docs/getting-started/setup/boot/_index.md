@@ -329,6 +329,48 @@ storage:
 webhook: lighthouse
 ```
 
+## Repository
+
+By default Jenkins X uses:
+ 
+* [Nexus](https://www.sonatype.com/nexus-repository-oss) as an artifact repository to store artifacts (e.g. Java jars, `pom.xml` files, tarballs or npm modules etc) 
+* [Chartmusem](https://chartmuseum.com/) as a repository of charts
+
+You can explicitly configure nexus via the following `jx-requirements.yml` file:
+
+```yaml
+repository: nexus
+```         
+
+### Bucketrepo
+
+The [bucketrepo](https://github.com/jenkins-x/bucketrepo) chart is a small footprint microservice that can
+ 
+* act as a Maven proxy to cache maven dependencies when using java/maven builds
+* act as an artifact repository (e.g. to deploy maven artifacts)
+* implement a chart repository for releasing helm charts
+
+To enable `bucketrepo` use the following `jx-requirements.yml` file:
+
+```yaml
+repository: bucketrepo
+```   
+
+By default the local file system in the bucket repo is used to store artifacts. 
+
+To enable cloud storage for artifacts in `bucketrepo` you need to enable the `storage.repository` configuration in which case a cloud bucket is used instead. See the [storage section for more details](#storage).
+
+
+### None
+
+If you want to disable the artifact repository (nexus) but still use chartmuseum for charts you can use the following:
+
+```yaml
+repository: none
+```         
+
+Note that without using an artifact repository you will not be able to deploy maven artifacts; though [Chartmusem](https://chartmuseum.com/) will still be used as a repository of charts
+
 ## Storage
 
 the [jx-requirements.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml) file can configure whether you want to use long term storage for logs + reports and what cloud storage buckets to use to store the data.
