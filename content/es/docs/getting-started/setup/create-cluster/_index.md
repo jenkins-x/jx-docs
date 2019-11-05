@@ -13,6 +13,6 @@ Jenkins X necesita que exista un clúster de Kubernetes para que pueda instalars
 
 Existen varios enfoques para crear grupos de Kubernetes.
 
-Nuestra recomendación es usar [Terraform](https://www.terraform.io) para configurar toda su infraestructura en la nube (clúster de kubernetes, cuentas de servicio, almacenamiento, registro, etc.) y utilizar un proveedor de la nube para crear y administrar sus clústeres de kubernetes.
+Nuestra recomendación es usar [Terraform](https://www.terraform.io) para configurar toda su infraestructura en la nube (clúster de Kubernetes, cuentas de servicio, almacenamiento, registro, etc.) y utilizar un proveedor de la nube para crear y administrar sus clústeres de Kubernetes.
 
-O puede utilizar un enfoque específico de proveedor de kubernetes:
+O puede utilizar un enfoque específico de proveedor de Kubernetes:

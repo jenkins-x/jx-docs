@@ -9,8 +9,8 @@ weight: 30
 
 Jenkins X viene con una útil y práctica herramienta de línea de comandos [jx](/commands/jx) para:
 
-* [instalar Jenkins X](/docs/getting-started/setup/install) dentro de un clúster de kubernetes existente
-* [crear un nuevo cluster de kubernetes](/docs/getting-started/setup/create-cluster/) e instalar Jenkins X dentro de él
+* [instalar Jenkins X](/docs/getting-started/setup/install) dentro de un clúster de Kubernetes existente
+* [crear un nuevo cluster de Kubernetes](/docs/getting-started/setup/create-cluster/) e instalar Jenkins X dentro de él
 * [cargar/importar proyectos](/developing/import) dentro de Jenkins X junto a su flujos de configuración CI/CD
 * [crea nuevas aplicaciones Spring Boot](/developing/create-spring) las cuales son cargadas dentro de Jenkins X junto a sus flujos de configuración CI/CD
 
@@ -26,11 +26,11 @@ Con Jenkins X cada _equipo_ tiene sus propios Entornos. De forma predeterminada,
 
 También está el entorno `Dev`, que es donde se instalan herramientas como Jenkins, Nexus o Prow y donde se ejecutan los pipelines de CI/CD.
 
-Utilizamos GitOps para gestionar la configuración y la versión de los recursos de kubernetes que se despliegan en cada entorno. Por lo tanto, cada Entorno tiene su propio repositorio git que contiene todos los Helm Charts, sus versiones y la configuración para que las aplicaciones se ejecuten en el entorno.
+Utilizamos GitOps para gestionar la configuración y la versión de los recursos de Kubernetes que se despliegan en cada entorno. Por lo tanto, cada Entorno tiene su propio repositorio Git que contiene todos los Helm Charts, sus versiones y la configuración para que las aplicaciones se ejecuten en el entorno.
 
-Un Entorno se asigna a un espacio de nombres (namespace) en un clúster de Kubernetes. Cuando los PR son mezclados en el repositorio git del entorno, se desencadena la ejecución de los pipelines para aplicar los cambias a través de los Helms Charts en el namespace del entorno.
+Un Entorno se asigna a un espacio de nombres (namespace) en un clúster de Kubernetes. Cuando los PR son mezclados en el repositorio Git del entorno, se desencadena la ejecución de los pipelines para aplicar los cambias a través de los Helms Charts en el namespace del entorno.
 
-Esto significa que tanto los desarrolladores como administradores pueden utilizar el mismo repositorio de git para administrar todas las configuraciones y versiones de todas las aplicaciones y recursos para un entorno, por lo tanto, todos los cambios en el entorno se capturan en git. De esta forma es fácil ver quién realizó los cambios y, lo que es más importante, es fácil revertir los cambios cuando sucedan cosas malas.
+Esto significa que tanto los desarrolladores como administradores pueden utilizar el mismo repositorio de Git para administrar todas las configuraciones y versiones de todas las aplicaciones y recursos para un entorno, por lo tanto, todos los cambios en el entorno se capturan en Git. De esta forma es fácil ver quién realizó los cambios y, lo que es más importante, es fácil revertir los cambios cuando sucedan cosas malas.
 
 <img src="/images/gitops.png" class="img-thumbnail">
 
@@ -46,9 +46,9 @@ Lea la [guía de configuración](/docs/managing-jx/common-tasks/config/) para am
 
 ## Promoción
 
-La promoción es implementada con GitOps generando una PR en el repositorio git del entorno para que todos los cambios pasen por git para su revisión, aprobación y para que cualquier cambio sea fácil de revertir.
+La promoción es implementada con GitOps generando una PR en el repositorio Git del entorno para que todos los cambios pasen por Git para su revisión, aprobación y para que cualquier cambio sea fácil de revertir.
 
-Cuando un nuevo cambio dentro del repositorio git del entorno se mezcla con la rama master, se activa el pipeline para el entorno, el cual aplica los cambio a los recursos a través de helm; siempre utilizando el código del repositorio git como única fuente de información.
+Cuando un nuevo cambio dentro del repositorio Git del entorno se mezcla con la rama master, se activa el pipeline para el entorno, el cual aplica los cambio a los recursos a través de helm; siempre utilizando el código del repositorio Git como única fuente de información.
 
 Los Pipelines para CD de Jenkins X automatizan la promoción de cambios de versión a través de cada Entorno que se configura con la propiedad _promotion strategy_ en `Auto`. De forma predeterminada, el entorno `Staging` utiliza la promoción automática y el entorno `Production` utiliza la promoción manual.
 

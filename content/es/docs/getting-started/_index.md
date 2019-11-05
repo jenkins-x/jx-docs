@@ -12,8 +12,8 @@ La forma más sencilla de comenzar es a través de los [Tutoriales de Google Clo
 
 De lo contrario, primero deberá instalar la [herramienta de línea de comandos jx](/docs/getting-started/setup/install/) en su máquina.
 
-Puede utilizar la [línea de comando jx](/commands/jx/#jx) para [crear un nuevo clúster de kubernetes](/docs/getting-started/setup/create-cluster) con Jenkins X instalado automáticamente.
+Puede utilizar la [línea de comando jx](/commands/jx/#jx) para [crear un nuevo clúster de Kubernetes](/docs/getting-started/setup/create-cluster) con Jenkins X instalado automáticamente.
 
-Si ya tiene un clúster de kubernetes existente, [instale Jenkins X en su clúster de kubernetes](/getting-started/install-on-cluster/).
+Si ya tiene un clúster de Kubernetes existente, [instale Jenkins X en su clúster de Kubernetes](/getting-started/install-on-cluster/).
 
-Cuando tenga un clúster kubernetes con Jenkins X instalado, consulte sus [próximos pasos](/es/docs/getting-started/next/).
+Cuando tenga un clúster Kubernetes con Jenkins X instalado, consulte sus [próximos pasos](/es/docs/getting-started/next/).

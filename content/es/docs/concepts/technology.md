@@ -9,19 +9,19 @@ weight: 50
 
 [helm](https://www.helm.sh/) es el administrador de paquetes de código abierto para Kubernetes.
 
-Funciona como cualquier otro administrador de paquetes (brew, yum, npm, etc) donde existen uno o más repositorios de donde se instalan los paquetes. Los paquetes en helm se llaman cartas náuticas (`charts`) para seguir con el tema náutico en kubernetes. Estos `charts` pueden ser buscados, instalados y actualizados.
+Funciona como cualquier otro administrador de paquetes (brew, yum, npm, etc) donde existen uno o más repositorios de donde se instalan los paquetes. Los paquetes en helm se llaman cartas náuticas (`charts`) para seguir con el tema náutico en Kubernetes. Estos `charts` pueden ser buscados, instalados y actualizados.
 
-Un [chart de helm es básicamente un conjunto de ficheros YAML versionados](https://docs.helm.sh/developing_charts/#charts) de kubernetes que se puede instalar fácilmente en cualquier clúster.
+Un [chart de helm es básicamente un conjunto de ficheros YAML versionados](https://docs.helm.sh/developing_charts/#charts) de Kubernetes que se puede instalar fácilmente en cualquier clúster.
 
 Helm permite la composición entre charts (un chart puede contener otro chart) a través del fichero `requirements.yaml`.
 
 ## ¿Qué es Skaffold?
 
-[skaffold](https://github.com/GoogleContainerTools/skaffold) en una herramienta de código abierto para construir imágenes de docker en los clústeres de kubernetes y luego desplegarlas/actualizarlas a través de `kubectl` o `helm`.
+[skaffold](https://github.com/GoogleContainerTools/skaffold) en una herramienta de código abierto para construir imágenes de docker en los clústeres de Kubernetes y luego desplegarlas/actualizarlas a través de `kubectl` o `helm`.
 
-El reto de construir imágenes de docker dentro del clúster de kubernetes es seleccionar cómo hacerlo, porque existen varias estrategias a seguir para lograr el mismo objetivo, p.ej:
+El reto de construir imágenes de docker dentro del clúster de Kubernetes es seleccionar cómo hacerlo, porque existen varias estrategias a seguir para lograr el mismo objetivo, p.ej:
 
-* utilizar el proceso (daemon) y socket local de docker del clúster de kubernetes.
+* utilizar el proceso (daemon) y socket local de docker del clúster de Kubernetes.
 * utilizar el servicio de la nube como por ejemplo Google Cloud Builder
 * utilizar un enfoque sin docker-daemon como es [kaniko](https://github.com/GoogleContainerTools/kaniko) que no necesita tener accesso al daemon de docker.
 
@@ -31,7 +31,7 @@ Skaffold también es realmente útil dentro de [DevPods](/docs/reference/devpods
 
 ## ¿Cómo se compara Helm con Skaffold?
 
-`helm` le permite instalar/actualizar paquetes llamados charts que utilizan una o más imágenes de docker que se encuentran en algún registro de docker junto con algunos ficheros kubernetes YAML para instalar/actualizar aplicaciones en un clúster de kubernetes.
+`helm` le permite instalar/actualizar paquetes llamados charts que utilizan una o más imágenes de docker que se encuentran en algún registro de docker junto con algunos ficheros Kubernetes YAML para instalar/actualizar aplicaciones en un clúster de Kubernetes.
 
 `skaffold` es una herramienta para realizar construcciones de imágenes de docker y, opcionalmente, volver a desplegar aplicaciones a través de `kubectl` o `helm`, ya sea dentro del pipeline CI/CD o cuando se desarrolla localmente.
 
@@ -52,7 +52,7 @@ Entonces, hemos simplificado los microservicios en Jenkins X delegando a un micr
 * utilizar o no TLS
 * utilizar `Route` o `Ingress`
 
-Si mira dentro del repositorio git de su entorno, puede observar que hay 2 `exposecontroller` de forma predeterminada. Ambos `exposecontroller` son [charts de helm](https://github.com/jenkins-x/default-environment-charts/blob/master/env/requirements.yaml).
+Si mira dentro del repositorio Git de su entorno, puede observar que hay 2 `exposecontroller` de forma predeterminada. Ambos `exposecontroller` son [charts de helm](https://github.com/jenkins-x/default-environment-charts/blob/master/env/requirements.yaml).
 
 Estas 2 tareas son utilizadas de forma predeterminada para la generación o limpieza de recursos `Ingress` para exponer los recursos `Services` etiquetados para a los que desee acceder desde fuera del clúster. p.ej aplicación web o api rest.
 
