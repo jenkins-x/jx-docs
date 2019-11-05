@@ -19,17 +19,17 @@ aliases:
 
 _Jenkins X Boot_ uses the following approach:
 
-* create your kubernetes cluster however you want:
-  * use Terraform to create your kubernetes clusters + the associated cloud resources
-  * use your cloud providers web console to create a new kubernetes cluster
+* create your Kubernetes cluster however you want:
+  * use Terraform to create your Kubernetes clusters + the associated cloud resources
+  * use your cloud providers web console to create a new Kubernetes cluster
   * use `jx create cluster --skip-installation` e.g.
 ``` sh
 jx create cluster gke --skip-installation
 ```
 
-  * use some custom tool of your choice or maybe its provided to you by your operations team
+  * use some custom tool of your choice (maybe it's provided to you by your operations team)
 
-* you may want to verify you can communicate correctly with your kubernetes cluster via:
+* you may want to verify you can communicate correctly with your Kubernetes cluster via:
 ``` sh
 kubectl get ns
 ```
@@ -39,19 +39,19 @@ kubectl get ns
 jx boot
 ```
 
-You will now be prompted for any missing parameters required to install such as your admin user/password, the Pipeline git user and token etc.
+You will now be prompted for any missing parameters required to install, such as your admin user/password, the Pipeline git user and token etc.
 
 
-Then Jenkins X should be installed and setup on your kubernetes cluster.
+Then Jenkins X should be installed and set up on your Kubernetes cluster.
 
-### About 'jx boot'
+### About `jx boot`
 
-The [jx boot](/commands/jx_boot) interprets the boot pipeline using your local `jx` binary. The underlying pipeline for booting Jenkins X can later on be ran inside kubernetes via Tekton. If ever something goes wrong with tekton you can always `jx boot` again to get things back up and running (e.g. if someone accidentally deletes your cluster).
+The [jx boot](/commands/jx_boot) interprets the boot pipeline using your local `jx` binary. The underlying pipeline for booting Jenkins X can later be run inside Kubernetes via Tekton. If ever something goes wrong with Tekton you can always `jx boot` again to get things back up and running (e.g., if someone accidentally deletes your cluster).
 
 
 #### Pre and Post Validation
 
-Before any installation is attempted it runs the [jx step verify preinstall](/commands/jx_step_verify_preinstall/) command to check everything looks OK. If you are using Terraform (so that your 'jx-requirements.yml' file has `terraform: true`) it will fail if Terraform has not created the required cloud resources. Otherwise they are lazily created for you if they don't exist.
+Before any installation is attempted, Boot runs the [jx step verify preinstall](/commands/jx_step_verify_preinstall/) command to check everything looks OK. If you are using Terraform (so that your `jx-requirements.yml` file has `terraform: true`) it will fail if Terraform has not created the required cloud resources. Otherwise they are lazily created for you if they don't exist.
 
 Once the installation has completed the [jx step verify install](/commands/jx_step_verify_install/) command is run to verify your installation is valid.
 
@@ -59,18 +59,18 @@ Once the installation has completed the [jx step verify install](/commands/jx_st
 
 At any time you can re-run [jx boot](/commands/jx_boot) to re-apply any changes in your configuration.
 
-So just edit anything in the configuration you like and re-run [jx boot](/commands/jx_boot) - whether thats to add or remove Apps, to change parameters or configuration or upgrade or downgrade versions of dependencies.
+So just edit anything in the configuration you like and re-run [jx boot](/commands/jx_boot) - whether that's to add or remove apps, to change parameters or configuration, or upgrade or downgrade versions of dependencies.
 
 ## Requirements
 
 There is a file called [jx-requirements.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml) which is used to specify the logical requirements of your installation; such as:
 
-* what kubernetes provider to use
+* what Kubernetes provider to use
 * whether to store secrets in the local file system or vault
 * if you are using Terraform to manage your cloud resources
 * if you wish to use kaniko for container image builds
 
-This is the main configuration file for `jx boot` and where you make most of your changes. You may want to review the  [jx-requirements.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml) file and make any changes you need.
+This is the main configuration file for `jx boot` where you make most of your changes. You may want to review the  [jx-requirements.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml) file and make any changes you need.
 
 ## Secrets
 
@@ -112,7 +112,7 @@ webhook: prow
 
 This configuration will cause `jx boot`'s pipeline to install a Vault using KMS and a cloud storage bucket to load/save secrets.
 
-The big advantage of Vault is it means a team of folks can then easily run `jx boot` on the same cluster. Even if you accidentally delete your kubernetes cluster, its easy to restore from the KMS + cloud bucket.
+The big advantage of Vault is it means a team of folks can then easily run `jx boot` on the same cluster. Even if you accidentally delete your Kubernetes cluster, it's easy to restore from the KMS + cloud bucket.
 
 ## Webhook
 
@@ -124,7 +124,7 @@ Jenkins X supports a number of engines for handling webhooks and optionally supp
 
 [Prow](/docs/reference/components/prow/) is currently the default webhook and [ChatOps](/docs/using-jx/faq/chatops) engine when using [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/) and GitHub.
 
-Its configured via the `webhook: prow` in `jx-requirements.yml`
+It's configured via the `webhook: prow` in `jx-requirements.yml`
 
 ```yaml
 cluster:
@@ -150,7 +150,7 @@ webhook: prow
 
 Once Lighthouse is more stable and well tested we'll make it the default for all installations using [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/).
 
-Its configured via the `webhook: lighthouse` in `jx-requirements.yml`
+It's configured via the `webhook: lighthouse` in `jx-requirements.yml`
 
 ```yaml
 cluster:
@@ -176,7 +176,7 @@ To use a Jenkins server in boot for processing webhooks and pipelines configure 
 
 ## Git
 
-Jenkins X supports a number of different git providers. You can specify the git provider you wish to use and the organisation to use for the git providers for each environment in your [jx-requirements.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml) file.
+Jenkins X supports a number of different Git providers. You can specify the Git provider you wish to use and the organisation to use for the Git providers for each environment in your [jx-requirements.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml) file.
 
 {{% pageinfo %}}
 **NOTE** Jenkins X creates repositories per default as private. This can cause issues when evaluating Jenkins X with GitHub, using a free GitHub _organisation_ to hold the various created (environment) repositories as free organization accounts do not have access to private repos. Using a personal Github account is not an issue though, as free private accounts have unlimited private repos.
@@ -187,7 +187,7 @@ For evaluation purposes you could use a private GitHub account as the owner of t
 
 ### GitHub
 
-This is the default if you don't specify anything.
+This is the default Git provider if you don't specify one.
 
 
 ```yaml
@@ -241,7 +241,7 @@ webhook: lighthouse
 
 ### Bitbucket Server
 
-For this specify the URL of the `gitServer` and `gitKind: bitbucketserver`. If you want to use [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/) then make sure you specify the [lighthouse webhook](#webhook) via `webhook: lighthouse`.
+For this specify the URL of the `gitServer` and `gitKind: bitbucketserver`. If you want to use [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/) then make sure you specify the [Lighthouse webhook](#webhook) via `webhook: lighthouse`.
 
 ```yaml
 cluster:
@@ -299,9 +299,9 @@ webhook: lighthouse
 ```
 
 
-### Gitlab
+### GitLab
 
-For this specify the URL of the `gitServer` and `gitKind: gitlab`. If you want to use [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/) then make sure you specify the [lighthouse webhook](#webhook) via `webhook: lighthouse`.
+For this specify the URL of the `gitServer` and `gitKind: gitlab`. If you want to use [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/) then make sure you specify the [Lighthouse webhook](#webhook) via `webhook: lighthouse`.
 
 ```yaml
 cluster:
@@ -334,7 +334,7 @@ webhook: lighthouse
 By default Jenkins X uses:
  
 * [Nexus](https://www.sonatype.com/nexus-repository-oss) as an artifact repository to store artifacts (e.g. Java jars, `pom.xml` files, tarballs or npm modules etc) 
-* [Chartmusem](https://chartmuseum.com/) as a repository of charts
+* [ChartMuseum](https://chartmuseum.com/) as a repository of charts
 
 You can explicitly configure nexus via the following `jx-requirements.yml` file:
 
@@ -363,19 +363,19 @@ To enable cloud storage for artifacts in `bucketrepo` you need to enable the `st
 
 ### None
 
-If you want to disable the artifact repository (nexus) but still use chartmuseum for charts you can use the following:
+If you want to disable the artifact repository (nexus) but still use ChartMuseum for charts you can use the following:
 
 ```yaml
 repository: none
 ```         
 
-Note that without using an artifact repository you will not be able to deploy maven artifacts; though [Chartmusem](https://chartmuseum.com/) will still be used as a repository of charts
+Note that without using an artifact repository you will not be able to deploy Maven artifacts; though [ChartMuseum](https://chartmuseum.com/) will still be used as a repository of charts
 
 ## Storage
 
-the [jx-requirements.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml) file can configure whether you want to use long term storage for logs + reports and what cloud storage buckets to use to store the data.
+the [jx-requirements.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml) file can configure whether you want to use long-term storage for logs + reports and what cloud storage buckets to use to store the data.
 
-e.g. the following `jx-requirements.yml` file enables long term storage:
+e.g. the following `jx-requirements.yml` file enables long-term storage:
 
 ```yaml
 cluster:
@@ -399,8 +399,8 @@ You can also specify the URLs of the storage buckets in the `storage` section. T
 * `gs://anotherBucket/mydir/something.txt` : using a GCS bucket on GCP
 * `s3://nameOfBucket/mydir/something.txt` : using S3 bucket on AWS
 * `azblob://thatBucket/mydir/something.txt` : using an Azure bucket
-* `http://foo/bar` : file stored in git not using HTTPS
-* `https://foo/bar` : file stored in a git repo using HTTPS
+* `http://foo/bar` : file stored in Git not using HTTPS
+* `https://foo/bar` : file stored in a Git repo using HTTPS
 
 e.g.
 
@@ -428,7 +428,7 @@ For more details see the [Storage Guide](/architecture/storage).
 
 ## Ingress
 
-If you don't specify anything in your [jx-requirements.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml) file then boot will default to using HTTP (rathter than HTTPS) and using [nip.io](https://nip.io/) as the DNS mechanism.
+If you don't specify anything in your [jx-requirements.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml) file then boot will default to using HTTP (rather than HTTPS) and using [nip.io](https://nip.io/) as the DNS mechanism.
 
 After running boot your `jx-requirements.yml` may look like:
 
@@ -506,7 +506,7 @@ webhook: prow
 
 ## Upgrading
 
-With `jx boot` all of the versions and configuration is in git so its easy to manage change via GitOps either automatically or manually.
+With `jx boot` all of the versions and configuration is in Git so it's easy to manage change via GitOps either automatically or manually.
 
 ### Auto Upgrades
 
@@ -518,13 +518,13 @@ autoUpdate:
   schedule: "0 0 23 1/1 * ? *"
 ```
 
-When auto upgrades are enabled a `CronJob` is run which periodically checks for changes in the [version stream](/docs/concepts/version-stream/) or [boot configuration](https://github.com/jenkins-x/jenkins-x-boot-config). If changes are detected the [jx upgrade boot](/commands/jx_upgrade_boot/) will create a Pull Request on your development git repository. Once that merges the boot configuration is upgraded and boot will be re-run inside a tekton pipeline to upgrade your installation.
+When auto upgrades are enabled a `CronJob` is run which periodically checks for changes in the [version stream](/docs/concepts/version-stream/) or [boot configuration](https://github.com/jenkins-x/jenkins-x-boot-config). If changes are detected the [jx upgrade boot](/commands/jx_upgrade_boot/) will create a pull request on your development Git repository. Once that merges the boot configuration is upgraded and boot will be re-run inside a tekton pipeline to upgrade your installation.
 
 ### Manual upgrades
 
 You can manually run the [jx upgrade boot](/commands/jx_upgrade_boot/) command at any time which if there have been changes in [version stream](/docs/concepts/version-stream/) or [boot configuration](https://github.com/jenkins-x/jenkins-x-boot-config) will create a Pull Request on your development git repository.
 
-Once that merges the boot configuration is upgraded and boot will be re-run inside a tekton pipeline to upgrade your installation.
+Once that merges the boot configuration is upgraded and boot will be re-run inside a Tekton pipeline to upgrade your installation.
 
 ### Recovering
 
@@ -533,9 +533,9 @@ If anything ever goes wrong (e.g. your cluster, namespace or tekton gets deleted
 
 ## Backups
 
-Jenkins X is integrated with [velero](https://velero.io) to support backing up the state of Jenkins X (the kubernetes and custom resources together with persistent volumes).
+Jenkins X is integrated with [Velero](https://velero.io) to support backing up the state of Jenkins X (the Kubernetes and custom resources together with persistent volumes).
 
-To enable velero add the following to your `jx-requirements.yml`:
+To enable Velero add the following to your `jx-requirements.yml`:
 
 ```yaml
 storage:
@@ -546,4 +546,4 @@ velero:
   namespace: velero
 ```
 
-Using whatever your cloud providers bucket URLs are. For more background checkout the [storage guide](/docs/managing-jx/common-tasks/storage/)
+Using whatever your cloud providers bucket URLs are. For more background, check out the [storage guide](/docs/managing-jx/common-tasks/storage/)
