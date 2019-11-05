@@ -322,6 +322,47 @@ storage:
 webhook: lighthouse
 ```
 
+## Repositorios
+
+Por defecto, Jenkins X utiliza:
+
+* [Nexus](https://www.sonatype.com/nexus-repository-oss) como un repositorio de artefactos para almacenar elementos como: jars, archivos `pom.xml`, módulos npm, etc.
+* [Chartmusem](https://chartmuseum.com/) como repositorio de charts de Helm
+
+Puede configurar nexus a través del archivo `jx-requirements.yml`:
+
+```yaml
+repository: nexus
+```
+
+### Bucketrepo
+
+El microservicio [bucketrepo](https://github.com/jenkins-x/bucketrepo) es un repositorio de artefactos que utiliza como almacenamiento la nube. Este servicio puede:
+
+* actuar como un proxy maven para almacenar en caché las dependencias cuando se llevan a cabo las compilaciones de java/maven
+* actuar como un repositorio de artefactos (p.ej, para desplegar artefactos maven)
+* como repositorio de charts de helm
+
+Para habilitar `bucketrepo` establezca la siguiente configuración en el fichero `jx-requirements.yml`:
+
+```yaml
+repository: bucketrepo
+```
+
+Este servicio utiliza de forma predeterminada el sistema de archivos local para almacenar los artefactos.
+
+Para habilitar el almacenamiento en la nube de los artefactos guardados en `bucketrepo` debe establecer la configuración `storage.repository`, en cuyo caso se utiliza el bucket que esté utilizando en el proveedor cloud. Vea la [sección de almacenamiento para más detalles](#almacenamiento).
+
+### Ninguna
+
+Si desea inhabilitar el repositorio de artefactos (nexus) pero mantener chartmuseum para los charts, puede utilizar la siguiente configuración:
+
+```yaml
+repository: none
+```
+
+Tenga en cuenta que si no utiliza un repositorio para los artefactos no podrá desplegar artefactos de maven. Sin embargo, podrá seguir utilizando el [Chartmusem](https://chartmuseum.com/) para almacenar los charts.
+
 ## Almacenamiento
 
 El fichero [jx-requirements.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml) permite configurar almacenamiento a largo plazo para registros e informes.
