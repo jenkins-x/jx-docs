@@ -198,15 +198,13 @@ values for your domain for for *TTL* (`5`) and *TTL Unit*
   6.  Click `Create`.
 
   7.  Configure Jenkins X for the new domain names:
-
-    - Edit the `jx-requirements.yaml` file and update the `domain`
-field (in `ingress`) to your domain name, for example
-`cluster1.acmecorp.example`
-
+  
+    - Edit the `jx-requirements.yaml` file and update the `domain` field (in `ingress`) to your domain name, for example `cluster1.acmecorp.example`
+    
     - In the *tls* setting, enable TLS with `enabled: true`
+    
+    - The resulting `jx-requirements.yaml` entries for these settings should look similar to the example below:
 
-    - The resulting `jx-requirements.yaml` entries for these settings
-should look similar to the following:
 
 ```yaml
 gitops: true
