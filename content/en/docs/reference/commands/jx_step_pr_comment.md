@@ -1,5 +1,5 @@
 ---
-date: 2019-11-06T07:36:05Z
+date: 2019-11-06T13:58:23Z
 title: "jx step pr comment"
 slug: jx_step_pr_comment
 url: /commands/jx_step_pr_comment/

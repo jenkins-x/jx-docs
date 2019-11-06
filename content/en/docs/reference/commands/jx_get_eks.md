@@ -1,5 +1,5 @@
 ---
-date: 2019-11-06T07:36:05Z
+date: 2019-11-06T13:58:23Z
 title: "jx get eks"
 slug: jx_get_eks
 url: /commands/jx_get_eks/
