@@ -53,7 +53,7 @@ We can then use the new step to populate the `parameters.yaml` file in the Pipel
 jx step create values --name parameters
 ```
 
-This uses the [parameters.schema.json](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/env/parameters.schema.json) file which powers the UI.
+This uses the [parameters.tmpl.schema.json](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/env/parameters.tmpl.schema.json) file which powers the UI.
 
 ### Improvements to values.yaml
 

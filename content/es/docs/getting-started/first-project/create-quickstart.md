@@ -1,7 +1,7 @@
 ---
 title: Crear un inicio rápido
 linktitle: Crear un inicio rápido
-description: Cómo crear e importar una nueva aplicación de forma rápida en Jenkins
+description: ¿Cómo crear e importar una nueva aplicación de forma rápida en Jenkins?
 weight: 10
 ---
 
@@ -74,7 +74,7 @@ Entonces, cuando creas un proyecto de inicio rápido, ya sea a través de [jx cr
 * el paquete seleccionado es utilizado para incluir los siguientes fichero en caso de que no existan:
   * `Dockerfile` para crear la imagen de docker para la aplicación
   * `Jenkinsfile` para implementar el flujo de tareas CI / CD utilizando la declaración de tareas como código (declarative pipeline as code)
-  * Plantillas Helm para desplegar la aplicación en Kubernetes e implementar la [Vista Previa de Entornos](/docs/concepts/features/#preview-environments)
+  * Plantillas Helm para desplegar la aplicación en Kubernetes e implementar la [Vista Previa de Entornos](/es/docs/concepts/features/#entornos-de-vista-previa)
 
 ## Agregar tu propio Inicio rápido
 

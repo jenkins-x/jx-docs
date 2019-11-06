@@ -115,7 +115,7 @@ Jenkins X admite varios sistemas para gestionar webhooks y opcionalmente admite 
 
 ### Prow
 
-[Prow](/docs/reference/components/prow/) es actualmente el sistema de webhook y [ChatOps](/docs/using-jx/faq/chatops) pre-establecido cuando se utiliza [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) con [Tekton](https://tekton.dev/) y GitHub.
+[Prow](/docs/reference/components/prow/) es actualmente el sistema de webhook y [ChatOps](/docs/using-jx/faq/chatops) pre-establecido cuando se utiliza [Serverless Jenkins X Pipelines](/es/docs/concepts/jenkins-x-pipelines/) con [Tekton](https://tekton.dev/) y GitHub.
 
 Se configura a través de `webhook: prow` en el fichero `jx-requirements.yml`.
 
@@ -139,9 +139,9 @@ webhook: prow
 
 ### Lighthouse
 
-[Lighthouse](/architecture/lighthouse/) es actualmente el sistema de webhook y [ChatOps](/docs/using-jx/faq/chatops) pre-establecido cuando se utiliza [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) con [Tekton](https://tekton.dev/) y un servidor git diferente a [GitHub](https://github.com).
+[Lighthouse](/architecture/lighthouse/) es actualmente el sistema de webhook y [ChatOps](/docs/using-jx/faq/chatops) pre-establecido cuando se utiliza [Serverless Jenkins X Pipelines](/es/docs/concepts/jenkins-x-pipelines/) con [Tekton](https://tekton.dev/) y un servidor git diferente a [GitHub](https://github.com).
 
-Cuando Lighthouse sea más estable y esté bien probado, lo convertiremos en la configuración pre-establecida para todas las instalaciones que utilicen [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/).
+Cuando Lighthouse sea más estable y esté bien probado, lo convertiremos en la configuración pre-establecida para todas las instalaciones que utilicen [Serverless Jenkins X Pipelines](/es/docs/concepts/jenkins-x-pipelines/).
 
 Se configura a través de `webhook: lighthouse` en el fichero `jx-requirements.yml`.
 
@@ -234,7 +234,7 @@ webhook: lighthouse
 
 ### Bitbucket Server
 
-Para este servidor git se especifica la URL `gitServer` y el tipo `gitKind: bitbucketserver`. Si deseas utilizar [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) con [Tekton](https://tekton.dev/) asegúrate de establecer [lighthouse webhook](#webhook) a través de `webhook: lighthouse`.
+Para este servidor git se especifica la URL `gitServer` y el tipo `gitKind: bitbucketserver`. Si deseas utilizar [Serverless Jenkins X Pipelines](/es/docs/concepts/jenkins-x-pipelines/) con [Tekton](https://tekton.dev/) asegúrate de establecer [lighthouse webhook](#webhook) a través de `webhook: lighthouse`.
 
 ```yaml
 cluster:
@@ -264,7 +264,7 @@ webhook: lighthouse
 
 ### Bitbucket Cloud
 
-Para este servidor git se especifica el tipo `gitKind: bitbucketcloud`. Si deseas utilizar [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) con [Tekton](https://tekton.dev/) asegúrate de establecer [lighthouse webhook](#webhook) a través de `webhook: lighthouse`.
+Para este servidor git se especifica el tipo `gitKind: bitbucketcloud`. Si deseas utilizar [Serverless Jenkins X Pipelines](/es/docs/concepts/jenkins-x-pipelines/) con [Tekton](https://tekton.dev/) asegúrate de establecer [lighthouse webhook](#webhook) a través de `webhook: lighthouse`.
 
 ```yaml
 cluster:
@@ -294,7 +294,7 @@ webhook: lighthouse
 
 ### Gitlab
 
-Para este servidor git se especifica la URL `gitServer` y el tipo `gitKind: gitlab`. Si deseas utilizar [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) con [Tekton](https://tekton.dev/) asegúrate de establecer [lighthouse webhook](#webhook) a través de `webhook: lighthouse`.
+Para este servidor git se especifica la URL `gitServer` y el tipo `gitKind: gitlab`. Si deseas utilizar [Serverless Jenkins X Pipelines](/es/docs/concepts/jenkins-x-pipelines/) con [Tekton](https://tekton.dev/) asegúrate de establecer [lighthouse webhook](#webhook) a través de `webhook: lighthouse`.
 
 ```yaml
 cluster:
@@ -321,6 +321,47 @@ storage:
     url: "gs://jx-logs"
 webhook: lighthouse
 ```
+
+## Repositorios
+
+Por defecto, Jenkins X utiliza:
+
+* [Nexus](https://www.sonatype.com/nexus-repository-oss) como un repositorio de artefactos para almacenar elementos como: jars, archivos `pom.xml`, módulos npm, etc.
+* [Chartmusem](https://chartmuseum.com/) como repositorio de charts de Helm
+
+Puede configurar nexus a través del archivo `jx-requirements.yml`:
+
+```yaml
+repository: nexus
+```
+
+### Bucketrepo
+
+El microservicio [bucketrepo](https://github.com/jenkins-x/bucketrepo) es un repositorio de artefactos que utiliza como almacenamiento la nube. Este servicio puede:
+
+* actuar como un proxy maven para almacenar en caché las dependencias cuando se llevan a cabo las compilaciones de java/maven
+* actuar como un repositorio de artefactos (p.ej, para desplegar artefactos maven)
+* como repositorio de charts de helm
+
+Para habilitar `bucketrepo` establezca la siguiente configuración en el fichero `jx-requirements.yml`:
+
+```yaml
+repository: bucketrepo
+```
+
+Este servicio utiliza de forma predeterminada el sistema de archivos local para almacenar los artefactos.
+
+Para habilitar el almacenamiento en la nube de los artefactos guardados en `bucketrepo` debe establecer la configuración `storage.repository`, en cuyo caso se utiliza el bucket que esté utilizando en el proveedor cloud. Vea la [sección de almacenamiento para más detalles](#almacenamiento).
+
+### Ninguna
+
+Si desea inhabilitar el repositorio de artefactos (nexus) pero mantener chartmuseum para los charts, puede utilizar la siguiente configuración:
+
+```yaml
+repository: none
+```
+
+Tenga en cuenta que si no utiliza un repositorio para los artefactos no podrá desplegar artefactos de maven. Sin embargo, podrá seguir utilizando el [Chartmusem](https://chartmuseum.com/) para almacenar los charts.
 
 ## Almacenamiento
 
@@ -471,11 +512,11 @@ autoUpdate:
   schedule: "0 0 23 1/1 * ? *"
 ```
 
-Cuando las actualizaciones automáticas están habilitadas un `CronJob` es ejecutado periódicamente para revisar cambios en el [flujo de versiones](/docs/concepts/version-stream/) o en la [configuración del boot](https://github.com/jenkins-x/jenkins-x-boot-config). Si se detectan cambios el comando [jx step boot upgrade](/commands/jx_step_boot_upgrade/) va a crear un Pull Request en el repositorio git de desarrollo. Una vez mezclado los cambios la configuración del boot se ha actualizado y por ende Tekton iniciará el pipeline para actualizar la instalación.
+Cuando las actualizaciones automáticas están habilitadas un `CronJob` es ejecutado periódicamente para revisar cambios en el [flujo de versiones](/es/docs/concepts/version-stream/) o en la [configuración del boot](https://github.com/jenkins-x/jenkins-x-boot-config). Si se detectan cambios el comando [jx step boot upgrade](/commands/jx_step_boot_upgrade/) va a crear un Pull Request en el repositorio git de desarrollo. Una vez mezclado los cambios la configuración del boot se ha actualizado y por ende Tekton iniciará el pipeline para actualizar la instalación.
 
 ### Actualizaciones Manuales
 
-Puedes ejecutar manualmente el comando [jx step boot upgrade](/commands/jx_step_boot_upgrade/) siempre que lo desees. Si al ejecutarlo existen cambio en el [flujo de versiones](/docs/concepts/version-stream/) o en la [configuración del boot](https://github.com/jenkins-x/jenkins-x-boot-config) se creará un Pull Request en el repositorio git de desarrollo.
+Puedes ejecutar manualmente el comando [jx step boot upgrade](/commands/jx_step_boot_upgrade/) siempre que lo desees. Si al ejecutarlo existen cambio en el [flujo de versiones](/es/docs/concepts/version-stream/) o en la [configuración del boot](https://github.com/jenkins-x/jenkins-x-boot-config) se creará un Pull Request en el repositorio git de desarrollo.
 
 Una vez mezclado los cambios la configuración del boot se ha actualizado y por ende Tekton iniciará el pipeline para actualizar la instalación.
 
