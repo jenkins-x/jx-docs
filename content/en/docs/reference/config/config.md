@@ -1503,7 +1503,7 @@ IngressConfig
 </tr>
 <tr>
 <td>
-<code>remotetCluster</code></br>
+<code>remoteCluster</code></br>
 <em>
 bool
 </em>
@@ -2102,6 +2102,17 @@ bool
 <p>IgnoreLoadBalancer if the nginx-controller LoadBalancer service should not be used to detect and update the
 domain if you are using a dynamic domain resolver like <code>.nip.io</code> rather than a real DNS configuration.
 With this flag enabled the <code>Domain</code> value will be used and never re-created based on the current LoadBalancer IP address.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>exposer</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Exposer the exposer used to expose ingress endpoints. Defaults to &ldquo;Ingress&rdquo;</p>
 </td>
 </tr>
 <tr>
@@ -4885,5 +4896,5 @@ string
 <hr/>
 <p><em>
 Generated with <code>gen-crd-api-reference-docs</code>
-on git commit <code>1f6fbacb1</code>.
+on git commit <code>39f3625bf</code>.
 </em></p>
