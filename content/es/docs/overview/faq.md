@@ -21,9 +21,9 @@ En Jenkins X, solamente con la [instalación de Jenkins X](/es/docs/getting-star
 
 Jenkins X admite diferentes motores de ejecución; puede orquestar un servidor Jenkins por equipo reutilizando Jenkins en un contenedor docker. Sin embargo, cuando utilizamos los [Pipelines de Jenkins X sin servidor](/es/docs/concepts/jenkins-x-pipelines/), utilizamos [Tekton](https://tekton.dev/) en lugar de Jenkins como motor de los flujos CI/CD para proporcionar una arquitectura nativa en la nube, moderna y de alta disponibilidad.
 
-## ¿Es Jenkins X una bifurcación Jenkins?
+## ¿Es Jenkins X una bifurcación de Jenkins?
 
-No! Jenkins X puede orquestar el servidor Jenkins reutilizándolo dentro de un contenedor y configurándolo para que sea lo más nativo posible.
+¡No! Jenkins X puede orquestar el servidor Jenkins reutilizándolo dentro de un contenedor y configurándolo para que sea lo más nativo posible.
 
 Sin embargo, cuando utilizamos los [Pipelines de Jenkins X sin servidor (serverless)](/es/docs/concepts/jenkins-x-pipelines/), utilizamos [Tekton](https://tekton.dev/) en lugar de Jenkins como el motor de CI/CD para proporcionar una arquitectura nativa en la nube, moderna y de alta disponibilidad.
 
