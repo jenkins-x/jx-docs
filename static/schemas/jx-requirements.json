@@ -112,7 +112,7 @@
         "owner": {
           "type": "string"
         },
-        "remotetCluster": {
+        "remoteCluster": {
           "type": "boolean"
         },
         "repository": {
@@ -155,6 +155,9 @@
           "type": "string"
         },
         "domainIssuerURL": {
+          "type": "string"
+        },
+        "exposer": {
           "type": "string"
         },
         "externalDNS": {
