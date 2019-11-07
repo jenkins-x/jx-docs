@@ -3,7 +3,7 @@ title: Crear clúster EKS con Terraform
 linktitle: Terraform
 description: ¿Cómo configurar un clúster EKS, requerimientos y Jenkins X con Terraform en AWS?
 categories: [getting started]
-keywords: [install,kubernetes,aws,terraform]
+keywords: [install,Kubernetes,aws,terraform]
 weight: 65
 ---
 

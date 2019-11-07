@@ -47,7 +47,7 @@ El Pipeline en Jenkins X utiliza un nuevo archivo `jenkins-x.yml` que es YAML en
 
 Sin embargo, todavía se están reutilizando los mismos paquetes de construcción reutilizables y de composición por detrás del telón. (Los paquetes de construcción de Jenkins X - [build packs](/docs/managing-jx/common-tasks/build-packs/) - en realidad están escritos en YAML en los Pipelines de Jenkins X).
 
-Una cosa que notará es que con los Pipelines de Jenkins X no necesitamos copiar/pegar un gran archivo `Jenkinsfile` en el repositorio git de cada aplicación; por lo general, el archivo `jenkins-x.yml` generado es pequeño, como este:
+Una cosa que notará es que con los Pipelines de Jenkins X no necesitamos copiar/pegar un gran archivo `Jenkinsfile` en el repositorio Git de cada aplicación; por lo general, el archivo `jenkins-x.yml` generado es pequeño, como este:
 
 ```yaml
 buildPack: maven
@@ -107,8 +107,8 @@ Las siguientes variables de entorno están disponibles para su uso en los pasos 
 | BUILD_NUMBER | el número de construcción (1, 2, 3) comienza en `1` para cada repo y rama |
 | PIPELINE_KIND | el tipo de pipeline p.ej `release` o `pullrequest` |
 | PIPELINE_CONTEXT | el contexto del pipeline si existen múltiples pipelines por PR (para diferenciar tests/governance/lint etc) |
-| REPO_OWNER | el dueño del repositorio git |
-| REPO_NAME | el nombre del repositorio git |
+| REPO_OWNER | el dueño del repositorio Git |
+| REPO_NAME | el nombre del repositorio Git |
 | JOB_NAME | el nombre de la tarea que normalmente tiene este aspecto `$REPO_OWNER/$REPO_NAME/$BRANCH_NAME` |
 | APP_NAME | el nombre de la applicación que normalmente es `$REPO_NAME`
 | BRANCH_NAME | el nombre de la rama p.ej `master` o `PR-123` |
@@ -116,8 +116,8 @@ Las siguientes variables de entorno están disponibles para su uso en los pasos 
 | VERSION | contiene el número de versión que ha sido liberada o la versión de la vista previa del PR |
 | BUILD_ID | igual que `$BUILD_NUMBER`
 | JOB_TYPE | la tipo de tarea de prow p.ej `presubmit` para el PR o `postsubmit` para la liberación |
-| PULL_BASE_REF | la rama/referencia en git |
-| PULL_BASE_SHA | el SHA en git que ha sido construido |
+| PULL_BASE_REF | la rama/referencia en Git |
+| PULL_BASE_SHA | el SHA en Git que ha sido construido |
 | PULL_NUMBER | para los PRs este será el número sin el prefijo `PR-`
-| PULL_REFS | para combinar por lotes todas las referencias de git |
+| PULL_REFS | para combinar por lotes todas las referencias de Git |
 

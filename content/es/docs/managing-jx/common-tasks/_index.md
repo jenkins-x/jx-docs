@@ -1,7 +1,7 @@
 ---
-title: "Core Tasks"
-linkTitle: "Core Tasks"
+title: "Principales Tareas"
+linkTitle: "Principales Tareas"
 weight: 10
 description: >
-  The core tasks to help you manage the Jenkins X platform.
+  Se describen las principales tareas de la plataforma Jenkins X para ayudarlo a administrarla.
 ---
