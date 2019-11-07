@@ -126,7 +126,7 @@ pipeline {
 
 ## Overwrite existing Builders
 
-Jenkins X comes with a number of [pre-installed builders](https://raw.githubusercontent.com/jenkins-x/jenkins-x-platform/master/values.yaml)
+Jenkins X comes with a number of [pre-installed builders](https://raw.githubusercontent.com/jenkins-x/jenkins-x-platform/master/jenkins-x-platform/values.yaml)
 which you can overwrite if required during installation or upgrade.
 
 You just need to build your custom image either based on [builder-base](https://github.com/jenkins-x/builder-base/blob/master/Dockerfile.common)
