@@ -49,7 +49,7 @@ Una vez que haya elegido el proyecto a crear y le haya dado un nombre, se automa
 
 * crea un par de proyectos desde el inicio rápido en subdirectorios
 * adiciona el código de ambos en un par de repositorios Git
-* crea un repositorio Git remote para cada repositorio Git local en una plataforma como [GitHub](https://github.com)
+* crea un repositorio Git  para cada repositorio Git local en una plataforma como [GitHub](https://github.com)
 * empuja el código de los repositorios locales hacia los repositorios remotos
 * adiciona los siguientes ficheros:
   * `Dockerfile` para construir la imagen Docker de la aplicación

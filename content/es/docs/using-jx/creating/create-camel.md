@@ -26,11 +26,11 @@ Una vez que haya elegido el proyecto a crear y le haya dado un nombre, los sigui
 * crea un nuevo microservicio Camel en un subdirectorio
 * adiciona su código fuente a un repositorio Git
 * crea un repositorio Git remoto en un servidor Git como por ejemplo [GitHub](https://github.com)
-* empuja el código local al repositorio remote de Git
+* empuja el código local al repositorio remoto Git
 * adiciona los siguientes ficheros:
   * `Dockerfile` para construir su aplicación en una imagen Docker
   * `Jenkinsfile` para implementar el pipeline CI/CD
   * chart Helm para ejecutar la aplicación dentro de Kubernetes
-* registra un enlace en el repositorio remote Git y sus equipos en Jenkins
+* registra un enlace en el repositorio remoto Git y sus equipos en Jenkins
 * adiciona el repositorio Git a sus equipos en Jenkins
 * desencadena el primer pipeline
