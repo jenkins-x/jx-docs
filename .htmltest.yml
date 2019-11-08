@@ -2,3 +2,4 @@ DirectoryPath: "public"
 IgnoreSSLVerify: true
 # we shouldn't be ignoring missing alt properties, but there are a few too many right now
 IgnoreAltMissing: true
+IgnoreInternalEmptyHash: true
