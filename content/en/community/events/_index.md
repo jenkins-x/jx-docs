@@ -15,6 +15,8 @@ For details of the next Jenkins X talk or demo checkout our [talks at meetups an
 
 ### Other Current and Upcoming Events
 
+* [Jenkins X Hackathon in Lisbon on 3 December](/blog/2019/11/08/jenkins-x-hackathon-lisbon/)
+
 * [Jenkins X Contributor Summit in Lisbon on 3 December](/blog/2019/10/18/jenkins-x-contributor-summit-lisbon/)
 
 * [2019 DevOps World/Jenkins World EU - Lisbon, Portugal](/community/events/2019-12-dwjw)
