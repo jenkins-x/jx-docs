@@ -4664,6 +4664,146 @@ string
 </tr>
 </tbody>
 </table>
+<h3 id="config.jenkins.io/v1.VaultAWSConfig">VaultAWSConfig
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#config.jenkins.io/v1.VaultConfig">VaultConfig</a>)
+</p>
+<p>
+<p>VaultAWSConfig contains all the Vault configuration needed by Vault to be deployed in AWS</p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>VaultAWSUnsealConfig</code></br>
+<em>
+<a href="#config.jenkins.io/v1.VaultAWSUnsealConfig">
+VaultAWSUnsealConfig
+</a>
+</em>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<code>autoCreate</code></br>
+<em>
+bool
+</em>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<code>dynamoDBTable</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<code>dynamoDBRegion</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<code>iamUserName</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="config.jenkins.io/v1.VaultAWSUnsealConfig">VaultAWSUnsealConfig
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#config.jenkins.io/v1.VaultAWSConfig">VaultAWSConfig</a>)
+</p>
+<p>
+<p>VaultAWSUnsealConfig contains references to existing AWS resources that can be used to install Vault</p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>kmsKeyId</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<code>kmsRegion</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<code>s3Bucket</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<code>s3Prefix</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<code>s3Region</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
 <h3 id="config.jenkins.io/v1.VaultConfig">VaultConfig
 </h3>
 <p>
@@ -4671,6 +4811,7 @@ string
 <a href="#config.jenkins.io/v1.RequirementsConfig">RequirementsConfig</a>)
 </p>
 <p>
+<p>VaultConfig contains Vault configuration for boot</p>
 </p>
 <table>
 <thead>
@@ -4688,7 +4829,7 @@ string
 </em>
 </td>
 <td>
-<p>Name the name of the vault if using vault for secretts</p>
+<p>Name the name of the vault if using vault for secrets</p>
 </td>
 </tr>
 <tr>
@@ -4750,6 +4891,18 @@ bool
 </td>
 <td>
 <p>Optionally allow us to override the default lookup of the Vault URL, could be incluster service or external ingress</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>aws</code></br>
+<em>
+<a href="#config.jenkins.io/v1.VaultAWSConfig">
+VaultAWSConfig
+</a>
+</em>
+</td>
+<td>
 </td>
 </tr>
 </tbody>
@@ -4896,5 +5049,5 @@ string
 <hr/>
 <p><em>
 Generated with <code>gen-crd-api-reference-docs</code>
-on git commit <code>39f3625bf</code>.
+on git commit <code>75f7453c2</code>.
 </em></p>

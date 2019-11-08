@@ -291,8 +291,45 @@
       "additionalProperties": false,
       "type": "object"
     },
+    "VaultAWSConfig": {
+      "properties": {
+        "autoCreate": {
+          "type": "boolean"
+        },
+        "dynamoDBRegion": {
+          "type": "string"
+        },
+        "dynamoDBTable": {
+          "type": "string"
+        },
+        "iamUserName": {
+          "type": "string"
+        },
+        "kmsKeyId": {
+          "type": "string"
+        },
+        "kmsRegion": {
+          "type": "string"
+        },
+        "s3Bucket": {
+          "type": "string"
+        },
+        "s3Prefix": {
+          "type": "string"
+        },
+        "s3Region": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
     "VaultConfig": {
       "properties": {
+        "aws": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/VaultAWSConfig"
+        },
         "bucket": {
           "type": "string"
         },
