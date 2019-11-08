@@ -13,11 +13,11 @@ Kubernetes 命令行工具 [kubectl](https://kubernetes.io/docs/reference/kubect
 kubectl config set-context`kubectl config current-context` --namespace=foo
 ```
 
-然而 [jx](/commands/jx) 还提供了很多有用的命令，用来改变集群、命名空间或环境：
+然而 [jx](/commands/jx/) 还提供了很多有用的命令，用来改变集群、命名空间或环境：
 
 ### 切换环境
 
-使用 [jx environment](/commands/jx_environment) 来切换 [环境](/zh/docs/concepts/features/#environments)
+使用 [jx environment](/commands/jx_environment/) 来切换 [环境](/zh/docs/concepts/features/#environments)
 
 ```sh
 jx environment
@@ -33,7 +33,7 @@ jx env staging
 
 ### 切换命名空间
 
-使用 [jx namespace](/commands/jx_namespace) 在 Kubernetes 不同的命名空间之间进行切换。
+使用 [jx namespace](/commands/jx_namespace/) 在 Kubernetes 不同的命名空间之间进行切换。
 
 
 ```sh
@@ -50,7 +50,7 @@ jx ns jx-production
 
 ### 切换集群
 
-使用 [jx context](/commands/jx_context) 在不同的 Kubernetes 集群（或者上下文）之间切换。
+使用 [jx context](/commands/jx_context/) 在不同的 Kubernetes 集群（或者上下文）之间切换。
 
 ```sh
 jx context
@@ -73,15 +73,15 @@ jx ctx minikube
 
 因此，如果通过一个 shell 命令来切换 Kubernetes 上下文或命名空间，有时候是很有帮助的。例如：如果你总是想要看一下集群中的生产环境，就只在那个 shell 中使用那个集群，这样可以减少事故。
 
-你可以使用命令 [jx shell](/commands/jx_shell) 提示你选择不同的 Kubernetes 上下文，例如：[jx context](/commands/jx_context) 命令。然而，这样切换命名空间或集群就只能在当前 shell 中有效！
+你可以使用命令 [jx shell](/commands/jx_shell/) 提示你选择不同的 Kubernetes 上下文，例如：[jx context](/commands/jx_context/) 命令。然而，这样切换命名空间或集群就只能在当前 shell 中有效！
 
-还有 [jx shell](/commands/jx_shell) 通过 [jx prompt](/commands/jx_prompt) 自动更新你的命令提示符，这样使得你的 shell 很清楚上下文或命名空间的修改。
+还有 [jx shell](/commands/jx_shell/) 通过 [jx prompt](/commands/jx_prompt/) 自动更新你的命令提示符，这样使得你的 shell 很清楚上下文或命名空间的修改。
 
 ### 定制你的 shell
 
-你可以使用 [jx prompt](/commands/jx_prompt) 把当前 Kubernetes 集群和命名空间添加到你的终端提示符中。
+你可以使用 [jx prompt](/commands/jx_prompt/) 把当前 Kubernetes 集群和命名空间添加到你的终端提示符中。
 
-要为 [jx 命令](/commands/jx) 添加命令自动补充，尝试 [jx 自动补充](/commands/jx_completion) 。
+要为 [jx 命令](/commands/jx/) 添加命令自动补充，尝试 [jx 自动补充](/commands/jx_completion/) 。
 
 
 

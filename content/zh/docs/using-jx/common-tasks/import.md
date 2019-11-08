@@ -5,7 +5,7 @@ description: 如何把已经存在的项目导入 Jenkins X
 ---
 
 
-如果你已经有一些源码，希望导入 Jenkins X，你可以使用 [jx import](/commands/jx_import) 命令。
+如果你已经有一些源码，希望导入 Jenkins X，你可以使用 [jx import](/commands/jx_import/) 命令。
 
 ```sh
 cd my-cool-app

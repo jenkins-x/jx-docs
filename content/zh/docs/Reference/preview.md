@@ -9,7 +9,7 @@ description: 在变更合并到 master 之前预览 Pull Requests
 
 通常，预览环境是由 Jenkins X 的流水线中自动创建的。
 
-然而，你可以使用 [jx](/commands/jx) 通过命令 [jx preview](/commands/jx_preview) 手动创建一个[预览环境](/zh/docs/concepts/features/#preview-environments)。
+然而，你可以使用 [jx](/commands/jx/) 通过命令 [jx preview](/commands/jx_preview/) 手动创建一个[预览环境](/zh/docs/concepts/features/#preview-environments)。
 
 ```sh
 jx preview

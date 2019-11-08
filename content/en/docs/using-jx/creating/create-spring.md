@@ -141,4 +141,4 @@ The two methods of configuring Spring Boot projects in Jenkins X performs severa
 You can now use your Git-enabled local project subdirectory to make
 changes to your Spring Boot application, push those changes to Git, and
 automatically have Jenkins X build, create
-[previews](/developing/preview/) for testing and validation, and [promote](/developing/promote) your app to production for general usage.
+[previews](/developing/preview/) for testing and validation, and [promote](/developing/promote/) your app to production for general usage.

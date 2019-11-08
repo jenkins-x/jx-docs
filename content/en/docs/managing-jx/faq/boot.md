@@ -3,6 +3,7 @@ title: Boot Questions
 linktitle: Boot Questions
 description: Questions on using 'jx boot'
 weight: 20
+autolink: false
 aliases:
   - /faq/issues/
 ---
@@ -47,7 +48,7 @@ See also [How do I add multiple parallel pipelines to a project?](/docs/using-jx
 
 It depends on which namespace you want the charts to be installed.
 
-If its in the development environment (the `jx` namespace by default) then `env/requirements.yaml` is where to add the chart and for a chart `foo` you can add `env/foo/values.yaml` to configure it. (or `env/foo/values.tmpl.yaml` if you want to use some [templating](docs/getting-started/setup/boot/how-it-works/#improvements-to-values-yaml) of the `values.yaml`)
+If its in the development environment (the `jx` namespace by default) then `env/requirements.yaml` is where to add the chart and for a chart `foo` you can add `env/foo/values.yaml` to configure it. (or `env/foo/values.tmpl.yaml` if you want to use some [templating](/docs/getting-started/setup/boot/how-it-works/#improvements-to-values-yaml) of the `values.yaml`)
 
 
 Though if you want our chart to be in another namespace then we use the convention of adding a folder in the `system` directory in the boot configuration (e.g. like we do for ingress, cert manager, velero, service mesh etc). So make a new folder in `system` and add the `jx step helm apply` step in the pipeline in `jenkins-x.yml` like we do for `cert-manager`, `nginx`, `velero` etc.

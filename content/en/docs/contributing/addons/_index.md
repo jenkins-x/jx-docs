@@ -127,7 +127,7 @@ If you need to add support for different languages or build tools then you will 
 * environment variables
 * secrets so the pipeline can write to git repositories, docker registries, maven/npm/helm repositories and so forth
 
-Read more about [creating build packs](/architecture/build-packs#creating-new-build-packs) and [creating pod templates](/architecture/pod-templates).
+Read more about [creating build packs](/architecture/build-packs/#creating-new-build-packs) and [creating pod templates](/architecture/pod-templates).
 
 ## Build Stages
 

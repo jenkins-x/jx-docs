@@ -7,7 +7,7 @@ weight: 10
 
 Los inicios rápidos son aplicaciones prefabricadas desde las que puede iniciar un proyecto, en lugar de comenzar desde cero.
 
-Puedes crear nuevas aplicaciones desde nuestra lista de aplicaciones de inicio rápido seleccionadas a través del comando [jx create quickstart](/commands/jx_create_quickstart).
+Puedes crear nuevas aplicaciones desde nuestra lista de aplicaciones de inicio rápido seleccionadas a través del comando [jx create quickstart](/commands/jx_create_quickstart/).
 
 
 ```sh
@@ -80,7 +80,7 @@ Entonces, cuando creas un proyecto de inicio rápido, ya sea a través de [jx cr
 
 Si desea enviar un nuevo inicio rápido a Jenkins X, [simplemente plantee el problema](https://github.com/jenkins-x/jx/issues/new?labels=quickstart&title=Add%20quickstart&body=Please%20add%20this%20github%20quickstart:) con la URL en GitHub de su inicio rápido y podremos bifurcarlo (fork) en la [organización de inicio rápido](https://github.com/jenkins-x-quickstarts) para que aparezca en el menú de inicio rápido `jx create`.
 
-Otra forma puede ser si forma parte de un proyecto de código abierto y desea crear tu propio grupo de inicios rápidos para su proyecto; puede [plantear el problema](https://github.com/jenkins-x/jx/issues/new?labels=quickstart&title=Add%20quickstart&body=Please%20add%20this%20github%20quickstart:) dándonos detalles de la organización en GitHub donde están los inicios rápidos y los agregaremos a la  organización para que aparezcan en el comando [jx create quickstart](/commands/jx_create_quickstart). Es más fácil para el [jx create quickstart](/commands/jx_create_quickstart) si se mantienen los inicios rápidos separados por organizaciones en GitHub.
+Otra forma puede ser si forma parte de un proyecto de código abierto y desea crear tu propio grupo de inicios rápidos para su proyecto; puede [plantear el problema](https://github.com/jenkins-x/jx/issues/new?labels=quickstart&title=Add%20quickstart&body=Please%20add%20this%20github%20quickstart:) dándonos detalles de la organización en GitHub donde están los inicios rápidos y los agregaremos a la  organización para que aparezcan en el comando [jx create quickstart](/commands/jx_create_quickstart/). Es más fácil para el [jx create quickstart](/commands/jx_create_quickstart/) si se mantienen los inicios rápidos separados por organizaciones en GitHub.
 
 Una vez incluidos, podrá utilizar sus propios inicios rápidos en el comando `jx create quickstart` mediante el parámetro de comando `-g` o `--organisations`. Por ejemplo:
 
@@ -102,7 +102,7 @@ jx create quickstartlocation --url https://mygit.server.com --owner my-quickstar
 
 Si omites el parámetro `--url` el comando va a asumir como repositorios a [GitHub](https://github.com/). Ten en cuenta que está permitido incluir tanto repositorios privados como públicos.
 
-Esto significa que puedes tener tu repositorio privado para inicios rápidos en tu organización. Nosotros recomendamos lógicamente que [los nuevos inicios rápidos sean compartidos como proyectos open source](https://github.com/jenkins-x/jx/issues/new?labels=quickstart&title=Add%20quickstart&body=Please%20add%20this%20github%20quickstart:) para que puedan ser incluidos y compartidos con toda [la comunidad](/community) - pero puede darse el caso que desees tener un repositorio propio privado para utilizarlo con proyectos propietarios.
+Esto significa que puedes tener tu repositorio privado para inicios rápidos en tu organización. Nosotros recomendamos lógicamente que [los nuevos inicios rápidos sean compartidos como proyectos open source](https://github.com/jenkins-x/jx/issues/new?labels=quickstart&title=Add%20quickstart&body=Please%20add%20this%20github%20quickstart:) para que puedan ser incluidos y compartidos con toda [la comunidad](/community/) - pero puede darse el caso que desees tener un repositorio propio privado para utilizarlo con proyectos propietarios.
 
 Puedes además especificar `--includes` o excluir `--excludes` patrones para filtrar por nombres de repositorios donde `*` incluye a todos los elementos y `foo*` selecciona todos aquellos que empiezen con `foo`. Por ejemplo, puedes solamente incluir los lenguajes y tecnologías de tu organización necesite y el resto excluirlos.
 

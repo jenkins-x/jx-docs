@@ -153,7 +153,7 @@ You should now be good to go!
 
 ## Installing Jenkins X on a cloud
 
-To install Jenkins X on an existing Kubernetes cluster, you can then use the [jx install](/commands/jx_install) command:
+To install Jenkins X on an existing Kubernetes cluster, you can then use the [jx install](/commands/jx_install/) command:
 
 ```sh
 jx install
@@ -208,7 +208,7 @@ jx install --provider=kubernetes --external-ip 10.123.0.17 \
   --ingress-namespace=kube-system
 ```
 
-If you want an explanation of what the [jx install](/commands/jx_install) command does, you can read [what happens with the install](../install-on-cluster-what-happens)
+If you want an explanation of what the [jx install](/commands/jx_install/) command does, you can read [what happens with the install](../install-on-cluster-what-happens/)
 
 ## Installing Jenkins X on IBM Cloud Private
 

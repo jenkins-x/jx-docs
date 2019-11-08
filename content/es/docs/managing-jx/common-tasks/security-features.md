@@ -59,4 +59,4 @@ jx create post preview job --name owasp --image owasp/zap2docker-weekly:latest -
 
 Puede tener múltiples enlaces configurados, por lo tanto, si tuviera contenedores específicos a los que necesite revisar/probar, podría ejecutar en cada aplicación de vista previa (es decir, cada PR) utilizando el siguiente comando:
 
-[Entornos de vista previa](/developing/preview)
+[Entornos de vista previa](/docs/reference/preview/)

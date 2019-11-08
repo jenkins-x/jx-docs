@@ -29,8 +29,7 @@ useful to run `jx boot` from within Terraform.
 
 By default, Terraform stores its state in local file `terraform.tfstate`. In an ephemeral cloud
 environment, this state gets lost and you would create a new cluster each time you applied
-Terraform. Remedy this by specifying a [Terraform backend](https://www.terraform.io/docs/
-backends/index.html) to store the state in more durable storage like Google Cloud Storage or
+Terraform. Remedy this by specifying a [Terraform backend](https://www.terraform.io/docs/backends/index.html) to store the state in more durable storage like Google Cloud Storage or
 Amazon S3.
 
 Presenters recommended nginx as an ingress controller and

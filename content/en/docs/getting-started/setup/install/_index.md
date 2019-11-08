@@ -174,4 +174,4 @@ Or to get help on a specific command, say, `create` then type:
 jx help create
 ```
 
-You can also browse the [jx command reference documentation](/commands/jx)
+You can also browse the [jx command reference documentation](/commands/jx/)

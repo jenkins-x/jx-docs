@@ -62,5 +62,5 @@ jx create post preview job --name owasp --image owasp/zap2docker-weekly:latest -
 You can have multiple hooks configured, so if you had specific containers that had probes/tests you would like to run against every preview app (ie every pull request) you could add it this way.
 
 
-[Preview Environments](/developing/preview)
+[Preview Environments](/docs/reference/preview/)
 

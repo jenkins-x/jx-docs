@@ -37,7 +37,7 @@ Here we'll call out of some of the main repositories in the above organisations:
 
 * [jenkins-x/jenkins-x-builders](https://github.com/jenkins-x/jenkins-x-builders) generates the static jenkins server build pod docker images        
 * [jenkins-x/jenkins-x-image](https://github.com/jenkins-x/jenkins-x-image) generates the docker image for the static jenkins server we use by default
-* [jenkins-x/jenkins-x-serverless](https://github.com/jenkins-x/jenkins-x-serverless) generates the [serverless jenkins](/news/serverless-jenkins/) docker images when using [prow](/architecture/prow)
+* [jenkins-x/jenkins-x-serverless](https://github.com/jenkins-x/jenkins-x-serverless) generates the [serverless jenkins](/news/serverless-jenkins/) docker images when using [prow](/architecture/prow/)
 
 ### Tools
 

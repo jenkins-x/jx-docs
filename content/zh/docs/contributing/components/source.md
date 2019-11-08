@@ -33,7 +33,7 @@ Jenkins X 建立在巨人的肩膀上，并且拥有许多不同的源码仓库�
 
 * [jenkins-x/jenkins-x-builders](https://github.com/jenkins-x/jenkins-x-builders) 生成静态 jenkins 服务的构建 pod 和 docker 镜像
 * [jenkins-x/jenkins-x-image](https://github.com/jenkins-x/jenkins-x-image) 为我们默认使用的静态 jenkins 服务器生成 docker 镜像
-* [jenkins-x/jenkins-x-serverless](https://github.com/jenkins-x/jenkins-x-serverless) 当使用 [prow](/architecture/prow) 时生成 [serverless jenkins](/news/serverless-jenkins/) docker 镜像
+* [jenkins-x/jenkins-x-serverless](https://github.com/jenkins-x/jenkins-x-serverless) 当使用 [prow](/architecture/prow/) 时生成 [serverless jenkins](/news/serverless-jenkins/) docker 镜像
 
 ### 工具
 

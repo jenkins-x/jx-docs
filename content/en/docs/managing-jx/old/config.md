@@ -16,7 +16,7 @@ Jenkins X should work out of the box with smart defaults for your cloud provider
 
 However you can configure values in the underlying helm charts used by Jenkins X.
 
-To do this you need to create a `myvalues.yaml` file in the current directory you are in when you run either [jx create cluster](/commands/jx_create_cluster) or [jx install](/commands/jx_install)
+To do this you need to create a `myvalues.yaml` file in the current directory you are in when you run either [jx create cluster](/commands/jx_create_cluster/) or [jx install](/commands/jx_install/)
 
 Then this YAML file can be used to override any of the underlying [`values.yaml`](https://github.com/jenkins-x/jenkins-x-platform/blob/master/jenkins-x-platform/values.yaml) in any of the [charts](https://github.com/jenkins-x/jenkins-x-platform/blob/master/jenkins-x-platform/requirements.yaml) in Jenkins X.
 
@@ -88,7 +88,7 @@ There is an example OSS project [jenkins-x/jenkins-x-openshift-image](https://gi
 
 We try and use the best defaults for each platform for the Docker Registry; e.g. using ECR on AWS.
 
-However you can also specify this via the `--docker-registry` option when running  [jx create cluster](/commands/jx_create_cluster) or [jx install](/commands/jx_install)
+However you can also specify this via the `--docker-registry` option when running  [jx create cluster](/commands/jx_create_cluster/) or [jx install](/commands/jx_install/)
 
 e.g.
 

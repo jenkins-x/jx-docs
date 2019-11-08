@@ -7,6 +7,6 @@ aliases:
   - /demos/create_cluster_gke
 ---
 
-Este [demo](https://www.youtube.com/watch?v=r8-J9Qg-p9U) utiliza el comando [jx create cluster gke](/commands/jx_create_cluster_gke) para [crear un nuevo clúster de Kubernetes](/docs/getting-started/setup/create-cluster/):
+Este [demo](https://www.youtube.com/watch?v=r8-J9Qg-p9U) utiliza el comando [jx create cluster gke](/commands/jx_create_cluster_gke/) para [crear un nuevo clúster de Kubernetes](/docs/getting-started/setup/create-cluster/):
 
 <iframe width="640" height="360" src="https://www.youtube.com/embed/r8-J9Qg-p9U" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

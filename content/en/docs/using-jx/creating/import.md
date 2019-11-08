@@ -5,7 +5,7 @@ description: How to import existing projects into Jenkins X
 weight: 70
 ---
 
-If you already have some source code you wish to import into Jenkins X then you can use the [jx import](/commands/jx_import) command. e.g.
+If you already have some source code you wish to import into Jenkins X then you can use the [jx import](/commands/jx_import/) command. e.g.
 
 ```sh
 cd my-cool-app
@@ -66,7 +66,7 @@ When importing projects into Jenkins X we use git branch patterns to determine w
 
 Typically that may default to something like `master|PR-.*|feature.*`. That means that the `master` branch, any branch starting with `PR-` or `feature` will be scanned to look for a `Jenkinsfile` to setup the CI/CD pipelines.
 
-If you use another branch name than `master` such as `develop` or whatever you can change this pattern to be whatever you you like via the `--branches` argument whenever you run [jx import](/commands/jx_import), [jx create spring](/commands/jx_create_spring) or [jx create quickstart](/commands/jx_create_quickstart).
+If you use another branch name than `master` such as `develop` or whatever you can change this pattern to be whatever you you like via the `--branches` argument whenever you run [jx import](/commands/jx_import/), [jx create spring](/commands/jx_create_spring/) or [jx create quickstart](/commands/jx_create_quickstart/).
 
 
 ```sh
@@ -81,7 +81,7 @@ jx import --branches ".*"
 
 ## Configuring your teams branch patterns
 
-Usually a team uses the same naming conventions for branches so you may wish to configure the branch patterns at a team level so that they will be used by default if anyone in your team runs [jx import](/commands/jx_import), [jx create spring](/commands/jx_create_spring) or [jx create quickstart](/commands/jx_create_quickstart).
+Usually a team uses the same naming conventions for branches so you may wish to configure the branch patterns at a team level so that they will be used by default if anyone in your team runs [jx import](/commands/jx_import/), [jx create spring](/commands/jx_create_spring/) or [jx create quickstart](/commands/jx_create_quickstart/).
 
 These settings are stored in the [Environment Custom Resource](/docs/reference/components/custom-resources/) in Kubernetes.
 

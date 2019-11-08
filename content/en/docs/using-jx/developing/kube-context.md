@@ -15,11 +15,11 @@ If you want to change the namespace using the kubectl command line you can use:
 kubectl config set-context `kubectl config current-context` --namespace=foo
 ```
 
-However [jx](/commands/jx) provides lots of helper commands for changing clusters, namespaces or environments:
+However [jx](/commands/jx/) provides lots of helper commands for changing clusters, namespaces or environments:
 
 ### Changing Environments
 
-Use [jx environment](/commands/jx_environment) to switch [environments](/docs/concepts/features/#environments)
+Use [jx environment](/commands/jx_environment/) to switch [environments](/docs/concepts/features/#environments)
 
 ```sh
 jx environment
@@ -35,7 +35,7 @@ jx env staging
 
 ### Changing Namespace
 
-Use [jx namespace](/commands/jx_namespace) to switch between different kubernetes namespaces.
+Use [jx namespace](/commands/jx_namespace/) to switch between different kubernetes namespaces.
 
 
 ```sh
@@ -52,7 +52,7 @@ jx ns jx-production
 
 ### Changing Cluster
 
-Use [jx context](/commands/jx_context) to switch between different kubernetes clusters (or contexts).
+Use [jx context](/commands/jx_context/) to switch between different kubernetes clusters (or contexts).
 
 
 ```sh
@@ -76,17 +76,17 @@ This can be handy - but is sometimes dangerous. e.g. if you want to do something
 
  So its sometimes useful to be able to change the kubernetes context and/or namespace locally in a single shell only. For example if you ever want to look at a production cluster, only use that cluster in one shell only to minimise accidents.
 
- You can do that with the [jx shell](/commands/jx_shell) command which prompts you to pick a different kubernetes context like the  [jx context](/commands/jx_context) command. However changes to the namespace and/or cluster made in this shell only affect the current shell only!
+ You can do that with the [jx shell](/commands/jx_shell/) command which prompts you to pick a different kubernetes context like the  [jx context](/commands/jx_context/) command. However changes to the namespace and/or cluster made in this shell only affect the current shell only!
 
-[jx shell](/commands/jx_shell) also automatically updates your command prompt using [jx prompt](/commands/jx_prompt)
+[jx shell](/commands/jx_shell/) also automatically updates your command prompt using [jx prompt](/commands/jx_prompt/)
 so that it is clear your shell has changed the context and/or namespace,
-and adds bash completion via [jx prompt](/commands/jx_prompt).
+and adds bash completion via [jx prompt](/commands/jx_prompt/).
 
 ### Customize your shell
 
-You can use [jx prompt](/commands/jx_prompt)  to add the current kubernetes cluster and namespace to your terminals prompt.
+You can use [jx prompt](/commands/jx_prompt/)  to add the current kubernetes cluster and namespace to your terminals prompt.
 
-To add bash completion to your shell for [jx commands](/commands/jx) then try the  [jx completion](/commands/jx_completion).
+To add bash completion to your shell for [jx commands](/commands/jx/) then try the  [jx completion](/commands/jx_completion/).
 
 
 

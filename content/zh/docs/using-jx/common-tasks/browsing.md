@@ -11,11 +11,11 @@ description: 浏览 Jenkins X 中的资源
 kubectl get pods
 ```
 
-Jenkins X 的命令行工具，[jx](/commands/jx)，和 [kubectl](https://kubernetes.io/docs/reference/kubectl/overview/) 看起来相似，并且可以让你看到所有的 Jenkins X 资源。
+Jenkins X 的命令行工具，[jx](/commands/jx/)，和 [kubectl](https://kubernetes.io/docs/reference/kubectl/overview/) 看起来相似，并且可以让你看到所有的 Jenkins X 资源。
 
 ### 查看 Jenkins 控制台
 
-如果你熟悉 Jenkins 控制台，那么你可以使用 [jx console](/commands/jx_console) ：
+如果你熟悉 Jenkins 控制台，那么你可以使用 [jx console](/commands/jx_console/) ：
 
 ```sh
 jx console
@@ -25,7 +25,7 @@ jx console
 
 ### 流水线
 
-要查看当前流水线使用 [jx get pipelines](/commands/jx_get_pipelines):
+要查看当前流水线使用 [jx get pipelines](/commands/jx_get_pipelines/):
 
 ```sh
 jx get pipelines
@@ -55,7 +55,7 @@ jx get build logs myorg/myapp/master
 
 ### 流水线活动
 
-为了查看当前流水线的活动 [jx get activities](/commands/jx_get_activities)：
+为了查看当前流水线的活动 [jx get activities](/commands/jx_get_activities/)：
 
 ```sh
 jx get activities
@@ -100,7 +100,7 @@ jx get applications -e staging
 
 ### 环境
 
-为了查看你们团队中的 [环境](/zh/docs/concepts/features/#environments)，使用 [jx get environments](/commands/jx_get_environments)：
+为了查看你们团队中的 [环境](/zh/docs/concepts/features/#environments)，使用 [jx get environments](/commands/jx_get_environments/)：
 
 ```sh
 jx get environments
@@ -108,6 +108,6 @@ jx get environments
 
 你还可以
 
-* 通过 [jx create environment](/commands/jx_create_environment) 创建一个新的环境
-* 通过 [jx edit environment](/commands/jx_edit_environment) 编辑环境
-* 通过 [jx delete environment](/commands/jx_delete_environment) 删除环境
+* 通过 [jx create environment](/commands/jx_create_environment/) 创建一个新的环境
+* 通过 [jx edit environment](/commands/jx_edit_environment/) 编辑环境
+* 通过 [jx delete environment](/commands/jx_delete_environment/) 删除环境

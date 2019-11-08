@@ -22,7 +22,7 @@ If you are using boot then use [these instructions for configuring git](/docs/ge
 
 ## Listing git servers
 
-You can list the git servers configured via [jx get git](/commands/jx_get_git):
+You can list the git servers configured via [jx get git](/commands/jx_get_git/):
 
 ```
 jx get git
@@ -72,7 +72,7 @@ jx create env production --git-provider-url=https://gitproviderhostname.com
 
 ## Adding a new git provider
 
-If you already have a git server somewhere you can add it into Jenkins X via [jx create git server](/commands/jx_create_git_server):
+If you already have a git server somewhere you can add it into Jenkins X via [jx create git server](/commands/jx_create_git_server/):
 
 ```sh
 jx create git server gitKind someURL
@@ -136,7 +136,7 @@ jx create git token -n gitlab myusername
 
 ### Adding user tokens
 
-To use a git server you need to add a user name and API token via [jx create git token](/commands/jx_create_git_token):
+To use a git server you need to add a user name and API token via [jx create git token](/commands/jx_create_git_token/):
 
 ```sh
 jx create git token -n myProviderName myUserName
@@ -156,7 +156,7 @@ To use [gitea](https://gitea.io/en-us/) with Jenkins X then you need to enable t
 jx edit addon gitea -e true
 ```
 
-You can view the enabled addons via [jx get addons](/commands/jx_get_addons):
+You can view the enabled addons via [jx get addons](/commands/jx_get_addons/):
 
 ```sh
 jx get addons

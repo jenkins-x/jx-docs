@@ -7,7 +7,7 @@ weight: 180
 
 Cuando utilizamos un servidor Jenkins estático (Static Jenkins Server) con Jenkins X heredamos el modelo de almacenamiento habitual Jenkins; que crean registros, resultados de pruebas e informes los cuales son almacenados en un volumen (Persistent Volume) persistente del servidor Jenkins.
 
-Sin embargo, a medida que avanzamos hacia un [Jenkins más nativo en la nube](/news/changes-november-26-2018/) y usamos Jenkins sin servidor ([Serverless Jenkins](/news/serverless-jenkins/)), necesitamos una mejor solución para el almacenamiento de cosas como registros, resultados de pruebas, informes de cobertura de código, etc.
+Sin embargo, a medida que avanzamos hacia un [Jenkins más nativo en la nube](/blog/2018/11/26/changes-november-26-2018/) y usamos Jenkins sin servidor ([Serverless Jenkins](/news/serverless-jenkins/)), necesitamos una mejor solución para el almacenamiento de cosas como registros, resultados de pruebas, informes de cobertura de código, etc.
 
 ## Extensiones de almacenamiento
 
