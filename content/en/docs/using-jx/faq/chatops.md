@@ -23,7 +23,7 @@ For more detail see [what does tide do](#what-does-hook-do)
 
 ## Which kinds of webhook support ChatOps?
 
-[Prow](/docs/reference/components/prow/) and [Lighthouse](/architecture/lighthouse/) support both webhooks and [ChatOps](/docs/using-jx/faq/chatops) whereas Jenkins just supports webhooks only.
+[Prow](/docs/reference/components/prow/) and [Lighthouse](/architecture/lighthouse/) support both webhooks and [ChatOps](/docs/using-jx/faq/chatops/) whereas Jenkins just supports webhooks only.
 
 ## How do I re-trigger a PR pipeline?
 

@@ -6,7 +6,7 @@ description: 如何创建快速开始应用并导入 Jenkins X
 
 你可以由预制的应用开始一个项目，而不是从头开始。
 
-你可以通过命令 [jx create quickstart](/commands/jx_create_quickstart) ，从我们预制的快速应用列表中创建一个新的应用。
+你可以通过命令 [jx create quickstart](/commands/jx_create_quickstart/) ，从我们预制的快速应用列表中创建一个新的应用。
 
 ```sh
 jx create quickstart
@@ -70,7 +70,7 @@ ls -al ~/.jx/draft/packs/github.com/jenkins-x/draft-packs/packs
 
 如果你想要提交一个新的快速开始给 Jenkins X，请把你 GitHub中的链接[提交问题](https://github.com/jenkins-x/jx/issues/new?labels=quickstart&title=Add%20quickstart&body=Please%20add%20this%20github%20quickstart:) 到[快速开始组织](https://github.com/jenkins-x-quickstarts)，然后它就会出现在菜单 `jx create quickstart` 中。
 
-或者，你是开源项目的一份子，希望管理一套你们项目的快速开始；你可以[提交问题](https://github.com/jenkins-x/jx/issues/new?labels=quickstart&title=Add%20quickstart&body=Please%20add%20this%20github%20quickstart:)，把你们的GitHub组织详细信息给我们，然后我们会它作为默认的组织添加到命令 [jx create quickstart](/commands/jx_create_quickstart) 中。如果你把快速开始作为一个单独的 GitHub 组织来维护的话，对于 [jx create quickstart](/commands/jx_create_quickstart) 会更容易些。
+或者，你是开源项目的一份子，希望管理一套你们项目的快速开始；你可以[提交问题](https://github.com/jenkins-x/jx/issues/new?labels=quickstart&title=Add%20quickstart&body=Please%20add%20this%20github%20quickstart:)，把你们的GitHub组织详细信息给我们，然后我们会它作为默认的组织添加到命令 [jx create quickstart](/commands/jx_create_quickstart/) 中。如果你把快速开始作为一个单独的 GitHub 组织来维护的话，对于 [jx create quickstart](/commands/jx_create_quickstart/) 会更容易些。
 
 在我们完成这些事情之前，你还是可以在命令 `jx create quickstart` 中通过参数 `-g` or `--organisations` 来实现。
 

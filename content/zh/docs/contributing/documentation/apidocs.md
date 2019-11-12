@@ -4,7 +4,7 @@ linktitle: API 文档
 description: 如何帮助改善 Jenkins X 的 API 文档
 ---
 
-Jenkins X 有两种类型的 API 文档：[Kubernetes Custom Resource Documentation](/apidocs) 和 [Godoc](https://godoc.org/github.com/jenkins-x/jx)。这两种类型都是由 [jx](https://github.com/jenkins-x/jx) 的代码生成。
+Jenkins X 有两种类型的 API 文档：[Kubernetes Custom Resource Documentation](/apidocs/) 和 [Godoc](https://godoc.org/github.com/jenkins-x/jx)。这两种类型都是由 [jx](https://github.com/jenkins-x/jx) 的代码生成。
 
 
 ## 设置你的开发环境

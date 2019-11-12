@@ -77,5 +77,5 @@ weight: 20
 * [2018-04-12 CI/CD with Jenkins X on Kubernetes](https://skillsmatter.com/skillscasts/11833-kubernetes-april)🎥 at [Kubernetes Meetup, London](https://skillsmatter.com/meetups/10867-kubernetes-april)  by [Rob Davies](https://twitter.com/rajdavies) and [JamesRawlings](https://twitter.com/jdrawlings)
 
 
-Also check out the [Jenkins X Blog](/news/) and [Articles](/docs/getting-started/demos-talks-posts/articles/)
+Also check out the [Jenkins X Blog](/blog/news/) and [Articles](/docs/getting-started/demos-talks-posts/articles/)
 

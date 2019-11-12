@@ -21,7 +21,7 @@ Here's some of the main highlights:
 * thanks to the work of [@LinuxSuRen](https://github.com/LinuxSuRen) we now have the initial [Chinese translation of the Jenkins X documentation](https://jenkins-x.io/zh/)
 * we now support [MiniShift](/getting-started/create-cluster/) as well as AKS, AWS, GKE and vanilla kubernetes clusters.
 * we now have a much more flexible mechanism of handling Secrets/Credentials so dealing with [other git providers is now much simpler](/contribute/roadmap/)
-* we finally got lots more [architecture documentation](/architecture/) on how Jenkins X fits together.
+* we finally got lots more [architecture documentation](https://jenkins-x.io/architecture/) on how Jenkins X fits together.
 
 The [Jenkins X Futures page has been updated](/contribute/roadmap/) to give a better feel for where we are.   
 

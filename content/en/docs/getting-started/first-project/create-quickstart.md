@@ -7,7 +7,7 @@ weight: 10
 
 Quickstarts are pre-made applications you can start a project from, instead of starting from scratch.
 
-You can create new applications from our list of curated Quickstart applications via the [jx create quickstart](/commands/jx_create_quickstart) command.
+You can create new applications from our list of curated Quickstart applications via the [jx create quickstart](/commands/jx_create_quickstart/) command.
 
 
 ```sh
@@ -80,7 +80,7 @@ Then when you create a quickstart, use [jx create spring](/docs/using-jx/common-
 
 If you would like to submit a new Quickstart to Jenkins X please just [raise an issue](https://github.com/jenkins-x/jx/issues/new?labels=quickstart&title=Add%20quickstart&body=Please%20add%20this%20github%20quickstart:) with the URL in GitHub of your quickstart and we can fork it it into the [quickstart organisation](https://github.com/jenkins-x-quickstarts) so it appears in the `jx create quickstart` menu.
 
-Or if you are part of an open source project and wish to curate your own set of quickstarts for your project; you can [raise an issue](https://github.com/jenkins-x/jx/issues/new?labels=quickstart&title=Add%20quickstart&body=Please%20add%20this%20github%20quickstart:) giving us details of the github organisation where the quickstarts live and we'll add that in as a default organisation to include in the [jx create quickstart](/commands/jx_create_quickstart) command. Its easier for the [jx create quickstart](/commands/jx_create_quickstart) if you maintain the quickstarts in a separate quickstart organisation on github.
+Or if you are part of an open source project and wish to curate your own set of quickstarts for your project; you can [raise an issue](https://github.com/jenkins-x/jx/issues/new?labels=quickstart&title=Add%20quickstart&body=Please%20add%20this%20github%20quickstart:) giving us details of the github organisation where the quickstarts live and we'll add that in as a default organisation to include in the [jx create quickstart](/commands/jx_create_quickstart/) command. Its easier for the [jx create quickstart](/commands/jx_create_quickstart/) if you maintain the quickstarts in a separate quickstart organisation on github.
 
 Until we do that you can still use your own Quickstarts in the `jx create quickstart` command via the `-g` or `--organisations` command line argument. e.g.
 
@@ -103,7 +103,7 @@ jx create quickstartlocation --url https://mygit.server.com --owner my-quickstar
 
 If you omit the `--url` argument the command will assume its a [GitHub](https://github.com/) repository. Note that both public and private repositories are supported.
 
-This means you can have your own shared private quickstarts to reuse within your organisation. Of course we'd obviously prefer you to [share your quickstarts with us via open source](https://github.com/jenkins-x/jx/issues/new?labels=quickstart&title=Add%20quickstart&body=Please%20add%20this%20github%20quickstart:) then we can include your quickstart with the entire [community](/community) - but there may be times you want to curate your own internal quickstarts using proprietary software.
+This means you can have your own shared private quickstarts to reuse within your organisation. Of course we'd obviously prefer you to [share your quickstarts with us via open source](https://github.com/jenkins-x/jx/issues/new?labels=quickstart&title=Add%20quickstart&body=Please%20add%20this%20github%20quickstart:) then we can include your quickstart with the entire [community](/community/) - but there may be times you want to curate your own internal quickstarts using proprietary software.
 
 You can also specify `--includes` or `--excludes` patterns to filter the names of the repositories where `*` matches anything and `foo*` matches anything starting with `foo`. e.g. you could just include the languages and technologies your organisation supports and exclude the rest etc.
 

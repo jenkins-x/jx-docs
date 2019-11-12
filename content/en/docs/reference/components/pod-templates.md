@@ -20,7 +20,7 @@ The Kubernetes plugin uses _pod templates_ to define the pod used to run a CI/CD
 
 ## Referring to Pod Templates
 
-Jenkins X comes with a default set of pod templates for supported languages and runtimes in our [build packs](/architecture/build-packs) and are named something like: `jenkins-$PACKNAME`.
+Jenkins X comes with a default set of pod templates for supported languages and runtimes in our [build packs](/architecture/build-packs/) and are named something like: `jenkins-$PACKNAME`.
 
 For example the [maven build pack](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/blob/master/packs/maven/) uses the pod template `jenkins-maven`.
 
@@ -47,7 +47,7 @@ pipeline {
 
 ## Submitting new Pod Templates
 
-If you are working on a new [build pack](/architecture/build-packs) then we'd love you to [submit](/docs/contributing/) a new pod template and we can include it in the Jenkins X distribution!
+If you are working on a new [build pack](/architecture/build-packs/) then we'd love you to [submit](/docs/contributing/) a new pod template and we can include it in the Jenkins X distribution!
 
 There now follows instructions on how to do this - please if anything is not clear come [join the community and just ask](/community/) we are happy to help!
 
@@ -62,7 +62,7 @@ To submit a new build pack:
 
 When using pod templates and Jenkins pipelines you could use lots of different containers for each tool. e.g. one container for `maven` and another for `git` etc.
 
-We've found its much simpler to just have a single builder container with all the common tools inside. This also means you can use `kubectl exec` or [jx rsh](/commands/jx_rsh) to open a shell inside the build pod and have all the tools you need available for use when debugging/diagnosing problem pipelines.
+We've found its much simpler to just have a single builder container with all the common tools inside. This also means you can use `kubectl exec` or [jx rsh](/commands/jx_rsh/) to open a shell inside the build pod and have all the tools you need available for use when debugging/diagnosing problem pipelines.
 
 So we have a [builder-base](https://github.com/jenkins-x/builder-base) docker image which [contains all the different tools](https://github.com/jenkins-x/builder-base/blob/master/Dockerfile#L21-L70) we tend to use in CI/CD pipelines like `jx, skaffold, helm, git, updatebot`.
 
@@ -92,7 +92,7 @@ You will now be faced with a large page of configuration options ;) The pod temp
 
 You can edit/add/remove pod templates in that page and hit Save.
 
-Note though that longer term we are hoping to [maintain your development environment via GitOps like we do for Staging & Production](https://github.com/jenkins-x/jx/issues/604) - which means changes made via the Jenkins UI will be lost when [upgrading your development environment](/commands/jx_upgrade_platform).
+Note though that longer term we are hoping to [maintain your development environment via GitOps like we do for Staging & Production](https://github.com/jenkins-x/jx/issues/604) - which means changes made via the Jenkins UI will be lost when [upgrading your development environment](/commands/jx_upgrade_platform/).
 
 So longer term we're hoping to add the Pod Templates into your `values.yaml` file in your developer environment git repository like we do for the [jenkins-x-platform chart](https://github.com/jenkins-x/jenkins-x-platform/blob/master/values.yaml#L194-L431).
 

@@ -55,7 +55,7 @@ kops rolling-update cluster --yes
 
 ### 安装 Jenkins X
 
-为了在已有的 kubernetes 集群上安装 Jenkins X 你可以使用命令 [jx install](/commands/jx_install) ：
+为了在已有的 kubernetes 集群上安装 Jenkins X 你可以使用命令 [jx install](/commands/jx_install/) ：
 
     jx install
 

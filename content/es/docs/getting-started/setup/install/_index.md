@@ -161,4 +161,4 @@ O, para obtener información sobre un comando específico, por ejemplo `create`,
 jx help create
 ```
 
-También puedes buscar en la [documentación de referencia para comandos jx](/commands/jx)
+También puedes buscar en la [documentación de referencia para comandos jx](/commands/jx/)

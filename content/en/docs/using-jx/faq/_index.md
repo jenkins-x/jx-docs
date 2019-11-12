@@ -147,7 +147,7 @@ For more details the code to resolve it is [here](https://github.com/jenkins-x/j
 
 ## What if my team does not want to use helm?
 
-To help automate CI/CD with GitOps we assume helm charts are created as part of the automated project setup and CI/CD. e.g. just [import your source code](/docs/using-jx/common-tasks/import/) and a docker image + helm chart will be generated for you - the developers don't need to know or care if they don't want to use helm:
+To help automate CI/CD with GitOps we assume helm charts are created as part of the automated project setup and CI/CD. e.g. just [import your source code](/docs/using-jx/creating/import/) and a docker image + helm chart will be generated for you - the developers don't need to know or care if they don't want to use helm:
 
 If a developer wants to specifically create a specific resource (e.g. `Secret, ConfigMap` etc) they can just hack the YAML directly in `charts/myapp/templates/*.yaml`. Increasingly most IDEs now have UI wizards for creating + editing kubernetes resources.
 

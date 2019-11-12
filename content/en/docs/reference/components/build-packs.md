@@ -8,7 +8,7 @@ aliases:
   - /docs/managing-jx/common-tasks/build-packs
 ---
 
-We use [draft](https://draft.sh/) style _build packs_ for different languages, runtimes and build tools to add the necessary configuration files to projects as we [import them](/docs/using-jx/common-tasks/import/) or [create](/docs/using-jx/common-tasks/create-spring/) [them](/docs/getting-started/first-project/create-quickstart/) so that we can build and deploy them in kubernetes.
+We use [draft](https://draft.sh/) style _build packs_ for different languages, runtimes and build tools to add the necessary configuration files to projects as we [import them](/docs/using-jx/creating/import/) or [create](/docs/using-jx/common-tasks/create-spring/) [them](/docs/getting-started/first-project/create-quickstart/) so that we can build and deploy them in kubernetes.
 
 The build packs are used to default the following files if they do not already exist in the project being created/imported:
 
@@ -126,10 +126,10 @@ cp -r charts/somefoo ~/.jx/draft/packs/github.com/jenkins-x/draft-packs/packs/$P
 ```
 
 Once your build pack is in a folder at `~/.jx/draft/packs/github.com/jenkins-x/draft-packs/packs/`
-then it should be usable by the [jx import](/commands/jx_import) code
+then it should be usable by the [jx import](/commands/jx_import/) code
 which uses programming language detection to find the most suitable build pack to use when importing a project.
 If your build pack requires custom logic to detect it then let us know
-and we can help patch [jx import](/commands/jx_import) to work better for your build pack.
+and we can help patch [jx import](/commands/jx_import/) to work better for your build pack.
 For example, we have some custom logic for handling [Maven and Gradle better](https://github.com/jenkins-x/jx/blob/712d9edf5e55aafaadfb3e0ac57692bb44634b1c/pkg/jx/cmd/common_buildpacks.go#L82:L108).
 
 

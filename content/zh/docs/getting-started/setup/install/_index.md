@@ -130,4 +130,4 @@ jx
 jx help create
 ```
 
-你也可以浏览 [jx 命令参考文档](/commands/jx)
+你也可以浏览 [jx 命令参考文档](/commands/jx/)

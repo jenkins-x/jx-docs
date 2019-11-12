@@ -7,22 +7,22 @@ weight: 30
 
 ## Línea de Comando
 
-Jenkins X viene con una útil y práctica herramienta de línea de comandos [jx](/commands/jx) para:
+Jenkins X viene con una útil y práctica herramienta de línea de comandos [jx](/commands/jx/) para:
 
-* [instalar Jenkins X](/docs/getting-started/setup/install) dentro de un clúster de Kubernetes existente
+* [instalar Jenkins X](/docs/getting-started/setup/install/) dentro de un clúster de Kubernetes existente
 * [crear un nuevo cluster de Kubernetes](/docs/getting-started/setup/create-cluster/) e instalar Jenkins X dentro de él
 * [cargar/importar proyectos](/developing/import) dentro de Jenkins X junto a su flujos de configuración CI/CD
-* [crea nuevas aplicaciones Spring Boot](/developing/create-spring) las cuales son cargadas dentro de Jenkins X junto a sus flujos de configuración CI/CD
+* [crea nuevas aplicaciones Spring Boot](/developing/create-spring/) las cuales son cargadas dentro de Jenkins X junto a sus flujos de configuración CI/CD
 
 ## Pipelines Automatizados
 
-En lugar de tener que tener un conocimiento profundo de las partes internas de Jenkins Pipeline, Jenkins X configurará automáticamente pipelines (flujos de actividades) increíbles para que sus proyectos implementen completamente CI y CD utilizando las [mejores prácticas de DevOps](/about/concepts)
+En lugar de tener que tener un conocimiento profundo de las partes internas de Jenkins Pipeline, Jenkins X configurará automáticamente pipelines (flujos de actividades) increíbles para que sus proyectos implementen completamente CI y CD utilizando las [mejores prácticas de DevOps](/about/concepts/)
 
 ## Entornos
 
 Un _entorno_ es un lugar donde se despliegan las aplicaciones. Los desarrolladores a menudo hacen referencia a los entornos usando un nombre corto como `Testing, Staging/UAT or Production`.
 
-Con Jenkins X cada _equipo_ tiene sus propios Entornos. De forma predeterminada, Jenkins X crea los entornos `Staging` y `Production` para cada equipo, pero puede crear nuevos entornos a través de [jx create environment](/commands/jx_create_environment).
+Con Jenkins X cada _equipo_ tiene sus propios Entornos. De forma predeterminada, Jenkins X crea los entornos `Staging` y `Production` para cada equipo, pero puede crear nuevos entornos a través de [jx create environment](/commands/jx_create_environment/).
 
 También está el entorno `Dev`, que es donde se instalan herramientas como Jenkins, Nexus o Prow y donde se ejecutan los pipelines de CI/CD.
 
@@ -52,7 +52,7 @@ Cuando un nuevo cambio dentro del repositorio Git del entorno se mezcla con la r
 
 Los Pipelines para CD de Jenkins X automatizan la promoción de cambios de versión a través de cada Entorno que se configura con la propiedad _promotion strategy_ en `Auto`. De forma predeterminada, el entorno `Staging` utiliza la promoción automática y el entorno `Production` utiliza la promoción manual.
 
-Para promover manualmente una versión de la aplicación hacia un entorno debes utilizar el comando [jx promote](/developing/promote).
+Para promover manualmente una versión de la aplicación hacia un entorno debes utilizar el comando [jx promote](/developing/promote/).
 
 <img src="/images/overview.png" class="img-thumbnail">
 

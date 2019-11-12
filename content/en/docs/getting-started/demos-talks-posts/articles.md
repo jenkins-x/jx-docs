@@ -50,5 +50,5 @@ weight: 10
 * [Activiti Cloud & Jenkins X: Blueprint in AWS and GCE](https://salaboy.com/2018/05/15/activiti-cloud-jenkins-x-blueprint-in-aws-and-gce/) by [Salaboy](https://salaboy.com/) on 15th May, 2018
 * [CI/CD with Jenkins-x on your existing (GKE) cluster — ruby on rails application](https://medium.com/@maniankara/ci-cd-with-jenkins-x-on-your-existing-gke-cluster-ruby-on-rails-application-785d8390a857) by [anoop vijayan maniankara](https://medium.com/@maniankara) on May 20th, 2018
 
-Also check out the [Jenkins X Blog](/news/) and [Talks and Conferences](/docs/getting-started/demos-talks-posts/talks/)
+Also check out the [Jenkins X Blog](/blog/news/) and [Talks and Conferences](/docs/getting-started/demos-talks-posts/talks/)
 

@@ -12,7 +12,7 @@ Los Pipelines de Entrega Continua de Jenkins X automatizan la [promoción](/es/d
 * El entorno `Staging` utiliza promoción automática
 * El entorno `Production` utiliza promoción `Manual`
 
-Para realizar una Promoción manual de tu aplicación hacia un entorno específico debes utilizar el comando [jx promote](/commands/jx_promote).
+Para realizar una Promoción manual de tu aplicación hacia un entorno específico debes utilizar el comando [jx promote](/commands/jx_promote/).
 
 ```sh
 jx promote --app myapp --version 1.2.3 --env production

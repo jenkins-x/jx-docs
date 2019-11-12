@@ -13,7 +13,7 @@ Jenkins X 应该为你的云服务商提供默认可用的配置。例如：如�
 
 然而，你可以修改 Jenkins X 使用的 helm charts 的配置。
 
-要做到这一点，你需要在运行命令 [jx create cluster](/commands/jx_create_cluster) 或 [jx install](/commands/jx_install) 的目录下创建一个文件 `myvalues.yaml` 。
+要做到这一点，你需要在运行命令 [jx create cluster](/commands/jx_create_cluster/) 或 [jx install](/commands/jx_install/) 的目录下创建一个文件 `myvalues.yaml` 。
 
 然后，这个 YAML 文件可以覆盖 Jenkins X 中的任何 charts 中的 `values.yaml` 文件。
 
@@ -76,7 +76,7 @@ jenkins:
 
 We try and use the best defaults for each platform for the Docker Registry; e.g. using ECR on AWS.
 
-然而，你也可以在执行命令 [jx create cluster](/commands/jx_create_cluster) 或 [jx install](/commands/jx_install) 时，通过选项 `--docker-registry` 来指定。
+然而，你也可以在执行命令 [jx create cluster](/commands/jx_create_cluster/) 或 [jx install](/commands/jx_install/) 时，通过选项 `--docker-registry` 来指定。
 
 例如：
 
@@ -84,4 +84,4 @@ We try and use the best defaults for each platform for the Docker Registry; e.g.
 jx create cluster gke --docker-registry eu.gcr.io
 ```
 
-但是，如果你使用了不同的 Docker Registry 的话，你可能需要[修改 secret 才能连接到 docker](/docs/managing-jx/common-tasks/docker-registry/#update-the-config-json-secret)。
+但是，如果你使用了不同的 Docker Registry 的话，你可能需要[修改 secret 才能连接到 docker](/docs/reference/components/docker-registry/#update-the-config-json-secret)。

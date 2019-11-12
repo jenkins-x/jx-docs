@@ -57,7 +57,6 @@ Jenkins X 文档中所有的页面，使用典型的三个反引号这样的语�
 > Without the threat of punishment, there is no joy in flight. - [Kobo Abe][abe]
 
 [abe]: https://en.wikipedia.org/wiki/Kobo_Abe
-[archetypes]: /content-management/archetypes/
 [bqsyntax]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#blockquotes
 [charcount]: http://www.lettercount.com/
 [`docs/static/images/showcase/`]: https://github.com/jenkins-x/jx/tree/master/docs/static/images/showcase/

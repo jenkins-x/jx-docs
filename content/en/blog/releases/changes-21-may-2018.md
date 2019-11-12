@@ -17,7 +17,7 @@ We also did a bunch of presentations:
 
 * James Strachan presented [Jenkins X at DevOxx UK](https://youtu.be/BF3MhFjvBTU?list=PLRsbF2sD7JVpRvLpv_Cub94zsM1aHm-Op) with a live demo on GKE. [Slides are here](https://www.youtube.com/redirect?event=comments&redir_token=8Ho_5LeDnDKOo6D5oWgr_dKtmPl8MTUyNjk5NzM4M0AxNTI2OTEwOTgz&q=https%3A%2F%2Fdocs.google.com%2Fpresentation%2Fd%2F1hwt2lFh3cCeFdP4xoT_stMPs0nh2xVZUtze6o79WfXc%2Fedit%3Fusp%3Dsharing)
 * James Rawlings presented [Jenkins X at Cloud Native Wales](https://blog.cloudnativewales.io/001_ourfirstmeetup/)
-* James Strachan presented [Jenkins X at KubeCon](/news/jenkins-x-does-kubecon/) 
+* James Strachan presented [Jenkins X at KubeCon](/blog/news/jenkins-x-does-kubecon/) 
 
 Finally we made it over [1000 stars on github](https://github.com/jenkins-x/jx) within 2 months of announcing the project. Please keep the stars coming if you've not yet given Jenkins X a star! 
 

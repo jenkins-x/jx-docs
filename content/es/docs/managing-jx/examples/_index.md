@@ -6,7 +6,7 @@ description: >
   Ejemplos de cómo configurar Jenkins X
 ---
 
-Para obtener más detalles, consulte la [documentación de boot](/es/docs/getting-started/setup/boot) sobre:
+Para obtener más detalles, consulte la [documentación de boot](/es/docs/getting-started/setup/boot/) sobre:
 
 * [secrets](/es/docs/getting-started/setup/boot/#información-sensible-secrets)
 * [git](/es/docs/getting-started/setup/boot/#git)
