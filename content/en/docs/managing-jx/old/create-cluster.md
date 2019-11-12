@@ -371,4 +371,4 @@ Now **[develop apps faster with Jenkins X](/docs/getting-started/next/)**.
 
 ## Troubleshooting
 
-If you hit any issues installing Jenkins X then please check out our [troubleshooting guide](https://jenkins-x.io/troubleshooting/faq/) or [let us know](/community/) and we'll try our best to help.
+If you hit any issues installing Jenkins X then please check out our [troubleshooting guide](/docs/managing-jx/faq/) or [let us know](/community/) and we'll try our best to help.

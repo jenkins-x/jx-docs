@@ -15,7 +15,7 @@ Before we go over whats happened - a big thanks to all of our new committers and
 
 Here's a quick summary of some of the main things that's happened this summer:
 
-* we have awesome [new tutorials](https://jenkins-x.io/tutorials/video/) to get you started even faster on GKE
+* we have awesome [new tutorials](/docs/getting-started/demos-talks-posts/create_cluster_gke/) to get you started even faster on GKE
 * we now have [full support AWS both kops and EKS](/docs/getting-started/setup/create-cluster/amazon/) with ECR support OOTB thanks to the excellent eksctl tool which helps us create EKS clusters on Amazon
 * Gareth wrote an [awesome blog](https://www.cloudbees.com/blog/using-jx-create-gitops-managed-jenkins-x-installation-%C2%A0cloudbees-codeship-and-terraform-gke
 ) describing how we can auomate spinning up a CodeShip CI job that automates your cloud infrastructure, setting up 1..N kubernetes clusters then installing Jenkins X on top with Terraform - GitOps FTW.
