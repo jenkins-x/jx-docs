@@ -432,7 +432,7 @@ storage:
     url: gs://my-repo
 ```
 
-For more details see the [Storage Guide](/architecture/storage).
+For more details see the [Storage Guide](https://jenkins-x.io/architecture/storage/).
 
 ## Ingress
 

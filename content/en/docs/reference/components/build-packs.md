@@ -84,11 +84,11 @@ We love [contributions](/community/) so please consider adding new build packs a
 
 Here are instructions on how to create a new build pack - please if anything is not clear come [join the community and just ask](/community/) we are happy to help!
 
-The best place to start with is a _quickstart_ application. A sample project that you can use as a test. So create/find a suitable example project and then [import it](/developing/import).
+The best place to start with is a _quickstart_ application. A sample project that you can use as a test. So create/find a suitable example project and then [import it](/docs/using-jx/creating/import/).
 
 Then manually add a `Dockerfile` and `Jenkinsfile` if one is not already added for you. You could start with files from the [current build pack folders](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/tree/master/packs) - using the most similar language/framework to yours.
 
-If your build pack is using build tools which are not yet available in one of the existing [pod templates](/architecture/pod-templates) then you will need to [submit a new pod template](/docs/managing-jx/common-tasks/pod-templates/#submitting-new-pod-templates) probably using a new build container image too.
+If your build pack is using build tools which are not yet available in one of the existing [pod templates](/docs/reference/components/pod-templates/) then you will need to [submit a new pod template](/docs/reference/components/pod-templates/) probably using a new build container image too.
 
 Once you have a pod template to use, say, `jenkins-foo` then refer to it in your `Jenkinsfile`:
 

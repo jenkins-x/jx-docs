@@ -68,7 +68,7 @@ ls -al ~/.jx/draft/packs/github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/pa
 ls -al ~/.jx/draft/packs/github.com/jenkins-x-buildpacks/jenkins-x-classic/packs
 ```
 
-Entonces, cuando creas un proyecto de inicio rápido, ya sea a través de [jx create spring](/docs/using-jx/common-tasks/create-spring/) o [jx import](developing/import/), el [constructor de paquetes de Jenkins X](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) realiza lo siguiente:
+Entonces, cuando creas un proyecto de inicio rápido, ya sea a través de [jx create spring](/docs/using-jx/common-tasks/create-spring/) o [jx import](/docs/using-jx/creating/import/), el [constructor de paquetes de Jenkins X](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) realiza lo siguiente:
 
 * selecciona el paquete correcto basado en el lenguaje del código ([listado de posibles paquetes](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/tree/master/packs)).
 * el paquete seleccionado es utilizado para incluir los siguientes fichero en caso de que no existan:

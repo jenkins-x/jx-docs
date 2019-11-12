@@ -162,7 +162,7 @@ In the `values.yaml` file mentioned above, add the following section for each ne
 
 **Note**: you can copy-paste from the above and just update the places where it mentions `nodejs10x` to your builder name (assuming your builder doesn't need more resources etc. than the example above)
 
-**Note 2**: If you don't know the exact image version, find your image on [gcr.io/jenkinsxio/](gcr.io/jenkinsxio/)
+**Note 2**: If you don't know the exact image version, find your image on [gcr.io/jenkinsxio/](https://gcr.io/jenkinsxio/)
 
 ## Update Jenkins X Versions
 

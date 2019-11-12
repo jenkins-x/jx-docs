@@ -11,6 +11,7 @@ weight: 130
 aliases:
   - /getting-started/install-on-cluster
   - /docs/getting-started/install-on-cluster
+  - /docs/managing-jx/common-tasks/install-on-cluster
 ---
 
 Jenkins X can be installed on 1.8 or later of Kubernetes. The requirements are:

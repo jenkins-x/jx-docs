@@ -17,6 +17,6 @@ Well the [Using Jenkins X](/docs/using-jx/) section contains the next steps you 
 * [create a new Spring Boot application and import it into Jenkins X](/docs/using-jx/common-tasks/create-spring/) 
 * [create a new quickstart and import it into Jenkins X](/docs/getting-started/first-project/create-quickstart/)
 * [import existing source code into Jenkins X](/docs/using-jx/creating/import/)
-* [browsing](/docs/using-jx/common-tasks/browsing/) for browsing pipelines, builds, apps and activity
+* [browsing](/docs/using-jx/developing/browsing/) for browsing pipelines, builds, apps and activity
 
 You may also want to check out the [various demonstrations of what you can do with Jenkins X](/demos/)

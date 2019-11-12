@@ -74,13 +74,13 @@ The `Team` Custom Resource is created via the [jx create team](/commands/jx_crea
 
 ### User
 
-The `User` Custom Resource is used to support RBAC across the various [environments](/docs/concepts/features/#environments) and [preview environments](/about/features/#preview-environments) in teams.
+The `User` Custom Resource is used to support RBAC across the various [environments](/docs/concepts/features/#environments) and [preview environments](/docs/concepts/features/#preview-environments) in teams.
 
 It is also used by the [jx edit userroles](/commands/jx_edit_userroles/) to change user roles.
 
 ## EnvironmentRoleBinding
 
-The `EnvironmentRoleBinding` resource is like the standard Kubernetes [RoleBinding](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.13/#rolebinding-v1-rbac-authorization-k8s-io) resource, but it allows mapping of a `Role` to multiple [environments](/docs/concepts/features/#environments) and [preview environments](/about/features/#preview-environments) in a team by using a selector of Environments on which to bind roles.
+The `EnvironmentRoleBinding` resource is like the standard Kubernetes [RoleBinding](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.13/#rolebinding-v1-rbac-authorization-k8s-io) resource, but it allows mapping of a `Role` to multiple [environments](/docs/concepts/features/#environments) and [preview environments](/docs/concepts/features/#preview-environments) in a team by using a selector of Environments on which to bind roles.
 
 This makes it easy to bind a `Role` to either all environments, all preview environments or both or a given set of users.
 

@@ -8,7 +8,7 @@ aliases:
   - /architecture/lighthouse
 ---
 
-[Prow](prow.html) is a great way to do [ChatOps](/docs/using-jx/faq/chatops/) with [Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) though unfortunately its only supported for GitHub.com and is quite heavy and complex. To work around this we've created [Lighthouse](https://github.com/jenkins-x/lighthouse).
+[Prow](/docs/reference/components/prow/) is a great way to do [ChatOps](/docs/using-jx/faq/chatops/) with [Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) though unfortunately its only supported for GitHub.com and is quite heavy and complex. To work around this we've created [Lighthouse](https://github.com/jenkins-x/lighthouse).
 
 [Lighthouse](https://github.com/jenkins-x/lighthouse) is a lightweight [ChatOps](/docs/using-jx/faq/chatops/) based webhook handler which can trigger [Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) on webhooks from multiple git providers such as: GitHub, GitHub Enterprise, BitBucket Server, BitBucket Cloud, GitLab, Gogs and Gitea.
 

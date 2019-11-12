@@ -110,11 +110,11 @@ Then pick the devpod to delete and confirm. Or pass in the name of the devpod yo
 
 ## Synchronizing source code
 
-If you are using one of our [IDE plugins](/developing/ide) for your desktop IDE then synchronisation of local files to your DevPod will already be included.
+If you are using one of our [IDE plugins](/docs/using-jx/developing/ide/) for your desktop IDE then synchronisation of local files to your DevPod will already be included.
 
 Otherwise if you are using a desktop IDE you can synchronise your local source code into your DevPod via the [jx sync](/commands/jx_sync/) command.
 
-This will allow you to edit source code in your preferred [IDE](/developing/ide) like [VS Code](https://code.visualstudio.com/) or [IDEA](https://www.jetbrains.com/idea/).
+This will allow you to edit source code in your preferred [IDE](/docs/using-jx/developing/ide/) like [VS Code](https://code.visualstudio.com/) or [IDEA](https://www.jetbrains.com/idea/).
 
 
 ```sh
@@ -151,7 +151,7 @@ This will use the `dev` profile to generate a new docker image using the generat
 
 When you created your DevPod it was associated with an _Edit Environment_ for your _username_ so that any apps deployed in a DevPod will appear in your _Edit Environment_.
 
-So once the `skaffold dev -p dev` (what `watch.sh` does) command has built the docker image and installed the helm chart, your app will show up via  [jx get applications](/commands/applications):
+So once the `skaffold dev -p dev` (what `watch.sh` does) command has built the docker image and installed the helm chart, your app will show up via  [jx get applications](/commands/jx_get_applications/):
 
 ```sh
 jx get applications
@@ -161,7 +161,7 @@ Now if you edit code and trigger a docker rebuild, which for most languages is j
 
 ## Using an IDE
 
-One of the easiest ways to get started with DevPods is via an IDE such as [VS Code](https://code.visualstudio.com/). Check out the [Jenkins X plugins for IDEs](/docs/using-jx/common-tasks/ide/)
+One of the easiest ways to get started with DevPods is via an IDE such as [VS Code](https://code.visualstudio.com/). Check out the [Jenkins X plugins for IDEs](/docs/using-jx/developing/ide/)
 
 VS Code has support which automates all the above so you can run a shell/sync quite easily.
 

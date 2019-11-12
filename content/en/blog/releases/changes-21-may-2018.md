@@ -9,7 +9,7 @@ aliases: []
 author: jenkins-x-bot
 ---
 
-Its been a busy 24 days since our [last blog post](/news/changes-april-27-2018/).
+Its been a busy 24 days since our [last blog post](/blog/2018/04/27/changes-april-27-2018/).
 
 We had our first [Jenkins X Office Hours](https://www.youtube.com/watch?v=bvStct7Cz5E) which was lots of fun. We meet every other Thursday at 5pm BST / 12pm US Eastern. Feel free to  [add your questions to the doc](https://docs.google.com/document/d/1wHdBlZAN-ndPELuBoM5HBnYiQLvcz92-euXne2mKOEI/edit) or hangout live and ask questions in person. More details on the [community page](/community/#office-hours). 
 
@@ -17,15 +17,15 @@ We also did a bunch of presentations:
 
 * James Strachan presented [Jenkins X at DevOxx UK](https://youtu.be/BF3MhFjvBTU?list=PLRsbF2sD7JVpRvLpv_Cub94zsM1aHm-Op) with a live demo on GKE. [Slides are here](https://www.youtube.com/redirect?event=comments&redir_token=8Ho_5LeDnDKOo6D5oWgr_dKtmPl8MTUyNjk5NzM4M0AxNTI2OTEwOTgz&q=https%3A%2F%2Fdocs.google.com%2Fpresentation%2Fd%2F1hwt2lFh3cCeFdP4xoT_stMPs0nh2xVZUtze6o79WfXc%2Fedit%3Fusp%3Dsharing)
 * James Rawlings presented [Jenkins X at Cloud Native Wales](https://blog.cloudnativewales.io/001_ourfirstmeetup/)
-* James Strachan presented [Jenkins X at KubeCon](/blog/news/jenkins-x-does-kubecon/) 
+* James Strachan presented [Jenkins X at KubeCon](/blog/2018/05/05/jenkins-x-does-kubecon/) 
 
 Finally we made it over [1000 stars on github](https://github.com/jenkins-x/jx) within 2 months of announcing the project. Please keep the stars coming if you've not yet given Jenkins X a star! 
 
 We still found plenty of time to fix issues and add new features as you can see in the changelog below.
 
-We've now [lots more quickstarts](quickstarts) such as rails and python support. There's a [great blog on that here](https://medium.com/@maniankara/ci-cd-with-jenkins-x-on-your-existing-gke-cluster-ruby-on-rails-application-785d8390a857).
+We've now [lots more quickstarts](https://github.com/jenkins-x-quickstarts) such as rails and python support. There's a [great blog on that here](https://medium.com/@maniankara/ci-cd-with-jenkins-x-on-your-existing-gke-cluster-ruby-on-rails-application-785d8390a857).
 
-One big change in the project is the new [VS Code Extension](/developing/ide/) which we'll blog about soon in detail to walk through all the capabilities we've got & how to get started using it.
+One big change in the project is the new [VS Code Extension](/docs/using-jx/developing/ide/) which we'll blog about soon in detail to walk through all the capabilities we've got & how to get started using it.
 
 <img src="/images/vscode.png">
 

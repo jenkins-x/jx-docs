@@ -68,7 +68,7 @@ managing secrets and vaults.
 Jenkins X uses Vault to store all Jenkins X
 secrets, such as the GitHub personal access token generated for the
 pipeline bot when [creating a Jenkins X
-cluster](/docs/cloudbees-jenkins-x-distribution/boot/). It also stores
+cluster](/docs/getting-started/setup/boot/). It also stores
 any GitOps secrets, such as passwords for storage buckets, and keys for
 secure server access.
 
@@ -252,7 +252,7 @@ services. Default is `Ingress`.
 
 5.  The program will ask for a cluster domain. Default is the one
 created in [the Cluster creation
-process](/docs/cloudbees-jenkins-x-distribution/boot/) such as
+process](/docs/getting-started/setup/boot/) such as
 `192.168.1.100.nip.io`.
 
 6.  The program will ask for an `URLTemplate`. Press `Enter` to

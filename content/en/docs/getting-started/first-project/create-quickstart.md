@@ -68,7 +68,7 @@ ls -al ~/.jx/draft/packs/github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/pa
 ls -al ~/.jx/draft/packs/github.com/jenkins-x-buildpacks/jenkins-x-classic/packs
 ```
 
-Then when you create a quickstart, use [jx create spring](/docs/using-jx/common-tasks/create-spring/) or [jx import](developing/import/) the [Jenkins X build packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) are used to:
+Then when you create a quickstart, use [jx create spring](/docs/using-jx/common-tasks/create-spring/) or [jx import](/docs/using-jx/creating/import/) the [Jenkins X build packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) are used to:
 
 * find the right language pack. e.g. here are the current [list of language packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/tree/master/packs).
 * the language pack is then used to default these files if they don't already exist:

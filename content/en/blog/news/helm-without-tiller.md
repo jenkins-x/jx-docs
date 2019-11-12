@@ -6,7 +6,8 @@ description: >
 categories: [blog]
 keywords: []
 slug: "helm-without-tiller"
-aliases: []
+aliases:
+  - /news/helm-without-tiller/
 author: jstrachan
 ---
 
@@ -37,7 +38,7 @@ So now if you want to use Jenkins X without tiller there's a new magic command l
  jx create cluster gke --no-tiller
 ```
 
-or if you are [installing on an existing kubernetes cluster](/docs/managing/tasks/install-on-cluster/):
+or if you are [installing on an existing kubernetes cluster](/docs/managing-jx/old/install-on-cluster/):
 
 ```sh
  jx install --no-tiller
@@ -57,7 +58,7 @@ What `--no-tiller`  means is to switch helm to use `template mode` which means w
 
 Then we use `kubectl apply` to apply the YAML.
 
-Since we are using [GitOps](/about/features/#promotion) in Jenkins X it turns out we don't really need to rely on Helm's use of kubernetes resources to store environment specific configuration values; since everything is already in git!
+Since we are using [GitOps](/docs/concepts/features/#promotion) in Jenkins X it turns out we don't really need to rely on Helm's use of kubernetes resources to store environment specific configuration values; since everything is already in git!
 
 One added complication though is, with Helm you can add and remove resources inside a chart and as you upgrade to newer versions of the chart the old resources get automatically removed. Also with helm there's a way to remove a release by name and all the resources are removed.
 
@@ -95,7 +96,7 @@ Though its looking like helm 3 is still some way off so its not recommended any 
 
 If you use helm then we highly recommend you avoid tiller!
 
-If you are using Jenkins X then please consider using the `--no-tiller`  option when you're [creating a cluster](/getting-started/create-cluster/) or [install Jenkins X on an existing cluster](/docs/managing/tasks/install-on-cluster/).
+If you are using Jenkins X then please consider using the `--no-tiller`  option when you're [creating a cluster](/getting-started/create-cluster/) or [install Jenkins X on an existing cluster](/docs/managing-jx/old/install-on-cluster/).
 
 We're working  on Jenkins X 2.0 - most of its features are already available hidden behind feature flags. So in Jenkins X 2.0 we will default disable tiller by default along with enabling other things like Prow integration and using _serverless_ Jenkins by default (more on those in a separate blog!).
 

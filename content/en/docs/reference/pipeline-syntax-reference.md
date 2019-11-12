@@ -12,7 +12,7 @@ weight: 8
 
 ## Where to Define Your Pipelines
 
-Pipelines can either be defined in [build packs](build-packs.md), used for
+Pipelines can either be defined in [build packs](/docs/reference/components/build-packs/), used for
 multiple projects, or in the `jenkins-x.yml` file in a project's repository.
 When defining pipelines in a build pack, the top-level configuration below is
 used directly, while in `jenkins-x.yml`, the top-level configuration is under
@@ -134,7 +134,7 @@ inheriting this stage's configuration. Cannot be used with either `steps` or
 * **<a id='dir'>`dir`</a>** - Optional default working directory for steps and
 nested stages. Can either be relative under the `/workspace/source` directory or
 absolute.
-* **[`steps`](#steps)** - A list of steps to run in this stage. Cannot be used
+* **[`steps`](#configuration-for-steps)** - A list of steps to run in this stage. Cannot be used
 with either `stages` or `parallel`.
 
 ### Configuration for Steps
@@ -159,7 +159,7 @@ inherited environment variables from the stage and pipeline.
 
 * **<a id='agent'>`agent`</a>** - What container image should be used.
     * **`image`** - A container image, either as a fully qualified image or a
-    [pod template name](pod-templates.md).
+    [pod template name](/docs/reference/components/pod-templates/).
     * **`label`** - Only used with static Jenkins masters - the Jenkins agent
     label to use.
 * **<a id='env'>`env`</a>** - One or more environment variables.

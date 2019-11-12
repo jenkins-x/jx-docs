@@ -9,6 +9,7 @@ categories: [getting started]
 keywords: [install,kubernetes]
 aliases:
   - /getting-started/config
+  - /docs/managing-jx/common-tasks/config/
 weight: 50
 ---
 

@@ -44,7 +44,7 @@ Which will watch the pipeline activities and update the screen whenever a signif
 
 ### Pipeline Build logs
 
-To view the current pipeline build logs via [jx get build logs](/commands/jx_get_build_logs):
+To view the current pipeline build logs via [jx get build logs](/commands/jx_get_build_log/):
 
 ```sh
 jx get build logs

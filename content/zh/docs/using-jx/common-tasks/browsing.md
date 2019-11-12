@@ -33,7 +33,7 @@ jx get pipelines
 
 ### 流水线构建日志
 
-通过 [jx get build logs](/commands/jx_get_build_logs) 查看当前流水线构建日志：
+通过 [jx get build logs](/commands/jx_get_build_log/) 查看当前流水线构建日志：
 
 ```sh
 jx get build logs
@@ -71,7 +71,7 @@ jx get activities -f myapp -w
 
 ### 应用程序
 
-为了查看你的团队所有环境的所有应用的URL和 pod 数量，使用 [jx get applications](/commands/applications)：
+为了查看你的团队所有环境的所有应用的URL和 pod 数量，使用 [jx get applications](/commands/jx_get_applications/)：
 
 
 ```sh

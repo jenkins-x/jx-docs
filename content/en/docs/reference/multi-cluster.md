@@ -94,13 +94,13 @@ On startup the Environment Controller registers itself into the github repositor
 
 Whenever there is a push to the `master` branch (PRs and feature branches are handled by your Development cluster) the Environment Controller triggers a new [Jenkins X Pipeline](/docs/concepts/jenkins-x-pipelines/) for the Promotion. All other push events on other branches are ignored (as they are processed by the Development cluster).
 
-Then the tekton controller turns this set of Pipeline resources is turned into one or more Pods which run the pipeline. By default promotion pipelines just use a single pod - but you can [customise your deployment pipeline](/docs/concepts/jenkins-x-pipelines/#customising-the-pipelines) which may use sequential/parallel tasks which result in multiple pods.
+Then the tekton controller turns this set of Pipeline resources is turned into one or more Pods which run the pipeline. By default promotion pipelines just use a single pod - but you can [customise your deployment pipeline](/docs/concepts/jenkins-x-pipelines/#customizing-the-pipelines) which may use sequential/parallel tasks which result in multiple pods.
 
 Because Environment Controller reacts purely to merges to the environment git repository and we are using canonical git source code; it works with both Static Jenkins Servers and [serverless Jenkins X Pipelines and tekton](/docs/concepts/jenkins-x-pipelines/) in the Development cluster.
 
 ## Demo
 
-There was a demo of using environment controller in the [April 19, 2019 Office Hours](/community/april-18/)
+There was a demo of using environment controller in the [April 19, 2019 Office Hours](/community/office_hours/2019-04-19/)
 
 ## Known limitations
 

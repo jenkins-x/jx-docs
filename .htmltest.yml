@@ -5,4 +5,7 @@ IgnoreAltMissing: true
 IgnoreInternalEmptyHash: true
 IgnoreDirs:
 - "apidocs"
+- "zh"
+- "docs/reference/api"
+- "docs/reference/config"
 CheckDoctype: false

@@ -11,7 +11,7 @@ Jenkins X viene con una útil y práctica herramienta de línea de comandos [jx]
 
 * [instalar Jenkins X](/docs/getting-started/setup/install/) dentro de un clúster de Kubernetes existente
 * [crear un nuevo cluster de Kubernetes](/docs/getting-started/setup/create-cluster/) e instalar Jenkins X dentro de él
-* [cargar/importar proyectos](/developing/import) dentro de Jenkins X junto a su flujos de configuración CI/CD
+* [cargar/importar proyectos](/docs/using-jx/creating/import/) dentro de Jenkins X junto a su flujos de configuración CI/CD
 * [crea nuevas aplicaciones Spring Boot](/developing/create-spring/) las cuales son cargadas dentro de Jenkins X junto a sus flujos de configuración CI/CD
 
 ## Pipelines Automatizados
