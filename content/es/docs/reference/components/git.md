@@ -3,8 +3,6 @@ title: Servidores Git
 linktitle: Servidores Git
 description: Trabajando con diferentes servidores Git
 weight: 100
-aliases:
-  - /docs/managing-jx/common-tasks/git
 ---
 
 Jenkins X usa de manera predeterminada [GitHub](https://github.com/), la solución gratuita de alojamiento público de Git para proyectos de código abierto.

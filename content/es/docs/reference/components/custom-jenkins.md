@@ -3,8 +3,6 @@ title: Servidores de Jenkins Personalizados
 linktitle: Servidores de Jenkins Personalizados
 description: ¿Cómo trabajar con Servidores de Jenkins Personalizados en Jenkins X?
 weight: 70
-aliases:
-  - /docs/managing-jx/common-tasks/custom-jenkins
 ---
 
 Jenkins X proporciona CI/CD automatizado para las bibliotecas y microservicios que desee implementar en Kubernetes, pero ¿qué pasa con esas otros pipelines basadas en `Jenkinsfile` que ya ha creado en un servidor Jenkins personalizado?

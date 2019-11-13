@@ -4,8 +4,6 @@ linktitle: Recursos Personalizados
 description: Recursos Personalizados definidos para Jenkins X
 parent: "components"
 weight: 10
-aliases:
-  - /docs/managing-jx/common-tasks/custom-resources
 ---
 
 Kubernetes proporciona un mecanismo de extensión llamado [Recursos Personalizados](https://kubernetes.io/docs/concepts/api-extension/custom-resources/) que permite que los microservicios extiendan la plataforma Kubernetes para resolver problemas de orden superior.

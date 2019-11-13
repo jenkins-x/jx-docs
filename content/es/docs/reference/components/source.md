@@ -4,8 +4,6 @@ linktitle: Código Fuente
 description: La ubicación de varios repositorios de código fuente
 parent: "components"
 weight: 400
-aliases:
-  - /docs/managing-jx/common-tasks/source
 ---
 
 Jenkins X está construido sobre los hombros de gigantes y también tiene muchos repositorios de diferentes orígenes para hacer lograr varios objetivos, desde herramientas CLI, imágenes de docker, helm charts y [aplicaciones como complementos](/docs/contributing/addons/).

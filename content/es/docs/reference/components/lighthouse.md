@@ -3,9 +3,6 @@ title: Lighthouse
 linktitle: Lighthouse
 description: Ligero webhook y [ChatOps](/es/docs/using-jx/faq/chatops) para múltiples proveedores git.
 weight: 41
-aliases:
-  - /docs/managing-jx/common-tasks/lighthouse
-  - /architecture/lighthouse
 ---
 
 [Prow](https://github.com/kubernetes/test-infra/tree/master/prow) es una excelente manera de hacer [ChatOps](/es/docs/using-jx/faq/chatops) con los [Pipelines de Jenkins X](/es/docs/concepts/jenkins-x-pipelines/), aunque desafortunadamente solo es compatible con GitHub.com y es bastante pesado y complejo. Para solucionar este problema, hemos creado [Lighthouse](https://github.com/jenkins-x/lighthouse).

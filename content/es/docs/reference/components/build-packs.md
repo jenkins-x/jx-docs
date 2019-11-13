@@ -3,9 +3,6 @@ title: Paquetes de Compilación
 linktitle: Paquetes de Compilación
 description: Convertir el código fuente en aplicaciones en Kubernetes
 weight: 30
-aliases:
-  - /architecture/build-packs
-  - /docs/managing-jx/common-tasks/build-packs
 ---
 
 Usamos paquetes de compilación de estilo [draft](https://draft.sh/) para diferentes lenguajes, tiempos de ejecución y herramientas de compilación para agregar los archivos de configuración necesarios a los proyectos a medida que los [importamos](/docs/using-jx/common-tasks/import/) o los [creamos](/docs/using-jx/common-tasks/create-spring/) para que podamos compilarlos e desplegarlos en Kubernetes.

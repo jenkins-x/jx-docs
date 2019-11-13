@@ -3,8 +3,6 @@ title: Jenkins Nativo de la Nube
 linktitle: Jenkins Nativo de la Nube
 description: Hagamos que Jenkins sea nativo de la nube
 weight: 31
-aliases:
-  - /docs/managing-jx/common-tasks/cloud-native-jenkins
 ---
 
 Jenkins X ayuda a admitir _Jenkins nativo en la nube_ a través de:
