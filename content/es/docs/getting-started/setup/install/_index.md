@@ -4,8 +4,6 @@ linktitle: Instalar jx
 description: ¿Cómo instalar el binario jx en tu máquina?
 weight: 5
 keywords: [instalar]
-aliases:
-  - /getting-started/install
 ---
 
 Elija las instrucciones más adecuadas para su sistema operativo:

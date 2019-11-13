@@ -3,8 +3,6 @@ title: Conceptos
 linktitle: Conceptos
 description: Un resumen de los conceptos en Jenkins X.
 weight: 5
-aliases:
-  - /about/concepts
 ---
 
 Jenkins X está diseñado para simplificar el trabajo de los desarrolladores según los principios y las mejores prácticas de DevOps. Los enfoques adoptados se basan en la investigación exhaustiva realizada para el libro [*ACCELERATE: Building and Scaling High Performing Technology Organsiations*](https://goo.gl/vZ8BFN). Puedes leer por qué usamos [Accelerate](../overview/accelerate) como base para los principios de Jenkins X.

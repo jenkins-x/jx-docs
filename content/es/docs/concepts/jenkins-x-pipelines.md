@@ -3,9 +3,6 @@ title: Pipelines en Jenkins X
 linktitle: Pipelines en Jenkins X
 description: Flujo de actividades sin servidor (serverless) pensadas para la nube
 keywords: [tekton]
-aliases:
-  - /architecture/jenkins-x-pipelines
-  - /getting-started/next-gen-pipeline
 weight: 40
 ---
 

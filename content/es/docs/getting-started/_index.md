@@ -4,8 +4,6 @@ linkTitle: "Comenzando"
 weight: 2
 description: >
   ¿Cómo ponerse en marcha rápidamente con Jenkins X?
-aliases:
-  - /getting-started
 ---
 
 La forma más sencilla de comenzar es a través de los [Tutoriales de Google Cloud](/es/docs/managing-jx/tutorials/google-hosted/).

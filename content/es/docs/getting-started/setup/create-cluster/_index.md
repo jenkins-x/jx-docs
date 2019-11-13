@@ -5,8 +5,6 @@ description: ¿Como crear un clúster de Kubernetes?
 categories: [getting started]
 keywords: [cluster]
 weight: 1
-aliases:
-  - /getting-started/create-cluster
 ---
 
 Jenkins X necesita que exista un clúster de Kubernetes para que pueda instalarse mediante el [jx boot](/docs/getting-started/setup/boot/).
