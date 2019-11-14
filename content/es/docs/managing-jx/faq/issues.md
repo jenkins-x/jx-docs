@@ -3,8 +3,6 @@ title: Problemas comunes
 linktitle: Problemas comunes
 description: Preguntas sobre problemas comunes configurando Jenkins X.
 weight: 50
-aliases:
-  - /faq/issues/
 ---
 
 Hemos tratado de recopilar problemas comunes aquí con soluciones alternativas. Si su problema no aparece en esta lista, [infórmenos](https://github.com/jenkins-x/jx/issues/new).

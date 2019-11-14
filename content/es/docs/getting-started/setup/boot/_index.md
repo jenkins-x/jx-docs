@@ -5,9 +5,6 @@ description: Instalar, configurar y actualizar Jenkins X mediante GitOps y Jenki
 categories: [getting started]
 keywords: [install]
 weight: 10
-aliases:
-  - /getting-started/boot
-  - /docs/reference/boot
 ---
 
 ## Resumen

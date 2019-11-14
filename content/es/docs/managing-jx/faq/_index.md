@@ -3,8 +3,6 @@ title: FAQ
 linktitle: FAQ
 description: Preguntas sobre cómo gestionar Jenkins X
 weight: 60
-aliases:
-  - /faq/setup/
 ---
 
 ## ¿Cómo agrego un usuario a mi instalación de Jenkins X?

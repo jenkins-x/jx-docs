@@ -1,7 +1,6 @@
 ---
 title: Control de Acceso
 linktitle: Control de Acceso
-aliases: [/rbac/]
 description: Gestionar el Control de Acceso
 weight: 10
 ---

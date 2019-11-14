@@ -3,8 +3,6 @@ title: Crear Aplicación Spring
 linktitle: Crear Aplicación Spring
 description: Cómo crear una nueva aplicación Spring Boot con CI/CD y Promociones GitOps
 weight: 50
-aliases:
-  - /developing/create-spring
 ---
 
 Este [demo](https://www.youtube.com/watch?v=kPes3rvT1UM) utiliza el comando [jx create spring](/commands/jx_create_spring/) para [crear una aplicación Spring Boot con pipelines CI/CD](/developing/create-spring/) y [Promociones GitOps](/es/docs/concepts/features/#promoción):

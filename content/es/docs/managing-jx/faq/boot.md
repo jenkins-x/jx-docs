@@ -3,8 +3,6 @@ title: Preguntas sobre Boot
 linktitle: Preguntas sobre Boot
 description: Preguntas sobre cómo utilizar 'jx boot'
 weight: 20
-aliases:
-  - /faq/issues/
 ---
 
 Para ampliar los detalles vea cómo utilizar [jx boot](/es/docs/getting-started/setup/boot/).

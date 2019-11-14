@@ -3,8 +3,6 @@ title: Contribuye al Proyecto Jenkins X
 linktitle: Contribuye a Jenkins X
 description: Contribuye al desarrollo de Jenkins X y a su documentación.
 weight: 10
-aliases:
-  - /contribute
 ---
 
 Jenkins X relies heavily on the enthusiasm and participation of the open-source community. We need your help so please dive in! There are many ways to help:
