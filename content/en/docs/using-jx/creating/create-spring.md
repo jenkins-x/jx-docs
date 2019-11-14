@@ -3,6 +3,8 @@ title: Create Spring Boot
 linktitle: Create Spring Boot
 description: How to create new Spring Boot applications and import them into Jenkins X
 weight: 40
+aliases:
+  - /docs/using-jx/common-tasks/create-spring/
 ---
 
 Java microservices developers can leverage the opinionated resources and
@@ -64,7 +66,7 @@ jx import
 
 You can now perform builds, commit project code to your newly created
 Git repository, and Jenkins X will automatically
-process pull requests and create [previews](/developing/preview) of your applications for testing and validation.
+process pull requests and create [previews](/docs/reference/preview/) of your applications for testing and validation.
 
 ## Creating a new Spring Boot application
 
@@ -99,7 +101,7 @@ jx create spring
     and hitting the `Space Bar` to select them. The application
     prompts you to initialize Git
 
-There is a [demo of using the command: jx create spring](/demos/create_spring/).
+There is a [demo of using the command: jx create spring](/docs/getting-started/demos-talks-posts/create_spring/).
 
 You can also pass certain options to the `jx create` command, such as specifying Spring Boot dependencies:
 
@@ -141,4 +143,4 @@ The two methods of configuring Spring Boot projects in Jenkins X performs severa
 You can now use your Git-enabled local project subdirectory to make
 changes to your Spring Boot application, push those changes to Git, and
 automatically have Jenkins X build, create
-[previews](/developing/preview/) for testing and validation, and [promote](/developing/promote) your app to production for general usage.
+[previews](/docs/reference/preview/) for testing and validation, and [promote](/developing/promote/) your app to production for general usage.

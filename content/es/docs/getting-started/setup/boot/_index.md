@@ -29,7 +29,7 @@ _Jenkins X Boot_ utiliza el siguiente enfoque:
 kubectl get ns
 ```
 
-* ejecute el comando [jx boot](/commands/jx_boot):
+* ejecute el comando [jx boot](/commands/jx_boot/):
 ```sh
 jx boot
 ```
@@ -40,7 +40,7 @@ Entonces Jenkins X debe instalarse y configurarse en su clúster de Kubernetes.
 
 ### Acerca de 'jx boot'
 
-El comando [jx boot](/commands/jx_boot) interpreta y ejecuta el pipeline de arranque utilizando el binario local `jx`. El pipeline utilizado para arrancar Jenkins X puede ser ejecutado más tarde dentro de Kubernetes a través de Tekton. Si en algún momento algo sale mal con Tekton, siempre puedes volver a utilizar el comando `jx boot` para que las cosas vuelvan a funcionar (por ejemplo, si alguien elimina accidentalmente su clúster).
+El comando [jx boot](/commands/jx_boot/) interpreta y ejecuta el pipeline de arranque utilizando el binario local `jx`. El pipeline utilizado para arrancar Jenkins X puede ser ejecutado más tarde dentro de Kubernetes a través de Tekton. Si en algún momento algo sale mal con Tekton, siempre puedes volver a utilizar el comando `jx boot` para que las cosas vuelvan a funcionar (por ejemplo, si alguien elimina accidentalmente su clúster).
 
 #### Pre and Post Validation
 
@@ -50,9 +50,9 @@ Una vez que la instalación se ha completado, se ejecuta el comando [jx step ver
 
 ## Modificando su instalación
 
-En cualquier momento puede volver a ejecutar el comando [jx boot](/commands/jx_boot) para aplicar cualquier cambio en su configuración.
+En cualquier momento puede volver a ejecutar el comando [jx boot](/commands/jx_boot/) para aplicar cualquier cambio en su configuración.
 
-Para lograrlo solamente edite cualquier elemento en la configuración y vuelva a ejecutar [jx boot](/commands/jx_boot), ya sea para agregar o eliminar aplicaciones, para cambiar parámetros, configuraciones o para actualizar / degradar versiones de dependencias.
+Para lograrlo solamente edite cualquier elemento en la configuración y vuelva a ejecutar [jx boot](/commands/jx_boot/), ya sea para agregar o eliminar aplicaciones, para cambiar parámetros, configuraciones o para actualizar / degradar versiones de dependencias.
 
 ## Requisitos
 
@@ -109,13 +109,13 @@ La gran ventaja de utilizar Vault se muestra en el trabajo de equipo, donde cada
 
 ## Webhook
 
-Jenkins X admite varios sistemas para gestionar webhooks y opcionalmente admite [ChatOps](/docs/using-jx/faq/chatops).
+Jenkins X admite varios sistemas para gestionar webhooks y opcionalmente admite [ChatOps](/docs/using-jx/faq/chatops/).
 
-[Prow](/docs/reference/components/prow/) y [Lighthouse](/architecture/lighthouse/) admiten webhooks y [ChatOps](/docs/using-jx/faq/chatops), mientras que Jenkins solo admite webhooks.
+[Prow](/docs/reference/components/prow/) y [Lighthouse](/architecture/lighthouse/) admiten webhooks y [ChatOps](/docs/using-jx/faq/chatops/), mientras que Jenkins solo admite webhooks.
 
 ### Prow
 
-[Prow](/docs/reference/components/prow/) es actualmente el sistema de webhook y [ChatOps](/docs/using-jx/faq/chatops) pre-establecido cuando se utiliza [Serverless Jenkins X Pipelines](/es/docs/concepts/jenkins-x-pipelines/) con [Tekton](https://tekton.dev/) y GitHub.
+[Prow](/docs/reference/components/prow/) es actualmente el sistema de webhook y [ChatOps](/docs/using-jx/faq/chatops/) pre-establecido cuando se utiliza [Serverless Jenkins X Pipelines](/es/docs/concepts/jenkins-x-pipelines/) con [Tekton](https://tekton.dev/) y GitHub.
 
 Se configura a través de `webhook: prow` en el fichero `jx-requirements.yml`.
 
@@ -139,7 +139,7 @@ webhook: prow
 
 ### Lighthouse
 
-[Lighthouse](/architecture/lighthouse/) es actualmente el sistema de webhook y [ChatOps](/docs/using-jx/faq/chatops) pre-establecido cuando se utiliza [Serverless Jenkins X Pipelines](/es/docs/concepts/jenkins-x-pipelines/) con [Tekton](https://tekton.dev/) y un servidor git diferente a [GitHub](https://github.com).
+[Lighthouse](/architecture/lighthouse/) es actualmente el sistema de webhook y [ChatOps](/docs/using-jx/faq/chatops/) pre-establecido cuando se utiliza [Serverless Jenkins X Pipelines](/es/docs/concepts/jenkins-x-pipelines/) con [Tekton](https://tekton.dev/) y un servidor git diferente a [GitHub](https://github.com).
 
 Cuando Lighthouse sea más estable y esté bien probado, lo convertiremos en la configuración pre-establecida para todas las instalaciones que utilicen [Serverless Jenkins X Pipelines](/es/docs/concepts/jenkins-x-pipelines/).
 
@@ -416,7 +416,7 @@ storage:
     url: gs://my-repo
 ```
 
-Para ampliar detalles utilice la [Guía de Almacenamiento](/architecture/storage).
+Para ampliar detalles utilice la [Guía de Almacenamiento](https://jenkins-x.io/architecture/storage/).
 
 ## Ingress
 

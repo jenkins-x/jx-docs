@@ -16,7 +16,7 @@ This page lists the main organisations and repositories.
 
 * [jenkins-x](https://github.com/jenkins-x) the main organisation for source code
 * [jenkins-x-apps](https://github.com/jenkins-x-apps) contains the standard  [addon Apps](/docs/contributing/addons/) for Jenkins X
-* [jenkins-x-buildpacks](https://github.com/jenkins-x-buildpacks) contains the available [build packs](/docs/managing-jx/common-tasks/build-packs/)
+* [jenkins-x-buildpacks](https://github.com/jenkins-x-buildpacks) contains the available [build packs](/docs/reference/components/build-packs//)
 * [jenkins-x-charts](https://github.com/jenkins-x-charts) the main helm charts we distribute
 * [jenkins-x-images](https://github.com/jenkins-x-images) contains some custom docker image builds
 * [jenkins-x-quickstarts](https://github.com/jenkins-x-quickstarts) the quickstart projects used by [create quickstart](/docs/getting-started/first-project/create-quickstart/)
@@ -37,7 +37,7 @@ Here we'll call out of some of the main repositories in the above organisations:
 
 * [jenkins-x/jenkins-x-builders](https://github.com/jenkins-x/jenkins-x-builders) generates the static jenkins server build pod docker images        
 * [jenkins-x/jenkins-x-image](https://github.com/jenkins-x/jenkins-x-image) generates the docker image for the static jenkins server we use by default
-* [jenkins-x/jenkins-x-serverless](https://github.com/jenkins-x/jenkins-x-serverless) generates the [serverless jenkins](/news/serverless-jenkins/) docker images when using [prow](/architecture/prow)
+* [jenkins-x/jenkins-x-serverless](https://github.com/jenkins-x/jenkins-x-serverless) generates the [serverless jenkins](/news/serverless-jenkins/) docker images when using [prow](/architecture/prow/)
 
 ### Tools
 

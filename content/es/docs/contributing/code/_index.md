@@ -390,7 +390,7 @@ There are a number of automated checks that will run on your PR:
 * Semantic Pull Request - validates that your commit messages meet the Conventional Commit format described above.
   Additionally your PR must also have a conventional message. The UX for this bot is a little odd as it doesn't go red
   if the messages are NOT correct, instead it goes yellow. You need it to go to a green tick!
-* DCO - see [Signoff](#Signoff)
+* DCO - see [Signoff](#signoff)
 * Hound - lints the code and comments inline with any issues. You need this to go to a green tick and and say "No violations found. Woof!"
 * lint - runs a lot more lint checks but in a CI job so won't provide inline feedback. You need this to pass as a green tick. Check the log for any errors.
 * bdd - runs the end to end test [create-spring](https://github.com/jenkins-x/bdd-jx/blob/master/test/spring/jx_create_spring.go) in a new team on an existing cluster using static jenkins. Check the logs for errors.
@@ -645,7 +645,7 @@ Another approach is you can make your own docker image, then pause a pipeline an
 
 ## Code Generation
 
-Jenkins X makes use of code generation to create [Mocks](#mocking--stubbing), Kubernetes Custom Resource clients, [OpenAPI spec and API Documentation](../apidocs).
+Jenkins X makes use of code generation to create [Mocks](#mocking--stubbing), Kubernetes Custom Resource clients, [OpenAPI spec and API Documentation](/apidocs).
 The generated files, except for the HTML docs, checked into version control.
 There are several `make` targets resposible for code generation.
 They can be found in `Makefile.codegen`.

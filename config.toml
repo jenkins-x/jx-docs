@@ -152,7 +152,7 @@ no = 'Sorry to hear that. Please <a href="https://github.com/jenkins-x/jx/issues
 	desc = "Follow us on Twitter to get the latest news!"
 [[params.links.user]]
 	name = "Newsletter"
-	url = "/community"
+	url = "/community/"
 	icon = "fa fa-envelope"
         desc = "Subscribe to the newsletter"
 

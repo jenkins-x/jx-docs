@@ -37,7 +37,7 @@ jx step syntax effective -s
 
 You can override whole Stages or replace a specific step with a single step or a sequence of steps. You can also add steps before/after another step.
 
-For more detail check out [how to override steps](/architecture/pipeline-syntax-reference/#specifying-and-overriding-release-pull-request-and-feature-pipelines)
+For more detail check out [how to override steps](/docs/reference/pipeline-syntax-reference/#specifying-and-overriding-release-pull-request-and-feature-pipelines)
 
 ## How can I override the default container image?
 
@@ -56,7 +56,7 @@ You can see the effect of this change locally before you commit it to git via th
 jx step syntax effective -s
 ```         
 
-For more detail check out [how to override steps](/architecture/pipeline-syntax-reference/#specifying-and-overriding-release-pull-request-and-feature-pipelines)
+For more detail check out [how to override steps](/docs/reference/pipeline-syntax-reference/#specifying-and-overriding-release-pull-request-and-feature-pipelines)
 
 ## How do Jenkins X Pipelines compare to Jenkins pipelines?
 

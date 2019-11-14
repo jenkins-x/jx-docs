@@ -16,7 +16,7 @@ Please join us, we'd love to hear your feedback or have you participate and show
 
 ### Events
 
-For details of the next Jenkins X demo or talk checkout our [talks at conferences and meetups](/community/talksdemos) page!
+For details of the next Jenkins X demo or talk checkout our [talks at conferences and meetups](/community/talksdemos/) page!
 
 ### Slack
 

@@ -34,7 +34,7 @@ jx create cluster gke --skip-installation
 kubectl get ns
 ```
 
-* run the [jx boot](/commands/jx_boot) command:
+* run the [jx boot](/commands/jx_boot/) command:
 ```sh
 jx boot
 ```
@@ -46,7 +46,7 @@ Then Jenkins X should be installed and set up on your Kubernetes cluster.
 
 ### About `jx boot`
 
-The [jx boot](/commands/jx_boot) interprets the boot pipeline using your local `jx` binary. The underlying pipeline for booting Jenkins X can later be run inside Kubernetes via Tekton. If ever something goes wrong with Tekton you can always `jx boot` again to get things back up and running (e.g., if someone accidentally deletes your cluster).
+The [jx boot](/commands/jx_boot/) interprets the boot pipeline using your local `jx` binary. The underlying pipeline for booting Jenkins X can later be run inside Kubernetes via Tekton. If ever something goes wrong with Tekton you can always `jx boot` again to get things back up and running (e.g., if someone accidentally deletes your cluster).
 
 
 #### Pre and Post Validation
@@ -57,9 +57,9 @@ Once the installation has completed the [jx step verify install](/commands/jx_st
 
 ## Changing your installation
 
-At any time you can re-run [jx boot](/commands/jx_boot) to re-apply any changes in your configuration.
+At any time you can re-run [jx boot](/commands/jx_boot/) to re-apply any changes in your configuration.
 
-So just edit anything in the configuration you like and re-run [jx boot](/commands/jx_boot) - whether that's to add or remove apps, to change parameters or configuration, or upgrade or downgrade versions of dependencies.
+So just edit anything in the configuration you like and re-run [jx boot](/commands/jx_boot/) - whether that's to add or remove apps, to change parameters or configuration, or upgrade or downgrade versions of dependencies.
 
 ## Requirements
 
@@ -116,13 +116,13 @@ The big advantage of Vault is it means a team of folks can then easily run `jx b
 
 ## Webhook
 
-Jenkins X supports a number of engines for handling webhooks and optionally supporting [ChatOps](/docs/using-jx/faq/chatops).
+Jenkins X supports a number of engines for handling webhooks and optionally supporting [ChatOps](/docs/using-jx/faq/chatops/).
 
-[Prow](/docs/reference/components/prow/) and [Lighthouse](/architecture/lighthouse/) support webhooks and [ChatOps](/docs/using-jx/faq/chatops) whereas Jenkins just supports webhooks.
+[Prow](/docs/reference/components/prow/) and [Lighthouse](/architecture/lighthouse/) support webhooks and [ChatOps](/docs/using-jx/faq/chatops/) whereas Jenkins just supports webhooks.
 
 ### Prow
 
-[Prow](/docs/reference/components/prow/) is currently the default webhook and [ChatOps](/docs/using-jx/faq/chatops) engine when using [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/) and GitHub.
+[Prow](/docs/reference/components/prow/) is currently the default webhook and [ChatOps](/docs/using-jx/faq/chatops/) engine when using [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/) and GitHub.
 
 It's configured via the `webhook: prow` in `jx-requirements.yml`
 
@@ -146,7 +146,7 @@ webhook: prow
 
 ### Lighthouse
 
-[Lighthouse](/architecture/lighthouse/) is currently the default webhook and [ChatOps](/docs/using-jx/faq/chatops) engine when using [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/) and a git server other than https://github.com.
+[Lighthouse](/architecture/lighthouse/) is currently the default webhook and [ChatOps](/docs/using-jx/faq/chatops/) engine when using [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/) and a git server other than https://github.com.
 
 Once Lighthouse is more stable and well tested we'll make it the default for all installations using [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/).
 
@@ -432,7 +432,7 @@ storage:
     url: gs://my-repo
 ```
 
-For more details see the [Storage Guide](/architecture/storage).
+For more details see the [Storage Guide](https://jenkins-x.io/architecture/storage/).
 
 ## Ingress
 

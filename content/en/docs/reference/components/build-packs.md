@@ -8,7 +8,7 @@ aliases:
   - /docs/managing-jx/common-tasks/build-packs
 ---
 
-We use [draft](https://draft.sh/) style _build packs_ for different languages, runtimes and build tools to add the necessary configuration files to projects as we [import them](/docs/using-jx/common-tasks/import/) or [create](/docs/using-jx/common-tasks/create-spring/) [them](/docs/getting-started/first-project/create-quickstart/) so that we can build and deploy them in kubernetes.
+We use [draft](https://draft.sh/) style _build packs_ for different languages, runtimes and build tools to add the necessary configuration files to projects as we [import them](/docs/using-jx/creating/import/) or [create](/docs/using-jx/common-tasks/create-spring/) [them](/docs/getting-started/first-project/create-quickstart/) so that we can build and deploy them in kubernetes.
 
 The build packs are used to default the following files if they do not already exist in the project being created/imported:
 
@@ -84,11 +84,11 @@ We love [contributions](/community/) so please consider adding new build packs a
 
 Here are instructions on how to create a new build pack - please if anything is not clear come [join the community and just ask](/community/) we are happy to help!
 
-The best place to start with is a _quickstart_ application. A sample project that you can use as a test. So create/find a suitable example project and then [import it](/developing/import).
+The best place to start with is a _quickstart_ application. A sample project that you can use as a test. So create/find a suitable example project and then [import it](/docs/using-jx/creating/import/).
 
 Then manually add a `Dockerfile` and `Jenkinsfile` if one is not already added for you. You could start with files from the [current build pack folders](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/tree/master/packs) - using the most similar language/framework to yours.
 
-If your build pack is using build tools which are not yet available in one of the existing [pod templates](/architecture/pod-templates) then you will need to [submit a new pod template](/docs/managing-jx/common-tasks/pod-templates/#submitting-new-pod-templates) probably using a new build container image too.
+If your build pack is using build tools which are not yet available in one of the existing [pod templates](/docs/reference/components/pod-templates/) then you will need to [submit a new pod template](/docs/reference/components/pod-templates/) probably using a new build container image too.
 
 Once you have a pod template to use, say, `jenkins-foo` then refer to it in your `Jenkinsfile`:
 
@@ -126,10 +126,10 @@ cp -r charts/somefoo ~/.jx/draft/packs/github.com/jenkins-x/draft-packs/packs/$P
 ```
 
 Once your build pack is in a folder at `~/.jx/draft/packs/github.com/jenkins-x/draft-packs/packs/`
-then it should be usable by the [jx import](/commands/jx_import) code
+then it should be usable by the [jx import](/commands/jx_import/) code
 which uses programming language detection to find the most suitable build pack to use when importing a project.
 If your build pack requires custom logic to detect it then let us know
-and we can help patch [jx import](/commands/jx_import) to work better for your build pack.
+and we can help patch [jx import](/commands/jx_import/) to work better for your build pack.
 For example, we have some custom logic for handling [Maven and Gradle better](https://github.com/jenkins-x/jx/blob/712d9edf5e55aafaadfb3e0ac57692bb44634b1c/pkg/jx/cmd/common_buildpacks.go#L82:L108).
 
 

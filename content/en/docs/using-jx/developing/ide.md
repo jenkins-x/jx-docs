@@ -45,6 +45,6 @@ You can find the [Jenkins X plugin for IntelliJ here](https://plugins.jetbrains.
 
 To help you work in the cloud we also support a Web Based IDE using  the [Theia IDE](https://www.theia-ide.org/).
 
-To get started with Theia see [how to create a DevPod with an embedded Web IDE](/devpods/#using-theia-ide) 
+To get started with Theia see [how to create a DevPod with an embedded Web IDE](/docs/reference/devpods/#using-theia-ide) 
 
 

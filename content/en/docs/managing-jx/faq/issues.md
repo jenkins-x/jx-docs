@@ -25,7 +25,7 @@ We also have a diagnostic command that looks for common problems [jx step verify
 jx step verify install
 ```
 
-A common issue for pods not starting is if your cluster does not have a [default storage class](https://kubernetes.io/docs/concepts/storage/storage-classes/) setup so that `Persistent Volume Claims` can be bound to `Persistent Volumes` as described in the [install instructions](/docs/managing-jx/common-tasks/install-on-cluster/).
+A common issue for pods not starting is if your cluster does not have a [default storage class](https://kubernetes.io/docs/concepts/storage/storage-classes/) setup so that `Persistent Volume Claims` can be bound to `Persistent Volumes` as described in the [install instructions](/docs/getting-started/install-on-cluster/).
 
 You can check your storage class and persistent volume setup via:
 
@@ -89,7 +89,7 @@ So a workaround is to use a real [external docker registry](/docs/managing-jx/co
 
 Generally speaking this happens when your laptop has a different version of helm to the version used in our build pack docker images and/or the version of tiller thats running in your server.
 
-The simplest fix for this is to just [not use tiller at all](/news/helm-without-tiller/) - which actually helps avoid this problem ever happening and solves a raft of security issues too.
+The simplest fix for this is to just [not use tiller at all](/blog/2018/10/03/helm-without-tiller/) - which actually helps avoid this problem ever happening and solves a raft of security issues too.
 
 However switching from using Tiller to No Tiller does require a re-install of Jenkins X (though you could try do that in separate set of namespaces then move projects across incrementally?).
 
@@ -239,7 +239,7 @@ That should regenerate your local `~/kube/config` file and so `kubectl get node`
 
 ## How can I diagnose exposecontroller issues?
 
-When you [promote a new version of your application to an environment](/docs/managing-jx/faq/#how-does-promotion-actually-work), such as the Staging Environment a Pull Request is raised on the environment repository.
+When you promote a new version of your application to an environment, such as the Staging Environment a Pull Request is raised on the environment repository.
 
 When the master pipeline runs on an environment a Kubernetes `Job` is created for [exposecontroller](https://github.com/jenkins-x/exposecontroller) which runs a pod until it terminates.
 
@@ -266,7 +266,7 @@ If you find you get lots of warnings in your pipelines like this...
 
 and promotion takes 30 minutes from a release pipeline on an application starting to the change hitting `Staging` then its mostly probably due to Webhooks.
 
-When we [import projects](/docs/using-jx/common-tasks/import/) or [create quickstarts](/docs/getting-started/first-project/create-quickstart/) we automate the setup of CI/CD pipelines for the git repository. What this does is setup Webhooks on the git repository to trigger Jenkins X to trigger pipelines (either using Prow for [serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) or the static jenkins server if not).
+When we [import projects](/docs/using-jx/creating/import/) or [create quickstarts](/docs/getting-started/first-project/create-quickstart/) we automate the setup of CI/CD pipelines for the git repository. What this does is setup Webhooks on the git repository to trigger Jenkins X to trigger pipelines (either using Prow for [serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) or the static jenkins server if not).
 
 However sometimes your git provider (e.g. [GitHub](https://github.com/) may not be able to do connect to your Jenkins X installation (e.g. due to networking / firewall issues).
 

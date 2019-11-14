@@ -7,7 +7,7 @@ weight: 80
 
 Jenkins X defaults to using the issue tracker in your git provider for creating and browsing issues.
 
-e.g. if you are inside the source code of a github project then you can type [jx create issue](/commands/jx_create_issue):
+e.g. if you are inside the source code of a github project then you can type [jx create issue](/commands/jx_create_issue/):
 
 ```sh
 jx create issue -t "lets make things more awesome"
@@ -15,7 +15,7 @@ jx create issue -t "lets make things more awesome"
 
 And a new issue will be created on github.
 
-You can list open the issues on your project via [jx get issues](/commands/jx_get_issues):
+You can list open the issues on your project via [jx get issues](/commands/jx_get_issues/):
 
 ```sh
 jx get issues
@@ -25,13 +25,13 @@ jx get issues
 
 If you wish to use, say, JIRA on a project you first need to add a JIRA service.
 
-You can register your JIRA service via [jx create tracker server](/commands/jx_create_tracker_server):
+You can register your JIRA service via [jx create tracker server](/commands/jx_create_tracker_server/):
 
 ```sh
 jx create tracker server jira https://mycompany.atlassian.net/
 ```
 
-You can then view your issue tracker server via [jx get tracker](/commands/jx_get_tracker):
+You can then view your issue tracker server via [jx get tracker](/commands/jx_get_tracker/):
 
 ```sh
 jx get tracker
@@ -45,7 +45,7 @@ jx create tracker token -n jira  myEmailAddress
 
 ### configure the issue tracker on a project
 
-In the source code of your project then use [jx edit config](/commands/jx_edit_config):
+In the source code of your project then use [jx edit config](/commands/jx_edit_config/):
 
 ```sh
 jx edit config -k issues

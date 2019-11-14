@@ -13,7 +13,7 @@ cascade:
 ## Concepts
 ---
 
-Jenkins X está diseñado para simplificar el trabajo de los desarrolladores según los principios y las buenas prácticas de DevOps. Los enfoques adoptados se basan en la investigación exhaustiva realizada para el libro [*ACCELERATE: Building and Scaling High Performing Technology Organsiations*](https://goo.gl/vZ8BFN). Puedes leer por qué usamos [Accelerate](../overview/accelerate) como base para los principios de Jenkins X.
+Jenkins X está diseñado para simplificar el trabajo de los desarrolladores según los principios y las buenas prácticas de DevOps. Los enfoques adoptados se basan en la investigación exhaustiva realizada para el libro [*ACCELERATE: Building and Scaling High Performing Technology Organsiations*](https://goo.gl/vZ8BFN). Puedes leer por qué usamos [Accelerate](/docs/overview/accelerate/) como base para los principios de Jenkins X.
 
 ## Principios
 ---

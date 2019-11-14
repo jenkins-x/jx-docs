@@ -180,4 +180,4 @@ menu:
 * [Kubernetes Meetup, London  12 Apriul 2018: CI/CD with Jenkins X on Kubernetes](https://skillsmatter.com/skillscasts/11833-kubernetes-april) by [Rob Davies](https://twitter.com/rajdavies) and [JamesRawlings](https://twitter.com/jdrawlings)
 
 
-Read more about Jenkins X in our [Blog](/news/) and [Articles](/docs/getting-started/demos-talks-posts/articles/) section.
+Read more about Jenkins X in our [Blog](/blog/news/) and [Articles](/docs/getting-started/demos-talks-posts/articles/) section.

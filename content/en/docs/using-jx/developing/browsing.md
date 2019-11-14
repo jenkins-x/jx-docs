@@ -14,11 +14,11 @@ If you have used kubernetes before you're probably used the [kubectl](https://ku
 kubectl get pods
 ```
 
-The Jenkins X command line tool, [jx](/commands/jx), has a similar look and feel to [kubectl](https://kubernetes.io/docs/reference/kubectl/overview/) and lets you get the status of all the Jenkins X resources.
+The Jenkins X command line tool, [jx](/commands/jx/), has a similar look and feel to [kubectl](https://kubernetes.io/docs/reference/kubectl/overview/) and lets you get the status of all the Jenkins X resources.
 
 ### View Jenkins Console
 
-If you are familiar with the Jenkins console then you can use [jx console](/commands/jx_console):
+If you are familiar with the Jenkins console then you can use [jx console](/commands/jx_console/):
 
 ```sh
 jx console
@@ -28,7 +28,7 @@ to open it in a browser.
 
 ### Pipeline Activity
 
-To view the current pipeline activity [jx get activities](/commands/jx_get_activities):
+To view the current pipeline activity [jx get activities](/commands/jx_get_activities/):
 
 ```sh
 jx get activities
@@ -40,11 +40,11 @@ If you want to watch whats going on with your app `myapp`  you can use:
 jx get activities -f myapp -w
 ```
 
-Which will watch the pipeline activities and update the screen whenever a significant change happens (e.g. a release completes, a PR is created to start [promotion](/developing/promote) etc).
+Which will watch the pipeline activities and update the screen whenever a significant change happens (e.g. a release completes, a PR is created to start [promotion](/developing/promote/) etc).
 
 ### Pipeline Build logs
 
-To view the current pipeline build logs via [jx get build logs](/commands/jx_get_build_logs):
+To view the current pipeline build logs via [jx get build logs](/commands/jx_get_build_log/):
 
 ```sh
 jx get build logs
@@ -66,7 +66,7 @@ jx get build logs myorg/myapp/master
 
 ### Pipelines
 
-To view the current configured pipelines use [jx get pipelines](/commands/jx_get_pipelines):
+To view the current configured pipelines use [jx get pipelines](/commands/jx_get_pipelines/):
 
 ```sh
 jx get pipelines
@@ -74,7 +74,7 @@ jx get pipelines
 
 ### Applications
 
-To view all the applications in your team across all your environments with URLs and pod counts use  [jx get applications](/commands/jx_get_applications):
+To view all the applications in your team across all your environments with URLs and pod counts use  [jx get applications](/commands/jx_get_applications/):
 
 ```sh
 jx get applications
@@ -102,7 +102,7 @@ jx get applications -e staging
 
 ### Environments
 
-To view the [environments](/docs/concepts/features/#environments) defined for your team use [jx get environments](/commands/jx_get_environments):
+To view the [environments](/docs/concepts/features/#environments) defined for your team use [jx get environments](/commands/jx_get_environments/):
 
 ```sh
 jx get environments
@@ -110,6 +110,6 @@ jx get environments
 
 You can also
 
-* create a new environment via [jx create environment](/commands/jx_create_environment)
-* edit an environment via [jx edit environment](/commands/jx_edit_environment)
-* delete an environment via [jx delete environment](/commands/jx_delete_environment)
+* create a new environment via [jx create environment](/commands/jx_create_environment/)
+* edit an environment via [jx edit environment](/commands/jx_edit_environment/)
+* delete an environment via [jx delete environment](/commands/jx_delete_environment/)

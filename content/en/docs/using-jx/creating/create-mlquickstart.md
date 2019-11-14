@@ -7,7 +7,7 @@ weight: 30
 
 Machine learning quickstarts are pre-made machine-learning applications you can leverage to start your own projects.
 
-You can create new applications from our list of curated machine learning quickstart applications via the [jx create mlquickstart](/commands/jx_create_mlquickstart) command.
+You can create new applications from our list of curated machine learning quickstart applications via the [jx create mlquickstart](/commands/jx_create_mlquickstart/) command.
 
 
 ```sh
@@ -99,7 +99,7 @@ Then when you create a machine learning quickstart, the [Jenkins X build packs](
 
 If you would like to submit a new Quickstart to Jenkins X please just [raise an issue](https://github.com/jenkins-x/jx/issues/new?labels=quickstart&title=Add%20mlquickstart&body=Please%20add%20this%20github%20mlquickstart:) with the URL in GitHub of your quickstart and we can fork it it into the [quickstart organisation](https://github.com/machine-learning-quickstarts) so it appears in the `jx create mlquickstart` menu.
 
-Or if you are part of an open source project and wish to curate your own set of quickstarts for your project; you can [raise an issue](https://github.com/jenkins-x/jx/issues/new?labels=quickstart&title=Add%20mlquickstart&body=Please%20add%20this%20github%20mlquickstart:) giving us details of the github organisation where the quickstarts live and we'll add that in as a default organisation to include in the [jx create mlquickstart](/commands/jx_create_mlquickstart) command. Its easier for the [jx create mlquickstart](/commands/jx_create_mlquickstart) if you maintain the quickstarts in a separate quickstart organisation on github.
+Or if you are part of an open source project and wish to curate your own set of quickstarts for your project; you can [raise an issue](https://github.com/jenkins-x/jx/issues/new?labels=quickstart&title=Add%20mlquickstart&body=Please%20add%20this%20github%20mlquickstart:) giving us details of the github organisation where the quickstarts live and we'll add that in as a default organisation to include in the [jx create mlquickstart](/commands/jx_create_mlquickstart/) command. Its easier for the [jx create mlquickstart](/commands/jx_create_mlquickstart/) if you maintain the quickstarts in a separate quickstart organisation on github.
 
 Until we do that you can still use your own Quickstarts in the `jx create mlquickstart` command via the `-g` or `--organisations` command line argument. e.g.
 
@@ -150,7 +150,7 @@ Note that you MUST specify the `--includes=[ML-*]` option or your quickstarts wi
 
 If you omit the `--url` argument the command will assume its a [GitHub](https://github.com/) repository. Note that both public and private repositories are supported.
 
-This means you can have your own shared private quickstarts to reuse within your organisation. Of course we'd obviously prefer you to [share your quickstarts with us via open source](https://github.com/jenkins-x/jx/issues/new?labels=quickstart&title=Add%20mlquickstart&body=Please%20add%20this%20github%20mlquickstart:) then we can include your quickstart with the entire [community](/community) - but there may be times you want to curate your own internal quickstarts using proprietary software.
+This means you can have your own shared private quickstarts to reuse within your organisation. Of course we'd obviously prefer you to [share your quickstarts with us via open source](https://github.com/jenkins-x/jx/issues/new?labels=quickstart&title=Add%20mlquickstart&body=Please%20add%20this%20github%20mlquickstart:) then we can include your quickstart with the entire [community](/community/) - but there may be times you want to curate your own internal quickstarts using proprietary software.
 
 You can also specify other `--includes` or `--excludes` patterns to filter the names of the repositories where `*` matches anything and `foo*` matches anything starting with `foo`. e.g. you could just include the languages and technologies your organisation supports and exclude the rest etc.
 

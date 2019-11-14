@@ -8,22 +8,22 @@ weight: 30
 
 ## Command Line
 
-Jenkins X comes with a handy [jx](/commands/jx) command line tool to easily:
+Jenkins X comes with a handy [jx](/commands/jx/) command line tool to easily:
 
-* [install Jenkins X](/docs/getting-started/setup/install) inside your existing kubernetes cluster
+* [install Jenkins X](/docs/getting-started/setup/install/) inside your existing kubernetes cluster
 * [create a new kubernetes cluster](/docs/getting-started/setup/create-cluster/) and install Jenkins X into it
-* [import projects](/developing/import) into Jenkins X and their Continuous Delivery pipelines setup
-* [create new Spring Boot applications](/developing/create-spring) which get imported into Jenkins X and their Continuous Delivery pipelines setup
+* [import projects](/docs/using-jx/creating/import/) into Jenkins X and their Continuous Delivery pipelines setup
+* [create new Spring Boot applications](/developing/create-spring/) which get imported into Jenkins X and their Continuous Delivery pipelines setup
 
 ## Automated Pipelines
 
-Rather than having to have deep knowledge of the internals of Jenkins Pipeline, Jenkins X will automatically setup awesome pipelines for your projects that fully implements both CI and CD using [DevOps best practices](/about/concepts)
+Rather than having to have deep knowledge of the internals of Jenkins Pipeline, Jenkins X will automatically setup awesome pipelines for your projects that fully implements both CI and CD using [DevOps best practices](/about/concepts/)
 
 ## Environments
 
 An _environment_ is a place where applications get deployed. Developers often refer environments using a short name like `Testing, Staging/UAT or Production`.
 
-With Jenkins X each _team_ gets its own Environments. By default Jenkins X creates a `Staging` and `Production` environment for each team but you can create new environments via [jx create environment](/commands/jx_create_environment).
+With Jenkins X each _team_ gets its own Environments. By default Jenkins X creates a `Staging` and `Production` environment for each team but you can create new environments via [jx create environment](/commands/jx_create_environment/).
 
 There is also the `Dev` environment which is where tools like Jenkins, Nexus or Prow are installed and where CI/CD pipelines run.
 
@@ -54,7 +54,7 @@ When a new change to an environments git repository is merged to master, the pip
 
 The CD Pipelines of Jenkins X automate the promotion of version changes through each Environment which is configured with a _promotion strategy_ property of `Auto`. By default the `Staging` environment uses automatic promotion and the `Production` environment uses `Manual` promotion.
 
-To manually promote a version of an application to an environment you can use [jx promote](/developing/promote) command.
+To manually promote a version of an application to an environment you can use [jx promote](/developing/promote/) command.
 
 <img src="/images/overview.png" class="img-thumbnail">
 

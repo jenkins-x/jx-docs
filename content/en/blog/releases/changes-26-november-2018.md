@@ -11,11 +11,11 @@ author: jenkins-x-bot
 
 The last few months have been crazy busy in the Jenkins X community. We've had 2 [Jenkins World](/news/jenkins-x-at-jenkinsworld/) conferences in San Francisco and Nice, introduced [serverless jenkins](/news/serverless-jenkins/) and  [tiller-less helm](/news/helm-without-tiller/)
 
-Now we have released support for [Cloud Native Jenkins](/architecture/cloud-native-jenkins/) which lets us support pluggable workloads for different teams (e.g. kubernetes workloads, traditional workloads of libraries and binaries or other workloads).
+Now we have released support for [Cloud Native Jenkins](/docs/reference/components/cloud-native-jenkins/) which lets us support pluggable workloads for different teams (e.g. kubernetes workloads, traditional workloads of libraries and binaries or other workloads).
 
-For more details on Cloud Native Jenkins please see the [Cloud Native Jenkins documentation](/architecture/cloud-native-jenkins/).
+For more details on Cloud Native Jenkins please see the [Cloud Native Jenkins documentation](/docs/reference/components/cloud-native-jenkins/).
 
-Meanwhile we've been doing lots of work improving the [App extension model](/extending/) in Jenkins X to make it an open source platform for CI+CD and DevOps.
+Meanwhile we've been doing lots of work improving the [App extension model](/docs/contributing/addons/) in Jenkins X to make it an open source platform for CI+CD and DevOps.
 
 Please [join us in the commmunity](/community/) and lets help each other [accelerate](/about/accelerate/)
 

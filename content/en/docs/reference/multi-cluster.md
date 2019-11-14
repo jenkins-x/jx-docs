@@ -26,7 +26,7 @@ Our assumption with the Environment Controller is that we need something that:
 
 ## Creating your Dev cluster
 
-If you are creating a new installation then when you use [jx create cluster](/commands/jx_create_cluster) or [jx install](/commands/jx_install) then please specify `--remote-environments` to indicate that `Staging/Production` environments will be remote from the development cluster.
+If you are creating a new installation then when you use [jx create cluster](/commands/jx_create_cluster/) or [jx install](/commands/jx_install/) then please specify `--remote-environments` to indicate that `Staging/Production` environments will be remote from the development cluster.
 
 e.g.
 
@@ -34,7 +34,7 @@ e.g.
 jx create cluster gke --remote-environments --tekton
 ```
 
-When creating your Environments via [jx create environment](/commands/jx_create_environment) you can also specify the environment is remote via the `--remote` or answering `Y` to the question when prompted.
+When creating your Environments via [jx create environment](/commands/jx_create_environment/) you can also specify the environment is remote via the `--remote` or answering `Y` to the question when prompted.
 
 What this means is that if an environment is remote to the development cluster then we don't register the release pipeline
 of the environment in the Dev cluster; we leave that to the Environment Controller to perform running inside the remote cluster.
@@ -44,7 +44,7 @@ of the environment in the Dev cluster; we leave that to the Environment Controll
 
 If you already have a Dev cluster that was setup with `Staging` and `Production` namespaces inside your Dev cluster then please do the following:
 
-Edit the environments to mark them as remote via [jx edit environment](/commands/jx_edit_environment):
+Edit the environments to mark them as remote via [jx edit environment](/commands/jx_edit_environment/):
 
 ```sh
 jx edit env staging --remote
@@ -94,13 +94,13 @@ On startup the Environment Controller registers itself into the github repositor
 
 Whenever there is a push to the `master` branch (PRs and feature branches are handled by your Development cluster) the Environment Controller triggers a new [Jenkins X Pipeline](/docs/concepts/jenkins-x-pipelines/) for the Promotion. All other push events on other branches are ignored (as they are processed by the Development cluster).
 
-Then the tekton controller turns this set of Pipeline resources is turned into one or more Pods which run the pipeline. By default promotion pipelines just use a single pod - but you can [customise your deployment pipeline](/docs/concepts/jenkins-x-pipelines/#customising-the-pipelines) which may use sequential/parallel tasks which result in multiple pods.
+Then the tekton controller turns this set of Pipeline resources is turned into one or more Pods which run the pipeline. By default promotion pipelines just use a single pod - but you can [customise your deployment pipeline](/docs/concepts/jenkins-x-pipelines/#customizing-the-pipelines) which may use sequential/parallel tasks which result in multiple pods.
 
 Because Environment Controller reacts purely to merges to the environment git repository and we are using canonical git source code; it works with both Static Jenkins Servers and [serverless Jenkins X Pipelines and tekton](/docs/concepts/jenkins-x-pipelines/) in the Development cluster.
 
 ## Demo
 
-There was a demo of using environment controller in the [April 19, 2019 Office Hours](/community/april-18/)
+There was a demo of using environment controller in the [April 19, 2019 Office Hours](/community/office_hours/2019-04-19/)
 
 ## Known limitations
 

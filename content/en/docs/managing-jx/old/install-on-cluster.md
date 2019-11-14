@@ -11,6 +11,7 @@ weight: 130
 aliases:
   - /getting-started/install-on-cluster
   - /docs/getting-started/install-on-cluster
+  - /docs/managing-jx/common-tasks/install-on-cluster
 ---
 
 Jenkins X can be installed on 1.8 or later of Kubernetes. The requirements are:
@@ -79,7 +80,7 @@ When using `jx install --provider=(aws|eks)`, you are prompted if you want to us
 
 The default on AWS is to use ECR as the Docker container registry. For this to work, the nodes need permission to upload images to ECR. If you instead want to use the embedded Docker registry of Jenkins X inside your Kubernetes cluster, you will need to enable insecure Docker registries.
 
-Note that you may want to use the [jx create cluster aws](/docs/getting-started/setup/create-cluster/#using-amazon-aws) command which automates all of this for you!
+Note that you may want to use the [jx create cluster aws](/docs/getting-started/setup/create-cluster/amazon/) command which automates all of this for you!
 
 #### Give nodes permission to use ECR
 
@@ -153,7 +154,7 @@ You should now be good to go!
 
 ## Installing Jenkins X on a cloud
 
-To install Jenkins X on an existing Kubernetes cluster, you can then use the [jx install](/commands/jx_install) command:
+To install Jenkins X on an existing Kubernetes cluster, you can then use the [jx install](/commands/jx_install/) command:
 
 ```sh
 jx install
@@ -165,7 +166,7 @@ If you know the provider, you can specify the provider on the command line. e.g.
 jx install --provider=aws
 ```
 
-Note: if you wish to use a different Git provider than GitHub for your environments, see [how to use a different Git provider](/docs/managing-jx/common-tasks/git/#using-a-different-git-provider-for-environments)
+Note: if you wish to use a different Git provider than GitHub for your environments, see [how to use a different Git provider](/docs/reference/components/git/#using-a-different-git-provider-for-environments)
 
 ## Installing Jenkins X on premises
 
@@ -208,7 +209,7 @@ jx install --provider=kubernetes --external-ip 10.123.0.17 \
   --ingress-namespace=kube-system
 ```
 
-If you want an explanation of what the [jx install](/commands/jx_install) command does, you can read [what happens with the install](../install-on-cluster-what-happens)
+If you want an explanation of what the [jx install](/commands/jx_install/) command does, you can read [what happens with the install](../install-on-cluster-what-happens/)
 
 ## Installing Jenkins X on IBM Cloud Private
 

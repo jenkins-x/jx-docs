@@ -29,7 +29,7 @@ We'll go over each step in the following.
 
 ## Getting Started
 
-Before you can get started, you'll need to first fork & clone https://github.com/jenkins-x/jenkins-x-builders. See [Development](/contribute/development) section for more details on setting up your local environment, link to upstream, and branching out from your master.
+Before you can get started, you'll need to first fork & clone https://github.com/jenkins-x/jenkins-x-builders. See [Development](/docs/contributing/code/) section for more details on setting up your local environment, link to upstream, and branching out from your master.
 
 ## Create Builder
 
@@ -82,7 +82,7 @@ builder-<your builder name>
   |  |- container-test.yaml
 ```
 
-Once your files are in place, and you have verified locally that your image builds, you can commit, push, and raise a pull request as described in [Development](/contribute/development)
+Once your files are in place, and you have verified locally that your image builds, you can commit, push, and raise a pull request as described in [Development](/docs/contributing/code/)
 
 ## Inform the update bot
 
@@ -162,7 +162,7 @@ In the `values.yaml` file mentioned above, add the following section for each ne
 
 **Note**: you can copy-paste from the above and just update the places where it mentions `nodejs10x` to your builder name (assuming your builder doesn't need more resources etc. than the example above)
 
-**Note 2**: If you don't know the exact image version, find your image on [gcr.io/jenkinsxio/](gcr.io/jenkinsxio/)
+**Note 2**: If you don't know the exact image version, find your image on [gcr.io/jenkinsxio/](https://gcr.io/jenkinsxio/)
 
 ## Update Jenkins X Versions
 

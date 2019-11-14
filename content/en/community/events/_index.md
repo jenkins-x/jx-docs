@@ -11,7 +11,7 @@ menu:
 
 ## Talks and Demos
 
-For details of the next Jenkins X talk or demo checkout our [talks at meetups and conferences](/community/talksdemos) page!
+For details of the next Jenkins X talk or demo checkout our [talks at meetups and conferences](/community/talksdemos/) page!
 
 ### Other Current and Upcoming Events
 
@@ -19,7 +19,7 @@ For details of the next Jenkins X talk or demo checkout our [talks at meetups an
 
 * [Jenkins X Contributor Summit in Lisbon on 3 December](/blog/2019/10/18/jenkins-x-contributor-summit-lisbon/)
 
-* [2019 DevOps World/Jenkins World EU - Lisbon, Portugal](/community/events/2019-12-dwjw)
+* [2019 DevOps World/Jenkins World EU - Lisbon, Portugal](/community/events/2019-12-dwjw/)
 
 * [Join us at the CI/CD Devroom at FOSDEM 2020 -- CFP now open!](/blog/2019/10/09/fosdem2020/)
 

@@ -30,7 +30,7 @@ type: docs
 
 # Status Reports
 
-This section describes any specific manual work arounds you may require above and beyond changes described in the [News section](/news/) or using [jx upgrade](/commands/jx_upgrade/) to upgrade the [CLI](/commands/jx_upgrade_cli/) or [platform](/commands/jx_upgrade_platform/).
+This section describes any specific manual work arounds you may require above and beyond changes described in the [News section](/blog/news/) or using [jx upgrade](/commands/jx_upgrade/) to upgrade the [CLI](/commands/jx_upgrade_cli/) or [platform](/commands/jx_upgrade_platform/).
 
 
 ## 25th June 2019: missing image: bitnami/monocular-api
@@ -50,7 +50,7 @@ kubectl scale deploy jenkins-x-monocular-ui --replicas=0
 The latest [version stream release](/docs/concepts/version-stream/) has removed monocular so if you [upgrade your platform
 ](/docs/managing-jx/common-tasks/upgrade-jx/) this issue should be resolved.
 
-We can always add monocular back as an optional [App](/apps) later on when it works again.
+We can always add monocular back as an optional [App](/docs/contributing/addons/) later on when it works again.
 
 
 ## 12th June 2019: Knative Build now deprecated

@@ -288,13 +288,13 @@ If you already have Hugo running, it's usually best to double check that the sit
 
 ### Make Changes
 
-All pages are written in GitHub-flavored markdown (see [below](#syntax-reference) for details on syntax).
+All pages are written in GitHub-flavored markdown (see [below](#markdown-syntax-reference) for details on syntax).
 
 Some things, like the footer etc. are in the `/themes/docsy` structure, but most likely you'll just be adding/changing things in the various page structures. If you do make changes that involve the theme, remember to copy-paste the theme file to the appropriate folder in the `/layouts` structure, and make your changes there. If you make changes to files in the `/themes/docsy` structure, they will likely be deleted when we update the theme.
 
 ### Add new Content
 
-The Jenkins X docs make heavy use of Jenkins X's [archetypes][] feature. All content sections in Jenkins X documentation have an assigned archetype.
+The Jenkins X docs make heavy use of Jenkins X's archetypes feature. All content sections in Jenkins X documentation have an assigned archetype.
 
 Adding new content to the Jenkins X docs follows the same pattern, regardless of the content section:
 
@@ -471,7 +471,6 @@ Which will render as follows in the Jenkins X docs:
 > Without the threat of punishment, there is no joy in flight. - [Kobo Abe][abe]
 
 [abe]: https://en.wikipedia.org/wiki/Kobo_Abe
-[archetypes]: /content-management/archetypes/
 [bqsyntax]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#blockquotes
 [charcount]: http://www.lettercount.com/
 [`docs/static/images/showcase/`]: https://github.com/jenkins-x/jx/tree/master/docs/static/images/showcase/

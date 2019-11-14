@@ -20,9 +20,9 @@ And you are then good to go. Any new projects you create will be created in this
 
 ## Converting existing applications
 
-If you already have a microservice and you want to convert it over to Knative Serve just [import the source repository into Jenkins X](/docs/using-jx/common-tasks/import/) and you should be all done.
+If you already have a microservice and you want to convert it over to Knative Serve just [import the source repository into Jenkins X](/docs/using-jx/creating/import/) and you should be all done.
 
-If your application was imported recently into Jenkins X but before you installed and enabled Knative Serve you can use [jx edit deploy](/commands/jx_edit_deploy) to switch between the `default` deployment kind (using kubernetes `Deployment` and `Service` resources) and the `knative` kind (using Knative `Service` resource)
+If your application was imported recently into Jenkins X but before you installed and enabled Knative Serve you can use [jx edit deploy](/commands/jx_edit_deploy/) to switch between the `default` deployment kind (using kubernetes `Deployment` and `Service` resources) and the `knative` kind (using Knative `Service` resource)
 
 ```sh
 jx edit deploy
@@ -33,7 +33,7 @@ This command will modify the `knativeDeploy` flag in your helm `charts/myapp/val
 
 ## Edit your team’s deploy kind
 
-You can edit the default deployment kind for your team which is used when’re you create a QuickStart or import a repository via the [jx edit deploy](/commands/jx_edit_deploy) command with the `-t` argument:
+You can edit the default deployment kind for your team which is used when’re you create a QuickStart or import a repository via the [jx edit deploy](/commands/jx_edit_deploy/) command with the `-t` argument:
 
 ```sh
 jx edit deploy -t
@@ -72,7 +72,7 @@ Or you can follow the [Knative install guide](https://www.knative.dev/docs/insta
 
 ## Using Knative Serve
 
-Now you have installed [Knative Serve](https://www.knative.dev/) snd [Gloo](https://gloo.solo.io/) you can [create a new quicktart](/docs/getting-started/first-project/create-quickstart/) or [create a new spring boot application](developing/create-spring/) and it will default to using Knative Serve to elastically scale your microservice based on its load over HTTP.
+Now you have installed [Knative Serve](https://www.knative.dev/) snd [Gloo](https://gloo.solo.io/) you can [create a new quicktart](/docs/getting-started/first-project/create-quickstart/) or [create a new spring boot application](/docs/getting-started/demos-talks-posts/create_spring/) and it will default to using Knative Serve to elastically scale your microservice based on its load over HTTP.
 
 You can check if Knative Serve is being used on your application by doing:
 

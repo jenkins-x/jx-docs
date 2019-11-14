@@ -7,7 +7,7 @@ weight: 180
 
 When we use a Static Jenkins Server with Jenkins X we inherit the usual Jenkins storage model; that build logs and test results and reports are stored on the Persistent Volume of the Jenkins server.
 
-However as we move towards a more [Cloud Native Jenkins](/news/changes-november-26-2018/) and use [Serverless Jenkins](/news/serverless-jenkins/) we need a better solution for the storage of things like logs, test results, code coverage reports etc.
+However as we move towards a more [Cloud Native Jenkins](/blog/2018/11/26/changes-november-26-2018/) and use [Serverless Jenkins](/news/serverless-jenkins/) we need a better solution for the storage of things like logs, test results, code coverage reports etc.
 
 ## Storage Extensions
 

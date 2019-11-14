@@ -6,7 +6,7 @@ weight: 110
 ---
 
 
-To create a new Kubernetes cluster with Jenkins X installed use the  [jx create cluster](/commands/jx_create_cluster) command.
+To create a new Kubernetes cluster with Jenkins X installed use the  [jx create cluster](/commands/jx_create_cluster/) command.
 
 A number of different public cloud providers are supported as shown below.
 
@@ -27,7 +27,7 @@ Currently the best experience for running Jenkins X is on Google Container Engin
 
 Now [download](/docs/getting-started/setup/install//) the `jx` CLI which is used to create and interact with the Jenkins X cluster.
 
-Now use the [jx create cluster gke](/commands/jx_create_cluster_gke) command:
+Now use the [jx create cluster gke](/commands/jx_create_cluster_gke/) command:
 
     jx create cluster gke
 
@@ -37,7 +37,7 @@ If you wish to name your cluster and provide your own admin password you can run
 
 Then follow all the prompts on the console (mostly just hitting enter will do).
 
-Note if you wish to use a different git provider than GitHub for your environments see [how to use a different git provider](/docs/managing-jx/common-tasks/git/#using-a-different-git-provider-for-environments)
+Note if you wish to use a different git provider than GitHub for your environments see [how to use a different git provider](/docs/reference/components/git/#using-a-different-git-provider-for-environments)
 
 ## Using the Google Cloud Shell
 
@@ -54,7 +54,7 @@ curl -L https://github.com/jenkins-x/jx/releases/download/v{{.Site.Params.releas
 sudo mv jx /usr/local/bin
 ```
 
-Now use the [jx create cluster gke](/commands/jx_create_cluster_gke) command:
+Now use the [jx create cluster gke](/commands/jx_create_cluster_gke/) command:
 
 ```sh
 jx create cluster gke --skip-login
@@ -177,7 +177,7 @@ jx create cluster gke
 
 
 
-Note if you wish to use a different git provider than GitHub for your environments see [how to use a different git provider](/docs/managing-jx/common-tasks/git/#using-a-different-git-provider-for-environments)
+Note if you wish to use a different git provider than GitHub for your environments see [how to use a different git provider](/docs/reference/components/git/#using-a-different-git-provider-for-environments)
 
 
 Now **[develop apps faster with Jenkins X](/docs/getting-started/next/)**.
@@ -193,7 +193,7 @@ You should now be able to use the `kubectl` and `jx` CLI tools on your laptop to
 
 ### Using Google Cloud from your laptop
 
-Use the [jx create cluster gke](/commands/jx_create_cluster_gke) command:
+Use the [jx create cluster gke](/commands/jx_create_cluster_gke/) command:
 
 ```sh
 jx create cluster gke --verbose
@@ -236,12 +236,12 @@ This is not really intended for real production installations; but can be a quic
 
 When using `jx create cluster aws`, `jx create cluster eks` or `jx install --provider=(aws|eks)` you are prompted if you want to use DNS and optionally setup a wildcard DNS CNAME record on Route 53; if not we are assuming you're gonna avoid DNS to kick the tires on a single availability zone IP address by resolving the NLB host name to one of the availability zone IP addresses.
 
-Note if you wish to use a different git provider than GitHub for your environments see [how to use a different git provider](/docs/managing-jx/common-tasks/git/#using-a-different-git-provider-for-environments)
+Note if you wish to use a different git provider than GitHub for your environments see [how to use a different git provider](/docs/reference/components/git/#using-a-different-git-provider-for-environments)
 
 
 ### EKS
 
-Use the [jx create cluster eks](/commands/jx_create_cluster_eks) command:
+Use the [jx create cluster eks](/commands/jx_create_cluster_eks/) command:
 
 ```sh
 jx create cluster eks
@@ -251,7 +251,7 @@ Under the covers this will download and use the [eksctl](https://eksctl.io/) too
 
 ### Kops
 
-Use the [jx create cluster aws](/commands/jx_create_cluster_aws) command:
+Use the [jx create cluster aws](/commands/jx_create_cluster_aws/) command:
 
 ```sh
 jx create cluster aws
@@ -275,7 +275,7 @@ Now **[develop apps faster with Jenkins X](/docs/getting-started/next/)**.
 
 Before you start you may find [this blog helpful](https://cloudblogs.microsoft.com/opensource/2019/03/06/jenkins-x-azure-kubernetes-service-setup/).
 
-Use the [jx create cluster aks](/commands/jx_create_cluster_aks) command:
+Use the [jx create cluster aks](/commands/jx_create_cluster_aks/) command:
 
 ```sh
 jx create cluster aks
@@ -285,7 +285,7 @@ Now **[develop apps faster with Jenkins X](/docs/getting-started/next/)**.
 
 ## Using Oracle (OKE)
 
-Use the [jx create cluster oke](/commands/jx_create_cluster_oke) command:
+Use the [jx create cluster oke](/commands/jx_create_cluster_oke/) command:
 
 ```sh
 jx create cluster oke
@@ -299,7 +299,7 @@ Now **[develop apps faster with Jenkins X](/docs/getting-started/next/)**.
 
 ## Using IBM Cloud Kubernetes Service (IKS)
 
-Use the [jx create cluster iks](/commands/jx_create_cluster_iks) command:
+Use the [jx create cluster iks](/commands/jx_create_cluster_iks/) command:
 
 ```sh
 jx create cluster iks --apikey=<IBM Cloud API Key>
@@ -361,7 +361,7 @@ If you want to try out Jenkins X on a local OpenShift cluster then you can try u
 
 **minishift does not produce a public-facing IP so webhooks will not be able to reach the cluster. As a result, only polling for changes works and it might take a long while for pipelines to fire.**
 
-To create a minishift VM with Jenkins X installed on it try the [jx create cluster minishift](/commands/jx_create_cluster_minishift) command:
+To create a minishift VM with Jenkins X installed on it try the [jx create cluster minishift](/commands/jx_create_cluster_minishift/) command:
 
 ```sh
 jx create cluster minishift
@@ -371,4 +371,4 @@ Now **[develop apps faster with Jenkins X](/docs/getting-started/next/)**.
 
 ## Troubleshooting
 
-If you hit any issues installing Jenkins X then please check out our [troubleshooting guide](/troubleshooting/faq/) or [let us know](/community) and we'll try our best to help.
+If you hit any issues installing Jenkins X then please check out our [troubleshooting guide](/docs/managing-jx/faq/) or [let us know](/community/) and we'll try our best to help.

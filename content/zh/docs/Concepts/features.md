@@ -9,9 +9,9 @@ lastmod: 2018-04-30
 
 ## 命令行
 
-Jenkins X 带来了一个方便使用的命令行工具 [jx](/commands/jx) ：
+Jenkins X 带来了一个方便使用的命令行工具 [jx](/commands/jx/) ：
 
-* [安装 Jenkins X](/zh/docs/getting-started/setup/install) 到你已经存在的 Kubernetes 集群
+* [安装 Jenkins X](/zh/docs/getting-started/setup/install/) 到你已经存在的 Kubernetes 集群
 * [创建一个新的 kubernetes 集群](/zh/docs/getting-started/setup/create-cluster/) 并把 Jenkins X 安装进去
 * [导入项目](/zh/developing/import) 到 Jenkins X 中以及他们的持续部署流水线设置
 * [创建新的 Spring Boot 应用](/zh/developing/create-spring) 并导入 Jenkins X 中，以及他们的持续部署流水线设置
@@ -24,7 +24,7 @@ Jenkins X 带来了一个方便使用的命令行工具 [jx](/commands/jx) ：
 
 环境指的是应用部署的地方。开发人员通常使用缩写来描述环境，例如：“测试中（Testing）、Staging/UAT或者生产（Production）”。
 
-在 Jenkins X 中每个团队都有一套自己的环境。默认情况下，Jenkins X 会给每个团队创建一个 `Staging` 和 `生产` 环境，但你可以通过命令 [jx create environment](/commands/jx_create_environment)创建一个新的环境。
+在 Jenkins X 中每个团队都有一套自己的环境。默认情况下，Jenkins X 会给每个团队创建一个 `Staging` 和 `生产` 环境，但你可以通过命令 [jx create environment](/commands/jx_create_environment/)创建一个新的环境。
 
 我们使用 GitOps 来管理要部署到每个环境中的 Kubernetes 资源的配置和版本。因此，每个环境都有自己的 git 仓库，应用在这个环境中运行需要的 Helm Charts、版本以及配置都在库中。
 
@@ -40,7 +40,7 @@ Jenkins X 带来了一个方便使用的命令行工具 [jx](/commands/jx) ：
 
 Jenkins X 的持续部署流水线把改变了的版本自动做部署升级，这是需要把配置中的”部署升级策略“设置为”自动“。默认情况下，”Staging“环境使用自动部署升级，而”生产“环境使用”手动“部署升级。
 
-要手动把某个版本的应用部署升级到一个环境中的话，你可以使用[jx promote](/developing/promote)命令。
+要手动把某个版本的应用部署升级到一个环境中的话，你可以使用[jx promote](/developing/promote/)命令。
 
 <img src="/images/overview.png" class="img-thumbnail">
 

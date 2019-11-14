@@ -17,5 +17,4 @@ Jenkins X relies heavily on the enthusiasm and participation of the open-source 
 * If you'd like to [contribute to the code](/docs/contributing/code/) then try browse the [current issues](https://github.com/jenkins-x/jx/issues).
   * we have marked issues [help wanted](https://github.com/jenkins-x/jx/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) or [good first issue](https://github.com/jenkins-x/jx/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) to save you hunting around too much
   * in particular we would love help on getting Jenkins X [working well on windows](https://github.com/jenkins-x/jx/issues?q=is%3Aopen+is%3Aissue+label%3Awindows) or the [integrations with cloud services, git providers and issues trackers](https://github.com/jenkins-x/jx/issues?q=is%3Aissue+is%3Aopen+label%3Aintegrations)
- * for more long term goals see the [Jenkins X Futures](/contribute/roadmap) page
  * we could always use more test cases and to improve test coverage!

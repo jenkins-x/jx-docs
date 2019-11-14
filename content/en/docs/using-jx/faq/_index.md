@@ -43,7 +43,7 @@ To see a more complex example of how you can use a `values.yaml` file to inject 
 
 ## How do I inject preview specific configuration?
 
-See the [above question on how to inject environment specific configuration into environments](/#how-do-i-inject-environment-specific-configuration)
+See the [above question on how to inject environment specific configuration into environments](#how-do-i-inject-environment-specific-configuration)
 
 Preview Environments are similar to eother environments like `Staging` and `Production` only instead of storing the environments in a separate git repository the preview environment is defined inside each applications `charts/preview` folder.
 
@@ -88,7 +88,7 @@ To find out more see [how to add dependent charts, services or configuration to 
 
 ## Can I use my existing release pipeline?
 
-With Jenkins X you are free to create your own pipeline to do the release if you wish; though doing so means you miss out on our [extension model](/extending/) which lets you easily enable various extension Apps like Governance, Compliance, code quality, code coverage, security scanning, vulnerability testing and various other extensions which are being added all the time through our community.
+With Jenkins X you are free to create your own pipeline to do the release if you wish; though doing so means you miss out on our [extension model](/docs/contributing/addons/) which lets you easily enable various extension Apps like Governance, Compliance, code quality, code coverage, security scanning, vulnerability testing and various other extensions which are being added all the time through our community.
 
 We've specifically built this extension model to minimise the work your teams have in having to edit + maintain pipelines across many separate microservices; the idea is we're trying to automate both the pipelines and the extensions to the pipelines so teams can focus on their actual code and less on the CI/CD plumbing which is pretty much all undifferentiated heavy lifting these days.
 
@@ -122,7 +122,7 @@ Promotion in Jenkins X is completely separate to Release & we support promoting 
 
 The PR triggers a CI pipeline to verify the changes are valid (e.g. the helm chart exists and can be downloaded, the docker images exist etc). Whenever the PR gets merged (could be automatically or may require additional reviews/+1s/JIRA/ServiceNow tickets or whatever) - then another pipeline is triggered to apply the helm charts from the master branch to the destination k8s cluster and namespace.
 
-Jenkins X automates all of the above but given both these pipelines are defined in the environments git repository in a `Jenkinsfile` you are free to customise to add your own pre/post steps if you wish. e.g. you could analyse the YAML to pre-provision PVs for any PVCs using some custom disk snapshot tool you may have.  Or you can do that in a pre or post-install helm hook job. Though we'd prefer these tools to be created as part of the Jenkins X [extension model](/extending/) to avoid custom pipeline hacking which could break in future Jenkins X releases - though its not a huge biggie.
+Jenkins X automates all of the above but given both these pipelines are defined in the environments git repository in a `Jenkinsfile` you are free to customise to add your own pre/post steps if you wish. e.g. you could analyse the YAML to pre-provision PVs for any PVCs using some custom disk snapshot tool you may have.  Or you can do that in a pre or post-install helm hook job. Though we'd prefer these tools to be created as part of the Jenkins X [extension model](/docs/contributing/addons/) to avoid custom pipeline hacking which could break in future Jenkins X releases - though its not a huge biggie.
 
 ## How do I change the owner of a docker image
 
@@ -147,7 +147,7 @@ For more details the code to resolve it is [here](https://github.com/jenkins-x/j
 
 ## What if my team does not want to use helm?
 
-To help automate CI/CD with GitOps we assume helm charts are created as part of the automated project setup and CI/CD. e.g. just [import your source code](/docs/using-jx/common-tasks/import/) and a docker image + helm chart will be generated for you - the developers don't need to know or care if they don't want to use helm:
+To help automate CI/CD with GitOps we assume helm charts are created as part of the automated project setup and CI/CD. e.g. just [import your source code](/docs/using-jx/creating/import/) and a docker image + helm chart will be generated for you - the developers don't need to know or care if they don't want to use helm:
 
 If a developer wants to specifically create a specific resource (e.g. `Secret, ConfigMap` etc) they can just hack the YAML directly in `charts/myapp/templates/*.yaml`. Increasingly most IDEs now have UI wizards for creating + editing kubernetes resources.
 
