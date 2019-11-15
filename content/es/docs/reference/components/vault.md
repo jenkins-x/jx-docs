@@ -37,7 +37,7 @@ creados/destruidos según sea necesario para el acceso temporal a datos, y gener
 
 Jenkins X interactúa con Vault a través del programa de línea de comando `jx`. Hay comandos para crear, eliminar y gestionar secretos y bóvedas.
 
-Jenkins X usa Vault para almacenar todos los secretos de Jenkins X, como el token de acceso personal de GitHub generado para el pipeline del bot (sistema) cuando [crea un clúster de Jenkins X cluster](/docs/cloudbees-jenkins-x-distribution/boot/). También almacena cualquier secreto de GitOps, como contraseñas para los depósitos de almacenamiento y claves para acceso seguro al servidor.
+Jenkins X usa Vault para almacenar todos los secretos de Jenkins X, como el token de acceso personal de GitHub generado para el pipeline del bot (sistema) cuando [crea un clúster de Jenkins X cluster](/docs/getting-started/setup/boot/). También almacena cualquier secreto de GitOps, como contraseñas para los depósitos de almacenamiento y claves para acceso seguro al servidor.
 
 Los secretos pueden ser recuperados por el pipeline o por la línea de comando si está registrado en la cuenta asociada con el servicio Kubernetes, así como en cualquier secreto almacenado en el espacio de nombres `jx` para el pipeline.
 
@@ -178,7 +178,7 @@ $ jx create vault
 
 4. El programa le preguntará por el *Expose type* para el Vault para crear reglas y rutas para el balanceo de carga del clúster y otros servicios. El valor predeterminado es `Ingress`.
 
-5. El programa solicitará un dominio de clúster. El valor predeterminado es el creado en [el proceso de creación de Cluster](/docs/cloudbees-jenkins-x-distribution/boot/), como 192.168.1.100.nip.io.
+5. El programa solicitará un dominio de clúster. El valor predeterminado es el creado en [el proceso de creación de Cluster](/docs/getting-started/setup/boot/), como 192.168.1.100.nip.io.
 
 6. El programa le pedirá una `URLTemplate`. Presione `Enter` para usar el valor predeterminado.
 

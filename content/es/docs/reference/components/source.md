@@ -35,7 +35,7 @@ Aquí mencionaremos a algunos de los principales repositorios en las organizacio
 
 * [jenkins-x/jenkins-x-builders](https://github.com/jenkins-x/jenkins-x-builders) genera las imágenes estáticas de docker de los pod de compilación del servidor jenkins
 * [jenkins-x/jenkins-x-image](https://github.com/jenkins-x/jenkins-x-image) genera la imagen docker para el servidor jenkins estático que usamos por defecto
-* [jenkins-x/jenkins-x-serverless](https://github.com/jenkins-x/jenkins-x-serverless) genera las imágenes de docker para [jenkins sin servidor](/news/serverless-jenkins/) cuando se utiliza [Prow](/architecture/prow)
+* [jenkins-x/jenkins-x-serverless](https://github.com/jenkins-x/jenkins-x-serverless) genera las imágenes de docker para [jenkins sin servidor](/news/serverless-jenkins/) cuando se utiliza [Prow](/architecture/prow/)
 
 ### Herramientas
 

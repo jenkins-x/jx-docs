@@ -8,4 +8,5 @@ IgnoreDirs:
 - "zh"
 - "docs/reference/api"
 - "docs/reference/config"
+- "community/events/"
 CheckDoctype: false

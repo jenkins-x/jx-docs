@@ -154,16 +154,16 @@ no = 'Sorry to hear that. Please <a href="https://github.com/jenkins-x/jx/issues
 	name = "Newsletter"
 	url = "/community/"
 	icon = "fa fa-envelope"
-        desc = "Subscribe to the newsletter"
+	desc = "Subscribe to the newsletter"
 
 # Developer relevant links. These will show up on right side of footer and in the community page if you have one.
 [[params.links.developer]]
 	name = "GitHub"
 	url = "https://github.com/jenkins-x/jx"
 	icon = "fab fa-github"
-        desc = "Development takes place here!"
+  desc = "Development takes place here!"
 [[params.links.developer]]
 	name = "Developer Slack Channel"
 	url = "https://kubernetes.slack.com/messages/C9LTHT2BB"
 	icon = "fab fa-slack"
-        desc = "Chat with other project developers"
+  desc = "Chat with other project developers"

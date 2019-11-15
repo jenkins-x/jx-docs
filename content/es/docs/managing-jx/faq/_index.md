@@ -23,7 +23,7 @@ Una vez que el usuario tiene acceso al clúster de Kubernetes:
 
 * [instale el binario jx](/es/docs/getting-started/setup/install/)
 
-Si Jenkins X fue instalado en el namespace `jx`, entonces lo siguientes debe ser [cambiar su contexto](/docs/using-jx/common-tasks/kube-context/) al namespace `jx`:
+Si Jenkins X fue instalado en el namespace `jx`, entonces lo siguientes debe ser [cambiar su contexto](/docs/using-jx/developing/kube-context/) al namespace `jx`:
 
     $  jx ns jx
 

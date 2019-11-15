@@ -49,7 +49,7 @@ jx import
 
 6.  La aplicación le pregunta qué nombre ponerle al repositorio remoto en Git (p.ej `my-springapp`)
 
-Ahora puede realizar compilaciones, adicionar código del proyecto en su repositorio Git recién creado, y Jenkins X procesará automáticamente los PR y creará [vistas previas](/developing/preview) de sus aplicaciones para pruebas y validación.
+Ahora puede realizar compilaciones, adicionar código del proyecto en su repositorio Git recién creado, y Jenkins X procesará automáticamente los PR y creará [vistas previas](/docs/reference/preview/) de sus aplicaciones para pruebas y validación.
 
 ## Creando una aplicación Spring Boot
 
@@ -78,7 +78,7 @@ jx create spring
 
 7. La aplicación le mostrará para inicializar el repositorio Git.
 
-Esta es una [demostración utilizando el comando jx create spring](/demos/create_spring/).
+Esta es una [demostración utilizando el comando jx create spring](/docs/getting-started/demos-talks-posts/create_spring/).
 
 También puede adicionar algunas opciones al comado `jx create` como por ejemplo, especificar las dependencias:
 
@@ -105,4 +105,4 @@ Los dos métodos para configurar proyectos Spring Boot en Jenkins X realizan var
 - Registra un enlace (p.ej `http://hook-jx.192.169.1.100.nip.io/hook`) en el repositorio Git remoto
 - Inicia el primer pipeline de construcción
 
-Ahora puede usar su subdirectorio de proyecto local habilitado para Git para realizar cambios en su aplicación Spring Boot, enviar esos cambios a Git y hacer que Jenkins X construya automáticamente, cree [vistas previas](/developing/preview/) para pruebas y validación, y [promueva](/developing/promote) su aplicación a producción para uso general.
+Ahora puede usar su subdirectorio de proyecto local habilitado para Git para realizar cambios en su aplicación Spring Boot, enviar esos cambios a Git y hacer que Jenkins X construya automáticamente, cree [vistas previas](/docs/reference/preview/) para pruebas y validación, y [promueva](/developing/promote/) su aplicación a producción para uso general.

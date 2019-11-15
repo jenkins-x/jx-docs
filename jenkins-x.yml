@@ -53,6 +53,15 @@ pipelineConfig:
               - jenkins-x-website
               - --enableGitInfo
 
+          - image: dennisnewel/htmltest:latest
+            name: htmltest
+            command: htmltest
+            args:
+              - -s
+              - -c
+              - .htmltest.yml
+              - jenkins-x-website
+
           - image: gcr.io/jenkinsxio/builder-go
             name: update-website
             command: ./update-website.sh
@@ -104,6 +113,14 @@ pipelineConfig:
             - tmp-website
             - --enableGitInfo
             - --baseURL http://${APP_NAME}.jx-${REPO_OWNER}-${REPO_NAME}-pr-${PULL_NUMBER}.${DOMAIN}/
+          - image: dennisnewel/htmltest:latest
+            name: htmltest
+            command: htmltest
+            args:
+              - -s
+              - -c
+              - .htmltest.yml
+              - tmp-website
 
           - image: gcr.io/kaniko-project/executor:9912ccbf8d22bbafbf971124600fbb0b13b9cbd6
             name: build-and-push-image

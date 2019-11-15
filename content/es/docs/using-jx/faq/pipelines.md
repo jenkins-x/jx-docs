@@ -36,7 +36,7 @@ $ jx step syntax effective -s
 
 Puede anular etapas enteras o reemplazar un paso específico con un solo paso o una secuencia de pasos. También puede agregar pasos antes/después de otro paso.
 
-Para obtener más detalles, consulte [cómo modificar los pasos](/architecture/pipeline-syntax-reference/#specifying-and-overriding-release-pull-request-and-feature-pipelines).
+Para obtener más detalles, consulte [cómo modificar los pasos](/docs/reference/pipeline-syntax-reference/#specifying-and-overriding-release-pull-request-and-feature-pipelines).
 
 ## ¿Cómo puedo modificar la imagen predeterminada del contenedor?
 
@@ -55,7 +55,7 @@ Puede ver el efecto de este cambio localmente antes de enviarlo a Git mediante e
 $ jx step syntax effective -s
 ```
 
-Para obtener más detalles, consulte [cómo modificar los pasos](/architecture/pipeline-syntax-reference/#specifying-and-overriding-release-pull-request-and-feature-pipelines).
+Para obtener más detalles, consulte [cómo modificar los pasos](/docs/reference/pipeline-syntax-reference/#specifying-and-overriding-release-pull-request-and-feature-pipelines).
 
 ## ¿Cómo se comparan los pipelines de Jenkins X con los pipelines de Jenkins?
 
@@ -71,7 +71,7 @@ Vea las [variables de entorno preestablecidas creadas para los pasos de los pipe
 
 ## ¿Hay alguna referencia para la sintaxis?
 
-Vea la [sintaxis de referencia para los Pipelines de Jenkins x](/es/docs/reference/pipeline-syntax-reference/).
+Vea la [sintaxis de referencia para los Pipelines de Jenkins x](/docs/reference/pipeline-syntax-reference/).
 
 ## ¿Cómo se monta un Secret o ConfigMap?
 

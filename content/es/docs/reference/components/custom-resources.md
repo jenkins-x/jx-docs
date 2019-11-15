@@ -14,7 +14,7 @@ También puede [navegar por la Referencia de API de Recursos Personalizados](/ap
 
 ## Environments
 
-Jenkins X admite de forma nativa los [entornos](/es/docs/concepts/features/#entornos) que le permiten ser definidos para su equipo y luego consultarlos a través de [jx get environments](/commands/jx_get_environments).
+Jenkins X admite de forma nativa los [entornos](/es/docs/concepts/features/#entornos) que le permiten ser definidos para su equipo y luego consultarlos a través de [jx get environments](/commands/jx_get_environments/).
 
 ```sh
 jx get environments
@@ -34,7 +34,7 @@ O editarlos vía `YAML` directamente si lo desea:
 kubectl edit env staging
 ```
 
-aunque puede preferir el comando [jx edit environment](/commands/jx_edit_environment), que es más fácil.
+aunque puede preferir el comando [jx edit environment](/commands/jx_edit_environment/), que es más fácil.
 
 ## Release
 
@@ -62,7 +62,7 @@ O cuando realiza `jx import` o `jx create quickstart` puede pasar el parámetro 
 
 Este recurso almacena el estado del pipeline en términos de etapas de pipelines de Jenkins, más la [actividad de promoción](/es/docs/concepts/features/#promoción).
 
-Este recurso también lo utiliza el comando [jx get activities](/commands/jx_get_activities).
+Este recurso también lo utiliza el comando [jx get activities](/commands/jx_get_activities/).
 
 ## Team
 
@@ -70,12 +70,12 @@ El recurso personalizado `Team` se crea mediante el comando [jx create team](/co
 
 ### User
 
-El recurso personalizado `User` se utiliza para admitir RBAC en los distintos [entornos](/es/docs/concepts/features/#entornos) y [vistas previas de entornos](/about/features/#preview-environments) en equipos.
+El recurso personalizado `User` se utiliza para admitir RBAC en los distintos [entornos](/es/docs/concepts/features/#entornos) y [vistas previas de entornos](/docs/concepts/features/#preview-environments) en equipos.
 
 También lo utilizan el comando [jx edit userroles](/commands/jx_edit_userroles/) para cambiar los roles de usuario.
 
 ## EnvironmentRoleBinding
 
-El recurso `EnvironmentRoleBinding` es como el recurso estándar de Kubernetes [RoleBinding](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.13/#rolebinding-v1-rbac-authorization-k8s-io), pero permite la asignación de un rol a múltiples [entornos](/es/docs/concepts/features/#entornos) y [vistas previas de entornos](/about/features/#preview-environments) en un equipo mediante el uso de un selector de entornos en el que se vinculan roles.
+El recurso `EnvironmentRoleBinding` es como el recurso estándar de Kubernetes [RoleBinding](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.13/#rolebinding-v1-rbac-authorization-k8s-io), pero permite la asignación de un rol a múltiples [entornos](/es/docs/concepts/features/#entornos) y [vistas previas de entornos](/docs/concepts/features/#preview-environments) en un equipo mediante el uso de un selector de entornos en el que se vinculan roles.
 
 Esto facilita la vinculación de un `Role` a todos los entornos, a todos los entornos de vista previa o a ambos o a un conjunto determinado de usuarios.

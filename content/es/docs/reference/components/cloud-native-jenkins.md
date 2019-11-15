@@ -7,7 +7,7 @@ weight: 31
 
 Jenkins X ayuda a admitir _Jenkins nativo en la nube_ a través de:
 
-* orquestando tanto [Jenkins sin servidor](/news/serverless-jenkins/) con [prow](/architecture/prow) como Jenkins Estático con maestros por equipo. Esto permite que los equipos se muevan hacia un sistema sin servidor mientras que también traen maestros estáticos.
+* orquestando tanto [Jenkins sin servidor](/news/serverless-jenkins/) con [prow](/architecture/prow/) como Jenkins Estático con maestros por equipo. Esto permite que los equipos se muevan hacia un sistema sin servidor mientras que también traen maestros estáticos.
 * cada equipo puede instalar su propio Jenkins X en su propio namespace (a través de `jx install --namespace myteam`)
 * soporte para diferentes cargas de trabajo por equipo (ver [jx edit buildpack](/commands/jx_edit_buildpack/)).
 
@@ -41,4 +41,4 @@ Sin embargo, debería poder extender cualquiera de estos paquetes de construcci�
 
 ## Escribiendo su propio paquete de construcción
 
-Queremos que [extienda Jenkins X](/extending/), así que consulte la documentación sobre [cómo crear sus propios paquetes de construcción]/docs/managing-jx/common-tasks/build-packs/#creating-new-build-packs).
+Queremos que [extienda Jenkins X](/docs/contributing/addons/), así que consulte la documentación sobre [cómo crear sus propios paquetes de construcción]/docs/managing-jx/common-tasks/build-packs/#creating-new-build-packs).

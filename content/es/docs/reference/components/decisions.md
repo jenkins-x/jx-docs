@@ -7,7 +7,7 @@ weight: 20
 
 # Decisiones
 
-Jenkins X es una experiencia de desarrollo basada en opiniones de expertos, aquí explicaremos los antecedentes y las decisiones que hemos tomado para ayudar a explicar las razones de estas opiniones. También puede consultar la página [Accelerate](/about/opinions/) para obtener detalles sobre cómo Jenkins X implementa las competencias recomendadas por este libro.
+Jenkins X es una experiencia de desarrollo basada en opiniones de expertos, aquí explicaremos los antecedentes y las decisiones que hemos tomado para ayudar a explicar las razones de estas opiniones. También puede consultar la página [Accelerate](/docs/reference/components/decisions/) para obtener detalles sobre cómo Jenkins X implementa las competencias recomendadas por este libro.
 
 ## Kubernetes
 
@@ -35,7 +35,7 @@ El proyecto Draft vino de Deis, que fue adquirida por Microsoft y continúa invi
 
 Las plantillas OpenShift tenían como objetivo hacer algo similar, sin embargo, son específicas de OpenShift.
 
-Muchas de las preocupaciones con Helm se están abordando con la actualización de la versión principal de Helm 3. Eliminar el uso de Tiller, el componente del lado del servidor de Helm, es una gran victoria, ya que se considera inseguro debido a los permisos elevados que necesita para ejecutarse. Jenkins X [proporciona una forma](/architecture/helm3/) de usar la versión beta de Helm 3 para las personas que deseen probar esto en su lugar, lo estamos utilizando nosotros mismos y hasta ahora está funcionando muy bien. Si hay problemas, nos gustaría enviar comentarios al proyecto Helm para que podamos ayudarlos a llegar a GA antes.
+Muchas de las preocupaciones con Helm se están abordando con la actualización de la versión principal de Helm 3. Eliminar el uso de Tiller, el componente del lado del servidor de Helm, es una gran victoria, ya que se considera inseguro debido a los permisos elevados que necesita para ejecutarse. Jenkins X [proporciona una forma](/docs/reference/components/helm3/) de usar la versión beta de Helm 3 para las personas que deseen probar esto en su lugar, lo estamos utilizando nosotros mismos y hasta ahora está funcionando muy bien. Si hay problemas, nos gustaría enviar comentarios al proyecto Helm para que podamos ayudarlos a llegar a GA antes.
 
 El proyecto Helm vino de Deis, que fue adquirido por Microsoft y continúa invirtiendo y evolucionando su historia de desarrollador de Kubernetes.
 
