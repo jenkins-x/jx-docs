@@ -1004,12 +1004,27 @@
         "distributeParallelAcrossNodes": {
           "type": "boolean"
         },
+        "podLabels": {
+          "patternProperties": {
+            ".*": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
         "retry": {
           "type": "integer"
         },
         "timeout": {
           "$schema": "http://json-schema.org/draft-04/schema#",
           "$ref": "#/definitions/Timeout"
+        },
+        "tolerations": {
+          "items": {
+            "$schema": "http://json-schema.org/draft-04/schema#",
+            "$ref": "#/definitions/Toleration"
+          },
+          "type": "array"
         },
         "volumes": {
           "items": {
@@ -1192,6 +1207,14 @@
         "distributeParallelAcrossNodes": {
           "type": "boolean"
         },
+        "podLabels": {
+          "patternProperties": {
+            ".*": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
         "retry": {
           "type": "integer"
         },
@@ -1201,6 +1224,12 @@
         },
         "timeout": {
           "$ref": "#/definitions/Timeout"
+        },
+        "tolerations": {
+          "items": {
+            "$ref": "#/definitions/Toleration"
+          },
+          "type": "array"
         },
         "unstash": {
           "$schema": "http://json-schema.org/draft-04/schema#",
@@ -1327,6 +1356,27 @@
           "type": "integer"
         },
         "unit": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "Toleration": {
+      "properties": {
+        "effect": {
+          "type": "string"
+        },
+        "key": {
+          "type": "string"
+        },
+        "operator": {
+          "type": "string"
+        },
+        "tolerationSeconds": {
+          "type": "integer"
+        },
+        "value": {
           "type": "string"
         }
       },
