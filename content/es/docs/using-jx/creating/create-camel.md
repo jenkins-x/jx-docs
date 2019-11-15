@@ -5,7 +5,7 @@ description: ¿Cómo crear un nuevo microservicio Apache Camel e importarlo a Je
 weight: 20
 ---
 
-Si desea crear un nuevo microservicio Spring Boot usando [Apache Camel](http://camel.apache.org/), puede utilizar el comando [jx create camel](/commands/jx_create_camel).
+Si desea crear un nuevo microservicio Spring Boot usando [Apache Camel](http://camel.apache.org/), puede utilizar el comando [jx create camel](/commands/jx_create_camel/).
 
 ```sh
 jx create camel

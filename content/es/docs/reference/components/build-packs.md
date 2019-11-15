@@ -5,7 +5,7 @@ description: Convertir el código fuente en aplicaciones en Kubernetes
 weight: 30
 ---
 
-Usamos paquetes de compilación de estilo [draft](https://draft.sh/) para diferentes lenguajes, tiempos de ejecución y herramientas de compilación para agregar los archivos de configuración necesarios a los proyectos a medida que los [importamos](/docs/using-jx/common-tasks/import/) o los [creamos](/docs/using-jx/common-tasks/create-spring/) para que podamos compilarlos e desplegarlos en Kubernetes.
+Usamos paquetes de compilación de estilo [draft](https://draft.sh/) para diferentes lenguajes, tiempos de ejecución y herramientas de compilación para agregar los archivos de configuración necesarios a los proyectos a medida que los [importamos](/docs/using-jx/creating/import/) o los [creamos](/docs/using-jx/common-tasks/create-spring/) para que podamos compilarlos e desplegarlos en Kubernetes.
 
 Los paquetes de compilación se utilizan para predeterminar los siguientes archivos si aún no existen en el proyecto que se está creando/importando:
 
@@ -22,7 +22,7 @@ La línea de comando `jx` clona los paquetes de compilación en la carpeta `.~/.
 
 Como parte de la transición de [Jenkins hacia ser nativa de la nube](/docs/managing-jx/common-tasks/cloud-native-jenkins/), hemos reestructurado nuestros [paquetes de compilación](https://github.com/jenkins-x-buildpacks/) para que sean más modulares y más fáciles de componer y reutilizar en las cargas de trabajo.
 
-Por ejemplo, el paquete de compilación [jenkins-x-kubernetes](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) hereda del paquete de compilación [jenkins-x-classic](https://github.com/jenkins-x-buildpacks/jenkins-x-classic), reutilizando el CI y los pipelines de liberación, pero luego agregando las cargas de trabajo específicas de Kubernetes (por ejemplo, construyendo imágenes de docker, creando charts de helm, [vista previa de entornos](/docs/concepts/features/#entornos-de-vista-previa y [promoción a través de GitOps](/docs/concepts/features/#promocion))
+Por ejemplo, el paquete de compilación [jenkins-x-kubernetes](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) hereda del paquete de compilación [jenkins-x-classic](https://github.com/jenkins-x-buildpacks/jenkins-x-classic), reutilizando el CI y los pipelines de liberación, pero luego agregando las cargas de trabajo específicas de Kubernetes (por ejemplo, construyendo imágenes de docker, creando charts de helm, [vista previa de entornos](/es/docs/concepts/features/#entornos-de-vista-previa) y [promoción a través de GitOps](/es/docs/concepts/features/#promoción))
 
 Para hacer esto, hemos introducido un nuevo formato de archivo YAML simple para definir pipelines.
 
@@ -80,11 +80,11 @@ Nos encantan las [contribuciones](/community/), así que considere agregar nuevo
 
 Aquí hay instrucciones sobre cómo crear un nuevo paquete de compilación. Por favor, si algo no está claro, [únase a la comunidad y solo pregunte](/community/), aquí estamos encantados de ayudar.
 
-El mejor lugar para comenzar es una aplicación de _inicio rápido_. Un proyecto de muestra que puede usar como prueba. Así que cree/encuentre un proyecto de ejemplo adecuado y luego [impórtelo](/developing/import).
+El mejor lugar para comenzar es una aplicación de _inicio rápido_. Un proyecto de muestra que puede usar como prueba. Así que cree/encuentre un proyecto de ejemplo adecuado y luego [impórtelo](/docs/using-jx/creating/import/).
 
 Luego, agregue manualmente un `Dockerfile` y un `Jenkinsfile` si aún no ha agregado uno para usted. Puede comenzar con los archivos de las [carpetas del paquete de compilación actual](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/tree/master/packs), utilizando el lenguaje/framework más similar al suyo.
 
-Si su paquete de compilación está utilizando herramientas de compilación que aún no están disponibles en una de las [plantillas de pod](/architecture/pod-templates) existentes, entonces deberá [enviar una nueva plantilla de pod](/docs/managing-jx/common-tasks/pod-templates/#submitting-new-pod-templates), probablemente también utilizando una nueva imagen del contenedor de compilación.
+Si su paquete de compilación está utilizando herramientas de compilación que aún no están disponibles en una de las [plantillas de pod](/es/docs/reference/components/pod-templates/) existentes, entonces deberá [enviar una nueva plantilla de pod](/es/docs/reference/components/pod-templates/#enviar-nuevas-plantillas-de-pod), probablemente también utilizando una nueva imagen del contenedor de compilación.
 
 Una vez que tenga una plantilla de pod para usar, por ejemplo, `jenkins-foo`, consulte en su `Jenkinsfile`:
 
@@ -120,6 +120,6 @@ cp Dockerfile Jenkinsfile  ~/.jx/draft/packs/github.com/jenkins-x/draft-packs/pa
 cp -r charts/somefoo ~/.jx/draft/packs/github.com/jenkins-x/draft-packs/packs/$PACK/charts
 ```
 
-Una vez que su paquete de compilación esté en una carpeta en `~/.jx/draft/packs/github.com/jenkins-x/draft-packs/packs/`, entonces debería ser utilizable por el comando [jx import](/commands/jx_import) que utiliza la detección del lenguaje de programación para encontrar el paquete de compilación más adecuado para usar al importar un proyecto. Si su paquete de compilación requiere una lógica personalizada para detectarlo, avísenos y podemos ayudarlo agregando un parche en el comando [jx import](/commands/jx_import) para que funcione mejor para su paquete de compilación. Por ejemplo, tenemos una lógica personalizada para [manejar mejor a Maven y Gradle](https://github.com/jenkins-x/jx/blob/712d9edf5e55aafaadfb3e0ac57692bb44634b1c/pkg/jx/cmd/common_buildpacks.go#L82:L108).
+Una vez que su paquete de compilación esté en una carpeta en `~/.jx/draft/packs/github.com/jenkins-x/draft-packs/packs/`, entonces debería ser utilizable por el comando [jx import](/commands/jx_import/) que utiliza la detección del lenguaje de programación para encontrar el paquete de compilación más adecuado para usar al importar un proyecto. Si su paquete de compilación requiere una lógica personalizada para detectarlo, avísenos y podemos ayudarlo agregando un parche en el comando [jx import](/commands/jx_import/) para que funcione mejor para su paquete de compilación. Por ejemplo, tenemos una lógica personalizada para [manejar mejor a Maven y Gradle](https://github.com/jenkins-x/jx/blob/712d9edf5e55aafaadfb3e0ac57692bb44634b1c/pkg/jx/cmd/common_buildpacks.go#L82:L108).
 
 Si necesitas más ayuda [únete a la comunidad](/community/).

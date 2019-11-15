@@ -32,7 +32,7 @@ luego modifique el YAML para adaptarlo, cambiando los nombres de los recursos pa
 
 ## ¿Cómo administrar los recursos SourceRepository?
 
-Vea cómo actualizar su [configuración boot con los últimos recursos SourceRepository](/docs/getting-started/setup/boot/how-it-works/#repositorio-de-origen).
+Vea cómo actualizar su [configuración boot con los últimos recursos SourceRepository](/es/docs/getting-started/setup/boot/how-it-works/#repositorio-de-origen).
 
 ## ¿Cómo enlazo SourceRepository a un Scheduler personalizado?
 
@@ -44,7 +44,7 @@ Consulte también [¿Cómo agrego múltiples pipelines paralelas a un proyecto?]
 
 Dependerá de en cuál namespaces desea instalar el chart.
 
-Si está en el entorno de desarrollo (el namespace `jx` por defecto), entonces `env/requirements.yaml` es donde agregar el chart y para un chart `foo` puede agregar `env/foo/values.yaml` para configurarlo. (o `env/foo/values.tmpl.yaml` si desea utilizar algunas [plantillas](docs/getting-started/setup/boot/how-it-works/#improvements-to-values-yaml) con ficheros `values.yaml`).
+Si está en el entorno de desarrollo (el namespace `jx` por defecto), entonces `env/requirements.yaml` es donde agregar el chart y para un chart `foo` puede agregar `env/foo/values.yaml` para configurarlo. (o `env/foo/values.tmpl.yaml` si desea utilizar algunas [plantillas](/docs/getting-started/setup/boot/how-it-works/#improvements-to-values-yaml) con ficheros `values.yaml`).
 
 Sin embargo, si desea que nuestro chart esté en otro namespace, entonces usamos la convención de agregar una carpeta en el directorio `system`, en la configuración boot (por ejemplo, como lo hacemos para las entradas, administrador de certificados, velero, malla de servicio, etc.). Entonces, cree una nueva carpeta `system`  y agregue el paso `jx step helm apply` en el pipeline en `jenkins-x.yml` como lo hacemos para `cert-manager`, `nginx`, `velero`, etc.
 

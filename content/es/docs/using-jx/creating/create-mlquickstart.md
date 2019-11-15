@@ -7,7 +7,7 @@ weight: 30
 
 El inicio rápido de aprendizaje automático (Machine learning quickstarts) son aplicaciones pre-configuradas de aprendizaje automático que puedes utilizar para iniciar tus propios proyectos.
 
-Puede crear nuevas aplicaciones desde nuestra lista de inicio rápido de aprendizaje automático a través del comando [jx create mlquickstart](/commands/jx_create_mlquickstart).
+Puede crear nuevas aplicaciones desde nuestra lista de inicio rápido de aprendizaje automático a través del comando [jx create mlquickstart](/commands/jx_create_mlquickstart/).
 
 ```sh
 jx create mlquickstart
@@ -98,7 +98,7 @@ Entonces, cuando creas un proyecto de inicio rápido de aprendizaje automático,
 
 Si desea enviar un nuevo inicio rápido a Jenkins X, simplemente [plantee un problema](https://github.com/jenkins-x/jx/issues/new?labels=quickstart&title=Add%20mlquickstart&body=Please%20add%20this%20github%20mlquickstart:) con la URL en GitHub de su inicio rápido y podemos bifurcarlo en la [organización de inicio rápido](https://github.com/machine-learning-quickstarts) para que aparezca en el menú `jx create mlquickstart`.
 
-O si forma parte de un proyecto de código abierto y desea seleccionar su propio conjunto de inicios rápidos para su proyecto; puede [plantear un problema](https://github.com/jenkins-x/jx/issues/new?labels=quickstart&title=Add%20mlquickstart&body=Please%20add%20this%20github%20mlquickstart:) proporcionándonos detalles de la organización de GitHub donde están los inicios rápidos y lo agregaremos como una organización predeterminada en el comando [jx create mlquickstart](/commands/jx_create_mlquickstart). Es más fácil para [jx create mlquickstart](/commands/jx_create_mlquickstart) si mantiene los inicios rápidos en una organización separada de inicio rápido en GitHub.
+O si forma parte de un proyecto de código abierto y desea seleccionar su propio conjunto de inicios rápidos para su proyecto; puede [plantear un problema](https://github.com/jenkins-x/jx/issues/new?labels=quickstart&title=Add%20mlquickstart&body=Please%20add%20this%20github%20mlquickstart:) proporcionándonos detalles de la organización de GitHub donde están los inicios rápidos y lo agregaremos como una organización predeterminada en el comando [jx create mlquickstart](/commands/jx_create_mlquickstart/). Es más fácil para [jx create mlquickstart](/commands/jx_create_mlquickstart/) si mantiene los inicios rápidos en una organización separada de inicio rápido en GitHub.
 
 Hasta que lo hagamos, puede seguir usando sus propios Inicios Rápidos en el comando `jx create mlquickstart` a través del parámetro `-g` o `--organisation`. p.ej.
 

@@ -17,7 +17,7 @@ Si está utilizando boot, utilice [estas instrucciones para configurar Git](/es/
 
 ## Listar servidores Git
 
-Puede listar los servidores Git configurados a través del comando [jx get git](/commands/jx_get_git):
+Puede listar los servidores Git configurados a través del comando [jx get git](/commands/jx_get_git/):
 
 ```
 jx get git
@@ -46,7 +46,7 @@ o [instalarlo en un clúster existente](/docs/managing-jx/common-tasks/install-o
 $ jx install --no-default-environments
 ```
 
-Luego, una vez que Jenkins X esté instalado, puede [agregar un nuevo proveedor git](#adding-a-new-git-provider).
+Luego, una vez que Jenkins X esté instalado, puede [agregar un nuevo proveedor git](#agregar-un-nuevo-proveedor-git).
 
 Luego, cuando el proveedor git está configurado, puede verificar que esté disponible y que tenga el `gitKind` correcto a través de:
 
@@ -61,9 +61,9 @@ $ jx create env staging --git-provider-url=https://gitproviderhostname.com
 $ jx create env production --git-provider-url=https://gitproviderhostname.com
 ```
 
-## Adicionar un nuevo proveedor git
+## Agregar un nuevo proveedor git
 
-Si ya tiene un servidor git en algún lugar, puede agregarlo a Jenkins X a través de [jx create git server](/commands/jx_create_git_server):
+Si ya tiene un servidor git en algún lugar, puede agregarlo a Jenkins X a través de [jx create git server](/commands/jx_create_git_server/):
 
 ```sh
 jx create git server gitKind someURL
@@ -126,7 +126,7 @@ jx create git token -n gitlab myusername
 
 ### Adicionar tokens de usuarios
 
-Para utilizar este servidor git necesitarás adicionar el nombre de usuario y el token del API a través de [jx create git token](/commands/jx_create_git_token):
+Para utilizar este servidor git necesitarás adicionar el nombre de usuario y el token del API a través de [jx create git token](/commands/jx_create_git_token/):
 
 ```sh
 jx create git token -n myProviderName myUserName
@@ -146,7 +146,7 @@ Para usar [gitea](https://gitea.io/en-us/) con Jenkins X, debe habilitar el comp
 jx edit addon gitea -e true
 ```
 
-Puede ver los complementos habilitados a través de [jx get addons](/commands/jx_get_addons):
+Puede ver los complementos habilitados a través de [jx get addons](/commands/jx_get_addons/):
 
 ```sh
 jx get addons

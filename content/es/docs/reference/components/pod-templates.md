@@ -45,7 +45,7 @@ pipeline {
 
 ## Enviar nuevas Plantillas de Pod
 
-Si está trabajando en un nuevo [paquete de compilación](/architecture/build-packs), nos encantaría que [envíe](/docs/contributing/) una nueva plantilla de pod y podemos incluirla en la distribución Jenkins X!
+Si está trabajando en un nuevo [paquete de compilación](/architecture/build-packs/), nos encantaría que [envíe](/docs/contributing/) una nueva plantilla de pod y podemos incluirla en la distribución Jenkins X!
 
 Ahora sigue las instrucciones sobre cómo hacer esto. Por favor, si algo no está claro, ven [únete a la comunidad y pregunta](/community/) ¡estaremos encantados de ayudarte!
 
@@ -90,8 +90,8 @@ Ahora se enfrentará a una gran página de opciones de configuración ;) Las pla
 
 Puede editar/agregar/eliminar plantillas de pod en esa página y presionar Guardar.
 
-Sin embargo, tenga en cuenta que a largo plazo esperamos [mantener su entorno de desarrollo a través de GitOps, como lo hacemos para Staging y Production](https://github.com/jenkins-x/jx/issues/604), lo que significa que los cambios realizados a través de la interfaz de usuario de Jenkins se perderán al [actualizar su entorno de desarrollo](/commands/jx_upgrade_platform).
+Sin embargo, tenga en cuenta que a largo plazo esperamos [mantener su entorno de desarrollo a través de GitOps, como lo hacemos para Staging y Production](https://github.com/jenkins-x/jx/issues/604), lo que significa que los cambios realizados a través de la interfaz de usuario de Jenkins se perderán al [actualizar su entorno de desarrollo](/commands/jx_upgrade_platform/).
 
 A largo plazo, esperamos agregar las plantillas de pod en su archivo `values.yaml` en el repositorio git de su entorno de desarrollador como lo hacemos para el [chart jenkins-x-platform](https://github.com/jenkins-x/jenkins-x-platform/blob/master/values.yaml#L194-L431).
 
-Si está creando plantillas de pod utilizando herramientas de compilación de código abierto, puede ser más sencillo [enviar su plantilla de pod en una solicitud de extracción](#submitting-new-pod-templates) y podemos agregar esa plantilla de pod en futuras versiones de Jenkins X.
+Si está creando plantillas de pod utilizando herramientas de compilación de código abierto, puede ser más sencillo [enviar su plantilla de pod en una solicitud de extracción](#enviar-nuevas-plantillas-de-pod) y podemos agregar esa plantilla de pod en futuras versiones de Jenkins X.

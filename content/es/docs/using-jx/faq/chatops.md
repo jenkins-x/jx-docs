@@ -13,13 +13,13 @@ Usamos la frase _ChatOps_ para referirnos a los cambios en el código operativo 
 
 ChatOps ayuda a los desarrolladores a colaborar en los PR y acelera la mezcla de los PR. Queremos poder mezclar los cambios lo más rápido posible en la rama master para que podamos integrar continuamente el código y minimizar las desventajas de las ramas a largo plazo.
 
-ChatOps (y [tide en particular](#what-does-hook-do)) también ayuda a automatizar y acelerar las tareas, p.ej.
+ChatOps (y [tide en particular](#qué-hace-hook)) también ayuda a automatizar y acelerar las tareas, p.ej.
 
 * los desarrolladores no tienen que seguir presionando recargar en una página de PR esperando que se pasen todas las pruebas para que puedan hacer clic en `Merge`. Simplemente agregue un comentario `/lgtm` o apruebe la revisión del código y el PR se fusionará automáticamente una vez que sus pruebas se vuelvan verdes. ¡Esto también evita que los desarrolladores presionen accidentalmente el botón `Merge` antes de que pasen todas las pruebas!
 * todas los PR se vuelven a clasificar automáticamente y se prueban contra la rama master antes de mezclarsse, lo que garantiza que no rompamos la rama master accidentalmente
 * la mezcla por lotes de los PR es compatible para acelerar la mezcla de los PRs.
 
-Para ampliar los detalles vea [qué es lo que tide hace](#what-does-hook-do)
+Para ampliar los detalles vea [qué es lo que tide hace](#qué-hace-hook)
 
 ## ¿Qué tipos de webhook admiten ChatOps?
 
@@ -35,7 +35,7 @@ Si cree que el pipeline falló debido a alguna razón de infraestructura tempora
 * `/test all` vuelve a a ejecutar todos los pipelines fallidos.
 * `/test foo` vuelve a ejecutar todos los pipelines con nombre `foo`.
 
-Tenga en cuenta que debe estar en el archivo `OWNERS` como [aprobador para que esto funcione](#why-did-a-pullrequest-have-no-pipeline-triggered).
+Tenga en cuenta que debe estar en el archivo `OWNERS` como [aprobador para que esto funcione](#por-qué-un-pull-request-no-tiene-un-pipeline-activado).
 
 ## ¿Cómo agrego múltiples pipelines paralelos a un proyecto?
 

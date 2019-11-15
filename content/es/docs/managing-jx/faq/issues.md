@@ -233,7 +233,7 @@ Eso debería regenerar su archivo local `~/kube/config` y entonces `kubectl get 
 
 ## ¿Cómo puedo diagnosticar problemas de exposecontroller?
 
-Cuando [promueve una nueva versión de su aplicación a un entorno](/docs/managing-jx/faq/#how-does-promotion-actually-work), como el entorno Staging, se genera un PR en el repositorio del entorno.
+Cuando promueve una nueva versión de su aplicación a un entorno, como el entorno Staging, se genera un PR en el repositorio del entorno.
 
 Cuando el pipeline del master se ejecuta en un entorno, se crea un `Job` de Kubernetes para [exposecontroller](https://github.com/jenkins-x/exposecontroller) que ejecuta un pod hasta que finaliza.
 
@@ -247,7 +247,7 @@ Luego ejecute este comando:
 kail -l job-name=expose -n jx-staging
 ```
 
-Si luego promueve el entorno Staging o vuelve a activar el pipeline en la rama `master` de su repositorio Git de Staging (p.ej, a través de [jx start pipeline](/command/jx_start_pipeline/)), debería ver la salida del [exposecontroller] (https://github.com/jenkins-x/exposecontroller) pod.
+Si luego promueve el entorno Staging o vuelve a activar el pipeline en la rama `master` de su repositorio Git de Staging (p.ej, a través de [jx start pipeline](/commands/jx_start_pipeline/)), debería ver la salida del [exposecontroller] (https://github.com/jenkins-x/exposecontroller) pod.
 
 ## ¿Por qué la promoción es realmente lenta?
 
@@ -259,7 +259,7 @@ Si encuentra que recibe muchas advertencias en sus pipelines como esta ...
 
 y la promoción demora 30 minutos desde la liberación de un pipeline en una aplicación que comienza con el cambio que afecta a `Staging`, y probablemente se deba principalmente a Webhooks.
 
-Cuando [importamos proyectos](/es/docs/using-jx/common-tasks/import/) o [creamos inicios rápidos](/es/docs/getting-started/first-project/create-quickstart/), automatizamos la configuración de los pipelines de CI/CD para el repositorio Git. Lo que esto hace es configurar Webhooks en el repositorio de Git para activar Jenkins X para activar pipelines (ya sea usando Prow para [Jenkins X Pipelines sin servidor](/es/docs/concepts/jenkins-x-pipelines/) o el servidor estático jenkins si no).
+Cuando [importamos proyectos](/docs/using-jx/creating/import/) o [creamos inicios rápidos](/es/docs/getting-started/first-project/create-quickstart/), automatizamos la configuración de los pipelines de CI/CD para el repositorio Git. Lo que esto hace es configurar Webhooks en el repositorio de Git para activar Jenkins X para activar pipelines (ya sea usando Prow para [Jenkins X Pipelines sin servidor](/es/docs/concepts/jenkins-x-pipelines/) o el servidor estático jenkins si no).
 
 Sin embargo, a veces su proveedor de Git (por ejemplo, [GitHub](https://github.com/) puede no poder conectarse a su instalación Jenkins X (por ejemplo, debido a problemas de red/firewall).
 

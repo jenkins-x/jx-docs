@@ -5,14 +5,14 @@ description: ¿Cómo importar un proyecto existente en Jenkins X?
 weight: 70
 ---
 
-Si ya tiene algún código fuente que desea importar a Jenkins X, puede usar el comando [jx import](/commands/jx_import). p.ej.
+Si ya tiene algún código fuente que desea importar a Jenkins X, puede usar el comando [jx import](/commands/jx_import/). p.ej.
 
 ```sh
 cd my-cool-app
 jx import
 ```
 
-Al utilizar el comando [jx import](/commands/jx_import) se realizarán las siguientes acciones (se le indicará en el camino):
+Al utilizar el comando [jx import](/commands/jx_import/) se realizarán las siguientes acciones (se le indicará en el camino):
 
 * adiciona su código en un repositorio Git si no existe actualmente
 * crea un repositorio Git remoto en plataformas como [GitHub](https://github.com)
@@ -65,7 +65,7 @@ Al importar proyectos en Jenkins X, usamos patrones de rama Git para determinar 
 
 Por lo general, eso puede ser predeterminado a algo como `master|PR-.*|feature.*`. Eso significa que la rama `master`, cualquier rama que comience con `PR-` o `feature` se escaneará para buscar el fichero `Jenkinsfile` para configurar los pipelines CI/CD.
 
-Si usa otro nombre de rama que no sea `master`, como `develop` o lo que sea, puede cambiar este patrón para que sea lo que quiera a través del parámetro `--branches` siempre que ejecute [jx import](/commands/jx_import), [jx create spring](/commands/jx_create_spring) o [jx create quickstart](/commands/jx_create_quickstart).
+Si usa otro nombre de rama que no sea `master`, como `develop` o lo que sea, puede cambiar este patrón para que sea lo que quiera a través del parámetro `--branches` siempre que ejecute [jx import](/commands/jx_import/), [jx create spring](/commands/jx_create_spring/) o [jx create quickstart](/commands/jx_create_quickstart/).
 
 ```sh
 jx import --branches "develop|PR-.*|feature.*"
@@ -79,7 +79,7 @@ jx import --branches ".*"
 
 ## Configurar los patrones de ramas de tu equipos
 
-Por lo general, un equipo usa las mismas convenciones de nomenclatura para las ramas, por lo que es posible que desee configurar los patrones de las ramas a nivel de equipo para que se usen de forma predeterminada si alguien en su equipo ejecuta [jx import](/commands/jx_import), [jx create spring](/commands/jx_create_spring) o [jx create quickstart](/commands/jx_create_quickstart).
+Por lo general, un equipo usa las mismas convenciones de nomenclatura para las ramas, por lo que es posible que desee configurar los patrones de las ramas a nivel de equipo para que se usen de forma predeterminada si alguien en su equipo ejecuta [jx import](/commands/jx_import/), [jx create spring](/commands/jx_create_spring/) o [jx create quickstart](/commands/jx_create_quickstart/).
 
 Estas configuraciones se almacenan en el recurso [Environment Custom Resource](/docs/reference/components/custom-resources/) en Kubernetes.
 
