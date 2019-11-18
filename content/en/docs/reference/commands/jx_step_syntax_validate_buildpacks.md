@@ -1,5 +1,5 @@
 ---
-date: 2019-11-18T11:55:53Z
+date: 2019-11-18T14:51:55Z
 title: "jx step syntax validate buildpacks"
 slug: jx_step_syntax_validate_buildpacks
 url: /commands/jx_step_syntax_validate_buildpacks/
