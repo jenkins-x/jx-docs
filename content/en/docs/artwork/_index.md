@@ -4,6 +4,8 @@ linktitle: Artwork
 type: docs
 description: Artwork for Jenkins X logo.
 weight: 7
+aliases:
+  - /artwork
 ---
 
 Jenkins X logos can be downloaded in a number of sizes, or as vector graphics, from [our artwork repo](https://github.com/cdfoundation/artwork/tree/master/jenkinsx). The repo also contains our brand guidelines and color palette.
