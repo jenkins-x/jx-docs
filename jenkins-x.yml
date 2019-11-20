@@ -53,14 +53,14 @@ pipelineConfig:
               - jenkins-x-website
               - --enableGitInfo
 
-          - image: dennisnewel/htmltest:latest
-            name: htmltest
-            command: htmltest
-            args:
-              - -s
-              - -c
-              - .htmltest.yml
-              - jenkins-x-website
+          # - image: dennisnewel/htmltest:latest
+          #   name: htmltest
+          #   command: htmltest
+          #   args:
+          #     - -s
+          #     - -c
+          #     - .htmltest.yml
+          #     - jenkins-x-website
 
           - image: gcr.io/jenkinsxio/builder-go
             name: update-website
