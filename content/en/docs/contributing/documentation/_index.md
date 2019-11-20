@@ -122,6 +122,7 @@ To make it as simple as possible, we've created and published Docker images inst
 In order to use this setup, first make sure you're in the folder with your local cloned copy of the `jx-docs` repo, then run the following command to download and start the Hugo server:
 
 ```sh
+npm install
 docker-compose up -d server
 ```
 
@@ -311,7 +312,7 @@ When you've finished, and verified that everything looks good (using the Hugo se
 We're using a tool called [htmltest](https://github.com/wjdp/htmltest) to check that links are still valid etc. so you just need to run the following commands to build the site locally, and verify that everything looks good:
 
 ```sh
-docker-compose run server hugo
+docker-compose run server sh -c "cd /src && hugo"
 docker-compose up linkchecker
 ```
 
