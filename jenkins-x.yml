@@ -48,7 +48,7 @@ pipelineConfig:
 
           ## delete everything in the jenkins-x-website repo clone
           - image: dennisnewel/hugo-extended:0.58.3
-            name: git-submodules
+            name: remove-old
             command: git
             args:
             - -C jenkins-x-website rm -r '*'
