@@ -6,7 +6,7 @@ date: 2013-07-01
 publishdate: 2013-07-01
 categories: [getting started]
 keywords: [install,builder]
-weight: 60
+weight: 260
 ---
 
 In Jenkins X, it is possible to create your custom Builders (aka [POD templates](https://github.com/jenkinsci/kubernetes-plugin)) or overwrite existing onces. You just need to base your Docker
@@ -19,7 +19,7 @@ These images contain a number of pre-installed tools which get constantly update
 
 First you need to create a docker image for your builder. For instance a starting `Dockerfile` can look like this:
 
-```
+```dockerfile
 FROM jenkinsxio/builder-base:latest
 
 # Install your tools and libraries
@@ -30,18 +30,18 @@ CMD ["gcc"]
 
 Now you can build the image and publish it to your registry:
 
-```shell
-export BUILDER_IMAGE=<YOUR_REGISTRY>/<YOUR_BUILDER_IMAGE>:<VERSION> 
+```sh
+export BUILDER_IMAGE=<YOUR_REGISTRY>/<YOUR_BUILDER_IMAGE>:<VERSION>
 docker build -t ${BUILDER_IMAGE} .
-docker push ${BUILDER_IMAGE} 
+docker push ${BUILDER_IMAGE}
 ```
 
-Do not worry, you do not have to run manually these steps every time when a new image needs to be built. 
+Do not worry, you do not have to run manually these steps every time when a new image needs to be built.
 Jenkins X can manage this for you. You just need to push your `Dockerfile` in a repository similar with [this
 ](https://github.com/jenkins-x/builder-go) one. Adjust the `Jenkinsfile` according with your organization and
 application name, and then import the repository into your Jenkins X platform with:
 
-```
+```sh
 jx import --url <REPOSITORY_URL>
 ```
 
@@ -49,7 +49,7 @@ From now on, every time you push a change, Jenkins X will build and publish auto
 
 ### Install the Builder
 
-You can now install your builder either when you install Jenkins X or upgrade it. 
+You can now install your builder either when you install Jenkins X or upgrade it.
 
 Create a `myvalues.yaml` file in your `~/.jx/` folder with the following content:
 
@@ -80,7 +80,7 @@ jenkins:
             RequestMemory: "128Mi"
             Args: '${computer.jnlpmac} ${computer.name}'
           Dlang:
-            Image: <YOUR_BUILDER_IMAGE> 
+            Image: <YOUR_BUILDER_IMAGE>
             Privileged: true
             RequestCpu: "400m"
             RequestMemory: "512Mi"
@@ -126,15 +126,15 @@ pipeline {
 
 ## Overwrite existing Builders
 
-Jenkins X comes with a number of [pre-installed builders](https://raw.githubusercontent.com/jenkins-x/jenkins-x-platform/master/values.yaml) 
+Jenkins X comes with a number of [pre-installed builders](https://raw.githubusercontent.com/jenkins-x/jenkins-x-platform/master/jenkins-x-platform/values.yaml)
 which you can overwrite if required during installation or upgrade.
 
-You just need to build your custom image either based on [builder-base](https://github.com/jenkins-x/builder-base/blob/master/Dockerfile.common) 
+You just need to build your custom image either based on [builder-base](https://github.com/jenkins-x/builder-base/blob/master/Dockerfile.common)
 image or the [builder image](https://hub.docker.com/u/jenkinsxio/) you want to overwrite. See more details above.
 
 Then you can create a `myvalues.yaml` file in your `~/.jx/` folder with the following content:
 
-```
+```yaml
 jenkins:
   Agent:
     PodTemplates:

@@ -32,6 +32,11 @@ languageCode = "zh-CN"
 weight = 2
 languageName = "中文"
 contentDir = "content/zh"
+[languages.es]
+languageCode = "es-ES"
+weight = 3
+languageName = "Español"
+contentDir = "content/es"
 
 disableKinds = ["taxonomy", "taxonomyTerm"]
 
@@ -82,7 +87,7 @@ pygmentsStyle = "tango"
 
 [params]
 ## Used for views in rendered HTML (i.e., rather than using the .Hugo variable)
-release = "2.0.774"
+release = "2.0.1007"
 
 copyright = "The Jenkins X Authors."
 privacy_policy = "https://policies.google.com/privacy"
@@ -112,7 +117,7 @@ sidebar_menu_compact = true
 #  Set to true to disable breadcrumb navigation.
 breadcrumb_disable = false
 #  Set to true to hide the sidebar search box (the top nav search box will still be displayed if search is enabled)
-sidebar_search_disable = false
+sidebar_search_disable = true
 #  Set to false if you don't want to display a logo (/assets/icons/logo.svg) in the top nav bar
 navbar_logo = true
 # Set to true to disable the About link in the site footer
@@ -131,29 +136,34 @@ no = 'Sorry to hear that. Please <a href="https://github.com/jenkins-x/jx/issues
 [params.links]
 # End user relevant links. These will show up on left side of footer and in the community page if you have one.
 [[params.links.user]]
+	name = "Slack Signup"
+	url = "http://slack.k8s.io/"
+	icon = "fab fa-slack"
+	desc = "Sign up for access to community slack channels"
+[[params.links.user]]
 	name = "User Slack Channel"
 	url = "https://kubernetes.slack.com/messages/C9MBGQJRH"
 	icon = "fab fa-slack"
-        desc = "Discussion and help from your fellow users"
+	desc = "Discussion and help from your fellow users"
 [[params.links.user]]
 	name ="Twitter"
 	url = "https://twitter.com/jenkinsxio"
 	icon = "fab fa-twitter"
-        desc = "Follow us on Twitter to get the latest news!"
+	desc = "Follow us on Twitter to get the latest news!"
 [[params.links.user]]
 	name = "Newsletter"
-	url = "/community"
+	url = "/community/"
 	icon = "fa fa-envelope"
-        desc = "Subscribe to the newsletter"
+	desc = "Subscribe to the newsletter"
 
 # Developer relevant links. These will show up on right side of footer and in the community page if you have one.
 [[params.links.developer]]
 	name = "GitHub"
 	url = "https://github.com/jenkins-x/jx"
 	icon = "fab fa-github"
-        desc = "Development takes place here!"
+  desc = "Development takes place here!"
 [[params.links.developer]]
 	name = "Developer Slack Channel"
 	url = "https://kubernetes.slack.com/messages/C9LTHT2BB"
 	icon = "fab fa-slack"
-        desc = "Chat with other project developers"
+  desc = "Chat with other project developers"

@@ -4,8 +4,9 @@ date: 2018-09-06T08:36:00+02:00
 description: "Jenkins X @ JenkinsWorld" 
 categories: [blog]
 keywords: []
-slug: "jenkins-x-at-JenkinsWorld"
-aliases: []
+slug: "jenkins-x-at-jenkinsworld"
+aliases:
+  - /news/jenkins-x-at-jenkinsworld/
 author: rdavies
 ---
 

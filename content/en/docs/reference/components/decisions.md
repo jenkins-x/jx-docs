@@ -7,7 +7,7 @@ weight: 20
 
 # Decisions
 
-Jenkins X is an opinionated developer experience, here we will explain the background and decisions we have taken to help explain the reasons for these opinions.  You may also want to take a look at the [Accelerate](/about/opinions/) page for details on how Jenkins X implements the capabilities recommended by
+Jenkins X is an opinionated developer experience, here we will explain the background and decisions we have taken to help explain the reasons for these opinions.  You may also want to take a look at the [Accelerate](/docs/reference/components/decisions/) page for details on how Jenkins X implements the capabilities recommended by
 
 ## Kubernetes
 
@@ -37,7 +37,7 @@ The Draft project came from Deis who were acquired by Microsoft and continue to 
 
 OpenShift Templates aimed to do a similar thing however they are OpenShift specific.
 
-Lots of the concerns with Helm are being addressed with the major version upgrade of Helm 3.  Removing the use of Tiller the server side component of Helm is a big win as it's seen as being insecure given the elevated permissions it needs to run.  Jenkins X [provides a way](/architecture/helm3/) to use the beta version of Helm 3 for folks that would like to try this instead, we're using this ourselves and it's working great so far.  If there are issues we'd like to feedback to the Helm project so we can help get them to GA sooner.
+Lots of the concerns with Helm are being addressed with the major version upgrade of Helm 3.  Removing the use of Tiller the server side component of Helm is a big win as it's seen as being insecure given the elevated permissions it needs to run.  Jenkins X [provides a way](/docs/reference/components/helm3/) to use the beta version of Helm 3 for folks that would like to try this instead, we're using this ourselves and it's working great so far.  If there are issues we'd like to feedback to the Helm project so we can help get them to GA sooner.
 
 The Helm project came from Deis who were acquired by Microsoft and continue to invest and evolve their Kubernetes developer story.
 

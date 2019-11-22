@@ -9,9 +9,9 @@ aliases:
 
 The CD Pipelines of Jenkins X automate the [promotion](/docs/concepts/features/#promotion) of version changes through each [Environment](/docs/concepts/features/#environments) which is configured with a _promotion strategy_ property of `Auto`. By default the `Staging` environment uses automatic promotion and the `Production` environment uses `Manual` promotion.
 
-To manually Promote a version of your application to an environment use the [jx promote](/commands/jx_promote) command.
+To manually Promote a version of your application to an environment use the [jx promote](/commands/jx_promote/) command.
 
-```shell 
+```sh
 jx promote --app myapp --version 1.2.3 --env production
 ```
 
@@ -20,7 +20,7 @@ The command waits for the promotion to complete, logging details of its progress
 e.g. to wait for 5 hours
 
 
-```shell 
+```sh
 jx promote  --app myapp --version 1.2.3 --env production --timeout 5h
 ```
 
@@ -46,35 +46,35 @@ If you wish to search your helm repositories for an application to promote you c
 
 e.g. to find a `redis` chart to promote to staging you could do:
 
-```shell 
+```sh
 jx promote -f redis --env staging
 ```
 
-For databases you may want to alias (via `--alias`) the name of the chart to be a logical name for the kind of database you need. As you may need multiple databases in the same environment for different microservices. e.g. 
+For databases you may want to alias (via `--alias`) the name of the chart to be a logical name for the kind of database you need. As you may need multiple databases in the same environment for different microservices. e.g.
 
-```shell 
+```sh
 jx promote -f postgres --alias salesdb --env staging
 ```
 
 If you cannot find the particular application you are looking for you may need to add a helm chart repository to your helm installation via:
 
-```shell 
+```sh
 helm repo add myrepo https://something.acme.com/charts/
 ```
 
 for example to add the stable community charts:
 
-```shell 
-$ helm repo add incubator https://kubernetes-charts.storage.googleapis.com/
+```sh
+helm repo add stable https://kubernetes-charts.storage.googleapis.com/
 "stable" has been added to your repositories
 ```
-  
+
 to add the incubator community charts:
 
-```shell 
-$ helm repo add incubator https://kubernetes-charts-incubator.storage.googleapis.com/
+```sh
+helm repo add incubator https://kubernetes-charts-incubator.storage.googleapis.com/
 "incubator" has been added to your repositories
-```  
+```
 
 There are huge numbers of [charts already created and maintained by the community](https://github.com/helm/charts/tree/master/stable) these days. If you want to add your own apps developed outside of Jenkins X you just need to package the YAML as a helm chart and install it in a chart repository.
 

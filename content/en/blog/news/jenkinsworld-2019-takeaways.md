@@ -10,9 +10,9 @@ slug: "jenkinsworld-2019-takeaways"
 aliases: []
 author: John McGehee
 ---
-Jenkins X was the star of the show at DevOps World | Jenkins World 2019. In this article I will 
+Jenkins X was the star of the show at DevOps World | Jenkins World 2019. In this article I will
 share with you the dozen key things I learned about this exciting new cloud native CI/CD tool.
-Beyond its capabilities as a CI/CD tool, Jenkins X also provides an excellent example of how to architect 
+Beyond its capabilities as a CI/CD tool, Jenkins X also provides an excellent example of how to architect
 a cloud native application on Kubernetes.
 
 Jenkins X is a completely new CI/CD system that shares little but its name with the existing Jenkins. Jenkins X incorporates the best practices from the *State of DevOps* reports and the seminal book, *Accelerate* by [Nicole Forsgren](https://twitter.com/nicolefv), [Jez Humble](https://twitter.com/jezhumble) and [Gene Kim](https://twitter.com/RealGeneKim).
@@ -23,22 +23,21 @@ I attended multiple presentations by [James Strachan](https://twitter.com/jstrac
 
 ## Setting up Kubernetes
 
-[Terraform is recommended](https://cb-technologists.github.io/posts/gitops-series-part-1/) for 
+[Terraform is recommended](https://cb-technologists.github.io/posts/gitops-series-part-1/) for
 setting up the required Kubernetes cluster and storage buckets. As explained below, you may find it
 useful to run `jx boot` from within Terraform.
 
-By default, Terraform stores its state in local file `terraform.tfstate`. In an ephemeral cloud 
-environment, this state gets lost and you would create a new cluster each time you applied 
-Terraform. Remedy this by specifying a [Terraform backend](https://www.terraform.io/docs/
-backends/index.html) to store the state in more durable storage like Google Cloud Storage or 
+By default, Terraform stores its state in local file `terraform.tfstate`. In an ephemeral cloud
+environment, this state gets lost and you would create a new cluster each time you applied
+Terraform. Remedy this by specifying a [Terraform backend](https://www.terraform.io/docs/backends/index.html) to store the state in more durable storage like Google Cloud Storage or
 Amazon S3.
 
 Presenters recommended nginx as an ingress controller and
-[cert-manager](https://cb-technologists.github.io/posts/gitops-series-part-1/) to manage TLS 
+[cert-manager](https://cb-technologists.github.io/posts/gitops-series-part-1/) to manage TLS
 (HTTPS SSL) certificates.
 
 For introspection, navigation and object management of your Kubernetes cluster, try
-[VMWare's Octant UI tool](https://github.com/vmware/octant). It runs on your local client just like 
+[VMWare's Octant UI tool](https://github.com/vmware/octant). It runs on your local client just like
 `kubectl`. An advantage of Octant is that it authenticates the same way as `kubectl`: if `kubectl` works, octant works.
 
 ## Setting up Jenkins X
@@ -48,7 +47,7 @@ For a stable build of Jenkins X, get the
 
 Jenkins X has two modes:
 
-* Static traditional Jenkins master with Jenkins pipelines. Use this if you want to continue 
+* Static traditional Jenkins master with Jenkins pipelines. Use this if you want to continue
   using your existing Jenkinsfiles.
 * Jenkins X pipelines based on [Tekton pipelines](https://github.com/tektoncd/pipeline).
   This is now the default, and is recommended for the long term. This mode is controlled by
@@ -56,36 +55,36 @@ Jenkins X has two modes:
   syntax.
 
 There are two interactive quick start commands. The older and presumably more stable is:
-```
+```sh
 jx create quickstart
 ```
 
 The new way to install, configure and upgrade Jenkins X is:
-```
+```sh
 jx boot
 ```
 
 `jx boot` interactively queries the user for the required setup data, recording the responses in file `jx-requirements.yml`. It is re-entrant so you can run it repeatedly. Running `jx boot` from within Terraform is a useful technique.
 
-Jenkins X evolves quickly, so `jx boot` records the Jenkinx X version to use in field 
-`versionStream` within `jx-requirements.yml`. This establishes the version to use on subsequent 
+Jenkins X evolves quickly, so `jx boot` records the Jenkinx X version to use in field
+`versionStream` within `jx-requirements.yml`. This establishes the version to use on subsequent
 invocations of `jx boot`. Update `versionStream` when you want to start using a newer version of
 Jenkins X.
 
 ## Getting status
 
 Get logs using:
-```
+```sh
 jx get build logs
 ```
 
 Track execution with:
-```
+```sh
 jx get activity
 ```
 
 List preview environments using:
-```
+```sh
 jx get environments
 ```
 
@@ -122,14 +121,14 @@ There are three ways to define a Jenkins X pipeline:
 
 * Automatically via a build pack. The build pack automatically detects the source code language.
 * Specify a build pack and then override portions of it in `jenkins-x.yml`
-* Fully define an entirely new pipeline in `jenkins-x.yml`. This is only useful for a pipeline 
+* Fully define an entirely new pipeline in `jenkins-x.yml`. This is only useful for a pipeline
   that will not be reused. For reusable pipelines, define a build pack.
 
-Build packs are standard, opinionated pipelines for languages. They consist of a predefined 
-sequence of steps that run in a consistent order. They are similar to stages in that they can be 
+Build packs are standard, opinionated pipelines for languages. They consist of a predefined
+sequence of steps that run in a consistent order. They are similar to stages in that they can be
 overridden and extended.
 
-Jenkins X is controlled by a `jenkins-x.yml` file that lives at the root of the Git repository. 
+Jenkins X is controlled by a `jenkins-x.yml` file that lives at the root of the Git repository.
 In `jenkins-x.yml`, you can:
 
 * Override build packs
@@ -150,12 +149,12 @@ in a default pipeline.
 ## Validating syntax and IDE autocompletion
 
 Check your pipelines using:
-```
+```sh
 jx step syntax validate
 ```
 
 Pipelines are usually defined by multiple YAML files. See how they fit together in a single flat pipeline file:
-```
+```sh
 jx step syntax effective
 ```
 
@@ -169,9 +168,9 @@ Accordingly, Jenkins X creates a preview environment for each run of a pull requ
 
 Jenkins X currently uses Prow as a webhook handler and ChatOps engine for pull requests. Importantly, **at this time Prow supports only GitHub.**
 
-Since Jenkins X uses only a small portion of Prow, and since Prow supports only GitHub, the 
-Jenkins X team is developing [Lighthouse](https://github.com/jenkins-x/lighthouse) as a 
-lightweight replacement. In this very experimental webhook handler, the Git provider is factored 
+Since Jenkins X uses only a small portion of Prow, and since Prow supports only GitHub, the
+Jenkins X team is developing [Lighthouse](https://github.com/jenkins-x/lighthouse) as a
+lightweight replacement. In this very experimental webhook handler, the Git provider is factored
 out so that new providers can be easily added.
 
 As an aside, adding a [new Git provider for Lighthouse](https://github.com/jenkins-x/go-scm) would be an excellent way to learn the Go language.

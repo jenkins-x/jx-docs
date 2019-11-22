@@ -1,9 +1,9 @@
 ---
-title: "Setup Jenkins X"
-linkTitle: "Setup Jenkins X"
-weight: 8
+title: "安装 Jenkins X"
+linkTitle: "安装 Jenkins X"
+weight: 1
 date: 2017-01-04
 description: >
-  How to setup Jenkins X.
+  如何安装 Jenkins X.
 ---
 

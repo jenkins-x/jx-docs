@@ -19,7 +19,7 @@ Jenkins X provides [automated CI + CD](/docs/concepts/features/#automated-pipeli
 
 Jenkins is a general purpose CI/CD server that can be configured to do anything you like by adding plugins, changing configuration and writing your own pipelines.
 
-With Jenkins X you just [install Jenkins X](/docs/getting-started/) which automatically sets up all of the various tools (helm, docker registry, nexus etc) and then [create](/docs/using-jx/common-tasks/create-spring/)/[import](/docs/using-jx/common-tasks/import/) projects and you get fully automated CI/CD and previews. This lets your developers focus on building applications while you delegate to Jenkins X to manage your CI+CD.
+With Jenkins X you just [install Jenkins X](/docs/getting-started/) which automatically sets up all of the various tools (helm, docker registry, nexus etc) and then [create](/docs/using-jx/common-tasks/create-spring/)/[import](/docs/using-jx/creating/import/) projects and you get fully automated CI/CD and previews. This lets your developers focus on building applications while you delegate to Jenkins X to manage your CI+CD.
 
 Jenkins X supports different execution engines; so it can orchestrate a Jenkins server per team by reusing Jenkins in a docker container. Though when using [serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) we use [Tekton](https://tekton.dev/) rather than Jenkins as the underlying CI/CD engine to provide a modern highly available cloud native architecture.
 

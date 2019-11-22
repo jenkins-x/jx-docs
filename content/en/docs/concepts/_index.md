@@ -1,14 +1,14 @@
 ---
 title: Concepts
 linktitle: Concepts
-description: An overview of the concepts in Jenkins X
+description: An overview of the concepts in Jenkins X.
 weight: 5
 aliases:
   - /about/concepts
 ---
 
 Jenkins X is designed to make it simple for developers to work to DevOps principles and best practices. The approaches taken
-are based on the comprehensive research done for the book [*ACCELERATE: Building and Scaling High Performing Technology Organsiations*](https://goo.gl/vZ8BFN). You can read why we use [Accelerate](../accelerate) for the principals behind Jenkins X.
+are based on the comprehensive research done for the book [*ACCELERATE: Building and Scaling High Performing Technology Organsiations*](https://goo.gl/vZ8BFN). You can read why we use [Accelerate](/docs/overview/accelerate/) for the principles behind Jenkins X.
 
 
 ## Principles

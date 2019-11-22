@@ -17,6 +17,8 @@ Typically each environment is associated with its own [kubernetes namespace](htt
 
 Though technically 2 teams could share the same underlying namespace for, say, `Staging` though we advise separation to keep things simple - otherwise changes in one git repo could conflict with changes in another if they both configure the same namespace; due to, say, service resource name or DNS conflicts. If you wish 2 teams to share the same underlying microservices its much simpler to just use `service linking` to link services in one namespace to another so that they appear as local services with local DNS.
 
+See the full list of [components of Jenkns X](/docs/reference/components/)
+
 ## Development Environment
 
 In the dev environment we have installed a number of core applications we believe are required at a minimum to start folks off with CI/CD on Kubernetes. 
@@ -48,5 +50,5 @@ Also they are not permanent but created on a Pull Request to an applications git
 
 ## Ingress Custom Annotations
 
-To learn how to add custom annotations to the ingress controller, please see [How To Add Custom Annotations to Ingress Controller?](/docs/managing-jx/faq/#how-to-add-custom-annotations-to-ingress-controller)
+To learn how to add custom annotations to the ingress controller, please see [How To Add Custom Annotations to Ingress Controller?](/docs/using-jx/faq/#how-to-add-custom-annotations-to-ingress-controller)
 

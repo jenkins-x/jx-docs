@@ -41,7 +41,7 @@ pipeline {
           }
           ...
 ```
- 
+
 ## 提交新的 Pod 模板
 
 如果你正在使用一个新的 [build pack](/zh/architecture/build-packs)，那么，我们欢迎你 [提交](/zh/docs/contributing/) 一个新的 pod 模板，而且我们可以把它包含在 Jenkins X 的发行版中！
@@ -59,7 +59,7 @@ pipeline {
 
 当使用 pod 模板和 Jenkins 流水线时，每个工具你可以用很多不同的容器。例如： `maven` 容器和 `git` 等。
 
-我们发现，在一个构建容器里有所有通用的工具会比较简单。这也意味着你可以使用 `kubectl exec` 或 [jx rsh](/commands/jx_rsh) 打开一个构建 pod 的 shell，当你调试、诊断有问题的流水线时里面有所有需要的工具。
+我们发现，在一个构建容器里有所有通用的工具会比较简单。这也意味着你可以使用 `kubectl exec` 或 [jx rsh](/commands/jx_rsh/) 打开一个构建 pod 的 shell，当你调试、诊断有问题的流水线时里面有所有需要的工具。
 
 因此，我们有一个 [builder-base](https://github.com/jenkins-x/builder-base) 的 docker 镜像，[包含所有不同的工具](https://github.com/jenkins-x/builder-base/blob/master/Dockerfile#L21-L70) ，我们倾向于在 CI/CD 流水线中使用像 `jx, skaffold, helm, git, updatebot` 的工具。
 
@@ -79,7 +79,7 @@ pipeline {
 
 现在，添加新的 Pod 模板最简单的方式就是通过 Jenkins 控制台。例如：
 
-```bash 
+```sh
 jx console
 ```
 
@@ -89,7 +89,7 @@ jx console
 
 你可以在那个页面编辑、增加、移除 pod 模板并点击保存。
 
-注意，长期来说，尽管我们希望[通过 GitOps 维护你的开发环境，就像是我们做的 Staging 和 Production](https://github.com/jenkins-x/jx/issues/604) —— 也就意味着当你[升级你的开发环境](/commands/jx_upgrade_platform)通过 Jenkins 界面做的修改可能会丢失。
+注意，长期来说，尽管我们希望[通过 GitOps 维护你的开发环境，就像是我们做的 Staging 和 Production](https://github.com/jenkins-x/jx/issues/604) —— 也就意味着当你[升级你的开发环境](/commands/jx_upgrade_platform/)通过 Jenkins 界面做的修改可能会丢失。
 
 因此，我们希望把 Pod 模板添加到你的开发环境 git 库的 `values.yaml` 文件中，就像我们在 [jenkins-x-platform chart](https://github.com/jenkins-x/jenkins-x-platform/blob/master/values.yaml#L194-L431) 做的一样。
 

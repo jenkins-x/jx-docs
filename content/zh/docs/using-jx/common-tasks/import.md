@@ -4,12 +4,12 @@ linktitle: 导入
 description: 如何把已经存在的项目导入 Jenkins X
 ---
 
-                
-如果你已经有一些源码，希望导入 Jenkins X，你可以使用 [jx import](/commands/jx_import) 命令。
 
-```shell
-$ cd my-cool-app
-$ jx import
+如果你已经有一些源码，希望导入 Jenkins X，你可以使用 [jx import](/commands/jx_import/) 命令。
+
+```sh
+cd my-cool-app
+jx import
 ```
 
 导入将会执行下面的动作（提示你按照这个方法来）：
@@ -33,29 +33,29 @@ $ jx import
 
 如果你希望导入的工程已经在 git 远程库中，那么，你可以使用参数 `--url`：
 
-```shell
-    jx import --url https://github.com/jenkins-x/spring-boot-web-example.git
+```sh
+jx import --url https://github.com/jenkins-x/spring-boot-web-example.git
 ```
 
 ### 导入 GitHub 项目
 
 如果你希望从 GitHub 组织中导入，可以使用：
- 
-```shell
-    jx import --github --org myname
+
+```sh
+jx import --github --org myname
 ```
 
 将会提示你需要导入的库。使用光标和空格键来选择（取消）要导入的库。
 
 如果你希望默认导入所有的库（那么反选你不想要的）添加 `--all`：
-   
-```shell
-    jx import --github --org myname --all
+
+```sh
+jx import --github --org myname --all
 ```
 
 为了过滤列表，你可以添加参数 `--filter`
 
-```shell
-    jx import --github --org myname --all --filter foo
-```  
-  
+```sh
+jx import --github --org myname --all --filter foo
+```
+

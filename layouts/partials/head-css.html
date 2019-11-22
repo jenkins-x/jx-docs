@@ -1,0 +1,13 @@
+
+{{ $scssMain := "scss/main.scss"}}
+{{ if .Site.IsServer }}
+{{/* Note the missing postCSS. This makes it snappier to develop in Chrome, but makes it look sub-optimal in other browsers. */}}
+{{ $css := resources.Get $scssMain | toCSS (dict "enableSourceMap" true) }}
+<link href="{{ $css.RelPermalink }}" rel="stylesheet">
+{{ else }}
+{{ $css := resources.Get $scssMain | toCSS (dict "enableSourceMap" false) | postCSS | minify | fingerprint }}
+<link rel="preload" href="{{ $css.RelPermalink }}" as="style">
+<link href="{{ $css.RelPermalink }}" rel="stylesheet" integrity="{{ $css.Data.integrity }}">
+{{ end }}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/default.min.css">

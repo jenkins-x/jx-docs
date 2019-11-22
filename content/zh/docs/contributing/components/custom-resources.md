@@ -10,9 +10,9 @@ Kubernetes 提供了一个叫做[自定义资源](https://kubernetes.io/docs/con
 
 ### 环境
 
-Jenkins X 原生地支持[环境](/zh/docs/concepts/features/#environments)，允许为你们团队定义环境，并通过 [jx get environments](/commands/jx_get_environments) 查询：
+Jenkins X 原生地支持[环境](/zh/docs/concepts/features/#environments)，允许为你们团队定义环境，并通过 [jx get environments](/commands/jx_get_environments/) 查询：
 
-```shell
+```sh
 jx get environments
 ```
 
@@ -20,17 +20,17 @@ jx get environments
 
 因此，你还可以通过 [kubectl](https://kubernetes.io/docs/reference/kubectl/overview/) 查询环境：
 
-```shell
+```sh
 kubectl get environments
 ```
 
 或者你想要通过 `YAML` 直接编辑它们的话：
 
-```shell
+```sh
 kubectl edit env staging
 ```
 
-尽管，你使用命令 [jx edit environment](/commands/jx_edit_environment) 会更容易。
+尽管，你使用命令 [jx edit environment](/commands/jx_edit_environment/) 会更容易。
 
 ### 发版
 
@@ -45,4 +45,4 @@ Jenkins X 流水线生成了一个自定义资源 `发版`，我们可以用来�
 
 该资源保存了基于 Jenkins 流水线阶段以及 [升级活动](/docs/concepts/features/#promotion) 的流水线状态
 
-该资源还会被命令 [jx get activities](/commands/jx_get_activities) 用到
+该资源还会被命令 [jx get activities](/commands/jx_get_activities/) 用到

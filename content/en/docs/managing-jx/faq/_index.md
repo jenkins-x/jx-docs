@@ -3,7 +3,7 @@ title: FAQ
 linktitle: FAQ
 description: Questions about managing Jenkins X
 weight: 60
-aliases: 
+aliases:
   - /faq/setup/
 ---
 
@@ -25,7 +25,7 @@ Once your user has access to the kubernetes cluster:
 
 * [install the jx binary](/docs/getting-started/setup/install//)
 
-If Jenkins X was installed in the namespace `jx` then the following should [switch your context](/docs/using-jx/common-tasks/kube-context/) to the `jx` namespace:
+If Jenkins X was installed in the namespace `jx` then the following should [switch your context](/docs/using-jx/developing/kube-context/) to the `jx` namespace:
 
     jx ns jx
 
@@ -36,17 +36,31 @@ To test you should be able to type:
 
 To view the environments and any development tools like the Jenkins or Nexus consoles.
 
+## How does access control and security work?
+
+See the [access control documentation](/docs/managing-jx/common-tasks/access-control/)
+
 ## How do I upgrade my Jenkins X installation?
+
+Our strategic direction for installing, configuring and upgrading Jenkins X is [jx boot](/docs/getting-started/setup/boot/).
+
+If you are using [jx boot](/docs/getting-started/setup/boot/) you can enable [automatic upgrades](/docs/getting-started/setup/boot/#auto-upgrades) or [manually trigger them yourself](/docs/getting-started/setup/boot/#manual-upgrades).
+
+If anything ever goes wrong (e.g. your cluster, namespace or tekton gets deleted), you can always re-run [jx boot](/docs/getting-started/setup/boot/) on your laptop to restore your cluster.
+
+Otherwise the older approach is as follows:
+
+### If not using boot
 
 You can upgrade via the [jx upgrade](/commands/jx_upgrade/) commands. Start with
 
-```shell
+```sh
 jx upgrade cli
 ```
 
 to get you on the latest CLI then you can upgrade the platform:
 
-```shell
+```sh
 jx upgrade platform
 ```
 
@@ -54,7 +68,7 @@ jx upgrade platform
 
 We use specific `BuildTemplates` for different programming languages. These `BuildTemplates` describe the steps that will be executed as part of the job, which in case of the Jenkins X BuildTemplates, they all execute the `JenkinsfileRunner` to execute the project's Jenkinsfile.
 
-```
+```sh
 $ kubectl get buildtemplates
 NAME                        AGE
 environment-apply           9d
@@ -88,20 +102,20 @@ The docker image that has the `Jenkinsfile` runner has also other tools installe
 
 Once this is done, you need to change the BuildTemplate in your cluster so that it starts using the new version of the docker image. For example, you can see the current version of this image for the Go BuildTemplate in your cluster
 
-```
+```sh
 $ kubectl describe buildtemplate jenkins-go | grep Image
 Image:       jenkinsxio/jenkins-go:256.0.44
 ```
 
 If you want to use a different version that uses a newer jx version you could manually change all the BuildTemplates but instead let's jx take care of it
 
-```
-$ jx upgrade addon jx-build-templates
+```sh
+jx upgrade addon jx-build-templates
 ```
 
 Check that the change has been done
 
-```
+```sh
 $ kubectl describe buildtemplate jenkins-go | grep Image
 Image:       jenkinsxio/jenkins-go:256.0.50
 ```
@@ -113,13 +127,13 @@ Image:       jenkinsxio/jenkins-go:256.0.50
 
 ## How do I reuse my existing Ingress controller?
 
-By default when you [install Jenkins X into an existing kubernetes cluster](/docs/managing-jx/common-tasks/install-on-cluster/) it prompts you if you want to install an Ingress controller. Jenkins X needs an Ingress controller of some kind so that we can setup `Ingress` resources for each `Service` so we can access web applications via URLs outside of the kubneretes cluster (e.g. inside web browsers).
+By default when you [install Jenkins X into an existing kubernetes cluster](/docs/getting-started/install-on-cluster/) it prompts you if you want to install an Ingress controller. Jenkins X needs an Ingress controller of some kind so that we can setup `Ingress` resources for each `Service` so we can access web applications via URLs outside of the kubneretes cluster (e.g. inside web browsers).
 
 The [jx install](/commands/jx_install/) command takes a number of CLI arguments starting with `--ingress` where you can point to the namespace, deployment name and service name of the ingress controller you wish to use for the installation.
 
 We do recommend you use the default ingress controller if you can - as we know it works really well and only uses a single LoadBalancer IP for the whole cluster (your cloud provider often charges per IP address). However if you want to point at a different ingress controller just specify those arguments on install:
 
-```shell
+```sh
 jx install \
   --ingress-service=$(yoursvcname) \
   --ingress-deployment=$(yourdeployname) \

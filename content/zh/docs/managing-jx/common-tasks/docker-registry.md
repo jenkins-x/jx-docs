@@ -14,15 +14,15 @@ description: 配置你的 docker registry
 
 为了指定 Docker Registry 的主机、端口，你可以使用 Jenkins 控制台：
 
-```
+```sh
 jx console
-``` 
+```
 
 然后，定位到 `管理 Jenkins -> 系统配置`，并修改环境变量 `DOCKER_REGISTRY` 指向你选择的 Docker Registry。
 
 另一种方法是，把下面的内容添加到你的自定义 Jenkins X 平台 helm charts 的`values.yaml` 文件中：
 
-```yaml 
+```yaml
 jenkins:
   Servers:
     Global:
@@ -58,16 +58,16 @@ jenkins:
 
 然后需要更新凭据 `jenkins-docker-cfg` ，你可以执行以下操作:
 
-```
+```sh
 kubectl delete secret jenkins-docker-cfg
 kubectl create secret generic jenkins-docker-cfg --from-file=./config.json
-```   
+```
 
 ## 使用 Docker Hub
 
 如果你想要发布你的镜像到 Docker Hub 当中 ，则需要修改你的 `config.json` 像下面那样:
 
-```json 
+```json
 {
     "auths": {
         "https://index.docker.io/v1/": {
@@ -76,7 +76,7 @@ kubectl create secret generic jenkins-docker-cfg --from-file=./config.json
         }
     }
 }
-``` 
+```
 
 ### 为你的 registry 挂载凭证
 

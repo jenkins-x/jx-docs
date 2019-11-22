@@ -20,25 +20,25 @@ Jenkins X 可以在 Kubernetes 1.8 以及更高版本上安装。需要的依赖
 
 如果你是通过 [kops](https://github.com/kubernetes/kops) 创建的 kubernetes 集群，那么你可以这么做：
 
-```
-kops edit cluster 
+```sh
+kops edit cluster
 ```
 
 然后，确保在 YAML 文件的章节 `spec` 中有 `docker` 配置：
 
-```yaml 
+```yaml
 ...
 spec:
   docker:
     insecureRegistry: 100.64.0.0/10
     logDriver: ""
-``` 
+```
 
 上面的 IP 范围 `100.64.0.0/10` 是 AWS 上的，但你需要修改为其他 Kubernetes 集群的；它依赖于 Kubernetes 服务的 IP 范围。
- 
+
 保存后，你可以参考下面的命令进行验证：
 
-```
+```sh
 kops get cluster -oyaml
 ```
 
@@ -46,7 +46,7 @@ kops get cluster -oyaml
 
 现在，确保这些修改在你的集群类型上是激活的：
 
-```
+```sh
 kops update cluster --yes
 kops rolling-update cluster --yes
 ```
@@ -55,7 +55,7 @@ kops rolling-update cluster --yes
 
 ### 安装 Jenkins X
 
-为了在已有的 kubernetes 集群上安装 Jenkins X 你可以使用命令 [jx install](/commands/jx_install) ：
+为了在已有的 kubernetes 集群上安装 Jenkins X 你可以使用命令 [jx install](/commands/jx_install/) ：
 
     jx install
 

@@ -2,7 +2,7 @@
 title: "Managing Jenkins X Kubernetes Clusters Using Infrastructure as Code With Terraform"
 date: 2019-04-03T07:36:00+02:00
 description: >
-    Use Infrastructure as Code to provision Jenkins X clusters. 
+    Use Infrastructure as Code to provision Jenkins X clusters.
 categories: [blog]
 keywords: [terraform,IaC,provisioning,k8s]
 slug: "terraform-jenkins-x"
@@ -23,14 +23,14 @@ CAUTION: Do not make updates to the cluster that require recreating the cluster 
 {{% /alert %}}
 
 # Overview
-Many organizations have adopted DevOps practices in the last few years.  This is valuable as it relates to Jenkins X as we provide a way to manage the Kubernetes clusters  Infrastructure as Code which is one of the core concepts of DevOps practices as it relates to automation.  
+Many organizations have adopted DevOps practices in the last few years.  This is valuable as it relates to Jenkins X as we provide a way to manage the Kubernetes clusters  Infrastructure as Code which is one of the core concepts of DevOps practices as it relates to automation.
 
 Many environments may only allow for creating cloud resources using IaC, therefore we provide you with guidance on how to get started using Terraform to manage your Jekins X clusters.
 
 Our objective is to bring awareness to our Jenkins X users on know that they can manage the cluster changes and version them by placing the Terraform code source control and adopting the typical developer workflow which includes PRs in source control to make infrastructure changes in a controlled manner.
 
 ## Terraform clusters for AWS, GCP and Azure
-Jenkins X supports generating Terraform plans and code for all three leading clouds (AWS, Azure and GCP).  
+Jenkins X supports generating Terraform plans and code for all three leading clouds (AWS, Azure and GCP).
 
 On this post we walk you through the steps for terraforming clusters in GKE.
 
@@ -43,7 +43,7 @@ On this post we walk you through the steps for terraforming clusters in GKE.
 
 To get started, you must have the following items installed on your machine.
 
- - The `jx` CLI installed.  
+ - The `jx` CLI installed.
  - Terraform - can be installed using `brew install terraform`
 - GCP account with proper rights to create resources
 - The Google Cloud CLI `gcloud`
@@ -51,16 +51,16 @@ To get started, you must have the following items installed on your machine.
 
 # Step 1 - Create Terraform Plan
 
-Our first task is to generate the Terraform code for each cluster, we create a Dev, Staging and Production cluster. 
+Our first task is to generate the Terraform code for each cluster, we create a Dev, Staging and Production cluster.
 
-We execute the `jx create terraform -c dev=gke -c stage=gke -c prod=gke`.  
+We execute the `jx create terraform -c dev=gke -c stage=gke -c prod=gke`.
 
-The command generates three different clusters for each environment respectively in GCP.  Other providers supported are  aks, eks. 
+The command generates three different clusters for each environment respectively in GCP.  Other providers supported are  aks, eks.
 
 ## Folder Structure Output
 Running the previous command, outputs the following folder structure wherever we executed the command locally.
 
-```
+```txt
 ├── README.md
 ├── build.sh
 ├── ci-demo-206601-121d21dc79ac.json
@@ -93,7 +93,7 @@ Running the previous command, outputs the following folder structure wherever we
 
 7 directories, 22 files
 ```
-We now have a great code-base to create our clusters on GKE for three different environments. 
+We now have a great code-base to create our clusters on GKE for three different environments.
 
 {{% alert %}}
 NOTE: On this Post, we will only create the Dev Cluster, although the process is the same for creating the other Kubernetes clusters.
@@ -102,23 +102,23 @@ First we need to make sure we have credentials to execute our Terraform code.
 
 # Step 2 - Get GKE Credentials
 
-Jenkins X creates a Service Account (SA) for each cluster. 
+Jenkins X creates a Service Account (SA) for each cluster.
 
 For our dev cluster, it has created the jx-questerring-dev@ci-demo-206601.iam.gserviceaccount.com account.
 
 We need to download the `json` file in order to pass as credentials to our `terraform.tf` file which contains the definition to access the Terraform Backend.
 
 ## Downloading Credentials JSON File
-To download the SA account credentials, go to the GCP Console > IAM &  Admin > Service Accounts.  
+To download the SA account credentials, go to the GCP Console > IAM &  Admin > Service Accounts.
 
-We find the one for our cluster which is named in our case 
+We find the one for our cluster which is named in our case
 as follows: `jx-questerring-dev@ci-demo-206601.iam.gserviceaccount.com`
 
-We click on the file *name*  > *edit*, then click on *create key* in JSON format, download and save in our project folder structure. 
+We click on the file *name*  > *edit*, then click on *create key* in JSON format, download and save in our project folder structure.
 
 We now add a reference within the `terraform.tf` as shown below.
 
-```
+```tf
 terraform {
     required_version = ">= 0.11.0"
     backend "gcs" {
@@ -134,8 +134,8 @@ Notice that we added the `credentials` portion and point to the credentials `jso
 # Step 3 - Initiate Terraform Backend
 We are now ready to initiate Terraform backend.  Terraform backends are used to save the Terraform State remotely.  This is great for when a team needs to collaborate on making infrastructure changes, because the Terraform State is stored in the GCP Bucket that was also created when we executed our initial command to create the cluster.
 
-```
-$ terraform init                                                                                                               
+```tf
+$ terraform init
 Initializing the backend...
 
 Successfully configured the backend "gcs"! Terraform will automatically
@@ -155,8 +155,8 @@ We now can execute a `terraform plan` and see what will be created.  At this poi
 
 For example, you may have an existing network that you wish to deploy the cluster in.  You may also wish to enable the an add-on, or you can specify the cluster_ipv4_cidr_block and many other things (see https://www.terraform.io/docs/providers/google/r/container_cluster.html) for details.
 
-```
-$ terraform plan                                                                                 
+```sh
+$ terraform plan
 
 Refreshing Terraform state in-memory prior to plan...
 The refreshed state will be used to calculate this plan, but will not be
@@ -257,7 +257,7 @@ can't guarantee that exactly these actions will be performed if
 # Step 5 - Create Cluster Using Terraform Apply
 Now that we've seen what will be created and using the default terraform code generated, let us create said resources!
 
-```
+```sh
 $ terraform apply
 .....trimmed for brevity
 Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
@@ -273,18 +273,18 @@ The outcome shows some key information, like the *cluster_endpoint* and the *clu
 
 Let us access the cluster using kubectl.  In order to do that, we need to get credentials.  We execute the following command (which you can get from the UI on GCP right from the cluster connect window)
 
-```
-$ gcloud container clusters get-credentials questerring-dev --zone us-west1-a --project ci-demo-206601 
-                        
+```sh
+$ gcloud container clusters get-credentials questerring-dev --zone us-west1-a --project ci-demo-206601
+
 Fetching cluster endpoint and auth data.
 kubeconfig entry generated for questerring-dev.
 ```
-This has effectively modified our `kubeconfig` file and we now have a new context.  
+This has effectively modified our `kubeconfig` file and we now have a new context.
 
 Executing the following command, we see our new cluster (in bold)
 
-```
-$ jx context                                                                                                                      
+```sh
+$ jx context
 BigDaddyO
 arn:aws:eks:us-west-2:653931956080:cluster/jxcluster
 gke_ci-demo-206601_europe-west1-b_sirjenkinsgke
@@ -316,7 +316,7 @@ We are going to modify the cluster and add an add-on for the Dashboard which is 
 
 To do that we change the following within the cluster declaration in main.tf and add the following (in bold):
 
-```
+```tf
 resource "google_container_cluster" "jx-cluster" {
     name                     = "${var.cluster_name}"
     description              = "jx k8s cluster provisioned and managed via Terraform."
@@ -349,8 +349,8 @@ resource "google_container_cluster" "jx-cluster" {
 
 Then we run the terraform plan, output shows a change to the cluster as expected.
 
-```
-terraform plan                                                                                                             
+```sh
+$ terraform plan
 
 Refreshing Terraform state in-memory prior to plan...
 The refreshed state will be used to calculate this plan, but will not be
@@ -387,7 +387,7 @@ NOTE: This dashboard is deprecated, and we are only showing you in the context o
 {{ /alert }}
 
 ### Get Access token
-```
+```sh
 gcloud config config-helper --format=json | jq -r '.credential.access_token'
 ```
 
@@ -400,7 +400,7 @@ http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-da
 Paste the token and now you should be able to access the now deprecated dashboard via the browser.
 
 # Conclusion
-We walked through how to create your initial Terraform code and structure, created the Dev cluster and modified it by specifying an add-on to include in our cluster.  
+We walked through how to create your initial Terraform code and structure, created the Dev cluster and modified it by specifying an add-on to include in our cluster.
 
 Please keep in mind, that once *GitOps* feature in Jenkins X is available, we recommend you manage the platform in that manner.  Documentation, tutorials and presentations on that topic will be coming soon!
 
