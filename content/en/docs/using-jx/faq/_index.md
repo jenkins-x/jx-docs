@@ -45,7 +45,7 @@ To see a more complex example of how you can use a `values.yaml` file to inject 
 
 See the [above question on how to inject environment specific configuration into environments](#how-do-i-inject-environment-specific-configuration)
 
-Preview Environments are similar to eother environments like `Staging` and `Production` only instead of storing the environments in a separate git repository the preview environment is defined inside each applications `charts/preview` folder.
+Preview Environments are similar to other environments like `Staging` and `Production` only instead of storing the environments in a separate git repository the preview environment is defined inside each applications `charts/preview` folder.
 
 So to inject any custom configuration into your Preview environment you can modify the `charts/preview/values.yaml` file in your applications git repository to override any helm template parameters defined in your chart (in the `charts/myapp` folder).
 
