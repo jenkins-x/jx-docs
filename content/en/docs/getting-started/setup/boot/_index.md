@@ -11,6 +11,7 @@ weight: 10
 aliases:
   - /getting-started/boot
   - /docs/reference/boot
+  - /architecture/tls
 ---
 
 
