@@ -6,6 +6,8 @@ date: 2019-06-20
 publishdate: 2019-06-20
 keywords: [tekton]
 weight: 8
+aliases:
+  - /architecture/pipeline-syntax-reference
 ---
 
 # Syntax for `jenkins-x.yml` and build packs
