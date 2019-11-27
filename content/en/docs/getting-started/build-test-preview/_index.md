@@ -10,7 +10,7 @@ Jenkins X developer environments should be familiar to anyone who has
 developed in a Git environment, with added features that further
 automates development processes, builds, and promotion.
 
-# The traditional development environment
+## The traditional development environment
 
 
 A common workflow in a Git development involves:
@@ -33,14 +33,14 @@ A common workflow in a Git development involves:
 
 6. Merging - The PR code, if accepted, is merged into the master or main project repo.
 
-# Jenkins X and the developer process
+## Jenkins X and the developer process
 
 Development with Jenkins X is similar to the traditional Git development
 workflow, with the added benefits of continuous development via automation within a Git context, also known as *GitOps*.
 
 Jenkins X goes one step further by offering a *preview environment* that allows developer peers and QA testers to validate new features and fixes using an evaluation build of the functionality within the Git PR.
 
-## Generating a preview environment
+### Generating a preview environment
 
 In a typical Jenkins X development scenario, users make changes to an
 application that has been imported or created via one of the various
@@ -90,7 +90,7 @@ The preview environment is created whenever a change is made to the
 repository, allowing any relevant user to validate or evaluate features,
 bugfixes, or security hotfix.
 
-## Testing the preview environment
+### Testing the preview environment
 
 The development bot created during the installation process sends a notification email to the developer as well as the designated repository approver that a PR is ready for review. During the approval process, the approver can click on the preview application with the code changes for testing and validation.
 
