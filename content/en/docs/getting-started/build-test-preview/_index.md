@@ -59,7 +59,7 @@ development environment:
 1. A developer makes a branch to their local cloned source repository to create a new feature:
 
 ```sh
-git branch acme-feature1
+git checkout -b acme-feature1
 ```
 
 2.  The developer makes changes to the source code in their branch and adds the affected files to the commit queue:
