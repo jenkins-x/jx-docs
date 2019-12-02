@@ -22,8 +22,8 @@ jx upgrade [flags]
   # upgrade the command line tools
   jx upgrade cli
   
-  # upgrade the platform
-  jx upgrade platform
+  # upgrade jx boot config, this can be used to upgrade the whole Jenkins X platform
+  jx upgrade boot
   
   # upgrade extensions
   jx upgrade extensions
