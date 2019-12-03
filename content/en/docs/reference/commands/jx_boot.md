@@ -12,7 +12,7 @@ Boots up Jenkins X in a Kubernetes cluster using GitOps and a Jenkins X Pipeline
 
 Boots up Jenkins X in a Kubernetes cluster using GitOps and a Jenkins X Pipeline 
 
-For more documentation see: https://jenkins-x.io/getting-started/boot/
+For more documentation see: https://jenkins-x.io/docs/getting-started/setup/boot/
 
 ```
 jx boot [flags]
