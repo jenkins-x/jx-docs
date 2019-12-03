@@ -1,5 +1,5 @@
 ---
-date: 2019-12-03T06:10:16Z
+date: 2019-12-03T16:39:28Z
 title: "jx step expose"
 slug: jx_step_expose
 url: /commands/jx_step_expose/
