@@ -12,6 +12,8 @@ Pick the most suitable instructions for your operating system:
 
 ## macOS
 
+1. Download the `jx` binary
+
 On a Mac you can use [brew](https://brew.sh/):
 
 ```sh
@@ -19,9 +21,9 @@ brew tap jenkins-x/jx
 brew install jx
 ```
 
-To install Jenkins X on macOS without brew, download the `.tar` file, and unarchive it in a directory where you can run the `jx` command.
+Alternatively, to install Jenkins X on macOS without brew, download the `.tar` file, and unarchive it in a directory where you can run the `jx` command.
 
-1.  Download the `jx` binary archive using `curl` and pipe (`|`) the compressed archive to
+Download the `jx` binary archive using `curl` and pipe (`|`) the compressed archive to
     the `tar` command:
 
 ```sh
@@ -35,8 +37,7 @@ curl -L "https://github.com/jenkins-x/jx/releases/download/$(curl --silent "http
 ```
 
 
-2.  Install the `jx` binary by moving it to a location which should be on your environments PATH, using
-    the `mv` command:
+2.  Install the `jx` binary by moving it to a location in your executable path using using the `mv` command:
 
 ```sh
 sudo mv jx /usr/local/bin
@@ -65,8 +66,7 @@ curl -L "https://github.com/jenkins-x/jx/releases/download/$(curl --silent https
 curl -L "https://github.com/jenkins-x/jx/releases/download/$(curl --silent "https://github.com/jenkins-x/jx/releases/latest" | sed 's#.*tag/\(.*\)\".*#\1#')/jx-linux-amd64.tar.gz" | tar xzv "jx"
 ```
 
-2.  Install the `jx` binary by moving it to a location which should be on your environments PATH, using
-    the `mv` command:
+2.  Install the `jx` binary by moving it to a location in your executable path using using the `mv` command:
 
 ```sh
 sudo mv jx /usr/local/bin
