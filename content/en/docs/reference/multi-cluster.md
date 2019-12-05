@@ -8,9 +8,11 @@ lastmod: 2018-01-02
 categories: [getting started]
 keywords: [install,kubernetes]
 weight: 30
+aliases:
+  - /getting-started/multi-cluster
 ---
 
-A common requirement for a production setup is to isolate your Development, Staging and Production environments onto separate kubernetes clusters and to isolate the clusters from each other in separate cloud accounts or VPNs etc.
+A common requirement for a production setup is to isolate your Development, Staging and Production environments onto separate Kubernetes clusters and to isolate the clusters from each other in separate cloud accounts or VPNs etc.
 
 You can do this by installing the `Environment Controller` chart into your Staging or Production cluster.
 

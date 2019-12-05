@@ -3,6 +3,8 @@ title: Storage
 linktitle: Storage
 description: Let's save your pipeline files somewhere cloud native!
 weight: 180
+aliases:
+  - /architecture/storage/
 ---
 
 When we use a Static Jenkins Server with Jenkins X we inherit the usual Jenkins storage model; that build logs and test results and reports are stored on the Persistent Volume of the Jenkins server.
