@@ -27,7 +27,7 @@ To contribute to Jenkins X jx binary, you will need:
 
  - [Git](https://git-scm.com) and a [GitHub](https://github.com) account
  - [Go](https://golang.org/) `1.11.4`, with support for compiling to `linux/amd64`
- - [pre-commit](https://pre-commit.com/#install) - once installed, ensure you're at the root of the repository which contains a `.pre-commit-config.yaml` configuration file, then:
+ - [pre-commit](https://pre-commit.com/#install) - We use pre-commit as a method of executing specific tasks prior to a git commit. The majority of our pre-commit configurations use [detect-secrets](https://github.com/Yelp/detect-secrets), which helps us prevent leaking secrets into repositories. Once installed, ensure you're at the root of the repository which contains a `.pre-commit-config.yaml` configuration file, then:
 
 ```sh
 pre-commit install
