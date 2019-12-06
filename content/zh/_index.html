@@ -1,7 +1,6 @@
 +++
 title = "Jenkins X"
 linkTitle = "Jenkins X"
-
 +++
 
 <!-- Original CSS link for search styling -->
@@ -16,7 +15,7 @@ linkTitle = "Jenkins X"
   /* Show it is fixed to the top */
   body {
     min-height: 75rem;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
   }
 
   /* Home page Hero, contains logo and main tag line */
@@ -124,8 +123,32 @@ linkTitle = "Jenkins X"
         src="https://raw.githubusercontent.com/cdfoundation/artwork/master/jenkinsx/stacked/color/jenkinsx-stacked-color.png">
       <div class="tag-line">Accelerate Your Continuous<br/> Delivery on Kubernetes</div>
       <p>
-        <a href="/docs/getting-started/" class="btn btn-lg btn-primary my-4">Get started</a>
+        <a href="/docs/getting-started/" class="btn btn-lg bg-primary text-light my-4">Get started</a>
       </p>
+    </div>
+  </section>
+  <section class="py-5 text-light" style="background:url(https://jenkins.io/images/cdf/cdf-background-wide.jpg) no-repeat center;">
+    <div class="container">
+      <div class="row">
+        <div class="col col-lg-6 col-sm-12">
+          <p>
+            <b>Join us at DevOps World | Jenkins World</b>
+          </p>
+          <p>
+            DevOps World - Jenkins World is the largest gathering of Jenkins users in the world, including Jenkins experts,
+            continuous delivery practitioners, and companies offering complementary technologies to Jenkins. Join us in
+            Lisbon, Portugal (December 2-5 2019).
+            <br/>
+            <br/>
+            <a class="btn bg-warning" href="https://www.cloudbees.com/devops-world">Register Today</a>
+          </p>
+        </div>
+        <div class="col col-lg-6 col-sm-12">
+          <a href="https://www.cloudbees.com/devops-world">
+            <img class="img-fluid" height="auto" src="/images/community/events/2019-DWJW-JAM_banner-600x338.jpg">
+          </a>
+        </div>
+      </div>
     </div>
   </section>
   <section class="py-5 bg-light">
@@ -314,7 +337,7 @@ linkTitle = "Jenkins X"
       <div class="row">
         <div class="col text-center">
           <p class="mt-4">
-            <a href="/docs/overview/" class="btn btn-lg btn-secondary my-4">Learn More</a>
+            <a href="/docs/overview/" class="btn btn-lg bg-secondary text-light my-4">Learn More</a>
           </p>
         </div>
       </div>
@@ -338,12 +361,13 @@ linkTitle = "Jenkins X"
         <div class="col-sm-hidden col-lg-2"></div>
         <div class="col-sm-12 col-lg-4">
           <div class="w-100 w-50-ns tc">
-            <p class="f2 m0 p0 pt3">Mac OS</p>
-            <div class="code f6 bg-black light-gray lh-copy pv3 ph3 br2 w-100 w-50-ns center mb2 tl">
-              $ brew tap jenkins-x/jx <br>
-              $ brew install jx <br>
-            </div>
-            <p class="f2 m0 p0 pt3">Other OS</p>
+            <p class="h3 m0 p0 pt3">Mac OS</p>
+            <pre class="bg-dark text-light">
+              <code class="language-cmd">
+  $ brew tap jenkins-x/jx
+  $ brew install jx</code>
+            </pre>
+            <p class="h3 m0 p0 pt3">Other OS</p>
             <p class="f3 nested-links">
               See the <a href="/docs/getting-started/" class="link">Getting started guide </a> for
               more
@@ -385,7 +409,7 @@ linkTitle = "Jenkins X"
             </footer>
           </blockquote>
           <p class="mt-4 text-center">
-              <a href="/blog/" class="btn btn-lg btn-secondary my-4">Read articles about Jenkins X</a>
+              <a href="/blog/" class="btn btn-lg bg-secondary text-light my-4">Read articles about Jenkins X</a>
             </p>
         </div>
         <div class="w-100">
@@ -400,13 +424,48 @@ linkTitle = "Jenkins X"
   <section class="py-5 bg-light">
     <div class="container">
       <div class="row">
+        <div class="col">
+          <p class="features text-center">Sponsors</p>
+          <p></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="media">
+            <span>
+              <svg width="120" height="120" viewBox="0 0 211 227" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M31.2099 61.08C31.198 49.8619 37.6224 39.6317 47.7322 34.7699C57.842 29.908 69.8444 31.2768 78.5999 38.29L100.73 16.16C80.6929 -1.82851 51.1662 -4.37504 28.3452 9.91718C5.52413 24.2094 -5.07488 51.8856 2.3617 77.7654C9.79828 103.645 33.4729 121.473 60.3999 121.47H83.0699V90.27H60.3999C44.2879 90.248 31.232 77.1921 31.2099 61.08Z"
+                  fill="#335061" />
+                <path
+                  d="M150 105.57H127.31V136.77H150C166.114 136.781 179.17 149.847 179.17 165.96C179.17 182.073 166.113 195.139 150 195.15C133.887 195.161 120.812 182.113 120.79 166V61.08C120.799 46.1727 115.272 31.7933 105.28 20.73L83.1602 42.85C87.3253 48.0125 89.5948 54.4468 89.5902 61.08V166C89.6122 199.345 116.655 226.361 150 226.35C183.345 226.339 210.37 199.305 210.37 165.96C210.37 132.615 183.345 105.581 150 105.57Z"
+                  fill="#1997B5" />
+              </svg>
+            </span>
+            <div class="media-body pl-4">
+              <h2 class="mt-0"><a href="https://www.cloudbees.com/">CloudBees</a></h2>
+              <h3>CloudBees Jenkins X Distribution & Support</h3>
+              <p>CloudBees is offering <a href="https://www.cloudbees.com/products/cloudbees-jenkins-x-distribution/overview" target="_blank">a distribution of Jenkins X</a> with a predictable monthly release cadance, additional feature verification, and thorrough testing of supported capabilities.</p>
+              <p>Additionally, CloudBees offers <a href="https://www.cloudbees.com/products/cloudbees-jenkins-x-support/overview" target="_blank">paid support</a> for users of their distribution.</p>
+              <h3>CloudBees CI-CD powered by Jenkins X</h3>
+              <p>CloudBees is offering an automated and opinionated <a href="https://www.cloudbees.com/products/cloudbees-ci-cd/overview" target="_blank">CI/CD as a Service</a> solution for cloud-native applications based on Jenkins X. If you'd rather not manage Jenkins X yourself, this is the option for you.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <section class="py-5">
+    <div class="container">
+      <div class="row">
         <div class="col-lg-4 text-center">
           <span style="font-size: 64px; color: #37373C;">
             <i class="fab fa-slack"></i>
           </span>
           <h2>Join the conversation</h2>
           <p>Have a question? Learn more by talking with other contributors.</p>
-          <p><a class="btn btn-sm btn-primary my-2" href="/community/" role="button">Join</a></p>
+          <p><a class="btn btn-sm bg-primary text-light my-2" href="/community/" role="button">Join</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4 text-center">
           <span style="font-size: 64px; color: #37373C;">
@@ -414,7 +473,7 @@ linkTitle = "Jenkins X"
           </span>
           <h2>Contributors welcome</h2>
           <p>We value every contribution. Join us on GitHub to learn how you can help.</p>
-          <p><a class="btn btn-sm btn-primary my-2" href="docs/contributing/" role="button">Contribute</a></p>
+          <p><a class="btn btn-sm bg-primary text-light my-2" href="docs/contributing/" role="button">Contribute</a></p>
         </div><!-- /.col-lg-4 -->
 
         <div class="col-lg-4 text-center">
@@ -423,7 +482,7 @@ linkTitle = "Jenkins X"
           </span>
           <h2>Follow us on Twitter</h2>
           <p>Don't miss out! Follow us for feature announcements and other news.</p>
-          <p><a class="btn btn-sm btn-primary my-2" href="https://twitter.com/jenkinsxio" role="button">Follow</a></p>
+          <p><a class="btn btn-sm bg-primary text-light my-2" href="https://twitter.com/jenkinsxio" role="button">Follow</a></p>
         </div><!-- /.col-lg-4 -->
       </div>
     </div>
