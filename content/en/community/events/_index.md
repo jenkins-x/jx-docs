@@ -15,19 +15,13 @@ For details of the next Jenkins X talk or demo checkout our [talks at meetups an
 
 ### Other Current and Upcoming Events
 
-* [Jenkins X Hackathon in Lisbon on 2 December](/blog/2019/11/08/jenkins-x-hackathon-lisbon/)
-
-* [Jenkins X Contributor Summit in Lisbon on 3 December](/blog/2019/10/18/jenkins-x-contributor-summit-lisbon/)
-
-* [2019 DevOps World/Jenkins World EU - Lisbon, Portugal](/community/events/2019-12-dwjw/)
-
-* [Join us at the CI/CD Devroom at FOSDEM 2020 -- CFP now open!](/blog/2019/10/09/fosdem2020/)
+* [Join us at the CI/CD Devroom at FOSDEM 2020](/blog/2019/10/09/fosdem2020/)
 
 ### Office Hours
 
 We meet for office hours **every other Thursday** at 4pm UK / 11am US Eastern / 8am US Pacific.
 
-Next office hours: **28 November 2019**
+Next office hours: **12 December 2019**
 
 Join us: <https://zoom.us/j/397862697>
 

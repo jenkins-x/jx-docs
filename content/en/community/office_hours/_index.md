@@ -7,7 +7,7 @@ weight: 30
 
 Join us for office hours **every other Thursday** at 4pm UK / 11am US Eastern / 8am US Pacific.
 
-Next office hours: **28 November 2019**
+Next office hours: **12 December 2019**
 
 Join us: <https://zoom.us/j/397862697>
 
