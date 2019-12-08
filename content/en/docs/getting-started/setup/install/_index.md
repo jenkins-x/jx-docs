@@ -117,7 +117,7 @@ choco upgrade jenkins-x
   scoop update jx
   ```
 
-## Google Cloud Platform (GCP)
+<!-- ## Google Cloud Platform (GCP)
 
 {{% alert %}}
 It is highly recommended that you use Google Chrome browser with
@@ -152,11 +152,11 @@ sudo mv jx /usr/local/bin
 jx version
 ```
 
-Once you have the `jx` binary installed you can then [configure a Jenkins X cluster on Google Kubernetes Engine](/getting-started/create-cluster/).
+Once you have the `jx` binary installed you can then [configure a Jenkins X cluster on Google Kubernetes Engine](/getting-started/create-cluster/). -->
 
 ## Other platforms
 
-[download the binary](https://github.com/jenkins-x/jx/releases) for `jx` and add it to your `$PATH`
+[Download the binary](https://github.com/jenkins-x/jx/releases) for `jx` and add it to your `$PATH`
 
 Or you can try [build it yourself](https://github.com/jenkins-x/jx/blob/master/docs/contributing/hacking.md). Though if build it yourself please be careful to remove any older `jx` binary so your local build is found first on the `$PATH` :)
 
