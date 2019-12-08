@@ -1,6 +1,7 @@
 ---
 title: Google Cloud Hosted Tutorials
 linktitle: Google Cloud Tutorials
+draft: true
 description: Tutorials using Google Kubernetes Engine & Cloud Shell
 weight: 10
 ---
