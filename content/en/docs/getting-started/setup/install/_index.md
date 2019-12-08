@@ -14,16 +14,16 @@ Pick the most suitable instructions for your operating system:
 
 1. Download the `jx` binary
 
-On a Mac you can use [brew](https://brew.sh/):
+    On a Mac you can use [brew](https://brew.sh/):
 
 ```sh
 brew tap jenkins-x/jx
 brew install jx
 ```
 
-Alternatively, to install Jenkins X on macOS without brew, download the `.tar` file, and unarchive it in a directory where you can run the `jx` command.
+    Alternatively, to install Jenkins X on macOS without brew, download the `.tar` file, and unarchive it in a directory where you can run the `jx` command.
 
-Download the `jx` binary archive using `curl` and pipe (`|`) the compressed archive to
+    Download the `jx` binary archive using `curl` and pipe (`|`) the compressed archive to
     the `tar` command:
 
 ```sh
@@ -119,18 +119,18 @@ choco upgrade jenkins-x
 
 ## Google Cloud Platform (GCP)
 
+{{% alert %}}
+It is highly recommended that you use Google Chrome browser with
+GCP Cloud Shell, as you may experience issues using other
+browsers.
+{{% /alert %}}
+
 To run `jx` commands from the GCP Cloud Shell, install the Jenkins X
 binaries from the GitHub repository and install it via GCP shell
 commands:
 
 1.  Open the [GCP Cloud Shell](https://cloud.google.com/shell/docs/starting-cloud-shell),
     and choose your GCP project for Jenkins X.
-
-{{% alert %}}
-It is highly recommended that you use Google Chrome browser with
-GCP Cloud Shell, as you may experience issues using other
-browsers.
-{{% /alert %}}
 
 2.  In GCP Cloud Shell, download the `jx` binary archive using `curl` and pipe (`|`) the compressed archive to
     the `tar` command:
