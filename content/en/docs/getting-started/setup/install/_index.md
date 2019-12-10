@@ -43,10 +43,10 @@ curl -L "https://github.com/jenkins-x/jx/releases/download/$(curl --silent "http
 sudo mv jx /usr/local/bin
 ```
 
-3. Run `jx version` to make sure you're on the latest stable version
+3. Run `jx --version` to make sure you're on the latest stable version
 
 ```sh
-jx version
+jx --version
 ```
 
 ## Linux
@@ -72,10 +72,10 @@ curl -L "https://github.com/jenkins-x/jx/releases/download/$(curl --silent "http
 sudo mv jx /usr/local/bin
 ```
 
-3. Run `jx version` to make sure you're on the latest stable version
+3. Run `jx --version` to make sure you're on the latest stable version
 
 ```sh
-jx version
+jx --version
 ```
 
 ## Windows
@@ -146,10 +146,10 @@ curl -L "https://github.com/jenkins-x/jx/releases/download/$(curl --silent https
 sudo mv jx /usr/local/bin
 ```
 
-4. Run `jx version` to make sure you're on the latest stable version
+4. Run `jx --version` to make sure you're on the latest stable version
 
 ```sh
-jx version
+jx --version
 ```
 
 Once you have the `jx` binary installed you can then [configure a Jenkins X cluster on Google Kubernetes Engine](/getting-started/create-cluster/). -->
