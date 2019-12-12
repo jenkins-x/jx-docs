@@ -1,5 +1,5 @@
 ---
-date: 2019-12-12T07:05:29Z
+date: 2019-12-12T13:07:55Z
 title: "jx step cluster label"
 slug: jx_step_cluster_label
 url: /commands/jx_step_cluster_label/
