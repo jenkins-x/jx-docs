@@ -8,8 +8,11 @@ aliases:
   - /getting-started
 ---
 
-<!-- ### Try out Jenkins X quickly
+### Try out Jenkins X quickly
 
+If you're looking to take Jenkins X for a spin (or not interested in running it yourself) the quickest way to get up and running, is using the [CloudBees CI-CD powered by Jenkins X](https://www.cloudbees.com/products/cloudbees-ci-cd/overview) which is a SaaS running on Jenkins X.
+
+<!--
 The simplest way to get started is via the [Google Cloud Tutorials](/docs/managing-jx/tutorials/google-hosted/). -->
 
 ### Get setup locally
