@@ -4968,6 +4968,28 @@ string
 <p>ServiceAccount the cloud service account used to run velero</p>
 </td>
 </tr>
+<tr>
+<td>
+<code>schedule</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Schedule of backups</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>ttl</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>TimeToLive period for backups to be retained</p>
+</td>
+</tr>
 </tbody>
 </table>
 <h3 id="config.jenkins.io/v1.VersionStreamConfig">VersionStreamConfig
@@ -5071,5 +5093,5 @@ string
 <hr/>
 <p><em>
 Generated with <code>gen-crd-api-reference-docs</code>
-on git commit <code>f77ca8324</code>.
+on git commit <code>8a0927e45</code>.
 </em></p>
