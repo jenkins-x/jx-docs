@@ -360,7 +360,13 @@
         "namespace": {
           "type": "string"
         },
+        "schedule": {
+          "type": "string"
+        },
         "serviceAccount": {
+          "type": "string"
+        },
+        "ttl": {
           "type": "string"
         }
       },
