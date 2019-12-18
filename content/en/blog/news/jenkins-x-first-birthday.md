@@ -28,7 +28,7 @@ To help developers get their code out to the world quickly Jenkins X offers prev
 
 ### Preview Environments
 
-These are the Jenkins X killer feature. Preview environments enable developers to preview pull requests before changes merge to master. This takes away the pain of having to look at code to work out how good a PR is. Preview environments allow for fast and early feedback as developers can review actual functionality in an automatically provisioned environment. Typically the creation of preview environments is automated inside the Pipelines created by Jenkins X. Read more about [preview environments](https://jenkins-x.io/developing/preview/#readout). 
+These are the Jenkins X killer feature. Preview environments enable developers to preview pull requests before changes merge to master. This takes away the pain of having to look at code to work out how good a PR is. Preview environments allow for fast and early feedback as developers can review actual functionality in an automatically provisioned environment. Typically the creation of preview environments is automated inside the Pipelines created by Jenkins X. Read more about [preview environments](https://jenkins-x.io/docs/concepts/features/#preview-environments). 
 
 ### Developer Experience (DevEx)
 
