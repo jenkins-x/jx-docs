@@ -13,6 +13,8 @@ aliases:
 
 {{% pageinfo %}}
 Note that currently Vault only works on Google Cloud Platform (GCP) with Google Kubernetes Engine (GKE). We're working on expanding support to other cloud providers.
+
+In addition, we don't currently support pointing to an existing Vault instance, but there is an open issue to address this.
 {{% /pageinfo %}}
 
 # What is Vault?
