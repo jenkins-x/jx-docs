@@ -29,7 +29,7 @@ When you have a Kubernetes cluster with Jenkins X installed, check out [your nex
 
 ## Other options
 
-In case you're looking for something else then straight up Jenkins X, there are a few options:
+In case you're looking for something else than straight up Jenkins X, there are a few options:
 
 * [CloudBees Jenkins X Distribution](https://www.cloudbees.com/products/cloudbees-jenkins-x-distribution/overview) - monthly releases, battle tested and verified by CloudBees. Optional [commercial support](https://www.cloudbees.com/products/cloudbees-jenkins-x-support/overview) is available as well for extra piece of mind
 * [CloudBees CI-CD powered by Jenkins X](https://www.cloudbees.com/products/cloudbees-ci-cd/overview) - CI/CD as a service so you don't need to worry about setting up and manage Jenkins X
