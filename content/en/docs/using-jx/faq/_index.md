@@ -239,11 +239,13 @@ See how to [add a custom step to your pipeline](/docs/concepts/jenkins-x-pipelin
 
 ### Staging/Production
 
-By default, [enabling Vault](/docs/getting-started/setup/boot/#vault) via `jx boot`'s `jx-requirements.yaml` will only activate it in your pipeline and preview environments, not in staging and production. To also activate it in those environments, simply add a `jx-requirements.yaml` file to the root of their repo, with at least the following content:
+By default, [enabling Vault](/docs/getting-started/setup/boot/#vault) via `jx boot`'s `jx-requirements.yml` will only activate it in your pipeline and preview environments, not in staging and production. To also activate it in those environments, simply add a `jx-requirements.yml` file to the root of their repo, with at least the following content:
 
 ```yaml
 secretStorage: vault
 ```
+
+Note that the file **must** be named with `.yml`, not `.yaml`, or else the requirements loader cannot load the proper file.
 
 Then, assuming you have a secret in Vault with path `secret/path/to/mysecret` containing key `password`, you can inject it into service `myapp` (for instance, as a `PASSWORD` environment variable) by adding the following to your staging repo's `/env/values.yaml`:
 
