@@ -44,8 +44,8 @@ jx boot [flags]
   -h, --help                   help for boot
   -r, --requirements string    requirements file which will overwrite the default requirements file
   -s, --start-step string      the step in the pipeline to start from
-      --versions-ref string    the bootstrap ref for the versions repo. Once the boot config is cloned, the repo will be then read from the jx-requirements.yaml (default "master")
-      --versions-repo string   the bootstrap URL for the versions repo. Once the boot config is cloned, the repo will be then read from the jx-requirements.yaml (default "https://github.com/jenkins-x/jenkins-x-versions.git")
+      --versions-ref string    the bootstrap ref for the versions repo. Once the boot config is cloned, the repo will be then read from the jx-requirements.yml (default "master")
+      --versions-repo string   the bootstrap URL for the versions repo. Once the boot config is cloned, the repo will be then read from the jx-requirements.yml (default "https://github.com/jenkins-x/jenkins-x-versions.git")
 ```
 
 ### Options inherited from parent commands

@@ -9531,7 +9531,7 @@ string
 </em>
 </td>
 <td>
-<p>BootRequirements is a marshaled string of the jx-requirements.yaml used in the most recent run for this cluster</p>
+<p>BootRequirements is a marshaled string of the jx-requirements.yml used in the most recent run for this cluster</p>
 </td>
 </tr>
 </tbody>

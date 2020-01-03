@@ -236,7 +236,7 @@ Vea cómo [agregar un paso personalizado a su pipeline](/docs/concepts/jenkins-x
 
 ### Staging/Production
 
-De forma predeterminada, [habilitar Vault](/docs/getting-started/setup/boot/#vault) a través de los `jx-requirements.yaml` de `jx boot` solo lo activará en sus entornos de pipeline y vista previa, no en staging y producción. Para activarlo también en esos entornos, simplemente agregue un archivo `jx-requirements.yaml` a la raíz de su repositorio, con al menos el siguiente contenido:
+De forma predeterminada, [habilitar Vault](/docs/getting-started/setup/boot/#vault) a través de los `jx-requirements.yml` de `jx boot` solo lo activará en sus entornos de pipeline y vista previa, no en staging y producción. Para activarlo también en esos entornos, simplemente agregue un archivo `jx-requirements.yml` a la raíz de su repositorio, con al menos el siguiente contenido:
 
 ```yaml
 secretStorage: vault
