@@ -9531,7 +9531,7 @@ string
 </em>
 </td>
 <td>
-<p>BootRequirements is a marshaled string of the jx-requirements.yaml used in the most recent run for this cluster</p>
+<p>BootRequirements is a marshaled string of the jx-requirements.yml used in the most recent run for this cluster</p>
 </td>
 </tr>
 </tbody>
@@ -10097,5 +10097,5 @@ PromoteWorkflowStep
 <hr/>
 <p><em>
 Generated with <code>gen-crd-api-reference-docs</code>
-on git commit <code>6752921e4</code>.
+on git commit <code>4959286f9</code>.
 </em></p>
