@@ -90,7 +90,7 @@ Ahora se enfrentará a una gran página de opciones de configuración ;) Las pla
 
 Puede editar/agregar/eliminar plantillas de pod en esa página y presionar Guardar.
 
-Sin embargo, tenga en cuenta que a largo plazo esperamos [mantener su entorno de desarrollo a través de GitOps, como lo hacemos para Staging y Production](https://github.com/jenkins-x/jx/issues/604), lo que significa que los cambios realizados a través de la interfaz de usuario de Jenkins se perderán al [actualizar su entorno de desarrollo](/commands/jx_upgrade_platform/).
+Sin embargo, tenga en cuenta que a largo plazo esperamos [mantener su entorno de desarrollo a través de GitOps, como lo hacemos para Staging y Production](https://github.com/jenkins-x/jx/issues/604), lo que significa que los cambios realizados a través de la interfaz de usuario de Jenkins se perderán al [actualizar su entorno de desarrollo](/commands/deprecation/).
 
 A largo plazo, esperamos agregar las plantillas de pod en su archivo `values.yaml` en el repositorio git de su entorno de desarrollador como lo hacemos para el [chart jenkins-x-platform](https://github.com/jenkins-x/jenkins-x-platform/blob/master/values.yaml#L194-L431).
 

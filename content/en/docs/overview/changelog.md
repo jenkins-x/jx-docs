@@ -30,7 +30,7 @@ type: docs
 
 # Status Reports
 
-This section describes any specific manual work arounds you may require above and beyond changes described in the [News section](/blog/news/) or using [jx upgrade](/commands/jx_upgrade/) to upgrade the [CLI](/commands/jx_upgrade_cli/) or [platform](/commands/jx_upgrade_platform/).
+This section describes any specific manual work arounds you may require above and beyond changes described in the [News section](/blog/news/) or using [jx upgrade](/commands/jx_upgrade/) to upgrade the [CLI](/commands/jx_upgrade_cli/) or [platform](/commands/deprecation/).
 
 
 ## 25th June 2019: missing image: bitnami/monocular-api

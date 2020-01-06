@@ -65,7 +65,7 @@ Al importar proyectos en Jenkins X, usamos patrones de rama Git para determinar 
 
 Por lo general, eso puede ser predeterminado a algo como `master|PR-.*|feature.*`. Eso significa que la rama `master`, cualquier rama que comience con `PR-` o `feature` se escaneará para buscar el fichero `Jenkinsfile` para configurar los pipelines CI/CD.
 
-Si usa otro nombre de rama que no sea `master`, como `develop` o lo que sea, puede cambiar este patrón para que sea lo que quiera a través del parámetro `--branches` siempre que ejecute [jx import](/commands/jx_import/), [jx create spring](/commands/jx_create_spring/) o [jx create quickstart](/commands/jx_create_quickstart/).
+Si usa otro nombre de rama que no sea `master`, como `develop` o lo que sea, puede cambiar este patrón para que sea lo que quiera a través del parámetro `--branches` siempre que ejecute [jx import](/commands/jx_import/) o [jx create quickstart](/commands/jx_create_quickstart/).
 
 ```sh
 jx import --branches "develop|PR-.*|feature.*"
@@ -79,14 +79,14 @@ jx import --branches ".*"
 
 ## Configurar los patrones de ramas de tu equipos
 
-Por lo general, un equipo usa las mismas convenciones de nomenclatura para las ramas, por lo que es posible que desee configurar los patrones de las ramas a nivel de equipo para que se usen de forma predeterminada si alguien en su equipo ejecuta [jx import](/commands/jx_import/), [jx create spring](/commands/jx_create_spring/) o [jx create quickstart](/commands/jx_create_quickstart/).
+Por lo general, un equipo usa las mismas convenciones de nomenclatura para las ramas, por lo que es posible que desee configurar los patrones de las ramas a nivel de equipo para que se usen de forma predeterminada si alguien en su equipo ejecuta [jx import](/commands/jx_import/) o [jx create quickstart](/commands/jx_create_quickstart/).
 
 Estas configuraciones se almacenan en el recurso [Environment Custom Resource](/docs/reference/components/custom-resources/) en Kubernetes.
 
-Para establecer los patrones de ramas para su equipo, utilice el comando [jx edit branchpattern](/commands/jx_edit_branchpattern/).
+Para establecer los patrones de ramas para su equipo, utilice el comando [jx create branchpattern](/commands/jx_create_branchpattern/).
 
 ```sh
-jx edit branchpattern  "develop|PR-.*|feature.*"
+jx create branchpattern  "develop|PR-.*|feature.*"
 ```
 
 Luego puede ver los patrones de rama actuales para su equipo a través del comando [jx get branchpattern](/commands/jx_get_branchpattern/):

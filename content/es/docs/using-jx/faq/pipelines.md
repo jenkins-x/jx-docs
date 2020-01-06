@@ -79,7 +79,7 @@ Cada paso del pipeline de Jenkins X en el fichero `jenkins-x.yml` es básicament
 
 Puede ver un ejemplo de [cómo montar un Secret en una variable de entorno aquí](/docs/reference/pipeline-syntax-reference/#full-pipeline-definition-in-jenkins-x-yml).
 
-Si está dentro de un script de shell, también puede usar el comando [jx step credential](/commands/jx_step_credential/).
+Si está dentro de un script de shell, también puede usar el comando [jx step credential](/commands/deprecation/).
 
 ## ¿Puedo montar un volumen persistente en mi pipeline?
 

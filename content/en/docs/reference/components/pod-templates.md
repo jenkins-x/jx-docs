@@ -92,7 +92,7 @@ You will now be faced with a large page of configuration options ;) The pod temp
 
 You can edit/add/remove pod templates in that page and hit Save.
 
-Note though that longer term we are hoping to [maintain your development environment via GitOps like we do for Staging & Production](https://github.com/jenkins-x/jx/issues/604) - which means changes made via the Jenkins UI will be lost when [upgrading your development environment](/commands/jx_upgrade_platform/).
+Note though that longer term we are hoping to [maintain your development environment via GitOps like we do for Staging & Production](https://github.com/jenkins-x/jx/issues/604) - which means changes made via the Jenkins UI will be lost when [upgrading your development environment](/commands/deprecation/).
 
 So longer term we're hoping to add the Pod Templates into your `values.yaml` file in your developer environment git repository like we do for the [jenkins-x-platform chart](https://github.com/jenkins-x/jenkins-x-platform/blob/master/values.yaml#L194-L431).
 

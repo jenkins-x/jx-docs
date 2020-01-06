@@ -17,7 +17,7 @@ If you are using Google's GKE then you can browse the [GKE Console](https://cons
 
 For other clusters we are planning on writing some [CLI commands to export and import the kube config](https://github.com/jenkins-x/jx/issues/1406).
 
-Also [CloudBees](https://www.cloudbees.com/) are working on a distribution of Jenkins X which will include single sign on together with an awesome web UI to visualise teams, pipelines, logs, environments, applications, versions and infrastructure. The CloudBees UI provides an easy way for anyone in your team to login to Jenkins X from the command line with the `Connect` button on the `Teams` page which uses [jx login](/commands/jx_login/)
+Also [CloudBees](https://www.cloudbees.com/) are working on a distribution of Jenkins X which will include single sign on together with an awesome web UI to visualise teams, pipelines, logs, environments, applications, versions and infrastructure. The CloudBees UI provides an easy way for anyone in your team to login to Jenkins X from the command line with the `Connect` button on the `Teams` page which uses [jx login](/commands/deprecation/)
 
 ### Once the user has access to the kubernetes cluster
 
@@ -129,7 +129,7 @@ Image:       jenkinsxio/jenkins-go:256.0.50
 
 By default when you [install Jenkins X into an existing kubernetes cluster](/docs/getting-started/install-on-cluster/) it prompts you if you want to install an Ingress controller. Jenkins X needs an Ingress controller of some kind so that we can setup `Ingress` resources for each `Service` so we can access web applications via URLs outside of the kubneretes cluster (e.g. inside web browsers).
 
-The [jx install](/commands/jx_install/) command takes a number of CLI arguments starting with `--ingress` where you can point to the namespace, deployment name and service name of the ingress controller you wish to use for the installation.
+The [jx install](/commands/deprecation/) command takes a number of CLI arguments starting with `--ingress` where you can point to the namespace, deployment name and service name of the ingress controller you wish to use for the installation.
 
 We do recommend you use the default ingress controller if you can - as we know it works really well and only uses a single LoadBalancer IP for the whole cluster (your cloud provider often charges per IP address). However if you want to point at a different ingress controller just specify those arguments on install:
 
@@ -142,7 +142,7 @@ jx install \
 
 ## How do I enable HTTPS URLs?
 
-In general use the [jx upgrade ingress](/commands/jx_upgrade_ingress/) command.
+In general use the [jx upgrade ingress](/commands/deprecation/) command.
 
 For more detail see these blogs posts:
 

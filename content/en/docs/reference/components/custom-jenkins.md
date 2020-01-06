@@ -48,7 +48,7 @@ So to find the password you will need to find it by hand I'm afraid.
 kubectl get secret jx-jx-app-jenkins -o yaml | ksd
 ```
 
-Then you will see your user/pwd on the screen if you want to login to the Jenkins UI via [jx console](/commands/jx_console/)
+Then you will see your user/pwd on the screen if you want to login to the Jenkins UI via [jx console](/commands/deprecation/)
 
 
 ## Using the custom Jenkins

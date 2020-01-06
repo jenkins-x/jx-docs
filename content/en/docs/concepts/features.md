@@ -39,7 +39,7 @@ This means both developers and operations can use the same git repository to man
 
 A Team in Jenkins X is represented by an install of Jenkins X in a separate namespace.
 
-You can install Jenkins X into different namespaces in the same cluster if you wish using the `--namespace` command line argument in [jx create cluster](/commands/jx_create_cluster/) or [jx install](/commands/jx_install/). Note that to support multiple installs of Jenkins X in the same cluster you need to [avoid Tiller if you are using helm 2.x](/news/helm-without-tiller/).
+You can install Jenkins X into different namespaces in the same cluster if you wish using the `--namespace` command line argument in [jx create cluster](/commands/jx_create_cluster/) or [jx install](/commands/deprecation/). Note that to support multiple installs of Jenkins X in the same cluster you need to [avoid Tiller if you are using helm 2.x](/news/helm-without-tiller/).
 
 You can also use the [jx create team](/commands/jx_create_team/) CLI which creates a new `Team` [Custom Resource](/docs/reference/components/custom-resources/) then in the background the team controller will create a new Jenkins X install in the teams namespaces, by default reusing the same underlying nexus and docker registry.
 
