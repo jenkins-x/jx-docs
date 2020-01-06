@@ -105,7 +105,7 @@ Esto es un [problema pendiente](https://github.com/jenkins-x/jx/issues/1234) que
 Básciamente sucede cuando tienes un token viejo de API en `~/.jx/jenkinsAuth.yaml` para la URL del servidor Jenkins. Tú también puedes:
 
 * eliminarlo del fichero manualmente
-* ejecutar el siguiente comando [jx delete jenkins token](/commands/jx_delete_jenkins_user/):
+* ejecutar el siguiente comando [jx delete jenkins token](/commands/deprecation/):
 
         $ jx delete jenkins token admin
 

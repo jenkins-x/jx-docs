@@ -36,12 +36,12 @@ Upon the successful completion of all BDD tests executed on the PR it will merge
 
 ## Creating Pull Requests
 
-We have a simple CLI command [jx step create version pr](/commands/jx_step_create_version/) which can be used to automatically generate Pull Requests on the [jenkins-x/jenkins-x-versions](https://github.com/jenkins-x/jenkins-x-versions) git repository.
+We have a simple CLI command [jx step create pullrequest versions](/commands/jx_step_create_pullrequest_versions/) which can be used to automatically generate Pull Requests on the [jenkins-x/jenkins-x-versions](https://github.com/jenkins-x/jenkins-x-versions) git repository.
 
 If you are the maintainer of an upstream chart that is used by Jenkins X it would be awesome to add this command at the end of your release pipeline to generate a Pull Request for us to upgrade Jenkins X to use your new release (after the BDD tests have run to verify things still work):
 
 ```sh
-jx step create version pr -n mychartName -v 1.2.3
+jx step create pullrequest versions -n mychartName -v 1.2.3
 ```
 
 where `mychartName` is the fully qualified chart name using the remote repository prefix. e.g. `jenkins-x/prow` is the name of the `prow` chart maintained in the `jenkins-x` chart repository.

@@ -84,7 +84,7 @@ La fuente de estos proyectos de Inicio Rápido se mantiene en [la organización 
 
 Al igual que con los inicios rápidos convencionales de Jenkins-X, utilizamos [los paquetes de compilación Jenkins X](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) para que utilizar el paquete adecuado para el proyecto utilizando el lenguaje de código fuente y los tipos frameworks de aprendizaje automático para elegir la combinación más adecuada.
 
-Cuando utilice [jx create](/es/docs/getting-started/setup/create-cluster/), [jx install](/docs/managing-jx/common-tasks/install-on-cluster/) o [jx init](/commands/jx_init/), [los paquetes de compilación de Jenkins X](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) serán clonados en su carpeta local `~/.jx/draft/packs`.
+Cuando utilice [jx create](/es/docs/getting-started/setup/create-cluster/), [jx install](/docs/managing-jx/common-tasks/install-on-cluster/) o [jx init](/commands/deprecation/), [los paquetes de compilación de Jenkins X](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) serán clonados en su carpeta local `~/.jx/draft/packs`.
 
 Entonces, cuando creas un proyecto de inicio rápido de aprendizaje automático, [los paquetes de compilación de Jenkins X](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) son utilizado para:
 
@@ -154,7 +154,7 @@ También puede especificar otros patrones como `--includes` o `--excludes` para 
 
 También tenga en cuenta que puede usar el alias de `qsloc` en lugar de `quickstartlocation` si desea alias más cortos;)
 
-Luego puede ver las ubicaciones actuales de inicio rápido para su equipo a través del comando [jx get quickstartlocations](/commands/jx_get_quickstartlocations/):
+Luego puede ver las ubicaciones actuales de inicio rápido para su equipo a través del comando [jx get quickstartlocations](/commands/jx_get_quickstartlocation/):
 
 ```sh
 jx get quickstartlocations

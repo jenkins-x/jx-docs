@@ -28,7 +28,7 @@ Our assumption with the Environment Controller is that we need something that:
 
 ## Creating your Dev cluster
 
-If you are creating a new installation then when you use [jx create cluster](/commands/jx_create_cluster/) or [jx install](/commands/jx_install/) then please specify `--remote-environments` to indicate that `Staging/Production` environments will be remote from the development cluster.
+If you are creating a new installation then when you use [jx create cluster](/commands/jx_create_cluster/) or [jx install](/commands/deprecation/) then please specify `--remote-environments` to indicate that `Staging/Production` environments will be remote from the development cluster.
 
 e.g.
 

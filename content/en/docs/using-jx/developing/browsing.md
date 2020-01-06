@@ -18,7 +18,7 @@ The Jenkins X command line tool, [jx](/commands/jx/), has a similar look and fee
 
 ### View Jenkins Console
 
-If you are familiar with the Jenkins console then you can use [jx console](/commands/jx_console/):
+If you are familiar with the Jenkins console then you can use [jx console](/commands/deprecation/):
 
 ```sh
 jx console

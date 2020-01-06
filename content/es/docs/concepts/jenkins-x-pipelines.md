@@ -60,7 +60,7 @@ Sin embargo, hay veces que desea [personalizar un pipeline](/docs/reference/comp
 
 Puede leer más sobre el [modelo de extensión](/docs/reference/components/build-packs//#pipeline-extension-model) para descubrir todo lo que puede hacer. Básicamente, puede agregar pasos antes/después de cualquier ciclo de vida o reemplazar completamente un conjunto de ciclos de vida o incluso optar por salir del paquete de compilación por completo e alinear sus pipelines dentro de su `jenkins-x.yml`.
 
-Para una forma rápida de agregar un nuevo paso en el ciclo de vida de su pipeline, utilice el comando [jx create step](/commands/jx_create_step/):
+Para una forma rápida de agregar un nuevo paso en el ciclo de vida de su pipeline, utilice el comando [jx create step](/commands/deprecation/):
 
 <figure>
 <img src="/images/architecture/create-step.gif" />

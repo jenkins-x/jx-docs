@@ -251,7 +251,7 @@ Under the covers this will download and use the [eksctl](https://eksctl.io/) too
 
 ### Kops
 
-Use the [jx create cluster aws](/commands/jx_create_cluster_aws/) command:
+Use the [jx create cluster aws](/commands/deprecation/) command:
 
 ```sh
 jx create cluster aws
@@ -285,7 +285,7 @@ Now **[develop apps faster with Jenkins X](/docs/getting-started/next/)**.
 
 ## Using Oracle (OKE)
 
-Use the [jx create cluster oke](/commands/jx_create_cluster_oke/) command:
+Use the [jx create cluster oke](/commands/deprecation/) command:
 
 ```sh
 jx create cluster oke
@@ -361,7 +361,7 @@ If you want to try out Jenkins X on a local OpenShift cluster then you can try u
 
 **minishift does not produce a public-facing IP so webhooks will not be able to reach the cluster. As a result, only polling for changes works and it might take a long while for pipelines to fire.**
 
-To create a minishift VM with Jenkins X installed on it try the [jx create cluster minishift](/commands/jx_create_cluster_minishift/) command:
+To create a minishift VM with Jenkins X installed on it try the [jx create cluster minishift](/commands/deprecation/) command:
 
 ```sh
 jx create cluster minishift

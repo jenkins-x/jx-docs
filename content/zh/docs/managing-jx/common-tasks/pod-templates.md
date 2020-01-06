@@ -89,7 +89,7 @@ jx console
 
 你可以在那个页面编辑、增加、移除 pod 模板并点击保存。
 
-注意，长期来说，尽管我们希望[通过 GitOps 维护你的开发环境，就像是我们做的 Staging 和 Production](https://github.com/jenkins-x/jx/issues/604) —— 也就意味着当你[升级你的开发环境](/commands/jx_upgrade_platform/)通过 Jenkins 界面做的修改可能会丢失。
+注意，长期来说，尽管我们希望[通过 GitOps 维护你的开发环境，就像是我们做的 Staging 和 Production](https://github.com/jenkins-x/jx/issues/604) —— 也就意味着当你[升级你的开发环境](/commands/deprecation/)通过 Jenkins 界面做的修改可能会丢失。
 
 因此，我们希望把 Pod 模板添加到你的开发环境 git 库的 `values.yaml` 文件中，就像我们在 [jenkins-x-platform chart](https://github.com/jenkins-x/jenkins-x-platform/blob/master/values.yaml#L194-L431) 做的一样。
 
