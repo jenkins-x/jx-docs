@@ -509,11 +509,11 @@ autoUpdate:
   schedule: "0 0 23 1/1 * ? *"
 ```
 
-Cuando las actualizaciones automáticas están habilitadas un `CronJob` es ejecutado periódicamente para revisar cambios en el [flujo de versiones](/es/docs/concepts/version-stream/) o en la [configuración del boot](https://github.com/jenkins-x/jenkins-x-boot-config). Si se detectan cambios el comando [jx step boot upgrade](/commands/jx_step_boot_upgrade/) va a crear un Pull Request en el repositorio git de desarrollo. Una vez mezclado los cambios la configuración del boot se ha actualizado y por ende Tekton iniciará el pipeline para actualizar la instalación.
+Cuando las actualizaciones automáticas están habilitadas un `CronJob` es ejecutado periódicamente para revisar cambios en el [flujo de versiones](/es/docs/concepts/version-stream/) o en la [configuración del boot](https://github.com/jenkins-x/jenkins-x-boot-config). Si se detectan cambios el comando [jx upgrade boot](/commands/jx_upgrade_boot/) va a crear un Pull Request en el repositorio git de desarrollo. Una vez mezclado los cambios la configuración del boot se ha actualizado y por ende Tekton iniciará el pipeline para actualizar la instalación.
 
 ### Actualizaciones Manuales
 
-Puedes ejecutar manualmente el comando [jx step boot upgrade](/commands/jx_step_boot_upgrade/) siempre que lo desees. Si al ejecutarlo existen cambio en el [flujo de versiones](/es/docs/concepts/version-stream/) o en la [configuración del boot](https://github.com/jenkins-x/jenkins-x-boot-config) se creará un Pull Request en el repositorio git de desarrollo.
+Puedes ejecutar manualmente el comando [jx upgrade boot](/commands/jx_upgrade_boot/) siempre que lo desees. Si al ejecutarlo existen cambio en el [flujo de versiones](/es/docs/concepts/version-stream/) o en la [configuración del boot](https://github.com/jenkins-x/jenkins-x-boot-config) se creará un Pull Request en el repositorio git de desarrollo.
 
 Una vez mezclado los cambios la configuración del boot se ha actualizado y por ende Tekton iniciará el pipeline para actualizar la instalación.
 

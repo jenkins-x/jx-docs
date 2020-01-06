@@ -65,7 +65,7 @@ However there are times you want to customize a [particular pipeline](/docs/refe
 
 You can read more about the [extension model](/docs/reference/components/build-packs//#pipeline-extension-model) to find out all you can do. Basically you can add steps before/after any life cycle or completely replace a set of life cycles or even opt out of the build pack completely and inline your pipelines inside your `jenkins-x.yml`
 
-For a quick way to add a new step into a pipeline life cycle you can use the [jx create step](/commands/jx_create_step/) command:
+For a quick way to add a new step into a pipeline life cycle you can use the [jx create step](/commands/deprecation/) command:
 
 <figure>
 <img src="/images/architecture/create-step.gif" />

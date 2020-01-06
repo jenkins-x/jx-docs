@@ -15,7 +15,7 @@ Jenkins X 的命令行工具，[jx](/commands/jx/)，和 [kubectl](https://kuber
 
 ### 查看 Jenkins 控制台
 
-如果你熟悉 Jenkins 控制台，那么你可以使用 [jx console](/commands/jx_console/) ：
+如果你熟悉 Jenkins 控制台，那么你可以使用 [jx console](/commands/deprecation/) ：
 
 ```sh
 jx console

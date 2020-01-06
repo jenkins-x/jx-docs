@@ -36,12 +36,12 @@ Al completar con éxito todas las pruebas BDD ejecutadas en el PR, mezclará el 
 
 ## Creando Pull Requests (PR)
 
-Tenemos un simple comando CLI [jx step create version pr](/commands/jx_step_create_version/) que se puede utilizar para generar automáticamente solicitudes de extracción (PR) en el repositorio git [jenkins-x/jenkins-x-versions](https://github.com/jenkins-x/jenkins-x-versions).
+Tenemos un simple comando CLI [jx step create pullrequest versions](/commands/jx_step_create_pullrequest_versions/) que se puede utilizar para generar automáticamente solicitudes de extracción (PR) en el repositorio git [jenkins-x/jenkins-x-versions](https://github.com/jenkins-x/jenkins-x-versions).
 
 Si eres el responsable de un chart de entrada que utiliza Jenkins X, sería increíble agregar este comando al final de su pipeline de liberación para generar un PR y que de esa forma podamos actualizar Jenkins X para utilizar su nueva versión (después que las pruebas BDD hayan pasado correctamente):
 
 ```sh
-jx step create version pr -n mychartName -v 1.2.3
+jx step create pullrequest versions -n mychartName -v 1.2.3
 ```
 
 donde mychartName es el nombre de gráfico completo que utiliza el prefijo de repositorio remoto. p.ej. jenkins-x / prow es el nombre del gráfico de proa mantenido en el repositorio de gráficos jenkins-x.

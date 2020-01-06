@@ -66,7 +66,7 @@ When importing projects into Jenkins X we use git branch patterns to determine w
 
 Typically that may default to something like `master|PR-.*|feature.*`. That means that the `master` branch, any branch starting with `PR-` or `feature` will be scanned to look for a `Jenkinsfile` to setup the CI/CD pipelines.
 
-If you use another branch name than `master` such as `develop` or whatever you can change this pattern to be whatever you you like via the `--branches` argument whenever you run [jx import](/commands/jx_import/), [jx create spring](/commands/jx_create_spring/) or [jx create quickstart](/commands/jx_create_quickstart/).
+If you use another branch name than `master` such as `develop` or whatever you can change this pattern to be whatever you you like via the `--branches` argument whenever you run [jx import](/commands/jx_import/) or [jx create quickstart](/commands/jx_create_quickstart/).
 
 
 ```sh
@@ -81,14 +81,14 @@ jx import --branches ".*"
 
 ## Configuring your teams branch patterns
 
-Usually a team uses the same naming conventions for branches so you may wish to configure the branch patterns at a team level so that they will be used by default if anyone in your team runs [jx import](/commands/jx_import/), [jx create spring](/commands/jx_create_spring/) or [jx create quickstart](/commands/jx_create_quickstart/).
+Usually a team uses the same naming conventions for branches so you may wish to configure the branch patterns at a team level so that they will be used by default if anyone in your team runs [jx import](/commands/jx_import/) or [jx create quickstart](/commands/jx_create_quickstart/).
 
 These settings are stored in the [Environment Custom Resource](/docs/reference/components/custom-resources/) in Kubernetes.
 
-To set the branch patterns for your team  [jx edit branchpattern](/commands/jx_edit_branchpattern/) command.
+To set the branch patterns for your team  [jx create branchpattern](/commands/jx_create_branchpattern/) command.
 
 ```sh
-jx edit branchpattern  "develop|PR-.*|feature.*"
+jx create branchpattern  "develop|PR-.*|feature.*"
 ```
 You can then view the current branch patterns for your team via the [jx get branchpattern](/commands/jx_get_branchpattern/) command:
 

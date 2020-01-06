@@ -15,7 +15,7 @@ Si está utilizando el GKE de Google, puede navegar por la [Consola GKE](https:/
 
 Para otros clústeres, estamos planeando escribir algunos [comandos CLI para exportar e importar la configuración de kube](https://github.com/jenkins-x/jx/issues/1406).
 
-Además, [CloudBees](https://www.cloudbees.com/) está trabajando en una distribución de Jenkins X que incluirá un inicio de sesión único junto con una increíble interfaz de usuario web para visualizar equipos, pipelines, registros, entornos, aplicaciones, versiones e infraestructura. La interfaz de usuario de CloudBees proporciona una manera fácil para que cualquier persona de su equipo inicie sesión en Jenkins X desde la línea de comandos con el botón `Connect` en la página `Teams` que utiliza [jx login](/commands/jx_login/).
+Además, [CloudBees](https://www.cloudbees.com/) está trabajando en una distribución de Jenkins X que incluirá un inicio de sesión único junto con una increíble interfaz de usuario web para visualizar equipos, pipelines, registros, entornos, aplicaciones, versiones e infraestructura. La interfaz de usuario de CloudBees proporciona una manera fácil para que cualquier persona de su equipo inicie sesión en Jenkins X desde la línea de comandos con el botón `Connect` en la página `Teams` que utiliza [jx login](/commands/deprecation/).
 
 ### Una vez que el usuario tiene acceso al clúster de Kubernetes
 
@@ -128,7 +128,7 @@ Image:       jenkinsxio/jenkins-go:256.0.50
 
 De manera predeterminada, [cuando instala Jenkins X en un clúster de Kubernetes existente](/docs/managing-jx/common-tasks/install-on-cluster/), le pregunta si desea instalar un controlador Ingress. Jenkins X necesita un controlador Ingress de algún tipo para que podamos configurar los recursos `Ingress` para cada `Service` para que podamos acceder a las aplicaciones web a través de URL fuera del clúster de Kubernetes (por ejemplo, dentro de los navegadores web).
 
-El comando [jx install](/commands/jx_install/) toma una serie de parámetros CLI que comienzan con `--ingress` donde puede apuntar el namespace, el deployment y el service del controlador de entrada que desea usar para la instalación.
+El comando [jx install](/commands/deprecation/) toma una serie de parámetros CLI que comienzan con `--ingress` donde puede apuntar el namespace, el deployment y el service del controlador de entrada que desea usar para la instalación.
 
 Si puede, le recomendamos que use el controlador de entrada predeterminado, ya que sabemos que funciona muy bien y solo usa una sola IP de LoadBalancer para todo el clúster (su proveedor de la nube a menudo cobra por dirección IP). Sin embargo, si desea apuntar a un controlador de entrada diferente, simplemente especifique esos argumentos en la instalación:
 
@@ -141,7 +141,7 @@ $ jx install \
 
 ## ¿Cómo habilito las URL HTTPS?
 
-En general utilizamos el comando [jx upgrade ingress](/commands/jx_upgrade_ingress/).
+En general utilizamos el comando [jx upgrade ingress](/commands/deprecation/).
 
 Para más detalles vea los siguiente documentos:
 

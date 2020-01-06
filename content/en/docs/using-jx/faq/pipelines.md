@@ -80,7 +80,7 @@ Each step in a Jenkins X Pipeline in the `jenkins-x.yml` file is basically a [Co
 
 You can see [an example of mounting a Secrett to an environment variable here](/docs/reference/pipeline-syntax-reference/#full-pipeline-definition-in-jenkins-x-yml)
 
-If you are inside a shell script you can also use the [jx step credential](/commands/jx_step_credential/)
+If you are inside a shell script you can also use the [jx step credential](/commands/deprecation/)
 
 ## Can I mount a Persistent Volume in my pipeline?
 

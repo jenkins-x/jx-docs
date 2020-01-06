@@ -109,7 +109,7 @@ This is a [pending issue](https://github.com/jenkins-x/jx/issues/1234) which we 
 It basically happens if you have an old API token in `~/.jx/jenkinsAuth.yaml` for your jenkins server URL. You can either:
 
 * remove it from that file by hand
-* run the following command [jx delete jenkins token](/commands/jx_delete_jenkins_user/):
+* run the following command [jx delete jenkins token](/commands/deprecation/):
 
     jx delete jenkins token admin
 

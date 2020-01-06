@@ -9,7 +9,7 @@ description: 如何创建Spring Boot应用并导入Jenkins X
 
 你可以利用[Spring Boot Initializr](http://start.spring.io/)创建Spring Boot应用，然后通过执行命令 [jx import](/commands/jx_import/) 来[导入Jenkins X](/developing/import/)。
 
-然而，另外一个快速自动化的方式，是通过执行 [jx create spring](/commands/jx_create_spring/) 命令实现：
+然而，另外一个快速自动化的方式，是通过执行 [jx create spring](/commands/deprecation/) 命令实现：
 
 ```sh
 jx create spring -d web -d actuator
@@ -19,7 +19,7 @@ jx create spring -d web -d actuator
 
 我们强烈建议你总是包括依赖 **actuator** 到你的 Spring Boot 应用中，它可以为 [Liveness and Readiness probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/) 提供健康检查。
 
-命令 [jx create spring](/commands/jx_create_spring/) 的步骤如下：
+命令 [jx create spring](/commands/deprecation/) 的步骤如下：
 
 * 在子目录中创建一个新的 Spring Boot 应用
 * 把你的源码加入到git库中

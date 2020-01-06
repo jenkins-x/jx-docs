@@ -38,7 +38,7 @@ Esto significa que tanto los desarrolladores como administradores pueden utiliza
 
 Un equipo en Jenkins X está representado por una instalación de Jenkins X en un namespace separado.
 
-Puede instalar Jenkins X en diferentes namespaces en el mismo clúster si lo desea utilizando el argumento `--namespace` en la línea de comando [jx create cluster](/commands/jx_create_cluster/) o [jx install](/commands/jx_install/). Tenga en cuenta que para admitir múltiples instalaciones de Jenkins X en el mismo clúster, debe [evitar Tiller si está utilizando helm 2.x](/news/helm-without-tiller/).
+Puede instalar Jenkins X en diferentes namespaces en el mismo clúster si lo desea utilizando el argumento `--namespace` en la línea de comando [jx create cluster](/commands/jx_create_cluster/) o [jx install](/commands/deprecation/). Tenga en cuenta que para admitir múltiples instalaciones de Jenkins X en el mismo clúster, debe [evitar Tiller si está utilizando helm 2.x](/news/helm-without-tiller/).
 
 También puede utilizar la CLI [jx create team](/commands/jx_create_team/) para crear un nuevo `Team` [Custom Resource](/docs/reference/components/custom-resources/). Al utilizar este comando el controlador de equipos creará, en segundo plano, una nueva instalación de Jenkins X en los namespaces del equipo, reutilizando de forma predeterminada el mismo nexus y registro de docker.
 

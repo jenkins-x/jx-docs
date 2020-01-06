@@ -18,7 +18,7 @@ It describes how you can use it via the `--prow` feature flag when using either 
 
     jx create cluster gke --prow
     
-or [jx install](/commands/jx_install/)
+or [jx install](/commands/deprecation/)
 
     jx install --prow 
     

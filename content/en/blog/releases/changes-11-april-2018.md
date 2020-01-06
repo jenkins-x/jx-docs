@@ -26,7 +26,7 @@ We announced [Jenkins X](https://jenkins.io/blog/2018/03/19/introducing-jenkins-
 Also we've made it a little bit easier to keep your `jx` binary up to date _continuously_. Just type
 
 * [jx version](/commands/jx_version/) to get prompted if there is a new version available and if prompted, it will upgrade itself
-* [jx upgrade cli](/commands/jx_upgrade_cli/) will upgrade the `jx` binary if its available or [jx upgrade platform](/commands/jx_upgrade_platform/) for the platform 
+* [jx upgrade cli](/commands/jx_upgrade_cli/) will upgrade the `jx` binary if its available or [jx upgrade platform](/commands/deprecation/) for the platform 
 
 
 Some metrics might help give you an idea for our progress as a community. 

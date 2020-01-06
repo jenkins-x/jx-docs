@@ -32,7 +32,7 @@ Sin embargo, estamos integrando [Lighthouse](https://github.com/jenkins-x/lighth
 
 Cuando instales Jenkins X, creará repositorios de Git para `Staging` y `Production` usando GitHub.
 
-Si desea utilizar un proveedor de Git diferente para sus entornos, cuando instale Jenkins X agregue el parámetro `--no-default-environments` en el comando [jx create cluster](/commands/jx_create_cluster/) o [jx install](/commands/jx_install/).
+Si desea utilizar un proveedor de Git diferente para sus entornos, cuando instale Jenkins X agregue el parámetro `--no-default-environments` en el comando [jx create cluster](/commands/jx_create_cluster/) o [jx install](/commands/deprecation/).
 
 p.ej. para [crear un nuevo clúster](/es/docs/getting-started/setup/create-cluster/).
 
