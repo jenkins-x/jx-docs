@@ -13,8 +13,7 @@ Elija las instrucciones más adecuadas para su sistema operativo:
 En una Mac puedes utilizar [brew](https://brew.sh/):
 
 ```sh
-brew tap jenkins-x/jx
-brew install jx
+brew install jenkins-x/jx/jx
 ```
 
 Para instalar Jenkins X en macOS sin utilizar brew debes descargar el fichero `.tar` y descomprimirlo en el directorio donde puedas ejecutar el comando `jx`.
