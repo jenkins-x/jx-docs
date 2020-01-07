@@ -1,5 +1,5 @@
 ---
-date: 2020-01-07T01:11:34Z
+date: 2020-01-07T19:41:02Z
 title: "jx get build pods"
 slug: jx_get_build_pods
 url: /commands/jx_get_build_pods/
@@ -10,7 +10,7 @@ Displays the build pods and their details
 
 ### Synopsis
 
-Display the knative build pods
+Display the Tekton build pods
 
 ```
 jx get build pods [flags]
@@ -19,19 +19,19 @@ jx get build pods [flags]
 ### Examples
 
 ```
-  # List all the knative build pods
+  # List all the Tekton build pods
   jx get build pods
   
-  # List all the pending knative build pods
+  # List all the pending Tekton build pods
   jx get build pods -p
   
-  # List all the knative build pods for a given repository
+  # List all the Tekton build pods for a given repository
   jx get build pods --repo cheese
   
-  # List all the pending knative build pods for a given repository
+  # List all the pending Tekton build pods for a given repository
   jx get build pods --repo cheese -p
   
-  # List all the knative build pods for a given Pull Request
+  # List all the Tekton build pods for a given Pull Request
   jx get build pods --repo cheese --branch PR-1234
 ```
 

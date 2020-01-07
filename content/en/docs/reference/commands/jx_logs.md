@@ -1,5 +1,5 @@
 ---
-date: 2020-01-07T01:11:34Z
+date: 2020-01-07T19:41:02Z
 title: "jx logs"
 slug: jx_logs
 url: /commands/jx_logs/
@@ -24,9 +24,6 @@ jx logs [deployment] [flags]
   
   # Tails the log of the container foo in the latest pod in deployment myapp
   jx logs myapp -c foo
-  
-  # Tails the log of the latest Knative build pod
-  jx logs -k
 ```
 
 ### Options
@@ -37,7 +34,6 @@ jx logs [deployment] [flags]
   -e, --env string         the Environment to look for the Deployment. Defaults to the current environment
   -f, --filter string      Filters the available deployments if no deployment argument is provided
   -h, --help               help for logs
-  -k, --knative-build      View the logs of the latest Knative build pod
   -l, --label string       The label to filter the pods if no deployment argument is provided
   -n, --namespace string   the namespace to look for the Deployment. Defaults to the current namespace
 ```

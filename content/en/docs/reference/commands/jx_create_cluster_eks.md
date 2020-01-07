@@ -1,5 +1,5 @@
 ---
-date: 2020-01-07T01:11:34Z
+date: 2020-01-07T19:41:02Z
 title: "jx create cluster eks"
 slug: jx_create_cluster_eks
 url: /commands/jx_create_cluster_eks/
@@ -73,7 +73,6 @@ jx create cluster eks [flags]
       --install-only                          Force the install command to fail if there is already an installation. Otherwise lets update the installation
       --kaniko                                Use Kaniko for building docker images
       --keep-exposecontroller-job             Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
-      --knative-build                         Note this option is deprecated now in favour of tekton. If specified this will keep using the old knative build with Prow instead of the strategic tekton
       --local-cloud-environment               Ignores default cloud-environment-repo and uses current directory 
       --local-helm-repo-name string           The name of the helm repository for the installed ChartMuseum (default "releases")
       --long-term-storage                     Enable the Long Term Storage option to save logs and other assets into a GCS bucket (supported only for GKE)

@@ -1,5 +1,5 @@
 ---
-date: 2020-01-07T01:11:34Z
+date: 2020-01-07T19:41:02Z
 title: "jx step syntax schema"
 slug: jx_step_syntax_schema
 url: /commands/jx_step_syntax_schema/
