@@ -17,8 +17,7 @@ weight: 2
 在 Mac 上你可以使用 [brew](https://brew.sh/)：
 
 ```sh
-brew tap jenkins-x/jx
-brew install jx
+brew install jenkins-x/jx/jx
 ```
 
 或者，如果您尚未安装 [brew](https://brew.sh/) ，并且喜欢手动安装的话，请执行如下指令安装:
