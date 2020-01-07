@@ -1,5 +1,5 @@
 ---
-date: 2020-01-07T01:11:34Z
+date: 2020-01-07T19:41:02Z
 title: "jx step syntax effective"
 slug: jx_step_syntax_effective
 url: /commands/jx_step_syntax_effective/
@@ -47,6 +47,7 @@ jx step syntax effective [flags]
       --source string                The name of the source repository (default "source")
   -u, --url string                   The URL for the build pack Git repository
       --use-kaniko                   Enables using kaniko directly for building docker images (default true)
+      --validate-in-cluster          Validate that resources referenced in the effective pipeline, such as volumes, exist in the current context cluster
 ```
 
 ### Options inherited from parent commands

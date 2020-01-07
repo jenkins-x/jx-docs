@@ -1,5 +1,5 @@
 ---
-date: 2020-01-07T01:11:34Z
+date: 2020-01-07T19:41:02Z
 title: "jx create cluster gke"
 slug: jx_create_cluster_gke
 url: /commands/jx_create_cluster_gke/
@@ -77,7 +77,6 @@ jx create cluster gke [flags]
       --install-only                          Force the install command to fail if there is already an installation. Otherwise lets update the installation
       --kaniko                                Use Kaniko for building docker images
       --keep-exposecontroller-job             Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
-      --knative-build                         Note this option is deprecated now in favour of tekton. If specified this will keep using the old knative build with Prow instead of the strategic tekton
   -v, --kubernetes-version string             The Kubernetes version to use for the master and nodes. Defaults to server-specified
       --labels string                         The labels to add to the cluster being created such as 'foo=bar,whatnot=123'. Label names must begin with a lowercase character ([a-z]), end with a lowercase alphanumeric ([a-z0-9]) with dashes (-), and lowercase alphanumeric ([a-z0-9]) between.
       --local-cloud-environment               Ignores default cloud-environment-repo and uses current directory 
@@ -107,6 +106,7 @@ jx create cluster gke [flags]
       --remote-environments                   Indicates you intend Staging and Production environments to run in remote clusters. See https://jenkins-x.io/getting-started/multi-cluster/
       --remote-tiller                         If enabled and we are using tiller for helm then run tiller remotely in the kubernetes cluster. Otherwise we run the tiller process locally. (default true)
       --scope stringArray                     The OAuth scopes to be added to the cluster
+      --service-account string                The service account used to run the cluster
       --skip-auth-secrets-merge               Skips merging the secrets from local files with the secrets from Kubernetes cluster
       --skip-cluster-role                     Don't enable cluster admin role for user
       --skip-ingress                          Skips the installation of ingress controller. Note that a ingress controller must already be installed into the cluster in order for the installation to succeed

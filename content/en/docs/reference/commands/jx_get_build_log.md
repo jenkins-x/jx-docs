@@ -1,5 +1,5 @@
 ---
-date: 2020-01-07T01:11:34Z
+date: 2020-01-07T19:41:02Z
 title: "jx get build log"
 slug: jx_get_build_log
 url: /commands/jx_get_build_log/
@@ -25,13 +25,13 @@ jx get build log [flags]
   # Pick a build to view the log based on the repo cheese
   jx get build log --repo cheese
   
-  # Pick a pending knative build to view the log based
+  # Pick a pending Tekton build to view the log based
   jx get build log -p
   
-  # Pick a pending knative build to view the log based on the repo cheese
+  # Pick a pending Tekton build to view the log based on the repo cheese
   jx get build log --repo cheese -p
   
-  # Pick a knative build for the 1234 Pull Request on the repo cheese
+  # Pick a Tekton build for the 1234 Pull Request on the repo cheese
   jx get build log --repo cheese --branch PR-1234
   
   # View the build logs for a specific tekton build pod

@@ -1,5 +1,5 @@
 ---
-date: 2020-01-07T01:11:34Z
+date: 2020-01-07T19:41:02Z
 title: "jx create cluster iks"
 slug: jx_create_cluster_iks
 url: /commands/jx_create_cluster_iks/
@@ -74,7 +74,6 @@ jx create cluster iks [flags]
       --isolation string                      The level of hardware isolation for your worker node. Use 'private' to have available physical resources dedicated to you only, or 'public' to allow physical resources to be shared with other IBM customers. For IBM Cloud Public accounts, the default value is public. (default "public")
       --kaniko                                Use Kaniko for building docker images
       --keep-exposecontroller-job             Prevents Helm deleting the exposecontroller Job and Pod after running.  Useful for debugging exposecontroller logs but you will need to manually delete the job if you update an environment
-      --knative-build                         Note this option is deprecated now in favour of tekton. If specified this will keep using the old knative build with Prow instead of the strategic tekton
   -k, --kube-version string                   Specify the Kubernetes version, including at least the major.minor version. If you do not include this flag, the default version is used. To see available versions, run ‘ibmcloud ks kube-versions’.
       --local-cloud-environment               Ignores default cloud-environment-repo and uses current directory 
       --local-helm-repo-name string           The name of the helm repository for the installed ChartMuseum (default "releases")
