@@ -76,6 +76,16 @@ The installer needs a user + API token for the git repository which it will prom
 
 If you prefer you can install the helm chart `jenkins-x/environment-controller` directly with helm by specifying the [required values from the values.yaml file](https://github.com/jenkins-x-charts/environment-controller/blob/master/environment-controller/values.yaml#L3-L19)
 
+**Fetch issues during installation**
+
+You might run into the issue, that you cannot deploy the envirnment controller, since helm is unable to download the chart file. This might be due to the fact, that older helm versions have issues with a missing trailing slash on the repo url. See [helm/issues/4954](https://github.com/helm/helm/issues/4954)
+
+```
+helm fetch -d /tmp/helm-template-workdir-742964675/jxet/chartFiles --untar environment-controller --repo https://storage.googleapis.com/chartmuseum.jenkins-x.io --version
+Error: Failed to fetch https://storage.googleapis.com/charts/environment-controller-0.0.617.tgz : 403 Forbidden
+```
+
+In that case, upgrading your helm version might help.
 
 ## Installing Ingress Controller
 
