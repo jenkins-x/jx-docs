@@ -84,3 +84,43 @@ If you are in some Go source code and you have a URL from Jenkins X, such as a B
 
 
 If you want to easily be able to read from the URL from Go source code you can use the [`ReadURL` function](https://github.com/jenkins-x/jx/blob/e5a7943dc0c3d79c27f30aea73235f18b3f5dcff/pkg/cloud/buckets/buckets.go#L44-L45).
+
+## GKE Storage Permissions
+In GKE your node-pool requires additional permissions to be able to write into GCS buckets,
+more specifically the `devstorage.full_control` permission.
+
+If you already have a cluster, you can see these permissions in your [cluster overview](https://console.cloud.google.com/kubernetes),
+under the dropdown `Permissions`.
+
+The description of the field `Storage` should be `Full`,
+by default it is `Read Only`.
+
+There are two ways to change your permissions,
+either you create a new cluster with the appropriate permissions
+or you just migrate the node-pool, if you already have a running cluster.
+
+### Create a new GKE Cluster with Full-Control
+
+To create a new cluster with the right permissions,
+you need to use the `--scopes` flag with the `storage-full` argument, as seen here:
+
+```
+gcloud container clusters create <name> --machine-type <type> --zone <zone> --scopes=storage-full
+```
+
+### Migrate to a node-pool with Full-Control
+
+Migrating to a new node-pool is quite simple, it's done in 2 steps!
+
+First create a new node-pool with the required permissions:
+
+```
+gcloud container node-pools create <node-pool-name> --cluster <cluster-name> --machine-type <type> --scopes=storage-full
+```
+
+Now delete the old node-pool, all your `Pods` will
+be rescheduled on the new node-pool through Kubernetes magic!
+
+```
+gcloud container node-pools delete <node-pool-name>
+```
