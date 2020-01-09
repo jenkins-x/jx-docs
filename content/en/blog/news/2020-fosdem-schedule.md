@@ -30,7 +30,7 @@ The [CI/CD devroom](https://fosdem.org/2020/schedule/track/continuous_integratio
 
 The [schedule for the CI/CD devroom](https://fosdem.org/2020/schedule/track/continuous_integration_and_continuous_deployment/) is up and is packed with 12 interesting talks. Many of the talks specificially address issues around CI/CD on Kubernetes and a number of the talks are on Jenkins X.
 
-Thank you to the volunteer organisers of the CI/CD devroom, including [Olivier Vernin](https://twitter.com/0lblak), who have picked awesome talks during what must have been a difficult selection process. 
+Thank you to the volunteer organisers of the CI/CD devroom, including [Olivier Vernin](https://twitter.com/0lblak) [Jan Willies](https://mobile.twitter.com/loswillios) and [Fabrizio Manfredi](https://mobile.twitter.com/thoulen), who have picked awesome talks during what must have been a difficult selection process. 
 
 ## Fringe and Jenkins X workshop
 
