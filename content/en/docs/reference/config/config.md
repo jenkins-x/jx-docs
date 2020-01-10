@@ -1151,6 +1151,17 @@ string
 <p>HelmMajorVersion contains the major helm version number. Assumes helm 2.x with no tiller if no value specified</p>
 </td>
 </tr>
+<tr>
+<td>
+<code>devEnvApprovers</code></br>
+<em>
+[]string
+</em>
+</td>
+<td>
+<p>DevEnvApprovers contains an optional list of approvers to populate the initial OWNERS file in the dev env repo</p>
+</td>
+</tr>
 </tbody>
 </table>
 <h3 id="config.jenkins.io/v1.CreateJenkinsfileArguments">CreateJenkinsfileArguments
@@ -5093,5 +5104,5 @@ string
 <hr/>
 <p><em>
 Generated with <code>gen-crd-api-reference-docs</code>
-on git commit <code>9433d1c29</code>.
+on git commit <code>ddb3bc95e</code>.
 </em></p>
