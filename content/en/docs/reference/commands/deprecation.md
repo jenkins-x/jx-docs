@@ -1,5 +1,5 @@
 ---
-date: 2020-01-07T19:41:02Z
+date: 2020-01-10T03:03:54Z
 title: "deprecated commands"
 slug: deprecation
 url: /commands/deprecation/
@@ -34,7 +34,6 @@ url: /commands/deprecation/
 | jx delete eks | Feb 1 2020 | eksctl delete cluster |
 | jx delete extension | Feb 1 2020 |  |
 | jx delete post | Feb 1 2020 |  |
-| jx edit deploy | Feb 1 2020 |  |
 | jx edit extensionsrepository | Feb 1 2020 |  |
 | jx get aws | Feb 1 2020 |  |
 | jx get clusters | Feb 1 2020 | gcloud container clusters list |

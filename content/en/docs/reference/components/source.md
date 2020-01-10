@@ -31,6 +31,7 @@ Here we'll call out of some of the main repositories in the above organisations:
 * [jenkins-x/bdd-jx](https://github.com/jenkins-x/bdd-jx) the BDD tests we use to verify the platform changes and verify PRs on [jenkins-x/jx](https://github.com/jenkins-x/jx)
 * [jenkins-x/jenkins-x-platform](https://github.com/jenkins-x/jenkins-x-platform) the main composite helm chart for the Jenkins X platform
 * [jenkins-x/jenkins-x-versions](https://github.com/jenkins-x/jenkins-x-versions) contains the [version stream](/docs/concepts/version-stream/) - the stable versions of all _charts_ and CLI _packages_
+* [jenkins-x/jenkins-x-boot-config](https://github.com/jenkins-x/jenkins-x-boot-config) the default boot configuration for a `jx boot` based install
  
 ### Build pods and images
 
