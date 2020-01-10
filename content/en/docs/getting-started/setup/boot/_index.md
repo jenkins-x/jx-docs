@@ -433,6 +433,10 @@ storage:
     url: gs://my-repo
 ```
 
+{{% pageinfo %}}
+**NOTE** On GKE your node-pool requires additional permissions to write into GCS buckets,
+for more information on this view the [GKE Storage Permissions](https://jenkins-x.io/docs/managing-jx/common-tasks/storage/#gke-storage-permissions)
+{{% /pageinfo %}}
 For more details see the [Storage Guide](https://jenkins-x.io/architecture/storage/).
 
 ## Ingress
