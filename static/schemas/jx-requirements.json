@@ -35,6 +35,12 @@
         "clusterName": {
           "type": "string"
         },
+        "devEnvApprovers": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
         "environmentGitOwner": {
           "type": "string"
         },
