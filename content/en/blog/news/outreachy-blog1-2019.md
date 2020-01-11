@@ -1,6 +1,6 @@
 ---
 title: "Outreachy - Motivation to apply! "
-date: 2019-01-10
+date: 2020-01-10
 draft: false
 description: >
   Let's contribute to open-source - Get, set, GO!
