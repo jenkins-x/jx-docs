@@ -14,6 +14,8 @@ author: Neha Gupta
 <img src="/images/community/events/outreachy.png"/>
 </figure>
 
+Neha Gupta is adding support for Kustomize in Jenkins X, to enable Kubernetes native configuration management, while participating in Outreachy from December 2019 to March 2020.
+
 ### Motivation to apply to Outreachy :
 In my graduation class of fifty people we were three girls struggling to set up our space and comfort with the weird reactions we got from fellow students for trying to understand technology.
 When my professor asked us to make an autonomous drone. I couldn’t make one, I was shattered, until a friend from computer science batch helped me make one. He showed me some of the cool apps he made, that sparked an interest, and I started building apps, realising that computer science is beyond just coding, it’s more about solving real life problems.
