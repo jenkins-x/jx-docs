@@ -21,7 +21,7 @@ For details of the next Jenkins X talk or demo checkout our [talks at meetups an
 
 We meet for office hours **every other Thursday** at 4pm UK / 11am US Eastern / 8am US Pacific.
 
-Next office hours: **9 January 2020**
+Next office hours: **23 January 2020**
 
 Join us: <https://zoom.us/j/397862697>
 
