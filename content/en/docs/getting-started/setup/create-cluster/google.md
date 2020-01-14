@@ -18,9 +18,12 @@ First make sure you have created/selected a Project:
 <img src="/images/quickstart/gke-select-project.png" class="img-thumbnail">
 
 
-Now you can click the `create cluster` button on the [kubernetets clusters](https://console.cloud.google.com/kubernetes/list) page or try [create cluster](https://console.cloud.google.com/kubernetes/add).
+Now you can click the `create cluster` button on the [kubernetes clusters](https://console.cloud.google.com/kubernetes/list) page or try [create cluster](https://console.cloud.google.com/kubernetes/add).
 
 
+## Using the JX command line
+
+If you have the JX command line setup locally, you can run `jx create cluster gke --skip-installation` to create a GKE cluster from there with defaults. 
 
 ## Using gcloud
 
