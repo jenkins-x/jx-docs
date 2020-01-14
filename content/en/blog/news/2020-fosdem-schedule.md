@@ -28,7 +28,7 @@ The vast majority of talks and events at FOSDEM are held in 'developer rooms' or
 
 The [CI/CD devroom](https://fosdem.org/2020/schedule/track/continuous_integration_and_continuous_deployment/) will take place on **2nd of February 2020 in Brussels, Belgium**. The CI/CD devroom will focus on OSS projects that help "improve the quality of our software by automating tests, deliveries or deployments". 
 
-The [schedule for the CI/CD devroom](https://fosdem.org/2020/schedule/track/continuous_integration_and_continuous_deployment/) is up and is packed with 12 interesting talks. Many of the talks specificially address issues around CI/CD on Kubernetes and a number of the talks are on Jenkins X.
+The [schedule for the CI/CD devroom](https://fosdem.org/2020/schedule/track/continuous_integration_and_continuous_deployment/) is up and is packed with 12 interesting talks. Many of the talks specifically address issues around CI/CD on Kubernetes and a number of the talks are on Jenkins X.
 
 Thank you to the volunteer organisers of the CI/CD devroom, including [Olivier Vernin](https://twitter.com/0lblak) [Jan Willies](https://mobile.twitter.com/loswillios) and [Fabrizio Manfredi](https://mobile.twitter.com/thoulen), who have picked awesome talks during what must have been a difficult selection process. 
 
