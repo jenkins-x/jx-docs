@@ -1,5 +1,5 @@
 ---
-date: 2020-01-15T11:31:49Z
+date: 2020-01-15T22:09:34Z
 title: "jx step create templated"
 slug: jx_step_create_templated
 url: /commands/jx_step_create_templated/

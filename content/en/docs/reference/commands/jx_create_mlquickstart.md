@@ -1,5 +1,5 @@
 ---
-date: 2020-01-15T11:31:49Z
+date: 2020-01-15T22:09:34Z
 title: "jx create mlquickstart"
 slug: jx_create_mlquickstart
 url: /commands/jx_create_mlquickstart/
@@ -42,6 +42,7 @@ jx create mlquickstart [flags]
 
 ```
       --branches string                The branch pattern for branches to trigger CI/CD pipelines on
+      --canary                         should we use canary rollouts (progressive delivery) by default for this application. e.g. using a Canary deployment via flagger. Requires the installation of flagger and istio/gloo in your cluster
       --credentials string             The Jenkins credentials name used by the job
       --deploy-kind string             The kind of deployment to use for the project. Should be one of knative, default
       --disable-updatebot              disable updatebot-maven-plugin from attempting to fix/update the maven pom.xml
@@ -57,6 +58,7 @@ jx create mlquickstart [flags]
       --git-public                     Create new Git repositories as public
       --git-username string            The Git username to use for creating new Git repositories
   -h, --help                           help for mlquickstart
+      --hpa                            should we enable the Horizontal Pod Autoscaler for this application.
       --import-commit-message string   Specifies the initial commit message used when importing the project
   -m, --import-mode string             The import mode to use. Should be one of Jenkinsfile, YAML
       --jenkinsfile string             The name of the Jenkinsfile to use. If not specified then 'Jenkinsfile' will be used
