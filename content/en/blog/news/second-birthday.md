@@ -84,7 +84,7 @@ CloudBees also aided this effort by introducing the [CloudBees Jenkins X Distrib
 
 ## October 2019: Jenkins X Steering Committee inaugural meeting
 
-The Jenkins X Bootstrap Steering Committee is tasked with organising the transition to an elected steering committee, as well as determining what responsibilities the steering committee will have in guiding the Jenkins X project.
+The Jenkins X Bootstrap [Steering Committee](https://github.com/jenkins-x/steering) is tasked with organising the transition to an elected steering committee, as well as determining what responsibilities the steering committee will have in guiding the Jenkins X project.
 
 ## December 2019: First Jenkins X Outreachy mentee!
 
