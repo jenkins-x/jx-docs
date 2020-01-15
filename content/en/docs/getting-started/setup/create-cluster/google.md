@@ -7,7 +7,16 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 weight: 50
 ---
+# Creating a Google cluster
 
+To create a Google cluster you can either do so with the
+[Google Cloud Console](#using-the-google-cloud-console),
+[gcloud](#using-gcloud) or the [Google Cloud Shell](#using-google-cloud-shell),
+be aware though that the smallest possible machine
+to host Jenkins X is the `n1-standard-2` machine-type.
+
+Furthermore, to be able to use `jx` storage features like log storage or backups,
+your cluster needs additional permissions, see [GKE Storage Permissions](https://jenkins-x.io/docs/managing-jx/common-tasks/storage/#gke-storage-permissions).
 
 ## Using the Google Cloud Console
 
