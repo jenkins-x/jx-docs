@@ -1,5 +1,5 @@
 ---
-date: 2020-01-15T11:31:49Z
+date: 2020-01-15T22:09:34Z
 title: "jx step wait"
 slug: jx_step_wait
 url: /commands/jx_step_wait/
@@ -35,7 +35,7 @@ jx step wait for artifact [flags]
   -g, --group string          The group ID of the artifact to search for
   -h, --help                  help for wait
       --poll-time string      The amount of time between polls for the artifact URL being present (default "10s")
-  -r, --repo string           The URL of the maven style repository to query for the artifact (default "http://central.maven.org/maven2/")
+  -r, --repo string           The URL of the maven style repository to query for the artifact (default "https://repo1.maven.org/maven2/")
   -t, --timeout string        The duration before we consider this operation failed (default "1h")
   -v, --version string        The version of the artifact to search for
 ```

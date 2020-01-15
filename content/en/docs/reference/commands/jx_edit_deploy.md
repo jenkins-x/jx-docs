@@ -1,5 +1,5 @@
 ---
-date: 2020-01-15T11:31:49Z
+date: 2020-01-15T22:09:34Z
 title: "jx edit deploy"
 slug: jx_edit_deploy
 url: /commands/jx_edit_deploy/
@@ -28,17 +28,28 @@ jx edit deploy [flags]
   # to switch to normal kubernetes deployments
   jx edit deploy default
   
-  # Edit the default deploy kind for your team
+  # to switch to use canary deployments (requires flagger and its dependencies)
+  jx edit deploy --canary
+  
+  # to disable canary deployments and don't ask any more questions
+  jx edit deploy --canary=false -b
+  
+  # to disable canary deployments and confirm if you want to change the deployment kind and HPA
+  jx edit deploy --canary=false
+  
+  # Edit the default deploy kind for your team and be prompted for answers
   jx edit deploy --team
   
-  # Set the default for your team to use knative
-  jx edit deploy --team knative
+  # Set the default for your team to use knative and canary but no HPA
+  jx edit deploy --team knative --canary=true --hpa=false
 ```
 
 ### Options
 
 ```
+      --canary        should we use canary rollouts (progressive delivery). e.g. using a Canary deployment via flagger. Requires the installation of flagger and istio/gloo in your cluster
   -h, --help          help for deploy
+      --hpa           should we enable the Horizontal Pod Autoscaler.
   -k, --kind string   The kind to use which should be one of: knative, default
   -t, --team          Edits the team default
 ```

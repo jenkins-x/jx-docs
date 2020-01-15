@@ -1,5 +1,5 @@
 ---
-date: 2020-01-15T11:31:49Z
+date: 2020-01-15T22:09:34Z
 title: "jx create devpod"
 slug: jx_create_devpod
 url: /commands/jx_create_devpod/
@@ -31,7 +31,7 @@ jx create devpod [flags]
 ### Options
 
 ```
-      --auto-expose               Automatically expose useful ports as services such as the debug port, as well as any ports specified using --ports (default true)
+      --auto-expose               Automatically expose useful ports via ingresses such as the ide port, debug port, as well as any ports specified using --ports
       --docker-registry string    The Docker registry to use within the DevPod. If not specified, default to the built-in registry or $DOCKER_REGISTRY
   -h, --help                      help for devpod
       --import                    Detect if there is a Git repository in the current directory and attempt to clone it into the DevPod. Ignored if used with --sync (default true)
