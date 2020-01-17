@@ -1,5 +1,5 @@
 ---
-date: 2020-01-16T01:03:00Z
+date: 2020-01-17T17:49:41Z
 title: "deprecated commands"
 slug: deprecation
 url: /commands/deprecation/
