@@ -523,12 +523,12 @@ With `jx boot` all of the versions and configuration is in Git so it's easy to m
 
 ### Auto Upgrades
 
-You can enable auto upgrades in the `jx-requirements.yml` via the following (where `schedule` is a cron expression)
+You can enable auto upgrades in the `jx-requirements.yml` via the following (where `schedule` is a cron expression).
 
 ```yaml
 autoUpdate:
   enabled: true
-  schedule: "0 0 23 1/1 * ? *"
+  schedule: "0 12 */5 * *"
 ```
 
 When auto upgrades are enabled a `CronJob` is run which periodically checks for changes in the [version stream](/docs/concepts/version-stream/) or [boot configuration](https://github.com/jenkins-x/jenkins-x-boot-config). If changes are detected the [jx upgrade boot](/commands/jx_upgrade_boot/) will create a pull request on your development Git repository. Once that merges the boot configuration is upgraded and boot will be re-run inside a tekton pipeline to upgrade your installation.
