@@ -3647,6 +3647,10 @@ string
 <h3 id="config.jenkins.io/v1.RequirementsConfig">RequirementsConfig
 </h3>
 <p>
+(<em>Appears on:</em>
+<a href="#config.jenkins.io/v1.RequirementsValues">RequirementsValues</a>)
+</p>
+<p>
 <p>RequirementsConfig contains the logical installation requirements in the <code>jx-requirements.yml</code> file when
 installing, configuring or upgrading Jenkins X via <code>jx boot</code></p>
 </p>
@@ -3857,6 +3861,34 @@ WebhookType
 </td>
 <td>
 <p>Webhook specifies what engine we should use for webhooks</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="config.jenkins.io/v1.RequirementsValues">RequirementsValues
+</h3>
+<p>
+<p>RequirementsValues contains the logical installation requirements in the <code>jx-requirements.yml</code> file as helm values</p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>jxRequirements</code></br>
+<em>
+<a href="#config.jenkins.io/v1.RequirementsConfig">
+RequirementsConfig
+</a>
+</em>
+</td>
+<td>
+<p>RequirementsConfig contains the logical installation requirements</p>
 </td>
 </tr>
 </tbody>
@@ -5104,5 +5136,5 @@ string
 <hr/>
 <p><em>
 Generated with <code>gen-crd-api-reference-docs</code>
-on git commit <code>548f067bb</code>.
+on git commit <code>e2d0b1f4b</code>.
 </em></p>
