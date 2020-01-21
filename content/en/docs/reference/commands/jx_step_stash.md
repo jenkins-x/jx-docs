@@ -6,7 +6,7 @@ url: /commands/jx_step_stash/
 ---
 ## jx step stash
 
-Stashes local files generated as part of a pipeline into long term storage
+Stashes local files generated as part of a pipeline into long term storage.
 
 ### Synopsis
 
@@ -14,12 +14,18 @@ This pipeline step stashes the specified files from the build into some stable s
   
 Currently Jenkins X supports storing files into a branch of a git repository or in cloud blob storage like S3, GCS, Azure blobs etc. 
 
-When using Cloud Storage we use URLs like 's3://nameOfBucket' on AWS, 'gs://anotherBucket' on GCP or on Azure 'azblob://thatBucket' 
+When using Cloud Storage we use URLs like `s3://nameOfBucket` on AWS, `gs://anotherBucket` on GCP or on Azure `azblob://thatBucket`.
+
+
+{{% pageinfo %}}
+**NOTE** Be aware that you have to run `jx step stash` inside your git repository,
+therefore `dir:` should be set to `/workspace/source` in your stash step.
+{{% /pageinfo %}}
 
 See Also: 
 
-  * jx step unstash : https://jenkins-x.io/commands/jx_step_unstash  
-  * jx edit storage : https://jenkins-x.io/commands/jx_edit_storage
+  * [jx step unstash](https://jenkins-x.io/commands/jx_step_unstash)
+  * [jx edit storage](https://jenkins-x.io/commands/jx_edit_storage)
 
 ```
 jx step stash [flags]

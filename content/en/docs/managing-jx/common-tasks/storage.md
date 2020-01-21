@@ -66,7 +66,12 @@ jx step stash -c coverage -p "build/coverage/*" --bucket-url s3://my-aws-bucket
 
 * specify the `classifier` via `-c` such as for `tests` or `coverage` etc.
 * specify the files to collect via `-p` which supports wildcards like `*`. files which will be stored with the relative directory path
-* if you want to remove a direectory prefix from the stashed files, like `target/reports` you can use `--basedir` to specify the directory to create relative file names from
+* if you want to remove a directory prefix from the stashed files, like `target/reports` you can use `--basedir` to specify the directory to create relative file names from
+
+{{% pageinfo %}}
+**NOTE** Be aware that you have to run `jx step stash` inside your git repository,
+therefore `dir:` should be set to `/workspace/source` in your stash step.
+{{% /pageinfo %}}
 
 By default [jx step stash](/commands/jx_step_stash/) will use your team's configured location for the classification you give. If you wish you can override the location for a stash using `--git-url` or `--bucket-url`
 
