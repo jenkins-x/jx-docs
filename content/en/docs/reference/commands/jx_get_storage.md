@@ -6,20 +6,18 @@ url: /commands/jx_get_storage/
 ---
 ## jx get storage
 
-Display the storage configuration for different classifications
+Display the storage configuration for different classifications.
 
 ### Synopsis
-
-Display the storage configuration for different classifications.
   
 Currently Jenkins X supports storing files into a branch of a git repository or in cloud blob storage like S3, GCS, Azure blobs etc. 
 
-When using Cloud Storage we use URLs like 's3://nameOfBucket' on AWS, 'gs://anotherBucket' on GCP or on Azure 'azblob://thatBucket' 
+When using Cloud Storage we use URLs like `s3://nameOfBucket` on AWS, `gs://anotherBucket` on GCP or on Azure `azblob://thatBucket`.
 
 See Also: 
 
-  * jx step stash : https://jenkins-x.io/commands/jx_step_stash  
-  * jx edit storage : https://jenkins-x.io/commands/jx_edit_storage
+  * [jx step stash](https://jenkins-x.io/commands/jx_step_stash)
+  * [jx edit storage](https://jenkins-x.io/commands/jx_edit_storage)
 
 ```
 jx get storage [flags]
