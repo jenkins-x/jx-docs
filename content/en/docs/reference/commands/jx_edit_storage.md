@@ -6,22 +6,21 @@ url: /commands/jx_edit_storage/
 ---
 ## jx edit storage
 
-Configures the storage location for stashing files or storing build logs for your team
+Configures the storage location for stashing files or storing build logs for your team.
 
 ### Synopsis
 
-Configures the storage location used by your team to stashing files or storing build logs.
   
-      If you don't specify any specific storage for a classifier it will try the classifier 'default'. If there is still no configuration then it will default to the git repository for a project.'
+    If you don't specify any specific storage for a classifier it will try the classifier 'default'. If there is still no configuration then it will default to the git repository for a project.'
   
 Currently Jenkins X supports storing files into a branch of a git repository or in cloud blob storage like S3, GCS, Azure blobs etc. 
 
-When using Cloud Storage we use URLs like 's3://nameOfBucket' on AWS, 'gs://anotherBucket' on GCP or on Azure 'azblob://thatBucket' 
+When using Cloud Storage we use URLs like `s3://nameOfBucket` on AWS,  `gs://anotherBucket` on GCP or on Azure `azblob://thatBucket`. 
 
 See Also: 
 
-  * jx step stash : https://jenkins-x.io/commands/jx_step_stash  
-  * jx get storage : https://jenkins-x.io/commands/jx_get_storage
+  * [jx step stash](https://jenkins-x.io/commands/jx_step_stash)
+  * [jx get storage](https://jenkins-x.io/commands/jx_get_storage)
 
 ```
 jx edit storage [flags]
@@ -52,6 +51,10 @@ jx edit storage [flags]
   
   # Creates a new GCS bucket and configures the logs to be stored in it
   jx edit storage -c logs --bucket myBucketName
+
+
+  # Create your own category
+  jx edit storage -c <new-category> --bucket-url gs://myExistingBucketName
 ```
 
 ### Options

@@ -36,7 +36,6 @@ You can also use the special classification `default` which is used if you don't
 
 If you are using [jx boot](/docs/getting-started/setup/boot/) to install and configure your setup then modify your `jx-requirements.yml` file to configure storage as described in the [boot storage documentation](/docs/getting-started/setup/boot/#storage)
 
-
 Otherwise to configure the storage location for a classification and team you use the [jx edit storage](/commands/jx_edit_storage/)
 
 e.g.
@@ -47,6 +46,9 @@ jx edit storage -c tests --bucket-url s3://myExistingBucketName
 
 # Configure the git URL and branch of where to store logs
 jx edit storage -c logs --git-url https://github.com/myorg/mylogs.git --git-branch cheese
+
+# Configure your own category
+jx edit storage -c <new-category> --bucket-url gs://myExistingBucketName
 ```
 
 You can view your teams storage settings via [jx get storage](/commands/jx_get_storage/)
