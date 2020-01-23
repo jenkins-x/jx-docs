@@ -15,7 +15,8 @@ For details of the next Jenkins X talk or demo checkout our [talks at meetups an
 
 ### Other Current and Upcoming Events
 
-* [Join us at the CI/CD Devroom at FOSDEM 2020](/blog/2019/10/09/fosdem2020/)
+* [Join us at FOSDEM 2020!](/blog/2020/01/09/jxfosdem2020/)
+* [FOSDEM Fringe: Full day workshop on Jenkins X by Viktor Farcic, Thursday, January 30](https://www.eventbrite.com/e/workshop-cloud-native-kubernetes-first-serverless-continuous-delivery-with-jenkins-x-kubernetes-and-tickets-87082627483)
 
 ### Office Hours
 
