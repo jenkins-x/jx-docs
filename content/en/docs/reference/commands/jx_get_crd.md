@@ -1,32 +1,32 @@
 ---
 date: 2020-01-24T01:06:06Z
-title: "jx get limits"
-slug: jx_get_limits
-url: /commands/jx_get_limits/
+title: "jx get crd"
+slug: jx_get_crd
+url: /commands/jx_get_crd/
 ---
-## jx get limits
+## jx get crd
 
-Displays the git user limits
+Display resources count for all custom resources
 
 ### Synopsis
 
-Display the github limits for users
+Count the number of resources for all custom resources definitions
 
 ```
-jx get limits [flags]
+jx get crd count [flags]
 ```
 
 ### Examples
 
 ```
-  # List all git users with limits
-  jx get limits
+  # Count the number of resources for all custom resources definitions
+  jx get crd count
 ```
 
 ### Options
 
 ```
-  -h, --help   help for limits
+  -h, --help   help for crd
 ```
 
 ### Options inherited from parent commands
