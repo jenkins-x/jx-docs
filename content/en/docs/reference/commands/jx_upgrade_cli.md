@@ -6,7 +6,7 @@ url: /commands/jx_upgrade_cli/
 ---
 ## jx upgrade cli
 
-Upgrades the jx command line application if there are is a new version available in the version stream
+Upgrades the jx command line application if there is a new version available in the version stream
 
 ### Synopsis
 
