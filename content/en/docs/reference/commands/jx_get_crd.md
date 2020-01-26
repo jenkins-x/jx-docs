@@ -1,32 +1,32 @@
 ---
 date: 2020-01-25T02:20:11Z
-title: "jx get addons"
-slug: jx_get_addons
-url: /commands/jx_get_addons/
+title: "jx get crd"
+slug: jx_get_crd
+url: /commands/jx_get_crd/
 ---
-## jx get addons
+## jx get crd
 
-Lists the addons
+Display resources count for all custom resources
 
 ### Synopsis
 
-Display the available addons
+Count the number of resources for all custom resources definitions
 
 ```
-jx get addons [flags]
+jx get crd count [flags]
 ```
 
 ### Examples
 
 ```
-  # List all the possible addons
-  jx get addon
+  # Count the number of resources for all custom resources definitions
+  jx get crd count
 ```
 
 ### Options
 
 ```
-  -h, --help   help for addons
+  -h, --help   help for crd
 ```
 
 ### Options inherited from parent commands

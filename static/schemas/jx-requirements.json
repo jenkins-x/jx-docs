@@ -41,6 +41,9 @@
           },
           "type": "array"
         },
+        "dockerRegistryOrg": {
+          "type": "string"
+        },
         "environmentGitOwner": {
           "type": "string"
         },
@@ -116,6 +119,9 @@
           "type": "string"
         },
         "owner": {
+          "type": "string"
+        },
+        "promotionStrategy": {
           "type": "string"
         },
         "remoteCluster": {

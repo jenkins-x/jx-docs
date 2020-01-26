@@ -1162,6 +1162,17 @@ string
 <p>DevEnvApprovers contains an optional list of approvers to populate the initial OWNERS file in the dev env repo</p>
 </td>
 </tr>
+<tr>
+<td>
+<code>dockerRegistryOrg</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>DockerRegistryOrg the default organisation used for container images</p>
+</td>
+</tr>
 </tbody>
 </table>
 <h3 id="config.jenkins.io/v1.CreateJenkinsfileArguments">CreateJenkinsfileArguments
@@ -1521,6 +1532,17 @@ bool
 </td>
 <td>
 <p>RemoteCluster specifies this environment runs on a remote cluster to the development cluster</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>promotionStrategy</code></br>
+<em>
+github.com/jenkins-x/jx/pkg/apis/jenkins.io/v1.PromotionStrategyType
+</em>
+</td>
+<td>
+<p>PromotionStrategy what kind of promotion strategy to use</p>
 </td>
 </tr>
 </tbody>
@@ -5136,5 +5158,5 @@ string
 <hr/>
 <p><em>
 Generated with <code>gen-crd-api-reference-docs</code>
-on git commit <code>b8438c882</code>.
+on git commit <code>7c0977fc0</code>.
 </em></p>
