@@ -14,7 +14,9 @@ author: Neha Gupta
 <img src="/images/community/events/outreachy.png"/>
 </figure>
 
-### Outreachy open-source contribution for applicants — Asking/Finding for help
+Neha Gupta is adding support for Kustomize in Jenkins X, to enable Kubernetes native configuration management, while participating in Outreachy from December 2019 to March 2020.
+
+### Outreachy open-source contribution for applicants — Asking/Finding help
 
 This blog might be helpful for beginners who are fear-stricken or I would say hesitant to ASK, to get lost in the new world while trying to understand any open source project, fear of asking questions that may sound stupid later on or are very obvious!
 First of all..
@@ -30,7 +32,7 @@ Relax!
 
 * For selecting a project you may also look for Google-Summer-of-Code, Outreachy, Google-Code-In, RSoC and other open-source programs and their organisations that helps people/students/aspiring developers to find your best interest communities and projects.
 
-** NOTE : Beware! seeing too many organisations and projects will only confuse you, so start with only one or max 2 projects, try to deep-dive and focus on them. **
+**NOTE : Beware! seeing too many organisations and projects will only confuse you, so start with only one or max 2 projects, try to deep-dive and focus on them.**
 
 After selecting the project :
 
