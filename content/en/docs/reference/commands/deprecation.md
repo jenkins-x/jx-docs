@@ -1,6 +1,7 @@
 ---
 date: 2020-01-25T02:20:11Z
 title: "deprecated commands"
+description: The list of deprecated commands
 slug: deprecation
 url: /commands/deprecation/
 ---

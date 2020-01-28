@@ -5,6 +5,8 @@ description: Promote new versions of your application to environments
 weight: 4
 aliases:
   - /developing/promote/
+  - /about/features/#promotion
+  - /about/features
 ---
 
 The CD Pipelines of Jenkins X automate the [promotion](/docs/concepts/features/#promotion) of version changes through each [Environment](/docs/concepts/features/#environments) which is configured with a _promotion strategy_ property of `Auto`. By default the `Staging` environment uses automatic promotion and the `Production` environment uses `Manual` promotion.
