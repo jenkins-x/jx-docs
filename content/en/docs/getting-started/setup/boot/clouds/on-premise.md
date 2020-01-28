@@ -12,8 +12,7 @@ On premise kubernetes clusters tend to differ wildly so its hard for us to know 
 
 Here are some recommendations to hopefully get you started. If you hit any issues please [join our community](/community/) we can hopefully help you.
 
-
-## Use the kubernetes provider
+## Configuration
 
 Please set your provider to `kubernetes` via this in your `jx-requirements.yml`:
 
@@ -22,7 +21,7 @@ clusterConfig:
     provider: kubernetes
 ```
 
-## Ingress
+### Ingress
 
 If you don't have a real ingress solution for your on premise cluster you can start off using the `nginx-controller` and the IP address of your api server.
 
@@ -40,7 +39,7 @@ ingress:
   ignoreLoadBalancer: true
 ```
 
-## Try start simple
+## General advice
 
 We recommend starting with the most simple possible installation and get that working, then gradually try to be more complex. e.g. start off by ignoring these features:
 

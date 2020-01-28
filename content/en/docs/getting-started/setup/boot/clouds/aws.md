@@ -8,7 +8,11 @@ lastmod: 2017-02-01
 weight: 20
 ---
 
+## Setting up your cluster
+
 We recommend you setup your cluster via [eksctl](https://eksctl.io/).
+
+## Configuration
 
 Please set your provider to `eks` via this in your `jx-requirements.yml` to indicate you are using EKS:
 
@@ -26,3 +30,4 @@ clusterConfig:
 
 If you wish to setup your EKS cluster by hand and not use [eksctl](https://eksctl.io/) then please specify `terraform: true` to indicating you are setting up all of the AWS related cloud resources yourself and that you do not want `jx boot` to try set anything up.
 
+We recommend using [Jenkins X Pipelines](/architecture/jenkins-x-pipelines/) as this works out of the box with kaniko for creating container images without needing a docker daemon and works well with ECR.

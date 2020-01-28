@@ -8,14 +8,7 @@ lastmod: 2017-02-01
 weight: 10
 ---
 
-Please set your provider to `gke` via this in your `jx-requirements.yml` to indicate you are using GCP:
-
-```yaml    
-clusterConfig:
-    provider: gke
-```
-
-On GCP we default to using GCR as the container registry (using `gcr.io`).
+## Setting up your cluster
 
 To setup the kubernetes cluster we recommend `jx create cluster gke --skip-installation` which should add the scopes required to your node pool to be able to push images to GCR. 
 
@@ -29,3 +22,16 @@ If you setup your cluster directly via the web console or `gcloud` you may need 
 * https://www.googleapis.com/auth/logging.write
 * https://www.googleapis.com/auth/monitoring
 
+
+## Configuration
+
+On GCP we default to using GCR as the container registry (using `gcr.io`).
+
+Please set your provider to `gke` via this in your `jx-requirements.yml` to indicate you are using GCP:
+
+```yaml    
+clusterConfig:
+    provider: gke
+```
+
+We also recommend using [Jenkins X Pipelines](/architecture/jenkins-x-pipelines/) as this works out of the box with kaniko for creating container images without needing a docker daemon and works well with GCR.
