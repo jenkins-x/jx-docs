@@ -20,10 +20,10 @@ The following table lists the maturity of Jenkins X with boot on the different c
 
 | Cloud Provider  | Maturity |
 | ------------- | ------------- |
-| [Google Cloud](gcp) | GA  |
-| [AWS](aws)  | GA  |
+| [Google Cloud](gcp/) | GA  |
+| [AWS](aws/)  | GA  |
 | Azure | Beta  |
-| [On Premise](on-premise) | Beta (*) note that on premise clusters differ wildly in capabilities and configuration |
+| [On Premise](on-premise/) | Beta (*) note that on premise clusters differ wildly in capabilities and configuration |
 
 ### Terminology
 
