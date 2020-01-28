@@ -7,7 +7,9 @@ aliases:
   - /contribute
 ---
 
-Jenkins X relies heavily on the enthusiasm and participation of the open-source community. We need your help so please dive in! There are many ways to help:
+Jenkins X relies heavily on the enthusiasm and participation of the open-source community. Find out more about our community, including events, office hours, and talks [here](https://jenkins-x.io/community/). We value respect and inclusiveness and follow the [CDF Code of Conduct](https://github.com/cdfoundation/toc/blob/master/CODE_OF_CONDUCT.md) in all interactions. 
+
+We welcome your contributions to the Jenkins X project! There are many ways to help:
 
 
 * [Give us feedback](/community/). What could we improve? Anything you don't like or you think is missing?
