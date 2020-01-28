@@ -1,6 +1,6 @@
 ---
-title: Amazon (AWS)
-linktitle: Amazon (AWS)
+title: Amazon 
+linktitle: Amazon
 description: Using Boot on Amazon (AWS)
 date: 2017-02-01
 publishdate: 2017-02-01
@@ -8,9 +8,7 @@ lastmod: 2017-02-01
 weight: 20
 ---
 
-## Setting up your cluster
-
-We recommend you setup your cluster via [eksctl](https://eksctl.io/).
+For details of how to setup your cluster see the [Amazon instructions](/docs/getting-started/setup/create-cluster/amazon/)
 
 ## Configuration
 

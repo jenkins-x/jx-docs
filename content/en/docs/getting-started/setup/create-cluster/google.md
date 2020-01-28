@@ -22,7 +22,22 @@ your cluster needs additional permissions, see [GKE Storage Permissions](https:/
 
 If you have the JX command line setup locally, you can run `jx create cluster gke --skip-installation` to create a GKE cluster from there with defaults.
 
-## Using the Google Cloud Console
+## Using the Google Cloud Console or CLI
+
+To setup the kubernetes cluster we recommend `jx create cluster gke --skip-installation` which should add the scopes required to your node pool to be able to push images to GCR. 
+
+If you setup your cluster directly via the web console or `gcloud` you may need to setup those scopes yourself. e.g. with `gcloud` add `--scopes` for the following scopes:
+
+* https://www.googleapis.com/auth/cloud-platform
+* https://www.googleapis.com/auth/compute
+* https://www.googleapis.com/auth/devstorage.full_control
+* https://www.googleapis.com/auth/service.management
+* https://www.googleapis.com/auth/servicecontrol
+* https://www.googleapis.com/auth/logging.write
+* https://www.googleapis.com/auth/monitoring
+
+
+### Using the Google Cloud Console
 
 You can create Kubernetes clusters in a few clicks on the [Google Cloud Console](https://console.cloud.google.com/).
 
@@ -34,11 +49,14 @@ First make sure you have created/selected a Project:
 Now you can click the `create cluster` button on the [kubernetes clusters](https://console.cloud.google.com/kubernetes/list) page or try [create cluster](https://console.cloud.google.com/kubernetes/add).
 
 
-## Using gcloud
+### Using gcloud
 
 The CLI tool for working with google cloud is called `gcloud`. If you have not done so already please [install gcloud](https://cloud.google.com/sdk/install).
 
 To create a cluster with gcloud [follow these instructions](https://cloud.google.com/kubernetes-engine/docs/how-to/creating-a-cluster).
+
+
+
 
 ## Connecting to your cluster
 
