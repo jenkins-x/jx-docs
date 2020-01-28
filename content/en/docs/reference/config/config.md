@@ -649,16 +649,6 @@ string
 </tr>
 <tr>
 <td>
-<code>ResourceIdentifier</code></br>
-<em>
-string
-</em>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
 <code>Namespace</code></br>
 <em>
 string
@@ -5158,5 +5148,5 @@ string
 <hr/>
 <p><em>
 Generated with <code>gen-crd-api-reference-docs</code>
-on git commit <code>7c0977fc0</code>.
+on git commit <code>a835533ed</code>.
 </em></p>
