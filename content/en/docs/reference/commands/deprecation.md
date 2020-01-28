@@ -1,7 +1,6 @@
 ---
-date: 2020-01-25T02:20:11Z
+date: 2020-01-28T15:30:39Z
 title: "deprecated commands"
-description: The list of deprecated commands
 slug: deprecation
 url: /commands/deprecation/
 ---
@@ -27,7 +26,7 @@ url: /commands/deprecation/
 | jx create lile | Feb 1 2020 | jx create quickstart |
 | jx create micro | Feb 1 2020 | jx create quickstart |
 | jx create post | Feb 1 2020 |  |
-| jx create spring | Feb 1 2020 | jx create quickstart |
+| jx create spring | Feb 1 2020 | jx create project |
 | jx create step | Feb 1 2020 |  |
 | jx create terraform | Feb 1 2020 | jx boot |
 | jx delete addon knative-build | Feb 1 2020 |  |
@@ -42,7 +41,7 @@ url: /commands/deprecation/
 | jx get post | Feb 1 2020 |  |
 | jx get workflows | Feb 1 2020 |  |
 | jx init | Feb 1 2020 | jx boot |
-| jx install | Feb 1 2020 | jx boot |
+| jx install | Jun 1 2020 | jx boot |
 | jx step create jenkins | Feb 1 2020 |  |
 | jx step credential | Feb 1 2020 |  |
 | jx step nexus drop | Feb 1 2020 |  |
