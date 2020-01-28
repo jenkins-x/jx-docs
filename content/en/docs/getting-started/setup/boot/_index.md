@@ -21,16 +21,14 @@ aliases:
 _Jenkins X Boot_ uses the following approach:
 
 * create your Kubernetes cluster however you want:
+  * use `jx create cluster --skip-installation` e.g. for Google Cloud use `jx create cluster gke --skip-installation`. To see all the different providers see [jx create cluster](/commands/jx_create_cluster/)  
   * use Terraform to create your Kubernetes clusters + the associated cloud resources
   * use your cloud providers web console to create a new Kubernetes cluster
-  * use `jx create cluster --skip-installation` e.g.
-``` sh
-jx create cluster gke --skip-installation
-```
-
   * use some custom tool of your choice (maybe it's provided to you by your operations team)
 
-* you may want to verify you can communicate correctly with your Kubernetes cluster via:
+Please check out our [Cloud Providers Guide](/docs/getting-started/setup/boot/clouds/) on our recommendations for your cloud provider.
+
+You can verify you can communicate correctly with your Kubernetes cluster via:
 ``` sh
 kubectl get ns
 ```
@@ -58,9 +56,17 @@ Once the installation has completed the [jx step verify install](/commands/jx_st
 
 ## Changing your installation
 
-At any time you can re-run [jx boot](/commands/jx_boot/) to re-apply any changes in your configuration.
+At any time you can re-run [jx boot](/commands/jx_boot/) to re-apply any changes in your configuration. To do this git clone your development environment git repository, change directory into the git clone and run `jx boot`. e.g.
+
+```sh 
+git clone https://github.com/myuser/environment-mycluster-dev.git
+cd environment-mycluster-dev
+jx boot
+```
 
 So just edit anything in the configuration you like and re-run [jx boot](/commands/jx_boot/) - whether that's to add or remove apps, to change parameters or configuration, or upgrade or downgrade versions of dependencies.
+
+Note that you can also just submit a Pull Request on your development git repository which if merged, will trigger a pipeline to run the above commands to apply the changes.
 
 ## Requirements
 
