@@ -66,9 +66,9 @@ Por lo tanto, tenemos una imagen de docker base ([builder-base](https://github.c
 
 Si desea usar una sola imagen de generador para su nueva plantilla de pod, puede usar la base de generador y luego agregar sus herramientas personalizadas en la parte superior.
 
-p.ej. [builder-maven](https://github.com/jenkins-x/builder-maven) utiliza un [Dockerfile](https://github.com/jenkins-x/builder-maven/blob/master/Dockerfile#L1) para hacer referencia al constructor base.
+p.ej. [builder-maven](https://github.com/jenkins-x/jenkins-x-builders/tree/master/builder-maven) utiliza un [Dockerfile](https://github.com/jenkins-x/jenkins-x-builders/blob/master/builder-maven/Dockerfile#L1) para hacer referencia al constructor base.
 
-Entonces, lo más simple podría ser copiar un constructor similar, como [builder-maven](https://github.com/jenkins-x/builder-maven) y luego editar el `Dockerfile` para agregar las herramientas de compilación que necesite.
+Entonces, lo más simple podría ser copiar un constructor similar, como [builder-maven](https://github.com/jenkins-x/jenkins-x-builders/tree/master/builder-maven) y luego editar el `Dockerfile` para agregar las herramientas de compilación que necesite.
 
 Nos encantan las solicitudes de extracción y las [contribuciones](/docs/contributing/), así que envíe solicitudes de extracción para nuevos contenedores de compilación y plantillas de pods, ¡y estamos más que felices de [ayudar](/docs/contributing/)!
 

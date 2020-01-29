@@ -68,9 +68,9 @@ So we have a [builder-base](https://github.com/jenkins-x/builder-base) docker im
 
 If you want to use a single builder image for your new pod template then you could use builder base as the base and then add your custom tools on top.
 
-e.g. [builder-maven](https://github.com/jenkins-x/builder-maven) uses a [Dockerfile](https://github.com/jenkins-x/builder-maven/blob/master/Dockerfile#L1) to reference the builder base.
+e.g. [builder-maven](https://github.com/jenkins-x/jenkins-x-builders/tree/master/builder-maven) uses a [Dockerfile](https://github.com/jenkins-x/jenkins-x-builders/blob/master/builder-maven/Dockerfile#L1) to reference the builder base.
 
-So the simplest thing could be to copy a similar builder - like [builder-maven](https://github.com/jenkins-x/builder-maven) and then edit the `Dockerfile` to add whatever build tools you need.
+So the simplest thing could be to copy a similar builder - like [builder-maven](https://github.com/jenkins-x/jenkins-x-builders/tree/master/builder-maven) and then edit the `Dockerfile` to add whatever build tools you need.
 
 We love Pull Requests and [contributions](/docs/contributing/) so please submit Pull Requests for new build containers and Pod Templates and we're more than happy to [help](/docs/contributing/)!
 

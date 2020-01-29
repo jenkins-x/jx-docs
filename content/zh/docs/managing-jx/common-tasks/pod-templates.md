@@ -65,9 +65,9 @@ pipeline {
 
 如果想要在你新的 pod 模板中使用单一的构建惊喜那个，那么，你可以使用 builder base 作为基础增加你自定义的工具。
 
-例如：[builder-maven](https://github.com/jenkins-x/builder-maven) 使用一个 [Dockerfile](https://github.com/jenkins-x/builder-maven/blob/master/Dockerfile#L1) 引用基础构建。
+例如：[builder-maven](https://github.com/jenkins-x/jenkins-x-builders/tree/master/builder-maven) 使用一个 [Dockerfile](https://github.com/jenkins-x/jenkins-x-builders/blob/master/builder-maven/Dockerfile#L1) 引用基础构建。
 
-因此，最简单的就是拷贝一个简单的 builder —— 像 [builder-maven](https://github.com/jenkins-x/builder-maven)，然后编辑 `Dockerfile` 增加你需要的构建工具。
+因此，最简单的就是拷贝一个简单的 builder —— 像 [builder-maven](https://github.com/jenkins-x/jenkins-x-builders/tree/master/builder-maven)，然后编辑 `Dockerfile` 增加你需要的构建工具。
 
 我们欢迎 Pull Requests 和[贡献](/zh/docs/contributing/)，因此，请把你新的构建容器和 Pod 模板提交，我们很乐意[帮助](/zh/docs/contributing/)！
 
