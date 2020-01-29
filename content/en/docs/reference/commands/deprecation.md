@@ -1,8 +1,9 @@
 ---
-date: 2020-01-28T15:30:39Z
+date: 2020-01-29T01:09:50Z
 title: "deprecated commands"
 slug: deprecation
 url: /commands/deprecation/
+description: list of jx commands which have been deprecated
 ---
 
 
@@ -27,7 +28,6 @@ url: /commands/deprecation/
 | jx create micro | Feb 1 2020 | jx create quickstart |
 | jx create post | Feb 1 2020 |  |
 | jx create spring | Feb 1 2020 | jx create project |
-| jx create step | Feb 1 2020 |  |
 | jx create terraform | Feb 1 2020 | jx boot |
 | jx delete addon knative-build | Feb 1 2020 |  |
 | jx delete aws | Feb 1 2020 |  |

@@ -501,6 +501,97 @@ string
 </tr>
 </tbody>
 </table>
+<h3 id="config.jenkins.io/v1.Application">Application
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#config.jenkins.io/v1.ApplicationConfig">ApplicationConfig</a>)
+</p>
+<p>
+<p>Application is an application to install during boot</p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>name</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Name of the application / helm chart</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>repository</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Repository the helm repository</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>namespace</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Namespace to install the application into</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="config.jenkins.io/v1.ApplicationConfig">ApplicationConfig
+</h3>
+<p>
+<p>ApplicationConfig contains applications to install during boot</p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>applications</code></br>
+<em>
+<a href="#config.jenkins.io/v1.Application">
+[]Application
+</a>
+</em>
+</td>
+<td>
+<p>Applications of applications</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>defaultNamespace</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>DefaultNamespace the default namespace to install applications into</p>
+</td>
+</tr>
+</tbody>
+</table>
 <h3 id="config.jenkins.io/v1.AutoUpdateConfig">AutoUpdateConfig
 </h3>
 <p>
@@ -3751,6 +3842,18 @@ re-run &lsquo;jx boot&rsquo; when changes merge to the master branch</p>
 </tr>
 <tr>
 <td>
+<code>helmfile</code></br>
+<em>
+bool
+</em>
+</td>
+<td>
+<p>Indicates if we are using helmfile and helm 3 to spin up environments. This is currently an experimental
+feature flag used to implement better Multi-Cluster support. See <a href="https://github.com/jenkins-x/jx/issues/6442">https://github.com/jenkins-x/jx/issues/6442</a></p>
+</td>
+</tr>
+<tr>
+<td>
 <code>kaniko</code></br>
 <em>
 bool
@@ -5148,5 +5251,5 @@ string
 <hr/>
 <p><em>
 Generated with <code>gen-crd-api-reference-docs</code>
-on git commit <code>a835533ed</code>.
+on git commit <code>a351de4be</code>.
 </em></p>
