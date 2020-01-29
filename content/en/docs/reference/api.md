@@ -1,6 +1,7 @@
 ---
 title: API Documentation
 linktitle: API Documentation
+description: Reference of the Jenkins X REST APIs and custom resources
 weight: 10
 ---
 <p>Packages:</p>
@@ -10152,5 +10153,5 @@ PromoteWorkflowStep
 <hr/>
 <p><em>
 Generated with <code>gen-crd-api-reference-docs</code>
-on git commit <code>a835533ed</code>.
+on git commit <code>a351de4be</code>.
 </em></p>
