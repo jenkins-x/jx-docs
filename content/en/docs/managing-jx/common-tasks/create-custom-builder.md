@@ -40,7 +40,7 @@ docker push ${BUILDER_IMAGE}
 
 Do not worry, you do not have to run manually these steps every time when a new image needs to be built.
 Jenkins X can manage this for you. You just need to push your `Dockerfile` in a repository similar with [this
-](https://github.com/jenkins-x/builder-go) one. Adjust the `Jenkinsfile` according with your organization and
+](https://github.com/jenkins-x/jenkins-x-builders/tree/master/builder-go) one. Adjust the `Jenkinsfile` according with your organization and
 application name, and then import the repository into your Jenkins X platform with:
 
 ```sh

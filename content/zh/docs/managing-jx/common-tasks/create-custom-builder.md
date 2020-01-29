@@ -33,7 +33,7 @@ docker build -t ${BUILDER_IMAGE} .
 docker push ${BUILDER_IMAGE}
 ```
 
-别担心，当新的镜像需要构建时，您无需每次手动执行这些步骤。Jenkins X 可以为您管理这些。您只需要把 `Dockerfile` 推送到类似于[这个](https://github.com/jenkins-x/builder-go)代码仓库中。然后，根据您的组织名称来调整 `Jenkinsfile` ，并使用下面的命令导入 Jenkins X 平台：
+别担心，当新的镜像需要构建时，您无需每次手动执行这些步骤。Jenkins X 可以为您管理这些。您只需要把 `Dockerfile` 推送到类似于[这个](https://github.com/jenkins-x/jenkins-x-builders/tree/master/builder-go)代码仓库中。然后，根据您的组织名称来调整 `Jenkinsfile` ，并使用下面的命令导入 Jenkins X 平台：
 
 ```sh
 jx import --url <REPOSITORY_URL>
