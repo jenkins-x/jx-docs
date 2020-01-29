@@ -12,7 +12,7 @@ aliases:
 ---
 
 In Jenkins X, it is possible to create your custom Builders (aka [POD templates](https://github.com/jenkinsci/kubernetes-plugin)) or overwrite existing onces. You just need to base your Docker
-image on this [builder-base](https://github.com/jenkins-x/builder-base/blob/master/Dockerfile.common) image or on its [slim](https://github.com/jenkins-x/builder-base/blob/master/Dockerfile.slim) version.
+image on this [builder-base](https://github.com/jenkins-x/jenkins-x-builders-base/blob/master/Dockerfile.common) image.
 These images contain a number of pre-installed tools which get constantly updated and published to [Docker Hub](https://hub.docker.com/r/jenkinsxio/builder-base/).
 
 ## Create a custom Builder from scratch
@@ -131,7 +131,7 @@ pipeline {
 Jenkins X comes with a number of [pre-installed builders](https://raw.githubusercontent.com/jenkins-x/jenkins-x-platform/master/jenkins-x-platform/values.yaml)
 which you can overwrite if required during installation or upgrade.
 
-You just need to build your custom image either based on [builder-base](https://github.com/jenkins-x/builder-base/blob/master/Dockerfile.common)
+You just need to build your custom image either based on [builder-base](https://github.com/jenkins-x/jenkins-x-builders-base/blob/master/Dockerfile.common)
 image or the [builder image](https://hub.docker.com/u/jenkinsxio/) you want to overwrite. See more details above.
 
 Then you can create a `myvalues.yaml` file in your `~/.jx/` folder with the following content:

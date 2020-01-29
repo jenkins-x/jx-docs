@@ -61,7 +61,7 @@ pipeline {
 
 我们发现，在一个构建容器里有所有通用的工具会比较简单。这也意味着你可以使用 `kubectl exec` 或 [jx rsh](/commands/jx_rsh/) 打开一个构建 pod 的 shell，当你调试、诊断有问题的流水线时里面有所有需要的工具。
 
-因此，我们有一个 [builder-base](https://github.com/jenkins-x/builder-base) 的 docker 镜像，[包含所有不同的工具](https://github.com/jenkins-x/builder-base/blob/master/Dockerfile#L21-L70) ，我们倾向于在 CI/CD 流水线中使用像 `jx, skaffold, helm, git, updatebot` 的工具。
+因此，我们有一个 [builder-base](https://github.com/jenkins-x/builder-base) 的 docker 镜像，[包含所有不同的工具](https://github.com/jenkins-x/jenkins-x-builders-base/blob/master/Dockerfile.common#L4-L15) ，我们倾向于在 CI/CD 流水线中使用像 `jx, skaffold, helm, git, updatebot` 的工具。
 
 如果想要在你新的 pod 模板中使用单一的构建惊喜那个，那么，你可以使用 builder base 作为基础增加你自定义的工具。
 

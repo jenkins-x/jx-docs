@@ -64,7 +64,7 @@ When using pod templates and Jenkins pipelines you could use lots of different c
 
 We've found its much simpler to just have a single builder container with all the common tools inside. This also means you can use `kubectl exec` or [jx rsh](/commands/jx_rsh/) to open a shell inside the build pod and have all the tools you need available for use when debugging/diagnosing problem pipelines.
 
-So we have a [builder-base](https://github.com/jenkins-x/builder-base) docker image which [contains all the different tools](https://github.com/jenkins-x/builder-base/blob/master/Dockerfile#L21-L70) we tend to use in CI/CD pipelines like `jx, skaffold, helm, git, updatebot`.
+So we have a [builder-base](https://github.com/jenkins-x/builder-base) docker image which [contains all the different tools](https://github.com/jenkins-x/jenkins-x-builders-base/blob/master/Dockerfile.common#L4-L15) we tend to use in CI/CD pipelines like `jx, skaffold, helm, git, updatebot`.
 
 If you want to use a single builder image for your new pod template then you could use builder base as the base and then add your custom tools on top.
 

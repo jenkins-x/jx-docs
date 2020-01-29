@@ -62,7 +62,7 @@ Al usar plantillas de pod y pipeliens de Jenkins, puede usar muchos contenedores
 
 Hemos encontrado que es mucho más simple tener un solo contenedor de constructor con todas las herramientas comunes en su interior. Esto también significa que puede usar `kubectl exec` o (/commands/jx_rsh) para abrir un shell dentro del pod de compilación y tener todas las herramientas que necesita disponibles para depurar/diagnosticar pipelines con problemas.
 
-Por lo tanto, tenemos una imagen de docker base ([builder-base](https://github.com/jenkins-x/builder-base)) en el generador que contiene [todas las diferentes herramientas](https://github.com/jenkins-x/builder-base/blob/master/Dockerfile#L21-L70) que tendemos a utilizar en los pipelines de CI/CD como `jx, skaffold, helm, git, updatebot`.
+Por lo tanto, tenemos una imagen de docker base ([builder-base](https://github.com/jenkins-x/builder-base)) en el generador que contiene [todas las diferentes herramientas](https://github.com/jenkins-x/jenkins-x-builders-base/blob/master/Dockerfile.common#L4-L15) que tendemos a utilizar en los pipelines de CI/CD como `jx, skaffold, helm, git, updatebot`.
 
 Si desea usar una sola imagen de generador para su nueva plantilla de pod, puede usar la base de generador y luego agregar sus herramientas personalizadas en la parte superior.
 
