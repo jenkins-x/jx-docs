@@ -216,6 +216,9 @@
         "gitops": {
           "type": "boolean"
         },
+        "helmfile": {
+          "type": "boolean"
+        },
         "ingress": {
           "$ref": "#/definitions/IngressConfig"
         },
