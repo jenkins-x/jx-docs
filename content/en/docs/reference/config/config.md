@@ -551,6 +551,19 @@ string
 <p>Namespace to install the application into</p>
 </td>
 </tr>
+<tr>
+<td>
+<code>phase</code></br>
+<em>
+<a href="#config.jenkins.io/v1.Phase">
+Phase
+</a>
+</em>
+</td>
+<td>
+<p>Phase of the pipeline to install application</p>
+</td>
+</tr>
 </tbody>
 </table>
 <h3 id="config.jenkins.io/v1.ApplicationConfig">ApplicationConfig
@@ -2958,6 +2971,15 @@ string
 </tr>
 </tbody>
 </table>
+<h3 id="config.jenkins.io/v1.Phase">Phase
+(<code>string</code> alias)</p></h3>
+<p>
+(<em>Appears on:</em>
+<a href="#config.jenkins.io/v1.Application">Application</a>)
+</p>
+<p>
+<p>Phase of the pipeline to install application</p>
+</p>
 <h3 id="config.jenkins.io/v1.PipelineConfig">PipelineConfig
 </h3>
 <p>
@@ -5251,5 +5273,5 @@ string
 <hr/>
 <p><em>
 Generated with <code>gen-crd-api-reference-docs</code>
-on git commit <code>a351de4be</code>.
+on git commit <code>993ff917c</code>.
 </em></p>
