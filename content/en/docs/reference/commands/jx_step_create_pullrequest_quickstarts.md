@@ -1,5 +1,5 @@
 ---
-date: 2020-02-07T01:03:15Z
+date: 2020-02-07T15:17:20Z
 title: "jx step create pullrequest quickstarts"
 slug: jx_step_create_pullrequest_quickstarts
 url: /commands/jx_step_create_pullrequest_quickstarts/
