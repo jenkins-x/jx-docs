@@ -25,7 +25,7 @@ The first thing you'll need to do is get your local environment setup, so that y
 We'll go through each step below, but here's what you need to get started:
 
 * [Git](https://git-scm.com) and a [GitHub](https://github.com) account
-* A local workign copy of the code
+* A local working copy of the code
 * A way to run the site locally to check your changes before submitting them
 
 ## Install Git on your system
