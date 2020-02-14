@@ -4,11 +4,346 @@ linktitle: Amazon
 description: Using Boot on Amazon (AWS)
 date: 2017-02-01
 publishdate: 2017-02-01
-lastmod: 2017-02-01
+lastmod: 2020-02-13
 weight: 20
 ---
 
 For details of how to setup your cluster see the [Amazon instructions](/docs/getting-started/setup/create-cluster/amazon/)
+
+## Authentication mechanisms
+There are two standard authentication mechanisms that are recommended depending on use case: Enhanced permissions for the nodepool role, and IRSA.
+
+### Enhanced permissions for the nodepool role
+The default authentication and permissions mechanism used by EKS in order to give nodepool access to certain AWS services.
+
+When an EKS cluster is created, the control plane for the cluster is managed directly by AWS but its nodepool and all the worker nodes are created as EC2 instances. These EC2 instances are assigned an IAM Role with specific permissions to allow these nodes to authenticate against AWS.
+
+More policies can be added to these roles in order to provide permissions to every pod running in the cluster.
+
+The issue with this mechanism is that by enhancing the permissions on the nodepool EC2 instances, every pod in the cluster will have every permission provided by the Role, which could raise security concerns.
+
+Third party solutions like [kiam](https://github.com/uswitch/kiam) or [kube2iam](https://github.com/jtblin/kube2iam) can be used to provide permissions on a pod by pod basis but for Jenkins X it is recommended to use the official [IAMRoles for Service Accounts](https://aws.amazon.com/blogs/opensource/introducing-fine-grained-iam-roles-service-accounts).
+
+Note that this is the mechanism that *must* be used if the cluster was not created with [eksctl](https://github.com/weaveworks/eksctl), because only clusters created with `eksctl` are able to assign an Open ID Connect Provider that will make IAM Roles for Service Accounts work.
+
+### IAM Roles for Service Accounts (IRSA)
+
+In order to avoid the security concerns that enhanced permissions on the nodepool creates, it is recommended to use IRSA mechanisms to provide fine grained permissions at the Service Account level, meaning that a Role will be created and attached for every single Service Account that is used in the cluster.
+
+When executing `jx boot` (and ensuring that the `--terraform` flag is set to `false`), a series of IAM Policies are created through CloudFormation stacks:
+
+[jenkinsx-policies.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/kubeProviders/eks/templates/jenkinsx-policies.yml)
+
+These policies are then exported as CloudFormation outputs following a defined format. For example:
+
+```yaml
+Export:
+  Name: !Join [ "-", [ TektonBotPolicy, Ref: PoliciesSuffixParameter] ]
+```
+This policy performs a Join operation. A name is provided, in this case TektonBotPolicy; then a random suffix is appended to make the name unique.
+
+The provided name will be used in the irsa.tmpl.yaml file.
+
+The names of the outputs from jenkinsx-policies.yml are used in this file by processing it through Golang’s templating functionality, exporting the outputs of the CloudFormation stack under the .IAM.` prefix.
+
+This means that the outputs from jenkins-x-policies.yml can be obtained and queried in this file, which will then be processed and run against the cluster.
+
+For example, take this output from the CloudFormation stack:
+
+```yaml
+CFNTektonBotPolicy:
+  Value:
+  Ref: CFNJenkinsXPolicies
+  Description: The ARN of the created policy
+  Export:
+    Name: !Join [ "-", [ TektonBotPolicy, Ref: PoliciesSuffixParameter] ]
+```
+
+And how we use its export name in the next file:
+
+```yaml
+{{- if .IAM.TektonBotPolicy }}
+  - metadata:
+      name: tekton-bot
+      namespace: jx
+      labels: {aws-usage: "jenkins-x"}
+    attachPolicyARNs:
+    - {{.IAM.TektonBotPolicy | quote}}
+```
+In this example we are taking the policy ARN created from the CloudFormation stack under a specific export name and using it in the IRSA template file. This will then create an IAM Role, attach the policy to it, then it will create a new ServiceAccount called tekton-bot with the necessary annotations to let it assume the created role.
+
+If the ServiceAccount already exists, it will perform an upsert and just add the annotation.
+
+A pod that uses that ServiceAccount will automatically assume that role in IAM and be granted access to the cloud services defined in the policy that was attached to its role.
+
+If you need to add more permissions for other Service Accounts, just add them to [jenkinsx-policies.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/kubeProviders/eks/templates/jenkinsx-policies.yml) with an export name that can be referenced in [irsa.tmpl.yaml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/kubeProviders/eks/templates/irsa.tmpl.yaml) and Jenkins X will create everything for you.
+
+You can also simply add already created policies to your ServiceAccounts like this:
+
+```yaml
+  - metadata:
+      name: jenkins-x-controllerbuild
+      namespace: jx
+      labels: {aws-usage: "jenkins-x"}
+    attachPolicyARNs:
+    - "arn:aws:iam::aws:policy/AmazonS3FullAccess"
+```
+Note: For now, this can only be done in the initial installation of Jenkins X and any adjustments need to be done manually by adding more permissions to the created IAM Policies.
+
+## [IAM Policies for Cluster creation and Jenkins X Boot](#iam-policies-for-boot)
+
+Before getting into IRSA, we will define the minimum permissions needed to create an EKS cluster with jx create cluster eks and Jenkins X.
+
+### IAM Policy for Cluster creation
+
+In order to create an EKS cluster, we make use of [eksctl](https://github.com/weaveworks/eksctl), which is the official tool to interact with EKS clusters.
+
+There is no official policy documented by eksctl to get a cluster running, but there’s a very useful GitHub issue where users have been curating a comprehensive policy that should work for all cases: [https://gist.github.com/dgozalo/bc4b932d51f22ca5d8dad07d9a1fe0f2](https://gist.github.com/dgozalo/bc4b932d51f22ca5d8dad07d9a1fe0f2)
+
+```yaml
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:CreateInstanceProfile",
+                "iam:DeleteInstanceProfile",
+                "iam:GetRole",
+                "iam:GetInstanceProfile",
+                "iam:RemoveRoleFromInstanceProfile",
+                "iam:CreateRole",
+                "iam:DeleteRole",
+                "iam:AttachRolePolicy",
+                "iam:PutRolePolicy",
+                "iam:ListInstanceProfiles",
+                "iam:AddRoleToInstanceProfile",
+                "iam:ListInstanceProfilesForRole",
+                "iam:PassRole",
+                "iam:DetachRolePolicy",
+                "iam:DeleteRolePolicy",
+                "iam:GetRolePolicy",
+                "iam:DeleteServiceLinkedRole",
+                "iam:CreateServiceLinkedRole"
+            ],
+            "Resource": [
+                "arn:aws:iam::<account_id>:instance-profile/eksctl-*",
+                "arn:aws:iam::<account_id>:role/eksctl-*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": "cloudformation:*",
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "eks:*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "autoscaling:DescribeAutoScalingGroups",
+                "autoscaling:DescribeLaunchConfigurations",
+                "autoscaling:DescribeScalingActivities",
+                "autoscaling:CreateLaunchConfiguration",
+                "autoscaling:DeleteLaunchConfiguration",
+                "autoscaling:UpdateAutoScalingGroup",
+                "autoscaling:DeleteAutoScalingGroup",
+                "autoscaling:CreateAutoScalingGroup"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "ec2:DeleteInternetGateway",
+            "Resource": "arn:aws:ec2:*:*:internet-gateway/*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:AuthorizeSecurityGroupIngress",
+                "ec2:DeleteSubnet",
+                "ec2:DeleteTags",
+                "ec2:CreateNatGateway",
+                "ec2:CreateVpc",
+                "ec2:AttachInternetGateway",
+                "ec2:DescribeVpcAttribute",
+                "ec2:DeleteRouteTable",
+                "ec2:AssociateRouteTable",
+                "ec2:DescribeInternetGateways",
+                "ec2:CreateRoute",
+                "ec2:CreateInternetGateway",
+                "ec2:RevokeSecurityGroupEgress",
+                "ec2:CreateSecurityGroup",
+                "ec2:ModifyVpcAttribute",
+                "ec2:DeleteInternetGateway",
+                "ec2:DescribeRouteTables",
+                "ec2:ReleaseAddress",
+                "ec2:AuthorizeSecurityGroupEgress",
+                "ec2:DescribeTags",
+                "ec2:CreateTags",
+                "ec2:DeleteRoute",
+                "ec2:CreateRouteTable",
+                "ec2:DetachInternetGateway",
+                "ec2:DescribeNatGateways",
+                "ec2:DisassociateRouteTable",
+                "ec2:AllocateAddress",
+                "ec2:DescribeSecurityGroups",
+                "ec2:RevokeSecurityGroupIngress",
+                "ec2:DeleteSecurityGroup",
+                "ec2:DeleteNatGateway",
+                "ec2:DeleteVpc",
+                "ec2:CreateSubnet",
+                "ec2:DescribeSubnets",
+                "ec2:DescribeAvailabilityZones",
+                "ec2:DescribeImages",
+                "ec2:describeAddresses",
+                "ec2:DescribeVpcs",
+                "ec2:CreateLaunchTemplate",
+                "ec2:DescribeLaunchTemplates",
+                "ec2:RunInstances",
+                "ec2:DeleteLaunchTemplate",
+                "ec2:DescribeLaunchTemplateVersions",
+                "ec2:DescribeImageAttribute",
+                "ec2:DescribeKeyPairs",
+                "ec2:ImportKeyPair"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+```
+### IAM Policy for Jenkins X Boot creation
+
+A different policy is required for Jenkins X to be successful with the jx boot command.  Depending on the configuration present in jx-requirements.yml, we will attempt to interact with different cloud services like S3, DynamoDB or KMS.  This policy will allow the executing user the minimum permissions to be successful.
+
+[https://gist.github.com/dgozalo/df514542b63ef05282cac793b433d74b](https://gist.github.com/dgozalo/df514542b63ef05282cac793b433d74b)
+
+```yaml
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "dynamodb:CreateTable",
+                "s3:GetObject",
+                "cloudformation:ListStacks",
+                "cloudformation:DescribeStackEvents",
+                "dynamodb:DescribeTable",
+                "s3:CreateBucket",
+                "kms:CreateKey",
+                "s3:ListBucket",
+                "s3:PutBucketVersioning",
+                "cloudformation:DescribeStacks"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": [
+                "iam:GetRole",
+                "iam:GetPolicy",
+                "ecr:CreateRepository",
+                "iam:AttachUserPolicy",
+                "iam:CreateRole",
+                "iam:DeleteRole",
+                "iam:AttachRolePolicy",
+                "iam:CreateAccessKey",
+                "iam:CreateOpenIDConnectProvider",
+                "iam:CreatePolicy",
+                "iam:DetachRolePolicy",
+                "cloudformation:CreateStack",
+                "cloudformation:DeleteStack",
+                "ecr:DescribeRepositories",
+                "iam:GetOpenIDConnectProvider"
+            ],
+            "Resource": [
+                "arn:aws:iam::*:policy/CFN*",
+                "arn:aws:iam::*:policy/*jenkins-x-vault*",
+                "arn:aws:iam::*:oidc-provider/*",
+                "arn:aws:iam::*:role/*addon-iamserviceaccoun*",
+                "arn:aws:iam::*:user/*",
+                "arn:aws:ecr:*:*:repository/*",
+                "arn:aws:cloudformation:*:*:stack/JenkinsXPolicies*/*",
+                "arn:aws:cloudformation:*:*:stack/*addon-iamserviceaccount*/*",
+                "arn:aws:cloudformation:*:*:stack/*jenkins-x-vault*/*"
+            ]
+        },
+        {
+            "Sid": "VisualEditor2",
+            "Effect": "Allow",
+            "Action": [
+                "iam:CreatePolicy",
+                "iam:DetachRolePolicy",
+                "iam:GetPolicy",
+                "iam:CreateRole",
+                "iam:AttachRolePolicy",
+                "iam:GetOpenIDConnectProvider",
+                "iam:CreateOpenIDConnectProvider"
+            ],
+            "Resource": [
+                "arn:aws:iam::*:oidc-provider/*",
+                "arn:aws:iam::*:role/*addon-iamserviceaccoun*",
+                "arn:aws:iam::*:policy/CFN*"
+            ]
+        },
+        {
+            "Sid": "VisualEditor3",
+            "Effect": "Allow",
+            "Action": "eks:*",
+            "Resource": [
+                "arn:aws:eks:*:*:fargateprofile/*/*/*",
+                "arn:aws:eks:*:*:cluster/*",
+                "arn:aws:eks:*:*:nodegroup/*/*/*"
+            ]
+        }
+    ]
+}
+```
+The reason for these policies is further described for each cloud resource below.
+
+**IAM**
+
+In order to make IAM Roles for Service Accounts work, Jenkins X will create IAM Policies and Roles and then attach these policies to these roles.  These Roles are then annotated into selected Service Accounts so pods using them can assume the role.  In order to make IRSA work, Jenkins X needs to create an Open ID Connect Provider with IAM in order to authenticate the annotated pods.  Also, in order to make Vault work, we (for now) need to attach a policy, created just for Vault, into a provided IAM User.
+
+**CloudFormation**
+
+Jenkins X creates a series of CloudFormation stacks to prepare the platform for cluster installation. All IAM Policies created for IRSA are created as CloudFormation stacks.  Every cloud resource needed by Vault is also created by CloudFormation, but only if they are not provided in jx-requirements.yml already.
+
+**S3**
+
+Jenkins X uses S3 for Long Term Storage, that is, for logs archival and stashing of artifacts created in Pipelines.  Jenkins X Boot will attempt to check for existing S3 buckets and create them if they don’t exist.  It is also used by Vault, so there needs to be enough permissions for the executing user to interact with the service. Permissions to interact with the bucket however, is handled by IRSA and are only granted to the Vault pod.
+
+**DynamoDB**
+
+This service is used by Vault, so the executing user needs to have permissions to at least create the table. Permissions to interact with the table however, is handled by IRSA and are only granted to the Vault pod.
+
+**KMS**
+
+Vault needs to create a KMS key in order to encrypt its contents. Again, the executing user just needs permissions to create the Key. Permissions to interact with KMS however, is handled by IRSA and are only granted to the Vault pod.
+
+**ECR**
+
+Jenkins X will check if there is an ECR registry already created for a given application, and create it otherwise.
+
+**EKS**
+
+Jenkins X will need full permissions on EKS in order to operate without problems.  For further security, this policy can be modified to restrict its access to only certain resources and accounts.  For example, if you know the name of your cluster, you can modify the resources affected by the eks permission to limit its effect.
+
+**Vault: A special case**
+
+Vault does not support IAM Roles for Service accounts at the moment, its configuration depends on an existing IAM User that needs to be provided for Jenkins X to attach an IAM Policy to and use its secret credentials to authenticate against AWS.
+
+The CloudFormation stack that creates its resources can be found here:
+[https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/kubeProviders/eks/templates/vault_cf_tmpl.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/kubeProviders/eks/templates/vault_cf_tmpl.yml)
+
 
 ## Configuration
 
