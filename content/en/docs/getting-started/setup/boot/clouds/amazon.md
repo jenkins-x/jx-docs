@@ -90,7 +90,7 @@ You can also simply add already created policies to your ServiceAccounts like th
 ```
 Note: For now, this can only be done in the initial installation of Jenkins X and any adjustments need to be done manually by adding more permissions to the created IAM Policies.
 
-## [IAM Policies for Cluster creation and Jenkins X Boot](#iam-policies-for-boot)
+## IAM Policies for Cluster creation and Jenkins X Boot
 
 Before getting into IRSA, we will define the minimum permissions needed to create an EKS cluster with jx create cluster eks and Jenkins X.
 
