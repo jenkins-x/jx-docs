@@ -10,7 +10,7 @@ weight: 20
 
 For details of how to setup your cluster see the [Amazon instructions](/docs/getting-started/setup/create-cluster/amazon/)
 
-[Basic Configuration](#configuration) 
+[Basic Configuration](#basic-configuration) 
 
 [Authentication Mechanisms](#authentication-mechanisms)
 
