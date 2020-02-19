@@ -68,7 +68,7 @@ See the IDE guide for [IDEA](/docs/concepts/jenkins-x-pipelines/#editing-in-vs-c
 
 ## What environment variables are available by default inside a pipeline?
 
-See the [default environment variables created for pipeline steps](/docs/concepts/jenkins-x-pipelines/#default-environment-variables)
+See the [default environment variables created for pipeline steps](/docs/using-jx/pipelines/envvars/#default-environment-variables)
 
 ## Is there a reference for the syntax?
 
@@ -76,9 +76,9 @@ See the [Jenkins X Pipelines Syntax Reference](/docs/reference/pipeline-syntax-r
 
 ## How do I mount a Secret or ConfigMap?
 
-Each step in a Jenkins X Pipeline in the `jenkins-x.yml` file is basically a [Container](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.15/#container-v1-core) from kubernetes so you can specify the image, resource limitts, environment variables and mount them from a `ConfigMap` or `Secret`
+Each step in a Jenkins X Pipeline in the `jenkins-x.yml` file is basically a [Container](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.15/#container-v1-core) from kubernetes so you can specify the image, resource limits, environment variables and mount them from a `ConfigMap` or `Secret`
 
-You can see [an example of mounting a Secrett to an environment variable here](/docs/reference/pipeline-syntax-reference/#full-pipeline-definition-in-jenkins-x-yml)
+You can see [an example of mounting a Secret to an environment variable here](/docs/reference/pipeline-syntax-reference/#full-pipeline-definition-in-jenkins-x-yml)
 
 If you are inside a shell script you can also use the [jx step credential](/commands/deprecation/)
 
