@@ -5,7 +5,7 @@ weight: 5
 description: >
   Using custom docker images in your steps
 ---
-You’re not restricted to the builder images available from Jenkins X, but can use any Docker image you’d like; as long as Jenkins X can access the registry where they’re published.
+Jenkins X supports various types of Docker builder images, as long as the image is published in an accessible registry. 
 
 One example is to re-use Google’s fairly small [cloud builder images](https://github.com/GoogleCloudPlatform/cloud-builders) to perform quick tasks:
 ```yaml
