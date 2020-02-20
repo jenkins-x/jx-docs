@@ -94,4 +94,4 @@ or at a step level:
                 value: A value for the step level variable
 ```
 
-Each level will add their variables to the variables defined in the level(s) above them, or potentially replace a variable if the same name is used
+Each level will add their variables to the variables defined in the level(s) above them, or potentially replace a variable if the same name is used.
