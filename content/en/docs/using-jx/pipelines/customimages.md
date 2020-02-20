@@ -27,4 +27,4 @@ Or you can use your own published images like this:
             - --baseURL http://${APP_NAME}.jx-${REPO_OWNER}-${REPO_NAME}-pr-${PULL_NUMBER}.${DOMAIN}/
 ```
 
-The main requirement is that the image is available, either with or without authentication
+The main requirement is that the image is available, either with or without authentication.
