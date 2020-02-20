@@ -6,6 +6,7 @@ IgnoreInternalEmptyHash: true
 IgnoreDirs:
 - "apidocs"
 - "zh"
+- "es"
 - "docs/reference/api"
 - "docs/reference/config"
 - "community/events/"
