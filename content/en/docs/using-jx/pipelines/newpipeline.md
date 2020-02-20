@@ -6,7 +6,7 @@ description: >
   How to create a new Jenkins X Pipeline from scratch
 ---
 
-If you’re starting out with a blank canvas, it’s still a good idea to have a look at the [quickstart templates](https://github.com/jenkins-x-quickstarts) to get inspiration for how to deal with certain things.
+If you’re starting out with a blank canvas, it’s still a good idea to have a look at the [quickstart templates](https://github.com/jenkins-x-quickstarts) to get inspiration for creating a pipeline with proper syntax and structure.
 
 You can copy the basic structure over from an existing file, or copy from here, but at the very minimum you need to define two pipelines, pullRequest and Release, which will encompass the more detailed stages and steps:
 
