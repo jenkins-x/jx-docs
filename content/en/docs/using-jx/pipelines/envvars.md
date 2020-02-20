@@ -42,7 +42,7 @@ For `pullRequest` pipelines, the value is populated based on the version recorde
 
 #### Triggering a major or minor version bump
 
-When the version is bumped automatically, only the patch version is changed. To change the major or minor version, manually add a tag (e.g. 1.4.0) to your repo and Jenkins X will continue to increment from there (making the next application version 1.4.1 in the previous example)
+When the version is bumped automatically, only the patch version is changed. To change the major or minor version, manually add a tag (e.g. 1.4.0) to your repo and Jenkins X will continue to increment from there (making the next application version 1.4.1 in the previous example).
 
 #### Overriding ${VERSION}
 
