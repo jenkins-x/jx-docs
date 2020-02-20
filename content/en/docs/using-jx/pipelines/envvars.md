@@ -36,7 +36,7 @@ The following environment variables are available for use in a step in Jenkins X
 
 This particular variable is populated by Jenkins X when running pipelines. You can use this to tag docker images or anything else where you need a version number for the application you’re building.
 
-For Release pipelines, Jenkins X will look up the latest Git tag and use that as a basis for the value, increment it and create a new tag. Say your latest tag is `1.3.34`, Jenkins X will populate `${VERSION}` with `1.3.35` and will tag the HEAD of the master branch with the same value. This all happens automatically, giving you a record of the last successful build of the master branch.
+For Release pipelines, Jenkins X will look up the latest Git tag and use that as a basis for the value, increment it and create a new tag. For example, if your latest tag is `1.3.34`, Jenkins X will populate `${VERSION}` with `1.3.35` and will tag the HEAD of the master branch with the same value. This all happens automatically, giving you a record of the last successful build of the master branch.
 
 For `pullRequest` pipelines, the value is populated based on the version recorded in the GitOps repo for your application, and appended with `PR-<pull request number>-<build number>` giving each build a pull request a unique version.
 
