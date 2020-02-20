@@ -15,7 +15,7 @@ One example is to re-use Google’s fairly small [cloud builder images](https://
            args: ['install']
 ```
 
-Or your own published images like this:
+Or you can use your own published images like this:
 ```yaml
           - image: gcr.io/jenkinsxio/hugo-extended:0.60.1-3
             name: build-website
