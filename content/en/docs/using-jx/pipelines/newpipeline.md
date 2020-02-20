@@ -20,7 +20,7 @@ pipelineConfig:
 
 For the `pullRequest` pipeline you define the stages and steps that Jenkins X will execute for each pull request, and `Release` is the same, just for what should happen to create the final product (whether a k8s app, docker image, static website, etc.)
 
-You can also specify a `feature` pipeline, for processing merges to a feature branch. Though note that the [accelerate book](/docs/overview/accelerate/) recommends against long term feature branches. Instead consider using trunk based development which is a practice of high performing teams.
+You can also specify a `feature` pipeline, for processing merges to a feature branch. However, note that the [Accelerate book](/docs/overview/accelerate/) recommends against long term feature branches. Instead, consider using trunk based development which is a practice of high performing teams.
 
 Each pipeline will have an `agent` defined (usually Kaniko for building docker images) and at least one `stage`:
 
