@@ -1,8 +1,9 @@
 ---
-title: "jx commands"
-linkTitle: "jx commands"
-weight: 6
-date: 2017-01-05
+title: "Command Line Reference"
+linkTitle: "Command Line Reference"
+weight: 1
 description: >
-  Reference section for `jx` CLI commands.
+  jx command line reference
 ---
+
+[Overview of jx commands](/commands/jx/)

@@ -46,7 +46,7 @@ Entonces, para encontrar la contraseña, tendrá que encontrarla a mano, me temo
 kubectl get secret jx-jx-app-jenkins -o yaml | ksd
 ```
 
-Luego podrá ver su usuario/contraseña en la pantalla si lo desea para para registrase en la interfaz de Jenkins a través del comando [jx console](/commands/jx_console/).
+Luego podrá ver su usuario/contraseña en la pantalla si lo desea para para registrase en la interfaz de Jenkins a través del comando [jx console](/commands/deprecation/).
 
 ## Usando el Jenkins personalizado
 

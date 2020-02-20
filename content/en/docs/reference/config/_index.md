@@ -1,6 +1,7 @@
 ---
 title: Configuration
 linktitle: Configuration
+description: Configuration File Reference
 weight: 8
 ---
 

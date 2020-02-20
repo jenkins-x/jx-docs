@@ -501,6 +501,110 @@ string
 </tr>
 </tbody>
 </table>
+<h3 id="config.jenkins.io/v1.Application">Application
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#config.jenkins.io/v1.ApplicationConfig">ApplicationConfig</a>)
+</p>
+<p>
+<p>Application is an application to install during boot</p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>name</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Name of the application / helm chart</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>repository</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Repository the helm repository</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>namespace</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Namespace to install the application into</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>phase</code></br>
+<em>
+<a href="#config.jenkins.io/v1.Phase">
+Phase
+</a>
+</em>
+</td>
+<td>
+<p>Phase of the pipeline to install application</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="config.jenkins.io/v1.ApplicationConfig">ApplicationConfig
+</h3>
+<p>
+<p>ApplicationConfig contains applications to install during boot</p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>applications</code></br>
+<em>
+<a href="#config.jenkins.io/v1.Application">
+[]Application
+</a>
+</em>
+</td>
+<td>
+<p>Applications of applications</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>defaultNamespace</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>DefaultNamespace the default namespace to install applications into</p>
+</td>
+</tr>
+</tbody>
+</table>
 <h3 id="config.jenkins.io/v1.AutoUpdateConfig">AutoUpdateConfig
 </h3>
 <p>
@@ -640,16 +744,6 @@ string
 <tr>
 <td>
 <code>BuildIdentifier</code></br>
-<em>
-string
-</em>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code>ResourceIdentifier</code></br>
 <em>
 string
 </em>
@@ -1151,6 +1245,28 @@ string
 <p>HelmMajorVersion contains the major helm version number. Assumes helm 2.x with no tiller if no value specified</p>
 </td>
 </tr>
+<tr>
+<td>
+<code>devEnvApprovers</code></br>
+<em>
+[]string
+</em>
+</td>
+<td>
+<p>DevEnvApprovers contains an optional list of approvers to populate the initial OWNERS file in the dev env repo</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>dockerRegistryOrg</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>DockerRegistryOrg the default organisation used for container images</p>
+</td>
+</tr>
 </tbody>
 </table>
 <h3 id="config.jenkins.io/v1.CreateJenkinsfileArguments">CreateJenkinsfileArguments
@@ -1198,7 +1314,7 @@ string
 </tr>
 <tr>
 <td>
-<code>JenkinsfileRunner</code></br>
+<code>IsTekton</code></br>
 <em>
 bool
 </em>
@@ -1510,6 +1626,17 @@ bool
 </td>
 <td>
 <p>RemoteCluster specifies this environment runs on a remote cluster to the development cluster</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>promotionStrategy</code></br>
+<em>
+github.com/jenkins-x/jx/pkg/apis/jenkins.io/v1.PromotionStrategyType
+</em>
+</td>
+<td>
+<p>PromotionStrategy what kind of promotion strategy to use</p>
 </td>
 </tr>
 </tbody>
@@ -2844,6 +2971,15 @@ string
 </tr>
 </tbody>
 </table>
+<h3 id="config.jenkins.io/v1.Phase">Phase
+(<code>string</code> alias)</p></h3>
+<p>
+(<em>Appears on:</em>
+<a href="#config.jenkins.io/v1.Application">Application</a>)
+</p>
+<p>
+<p>Phase of the pipeline to install application</p>
+</p>
 <h3 id="config.jenkins.io/v1.PipelineConfig">PipelineConfig
 </h3>
 <p>
@@ -3636,6 +3772,10 @@ string
 <h3 id="config.jenkins.io/v1.RequirementsConfig">RequirementsConfig
 </h3>
 <p>
+(<em>Appears on:</em>
+<a href="#config.jenkins.io/v1.RequirementsValues">RequirementsValues</a>)
+</p>
+<p>
 <p>RequirementsConfig contains the logical installation requirements in the <code>jx-requirements.yml</code> file when
 installing, configuring or upgrading Jenkins X via <code>jx boot</code></p>
 </p>
@@ -3720,6 +3860,18 @@ bool
 <td>
 <p>GitOps if enabled we will setup a webhook in the boot configuration git repository so that we can
 re-run &lsquo;jx boot&rsquo; when changes merge to the master branch</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>helmfile</code></br>
+<em>
+bool
+</em>
+</td>
+<td>
+<p>Indicates if we are using helmfile and helm 3 to spin up environments. This is currently an experimental
+feature flag used to implement better Multi-Cluster support. See <a href="https://github.com/jenkins-x/jx/issues/6442">https://github.com/jenkins-x/jx/issues/6442</a></p>
 </td>
 </tr>
 <tr>
@@ -3846,6 +3998,34 @@ WebhookType
 </td>
 <td>
 <p>Webhook specifies what engine we should use for webhooks</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="config.jenkins.io/v1.RequirementsValues">RequirementsValues
+</h3>
+<p>
+<p>RequirementsValues contains the logical installation requirements in the <code>jx-requirements.yml</code> file as helm values</p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>jxRequirements</code></br>
+<em>
+<a href="#config.jenkins.io/v1.RequirementsConfig">
+RequirementsConfig
+</a>
+</em>
+</td>
+<td>
+<p>RequirementsConfig contains the logical installation requirements</p>
 </td>
 </tr>
 </tbody>
@@ -4419,6 +4599,111 @@ string
 <p>StepOverrideType is used to specify whether the existing step should be replaced (default), new step(s) should be
 prepended before the existing step, or new step(s) should be appended after the existing step.</p>
 </p>
+<h3 id="config.jenkins.io/v1.StepPlaceholderReplacementArgs">StepPlaceholderReplacementArgs
+</h3>
+<p>
+<p>StepPlaceholderReplacementArgs specifies the arguments required for replacing placeholders in build pack directories.</p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>WorkspaceDir</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<code>GitName</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<code>GitOrg</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<code>GitHost</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<code>DockerRegistry</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<code>DockerRegistryOrg</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<code>ProjectID</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<code>KanikoImage</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<code>UseKaniko</code></br>
+<em>
+bool
+</em>
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
 <h3 id="config.jenkins.io/v1.StorageConfig">StorageConfig
 </h3>
 <p>
@@ -5093,5 +5378,5 @@ string
 <hr/>
 <p><em>
 Generated with <code>gen-crd-api-reference-docs</code>
-on git commit <code>12797a799</code>.
+on git commit <code>a0d4c5a2b</code>.
 </em></p>

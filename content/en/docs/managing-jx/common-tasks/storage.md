@@ -36,7 +36,6 @@ You can also use the special classification `default` which is used if you don't
 
 If you are using [jx boot](/docs/getting-started/setup/boot/) to install and configure your setup then modify your `jx-requirements.yml` file to configure storage as described in the [boot storage documentation](/docs/getting-started/setup/boot/#storage)
 
-
 Otherwise to configure the storage location for a classification and team you use the [jx edit storage](/commands/jx_edit_storage/)
 
 e.g.
@@ -47,6 +46,9 @@ jx edit storage -c tests --bucket-url s3://myExistingBucketName
 
 # Configure the git URL and branch of where to store logs
 jx edit storage -c logs --git-url https://github.com/myorg/mylogs.git --git-branch cheese
+
+# Configure your own category
+jx edit storage -c <new-category> --bucket-url gs://myExistingBucketName
 ```
 
 You can view your teams storage settings via [jx get storage](/commands/jx_get_storage/)
@@ -66,7 +68,12 @@ jx step stash -c coverage -p "build/coverage/*" --bucket-url s3://my-aws-bucket
 
 * specify the `classifier` via `-c` such as for `tests` or `coverage` etc.
 * specify the files to collect via `-p` which supports wildcards like `*`. files which will be stored with the relative directory path
-* if you want to remove a direectory prefix from the stashed files, like `target/reports` you can use `--basedir` to specify the directory to create relative file names from
+* if you want to remove a directory prefix from the stashed files, like `target/reports` you can use `--basedir` to specify the directory to create relative file names from
+
+{{% pageinfo %}}
+**NOTE** Be aware that you have to run `jx step stash` inside your git repository,
+therefore `dir:` should be set to `/workspace/source` in your stash step.
+{{% /pageinfo %}}
 
 By default [jx step stash](/commands/jx_step_stash/) will use your team's configured location for the classification you give. If you wish you can override the location for a stash using `--git-url` or `--bucket-url`
 
@@ -84,3 +91,43 @@ If you are in some Go source code and you have a URL from Jenkins X, such as a B
 
 
 If you want to easily be able to read from the URL from Go source code you can use the [`ReadURL` function](https://github.com/jenkins-x/jx/blob/e5a7943dc0c3d79c27f30aea73235f18b3f5dcff/pkg/cloud/buckets/buckets.go#L44-L45).
+
+## GKE Storage Permissions
+In GKE your node-pool requires additional permissions to be able to write into GCS buckets,
+more specifically the `devstorage.full_control` permission.
+
+If you already have a cluster, you can see these permissions in your [cluster overview](https://console.cloud.google.com/kubernetes),
+under the dropdown `Permissions`.
+
+The description of the field `Storage` should be `Full`,
+by default it is `Read Only`.
+
+There are two ways to change your permissions,
+either you create a new cluster with the appropriate permissions
+or you just migrate the node-pool, if you already have a running cluster.
+
+### Create a new GKE Cluster with Full-Control
+
+To create a new cluster with the right permissions,
+you need to use the `--scopes` flag with the `storage-full` argument, as seen here:
+
+```
+gcloud container clusters create <name> --machine-type <type> --zone <zone> --scopes=storage-full
+```
+
+### Migrate to a node-pool with Full-Control
+
+Migrating to a new node-pool is quite simple, it's done in 2 steps!
+
+First create a new node-pool with the required permissions:
+
+```
+gcloud container node-pools create <node-pool-name> --cluster <cluster-name> --machine-type <type> --scopes=storage-full
+```
+
+Now delete the old node-pool, all your `Pods` will
+be rescheduled on the new node-pool through Kubernetes magic!
+
+```
+gcloud container node-pools delete <node-pool-name>
+```

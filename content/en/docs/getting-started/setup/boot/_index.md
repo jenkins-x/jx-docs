@@ -21,16 +21,14 @@ aliases:
 _Jenkins X Boot_ uses the following approach:
 
 * create your Kubernetes cluster however you want:
+  * use `jx create cluster --skip-installation` e.g. for Google Cloud use `jx create cluster gke --skip-installation`. To see all the different providers see [jx create cluster](/commands/jx_create_cluster/)  
   * use Terraform to create your Kubernetes clusters + the associated cloud resources
   * use your cloud providers web console to create a new Kubernetes cluster
-  * use `jx create cluster --skip-installation` e.g.
-``` sh
-jx create cluster gke --skip-installation
-```
-
   * use some custom tool of your choice (maybe it's provided to you by your operations team)
 
-* you may want to verify you can communicate correctly with your Kubernetes cluster via:
+Please check out our [Cloud Providers Guide](/docs/getting-started/setup/boot/clouds/) on our recommendations for your cloud provider.
+
+You can verify you can communicate correctly with your Kubernetes cluster via:
 ``` sh
 kubectl get ns
 ```
@@ -58,9 +56,17 @@ Once the installation has completed the [jx step verify install](/commands/jx_st
 
 ## Changing your installation
 
-At any time you can re-run [jx boot](/commands/jx_boot/) to re-apply any changes in your configuration.
+At any time you can re-run [jx boot](/commands/jx_boot/) to re-apply any changes in your configuration. To do this git clone your development environment git repository, change directory into the git clone and run `jx boot`. e.g.
+
+```sh 
+git clone https://github.com/myuser/environment-mycluster-dev.git
+cd environment-mycluster-dev
+jx boot
+```
 
 So just edit anything in the configuration you like and re-run [jx boot](/commands/jx_boot/) - whether that's to add or remove apps, to change parameters or configuration, or upgrade or downgrade versions of dependencies.
+
+Note that you can also just submit a Pull Request on your development git repository which if merged, will trigger a pipeline to run the above commands to apply the changes.
 
 ## Requirements
 
@@ -433,6 +439,10 @@ storage:
     url: gs://my-repo
 ```
 
+{{% pageinfo %}}
+**NOTE** On GKE your node-pool requires additional permissions to write into GCS buckets,
+for more information on this view the [GKE Storage Permissions](https://jenkins-x.io/docs/managing-jx/common-tasks/storage/#gke-storage-permissions)
+{{% /pageinfo %}}
 For more details see the [Storage Guide](https://jenkins-x.io/architecture/storage/).
 
 ## Ingress
@@ -519,12 +529,12 @@ With `jx boot` all of the versions and configuration is in Git so it's easy to m
 
 ### Auto Upgrades
 
-You can enable auto upgrades in the `jx-requirements.yml` via the following (where `schedule` is a cron expression)
+You can enable auto upgrades in the `jx-requirements.yml` via the following (where `schedule` is a cron expression).
 
 ```yaml
 autoUpdate:
   enabled: true
-  schedule: "0 0 23 1/1 * ? *"
+  schedule: "0 12 */5 * *"
 ```
 
 When auto upgrades are enabled a `CronJob` is run which periodically checks for changes in the [version stream](/docs/concepts/version-stream/) or [boot configuration](https://github.com/jenkins-x/jenkins-x-boot-config). If changes are detected the [jx upgrade boot](/commands/jx_upgrade_boot/) will create a pull request on your development Git repository. Once that merges the boot configuration is upgraded and boot will be re-run inside a tekton pipeline to upgrade your installation.

@@ -54,7 +54,7 @@ El código de estas aplicaciones de inicio rápido se encuentra en la [organizac
 
 Cuando creas el inicio rápido se utiliza el [paquete de construcción de Jenkins X](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) para identificar la configuración que necesita del proyecto. Durante la identificación se tiene en cuenta los diferentes lenguajes existentes en el proyecto y se selecciona el paquete más adecuado.
 
-Cuando utilizas [jx create](/docs/getting-started/setup/create-cluster/), [jx install](/docs/managing-jx/common-tasks/install-on-cluster/) o [jx init](/commands/jx_init/) el [paquete de construcción de Jenkins X](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) es clonado ha la carpeta local `~/.jx/draft/packs`.
+Cuando utilizas [jx create](/docs/getting-started/setup/create-cluster/), [jx install](/docs/managing-jx/common-tasks/install-on-cluster/) o [jx init](/commands/deprecation/) el [paquete de construcción de Jenkins X](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) es clonado ha la carpeta local `~/.jx/draft/packs`.
 
 Dependiendo del tipo de instalación de Jenkins X (Serverless Jenkins vs Static Master Jenkins), puedes ver todos los lenguajes disponibles en los paquetes de construcción si listas los elementos de la siguiente ubicación de tu máquina:
 
@@ -108,7 +108,7 @@ Puedes además especificar `--includes` o excluir `--excludes` patrones para fil
 
 Te interesará saber que puedes utilizar el alias `gsloc` en vez de `quickstartlocation` si te gustan más lo alias cortos ;)
 
-Puedes entonces ver la ubicación actual de tus aplicaciones de inicio rápido de tu equipo utilizando el comando [jx get quickstartlocations](/commands/jx_get_quickstartlocations/)
+Puedes entonces ver la ubicación actual de tus aplicaciones de inicio rápido de tu equipo utilizando el comando [jx get quickstartlocations](/commands/jx_get_quickstartlocation/)
 
 ```sh
 jx get quickstartlocations

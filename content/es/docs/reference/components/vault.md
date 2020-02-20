@@ -78,7 +78,7 @@ safe set /secret/my-cluster-name/creds/my-secret json=@myfile.txt
 # Configurar DNS y TLS para Vault
 
 Para una instalación segura de Jenkins X, debe habilite TLS cuando interactúe con el servicio de almacenamiento. Para configurar TLS, primero debe configurar los ajustes de DNS de Zona en Google Cloud Platform, y luego configure los ajustes de DNS externos para el `Ingress` y TLS en el
-fichero de configuración ``jx-requirements.yaml`.
+fichero de configuración ``jx-requirements.yml`.
 
 ## Configurar Google Cloud DNS
 
@@ -139,11 +139,11 @@ El siguiente paso es configurar GCP:
 
 Finalmente, configure Jenkins X para los nuevos nombres de dominio:
 
-1. Edite el fichero `jx-requirements.yaml` y actualice el campo `dominio` (en `Ingress`) a su nombre de dominio, por ejemplo `cluster1.acmecorp.example`.
+1. Edite el fichero `jx-requirements.yml` y actualice el campo `dominio` (en `Ingress`) a su nombre de dominio, por ejemplo `cluster1.acmecorp.example`.
 
 2. En la configuración *tls*, habilite TLS con `enabled: true`.
 
-El fichero `jx-requirements.yaml` quedaría de la siguiente forma si utilizamos las configuraciones mencionadas:
+El fichero `jx-requirements.yml` quedaría de la siguiente forma si utilizamos las configuraciones mencionadas:
 
 ```yaml
 gitops: true

@@ -9,14 +9,14 @@ aliases:
 
 Jenkins X uses [Helm](https://www.helm.sh/) to install both Jenkins X and to install the applications you create in each of the [Environments](/docs/concepts/features/#environments) (like `Staging` and `Production`)
 
-**NOTE** until Helm 3 is GA we highly recommend folks use [Helm 2.x without Tiller](/news/helm-without-tiller/)
+**NOTE** until Helm 3 is fully integrated and tested in Jenkins X we highly recommend using [Helm 2.x without Tiller](/news/helm-without-tiller/)
 
-Currently Helm 3 is being developed that has a number of great improvements:
+Helm 3 has a number of great improvements:
 
 * remove the server side component, Tiller, so that `helm install` uses the current user/ServiceAccount's RBAC
 * releases become namespace aware avoiding the need to come up with globally unique release names
 
-At the time of writing helm 3 is still early in its development but to improve feedback we've added support for Helm 2 and Helm 3 into Jenkins X.
+Though Helm 3 is not fully integrated and tested in Jenkins X, to improve feedback, we've added support for Helm 2 and Helm 3.
 
 You can use either helm 2 or helm 3 to do either of these things:
 

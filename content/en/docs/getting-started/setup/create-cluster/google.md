@@ -7,9 +7,37 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 weight: 50
 ---
+# Creating a Google cluster
+
+To create a Google cluster you can either do so using the `jx` command line,
+[Google Cloud Console](#using-the-google-cloud-console) or
+[gcloud](#using-gcloud),
+be aware though that the smallest possible machine
+to host Jenkins X is the `n1-standard-2` machine-type.
+
+Furthermore, to be able to use `jx` storage features like log storage or backups,
+your cluster needs additional permissions, see [GKE Storage Permissions](https://jenkins-x.io/docs/managing-jx/common-tasks/storage/#gke-storage-permissions).
+
+## Using the JX command line
+
+If you have the JX command line setup locally, you can run `jx create cluster gke --skip-installation` to create a GKE cluster from there with defaults.
+
+## Using the Google Cloud Console or CLI
+
+To setup the kubernetes cluster we recommend `jx create cluster gke --skip-installation` which should add the scopes required to your node pool to be able to push images to GCR. 
+
+If you setup your cluster directly via the web console or `gcloud` you may need to setup those scopes yourself. e.g. with `gcloud` add `--scopes` for the following scopes:
+
+* https://www.googleapis.com/auth/cloud-platform
+* https://www.googleapis.com/auth/compute
+* https://www.googleapis.com/auth/devstorage.full_control
+* https://www.googleapis.com/auth/service.management
+* https://www.googleapis.com/auth/servicecontrol
+* https://www.googleapis.com/auth/logging.write
+* https://www.googleapis.com/auth/monitoring
 
 
-## Using the Google Cloud Console
+### Using the Google Cloud Console
 
 You can create Kubernetes clusters in a few clicks on the [Google Cloud Console](https://console.cloud.google.com/).
 
@@ -18,26 +46,17 @@ First make sure you have created/selected a Project:
 <img src="/images/quickstart/gke-select-project.png" class="img-thumbnail">
 
 
-Now you can click the `create cluster` button on the [kubernetets clusters](https://console.cloud.google.com/kubernetes/list) page or try [create cluster](https://console.cloud.google.com/kubernetes/add).
+Now you can click the `create cluster` button on the [kubernetes clusters](https://console.cloud.google.com/kubernetes/list) page or try [create cluster](https://console.cloud.google.com/kubernetes/add).
 
 
-
-## Using gcloud
+### Using gcloud
 
 The CLI tool for working with google cloud is called `gcloud`. If you have not done so already please [install gcloud](https://cloud.google.com/sdk/install).
 
 To create a cluster with gcloud [follow these instructions](https://cloud.google.com/kubernetes-engine/docs/how-to/creating-a-cluster).
 
 
-## Using Google Cloud Shell
 
-To avoid having to install `gcloud` you can use the [Google Cloud Shell](https://console.cloud.google.com/) as it already comes with most of the things you may need to install (`git, gcloud, kubectl` etc).
-
-First you need to open the Google Cloud Shell via the button in the toolbar:
-
-<img src="/images/quickstart/gke-start-shell.png" class="img-thumbnail">
-
-You can then create a cluster with `gcloud` by [following these instructions](https://cloud.google.com/kubernetes-engine/docs/how-to/creating-a-cluster).
 
 ## Connecting to your cluster
 

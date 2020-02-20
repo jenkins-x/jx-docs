@@ -70,6 +70,7 @@ env/
     values.yaml  # tekton specific config
 ```
 
+then you can omit the `prow:` indentation in the `env/prow/values.yaml` file to make the YAML you create/edit smaller and simpler. It also means longer term we can generate JSON schema files for each `env/$app/values.yaml` files so that we can support better editor/IDE integration
 
 #### values.tmpl.yaml templates
 

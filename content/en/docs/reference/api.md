@@ -1,6 +1,7 @@
 ---
 title: API Documentation
 linktitle: API Documentation
+description: Reference of the Jenkins X REST APIs and custom resources
 weight: 10
 ---
 <p>Packages:</p>
@@ -4056,6 +4057,47 @@ string
 <p>
 <p>DependencyUpdatePath is the path of a dependency update</p>
 </p>
+<h3 id="jenkins.io/v1.DeployOptions">DeployOptions
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#jenkins.io/v1.TeamSettings">TeamSettings</a>)
+</p>
+<p>
+<p>DeployOptions configures options for how to deploy applications by default such as using progressive delivery or using horizontal pod autoscaler</p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>canary</code></br>
+<em>
+bool
+</em>
+</td>
+<td>
+<p>Canary should we enable canary rollouts (progressive delivery) for apps by default</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>hpa</code></br>
+<em>
+bool
+</em>
+</td>
+<td>
+<p>should we use the horizontal pod autoscaler on new apps by default?</p>
+</td>
+</tr>
+</tbody>
+</table>
 <h3 id="jenkins.io/v1.EnvironmentFilter">EnvironmentFilter
 </h3>
 <p>
@@ -9426,6 +9468,7 @@ string
 </em>
 </td>
 <td>
+<p>DeployKind what kind of deployment (&ldquo;default&rdquo; uses regular Kubernetes Services and Deployments, &ldquo;knative&rdquo; uses the Knative Service resource instead)</p>
 </td>
 </tr>
 <tr>
@@ -9531,7 +9574,20 @@ string
 </em>
 </td>
 <td>
-<p>BootRequirements is a marshaled string of the jx-requirements.yaml used in the most recent run for this cluster</p>
+<p>BootRequirements is a marshaled string of the jx-requirements.yml used in the most recent run for this cluster</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>deployOptions</code></br>
+<em>
+<a href="#jenkins.io/v1.DeployOptions">
+DeployOptions
+</a>
+</em>
+</td>
+<td>
+<p>DeployOptions configures options for how to deploy applications by default such as using canary rollouts (progressive delivery) or using horizontal pod autoscaler</p>
 </td>
 </tr>
 </tbody>
@@ -10097,5 +10153,5 @@ PromoteWorkflowStep
 <hr/>
 <p><em>
 Generated with <code>gen-crd-api-reference-docs</code>
-on git commit <code>12797a799</code>.
+on git commit <code>a0d4c5a2b</code>.
 </em></p>

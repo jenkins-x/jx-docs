@@ -65,7 +65,7 @@ However there are times you want to customize a [particular pipeline](/docs/refe
 
 You can read more about the [extension model](/docs/reference/components/build-packs//#pipeline-extension-model) to find out all you can do. Basically you can add steps before/after any life cycle or completely replace a set of life cycles or even opt out of the build pack completely and inline your pipelines inside your `jenkins-x.yml`
 
-For a quick way to add a new step into a pipeline life cycle you can use the [jx create step](/commands/jx_create_step/) command:
+For a quick way to add a new step into a pipeline life cycle you can use the [jx create step](/commands/deprecation/) command:
 
 <figure>
 <img src="/images/architecture/create-step.gif" />
@@ -98,28 +98,3 @@ We'd love to improve this UX if you fancy [helping out](/docs/contributing/).
 This should already be included out of the box due to the Jenkins X JSON Schema being registered with [schemastore.org](http://schemastore.org/json/) so editing your `jenkins-x.yml` file in IDEA will include smart completion and validation!
 
 We'd love to improve this UX if you fancy [helping out](/docs/contributing/).
-
-## Default environment variables
-
-The following environment variables are available for use in a step in Jenkins X Pipelines:
-
-| Name | Description |
-| --- | --- |
-| DOCKER_REGISTRY | the docker registry host (e.g. `docker.io` or `gcr.io`) |
-| BUILD_NUMBER | the build number (1, 2, 3) starts at `1` for each repo and branch |
-| PIPELINE_KIND | the kind of pipeline such as `release` or `pullrequest` |
-| PIPELINE_CONTEXT | the pipeline context if there are multiple pipelines per PR (for different tests/governance/lint etc) |
-| REPO_OWNER | the git repository owner |
-| REPO_NAME | the git repository name |
-| JOB_NAME | the job name which typically looks like `$REPO_OWNER/$REPO_NAME/$BRANCH_NAME` |
-| APP_NAME | the name of the app which typically is the `$REPO_NAME`
-| BRANCH_NAME | the name of the branch such as `master` or `PR-123` |
-| JX_BATCH_MODE | indicates to jx to use batch mode if `true` |
-| VERSION | contains the version number being released or the PR's preview version |
-| BUILD_ID | same as `$BUILD_NUMBER`
-| JOB_TYPE | the prow job type such as `presubmit` for PR or `postsubmit` for release |
-| PULL_BASE_REF | the branch/ref of git |
-| PULL_BASE_SHA | the git SHA being built |
-| PULL_NUMBER | for PRs this will be the number without the `PR-` prefix
-| PULL_REFS | for batch merging all the git refs |
-

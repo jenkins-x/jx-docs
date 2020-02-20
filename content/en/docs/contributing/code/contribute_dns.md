@@ -36,7 +36,7 @@ this process again.
 6. Click `Create`
 7. Tell Jenkins X about the name.
   * If you are using `jx install --external-dns` then paste `<unique name>.<your username>.jenkins-x.rocks` into the prompt where you paused earlier
-  * If you are using `jx boot` then edit `jx-requirements.yaml`, and update the `domain` field (in `ingress`)
+  * If you are using `jx boot` then edit `jx-requirements.yml`, and update the `domain` field (in `ingress`)
     to `<unique name>.<your username>.jenkins-x.rocks` and run `jx boot`
 
 ## Without External DNS on Google Cloud Platform
@@ -54,7 +54,7 @@ Once you have access, you can use the `Add record set` button to add entries or 
   * If you used `jx install` then you **must** configure this during install. When you are prompted if you want to use
     the default `.nip.io` domain copy the IP. You **must** now wait until your domain name is ready.
   * If you used jx boot then you can do this at any time. The domain name is present in the domain name and can be found
-    in `jx-requirements.yaml`. Copy the IP.
+    in `jx-requirements.yml`. Copy the IP.
 3. Use the default values for `Resource Record Type` (`A`), `TTL` (`5`) and `TTL Unit` (`minutes`).
 4. Paste the IP address you found above into the `IPv4 Address` field
 5. Click `Create`
@@ -63,7 +63,7 @@ Once you have access, you can use the `Add record set` button to add entries or 
 you found above the DNS has propagated. If you are using a Mac `watch` can be installed using `brew install watch`
 7. Tell Jenkins X about the name.
   * If you are using `jx install` then paste `<unique name>.<your username>.jenkins-x.rocks` into the prompt where you paused earlier
-  * If you are using `jx boot` then edit `jx-requirements.yaml`, and update the `domain` field (in `ingress`)
+  * If you are using `jx boot` then edit `jx-requirements.yml`, and update the `domain` field (in `ingress`)
     to `<unique name>.<your username>.jenkins-x.rocks` and run `jx boot`
 
 > If you prefer to use the gcloud CLI you can find instructions for usage on the "Create record set" screen.

@@ -50,7 +50,7 @@ jx create quickstart  -f http
 
 当你创建完成后，我们根据工程源码的语言，使用 [Jenkins X build packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) 来匹配最合适的构建。
 
-当你使用 [jx create](/zh/docs/getting-started/setup/create-cluster/)， [jx install](/docs/managing-jx/common-tasks/install-on-cluster/) 或者 [jx init](/commands/jx_init/) 时，[Jenkins X build packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) 会克隆到目录 `~/.jx/draft/packs` 中。
+当你使用 [jx create](/zh/docs/getting-started/setup/create-cluster/)， [jx install](/docs/managing-jx/common-tasks/install-on-cluster/) 或者 [jx init](/commands/deprecation/) 时，[Jenkins X build packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) 会克隆到目录 `~/.jx/draft/packs` 中。
 
 例如：你可以通过下面命令查看支持的所有语言：
 

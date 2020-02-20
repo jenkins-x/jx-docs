@@ -92,7 +92,7 @@ With Jenkins X you are free to create your own pipeline to do the release if you
 
 We've specifically built this extension model to minimise the work your teams have in having to edit + maintain pipelines across many separate microservices; the idea is we're trying to automate both the pipelines and the extensions to the pipelines so teams can focus on their actual code and less on the CI/CD plumbing which is pretty much all undifferentiated heavy lifting these days.
 
-## How can I handle custom branches with tekton
+## How can I handle custom branches with tekton?
 
 We don't use `branch patterns` with tekton; they are a jenkins specific configuration.
 
@@ -124,7 +124,7 @@ The PR triggers a CI pipeline to verify the changes are valid (e.g. the helm cha
 
 Jenkins X automates all of the above but given both these pipelines are defined in the environments git repository in a `Jenkinsfile` you are free to customise to add your own pre/post steps if you wish. e.g. you could analyse the YAML to pre-provision PVs for any PVCs using some custom disk snapshot tool you may have.  Or you can do that in a pre or post-install helm hook job. Though we'd prefer these tools to be created as part of the Jenkins X [extension model](/docs/contributing/addons/) to avoid custom pipeline hacking which could break in future Jenkins X releases - though its not a huge biggie.
 
-## How do I change the owner of a docker image
+## How do I change the owner of a docker image?
 
 When using a docker registry like gcr.io then the docker image owner `gcr.io/owner/myname:1.2.3` can be different to your git owner/organisation.
 
@@ -219,15 +219,15 @@ service:
 To see an example of where we add multiple annotations that the `exposecontroller` adds to generated ingress rules, take a look at this [values.yaml](https://github.com/jenkins-x/jenkins-x-platform/blob/08a304ff03a3e19a8eb270888d320b4336237005/values.yaml#L655)
 
 
-## Should I use a monorepo
+## Should I use a monorepo?
 
 We are all trying to [Accelerate](/docs/overview/accelerate/) and deliver business value to our customers faster. This is why we often use the 2 pizza teams and microservices as a way to empower teams to go fast; releasing microservices independently with no cross-team coordination required to speed things up.
 
-If you are developing microservices across separate 2 pizza teams then like [others](https://medium.com/@mattklein123/monorepos-please-dont-e9a279be011b) we don't think you should use monorepos - instead use a repository per microservice so that each mciroservice can release at its own individual release cadence.
+If you are developing microservices across separate 2 pizza teams then like [others](https://medium.com/@mattklein123/monorepos-please-dont-e9a279be011b) we don't think you should use monorepos - instead use a repository per microservice so that each microservice can release at its own individual release cadence.
 
 Monorepo's generally work better when a single team is working on a monolith that releases everything periodically after changing a single repository.
 
-## How can I use a monorepo
+## How can I use a monorepo?
 
 We have focused the automated CI/CD in Jenkins X around helping teams [Accelerate](/docs/overview/accelerate/) using microservices to build cloud native applications. So we assume separate repositories for each microservice.
 
@@ -239,11 +239,13 @@ See how to [add a custom step to your pipeline](/docs/concepts/jenkins-x-pipelin
 
 ### Staging/Production
 
-By default, [enabling Vault](/docs/getting-started/setup/boot/#vault) via `jx boot`'s `jx-requirements.yaml` will only activate it in your pipeline and preview environments, not in staging and production. To also activate it in those environments, simply add a `jx-requirements.yaml` file to the root of their repo, with at least the following content:
+By default, [enabling Vault](/docs/getting-started/setup/boot/#vault) via `jx boot`'s `jx-requirements.yml` will only activate it in your pipeline and preview environments, not in staging and production. To also activate it in those environments, simply add a `jx-requirements.yml` file to the root of their repo, with at least the following content:
 
 ```yaml
 secretStorage: vault
 ```
+
+Note that the file **must** be named with `.yml`, not `.yaml`, or else the requirements loader cannot load the proper file.
 
 Then, assuming you have a secret in Vault with path `secret/path/to/mysecret` containing key `password`, you can inject it into service `myapp` (for instance, as a `PASSWORD` environment variable) by adding the following to your staging repo's `/env/values.yaml`:
 
