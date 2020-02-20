@@ -6,7 +6,7 @@ description: >
   Using environment variables in your pipelines
 ---
 
-There are variables that are available by default, and there are those that you can define yourself
+There are variables that are available by default, and there are those that you can define yourself.
 
 ## Default environment variables
 
