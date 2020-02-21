@@ -4,7 +4,7 @@ linktitle: Amazon
 description: Using Boot on Amazon (AWS)
 date: 2017-02-01
 publishdate: 2017-02-01
-lastmod: 2020-02-13
+lastmod: 2020-02-21
 weight: 20
 ---
 
@@ -17,6 +17,9 @@ For details of how to setup your cluster see the [Amazon instructions](/docs/get
 [IAM Policies for Cluster Creation and Jenkins X Boot](#iam-policies-for-cluster-creation-and-jenkins-x-boot)
 
 [Configuring Vault for EKS](#configuring-vault-for-eks)
+
+[Configuring DNS and TLS on EKS](#configuring-dns-and-tls-on-eks)
+
 
 ## Basic Configuration
 
@@ -34,7 +37,7 @@ clusterConfig:
     provider: aws
 ```
 
-If you wish to setup your EKS cluster by hand and not use [eksctl](https://eksctl.io/) then please specify `terraform: true` to indicating you are setting up all of the AWS related cloud resources yourself and that you do not want `jx boot` to try set anything up.
+If you wish to setup your EKS cluster by hand and not use [eksctl](https://eksctl.io/) then please specify `terraform: true` to indicate that you are setting up all of the AWS related cloud resources yourself and that you do not want `jx boot` attempting to set anything up.
 
 We recommend using [Jenkins X Pipelines](/architecture/jenkins-x-pipelines/) as this works out of the box with kaniko for creating container images without needing a docker daemon and works well with ECR.
 
@@ -832,5 +835,51 @@ vault:
     s3Region: ""
     s3Prefix: ""
 ```
-
 Note: A pair of Access Keys will be created even if you set **autoCreate** to **false**. To prevent this, you can set an existing pair through environment variables: **VAULT_AWS_ACCESS_KEY_ID** and **VAULT_AWS_SECRET_ACCESS_KEY**.
+
+## Configuring DNS and TLS on EKS
+
+If you require custom Domain Name Service (DNS) and/or Transport Layer Security (TLS) support, follow the steps in this section.
+
+### Configuring AWS Route 53
+
+In order to configure you cluster to enable external DNS and TLS for its services and your applications, you must configure AWS Route53 appropriately.
+
+An administrator should have a domain name registered with a name registrar, for example www.acmecorp.example, before configuring Route 53’s Hosted Zone settings. For more information, refer to [Getting Started with Amazon Route 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started.html) from the Amazon documentation.
+
+1. Within the AWS Dashboard, navigate to the Region Selector dropdown and choose the region that you are going to work with.
+2. Configure the following settings as described in [Creating a Public Hosted Zone](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingHostedZone.html) from the Amazon documentation:
+    - Input a DNS suffix in DNS name, for example acmecorp.example
+    - (Optional) input a Comment for your Hosted Zone
+    - Choose Public as your Zone Type
+    - Click Create
+
+Once created, the Hosted Zone Details page loads. NS (Name server) and SOA (Start of Authority) records are automatically created for your domain (for example acmecorp.example)
+
+### Configuring External DNS
+
+Once you have configured AWS Route 53, you can browse the Hosted Zones page from the navigation pane for the selected region to set up your external domain.
+
+NOTE: External DNS will automatically update DNS records if you reuse a domain name, so if you delete an old cluster and create a new one it will preserve the same domain configuration for the new cluster.
+
+1. Choose a unique DNS name; you can use nested domains (for example, cluster1.acmecorp.example). Create a new Hosted Zone for this subdomain.
+2. In the newly created Hosted Zone details page, copy all the nameservers from the NS recordset and annotate the name of your subdomain.
+3. Go back to the Hosted Zone created for your apex domain, in this case acmecorp.example, and click on <create_record_set> to create a new record set.
+    - Input the name of the subdomain in the Name field. In this case cluster1.acmecorp.example
+    - Select NS as the Type
+    - Input the nameservers that you copied from the subdomain Hosted Zone in the Value field
+4. Click Create
+5. Configure Jenkins X for the new domain names:
+    - Open the `jx-requirements.yml` file in a text editor (such as TextEdit for macOS or gedit for Linux) and edit the ingress section at the root level.
+        ```yaml
+        ingress:
+          domain: cluster1.acmecorp.example
+          ignoreLoadBalancer: true
+          externalDNS: true
+          namespaceSubDomain: -jx.
+          tls:
+            email: certifiable@acmecorp.example
+            enabled: true
+            production: true
+        ```
+When you're ready to run `jx boot` this configuration will be applied to your cluster.
