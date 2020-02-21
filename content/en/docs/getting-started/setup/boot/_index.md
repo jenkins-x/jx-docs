@@ -50,9 +50,18 @@ The [jx boot](/commands/jx_boot/) interprets the boot pipeline using your local 
 
 #### Pre and Post Validation
 
-Before any installation is attempted, Boot runs the [jx step verify preinstall](/commands/jx_step_verify_preinstall/) command to check everything looks OK. If you are using Terraform (so that your `jx-requirements.yml` file has `terraform: true`) it will fail if Terraform has not created the required cloud resources. Otherwise they are lazily created for you if they don't exist.
+Before any installation is attempted, Boot runs the [jx step verify preinstall](/commands/jx_step_verify_preinstall/) command to check everything looks OK. It will also check whether your installed package versions are within the upper and lower version limits, see [here](https://github.com/jenkins-x/jenkins-x-versions/tree/master/packages) for further information. If you are using Terraform (so that your `jx-requirements.yml` file has `terraform: true`) it will fail if Terraform has not created the required cloud resources. Otherwise they are lazily created for you if they don't exist.
 
 Once the installation has completed the [jx step verify install](/commands/jx_step_verify_install/) command is run to verify your installation is valid.
+
+#### Packages
+
+For any boot based installation package versions which are used by `jx` are checked against the upper and lower version limits specified within the [version stream](https://github.com/jenkins-x/jenkins-x-versions/tree/master/packages). Usually the upgrade process of a local pacage is pain free, however, downgrading can sometimes be difficult.
+
+##### Brew
+
+This [gist] (https://gist.github.com/rdump/b79a63084b47f99a41514432132bd408) describes how you can switch to different versions of the `kubectl` package` using the `brew` package manager.
+
 
 ## Changing your installation
 
