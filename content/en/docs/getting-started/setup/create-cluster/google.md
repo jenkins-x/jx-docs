@@ -15,6 +15,8 @@ To create a Google cluster you can either do so using the `jx` command line,
 be aware though that the smallest possible machine
 to host Jenkins X is the `n1-standard-2` machine-type.
 
+**NOTE:** . Google requires you to setup a [billing account](https://cloud.google.com/billing/docs/how-to/manage-billing-account#create_a_new_billing_account) as well, this is standard setup on GCP.
+
 Furthermore, to be able to use `jx` storage features like log storage or backups,
 your cluster needs additional permissions, see [GKE Storage Permissions](https://jenkins-x.io/docs/managing-jx/common-tasks/storage/#gke-storage-permissions).
 
