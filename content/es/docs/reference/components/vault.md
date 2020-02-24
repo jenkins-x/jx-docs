@@ -5,9 +5,9 @@ description: Gestione sus Secretos
 weight: 200
 ---
 
-{{% pageinfo %}}
+{{< pageinfo >}}
 Tenga en cuenta que actualmente Vault solo funciona en Google Cloud Platform (GCP) con Google Kubernetes Engine (GKE). Estamos trabajando para ampliar el soporte a otros proveedores de la nube.
-{{% /pageinfo %}}
+{{< /pageinfo >}}
 
 # ¿Qué es Vault?
 
@@ -108,9 +108,9 @@ Una vez creada, se carga la página *Zone Details*. *NS* (servidor de nombres) y
 
 Una vez que haya configurado Google Cloud DNS, puede usar la página de [Zonas](https://console.cloud.google.com/net-services/dns/zones) en su proyecto de Google Cloud Platform para configurar su dominio externo.
 
-{{% alert %}}
+{{< alert >}}
 NOTA: El DNS externo actualizará automáticamente los registros DNS si reutiliza el nombre de dominio, por lo que si elimina un clúster antiguo y crea uno nuevo, conservará la misma configuración de dominio para el nuevo clúster.
-{{% /alert %}}
+{{< /alert >}}
 
 Para configurar DNS Externo:
 
@@ -158,9 +158,9 @@ ingress:
 secretStorage: vault
 ```
 
-{{% alert %}}
+{{< alert >}}
 Recuerde ejecutar el comando `jx boot` para que los cambios tengan efecto en su entorno.
-{{% /alert %}}
+{{< /alert >}}
 
 # Crear un Vault
 

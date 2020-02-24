@@ -29,9 +29,9 @@ Given that Jenkins X is the native CI/CD platform for Kubernetes, we must start 
 # What we are doing today
 Today, I walk you through the process of increasing observability in your build and release pipeline by implementing tracing for a couple of events such as `npm install` and `npm test` which are part of a sample NodeJS application.
 
-{{% alert %}}
+{{< alert >}}
 NOTE: Tracing is only a small portion of other things that need to be in place.  Logging and Metrics are also required.  The combination and aggregation of this data allows you to understand how observable your pipeline is.
-{{% /alert %}}
+{{< /alert >}}
 
 
 <figure>
@@ -56,9 +56,9 @@ In this post, we use the Honeycomb.io API to trace our pipeline events.
 In this scenario we want to trace start and end times for certain events.  In our example NodeJS app, we have commands such as `npm install` and `npm test`, which are part of our **build-pack** pipeline out of the box.  To do start tracing, we modify the Tekton pipeline and inject calls to the Honeycomb.io API before and after these specific **build pack** named steps.
 
 
-{{% alert %}}
+{{< alert >}}
 NOTE: Please be sure to sign up for [honeycomb.io](http://honeycomb.io) to obtain your **API Key**
-{{% /alert %}}
+{{< /alert >}}
 
 
 #### Create Kubernetes Secret

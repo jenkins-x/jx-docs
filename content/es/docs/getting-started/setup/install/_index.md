@@ -114,9 +114,9 @@ Para ejecutar los comandos `jx` desde GCP Cloud Shell, instale los binarios de J
 1.  Abra [GCP Cloud Shell](https://cloud.google.com/shell/docs/starting-cloud-shell),
     y seleccione su proyecto GCP para Jenkinx X.
 
-{{% alert %}}
+{{< alert >}}
 Es altamente recomendable que utilice el navegador Google Chrome con GCP Cloud Shell para evitar problemas inesperados.
-{{% /alert %}}
+{{< /alert >}}
 
 1.  Estando en GCP Cloud Shell, descargue el archivo binario `jx` utilizando `curl` y la barra `|` a través del comando:
 

@@ -13,9 +13,9 @@ Jenkins X 命令行在安装 Jenkins X 平台时会做如下事情：
 
 ## 安装二进制客户端来管理你的集群
 
-{{% alert %}}
+{{< alert >}}
 如果您运行在 Mac OS X 上，Jenkins X 会使用 `Homebrew` 来安装不同的命令行。不存在就会安装。
-{{% /alert %}}
+{{< /alert >}}
 
 ### 安装 kubectl
 
@@ -66,9 +66,9 @@ Tiller，也就是 Helm 的服务器端，会部署到命名空间 *kube-system*
 - monocular
 - nexus
 
-{{% alert %}}
+{{< alert >}}
 默认，Jenkins X 将会通过域名 *nip.io* 暴露 Ingress，并生成自签名的证书。当按照完后，您可以通过命令 `jx upgrade ingress --cluster` 轻松地修改为您自己的域名和签名。
-{{% /alert %}}
+{{< /alert >}}
 
 ### 配置 git 仓库
 
