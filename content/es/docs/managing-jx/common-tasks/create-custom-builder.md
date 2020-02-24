@@ -32,7 +32,7 @@ docker build -t ${BUILDER_IMAGE} .
 docker push ${BUILDER_IMAGE}
 ```
 
-No se preocupe, no es necesario que ejecute estos pasos manualmente cada vez que necesite construir una nueva imagen. Jenkins X puede manejar esto por ti. Solo necesita insertar su ficheor `Dockerfile` en un repositorio similar a [este](https://github.com/jenkins-x/builder-go). Ajuste el fichero `Jenkinsfile` de acuerdo con el nombre de su organización y aplicación, y luego importe el repositorio en su plataforma Jenkins X con:
+No se preocupe, no es necesario que ejecute estos pasos manualmente cada vez que necesite construir una nueva imagen. Jenkins X puede manejar esto por ti. Solo necesita insertar su ficheor `Dockerfile` en un repositorio similar a [este](https://github.com/jenkins-x/jenkins-x-builders/tree/master/builder-go). Ajuste el fichero `Jenkinsfile` de acuerdo con el nombre de su organización y aplicación, y luego importe el repositorio en su plataforma Jenkins X con:
 
 ```sh
 jx import --url <REPOSITORY_URL>

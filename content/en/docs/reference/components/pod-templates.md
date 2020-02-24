@@ -64,13 +64,13 @@ When using pod templates and Jenkins pipelines you could use lots of different c
 
 We've found its much simpler to just have a single builder container with all the common tools inside. This also means you can use `kubectl exec` or [jx rsh](/commands/jx_rsh/) to open a shell inside the build pod and have all the tools you need available for use when debugging/diagnosing problem pipelines.
 
-So we have a [builder-base](https://github.com/jenkins-x/builder-base) docker image which [contains all the different tools](https://github.com/jenkins-x/builder-base/blob/master/Dockerfile#L21-L70) we tend to use in CI/CD pipelines like `jx, skaffold, helm, git, updatebot`.
+So we have a [builder-base](https://github.com/jenkins-x/builder-base) docker image which [contains all the different tools](https://github.com/jenkins-x/jenkins-x-builders-base/blob/master/Dockerfile.common#L4-L15) we tend to use in CI/CD pipelines like `jx, skaffold, helm, git, updatebot`.
 
 If you want to use a single builder image for your new pod template then you could use builder base as the base and then add your custom tools on top.
 
-e.g. [builder-maven](https://github.com/jenkins-x/builder-maven) uses a [Dockerfile](https://github.com/jenkins-x/builder-maven/blob/master/Dockerfile#L1) to reference the builder base.
+e.g. [builder-maven](https://github.com/jenkins-x/jenkins-x-builders/tree/master/builder-maven) uses a [Dockerfile](https://github.com/jenkins-x/jenkins-x-builders/blob/master/builder-maven/Dockerfile#L1) to reference the builder base.
 
-So the simplest thing could be to copy a similar builder - like [builder-maven](https://github.com/jenkins-x/builder-maven) and then edit the `Dockerfile` to add whatever build tools you need.
+So the simplest thing could be to copy a similar builder - like [builder-maven](https://github.com/jenkins-x/jenkins-x-builders/tree/master/builder-maven) and then edit the `Dockerfile` to add whatever build tools you need.
 
 We love Pull Requests and [contributions](/docs/contributing/) so please submit Pull Requests for new build containers and Pod Templates and we're more than happy to [help](/docs/contributing/)!
 
