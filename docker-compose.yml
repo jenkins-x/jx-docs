@@ -1,7 +1,7 @@
 version: "2"
 services:
   server:
-    image: gcr.io/jenkinsxio/hugo-extended:0.60.1-3
+    image: gcr.io/jenkinsxio/hugo-extended:0.65.3-6
     command: ["hugo", "server", "-s", "/src", "-D", "--bind", "0.0.0.0", "--ignoreCache"]
     volumes:
       - .:/src
@@ -14,6 +14,6 @@ services:
       - .:/workdir
   linkchecker:
     image: wjdp/htmltest:v0.12.0
-    command: "htmltest -s -c /test/.htmltest.yml"
+    command: "htmltest -l0 -s -c /test/.htmltest.yml"
     volumes:
       - .:/test
