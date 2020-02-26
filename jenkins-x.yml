@@ -118,7 +118,7 @@ pipelineConfig:
             name: htmlproofer
             command: htmlproofer
             args:
-              - ./public
+              - ./tmp-website
               - --allow-hash-href
               - --disable-external
               - --check-html
