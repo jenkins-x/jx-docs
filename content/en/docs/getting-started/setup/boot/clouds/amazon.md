@@ -8,7 +8,8 @@ lastmod: 2020-02-21
 weight: 20
 ---
 
-For details of how to setup your cluster see the [Amazon instructions](/docs/getting-started/setup/create-cluster/amazon/)
+The information in this document assumes you have already created a Kubernetes cluster in AWS and you are now ready to `boot` your cluster with Jenkins X.
+For details of how to create a cluster see the [Amazon instructions](/docs/getting-started/setup/create-cluster/amazon/)
 
 [Basic Configuration](#basic-configuration) 
 
@@ -28,13 +29,6 @@ Please set your provider to `eks` via this in your `jx-requirements.yml` to indi
 ```yaml    
 clusterConfig:
     provider: eks
-```
-
-If you wish to use AWS via something like `kops` and not use EKS then use the `aws` provider:
-
-```yaml    
-clusterConfig:
-    provider: aws
 ```
 
 If you wish to setup your EKS cluster by hand and not use [eksctl](https://eksctl.io/) then please specify `terraform: true` to indicate that you are setting up all of the AWS related cloud resources yourself and that you do not want `jx boot` attempting to set anything up.
@@ -843,7 +837,7 @@ If you require custom Domain Name Service (DNS) and/or Transport Layer Security 
 
 ### Configuring AWS Route 53
 
-In order to configure you cluster to enable external DNS and TLS for its services and your applications, you must configure AWS Route53 appropriately.
+In order to configure your cluster to enable external DNS and TLS for its services and your applications, you must configure AWS Route53 appropriately.
 
 An administrator should have a domain name registered with a name registrar, for example www.acmecorp.example, before configuring Route 53’s Hosted Zone settings. For more information, refer to [Getting Started with Amazon Route 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started.html) from the Amazon documentation.
 
