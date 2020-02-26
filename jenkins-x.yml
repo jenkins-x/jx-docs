@@ -114,14 +114,17 @@ pipelineConfig:
             - tmp-website
             - --enableGitInfo
             - --baseURL http://${APP_NAME}.jx-${REPO_OWNER}-${REPO_NAME}-pr-${PULL_NUMBER}.${DOMAIN}/
-          - image: dennisnewel/htmltest:latest
-            name: htmltest
-            command: htmltest
+          - image: chabad360/htmlproofer:latest
+            name: htmlproofer
+            command: htmlproofer
             args:
-              - -s
-              - -c
-              - .htmltest.yml
-              - tmp-website
+              - ./public
+              - --allow-hash-href
+              - --disable-external
+              - --check-html
+              - --checks-to-ignore ScriptCheck
+              - --empty-alt-ignore
+              - --file-ignore /.*apidocs.*/,/.*\/zh.*/,/.*\/es.*/,/.*\/docs\/reference\/api.*/,/.*\/docs\/reference\/config.*/,/.*\/community\/events.*/
 
           - image: gcr.io/kaniko-project/executor:9912ccbf8d22bbafbf971124600fbb0b13b9cbd6
             name: build-and-push-image
