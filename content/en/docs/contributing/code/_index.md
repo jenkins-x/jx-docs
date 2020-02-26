@@ -17,9 +17,9 @@ This contribution guide takes a step-by-step approach in hopes of helping newcom
 * You are new to Git or open-source projects in general
 * You are a fan of Jenkins X and enthusiastic about contributing to the project
 
-{{% alert %}}
+{{< alert >}}
 If you're struggling at any point in this contribution guide, reach out to the Jenkins X community in [Jenkins X's Discussion forum](/community/).
-{{% /alert %}}
+{{< /alert >}}
 
 # Prerequisites
 
@@ -657,11 +657,11 @@ They can be found in `Makefile.codegen`.
 * `make generate-openapi` generates the [OpenAPI](https://swagger.io/specification/) spec only
 * `make generate-docs` generates the HTML apidocs, and is not committed
 
- {{% alert %}}
+ {{< alert >}}
  Not all files under `pkg/client/clientset/versioned/typed/jenkins.io/v1` are generated.
  The expansion files are manually maintained and need to be kept when re-generating the clientset.
  See also [clientset generation](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-api-machingenerating-clientset.md) in the Kuberenetes Community repository.
- {{% /alert %}}
+ {{< /alert >}}
 
 If you get a conflict on any of these directories or files when committing, rebasing or merging your best bet is to discard the changeset you have, and regenerate:
 

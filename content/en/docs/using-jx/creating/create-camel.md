@@ -5,9 +5,9 @@ description: How to create a new Apache Camel microservice and import it into Je
 weight: 20
 ---
 
-{{% alert color="warning" %}}
+{{< alert color="warning" >}}
 Deprecated. Will be removed on 1st of February 2020.
-{{% /alert %}}
+{{< /alert >}}
 
 If you want to create a new Spring Boot based microservice using [Apache Camel](http://camel.apache.org/) you can use the [jx create camel](/commands/deprecation/) command.
 

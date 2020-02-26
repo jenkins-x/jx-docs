@@ -10,9 +10,9 @@ keywords: ["License","apache"]
 weight: 60
 ---
 
-{{% pageinfo %}}
+{{< pageinfo >}}
 Jenkins X is released under the Apache 2.0 license.
-{{% /pageinfo %}}
+{{< /pageinfo >}}
 
 _Version 2.0, January 2004_ <br>
 <http://www.apache.org/licenses/LICENSE-2.0>

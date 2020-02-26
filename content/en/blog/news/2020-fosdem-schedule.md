@@ -38,11 +38,11 @@ Thank you to the volunteer organisers of the CI/CD devroom, including [Olivier V
 
 On **Thursday, January 30**, [Viktor Farcic](https://twitter.com/vfarcic) will be presenting a full day workshop on Jenkins X, as described in this abbreviated abstract:
 
-{{% alert %}} Jenkins X is a combination of best of breed tools and software for Kubernetes. It provides an interactive command-line interface to instantiate applications, repositories, environments, and pipelines and orchestrate continuous integration and continuous delivery.
+{{< alert >}} Jenkins X is a combination of best of breed tools and software for Kubernetes. It provides an interactive command-line interface to instantiate applications, repositories, environments, and pipelines and orchestrate continuous integration and continuous delivery.
 
 It is the CI/CD solution for development of modern cloud applications on Kubernetes.
 
-We'll explore how to create a fully operational continuous delivery pipeline using containers, Kubernetes, Jenkins X, and quite a few other tools. {{% /alert %}}
+We'll explore how to create a fully operational continuous delivery pipeline using containers, Kubernetes, Jenkins X, and quite a few other tools. {{< /alert >}}
 
 The workshop will take place from 8:30am to 5:00pm at the Marivaux Hotel Congress and Seminar Centre, Boulevard Adolphe Maxlaan 98, 1000 Brussels. There will be breakfast and snacks provided, for which there is a 25 Euro charge. Please sign up on the [eventbrite event page](https://www.eventbrite.com/e/workshop-cloud-native-kubernetes-first-serverless-continuous-delivery-with-jenkins-x-kubernetes-and-tickets-87082627483).
 

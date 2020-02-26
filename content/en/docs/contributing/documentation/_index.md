@@ -14,9 +14,9 @@ This contribution guide takes a step-by-step approach in hopes of helping newcom
 * You are new to Git or open-source projects in general
 * You are a fan of Jenkins X and enthusiastic about contributing to the project
 
-{{% alert %}}
+{{< alert >}}
 If you're struggling at any point in this contribution guide, reach out to the Jenkins X community in [Jenkins X's Discussion forum](/community/).
-{{% /alert %}}
+{{< /alert >}}
 
 ## Getting Started
 
@@ -73,13 +73,13 @@ git clone --recurse-submodules --depth 1 git@github.com:<YOUR_USERNAME>/jx-docs.
 cd jx-docs
 ```
 
-{{% alert %}}
+{{< alert >}}
 In case you already have a git clone locally (from before the theme change) then run the following to pull the Docsy theme and dependencies
 
 ```sh
 git submodule update --init --recursive
 ```
-{{% /alert %}}
+{{< /alert >}}
 
 Add the conventional upstream `git` remote in order to fetch changes from the `jx-docs` master
 branch and to create pull requests:
@@ -236,9 +236,9 @@ curl https://htmltest.wjdp.uk | sudo bash -s -- -b /usr/local/bin
 
 See [markdown-spellcheck install](https://github.com/lukeapage/node-markdown-spellcheck#cli-usage) and [htmltest install](https://github.com/wjdp/htmltest#system-wide-install) pages for more details on other ways to install them.
 
-{{% alert %}}
+{{< alert >}}
 Note that at this point in time, htmltest installs as version 0.10.3, which does not include the option `IgnoreSSLVerify` which results in a lot of `x509` errors in the output. The docker option is based on a newer build that's not yet available as an official version
-{{% /alert %}}
+{{< /alert >}}
 
 ## Contribution Workflow
 
@@ -381,7 +381,7 @@ Sometimes it may take a few days for a review to happen. If you feel it's an urg
 
 Once the review is done, your changes will be merged into the master branch, and the site will be updated.
 
-{{% alert %}}
+{{< alert >}}
 In case you need to update your PR/branch because js-docs/master have been updated since you submitted your PR, run the followin `git` command to pull all the changes to your local environment and then push them to your PR/branch:
 
 ```sh
@@ -391,7 +391,7 @@ git push
 ```
 
 If you experience Merge Conflicts, there's a good [article on GitHub](https://help.github.com/en/articles/resolving-a-merge-conflict-using-the-command-line) that helps explain what to do
-{{% /alert %}}
+{{< /alert >}}
 
 ## Reference
 

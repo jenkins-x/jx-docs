@@ -1,7 +1,7 @@
 version: "2"
 services:
   server:
-    image: dennisnewel/hugo-extended:0.58.3
+    image: gcr.io/jenkinsxio/hugo-extended:0.65.3-6
     command: ["hugo", "server", "-s", "/src", "-D", "--bind", "0.0.0.0", "--ignoreCache"]
     volumes:
       - .:/src
@@ -13,7 +13,7 @@ services:
     volumes:
       - .:/workdir
   linkchecker:
-    image: dennisnewel/htmltest:latest
-    command: "htmltest -s -c /test/.htmltest.yml"
+    image: chabad360/htmlproofer:latest
+    command: "htmlproofer ./public --allow-hash-href --disable-external --check-html --checks-to-ignore ScriptCheck --empty-alt-ignore --file-ignore /.*apidocs.*/,/.*\/zh.*/,/.*\/es.*/,/.*\/docs\/reference\/api.*/,/.*\/docs\/reference\/config.*/,/.*\/community\/events.*/"
     volumes:
-      - .:/test
+      - ./public:/public

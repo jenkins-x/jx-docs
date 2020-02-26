@@ -14,9 +14,9 @@ The Jenkins X CLI will do the following when installing the Jenkins X platform:
 
 ##  Install client binaries to manage your cluster
 
-{{% alert %}}
+{{< alert >}}
 If you are running on Mac OS X, Jenkins X is using `Homebrew` to install the various CLI. It will install it if not present.
-{{% /alert %}}
+{{< /alert >}}
 
 ### Install kubectl
 
@@ -67,9 +67,9 @@ In a Kubernetes cluster, services and pods have IPs that are only routable from 
 - monocular
 - nexus
 
-{{% alert %}}
+{{< alert >}}
 By default, Jenkins X will expose the ingress via the *nip.io* domain and generate self-signed certificates. You can easily adapt them by using our own custom domain and certificate after the installation with `jx upgrade ingress --cluster`
-{{% /alert %}}
+{{< /alert >}}
 
 ### Configure git source repository
 

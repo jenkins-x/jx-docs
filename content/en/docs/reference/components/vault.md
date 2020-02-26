@@ -11,11 +11,11 @@ aliases:
   - /architecture/vault
 ---
 
-{{% pageinfo %}}
+{{< pageinfo >}}
 Note that currently Vault only works on Google Cloud Platform (GCP) with Google Kubernetes Engine (GKE). We're working on expanding support to other cloud providers.
 
 In addition, we don't currently support pointing to an existing Vault instance, but there is an open issue to address this.
-{{% /pageinfo %}}
+{{< /pageinfo >}}
 
 # What is Vault?
 
@@ -166,11 +166,11 @@ Once you have configured Google Cloud DNS, you can use browse the
 [Zones](https://console.cloud.google.com/net-services/dns/zones) page in
 your Google Cloud Platform project to setup your external domain.
 
-{{% alert %}}
+{{< alert >}}
 NOTE: External DNS will automatically updates DNS records if you reuse the
 domain name, so if you delete an old cluster and create a new one it
 will preserve the same domain configuration for the new cluster.
-{{% /alert %}}
+{{< /alert >}}
 
 To setup External DNS:
 
@@ -221,10 +221,10 @@ ingress:
 secretStorage: vault
 ```
 
-{{% alert %}}
+{{< alert >}}
 Remember to run `jx boot` for the changes to take effect in your
 environment.
-{{% /alert %}}
+{{< /alert >}}
 
 # Creating a Vault
 
