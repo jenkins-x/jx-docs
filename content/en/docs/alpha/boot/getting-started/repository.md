@@ -17,7 +17,7 @@ jxl boot create
 
 This will create a new git repository for your installation.
 
-The command will output instructions on how to setup the [secrets](secrets) and then [run the boot job](run/).
+The command will output instructions on how to setup the [secrets](/docs/alpha/boot/getting-started/secrets/) and then [run the boot job](/docs/alpha/boot/getting-started/run/).
 
 ## Upgrading an existing cluster
  
@@ -46,4 +46,4 @@ and follow the instructions.
 
 If your cluster is using GitOps the command will clone the development git repository to a temporary directory, modify it and submit a pull request.
 
-If your cluster is not using GitOps then a new git repository will be created along with instructions on how to setup the [secrets](secrets) and then [run the boot job](run/).
+If your cluster is not using GitOps then a new git repository will be created along with instructions on how to setup the [secrets](/docs/alpha/boot/getting-started/secrets/) and then [run the boot job](/docs/alpha/boot/getting-started/run/).
