@@ -1,0 +1,68 @@
+---
+title: Secrets
+linktitle: Secrets
+description: Setting up the secrets for your installation
+weight: 30
+---
+
+You need to specify a few secret values before you can boot up. 
+
+We don't store the secrets in git but use some kind of secret manager. Over time we want to support many providers. Currently we support
+
+* Google Secret Manager: the `secrets.yaml` file is stored in a google secret manager secret
+* Kubernetes Secrets: a single Kubernetes `Secret` stores the `secrets.yaml` file
+
+
+To populate the Secrets run:
+
+
+```
+jxl boot secrets edit
+```                  
+
+This will prompt you to enter all the missing Secrets required.
+
+If you want to re-enter them all again or recreate tokens do:
+
+```
+jxl boot secrets edit -a
+```                  
+
+#### Importing and exporting
+
+You can export the current secrets to the file system via
+
+```
+jxl boot secrets export -f /tmp/mysecrets.yaml
+```                  
+
+Or to view them on the terminal...
+
+```
+jxl boot secrets export -c
+```                  
+
+If you have an existing secrets.yaml file on the file system that looks kinda like this (with the actual values included)...
+
+```yaml
+secrets:
+  adminUser:
+    username: 
+    password: 
+  hmacToken: 
+  pipelineUser:
+    username: 
+    token: 
+    email:  
+```
+
+Then you can import this YAML file via:
+
+```
+jxl boot secrets import -f /tmp/mysecrets.yaml
+```                  
+
+
+### Migrating Secrets from Vault
+
+If you have secrets already in a Vault then use the vault CLI tool to export the secrets to disk, reformat it in the above YAML layout and then import the secrets as above.
