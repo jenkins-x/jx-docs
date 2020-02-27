@@ -40,15 +40,6 @@ contentDir = "content/es"
 
 disableKinds = ["taxonomy", "taxonomyTerm"]
 
-# Highlighting config
-pygmentsCodeFences = true
-pygmentsUseClasses = false
-# Use the new Chroma Go highlighter in Hugo.
-pygmentsUseClassic = false
-#pygmentsOptions = "linenos=table"
-# See https://help.farbox.com/pygments.html
-pygmentsStyle = "tango"
-
 ###
 # Configure how URLs look like per section.
 ###
@@ -56,14 +47,25 @@ pygmentsStyle = "tango"
 	blog = "/:section/:year/:month/:day/:slug/"
 
 ###
-# Configuration for BlackFriday markdown parser: https://github.com/russross/blackfriday
+# Configuration for Goldmark markdown parser
 ###
-[blackfriday]
-	plainIDAnchors = true
-	hrefTargetBlank = true
-	angledQuotes = false
-	latexDashes = true
-
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+    [markup.goldmark.parser]
+      attribute = true
+      autoHeadingID = true
+      autoHeadingIDType = "github"
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+						
 ###
 # Image processing configuration.
 ###
@@ -87,7 +89,7 @@ pygmentsStyle = "tango"
 
 [params]
 ## Used for views in rendered HTML (i.e., rather than using the .Hugo variable)
-release = "2.0.1202"
+release = "2.0.1212"
 
 copyright = "The Jenkins X Authors."
 privacy_policy = "https://policies.google.com/privacy"

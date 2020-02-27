@@ -22,11 +22,11 @@ Puede listar los servidores Git configurados a través del comando [jx get git](
 ```
 jx get git
 ```
-{{% alert %}}
+{{< alert >}}
 **NOTA:** Todos los proveedores de Git mencionados aquí son compatibles si está utilizando Jenkins Static Masters. Sin embargo, si está utilizando **Jenkins X Serverless con Tekton**, solo se admite GitHub. Esto significa que todos los demás proveedores de Git, incluido GitHub Enterprise, no son compatibles actualmente debido a cómo Prow se comunica con las API.
 
 Sin embargo, estamos integrando [Lighthouse](https://github.com/jenkins-x/lighthouse) para garantizar el soporte para los proveedores de Git listados en esta página en un entorno Jenkins X Serverless muy pronto.
-{{% /alert %}}
+{{< /alert >}}
 
 ## Utilizar diferentes proveedores Git por entornos
 

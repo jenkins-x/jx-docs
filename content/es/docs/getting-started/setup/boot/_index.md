@@ -176,12 +176,12 @@ Para utilizar el servidor Jenkins en boot con el objetivo de procesar webhooks y
 
 Jenkins X admite diferentes proveedores de git. Puedes especificar el proveedor de git y la organización que desees utilizar para cada entorno en el fichero  [jx-requirements.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml).
 
-{{% pageinfo %}}
+{{< pageinfo >}}
 
 **NOTA** Jenkins X crea los repositorios como privados por defecto. Esto puede causar problemas al evaluar Jenkins X con GitHub si se utiliza una organización gratuita de GitHub para mantener los diversos repositorios (de entorno) creados, ya que las cuentas de la organización libre no tienen acceso a repositorios privados. Sin embargo, el uso de una cuenta personal de Github no es un problema, ya que las cuentas privadas gratuitas tienen repositorios privados ilimitados.
 
 Para fines de evaluación, puede usar una cuenta privada de GitHub como propietario de los repositorios, y cambiar a una cuenta de organización paga una vez que esté listo para entrar. Alternativamente, puede habilitar los repositorios de entorno público estableciendo `environmentGitPublic` en `true` en su configuración de jx boot. En caso de que esté utilizando `jx create` o `jx install`, deberá agregar la opción `--git-public` como parte del comando para habilitar el repositorio público.
-{{% /pageinfo %}}
+{{< /pageinfo >}}
 
 
 ### GitHub

@@ -157,7 +157,7 @@ We use [exposecontroller](https://github.com/jenkins-x/exposecontroller) to auto
 
 The default `UrlTemplate` for each environment is of the form: `{{.Service}}.{{.Namespace}}.{{.Domain}}` where `Service` is the name of the service, `Namespace` is the kubernetes namespace and `Domain` is the configured DNS domain.
 
-If you want to modify the URL schemes of your service in an environment then edit the file `env/values.yaml` in your Environments git repository. To find the URLs to each source repository use the [jx get env]() command.
+If you want to modify the URL schemes of your service in an environment then edit the file `env/values.yaml` in your Environments git repository. To find the URLs to each source repository use the [jx get environments](/commands/jx_get_environments/) command.
 
 Then modify the contents of `env/values.yaml` to include the `urlTemplate:` value as follows:
 

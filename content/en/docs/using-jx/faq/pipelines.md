@@ -78,7 +78,7 @@ See the [Jenkins X Pipelines Syntax Reference](/docs/reference/pipeline-syntax-r
 
 Each step in a Jenkins X Pipeline in the `jenkins-x.yml` file is basically a [Container](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.15/#container-v1-core) from kubernetes so you can specify the image, resource limits, environment variables and mount them from a `ConfigMap` or `Secret`
 
-You can see [an example of mounting a Secret to an environment variable here](/docs/reference/pipeline-syntax-reference/#full-pipeline-definition-in-jenkins-x-yml)
+You can see [an example of mounting a Secret to an environment variable here](/docs/reference/pipeline-syntax-reference/#full-pipeline-definition-in-jenkins-xyml)
 
 If you are inside a shell script you can also use the [jx step credential](/commands/deprecation/)
 
