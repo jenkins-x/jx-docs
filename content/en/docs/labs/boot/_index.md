@@ -2,7 +2,7 @@
 title: Boot
 linktitle: Boot
 type: docs
-description: New boot for helm 3 and helmfile.
+description: New boot for helm 3, helmfile and multi cluster support.
 weight: 7
 aliases:
   - /artwork
