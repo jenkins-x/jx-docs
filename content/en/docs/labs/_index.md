@@ -1,16 +1,16 @@
 ---
-title: Alpha
-linktitle: Alpha
+title: Labs
+linktitle: Labs
 type: docs
-description: Alpha commands
-weight: 8
+description: Labs enhancements
+weight: 6
 aliases:
-  - /alpha
+  - /labs
 ---
 
 We want to enable the Jenkins X open source community to move fast, innovate and iterate while at the same time keeping stability.
 
-So to let us experiment and innovate quickly we try things out in alpha commands that are available within the [jx alpha]() command line.
+So we innovate within the Labs so that we can go quickly and innovate rapidly then when things are stable we can roll them into the stable Jenkins X release.
 
 For more details see the [Labs Enhancements proposal](https://github.com/rawlingsj/enhancements/blob/master/proposals/labs/README.md)
 

@@ -3,7 +3,7 @@ title: Artwork
 linktitle: Artwork
 type: docs
 description: Artwork for Jenkins X logo.
-weight: 7
+weight: 8
 aliases:
   - /artwork
 ---
