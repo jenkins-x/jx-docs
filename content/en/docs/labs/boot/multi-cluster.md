@@ -65,4 +65,4 @@ jx boot
 
 And your remote `Staging` or `Production` cluster should boot up.
 
-If you want to add any more apps to your cluster, use the [jx add app](/docs/alpha/boot/apps/#adding-apps-or-charts) command.
+If you want to add any more apps to your cluster, use the [jx add app](/docs/labs/boot/apps/#adding-apps-or-charts) command.

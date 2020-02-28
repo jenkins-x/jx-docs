@@ -17,16 +17,19 @@ To populate the Secrets run:
 
 
 ```
-jxl boot secrets edit
+jxl boot secrets edit --giturl https://github.com/myuser/environment-mycluster-dev.git
 ```                  
 
 This will prompt you to enter all the missing Secrets required.
 
-If you want to re-enter them all again or recreate tokens do:
+If you want to re-enter them all again or recreate tokens do the following:
 
 ```
-jxl boot secrets edit -a
-```                  
+jxl boot secrets edit -a --giturl https://github.com/myuser/environment-mycluster-dev.git
+```                                                                        
+
+Note that once you have booted up a cluster you can omit the `--git-url` parameter as it can be discovered from the current kubernetes cluster (via the `dev` `Environment` resource)
+
 
 #### Importing and exporting
 

@@ -6,7 +6,7 @@ weight: 50
 ---
 
 
-Once you have [created your git repository](/docs/alpha/boot/getting-started/repository/) for your development environment via `jxl boot create` or `jxl boot upgrade` and populated the [secrets](/docs/alpha/boot/getting-started/secrets/) as shown above you can run the boot `Job` via:
+Once you have [created your git repository](/docs/labs/boot/getting-started/repository/) for your development environment via `jxl boot create` or `jxl boot upgrade` and populated the [secrets](/docs/labs/boot/getting-started/secrets/) as shown above you can run the boot `Job` via:
 
 ```
 jxl boot run --git-url=https://github.com/myorg/env-mycluster-dev.git
