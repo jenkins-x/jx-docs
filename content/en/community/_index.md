@@ -11,13 +11,7 @@ The Jenkins X Community is like no other, we are friendly, very open to feedback
 
 We value respect and inclusiveness and follow the [CDF Code of Conduct](https://github.com/cdfoundation/toc/blob/master/CODE_OF_CONDUCT.md) in all interactions.
 
-Please join us, we'd love to hear your feedback or have you participate and show some of the work you are doing with Jenkins X!
-
 ## Joining the Community
-
-### Events
-
-For details of the next Jenkins X demo or talk checkout our [talks at conferences and meetups](/community/talksdemos/) page!
 
 ### Slack
 
@@ -28,25 +22,26 @@ Talk to us on our slack channels, which are part of the Kubernetes slack. Join K
 * [\#jenkins-x-user](https://kubernetes.slack.com/messages/C9MBGQJRH) for users of Jenkins X
 * [\#jenkins-x-dev](https://kubernetes.slack.com/messages/C9LTHT2BB) for developers of Jenkins X
 
-### Want to contribute?
-
-It will be lots of fun!
-
-Check out the [contribution guide](/docs/contributing/) for some tips on how to get started.
-
 ### Office Hours
 
 We meet for office hours **every other Thursday** at 4pm UK / 11am US Eastern / 8am US Pacific.
 
 Next office hours: **5 March 2020**
 
-Join us: <https://zoom.us/j/397862697>
+Zoom link: <https://zoom.us/j/397862697>
 
-Feel free to [add your questions to the doc](https://docs.google.com/document/d/1wHdBlZAN-ndPELuBoM5HBnYiQLvcz92-euXne2mKOEI/edit) or ask your questions in person.
+Please join us, we'd love to hear your feedback or have you participate and show some of the work you are doing with Jenkins X! Feel free to [add your questions to the doc](https://docs.google.com/document/d/1wHdBlZAN-ndPELuBoM5HBnYiQLvcz92-euXne2mKOEI/edit) or ask your questions in person.
 
-Previous office hour recordings can be found on our [Jenkins X YouTube channel](https://www.youtube.com/channel/UCN2kblPjXKMcjjVYmwvquvg/playlists) in the Office Hours playlist. 
+Previous office hour recordings can be found on our [Jenkins X YouTube channel](https://www.youtube.com/channel/UCN2kblPjXKMcjjVYmwvquvg/playlists) in the Office Hours playlist. Alternatively, see our office hours [archives](/community/office_hours/).
 
-Alternatively, see our office hours [archives](/community/office_hours/).
+### Want to contribute?
+
+It will be lots of fun! Check out the [contribution guide](/docs/contributing/) for some tips on how to get started.
+
+<figure>
+<img src="/images/community/GoCommunity-background.png" class="img-thumbnail"/>
+</figure>
+image by Ashley McNamara, [creative commons license](https://github.com/ashleymcnamara/gophers/blob/master/GoCommunity.png)
 
 ### Subscribe to the Jenkins X Newsletter
 Our newsletter is filled with various topics and relevant content for people just starting, or folks who have been using the platform for a while.
