@@ -8,7 +8,7 @@ categories: [getting started]
 keywords: [install,builder]
 ---
 
-在 Jenkins X 中，可以创建字段自定义的 Builder （也就是 [POD templates](https://github.com/jenkinsci/kubernetes-plugin)）或覆盖已有的。你只需要基于 [builder-base](https://github.com/jenkins-x/builder-base/blob/master/Dockerfile.common) 或它的 [slim](https://github.com/jenkins-x/builder-base/blob/master/Dockerfile.slim) 版本的镜像。
+在 Jenkins X 中，可以创建字段自定义的 Builder （也就是 [POD templates](https://github.com/jenkinsci/kubernetes-plugin)）或覆盖已有的。你只需要基于 [builder-base](https://github.com/jenkins-x/jenkins-x-builders-base/blob/master/Dockerfile.common)。
 
 ## 从零创建一个自定义 Builder
 
@@ -33,7 +33,7 @@ docker build -t ${BUILDER_IMAGE} .
 docker push ${BUILDER_IMAGE}
 ```
 
-别担心，当新的镜像需要构建时，您无需每次手动执行这些步骤。Jenkins X 可以为您管理这些。您只需要把 `Dockerfile` 推送到类似于[这个](https://github.com/jenkins-x/builder-go)代码仓库中。然后，根据您的组织名称来调整 `Jenkinsfile` ，并使用下面的命令导入 Jenkins X 平台：
+别担心，当新的镜像需要构建时，您无需每次手动执行这些步骤。Jenkins X 可以为您管理这些。您只需要把 `Dockerfile` 推送到类似于[这个](https://github.com/jenkins-x/jenkins-x-builders/tree/master/builder-go)代码仓库中。然后，根据您的组织名称来调整 `Jenkinsfile` ，并使用下面的命令导入 Jenkins X 平台：
 
 ```sh
 jx import --url <REPOSITORY_URL>
@@ -122,7 +122,7 @@ pipeline {
 
 Jenkins X 自带了很多[预安装的 Builder](https://raw.githubusercontent.com/jenkins-x/jenkins-x-platform/master/values.yaml)，在安装或升级过程中可以根据需要覆盖。
 
-您只需要基于[基础 Builder](https://github.com/jenkins-x/builder-base/blob/master/Dockerfile.common) 镜像或者[Builder 镜像](https://hub.docker.com/u/jenkinsxio/) 自定义。在上面查看细节。
+您只需要基于[基础 Builder](https://github.com/jenkins-x/jenkins-x-builders-base/blob/master/Dockerfile.common) 镜像或者[Builder 镜像](https://hub.docker.com/u/jenkinsxio/) 自定义。在上面查看细节。
 
 然后，您可以在目录 `~/.jx/` 中创建文件 `myvalues.yaml` ，并写入一下内容：
 

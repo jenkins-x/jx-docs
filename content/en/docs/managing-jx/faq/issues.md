@@ -202,11 +202,11 @@ Authenticated core services of Jenkins X include Jenkins, Nexus, ChartMuseum.  T
 ### Set Admin Username and Password values for Core Services
 You can also set the admin username via the `--default-admin-username=username` flag.
 
-{{% alert %}}
+{{< alert >}}
 Perhaps you are using the  Active Directory security realm in Jenkins.  It is in this scenario that setting the Admin Username via the `--default-admin-username` based on your existing service accounts makes sense.
 
 You may also pass this value via the `myvalues.yaml`.
-{{% /alert %}}
+{{< /alert >}}
 
 If you would like to set the default password yourself then you can set the flag `--default-admin-password=foo` to the two comamnds above.
 

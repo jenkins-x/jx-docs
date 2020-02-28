@@ -18,9 +18,9 @@ author: Oscar Medina
 </figcaption>
 </figure>
 
-{{% alert %}}
+{{< alert >}}
 CAUTION: Do not make updates to the cluster that require recreating the cluster resources, all data will be lost.  Only changes that update the cluster are supported at this time.
-{{% /alert %}}
+{{< /alert >}}
 
 # Overview
 Many organizations have adopted DevOps practices in the last few years.  This is valuable as it relates to Jenkins X as we provide a way to manage the Kubernetes clusters  Infrastructure as Code which is one of the core concepts of DevOps practices as it relates to automation.
@@ -95,10 +95,10 @@ Running the previous command, outputs the following folder structure wherever we
 ```
 We now have a great code-base to create our clusters on GKE for three different environments.
 
-{{% alert %}}
+{{< alert >}}
 NOTE: On this Post, we will only create the Dev Cluster, although the process is the same for creating the other Kubernetes clusters.
 First we need to make sure we have credentials to execute our Terraform code.
-{{% /alert %}}
+{{< /alert >}}
 
 # Step 2 - Get GKE Credentials
 

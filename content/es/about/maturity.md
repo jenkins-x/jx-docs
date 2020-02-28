@@ -18,9 +18,9 @@ Cada uno de los niveles se detalla a continuación, incluidas las pasos por las 
 
 ## Experimental
 
-{{% alert %}}
+{{< alert >}}
 TL;DR: Úselo bajo su propio riesgo
-{{% /alert %}}
+{{< /alert >}}
 
 Este sería el nivel inicial para la mayoría de las nuevas funcionalidades. Es probable que sea el primer impulso de algo que al menos funcione para el contribuyente. No se espera que las funcionalidades en este nivel cumplan con los requisitos, y podría ser una sugerencia de cómo abordar un problema determinado. También podría ser una cosa muy bien estructurada, pensada y pulida que en su mayoría solo necesita ser examinada por otros antes de ser elevada en madurez.
 
@@ -28,9 +28,9 @@ La conclusión principal para este nivel de madurez es que existe el riesgo de q
 
 ## Estable
 
-{{% alert %}}
+{{< alert >}}
 TL;DR: Funcionalidad completa; necesita más pruebas/documentación
-{{% /alert %}}
+{{< /alert >}}
 
 Después de haber estado en el estado Experimental durante un período de tiempo, y la función ha recibido comentarios de otros, etc., eventualmente debería alcanzar un estado de función completa, donde se puede esperar que funcione en la mayoría de las circunstancias. Es posible que las pruebas automatizadas aún sean pocas y que la documentación también deba desarrollarse un poco más.
 
@@ -38,9 +38,9 @@ Para que una funcionalidad alcance este nivel, debería haber llegado a un punto
 
 ## Producción
 
-{{% alert %}}
+{{< alert >}}
 TL;DR: Nivel de produccion. Bien probado y documentado
-{{% /alert %}}
+{{< /alert >}}
 
 Este es el nivel final de madurez, y como consumidor de una funcionalidad estable, debe esperar que sea sólido, bien probado en varias configuraciones/entornos y bien documentado.
 
@@ -48,9 +48,9 @@ Las funcionalidades en nivel de producción ciertamente pueden cambiar, pero los
 
 ## Obsoleta
 
-{{% alert %}}
+{{< alert >}}
 TL;DR: Esto se eliminará pronto. No usar
-{{% /alert %}}
+{{< /alert >}}
 
 Eventualmente, algunas funcionalidades quedarán en desuso por cualquier razón (se encontró un mejor enfoque, el problema que resolvió ya no es un problema, etc.). Sin embargo, esto no debería suceder durante la noche, y las obsolescencias deben anunciarse en el registro de cambios y en el blog con al menos un mes de antelación.
 
@@ -62,9 +62,9 @@ Para ayudar a aclarar qué funcionalidades son experimentales y cuáles son esta
 
 El sitio de documentación tendrá banderas como esta:
 
-{{% alert color="warning" %}}
+{{< alert color="warning" >}}
 Experimental
-{{% /alert %}}
+{{< /alert >}}
 
 El comando `--help` incluirá la información en la descripción de un comando, de esta forma:
 
@@ -79,9 +79,9 @@ Installing:
 
 Las funciones/comandos de nivel de producción no se marcarán específicamente.
 
-{{% alert color="warning" %}}
+{{< alert color="warning" >}}
 En este punto, estas marcas no se han aplicado universalmente. En caso de duda, pregunte en el canal slack `# jenkins-x-user`
-{{% /alert %}}
+{{< /alert >}}
 
 ## Acceso a Funciones Experimentales
 
@@ -101,9 +101,9 @@ Adicione `--allow-experimental` al comando para utilizar las funciones experimen
 
 Para resaltar las funcionalidades obsoletas y hacer que sea fácil ver cuáles evitar, la documentación (este sitio) incluirá una advertencia como esta:
 
-{{% alert color="warning" %}}
+{{< alert color="warning" >}}
 Obsoleta en jx desde 2.0.134. Será eliminada en el 2 de diciembre del 2019.
-{{% /alert %}}
+{{< /alert >}}
 
 en páginas que se refieren a funciones obsoletas. La advertencia indicará la versión donde la función se detendrá/dejará de incluirse.
 

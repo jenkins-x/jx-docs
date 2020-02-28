@@ -41,9 +41,17 @@ El comando [jx boot](/commands/jx_boot/) interpreta y ejecuta el pipeline de arr
 
 #### Pre and Post Validation
 
-Antes de intentar cualquier instalación, ejecuta el comando [jx step verify preinstall](/commands/jx_step_verify_preinstall/) para verificar que todo esté bien. Si está utilizando Terraform (su archivo `jx-requirements.yml` tiene `terraform: true`) fallará si Terraform no ha creado los recursos necesarios en la nube. De lo contrario, éstos serán creados para usted según sea necesario si no existen.
+Antes de intentar cualquier tipo de instalación `boot` ejecutará [jx step verify preinstall](/commands/jx_step_verify_preinstall/) para comprobar que todo esté bien. También verificará que las versiones de los paquetes que requiere que estén instalados se encuentran dentro de los límites superior e inferior. Mas información al respecto, [aquí](https://github.com/jenkins-x/jenkins-x-versions/tree/master/packages). Si usas Terraform (tu archivo `jx-requirements.yml` tiene `terraform: true`)  `boot` fallará si Terraform aún no ha creado los recursos requeridos en la nube. Si no lo estás usando los recursos se crearán automáticamente. 
 
 Una vez que la instalación se ha completado, se ejecuta el comando [jx step verify install](/commands/jx_step_verify_install/) para verificar que su instalación sea válida.
+
+#### Packages
+
+Para instalaciones basadas en `boot`, las versiones de paquetes que usa `jx` han de encontrarse entre los límites especificados en [version stream](https://github.com/jenkins-x/jenkins-x-versions/tree/master/packages). Habitualmente actualizar los paquetes es sencillo, sin embargo, no sucede igual si hay decrementar la versión.
+
+##### Brew
+
+Este [gist] (https://gist.github.com/rdump/b79a63084b47f99a41514432132bd408) describe cómo puede cambiar a diferentes versiones del paquete `kubectl` usando el administrador de paquetes `brew`.
 
 ## Modificando su instalación
 
@@ -168,12 +176,12 @@ Para utilizar el servidor Jenkins en boot con el objetivo de procesar webhooks y
 
 Jenkins X admite diferentes proveedores de git. Puedes especificar el proveedor de git y la organización que desees utilizar para cada entorno en el fichero  [jx-requirements.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml).
 
-{{% pageinfo %}}
+{{< pageinfo >}}
 
 **NOTA** Jenkins X crea los repositorios como privados por defecto. Esto puede causar problemas al evaluar Jenkins X con GitHub si se utiliza una organización gratuita de GitHub para mantener los diversos repositorios (de entorno) creados, ya que las cuentas de la organización libre no tienen acceso a repositorios privados. Sin embargo, el uso de una cuenta personal de Github no es un problema, ya que las cuentas privadas gratuitas tienen repositorios privados ilimitados.
 
 Para fines de evaluación, puede usar una cuenta privada de GitHub como propietario de los repositorios, y cambiar a una cuenta de organización paga una vez que esté listo para entrar. Alternativamente, puede habilitar los repositorios de entorno público estableciendo `environmentGitPublic` en `true` en su configuración de jx boot. En caso de que esté utilizando `jx create` o `jx install`, deberá agregar la opción `--git-public` como parte del comando para habilitar el repositorio público.
-{{% /pageinfo %}}
+{{< /pageinfo >}}
 
 
 ### GitHub

@@ -50,9 +50,18 @@ The [jx boot](/commands/jx_boot/) interprets the boot pipeline using your local 
 
 #### Pre and Post Validation
 
-Before any installation is attempted, Boot runs the [jx step verify preinstall](/commands/jx_step_verify_preinstall/) command to check everything looks OK. If you are using Terraform (so that your `jx-requirements.yml` file has `terraform: true`) it will fail if Terraform has not created the required cloud resources. Otherwise they are lazily created for you if they don't exist.
+Before any installation is attempted, Boot runs the [jx step verify preinstall](/commands/jx_step_verify_preinstall/) command to check everything looks OK. It will also check whether your installed package versions are within the upper and lower version limits, see [here](https://github.com/jenkins-x/jenkins-x-versions/tree/master/packages) for further information. If you are using Terraform (so that your `jx-requirements.yml` file has `terraform: true`) it will fail if Terraform has not created the required cloud resources. Otherwise they are lazily created for you if they don't exist.
 
 Once the installation has completed the [jx step verify install](/commands/jx_step_verify_install/) command is run to verify your installation is valid.
+
+#### Packages
+
+For any boot based installation package versions which are used by `jx` are checked against the upper and lower version limits specified within the [version stream](https://github.com/jenkins-x/jenkins-x-versions/tree/master/packages). Usually the upgrade process of a local pacage is pain free, however, downgrading can sometimes be difficult.
+
+##### Brew
+
+This [gist] (https://gist.github.com/rdump/b79a63084b47f99a41514432132bd408) describes how you can switch to different versions of the `kubectl` package` using the `brew` package manager.
+
 
 ## Changing your installation
 
@@ -185,11 +194,11 @@ To use a Jenkins server in boot for processing webhooks and pipelines configure 
 
 Jenkins X supports a number of different Git providers. You can specify the Git provider you wish to use and the organisation to use for the Git providers for each environment in your [jx-requirements.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml) file.
 
-{{% pageinfo %}}
+{{< pageinfo >}}
 **NOTE** Jenkins X creates repositories per default as private. This can cause issues when evaluating Jenkins X with GitHub, using a free GitHub _organisation_ to hold the various created (environment) repositories as free organization accounts do not have access to private repos. Using a personal Github account is not an issue though, as free private accounts have unlimited private repos.
 
 For evaluation purposes you could use a private GitHub account as the owner of the repositories, and switch to a paid organizational account once you're ready to go all in. Alternatively, you can enable public environment repositories by setting `environmentGitPublic` to true in your jx boot configuration. In case you're using `jx create` or `jx install`, you'll need to add the `--git-public` option as part of the command to enable public repo
-{{% /pageinfo %}}
+{{< /pageinfo >}}
 
 
 ### GitHub
@@ -439,10 +448,10 @@ storage:
     url: gs://my-repo
 ```
 
-{{% pageinfo %}}
+{{< pageinfo >}}
 **NOTE** On GKE your node-pool requires additional permissions to write into GCS buckets,
 for more information on this view the [GKE Storage Permissions](https://jenkins-x.io/docs/managing-jx/common-tasks/storage/#gke-storage-permissions)
-{{% /pageinfo %}}
+{{< /pageinfo >}}
 For more details see the [Storage Guide](https://jenkins-x.io/architecture/storage/).
 
 ## Ingress

@@ -12,10 +12,10 @@ There are a couple of ways that you as a developer can quickly become productive
 
 There are specific steps for each approach, and we provide you a visual representation of each workflow, as well as the specific steps to quickly get started.
 
-{{% alert %}}
+{{< alert >}}
 Keep in mind, this development workflow helps you make changes before even checking in your code to the repo, or submitting a formal pull request.  Really meant for you to validate your changes fast!
 
-{{% /alert %}}
+{{< /alert >}}
 
 ## Develop Using DevPods and a desktop IDE
 
@@ -27,9 +27,9 @@ In this scenario, you are using a desktop IDE such as VS Code or Intellij which 
 <h5>Developer Workflow - Develop Using DevPods and an IDE</h5>
 </figcaption>
 
-{{% alert %}}
+{{< alert >}}
 See [IDE](/docs/using-jx/developing/ide/#vs-code) for more details on using VSCode
-{{% /alert %}}
+{{< /alert >}}
 
 To get started using this approach, simply execute the following command in the root of your app directory.  We are using a `NodeJS` app for this example, therefore we specify the language using the `-l` parameter.
 
@@ -48,9 +48,9 @@ Once this happens, you must execute one more command within your ssh session to 
 ./watch.sh
 ```
 
-{{% alert %}}
+{{< alert >}}
  From this point forward, any changes you make **(step 1 in diagram)**, trigger a Docker Image build, and you should see the output of that build command in your terminal as it happens.
-{{% /alert %}}
+{{< /alert >}}
 
 Once you are happy with changes to your app, you go to **(step 2 in diagram)** and check-in your code, create a `Pull Request` at which point a `Jenkins X Pipeline` is triggered immediately to promote your changes to `Staging` enviornment.
 
@@ -90,9 +90,9 @@ cd /workspace
 [root@me-nodejs node-app]#
 ```
 
-{{% alert %}}
+{{< alert >}}
  **NOTE**: We are not passing the `--sync` flag because we plan on using the web based IDE
-{{% /alert %}}
+{{< /alert >}}
 
 A succesful execution of the command above, will ensure the following has happened:
 

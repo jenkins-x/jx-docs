@@ -17,9 +17,9 @@ Jenkins X 是由众多[开发者][contributors]开发的开源项目。还有很
 * 你是刚刚接触 Git 或者开源项目
 * 你是 Jenkins X 的爱好者并乐于对项目的发展贡献力量
 
-{{% alert "有其它的问题？" %}}
+{{< alert "有其它的问题？" >}}
 如果在阅读此指导文档过程中有任何问题，请向 Jenkins X 社区的[讨论组](/community/)寻求帮助。
-{{% /alert %}}
+{{< /alert >}}
 
 ## 安装 Go
 
@@ -273,9 +273,9 @@ git commit --amend
 
 #### 修改多次提交
 
-{{% alert color="warning" title="Be Careful Modifying Multiple Commits"%}}
+{{< alert color="warning" title="Be Careful Modifying Multiple Commits">}}
 对此章节中介绍的修改，可能会造成不可意料的后果。如果不确定的如何使用的话，跳过下面的部分！
-{{% /alert %}}
+{{< /alert >}}
 
 这一部分的操作需要更高的技能。Git 允许你对多次提交进行[修改](https://git-scm.com/docs/git-rebase)。换句话说：它允许你对历史的提交进行修改。
 

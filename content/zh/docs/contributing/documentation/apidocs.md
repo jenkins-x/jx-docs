@@ -25,9 +25,9 @@ HTML 文档是由 [OpenAPI 说明](https://github.com/jenkins-x/jx/tree/master/d
  make generate-openapi
  ```
 
- {{% alert %}}
+ {{< alert >}}
  `make generate-openapi` 仅仅是对 `jx create client openapi` 进行了包装，通过传入参数：从哪个包来生成、生成的目标包的名称和组（`jenkins.io`）以及版本(`v1`)来生成最终的文件。如果你愿意的话，也可以直接运行这个命令。
- {{% /alert %}}
+ {{< /alert >}}
 
  生成 HTML 运行：
 
@@ -35,15 +35,15 @@ HTML 文档是由 [OpenAPI 说明](https://github.com/jenkins-x/jx/tree/master/d
  make generate-docs
  ```
 
-{{% alert %}}
+{{< alert >}}
 `make generate-docs` 仅仅是对 `jx create client docs` 进行了包装。 Y如果你愿意的话，也可以直接运行这个命令。
-{{% /alert %}}
+{{< /alert >}}
 
 当你对自定义资源进行了修改的话，应该运行 `make generate-openapi`，并确认将所生成的修改添加到版本控制当中。这意味着对于其他人，在任意时刻都会有标记了版本的 OpenAPI 说明可供使用。
 
-{{% alert %}}
+{{< alert >}}
 你也可以运行 `make generate` 它会进行所有 Jenins X（mocks、client 以及 OpenAPI）所需要的代码生成工作。
-{{% /alert %}}
+{{< /alert >}}
 
 构建版本时会运行 `make generate-docs`，并且对于每一个版本，更新都会自动的上传到 Jenkins X 的网站上。在版本构建结束的几分钟后会生效。
 

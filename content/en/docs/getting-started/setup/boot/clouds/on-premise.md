@@ -50,4 +50,12 @@ We recommend starting with the most simple possible installation and get that wo
 
 Then once you have something working, incrementally try enabling each of those in turn. 
 
-
+If a helm step fails some resources may have already been created, running the step again will result in a conflict (resource already exists). To delete all created resource:
+- configure jx to keep the tmp folder with compiled helm files:
+```
+export JX_NO_DELETE_TMP_DIR=true
+```
+- go to the tmp folder visible in the logs and execute:
+```
+helm template jenkins-x . --namespace jx | kubectl delete -f -
+```

@@ -118,11 +118,11 @@ choco upgrade jenkins-x
 
 <!-- ## Google Cloud Platform (GCP)
 
-{{% alert %}}
+{{< alert >}}
 It is highly recommended that you use Google Chrome browser with
 GCP Cloud Shell, as you may experience issues using other
 browsers.
-{{% /alert %}}
+{{< /alert >}}
 
 To run `jx` commands from the GCP Cloud Shell, install the Jenkins X
 binaries from the GitHub repository and install it via GCP shell

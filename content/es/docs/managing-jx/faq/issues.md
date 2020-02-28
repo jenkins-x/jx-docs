@@ -197,11 +197,11 @@ Los servicios principales autenticados de Jenkins X incluyen Jenkins, Nexus, Cha
 
 Puede establecer nombre del usuario de administración a través del parámetro `--default-admin-username=username`.
 
-{{% alert %}}
+{{< alert >}}
 Quizás esté utilizando el dominio de seguridad de Active Directory en Jenkins. Es en este escenario que tiene sentido configurar el nombre de usuario de administrador a través de `--default-admin-username` según sus cuentas de servicio existentes.
 
 También puede pasar este valor a través de `myvalues.yaml`.
-{{% /alert %}}
+{{< /alert >}}
 
 Si desea establecer la contraseña predeterminada usted mismo, puede establecer el indicador `--default-admin-password=foo` en los dos comandos anteriores.
 
