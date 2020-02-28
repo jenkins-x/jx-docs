@@ -32,6 +32,19 @@ If you already have a git clone then run
 $ git submodule update --init --recursive
 ```   
 
+To pull the latest:
+
+```bash
+$ git pull --recurse-submodules
+```      
+
+you can view the commit sha of the sub modules via:
+
+```bash
+git submodule status --recursive
+```      
+
+ 
 ## Download npm modules
 
 Then you need to run this command to download the requirerd npm modules:
@@ -41,6 +54,20 @@ Then you need to run this command to download the requirerd npm modules:
 $ npm install
 ```   
 
+### Upgrading the enhancements content
+
+To upgrade to a new enhancements commit - we'll hopefully automate this soon!
+
+```bash
+cd content/en/docs/labs/enhancements
+git checkout master
+git pull
+cd ..
+git add enhancements
+git commit -m "move to latest enhancements"
+```
+ 
+ 
 ### Dockerized Hugo
 
 Instead of installing Hugo locally, you can use the included `docker-compose.yml` to spin up the Hugo server. Make sure you have Docker installed.
