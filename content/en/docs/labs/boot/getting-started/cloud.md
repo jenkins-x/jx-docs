@@ -1,7 +1,7 @@
 ---
-title: Create Cluster
+title: Setting up Cloud Resources
 linktitle: Create Cluster
-description: Create a Kubernetes Cluster for boot
+description: Setting up Cloud Resources for boot
 weight: 10
 ---
 
