@@ -14,9 +14,38 @@ aliases:
 
 A common requirement for a production setup is to isolate your Development, Staging and Production environments onto separate Kubernetes clusters and to isolate the clusters from each other in separate cloud accounts or VPNs etc.
 
-You can do this by installing the `Environment Controller` chart into your Staging or Production cluster.
+The challenge is how to install and manage all the separate kubernetes clusters with GitOps management and promotion between them all.
 
-## Goal
+We currently have 2 solutions for this:
+
+## Labs Multi Cluster solution
+
+This is our preferred strategic direction to solving the multi cluster problem.
+
+You can check out the [full documentation here](/docs/labs/boot/multi-cluster/).
+
+We like this solution as:
+
+* it works with any git provider supported by boot since it reuses `lighthouse` for webhooks and ChatOps for each environment rather than `environment controller`
+* we use the new [helm 3 based boot + helmfile](/docs/labs/boot/) approach to boot every environment: dev, staging and production whether any of the environments share a kubernetes cluster if they are all in separate remote clusters
+* for each cluster you can [add/remove any apps](/docs/labs/boot/apps/) you want via simple GitOps. e.g. if you want ingress, cert manager or external DNS for TLS in any environment and namespace it all works the same; its just  [boot with helm 3 based boot + helmfile](/docs/labs/boot/)
+
+The downsides of this approach are:
+
+* this is using the [Labs work](/docs/labs/) and the [jxl](/docs/labs/jxl/) command line 
+* this is not yet integrated into the stable version of Jenkins X
+
+
+## Environment Controller
+
+With this approach you install the `Environment Controller` chart into your Staging or Production cluster.
+
+This is good because its already integrated into the stable version of Jenkins X.
+
+Though it has a number of drawbacks:
+
+* only works for github.com repositories
+* cannot be used to [add/remove any apps](/docs/labs/boot/apps/) like ingress, cert manager or external DNS for TLS
 
 Our assumption with the Environment Controller is that we need something that:
 
@@ -26,7 +55,7 @@ Our assumption with the Environment Controller is that we need something that:
 * does not require access to the development cluster or anything else in Jenkins X other than the environments git repository and a docker + chart repository
 
 
-## Creating your Dev cluster
+### Creating your Dev cluster
 
 If you are creating a new installation then when you use [jx create cluster](/commands/jx_create_cluster/) or [jx install](/commands/deprecation/) then please specify `--remote-environments` to indicate that `Staging/Production` environments will be remote from the development cluster.
 
@@ -42,7 +71,7 @@ What this means is that if an environment is remote to the development cluster t
 of the environment in the Dev cluster; we leave that to the Environment Controller to perform running inside the remote cluster.
 
 
-## Configure an existing Dev cluster
+### Configure an existing Dev cluster
 
 If you already have a Dev cluster that was setup with `Staging` and `Production` namespaces inside your Dev cluster then please do the following:
 
@@ -58,7 +87,7 @@ You need to manually disable the release pipeline in the Dev cluster.
 e.g. by removing the `postsubmit` setting in your Prow configuration if you are using [serverless Jenkins X Pipelines and tekton](/docs/concepts/jenkins-x-pipelines/) - or comment out the `jx step helm apply` command in your `Jenkinsfile` if using static jenkins server
 
 
-## Installing Environment Controller
+### Installing Environment Controller
 
 First you need to connect to your remote kubernetes cluster for `Staging` or `Production` using your managed kubernetes provider's tooling.
 
@@ -87,7 +116,7 @@ Error: Failed to fetch https://storage.googleapis.com/charts/environment-control
 
 In that case, upgrading your helm version might help.
 
-## Installing Ingress Controller
+### Installing Ingress Controller
 
 If you don't already have any kind of Ingress Controller in your remote `Staging` / `Production` cluster then it is recommend - particularly if you want to try out our [quickstarts](/docs/getting-started/first-project/create-quickstart/) which depend on Ingress to be able to be used from a web browser.
 
@@ -100,7 +129,7 @@ jx create addon ingctl
 This will setup the Ingress Controller; find its external domain and then setup a Pull Request on the environments git repository so that future promotions in the environment will use the correct `domain` value on the generated `Ingress` resources.
 
 
-## How it works
+### How it works
 
 On startup the Environment Controller registers itself into the github repository as a webhook endpoint using its LoadBalancer service IP address. If you are using a custom ingress/DNS endpoint you can override this via the `webhookUrl` chart value or [--webhook-url CLI option](/commands/jx_create_addon_environment/)
 
@@ -110,11 +139,11 @@ Then the tekton controller turns this set of Pipeline resources is turned into o
 
 Because Environment Controller reacts purely to merges to the environment git repository and we are using canonical git source code; it works with both Static Jenkins Servers and [serverless Jenkins X Pipelines and tekton](/docs/concepts/jenkins-x-pipelines/) in the Development cluster.
 
-## Demo
-
+### Demo
+ 
 There was a demo of using environment controller in the [April 19, 2019 Office Hours](/community/office_hours/2019-04-19/)
 
-## Known limitations
+### Known limitations
 
 The following things are not yet automatically configured for you but we hope to automate them soon:
 
