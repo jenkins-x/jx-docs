@@ -32,6 +32,12 @@ If you already have a git clone then run
 $ git submodule update --init --recursive
 ```   
 
+To pull the latest:
+
+```bash
+$ git pull --recurse-submodules
+```   
+ 
 ## Download npm modules
 
 Then you need to run this command to download the requirerd npm modules:
