@@ -41,6 +41,7 @@ It will be lots of fun! Check out the [contribution guide](/docs/contributing/) 
 <figure>
 <img src="/images/community/GoCommunity-background.png" class="img-thumbnail"/>
 </figure>
+
 image by Ashley McNamara, [creative commons license](https://github.com/ashleymcnamara/gophers/blob/master/GoCommunity.png)
 
 ### Subscribe to the Jenkins X Newsletter
