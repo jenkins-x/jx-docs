@@ -44,7 +44,8 @@ The configuration for the three pipeline types for this build pack or project.
     * **[`setVersion`](#build-pack-stages)** - The second stage to run.
     * **[`preBuild`](#build-pack-stages)** - The third stage to run.
     * **[`build`](#build-pack-stages)** - The fourth stage to run.
-    * **[`postBuild`](#build-pack-stages)** - The fifth and final stage to run.
+    * **[`postBuild`](#build-pack-stages)** - The fifth stage to run.
+    * **[`promote`](#build-pack-stages)** - The sixth and final stage to run.
     * **[`pipeline`](#defining-an-individual-pipeline)** - The full definition
     of the pipeline. Mutually exclusive with `setup`, etc.
 * **<a id='overrides'>`overrides`</a>** - A list of overriding changes to make
