@@ -2,11 +2,11 @@
 title: Getting jxl
 linktitle: Getting jxl
 type: docs
-description: Getting the jxl binary so you can try the Alpha features
+description: Getting the jxl binary so you can try the Labs features
 weight: 1
 ---
 
-Before you start using the Alpha features you need to get the Alpha Command Line tool called `jxl`.
+Before you start using the Labs features you need to get the Labs Command Line tool called `jxl`.
 
 You can download `jxl` from here: https://github.com/jenkins-x-labs/jxl/releases
 

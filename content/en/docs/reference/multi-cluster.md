@@ -46,6 +46,8 @@ Though it has a number of drawbacks:
 
 * only works for github.com repositories
 * cannot be used to [add/remove any apps](/docs/labs/boot/apps/) like ingress, cert manager or external DNS for TLS
+* can only work with helm 2 
+* can only support helm charts deployed into a single namespace
 
 Our assumption with the Environment Controller is that we need something that:
 
