@@ -37,6 +37,10 @@ pipelineConfig:
             - submodule update --init --recursive
 
           - image: gcr.io/jenkinsxio/hugo-extended:0.65.3-6
+            name: update-content
+            command: ./update-content.sh
+
+          - image: gcr.io/jenkinsxio/hugo-extended:0.65.3-6
             command: hugo
             args:
               - version
@@ -97,6 +101,9 @@ pipelineConfig:
             command: git
             args:
             - submodule update --init --recursive
+          - image: gcr.io/jenkinsxio/hugo-extended:0.65.3-6
+            name: update-content
+            command: ./update-content.sh
           - image: gcr.io/jenkinsxio/hugo-extended:0.65.3-6
             name: version
             command: hugo
