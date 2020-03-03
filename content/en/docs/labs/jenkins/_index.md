@@ -1,6 +1,6 @@
 ---
-title: Trigger Jenkins
-linktitle: Trigger Jenkins
+title: Jenkins
+linktitle: Jenkins
 type: docs
 description: Improved Jenkins and Jenkins X interoperability
 weight: 30
