@@ -8,7 +8,11 @@ weight: 50
 Once you have [added one or more Jenkins Servers to the registry](/docs/labs/jenkins/getting-started/#adding-jenkins-servers) you can import a `Jenksinfile` based project.
 
 
-## From inside the source code
+## Import the code
+
+First you need to import the code via one of these approaches: 
+ 
+### From inside the source code
 
 If you are inside a git clone of the project you have with a `Jenkinsfile`  then run the import wizard:
 
@@ -16,9 +20,18 @@ If you are inside a git clone of the project you have with a `Jenkinsfile`  then
 jxl project import
 ``` 
 
-This will prompt you to import the repository into Jenkins X.
+### Import via a git URL 
 
-You get to pick which Jenkins server you wish to use (if you have more than one).
+If you don't have a local git clone then use:
+
+
+```bash 
+jxl project import --git-url=https://github.com/myorg/myrepo.git
+```           
+
+## Choose the remote Jenkins server 
+
+Next the wizard will prompt you to pick which Jenkins server you wish to use (if you have more than one).
 
 In addition you get to pick between:
 
