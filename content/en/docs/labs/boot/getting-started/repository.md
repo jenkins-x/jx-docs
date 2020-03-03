@@ -15,7 +15,20 @@ To create a fresh install run the `jxl boot create` command:
 jxl boot create
 ```
 
-This will create a new git repository for your installation.
+This will create the git repositories for your environments.
+
+The command will output instructions on how to setup the [secrets](/docs/labs/boot/getting-started/secrets/) and then [run the boot job](/docs/labs/boot/getting-started/run/).
+
+
+### Using Multi Cluster
+
+If you wish to use [multi cluster](/docs/labs/boot/multi-cluster/) where your `staging` and `production` environments are in separate repositories then please add the `--env-remote` flag then follow the [multi cluster documentation](/docs/labs/boot/multi-cluster/) after you have booted your development environment.
+
+``` 
+jxl boot create --env-remote
+```
+
+This will create the git repositories for your environments.
 
 The command will output instructions on how to setup the [secrets](/docs/labs/boot/getting-started/secrets/) and then [run the boot job](/docs/labs/boot/getting-started/run/).
 
