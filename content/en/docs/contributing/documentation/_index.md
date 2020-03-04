@@ -7,6 +7,10 @@ weight: 10
 
 We welcome your contributions to Jenkins X documentation whether you are a developer, an end user of Jenkins X, or someone who can't stand seeing typos!
 
+{{% alert %}}
+If you're looking for the easiest way to correct existing content (typos etc.) have a look at the [Suggest Changes](/docs/contributing/documentation/changes) guide.
+{{% /alert %}}
+
 # Assumptions
 
 This contribution guide takes a step-by-step approach in hopes of helping newcomers. Therefore, we only assume the following:
