@@ -7,9 +7,18 @@ weight: 6
 
 We recommend using separate clusters for your `Staging` and `Production` environments. This lets you completely isolate your environments which improves security.
 
+
+## Setting up multi cluster
+
 To enable multi cluster you need to specify `remoteCluster: true` on your `Staging` and/or `Production` environments in your `jx-requirements.yml`.
 
-Here's an example `jx-requirements.yml`:
+The easiest way to do that is passing in `--env-report`  when you [created your environment git repositories](/docs/labs/boot/getting-started/repository/):
+
+``` 
+jxl boot create --env-remote
+```
+
+Or if you've already [created your environment git repositories](/docs/labs/boot/getting-started/repository/) you can modify your `jx-requirements.yml` to something like this:
 
 ```yaml 
 bootConfigURL: https://github.com/jenkins-x/jenkins-x-boot-helmfile-config
@@ -35,9 +44,32 @@ versionStream:
 webhook: lighthouse
 ```    
 
-**NOTE** currently the git layout of remote environments is a little different to the usual environment git repository layout (as its using helmfile and helm 3 rather than helm 2). So we recommend creating new git repositories for your remote environments (which `jx boot` does by default if the git repository doesn't exist).
+### Setup the development cluster as normal
 
-### How it works
+Follow the [getting started guide for helm 3 boot](/docs/labs/boot/getting-started/) to setup the secrets and boot up the development cluster.
+
+### Configure the Staging/Production git repository
+
+First make sure you do:
+
+```bash 
+export NAMESPACE=jx-staging
+```
+
+Then you will need to follow the instructions to [setup the cloud resources for the Staging/Production cluster](/docs/labs/boot/getting-started/cloud/)
+
+When you are connected to the Staging/Production cluster you will need to run:
+
+``` 
+jxl boot verify --git-url=https://github.com/myorg/environment-mycluster-staging.git
+```
+ 
+This will ensure that your `jx-requirements.yml` file in your `staging` / `production` git repository is setup to point at the correct cloud resources.
+
+Then follow the [secrets setup](/docs/labs/boot/getting-started/secrets/) and  [run the boot job](/docs/labs/boot/getting-started/run/) for the `staging` / `production` environment
+
+
+## How it works
 
 Once you run `jx boot` on your development cluster you will get a helm 3 based installation of Jenkins X as usual but with a few differences:
  

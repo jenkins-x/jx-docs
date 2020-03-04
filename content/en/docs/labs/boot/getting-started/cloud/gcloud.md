@@ -9,6 +9,12 @@ weight: 10
 
 Before you begin you need to install [gcloud](https://cloud.google.com/sdk/gcloud)
 
+You may want to upgrade to the latest `gcloud`:
+
+```bash 
+gcloud components update
+```
+
 Now define a few environment variables:
 
 - `NAMESPACE` is the Kubernetes namespace the base Jenkins X installation will installed into, note optionl apps installed during the boot process can be installed into different namespaces
