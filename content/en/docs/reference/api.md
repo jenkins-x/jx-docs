@@ -7820,7 +7820,7 @@ ReviewPolicy
 <a href="#jenkins.io/v1.BatchPipelineActivity">BatchPipelineActivity</a>)
 </p>
 <p>
-<p>PullRequestInfo contains information about a PR, like its PR and Build numbers</p>
+<p>PullRequestInfo contains information about a PR included in a batch, like its PR number, the last build number, and SHA</p>
 </p>
 <table>
 <thead>
@@ -7848,6 +7848,18 @@ string
 </em>
 </td>
 <td>
+<p>LastBuildNumberForCommit is the number of the last successful build of this PR outside of a batch</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>lastBuildSHA</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>LastBuildSHA is the commit SHA in the last successful build of this PR outside of a batch.</p>
 </td>
 </tr>
 </tbody>
@@ -10153,5 +10165,5 @@ PromoteWorkflowStep
 <hr/>
 <p><em>
 Generated with <code>gen-crd-api-reference-docs</code>
-on git commit <code>70e0832ac</code>.
+on git commit <code>2ebcd472a</code>.
 </em></p>
