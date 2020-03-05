@@ -61,7 +61,7 @@ Then you will need to follow the instructions to [setup the cloud resources for 
 When you are connected to the Staging/Production cluster you will need to run:
 
 ``` 
-jxl boot verify --git-url=https://github.com/myorg/environment-mycluster-staging.git
+jxl verify requirements --git-url=https://github.com/myorg/environment-mycluster-staging.git
 ```
  
 This will ensure that your `jx-requirements.yml` file in your `staging` / `production` git repository is setup to point at the correct cloud resources.

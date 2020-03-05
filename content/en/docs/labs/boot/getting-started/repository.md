@@ -20,6 +20,21 @@ This will create the git repositories for your environments.
 The command will output instructions on how to setup the [secrets](/docs/labs/boot/getting-started/secrets/) and then [run the boot job](/docs/labs/boot/getting-started/run/).
 
 
+### Extra arguments
+
+You can pass in a whole number of different arguments to default values in your installation. You can see all the available arguments via:
+
+```bash 
+jxl boot create --help
+``` 
+
+e.g. if you want to specify the kubernetes provider to `gke` and enable public repositories for environments and apps you can use:
+
+```bash 
+jxl boot create --provider=gke --env-git-public  --git-public
+``` 
+
+ 
 ### Using Multi Cluster
 
 If you wish to use [multi cluster](/docs/labs/boot/multi-cluster/) where your `staging` and `production` environments are in separate repositories then please add the `--env-remote` flag then follow the [multi cluster documentation](/docs/labs/boot/multi-cluster/) after you have booted your development environment.
