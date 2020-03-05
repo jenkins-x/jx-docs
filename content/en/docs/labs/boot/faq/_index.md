@@ -61,6 +61,33 @@ jxRequirements:
     namespaceSubDomain: "."
 ```
 
+## How do I configure the ingress TLS certificate in Dev, Staging or Production?
+
+You can specify the TLS certificate to use for the `dev`, `staging` or `production` environment by modifying the `jx-requirements.yml` file in the environments git repository:
+
+
+```yaml 
+ingress: 
+  tls:
+    enabled:
+    secretName: my-tls-secret-name
+```
+
+This will then be applied to all the Jenkins X ingress resources for things like `lighthouse` or `nexus` - plus any apps you deploy to `dev`, `staging` or `production`.
+
+If you want to override the TLS secret name for a specific app in a specific environment then rather like the [above question](#how-do-i-configure-the-ingress-domain-in-dev-staging-or-production) you can use the [app customisation mechanism](/docs/labs/boot/apps/#customising-charts).
+ 
+e.g. for an app called `mychart` you can create a file called `apps/mychart/values.yaml` in the git repository for your environment and add the following YAML:
+                                                                                                                                        
+```yaml 
+jxRequirements:
+  ingress:
+    tls:
+      enabled:
+      secretName: my-tls-secret-name
+```
+
+
 ## How do I uninstall boot?
 
 From inside a git clone of your `dev`, `staging` or `production` environment's git repository you can run: 
