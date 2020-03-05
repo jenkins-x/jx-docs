@@ -584,6 +584,31 @@ If you want to debug using `jx` with `stdin` to test out terminal interaction, y
 	dlv --listen=:2345 --headless=true --api-version=2 attach SomePID
 	```
 
+### Debugging jx boot pipeline
+
+If you want to debug a pipeline, for example `install-vault` pipeline you'll have to change the args and command in `jenkins-x.yml` file in the boot config directory:
+
+1. Change the command to `dlv`.
+2. Add `dlv` args and `jx` as args.
+
+```yml
+- args:
+- --listen=:2345
+- --headless=true
+- --api-version=2
+- exec
+- <PATH-TO-jx-binary>
+- --
+- step
+- boot
+- vault
+- --provider-values-dir
+- ../../kubeProviders
+command: dlv
+dir: /workspace/source/systems/vault
+name: install-vault
+```
+
 ### Debugging a unit test
 
 You can run a single unit test via:
