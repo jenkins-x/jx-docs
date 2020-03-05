@@ -5,7 +5,7 @@ type: docs
 weight: 30
 ---
 
-Join us for office hours **every other Thursday** at 4pm UK / 11am US Eastern / 8am US Pacific.
+Join us for office hours **every other Thursday** at 16:00 UTC (*See your timezone [here](https://time.is/1500_in_UTC)*).
 
 Next office hours: **5 March 2020**
 
