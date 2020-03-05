@@ -20,7 +20,7 @@ For details of the next Jenkins X talk or demo checkout our [talks at meetups an
 
 ### Office Hours
 
-We meet for office hours **every other Thursday** at 4pm UK / 11am US Eastern / 8am US Pacific.
+We meet for office hours **every other Thursday** at 16:00 UTC (*See your timezone [here](https://time.is/1600_in_UTC)*).
 
 Next office hours: **5 March 2020**
 
