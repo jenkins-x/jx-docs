@@ -1,5 +1,5 @@
 ---
-date: 2020-03-06T01:00:27Z
+date: 2020-03-06T14:30:12Z
 title: "jx alpha project"
 slug: jx_alpha_project
 url: /commands/jx_alpha_project/
