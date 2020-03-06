@@ -1,5 +1,5 @@
 ---
-date: 2020-03-06T01:00:27Z
+date: 2020-03-06T14:30:12Z
 title: "jx step syntax validate pipeline"
 slug: jx_step_syntax_validate_pipeline
 url: /commands/jx_step_syntax_validate_pipeline/

@@ -1,5 +1,5 @@
 ---
-date: 2020-03-06T01:00:27Z
+date: 2020-03-06T14:30:12Z
 title: "jx get crd"
 slug: jx_get_crd
 url: /commands/jx_get_crd/
