@@ -4,13 +4,13 @@ gcloud config set project $PROJECT_ID
 gcloud services enable secretmanager.googleapis.com
 
 # setup the service accounts
-gcloud iam service-accounts create $CLUSTER_NAME-ex --project $PROJECT_ID
-gcloud iam service-accounts create $CLUSTER_NAME-jb --project $PROJECT_ID
-gcloud iam service-accounts create $CLUSTER_NAME-ko --project $PROJECT_ID
-gcloud iam service-accounts create $CLUSTER_NAME-st --project $PROJECT_ID
-gcloud iam service-accounts create $CLUSTER_NAME-tk --project $PROJECT_ID
-gcloud iam service-accounts create $CLUSTER_NAME-vo --project $PROJECT_ID
-gcloud iam service-accounts create $CLUSTER_NAME-vt --project $PROJECT_ID
+gcloud iam service-accounts create $CLUSTER_NAME-ex --display-name=$CLUSTER_NAME-ex --project $PROJECT_ID
+gcloud iam service-accounts create $CLUSTER_NAME-jb --display-name=$CLUSTER_NAME-jb --project $PROJECT_ID
+gcloud iam service-accounts create $CLUSTER_NAME-ko --display-name=$CLUSTER_NAME-ko --project $PROJECT_ID
+gcloud iam service-accounts create $CLUSTER_NAME-st --display-name=$CLUSTER_NAME-st --project $PROJECT_ID
+gcloud iam service-accounts create $CLUSTER_NAME-tk --display-name=$CLUSTER_NAME-tk --project $PROJECT_ID
+gcloud iam service-accounts create $CLUSTER_NAME-vo --display-name=$CLUSTER_NAME-vo --project $PROJECT_ID
+gcloud iam service-accounts create $CLUSTER_NAME-vt --display-name=$CLUSTER_NAME-vt --project $PROJECT_ID
 
 curl https://raw.githubusercontent.com/jenkins-x-labs/cloud-resources/master/gcloud/setup.yaml | sed "s/{namespace}/$NAMESPACE/" | sed "s/{project_id}/$PROJECT_ID/" | sed "s/{cluster_name}/$CLUSTER_NAME/" | kubectl apply -f -
 
