@@ -17,7 +17,7 @@ weight: 40
 
 ## Trying Jenkins X Pipelines
 
-Create a new cluster installed with Jenkins X Pipelines using `jx` with these flags:
+Create a new cluster installed with Jenkins X Pipelines using `jx` and the following flags:
 
 ```sh
 jx create cluster gke --tekton
