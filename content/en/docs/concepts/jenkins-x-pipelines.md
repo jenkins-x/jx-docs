@@ -11,21 +11,19 @@ aliases:
 weight: 40
 ---
 
-We [recently announced](/news/jenkins-x-next-gen-pipeline-engine/) that we are introducing **Jenkins X Pipelines**, a new serverless pipeline execution engine based on the [Tekton Pipelines](https://tekton.dev/) open source project.
+<!-- We [recently announced](/news/jenkins-x-next-gen-pipeline-engine/) that we are introducing -->
 
-Tekton has been designed to be a modern cloud native solution for running pipelines.
-
-The work here is still experimental but we'd love feedback and help from the community to drive it forward.
+ **Jenkins X Pipelines** are cloud native pipelines that use [Tekton](https://tekton.dev/) as the pipeline execution engine.
 
 ## Trying Jenkins X Pipelines
 
-Right now to enable a Tekton based install you can create a new cluster using `jx` along with these flags:
+Create a new cluster using `jx` along with these flags to create a cluster installed with Jenkins X pipelines on GCP:
 
 ```sh
 jx create cluster gke --tekton
 ```
 
-Or if you want to go all in on the next generation of Jenkins X with built-in GitOps for your development environment, using Tekton and using Vault for storage of Secrets then use the following (only works on GCP and AWS right now):
+Or if you want to go all in on the next generation of Jenkins X with built-in GitOps for your development environment, using Tekton and using Vault for storage of secrets then use the following (only works on GCP and AWS right now):
 
 ```sh
 jx create cluster gke --ng
@@ -35,7 +33,7 @@ The general developer experience, CLI and IDE plugins should work as before - bu
 
 ## Using a quickstart
 
-Once your cluster is started you can create a new quickstart, we've been using the NodeJS one reliably.
+Once your cluster is started you can create a new quickstart.
 
 ```sh
 jx create quickstart
