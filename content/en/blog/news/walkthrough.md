@@ -1,6 +1,6 @@
 ---
 title: "Walkthrough: Setting up Jenkins X on a Kubernetes cluster"
-date: 2020-02-20
+date: 2020-03-10
 draft: false
 description: >
   Set up Jenkins X on a Kubernetes cluster hosted on GKE 
@@ -68,7 +68,7 @@ Towards the end, you will see output similar to:
 
 ```
 NAME         LOCATION         MASTER_VERSION  MASTER_IP      MACHINE_TYPE   NODE_VERSION    NUM_NODES  STATUS
-walkthrough  europe-north1-a  1.13.11-gke.23  35.228.29.158  n1-standard-2  1.13.11-gke.23  3          RUNNING
+walkthrough  europe-north1-a  1.14.10-gke.17  35.228.74.166  n1-standard-2  1.14.10-gke.17  3          RUNNING
 ```
 
 Congratulations you now have a Kubernetes cluster!
@@ -95,7 +95,7 @@ This has been implemented for `jx create` or `jx install` [apparently](https://j
 
     The `jx-requirements.yml` file is interesting to review, see the defaults in place, and make any changes you need.  
 
-* For my setup, I knew there was one change I needed to make to the `jx-requirements.yml`. By default, Jenkins X will create private environment repos. However, I set up a free open source GitHub organization to hold the environment repositories that will be created by Jenkins X, and this type of GitHub organization account does not have access to private repos. To configure Jenkins X to create public environment repositories, set `environmentGitPublic` to `true` in `jx-requirements.yml`.
+* For my setup, I knew there was one change I needed to make to the `jx-requirements.yml`. By default, Jenkins X will create private environment repos. You can see this configured in `jx-requirements.yml` as `environmentGitPublic: false`. However, I set up a free open source GitHub organization to hold the environment repositories that will be created by Jenkins X, and this type of GitHub organization account does not have access to private repos. To configure Jenkins X to create public environment repositories, set `environmentGitPublic` to `true` in `jx-requirements.yml`.
 
 * Save your changes and then on the command line run:
 
