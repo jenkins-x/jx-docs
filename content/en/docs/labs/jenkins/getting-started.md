@@ -10,11 +10,7 @@ Make sure you have got the [jxl binary](/docs/labs/jxl/) before proceeding.
 
 ## Adding Jenkins Servers
 
-`trigger-pipeline` can automatically discover Jenkins servers created via the [Jenkins Operator](https://jenkinsci.github.io/kubernetes-operator/).
-
-In addition you can register any Jenkins servers you wish to the Jenkins Server Registry via the `tp add` command.
-
-To add a new Jenkins server with a guided wizard:
+You can register any Jenkins servers you wish to the Jenkins Server Registry via the `jxl jenkins add` command:
 
 ```
 jxl jenkins add 
@@ -23,7 +19,7 @@ jxl jenkins add
 If you already know the name, URL, username and API Token then you can use:
 
 ```
-jxl jenkins add 
+jxl jenkins add -u https://myjenkins.com/ --username myuser
 ```
 
 ### Removing Jenkins Servers
