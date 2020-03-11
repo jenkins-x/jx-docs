@@ -70,4 +70,4 @@ And finally, if you’d like to keep your Jenkins jobs running but as individual
 
 We know this is a big announcement on a fast timeline and a lot of ideas to take in. We’d love to talk to you about it! Please join the [office hours we have arranged on March 19th](https://jenkins-x.io/community/office_hours/) that will be fully dedicated to discussing this. 
 
-You may reach out to me, Ethan Jones, at ejones@cloudbees.com if you’d like to discuss things one on one with some of our product and engineering team members.
+You may reach out to me, Ethan Jones, at ejones@cloudbees.com, if you’d like to discuss things one on one with some of our product and engineering team members.
