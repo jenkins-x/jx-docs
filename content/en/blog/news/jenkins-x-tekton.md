@@ -16,6 +16,7 @@ Jenkins X is committing fully to Tekton as its pipeline execution engine. We are
 This means we are formally deprecating - and will be removing - traditional Jenkins static masters support inside Jenkins X. We are excited about the new way forward, which we’ll discuss further below, but it’s important to be clear about what this means for current users. If you are already using Jenkins X with Tekton-based pipelines, then nothing will change for you, and you do not need to change anything. If you’re running a traditional Jenkinsfile on Jenkins X, then you have three choices: 
 
 * Continue using static masters with a version of Jenkins X that supports Jenkins static masters
+    * Note that for versions of Jenkins X that support Jenkins static masters we will not provide any security fixes either to the jx CLI or to the Jenkins image used after mid April.
 * Return to a more optimized Jenkins installation
 * Or, if you plan on updating your version of Jenkins X to keep up with the latest features, then you will need to adapt your setup
 
@@ -67,4 +68,6 @@ And finally, if you’d like to keep your Jenkins jobs running but as individual
 
 ## Conclusion
 
-We know this is a big announcement on a fast timeline and a lot of ideas to take in. We’d love to talk to you about it! Please join the [office hours we have arranged on March 19th](https://jenkins-x.io/community/office_hours/) that will be fully dedicated to discussing this - or reach out if you’d like to discuss things one on one with some of our product and engineering team members.
+We know this is a big announcement on a fast timeline and a lot of ideas to take in. We’d love to talk to you about it! Please join the [office hours we have arranged on March 19th](https://jenkins-x.io/community/office_hours/) that will be fully dedicated to discussing this. 
+
+You may reach out to me, Ethan Jones, at ejones@cloudbees.com, if you’d like to discuss things one on one with some of our product and engineering team members.
