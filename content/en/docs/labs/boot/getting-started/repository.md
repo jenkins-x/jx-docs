@@ -34,7 +34,18 @@ e.g. if you want to specify the kubernetes provider to `gke` and enable public r
 jxl boot create --provider=gke --env-git-public  --git-public
 ``` 
 
+### Shrinking the footprint
+
+If you are using a free tier or small kubernetes cluster you can shrink the footprint a little via the following:
  
+ ```bash 
+ jxl boot create --repository=bucketrepo
+ ``` 
+
+This will avoid `nexus` and `chartmuseum` and deploy the small [bucketrepo](https://github.com/jenkins-x/bucketrepo) instead. More on the [configuration page](/docs/labs/boot/getting-started/config/#bucketrepo)
+
+
+
 ### Using Multi Cluster
 
 If you wish to use [multi cluster](/docs/labs/boot/multi-cluster/) where your `staging` and `production` environments are in separate repositories then please add the `--env-remote` flag then follow the [multi cluster documentation](/docs/labs/boot/multi-cluster/) after you have booted your development environment.
