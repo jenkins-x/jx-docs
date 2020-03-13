@@ -2,7 +2,7 @@
 title: Contribute to the Jenkins X Project
 linktitle: Contribute to Jenkins X
 description: Contribute to Jenkins X development and documentation.
-weight: 10
+weight: 9
 aliases:
   - /contribute
 ---
