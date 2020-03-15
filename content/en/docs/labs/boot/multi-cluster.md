@@ -12,7 +12,7 @@ We recommend using separate clusters for your `Staging` and `Production` environ
 
 To enable multi cluster you need to specify `remoteCluster: true` on your `Staging` and/or `Production` environments in your `jx-requirements.yml`.
 
-The easiest way to do that is passing in `--env-report`  when you [created your environment git repositories](/docs/labs/boot/getting-started/repository/):
+The easiest way to do that is passing in `--env-remote`  when you [created your environment git repositories](/docs/labs/boot/getting-started/repository/):
 
 ``` 
 jxl boot create --env-remote
