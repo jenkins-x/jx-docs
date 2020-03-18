@@ -434,6 +434,32 @@ kubectl logs YOUR_CERT_MNG_POD --namespace cert-manager -f
 
 Your TLS certificates should now be set up and working, otherwise checkout the [official _cert-manager_ troubleshooting](https://docs.cert-manager.io/en/latest/getting-started/troubleshooting.html) instructions.
 
+
+## Recreating a cluster with the same name
+
+If you want to destroy a cluster that was created with boot and recreate it with the exact same name, there is some clean that needs to be done first.
+
+Make sure you uninstall jx:
+```sh
+jx uninstall
+```
+
+Delete the cluster either from the web console or terminal by using the Kubernetes provider CLI command:
+```sh
+gcloud container clusters delete <cluster-name> --zone <cluster-zone>
+```
+
+After you have successfully done this, remove the `~/.jx` and `~/.kube` directories:
+```sh
+rm -rf ~/.jx ~/.kube
+```
+
+Delete any repositories created by `jx` on your Github organisations account.
+
+Delete the local git `jenkins-x-boot-config` repository.
+
+That should leave your Kubernetes provider and your local environment in a clean state.
+
 ## Other issues
 
 Please [let us know](https://github.com/jenkins-x/jx/issues/new) and see if we can help? Good luck!
