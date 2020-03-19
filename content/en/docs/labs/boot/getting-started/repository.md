@@ -38,7 +38,7 @@ jxl boot create --provider=gke --env-git-public  --git-public
 
 If you are using a free tier or small kubernetes cluster you can shrink the footprint a little via the following:
  
- ```bash 
+```bash 
  jxl boot create --repository=bucketrepo
  ``` 
 
@@ -50,13 +50,34 @@ This will avoid `nexus` and `chartmuseum` and deploy the small [bucketrepo](http
 
 If you wish to use [multi cluster](/docs/labs/boot/multi-cluster/) where your `staging` and `production` environments are in separate repositories then please add the `--env-remote` flag then follow the [multi cluster documentation](/docs/labs/boot/multi-cluster/) after you have booted your development environment.
 
-``` 
+```bash 
 jxl boot create --env-remote
 ```
 
 This will create the git repositories for your environments.
 
 The command will output instructions on how to setup the [secrets](/docs/labs/boot/getting-started/secrets/) and then [run the boot job](/docs/labs/boot/getting-started/run/).
+
+## Other options
+
+You can switch to use `istio` instead of `nginx` for ingress support via adding:
+
+```bash 
+jxl boot create --ingress-kind=istio
+```                                 
+
+which then switches to adding `istio` instead and using `Gateway` and `VirtualService` resources from istio instead of the classic `Ingress` resources.
+
+You can enable TLS + cert manager and externaldns via:
+
+```bash 
+jxl boot create --tls --externaldns
+```                                 
+
+Though please note we are still working on [cert manager + externaldns integration](https://github.com/jenkins-x-labs/issues/issues/13) in `jxl boot` so please be gentle.
+
+Incidentally you can also specify the [TLS secret](/docs/labs/boot/faq/#how-do-i-configure-the-ingress-tls-certificate-in-dev-staging-or-production)
+
 
 ## Upgrading an existing cluster
  
