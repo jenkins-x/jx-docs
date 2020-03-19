@@ -134,7 +134,7 @@ jx create git server gitlab https://gitlab.com/ -n gitlab
 jx create git token -n gitlab myusername
 ```
 
-### Adding user tokens
+## Adding user tokens
 
 To use a git server you need to add a user name and API token via [jx create git token](/commands/jx_create_git_token/):
 
@@ -144,7 +144,7 @@ jx create git token -n myProviderName myUserName
 
 You will then be prompted for the API token
 
-### Kubernetes hosted git providers
+## Kubernetes hosted git providers
 
 You can install git providers inside the kubernetes cluster running Jenkins X.
 
@@ -167,7 +167,7 @@ Now when you [install Jenkins X](/docs/getting-started/) it will also install th
 Then whenever Jenkins X needs to create a git repository for an Environment or for a new Project the gitea server will appear in the pick list.
 
 
-#### Known gitea limitations
+### Known gitea limitations
 
 At the time of writing the [gitea plugin for Jenkins](https://issues.jenkins-ci.org/browse/JENKINS-50459) does not correctly update Pull Request and git commit build statuses which breaks the GitOps promotion pipelines. Promotion can work through manual approval, but the pipeline reports a failure.
 
