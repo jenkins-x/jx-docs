@@ -14,7 +14,7 @@ Our recommendation for using progressive delivery with Jenkins X is to use:
 
 ## Configuring Progressive Delivery
 
-Please follow the usual [Getting Started Guide for boot and helm 3](/docs/labs/boot/getting-started/) but before [running boot](docs/labs/boot/getting-started/run/) please make sure you make the following configuration:
+Please follow the usual [getting started guide for boot and helm 3](/docs/labs/boot/getting-started/) but before [running boot](docs/labs/boot/getting-started/run/) please make sure you make the following configuration:
 
 ### Add the istio and flagger apps
 
@@ -46,18 +46,41 @@ ingress:
 ...
 ```
 
+### Now boot 
+
+Now your development git repository should be setup and be ready. Now:
+
+* make sure you have setup [any secrets you need to boot](/docs/labs/boot/getting-started/secrets/)
+* now [run boot](docs/labs/boot/getting-started/run/) to setup your installation
+
+When it is all complete you should see istio, flagger, grafana pods running in the `istio-system` namespace something like this:
+
+```bash 
+$ kubectl get pod -n istio-system
+NAME                                    READY   STATUS    RESTARTS   AGE
+flagger-66dc49cd-g6ptp                  1/1     Running   0          32h
+grafana-7d7d7476f6-ff6bm                1/1     Running   0          32h
+istio-ingressgateway-598796f4d9-sq8b7   1/1     Running   0          32h
+istiod-7d9c7bdd6-vjp9j                  1/1     Running   0          32h
+kuberhealthy-f54f7f7df-b5gbf            1/1     Running   2          32h
+kuberhealthy-f54f7f7df-j6qwt            1/1     Running   0          32h
+prometheus-b47d8c58c-n974m              2/2     Running   0          32h
+```                                                                     
+
+From 1.5 onwards istio is pretty small; just 2 pods. Note that those `kuberhealthy` pods are optional and just help with reporting.
+
 
 ### Enable istio in staging/production
 
 If you wish to use a Canary with [flagger](https://flagger.app/) and [istio](https://istio.io/) in your staging or production namespace you need to make sure you have labelled the namespace correctly to enable istio injection.
 
-e.g. run the following command in staging:
+To enable istio in staging:
 
 ```bash 
 kubectl label namespace jx-staging istio-injection=enabled
 ```
 
-or in production:
+To enable istio in production:
 
 ```bash 
 kubectl label namespace jx-production istio-injection=enabled
@@ -65,13 +88,13 @@ kubectl label namespace jx-production istio-injection=enabled
 
 ### Defaulting to use Canary
 
-Run the following command to default to using canary deployments and horizontal pod autoscaling...
+Run the following command to default to using canary deployments and horizontal pod autoscaling whenever you [create a new quickstart](/docs/getting-started/first-project/create-quickstart/) or [import a project](/docs/using-jx/creating/import/)
 
 ```bash 
 jx edit deploy --team --canary --hpa
 ```
 
-This will enable all new quickstarts and imported projects to use canary rollouts.
+This will enable all new quickstarts and imported projects to use canary rollouts and use horizontal pod autoscaling in all environments.
 
 You can switch the defaults back again at any time or configure any app to change its defaults by running `jx edit deploy` inside a git clone of an application.
 
@@ -95,7 +118,7 @@ you can enable/disable those 2 flags for canary releases and horizontal pod auto
 
 ## Using Progressive Delivery
 
-Once you have followed the above steps create a [quickstart application](docs/getting-started/first-project/create-quickstart/) in the usual way.
+Once you have followed the above steps create a [quickstart application](/docs/getting-started/first-project/create-quickstart/) in the usual way.
 
 As you merge changes to the master branch of your application Jenkins X will create a new release and [promote it to the staging environment](/docs/using-jx/faq/#how-does-promotion-actually-work). 
 
@@ -107,5 +130,5 @@ However if Canary deployment is enabled your new version will gradually be rolle
 * eventually if things look good the new version will fully rollout to 100% traffic
 * if anything goes bad during the rollout time period the old version is restored
  
-
+There is an excellent [video showing this in action](https://youtu.be/7eePqtxW7NM).
 
