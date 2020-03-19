@@ -5,7 +5,6 @@ description: Changing your configuration
 weight: 40
 ---
 
-
 You can edit the `jx-requirements.yml` file in the git repository that was created in an earlier step for your `dev` environment, to configure various capabilities:
 
 Make changes to the config using the help below or continue Next to run boot.
@@ -16,7 +15,6 @@ Make changes to the config using the help below or continue Next to run boot.
     <li class="page-item"><a class="page-link" href="../run">Next</a></li>
   </ul>
 </nav>
-
 
 ## Git
 
@@ -47,7 +45,7 @@ webhook: lighthouse
 
 ### GitHub Enterprise
 
-The configuration is similar to the above but you need to specify the URL of the `gitServer` (if it differs from https://github.com) and `gitKind: github`
+The configuration is similar to the above but you need to specify the URL of the `gitServer` (if it differs from ht<span>tps://github.com) and `gitKind: github`
 
 ```yaml
 cluster:
@@ -134,7 +132,6 @@ storage:
 webhook: lighthouse
 ```
 
-
 ### GitLab
 
 For this specify the URL of the `gitServer` and `gitKind: gitlab`. If you want to use [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/)
@@ -203,7 +200,6 @@ repository: bucketrepo
 By default the local file system in the bucket repo is used to store artifacts.
 
 To enable cloud storage for artifacts in `bucketrepo` you need to enable the `storage.repository` configuration in which case a cloud bucket is used instead. See the [storage section for more details](#storage).
-
 
 ### None
 
@@ -355,7 +351,6 @@ webhook: prow
 ### Recovering
 
 If anything ever goes wrong (e.g. your cluster, namespace or tekton gets deleted) and your installation is incabable of running tekton pipelines you can always re-run [jx boot](/docs/getting-started/setup/boot/) on your laptop to restore your cluster.
-
 
 ## Backups
 

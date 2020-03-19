@@ -16,6 +16,6 @@ We found we had lots of different bits of install logic spread across all kinds 
 
 We also hit issues that the [jx create cluster](/commands/jx_create_cluster/) and [jx install](/commands/deprecation/) commands would install things like ingress controller and not give users the chance to configure/override their installation.
 
-Users often struggled with understanding how to easily configure and override things; or upgrade values after things have been installed. 
+Users often struggled with understanding how to easily configure and override things; or upgrade values after things have been installed.
 
-So we wanted to come up with a new cleaner approach which worked for every kind of installation and provided a standard way to extend and customise the configuration via [Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) and helm style configuration.
+So we wanted to come up with a new cleaner approach which worked for every kind of installation and provided a standard way to extend and customise the configuration via [Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) and Helm style configuration.

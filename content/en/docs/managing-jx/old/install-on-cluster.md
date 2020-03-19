@@ -42,15 +42,17 @@ All the resources created by the conformance tests can be cleaned up with:
 
     jx compliance delete
 
-
 ## Using AWS
 
 If you are using AWS, be sure to check out the detailed blog on [Continuous Delivery with Amazon EKS and Jenkins X](https://aws.amazon.com/blogs/opensource/continuous-delivery-eks-jenkins-x/) by [Henryk Konsek](https://twitter.com/hekonsek) which goes into lots of detail on how to setup AWS + EKS with Jenkins X.
 
+<!--
+TODO Terraform 
 If you want to go further with infrastructure as code you can follow this
 [guide](/docs/managing-jx/common-tasks/aws-terraform-install-gitops/) about setting up an EKS cluster and other
 requirements in AWS with Terraform and then installing Jenkins X on it using GitOps for the
 installation.
+-->
 
 ### Ingress on AWS
 
@@ -74,13 +76,9 @@ This is not really intended for real production installations. However, it can b
 
 When using `jx install --provider=(aws|eks)`, you are prompted if you want to use DNS and optionally setup a wildcard DNS CNAME record on Route 53. If not, we assume you're going to avoid DNS to kick the tires on a single availability zone IP address by resolving the NLB host name to one of the availability zone IP addresses.
 
-
-
 ### Getting registries to work on AWS with cluster set up with kops
 
 The default on AWS is to use ECR as the Docker container registry. For this to work, the nodes need permission to upload images to ECR. If you instead want to use the embedded Docker registry of Jenkins X inside your Kubernetes cluster, you will need to enable insecure Docker registries.
-
-Note that you may want to use the [jx create cluster aws](/docs/getting-started/setup/create-cluster/amazon/) command which automates all of this for you!
 
 #### Give nodes permission to use ECR
 
