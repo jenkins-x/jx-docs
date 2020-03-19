@@ -2,7 +2,7 @@
 title: Comparison
 linktitle: Comparison
 description: Comparison of helm 3 + helmfile versus helm 2 with boot
-weight: 7
+weight: 90
 ---
 
 
