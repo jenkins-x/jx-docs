@@ -16,7 +16,7 @@ weight: 20
 
 * [2019-07-04 Modern CI/CD with Tekton and Prow Automated via Jenkins X](https://kccnceu19.sched.com/event/MPZ4?iframe=no) at [KubeCon (Barcelona)](https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2019/) by [Christie Wilson ](https://twitter.com/bobcatwilson) and [James Rawlings](https://twitter.com/jdrawlings) [🎥 YouTube](https://www.youtube.com/watch?v=4EyTGYB7GvA)
 
-* [2019-06-25 GitOps by courtesy of Jenkins-X](https://containerdays.sched.com/event/Q4Oc/gitops-by-courtesy-of-jenkins-x) at [ContainerDays 2019, Hamburg (Germany)](https://www.containerdays.io/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) [🎥 YouTube](https://www.youtube.com/watch?v=XzZIeCrB8p0) ([Slides](http://aschemann.net/gerd/publications/jx-talk-condays-2019/))
+* [2019-06-25 GitOps by courtesy of Jenkins X](https://containerdays.sched.com/event/Q4Oc/gitops-by-courtesy-of-jenkins-x) at [ContainerDays 2019, Hamburg (Germany)](https://www.containerdays.io/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) [🎥 YouTube](https://www.youtube.com/watch?v=XzZIeCrB8p0) ([Slides](http://aschemann.net/gerd/publications/jx-talk-condays-2019/))
 
 * [2019-06-24 Progressive Delivery: Continuous Delivery the Right Way](https://cdsummitchina19.sched.com/event/QaSO/progressive-delivery-continuous-delivery-the-right-way) at [CDSummit China](https://cdsummitchina19.sched.com) by [Carlos Sanchez](https://csanchez.org) [🎥 YouTube](https://www.youtube.com/watch?v=-3VHVsgBTyo&list=PLHsuXkXI4xdjGlGkCBdxIAmkzfWXqsUrO&index=2)
 
@@ -24,7 +24,7 @@ weight: 20
 
 * [2019-06-24 Serverless Jenkins on Kubernetes - Jenkins X](https://sched.co/Nrmd) at [KubeCon CloudNativeCon 2019 (China)](https://www.lfasiallc.com/events/kubecon-cloudnativecon-china-2019/) by [RunZe Xia](https://github.com/runzexia) [🎥 YouTube](https://www.youtube.com/watch?v=oHz6pBuvchE&t=3s)
 
-* [2019-06-11 Cloud Native CI/CD with Jenkins X and Tekton Pipelines](https://www.youtube.com/watch?v=f1wVRnao-BE) on [Jenkins-X YouTube](https://www.youtube.com/channel/UCN2kblPjXKMcjjVYmwvquvg/) by [Christie Wilson](https://twitter.com/bobcatwilson) and [James Rawlings](https://twitter.com/jdrawlings) [🎥 YouTube](https://www.youtube.com/watch?v=f1wVRnao-BE)
+* [2019-06-11 Cloud Native CI/CD with Jenkins X and Tekton Pipelines](https://www.youtube.com/watch?v=f1wVRnao-BE) on [Jenkins X YouTube](https://www.youtube.com/channel/UCN2kblPjXKMcjjVYmwvquvg/) by [Christie Wilson](https://twitter.com/bobcatwilson) and [James Rawlings](https://twitter.com/jdrawlings) [🎥 YouTube](https://www.youtube.com/watch?v=f1wVRnao-BE)
 
 * [2019-05-27: Running Serverless Continuous Delivery](http://www.jbcnconf.com/2019/infoTalk.html?id=5cd1f98438da161cb0381424) at [JBCNConf](http://www.jbcnconf.com/2019/) by [Viktor Farcic](https://twitter.com/vfarcic) [🎥 YouTube](https://www.youtube.com/watch?v=PEmsqzbiNFc)
 

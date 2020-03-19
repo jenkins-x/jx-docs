@@ -12,6 +12,7 @@ weight: 7
 * We can use the `helm list` command line to view versions of each chart/app nicely in the CLI.
   * we can avoid composite charts to simplfiy configuration and upgrades
 * Everything is now an app. So if you want to remove our `nginx-ingress` chart and replace it with another ingress solution (knative / istio / gloo / ambassador / linkerd or whatever) just go ahead and use the [apps commands](/docs/labs/boot/apps/) to add/remove apps and have boot manage everything in a consistent way
+    * e.g. here's [an example](https://github.com/jstrachan/environment-bucketrepo-dev/blob/master/jx-apps.yml#L2-L5) of removing `nginx`, `chartmusem` and `nexus` and adding in `istio`, `flagger` and some other tools like `bucketrepo` and `kuberhealthy` via a single simple yaml change. Incidentally to replace the use of `Ingress` resources with istio's `Gateway` and `VirtualService` you also need to add the `kind: istio` flag in the [jx-requirements.yml](https://github.com/jstrachan/environment-bucketrepo-dev/blob/master/jx-requirements.yml#L57) file
 * You can install an app in a specific namespace if you wish
     * This also opens the door to using boot to setup multi-team installations where multiple teams use different namespaces but share services in the same cluster
 * The new [jxl boot run](/docs/labs/boot/getting-started/run/) command runs the boot pipeline as a `Job` inside the Kubernetes cluster. This ensures consistency in tooling used and also improves security by avoiding having the secrets on a developers laptop.

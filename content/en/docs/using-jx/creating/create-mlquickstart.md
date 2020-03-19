@@ -57,7 +57,7 @@ Once you have chosen the project to create and given it a name the following is 
   * `Dockerfile` to build your -service application as a docker image
   * `jenkins-x.yml` to implement the CI / CD pipelines for training and service builds
   * Helm charts to run your applications inside Kubernetes
-* registers webhooks on the remote git repositories to your teams Jenkins-X server
+* registers webhooks on the remote git repositories to your teams Jenkins X server
 * triggers the pipelines to train and deploy your service
 
 Once you create a machine learning quickstart, both the training and service projects will build simultaneously. The service project will deploy but first time around, it will fail to start, because it doesn't yet have a trained model to work with.
@@ -73,7 +73,7 @@ and then select the name of the training project you wish to run again, or you m
 
 Once training has completed successfully, the version of your model that has just been trained and the metrics associated with this run will be passed to your `-service` project using a pull request. You now need to review the `-service` project repository and check the training metrics for suitability. The `-service` project will automatically rebuild using the newly trained model instance and deploy into a preview environment where you can test it using its API.
 
-If all QA checks pass you may then sign-off the release in the same way you would do for any other build within Jenkins-X (have approvers and reviewers issue /approve and /lgtm comments in the pull request thread).
+If all QA checks pass you may then sign-off the release in the same way you would do for any other build within Jenkins X (have approvers and reviewers issue /approve and /lgtm comments in the pull request thread).
 
 Once signed off, the trained model instance is merged into the master branch of your -service project, rebuilt and deployed into staging for further testing and integration.
 
@@ -83,7 +83,7 @@ Each time you restart the traing project, you will get a new model instance that
 
 The source of these Quickstarts are maintained in [the machine-learning-quickstarts GitHub organisation](https://github.com/machine-learning-quickstarts).
 
-As with conventional Jenkins-X quickstarts, we use the [Jenkins X build packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) to match the right pack for the project using the source code language and machine learning framework kinds to pick the most suitable match.
+As with conventional Jenkins X quickstarts, we use the [Jenkins X build packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) to match the right pack for the project using the source code language and machine learning framework kinds to pick the most suitable match.
 
 When you use [jx create](/docs/getting-started/setup/create-cluster/), [jx install](/docs/managing-jx/common-tasks/install-on-cluster/) or [jx init](/commands/deprecation/) the [Jenkins X build packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) are cloned into your `~/.jx/draft/packs` folder.
 

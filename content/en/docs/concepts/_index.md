@@ -2,7 +2,7 @@
 title: Concepts
 linktitle: Concepts
 description: An overview of the concepts in Jenkins X.
-weight: 5
+weight: 6
 aliases:
   - /about/concepts
 ---
