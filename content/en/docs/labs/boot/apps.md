@@ -2,7 +2,7 @@
 title: Apps framework
 linktitle: Apps framework
 description: Apps framework - coming soon!
-weight: 80
+weight: 100
 ---
 
 

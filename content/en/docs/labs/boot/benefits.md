@@ -2,7 +2,7 @@
 title: Benefits
 linktitle: Benefits
 description: Benefits of the new helm 3 based boot
-weight: 7
+weight: 80
 ---
 
 

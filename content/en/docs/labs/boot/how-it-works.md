@@ -2,7 +2,7 @@
 title: How it works
 linktitle: How it works
 description: How boot works under the covers
-weight: 100
+weight: 130
 ---
 
 ## How it works
