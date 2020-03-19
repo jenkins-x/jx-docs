@@ -8,7 +8,7 @@ aliases:
   - /documentation/mlops/data
 ---
 
-In most scenarios, you will be expecting to remotely access data hosted elsewhere on your network and can manage this in code as part of your training scripts and service implementations. There are however a couple of situations in which Jenkins-X can help you to manage certain types of data.
+In most scenarios, you will be expecting to remotely access data hosted elsewhere on your network and can manage this in code as part of your training scripts and service implementations. There are however a couple of situations in which Jenkins X can help you to manage certain types of data.
 
 ## Handling data in Buckets
 If you are working with data in the form of arbitrary files, you can transfer these to your training environment via a Storage Bucket in your Cloud project with the following helper step within your build pipeline:
