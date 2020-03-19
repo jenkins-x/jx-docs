@@ -16,20 +16,15 @@ Boot also automatically creates or updates any required webhooks on the git prov
 
 If you are using GitOps we hope to automate the population of the [repositories/templates](https://github.com/jenkins-x/jenkins-x-boot-config/tree/master/repositories/templates) folder as you import/create projects. Until then you can manually create a Pull Request on your boot git repository via [jx step create pullrequest repositories](/commands/jx_step_create_pullrequest_repositories/)
 
-
 ## Pipeline
 
 The install/upgrade process is defined in a [Jenkins X Pipeline](/docs/concepts/jenkins-x-pipelines/) in a file called [jenkins-x.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jenkins-x.yml).
 
 Typically you won't need to edit this file; though if you do see the [editing guide](/docs/concepts/jenkins-x-pipelines/#customizing-the-pipelines).
 
-
-
-
 ## Configuration
 
 The boot process is configured using helm style configuration in `values.yaml` files. Though we support a few [extensions to helm](https://github.com/jenkins-x/jx/issues/4328).
-
 
 ### Parameters file
 
@@ -43,7 +38,6 @@ If you look at the current [env/parameters.yaml](https://github.com/jenkins-x/en
 * `local:` to load from a key in a YAML file at `~/.jx/localSecrets/$path.yml`
 
 This means we can populate all the Parameters we need on startup then refer to them from `values.tmpl.yaml` to populate the tree of values to then inject those into Vault.
-
 
 ### Populating the `parameters.yaml` file
 

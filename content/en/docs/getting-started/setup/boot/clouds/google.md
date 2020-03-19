@@ -8,15 +8,13 @@ lastmod: 2017-02-01
 weight: 10
 ---
 
-For details of how to setup your cluster see the [Google Cloud instructions](/docs/getting-started/setup/create-cluster/google/)
-
 ## Configuration
 
 On GCP we default to using GCR as the container registry (using `gcr.io`).
 
 Please set your provider to `gke` via this in your `jx-requirements.yml` to indicate you are using GCP:
 
-```yaml    
+```yaml
 clusterConfig:
     provider: gke
 ```

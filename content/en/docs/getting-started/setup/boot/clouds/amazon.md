@@ -9,24 +9,12 @@ weight: 20
 ---
 
 The information in this document assumes you have already created a Kubernetes cluster in AWS and you are now ready to `boot` your cluster with Jenkins X.
-For details of how to create a cluster see the [Amazon instructions](/docs/getting-started/setup/create-cluster/amazon/)
-
-[Basic Configuration](#basic-configuration) 
-
-[Authentication Mechanisms](#authentication-mechanisms)
-
-[IAM Policies for Cluster Creation and Jenkins X Boot](#iam-policies-for-cluster-creation-and-jenkins-x-boot)
-
-[Configuring Vault for EKS](#configuring-vault-for-eks)
-
-[Configuring DNS and TLS on EKS](#configuring-dns-and-tls-on-eks)
-
 
 ## Basic Configuration
 
 Please set your provider to `eks` via this in your `jx-requirements.yml` to indicate you are using EKS:
 
-```yaml    
+```yaml
 clusterConfig:
     provider: eks
 ```
@@ -34,7 +22,6 @@ clusterConfig:
 If you wish to setup your EKS cluster by hand and not use [eksctl](https://eksctl.io/) then please specify `terraform: true` to indicate that you are setting up all of the AWS related cloud resources yourself and that you do not want `jx boot` attempting to set anything up.
 
 We recommend using [Jenkins X Pipelines](/architecture/jenkins-x-pipelines/) as this works out of the box with kaniko for creating container images without needing a docker daemon and works well with ECR.
-
 
 ## Authentication Mechanisms
 There are two standard authentication mechanisms that are recommended depending on use case: Enhanced permissions for the nodepool role, and IRSA.
@@ -66,6 +53,7 @@ These policies are then exported as CloudFormation outputs following a defined f
 Export:
   Name: !Join [ "-", [ TektonBotPolicy, Ref: PoliciesSuffixParameter] ]
 ```
+
 This policy performs a Join operation. A name is provided, in this case TektonBotPolicy; then a random suffix is appended to make the name unique.
 
 The provided name will be used in the irsa.tmpl.yaml file.
@@ -96,6 +84,7 @@ And how we use its export name in the next file:
     attachPolicyARNs:
     - {{.IAM.TektonBotPolicy | quote}}
 ```
+
 In this example we are taking the policy ARN created from the CloudFormation stack under a specific export name and using it in the IRSA template file. This will then create an IAM Role, attach the policy to it, then it will create a new ServiceAccount called tekton-bot with the necessary annotations to let it assume the created role.
 
 If the ServiceAccount already exists, it will perform an upsert and just add the annotation.
@@ -114,11 +103,12 @@ You can also simply add already created policies to your ServiceAccounts like th
     attachPolicyARNs:
     - "arn:aws:iam::aws:policy/AmazonS3FullAccess"
 ```
+
 Note: For now, this can only be done in the initial installation of Jenkins X and any adjustments need to be done manually by adding more permissions to the created IAM Policies.
 
 ## IAM Policies for Cluster Creation and Jenkins X Boot
 
-Before getting into IRSA, we will define the minimum permissions needed to create an EKS cluster with jx create cluster eks and Jenkins X.
+Before getting into IRSA, we will define the minimum permissions needed to create an EKS cluster with `jx create cluster eks` and Jenkins X.
 
 ### IAM Policy for cluster creation
 
@@ -243,6 +233,7 @@ There is no official policy documented by eksctl to get a cluster running, but t
     ]
 }
 ```
+
 ### IAM Policy for Jenkins X Boot creation
 
 A different policy is required for Jenkins X to be successful with the jx boot command.  Depending on the configuration present in jx-requirements.yml, we will attempt to interact with different cloud services like S3, DynamoDB or KMS.  This policy will allow the executing user the minimum permissions to be successful.
@@ -333,37 +324,38 @@ A different policy is required for Jenkins X to be successful with the jx boot c
     ]
 }
 ```
+
 The reason for these policies is further described for each cloud resource below.
 
-**IAM**
+#### IAM
 
 In order to make IAM Roles for Service Accounts work, Jenkins X will create IAM Policies and Roles and then attach these policies to these roles.  These Roles are then annotated into selected Service Accounts so pods using them can assume the role.  In order to make IRSA work, Jenkins X needs to create an Open ID Connect Provider with IAM in order to authenticate the annotated pods.  Also, in order to make Vault work, we (for now) need to attach a policy, created just for Vault, into a provided IAM User.
 
-**CloudFormation**
+#### CloudFormation
 
 Jenkins X creates a series of CloudFormation stacks to prepare the platform for cluster installation. All IAM Policies created for IRSA are created as CloudFormation stacks.  Every cloud resource needed by Vault is also created by CloudFormation, but only if they are not provided in jx-requirements.yml already.
 
-**S3**
+#### S3
 
 Jenkins X uses S3 for Long Term Storage, that is, for logs archival and stashing of artifacts created in Pipelines.  Jenkins X Boot will attempt to check for existing S3 buckets and create them if they don’t exist.  It is also used by Vault, so there needs to be enough permissions for the executing user to interact with the service. Permissions to interact with the bucket however, is handled by IRSA and are only granted to the Vault pod.
 
-**DynamoDB**
+#### DynamoDB
 
 This service is used by Vault, so the executing user needs to have permissions to at least create the table. Permissions to interact with the table however, is handled by IRSA and are only granted to the Vault pod.
 
-**KMS**
+#### KMS
 
 Vault needs to create a KMS key in order to encrypt its contents. Again, the executing user just needs permissions to create the Key. Permissions to interact with KMS however, is handled by IRSA and are only granted to the Vault pod.
 
-**ECR**
+#### ECR
 
 Jenkins X will check if there is an ECR registry already created for a given application, and create it otherwise.
 
-**EKS**
+#### EKS
 
 Jenkins X will need full permissions on EKS in order to operate without problems.  For further security, this policy can be modified to restrict its access to only certain resources and accounts.  For example, if you know the name of your cluster, you can modify the resources affected by the eks permission to limit its effect.
 
-**Vault**
+#### Vault
 
 A special case - refer to [Configuring Vault for EKS](#configuring-vault-for-eks)
 
@@ -411,6 +403,7 @@ vault:
     s3Region: ""
     s3Prefix: ""
 ```
+
 Note: A pair of Access Keys will be created even if you set **autoCreate** to **false**. To prevent this, you can set an existing pair through environment variables: **VAULT_AWS_ACCESS_KEY_ID** and **VAULT_AWS_SECRET_ACCESS_KEY**.
 
 ## Configuring DNS and TLS on EKS
@@ -447,6 +440,7 @@ NOTE: External DNS will automatically update DNS records if you reuse a domain n
 4. Click Create
 5. Configure Jenkins X for the new domain names:
     - Open the `jx-requirements.yml` file in a text editor (such as TextEdit for macOS or gedit for Linux) and edit the ingress section at the root level.
+
         ```yaml
         ingress:
           domain: cluster1.acmecorp.example
@@ -458,4 +452,5 @@ NOTE: External DNS will automatically update DNS records if you reuse a domain n
             enabled: true
             production: true
         ```
+
 When you're ready to run `jx boot` this configuration will be applied to your cluster.

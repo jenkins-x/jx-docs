@@ -1,0 +1,7 @@
+<dl>
+{{range split .Inner "*"}}   
+ {{ $def := split . ";" }}
+ <dt>{{ index $def 0 }}</dt>
+ <dd>{{ index $def 1 | markdownify }}</dd>
+{{end}}
+</dl>
