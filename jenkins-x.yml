@@ -38,7 +38,7 @@ pipelineConfig:
 
           - image: gcr.io/jenkinsxio/hugo-extended:0.65.3-6
             name: update-content
-            command: ./update-content.sh
+            command: ./scripts/ci/update-content.sh
 
           - image: gcr.io/jenkinsxio/hugo-extended:0.65.3-6
             command: hugo
@@ -69,12 +69,12 @@ pipelineConfig:
           ## add, commit, and push changes
           - image: gcr.io/jenkinsxio/builder-go
             name: update-website
-            command: ./update-website.sh
+            command: ./scripts/ci/update-website.sh
 
           # Create the release notes
           - name: changelog
             image: gcr.io/jenkinsxio/builder-go:0.1.571
-            command: ./changelog.sh
+            command: ./scripts/ci/changelog.sh
 
     pullRequest:
       pipeline:
@@ -103,7 +103,7 @@ pipelineConfig:
             - submodule update --init --recursive
           - image: gcr.io/jenkinsxio/hugo-extended:0.65.3-6
             name: update-content
-            command: ./update-content.sh
+            command: ./scripts/ci/update-content.sh
           - image: gcr.io/jenkinsxio/hugo-extended:0.65.3-6
             name: version
             command: hugo
