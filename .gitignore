@@ -9,6 +9,9 @@ tmp-website
 .idea
 *.iml
 
+# vscode
+.vscode
+
 # generated files
 /public
 nohup.out
