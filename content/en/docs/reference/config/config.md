@@ -1639,6 +1639,17 @@ github.com/jenkins-x/jx/pkg/apis/jenkins.io/v1.PromotionStrategyType
 <p>PromotionStrategy what kind of promotion strategy to use</p>
 </td>
 </tr>
+<tr>
+<td>
+<code>urlTemplate</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>URLTemplate is the template to use for your environment&rsquo;s exposecontroller generated URLs</p>
+</td>
+</tr>
 </tbody>
 </table>
 <h3 id="config.jenkins.io/v1.ExposeController">ExposeController
@@ -5378,5 +5389,5 @@ string
 <hr/>
 <p><em>
 Generated with <code>gen-crd-api-reference-docs</code>
-on git commit <code>81ef54e37</code>.
+on git commit <code>b05ff956b</code>.
 </em></p>
