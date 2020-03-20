@@ -1,16 +1,155 @@
 # Jenkins X Docs
+<a id="markdown-jenkins-x-docs" name="jenkins-x-docs"></a>
 
-Documentation site for [Jenkins X](http://jenkins-x.io/)
+This repository contains the source for [jenkins-x.io](http://jenkins-x.io/).
 
-**Please browse these docs** on the [http://jenkins-x.io/](http://jenkins-x.io/) site as the links don't all work when browsing the markdown files inside github
+**NOTE:** Please browse these docs on [jenkins-x.io](http://jenkins-x.io/). Not all links work when browsing the Markdown files inside this repository.
 
-## Contributing to Jenkins X Documentation
+----
 
-Please visit the contributing guide for the documentation available at [Jenkins X website](https://jenkins-x.io/docs/contributing/documentation/).
+<!-- TOC -->
 
-## Adding redirects
+- [Building the docs](#building-the-docs)
+    - [Preparing the sources](#preparing-the-sources)
+        - [Git submodules](#git-submodules)
+    - [Downloading npm modules](#downloading-npm-modules)
+    - [Running Hugo](#running-hugo)
+        - [Locally](#locally)
+        - [Dockerized](#dockerized)
+- [Common Workflows](#common-workflows)
+    - [Running spell check](#running-spell-check)
+    - [Checking links, images, etc](#checking-links-images-etc)
+    - [Adding redirects](#adding-redirects)
+    - [Upgrading the enhancements content](#upgrading-the-enhancements-content)
+- [Localization](#localization)
+- [Contributing](#contributing)
 
-If you move a page to a different location you can add a redirect via this in the header of the page...
+<!-- /TOC -->
+
+----
+
+## Building the docs
+<a id="markdown-building-the-docs" name="building-the-docs"></a>
+
+### Preparing the sources
+<a id="markdown-preparing-the-sources" name="preparing-the-sources"></a>
+
+To edit the docs locally, you need to clone this repository:
+
+```bash
+git clone  --recurse-submodules --depth 1 https://github.com/jenkins-x/jx-docs.git
+```
+
+#### Git submodules
+<a id="markdown-git-submodules" name="git-submodules"></a>
+
+Notice the use of `--recurse-submodules` in the clone command above.
+This option will pull in two git [submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules), namely  
+[docsy](https://github.com/google/docsy) and [labs-enhancements](https://github.com/jenkins-x/enhancements).
+If you already have a git clone without the submodules checked out you can run:
+
+```bash
+git submodule update --init --recursive
+```
+
+In subsequent updates of the sources via `git pull` also remember to pull the changes from the submodules:
+
+```bash
+git pull --recurse-submodules
+```
+
+you can view the commit sha of the sub-modules via:
+
+```bash
+git submodule status --recursive
+```
+
+### Downloading npm modules
+<a id="markdown-downloading-npm-modules" name="downloading-npm-modules"></a>
+
+After getting all the sources, you need to [install npm](https://www.npmjs.com/get-npm) and make sure the required npm modules are installed:
+
+```bash
+npm install
+```
+
+### Running Hugo
+<a id="markdown-running-hugo" name="running-hugo"></a>
+
+The site itself is built with [Hugo](https://gohugo.io/) and configured in [`config.toml`](./config.toml).
+You have two options to run Hugo, either directly on your machine or via [Docker Compose](https://github.com/docker/compose).
+The following two sections describe the two alternatives in more detail.
+
+**NOTE:** Hugo renders the site in memory in development mode.
+Per default, no content is written to disk.
+
+#### Locally
+<a id="markdown-locally" name="locally"></a>
+
+If you want to build the site locally on your machine, you need to [install](https://gohugo.io/getting-started/installing) Hugo.
+Check the [Makefile](./Makfile) for the latest recommended version use.
+Once installed, you can run:
+
+```bash
+make server
+```
+
+You can now access the site under [localhost:1313](http://localhost:1313).
+
+#### Dockerized
+<a id="markdown-dockerized" name="dockerized"></a>
+
+Instead of installing Hugo locally, you can use the provided `docker-compose.yml` to spin up the Hugo server in a containerized environment.
+Make sure you have [Docker](https://docs.docker.com/install/) installed.
+
+```bash
+make compose-up
+```
+
+You can now access the site under [localhost:1313](http://localhost:1313).
+The Hugo server is running in the background.
+You can stop it via:
+
+```bash
+make compose-down
+```
+
+## Common Workflows
+<a id="markdown-common-workflows" name="common-workflows"></a>
+
+### Running spell check
+<a id="markdown-running-spell-check" name="running-spell-check"></a>
+
+We are not all masters of spelling, so luckily there are tools to help us fix that.
+We are using [node-markdown-spellcheck](https://github.com/lukeapage/node-markdown-spellcheck) to run through all our markdown files and list any spelling issue or unknown word.
+
+To make this as simple as possible, just run the following command:
+
+```bash
+make spellcheck
+```
+
+The report likely includes words that are spelt correctly, but that just means the spell checker is not aware of the correct spelling (happens a lot for technical terms, commands, etc.).
+Please edit [`.spelling`](./.spelling) and add the unknown word.
+Also, please try and keep the list alphabetically sorted, which makes it easier to navigate.
+
+### Checking links, images, etc
+<a id="markdown-checking-links-images-etc" name="checking-links-images-etc"></a>
+
+To get help in checking all the links, we'll use the awesome [htmltest](https://github.com/wjdp/htmltest).
+
+```bash
+make linkcheck
+```
+
+**NOTE:** The initial run is really slow (due to external link checks) and that the cache is only build up when it finishes.
+
+**NOTE:**: It's safe to ignore the `... x509: certificate ...` errors for now
+
+### Adding redirects
+<a id="markdown-adding-redirects" name="adding-redirects"></a>
+
+If you move a page to a different location you can add a redirect via using an _aliases_ entry in the header of the page:
 
 ```yaml
 aliases:
@@ -18,43 +157,8 @@ aliases:
   - /another/path
 ```  
 
-## Build the docs locally
-
-To edit the docs locally and try out what the [website](http://jenkins-x.io/) will look like then you need to clone this repository:
-
-```bash
-$ git clone  --recurse-submodules --depth 1 https://github.com/jenkins-x/jx-docs.git
-```   
-
-If you already have a git clone then run
-
-```bash
-$ git submodule update --init --recursive
-```   
-
-To pull the latest:
-
-```bash
-$ git pull --recurse-submodules
-```      
-
-you can view the commit sha of the sub modules via:
-
-```bash
-git submodule status --recursive
-```      
-
- 
-## Download npm modules
-
-Then you need to run this command to download the requirerd npm modules:
-                                                                 
-
-```bash
-$ npm install
-```   
-
 ### Upgrading the enhancements content
+<a id="markdown-upgrading-the-enhancements-content" name="upgrading-the-enhancements-content"></a>
 
 To upgrade to a new enhancements commit - we'll hopefully automate this soon!
 
@@ -66,69 +170,16 @@ cd ..
 git add enhancements
 git commit -m "move to latest enhancements"
 ```
- 
- 
-### Dockerized Hugo
-
-Instead of installing Hugo locally, you can use the included `docker-compose.yml` to spin up the Hugo server. Make sure you have Docker installed.
-
-* Build and run the preview server: `docker-compose up -d server`
-* go to http://localhost:1313 to view the site
-
-### Local Hugo install
-
-Then to view the docs in your browser, [install Hugo](https://gohugo.io/getting-started/installing).
-Navigate to the directory, run hugo server, and open up the link:
-
-```bash
-$ cd jx-docs
-$ hugo server
-
-Started building sites ...
-.
-.
-Serving pages from memory
-Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
-Press Ctrl+C to stop
-```
-### Running spell check
-
-We're not all masters of spelling, so luckily there's tools to help us fix that. We'll be using [node-markdown-spellcheck](https://github.com/lukeapage/node-markdown-spellcheck) to run through all our markdown files and list any spelling issue or unknown word it can find.
-
-To make this as simple as possible, just run the following command
-
-```bash
-$ docker-compose up spellchecker
-```
-
-This will output any issue the spell checker have found.
-
-It's likely that the report includes words that are spelled correctly, but that just means the spell checker is not aware of the correct spelling (happens a lot for technical terms, commands, etc.). Please edit the `.spelling` file and add the unknown word.
-Also, please try and keep the list alphabetically sorted; makes it easier to navigate when you're looking for something
-
-### Checking links, images, etc
-
-To get help in checking all the links etc. we'll use the awesome tool [htmltest](https://github.com/wjdp/htmltest).
-
-Make sure you've built the dockerized Hugo mentioned above. If you called it something else than `jx-docs/dev` adjust the first command to use your image tag
-* Generate the resulting HTML:
-  ```
-  docker-compose run server -d public -s /src
-  ```
-* Run htmltest:
-  ```
-  docker-compose run linkchecker
-  ```
-  * note that initial run is really slow (due to external link checks) and that the cache is only build up when it finishes. You should run this before making changes
-
-**Note**: It's safe to ignore the `... x509: certificate ...` errors for now
-
-# Contribution
-
-Please visit the contributing guide for the documentation available at [Jenkins X website](https://jenkins-x.io/docs/contributing/documentation/).
 
 ## Localization
+<a id="markdown-localization" name="localization"></a>
 
-In order to let more people know Jenkins X better, localization is very important and meaningful. And we should keep some rules about this, please read related languages below:
+To let more people know Jenkins X better, localization is essential and meaningful.
+And we should keep some rules about this, please read related languages below:
 
-* [Chinese](Localization_Chinese.md)
+- [Chinese](Localization_Chinese.md)
+
+## Contributing
+<a id="markdown-contributing" name="contributing"></a>
+
+Please refer to the documentation contributing guide available at [Jenkins X website](https://jenkins-x.io/docs/contributing/documentation/).
