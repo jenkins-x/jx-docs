@@ -91,7 +91,7 @@ kubectl label namespace jx-production istio-injection=enabled
 Run the following command to default to using canary deployments and horizontal pod autoscaling whenever you [create a new quickstart](/docs/getting-started/first-project/create-quickstart/) or [import a project](/docs/using-jx/creating/import/)
 
 ```bash 
-jx edit deploy --team --canary --hpa
+jxl edit deploy --team --canary --hpa
 ```
 
 This will enable all new quickstarts and imported projects to use canary rollouts and use horizontal pod autoscaling in all environments.
