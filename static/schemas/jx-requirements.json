@@ -129,6 +129,9 @@
         },
         "repository": {
           "type": "string"
+        },
+        "urlTemplate": {
+          "type": "string"
         }
       },
       "additionalProperties": false,
