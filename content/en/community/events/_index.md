@@ -22,7 +22,7 @@ For details of the next Jenkins X talk or demo checkout our [talks at meetups an
 
 We meet for office hours **every other Thursday** at 16:00 UTC (*See your timezone [here](https://time.is/1600_in_UTC)*).
 
-Next office hours: **19 March 2020**
+Next office hours: **2 April 2020**
 
 Join us: <https://zoom.us/j/397862697>
 
