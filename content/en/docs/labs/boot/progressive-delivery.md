@@ -32,6 +32,8 @@ apps:
 
 So that you remove `stable/nginx-ingress` from your `jx-apps.yml` file and ensure the above apps are added at the top of the file.
 
+Also for now I'm afraid you will have to remove the `jenkins-x/jxui` chart as its currently not working yet with istio ingress - but we can hopefully get that working soon.
+
 ### Enable istio based ingress
 
 To avoid having 2 `LoadBalancer` services for both `istio` and `nginx` (which costs more money) its easier to switch to pure istio for both internal and external load balancing. This also results in a smaller footprint. 
