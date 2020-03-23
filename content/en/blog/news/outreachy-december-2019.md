@@ -69,6 +69,7 @@ Next office hours are on **3 October**. Join us here: https://zoom.us/j/39786269
 <figure>
 <img src="/images/awesome-gophers-by-Ashley-McNamara/gopher_unicorn.png" class="img-thumbnail"/>
 </figure>
+
 image by Ashley McNamara, [creative commons license](https://github.com/ashleymcnamara/gophers/blob/master/gopher_unicorn.png)
 
 
