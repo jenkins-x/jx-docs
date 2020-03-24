@@ -33,7 +33,7 @@ your operating system.
 
 [More installation options... ](/docs/getting-started/setup/install/)
 
-### Step 2: Configure your Kubernetes environment
+### Step 2: Provision your Kubernetes Cluster
 
 Once you have installed the binary on your workstation, next you can configure your kubernetes environment and install Jenkins X.
 
