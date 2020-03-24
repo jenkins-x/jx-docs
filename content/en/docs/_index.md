@@ -35,7 +35,7 @@ your operating system.
 
 ### Step 2: Provision your Kubernetes Cluster
 
-Once you have installed the binary on your workstation, next you can configure your kubernetes environment and install Jenkins X.
+Once you have installed the binary on your workstation, next you want to provision your kubernetes cluster.  Choose your cloud provider.
 
 <div class="row">
   <div class="col-sm-4">
