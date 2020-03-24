@@ -20,6 +20,14 @@ jxl boot run
 
 This will use helm to install the boot Job and tail the log of the pod so you can see the boot job run. It looks like the boot process is running locally on your laptop but really it is all running inside a Pod inside Kubernetes.
 
+Once this has finished you are ready to import or create a quicstart.
+
+<nav>
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="../config">Previous</a></li>
+    <li class="page-item"><a class="page-link" href="../../../wizard/overview/">Next</a></li>
+  </ul>
+</nav>
 
 ### Upgrading your cluster
 
