@@ -23,6 +23,13 @@ jxl boot secrets edit --git-url https://github.com/myuser/environment-mycluster-
 
 This will prompt you to enter all the missing Secrets required.
 
+<nav>
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="../repository">Previous</a></li>
+    <li class="page-item"><a class="page-link" href="../config">Next</a></li>
+  </ul>
+</nav>
+
 ### Re-enter all secrets
 
 If you want to re-enter them all again or recreate tokens do the following:

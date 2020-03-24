@@ -17,6 +17,9 @@ e.g. `jxl` assumes:
 * helm 3 is used
 * we use lighthouse and tekton for CI/CD
 
+notes:
+* main development has been done using GitHub and Google Container Engine (GKE) but OSS contributions have been helping to validate and fix issues using other platforms.
+
 ## How jxl is built
 
 We are trying to take a microservices approach to creating improvements to Jenkins X inside the Labs.

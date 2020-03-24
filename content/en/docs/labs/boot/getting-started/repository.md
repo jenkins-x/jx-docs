@@ -9,15 +9,30 @@ Once you are connected to a Kubernetes cluster you need to create a git reposito
 
 ## Creating a fresh install
 
-To create a fresh install run the `jxl boot create` command:
+{{< pageinfo >}}
+**NOTE** Jenkins X creates repositories per default as private. This can cause issues when evaluating Jenkins X with GitHub, using a free GitHub _organisation_ to hold the various created (environment) repositories as free organization accounts do not have access to private repos. Using a personal Github account is not an issue though, as free private accounts have unlimited private repos.
 
-``` 
+For evaluation purposes you could use a private GitHub account as the owner of the repositories, and switch to a paid organizational account once you're ready to go all in. Alternatively, you can use a free GitHub organisation and enable public environment repositories by setting `environmentGitPublic` to true in your jx boot configuration in the next section or use `--git-public` flags below.
+{{< /pageinfo >}}
+
+To create a fresh install run the `jxl boot create` command.  Note this by default creates three git repositories, one for each environments dev, staging and production.
+
+```bash
 jxl boot create
 ```
 
-This will create the git repositories for your environments.
+or for public git repositories as per the note above
 
-The command will output instructions on how to setup the [secrets](/docs/labs/boot/getting-started/secrets/) and then [run the boot job](/docs/labs/boot/getting-started/run/).
+```bash
+jxl boot create --env-git-public  --git-public
+```
+
+<nav>
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="../cloud">Previous</a></li>
+    <li class="page-item"><a class="page-link" href="../secrets">Next</a></li>
+  </ul>
+</nav>
 
 
 ### Extra arguments
@@ -28,10 +43,10 @@ You can pass in a whole number of different arguments to default values in your 
 jxl boot create --help
 ``` 
 
-e.g. if you want to specify the kubernetes provider to `gke` and enable public repositories for environments and apps you can use:
+e.g. if you want to specify the kubernetes provider to `gke` you can use:
 
 ```bash 
-jxl boot create --provider=gke --env-git-public  --git-public
+jxl boot create --provider=gke
 ``` 
 
 ### Shrinking the footprint

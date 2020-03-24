@@ -44,6 +44,13 @@ cd cloud-resources/gcloud
 ./create_cluster.sh
 ```
 
+<nav>
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="../">Previous</a></li>
+    <li class="page-item"><a class="page-link" href="../../repository">Next</a></li>
+  </ul>
+</nav>
+
 ## Harder way
 
 This way we'll list out all the [gcloud](https://cloud.google.com/sdk/gcloud) commands you will need to run in a terminal:
@@ -60,3 +67,10 @@ This way we'll list out all the [gcloud](https://cloud.google.com/sdk/gcloud) co
 <div class="highlight">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash hljs" data-lang="bash">{{<gcp-create-resources>}}</code></pre>
 </div>
+
+<nav>
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="../">Previous</a></li>
+    <li class="page-item"><a class="page-link" href="../../repository">Next</a></li>
+  </ul>
+</nav>

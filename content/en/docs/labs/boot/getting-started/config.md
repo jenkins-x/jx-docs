@@ -6,18 +6,21 @@ weight: 40
 ---
 
 
-You can edit the `jx-requirements.yml` file in your git repository for your `dev` environment to configure various capabilities: 
+You can edit the `jx-requirements.yml` file in the git repository that was created in an earlier step for your `dev` environment, to configure various capabilities:
+
+Make changes to the config using the help below or continue Next to run boot.
+
+<nav>
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="../secrets">Previous</a></li>
+    <li class="page-item"><a class="page-link" href="../run">Next</a></li>
+  </ul>
+</nav>
+
 
 ## Git
 
 Jenkins X supports a number of different Git providers. You can specify the Git provider you wish to use and the organisation to use for the Git providers for each environment in your `jx-requirements.yml`
-
-{{< pageinfo >}}
-**NOTE** Jenkins X creates repositories per default as private. This can cause issues when evaluating Jenkins X with GitHub, using a free GitHub _organisation_ to hold the various created (environment) repositories as free organization accounts do not have access to private repos. Using a personal Github account is not an issue though, as free private accounts have unlimited private repos.
-
-For evaluation purposes you could use a private GitHub account as the owner of the repositories, and switch to a paid organizational account once you're ready to go all in. Alternatively, you can enable public environment repositories by setting `environmentGitPublic` to true in your jx boot configuration. In case you're using `jx create` or `jx install`, you'll need to add the `--git-public` option as part of the command to enable public repo
-{{< /pageinfo >}}
-
 
 ### GitHub
 
