@@ -1,23 +1,25 @@
 ---
 title: Jenkins X Documentation
 linkTitle: Documentation
+type: docs
+layout: home
 weight: 20
 menu:
   main:
     weight: 20
 aliases:
   - /documentation
----
 
+---
 Jenkins X is an open source project that provides Kubernetes-based CI/CD
 applications featuring pipeline automation, built-in GitOps, and preview
 environments to help teams collaborate and accelerate their at any scale. [Read
 More...](/docs/overview/)
 
-## Get started with Jenkins X in 3 easy steps!
+# Get started with Jenkins X in 3 easy steps!
 
 
-### Step 1: Install the Jenkins X Binary
+## Step 1: Install the Jenkins X Binary
 
 The first step in using Jenkins X is installing the Jenkins X binary (`jx`) for
 your operating system.
@@ -33,7 +35,7 @@ your operating system.
 
 [More installation options... ](/docs/getting-started/setup/install/)
 
-### Step 2: Provision your Kubernetes Cluster
+## Step 2: Provision your Kubernetes Cluster
 
 Once you have installed the binary on your workstation, next you want to provision your kubernetes cluster.  Choose your cloud provider.
 
@@ -41,33 +43,27 @@ Once you have installed the binary on your workstation, next you want to provisi
   <div class="col-sm-4">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Google Clusters</h5>
-        <p class="card-text">How to create a kubernetes cluster on Google Cloud Platform (GCP)</p>
-        <a href="/docs/getting-started/setup/create-cluster/google/" class="btn btn-primary">Google <i class="fab fa-google ml-2 "></i></a>
+        <a href="/docs/getting-started/setup/create-cluster/google/"><img src="https://www.pulumi.com/logos/tech/gcp.svg"/></i></a>
       </div>
     </div>
   </div>
   <div class="col-sm-4">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Amazon Clusters</h5>
-        <p class="card-text">How to create a kubernetes cluster on Amazon Web Services (AWS)</p>
-        <a href="/docs/getting-started/setup/create-cluster/amazon/" class="btn btn-secondary">AWS <i class="fab fa-aws ml-2 "></i></a>
+        <a href="/docs/getting-started/setup/create-cluster/amazon/"> <img src="https://www.pulumi.com/logos/tech/aws.svg" class="mx-auto d-block"/></i></a>
       </div>
     </div>
   </div>
   <div class="col-sm-4">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Azure Clusters</h5>
-        <p class="card-text">How to create a kubernetes cluster on Microsoft Azure platform.</p>
-        <a href="/docs/getting-started/setup/create-cluster/azure/" class="btn btn-dark">Azure <i class="fab fa-microsoft ml-2 "></i></a>
+        <a href="/docs/getting-started/setup/create-cluster/azure/"><img src="https://www.pulumi.com/logos/tech/azure.svg"/></i></a>
       </div>
     </div>
   </div>
 </div>
 
-### Step 3: Install Jenkins X on your cluster
+## Step 3: Install Jenkins X on your cluster
 
 Once you have configured your kubernetes environment, you can finally Install Jenkins X and start using it!
 

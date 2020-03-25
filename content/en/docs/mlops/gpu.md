@@ -23,7 +23,8 @@ Once your cluster is configured, you can allocate GPU resources to containers as
 
 For the training project, you will need to ensure that the build container used has access to GPU resources. This can be provisioned via the `jenkins-x.yml` file in that project, like this:
 
-```
+
+```yaml
 buildPack: ml-python-gpu-training
 
 pipelineConfig:
@@ -43,6 +44,28 @@ pipelineConfig:
               memory: 8Gi
               nvidia.com/gpu: 1
 ```
+{{< highlight yaml  >}}
+
+buildPack: ml-python-gpu-training
+
+pipelineConfig:
+  pipelines:
+    overrides:
+      - pipeline: release
+        stage: training
+        name: training
+        containerOptions:
+          resources:
+            limits:
+              cpu: 4
+              memory: 32Gi
+              nvidia.com/gpu: 1
+            requests:
+              cpu: 0.5
+              memory: 8Gi
+              nvidia.com/gpu: 1
+{{< / highlight >}}
+
 Note that at the moment, it is not possible to modify the container resources of a single pipeline step, but only the resources for every container in a stage. As a result, it is necessary to perform all ML build activities in a single step in a dedicated stage or Kubernetes will attempt to allocate a physical GPU to a new container for every step in the stage, draining all available resources and likely blocking the build.
 
 This pipeline config is set up for you in all the existing GPU quickstarts.

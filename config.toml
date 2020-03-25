@@ -1,6 +1,13 @@
 baseURL = "/"
 title = "Jenkins X"
 
+ignorecache = true
+
+pygmentsUseClassic=false
+pygmentsCodefences=true
+pygmentsUseClasses=true
+pygmentsStyle = "monokai"
+
 enableRobotsTXT = true
 
 # Hugo allows theme composition (and inheritance). The precedence is from left to right.
@@ -50,21 +57,32 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
 # Configuration for Goldmark markdown parser
 ###
 [markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
-    [markup.goldmark.parser]
-      attribute = true
-      autoHeadingID = true
-      autoHeadingIDType = "github"
-    [markup.goldmark.extensions]
-      definitionList = true
-      footnote = true
-      linkify = true
-      strikethrough = true
-      table = true
-      taskList = true
-      typographer = true
+#   [markup.goldmark]
+#     [markup.goldmark.renderer]
+#       unsafe = true
+#     [markup.goldmark.parser]
+#       attribute = true
+#       autoHeadingID = true
+#       autoHeadingIDType = "dracula"
+#     [markup.goldmark.extensions]
+#       definitionList = true
+#       footnote = true
+#       linkify = true
+#       strikethrough = true
+#       table = true
+#       taskList = true
+#       typographer = true
+
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = "monokai"
+    tabWidth = 4
 						
 ###
 # Image processing configuration.
@@ -94,6 +112,10 @@ release = "2.0.1247"
 copyright = "The Jenkins X Authors."
 privacy_policy = "https://policies.google.com/privacy"
 
+
+customCSS = [
+    "syntax.css"
+  ]
 # First one is picked as the Twitter card image if not set on page.
 # images = ["images/project-illustration.png"]
 
@@ -169,3 +191,6 @@ no = 'Sorry to hear that. Please <a href="https://github.com/jenkins-x/jx/issues
 	url = "https://kubernetes.slack.com/messages/C9LTHT2BB"
 	icon = "fab fa-slack"
   desc = "Chat with other project developers"
+
+
+
