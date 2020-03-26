@@ -1,5 +1,5 @@
 ---
-date: 2020-03-21T01:00:40Z
+date: 2020-03-26T00:55:25Z
 title: "deprecated commands"
 slug: deprecation
 url: /commands/deprecation/
@@ -15,23 +15,8 @@ description: list of jx commands which have been deprecated
 |----------------|----------------|--------------|
 | jx console | Jun 1 2020 | jx ui |
 | jx controller workflow | Feb 1 2020 |  |
-| jx create addon knative-build | Feb 1 2020 |  |
-| jx create archetype | Feb 1 2020 | jx create project |
-| jx create camel | Feb 1 2020 | jx create project |
-| jx create cluster aws | Feb 1 2020 |  |
-| jx create cluster minikube | Feb 1 2020 | minikube start |
-| jx create cluster minishift | Feb 1 2020 |  |
-| jx create cluster oke | Feb 1 2020 |  |
-| jx create codeship | Feb 1 2020 |  |
-| jx create jhipster | Feb 1 2020 | jx create project |
-| jx create lile | Feb 1 2020 | jx create project |
-| jx create micro | Feb 1 2020 | jx create project |
 | jx create post | Feb 1 2020 |  |
 | jx create spring | Mar 1 2020 | jx create project |
-| jx create terraform | Feb 1 2020 | jx boot |
-| jx delete addon knative-build | Feb 1 2020 |  |
-| jx delete aws | Feb 1 2020 |  |
-| jx delete eks | Feb 1 2020 | eksctl delete cluster |
 | jx delete extension | Feb 1 2020 |  |
 | jx delete post | Feb 1 2020 |  |
 | jx edit extensionsrepository | Feb 1 2020 |  |
