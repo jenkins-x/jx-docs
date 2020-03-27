@@ -1,10 +1,10 @@
 ---
 title: Jenkins X Pipeline Syntax Reference
-linktitle: Pipeline Reference
-description: cloud native serverless pipelines
+linktitle: Tekton Pipelines
+description: Cloud Native Serverless Tekton Pipeline reference.
 date: 2019-06-20
 publishdate: 2019-06-20
-keywords: [tekton]
+keywords: [tekton,pipeline]
 weight: 8
 aliases:
   - /architecture/pipeline-syntax-reference

@@ -1,8 +1,15 @@
 ---
-title: General Questions
-linktitle: General Questions
-description: General questions about the Jenkins X project
-weight: 20
+title: FAQs
+linktitle: FAQs
+description: Frequently asked questions about the Jenkins X project.
+type: docs
+menu:
+  docs:
+    title: "FAQs"
+    weight: 11
+
+aliases:
+  - /faqs/ 
 ---
 
 We have tried to collate common issues here with work arounds. If your issue isn't listed here please [let us know](https://github.com/jenkins-x/jx/issues/new).

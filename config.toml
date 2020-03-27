@@ -3,10 +3,9 @@ title = "Jenkins X"
 
 ignorecache = true
 
-pygmentsUseClassic=false
+
 pygmentsCodefences=true
 pygmentsUseClasses=true
-pygmentsStyle = "monokai"
 
 enableRobotsTXT = true
 
@@ -57,21 +56,21 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
 # Configuration for Goldmark markdown parser
 ###
 [markup]
-#   [markup.goldmark]
-#     [markup.goldmark.renderer]
-#       unsafe = true
-#     [markup.goldmark.parser]
-#       attribute = true
-#       autoHeadingID = true
-#       autoHeadingIDType = "dracula"
-#     [markup.goldmark.extensions]
-#       definitionList = true
-#       footnote = true
-#       linkify = true
-#       strikethrough = true
-#       table = true
-#       taskList = true
-#       typographer = true
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+    [markup.goldmark.parser]
+      attribute = true
+      autoHeadingID = true
+      autoHeadingIDType = "github"
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
 
   [markup.highlight]
     codeFences = true
@@ -81,7 +80,7 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
     lineNos = false
     lineNumbersInTable = true
     noClasses = true
-    style = "monokai"
+	style = "paraiso-dark"
     tabWidth = 4
 						
 ###
@@ -113,9 +112,6 @@ copyright = "The Jenkins X Authors."
 privacy_policy = "https://policies.google.com/privacy"
 
 
-customCSS = [
-    "syntax.css"
-  ]
 # First one is picked as the Twitter card image if not set on page.
 # images = ["images/project-illustration.png"]
 

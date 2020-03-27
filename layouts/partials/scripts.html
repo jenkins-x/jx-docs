@@ -21,7 +21,8 @@
     debug: false
   });
 </script>
-<script>hljs.initHighlightingOnLoad();</script>
+<script>
+hljs.initHighlightingOnLoad();</script>
 <!-- CDF -->
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154682132-3"></script>
@@ -32,4 +33,13 @@
   gtag('config', 'UA-154682132-3');
 </script>
 <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us7.list-manage.com","uuid":"d0c128ac1f69ba2bb20742976","lid":"84d053b0a0","uniqueMethods":true}) })</script>
+<script type="text/javascript" src="{{ "js/jquery.smartWizard.min.js" | absURL }}"></script>
+<script>
+$(document).ready(function(){
+  $('#smartwizard').smartWizard({
+    autoAdjustHeight: false
+  });
+});
+
+</script>
 {{ partial "hooks/body-end.html" . }}

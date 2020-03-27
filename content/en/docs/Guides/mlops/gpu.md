@@ -23,27 +23,6 @@ Once your cluster is configured, you can allocate GPU resources to containers as
 
 For the training project, you will need to ensure that the build container used has access to GPU resources. This can be provisioned via the `jenkins-x.yml` file in that project, like this:
 
-
-```yaml
-buildPack: ml-python-gpu-training
-
-pipelineConfig:
-  pipelines:
-    overrides:
-      - pipeline: release
-        stage: training
-        name: training
-        containerOptions:
-          resources:
-            limits:
-              cpu: 4
-              memory: 32Gi
-              nvidia.com/gpu: 1
-            requests:
-              cpu: 0.5
-              memory: 8Gi
-              nvidia.com/gpu: 1
-```
 {{< highlight yaml  >}}
 
 buildPack: ml-python-gpu-training
