@@ -6,6 +6,8 @@ description: >
   How to get up and running with Jenkins X
 aliases:
   - /getting-started
+
+
 ---
 
 <!-- If you're looking to take Jenkins X for a spin (or not interested in running it yourself) the quickest way to get up and running, is using the [CloudBees CI-CD powered by Jenkins X](https://www.cloudbees.com/products/cloudbees-ci-cd/overview) which is a SaaS running on Jenkins X. -->

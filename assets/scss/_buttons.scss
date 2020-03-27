@@ -1,0 +1,166 @@
+// Buttons
+
+
+.btn {
+    border-radius: 0rem;
+
+    &-lg {
+        border-radius: 0rem;
+    }
+
+    &-sm {
+        border-radius: 0rem;
+    }
+}
+
+
+.bg-primary {
+
+    .dropdown-menu {
+      background-color: $primary;
+  
+      .dropdown-item,
+      .dropdown-item:focus {
+        color: $navbar-dark-color;
+      }
+  
+      .dropdown-item.active,
+      .dropdown-item:hover,
+      .dropdown-item:focus {
+        background-color: darken($primary, 5%);
+        color: #fff;
+      }
+    }
+  }
+
+
+.btn {
+    &-primary {
+      border-color: darken($primary, 5%);
+    }
+  
+    &-secondary {
+      border-color: darken($secondary, 5%);
+    }
+  
+    &-success {
+      border-color: darken($success, 5%);
+    }
+  
+    &-info {
+      border-color: darken($info, 5%);
+      color: $white;
+    }
+  
+    &-danger {
+      border-color: darken($danger, 5%);
+    }
+  
+    &-warning {
+      border-color: darken($warning, 5%);
+      color: $white;
+    }
+  
+    &-light {
+      border-color: darken($light, 5%);
+    }
+  
+    &-dark {
+      border-color: darken($dark, 5%);
+    }
+  }
+  
+  .btn-group {
+  
+    .dropdown-menu {
+      border-top-width: 0;
+    }
+  
+    .dropdown-toggle {
+  
+      &.btn-primary ~ .dropdown-menu {
+        background-color: $primary;
+        border-color: darken($primary, 5%);
+  
+        .dropdown-item {
+          color: $white;
+        }
+  
+        .dropdown-item:hover,
+        .dropdown-item:focus {
+          background-color: darken($primary, 8%);
+        }
+      }
+  
+      &.btn-secondary ~ .dropdown-menu {
+        background-color: $secondary;
+        border-color: darken($secondary, 5%);
+  
+        .dropdown-item {
+          color: $white;
+        }
+  
+        .dropdown-item:hover,
+        .dropdown-item:focus {
+          background-color: darken($secondary, 8%);
+        }
+      }
+  
+      &.btn-success ~ .dropdown-menu {
+        background-color: $success;
+        border-color: darken($success, 5%);
+  
+        .dropdown-item {
+          color: $white;
+        }
+  
+        .dropdown-item:hover,
+        .dropdown-item:focus {
+          background-color: darken($success, 8%);
+        }
+      }
+  
+      &.btn-info ~ .dropdown-menu {
+        background-color: $info;
+        border-color: darken($info, 5%);
+  
+        .dropdown-item {
+          color: $white;
+        }
+  
+        .dropdown-item:hover,
+        .dropdown-item:focus {
+          background-color: darken($info, 8%);
+        }
+      }
+  
+      &.btn-warning ~ .dropdown-menu {
+        background-color: $warning;
+        border-color: darken($warning, 5%);
+  
+        .dropdown-item {
+          color: $white;
+        }
+  
+        .dropdown-item:hover,
+        .dropdown-item:focus {
+          background-color: darken($warning, 8%);
+        }
+      }
+  
+      &.btn-danger ~ .dropdown-menu {
+        background-color: $danger;
+        border-color: darken($primary, 5%);
+  
+        .dropdown-item {
+          color: $white;
+        }
+  
+        .dropdown-item:hover,
+        .dropdown-item:focus {
+          background-color: darken($danger, 8%);
+        }
+      }
+    }
+  }
+  
