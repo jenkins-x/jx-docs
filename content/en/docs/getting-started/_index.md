@@ -1,7 +1,7 @@
 ---
 title: "Getting Started"
 linkTitle: "Getting Started"
-weight: 2
+weight: 1
 description: >
   How to get up and running with Jenkins X
 aliases:

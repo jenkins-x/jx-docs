@@ -2,9 +2,10 @@
 title: Contribute to the Jenkins X Project
 linktitle: Contribute to Jenkins X
 description: Contribute to Jenkins X development and documentation.
-weight: 9
+weight: 12
 aliases:
   - /contribute
+  - /docs/guides/contribute
 ---
 
 Jenkins X relies heavily on the enthusiasm and participation of the open-source community. Find out more about our community, including events, office hours, and talks [here](https://jenkins-x.io/community/). We value respect and inclusiveness and follow the [CDF Code of Conduct](https://github.com/cdfoundation/toc/blob/master/CODE_OF_CONDUCT.md) in all interactions. 

@@ -12,8 +12,8 @@ services:
     command: "--en-us --ignore-numbers --ignore-acronyms --report \"content/**/*.md\""
     volumes:
       - .:/workdir
-  linkchecker:
-    image: chabad360/htmlproofer:latest
-    command: "htmlproofer ./public --allow-hash-href --disable-external --check-html --checks-to-ignore ScriptCheck --empty-alt-ignore --file-ignore /.*apidocs.*/,/.*\/zh.*/,/.*\/es.*/,/.*\/docs\/reference\/api.*/,/.*\/docs\/reference\/config.*/,/.*\/community\/events.*/"
-    volumes:
-      - ./public:/public
+  # linkchecker:
+  #   image: chabad360/htmlproofer:latest
+  #   command: "htmlproofer ./public --allow-hash-href --disable-external --check-html --checks-to-ignore ScriptCheck --empty-alt-ignore --file-ignore /.*apidocs.*/,/.*\/zh.*/,/.*\/es.*/,/.*\/docs\/reference\/api.*/,/.*\/docs\/reference\/config.*/,/.*\/community\/events.*/"
+  #   volumes:
+  #     - ./public:/public

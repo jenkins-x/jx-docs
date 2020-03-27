@@ -28,9 +28,9 @@ compose-down: ## Stops Hugo container
 spellcheck: ## Runs spell checker using Docker Compose in foreground
 	docker-compose up spellchecker
 
-.PHONY: linkcheck
-linkcheck: generate ## Runs spell checker using Docker Compose in foreground
-	docker-compose run linkchecker	
+# .PHONY: linkcheck
+# linkcheck: generate ## Runs spell checker using Docker Compose in foreground
+# 	docker-compose run linkchecker	
 
 .PHONY: clean
 clean: ## Deletes temporary/generated files

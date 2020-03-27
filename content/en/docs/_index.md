@@ -1,14 +1,18 @@
 ---
 title: Jenkins X Documentation
 linkTitle: Docs
-type: docs
+
 layout: home
 weight: 20
 menu:
   main:
     weight: 20
+  docs:
+    title: "Getting Started"
+    weight: 1
+
 aliases:
-  - /docs
+  - /getting-started
 
 ---
 Jenkins X is an open source project that provides Kubernetes-based CI/CD

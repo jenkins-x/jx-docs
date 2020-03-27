@@ -2,11 +2,12 @@
 title: FAQs
 linktitle: FAQs
 description: Frequently asked questions about the Jenkins X project.
+
 type: docs
 menu:
   docs:
     title: "FAQs"
-    weight: 11
+    weight: 13
 
 aliases:
   - /faqs/ 
