@@ -10165,5 +10165,5 @@ PromoteWorkflowStep
 <hr/>
 <p><em>
 Generated with <code>gen-crd-api-reference-docs</code>
-on git commit <code>589dbb26c</code>.
+on git commit <code>52db8eccf</code>.
 </em></p>
