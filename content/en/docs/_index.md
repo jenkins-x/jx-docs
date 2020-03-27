@@ -134,6 +134,7 @@ choco upgrade jenkins-x
   scoop install jx
   ```
 
+
   Upgrade the `jx` binary
 
   ```sh
