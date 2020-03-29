@@ -37,5 +37,5 @@ There are a few other ways for users to trial and run Jenkins X in production th
 
 ## Step by Step Guide
 
-There are many guides available that can take you through nuances for your platform if you search the web. [This guide](http://sharepointoscar.com/2020-01-10-Installing-Jenkins X/) takes you through setting up a cluster on GKE and using GitHub with a custom DNS name.
+There are many guides available that can take you through nuances for your platform if you search the web. [This guide](http://sharepointoscar.com/2020-01-10-Installing-Jenkins-X/) takes you through setting up a cluster on GKE and using GitHub with a custom DNS name.
 
