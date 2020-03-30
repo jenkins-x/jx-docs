@@ -276,6 +276,8 @@ For more details see the [Storage Guide](https://jenkins-x.io/architecture/stora
 
 ## Ingress
 
+When installing Jenkins X it is common that you will want to use a custom domain to access services and applications running in Kubernetes.  
+
 If you don't specify anything in your [jx-requirements.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml) file then boot will default to using HTTP (rather than HTTPS) and using [nip.io](https://nip.io/) as the DNS mechanism.
 
 After running boot your `jx-requirements.yml` may look like:
@@ -310,7 +312,56 @@ storage:
 webhook: prow
 ```
 
-If you wish to enable external DNS (to automatically register DNS names for all of your exported services) a DNS domain name or TLS then modify the `ingress` section of your to add `ingress.domain` and `ingress.externalDNS = true` in `jx-requirements.yml` file and re-run `jx boot`. There's a complete example below.
+### Custom domains with external dns
+
+There is a very useful open source project called [external-dns](https://github.com/kubernetes-sigs/external-dns) which integrates with Cloud Providers own managed dns services, to automatically enable dns.
+
+In labs this has been verified on GKE so far but we are looking to do more very soon.
+
+#### Configure for Google Cloud
+
+If you want to buy a new domain then using [Google Domains](https://domains.google.com/m/registrar/search) is nice and easy
+
+<img src="/images/getting-started/googlednscreate.png" width="80%" float="left">
+
+First configure [Google Cloud DNS](https://cloud.google.com/dns) in the GCP project that your Kubernetes cluster runs, to manage your custom domain, you will have a list of four servers returned
+
+```bash
+➜ jx create domain gke -d acame-trading.com
+
+Please update your existing DNS managed servers to use the nameservers below
+ns-cloud-e1.googledomains.com.
+ns-cloud-e2.googledomains.com.
+ns-cloud-e3.googledomains.com.
+ns-cloud-e4.googledomains.com.
+```
+
+Now update your dns provider so that [Google Cloud DNS](https://cloud.google.com/dns) can manage your domain, here's an example using [Google Domains](https://domains.google.com/m/registrar/search):
+
+<img src="/images/getting-started/googlednsconfigure.png" width="80%" float="left">
+
+Next you can edit the `jx-requirements.yml` and add your domain:
+
+__NOTE__ when using jxl on GKE the `externalDNS:` value is ignored and will be deprecated.  This flag used to create cloud resources but these have now been moved outside of the boot process.
+
+```yaml
+ingress:
+  domain: my.domain.com
+```
+
+Edit the `jx-apps.yml` in your environment repository and add the external dns chart:
+
+```yaml
+apps:
+- name: bitnami/external-dns
+```
+
+Remember to repeat this in each environment git repository, you can also use different domains for each environment by repeating all the external dns steps here.
+
+__NOTE__ it can take a few minutes for DNS to propogate for each URL so please be patient when you first enable external dns or deploy a new application into an environment for the first time.
+
+
+### Automated TLS
 
 You can also update your configuration to enable TLS via `ingress.tls.enabled = true`. Here's an example:
 
@@ -331,7 +382,7 @@ environments:
 gitops: true
 ingress:
   domain: my.domain.com
-  externalDNS: true
+  externalDNS: false
   namespaceSubDomain: -jx.
   tls:
     email: someone@acme.com
