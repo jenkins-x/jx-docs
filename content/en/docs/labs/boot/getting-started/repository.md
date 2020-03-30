@@ -17,6 +17,8 @@ For evaluation purposes you could use a private GitHub account as the owner of t
 
 To create a fresh install run the `jxl boot create` command.  Note this by default creates three git repositories, one for each environments dev, staging and production.
 
+In a new directory run:
+
 ```bash
 jxl boot create
 ```
