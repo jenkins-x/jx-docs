@@ -39,20 +39,20 @@ by [Viktor Farcic](https://technologyconversations.com/)
         <div class="col-sm-12 col-lg-4">
           <div class="w-100 w-50-ns tc">
             <p class="h3 m0 p0 pt3">Pros and cons of different deployment strategies</p>
-            <p class class="f3">
+            <p class="f3">
               Serverless
             </p>
-            <p class class="f3">
+            <p class="f3">
               Blue/Green
             </p>
-            <p class class="f3">
+            <p class="f3">
               Rolling update
             </p>
-            <p class class="f3">
+            <p class="f3">
               Canary
             </p>
             <p class="h3 m0 p0 pt3">Demo</p>
-            <p class class="f3">
+            <p class="f3">
               All strategies automated with Jenkins X
             </p>
           </div>
@@ -76,17 +76,17 @@ by [Carlos Sanchez](https://twitter.com/csanchez)
         <div class="col-sm-hidden col-lg-2"></div>
         <div class="col-sm-12 col-lg-4">
           <div class="w-100 w-50-ns tc">
-            <p class class="f3">
+            <p class="f3">
               Progressive Delivery makes it easier to adopt Continuous Delivery
             </p>
-            <p class class="f3">
+            <p class="f3">
               Roll out new versions gradually
             </p>
             <p class="h3 m0 p0 pt3">Demo</p>
-            <p class class="f3">
+            <p class="f3">
               Automated Progressive Delivery pipeline
             </p>
-            <p class class="f3">
+            <p class="f3">
               Canary deployments and rollbacks in Kubernetes using Jenkins X
             </p>
           </div>
@@ -111,17 +111,17 @@ by [Alejandro Saucedo](https://twitter.com/axsaucedo)
         <div class="col-sm-12 col-lg-4">
           <div class="w-100 w-50-ns tc">
             <p class="h3 m0 p0 pt3"> Key insights on MLOps</p>
-            <p class class="f3">
+            <p class="f3">
               Monitoring, deployment, orchestration and continuous delivery for machine learning
             </p>
             <p class="h3 m0 p0 pt3">Demo</p>
-            <p class class="f3">
+            <p class="f3">
               Jenkins X to deploy/promote models across multiple environments
             </p>
-            <p class class="f3">
+            <p class="f3">
               KIND (Kubernetes in Docker) to run integration tests in dev environment
             </p>
-            <p class class="f3">
+            <p class="f3">
               Seldon to orchestrate & monitor the models
             </p>
           </div>
