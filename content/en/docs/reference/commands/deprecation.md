@@ -1,5 +1,5 @@
 ---
-date: 2020-03-26T00:55:25Z
+date: 2020-03-31T14:05:34Z
 title: "deprecated commands"
 slug: deprecation
 url: /commands/deprecation/
@@ -20,9 +20,6 @@ description: list of jx commands which have been deprecated
 | jx delete extension | Feb 1 2020 |  |
 | jx delete post | Feb 1 2020 |  |
 | jx edit extensionsrepository | Feb 1 2020 |  |
-| jx get aws | Feb 1 2020 |  |
-| jx get clusters | Feb 1 2020 | gcloud container clusters list |
-| jx get eks | Feb 1 2020 | eksctl get clusters |
 | jx get post | Feb 1 2020 |  |
 | jx get workflows | Feb 1 2020 |  |
 | jx init | Jun 1 2020 | jx boot |
