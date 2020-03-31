@@ -136,7 +136,7 @@ Also, please try and keep the list alphabetically sorted, which makes it easier 
 ### Checking links, images, etc
 <a id="markdown-checking-links-images-etc" name="checking-links-images-etc"></a>
 
-To get help in checking all the links, we'll use the awesome [htmltest](https://github.com/wjdp/htmltest).
+To get help in checking all the links, we'll use [htmlproofer](https://github.com/chabad360/htmlproofer).
 
 ```bash
 make linkcheck
