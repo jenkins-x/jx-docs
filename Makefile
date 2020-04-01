@@ -35,4 +35,4 @@ linkcheck: generate ## Runs spell checker using Docker Compose in foreground
 .PHONY: clean
 clean: ## Deletes temporary/generated files
 	rm -rf public
-
+	rm -rf resources

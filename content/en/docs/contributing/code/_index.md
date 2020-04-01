@@ -1,5 +1,5 @@
 ---
-title: Contribute to the code
+title: Contribute code
 linktitle: Development
 description: How to contribute to Jenkins X development.
 authors: [digitalcraftsman]

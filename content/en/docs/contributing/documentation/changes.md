@@ -2,10 +2,11 @@
 title: Suggest changes to documentation
 linktitle: Suggest changes
 description: How to suggest changes to the Jenkins X site and documentation
-weight: 5
+weight: 10
 ---
 
-Did you spot a typo or feel something's missing from a certain page? you can still contribute your suggestions without having to go through setting everything up locally as explained on [Contribute to Documentation](/docs/contributing/documentation/).
+Did you spot a typo or feel something's missing from a certain page? 
+You can still contribute your suggestions without having to go through setting everything up locally as explained on [Contribute to Documentation](/docs/contributing/documentation/).
 
 The process requires only three steps:
 
@@ -17,7 +18,8 @@ We'll go through each step here. Keep in mind though, that if you're looking to 
 
 ## Click the "Edit this page" link
 
-First off, make sure you're viewing the page you want to make changes to. The link you need to click is specific for the page, to make it easier to start making changes.
+First off, make sure you're viewing the page you want to make changes to.
+The link you need to click is specific for the page, to make it easier to start making changes.
 
 On the right hand side of the page, you'll find a column that will always have the following three links:
 
@@ -33,7 +35,8 @@ Clicking the "Edit this page" link takes you to a page on GitHub that looks some
 
 ![Triage](/images/contribute/edit_page.png)
 
-The main part of this page is the text field which includes the text for page you came from. It is using [GitHub markdown](https://guides.github.com/features/mastering-markdown/) to indicate when this should be bold, italic, etc., so if you haven't come across markdown before it might be a good idea to have a look at that if you plan on making changes to/using text formatting. There's also a [cheat-sheet here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) with just the formatting.
+The main part of this page is the text field which includes the text for page you came from. It is using [GitHub markdown](https://guides.github.com/features/mastering-markdown/) to indicate when this should be bold, italic, etc., so if you haven't come across markdown before it might be a good idea to have a look at that if you plan on making changes to/using text formatting.
+There's also a [cheat-sheet here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) with just the formatting.
 
 You can make any changes you see fit (it's treated as a suggestion that will be reviewed by others before being applied to the live website).
 
@@ -51,4 +54,5 @@ The page should look something like this:
 
 The next screen after you clicked "Propose file changes" should be "Open Pull Request".
 
-You can add more description if you wish, but at this point its fine to just click "Create pull request". If there are any questions about your changes, or suggestions for improvements, they will be added to the pull request, so in case you have opted out of notifications from GitHub it would be good to check back now and then until the change is applied.
+You can add more description if you wish, but at this point its fine to just click "Create pull request".
+If there are any questions about your changes, or suggestions for improvements, they will be added to the pull request, so in case you have opted out of notifications from GitHub it would be good to check back now and then until the change is applied.
