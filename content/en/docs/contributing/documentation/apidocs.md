@@ -1,8 +1,8 @@
 ---
-title: Contribute to the API Documentation
+title: API Documentation
 linktitle: API Documentation
 description: How to help improve the Jenkins X API documentation
-weight: 10
+weight: 15
 ---
 
 Jenkins X has two types of API documentation: [Kubernetes Custom Resource Documentation](/apidocs/) and [Godoc](https://godoc.org/github.com/jenkins-x/jx).
@@ -89,7 +89,6 @@ The OpenAPI spec is generated from the code. The structure is generated from the
 * if the `key` is `-` the field will be skipped
 * if `inline` is set, the properties will be inlined into the parent object
 
-
 Additionally the
 
 ```go
@@ -100,8 +99,8 @@ comment can be used to prevent a property being `required`. For example:
 
 ```go
   metav1.TypeMeta `json:",inline"
-	// +optional
-	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
+    // +optional
+    metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
   Spec BuildPackSpec `json:"spec,omitempty" protobuf:"bytes,2,opt,name=spec"`
 ```
 
@@ -121,24 +120,24 @@ OpenAPI definition by implementing a function named "OpenAPIDefinition" with
 the following signature:
 
 ```go
-	import openapi "k8s.io/kube-openapi/pkg/common"
+    import openapi "k8s.io/kube-openapi/pkg/common"
 
-	// ...
+    // ...
 
-	type Time struct {
-		time.Time
-	}
+    type Time struct {
+        time.Time
+    }
 
-	func (_ Time) OpenAPIDefinition() openapi.OpenAPIDefinition {
-		return openapi.OpenAPIDefinition{
-			Schema: spec.Schema{
-				SchemaProps: spec.SchemaProps{
-					Type:   []string{"string"},
-					Format: "date-time",
-				},
-			},
-		}
-	}
+    func (_ Time) OpenAPIDefinition() openapi.OpenAPIDefinition {
+        return openapi.OpenAPIDefinition{
+            Schema: spec.Schema{
+                SchemaProps: spec.SchemaProps{
+                   Type:   []string{"string"},
+                   Format: "date-time",
+                },
+            },
+        }
+    }
 ```
 
 Alternatively, the type can avoid the "openapi" import by defining the following
