@@ -11,7 +11,7 @@ We welcome your contributions to Jenkins X documentation whether you are a devel
 If you're looking for the easiest way to correct existing content (typos etc.) have a look at the [Suggest Changes](/docs/contributing/documentation/changes) guide.
 {{% /alert %}}
 
-# Assumptions
+## Assumptions
 
 This contribution guide takes a step-by-step approach in hopes of helping newcomers. Therefore, we only assume the following:
 
@@ -83,6 +83,7 @@ In case you already have a git clone locally (from before the theme change) then
 ```sh
 git submodule update --init --recursive
 ```
+
 {{< /alert >}}
 
 Add the conventional upstream `git` remote in order to fetch changes from the `jx-docs` master
@@ -126,11 +127,10 @@ To make it as simple as possible, we've created and published Docker images inst
 In order to use this setup, first make sure you're in the folder with your local cloned copy of the `jx-docs` repo, then run the following command to download and start the Hugo server:
 
 ```sh
-npm install
 docker-compose up -d server
 ```
 
-This will make the site available on http://localhost:1313/ and it will auto-update when you save changes to any of the files in the repo.
+This will make the site available on [localhost:1313](http://localhost:1313/) and it will auto-update when you save changes to any of the files in the repo.
 
 To be able to see what's going on, and know when the site is ready (can take a bit to process when you first start up), you can run this command (ctrl-c to stop watching the logs):
 
@@ -178,35 +178,6 @@ or
 docker-compose down
 ```
 
-### Install Hugo
-
-You need a recent extended version (we recommend version 0.58 or later) of Hugo to do local builds and previews of the Jenkins X documentation site. If you install from the release page, make sure to get the extended Hugo version, which supports SCSS; you may need to scroll down the list of releases to see it.
-
-[Install Hugo following the gohugo.io instructions](https://gohugo.io/getting-started/installing).
-
-Check you're using `Hugo extended` and a version higher than `0.58.0` :
-
-```sh
-hugo version
-```
-
-The output should look something like `Hugo Static Site Generator v0.58.3/extended darwin/amd64 BuildDate: unknown`
-
-#### Install PostCSS
-
-To build or update your site’s CSS resources, you also need [PostCSS](https://postcss.org/) to create the final assets. If you need to install it, you must have a recent version of `NodeJS` installed on your machine so you can use `npm`, the Node package manager. By default `npm` installs tools under the directory where you run `npm install`:
-
-```sh
-sudo npm install -D --save autoprefixer
-sudo npm install -D --save postcss-cli
-```
-
-Get local copies of the project submodules so you can build and run your site locally:
-
-```sh
-git submodule update --init --recursive
-```
-
 #### Starting the preview server
 
 Build the site:
@@ -225,24 +196,36 @@ Web Server is available at //localhost:1313/ (bind address 127.0.0.1)
 Press Ctrl+C to stop
 ```
 
-Preview your site in your browser at: http://localhost:1313. You can use `Ctrl + c` to stop the Hugo server whenever you like.
+Preview your site in your browser at: [localhost:1313](http://localhost:1313/). You can use `Ctrl + c` to stop the Hugo server whenever you like.
 
 It may be a good idea to run the server in a separate terminal so that you can keep it running while also using git or other commands.
 
-#### Using spellchecker and linkchecker
+#### Running spell check
+<a id="markdown-running-spell-check" name="running-spell-check"></a>
 
-In a later section we'll go over how to use other tools to check for spelling errors or typos, as well as checking that all links are working as expected. If you don't want to use the supplied docker approach, these tools will need to be installed locally as well:
+We are not all masters of spelling, so luckily there are tools to help us fix that.
+We are using [node-markdown-spellcheck](https://github.com/lukeapage/node-markdown-spellcheck) to run through all our markdown files and list any spelling issue or unknown word.
 
-```sh
-npm i markdown-spellcheck -g
-curl https://htmltest.wjdp.uk | sudo bash -s -- -b /usr/local/bin
+To make this as simple as possible, just run the following command:
+
+```bash
+make spellcheck
 ```
 
-See [markdown-spellcheck install](https://github.com/lukeapage/node-markdown-spellcheck#cli-usage) and [htmltest install](https://github.com/wjdp/htmltest#system-wide-install) pages for more details on other ways to install them.
+The report likely includes words that are spelt correctly, but that just means the spell checker is not aware of the correct spelling (happens a lot for technical terms, commands, etc.).
+Please edit [`.spelling`](./.spelling) and add the unknown word.
+Also, please try and keep the list alphabetically sorted, which makes it easier to navigate.
 
-{{< alert >}}
-Note that at this point in time, htmltest installs as version 0.10.3, which does not include the option `IgnoreSSLVerify` which results in a lot of `x509` errors in the output. The docker option is based on a newer build that's not yet available as an official version
-{{< /alert >}}
+#### Checking links, images, etc
+<a id="markdown-checking-links-images-etc" name="checking-links-images-etc"></a>
+
+To get help in checking all the links, we'll use [htmlproofer](https://github.com/chabad360/htmlproofer).
+
+```bash
+make linkcheck
+```
+
+**NOTE:** The initial run is really slow (due to external link checks) and that the cache is only build up when it finishes.
 
 ## Contribution Workflow
 
@@ -256,7 +239,7 @@ At a high level, your workflow will likely look something like this:
 * Commit and push your changes to your fork of `jx-docs`
 * Raise a Pull Request (PR) to have your changes merged into the main `jx-docs` repo
 * Wait for and then participate in a review of your changes
-  * might involve making adjustments or adding a bit more
+    * might involve making adjustments or adding a bit more
 * See your changes go live on the [Jenkins X site](https://jenkins-x.io)
 
 We'll go though each of the steps below in more detail
@@ -416,40 +399,42 @@ We're using [DocSearch](https://community.algolia.com/docsearch/) by Algolia to 
 Across all pages on the Jenkins X docs, the typical triple-back-tick markdown syntax is used. If you do not want to take the extra time to implement the following code block shortcodes, please use standard GitHub-flavored markdown. The Jenkins X docs use a version of [highlight.js](https://highlightjs.org/) with a specific set of languages.
 
 Your options for languages are `xml`/`html`, `go`/`golang`, `md`/`markdown`/`mkd`, `handlebars`, `apache`, `toml`, `yaml`, `json`, `css`, `asciidoc`, `ruby`, `powershell`/`ps`, `scss`, `sh`/`zsh`/`bash`/`git`, `http`/`https`, and `javascript`/`js`.
+
 ````md
 ```go
 // CommandInterface defines the interface for a Command
 //go:generate pegomock generate github.com/jenkins-x/jx/pkg/util CommandInterface -o mocks/command_interface.go
 type CommandInterface interface {
-	DidError() bool
-	DidFail() bool
-	Error() error
-	Run() (string, error)
-	RunWithoutRetry() (string, error)
-	SetName(string)
-	SetDir(string)
-	SetArgs(\[]string)
-	SetTimeout(time.Duration)
-	SetExponentialBackOff(\*backoff.ExponentialBackOff)
+    DidError() bool
+    DidFail() bool
+    Error() error
+    Run() (string, error)
+    RunWithoutRetry() (string, error)
+    SetName(string)
+    SetDir(string)
+    SetArgs(\[]string)
+    SetTimeout(time.Duration)
+    SetExponentialBackOff(\*backoff.ExponentialBackOff)
 }
 ```
 ````
+
 becomes
 
 ```go
 // CommandInterface defines the interface for a Command
 //go:generate pegomock generate github.com/jenkins-x/jx/pkg/util CommandInterface -o mocks/command_interface.go
 type CommandInterface interface {
-	DidError() bool
-	DidFail() bool
-	Error() error
-	Run() (string, error)
-	RunWithoutRetry() (string, error)
-	SetName(string)
-	SetDir(string)
-	SetArgs(\[]string)
-	SetTimeout(time.Duration)
-	SetExponentialBackOff(\*backoff.ExponentialBackOff)
+    DidError() bool
+    DidFail() bool
+    Error() error
+    Run() (string, error)
+    RunWithoutRetry() (string, error)
+    SetName(string)
+    SetDir(string)
+    SetArgs(\[]string)
+    SetTimeout(time.Duration)
+    SetExponentialBackOff(\*backoff.ExponentialBackOff)
 }
 ```
 

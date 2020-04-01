@@ -12,7 +12,6 @@ This repository contains the source for [jenkins-x.io](http://jenkins-x.io/).
 - [Building the docs](#building-the-docs)
     - [Preparing the sources](#preparing-the-sources)
         - [Git submodules](#git-submodules)
-    - [Downloading npm modules](#downloading-npm-modules)
     - [Running Hugo](#running-hugo)
         - [Locally](#locally)
         - [Dockerized](#dockerized)
@@ -62,15 +61,6 @@ you can view the commit sha of the sub-modules via:
 
 ```bash
 git submodule status --recursive
-```
-
-### Downloading npm modules
-<a id="markdown-downloading-npm-modules" name="downloading-npm-modules"></a>
-
-After getting all the sources, you need to [install npm](https://www.npmjs.com/get-npm) and make sure the required npm modules are installed:
-
-```bash
-npm install
 ```
 
 ### Running Hugo
@@ -143,8 +133,6 @@ make linkcheck
 ```
 
 **NOTE:** The initial run is really slow (due to external link checks) and that the cache is only build up when it finishes.
-
-**NOTE:**: It's safe to ignore the `... x509: certificate ...` errors for now
 
 ### Adding redirects
 <a id="markdown-adding-redirects" name="adding-redirects"></a>

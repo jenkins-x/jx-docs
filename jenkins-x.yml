@@ -109,10 +109,6 @@ pipelineConfig:
             command: hugo
             args:
             - version
-          - image: gcr.io/cloud-builders/npm
-            name: install-dependencies
-            command: npm
-            args: ['install']
           - image: gcr.io/jenkinsxio/hugo-extended:0.65.3-6
             name: build-website
             command: hugo
