@@ -26,7 +26,7 @@ Talk to us on our slack channels, which are part of the Kubernetes slack. Join K
 
 We meet for office hours **every other Thursday** at 16:00 UTC (*See your timezone [here](https://time.is/1600_in_UTC)*).
 
-Next office hours: **2 April 2020**
+Next office hours: **16 April 2020**
 
 Zoom link: <https://zoom.us/j/397862697>
 
