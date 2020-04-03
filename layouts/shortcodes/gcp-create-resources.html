@@ -106,7 +106,7 @@ gcloud projects add-iam-policy-binding $PROJECT_ID \
 # tekton
 gcloud iam service-accounts add-iam-policy-binding \
   --role roles/iam.workloadIdentityUser \
-  --member "serviceAccount:$PROJECT_ID.svc.id.goog[$NAMESPACE/tekton-sa]" \
+  --member "serviceAccount:$PROJECT_ID.svc.id.goog[$NAMESPACE/tekton-bot]" \
   $CLUSTER_NAME-tk@$PROJECT_ID.iam.gserviceaccount.com \
   --project $PROJECT_ID
 
