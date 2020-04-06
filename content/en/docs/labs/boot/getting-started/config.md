@@ -16,6 +16,65 @@ Make changes to the config using the help below or continue Next to run boot.
   </ul>
 </nav>
 
+## Secrets
+
+Boot currently supports the following options for managing secrets:
+
+### Local Storage
+
+This is the default or can be explicitly configured via `secretStorage: local`:
+
+```yaml
+cluster:
+  provider: gke
+environments:
+- key: dev
+- key: staging
+- key: production
+kaniko: true
+secretStorage: local
+webhook: lighthouse
+```
+
+If enabled secrets are loaded/saved into the folder `~/.jx/localSecrets/$clusterName`. You can use `$JX_HOME` to change the location of `~/.jx`.
+
+### Vault
+
+This is the recommended approach when using GKE or EKS providers. It can be explicitly configured via `secretStorage: vault`:
+
+```yaml
+cluster:
+  provider: gke
+environments:
+- key: dev
+- key: staging
+- key: production
+kaniko: true
+secretStorage: vault
+webhook: lighthouse
+```
+
+This configuration will cause `jx boot`'s pipeline to install a Vault using KMS and a cloud storage bucket to load/save secrets.
+
+The big advantage of Vault is it means a team of folks can then easily run `jx boot` on the same cluster. Even if you accidentally delete your Kubernetes cluster, it's easy to restore from the KMS + cloud bucket.
+
+
+### Google Secret Manager 
+
+This can be explicitly configured via `secretStorage: gsm`:
+
+```yaml
+cluster:
+  provider: gke
+environments:
+- key: dev
+- key: staging
+- key: production
+kaniko: true
+secretStorage: gsm
+webhook: lighthouse
+```
+
 ## Git
 
 Jenkins X supports a number of different Git providers. You can specify the Git provider you wish to use and the organisation to use for the Git providers for each environment in your `jx-requirements.yml`
