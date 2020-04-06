@@ -53,7 +53,7 @@ kubectl apply -f operator/deploy/rbac.yaml
 kubectl apply -f operator/deploy/cr.yaml
 ```                    
 
-Now you need to wait for teh `vault-0` pod to be ready:
+Now you need to wait for the `vault-0` pod to be ready:
 
 ```bash 
 kubectl wait --for=condition=Ready pod/vault-0
