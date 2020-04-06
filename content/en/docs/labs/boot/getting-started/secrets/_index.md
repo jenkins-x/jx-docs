@@ -10,6 +10,7 @@ You need to specify a few secret values before you can boot up.
 We don't store the secrets in git but use some kind of secret manager. Over time we want to support many providers. Currently we support
 
 * Google Secret Manager: the `secrets.yaml` file is stored in a google secret manager secret
+* [Vault](vault) using HashiCorp's Vault
 * Kubernetes Secrets: a single Kubernetes `Secret` stores the `secrets.yaml` file
 
 ## Populate Secrets

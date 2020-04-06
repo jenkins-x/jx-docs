@@ -12,6 +12,12 @@ Once you have [created your git repository](/docs/labs/boot/getting-started/repo
 jxl boot run --git-url=https://github.com/myorg/env-mycluster-dev.git
 ```
 
+If you are using a private git repository you can specify the user name and token to clone the git repository via `--git-username` and `--git-token` arguments or you can add them into the URL:
+
+```
+jxl boot run --git-url=https://myusername:mytoken@github.com/myorg/env-mycluster-dev.git
+```
+
 Once you have booted up once you can omit the `git-url` argument as it can be discovered from the `dev` `Environment` resource:
 
 ```
