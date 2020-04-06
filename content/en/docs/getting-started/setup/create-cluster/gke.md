@@ -63,7 +63,7 @@ For more information on how to configure and use a custom domain, refer to [Usin
 If you just want to evaluate Jenkins X, you can set `force_destroy` to `true`.
 This allows you to remove all generated resources when running `terraform destroy`, including any generated buckets with their content.
 
-On completion of `terraform apply` there will be a _jx-requirements.yaml_ in the working directory.
+On completion of `terraform apply` there will be a _jx-requirements.yml_ in the working directory.
 This file can be used as input for running [`jx boot`](/docs/getting-started/setup/boot).
 
 The following sections define the various configuration variables as well as the Module's output variables.
