@@ -2,9 +2,14 @@
 title: FAQ
 linktitle: FAQ
 description: Questions about managing Jenkins X
-weight: 60
 aliases:
   - /faq/setup/
+type: docs
+weight: 200
+menu:
+  docs:
+    title: "FAQs"
+
 ---
 
 ## How do I add a user to my Jenkins X installation?

@@ -7,10 +7,9 @@ categories: [getting started]
 keywords: [cluster]
 ---
 
-{{% alert title="Tip" %}}
-The GKE Terraform Module for Jenkins X is published in the [Terraform Registry](https://registry.terraform.io/modules/jenkins-x/jx/google).
-The source is in the [terraform-google-jx](https://github.com/jenkins-x/terraform-google-jx) repository on GitHub.
-{{% /alert %}}
+{{< alert >}}
+<h3>TIP:</h3> The GKE Terraform Module for Jenkins X is published in the <a class="alert-link" href="https://registry.terraform.io/modules/jenkins-x/jx/google">[Terraform Registry]</a>.  The source is in the  <a class="alert-link" href="https://github.com/jenkins-x/terraform-google-jx">[terraform-google-jx]</a> repository on GitHub.  We welcome contributions! 
+{{< /alert >}}
 
 ## Prerequisites
 
