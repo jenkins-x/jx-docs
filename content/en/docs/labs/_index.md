@@ -1,11 +1,16 @@
 ---
 title: Labs
 linktitle: Labs
-type: docs
 description: Labs enhancements
-weight: 6
+
 aliases:
   - /labs
+
+type: docs
+menu:
+  docs:
+    title: "Reference"
+
 ---
 
 We want to enable the Jenkins X open source community to move fast, innovate and iterate while at the same time keeping stability.

@@ -1,0 +1,29 @@
+
+
+/* home page tab styling */
+.nav-tabs {
+    border-bottom: 0px;
+}
+.nav-tabs .nav-link {
+    border: 0px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.nav-item .nav-link {
+    color: #00526e;
+}
+
+.nav-tabs .nav-link, .nav-tabs .nav-link.disabled, .nav-tabs .nav-link.disabled:hover, .nav-tabs .nav-link.disabled:focus {
+    border: 0px;
+    background-color: transparent;
+}
+
+
+/* sidebar overrides */
+
+.td-sidebar-nav__section li {
+    list-style: none;
+    padding: .1em;
+
+}

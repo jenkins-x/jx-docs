@@ -1,7 +1,13 @@
 ---
 title: "Reference"
-linkTitle: "Reference"
-weight: 7
+linkTitle: "Reference"  
 description: >
   Reference docs for Jenkins X.
+weight: 90
+type: docs
+layout: home
+menu:
+  docs:
+    title: "Reference"
+
 ---
