@@ -79,7 +79,7 @@ kubectl create secret generic jenkins-docker-cfg --from-file=./config.json
 
 ## Using Docker Hub
 
-If you want to publish images to docker hub then you need to modify your `config.json` as described above to something like:
+If you want to publish images to docker hub then you need to modify your home dir `config.json` in `~/.docker/config.json` as described above to something like:
 
 ```json
 {
@@ -90,6 +90,18 @@ If you want to publish images to docker hub then you need to modify your `config
         }
     }
 }
+```
+
+If this file is missing, you need to login with command first
+```sh
+docker login <yourhost>:<port>
+```
+
+Encode the content of the `config.json` to base64 format. 
+
+Finally. copy and place the encoded string to the secret `jenkins-docker-cfg` by 
+```sh
+kubectl edit secret jenkins-docker-cfg
 ```
 
 ## Using jFrog BinTray (Artifactory)
