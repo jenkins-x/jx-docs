@@ -1369,6 +1369,9 @@ string
 </em>
 </td>
 <td>
+<p>Deprecated - Workflow functionality was removed and is obsolete
+Keeping these fields to ensure backwards compatibility
+Should be removed when we increment spec version</p>
 </td>
 </tr>
 <tr>
@@ -6418,6 +6421,9 @@ string
 </em>
 </td>
 <td>
+<p>Deprecated - Workflow functionality was removed and is obsolete
+Keeping these fields to ensure backwards compatibility
+Should be removed when we increment spec version</p>
 </td>
 </tr>
 <tr>
@@ -10165,5 +10171,5 @@ PromoteWorkflowStep
 <hr/>
 <p><em>
 Generated with <code>gen-crd-api-reference-docs</code>
-on git commit <code>56d02a74b</code>.
+on git commit <code>109f00119</code>.
 </em></p>
