@@ -14,18 +14,107 @@ layout="home"
 
 <h1>Get started</h1>
 
-<div class="card border-primary mb-3" style="max-width: 60rem;">
-  <div class="card-header">Other Ways To Run Jenkins X</div>
-  <div class="card-body">
-    <h4 class="card-title"><strong>Did you know?</strong></h4>
-    <p class="card-text">There are other ways to trial and run Jenkins X in production that have been developed from the Jenkins X open source project. Learn more about these under <a a class="card-link" href="/docs/alternatives"><strong>Jenkins X OSS alternatives</strong></a></p>
-  </div>
+  <p>&nbsp;</p>
+
+  <div class="row">
+    <div class="col col-lg-12">
+    <h2>Step 1: Provision your Kubernetes Cluster</h2>
+        
+    <p>Provisioning your Kubernetes cluster is easy. Jenkins X does not really care how you provision your cluster, however there
+        are many resources that are provisioned, so we recommend using the Terraform Modules we've made available</p>
+        
+    <ul class="nav nav-tabs" id="provision-cluster-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#gcp">GCP</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" data-toggle="tab" href="#aws">AWS (coming soon)</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" data-toggle="tab" href="#azure">Azure (coming soon)</a>
+      </li>
+    </ul>
+    <div id="provision-cluster-tabs" class="tab-content">
+      <div class="tab-pane fade show active" id="gcp">
+        <div class="row">
+          <div class="col-sm-4">
+                <a href="/docs/getting-started/setup/create-cluster/google/"><img src="https://www.pulumi.com/logos/tech/gcp.svg"/></i></a>
+          </div>
+        </div>
+        <h4>Use GKE Terraform Module</h4>
+        <p>1 . Create a <strong>main.tf</strong> file and add the code snippet below.</p>
+{{<highlight javascript>}}
+module "jx" {
+source  = "jenkins-x/jx/google"
+version = "1.2.1"
+# override default parameter values here
+}
+{{</highlight>}}
+
+        <p>This setup uses defaults parameter values.  You can modify them, <a href="/docs/getting-started/setup/create-cluster/gke/#inputs">more details here.</a></p>
+      
+        <p>2 . Provision the cluster using Terraform. The output of this command will include a file <strong>jx-requirements.yml</strong> which<br/>
+        you will use in <strong>Step 3: Install Jenkins X on your cluster</strong> </p>
+{{<highlight bash>}}
+$ terraform init && terraform apply
+{{</highlight>}}
+
+      </div>
+      <div class="tab-pane fade" id="aws">
+      <div class="row">
+        <div class="col-sm-4">
+              <a href="/docs/getting-started/setup/create-cluster/amazon/"> <img src="https://www.pulumi.com/logos/tech/aws.svg" class="mx-auto d-block"/></i></a>
+        </div>
+      </div>
+      <h4>Use the AWS Terraform Module</h4>
+      <p>1 . Create a <strong>main.tf</strong> file and add the code snippet below.</p>
+{{<highlight javascript>}}
+module "eks-jx" {
+  source  = "jenkins-x/eks-jx/aws"
+  vault_user=""
+}
+{{</highlight>}}
+This setup uses defaults parameter values. You can modify them, more <a href="docs/getting-started/setup/create-cluster/eks/#inputs">details here</a>.<br>
+<div class="card text-white bg-primary mb-3" style="max-width: 70rem;">
+<div class="card-header">IAM User</div>
+<div class="card-body">
+  <h4 class="card-title">Specify existing IAM User</h4>
+  <p class="card-text">You will need to provide a existing IAM user name for Vault. The specified user's access keys are used to authenticate the Vault pod against AWS. The IAM user does not need any permissions attached to it. This Terraform Module creates a new IAM Policy and attaches it to the specified user. <br>
+    For more information refer to <strong><a class="card-link text-white" href="/docs/getting-started/setup/boot/clouds/amazon/#configuring-vault-for-eks">Configuring Vault for EKS</a></strong>.</p>
 </div>
+</div>
+
+
+        <p>2 . Provision the cluster using Terraform. The output of this command will include a file <strong>jx-requirements.yml</strong> which<br/>
+          you will use in <strong>Step 3: Install Jenkins X on your cluster</strong> </p>
+{{<highlight bash>}}
+$ terraform init && terraform apply
+{{</highlight>}}
+      </div>
+      <div class="tab-pane fade" id="azure">
+        <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <a href="/docs/getting-started/setup/create-cluster/azure/"><img src="https://www.pulumi.com/logos/tech/azure.svg"/></i></a>
+              </div>
+            </div>
+        </div>
+          <h4>Use Azure (AKS) Terraform Module</h4>
+          <p>instructions on how to here.</p>
+      </div>
+        <div class="tab-pane fade" id="openshift">
+        <p>Coming soon!</p>
+      </div>
+    </div>
+    </div>
+  </div>
+
+ 
 
   <p>&nbsp;</p>
   <div class="row">
     <div class="col col-lg-12">
-      <h2>Step 1: Install the Jenkins X CLI</h2>
+      <h2>Step 2: Install the Jenkins X CLI</h2>
       <p>
         The first step in using Jenkins X is installing the Jenkins X binary <strong>jx</strong> for
         your operating system.
@@ -51,50 +140,37 @@ brew install jenkins-x/jx/jx
           
         <h3>Using Curl</h3>
         <p>
-        Download the `.tar` file, unarchive it.
+       
         </p>
 
 {{<highlight sh>}}
+  #  Download the `.tar` file, unarchive it.
 curl -L "https://github.com/jenkins-x/jx/releases/download/$(curl --silent https://api.github.com/repos/jenkins-x/jx/releases/latest | jq -r '.tag_name')/jx-darwin-amd64.tar.gz" | tar xzv "jx"
-{{</highlight>}}
-        
-        
-        Add  `jx` to your path
-        
-{{<highlight sh>}}
+
+# Add  `jx` to your path
 sudo mv jx /usr/local/bin
-{{</highlight>}}
-        
-        Check if all is good!
-        
-{{<highlight sh>}}
+
+# verify installation
 jx --version
 {{</highlight>}}
+        
         </div>
         <div class="tab-pane fade" id="linux">
         
         &nbsp;  
-        Download the `.tar` file, and unarchive it in a directory where you can run the `jx` command.
+        
       
 {{<highlight sh>}}
+# Download the `.tar` file, and unarchive it in a directory where you can run the `jx` command.
 curl -L "https://github.com/jenkins-x/jx/releases/download/$(curl --silent https://api.github.com/repos/jenkins-x/jx/releases/latest | jq -r '.tag_name')/jx-linux-amd64.tar.gz" | tar xzv "jx"
-{{</highlight>}}
-      
-        or, if you don't have `jq` installed:
-      
-{{<highlight sh>}}
+
+# if you don't have `jq` installed:
 curl -L "https://github.com/jenkins-x/jx/releases/download/$(curl --silent "https://github.com/jenkins-x/jx/releases/latest" | sed 's#.*tag/\(.*\)\".*#\1#')/jx-linux-amd64.tar.gz" | tar xzv "jx"
-{{</highlight>}}
-      
-        Move binary to your path
-      
-{{<highlight sh>}}
+
+# Move binary to your path
 sudo mv jx /usr/local/bin
-{{</highlight>}}
-      
-      Test all is good
-      
-{{<highlight sh>}}
+
+# verify installation
 jx --version
 {{</highlight>}}
       
@@ -127,131 +203,17 @@ jx --version
 choco upgrade jenkins-x
 {{</highlight>}}
       
-      
-      <h3> Install using Scoop</h3>
-      
-      <div class="alert alert-dismissible alert-info">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <strong>TIP:</strong> 
-        If you use <a href="https://scoop.sh" class="alert-link">Scoop</a>, then there is a <a href="https://github.com/lukesampson/scoop/blob/master/bucket/jx.json" class="alert-link">manifest available</a>
-      </div>
-      
-        Install the `jx` binary
-      
-{{<highlight sh>}}
-scoop install jx
-{{</highlight>}}
-      
-        Upgrade the `jx` binary
-      
-{{<highlight sh>}}
-scoop update jx
-{{</highlight>}}
         </div>
       </div>
     </div>
-  </div>    
-
+  </div>   
   <p>&nbsp;</p>
-    <div style="row">
-      <div class="col col-lg-12">
-      <h2>Step 2: Provision your Kubernetes Cluster</h2>
-          
-      <p>Provisioning your Kubernetes cluster is easy. Jenkins X does not really care how you provision your cluster, however there
-          are many resources that are provisioned, so we recommend using the Terraform Modules we've made available</p>
-          
-      <ul class="nav nav-tabs" id="provision-cluster-tabs">
-        <li class="nav-item">
-          <a class="nav-link active" data-toggle="tab" href="#gcp">GCP</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" data-toggle="tab" href="#aws">AWS (coming soon)</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" data-toggle="tab" href="#azure">Azure (coming soon)</a>
-        </li>
-      </ul>
-      <div id="provision-cluster-tabs" class="tab-content">
-        <div class="tab-pane fade show active" id="gcp">
-          <div class="row">
-            <div class="col-sm-4">
-                  <a href="/docs/getting-started/setup/create-cluster/google/"><img src="https://www.pulumi.com/logos/tech/gcp.svg"/></i></a>
-            </div>
-          </div>
-          <h4>Use GKE Terraform Module</h4>
-          <p>1 . Create a <strong>main.tf</strong> file and add the code snippet below.</p>
-{{<highlight javascript>}}
-module "jx" {
-  source  = "jenkins-x/jx/google"
-  version = "1.2.1"
-  # override default parameter values here
-}
-{{</highlight>}}
-
-          <p>This setup uses defaults parameter values.  You can modify them, <a href="/docs/getting-started/setup/create-cluster/gke/#inputs">more details here.</a></p>
-        
-          <p>2 . Provision the cluster using Terraform. The output of this command will include a file <strong>jx-requirements.yml</strong> which<br/>
-          you will use in <strong>Step 3: Install Jenkins X on your cluster</strong> </p>
-{{<highlight bash>}}
-$ terraform init && terraform apply
-{{</highlight>}}
-
-        </div>
-        <div class="tab-pane fade" id="aws">
-        <div class="row">
-          <div class="col-sm-4">
-                <a href="/docs/getting-started/setup/create-cluster/amazon/"> <img src="https://www.pulumi.com/logos/tech/aws.svg" class="mx-auto d-block"/></i></a>
-          </div>
-        </div>
-        <h4>Use the AWS Terraform Module</h4>
-        <p>1 . Create a <strong>main.tf</strong> file and add the code snippet below.</p>
-{{<highlight javascript>}}
-  module "eks-jx" {
-    source  = "jenkins-x/eks-jx/aws"
-    vault_user=""
-  }
-{{</highlight>}}
-This setup uses defaults parameter values. You can modify them, more <a href="docs/getting-started/setup/create-cluster/eks/#inputs">details here</a>.<br>
-<div class="card text-white bg-primary mb-3" style="max-width: 70rem;">
-  <div class="card-header">IAM User</div>
-  <div class="card-body">
-    <h4 class="card-title">Specify existing IAM User</h4>
-    <p class="card-text">You will need to provide a existing IAM user name for Vault. The specified user's access keys are used to authenticate the Vault pod against AWS. The IAM user does not need any permissions attached to it. This Terraform Module creates a new IAM Policy and attaches it to the specified user. <br>
-      For more information refer to <strong><a class="card-link text-white" href="/docs/getting-started/setup/boot/clouds/amazon/#configuring-vault-for-eks">Configuring Vault for EKS</a></strong>.</p>
-  </div>
-</div>
-
-
-          <p>2 . Provision the cluster using Terraform. The output of this command will include a file <strong>jx-requirements.yml</strong> which<br/>
-            you will use in <strong>Step 3: Install Jenkins X on your cluster</strong> </p>
-{{<highlight bash>}}
-$ terraform init && terraform apply
-{{</highlight>}}
-        </div>
-        <div class="tab-pane fade" id="azure">
-          <div class="col-sm-4">
-              <div class="card">
-                <div class="card-body">
-                  <a href="/docs/getting-started/setup/create-cluster/azure/"><img src="https://www.pulumi.com/logos/tech/azure.svg"/></i></a>
-                </div>
-              </div>
-          </div>
-            <h4>Use Azure (AKS) Terraform Module</h4>
-            <p>instructions on how to here.</p>
-        </div>
-          <div class="tab-pane fade" id="openshift">
-          <p>Coming soon!</p>
-        </div>
-      </div>
-      </div>
-    </div>
-  <p>&nbsp;</p>
-  <div style="row">
+  <div class="row">
   <div class="col col-lg-12">
     <p>&nbsp;</p>
     <h2>Step 3: Install Jenkins X on your cluster</h2>
     
-    <p>You have provisioned your Kubernetes cluster, you are ready to install Jenkins X on top of the cluster.  To do that, you will use the <strong>JX Boot</strong> CLI command.</p>
+    <p>You have provisioned your Kubernetes cluster and the CLI.  You are ready to install Jenkins X on top of the cluster.  To do that, you will use the <strong>JX Boot</strong> CLI command.</p>
     <div class="alert alert-dismissible alert-primary"> 
       <strong>What is JX Boot?</strong> With JX Boot you Install, configure or upgrade Jenkins X via GitOps and a Jenkins X Pipeline.  This pipeline resides within your
       config git repository, also known as a <a class="alert-link" href="/about/concepts/components/#permanent-environments">permanent environment</a>
@@ -264,3 +226,15 @@ $ terraform init && terraform apply
   <p>Get more details on <a href="/docs/getting-started/setup/boot/">JX Boot</a>  </p>
   </div>
   </div>
+  
+<div class="row">
+  <div class="col col-lg-12">
+    <div class="card border-primary mb-3">
+      <div class="card-header">Other Ways To Run Jenkins X</div>
+      <div class="card-body">
+        <h4 class="card-title"><strong>Did you know?</strong></h4>
+        <p class="card-text">There are other ways to trial and run Jenkins X in production that have been developed from the Jenkins X open source project. Learn more about these under <a a class="card-link" href="/docs/alternatives"><strong>Jenkins X OSS alternatives</strong></a></p>
+      </div>
+    </div>    
+  </div>
+</div>
