@@ -189,21 +189,16 @@ jx --version
           the binary can be executed:
 
 {{<highlight sh>}}
-    @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 {{</highlight>}}
 
       3.  Install Jenkins X using Chocolatey:
       
 {{<highlight sh>}}
-  choco install jenkins-x
+choco install jenkins-x
 {{</highlight>}}
       
-      Upgrading Jenkins X via Chocolatey
-      
-{{<highlight sh>}}
-choco upgrade jenkins-x
-{{</highlight>}}
-      
+
         </div>
       </div>
     </div>
@@ -228,7 +223,8 @@ choco upgrade jenkins-x
   <p>Get more details on <a href="/docs/getting-started/setup/boot/">JX Boot</a>  </p>
   </div>
   </div>
-  
+
+  <p>&nbsp;</p>
 <div class="row">
   <div class="col col-lg-12">
     <div class="card border-primary mb-3">

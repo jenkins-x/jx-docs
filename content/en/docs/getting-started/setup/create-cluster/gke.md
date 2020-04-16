@@ -38,13 +38,13 @@ Finally, ensure you have the following binaries installed:
 
 A default Jenkins X ready cluster can be provisioned by creating a file _main.tf_ with the following content in an empty directory:
 
-```tf
+{{<highlight javascript>}}
 module "jx" {
   source  = "jenkins-x/jx/google"
 
   gcp_project = "<my-gcp-project-id>"
 }
-```
+{{</highlight>}}
 
 You can then apply this Terraform configuration via the following terminal commands:
 

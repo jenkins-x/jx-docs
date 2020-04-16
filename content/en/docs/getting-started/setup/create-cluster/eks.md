@@ -25,13 +25,13 @@ This Jenkins X EKS Terraform Module allows you to create an EKS cluster for inst
 
 A default Jenkins X ready cluster can be provisioned by creating a _main.tf_ file in an empty directory with the following content:
 
-```terraform
+{{<highlight javascript>}}
 module "eks-jx" {
   source  = "jenkins-x/eks-jx/aws"
 
   vault_user="<your_vault_iam_username>"
 }
-```
+{{</highlight>}}
 
 You will need to provide a existing IAM user name for Vault.
 The specified user's access keys are used to authenticate the Vault pod against AWS.
