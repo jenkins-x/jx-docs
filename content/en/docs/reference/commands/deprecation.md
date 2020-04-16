@@ -1,5 +1,5 @@
 ---
-date: 2020-04-15T09:51:52Z
+date: 2020-04-16T13:01:38Z
 title: "deprecated commands"
 slug: deprecation
 url: /commands/deprecation/
@@ -14,7 +14,10 @@ description: list of jx commands which have been deprecated
 | Command        | Removal Date   | Replacement  |
 |----------------|----------------|--------------|
 | jx console | Jun 1 2020 | jx ui |
+| jx create post | Feb 1 2020 |  |
 | jx create spring | Mar 1 2020 | jx create project |
+| jx delete extension | Feb 1 2020 |  |
+| jx delete post | Feb 1 2020 |  |
 | jx edit extensionsrepository | Feb 1 2020 |  |
 | jx get post | Feb 1 2020 |  |
 | jx init | Jun 1 2020 | jx boot |
