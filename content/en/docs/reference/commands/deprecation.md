@@ -1,5 +1,5 @@
 ---
-date: 2020-04-15T09:51:52Z
+date: 2020-04-16T00:59:07Z
 title: "deprecated commands"
 slug: deprecation
 url: /commands/deprecation/
@@ -28,8 +28,5 @@ description: list of jx commands which have been deprecated
 | jx step nexus release | Feb 1 2020 |  |
 | jx step post | Feb 1 2020 |  |
 | jx step pre | Feb 1 2020 |  |
-| jx update cluster | Feb 1 2020 | gcloud container cluster upgrade |
-| jx upgrade cluster | Feb 1 2020 | jx boot |
-| jx upgrade extensions | Feb 1 2020 | jx upgrade apps |
 | jx upgrade ingress | Jun 1 2020 | jx boot |
 | jx upgrade platform | Jun 1 2020 | jx upgrade boot |
