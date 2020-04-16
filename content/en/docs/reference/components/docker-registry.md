@@ -79,7 +79,7 @@ kubectl create secret generic jenkins-docker-cfg --from-file=./config.json
 
 ## Using Docker Hub
 
-If you want to publish images to docker hub then you need to modify your `config.json` in your home directory as described above to something like:
+If you want to publish images to docker hub then you need to modify your home dir `config.json` in `~/.docker/config.json` as described above to something like:
 
 ```json
 {
