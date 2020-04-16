@@ -19,7 +19,9 @@ To populate the Secrets run:
 
 
 ```
-jxl boot secrets edit --git-url https://github.com/myuser/environment-mycluster-dev.git
+git clone https://github.com/myuser/environment-mycluster-dev.git
+cd environment-mycluster-dev
+jxl boot secrets edit
 ```                  
 
 This will prompt you to enter all the missing Secrets required.
@@ -36,7 +38,9 @@ This will prompt you to enter all the missing Secrets required.
 If you want to re-enter them all again or recreate tokens do the following:
 
 ```
-jxl boot secrets edit -a --git-url https://github.com/myuser/environment-mycluster-dev.git
+git clone https://github.com/myuser/environment-mycluster-dev.git
+cd environment-mycluster-dev
+jxl boot secrets edit -a
 ```                                                                        
 
 Note that once you have booted up a cluster you can omit the `--git-url` parameter as it can be discovered from the current kubernetes cluster (via the `dev` `Environment` resource)
@@ -60,7 +64,9 @@ secrets:
 Then you can import this YAML file via:
 
 ```
-jxl boot secrets import -f /tmp/mysecrets.yaml --git-url https://github.com/myuser/environment-mycluster-dev.git
+git clone https://github.com/myuser/environment-mycluster-dev.git
+cd environment-mycluster-dev
+jxl boot secrets import -f /tmp/mysecrets.yaml 
 ```                  
 
 
@@ -71,7 +77,9 @@ If you have booted Jenkins X before you may well have secrets in your `~/.jx/loc
 If the file is valid you can just run:
 
 ```
-jxl boot secrets import -f ~/.jx/localSecrets/mycluster/secrets.yaml --git-url https://github.com/myuser/environment-mycluster-dev.git
+git clone https://github.com/myuser/environment-mycluster-dev.git
+cd environment-mycluster-dev
+jxl boot secrets import -f ~/.jx/localSecrets/mycluster/secrets.yaml 
 ```                  
 
 ### Migrating Secrets from Vault

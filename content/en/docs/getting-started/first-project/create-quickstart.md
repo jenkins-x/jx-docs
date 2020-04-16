@@ -90,7 +90,7 @@ jx create quickstart  -l go --organisations my-github-org
 
 Then all quickstarts found in `my-github-org` will be listed in addition to the Jenkins X quickstarts.
 
-## Customising your teams quickstarts
+## Customising your team's quickstarts
 
 You can configure at a team level the quickstarts which are presented to you in the `jx create quickstart` command. These settings are stored in the [Environment Custom Resource](/docs/reference/components/custom-resources/) in Kubernetes.
 
