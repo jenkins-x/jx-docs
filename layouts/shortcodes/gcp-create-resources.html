@@ -6,7 +6,6 @@ gcloud services enable secretmanager.googleapis.com
 # setup the service accounts
 gcloud iam service-accounts create $CLUSTER_NAME-ex --display-name=$CLUSTER_NAME-ex --project $PROJECT_ID
 gcloud iam service-accounts create $CLUSTER_NAME-jb --display-name=$CLUSTER_NAME-jb --project $PROJECT_ID
-gcloud iam service-accounts create $CLUSTER_NAME-ko --display-name=$CLUSTER_NAME-ko --project $PROJECT_ID
 gcloud iam service-accounts create $CLUSTER_NAME-sm --display-name=$CLUSTER_NAME-sm --project $PROJECT_ID
 gcloud iam service-accounts create $CLUSTER_NAME-st --display-name=$CLUSTER_NAME-st --project $PROJECT_ID
 gcloud iam service-accounts create $CLUSTER_NAME-tk --display-name=$CLUSTER_NAME-tk --project $PROJECT_ID
@@ -18,13 +17,6 @@ curl https://raw.githubusercontent.com/jenkins-x-labs/cloud-resources/master/gcl
 
 # change to the new jx namespace
 jx ns $NAMESPACE
-
-# lets create the kaniko key
-gcloud iam service-accounts keys create kaniko-secret.json --iam-account $CLUSTER_NAME-ko@$PROJECT_ID.iam.gserviceaccount.com --project $PROJECT_ID
-
-kubectl create secret generic kaniko-secret --from-file=kaniko-secret=kaniko-secret.json
-
-
 
 # external dns
 gcloud iam service-accounts add-iam-policy-binding \
@@ -81,28 +73,6 @@ gcloud projects add-iam-policy-binding $PROJECT_ID \
   --member "serviceAccount:$CLUSTER_NAME-jb@$PROJECT_ID.iam.gserviceaccount.com" \
   --project $PROJECT_ID
 
-# kaniko
-gcloud iam service-accounts add-iam-policy-binding \
-  --role roles/iam.workloadIdentityUser \
-  --member "serviceAccount:$PROJECT_ID.svc.id.goog[$NAMESPACE/kaniko-sa]" \
-  $CLUSTER_NAME-ko@$PROJECT_ID.iam.gserviceaccount.com \
-  --project $PROJECT_ID
-
-gcloud projects add-iam-policy-binding $PROJECT_ID \
-  --role roles/storage.admin \
-  --member "serviceAccount:$CLUSTER_NAME-ko@$PROJECT_ID.iam.gserviceaccount.com" \
-  --project $PROJECT_ID
-
-gcloud projects add-iam-policy-binding $PROJECT_ID \
-  --role roles/storage.objectAdmin \
-  --member "serviceAccount:$CLUSTER_NAME-ko@$PROJECT_ID.iam.gserviceaccount.com" \
-  --project $PROJECT_ID
-
-gcloud projects add-iam-policy-binding $PROJECT_ID \
-  --role roles/storage.objectCreator \
-  --member "serviceAccount:$CLUSTER_NAME-ko@$PROJECT_ID.iam.gserviceaccount.com" \
-  --project $PROJECT_ID
-
 # tekton
 gcloud iam service-accounts add-iam-policy-binding \
   --role roles/iam.workloadIdentityUser \
@@ -113,6 +83,21 @@ gcloud iam service-accounts add-iam-policy-binding \
 gcloud projects add-iam-policy-binding $PROJECT_ID \
   --role roles/viewer \
   --member "serviceAccount:$CLUSTER_NAME-tk@$PROJECT_ID.iam.gserviceaccount.com" \
+
+gcloud projects add-iam-policy-binding $PROJECT_ID \
+  --role roles/storage.admin \
+  --member "serviceAccount:$CLUSTER_NAME-tk@$PROJECT_ID.iam.gserviceaccount.com" \
+  --project $PROJECT_ID
+
+gcloud projects add-iam-policy-binding $PROJECT_ID \
+  --role roles/storage.objectAdmin \
+  --member "serviceAccount:$CLUSTER_NAME-tk@$PROJECT_ID.iam.gserviceaccount.com" \
+  --project $PROJECT_ID
+
+gcloud projects add-iam-policy-binding $PROJECT_ID \
+  --role roles/storage.objectCreator \
+  --member "serviceAccount:$CLUSTER_NAME-tk@$PROJECT_ID.iam.gserviceaccount.com" \
+  --project $PROJECT_ID
 
 # secret manager
 gcloud iam service-accounts add-iam-policy-binding \
