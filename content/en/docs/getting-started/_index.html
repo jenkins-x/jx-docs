@@ -45,11 +45,11 @@ layout="home"
         <h4>Use GKE Terraform Module</h4>
         <p>1 . Create a <strong>main.tf</strong> file and add the code snippet below.</p>
 {{<highlight javascript>}}
-module "jx" {
-source  = "jenkins-x/jx/google"
-version = "1.2.1"
-# override default parameter values here
-}
+  module "jx" {
+    source  = "jenkins-x/jx/google"
+  
+    gcp_project = <my-gcp-project-id>
+  }
 {{</highlight>}}
 
         <p>This setup uses defaults parameter values.  You can modify them, <a href="/docs/getting-started/setup/create-cluster/gke/#inputs">more details here.</a></p>
