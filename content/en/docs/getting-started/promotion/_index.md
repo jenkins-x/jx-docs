@@ -28,7 +28,12 @@ jx promote  --app myapp --version 1.2.3 --env production --timeout 5h
 
 You can use terms like `20m` or `10h30m` for the various duration expressions.
 
-<img src="/images/overview.png" class="img-thumbnail">
+<div class="row">
+  <div class="col col-lg-9">
+    <img src="/images/overview.png" class="img-thumbnail">
+  </div>
+</div>
+
 
 
 ## Feedback
@@ -37,7 +42,12 @@ If the commit comments reference issues (e.g. via the text `fixes #123`) then Je
 
 Also as the version with those new commits is promoted to `Staging` or `Production` you will get automated comments on each fixed issue that the issue is now available for review in the corresponding environment along with a link to the release notes and a link to the app running in that environment. e.g.
 
-<img src="/images/issue-comment.png" class="img-thumbnail">
+<div class="row">
+  <div class="col col-lg-9">
+    <img src="/images/issue-comment.png" class="img-thumbnail">
+  </div>
+</div>
+
 
 
 ## Promoting external apps

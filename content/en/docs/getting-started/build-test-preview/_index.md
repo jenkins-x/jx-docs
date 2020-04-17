@@ -83,9 +83,11 @@ git add index.html server.js
 5. The program displays a link to a pull request. The developer can highlight the URL, right-click and choose *Open URL* to see the GitHub page in their browser.
 
 6. Jenkins X creates a preview environment in the PR for the application changes and displays a link to evaluate the new feature:
-
-<img src="/images/pr-comment.png" class="img-thumbnail">
-
+<div class="row">
+  <div class="col col-lg-9">
+    <img src="/images/pr-comment.png"/>
+  </div>
+</div>
 The preview environment is created whenever a change is made to the
 repository, allowing any relevant user to validate or evaluate features,
 bugfixes, or security hotfix.
