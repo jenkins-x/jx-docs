@@ -5,9 +5,9 @@ type: docs
 weight: 30
 ---
 
-Join us for office hours **every other Thursday** at 16:00 UTC (*See your timezone [here](https://time.is/1600_in_UTC)*).
+Join us for office hours **every other Thursday** at 16:00 UTC (*See your timezone [here](https://time.is/1600_in_UTC)*). Please note that this is 5pm British Summer Time in the UK.
 
-Next office hours: **16 April 2020**
+Next office hours: **30 April 2020**
 
 Join us: <https://zoom.us/j/397862697>
 
