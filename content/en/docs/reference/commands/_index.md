@@ -1,6 +1,6 @@
 ---
-title: "Command Line Reference"
-linkTitle: "Command Line Reference"
+title: "CLI"
+linkTitle: "CLI"
 weight: 1
 description: >
   jx command line reference

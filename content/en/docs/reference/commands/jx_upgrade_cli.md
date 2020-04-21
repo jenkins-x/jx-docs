@@ -15,7 +15,7 @@ Upgrades the Jenkins X command line tools if there is a different version stored
 
 The exact version used for the version stream is stored in the Team Settings on the 'dev' Environment CRD. 
 
-For more information on Version Streams see: https://jenkins-x.io/docs/concepts/version-stream/
+For more information on Version Streams see: https://jenkins-x.io/about/concepts/version-stream/
 
 ```
 jx upgrade cli [flags]

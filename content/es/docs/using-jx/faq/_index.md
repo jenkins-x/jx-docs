@@ -40,7 +40,7 @@ foo:
 
 Puede usar helm para hacer cosas como establecer el `namespace` actual si lo necesita.
 
-Para ver un ejemplo más complejo de cómo puede utilizar el fichero `values.yaml` para establecer valores en chart de helm, vea cómo lo hacemos para [configurar el propio Jenkins X](/docs/managing-jx/common-tasks/config/).
+Para ver un ejemplo más complejo de cómo puede utilizar el fichero `values.yaml` para establecer valores en chart de helm, vea cómo lo hacemos para [configurar el propio Jenkins X](/docs/guides/managing-jx/common-tasks/config/).
 
 ## ¿Cómo se inserta la configuración de vista previa?
 
@@ -80,13 +80,13 @@ jx delete preview
 
 ## ¿Cómo agrego otros servicios a una Vista Previa?
 
-Cuando crea un PR, de forma predeterminada Jenkins X crea un nuevo [Entorno de Vista Previa](/es/docs/concepts/features/#entornos-de-vista-previa). Dado que este es un nuevo espacio de nombres dinámico, es posible que desee configurar microservicios adicionales en el `namespace` para que pueda probar adecuadamente su vista previa de la construcción.
+Cuando crea un PR, de forma predeterminada Jenkins X crea un nuevo [Entorno de Vista Previa](/es/about/concepts/features/#entornos-de-vista-previa). Dado que este es un nuevo espacio de nombres dinámico, es posible que desee configurar microservicios adicionales en el `namespace` para que pueda probar adecuadamente su vista previa de la construcción.
 
 Para obtener más información, vea [cómo agregar charts, servicios o configuraciones a su entorno de vista previa](/docs/reference/preview/#adding-more-resources).
 
 ## ¿Puedo utilizar mi actual pipeline de liberación?
 
-Con Jenkins X, puede crear su propio pipeline de liberaciones si lo desea; aunque hacerlo significa que se pierde nuestro [modelo de extensión](/docs/contributing/addons/) que le permite habilitar fácilmente varias aplicaciones de extensión como Gobernanza, Cumplimiento, calidad de código, cobertura de código, escaneo de seguridad, pruebas de vulnerabilidad y varias otras extensiones que se agregan todo el tiempo a través de nuestra comunidad.
+Con Jenkins X, puede crear su propio pipeline de liberaciones si lo desea; aunque hacerlo significa que se pierde nuestro [modelo de extensión](/docs/guides/contributing/addons/) que le permite habilitar fácilmente varias aplicaciones de extensión como Gobernanza, Cumplimiento, calidad de código, cobertura de código, escaneo de seguridad, pruebas de vulnerabilidad y varias otras extensiones que se agregan todo el tiempo a través de nuestra comunidad.
 
 Hemos creado específicamente este modelo de extensión para minimizar el trabajo que tienen sus equipos para editar y mantener los pipelines en muchos microservicios separados. La idea es que estamos tratando de automatizar tanto los pipelines como las extensiones de los pipelines para que los equipos puedan centrarse en su código real y menos en la tubería de CI/CD, que es prácticamente todo el trabajo pesado indiferenciado en estos días.
 
@@ -100,7 +100,7 @@ Si está utilizando [boot](/es/docs/getting-started/setup/boot/) para instalar J
 
 p.ej. así es como especificamos [las ramas utilizadas para crear las liberaciones](https://github.com/jenkins-x-charts/jxboot-resources/blob/master/jxboot-resources/templates/default-scheduler.yaml#L48).
 
-También puede crear contextos de pipelines; p.ej. así es como agregamos múltiples canales de prueba paralelos en [el flujo de la versión](/docs/concepts/version-stream/) a través de un [Scheduler personalizado](https://github.com/jenkins-x/environment-tekton-weasel-dev/blob/master/env/templates/jx-versions-scheduler.yaml#L21) para que podamos tener muchas pruebas de integración ejecutadas en paralelo en un solo PR. Luego, cada contexto nombrado enumerado tiene un fichero `jenkins-x-$context.yml` asociado en el repositorio de origen para definir el pipeline a ejecutar como [este ejemplo que define el contexto `boot-lh`](https://github.com/jenkins-x/jenkins-x-versions/blob/master/jenkins-x-boot-lh.yml)
+También puede crear contextos de pipelines; p.ej. así es como agregamos múltiples canales de prueba paralelos en [el flujo de la versión](/about/concepts/version-stream/) a través de un [Scheduler personalizado](https://github.com/jenkins-x/environment-tekton-weasel-dev/blob/master/env/templates/jx-versions-scheduler.yaml#L21) para que podamos tener muchas pruebas de integración ejecutadas en paralelo en un solo PR. Luego, cada contexto nombrado enumerado tiene un fichero `jenkins-x-$context.yml` asociado en el repositorio de origen para definir el pipeline a ejecutar como [este ejemplo que define el contexto `boot-lh`](https://github.com/jenkins-x/jenkins-x-versions/blob/master/jenkins-x-boot-lh.yml)
 
 Luego puede asociar sus recursos `SourceRepository` con su scheduler personalizado de la siguiente manera:
 
@@ -120,7 +120,7 @@ La promoción en Jenkins X está completamente separada del lanzamiento y apoyam
 
 El PR activa un pipeline de CI para verificar que los cambios son válidos (por ejemplo, que el chart de Helm existe y se puede descargar, que existen las imágenes de Docker, etc.). Cada vez que el PR se mezclan (podría ser automáticamente o puede requerir tickets reviews/+1s/JIRA/ServiceNow o lo que sea), entonces se activa otro pipeline para aplicar los charts de Helm desde la rama master al clúster k8s de destino y a el `namespace`.
 
-Jenkins X automatiza todo lo anterior, pero dado que ambos pipelines se definen en un repositorio Git de entornos en un fichero `Jenkinsfile`, puede personalizarlo para agregar sus propios pasos previos/posteriores si lo desea. p.ej. puede analizar el YAML para pre-aprovisionar PVs para cualquier PVCs utilizando alguna herramienta de salvas de disco personalizada. O puede hacerlo en una tarea desencadenada por un enlace de Helm. Aunque preferimos que estas herramientas se creen como parte del [modelo de extensión](/docs/contributing/addons/) de Jenkins X para evitar que los pipelines personalizados se dañen en futuras versiones de Jenkins X, aunque no es un gran problema.
+Jenkins X automatiza todo lo anterior, pero dado que ambos pipelines se definen en un repositorio Git de entornos en un fichero `Jenkinsfile`, puede personalizarlo para agregar sus propios pasos previos/posteriores si lo desea. p.ej. puede analizar el YAML para pre-aprovisionar PVs para cualquier PVCs utilizando alguna herramienta de salvas de disco personalizada. O puede hacerlo en una tarea desencadenada por un enlace de Helm. Aunque preferimos que estas herramientas se creen como parte del [modelo de extensión](/docs/guides/contributing/addons/) de Jenkins X para evitar que los pipelines personalizados se dañen en futuras versiones de Jenkins X, aunque no es un gran problema.
 
 ## How do I change the owner of a docker image
 
@@ -145,7 +145,7 @@ Para ampliar los detalles vea el código de para resolverlo [aquí](https://gith
 
 ## ¿Qué pasa si mi equipo no quiere usar Helm?
 
-Para ayudar a automatizar CI/CD con GitOps, asumimos que los charts de Helm se crean como parte de la configuración automatizada del proyecto y del CI/CD. p.ej. simplemente [importe su código fuente](/docs/using-jx/creating/import/) y se generará una imagen de docker + chart de Helm para usted; los desarrolladores no necesitan saber ni preocuparse si no quieren usar Helm:
+Para ayudar a automatizar CI/CD con GitOps, asumimos que los charts de Helm se crean como parte de la configuración automatizada del proyecto y del CI/CD. p.ej. simplemente [importe su código fuente](/docs/guides/using-jx/creating/import/) y se generará una imagen de docker + chart de Helm para usted; los desarrolladores no necesitan saber ni preocuparse si no quieren usar Helm:
 
 Si un desarrollador desea crear específicamente un recurso (por ejemplo, `Secret, ConfigMap`, etc.), simplemente puede hackear el YAML directamente en `charts/myapp/templates/*.yaml`. Cada vez más, la mayoría de los IDE tienen asistentes de IU para crear + editar recursos de kubernetes.
 
@@ -157,7 +157,7 @@ Luego, si desea utilizar otra herramienta de administración de configuración, 
 
 ## ¿Cómo cambio el dominio de las aplicaciones sin servidor?
 
-Si utiliza [aplicaciones sin servidor](/docs/managing-jx/tutorials/serverless-apps/) con Knative, no usaremos el mecanismo `exposecontroller` predeterminado para los recursos de `Ingress`, ya que Knative no usa los recursos `Service` de Kubernetes.
+Si utiliza [aplicaciones sin servidor](/docs/guides/tutorials/serverless-apps/) con Knative, no usaremos el mecanismo `exposecontroller` predeterminado para los recursos de `Ingress`, ya que Knative no usa los recursos `Service` de Kubernetes.
 
 Puede solucionar esto editando manualmente la configuración Knative a través de:
 
@@ -218,7 +218,7 @@ Para ver un ejemplo de dónde agregamos múltiples anotaciones y el `exposecontr
 
 ## ¿Debo usar un monorepo?
 
-Todos estamos tratando de [acelerar](/docs/overview/accelerate/) y entregar valor comercial a nuestros clientes más rápido. Es por eso que a menudo usamos los 2 equipos de pizza y microservicios como una forma de capacitar a los equipos para ir rápido; liberar microservicios de forma independiente sin necesidad de coordinación entre equipos para acelerar las cosas.
+Todos estamos tratando de [acelerar](/about/overview/accelerate/) y entregar valor comercial a nuestros clientes más rápido. Es por eso que a menudo usamos los 2 equipos de pizza y microservicios como una forma de capacitar a los equipos para ir rápido; liberar microservicios de forma independiente sin necesidad de coordinación entre equipos para acelerar las cosas.
 
 Si está desarrollando microservicios en 2 equipos de pizza separados, entonces, como [otros](https://medium.com/@mattklein123/monorepos-please-dont-e9a279be011b), no creemos que deba usar monorepos; en su lugar, use un repositorio por microservicio para que cada mciroservicio pueda liberarse en su propia cadencia de lanzamiento individual.
 
@@ -226,11 +226,11 @@ Monorepo generalmente funciona mejor cuando un solo equipo está trabajando en u
 
 ## ¿Cómo puedo utilizar un monorepo?
 
-Hemos centrado la automatización de los CI/CD en Jenkins X para ayudar a los equipos a [acelerar](/docs/overview/accelerate/) utilizando microservicios para construir aplicaciones nativas en la nube. Por lo tanto, asumimos repositorios separados para cada microservicio.
+Hemos centrado la automatización de los CI/CD en Jenkins X para ayudar a los equipos a [acelerar](/about/overview/accelerate/) utilizando microservicios para construir aplicaciones nativas en la nube. Por lo tanto, asumimos repositorios separados para cada microservicio.
 
 Si tiene un monorepo existente que desea importar a Jenkins X, puede hacerlo; solo tenga en cuenta que tendrá que crear y mantener sus propios pipelines para su monorepo. Tan solo modifíquelos en su fichero `jenkins-x.yml` después de importar su monorepo.
 
-Vea cómo [agregar un paso personalizado a su pipeline](/docs/concepts/jenkins-x-pipelines/#customizing-the-pipelines).
+Vea cómo [agregar un paso personalizado a su pipeline](/about/concepts/jenkins-x-pipelines/#customizing-the-pipelines).
 
 ## ¿Cómo se inyectan secretos de Vault en entornos de staging/production/preview?
 

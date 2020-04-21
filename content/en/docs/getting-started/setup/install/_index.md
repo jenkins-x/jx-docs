@@ -109,4 +109,4 @@ Shell:
 
 [Download the binary](https://github.com/jenkins-x/jx/releases) for `jx` and add it to your `$PATH`
 
-Or you can try [build it yourself](https://github.com/jenkins-x/jx/blob/master/docs/contributing/hacking.md). Though if build it yourself please be careful to remove any older `jx` binary so your local build is found first on the `$PATH` :)
+Or you can try [build it yourself](https://github.com/jenkins-x/jx/blob/master/docs/guides/contributing/hacking.md). Though if build it yourself please be careful to remove any older `jx` binary so your local build is found first on the `$PATH` :)

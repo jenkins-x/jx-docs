@@ -7,7 +7,7 @@ categories: [getting started]
 keywords: [cluster]
 ---
 
-{{% alert title="Tip" %}}
+{{% alert  %}}
 The EKS Terraform module for Jenkins X is published in the [Terraform Registry](https://registry.terraform.io/modules/jenkins-x/eks-jx/aws).
 The source is in the [terraform-aws-eks-jx](https://github.com/jenkins-x/terraform-aws-eks-jx) repository on GitHub.
 {{% /alert %}}
@@ -25,7 +25,7 @@ You need the following binaries locally installed and configured on your _PATH_:
 
 A default Jenkins X ready cluster can be provisioned by creating a _main.tf_ file in an empty directory with the following content:
 
-```terraform
+```
 module "eks-jx" {
   source  = "jenkins-x/eks-jx/aws"
 }
@@ -47,7 +47,7 @@ You need the id and secret for running [`jx boot`](#running-jx-boot).
 
 If you do not want Terraform to create a new IAM user or you do not have permissions to create one, you need to provide the name of an existing IAM user.
 
-```terraform
+```
 module "eks-jx" {
   source  = "jenkins-x/eks-jx/aws"
 
@@ -133,7 +133,7 @@ The following sections provide a full list of configuration in- and output varia
 
 You can choose to create S3 buckets for long term storage and enable them in the generated _jx-requirements.yml_ file with `enable_logs_storage`, `enable_reports_storage` and `enable_repository_storage`.
 
-For more information refer to the [Storage](/docs/managing-jx/common-tasks/storage/) section.
+For more information refer to the [Storage](/docs/guides/managing-jx/common-tasks/storage/) section.
 
 ## Vault
 
@@ -188,7 +188,7 @@ The following is a list of considerations for a production use case.
 
 - Specify the version attribute of the module, for example:
 
-    ```terraform
+    ```
     module "jx" {
       source  = "jenkins-x/eks-jx/aws"
       version = "1.0.0"

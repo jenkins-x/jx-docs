@@ -134,7 +134,7 @@ webhook: lighthouse
 
 ### Bitbucket Server
 
-For this specify the URL of the `gitServer` and `gitKind: bitbucketserver`. If you want to use [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/)
+For this specify the URL of the `gitServer` and `gitKind: bitbucketserver`. If you want to use [Serverless Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/)
 
 ```yaml
 cluster:
@@ -164,7 +164,7 @@ webhook: lighthouse
 
 ### Bitbucket Cloud
 
-For this specify`gitKind: bitbucketcloud`. If you want to use [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/)
+For this specify`gitKind: bitbucketcloud`. If you want to use [Serverless Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/)
 
 ```yaml
 cluster:
@@ -193,7 +193,7 @@ webhook: lighthouse
 
 ### GitLab
 
-For this specify the URL of the `gitServer` and `gitKind: gitlab`. If you want to use [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/)
+For this specify the URL of the `gitServer` and `gitKind: gitlab`. If you want to use [Serverless Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/)
 
 ```yaml
 cluster:
@@ -325,7 +325,7 @@ storage:
 
 {{< pageinfo >}}
 **NOTE** On GKE your node-pool requires additional permissions to write into GCS buckets,
-for more information on this view the [GKE Storage Permissions](https://jenkins-x.io/docs/managing-jx/common-tasks/storage/#gke-storage-permissions)
+for more information on this view the [GKE Storage Permissions](https://jenkins-x.io/docs/guides/managing-jx/common-tasks/storage/#gke-storage-permissions)
 {{< /pageinfo >}}
 For more details see the [Storage Guide](https://jenkins-x.io/architecture/storage/).
 
@@ -477,7 +477,7 @@ velero:
   namespace: velero
 ```
 
-Using whatever your cloud providers bucket URLs are. For more background, check out the [storage guide](/docs/managing-jx/common-tasks/storage/)
+Using whatever your cloud providers bucket URLs are. For more background, check out the [storage guide](/docs/guides/managing-jx/common-tasks/storage/)
 
 ## User Interface
 

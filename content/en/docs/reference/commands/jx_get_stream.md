@@ -13,7 +13,7 @@ Displays the version of a chart, package or docker image from the Version Stream
 
 Displays the version of a chart, package or docker image from the Version Stream 
 
-For more information see: https://jenkins-x.io/docs/concepts/version-stream/
+For more information see: https://jenkins-x.io/about/concepts/version-stream/
 
 ```
 jx get stream [flags]

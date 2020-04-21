@@ -50,7 +50,7 @@ jx create quickstart  -f http
 
 当你创建完成后，我们根据工程源码的语言，使用 [Jenkins X build packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) 来匹配最合适的构建。
 
-当你使用 [jx create](/zh/docs/getting-started/setup/create-cluster/)， [jx install](/docs/managing-jx/common-tasks/install-on-cluster/) 或者 [jx init](/commands/deprecation/) 时，[Jenkins X build packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) 会克隆到目录 `~/.jx/draft/packs` 中。
+当你使用 [jx create](/zh/docs/getting-started/setup/create-cluster/)， [jx install](/docs/guides/managing-jx/common-tasks/install-on-cluster/) 或者 [jx init](/commands/deprecation/) 时，[Jenkins X build packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) 会克隆到目录 `~/.jx/draft/packs` 中。
 
 例如：你可以通过下面命令查看支持的所有语言：
 
@@ -58,13 +58,13 @@ jx create quickstart  -f http
 ls -al ~/.jx/draft/packs/github.com/jenkins-x/draft-packs/packs
 ```
 
-你可以使用 [jx create spring](/zh/docs/using-jx/common-tasks/create-spring/) 或 [jx import](developing/import/) 来快速创建，这时 [Jenkins X build packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) 会进行下面的步骤：
+你可以使用 [jx create spring](/zh/docs/guides/using-jx/common-tasks/create-spring/) 或 [jx import](developing/import/) 来快速创建，这时 [Jenkins X build packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) 会进行下面的步骤：
 
 * 找到对应的语言包。当前包括 [list of language packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/tree/master/packs)。
 * 当文件不存在时，语言包会实现默认的：
   * `Dockerfile` 将程序打包为 docker 镜像
   * `Jenkinsfile` 使用申明式流水线（pipeline）实现持续构建、持续部署
-  * Helm Charts 在 Kubernetes 上部署程序，并且实现 [预发环境](/docs/concepts/features/#preview-environments)
+  * Helm Charts 在 Kubernetes 上部署程序，并且实现 [预发环境](/about/concepts/features/#preview-environments)
 
 ## 添加你自己的快速开始
 

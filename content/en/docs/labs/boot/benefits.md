@@ -17,7 +17,7 @@ weight: 80
     * This also opens the door to using boot to setup multi-team installations where multiple teams use different namespaces but share services in the same cluster
 * The new [jxl boot run](/docs/labs/boot/getting-started/run/) command runs the boot pipeline as a `Job` inside the Kubernetes cluster. This ensures consistency in tooling used and also improves security by avoiding having the secrets on a developers laptop.
 * The boot git repository is much smaller and simpler; less to keep in sync/rebase/merge with the upstream git repository. Its mostly just 2 YAML files now `jx-requirements.yml` and `jx-apps.yml` which are both pretty much specific to your cluster installation. The `jenkins-x.yml` pipeline is configured inside the build pack so usually is 1 simple line long. So there's no need for all the git merge/rebase/cherry pick logic in jx 2.x
-  * we rely more instead on the [version stream](https://jenkins-x.io/docs/concepts/version-stream/) which can be shared across installations
+  * we rely more instead on the [version stream](https://jenkins-x.io/about/concepts/version-stream/) which can be shared across installations
 * the boot process is split up into [separate phases](/docs/labs/boot/getting-started/) which makes things easier to iterate and configure:
   * [setting up the cloud resources](/docs/labs/boot/getting-started/cloud/)
   * [creating the git repository](/docs/labs/boot/getting-started/repository/)

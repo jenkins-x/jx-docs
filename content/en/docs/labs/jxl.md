@@ -32,6 +32,6 @@ So rather than forking the Jenkins X repositories or complicating the `jx` codeb
 * the [jenkins-x-labs/jxl](https://github.com/jenkins-x-labs/jxl) repository then creates a `jx` like CLI called `jxl` by importing these microservices. Currently this is static compilation but over time we'd like this to use more binary extensions.
 * we then reuse code from [jenkins-x/jx](https://github.com/jenkins-x/jx/) to fill in more details and commands
 
-We are actually using a long term feature branch, the [multicluster](https://github.com/jenkins-x/jx/tree/multicluster) branch of [jenkins-x/jx](https://github.com/jenkins-x/jx/tree/multicluster) currently in Labs. As the [Accelerate book](/docs/overview/accelerate/) describes very clearly; long term feature branches are not a habit of high performing team teams - so this is bad! 
+We are actually using a long term feature branch, the [multicluster](https://github.com/jenkins-x/jx/tree/multicluster) branch of [jenkins-x/jx](https://github.com/jenkins-x/jx/tree/multicluster) currently in Labs. As the [Accelerate book](/about/overview/accelerate/) describes very clearly; long term feature branches are not a habit of high performing team teams - so this is bad! 
 
 So our intention is to try get changes from that branch either merged upstream or the code changed in that branch moved into separate microservices we can use; so that eventually we can reuse upstream [jenkins-x/jx](https://github.com/jenkins-x/jx/) and avoid the long term feature branch. 

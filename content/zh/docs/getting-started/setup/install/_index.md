@@ -113,7 +113,7 @@ scoop update jx
 
 [下载二进制包](https://github.com/jenkins-x/jx/releases) `jx` 然后加到环境变量 `$PATH` 中
 
-或者，你可以尝试 [自行构建](https://github.com/jenkins-x/jx/blob/master/docs/contributing/hacking.md)。然而，如果你要自行构建的话，请注意移除所有旧版本的 `jx` 二进制文件，这样你的本地构建才会出现在环境变量 `$PATH` 的第一位 :)
+或者，你可以尝试 [自行构建](https://github.com/jenkins-x/jx/blob/master/docs/guides/contributing/hacking.md)。然而，如果你要自行构建的话，请注意移除所有旧版本的 `jx` 二进制文件，这样你的本地构建才会出现在环境变量 `$PATH` 的第一位 :)
 
 ## 获得帮助
 

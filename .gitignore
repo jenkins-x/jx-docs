@@ -1,4 +1,4 @@
-resources/
+/resources/
 node_modules/
 tech-doc-hugo
 jenkins-x-website

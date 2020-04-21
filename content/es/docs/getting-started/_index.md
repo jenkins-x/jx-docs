@@ -6,7 +6,7 @@ description: >
   ¿Cómo ponerse en marcha rápidamente con Jenkins X?
 ---
 
-La forma más sencilla de comenzar es a través de los [Tutoriales de Google Cloud](/es/docs/managing-jx/tutorials/google-hosted/).
+La forma más sencilla de comenzar es a través de los [Tutoriales de Google Cloud](/es/docs/guides/managing-jx/tutorials/google-hosted/).
 
 De lo contrario, primero deberá instalar la [herramienta de línea de comandos jx](/docs/getting-started/setup/install/) en su máquina.
 
@@ -14,4 +14,4 @@ Puede utilizar la [línea de comando jx](/commands/jx/#jx) para [crear un nuevo 
 
 Si ya tiene un clúster de Kubernetes existente, [instale Jenkins X en su clúster de Kubernetes](/getting-started/install-on-cluster/).
 
-Cuando tenga un clúster Kubernetes con Jenkins X instalado, consulte sus [próximos pasos](/es/docs/getting-started/next/).
+Cuando tenga un clúster Kubernetes con Jenkins X instalado, consulte sus [próximos pasos](/es/docs/getting-started/).

@@ -14,7 +14,7 @@ También puede [navegar por la Referencia de API de Recursos Personalizados](/ap
 
 ## Environments
 
-Jenkins X admite de forma nativa los [entornos](/es/docs/concepts/features/#entornos) que le permiten ser definidos para su equipo y luego consultarlos a través de [jx get environments](/commands/jx_get_environments/).
+Jenkins X admite de forma nativa los [entornos](/es/about/concepts/features/#entornos) que le permiten ser definidos para su equipo y luego consultarlos a través de [jx get environments](/commands/jx_get_environments/).
 
 ```sh
 jx get environments
@@ -42,7 +42,7 @@ Los pipelines de Jenkins X generan el recurso personalizado `Release` que podemo
 
 * qué versión, etiqueta Git y URL Git se asignan a una versión en Kubernetes/Helm
 * qué URL y registro pipeline de Jenkins se usaron para realizar el lanzamiento
-* qué compromisos, problemas y PR formaron parte de cada lanzamiento para que podamos implementar los [comentarios a medida que los problemas se solucionan en Staging/Production](/es/docs/concepts/features/#retroalimentación)
+* qué compromisos, problemas y PR formaron parte de cada lanzamiento para que podamos implementar los [comentarios a medida que los problemas se solucionan en Staging/Production](/es/about/concepts/features/#retroalimentación)
 
 ## SourceRepository
 
@@ -60,22 +60,22 @@ O cuando realiza `jx import` o `jx create quickstart` puede pasar el parámetro 
 
 ## PipelineActivity
 
-Este recurso almacena el estado del pipeline en términos de etapas de pipelines de Jenkins, más la [actividad de promoción](/es/docs/concepts/features/#promoción).
+Este recurso almacena el estado del pipeline en términos de etapas de pipelines de Jenkins, más la [actividad de promoción](/es/about/concepts/features/#promoción).
 
 Este recurso también lo utiliza el comando [jx get activities](/commands/jx_get_activities/).
 
 ## Team
 
-El recurso personalizado `Team` se crea mediante el comando [jx create team](/commands/jx_create_team/) y el controlador `team controller` lo utiliza para observar los nuevos recursos `Team` para luego crear una instalación de Jenkins X en el namespace del `teams`. Para obtener más información sobre los equipos, consulte [la función del equipo](/es/docs/concepts/features/#equipos).
+El recurso personalizado `Team` se crea mediante el comando [jx create team](/commands/jx_create_team/) y el controlador `team controller` lo utiliza para observar los nuevos recursos `Team` para luego crear una instalación de Jenkins X en el namespace del `teams`. Para obtener más información sobre los equipos, consulte [la función del equipo](/es/about/concepts/features/#equipos).
 
 ### User
 
-El recurso personalizado `User` se utiliza para admitir RBAC en los distintos [entornos](/es/docs/concepts/features/#entornos) y [vistas previas de entornos](/docs/concepts/features/#preview-environments) en equipos.
+El recurso personalizado `User` se utiliza para admitir RBAC en los distintos [entornos](/es/about/concepts/features/#entornos) y [vistas previas de entornos](/about/concepts/features/#preview-environments) en equipos.
 
 También lo utilizan el comando [jx edit userroles](/commands/jx_edit_userroles/) para cambiar los roles de usuario.
 
 ## EnvironmentRoleBinding
 
-El recurso `EnvironmentRoleBinding` es como el recurso estándar de Kubernetes [RoleBinding](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.13/#rolebinding-v1-rbac-authorization-k8s-io), pero permite la asignación de un rol a múltiples [entornos](/es/docs/concepts/features/#entornos) y [vistas previas de entornos](/docs/concepts/features/#preview-environments) en un equipo mediante el uso de un selector de entornos en el que se vinculan roles.
+El recurso `EnvironmentRoleBinding` es como el recurso estándar de Kubernetes [RoleBinding](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.13/#rolebinding-v1-rbac-authorization-k8s-io), pero permite la asignación de un rol a múltiples [entornos](/es/about/concepts/features/#entornos) y [vistas previas de entornos](/about/concepts/features/#preview-environments) en un equipo mediante el uso de un selector de entornos en el que se vinculan roles.
 
 Esto facilita la vinculación de un `Role` a todos los entornos, a todos los entornos de vista previa o a ambos o a un conjunto determinado de usuarios.

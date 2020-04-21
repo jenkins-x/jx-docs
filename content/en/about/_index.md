@@ -13,7 +13,7 @@ cascade:
 ## Concepts
 ---
 Jenkins X is designed to make it simple for developers to work to DevOps principles and best practices. The approaches taken
-are based on the comprehensive research done for the book [*ACCELERATE: Building and Scaling High Performing Technology Organisations*](https://goo.gl/vZ8BFN). You can read why we use [Accelerate](../docs/overview/accelerate/) for the principals behind Jenkins X.
+are based on the comprehensive research done for the book [*ACCELERATE: Building and Scaling High Performing Technology Organisations*](https://goo.gl/vZ8BFN). You can read why we use [Accelerate](../about/overview/accelerate/) for the principals behind Jenkins X.
 
 
 ## Principles

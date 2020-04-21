@@ -86,13 +86,13 @@ El esquema JSON de Jenkins X ya está registrado en [schemastore.org](http://sch
 </figcaption>
 </figure>
 
-Nos encantaría mejorar esta experiencia de usuario, por si te [apetece ayudar](/docs/contributing/).
+Nos encantaría mejorar esta experiencia de usuario, por si te [apetece ayudar](/docs/guides/contributing/).
 
 ## Modificaciones en IDEA
 
 Esto ya debería estar incluido de fábrica debido a que el esquema JSON de Jenkins X está registrado en [schemastore.org](http://schemastore.org/json/), por lo que editar su archivo `jenkins-x.yml` en IDEA incluirá la finalización inteligente y la validación.
 
-Nos encantaría mejorar esta experiencia de usuario, por si te [gustaría ayudar](/docs/contributing/).
+Nos encantaría mejorar esta experiencia de usuario, por si te [gustaría ayudar](/docs/guides/contributing/).
 
 ## Variables de entorno predeterminadas
 

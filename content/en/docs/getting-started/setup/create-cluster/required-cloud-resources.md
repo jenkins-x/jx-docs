@@ -25,9 +25,9 @@ If all storage options are enabled, the following buckets are created:
 {{% description-list %}}
 
 * Log bucket; Bucket for storing build logs.
-Refer to [Configuring Storage](/docs/managing-jx/common-tasks/storage#configuring-storage) for more information.
+Refer to [Configuring Storage](/docs/guides/managing-jx/common-tasks/storage#configuring-storage) for more information.
 * Report bucket; Bucket for storing test and coverage reports.
-Refer to [Configuring Storage](/docs/managing-jx/common-tasks/storage#configuring-storage) for more information.
+Refer to [Configuring Storage](/docs/guides/managing-jx/common-tasks/storage#configuring-storage) for more information.
 * Repository bucket; Bucket used for storing artifacts when using [Bucketrepo](/docs/getting-started/setup/boot/#bucketrepo).
 Bucketrepo  is a small footprint microservice that is an alternative to both Nexus and Chartmusem.
 * Velero bucket; Bucket for [Velero](https://velero.io) backups.

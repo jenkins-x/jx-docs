@@ -4,7 +4,7 @@ linktitle: Git Servers
 description: Working with different Git servers
 weight: 100
 aliases:
-  - /docs/managing-jx/common-tasks/git
+  - /docs/guides/managing-jx/common-tasks/git
 ---
 
 
@@ -46,7 +46,7 @@ e.g. to [create a new cluster](/docs/getting-started/setup/create-cluster/)
 jx create cluster gke --no-default-environments
 ```
 
-or to [install in an existing cluster](/docs/managing-jx/common-tasks/install-on-cluster/)
+or to [install in an existing cluster](/docs/guides/managing-jx/common-tasks/install-on-cluster/)
 
 ```sh
 jx install --no-default-environments
