@@ -45,7 +45,7 @@ pipeline {
 
 ## Enviar nuevas Plantillas de Pod
 
-Si está trabajando en un nuevo [paquete de compilación](/architecture/build-packs/), nos encantaría que [envíe](/docs/contributing/) una nueva plantilla de pod y podemos incluirla en la distribución Jenkins X!
+Si está trabajando en un nuevo [paquete de compilación](/architecture/build-packs/), nos encantaría que [envíe](/docs/guides/contributing/) una nueva plantilla de pod y podemos incluirla en la distribución Jenkins X!
 
 Ahora sigue las instrucciones sobre cómo hacer esto. Por favor, si algo no está claro, ven [únete a la comunidad y pregunta](/community/) ¡estaremos encantados de ayudarte!
 
@@ -70,7 +70,7 @@ p.ej. [builder-maven](https://github.com/jenkins-x/jenkins-x-builders/tree/maste
 
 Entonces, lo más simple podría ser copiar un constructor similar, como [builder-maven](https://github.com/jenkins-x/jenkins-x-builders/tree/master/builder-maven) y luego editar el `Dockerfile` para agregar las herramientas de compilación que necesite.
 
-Nos encantan las solicitudes de extracción y las [contribuciones](/docs/contributing/), así que envíe solicitudes de extracción para nuevos contenedores de compilación y plantillas de pods, ¡y estamos más que felices de [ayudar](/docs/contributing/)!
+Nos encantan las solicitudes de extracción y las [contribuciones](/docs/guides/contributing/), así que envíe solicitudes de extracción para nuevos contenedores de compilación y plantillas de pods, ¡y estamos más que felices de [ayudar](/docs/guides/contributing/)!
 
 ## Agregar sus propias Plantillas de Pod
 

@@ -5,11 +5,11 @@ description: Preguntas sobre cómo utilizar Pipelines Serverless en Jenkins X
 weight: 10
 ---
 
-Para obtener más información, consulte la guía sobre los [Pipelines Serverless Jenkins X](/es/docs/concepts/jenkins-x-pipelines/) con [Tekton](https://tekton.dev/). También está la referencia de [sintaxis de Pipelines en Jenkins X](/docs/reference/pipeline-syntax-reference/).
+Para obtener más información, consulte la guía sobre los [Pipelines Serverless Jenkins X](/es/about/concepts/jenkins-x-pipelines/) con [Tekton](https://tekton.dev/). También está la referencia de [sintaxis de Pipelines en Jenkins X](/docs/reference/pipeline-syntax-reference/).
 
 ## ¿Cómo agrego un paso personalizado?
 
-Para agregar un nuevo paso personalizado a su fichero `jenkins-x.yml`, vea [cómo utilizar jx create step](/es/docs/concepts/jenkins-x-pipelines/#personalizar-el-pipelines).
+Para agregar un nuevo paso personalizado a su fichero `jenkins-x.yml`, vea [cómo utilizar jx create step](/es/about/concepts/jenkins-x-pipelines/#personalizar-el-pipelines).
 
 ## ¿Cómo modifico un paso?
 
@@ -59,15 +59,15 @@ Para obtener más detalles, consulte [cómo modificar los pasos](/docs/reference
 
 ## ¿Cómo se comparan los pipelines de Jenkins X con los pipelines de Jenkins?
 
-Vea las [diferencias entre los Pipelines de ambos sistemas: Jenkins X y Jenkins](/es/docs/concepts/jenkins-x-pipelines/#diferencias-con-los-pipelines-de-jenkins).
+Vea las [diferencias entre los Pipelines de ambos sistemas: Jenkins X y Jenkins](/es/about/concepts/jenkins-x-pipelines/#diferencias-con-los-pipelines-de-jenkins).
 
 ## ¿Cómo obtengo el completamiento de IDE editando `jenkins-x.yml`?
 
-Vea la guía de IDE para [IDEA](/es/docs/concepts/jenkins-x-pipelines/#modificaciones-en-idea) y [VS Code](/es/docs/concepts/jenkins-x-pipelines/#modificaciones-en-vs-code).
+Vea la guía de IDE para [IDEA](/es/about/concepts/jenkins-x-pipelines/#modificaciones-en-idea) y [VS Code](/es/about/concepts/jenkins-x-pipelines/#modificaciones-en-vs-code).
 
 ## ¿Qué variables de entorno están disponibles por defecto dentro de un pipeline?
 
-Vea las [variables de entorno preestablecidas creadas para los pasos de los pipelines](/es/docs/concepts/jenkins-x-pipelines/#variables-de-entorno-predeterminadas).
+Vea las [variables de entorno preestablecidas creadas para los pasos de los pipelines](/es/about/concepts/jenkins-x-pipelines/#variables-de-entorno-predeterminadas).
 
 ## ¿Hay alguna referencia para la sintaxis?
 

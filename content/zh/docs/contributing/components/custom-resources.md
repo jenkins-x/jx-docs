@@ -10,7 +10,7 @@ Kubernetes 提供了一个叫做[自定义资源](https://kubernetes.io/docs/con
 
 ### 环境
 
-Jenkins X 原生地支持[环境](/zh/docs/concepts/features/#environments)，允许为你们团队定义环境，并通过 [jx get environments](/commands/jx_get_environments/) 查询：
+Jenkins X 原生地支持[环境](/zh/about/concepts/features/#environments)，允许为你们团队定义环境，并通过 [jx get environments](/commands/jx_get_environments/) 查询：
 
 ```sh
 jx get environments
@@ -38,11 +38,11 @@ Jenkins X 流水线生成了一个自定义资源 `发版`，我们可以用来�
 
 * 版本、git 标签、git 地址映射到 Kubernetes/Helm 中的发版
 * Jenkins 流水线地址和执行日志用于执行发布
-* 提交日志、问题和 Pull Requests 是每次发版的一部分，因此我们可以实现[在 Staging/生产环境中修复的问题反馈](/zh/docs/concepts/features/#feedback)
+* 提交日志、问题和 Pull Requests 是每次发版的一部分，因此我们可以实现[在 Staging/生产环境中修复的问题反馈](/zh/about/concepts/features/#feedback)
 
 
 ### 流水线活动
 
-该资源保存了基于 Jenkins 流水线阶段以及 [升级活动](/docs/concepts/features/#promotion) 的流水线状态
+该资源保存了基于 Jenkins 流水线阶段以及 [升级活动](/about/concepts/features/#promotion) 的流水线状态
 
 该资源还会被命令 [jx get activities](/commands/jx_get_activities/) 用到

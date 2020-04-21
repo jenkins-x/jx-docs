@@ -5,7 +5,7 @@ description: Usando Helm 3 con Jenkins X
 weight: 110
 ---
 
-Jenkins X utiliza [Helm](https://www.helm.sh/) para instalar Jenkins X e instalar las aplicaciones que cree en cada uno de los [Entornos](/docs/concepts/features/#environments) (como `Staging` y `Production`).
+Jenkins X utiliza [Helm](https://www.helm.sh/) para instalar Jenkins X e instalar las aplicaciones que cree en cada uno de los [Entornos](/about/concepts/features/#environments) (como `Staging` y `Production`).
 
 **NOTA** hasta que Helm 3 sea GA recomendamos que las personas utilicen [Helm 2.x sin Tiller](/news/helm-without-tiller/)
 
@@ -49,7 +49,7 @@ Puede ver la configuración actual para su equipo a través del comando [jx get 
 jx get helmbin
 ```
 
-Básicamente la [plantilla del pod](/docs/managing-jx/common-tasks/pod-templates/) contiene ambos binarios:
+Básicamente la [plantilla del pod](/docs/guides/managing-jx/common-tasks/pod-templates/) contiene ambos binarios:
 
 * `helm` which is a 2.x distro of helm
 * `helm3` which is a 3.x distro of helm

@@ -32,7 +32,7 @@ jxl add app flagger/flagger
 
 ```
 
-these commands will implicitly use the [version stream](https://jenkins-x.io/docs/concepts/version-stream/) configuration (via [charts/repositories.yml](https://github.com/jenkins-x/jenkins-x-versions/blob/master/charts/repositories.yml)) to determine the mapping of prefixes to repository URLs.
+these commands will implicitly use the [version stream](https://jenkins-x.io/about/concepts/version-stream/) configuration (via [charts/repositories.yml](https://github.com/jenkins-x/jenkins-x-versions/blob/master/charts/repositories.yml)) to determine the mapping of prefixes to repository URLs.
 
 Then these commands will create Pull Requests on the [jx-apps.yml](https://github.com/jenkins-x-labs/boot-helmfile-poc/blob/master/jx-apps.yml) file in your environments git repository.
 
@@ -44,7 +44,7 @@ apps:
 - name: flagger/flagger
 ``` 
 
-This keeps the configuration in the environment git repository nice and concise. The `version` of the chart is then resolved during deployment via the [version stream](https://jenkins-x.io/docs/concepts/version-stream/).
+This keeps the configuration in the environment git repository nice and concise. The `version` of the chart is then resolved during deployment via the [version stream](https://jenkins-x.io/about/concepts/version-stream/).
 
 ### Adding new kubernetes resources
 
@@ -80,9 +80,9 @@ e.g. to customise a chart such as `nginx-ingress` you can create a file at `apps
 
 You can also use a file called `values.yaml.gotmpl` if you wish to use go templating of the values file. For example this lets you reference properties from the `jx-requirements.yml` file via expressions like `{{ .Values.jxRequirements.ingress.domain }}`. You can also reference the shared secrets in your `values.yaml.gotmpl` file via `{{ .Values.secrets.pipelineUser.username }}`.
 
-To see an example of this in action check out the [apps/jenkins-x/tekton/values.yaml.gotmpl](https://github.com/jenkins-x/jenkins-x-versions/tree/master/apps/jenkins-x/tekton/values.yaml.gotmpl) file in the [version stream](https://jenkins-x.io/docs/concepts/version-stream/).
+To see an example of this in action check out the [apps/jenkins-x/tekton/values.yaml.gotmpl](https://github.com/jenkins-x/jenkins-x-versions/tree/master/apps/jenkins-x/tekton/values.yaml.gotmpl) file in the [version stream](https://jenkins-x.io/about/concepts/version-stream/).
 
-Note that many apps are already configured to make use of the `jx-requirements.yml` settings via the [version stream](https://jenkins-x.io/docs/concepts/version-stream/) - but you are free to add your own custom configuration. 
+Note that many apps are already configured to make use of the `jx-requirements.yml` settings via the [version stream](https://jenkins-x.io/about/concepts/version-stream/) - but you are free to add your own custom configuration. 
 
 ### Removing apps
 

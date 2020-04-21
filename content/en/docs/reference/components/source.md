@@ -5,17 +5,17 @@ description: The location of the various source code repositories
 parent: "components"
 weight: 400
 aliases:
-  - /docs/managing-jx/common-tasks/source
+  - /docs/guides/managing-jx/common-tasks/source
 ---
 
-Jenkins X is built on the shoulders of giants and also has lots of different source repositories to make various things from CLI tools, docker images, helm charts and [addon Apps](/docs/contributing/addons/)
+Jenkins X is built on the shoulders of giants and also has lots of different source repositories to make various things from CLI tools, docker images, helm charts and [addon Apps](/docs/guides/contributing/addons/)
 
 This page lists the main organisations and repositories.
 
 ## Organisations
 
 * [jenkins-x](https://github.com/jenkins-x) the main organisation for source code
-* [jenkins-x-apps](https://github.com/jenkins-x-apps) contains the standard  [addon Apps](/docs/contributing/addons/) for Jenkins X
+* [jenkins-x-apps](https://github.com/jenkins-x-apps) contains the standard  [addon Apps](/docs/guides/contributing/addons/) for Jenkins X
 * [jenkins-x-buildpacks](https://github.com/jenkins-x-buildpacks) contains the available [build packs](/docs/reference/components/build-packs//)
 * [jenkins-x-charts](https://github.com/jenkins-x-charts) the main helm charts we distribute
 * [jenkins-x-images](https://github.com/jenkins-x-images) contains some custom docker image builds
@@ -30,7 +30,7 @@ Here we'll call out of some of the main repositories in the above organisations:
 * [jenkins-x/jx-docs](https://github.com/jenkins-x/jx-docs) the Hugo based documentation which generates this website
 * [jenkins-x/bdd-jx](https://github.com/jenkins-x/bdd-jx) the BDD tests we use to verify the platform changes and verify PRs on [jenkins-x/jx](https://github.com/jenkins-x/jx)
 * [jenkins-x/jenkins-x-platform](https://github.com/jenkins-x/jenkins-x-platform) the main composite helm chart for the Jenkins X platform
-* [jenkins-x/jenkins-x-versions](https://github.com/jenkins-x/jenkins-x-versions) contains the [version stream](/docs/concepts/version-stream/) - the stable versions of all _charts_ and CLI _packages_
+* [jenkins-x/jenkins-x-versions](https://github.com/jenkins-x/jenkins-x-versions) contains the [version stream](/about/concepts/version-stream/) - the stable versions of all _charts_ and CLI _packages_
 * [jenkins-x/jenkins-x-boot-config](https://github.com/jenkins-x/jenkins-x-boot-config) the default boot configuration for a `jx boot` based install
  
 ### Build pods and images

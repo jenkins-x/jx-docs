@@ -7,7 +7,7 @@ categories: [getting started]
 keywords: [cluster]
 ---
 
-{{% alert title="Tip" %}}
+{{% alert %}}
 The GKE Terraform module for Jenkins X is published in the [Terraform Registry](https://registry.terraform.io/modules/jenkins-x/jx/google).
 The source is in the [terraform-google-jx](https://github.com/jenkins-x/terraform-google-jx) repository on GitHub.
 {{% /alert %}}
@@ -41,7 +41,7 @@ Last but not least, ensure you have the following binaries installed:
 
 A default Jenkins X ready cluster can be provisioned by creating a file _main.tf_ in an empty directory with the following content:
 
-```terraform
+```
 module "jx" {
   source  = "jenkins-x/jx/google"
 
@@ -97,8 +97,8 @@ The following two paragraphs provide the full list of configuration and output v
 | velero\_namespace | Kubernetes namespace for Velero | `string` | `"velero"` | no |
 | velero\_schedule | The Velero backup schedule in cron notation to be set in the Velero Schedule CRD (see [default-backup.yaml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/systems/velero-backups/templates/default-backup.yaml)) | `string` | `"0 * * * *"` | no |
 | velero\_ttl | The the lifetime of a velero backup to be set in the Velero Schedule CRD (see [default-backup.yaml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/systems/velero-backups/templates/default-backup)) | `string` | `"720h0m0s"` | no |
-| version\_stream\_ref | The git ref for version stream to use when booting Jenkins X. See https://jenkins-x.io/docs/concepts/version-stream/ | `string` | `"master"` | no |
-| version\_stream\_url | The URL for the version stream to use when booting Jenkins X. See https://jenkins-x.io/docs/concepts/version-stream/ | `string` | `"https://github.com/jenkins-x/jenkins-x-versions.git"` | no |
+| version\_stream\_ref | The git ref for version stream to use when booting Jenkins X. See https://jenkins-x.io/about/concepts/version-stream/ | `string` | `"master"` | no |
+| version\_stream\_url | The URL for the version stream to use when booting Jenkins X. See https://jenkins-x.io/about/concepts/version-stream/ | `string` | `"https://github.com/jenkins-x/jenkins-x-versions.git"` | no |
 | webhook | Jenkins X webhook handler for git provider | `string` | `"prow"` | no |
 | zone | Zone in which to create the cluster | `string` | `"us-central1-a"` | no |
 
@@ -142,7 +142,7 @@ The following is a list of considerations for a production usecase.
 
 - Specify the version attribute of the module, for example:
 
-    ```terraform
+    ```
     module "jx" {
       source  = "jenkins-x/jx/google"
       version = "1.2.4"

@@ -84,7 +84,7 @@ La fuente de estos proyectos de Inicio Rápido se mantiene en [la organización 
 
 Al igual que con los inicios rápidos convencionales de Jenkins-X, utilizamos [los paquetes de compilación Jenkins X](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) para que utilizar el paquete adecuado para el proyecto utilizando el lenguaje de código fuente y los tipos frameworks de aprendizaje automático para elegir la combinación más adecuada.
 
-Cuando utilice [jx create](/es/docs/getting-started/setup/create-cluster/), [jx install](/docs/managing-jx/common-tasks/install-on-cluster/) o [jx init](/commands/deprecation/), [los paquetes de compilación de Jenkins X](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) serán clonados en su carpeta local `~/.jx/draft/packs`.
+Cuando utilice [jx create](/es/docs/getting-started/setup/create-cluster/), [jx install](/docs/guides/managing-jx/common-tasks/install-on-cluster/) o [jx init](/commands/deprecation/), [los paquetes de compilación de Jenkins X](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) serán clonados en su carpeta local `~/.jx/draft/packs`.
 
 Entonces, cuando creas un proyecto de inicio rápido de aprendizaje automático, [los paquetes de compilación de Jenkins X](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) son utilizado para:
 
@@ -92,7 +92,7 @@ Entonces, cuando creas un proyecto de inicio rápido de aprendizaje automático,
 * el paquete de lenguaje es utilizado para seleccionar los siguientes ficheros correspondientes si no existen:
   * `Dockerfile` para crear la imagen Docker de la aplicación
   * `jenkins-x.yml` para implementar los pipelines CI/CD utilizando pipelines declarativos como código
-  * Charts Helms para desplegar la aplicación en Kubernetes y para implementar [Vistas Previas de Entornos](/es/docs/concepts/features/#entornos-de-vista-previa).
+  * Charts Helms para desplegar la aplicación en Kubernetes y para implementar [Vistas Previas de Entornos](/es/about/concepts/features/#entornos-de-vista-previa).
 
 ## Adicionar tus propios Inicios Rápidos
 

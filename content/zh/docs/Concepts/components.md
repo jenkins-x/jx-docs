@@ -7,10 +7,10 @@ description: 典型 Jenkins X 安装中的组件概览
 Jenkins X 安装的包括：
 
 * 每个团队一个开发环境，也就是 [kubernetes 命名空间](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/)
-* 零或多个其它 [永久环境](/zh/docs/concepts/features/#environments) 
+* 零或多个其它 [永久环境](/zh/about/concepts/features/#environments) 
   * 为每个团队获取各自开箱即用的 `Staging` 和 `生产` 环境
   * 每个团队可以按照需要有很多环境，并依据习惯命名
-* 可选的 [预览环境](/zh/docs/concepts/features/#preview-environments) 
+* 可选的 [预览环境](/zh/about/concepts/features/#preview-environments) 
 
 通常，每个环境会关联对应不同的 [kubernetes 命名空间](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/) ，以确保环境之间干净隔离。
 
@@ -20,7 +20,7 @@ Jenkins X 安装的包括：
 
 在开发环境中，我们安装了很多必要的最小核心应用，才能启动基于 Kubernetes 的 CI/CD。
 
-我们还支持 [addons](/zh/docs/concepts/features/#applications) 扩展核心套件。
+我们还支持 [addons](/zh/about/concepts/features/#applications) 扩展核心套件。
 
 Jenkins X 的配置把这些服务连接起来，就可以直接工作了。这样就神奇地把 Kubernetes 的密码、环境遍历和配置文件全部配置好并可以工作了。
 
@@ -32,13 +32,13 @@ Jenkins X 的配置把这些服务连接起来，就可以直接工作了。这�
 
 ## 永久环境
 
-这些[环境](/zh/docs/concepts/features/#environments)，像 `Staging` 和 `Production` 使用 GitOps 来管理他们，因此，每个都有一个包含配置所有应用和服务以及要部署的位置信息的源码的 git 仓库。
+这些[环境](/zh/about/concepts/features/#environments)，像 `Staging` 和 `Production` 使用 GitOps 来管理他们，因此，每个都有一个包含配置所有应用和服务以及要部署的位置信息的源码的 git 仓库。
 
 通常，我们使用 git 仓库中的 Helm charts 来定义哪些 charts 要被安装，它们的版本，环境的具体配置，以及附加资源（例如：Secrets 或 像 Prometheus 可运行的应用等）
 
 ## 预览环境
 
-[预览环境](/zh/docs/concepts/features/#preview-environments) 和[永久环境](/zh/docs/concepts/features/#environments) 类似，都在源码中使用 Helm charts 定义。
+[预览环境](/zh/about/concepts/features/#preview-environments) 和[永久环境](/zh/about/concepts/features/#environments) 类似，都在源码中使用 Helm charts 定义。
 
 主要的不同之处，是预览环境配置在应用的源码的 `./chart/preview` 目录中。
 

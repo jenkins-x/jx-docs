@@ -5,7 +5,7 @@ description: 升级你的应用新版本到环境
 ---
 
 
-Jenkins X 的升级策略配置为 `Auto` 时，持续部署流水线通过配置好的[环境](/zh/docs/concepts/features/#promotion)来自动化[升级](/zh/docs/concepts/features/#promotion)版本。默认情况下，`Staging` 环境使用自动升级，`生产`环境使用`手动`升级。
+Jenkins X 的升级策略配置为 `Auto` 时，持续部署流水线通过配置好的[环境](/zh/about/concepts/features/#promotion)来自动化[升级](/zh/about/concepts/features/#promotion)版本。默认情况下，`Staging` 环境使用自动升级，`生产`环境使用`手动`升级。
 
 
 要手动升级应用的一个版本到特定环境上，可以使用命令 [jx promote](/commands/jx_promote/)。

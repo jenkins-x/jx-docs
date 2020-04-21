@@ -9,11 +9,11 @@ Jenkins X proporciona CI/CD automatizado para las bibliotecas y microservicios q
 
 Jenkins X ahora tiene una [aplicación Jenkins](https://github.com/jenkins-x-apps/jx-app-jenkins) que facilita agregar uno o más servidores Jenkins personalizados a su equipo y utilizar el servidor Jenkins personalizado para implementar cualquier pipeline personalizado que haya desarrollado.
 
-**NOTA** la aplicación Jenkins está diseñada solo para ejecutar pipelines personalizadas de `Jenkinsfile` que haya desarrollado a mano; no es un motor de ejecución para los pipelines automatizadas de CI/CD en Jenkins X para cargas de trabajo de Kubernetes; para eso realmente recomendamos los [pipelines de Jenkins X sin servidor](/es/docs/concepts/jenkins-x-pipelines/), pero también puede usar un servidor Jenkins estático incorporado.
+**NOTA** la aplicación Jenkins está diseñada solo para ejecutar pipelines personalizadas de `Jenkinsfile` que haya desarrollado a mano; no es un motor de ejecución para los pipelines automatizadas de CI/CD en Jenkins X para cargas de trabajo de Kubernetes; para eso realmente recomendamos los [pipelines de Jenkins X sin servidor](/es/about/concepts/jenkins-x-pipelines/), pero también puede usar un servidor Jenkins estático incorporado.
 
 ## ¿Por qué Jenkins personalizado?
 
-Esta aplicación le permite mantener su inversión en sus pipelines de Jenkins existentes, invocándolas en un Servidor Jenkins personalizado de su propia elección y configuración mientras comienza a usar más CI/CD automatizado en Jenkins X para nuevas bibliotecas y microservicios utilizando [Pipelines de Jenkins sin servidor X](/docs/concepts/jenkins-x-pipelines/) o el servidor estático incorporado de Jenkins en Jenkins X.
+Esta aplicación le permite mantener su inversión en sus pipelines de Jenkins existentes, invocándolas en un Servidor Jenkins personalizado de su propia elección y configuración mientras comienza a usar más CI/CD automatizado en Jenkins X para nuevas bibliotecas y microservicios utilizando [Pipelines de Jenkins sin servidor X](/about/concepts/jenkins-x-pipelines/) o el servidor estático incorporado de Jenkins en Jenkins X.
 
 Luego puede mezclar y combinar entre el CI/CD automatizado en Jenkins X y sus pipelines personalizadas de Jenkins, ¡todo bien organizado junto con Jenkins X!
 
@@ -50,7 +50,7 @@ Luego podrá ver su usuario/contraseña en la pantalla si lo desea para para reg
 
 ## Usando el Jenkins personalizado
 
-El comando `jx` que funciona con servidores Jenkins puede funcionar directamente con su nuevo servidor Jenkins personalizado; aunque debe especificar que desea interactuar con un servidor Jenkins personalizado en lugar del motor de ejecución incorporado en Jenkins X (p.ej, [Pipelines de Jenkins X sin servidor](/docs/concepts/jenkins-x-pipelines/) o el servidor Jenkins incorporado dentro de Jenkins X)
+El comando `jx` que funciona con servidores Jenkins puede funcionar directamente con su nuevo servidor Jenkins personalizado; aunque debe especificar que desea interactuar con un servidor Jenkins personalizado en lugar del motor de ejecución incorporado en Jenkins X (p.ej, [Pipelines de Jenkins X sin servidor](/about/concepts/jenkins-x-pipelines/) o el servidor Jenkins incorporado dentro de Jenkins X)
 
 Si solo tiene una aplicación Jenkins personalizada en su equipo, puede usar `-m` para especificar que desea trabajar con un servidor Jenkins personalizado. De lo contrario, puede especificar `-n myjenkinsname`.
 
@@ -70,4 +70,4 @@ jx start pipeline -m
 
 ## Administrar servidores Jenkins personalizados a través de GitOps
 
-Hemos diseñado la aplicación Jenkins para Jenkins X utilizando el [framework de extensión de la aplicación](/docs/contributing/addons/), lo que significa que puede administrar sus servidores Jenkins personalizados a través de [GitOps](/docs/managing-jx/common-tasks/manage-via-gitops/), manteniendo todas las aplicaciones, su versión y configuración en git y utilizando las herramientas Jenkins X para agregar/actualizar/configurar/eliminar sus aplicaciones.
+Hemos diseñado la aplicación Jenkins para Jenkins X utilizando el [framework de extensión de la aplicación](/docs/guides/contributing/addons/), lo que significa que puede administrar sus servidores Jenkins personalizados a través de [GitOps](/docs/guides/managing-jx/common-tasks/manage-via-gitops/), manteniendo todas las aplicaciones, su versión y configuración en git y utilizando las herramientas Jenkins X para agregar/actualizar/configurar/eliminar sus aplicaciones.

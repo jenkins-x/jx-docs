@@ -18,7 +18,7 @@ Imports a local folder or Git repository into Jenkins X.
   
       You can specify the git URL as an argument.
   
-      For more documentation see: [https://jenkins-x.io/docs/using-jx/creating/import/](https://jenkins-x.io/docs/using-jx/creating/import/)
+      For more documentation see: [https://jenkins-x.io/docs/guides/using-jx/creating/import/](https://jenkins-x.io/docs/guides/using-jx/creating/import/)
   
 See Also: 
 

@@ -386,7 +386,7 @@ git push --set-upstream <YOUR-GITHUB-USERNAME> <BRANCHNAME>
 
 [codecademy]: https://www.codecademy.com/learn/learn-git
 [contributors]: https://github.com/jenkins-x/jx/graphs/contributors
-[docscontrib]: /docs/contributing/documentation/
+[docscontrib]: /docs/guides/contributing/documentation//
 [forums]: https://discourse.jenkins-x.io
 [gitbook]: https://git-scm.com/
 [gobootcamp]: http://www.golangbootcamp.com/book/get_setup

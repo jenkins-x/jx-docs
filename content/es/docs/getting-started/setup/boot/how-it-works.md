@@ -15,9 +15,9 @@ Si está utilizando GitOps, esperamos automatizar la gestión de la carpeta [rep
 
 ## Pipeline
 
-El proceso de instalación/actualización está definido en un [Jenkins X Pipeline](/es/docs/concepts/jenkins-x-pipelines/) en el fichero con nombre [jenkins-x.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jenkins-x.yml).
+El proceso de instalación/actualización está definido en un [Jenkins X Pipeline](/es/about/concepts/jenkins-x-pipelines/) en el fichero con nombre [jenkins-x.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jenkins-x.yml).
 
-Lo típico es que no tenga que modificar este fichero, pero si necesitas hacerlo revisa primero [esta guía](/es/docs/concepts/jenkins-x-pipelines/#personalizar-el-pipelines).
+Lo típico es que no tenga que modificar este fichero, pero si necesitas hacerlo revisa primero [esta guía](/es/about/concepts/jenkins-x-pipelines/#personalizar-el-pipelines).
 
 ## Configuración
 

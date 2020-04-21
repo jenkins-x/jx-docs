@@ -1,11 +1,16 @@
 ---
 title: Labs
 linktitle: Labs
-type: docs
 description: Labs enhancements
-weight: 6
+
 aliases:
   - /labs
+
+type: docs
+menu:
+  docs:
+    title: "Reference"
+
 ---
 {{% alert %}}
 **NOTE: This current experiment is now closed. The work done and feedback we have received will be used to enhance Jenkins X in future versions**

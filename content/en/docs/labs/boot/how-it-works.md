@@ -48,7 +48,7 @@ This is all done by the [jx step create helmfile](https://jenkins-x.io/commands/
 
 #### Defaulting configuration
 
-In an effort to try streamline the users boot configuration repository, we've tried to put as much common configuration into the [version stream](https://jenkins-x.io/docs/concepts/version-stream/) as possible. 
+In an effort to try streamline the users boot configuration repository, we've tried to put as much common configuration into the [version stream](https://jenkins-x.io/about/concepts/version-stream/) as possible. 
 
 For example the default `namespace` for a chart and the `phase` (whether its installed via the `system` helmfile or the default `apps` helmfile) can be specified in the `defaults.yml` file in the version stream. e.g. here's where we define the [apps/stable/nginx-ingress/defaults.yml](https://github.com/jenkins-x/jenkins-x-versions/blob/master/apps/stable/nginx-ingress/defaults.yml) for `nginx-ingress`. This keeps the actual `jx-apps.yml` nice and simple...
 
@@ -79,7 +79,7 @@ So to do something similar in helmfile and helm 3 you could create an `apps/tekt
 
 However usually these `values.yaml*` files we write for each chart are bindings to the `jx-requirements.yml` and secrets and they usually don't change between cluster installations. 
 
-So we've allowed these files to be stored in the [version stream](https://jenkins-x.io/docs/concepts/version-stream/) instead. e.g. here's the [apps/jenkins-x/tekton/values.yaml.gotmpl](https://github.com/jenkins-x/jenkins-x-versions/tree/master/apps/jenkins-x/tekton/values.yaml.gotmpl) file to customise the `tekton` chart for use in Jenkins X with helmfile and helm 3.
+So we've allowed these files to be stored in the [version stream](https://jenkins-x.io/about/concepts/version-stream/) instead. e.g. here's the [apps/jenkins-x/tekton/values.yaml.gotmpl](https://github.com/jenkins-x/jenkins-x-versions/tree/master/apps/jenkins-x/tekton/values.yaml.gotmpl) file to customise the `tekton` chart for use in Jenkins X with helmfile and helm 3.
 
 This helps keep the git repository for your (dev) environment much smaller and easier to manage. You can still override the `values.yaml*` files for any app if you want inside your boot config git repository though..
  

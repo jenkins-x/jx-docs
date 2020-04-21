@@ -5,7 +5,7 @@ description: Promueva las nuevas versiones de su aplicación hacia los entornos
 weight: 4
 ---
 
-Los Pipelines de Entrega Continua de Jenkins X automatizan la [promoción](/es/docs/concepts/features/#promoción) de cambio de versiones a través de cada [Entorno](/es/docs/concepts/features/#entornos). Cada Entorno se encuentra configurado con la propiedad _estrategia de promoción_ en `Auto`. La configuración pre-establecida para los entornos es:
+Los Pipelines de Entrega Continua de Jenkins X automatizan la [promoción](/es/about/concepts/features/#promoción) de cambio de versiones a través de cada [Entorno](/es/about/concepts/features/#entornos). Cada Entorno se encuentra configurado con la propiedad _estrategia de promoción_ en `Auto`. La configuración pre-establecida para los entornos es:
 
 * El entorno `Staging` utiliza promoción automática
 * El entorno `Production` utiliza promoción `Manual`

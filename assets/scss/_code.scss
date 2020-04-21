@@ -1,0 +1,56 @@
+// Code formatting.
+
+.td-content {
+	// Highlighted code.
+    .highlight {
+  
+        @extend .card;
+        
+        margin: 2rem 0;
+        padding: 1rem;
+        border: none;
+        background-color: transparent;
+
+        pre, div {
+            background-color: transparent !important;
+        }
+
+        pre {
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    // Inline code
+    p code, li > code, table code {
+        color: inherit;
+        padding: 0.2em 0.4em;
+        margin: 0;
+        font-size: 85%;
+        word-break: normal;
+        border-radius: 0;
+        border: none;
+
+        br {
+            display: none;
+        }
+    }
+
+
+    // Code blocks
+    pre {
+        word-wrap: normal;
+        background-color: transparent;
+        padding: $spacer;
+     
+
+        > code {
+            padding: 15px;
+            margin: 0;
+            font-size: 100%;
+            word-break: normal;
+            white-space: pre;
+            border: 0;
+        }
+    }
+}

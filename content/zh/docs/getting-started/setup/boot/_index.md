@@ -112,13 +112,13 @@ Vault的最大优势在于同一个团队的人可以轻松地在同一群集上
 
 ## Webhook
 
-Jenkins X 支持许多用于处理Webhook的引擎，还可以选择支持[ChatOps](/docs/using-jx/faq/chatops/).
+Jenkins X 支持许多用于处理Webhook的引擎，还可以选择支持[ChatOps](/docs/guides/using-jx/faq/chatops/).
 
-[Prow](/docs/reference/components/prow/) 和 [Lighthouse](/architecture/lighthouse/) 可以支持webhooks的方式和 [ChatOps](/docs/using-jx/faq/chatops/)。 但是Jenkins只能支持 webhooks.
+[Prow](/docs/reference/components/prow/) 和 [Lighthouse](/architecture/lighthouse/) 可以支持webhooks的方式和 [ChatOps](/docs/guides/using-jx/faq/chatops/)。 但是Jenkins只能支持 webhooks.
 
 ### Prow
 
-当用户选择 [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) 的安装方式，安装后Jenkins X服务会使用 [Tekton](https://tekton.dev/)的流水线引擎和GitHub的git服务。 [Prow](/docs/reference/components/prow/) 是默认的webhook和[ChatOps](/docs/using-jx/faq/chatops/)的引擎。 
+当用户选择 [Serverless Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) 的安装方式，安装后Jenkins X服务会使用 [Tekton](https://tekton.dev/)的流水线引擎和GitHub的git服务。 [Prow](/docs/reference/components/prow/) 是默认的webhook和[ChatOps](/docs/guides/using-jx/faq/chatops/)的引擎。 
  
 它的配置方式在 `jx-requirements.yml` 里 `webhook: prow` 
 
@@ -142,9 +142,9 @@ webhook: prow
 
 ### Lighthouse
 
- 当用户选择 [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) 和 [Tekton](https://tekton.dev/) 的安装方式，但是没有采用 github的服务而是其他git服务的时候， [Lighthouse](/architecture/lighthouse/) 变成了默认的webhook和[ChatOps](/docs/using-jx/faq/chatops/)引擎。现在Prow的开源软件只支持github的Git服务。
+ 当用户选择 [Serverless Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) 和 [Tekton](https://tekton.dev/) 的安装方式，但是没有采用 github的服务而是其他git服务的时候， [Lighthouse](/architecture/lighthouse/) 变成了默认的webhook和[ChatOps](/docs/guides/using-jx/faq/chatops/)引擎。现在Prow的开源软件只支持github的Git服务。
 
-以后如果Lighthouse开源软件经过了充分的测试后更加稳定，我们会将它设为默认 [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/)。
+以后如果Lighthouse开源软件经过了充分的测试后更加稳定，我们会将它设为默认 [Serverless Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/)。
  
 Its configured via the `webhook: lighthouse` in `jx-requirements.yml`
 
@@ -230,7 +230,7 @@ webhook: lighthouse
 
 ### Bitbucket Server
 
-您要指定 `gitServer` 和 `gitKind: bitbucketserver`. 如果您安装的是 [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) 和 [Tekton](https://tekton.dev/)， 您需要通过指定 `webhook: lighthouse` 来使用[lighthouse webhook](#webhook)。   
+您要指定 `gitServer` 和 `gitKind: bitbucketserver`. 如果您安装的是 [Serverless Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) 和 [Tekton](https://tekton.dev/)， 您需要通过指定 `webhook: lighthouse` 来使用[lighthouse webhook](#webhook)。   
 
 ```yaml   
 cluster:
@@ -260,7 +260,7 @@ webhook: lighthouse
 
 ### Bitbucket Cloud
 
-您要指定 `gitKind: bitbucketcloud`. 如果您安装的是 [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) 和 [Tekton](https://tekton.dev/)， 您需要通过指定 `webhook: lighthouse` 来使用[lighthouse webhook](#webhook)。
+您要指定 `gitKind: bitbucketcloud`. 如果您安装的是 [Serverless Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) 和 [Tekton](https://tekton.dev/)， 您需要通过指定 `webhook: lighthouse` 来使用[lighthouse webhook](#webhook)。
 
 ```yaml   
 cluster:
@@ -290,7 +290,7 @@ webhook: lighthouse
 
 ### Gitlab
 
-您要指定 `gitServer` 的URL 和 `gitKind: gitlab`. 如果您安装的是 [Serverless Jenkins X Pipelines](/docs/concepts/jenkins-x-pipelines/) 和 [Tekton](https://tekton.dev/)， 您需要通过指定 `webhook: lighthouse` 来使用[lighthouse webhook](#webhook)。
+您要指定 `gitServer` 的URL 和 `gitKind: gitlab`. 如果您安装的是 [Serverless Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) 和 [Tekton](https://tekton.dev/)， 您需要通过指定 `webhook: lighthouse` 来使用[lighthouse webhook](#webhook)。
 
 ```yaml   
 cluster:
@@ -372,7 +372,7 @@ storage:
     url: gs://my-repo
 ```
 
-For more details see the [Storage Guide](/docs/managing-jx/common-tasks/storage/).
+For more details see the [Storage Guide](/docs/guides/managing-jx/common-tasks/storage/).
 
 ## Ingress
 

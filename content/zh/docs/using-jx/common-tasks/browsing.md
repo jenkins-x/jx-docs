@@ -100,7 +100,7 @@ jx get applications -e staging
 
 ### 环境
 
-为了查看你们团队中的 [环境](/zh/docs/concepts/features/#environments)，使用 [jx get environments](/commands/jx_get_environments/)：
+为了查看你们团队中的 [环境](/zh/about/concepts/features/#environments)，使用 [jx get environments](/commands/jx_get_environments/)：
 
 ```sh
 jx get environments

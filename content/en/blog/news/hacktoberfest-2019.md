@@ -32,11 +32,11 @@ All pull requests will count towards your Hacktoberfest challenge. Issues labell
 
 Jenkins X is an open source project and we welcome new contributors. There are plenty of [open issues](https://github.com/jenkins-x/jx/issues), and we welcome your help in making Jenkins X even more awesome. 
 
-Jenkins X is written largely in Go, but you don't need to be an expert to contribute! If you are new to the project, search for issues labelled "good-first-issue", a number of which we've also given the ["hacktoberfest" label](https://github.com/jenkins-x/jx/labels/hacktoberfest). Our [Contributing Guide](https://jenkins-x.io/docs/contributing/code/) has advice for getting started with contributing to Jenkins X.
+Jenkins X is written largely in Go, but you don't need to be an expert to contribute! If you are new to the project, search for issues labelled "good-first-issue", a number of which we've also given the ["hacktoberfest" label](https://github.com/jenkins-x/jx/labels/hacktoberfest). Our [Contributing Guide](https://jenkins-x.io/docs/guides/contributing/code/) has advice for getting started with contributing to Jenkins X.
 
 ### Contribute to the docs
 
-We welcome your help in making the Jenkins X documenation better. If you see areas of the documentation that need fixing or augmentation please raise a pull request! Our guide for [Contributing to the Documentation](https://jenkins-x.io/docs/contributing/documentation/) has advice for getting started with contributing to the Jenkins X docs.
+We welcome your help in making the Jenkins X documenation better. If you see areas of the documentation that need fixing or augmentation please raise a pull request! Our guide for [Contributing to the Documentation](https://jenkins-x.io/docs/guides/contributing/documentation//) has advice for getting started with contributing to the Jenkins X docs.
 
 ### Ask us questions
 

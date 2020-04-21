@@ -78,7 +78,7 @@ jx create spring
 
 7. La aplicación le mostrará para inicializar el repositorio Git.
 
-Esta es una [demostración utilizando el comando jx create spring](/docs/getting-started/demos-talks-posts/create_spring/).
+Esta es una [demostración utilizando el comando jx create spring](/docs/resources/demos-talks-posts/create_spring/).
 
 También puede adicionar algunas opciones al comado `jx create` como por ejemplo, especificar las dependencias:
 

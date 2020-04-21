@@ -31,7 +31,7 @@ Talk to us on our slack channels, which are part of the Kubernetes slack. Join K
 
 It will be lots of fun!
 
-Check out the [contribution guide](/docs/contributing/) for some tips on how to get started.
+Check out the [contribution guide](/docs/guides/contributing/) for some tips on how to get started.
 
 ### Office Hours
 

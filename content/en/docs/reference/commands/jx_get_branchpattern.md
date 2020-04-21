@@ -13,7 +13,7 @@ Display the git branch patterns for the current Team used on creating and import
 
 Display the git branch patterns for the current Team used on creating and importing projects 
 
-For more documentation see: https://jenkins-x.io/docs/using-jx/creating/import/#branch-patterns
+For more documentation see: https://jenkins-x.io/docs/guides/using-jx/creating/import/#branch-patterns
 
 ```
 jx get branchpattern [flags]
