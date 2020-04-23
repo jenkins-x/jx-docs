@@ -8,18 +8,18 @@ keywords: [cluster]
 ---
 
 {{% alert title="Tip" %}}
-The GKE Terraform Module for Jenkins X is published in the [Terraform Registry](https://registry.terraform.io/modules/jenkins-x/jx/google).
+The GKE Terraform module for Jenkins X is published in the [Terraform Registry](https://registry.terraform.io/modules/jenkins-x/jx/google).
 The source is in the [terraform-google-jx](https://github.com/jenkins-x/terraform-google-jx) repository on GitHub.
 {{% /alert %}}
 
 ## Prerequisites
 
-To create your GKE cluster, you need first a Google Cloud project.
-Instructions on how to setup a project can be found in the Google Cloud [documentation](https://cloud.google.com/deployment-manager/docs/step-by-step-guide/installation-and-setup).
-You need your Google Cloud project id as input for using the Terraform Module.
+To use the GKE Terraform module for Jenkins X, you need a Google Cloud project.
+Instructions on how to setup such a project can be found in the  [Google Cloud Installation and Setup](https://cloud.google.com/deployment-manager/docs/step-by-step-guide/installation-and-setup) guide.
+You need your Google Cloud project id as an input variable for using this module.
 
 You also need to install the Cloud SDK, in particular `gcloud`.
-You find instructions on how to install and authenticate in the documentation mentioned above.
+You find instructions on how to install and authenticate in the [Google Cloud Installation and Setup](https://cloud.google.com/deployment-manager/docs/step-by-step-guide/installation-and-setup) guide as well.
 
 Once you have `gcloud` installed, you need to create [Application Default Credentials](https://cloud.google.com/sdk/gcloud/reference/auth/application-default/login) by running:
 
@@ -27,7 +27,9 @@ Once you have `gcloud` installed, you need to create [Application Default Creden
 gcloud auth application-default login
 ```
 
-Finally, ensure you have the following binaries installed:
+Alternatively, you can export the environment variable _GOOGLE_APPLICATION_CREDENTIALS_ referencing the path to a Google Cloud [service account key file](https://cloud.google.com/iam/docs/creating-managing-service-account-keys).
+
+Last but not least, ensure you have the following binaries installed:
 
 - `gcloud`
 - `kubectl` ~> 1.14.0
@@ -35,11 +37,11 @@ Finally, ensure you have the following binaries installed:
 - `terraform` ~> 0.12.0
     - Terraform installation instruction can be found [here](https://learn.hashicorp.com/terraform/getting-started/install)
 
-## Cluster creation
+## Cluster provisioning
 
-A default Jenkins X ready cluster can be provisioned by creating a file _main.tf_ with the following content in an empty directory:
+A default Jenkins X ready cluster can be provisioned by creating a file _main.tf_ in an empty directory with the following content:
 
-```tf
+```terraform
 module "jx" {
   source  = "jenkins-x/jx/google"
 
@@ -47,7 +49,7 @@ module "jx" {
 }
 ```
 
-You can then apply this Terraform configuration via the following terminal commands:
+You can then apply this Terraform configuration via:
 
 ```bash
 terraform init
@@ -56,17 +58,23 @@ terraform apply
 
 This creates a cluster within the specified Google Cloud project with all possible configuration options defaulted.
 
+{{% alert title="Warning" %}}
+This example is for getting up and running quickly.
+It is not intended for a production cluster.
+Refer to [Production cluster considerations](#production-cluster-considerations) for things to consider when creating a production cluster.
+{{% /alert %}}
+
+On completion of `terraform apply` there will be a _jx-requirements.yml_ in the working directory which can be used as input to `jx boot`.
+Refer to [Running `jx boot`](#running-jx-boot) for more information.
+
 No custom domain is used.
 Instead DNS resolution occurs via [nip.io](https://nip.io/).
-For more information on how to configure and use a custom domain, refer to [Using a custom domain](/docs/getting-started/setup/create-cluster/gke#using-a-custom-domain).
+For more information on how to configure and use a custom domain, refer to [Using a custom domain](#using-a-custom-domain).
 
-If you just want to evaluate Jenkins X, you can set `force_destroy` to `true`.
-This allows you to remove all generated resources when running `terraform destroy`, including any generated buckets with their content.
+If you just want to experiment with Jenkins X, you can set `force_destroy` to `true`.
+This allows you to remove all generated resources when running `terraform destroy`, including any generated buckets including their content.
 
-On completion of `terraform apply` there will be a _jx-requirements.yml_ in the working directory.
-This file can be used as input for running [`jx boot`](/docs/getting-started/setup/boot).
-
-The following sections define the various configuration variables as well as the Module's output variables.
+The following two paragraphs provide the full list of configuration and output variables of this Terraform module.
 
 ### Inputs
 
@@ -78,6 +86,7 @@ The following sections define the various configuration variables as well as the
 | gcp\_project | The name of the GCP project to use | `string` | n/a | yes |
 | git\_owner\_requirement\_repos | The git id of the owner for the requirement repositories | `string` | `""` | no |
 | jenkins\_x\_namespace | Kubernetes namespace to install Jenkins X in | `string` | `"jx"` | no |
+| lets\_encrypt\_production | Flag to determine wether or not to use the Let's Encrypt production server. | `bool` | `true` | no |
 | max\_node\_count | Maximum number of cluster nodes | `number` | `5` | no |
 | min\_node\_count | Minimum number of cluster nodes | `number` | `3` | no |
 | node\_disk\_size | Node disk size in GB | `string` | `"100"` | no |
@@ -108,10 +117,10 @@ The following sections define the various configuration variables as well as the
 
 ## Using a custom domain
 
-If you want to use a custom domain with your Jenkins X installation, you need to provide values for the variables _parent_domain_ and _tls_email_.
-_parent_domain_ is the fully qualified domain name you want to use and _tls_email_ is the email you want to use for issuing Let's Encrypt TLS certificates.
+If you want to use a custom domain with your Jenkins X installation, you need to provide values for the [variables](#inputs) _parent_domain_ and _tls_email_.
+_parent_domain_ is the fully qualified domain name you want to use and _tls_email_ is the email address you want to use for issuing Let's Encrypt TLS certificates.
 
-Before you run the Terraform configuration, you also need to create a [Cloud DNS managed zone](https://cloud.google.com/dns/zones), with the DNS name in the managed zone matching your custom domain name, for example in the case of _example.jenkins-x.rocks_ as domain:
+Before you apply the Terraform configuration, you also need to create a [Cloud DNS managed zone](https://cloud.google.com/dns/zones), with the DNS name in the managed zone matching your custom domain name, for example in the case of _example.jenkins-x.rocks_ as domain:
 
 ![Creating a Managed Zone](/images/getting-started/create_managed_zone.png)
 
@@ -124,7 +133,55 @@ You can use [DNS checker](https://dnschecker.org/) to check whether your domain 
 
 When a custom domain is provided, Jenkins X uses [ExternalDNS](https://github.com/kubernetes-sigs/external-dns) together with [cert-manager](https://github.com/jetstack/cert-manager) to create A record entries in your managed zone for the various exposed applications.
 
-If _parent_domain_ is not set, your cluster will use [nip.io](https://nip.io/) in order to create publicly resolvable URLs of the form ht<span>tp://\<app-name\>-\<environment-name\>.\<cluster-ip\>.nip.io.
+If _parent_domain_ id not set, your cluster will use [nip.io](https://nip.io/) in order to create publicly resolvable URLs of the form ht<span>tp://\<app-name\>-\<environment-name\>.\<cluster-ip\>.nip.io.
+
+## Production cluster considerations
+
+The configuration as seen in [Cluster provisioning](#cluster-provisioning) is not suited for creating and maintaining a production Jenkins X cluster.
+The following is a list of considerations for a production usecase.
+
+- Specify the version attribute of the module, for example:
+
+    ```terraform
+    module "jx" {
+      source  = "jenkins-x/jx/google"
+      version = "1.2.4"
+      # insert your configuration
+    }
+    ```
+
+  Specifying the version ensures that you are using a fixed version and that version upgrades cannot occur unintented.
+
+- Keep the Terraform configuration under version control,  by creating a dedicated repository for your cluster configuration or by adding it to an already existing infrastructure repository.
+
+- Setup a Terraform backend to securely store and share the state of your cluster. For more information refer to [Configuring a Terraform backend](#configuring-a-terraform-backend).
+
+## Configuring a Terraform backend
+
+A "[backend](https://www.terraform.io/docs/backends/index.html)" in Terraform determines how state is loaded and how an operation such as _apply_ is executed.
+By default, Terraform uses the _local_ backend which keeps the state of the created resources on the local file system.
+This is problematic since sensitive information will be stored on disk and it is not possible to share state across a team.
+When working with Google Cloud a good choice for your Terraform backend is the [_gcs_ backend](https://www.terraform.io/docs/backends/types/gcs.html)  which stores the Terraform state in a Google Cloud Storage bucket.
+The [examples](https://github.com/jenkins-x/terraform-google-jx/examples) directory of the [terraform-google-jx](https://github.com/jenkins-x/terraform-google-jx/pulls) repository contains configuration examples for using the gcs backed with and without optionally configured customer supplied encryption key.
+
+To use the gcs backend you will need to create the bucket upfront.
+You can use `gsutil` to create the bucket:
+
+```sh
+gsutil mb gs://<my-bucket-name>/
+```
+
+It is also recommended to enable versioning on the bucket as an additional safety net in case of state corruption.
+
+```sh
+gsutil versioning set on gs://<my-bucket-name>
+```
+
+You can verify whether a bucket has versioning enabled via:
+
+```sh
+gsutil versioning get gs://<my-bucket-name>
+```
 
 ## Running `jx boot`
 
