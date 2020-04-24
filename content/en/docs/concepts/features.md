@@ -17,7 +17,7 @@ Jenkins X comes with a handy [jx](/commands/jx/) command line tool to easily:
 
 ## Automated Pipelines
 
-Rather than having to have deep knowledge of the internals of Jenkins Pipeline, Jenkins X will automatically setup awesome pipelines for your projects that fully implements both CI and CD using [DevOps best practices](/about/concepts/)
+Jenkins X will automatically set up awesome pipelines for your projects that fully implement both CI and CD using [DevOps best practices](/about/concepts/).
 
 ## Environments
 
