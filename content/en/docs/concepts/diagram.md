@@ -26,13 +26,3 @@ This is a setup of Jenkins X with [Lighthouse](https://github.com/jenkins-x/ligh
 <h5>Architecture for a serverless deployment using Tekton Pipelines and Lighthouse</h5>
 </figcaption>
 </figure>
-
-## Jenkins X with Jenkins Static Master
-This was the default setup in Jenkins X version 1.x
-
-<figure>
-<img src="/images/ArchitectureStaticJenkins.png"/>
-<figcaption>
-<h5>Architecture for a deployment with static Jenkins instance</h5>
-</figcaption>
-</figure>
