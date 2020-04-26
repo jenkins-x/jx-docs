@@ -28,16 +28,16 @@ A default Jenkins X ready cluster can be provisioned by creating a _main.tf_ fil
 ```terraform
 module "eks-jx" {
   source  = "jenkins-x/eks-jx/aws"
+}
 
-  output "vault_user_id" {
-    value       = module.eks-jx.vault_user_id
-    description = "The Vault IAM user id"
-  }
+output "vault_user_id" {
+  value       = module.eks-jx.vault_user_id
+  description = "The Vault IAM user id"
+}
 
-  output "vault_user_secret" {
-    value       = module.eks-jx.vault_user_secret
-    description = "The Vault IAM user secret"
-  }
+output "vault_user_secret" {
+  value       = module.eks-jx.vault_user_secret
+  description = "The Vault IAM user secret"
 }
 ```
 
