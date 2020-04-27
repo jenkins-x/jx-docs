@@ -142,7 +142,7 @@ Una vez instalado el binario `jx` podrás [configurar el clúster para Jenkins X
 
 [descargue el binario](https://github.com/jenkins-x/jx/releases) para `jx` y agréguelo al su `$PATH`
 
-También puede intentar [construirlo usted mismo](https://github.com/jenkins-x/jx/blob/master/docs/guides/contributing/hacking.md). Sin embargo, si lo construye usted mismo ten cuidado de eliminar cualquier binario `jx` anterior para que su compilación local se encuentre primero en el `$PATH` :)
+También puede intentar [construirlo usted mismo](https://github.com/jenkins-x/jx/blob/master/docs/contributing/hacking.md). Sin embargo, si lo construye usted mismo ten cuidado de eliminar cualquier binario `jx` anterior para que su compilación local se encuentre primero en el `$PATH` :)
 
 ## Obtener Ayuda
 

@@ -46,13 +46,13 @@ You can check on which branch your are with `git branch`. You should see a list 
 
 ## Start the Hugo server
 
-In case you don't already have it running, this is a good time to [start](/docs/guides/contributing/documentation/#local-preview-environment) your local Hugo server.
+In case you don't already have it running, this is a good time to [start](/docs/contributing/documentation/#local-preview-environment) your local Hugo server.
 
 If you already have Hugo running, it's usually best to double check that the site looks as you'd expect it (basically the same as the live site) and if something's off, do a quick restart of Hugo.
 
 ## Make Changes
 
-All pages are written in GitHub-flavored Markdown (see [Markdown reference](/docs/guides/contributing/documentation//reference/#markdown-syntax-reference) for details on syntax).
+All pages are written in GitHub-flavored Markdown (see [Markdown reference](/docs/contributing/documentation//reference/#markdown-syntax-reference) for details on syntax).
 
 Some things, like the footer etc. are in the `/themes/docsy` structure, but most likely you'll just be adding/changing things in the various page structures. If you do make changes that involve the theme, remember to copy-paste the theme file to the appropriate folder in the `/layouts` structure, and make your changes there. If you make changes to files in the `/themes/docsy` structure, they will likely be deleted when we update the theme.
 

@@ -41,4 +41,4 @@ Sin embargo, debería poder extender cualquiera de estos paquetes de construcci�
 
 ## Escribiendo su propio paquete de construcción
 
-Queremos que [extienda Jenkins X](/docs/guides/contributing/addons/), así que consulte la documentación sobre [cómo crear sus propios paquetes de construcción]/docs/guides/managing-jx/common-tasks/build-packs/#creating-new-build-packs).
+Queremos que [extienda Jenkins X](/docs/contributing/addons/), así que consulte la documentación sobre [cómo crear sus propios paquetes de construcción]/docs/guides/managing-jx/common-tasks/build-packs/#creating-new-build-packs).

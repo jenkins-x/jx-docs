@@ -6,14 +6,14 @@ parent: "components"
 weight: 400
 ---
 
-Jenkins X está construido sobre los hombros de gigantes y también tiene muchos repositorios de diferentes orígenes para hacer lograr varios objetivos, desde herramientas CLI, imágenes de docker, helm charts y [aplicaciones como complementos](/docs/guides/contributing/addons/).
+Jenkins X está construido sobre los hombros de gigantes y también tiene muchos repositorios de diferentes orígenes para hacer lograr varios objetivos, desde herramientas CLI, imágenes de docker, helm charts y [aplicaciones como complementos](/docs/contributing/addons/).
 
 Esta página enumera las principales organizaciones y repositorios.
 
 ## Organizaciones
 
 * [jenkins-x](https://github.com/jenkins-x) la organización principal para el código fuente
-* [jenkins-x-apps](https://github.com/jenkins-x-apps) contiene el estándar de [aplicaciones de componentes](/docs/guides/contributing/addons/) para Jenkins X
+* [jenkins-x-apps](https://github.com/jenkins-x-apps) contiene el estándar de [aplicaciones de componentes](/docs/contributing/addons/) para Jenkins X
 * [jenkins-x-buildpacks](https://github.com/jenkins-x-buildpacks) contiene los paquetes de [compilación disponibles](/docs/guides/managing-jx/common-tasks/build-packs/)
 * [jenkins-x-charts](https://github.com/jenkins-x-charts) los principales helm charts que distribuimos
 * [jenkins-x-images](https://github.com/jenkins-x-images) contiene algunas compilaciones de imágenes de docker personalizadas

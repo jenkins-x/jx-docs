@@ -47,7 +47,7 @@ As part of the Jenkins X workflow, Helm charts are created which need to be depl
 
 Mentor: David Conde
 
-The Jenkins X Apps Framework is a mechanism used to extend the functionality of Jenkins X. The goal of this project is to improve the [Apps Framework User Guide](https://jenkins-x.io/docs/guides/contributing/addons/) and to create a Jenkins X app.
+The Jenkins X Apps Framework is a mechanism used to extend the functionality of Jenkins X. The goal of this project is to improve the [Apps Framework User Guide](https://jenkins-x.io/docs/contributing/addons/) and to create a Jenkins X app.
 
 {{< /alert >}}
 
