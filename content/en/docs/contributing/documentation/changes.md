@@ -6,7 +6,7 @@ weight: 10
 ---
 
 Did you spot a typo or feel something's missing from a certain page? 
-You can still contribute your suggestions without having to go through setting everything up locally as explained on [Contribute to Documentation](/docs/guides/contributing/documentation//).
+You can still contribute your suggestions without having to go through setting everything up locally as explained on [Contribute to Documentation](/docs/contributing/documentation//).
 
 The process requires only three steps:
 
@@ -14,7 +14,7 @@ The process requires only three steps:
 1. Make your suggested changes
 1. Create a Pull Request
 
-We'll go through each step here. Keep in mind though, that if you're looking to contribute larger amounts of changes, pages, or sections, it's best to test things out locally first (using the process described on [Contribute to Documentation](/docs/guides/contributing/documentation//)) instead of using this method.
+We'll go through each step here. Keep in mind though, that if you're looking to contribute larger amounts of changes, pages, or sections, it's best to test things out locally first (using the process described on [Contribute to Documentation](/docs/contributing/documentation//)) instead of using this method.
 
 ## Click the "Edit this page" link
 

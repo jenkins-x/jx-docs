@@ -86,7 +86,7 @@ Para obtener más información, vea [cómo agregar charts, servicios o configura
 
 ## ¿Puedo utilizar mi actual pipeline de liberación?
 
-Con Jenkins X, puede crear su propio pipeline de liberaciones si lo desea; aunque hacerlo significa que se pierde nuestro [modelo de extensión](/docs/guides/contributing/addons/) que le permite habilitar fácilmente varias aplicaciones de extensión como Gobernanza, Cumplimiento, calidad de código, cobertura de código, escaneo de seguridad, pruebas de vulnerabilidad y varias otras extensiones que se agregan todo el tiempo a través de nuestra comunidad.
+Con Jenkins X, puede crear su propio pipeline de liberaciones si lo desea; aunque hacerlo significa que se pierde nuestro [modelo de extensión](/docs/contributing/addons/) que le permite habilitar fácilmente varias aplicaciones de extensión como Gobernanza, Cumplimiento, calidad de código, cobertura de código, escaneo de seguridad, pruebas de vulnerabilidad y varias otras extensiones que se agregan todo el tiempo a través de nuestra comunidad.
 
 Hemos creado específicamente este modelo de extensión para minimizar el trabajo que tienen sus equipos para editar y mantener los pipelines en muchos microservicios separados. La idea es que estamos tratando de automatizar tanto los pipelines como las extensiones de los pipelines para que los equipos puedan centrarse en su código real y menos en la tubería de CI/CD, que es prácticamente todo el trabajo pesado indiferenciado en estos días.
 
@@ -120,7 +120,7 @@ La promoción en Jenkins X está completamente separada del lanzamiento y apoyam
 
 El PR activa un pipeline de CI para verificar que los cambios son válidos (por ejemplo, que el chart de Helm existe y se puede descargar, que existen las imágenes de Docker, etc.). Cada vez que el PR se mezclan (podría ser automáticamente o puede requerir tickets reviews/+1s/JIRA/ServiceNow o lo que sea), entonces se activa otro pipeline para aplicar los charts de Helm desde la rama master al clúster k8s de destino y a el `namespace`.
 
-Jenkins X automatiza todo lo anterior, pero dado que ambos pipelines se definen en un repositorio Git de entornos en un fichero `Jenkinsfile`, puede personalizarlo para agregar sus propios pasos previos/posteriores si lo desea. p.ej. puede analizar el YAML para pre-aprovisionar PVs para cualquier PVCs utilizando alguna herramienta de salvas de disco personalizada. O puede hacerlo en una tarea desencadenada por un enlace de Helm. Aunque preferimos que estas herramientas se creen como parte del [modelo de extensión](/docs/guides/contributing/addons/) de Jenkins X para evitar que los pipelines personalizados se dañen en futuras versiones de Jenkins X, aunque no es un gran problema.
+Jenkins X automatiza todo lo anterior, pero dado que ambos pipelines se definen en un repositorio Git de entornos en un fichero `Jenkinsfile`, puede personalizarlo para agregar sus propios pasos previos/posteriores si lo desea. p.ej. puede analizar el YAML para pre-aprovisionar PVs para cualquier PVCs utilizando alguna herramienta de salvas de disco personalizada. O puede hacerlo en una tarea desencadenada por un enlace de Helm. Aunque preferimos que estas herramientas se creen como parte del [modelo de extensión](/docs/contributing/addons/) de Jenkins X para evitar que los pipelines personalizados se dañen en futuras versiones de Jenkins X, aunque no es un gran problema.
 
 ## How do I change the owner of a docker image
 

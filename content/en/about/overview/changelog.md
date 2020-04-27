@@ -50,7 +50,7 @@ kubectl scale deploy jenkins-x-monocular-ui --replicas=0
 The latest [version stream release](/about/concepts/version-stream/) has removed monocular so if you [upgrade your platform
 ](/docs/guides/managing-jx/common-tasks/upgrade-jx/) this issue should be resolved.
 
-We can always add monocular back as an optional [App](/docs/guides/contributing/addons/) later on when it works again.
+We can always add monocular back as an optional [App](/docs/contributing/addons/) later on when it works again.
 
 
 ## 12th June 2019: Knative Build now deprecated

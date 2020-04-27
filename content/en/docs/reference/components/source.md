@@ -8,14 +8,14 @@ aliases:
   - /docs/guides/managing-jx/common-tasks/source
 ---
 
-Jenkins X is built on the shoulders of giants and also has lots of different source repositories to make various things from CLI tools, docker images, helm charts and [addon Apps](/docs/guides/contributing/addons/)
+Jenkins X is built on the shoulders of giants and also has lots of different source repositories to make various things from CLI tools, docker images, helm charts and [addon Apps](/docs/contributing/addons/)
 
 This page lists the main organisations and repositories.
 
 ## Organisations
 
 * [jenkins-x](https://github.com/jenkins-x) the main organisation for source code
-* [jenkins-x-apps](https://github.com/jenkins-x-apps) contains the standard  [addon Apps](/docs/guides/contributing/addons/) for Jenkins X
+* [jenkins-x-apps](https://github.com/jenkins-x-apps) contains the standard  [addon Apps](/docs/contributing/addons/) for Jenkins X
 * [jenkins-x-buildpacks](https://github.com/jenkins-x-buildpacks) contains the available [build packs](/docs/reference/components/build-packs//)
 * [jenkins-x-charts](https://github.com/jenkins-x-charts) the main helm charts we distribute
 * [jenkins-x-images](https://github.com/jenkins-x-images) contains some custom docker image builds

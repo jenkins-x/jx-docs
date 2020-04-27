@@ -44,7 +44,7 @@ pipeline {
 
 ## 提交新的 Pod 模板
 
-如果你正在使用一个新的 [build pack](/zh/architecture/build-packs)，那么，我们欢迎你 [提交](/zh/docs/guides/contributing/) 一个新的 pod 模板，而且我们可以把它包含在 Jenkins X 的发行版中！
+如果你正在使用一个新的 [build pack](/zh/architecture/build-packs)，那么，我们欢迎你 [提交](/zh/docs/contributing/) 一个新的 pod 模板，而且我们可以把它包含在 Jenkins X 的发行版中！
 
 现在遵循如何这个的指示 —— 如果有任何不清楚的话请[加入社区并提问](/zh/community/)，我们很高兴帮助你！
 
@@ -69,7 +69,7 @@ pipeline {
 
 因此，最简单的就是拷贝一个简单的 builder —— 像 [builder-maven](https://github.com/jenkins-x/jenkins-x-builders/tree/master/builder-maven)，然后编辑 `Dockerfile` 增加你需要的构建工具。
 
-我们欢迎 Pull Requests 和[贡献](/zh/docs/guides/contributing/)，因此，请把你新的构建容器和 Pod 模板提交，我们很乐意[帮助](/zh/docs/guides/contributing/)！
+我们欢迎 Pull Requests 和[贡献](/zh/docs/contributing/)，因此，请把你新的构建容器和 Pod 模板提交，我们很乐意[帮助](/zh/docs/contributing/)！
 
 ## 增加你自己的 Pod 模板
 

@@ -38,7 +38,7 @@ Previous office hour recordings can be found on our [Jenkins X YouTube channel](
 
 ### Want to contribute?
 
-It will be lots of fun! Check out the [contribution guide](/docs/guides/contributing/) for some tips on how to get started.
+It will be lots of fun! Check out the [contribution guide](/docs/contributing/) for some tips on how to get started.
 
 <figure>
 <img src="/images/community/GoCommunity-background.png" class="img-thumbnail"/>

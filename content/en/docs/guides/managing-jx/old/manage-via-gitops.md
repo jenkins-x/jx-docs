@@ -12,7 +12,7 @@ aliases:
   - /docs/guides/managing-jx/common-tasks/manage-via-gitops/
 ---
 
-We recommend you use GitOps to manage your installation of Jenkins X, to upgrade it, configure it and add or remove extension [Apps](/docs/guides/contributing/addons/) so it’s easy to audit who changes what in your installation and to easily revert bad changes.
+We recommend you use GitOps to manage your installation of Jenkins X, to upgrade it, configure it and add or remove extension [Apps](/docs/contributing/addons/) so it’s easy to audit who changes what in your installation and to easily revert bad changes.
 
 Currently this only works on AWS and Google cloud as it requires our vault operator (which needs cloud storage & KMS) to store secrets while all other configuration is stored in the development environment git repository.
 

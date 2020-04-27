@@ -9,7 +9,7 @@ categories: [getting started]
 keywords: [install,kubernetes]
 ---
 
-我们推荐你使用 GitOps 管理你的 Jenkins X 设施，升级它、配置它、以及添加或移除扩展[应用](/docs/guides/contributing/addons/)，这样容易审计谁在你的设施上做了什么变更并且容易恢复坏的变更。
+我们推荐你使用 GitOps 管理你的 Jenkins X 设施，升级它、配置它、以及添加或移除扩展[应用](/docs/contributing/addons/)，这样容易审计谁在你的设施上做了什么变更并且容易恢复坏的变更。
 
 当前这仅在 AWS 和 Google 云可用，因为它要求我们的 vault 操作员（需要云存储和 KMS ）存储凭据，而所有其他配置都存储在开发环境 git 仓库中。
 

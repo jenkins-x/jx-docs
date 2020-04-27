@@ -61,7 +61,7 @@ Jenkins X 文档中所有的页面，使用典型的三个反引号这样的语�
 [charcount]: http://www.lettercount.com/
 [`docs/static/images/showcase/`]: https://github.com/jenkins-x/jx/tree/master/docs/static/images/showcase/
 [ghforking]: https://help.github.com/articles/fork-a-repo/
-[hugodev]: /docs/guides/contributing/code/
+[hugodev]: /docs/contributing/code/
 [shortcodeparams]: content-management/shortcodes/#shortcodes-without-markdown
 [sourceforge]: http://docutils.sourceforge.net/docs/ref/rst/directives.html#admonitions
 [templating function]: /functions/
