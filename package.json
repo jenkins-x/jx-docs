@@ -9,8 +9,10 @@
     "url": "https://github.com/jenkins-x/jx-docs.git"
   },
   "dependencies": {
+    "docsearch.js": "^2.6.3"
+  },
+  "devDependencies": {
     "autoprefixer": "^9.7.6",
-    "docsearch.js": "^2.6.3",
     "postcss-cli": "^7.1.1"
   }
 }
