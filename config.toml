@@ -65,7 +65,7 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
       table = true
       taskList = true
       typographer = true
-						
+
 ###
 # Image processing configuration.
 ###

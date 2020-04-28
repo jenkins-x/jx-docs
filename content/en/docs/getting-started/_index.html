@@ -2,7 +2,12 @@
 title="Getting Started"
 linkTitle="Getting Started"
 description="How to get up and running with Jenkins X"
-aliases="/getting-started"
+
+aliases = [
+    "/getting-started",
+    "/docs",
+    "/docs/"
+]
 
 type= "docs"
 menu="Docs"
@@ -59,7 +64,7 @@ module "jx" {
 {{</highlight>}}
 
         <p>
-          This setup uses defaults parameters. 
+          This setup uses defaults parameters.
           For more details instructions on how to provision a Kubernetes cluster with the GKE Terraform module refer to the, <a href="/docs/getting-started/setup/create-cluster/gke">Create GKE cluster</a> section.
         </p>
 
@@ -91,15 +96,15 @@ terraform apply
     value       = module.eks-jx.vault_user_id
     description = "The Vault IAM user id"
   }
-  
+
   output "vault_user_secret" {
     value       = module.eks-jx.vault_user_secret
     description = "The Vault IAM user secret"
-  }       
+  }
 }
 {{</highlight>}}
         <p>
-          This setup uses defaults parameters. 
+          This setup uses defaults parameters.
           For more details instructions on how to provision a Kubernetes cluster with the EKS Terraform module refer to the, <a href="/docs/getting-started/setup/create-cluster/eks">Create EKS cluster</a> section.
         </p>
 
@@ -163,7 +168,7 @@ jx --version
       <div class="tab-pane fade" id="linux">
 
         &nbsp;
-        
+
 {{<highlight sh>}}
 # Download the `.tar` file, and unarchive it in a directory where you can run the `jx` command.
 curl -L "https://github.com/jenkins-x/jx/releases/download/$(curl --silent "https://github.com/jenkins-x/jx/releases/latest" | sed 's#.*tag/\(.*\)\".*#\1#')/jx-linux-amd64.tar.gz" | tar xzv "jx"
