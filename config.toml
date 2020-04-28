@@ -1,5 +1,5 @@
 baseURL = "/"
-title = "Jenkins X"
+title = "Jenkins X - Cloud Native CI/CD Built On Kubernetes"
 
 enableRobotsTXT = true
 
@@ -22,8 +22,8 @@ enableMissingTranslationPlaceholders = true
 
 [languages]
 [languages.en]
-title = "Jenkins X"
-description = "Jenkins X documentation site"
+title = "Jenkins X - Cloud Native CI/CD Built On Kubernetes"
+description = "Documentation, guides and support for Jenkins X"
 languageName ="English"
 # Weight used for sorting.
 weight = 1
@@ -65,7 +65,7 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
       table = true
       taskList = true
       typographer = true
-						
+
 ###
 # Image processing configuration.
 ###
