@@ -1313,6 +1313,26 @@ string
 </tr>
 <tr>
 <td>
+<code>authorAvatarURL</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<code>authorURL</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
 <code>pullTitle</code></br>
 <em>
 string
@@ -6365,6 +6385,26 @@ string
 </tr>
 <tr>
 <td>
+<code>authorAvatarURL</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<code>authorURL</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
 <code>pullTitle</code></br>
 <em>
 string
@@ -10171,5 +10211,5 @@ PromoteWorkflowStep
 <hr/>
 <p><em>
 Generated with <code>gen-crd-api-reference-docs</code>
-on git commit <code>6efd3458e</code>.
+on git commit <code>263c0e900</code>.
 </em></p>
