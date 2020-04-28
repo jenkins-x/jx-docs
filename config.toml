@@ -16,27 +16,28 @@ enableGitInfo = true
 contentDir = "content/en"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
+disableLanguages = ["es", "zh"]
 
 # Useful when translating.
 enableMissingTranslationPlaceholders = true
 
 [languages]
-[languages.en]
-title = "Jenkins X"
-description = "Jenkins X documentation site"
-languageName ="English"
-# Weight used for sorting.
-weight = 1
-[languages.zh]
-languageCode = "zh-CN"
-weight = 2
-languageName = "中文"
-contentDir = "content/zh"
-[languages.es]
-languageCode = "es-ES"
-weight = 3
-languageName = "Español"
-contentDir = "content/es"
+	[languages.en]
+		title = "Jenkins X"
+		description = "Jenkins X documentation site"
+		languageName ="English"
+		# Weight used for sorting.
+		weight = 1
+	[languages.zh]
+		languageCode = "zh-CN"
+		weight = 2
+		languageName = "中文"
+		contentDir = "content/zh"
+	[languages.es]
+		languageCode = "es-ES"
+		weight = 3
+		languageName = "Español"
+		contentDir = "content/es"
 
 disableKinds = ["taxonomy", "taxonomyTerm"]
 
