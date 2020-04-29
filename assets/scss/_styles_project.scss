@@ -2,6 +2,11 @@
   color: rgb(255, 255, 255);
 }
 
+.alert a{
+  color: #ffffff;
+  text-decoration: underline;
+}
+
 /*!
  * Bootswatch v4.4.1
  * Homepage: https://bootswatch.com
@@ -5630,6 +5635,8 @@
  
  .alert-link {
    font-weight: 700;
+   text-decoration: underline;
+   
  }
  
  .alert-dismissible {
