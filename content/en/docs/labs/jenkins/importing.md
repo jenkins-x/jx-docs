@@ -4,6 +4,17 @@ linktitle: Importing Projects
 description: Importing Jenkinsfile based projects
 weight: 50
 ---
+{{% alert %}}
+**NOTE: This current experiment is now closed. The work done and feedback we have received will be used to enhance Jenkins X in future versions**
+
+**This code should not be used in production, or be adopted for usage.  It should only be used to provide feedback to the Labs team.**
+
+Thank you for your participation,
+
+-Labs
+
+
+{{% /alert %}}
 
 Once you have [added one or more Jenkins Servers to the registry](/docs/labs/jenkins/getting-started/#adding-jenkins-servers) you can import a `Jenksinfile` based project.
 

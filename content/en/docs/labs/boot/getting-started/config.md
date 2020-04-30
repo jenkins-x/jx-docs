@@ -4,6 +4,17 @@ linktitle: Configuration
 description: Changing your configuration
 weight: 40
 ---
+{{% alert %}}
+**NOTE: This current experiment is now closed. The work done and feedback we have received will be used to enhance Jenkins X in future versions**
+
+**This code should not be used in production, or be adopted for usage.  It should only be used to provide feedback to the Labs team.**
+
+Thank you for your participation,
+
+-Labs
+
+
+{{% /alert %}}
 
 You can edit the `jx-requirements.yml` file in the git repository that was created in an earlier step for your `dev` environment, to configure various capabilities:
 

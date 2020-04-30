@@ -4,7 +4,17 @@ linktitle: Vault
 description: Using Vault for your Secret storage
 weight: 30
 ---
+{{% alert %}}
+**NOTE: This current experiment is now closed. The work done and feedback we have received will be used to enhance Jenkins X in future versions**
 
+**This code should not be used in production, or be adopted for usage.  It should only be used to provide feedback to the Labs team.**
+
+Thank you for your participation,
+
+-Labs
+
+
+{{% /alert %}}
 
 To be able to use Vault as the storage engine for your Secrets you need to specify `--secret vault` when [creating your development git repository](/docs/labs/boot/getting-started/repository/) or [configure vault](/docs/labs/boot/getting-started/config/#vault) via `secretStorage: vault` in your `jx-requirements.yml`:
 
