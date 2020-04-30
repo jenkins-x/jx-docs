@@ -1,3 +1,6 @@
 {{ with .Site.Params.gcs_engine_id }}
- <input id="search-input" type="search" class="form-control td-search-input" placeholder="&#xf002; {{ T "ui_search" }}" aria-label="{{ T "ui_search" }}" autocomplete="off">
+<form class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2" id="search-input" type="search" placeholder=" {{ T "ui_search" }}" aria-label="{{ T "ui_search" }}" autocomplete="off"/>
+</form>
+ {{/*  <input id="search-input" type="search" class="form-control td-search-input" placeholder="&#xf002; {{ T "ui_search" }}" aria-label="{{ T "ui_search" }}" autocomplete="off">  */}}
 {{ end }}
