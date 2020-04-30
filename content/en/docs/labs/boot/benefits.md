@@ -4,7 +4,17 @@ linktitle: Benefits
 description: Benefits of the new helm 3 based boot
 weight: 80
 ---
+{{% alert %}}
+**NOTE: This current experiment is now closed. The work done and feedback we have received will be used to enhance Jenkins X in future versions**
 
+**This code should not be used in production, or be adopted for usage.  It should only be used to provide feedback to the Labs team.**
+
+Thank you for your participation,
+
+-Labs
+
+
+{{% /alert %}}
 
 * We can use vanilla helm 3 now to install, update or delete charts in any namespace without needing tiller or custom code to manage `helm template`
   * We can avoid all the complexities of the `jx step helm apply` logic using our own helm template generation + post processing logic. We can also move away from boot's use of `{{ .Requirements.foo }}` and `{{ .Parameters.bar }}` expressions

@@ -4,7 +4,17 @@ linktitle: Running Boot
 description: Running Boot to install / upgrade Jenkins X
 weight: 50
 ---
+{{% alert %}}
+**NOTE: This current experiment is now closed. The work done and feedback we have received will be used to enhance Jenkins X in future versions**
 
+**This code should not be used in production, or be adopted for usage.  It should only be used to provide feedback to the Labs team.**
+
+Thank you for your participation,
+
+-Labs
+
+
+{{% /alert %}}
 
 Once you have [created your git repository](/docs/labs/boot/getting-started/repository/) for your development environment via `jxl boot create` or `jxl boot upgrade` and populated the [secrets](/docs/labs/boot/getting-started/secrets/) as shown above you can run the boot `Job` via:
 

@@ -4,6 +4,17 @@ linktitle: Overview
 description: Overview of the Jenkins and Jenkins X interoperability
 weight: 10
 ---
+{{% alert %}}
+**NOTE: This current experiment is now closed. The work done and feedback we have received will be used to enhance Jenkins X in future versions**
+
+**This code should not be used in production, or be adopted for usage.  It should only be used to provide feedback to the Labs team.**
+
+Thank you for your participation,
+
+-Labs
+
+
+{{% /alert %}}
 
 The [Trigger Jenkins Proposal](https://github.com/jstrachan/enhancements/blob/jenkins-trigger/proposals/trigger-jenkins/README.md) aims to improve the interoperability of Jenkins and Jenkins X so you can use both together to solve all of your CI//CD needs.
 
