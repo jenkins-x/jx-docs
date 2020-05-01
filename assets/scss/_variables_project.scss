@@ -10,6 +10,10 @@ Add styles or override variables from the theme here.
   height: 55px !important;
 }
 
+.navbar-nav {
+  flex-direction: inherit !important;
+}
+
 footer {
   min-height: auto !important;
 }
