@@ -23,15 +23,20 @@ Jenkins X welcomes the opportunity to collaborate with technical writers on impr
 
 Jenkins X invites technical writers to engage with our ongoing efforts to restructure and update the Jenkins X documentation. There are a number of ongoing projects, and technical writers are welcome to engage with them or to make their own proposals in any area of Jenkins X documentation. We welcome the experience and perspecitve of new contributors and encourage proposals based on a technical writer's interests and expertise. 
 
-* Refactor the open source project's existing documentation to provide an improved user experience or a more accessible information architecture.
-* Write a conceptual overview of, or introduction to, a product or feature. Often a team creates their technical documentation from the bottom up, with the result that there's a lot of detail but it's hard to understand the product as a whole. A technical writer can fix this.
-* Create a tutorial for a high-profile use case.
-* Create a set of focused how-to guides for specific tasks.
-* Create a contributor’s guide that includes basic information about getting started as a contributor to the open source project, as well as any rules around licence agreements, processes for pull requests and reviews, building the project, and so on. 
+* Refactor the existing documentation to provide an improved user experience or a more accessible information architecture:
 
-The main part of Season of Docs runs for three months, from September to December 2020, but the application period for technical writers ends on July 9, 2020. [Detailed GSoD Timeline can be found here](https://developers.google.com/season-of-docs/docs/timeline).
+    We are currently in the process of restructuring the information architecture on the docs site. We recognise this is an iterative process and would welcome input from a technical writer on further improvements to create an accessible information architecture and improve the user experience.
+
+* Improve our [contributor’s guide](https://jenkins-x.io/docs/contributing/) to ensure the information for new contributors is clear and well organised, including basic information about getting started as a contributor to Jenkins X, as well as any rules around licence agreements, processes for pull requests and reviews, building the project, and so on.
+
+* Create a tutorial for provisioning a Kubernetes cluster and installing Jenkins X with `jx boot` on platforms that are not covered with Terraform. Currently, the [Get started page](https://jenkins-x.io/docs/getting-started/) gives the incorrect impression that Jenkins X works only in GKE (Google Cloud Platform) and EKS (Amazon Web Services). 
+
+* Write a how-to guide on using the new Terraform scripts to create Kubernetes clusters. Currently, on the docs site there is a [TODO for documentation on using Terraform to set up cloud resources](https://jenkins-x.io/docs/labs/boot/getting-started/cloud/terraform/). Using Terraform scripts to create clusters makes cluster creation more transparent and can increase default security. For more information on using Terraform scripts, please see a [recent office hours demo](https://www.youtube.com/watch?v=yujge0PHxd4) by [Hardy Ferentschik](https://github.com/hferentschik).
+ 
 
 ### 📆 Important Dates
+
+The main part of Season of Docs runs for three months, from September to December 2020, but the application period for technical writers ends on July 9, 2020. [Detailed GSoD Timeline can be found here](https://developers.google.com/season-of-docs/docs/timeline).
 
 * May 4, 2020: Deadline for Jenkins X to apply to Season of Docs
 * May 11 - June 8, 2020: Technical writers discuss project ideas with mentoring organisations
