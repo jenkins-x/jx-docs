@@ -11,7 +11,7 @@ aliases:
   - /getting-started/create-custom-builder
 ---
 
-In Jenkins X, it is possible to create your custom Builders (aka [POD templates](https://github.com/jenkinsci/kubernetes-plugin)) or overwrite existing onces. You just need to base your Docker
+In Jenkins X, (when using jenkins classic and not tekton...) it is possible to create your custom Builders (aka [POD templates](https://github.com/jenkinsci/kubernetes-plugin)) or overwrite existing onces. You just need to base your Docker
 image on this [builder-base](https://github.com/jenkins-x/jenkins-x-builders-base/blob/master/Dockerfile.common) image.
 These images contain a number of pre-installed tools which get constantly updated and published to [Docker Hub](https://hub.docker.com/r/jenkinsxio/builder-base/).
 
