@@ -1,7 +1,7 @@
 ---
 title: Create custom Builder
 linktitle: Create custom Builder
-description: How to create a custom Builder for Jenkins X
+description: How to create a custom Builder for Jenkins X using static master
 date: 2013-07-01
 publishdate: 2013-07-01
 categories: [getting started]
@@ -11,9 +11,9 @@ aliases:
   - /getting-started/create-custom-builder
 ---
 
-In Jenkins X, it is possible to create your custom Builders (aka [POD templates](https://github.com/jenkinsci/kubernetes-plugin)) or overwrite existing onces. You just need to base your Docker
-image on this [builder-base](https://github.com/jenkins-x/jenkins-x-builders-base/blob/master/Dockerfile.common) image.
-These images contain a number of pre-installed tools which get constantly updated and published to [Docker Hub](https://hub.docker.com/r/jenkinsxio/builder-base/).
+In Jenkins X, using the deprecated static master installation type, it is possible to create your custom Builders (aka [POD templates](https://github.com/jenkinsci/kubernetes-plugin)) or overwrite existing ones.
+To do so, you need to base your Docker image on this [builder-base](https://github.com/jenkins-x/jenkins-x-builders-base/blob/master/Dockerfile.common) image.
+This image contain a number of pre-installed tools which get constantly updated and published to [Docker Hub](https://hub.docker.com/r/jenkinsxio/builder-base/).
 
 ## Create a custom Builder from scratch
 
@@ -38,10 +38,9 @@ docker build -t ${BUILDER_IMAGE} .
 docker push ${BUILDER_IMAGE}
 ```
 
-Do not worry, you do not have to run manually these steps every time when a new image needs to be built.
-Jenkins X can manage this for you. You just need to push your `Dockerfile` in a repository similar with [this
-](https://github.com/jenkins-x/jenkins-x-builders/tree/master/builder-go) one. Adjust the `Jenkinsfile` according with your organization and
-application name, and then import the repository into your Jenkins X platform with:
+Do not worry, you do not have to run these steps manually every time when a new image needs to be built.
+Jenkins X can manage this for you. You just need to push your `Dockerfile` in a repository similar with [this](https://github.com/jenkins-x/jenkins-x-builders/tree/master/builder-go) one.
+Adjust the `Jenkinsfile` according with your organization and application name, and then import the repository into your Jenkins X platform with:
 
 ```sh
 jx import --url <REPOSITORY_URL>
@@ -128,11 +127,9 @@ pipeline {
 
 ## Overwrite existing Builders
 
-Jenkins X comes with a number of [pre-installed builders](https://raw.githubusercontent.com/jenkins-x/jenkins-x-platform/master/jenkins-x-platform/values.yaml)
-which you can overwrite if required during installation or upgrade.
+Jenkins X comes with a number of [pre-installed builders](https://raw.githubusercontent.com/jenkins-x/jenkins-x-platform/master/jenkins-x-platform/values.yaml) which you can overwrite if required during installation or upgrade.
 
-You just need to build your custom image either based on [builder-base](https://github.com/jenkins-x/jenkins-x-builders-base/blob/master/Dockerfile.common)
-image or the [builder image](https://hub.docker.com/u/jenkinsxio/) you want to overwrite. See more details above.
+You just need to build your custom image either based on the [builder-base](https://github.com/jenkins-x/jenkins-x-builders-base/blob/master/Dockerfile.common) image or the [builder image](https://hub.docker.com/u/jenkinsxio/) you want to overwrite. See more details above.
 
 Then you can create a `myvalues.yaml` file in your `~/.jx/` folder with the following content:
 
@@ -155,4 +152,3 @@ jenkins:
 ```
 
 You can proceed now with the Jenkins X installation, the builder will  be added automatically to the platform.
-
