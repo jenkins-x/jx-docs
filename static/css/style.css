@@ -32,7 +32,7 @@
     padding-top: 0px !important;
 }
 
-@media (min-width: 768px) .td-main main {
+.td-main main {
     padding-top: 1.5rem !important;
 }
 
@@ -40,6 +40,8 @@
     top: 0rem;
 }
 
-.a img {
+a img {
     padding-top: 15px;
+    max-width: -webkit-fill-available;
+    float: left;
 }
