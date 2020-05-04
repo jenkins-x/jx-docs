@@ -27,3 +27,19 @@
     padding: .1em;
 
 }
+
+.td-sidebar {
+    padding-top: 0px !important;
+}
+
+@media (min-width: 768px) .td-main main {
+    padding-top: 1.5rem !important;
+}
+
+.td-toc {
+    top: 0rem;
+}
+
+.a img {
+    padding-top: 15px;
+}
