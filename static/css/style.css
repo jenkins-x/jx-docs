@@ -42,6 +42,7 @@
 
 .td-toc {
     top: 0rem;
+    position: sticky;
 }
 
 a img {
