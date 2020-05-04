@@ -180,4 +180,3 @@ Whenever you modify the git repository for an environment the GitOps pipeline wi
 
 There is one available for the [CloudBees Jenkins X Distribution](https://www.cloudbees.com/products/cloudbees-jenkins-x-distribution/overview). It should normally work on OSS Jenkins X as well, though CloudBees won't support it unless you're also using their distribution. You can read more about it here: [Using the CloudBees Jenkins X Distribution user interface
 ](https://docs.cloudbees.com/docs/cloudbees-jenkins-x-distribution/latest/user-interface/)
-
