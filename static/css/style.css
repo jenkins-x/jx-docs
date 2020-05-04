@@ -22,6 +22,10 @@
 
 /* sidebar overrides */
 
+.td-sidebar__inner {
+    top: 1rem !important;
+}
+
 .td-sidebar-nav__section li {
     list-style: none;
     padding: .1em;
