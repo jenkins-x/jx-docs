@@ -1267,6 +1267,19 @@ string
 <p>DockerRegistryOrg the default organisation used for container images</p>
 </td>
 </tr>
+<tr>
+<td>
+<code>strictPermissions</code></br>
+<em>
+bool
+</em>
+</td>
+<td>
+<p>StrictPermissions lets you decide how to boot the cluster when it comes to permissions
+If it&rsquo;s false, cluster wide permissions will be used, normal, namespaced permissions will be used otherwise
+and extra steps will be necessary to get the cluster working</p>
+</td>
+</tr>
 </tbody>
 </table>
 <h3 id="config.jenkins.io/v1.CreateJenkinsfileArguments">CreateJenkinsfileArguments
@@ -5389,5 +5402,5 @@ string
 <hr/>
 <p><em>
 Generated with <code>gen-crd-api-reference-docs</code>
-on git commit <code>4585b3166</code>.
+on git commit <code>92b2057fd</code>.
 </em></p>
