@@ -90,6 +90,9 @@
         "registry": {
           "type": "string"
         },
+        "strictPermissions": {
+          "type": "boolean"
+        },
         "vaultName": {
           "type": "string"
         },
