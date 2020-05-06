@@ -1,12 +1,14 @@
 ---
-title: Events
-linktitle: Events
+title: Events & Webinars
+linktitle: Events & Webinars
 type: docs
 no_list: true
-weight: 20
+weight: 4
+type: docs
+no_list: true
 menu:
   community:
-    weight: 20
+    weight: 4
 ---
 
 ## Talks and Demos
@@ -20,7 +22,7 @@ For details of the next Jenkins X talk or demo checkout our [talks at meetups an
 
 ### Office Hours
 
-We meet for office hours **every other Tuesday** at 15:00 UTC (*See your timezone [here](https://time.is/1500_in_UTC)*). 
+We meet for office hours **every other Tuesday** at 15:00 UTC (*See your timezone [here](https://time.is/1500_in_UTC)*).
 
 Please note that this is **4pm British Summer Time** in the UK.
 

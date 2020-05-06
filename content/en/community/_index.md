@@ -1,10 +1,16 @@
 ---
-title: Community
-linktitle: Community
+title: Join And Contribute To The Jenkins X Community
+linktitle: "Join The Community"
 menu:
   community:
     weight: 1
-    name: Join the community
+    name: Join The Community
+  main:
+    weight: 10
+    name: "Contribute"
+type: docs
+no_list: true
+
 ---
 
 The Jenkins X Community is like no other, we are friendly, very open to feedback, provide guidance, best practices and much more.  You can find us in various channels.
@@ -15,7 +21,7 @@ We value respect and inclusiveness and follow the [CDF Code of Conduct](https://
 
 ### Slack
 
-We'd love to talk with you about Jenkins X and are happy to help if you have any questions. 
+We'd love to talk with you about Jenkins X and are happy to help if you have any questions.
 
 Talk to us on our slack channels, which are part of the Kubernetes slack. Join Kubernetes slack [here](http://slack.k8s.io/) and find us on our channels:
 
@@ -24,7 +30,7 @@ Talk to us on our slack channels, which are part of the Kubernetes slack. Join K
 
 ### Office Hours
 
-We meet for office hours **every other Tuesday** at 15:00 UTC (*See your timezone [here](https://time.is/1500_in_UTC)*). 
+We meet for office hours **every other Tuesday** at 15:00 UTC (*See your timezone [here](https://time.is/1500_in_UTC)*).
 
 Please note that this is **4pm British Summer Time** in the UK.
 
@@ -101,4 +107,3 @@ You may also want to try [Stack Overflow](https://stackoverflow.com/questions/ta
 ### Email
 
 If you prefer email then join us on the [jenkins-developers mailing list](https://groups.google.com/forum/#!forum/jenkinsci-dev). Prefix posts with `[Jenkins X]` in the subject.
-

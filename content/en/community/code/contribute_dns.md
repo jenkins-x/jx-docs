@@ -4,7 +4,10 @@ linktitle: DNS for contributors
 description: How to configure DNS on GCP for developing features, reproducing issues and demos
 keywords: [dns]
 authors: [pmuir]
+type: docs
 weight: 10
+aliases:
+    - /docs/contributing/code/contribute_dns/
 ---
 
 Some features and issues require DNS to be configured. The domain name `jenkins-x.rocks` is available for
@@ -67,5 +70,3 @@ you found above the DNS has propagated. If you are using a Mac `watch` can be in
     to `<unique name>.<your username>.jenkins-x.rocks` and run `jx boot`
 
 > If you prefer to use the gcloud CLI you can find instructions for usage on the "Create record set" screen.
-
-

@@ -2,7 +2,10 @@
 title: "Builder Images"
 linktitle: "Builder Images"
 date: 2019-09-06T20:00:23Z
+type: docs
 weight: 60
+aliases:
+    - /docs/contributing/code/builder-images/
 ---
 
 Jenkins X relies on a set of Docker images to run the actual builds. You can find the list here: https://github.com/jenkins-x/jenkins-x-builders
@@ -29,7 +32,7 @@ We'll go over each step in the following.
 
 ## Getting Started
 
-Before you can get started, you'll need to first fork & clone https://github.com/jenkins-x/jenkins-x-builders. See [Development](/docs/contributing/code/) section for more details on setting up your local environment, link to upstream, and branching out from your master.
+Before you can get started, you'll need to first fork & clone https://github.com/jenkins-x/jenkins-x-builders. See [Development](/community/code/) section for more details on setting up your local environment, link to upstream, and branching out from your master.
 
 ## Create Builder
 
@@ -82,7 +85,7 @@ builder-<your builder name>
   |  |- container-test.yaml
 ```
 
-Once your files are in place, and you have verified locally that your image builds, you can commit, push, and raise a pull request as described in [Development](/docs/contributing/code/)
+Once your files are in place, and you have verified locally that your image builds, you can commit, push, and raise a pull request as described in [Development](/community/code/)
 
 ## Inform the update bot
 

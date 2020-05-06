@@ -3,7 +3,10 @@ title: Pull Request Reviews
 linktitle: Pull Request Reviews
 description: How to get your pull request reviewed and how to review a pull request
 authors: [pmuir]
+type: docs
 weight: 20
+aliases:
+    - /docs/contributing/code/pullrequestreview/
 ---
 
 The pull request is the main place we gate changes in Jenkins X. It's here we:
@@ -12,9 +15,9 @@ The pull request is the main place we gate changes in Jenkins X. It's here we:
 * execute [end to end tests](https://github.com/jenkins-x/bdd-jx) against static jenkins and Tekton
 * [check the change](https://github.com/jenkins-x/jx/blob/2d54b6ef9a276f148cbc7cb10169e83238f2d83e/hack/linter.sh) for linting issues
 * [check the code](https://github.com/jenkins-x/jx/blob/2d54b6ef9a276f148cbc7cb10169e83238f2d83e/hack/gofmt.sh) for formatting issues
-* validate that [all generated code](/docs/contributing/code/#code-generation) (mocks, kubernetes clients, kubernetes openapi structs) are up to date
-* validate that we can [generate the apidoc](/docs/contributing/code/#code-generation)
-* validate that your [commits are conventional](/docs/contributing/code/#the-commit-message)
+* validate that [all generated code](/community/code/#code-generation) (mocks, kubernetes clients, kubernetes openapi structs) are up to date
+* validate that we can [generate the apidoc](//community/code/#code-generation)
+* validate that your [commits are conventional](/community/code/#the-commit-message)
 
 Our philosophy is to automate the checks as much as possible - there are some that must still be done by a human but we
 plan to reduce those as far as possible.

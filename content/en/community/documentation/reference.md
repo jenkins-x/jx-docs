@@ -2,7 +2,10 @@
 title: References
 linktitle: References
 description: Additional reference documentation when working on the Jenkins X site
+type: docs
 weight: 30
+aliases:
+    - /docs/contributing/documentation/reference/
 ---
 
 The following sections contains other information that's helpful when working with Hugo and the Jenkins X site; you don't necessary need to go through this if this is your first time.
@@ -88,7 +91,7 @@ Which will render as follows in the Jenkins X docs:
 [charcount]: http://www.lettercount.com/
 [`docs/static/images/showcase/`]: https://github.com/jenkins-x/jx/tree/master/docs/static/images/showcase/
 [ghforking]: https://help.github.com/articles/fork-a-repo/
-[hugodev]: /docs/contributing/code/
+[hugodev]: /community/code/
 [shortcodeparams]: content-management/shortcodes/#shortcodes-without-markdown
 [sourceforge]: http://docutils.sourceforge.net/docs/ref/rst/directives.html#admonitions
 [templating function]: /functions/

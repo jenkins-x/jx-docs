@@ -1,9 +1,16 @@
 ---
 title: Contribute code
-linktitle: Development
-description: How to contribute to Jenkins X development.
+linktitle: Contribute Code
+description: How to contribute code to Jenkins X development.
 authors: [digitalcraftsman]
-weight: 10
+weight: 2
+type: docs
+no_list: true
+menu:
+  community:
+    weight: 2
+aliases:
+    - /docs/contributing/
 ---
 
 # Introduction

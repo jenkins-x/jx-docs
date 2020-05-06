@@ -1,14 +1,21 @@
 ---
-title: Contribute documentation
-linktitle: Contribute documentation
+title:
+linktitle: Writing Documentation
 description: How to help improve the Jenkins X documentation
-weight: 1
+weight: 2
+type: docs
+no_list: true
+menu:
+  community:
+    weight: 2
+aliases:
+    - docs/contributing/documentation/
 ---
 
 We welcome your contributions to Jenkins X documentation whether you are a developer, an end user, or someone who can't stand seeing typos!
 
 {{% alert %}}
-If you're looking for the easiest way to correct existing content (typos etc.) have a look at the [Suggest Changes](/docs/contributing/documentation//changes) guide.
+If you're looking for the easiest way to correct existing content (typos etc.) have a look at the [Suggest Changes](/community/documentation/changes/) guide.
 {{% /alert %}}
 
 ## Assumptions
@@ -35,7 +42,7 @@ You want to get a clone of this repository.
 git clone  --recurse-submodules --depth 1 https://github.com/jenkins-x/jx-docs.git
 ```
 
-If you are a newcomer to Git and not sure what to do with the above command, have a look at the [Step by Step setup](/docs/contributing/documentation//step-by-step) guide which guides you through the process of installing Git, forking a repository and finally cloning it locally onto your local machine.
+If you are a newcomer to Git and not sure what to do with the above command, have a look at the [Step by Step setup](/community/documentation/step-by-step/) guide which guides you through the process of installing Git, forking a repository and finally cloning it locally onto your local machine.
 
 ## Local preview environment
 
@@ -155,8 +162,8 @@ It may be a good idea to run the server in a separate terminal so that you can k
 
 ## Contribution workflow
 
-Now that you have your local preview environment, the [contribution workflow](/docs/contributing/documentation//workflow) documnentation guides you through the steps to create your first pull request.
+Now that you have your local preview environment, the [contribution workflow](/community/documentation/workflow/) documnentation guides you through the steps to create your first pull request.
 
 ## Reference
 
-The [references](/docs/contributing/documentation//reference) page contains more useful information when working with Hugo and the Jenkins X site.
+The [references](/community/documentation/reference/) page contains more useful information when working with Hugo and the Jenkins X site.

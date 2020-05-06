@@ -45,11 +45,6 @@
 				<a class="nav-link{{if $active }} active{{end}}" href="{{ with .Page }}{{ .RelPermalink }}{{ else }}{{ .URL | relLangURL }}{{ end }}" {{ if ne $url.Host $baseurl.Host }}target="_blank" {{ end }}><span{{if $active }} class="active"{{end}}>{{ .Name }}</span></a>
 			</li>
 			{{ end }}
-			{{ if  .Site.Menus.community }}
-				<li class="nav-item dropdown d-none d-lg-block">
-					{{ partial "navbar-community-selector.html" . }}
-				</li>
-			{{ end }}
 			{{ if  .Site.Params.versions }}
 			<li class="nav-item dropdown d-none d-lg-block">
 				{{ partial "navbar-version-selector.html" . }}
@@ -64,4 +59,3 @@
 	</div>
 	<div class="navbar-nav d-none d-lg-block">{{ partial "search-input.html" . }}</div>
 </nav>
-
