@@ -2,7 +2,13 @@
 title: Overview
 linktitle: Apps Framework
 description: Extending Jenkins X using the Apps Framework
-weight: 20
+type: docs
+no_list: true
+menu:
+  community:
+    weight: 10
+aliases:
+    - /docs/contributing/addons/
 ---
 
 > This guide is still a work in progress!
@@ -156,4 +162,3 @@ itself. Binary plugins can import `jx` as a library of useful functions.
 Jenkins X provides a management framework for binary plugins that allows them to be automatically installed on the
 users machine when the relevant subcommand is called. The management framework will also take care of upgrading and
 removing plugins as needed. Plugins are managed by adding a custom resource to the team or cluster.
-

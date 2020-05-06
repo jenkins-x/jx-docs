@@ -2,7 +2,10 @@
 title: API Documentation
 linktitle: API Documentation
 description: How to help improve the Jenkins X API documentation
+type: docs
 weight: 15
+aliases:
+    - /docs/contributing/documentation/apidocs/
 ---
 
 Jenkins X has two types of API documentation: [Kubernetes Custom Resource Documentation](/apidocs/) and [Godoc](https://godoc.org/github.com/jenkins-x/jx).
@@ -10,7 +13,7 @@ Both types are generated from the `codegen` binary which is part of the jx [repo
 
 ## Setup your development environment
 
-It's best to make changes to the Jenkins X code on your local machine. Follow the [development](/docs/contributing/code/) guide
+It's best to make changes to the Jenkins X code on your local machine. Follow the [development](/community/code/) guide
 to get set up.
 
 ## Writing custom resource documentation

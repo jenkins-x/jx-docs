@@ -2,7 +2,14 @@
 title: Jenkins X Sponsors
 linktitle: Sponsors
 description:
-weight: 200
+type: docs
+no_list: true
+menu:
+  community:
+    weight: 8
+weight: 8
+aliases:
+    - /docs/contributing/sponsors/
 ---
 
 We thank the following organizations for their major commitments to support the Jenkins X project

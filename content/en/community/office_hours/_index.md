@@ -2,10 +2,10 @@
 title: Office Hours
 linktitle: Office Hours
 type: docs
-weight: 30
+weight: 9
 ---
 
-We meet for office hours **every other Tuesday** at 15:00 UTC (*See your timezone [here](https://time.is/1500_in_UTC)*). 
+We meet for office hours **every other Tuesday** at 15:00 UTC (*See your timezone [here](https://time.is/1500_in_UTC)*).
 
 Please note that this is **4pm British Summer Time** in the UK.
 

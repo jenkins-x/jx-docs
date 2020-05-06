@@ -2,7 +2,10 @@
 title: Step by Step setup
 linktitle: Git step by step
 description: Step by step instructions to setup Git
+type: docs
 weight: 20
+aliases:
+    - /docs/contributing/documentation/step-by-step/
 ---
 
 We'll go through each step below, but here's what you need to get started with Git:

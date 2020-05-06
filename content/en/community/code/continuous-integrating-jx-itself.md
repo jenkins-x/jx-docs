@@ -2,7 +2,10 @@
 title: Continuous Integrating JX itself
 linktitle: Continuous Integrating JX itself
 description: How we use jx to test every change into jx
+type: docs
 weight: 30
+aliases:
+    - /docs/contributing/code/continuous-integrating-jx-itself/
 ---
 
 You may be wondering how Jenkins X introduce changes to Jenkins X. Of course, Jenkins X is built using Jenkins X itself! That means that new changes to the project go through a CI process, and are built and tested using pipelines that run on a Jenkins X Kubernetes cluster.
@@ -37,4 +40,3 @@ The jx step bdd command allows you to create a new jx cluster to run the e2e tes
 
 ## Release
 If all tests pass and the pull request is merged, a new version of jx [will be released](https://github.com/jenkins-x/jx/releases). Not everyone can approve pull requests, only people whose names appear on [the OWNERS file](https://github.com/jenkins-x/jx/blob/master/OWNERS) can approve them. Remember, every merged pull request generates a new jx version. By default, new versions increment the patch part of the version string. This is done automatically, so when merging a pull request if jx is currently at version 1.3.152, after merging the pull request, the version 1.3.53 will be released. But when breaking changes are merged, the minor or major parts of the version string may be manually increased.
-
