@@ -1,5 +1,5 @@
 ---
-date: 2020-05-07T14:54:45Z
+date: 2020-05-07T18:31:03Z
 title: "jx create addon anchore"
 slug: jx_create_addon_anchore
 url: /commands/jx_create_addon_anchore/
@@ -46,7 +46,7 @@ jx create addon anchore [flags]
 
 ```
   -b, --batch-mode   Runs in batch mode without prompting for user input (default true)
-      --verbose      Enables verbose output
+      --verbose      Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warning, info, debug, trace
 ```
 
 ### SEE ALSO
