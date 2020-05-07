@@ -1,5 +1,5 @@
 ---
-date: 2020-05-07T14:54:45Z
+date: 2020-05-07T18:31:03Z
 title: "jx step validate"
 slug: jx_step_validate
 url: /commands/jx_step_validate/
@@ -23,7 +23,7 @@ jx step validate [flags]
 
 ```
   # Validates that the jx version is new enough
-  jx step validate --min-jx-version 2.1.25
+  jx step validate --min-jx-version 2.1.29
 ```
 
 ### Options
@@ -38,7 +38,7 @@ jx step validate [flags]
 
 ```
   -b, --batch-mode   Runs in batch mode without prompting for user input (default true)
-      --verbose      Enables verbose output
+      --verbose      Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warning, info, debug, trace
 ```
 
 ### SEE ALSO
