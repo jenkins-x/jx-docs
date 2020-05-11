@@ -5,9 +5,6 @@ description: 通过GitOps和Jenkins X Pipeline安装，配置或升级Jenkins X
 categories: [getting started]
 keywords: [install]
 weight: 10
-aliases: 
-  - /getting-started/boot
-  - /docs/reference/boot
 ---
 
 
@@ -20,19 +17,19 @@ _Jenkins X Boot_使用以下方法：
   * 使用Terraform创建您的kubernetes集群+相关的云资源
   * 使用您的云提供商Web控制台创建一个新的kubernetes集群
   * 使用 jx 命令行例如
-``` 
+```
 jx create cluster gke --skip-installation
 ```
-  
+
   * 使用选择的一些你们团队自定义工具，或者由您的运营团队提供给您的工具
 
 * 安装成功以后，您可以通过以下方式验证是否可以与kubernetes集群正常沟通：
-``` 
+```
 kubectl get ns
 ```
 
 * 运行 [jx boot](/commands/jx_boot/) 命令行:
-``` 
+```
 jx boot
 ```
 
@@ -46,10 +43,10 @@ jx boot
 
 
 #### 安装前后验证方法
- 
-在尝试进行任何安装之前，jx 会运行[jx step verify preinstall](/commands/jx_step_verify_preinstall/)命令以检查一切是否正常。 如果您使用的是Terraform（您的“jx-requirements.yml”文件会有“terraform：true”），如果这个时候Terraform没有创建所需的云资源的情况下， jx 安装将会失败。 
 
-安装完成后，将运行[jx step verify install](/commands/jx_step_verify_install/) 命令以验证您的安装成功. 
+在尝试进行任何安装之前，jx 会运行[jx step verify preinstall](/commands/jx_step_verify_preinstall/)命令以检查一切是否正常。 如果您使用的是Terraform（您的“jx-requirements.yml”文件会有“terraform：true”），如果这个时候Terraform没有创建所需的云资源的情况下， jx 安装将会失败。
+
+安装完成后，将运行[jx step verify install](/commands/jx_step_verify_install/) 命令以验证您的安装成功.
 
 ## 更改已有安装
 
@@ -76,7 +73,7 @@ Boot 当前支持以下用于管理敏感信息Secrets的选项:
 
 本地存储时默认设置，也可以通过以下方式改变存储配置 `secretStorage: local`:
 
-```yaml 
+```yaml
 cluster:
   provider: gke
 environments:
@@ -94,7 +91,7 @@ webhook: prow
 
 使用我们推荐的GKE或EKS提供的Kubernetes服务时，可以通过以下方式配置 `secretStorage: vault`:
 
-```yaml 
+```yaml
 cluster:
   provider: gke
 environments:
@@ -118,11 +115,11 @@ Jenkins X 支持许多用于处理Webhook的引擎，还可以选择支持[ChatO
 
 ### Prow
 
-当用户选择 [Serverless Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) 的安装方式，安装后Jenkins X服务会使用 [Tekton](https://tekton.dev/)的流水线引擎和GitHub的git服务。 [Prow](/docs/reference/components/prow/) 是默认的webhook和[ChatOps](/docs/guides/using-jx/faq/chatops/)的引擎。 
- 
-它的配置方式在 `jx-requirements.yml` 里 `webhook: prow` 
+当用户选择 [Serverless Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) 的安装方式，安装后Jenkins X服务会使用 [Tekton](https://tekton.dev/)的流水线引擎和GitHub的git服务。 [Prow](/docs/reference/components/prow/) 是默认的webhook和[ChatOps](/docs/guides/using-jx/faq/chatops/)的引擎。
 
-```yaml 
+它的配置方式在 `jx-requirements.yml` 里 `webhook: prow`
+
+```yaml
 cluster:
   provider: gke
 environments:
@@ -138,17 +135,17 @@ storage:
   repository:
     enabled: false
 webhook: prow
-``` 
+```
 
 ### Lighthouse
 
  当用户选择 [Serverless Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) 和 [Tekton](https://tekton.dev/) 的安装方式，但是没有采用 github的服务而是其他git服务的时候， [Lighthouse](/architecture/lighthouse/) 变成了默认的webhook和[ChatOps](/docs/guides/using-jx/faq/chatops/)引擎。现在Prow的开源软件只支持github的Git服务。
 
 以后如果Lighthouse开源软件经过了充分的测试后更加稳定，我们会将它设为默认 [Serverless Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/)。
- 
+
 Its configured via the `webhook: lighthouse` in `jx-requirements.yml`
 
-```yaml 
+```yaml
 cluster:
   provider: gke
 environments:
@@ -164,13 +161,13 @@ storage:
   repository:
     enabled: false
 webhook: lighthouse
-``` 
+```
 
 ### Jenkins
 
 要使用Jenkins服务器来处理Webhook和pipeline，请改动`jx-requirements.yml`中的`webhook: jenkins`。
 
-## Git 
+## Git
 
 Jenkins X支持许多不同的git服务。 您可以在[jx-requirements.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml) 文件里为每个环境指定相应的git服务供应商及git定义的组织 - organization。
 
@@ -178,8 +175,8 @@ Jenkins X支持许多不同的git服务。 您可以在[jx-requirements.yml](htt
 
 如果您没做任何改动，这些是默认设置。
 
- 
-```yaml 
+
+```yaml
 cluster:
   environmentGitOwner: myorg
   provider: gke
@@ -196,7 +193,7 @@ storage:
   repository:
     enabled: false
 webhook: prow
-``` 
+```
 
 ### GitHub Enterprise
 
@@ -226,7 +223,7 @@ storage:
     enabled: true
     url: "gs://jx-logs"
 webhook: lighthouse
-``` 
+```
 
 ### Bitbucket Server
 
@@ -256,7 +253,7 @@ storage:
     enabled: true
     url: "gs://jx-logs"
 webhook: lighthouse
-``` 
+```
 
 ### Bitbucket Cloud
 
@@ -285,7 +282,7 @@ storage:
     enabled: true
     url: "gs://jx-logs"
 webhook: lighthouse
-``` 
+```
 
 
 ### Gitlab
@@ -316,7 +313,7 @@ storage:
     enabled: true
     url: "gs://jx-logs"
 webhook: lighthouse
-``` 
+```
 
 ## Storage
 
@@ -324,7 +321,7 @@ webhook: lighthouse
 
 下面这个 `jx-requirements.yml` 文件是使用长期存储的例子:
 
-```yaml 
+```yaml
 cluster:
   provider: gke
 environments:
@@ -342,7 +339,7 @@ storage:
 ```
 
 
-您还可以在`storage`部分中指定存储分区的URL。支持以下URL语法： 
+您还可以在`storage`部分中指定存储分区的URL。支持以下URL语法：
 
 * `gs://anotherBucket/mydir/something.txt` : 使用谷歌云的GCS bucket
 * `s3://nameOfBucket/mydir/something.txt` : 使用亚马逊AWS的 S3 bucket
@@ -352,7 +349,7 @@ storage:
 
 e.g.
 
-```yaml 
+```yaml
 cluster:
   provider: gke
 environments:
@@ -376,11 +373,11 @@ For more details see the [Storage Guide](/docs/guides/managing-jx/common-tasks/s
 
 ## Ingress
 
-如果您采用[jx-requirements.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml) 默认设置， jx boot 会使用HTTP 而不是 HTTPS，同时也会使用 [nip.io](https://nip.io/) 作为DNS机制。 
+如果您采用[jx-requirements.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml) 默认设置， jx boot 会使用HTTP 而不是 HTTPS，同时也会使用 [nip.io](https://nip.io/) 作为DNS机制。
 
 在默认情况下运行boot后， `jx-requirements.yml` 配置如下：  
 
-```yaml 
+```yaml
 cluster:
   provider: gke
   clusterName: my-cluster-name
@@ -414,7 +411,7 @@ webhook: prow
 
 您也可以通过`ingress.tls.enabled = true`更新配置以启用TLS。下面有一个完整的示例。
 
-```yaml 
+```yaml
 cluster:
   clusterName: mycluster
   environmentGitOwner: myorg
@@ -451,4 +448,3 @@ storage:
     url: ""
 webhook: prow
 ```
-
