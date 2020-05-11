@@ -8,6 +8,9 @@ menu:
     weight: 10
 cascade:
   type: docs
+aliases:
+    - /getting-started/boot/
+    - /docs/reference/boot
 ---
 
 ## Concepts
@@ -28,13 +31,13 @@ The goals of DevOps projects are:
 * Lower failure rate of releases
 * Faster Mean Time To Recovery
 
-High performing teams should be able to deploy multiple times per day compared to the industry average that falls between once per week and once per month. 
+High performing teams should be able to deploy multiple times per day compared to the industry average that falls between once per week and once per month.
 
 The lead time for code to migrate from 'code committed' to 'code in production' should be less than one hour and the change failure rate should be less than 15%, compared to an average of between 31-45%.
 
-The Mean Time To Recover from a failure should also be less than one hour. 
+The Mean Time To Recover from a failure should also be less than one hour.
 
-Jenkins X has been designed from first principles to allow teams to apply DevOps best practices to hit top-of-industry performance goals. 
+Jenkins X has been designed from first principles to allow teams to apply DevOps best practices to hit top-of-industry performance goals.
 
 ## Practices
 ---
@@ -65,14 +68,14 @@ Jenkins X builds upon the DevOps model of loosely-coupled architectures and is d
 ## Building Blocks
 
 Jenkins X builds upon the following core components:  
-  
+
 ### Kubernetes & Docker
 ---
 At the heart of the system is Kubernetes, which has become the defacto virtual infrastructure platform for DevOps. Every major Cloud provider now offers Kubernetes infrastructure on demand and the platform may also be installed in-house on private infrastructure, if required. Test environments may also be created on local development hardware using the Minikube installer.
 
-Functionally, the Kubernetes platform extends the basic Containerisation principles provided by Docker to span across multiple physical Nodes. 
+Functionally, the Kubernetes platform extends the basic Containerisation principles provided by Docker to span across multiple physical Nodes.
 
-In brief, Kubernetes provides a homogeneous virtual infrastructure that can be scaled dynamically by adding or removing Nodes. Each Node participates in a single large flat private virtual network space. 
+In brief, Kubernetes provides a homogeneous virtual infrastructure that can be scaled dynamically by adding or removing Nodes. Each Node participates in a single large flat private virtual network space.
 
 The unit of deployment in Kubernetes is the Pod, which comprises one or more Docker containers and some meta-data. All containers within a Pod share the same virtual IP address and port space. Deployments within Kubernetes are declarative, so the user specifies the number of instances of a given version of a Pod to be deployed and Kubernetes calculates the actions required to get from the current state to the desired state by deploying or deleting Pods across Nodes. The decision as to where specific instances of Pods will be instantiated is influenced by available resources, desired resources and label-matching. Once deployed, Kubernetes undertakes to ensure that the desired number of Pods of each type remain operational by performing periodic health checks and terminating and replacing non-responsive Pods.
 
@@ -82,9 +85,9 @@ In the Jenkins X model, a Pod equates to a deployed instance of a Microservice (
 
 To access Services from outside the local network, Kubernetes requires the creation of an Ingress for each Service. The most common form of this utilises one or more load balancers with static IP addresses, which sit outside the Kubernetes virtual infrastructure and route network requests to mapped internal Services. By creating a wildcard external DNS entry for the static IP address of the load balancer, it becomes possible to map services to external fully-qualified domain names. For example, if our load balancer is mapped to `*.jenkins-x.io` then our payments service could be exposed as `http://payments.finance.jenkins-x.io`.
 
-Kubernetes represents a powerful and constantly improving platform for deploying services at massive scale, but is also complex to understand and can be difficult to configure correctly. Jenkins X brings to Kubernetes a set of default conventions and some simplified tooling, optimised for the purposes of DevOps and the management of loosely-coupled services. 
+Kubernetes represents a powerful and constantly improving platform for deploying services at massive scale, but is also complex to understand and can be difficult to configure correctly. Jenkins X brings to Kubernetes a set of default conventions and some simplified tooling, optimised for the purposes of DevOps and the management of loosely-coupled services.
 
-The `jx` command line tool provides simple ways to perform common operations upon Kubernetes instances like viewing logs and connecting to container instances. In addition, Jenkins X extends the Kubernetes Namespace convention to create Environments which may be chained together to form a promotion hierarchy for the release pipeline. 
+The `jx` command line tool provides simple ways to perform common operations upon Kubernetes instances like viewing logs and connecting to container instances. In addition, Jenkins X extends the Kubernetes Namespace convention to create Environments which may be chained together to form a promotion hierarchy for the release pipeline.
 
 A Jenkins X Environment can represent a virtual infrastructure environment such as Dev, Staging, Production etc for a given code team. Promotion rules between Environments can be defined so that releases may be moved automatically or manually through the pipeline. Each Environment is managed following the GitOps methodology - the desired state of an Environment is maintained in a Git repository and committing or rolling back changes to the repository triggers an associated change of state in the given Environment in Kubernetes.
 
