@@ -65,6 +65,7 @@ pipelineConfig:
               - -d
               - jenkins-x-website
               - --enableGitInfo
+              - --baseURL https://jenkins-x.io
 
           ## add, commit, and push changes
           - image: gcr.io/jenkinsxio/builder-go
