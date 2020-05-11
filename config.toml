@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://jenkins-x.io"
 title = "Jenkins X - Cloud Native CI/CD Built On Kubernetes"
 
 enableRobotsTXT = true
