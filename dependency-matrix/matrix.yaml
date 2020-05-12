@@ -9,5 +9,5 @@ dependencies:
   owner: jenkins-x
   repo: jenkins-x-versions
   url: https://github.com/jenkins-x/jenkins-x-versions
-  version: 2.1.31
+  version: 2.1.32
   versionURL: ""
