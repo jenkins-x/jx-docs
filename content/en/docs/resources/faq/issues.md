@@ -460,6 +460,31 @@ Delete the local git `jenkins-x-boot-config` repository.
 
 That should leave your Kubernetes provider and your local environment in a clean state.
 
+## No External IP assigned to the ingress in EKS
+
+If you have never created an Elastic Load Balancer (ELB) in AWS, then the `jx boot` command will fail to assign an ip to the ingress controller.
+
+In this case, the output from `jx boot` might look like this:
+```sh
+error: failed to discover the Ingress domain: getting a domain for ingress service kube-system/jxing-nginx-ingress-controller: Timed out after 5m0s, last error: %!s(<nil>)
+```
+
+To verify this is the case, run:
+```sh
+kubectl get svc --all-namespaces
+```
+
+If you see `pending` for external IP for `jxing-nginx-ingress-controller`
+```sh
+NAMESPACE     NAME                                  TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)                      AGE
+.....
+kube-system   jxing-nginx-ingress-controller        LoadBalancer   X.X.X.X         <pending>     80:32632/TCP,443:32036/TCP   4h45m
+...
+```
+then create an ELB manually outside of EKS, and tear it down.
+
+After that, run `jx boot` again.
+
 ## Other issues
 
 Please [let us know](https://github.com/jenkins-x/jx/issues/new) and see if we can help? Good luck!
