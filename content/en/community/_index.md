@@ -32,12 +32,21 @@ Talk to us on our slack channels, which are part of the Kubernetes slack. Join K
 * [\#jenkins-x-user](https://kubernetes.slack.com/messages/C9MBGQJRH) for users of Jenkins X
 * [\#jenkins-x-dev](https://kubernetes.slack.com/messages/C9LTHT2BB) for developers of Jenkins X
 
+
 ### Office Hours
 
 During office hours we demo the latest features, answer questions, and share knowledge together.
 We'd love to hear your feedback or show some of the work you are doing with Jenkins X! Feel free to [add your comments and questions to the doc](https://docs.google.com/document/d/1wHdBlZAN-ndPELuBoM5HBnYiQLvcz92-euXne2mKOEI/edit) or ask your questions in person.
 
 We meet for office hours **every other Tuesday** at 15:00 UTC (*See your timezone [here](https://time.is/1500_in_UTC)*).
+
+[Meeting link here](https://meet.google.com/cui-hnxp-bwu) or the link can be found on calendar event.
+
+Save Jenkins X Office Hours to your calendar by clicking the small 'Google calendar' button below: 
+
+<a target="_blank" href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=NDFhNDVyNGdzMW9nZnBpNzhpdGZsMG5qZWpfMjAyMDA1MTlUMTUwMDAwWiAwMzJwcDVlMDJqMjJiMHFqdGs2YTRxc21lY0Bn&amp;tmsrc=032pp5e02j22b0qjtk6a4qsmec%40group.calendar.google.com&amp;scp=ALL"><img border="0" src="https://www.google.com/calendar/images/ext/gc_button1_en-GB.gif"></a>
+
+
 
 <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Europe%2FLondon&amp;src=MDMycHA1ZTAyajIyYjBxanRrNmE0cXNtZWNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23EF6C00&amp;showTz=1" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 
