@@ -13,23 +13,22 @@ menu:
 
 ## Talks and Demos
 
-For details of the next Jenkins X talk or demo checkout our [talks at meetups and conferences](/community/talksdemos/) page!
-
-### Other Current and Upcoming Events
-
-* [Join us at FOSDEM 2020!](/blog/2020/01/09/jxfosdem2020/)
-* [FOSDEM Fringe: Full day workshop on Jenkins X by Viktor Farcic, Thursday, January 30](https://www.eventbrite.com/e/workshop-cloud-native-kubernetes-first-serverless-continuous-delivery-with-jenkins-x-kubernetes-and-tickets-87082627483)
+For details of the next Jenkins X talk or demo checkout our [talks at meetups and conferences](/community/talksdemos/) page.
 
 ### Office Hours
 
-We meet for office hours **every other Tuesday** at 15:00 UTC (*See your timezone [here](https://time.is/1500_in_UTC)*).
+During office hours we demo the latest features, answer questions, and share knowledge together.
+We'd love to hear your feedback or show some of the work you are doing with Jenkins X! Feel free to [add your comments and questions to the doc](https://docs.google.com/document/d/1wHdBlZAN-ndPELuBoM5HBnYiQLvcz92-euXne2mKOEI/edit) or ask your questions in person.
 
-Please note that this is **4pm British Summer Time** in the UK.
+We meet for office hours **every other Tuesday** at 15:00 UTC (*See your timezone [here](https://time.is/1500_in_UTC)*). This is our [meeting link](https://meet.google.com/cui-hnxp-bwu). 
 
-Next office hours: **19 May 2020**
+You can save Jenkins X office hours to your calendar by [clicking here](https://calendar.google.com/event?action=TEMPLATE&tmeid=NDFhNDVyNGdzMW9nZnBpNzhpdGZsMG5qZWpfMjAyMDA1MTlUMTUwMDAwWiAwMzJwcDVlMDJqMjJiMHFqdGs2YTRxc21lY0Bn&tmsrc=032pp5e02j22b0qjtk6a4qsmec%40group.calendar.google.com&scp=ALL). 
 
-Join us: <https://zoom.us/j/397862697>
+<a target="_blank" href="https://calendar.google.com/event?action=TEMPLATE;tmeid=NDFhNDVyNGdzMW9nZnBpNzhpdGZsMG5qZWpfMjAyMDA1MTlUMTUwMDAwWiAwMzJwcDVlMDJqMjJiMHFqdGs2YTRxc21lY0Bn;tmsrc=032pp5e02j22b0qjtk6a4qsmec%40group.calendar.google.com;scp=ALL"><img border="0" src="https://www.google.com/calendar/images/ext/gc_button1_en-GB.gif"></a>
 
-Feel free to [add your questions to the doc](https://docs.google.com/document/d/1wHdBlZAN-ndPELuBoM5HBnYiQLvcz92-euXne2mKOEI/edit) or ask your questions in person.
 
-Previous office hour recordings can be found on our [Jenkins X YouTube channel](https://www.youtube.com/channel/UCN2kblPjXKMcjjVYmwvquvg/playlists) in the Office Hours playlist, or see the [archives](/community/office_hours/).
+
+
+<iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Europe%2FLondon&amp;src=MDMycHA1ZTAyajIyYjBxanRrNmE0cXNtZWNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23EF6C00&amp;showTz=1" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+
+Previous office hour recordings can be found on our [Jenkins X YouTube channel](https://www.youtube.com/channel/UCN2kblPjXKMcjjVYmwvquvg/playlists) in the Office Hours playlist. Alternatively, see our office hours [archives](/community/office_hours/).
