@@ -26,7 +26,7 @@ We meet for office hours **every other Tuesday** at 15:00 UTC (*See your timezon
 
 Please note that this is **4pm British Summer Time** in the UK.
 
-Next office hours: **5 May 2020**
+Next office hours: **19 May 2020**
 
 Join us: <https://zoom.us/j/397862697>
 
