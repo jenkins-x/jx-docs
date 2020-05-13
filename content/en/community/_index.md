@@ -1,5 +1,4 @@
 ---
-title: Join And Contribute To The Jenkins X Community
 linktitle: "Join The Community"
 menu:
   community:
@@ -7,17 +6,22 @@ menu:
     name: Join The Community
   main:
     weight: 10
-    name: "Contribute"
+    name: "Community"
 type: docs
 no_list: true
 
 ---
 
-The Jenkins X Community is like no other, we are friendly, very open to feedback, provide guidance, best practices and much more.  You can find us in various channels.
+The Jenkins X Community is like no other, we are friendly, very open to feedback, provide guidance, best practices and much more.
 
 We value respect and inclusiveness and follow the [CDF Code of Conduct](https://github.com/cdfoundation/toc/blob/master/CODE_OF_CONDUCT.md) in all interactions.
 
-## Joining the Community
+<figure>
+<img src="/images/community/GoCommunity-background.png" class="img-thumbnail"/>
+</figure>
+
+image by Ashley McNamara, [creative commons license](https://github.com/ashleymcnamara/gophers/blob/master/GoCommunity.png)
+
 
 ### Slack
 
@@ -30,29 +34,17 @@ Talk to us on our slack channels, which are part of the Kubernetes slack. Join K
 
 ### Office Hours
 
+During office hours we demo the latest features, answer questions, and share knowledge together.
+We'd love to hear your feedback or show some of the work you are doing with Jenkins X! Feel free to [add your comments and questions to the doc](https://docs.google.com/document/d/1wHdBlZAN-ndPELuBoM5HBnYiQLvcz92-euXne2mKOEI/edit) or ask your questions in person.
+
 We meet for office hours **every other Tuesday** at 15:00 UTC (*See your timezone [here](https://time.is/1500_in_UTC)*).
-
-Please note that this is **4pm British Summer Time** in the UK.
-
-Next office hours: **19 May 2020**
 
 <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Europe%2FLondon&amp;src=MDMycHA1ZTAyajIyYjBxanRrNmE0cXNtZWNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23EF6C00&amp;showTz=1" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 
-Zoom link: <https://zoom.us/j/397862697>
-
-Please join us, we'd love to hear your feedback or have you participate and show some of the work you are doing with Jenkins X! Feel free to [add your questions to the doc](https://docs.google.com/document/d/1wHdBlZAN-ndPELuBoM5HBnYiQLvcz92-euXne2mKOEI/edit) or ask your questions in person.
+<!-- Zoom link: <https://zoom.us/j/397862697> -->
 
 Previous office hour recordings can be found on our [Jenkins X YouTube channel](https://www.youtube.com/channel/UCN2kblPjXKMcjjVYmwvquvg/playlists) in the Office Hours playlist. Alternatively, see our office hours [archives](/community/office_hours/).
 
-### Want to contribute?
-
-It will be lots of fun! Check out the [contribution guide](/docs/contributing/) for some tips on how to get started.
-
-<figure>
-<img src="/images/community/GoCommunity-background.png" class="img-thumbnail"/>
-</figure>
-
-image by Ashley McNamara, [creative commons license](https://github.com/ashleymcnamara/gophers/blob/master/GoCommunity.png)
 
 ### Subscribe to the Jenkins X Newsletter
 Our newsletter is filled with various topics and relevant content for people just starting, or folks who have been using the platform for a while.
@@ -99,6 +91,10 @@ Our newsletter is filled with various topics and relevant content for people jus
 <!--End mc_embed_signup-->
 
 You can also sign up using [this link](https://us7.campaign-archive.com/home/?u=d0c128ac1f69ba2bb20742976&id=84d053b0a0). The previous newsletters are also available there.
+
+### Want to contribute?
+
+It will be lots of fun! Check out the [contribution guide](/docs/contributing/) for some tips on how to get started.
 
 ### Reporting Issues
 
