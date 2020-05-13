@@ -36,6 +36,8 @@ Please note that this is **4pm British Summer Time** in the UK.
 
 Next office hours: **19 May 2020**
 
+<iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Europe%2FLondon&amp;src=MDMycHA1ZTAyajIyYjBxanRrNmE0cXNtZWNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23EF6C00&amp;showTz=1" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+
 Zoom link: <https://zoom.us/j/397862697>
 
 Please join us, we'd love to hear your feedback or have you participate and show some of the work you are doing with Jenkins X! Feel free to [add your questions to the doc](https://docs.google.com/document/d/1wHdBlZAN-ndPELuBoM5HBnYiQLvcz92-euXne2mKOEI/edit) or ask your questions in person.
