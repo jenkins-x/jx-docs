@@ -40,9 +40,9 @@ We'd love to hear your feedback or show some of the work you are doing with Jenk
 
 We meet for office hours **every other Tuesday** at 15:00 UTC (*See your timezone [here](https://time.is/1500_in_UTC)*).
 
-[Meeting link here](https://meet.google.com/cui-hnxp-bwu) or the link can be found on calendar event.
+[Meeting link](https://meet.google.com/cui-hnxp-bwu), which is also on the calendar event.
 
-Save Jenkins X Office Hours to your calendar by clicking the small 'Google calendar' button below: 
+You can save Jenkins X office hours to your calendar by clicking the small 'Google calendar' button below: 
 
 <a target="_blank" href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=NDFhNDVyNGdzMW9nZnBpNzhpdGZsMG5qZWpfMjAyMDA1MTlUMTUwMDAwWiAwMzJwcDVlMDJqMjJiMHFqdGs2YTRxc21lY0Bn&amp;tmsrc=032pp5e02j22b0qjtk6a4qsmec%40group.calendar.google.com&amp;scp=ALL"><img border="0" src="https://www.google.com/calendar/images/ext/gc_button1_en-GB.gif"></a>
 
