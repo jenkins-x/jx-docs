@@ -12,9 +12,12 @@ no_list: true
 
 ---
 
-The Jenkins X Community is like no other, we are friendly, very open to feedback, provide guidance, best practices and much more.
+The Jenkins X Community is like no other, we are friendly, very open to feedback, provide guidance, best practices and much more. 
+
+Join us on [Slack](/community/#slack) or during [Office Hours](/community/#office-hours) to ask questions and tell us what you are building. Upcoming [events and webinars](/community/#events--webinars) are shown on our [Event Calendar](/community/calendar) or announced on [Twitter](https://twitter.com/jenkinsxio).
 
 We value respect and inclusiveness and follow the [CDF Code of Conduct](https://github.com/cdfoundation/toc/blob/master/CODE_OF_CONDUCT.md) in all interactions.
+
 
 <figure>
 <img src="/images/community/GoCommunity-background.png" class="img-thumbnail"/>
@@ -100,9 +103,11 @@ Our newsletter is filled with various topics and relevant content for people jus
 
 You can also sign up using [this link](https://us7.campaign-archive.com/home/?u=d0c128ac1f69ba2bb20742976&id=84d053b0a0). The previous newsletters are also available there.
 
-### Want to contribute?
+### Events & Webinars
 
-It will be lots of fun! Check out the [contribution guide](/docs/contributing/) for some tips on how to get started.
+Our community likes to share! Join us during [Office Hours](/community/office_hours). Find out about upcoming events on our [Event Calendar](/community/calendar) or announced on [Twitter](https://twitter.com/jenkinsxio). 
+
+We have a curated list of [Jenkins X talks](/docs/resources/demos-talks-posts/talks/) and [articles](/docs/resources/demos-talks-posts/articles/) from our community to check out in our [Resources](/docs/resources/demos-talks-posts/) section.
 
 ### Reporting Issues
 
