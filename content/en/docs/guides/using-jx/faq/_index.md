@@ -219,17 +219,7 @@ service:
 To see an example of where we add multiple annotations that the `exposecontroller` adds to generated ingress rules, take a look at this [values.yaml](https://github.com/jenkins-x/jenkins-x-platform/blob/08a304ff03a3e19a8eb270888d320b4336237005/values.yaml#L655)
 
 
-## Should I use a monorepo?
-
-We are all trying to [Accelerate](/about/overview/accelerate/) and deliver business value to our customers faster. This is why we often use the 2 pizza teams and microservices as a way to empower teams to go fast; releasing microservices independently with no cross-team coordination required to speed things up.
-
-If you are developing microservices across separate 2 pizza teams then like [others](https://medium.com/@mattklein123/monorepos-please-dont-e9a279be011b) we don't think you should use monorepos - instead use a repository per microservice so that each microservice can release at its own individual release cadence.
-
-Monorepo's generally work better when a single team is working on a monolith that releases everything periodically after changing a single repository.
-
 ## How can I use a monorepo?
-
-We have focused the automated CI/CD in Jenkins X around helping teams [Accelerate](/about/overview/accelerate/) using microservices to build cloud native applications. So we assume separate repositories for each microservice.
 
 If you have an existing monorepo you want to import into Jenkins X you can; just be aware that you'll have to create and maintain your own pipelines for your monorepo. So just modify them `jenkins-x.yml` file after you import your monorepo.
 
