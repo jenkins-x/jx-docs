@@ -25,10 +25,13 @@ Import will perform the following actions (prompting you along the way):
 * add the git repository to your teams Jenkins
 * trigger the first pipeline
 
+{{< alert color="warning" >}}
+Be sure there isn't any `config.json` file at the root of your project, or else it will be interpreted as [kaniko](https://github.com/GoogleContainerTools/kaniko) configuration file, and can lead to a permission error when jx will try to push the builded project image to the docker registry.
+{{< /alert >}}
+
 ### Avoiding docker + helm
 
 If you are importing a repository that does not create a docker image you can use the `--no-draft` command line argument which will not use Draft to default the Dockerfile and helm chart.
-
 
 ### Importing via URL
 
