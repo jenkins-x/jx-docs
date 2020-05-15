@@ -14,6 +14,6 @@ services:
       - .:/workdir
   linkchecker:
     image: chabad360/htmlproofer:latest
-    command: "htmlproofer ./public --allow-hash-href --disable-external --check-html --checks-to-ignore ScriptCheck --empty-alt-ignore --file-ignore /.*apidocs.*/,/.*\/zh.*/,/.*\/es.*/,/.*\/docs\/reference\/api.*/,/.*\/docs\/reference\/config.*/,/.*\/community\/events.*/"
+    command: 'htmlproofer ./public --allow-hash-href --disable-external --check-html --checks-to-ignore ScriptCheck --empty-alt-ignore --file-ignore /.*apidocs.*/,/.*\/zh.*/,/.*\/es.*/,/.*\/docs\/reference\/api.*/,/.*\/docs\/reference\/config.*/,/.*\/community\/events.*/'
     volumes:
       - ./public:/public
