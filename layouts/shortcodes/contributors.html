@@ -1,0 +1,20 @@
+{{ $urlPre := "https://api.github.com" }}
+{{ $contributors := getJSON $urlPre "/repos/jenkins-x/jx/stats/contributors" }}
+{{ $sortedContributors := sort $contributors "total" "desc" }}
+
+  <table>
+    <tbody>
+  {{ range $count,$contributor := $sortedContributors }}
+    {{ if modBool $count 4 }}
+      <tr>
+    {{ end }}  
+      <td>
+          <a href="{{ .author.html_url }}"><img src="{{ .author.avatar_url }}" width="50%" alt="{{ .author.login }}"/></a>
+          <div style='width: 100px; text-align: center;'><sub><b>{{ .author.login }}</b></sub></div>
+      </td>
+    {{ if modBool ( add $count 1 ) 4 }}
+      </tr>
+    {{ end }} 
+  {{ end }}
+   </tbody>
+  </table>
