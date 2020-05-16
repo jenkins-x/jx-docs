@@ -162,7 +162,7 @@ It may be a good idea to run the server in a separate terminal so that you can k
 
 ## Contribution workflow
 
-Now that you have your local preview environment, the [contribution workflow](/community/documentation/workflow/) documnentation guides you through the steps to create your first pull request.
+Now that you have your local preview environment, the [contribution workflow](/community/documentation/workflow/) documentation guides you through the steps to create your first pull request.
 
 ## Reference
 
