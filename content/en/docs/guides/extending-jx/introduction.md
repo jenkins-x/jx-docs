@@ -4,6 +4,8 @@ linktitle: Apps Framework
 description: Extending Jenkins X using the Apps Framework
 type: docs
 weight: 1
+aliases:
+    - /docs/contributing/addons/
 ---
 
 > This guide is still a work in progress!
