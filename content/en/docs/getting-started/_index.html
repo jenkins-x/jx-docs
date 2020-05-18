@@ -4,14 +4,14 @@ linkTitle="Getting Started"
 description="How to get up and running with Jenkins X"
 
 aliases = [
-    "/getting-started",
-    "/docs",
-    "/docs/"
+    "/getting-started/",
+    "/docs/getting-started"
 ]
 
 type= "docs"
 menu="Docs"
-weight="1"
+name="Getting Started"
+weight="10"
 layout="home"
 
 +++
@@ -223,6 +223,13 @@ choco install jenkins-x
       Now you are ready to install Jenkins X into the cluster.
       To do that, you will use the <code>jx boot</code> command.
       For more details around JX Boot refer to the <a href="/docs/getting-started/setup/boot">Run Boot</a> section.
+    </p>
+    <p>
+      Jenkins X supports github.com as a Source Code Manager (SCM) by default. To use alternate
+      SCMs, you must enable support for <code>lighthouse</code> and configure the SCM support
+      in the <code>jx-requirements.yml</code> file. Refer to <a href="/docs/install-setup/configure-scm/">Configure SCMs</a>
+      for more information.
+    </p>
       In an empty directory run:
     </p>
 

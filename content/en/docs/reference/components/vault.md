@@ -7,7 +7,7 @@ publishdate: 2019-01-08
 lastmod: 2019-01-08
 weight: 200
 aliases:
-  - /docs/guides/managing-jx/common-tasks/vault
+  - /docs/resources/guides/managing-jx/common-tasks/vault
   - /architecture/vault
 ---
 

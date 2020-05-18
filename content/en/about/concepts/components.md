@@ -50,5 +50,5 @@ Also they are not permanent but created on a Pull Request to an applications git
 
 ## Ingress Custom Annotations
 
-To learn how to add custom annotations to the ingress controller, please see [How To Add Custom Annotations to Ingress Controller?](/docs/guides/using-jx/faq/#how-to-add-custom-annotations-to-ingress-controller)
+To learn how to add custom annotations to the ingress controller, please see [How To Add Custom Annotations to Ingress Controller?](/docs/resources/guides/using-jx/faq/#how-to-add-custom-annotations-to-ingress-controller)
 

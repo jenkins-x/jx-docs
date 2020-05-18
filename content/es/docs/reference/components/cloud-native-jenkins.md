@@ -18,7 +18,7 @@ Algunos equipos desarrollan aplicaciones nativas en la nube en Kubernetes y, por
 
 Para los equipos que no implementan aplicaciones en Kubernetes, como la entrega de bibliotecas o binarios, hay una nueva opción de `carga de trabajo de biblioteca` que tiene CI y versiones automatizadas pero no CD.
 
-Cuando [crea un clúster](/es/docs/getting-started/setup/create-cluster/) o [instala Jenkins X](/docs/guides/managing-jx/common-tasks/install-on-cluster/), se le solicita que elija entre los paquetes de construcción disponibles.
+Cuando [crea un clúster](/es/docs/getting-started/setup/create-cluster/) o [instala Jenkins X](/docs/resources/guides/managing-jx/common-tasks/install-on-cluster/), se le solicita que elija entre los paquetes de construcción disponibles.
 
 ```sh
 ? Pick workload build pack:   [Use arrows to move, type to filter]
@@ -41,4 +41,4 @@ Sin embargo, debería poder extender cualquiera de estos paquetes de construcci�
 
 ## Escribiendo su propio paquete de construcción
 
-Queremos que [extienda Jenkins X](/docs/contributing/addons/), así que consulte la documentación sobre [cómo crear sus propios paquetes de construcción]/docs/guides/managing-jx/common-tasks/build-packs/#creating-new-build-packs).
+Queremos que [extienda Jenkins X](/docs/contributing/addons/), así que consulte la documentación sobre [cómo crear sus propios paquetes de construcción]/docs/resources/guides/managing-jx/common-tasks/build-packs/#creating-new-build-packs).

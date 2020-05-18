@@ -18,9 +18,9 @@ Jenkins X 假设每个用户都可以访问运行 Jenkins X 的 kubernetes 开�
 
 当用户拥有了 kubernetes 集群的访问权限：
 
-* [安装 jx 二进制文件](/zh/getting-started/setup/install//)
+* [安装 jx 二进制文件](/zh/getting-started/setup/install/)
 
-如果 Jenkins X 安装在命名空间 `jx` 中，那么应该 [切换你的上下文](/zh/docs/guides/using-jx/common-tasks/kube-context/) 到命名空间 `jx` 当中：
+如果 Jenkins X 安装在命名空间 `jx` 中，那么应该 [切换你的上下文](/zh/docs/resources/guides/using-jx/common-tasks/kube-context/) 到命名空间 `jx` 当中：
 
     jx ns jx
 

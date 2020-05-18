@@ -4,7 +4,7 @@ linktitle: Custom Jenkins Servers
 description: How to work with Custom Jenkins Servers in Jenkins X
 weight: 70
 aliases:
-  - /docs/guides/managing-jx/common-tasks/custom-jenkins
+  - /docs/resources/guides/managing-jx/common-tasks/custom-jenkins
 ---
 
 Jenkins X provides automated CI/CD for your libraries and microservices you want to deploy on Kubernetes, but what about those other `Jenkinsfile` based pipelines you have already created on a custom Jenkins Server?
@@ -73,6 +73,6 @@ jx start pipeline -m
 
 ## Managing custom Jenkins Servers via GitOps
 
-We have designed the Jenkins App for Jenkins X using the [App extension framework](/docs/contributing/addons/) which means you can manage your custom Jenkins servers via [GitOps](/docs/guides/managing-jx/common-tasks/manage-via-gitops/) - keeping all of the apps, their version and configuration in git and using the Jenkins X tooling to add/update/configure/delete apps.
+We have designed the Jenkins App for Jenkins X using the [App extension framework](/docs/contributing/addons/) which means you can manage your custom Jenkins servers via [GitOps](/docs/resources/guides/managing-jx/common-tasks/manage-via-gitops/) - keeping all of the apps, their version and configuration in git and using the Jenkins X tooling to add/update/configure/delete apps.
 
 

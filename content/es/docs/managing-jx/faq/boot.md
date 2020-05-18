@@ -38,7 +38,7 @@ Vea cómo actualizar su [configuración boot con los últimos recursos SourceRep
 
 Debe asignar su `SourceRepository` a un `Scheduler` especificando `--scheduler` cuando utilice los comandos `jx create quickstart / jx import` en su repositorio o modifique el `spec.scheduler.name` de `SourceRepository` del CRD en su repositorio Git de desarrollo o especificando un programador predeterminado diferente en el `dev environment.spec.teamSettings.defaultScheduler.name` luego la próxima vez que se genere la configuración de prow (en el comando `jx create quickstart / jx import / jx boot` actualizará la configuración de prow para usar su programador.
 
-Consulte también [¿Cómo agrego múltiples pipelines paralelas a un proyecto?](/docs/guides/using-jx/faq/chatops/#how-do-i-add-multiple-parallel-pipelines-to-a-project)
+Consulte también [¿Cómo agrego múltiples pipelines paralelas a un proyecto?](/docs/resources/guides/using-jx/faq/chatops/#how-do-i-add-multiple-parallel-pipelines-to-a-project)
 
 ## ¿Cómo adiciono charts en Jekins X?
 

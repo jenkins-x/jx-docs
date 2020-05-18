@@ -12,7 +12,7 @@ aliases:
 
 Some features and issues require DNS to be configured. The domain name `jenkins-x.rocks` is available for
 use. Jenkins X can either manage your DNS for you or you can manage the DNS manually. Read more about how
-[Jenkins X manages your DNS for you](/docs/guides/managing-jx/common-tasks/dns/).
+[Jenkins X manages your DNS for you](/docs/resources/guides/managing-jx/common-tasks/dns/).
 
 In both scenarios you can reuse the domain name if you delete the old cluster that was using it and create a new one. If
 you run both clusters at the same time you will need a domain name for each.

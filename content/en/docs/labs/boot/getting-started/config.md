@@ -336,7 +336,7 @@ storage:
 
 {{< pageinfo >}}
 **NOTE** On GKE your node-pool requires additional permissions to write into GCS buckets,
-for more information on this view the [GKE Storage Permissions](https://jenkins-x.io/docs/guides/managing-jx/common-tasks/storage/#gke-storage-permissions)
+for more information on this view the [GKE Storage Permissions](https://jenkins-x.io/docs/resources/guides/managing-jx/common-tasks/storage/#gke-storage-permissions)
 {{< /pageinfo >}}
 For more details see the [Storage Guide](https://jenkins-x.io/architecture/storage/).
 
@@ -488,7 +488,7 @@ velero:
   namespace: velero
 ```
 
-Using whatever your cloud providers bucket URLs are. For more background, check out the [storage guide](/docs/guides/managing-jx/common-tasks/storage/)
+Using whatever your cloud providers bucket URLs are. For more background, check out the [storage guide](/docs/resources/guides/managing-jx/common-tasks/storage/)
 
 ## User Interface
 

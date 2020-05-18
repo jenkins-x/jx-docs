@@ -40,7 +40,7 @@ foo:
 
 Puede usar helm para hacer cosas como establecer el `namespace` actual si lo necesita.
 
-Para ver un ejemplo más complejo de cómo puede utilizar el fichero `values.yaml` para establecer valores en chart de helm, vea cómo lo hacemos para [configurar el propio Jenkins X](/docs/guides/managing-jx/common-tasks/config/).
+Para ver un ejemplo más complejo de cómo puede utilizar el fichero `values.yaml` para establecer valores en chart de helm, vea cómo lo hacemos para [configurar el propio Jenkins X](/docs/resources/guides/managing-jx/common-tasks/config/).
 
 ## ¿Cómo se inserta la configuración de vista previa?
 
@@ -145,7 +145,7 @@ Para ampliar los detalles vea el código de para resolverlo [aquí](https://gith
 
 ## ¿Qué pasa si mi equipo no quiere usar Helm?
 
-Para ayudar a automatizar CI/CD con GitOps, asumimos que los charts de Helm se crean como parte de la configuración automatizada del proyecto y del CI/CD. p.ej. simplemente [importe su código fuente](/docs/guides/using-jx/creating/import/) y se generará una imagen de docker + chart de Helm para usted; los desarrolladores no necesitan saber ni preocuparse si no quieren usar Helm:
+Para ayudar a automatizar CI/CD con GitOps, asumimos que los charts de Helm se crean como parte de la configuración automatizada del proyecto y del CI/CD. p.ej. simplemente [importe su código fuente](/docs/resources/guides/using-jx/creating/import/) y se generará una imagen de docker + chart de Helm para usted; los desarrolladores no necesitan saber ni preocuparse si no quieren usar Helm:
 
 Si un desarrollador desea crear específicamente un recurso (por ejemplo, `Secret, ConfigMap`, etc.), simplemente puede hackear el YAML directamente en `charts/myapp/templates/*.yaml`. Cada vez más, la mayoría de los IDE tienen asistentes de IU para crear + editar recursos de kubernetes.
 
@@ -230,7 +230,7 @@ Hemos centrado la automatización de los CI/CD en Jenkins X para ayudar a los eq
 
 Si tiene un monorepo existente que desea importar a Jenkins X, puede hacerlo; solo tenga en cuenta que tendrá que crear y mantener sus propios pipelines para su monorepo. Tan solo modifíquelos en su fichero `jenkins-x.yml` después de importar su monorepo.
 
-Vea cómo [agregar un paso personalizado a su pipeline](/about/concepts/jenkins-x-pipelines/#customizing-the-pipelines).
+Vea cómo [agregar un paso personalizado a su pipeline](/about/concepts/jenkins-x-pipelines/).
 
 ## ¿Cómo se inyectan secretos de Vault en entornos de staging/production/preview?
 

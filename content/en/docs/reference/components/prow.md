@@ -5,7 +5,7 @@ description: The CI/CD system that Kubernetes uses to build itself
 parent: "components"
 weight: 40
 aliases:
-  - /docs/guides/managing-jx/common-tasks/prow
+  - /docs/resources/guides/managing-jx/common-tasks/prow
   - /architecture/prow
 ---
 

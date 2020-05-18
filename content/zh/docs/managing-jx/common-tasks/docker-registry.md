@@ -80,5 +80,5 @@ kubectl create secret generic jenkins-docker-cfg --from-file=./config.json
 
 ### 为你的 registry 挂载凭证
 
-你的 docker registry 需要将凭证挂载到 [Pod 模板](/zh/docs/guides/managing-jx/common-tasks/pod-templates/)当中。
+你的 docker registry 需要将凭证挂载到 [Pod 模板](/zh/docs/resources/guides/managing-jx/common-tasks/pod-templates/)当中。
 

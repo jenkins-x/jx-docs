@@ -4,7 +4,7 @@ linktitle: 构建打包
 description: 打包源码为 kubernetes 应用
 ---
 
-我们使用 [draft](https://draft.sh/) 风格为不同的语言_构建打包_ ，我们通过[导入](/zh/docs/guides/using-jx/common-tasks/import/)或者[创建](/zh/docs/guides/using-jx/common-tasks/create-spring/)[他们](/zh/docs/getting-started/first-project/create-quickstart/)，运行时和构建工具添加必要的配置文件，因此我们可以在 Kubernetes 中构建和部署他们。
+我们使用 [draft](https://draft.sh/) 风格为不同的语言_构建打包_ ，我们通过[导入](/zh/docs/resources/guides/using-jx/common-tasks/import/)或者[创建](/zh/docs/resources/guides/using-jx/common-tasks/create-spring/)[他们](/zh/docs/getting-started/first-project/create-quickstart/)，运行时和构建工具添加必要的配置文件，因此我们可以在 Kubernetes 中构建和部署他们。
 
 如果由于工程没有被创建或导入而不存在的话，构建包会默认使用下面的文件：
 
@@ -19,7 +19,7 @@ description: 打包源码为 kubernetes 应用
 
 ## 创建新的构建
 
-我们欢迎[贡献](/zh/community/)，因此，请考虑增加新的构建包和 [pod 模板](/zh/docs/guides/managing-jx/common-tasks/pod-templates/)。
+我们欢迎[贡献](/zh/community/)，因此，请考虑增加新的构建包和 [pod 模板](/zh/docs/resources/guides/managing-jx/common-tasks/pod-templates/)。
 
 这里有如何创建一个新的构建包的指导 —— 如果有任何不清楚的请[加入社区并提问](/zh/community/)，我们很乐意帮助！
 
@@ -27,7 +27,7 @@ description: 打包源码为 kubernetes 应用
 
 然后，如果不存在的话，手动添加 `Dockerfile` 和 `Jenkinsfile` 。你可以从[当前构建包文件夹](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/tree/master/packs)开始 —— 使用相似的语言或框架。
 
-如果你的构建包使用了 [pod 模板](/zh/architecture/pod-templates) 中不存在的构建工具，你需要[提交一个新的 pod 模板](/zh/docs/guides/managing-jx/common-tasks/pod-templates/#submitting-new-pod-templates)，还可能需要一个新的构建容器景象。
+如果你的构建包使用了 [pod 模板](/zh/architecture/pod-templates) 中不存在的构建工具，你需要[提交一个新的 pod 模板](/zh/docs/resources/guides/managing-jx/common-tasks/pod-templates/#submitting-new-pod-templates)，还可能需要一个新的构建容器景象。
 
 一旦你有了 pod 模板可以使用，例如你的 `Jenkinsfile` 中引用到的 `jenkins-foo` ：
 

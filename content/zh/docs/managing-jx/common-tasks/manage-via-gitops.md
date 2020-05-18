@@ -20,7 +20,7 @@ keywords: [install,kubernetes]
 
 `—ng` 标记是这些标记的一个别名：`—gitops —vault —no-tiller —tekton` 。所以它还附带了对 [Jenkins X 流水线](/about/concepts/jenkins-x-pipelines/) - 基于 Tekton 的新式云原生流水线引擎的支持。
 
-如果你仍然想要使用Jenkins服务器作为 Jenkins X 中自动化 CI/CD 流水线的执行引擎，那么你可以使用 `—gitops —vault` 代替。仍要注意是的即使使用了 `—ng` 以及使用了由 Tekton 驱动的 [Jenkins X 流水线](/about/concepts/jenkins-x-pipelines/),你仍然需要创建你自己的[自定义 Jenkins 服务器](/docs/guides/managing-jx/common-tasks/custom-jenkins/)来运行传统的 Jenkins 任务和流水线。
+如果你仍然想要使用Jenkins服务器作为 Jenkins X 中自动化 CI/CD 流水线的执行引擎，那么你可以使用 `—gitops —vault` 代替。仍要注意是的即使使用了 `—ng` 以及使用了由 Tekton 驱动的 [Jenkins X 流水线](/about/concepts/jenkins-x-pipelines/),你仍然需要创建你自己的[自定义 Jenkins 服务器](/docs/resources/guides/managing-jx/common-tasks/custom-jenkins/)来运行传统的 Jenkins 任务和流水线。
 
 一旦你使用 GitOps 安装了 Jenkins X 来管理开发环境，那么表明安装了 Jenkins X 和它的附加应用程序，你将为 Dev，Staging，Production 环境获得一个额外的 git 仓库。它也意味着如果你用一个更新命令如 [jx upgrade platform](/commands/deprecation/) 或通过 [jx add app](http://localhost:1313/commands/jx_add_app/) 添加、更新、删除应用，那么那些命令将在开发环境的 git 存储库生成 Pull Request ，就像当你发布新版本的微服务时， promotion 是如何工作的。
 

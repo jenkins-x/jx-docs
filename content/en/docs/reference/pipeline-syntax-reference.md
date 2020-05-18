@@ -14,7 +14,7 @@ aliases:
 
 ## Where to Define Your Pipelines
 
-Pipelines can either be defined in [build packs](/docs/reference/components/build-packs/), used for
+Pipelines can either be defined in [build packs](/docs/create-project/build-packs/), used for
 multiple projects, or in the `jenkins-x.yml` file in a project's repository.
 When defining pipelines in a build pack, the top-level configuration below is
 used directly, while in `jenkins-x.yml`, the top-level configuration is under

@@ -1,15 +1,12 @@
 ---
-title: Resources
-linktitle: Resources
+title: Misc Resources
+linktitle: Misc Resources
 type: docs
 description: Artwork and resources to help you evangelize and showcase Jenkins X to your team!
-
-menu:
-  docs:
-    title: "Resources"
-    weight: 100
+weight: 50
 aliases:
   - /resources
+  - /docs/resources/
 ---
 
 # Presentations

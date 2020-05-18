@@ -16,7 +16,7 @@ Thank you for your participation,
 
 {{% /alert %}}
 
-The [Trigger Jenkins Proposal](https://github.com/jstrachan/enhancements/blob/jenkins-trigger/proposals/trigger-jenkins/README.md) aims to improve the interoperability of Jenkins and Jenkins X so you can use both together to solve all of your CI//CD needs.
+The [Trigger Jenkins Proposal](https://github.com/jstrachan/enhancements/blob/jenkins-trigger/proposals/trigger-jenkins/README.md) aims to improve the interoperability of Jenkins and Jenkins X so you can use both together to solve all of your CI/CD needs.
 
 We want to make it easy to reuse existing remote Jenkins servers with Jenkins X / tekton so that folks can work with either 100% cloud native tekton based automated CI/CD from Jenkins X or reuse existing Jenkins pipelines with remote Jenkins servers.
 

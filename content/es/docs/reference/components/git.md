@@ -40,7 +40,7 @@ p.ej. para [crear un nuevo clúster](/es/docs/getting-started/setup/create-clust
 $ jx create cluster gke --no-default-environments
 ```
 
-o [instalarlo en un clúster existente](/docs/guides/managing-jx/common-tasks/install-on-cluster/)
+o [instalarlo en un clúster existente](/docs/resources/guides/managing-jx/common-tasks/install-on-cluster/)
 
 ```sh
 $ jx install --no-default-environments

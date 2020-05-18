@@ -23,7 +23,7 @@ Una vez que el usuario tiene acceso al clúster de Kubernetes:
 
 * [instale el binario jx](/es/docs/getting-started/setup/install/)
 
-Si Jenkins X fue instalado en el namespace `jx`, entonces lo siguientes debe ser [cambiar su contexto](/docs/guides/using-jx/developing/kube-context/) al namespace `jx`:
+Si Jenkins X fue instalado en el namespace `jx`, entonces lo siguientes debe ser [cambiar su contexto](/docs/resources/guides/using-jx/developing/kube-context/) al namespace `jx`:
 
     $  jx ns jx
 
@@ -36,7 +36,7 @@ Para ver los entornos y cualquier herramienta de desarrollo como las consolas de
 
 ## ¿Cómo funciona el control de acceso y la seguridad?
 
-Vea la [documentación de control de acceso](/docs/guides/managing-jx/common-tasks/access-control/).
+Vea la [documentación de control de acceso](/docs/resources/guides/managing-jx/common-tasks/access-control/).
 
 ## ¿Cómo actualizo mi instalación de Jenkins X?
 
@@ -126,7 +126,7 @@ Image:       jenkinsxio/jenkins-go:256.0.50
 
 ## ¿Cómo reutilizo mi controlador Ingress existente?
 
-De manera predeterminada, [cuando instala Jenkins X en un clúster de Kubernetes existente](/docs/guides/managing-jx/common-tasks/install-on-cluster/), le pregunta si desea instalar un controlador Ingress. Jenkins X necesita un controlador Ingress de algún tipo para que podamos configurar los recursos `Ingress` para cada `Service` para que podamos acceder a las aplicaciones web a través de URL fuera del clúster de Kubernetes (por ejemplo, dentro de los navegadores web).
+De manera predeterminada, [cuando instala Jenkins X en un clúster de Kubernetes existente](/docs/resources/guides/managing-jx/common-tasks/install-on-cluster/), le pregunta si desea instalar un controlador Ingress. Jenkins X necesita un controlador Ingress de algún tipo para que podamos configurar los recursos `Ingress` para cada `Service` para que podamos acceder a las aplicaciones web a través de URL fuera del clúster de Kubernetes (por ejemplo, dentro de los navegadores web).
 
 El comando [jx install](/commands/deprecation/) toma una serie de parámetros CLI que comienzan con `--ingress` donde puede apuntar el namespace, el deployment y el service del controlador de entrada que desea usar para la instalación.
 

@@ -42,7 +42,7 @@ Se crea un `prowjob` (trabajo/ejecución de prow), un nuevo controlador pipeline
 
 El Pipeline en Jenkins X utiliza un nuevo archivo `jenkins-x.yml` que es YAML en lugar del fichero Groovy `Jenkinsfile` utilizado por Jenkins.
 
-Sin embargo, todavía se están reutilizando los mismos paquetes de construcción reutilizables y de composición por detrás del telón. (Los paquetes de construcción de Jenkins X - [build packs](/docs/reference/components/build-packs//) - en realidad están escritos en YAML en los Pipelines de Jenkins X).
+Sin embargo, todavía se están reutilizando los mismos paquetes de construcción reutilizables y de composición por detrás del telón. (Los paquetes de construcción de Jenkins X - [build packs](/docs/create-project/build-packs/) - en realidad están escritos en YAML en los Pipelines de Jenkins X).
 
 Una cosa que notará es que con los Pipelines de Jenkins X no necesitamos copiar/pegar un gran archivo `Jenkinsfile` en el repositorio Git de cada aplicación; por lo general, el archivo `jenkins-x.yml` generado es pequeño, como este:
 
@@ -50,15 +50,15 @@ Una cosa que notará es que con los Pipelines de Jenkins X no necesitamos copiar
 buildPack: maven
 ```
 
-¡Eso es! Lo que eso significa básicamente es que, en tiempo de ejecución, el Pipeline de Jenkins X utilizará los paquetes de construcción - [build packs](/docs/reference/components/build-packs//) - para generar el Pipeline de Tekton.
+¡Eso es! Lo que eso significa básicamente es que, en tiempo de ejecución, el Pipeline de Jenkins X utilizará los paquetes de construcción - [build packs](/docs/create-project/build-packs/) - para generar el Pipeline de Tekton.
 
 ## Personalizar el Pipelines
 
-Tener paquetes de compilación - [build packs](/docs/reference/components/build-packs//) - automatizados para hacer todo su CI+CD es bastante impresionante, ya que la mayoría de las veces sus microservicios se compilarán, probarán, empaquetarán, lanzarán y promocionarán de la misma manera. ¡CI+CD es a menudo un trabajo pesado indiferenciado que deberíamos automatizar!
+Tener paquetes de compilación - [build packs](/docs/create-project/build-packs/) - automatizados para hacer todo su CI+CD es bastante impresionante, ya que la mayoría de las veces sus microservicios se compilarán, probarán, empaquetarán, lanzarán y promocionarán de la misma manera. ¡CI+CD es a menudo un trabajo pesado indiferenciado que deberíamos automatizar!
 
-Sin embargo, hay veces que desea [personalizar un pipeline](/docs/reference/components/build-packs//#pipelines) en particular (liberación, PR, característica, etc.) o modificar pasos involucrados dentro del [ciclo de vida](/docs/reference/components/build-packs/#life-cycles).
+Sin embargo, hay veces que desea [personalizar un pipeline](/docs/create-project/build-packs/#pipelines) en particular (liberación, PR, característica, etc.) o modificar pasos involucrados dentro del [ciclo de vida](/docs/first-projects/build-packs/#life-cycles).
 
-Puede leer más sobre el [modelo de extensión](/docs/reference/components/build-packs//#pipeline-extension-model) para descubrir todo lo que puede hacer. Básicamente, puede agregar pasos antes/después de cualquier ciclo de vida o reemplazar completamente un conjunto de ciclos de vida o incluso optar por salir del paquete de compilación por completo e alinear sus pipelines dentro de su `jenkins-x.yml`.
+Puede leer más sobre el [modelo de extensión](/docs/create-project/build-packs/#pipeline-extension-model) para descubrir todo lo que puede hacer. Básicamente, puede agregar pasos antes/después de cualquier ciclo de vida o reemplazar completamente un conjunto de ciclos de vida o incluso optar por salir del paquete de compilación por completo e alinear sus pipelines dentro de su `jenkins-x.yml`.
 
 Para una forma rápida de agregar un nuevo paso en el ciclo de vida de su pipeline, utilice el comando [jx create step](/commands/deprecation/):
 

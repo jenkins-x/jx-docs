@@ -9,7 +9,7 @@ En los últimos 1-2 años, hemos aprendido que hay muchos tipos diferentes de cl
 
 Además, ahora se recomienda usar herramientas como Terraform para administrar todos sus recursos en la nube: crear / actualizar clústeres de Kubernetes, buckets de almacenamiento en la nube, cuentas de servicio, KMS, etc.
 
-Detectamos también que teníamos muchos segmentos diferentes de lógica de instalación distribuidos por distintos comandos, por ejemplo, [jx create cluster](/commands/jx_create_cluster/), [jx install](/commands/deprecation/), el uso del [parámetro --gitops](/docs/guides/managing-jx/common-tasks/manage-via-gitops/). A esto le podemos sumar las diferentes formas de gestionar la información sensible (Secrets). Esta gran matrix de combinaciones hace muy difícil el poder probar y mantener de forma sólida cada comando.
+Detectamos también que teníamos muchos segmentos diferentes de lógica de instalación distribuidos por distintos comandos, por ejemplo, [jx create cluster](/commands/jx_create_cluster/), [jx install](/commands/deprecation/), el uso del [parámetro --gitops](/docs/resources/guides/managing-jx/common-tasks/manage-via-gitops/). A esto le podemos sumar las diferentes formas de gestionar la información sensible (Secrets). Esta gran matrix de combinaciones hace muy difícil el poder probar y mantener de forma sólida cada comando.
 
 Además, nos topamos con problemas en los comandos [jx create cluster](/commands/jx_create_cluster/) y [jx install](/commands/deprecation/) porque estos deben instalar componentes como el Ingerss Controller y no se estaba dando la posibilidad de modificar/quitar su instalación.
 

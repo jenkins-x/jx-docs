@@ -12,7 +12,7 @@ Jenkins X 建立在巨人的肩膀上，并且拥有许多不同的源码仓库�
 
 * [jenkins-x](https://github.com/jenkins-x) 源码的主要组织
 * [jenkins-x-apps](https://github.com/jenkins-x-apps) 包括 Jenkins X 的标准[插件应用](/docs/contributing/addons/)
-* [jenkins-x-buildpacks](https://github.com/jenkins-x-buildpacks) 包括可用的[构建打包](/docs/guides/managing-jx/common-tasks/build-packs/)
+* [jenkins-x-buildpacks](https://github.com/jenkins-x-buildpacks) 包括可用的[构建打包](/docs/resources/guides/managing-jx/common-tasks/build-packs/)
 * [jenkins-x-charts](https://github.com/jenkins-x-charts) 我们分发的主要 helm 图表
 * [jenkins-x-images](https://github.com/jenkins-x-images) 包括一些自定义的 docker 镜像构建
 * [jenkins-x-quickstarts](https://github.com/jenkins-x-quickstarts) 通过[创建快速开始](/docs/getting-started/first-project/create-quickstart/)使用的快速开始项目

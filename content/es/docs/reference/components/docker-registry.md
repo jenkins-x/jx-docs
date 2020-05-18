@@ -123,4 +123,4 @@ Con esto debe ser sufiente, ahora debe poder ejecutar los pipelines y almacenar 
 
 ### Montar el Secreto para su registro
 
-Su registro docker va a necesitar un Secreto que necesita ser montado en la [Plantilla Pod](/docs/guides/managing-jx/common-tasks/pod-templates/).
+Su registro docker va a necesitar un Secreto que necesita ser montado en la [Plantilla Pod](/docs/resources/guides/managing-jx/common-tasks/pod-templates/).

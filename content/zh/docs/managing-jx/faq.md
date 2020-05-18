@@ -29,7 +29,7 @@ foo:
 
 如果需要，可以使用 vanilla helm 来执行注入当前命名空间之类的操作。
 
-要查看如何使用 `values.yaml` 文件注入 chart 的更复杂示例，请参阅我们如何使用这些文件[配置 Jenkins X 本身](/zh/docs/guides/managing-jx/common-tasks/config/)
+要查看如何使用 `values.yaml` 文件注入 chart 的更复杂示例，请参阅我们如何使用这些文件[配置 Jenkins X 本身](/zh/docs/resources/guides/managing-jx/common-tasks/config/)
 
 
 ## 如何管理每个环境中的 Secret ？

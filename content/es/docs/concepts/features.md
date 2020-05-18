@@ -11,7 +11,7 @@ Jenkins X viene con una útil y práctica herramienta de línea de comandos [jx]
 
 * [instalar Jenkins X](/docs/getting-started/setup/install/) dentro de un clúster de Kubernetes existente
 * [crear un nuevo cluster de Kubernetes](/docs/getting-started/setup/create-cluster/) e instalar Jenkins X dentro de él
-* [cargar/importar proyectos](/docs/guides/using-jx/creating/import/) dentro de Jenkins X junto a su flujos de configuración CI/CD
+* [cargar/importar proyectos](/docs/resources/guides/using-jx/creating/import/) dentro de Jenkins X junto a su flujos de configuración CI/CD
 * [crea nuevas aplicaciones Spring Boot](/developing/create-spring/) las cuales son cargadas dentro de Jenkins X junto a sus flujos de configuración CI/CD
 
 ## Pipelines Automatizados
@@ -42,7 +42,7 @@ Puede instalar Jenkins X en diferentes namespaces en el mismo clúster si lo des
 
 También puede utilizar la CLI [jx create team](/commands/jx_create_team/) para crear un nuevo `Team` [Custom Resource](/docs/reference/components/custom-resources/). Al utilizar este comando el controlador de equipos creará, en segundo plano, una nueva instalación de Jenkins X en los namespaces del equipo, reutilizando de forma predeterminada el mismo nexus y registro de docker.
 
-Lea la [guía de configuración](/docs/guides/managing-jx/common-tasks/config/) para ampliar los detalles sobre cómo compartir recursos como Nexus entre equipos.
+Lea la [guía de configuración](/docs/resources/guides/managing-jx/common-tasks/config/) para ampliar los detalles sobre cómo compartir recursos como Nexus entre equipos.
 
 ## Promoción
 

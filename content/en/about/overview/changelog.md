@@ -48,7 +48,7 @@ kubectl scale deploy jenkins-x-monocular-ui --replicas=0
 ```
 
 The latest [version stream release](/about/concepts/version-stream/) has removed monocular so if you [upgrade your platform
-](/docs/guides/managing-jx/common-tasks/upgrade-jx/) this issue should be resolved.
+](/docs/resources/guides/managing-jx/common-tasks/upgrade-jx/) this issue should be resolved.
 
 We can always add monocular back as an optional [App](/docs/contributing/addons/) later on when it works again.
 
@@ -61,7 +61,7 @@ So we highly recommend anyone who has created a Jenkins X installation using Kna
 
 Now the `jx` binary will warn that any attempt at using `--knative-build` when installing is deprecated.
 
-We will soon have a build pack for [Jenkinsfile runner](https://github.com/jenkinsci/jenkinsfile-runner) when using Tekton in case you need to reuse a Jenkinsfile within [Serverless Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) and Tekton along with support for orchestrating `Jenkinsfile` within a [custom Jenkins server](/docs/guides/managing-jx/common-tasks/custom-jenkins/).
+We will soon have a build pack for [Jenkinsfile runner](https://github.com/jenkinsci/jenkinsfile-runner) when using Tekton in case you need to reuse a Jenkinsfile within [Serverless Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) and Tekton along with support for orchestrating `Jenkinsfile` within a [custom Jenkins server](/docs/resources/guides/managing-jx/common-tasks/custom-jenkins/).
 
 ## 21st May 2019: Skaffold upgrade to v0.29.0
 
