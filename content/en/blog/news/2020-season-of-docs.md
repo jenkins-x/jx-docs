@@ -29,9 +29,13 @@ Jenkins X invites technical writers to engage with our ongoing efforts to restru
 
 * Improve our [contributor’s guide](/community/documentation/) to ensure the information for new contributors is clear and well organised, including basic information about getting started as a contributor to Jenkins X, as well as any rules around licence agreements, processes for pull requests and reviews, building the project, and so on.
 
-* Create a tutorial for provisioning a Kubernetes cluster and installing Jenkins X with `jx boot` on platforms that are not covered with Terraform. Currently, the [Get started page](https://jenkins-x.io/docs/getting-started/) gives the incorrect impression that Jenkins X works only in GKE (Google Cloud Platform) and EKS (Amazon Web Services).
+* Create a tutorial for provisioning a Kubernetes cluster and installing Jenkins X with `jx boot` on platforms that are not covered with Terraform. Currently, the [Get started page](/docs/getting-started/) gives the incorrect impression that Jenkins X works only in GKE (Google Cloud Platform) and EKS (Amazon Web Services).
 
-* Write a how-to guide on using the new Terraform scripts to create Kubernetes clusters. Currently, on the docs site there is a [TODO for documentation on using Terraform to set up cloud resources](https://jenkins-x.io/docs/labs/boot/getting-started/cloud/terraform/). Using Terraform scripts to create clusters makes cluster creation more transparent and can increase default security. For more information on using Terraform scripts, please see a [recent office hours demo](https://www.youtube.com/watch?v=yujge0PHxd4) by [Hardy Ferentschik](https://github.com/hferentschik).
+<!-- * Write a how-to guide on using the new Terraform scripts to create Kubernetes clusters. Currently, on the docs site there is a [TODO for documentation on using Terraform to set up cloud resources](https://jenkins-x.io/docs/labs/boot/getting-started/cloud/terraform/). Using Terraform scripts to create clusters makes cluster creation more transparent and can increase default security. For more information on using Terraform scripts, please see a [recent office hours demo](https://www.youtube.com/watch?v=yujge0PHxd4) by [Hardy Ferentschik](https://github.com/hferentschik). -->
+
+* Build out [Creating Projects](/docs/getting-started/first-project/) section to include new or extended sections such as Understanding Buildpacks, New Project With Quickstart Or Import, Defining Environments, etc. The GSoD writer would work with the Jenkins X engineering team and community to build out those pages.
+
+* Create FAQs for select docs pages. The GSoD writer would read through our [Kubernetes slack channels](/community/#slack) and [closed issues](https://github.com/jenkins-x/jx/issues?q=is%3Aissue+is%3Aclosed) to identify the most common questions we are asked and to take the answers given to build out the FAQs.
 
 
 ### 📆 Important Dates
