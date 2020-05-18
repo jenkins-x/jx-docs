@@ -4,7 +4,7 @@ linktitle: Docker Registry
 description: Configuring your docker registry
 weight: 90
 aliases:
-  - /docs/guides/managing-jx/common-tasks/docker-registry
+  - /docs/resources/guides/managing-jx/common-tasks/docker-registry
 ---
 
 To be able to create and publish docker images we need to use a Docker Registry.
@@ -123,5 +123,5 @@ That should do it, you should now be able to run pipelines and store images in t
 
 ### Mount a Secret for your registry
 
-Your docker registry will require a Secret to be mounted into the [Pod Templates](/docs/guides/managing-jx/common-tasks/pod-templates/).
+Your docker registry will require a Secret to be mounted into the [Pod Templates](/docs/resources/guides/managing-jx/common-tasks/pod-templates/).
 

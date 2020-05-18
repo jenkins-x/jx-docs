@@ -23,7 +23,7 @@ También tenemos un comando de diagnóstico para detectar problemas comunes, [jx
 $ jx step verify install
 ```
 
-Un problema común para lo cual pudieran no iniciar los pods es si el clúster no tiene una [clase de almacenamiento predeterminado](https://kubernetes.io/docs/concepts/storage/storage-classes/) configurada, por lo tanto, los recursos `Persistent Volume Claims` no pueden obtener los `Persistent Volumes` como se describe en las [instrucciones de instalación](/docs/guides/managing-jx/common-tasks/install-on-cluster/).
+Un problema común para lo cual pudieran no iniciar los pods es si el clúster no tiene una [clase de almacenamiento predeterminado](https://kubernetes.io/docs/concepts/storage/storage-classes/) configurada, por lo tanto, los recursos `Persistent Volume Claims` no pueden obtener los `Persistent Volumes` como se describe en las [instrucciones de instalación](/docs/resources/guides/managing-jx/common-tasks/install-on-cluster/).
 
 Puede revisar su clase de almacenamiento y volúmenes persistentes a través de:
 
@@ -80,7 +80,7 @@ Intentamos automatizar esta configuración cuando usamos `jx create cluster`, p.
 
 En [EKS](/commands/jx_create_cluster_eks/), usamos ECR de manera predeterminada para evitar este problema. Del mismo modo, pronto cambiaremos por defecto a GCR y ACR en GKE y AKS respectivamente.
 
-Por lo tanto, una solución alternativa es utilizar un [registro real de contenedores externos](/docs/guides/managing-jx/common-tasks/docker-registry/) o habilitar el registro inseguro (`insecure-registry`) en sus demonios de Docker en sus nodos en su clúster de Kubernetes.
+Por lo tanto, una solución alternativa es utilizar un [registro real de contenedores externos](/docs/resources/guides/managing-jx/common-tasks/docker-registry/) o habilitar el registro inseguro (`insecure-registry`) en sus demonios de Docker en sus nodos en su clúster de Kubernetes.
 
 ## Helm falla con el Error: UPGRADE FAILED: incompatible versions client[...] server[...]'
 
@@ -168,7 +168,7 @@ $ jx delete git token -n github <yourUserName>
 $ jx create git token -n github <yourUserName>
 ```
 
-Puede ver más detalles en [cómo utilizar Git y Jenkins X aquí](/docs/guides/managing-jx/common-tasks/git/).
+Puede ver más detalles en [cómo utilizar Git y Jenkins X aquí](/docs/resources/guides/managing-jx/common-tasks/git/).
 
 ## Invalidar token git para escanear un proyecto
 
@@ -187,7 +187,7 @@ $ jx delete git token -n GitHub admin
 $ jx create git token -n GitHub admin
 ```
 
-Puede ver más detalles en [cómo utilizar Git y Jenkins X aquí](/docs/guides/managing-jx/common-tasks/git/).
+Puede ver más detalles en [cómo utilizar Git y Jenkins X aquí](/docs/resources/guides/managing-jx/common-tasks/git/).
 
 ## ¿Cuáles son las credenciales para acceder a los servicios principales?
 
@@ -259,7 +259,7 @@ Si encuentra que recibe muchas advertencias en sus pipelines como esta ...
 
 y la promoción demora 30 minutos desde la liberación de un pipeline en una aplicación que comienza con el cambio que afecta a `Staging`, y probablemente se deba principalmente a Webhooks.
 
-Cuando [importamos proyectos](/docs/guides/using-jx/creating/import/) o [creamos inicios rápidos](/es/docs/getting-started/first-project/create-quickstart/), automatizamos la configuración de los pipelines de CI/CD para el repositorio Git. Lo que esto hace es configurar Webhooks en el repositorio de Git para activar Jenkins X para activar pipelines (ya sea usando Prow para [Jenkins X Pipelines sin servidor](/es/about/concepts/jenkins-x-pipelines/) o el servidor estático jenkins si no).
+Cuando [importamos proyectos](/docs/resources/guides/using-jx/creating/import/) o [creamos inicios rápidos](/es/docs/getting-started/first-project/create-quickstart/), automatizamos la configuración de los pipelines de CI/CD para el repositorio Git. Lo que esto hace es configurar Webhooks en el repositorio de Git para activar Jenkins X para activar pipelines (ya sea usando Prow para [Jenkins X Pipelines sin servidor](/es/about/concepts/jenkins-x-pipelines/) o el servidor estático jenkins si no).
 
 Sin embargo, a veces su proveedor de Git (por ejemplo, [GitHub](https://github.com/) puede no poder conectarse a su instalación Jenkins X (por ejemplo, debido a problemas de red/firewall).
 

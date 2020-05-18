@@ -64,7 +64,7 @@ Next office hours are on **5 May**. Join us here: https://zoom.us/j/397862697
 ### Additional Information
 
 #### Technical Writers
-* [Contributing to the Jenkins X documentation](https://jenkins-x.io//community/documentation/)
+* [Contributing to the Jenkins X documentation](https://jenkins-x.io/community/documentation/)
 * [GSoD Technical Writer guide](https://developers.google.com/season-of-docs/docs/tech-writer-guide)
 * [GSoD Timeline](https://developers.google.com/season-of-docs/docs/timeline)
 

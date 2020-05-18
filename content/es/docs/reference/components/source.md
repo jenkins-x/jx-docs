@@ -14,7 +14,7 @@ Esta página enumera las principales organizaciones y repositorios.
 
 * [jenkins-x](https://github.com/jenkins-x) la organización principal para el código fuente
 * [jenkins-x-apps](https://github.com/jenkins-x-apps) contiene el estándar de [aplicaciones de componentes](/docs/contributing/addons/) para Jenkins X
-* [jenkins-x-buildpacks](https://github.com/jenkins-x-buildpacks) contiene los paquetes de [compilación disponibles](/docs/guides/managing-jx/common-tasks/build-packs/)
+* [jenkins-x-buildpacks](https://github.com/jenkins-x-buildpacks) contiene los paquetes de [compilación disponibles](/docs/resources/guides/managing-jx/common-tasks/build-packs/)
 * [jenkins-x-charts](https://github.com/jenkins-x-charts) los principales helm charts que distribuimos
 * [jenkins-x-images](https://github.com/jenkins-x-images) contiene algunas compilaciones de imágenes de docker personalizadas
 * [jenkins-x-quickstarts](https://github.com/jenkins-x-quickstarts) los proyectos de inicio rápido utilizados por [create quickstart](/docs/getting-started/first-project/create-quickstart/)

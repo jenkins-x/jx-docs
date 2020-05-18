@@ -2,7 +2,7 @@
 title: Labs
 linktitle: Labs
 description: Labs enhancements
-
+weight: 60
 aliases:
   - /labs
 

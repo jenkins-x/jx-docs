@@ -47,7 +47,7 @@ Entonces Jenkins X invocará cada contexto a pedido a través de `/test mycontex
 
 Puede ver cómo definimos muchos [contextos de prueba paralelas en la secuencia de versiones aquí](https://github.com/jenkins-x/environment-tekton-weasel-dev/blob/f377a72498282de9ee49b807b4d5ba74321a4fab/env/templates/jx-versions-scheduler.yaml#L18), que todos se ejecutan en paralelo e informan su estado en cada PR en la [secuencia de versiones](/es/about/concepts/version-stream/)
 
-Consulte también [¿Cómo asigno SourceRepository a un Scheduler personalizado?](/docs/faq//boot/#how-do-i-map-sourcerepository-to-a-custom-scheduler)
+Consulte también [¿Cómo asigno SourceRepository a un Scheduler personalizado?](/docs/resources/faq/boot/#how-do-i-map-sourcerepository-to-a-custom-scheduler)
 
 ## ¿Qué hace hook?
 

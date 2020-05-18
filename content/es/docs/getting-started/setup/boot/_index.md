@@ -114,13 +114,13 @@ La gran ventaja de utilizar Vault se muestra en el trabajo de equipo, donde cada
 
 ## Webhook
 
-Jenkins X admite varios sistemas para gestionar webhooks y opcionalmente admite [ChatOps](/docs/guides/using-jx/faq/chatops/).
+Jenkins X admite varios sistemas para gestionar webhooks y opcionalmente admite [ChatOps](/docs/resources/guides/using-jx/faq/chatops/).
 
-[Prow](/docs/reference/components/prow/) y [Lighthouse](/architecture/lighthouse/) admiten webhooks y [ChatOps](/docs/guides/using-jx/faq/chatops/), mientras que Jenkins solo admite webhooks.
+[Prow](/docs/reference/components/prow/) y [Lighthouse](/architecture/lighthouse/) admiten webhooks y [ChatOps](/docs/resources/guides/using-jx/faq/chatops/), mientras que Jenkins solo admite webhooks.
 
 ### Prow
 
-[Prow](/docs/reference/components/prow/) es actualmente el sistema de webhook y [ChatOps](/docs/guides/using-jx/faq/chatops/) pre-establecido cuando se utiliza [Serverless Jenkins X Pipelines](/es/about/concepts/jenkins-x-pipelines/) con [Tekton](https://tekton.dev/) y GitHub.
+[Prow](/docs/reference/components/prow/) es actualmente el sistema de webhook y [ChatOps](/docs/resources/guides/using-jx/faq/chatops/) pre-establecido cuando se utiliza [Serverless Jenkins X Pipelines](/es/about/concepts/jenkins-x-pipelines/) con [Tekton](https://tekton.dev/) y GitHub.
 
 Se configura a través de `webhook: prow` en el fichero `jx-requirements.yml`.
 
@@ -144,7 +144,7 @@ webhook: prow
 
 ### Lighthouse
 
-[Lighthouse](/architecture/lighthouse/) es actualmente el sistema de webhook y [ChatOps](/docs/guides/using-jx/faq/chatops/) pre-establecido cuando se utiliza [Serverless Jenkins X Pipelines](/es/about/concepts/jenkins-x-pipelines/) con [Tekton](https://tekton.dev/) y un servidor git diferente a [GitHub](https://github.com).
+[Lighthouse](/architecture/lighthouse/) es actualmente el sistema de webhook y [ChatOps](/docs/resources/guides/using-jx/faq/chatops/) pre-establecido cuando se utiliza [Serverless Jenkins X Pipelines](/es/about/concepts/jenkins-x-pipelines/) con [Tekton](https://tekton.dev/) y un servidor git diferente a [GitHub](https://github.com).
 
 Cuando Lighthouse sea más estable y esté bien probado, lo convertiremos en la configuración pre-establecida para todas las instalaciones que utilicen [Serverless Jenkins X Pipelines](/es/about/concepts/jenkins-x-pipelines/).
 
@@ -545,4 +545,4 @@ velero:
   namespace: velero
 ```
 
-Puedes utilizar cualquier URL almacenamiento habilitada. Para conocer sobre las URL revise la [guía de almacenamiento](/docs/guides/managing-jx/common-tasks/storage/).
+Puedes utilizar cualquier URL almacenamiento habilitada. Para conocer sobre las URL revise la [guía de almacenamiento](/docs/resources/guides/managing-jx/common-tasks/storage/).

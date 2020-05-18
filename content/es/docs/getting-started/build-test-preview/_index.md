@@ -29,7 +29,7 @@ Jenkins X va un paso más allá brindando una *vista previa del entorno* permiti
 
 ### Generar el entorno de vista previa
 
-En un escenario típico de desarrollo en Jenkins X, los usuarios realizan cambios a la aplicación que han importado o creado a través de una de las posibles variantes, p.ej [inicios rápidos](/es/docs/getting-started/first-project/create-quickstart/), [importar proyectos](/es/docs/guides/using-jx/creating/import/), entre otros.
+En un escenario típico de desarrollo en Jenkins X, los usuarios realizan cambios a la aplicación que han importado o creado a través de una de las posibles variantes, p.ej [inicios rápidos](/es/docs/getting-started/first-project/create-quickstart/), [importar proyectos](/es/docs/resources/guides/using-jx/creating/import/), entre otros.
 
 Luego de tener el proyecto, el proceso para generar la vista previa de entorno a partir de los cambios realizados es muy similar al flujo tradicional de Git. Los pasos serían:
 

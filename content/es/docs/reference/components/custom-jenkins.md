@@ -70,4 +70,4 @@ jx start pipeline -m
 
 ## Administrar servidores Jenkins personalizados a través de GitOps
 
-Hemos diseñado la aplicación Jenkins para Jenkins X utilizando el [framework de extensión de la aplicación](/docs/contributing/addons/), lo que significa que puede administrar sus servidores Jenkins personalizados a través de [GitOps](/docs/guides/managing-jx/common-tasks/manage-via-gitops/), manteniendo todas las aplicaciones, su versión y configuración en git y utilizando las herramientas Jenkins X para agregar/actualizar/configurar/eliminar sus aplicaciones.
+Hemos diseñado la aplicación Jenkins para Jenkins X utilizando el [framework de extensión de la aplicación](/docs/contributing/addons/), lo que significa que puede administrar sus servidores Jenkins personalizados a través de [GitOps](/docs/resources/guides/managing-jx/common-tasks/manage-via-gitops/), manteniendo todas las aplicaciones, su versión y configuración en git y utilizando las herramientas Jenkins X para agregar/actualizar/configurar/eliminar sus aplicaciones.

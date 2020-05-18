@@ -54,7 +54,7 @@ El código de estas aplicaciones de inicio rápido se encuentra en la [organizac
 
 Cuando creas el inicio rápido se utiliza el [paquete de construcción de Jenkins X](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) para identificar la configuración que necesita del proyecto. Durante la identificación se tiene en cuenta los diferentes lenguajes existentes en el proyecto y se selecciona el paquete más adecuado.
 
-Cuando utilizas [jx create](/docs/getting-started/setup/create-cluster/), [jx install](/docs/guides/managing-jx/common-tasks/install-on-cluster/) o [jx init](/commands/deprecation/) el [paquete de construcción de Jenkins X](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) es clonado ha la carpeta local `~/.jx/draft/packs`.
+Cuando utilizas [jx create](/docs/getting-started/setup/create-cluster/), [jx install](/docs/resources/guides/managing-jx/common-tasks/install-on-cluster/) o [jx init](/commands/deprecation/) el [paquete de construcción de Jenkins X](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) es clonado ha la carpeta local `~/.jx/draft/packs`.
 
 Dependiendo del tipo de instalación de Jenkins X (Serverless Jenkins vs Static Master Jenkins), puedes ver todos los lenguajes disponibles en los paquetes de construcción si listas los elementos de la siguiente ubicación de tu máquina:
 
@@ -68,7 +68,7 @@ ls -al ~/.jx/draft/packs/github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/pa
 ls -al ~/.jx/draft/packs/github.com/jenkins-x-buildpacks/jenkins-x-classic/packs
 ```
 
-Entonces, cuando creas un proyecto de inicio rápido, ya sea a través de [jx create spring](/docs/guides/using-jx/common-tasks/create-spring/) o [jx import](/docs/guides/using-jx/creating/import/), el [constructor de paquetes de Jenkins X](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) realiza lo siguiente:
+Entonces, cuando creas un proyecto de inicio rápido, ya sea a través de [jx create spring](/docs/resources/guides/using-jx/common-tasks/create-spring/) o [jx import](/docs/resources/guides/using-jx/creating/import/), el [constructor de paquetes de Jenkins X](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) realiza lo siguiente:
 
 * selecciona el paquete correcto basado en el lenguaje del código ([listado de posibles paquetes](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/tree/master/packs)).
 * el paquete seleccionado es utilizado para incluir los siguientes fichero en caso de que no existan:

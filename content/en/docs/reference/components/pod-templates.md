@@ -4,7 +4,7 @@ linktitle: Pod Templates
 description: Pods used to implement Jenkins pipelines
 weight: 160
 aliases:
-  - /docs/guides/managing-jx/common-tasks/pod-templates
+  - /docs/resources/guides/managing-jx/common-tasks/pod-templates
 ---
 
 We implement CI/CD pipelines using declarative Jenkins pipelines using a `Jenkinsfile` in the source of each application or environment git repository.

@@ -100,9 +100,9 @@ In the future we intend to add the ability to plug your own identity management 
 
 Jenkins X ships with a series of quickstarts that provide you with pre-made applications that you can start a project with.
 
-You can create your own quickstarts that give your team members a starting point. Read more about [creating quickstarts](/docs/getting-started/first-project/create-quickstart/).
+You can create your own quickstarts that give your team members a starting point. Read more about [creating quickstarts](/docs/create-project/creating/).
 
-You can customize the list of quickstarts available to your team making it easier for them to select the right place to start. Read more about [customizing the quickstarts available](/docs/getting-started/first-project/create-quickstart/#customising-your-teams-quickstarts).
+You can customize the list of quickstarts available to your team making it easier for them to select the right place to start. Read more about [customizing the quickstarts available](/docs/create-project/creating/#customising-your-teams-quickstarts).
 
 
 
@@ -130,7 +130,7 @@ If you need to add support for different languages or build tools then you will 
 * environment variables
 * secrets so the pipeline can write to git repositories, docker registries, maven/npm/helm repositories and so forth
 
-Read more about [creating build packs](/docs/reference/components/build-packs/#creating-new-build-packs) and [creating pod templates](/docs/reference/components/pod-templates/).
+Read more about [creating build packs](/docs/create-project/build-packs/#creating-new-build-packs) and [creating pod templates](/docs/reference/components/pod-templates/).
 
 ## Build Stages
 

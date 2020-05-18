@@ -1,15 +1,15 @@
 ---
 title: Lighthouse
 linktitle: Lighthouse
-description: Ligero webhook y [ChatOps](/es/docs/guides/using-jx/faq/chatops/) para múltiples proveedores git.
+description: Ligero webhook y [ChatOps](/es/docs/resources/guides/using-jx/faq/chatops/) para múltiples proveedores git.
 weight: 41
 ---
 
-[Prow](https://github.com/kubernetes/test-infra/tree/master/prow) es una excelente manera de hacer [ChatOps](/es/docs/guides/using-jx/faq/chatops/) con los [Pipelines de Jenkins X](/es/about/concepts/jenkins-x-pipelines/), aunque desafortunadamente solo es compatible con GitHub.com y es bastante pesado y complejo. Para solucionar este problema, hemos creado [Lighthouse](https://github.com/jenkins-x/lighthouse).
+[Prow](https://github.com/kubernetes/test-infra/tree/master/prow) es una excelente manera de hacer [ChatOps](/es/docs/resources/guides/using-jx/faq/chatops/) con los [Pipelines de Jenkins X](/es/about/concepts/jenkins-x-pipelines/), aunque desafortunadamente solo es compatible con GitHub.com y es bastante pesado y complejo. Para solucionar este problema, hemos creado [Lighthouse](https://github.com/jenkins-x/lighthouse).
 
-[Lighthouse](https://github.com/jenkins-x/lighthouse) es un gestor de webhooks ligero basado en [ChatOps](/es/docs/guides/using-jx/faq/chatops/) que puede activar los [Pipelines de Jenkins X](/es/about/concepts/jenkins-x-pipelines/) en webhooks de múltiples proveedores de git como: GitHub, GitHub Enterprise, BitBucket Server, BitBucket Cloud, GitLab, Gogs y Gitea.
+[Lighthouse](https://github.com/jenkins-x/lighthouse) es un gestor de webhooks ligero basado en [ChatOps](/es/docs/resources/guides/using-jx/faq/chatops/) que puede activar los [Pipelines de Jenkins X](/es/about/concepts/jenkins-x-pipelines/) en webhooks de múltiples proveedores de git como: GitHub, GitHub Enterprise, BitBucket Server, BitBucket Cloud, GitLab, Gogs y Gitea.
 
-Actualmente, Lighthouse se enfoca en usar [Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) con Tekton, aunque a largo plazo podría reutilizarse con Tekton orquestando pipelines de Jenkins a través de la aplicación [Custom Jenkins Server](/docs/guides/managing-jx/common-tasks/custom-jenkins/)
+Actualmente, Lighthouse se enfoca en usar [Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) con Tekton, aunque a largo plazo podría reutilizarse con Tekton orquestando pipelines de Jenkins a través de la aplicación [Custom Jenkins Server](/docs/resources/guides/managing-jx/common-tasks/custom-jenkins/)
 
 ## Features
 

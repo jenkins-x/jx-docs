@@ -49,4 +49,4 @@ Además, estos entornos no son permanentes, sino que se crean a partir de un PR 
 
 ## Anotaciones Personalizadas de Entrada
 
-Para obtener información sobre cómo agregar anotaciones personalizadas al controlador de entradas, consulte [¿Cómo agregar anotaciones personalizadas al controlador de Entradas?](/docs/guides/using-jx/faq/#how-to-add-custom-annotations-to-ingress-controller)
+Para obtener información sobre cómo agregar anotaciones personalizadas al controlador de entradas, consulte [¿Cómo agregar anotaciones personalizadas al controlador de Entradas?](/docs/resources/guides/using-jx/faq/#how-to-add-custom-annotations-to-ingress-controller)

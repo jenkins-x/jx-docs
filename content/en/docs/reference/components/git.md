@@ -4,7 +4,7 @@ linktitle: Git Servers
 description: Working with different Git servers
 weight: 100
 aliases:
-  - /docs/guides/managing-jx/common-tasks/git
+  - /docs/resources/guides/managing-jx/common-tasks/git
 ---
 
 
@@ -17,7 +17,7 @@ However when working in the enterprise you may wish to use different git servers
 
 We highly recommend you use [boot](/docs/getting-started/setup/boot/) to install and configure Jenkins X.
 
-If you are using boot then use [these instructions for configuring git](/docs/getting-started/setup/boot/#git)
+If you are using boot then use [these instructions for configuring git](/docs/install-setup/installing/boot/#git)
 
 
 ## Listing git servers
@@ -46,7 +46,7 @@ e.g. to [create a new cluster](/docs/getting-started/setup/create-cluster/)
 jx create cluster gke --no-default-environments
 ```
 
-or to [install in an existing cluster](/docs/guides/managing-jx/common-tasks/install-on-cluster/)
+or to [install in an existing cluster](/docs/resources/guides/managing-jx/common-tasks/install-on-cluster/)
 
 ```sh
 jx install --no-default-environments

@@ -49,7 +49,7 @@ Puede ver la configuración actual para su equipo a través del comando [jx get 
 jx get helmbin
 ```
 
-Básicamente la [plantilla del pod](/docs/guides/managing-jx/common-tasks/pod-templates/) contiene ambos binarios:
+Básicamente la [plantilla del pod](/docs/resources/guides/managing-jx/common-tasks/pod-templates/) contiene ambos binarios:
 
 * `helm` which is a 2.x distro of helm
 * `helm3` which is a 3.x distro of helm

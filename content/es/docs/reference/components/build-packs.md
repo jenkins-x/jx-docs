@@ -5,7 +5,7 @@ description: Convertir el código fuente en aplicaciones en Kubernetes
 weight: 30
 ---
 
-Usamos paquetes de compilación de estilo [draft](https://draft.sh/) para diferentes lenguajes, tiempos de ejecución y herramientas de compilación para agregar los archivos de configuración necesarios a los proyectos a medida que los [importamos](/docs/guides/using-jx/creating/import/) o los [creamos](/docs/guides/using-jx/common-tasks/create-spring/) para que podamos compilarlos e desplegarlos en Kubernetes.
+Usamos paquetes de compilación de estilo [draft](https://draft.sh/) para diferentes lenguajes, tiempos de ejecución y herramientas de compilación para agregar los archivos de configuración necesarios a los proyectos a medida que los [importamos](/docs/resources/guides/using-jx/creating/import/) o los [creamos](/docs/resources/guides/using-jx/common-tasks/create-spring/) para que podamos compilarlos e desplegarlos en Kubernetes.
 
 Los paquetes de compilación se utilizan para predeterminar los siguientes archivos si aún no existen en el proyecto que se está creando/importando:
 
@@ -20,7 +20,7 @@ La línea de comando `jx` clona los paquetes de compilación en la carpeta `.~/.
 
 ## Modelo de extensión Pipeline
 
-Como parte de la transición de [Jenkins hacia ser nativa de la nube](/docs/guides/managing-jx/common-tasks/cloud-native-jenkins/), hemos reestructurado nuestros [paquetes de compilación](https://github.com/jenkins-x-buildpacks/) para que sean más modulares y más fáciles de componer y reutilizar en las cargas de trabajo.
+Como parte de la transición de [Jenkins hacia ser nativa de la nube](/docs/resources/guides/managing-jx/common-tasks/cloud-native-jenkins/), hemos reestructurado nuestros [paquetes de compilación](https://github.com/jenkins-x-buildpacks/) para que sean más modulares y más fáciles de componer y reutilizar en las cargas de trabajo.
 
 Por ejemplo, el paquete de compilación [jenkins-x-kubernetes](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) hereda del paquete de compilación [jenkins-x-classic](https://github.com/jenkins-x-buildpacks/jenkins-x-classic), reutilizando el CI y los pipelines de liberación, pero luego agregando las cargas de trabajo específicas de Kubernetes (por ejemplo, construyendo imágenes de docker, creando charts de helm, [vista previa de entornos](/es/about/concepts/features/#entornos-de-vista-previa) y [promoción a través de GitOps](/es/about/concepts/features/#promoción))
 
@@ -68,7 +68,7 @@ Si desea reemplazar por completo todos los pasos de un pipeline base para un cic
 Por ejemplo, para las bibliotecas maven, [usamos este archivo pipeline.yaml](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/f7027df958eb385d50fec0c0368e606a6d5eb9df/packs/maven/pipeline.yaml) que:
 
 * [extiende](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/f7027df958eb385d50fec0c0368e606a6d5eb9df/packs/maven/pipeline.yaml#L1-L2) el [pipeline común](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/f7027df958eb385d50fec0c0368e606a6d5eb9df/packs/pipeline.yaml) que configura git y define pasos comunes de compilación posterior
-* [configura el agente](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/f7027df958eb385d50fec0c0368e606a6d5eb9df/packs/maven/pipeline.yaml#L3-L5) en términos de [plantilla de pod](/docs/guides/managing-jx/common-tasks/pod-templates/) y nombre del contenedor
+* [configura el agente](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/f7027df958eb385d50fec0c0368e606a6d5eb9df/packs/maven/pipeline.yaml#L3-L5) en términos de [plantilla de pod](/docs/resources/guides/managing-jx/common-tasks/pod-templates/) y nombre del contenedor
 * define los pasos para los [build steps](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/f7027df958eb385d50fec0c0368e606a6d5eb9df/packs/maven/pipeline.yaml#L7-L11) del pipeline del `pull request`
 * define el [grupo de pasos de versión](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/f7027df958eb385d50fec0c0368e606a6d5eb9df/packs/maven/pipeline.yaml#L13-L18) del pipeline de liberación y los [pasos de compilación](https://github.com/jenkins-x-buildpacks/jenkins-x-classic/blob/f7027df958eb385d50fec0c0368e606a6d5eb9df/packs/maven/pipeline.yaml#L19-L21)
 
@@ -76,11 +76,11 @@ Luego, el [pipeline de maven kubernetes.yaml](https://github.com/jenkins-x-build
 
 # Crear nuevos paquetes de compilación
 
-Nos encantan las [contribuciones](/community/), así que considere agregar nuevos paquetes de compilación y [plantillas de pod](/docs/guides/managing-jx/common-tasks/pod-templates/).
+Nos encantan las [contribuciones](/community/), así que considere agregar nuevos paquetes de compilación y [plantillas de pod](/docs/resources/guides/managing-jx/common-tasks/pod-templates/).
 
 Aquí hay instrucciones sobre cómo crear un nuevo paquete de compilación. Por favor, si algo no está claro, [únase a la comunidad y solo pregunte](/community/), aquí estamos encantados de ayudar.
 
-El mejor lugar para comenzar es una aplicación de _inicio rápido_. Un proyecto de muestra que puede usar como prueba. Así que cree/encuentre un proyecto de ejemplo adecuado y luego [impórtelo](/docs/guides/using-jx/creating/import/).
+El mejor lugar para comenzar es una aplicación de _inicio rápido_. Un proyecto de muestra que puede usar como prueba. Así que cree/encuentre un proyecto de ejemplo adecuado y luego [impórtelo](/docs/resources/guides/using-jx/creating/import/).
 
 Luego, agregue manualmente un `Dockerfile` y un `Jenkinsfile` si aún no ha agregado uno para usted. Puede comenzar con los archivos de las [carpetas del paquete de compilación actual](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/tree/master/packs), utilizando el lenguaje/framework más similar al suyo.
 

@@ -5,7 +5,7 @@ description: The location of the various source code repositories
 parent: "components"
 weight: 400
 aliases:
-  - /docs/guides/managing-jx/common-tasks/source
+  - /docs/resources/guides/managing-jx/common-tasks/source
 ---
 
 Jenkins X is built on the shoulders of giants and also has lots of different source repositories to make various things from CLI tools, docker images, helm charts and [addon Apps](/docs/contributing/addons/)
@@ -16,7 +16,7 @@ This page lists the main organisations and repositories.
 
 * [jenkins-x](https://github.com/jenkins-x) the main organisation for source code
 * [jenkins-x-apps](https://github.com/jenkins-x-apps) contains the standard  [addon Apps](/docs/contributing/addons/) for Jenkins X
-* [jenkins-x-buildpacks](https://github.com/jenkins-x-buildpacks) contains the available [build packs](/docs/reference/components/build-packs//)
+* [jenkins-x-buildpacks](https://github.com/jenkins-x-buildpacks) contains the available [build packs](/docs/create-project/build-packs/)
 * [jenkins-x-charts](https://github.com/jenkins-x-charts) the main helm charts we distribute
 * [jenkins-x-images](https://github.com/jenkins-x-images) contains some custom docker image builds
 * [jenkins-x-quickstarts](https://github.com/jenkins-x-quickstarts) the quickstart projects used by [create quickstart](/docs/getting-started/first-project/create-quickstart/)

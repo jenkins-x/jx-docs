@@ -12,7 +12,7 @@ Jenkins X comes with a handy [jx](/commands/jx/) command line tool to easily:
 
 * [install Jenkins X](/docs/getting-started/setup/install/) inside your existing kubernetes cluster
 * [create a new kubernetes cluster](/docs/getting-started/setup/create-cluster/) and install Jenkins X into it
-* [import projects](/docs/guides/using-jx/creating/import/) into Jenkins X and their Continuous Delivery pipelines setup
+* [import projects](/docs/resources/guides/using-jx/creating/import/) into Jenkins X and their Continuous Delivery pipelines setup
 * [create new Spring Boot applications](/developing/create-spring/) which get imported into Jenkins X and their Continuous Delivery pipelines setup
 
 ## Automated Pipelines
@@ -43,7 +43,7 @@ You can install Jenkins X into different namespaces in the same cluster if you w
 
 You can also use the [jx create team](/commands/jx_create_team/) CLI which creates a new `Team` [Custom Resource](/docs/reference/components/custom-resources/) then in the background the team controller will create a new Jenkins X install in the teams namespaces, by default reusing the same underlying nexus and docker registry.
 
-See the [configuration guide](/docs/guides/managing-jx/common-tasks/config/) for more details on how to share resources like Nexus across Teams.
+See the [configuration guide](/docs/resources/guides/managing-jx/common-tasks/config/) for more details on how to share resources like Nexus across Teams.
 
 
 ## Promotion
