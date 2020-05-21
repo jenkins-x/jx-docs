@@ -8,6 +8,7 @@ lastmod: 2018-01-02
 categories: [getting started]
 keywords: [install,kubernetes]
 weight: 30
+draft: true
 aliases:
   - /getting-started/multi-cluster
 ---
