@@ -8,7 +8,6 @@ lastmod: 2018-01-02
 categories: [getting started]
 keywords: [install,kubernetes]
 weight: 30
-draft: true
 aliases:
   - /getting-started/multi-cluster
 ---
@@ -17,24 +16,7 @@ A common requirement for a production setup is to isolate your Development, Stag
 
 The challenge is how to install and manage all the separate kubernetes clusters with GitOps management and promotion between them all.
 
-We currently have 2 solutions for this:
-
-## Labs Multi Cluster solution
-
-This is our preferred strategic direction to solving the multi cluster problem.
-
-You can check out the [full documentation here](/docs/labs/boot/multi-cluster/).
-
-We like this solution as:
-
-* it works with any git provider supported by boot since it reuses `lighthouse` for webhooks and ChatOps for each environment rather than `environment controller`
-* we use the new [helm 3 based boot + helmfile](/docs/labs/boot/) approach to boot every environment: dev, staging and production whether any of the environments share a kubernetes cluster if they are all in separate remote clusters
-* for each cluster you can [add/remove any apps](/docs/labs/boot/apps/) you want via simple GitOps. e.g. if you want ingress, cert manager or external DNS for TLS in any environment and namespace it all works the same; its just  [boot with helm 3 based boot + helmfile](/docs/labs/boot/)
-
-The downsides of this approach are:
-
-* this is using the [Labs work](/docs/labs/) and the [jxl](/docs/labs/jxl/) command line 
-* this is not yet integrated into the stable version of Jenkins X
+We currently have this approach:
 
 
 ## Environment Controller
