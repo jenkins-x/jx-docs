@@ -8,11 +8,9 @@ aliases:
   - /architecture/lighthouse
 ---
 
-[Prow](/docs/reference/components/prow/) is a great way to do [ChatOps](/docs/resources/guides/using-jx/faq/chatops/) with [Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) though unfortunately its only supported for GitHub.com and is quite heavy and complex. To work around this we've created [Lighthouse](https://github.com/jenkins-x/lighthouse).
+[Lighthouse](https://github.com/jenkins-x/lighthouse) is a lightweight [ChatOps](/docs/resources/guides/using-jx/faq/chatops/) based webhook handler which can trigger [Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) on webhooks from multiple git providers such as: GitHub, GitHub Enterprise, GitLab, and BitBucket Server. It is a successor to [Prow](/docs/reference/components/prow/), providing support for more SCM providers, a smaller footprint, and an easier path to adding features going forward. Lighthouse has been the default webhook handler in Jenkins X since early May, 2020.
 
-[Lighthouse](https://github.com/jenkins-x/lighthouse) is a lightweight [ChatOps](/docs/resources/guides/using-jx/faq/chatops/) based webhook handler which can trigger [Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) on webhooks from multiple git providers such as: GitHub, GitHub Enterprise, BitBucket Server, BitBucket Cloud, GitLab, Gogs and Gitea.
-
-Currently Lighthouse is focussed on using [Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) with tekton though longer term it could be reused with tekton orchestrating Jenkins pipelines via the [Custom Jenkins Server App](/docs/resources/guides/managing-jx/common-tasks/custom-jenkins/)
+Currently Lighthouse is focused on using [Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) with tekton though longer term it could be reused with tekton orchestrating Jenkins pipelines via the [Custom Jenkins Server App](/docs/resources/guides/managing-jx/common-tasks/custom-jenkins/)
 
 ## Features
 
@@ -76,28 +74,24 @@ webhook: lighthouse
 
 ## Comparisons to Prow
 
-Lighthouse is very prow-like and currently reuses the Prow plugin source code and a bunch of [plugins from prow](https://github.com/jenkins-x/lighthouse/tree/master/pkg/prow/plugins)
+Lighthouse is based on a fork of Prow's source code, including most of the built-in [plugins from prow](https://github.com/jenkins-x/lighthouse/tree/master/pkg/plugins)
 
-Its got a few differences though:
+The most noteworthy differences are:
 
-* rather than be GitHub specific lighthouse uses [jenkins-x/go-scm](https://github.com/jenkins-x/go-scm) so it can support any git provider
-* lighthouse is mostly like `hook` from Prow; an auto scaling webhook handler - to keep the footprint small. This also means if anything goes wrong handling webhooks you only have one pod to look into.
-* lighthouse is also very light. In Jenkins X we have about 10 pods related to prow; with lighthouse we have just 1 along with the tekton controller itself. That one lighthouse pod could easily be auto scaled too from 0 to many as it starts up very quickly.
-* lighthouse focuses purely on Tekton pipelines so it does not require a `ProwJob` CRD; instead a push webhook to a release or pull request branch can trigger zero to many `PipelineRun` CRDs instead
-
-
+* In order to support multiple SCM providers, Lighthouse uses [jenkins-x/go-scm](https://github.com/jenkins-x/go-scm) as an abstraction layer, allowing additional provider support to be implemented without needing significant changes within Lighthouse itself.
+* Lighthouse has less moving parts and potential configuration than Prow, resulting in only four pods being run for Lighthouse: two webhook receiver replicas, a Keeper pod, which handles deciding when to merge and actually merging pull requests, and a Foghorn pod, which handles reporting commit statuses back to the provider.
 
 ## Porting Prow commands
 
-If there are any prow commands you want which we've not yet ported over, its relatively easy to port prow plugins.
+If there are any Prow commands you want which we've not yet ported over, it's relatively easy to port Prow plugins.
 
-We've reused the prow plugin code and configuration code; so its mostly a case of switching imports of `k8s.io/test-infra/prow` to `github.com/jenkins-x/lighthouse/pkg/prow` - then modifying the github client structs from, say, `github.PullRequest` to `scm.PullRequest`.
+We've reused the Prow plugin code and configuration code as the basis for Lighthouse; so its mostly a case of switching imports of `k8s.io/test-infra/prow` to `github.com/jenkins-x/lighthouse` - then modifying the github client structs from, say, `github.PullRequest` to `scm.PullRequest`.
 
-Most of the github structs map 1-1 with the [jenkins-x/go-scm](https://github.com/jenkins-x/go-scm) equivalents (e.g. Issue, Commit, PullRequest) though the go-scm API does tend to return slices to pointers to resources by default. There are some naming differences at different parts of the API though.
+Most of the GitHub structs map 1-1 with the [jenkins-x/go-scm](https://github.com/jenkins-x/go-scm) equivalents (e.g. Issue, Commit, PullRequest) though the go-scm API does tend to return slices to pointers to resources by default. There are some naming differences at different parts of the API though.
 
-e.g. compare the `githubClient` API for the [prow lgtm](https://github.com/kubernetes/test-infra/blob/344024d30165cda6f4691cc178f25b16f1a1f5af/prow/plugins/lgtm/lgtm.go#L134-L150) versus the [lighthouse lgtm](https://github.com/jenkins-x/lighthouse/blob/master/pkg/prow/plugins/lgtm/lgtm.go#L135-L150).
+e.g. compare the `githubClient` API for the [Prow lgtm](https://github.com/kubernetes/test-infra/blob/344024d30165cda6f4691cc178f25b16f1a1f5af/prow/plugins/lgtm/lgtm.go#L134-L150) versus the `scmProviderClient` API for the [Lighthouse lgtm](https://github.com/jenkins-x/lighthouse/blob/b2090082db828fb2d4c11095c5e59bf4a828c8de/pkg/plugins/lgtm/lgtm.go#L135-L151).
 
-All the prow plugin related code lives in the [pkg/prow](https://github.com/jenkins-x/lighthouse/tree/master/pkg/prow) tree of packages. Mostly all we've done is switch to using [jenkins-x/go-scm](https://github.com/jenkins-x/go-scm) and switch out the current prow agents and instead use a single `tekton` agent using the [PlumberClient](https://github.com/jenkins-x/lighthouse/blob/master/pkg/plumber/interface.go#L3-L6) to trigger pipelines.
+All the Prow-descended plugin related code lives in the [pkg/plugins](https://github.com/jenkins-x/lighthouse/tree/master/pkg/plugins) tree of packages. Mostly all we've done is switch to using [jenkins-x/go-scm](https://github.com/jenkins-x/go-scm) and switch out the current Prow agents and instead use a single `tekton` agent using the [PipelineLauncher](https://github.com/jenkins-x/lighthouse/blob/master/pkg/launcher/interface.go#L12) to trigger pipelines.
 
 
 ## Environment variables
