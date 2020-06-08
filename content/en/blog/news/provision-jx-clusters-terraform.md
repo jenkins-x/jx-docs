@@ -19,20 +19,20 @@ author: Oscar Medina
 </figure>
 
 {{< alert >}}
-CAUTION: Do not make updates to the cluster that require recreating the cluster resources, all data will be lost.  Only changes that update the cluster are supported at this time.
+CAUTION: Do not make updates to the cluster that require recreating the cluster resources, all data will be lost. Only changes that update the cluster are supported at this time.
 {{< /alert >}}
 
 # Overview
 Many organizations have adopted DevOps practices in the last few years.  This is valuable as it relates to Jenkins X as we provide a way to manage the Kubernetes clusters  Infrastructure as Code which is one of the core concepts of DevOps practices as it relates to automation.
 
-Many environments may only allow for creating cloud resources using IaC, therefore we provide you with guidance on how to get started using Terraform to manage your Jekins X clusters.
+Many environments may only allow for creating cloud resources using IaC, therefore we provide you with guidance on how to get started using Terraform to manage your Jenkins X clusters.
 
 Our objective is to bring awareness to our Jenkins X users on know that they can manage the cluster changes and version them by placing the Terraform code source control and adopting the typical developer workflow which includes PRs in source control to make infrastructure changes in a controlled manner.
 
 ## Terraform clusters for AWS, GCP and Azure
 Jenkins X supports generating Terraform plans and code for all three leading clouds (AWS, Azure and GCP).
 
-On this post we walk you through the steps for terraforming clusters in GKE.
+On this post we walk you through the steps for Terraform clusters in GKE.
 
 ## Benefits of Using IaC to Manage Your K8s Clusters
 - This is great, because at many companies the Ops team typically is already using IaC to manage the resources deployed to the cloud
@@ -55,12 +55,12 @@ Our first task is to generate the Terraform code for each cluster, we create a D
 
 We execute the `jx create terraform -c dev=gke -c stage=gke -c prod=gke`.
 
-The command generates three different clusters for each environment respectively in GCP.  Other providers supported are  aks, eks.
+The command generates three different clusters for each environment respectively in GCP. Other providers supported are AKS and EKS.
 
 ## Folder Structure Output
 Running the previous command, outputs the following folder structure wherever we executed the command locally.
 
-```txt
+```
 ├── README.md
 ├── build.sh
 ├── ci-demo-206601-121d21dc79ac.json
@@ -104,7 +104,8 @@ First we need to make sure we have credentials to execute our Terraform code.
 
 Jenkins X creates a Service Account (SA) for each cluster.
 
-For our dev cluster, it has created the jx-questerring-dev@ci-demo-206601.iam.gserviceaccount.com account.
+For our dev cluster, it has created the
+`jx-questerring-dev@ci-demo-206601.iam.gserviceaccount.com` account.
 
 We need to download the `json` file in order to pass as credentials to our `terraform.tf` file which contains the definition to access the Terraform Backend.
 
@@ -118,7 +119,7 @@ We click on the file *name*  > *edit*, then click on *create key* in JSON format
 
 We now add a reference within the `terraform.tf` as shown below.
 
-```tf
+```javascript
 terraform {
     required_version = ">= 0.11.0"
     backend "gcs" {
@@ -132,9 +133,9 @@ terraform {
 Notice that we added the `credentials` portion and point to the credentials `json` file we downloaded from the Google IAM & Admin web console.
 
 # Step 3 - Initiate Terraform Backend
-We are now ready to initiate Terraform backend.  Terraform backends are used to save the Terraform State remotely.  This is great for when a team needs to collaborate on making infrastructure changes, because the Terraform State is stored in the GCP Bucket that was also created when we executed our initial command to create the cluster.
+We are now ready to initiate Terraform backend. Terraform backends are used to save the Terraform State remotely. This is great for when a team needs to collaborate on making infrastructure changes, because the Terraform State is stored in the GCP Bucket that was also created when we executed our initial command to create the cluster.
 
-```tf
+```sh
 $ terraform init
 Initializing the backend...
 
@@ -148,7 +149,7 @@ Downloading plugin for provider "google" (2.3.0)...
 Terraform has been successfully initialized!
 ```
 
-We have initiated Terraform and our Terraform State is now configured to use the GCP Buket specified in the terraform.tf file.
+We have initiated Terraform and our Terraform State is now configured to use the GCP Bucket specified in the terraform.tf file.
 
 # Step 4 - Terraform Plan
 We now can execute a `terraform plan` and see what will be created.  At this point, we can opt to augment the terraform code.
@@ -267,7 +268,7 @@ Outputs:
 cluster_endpoint = 35.203.147.59
 cluster_master_version = 1.11.7-gke.12
 ```
-The outcome shows some key information, like the *cluster_endpoint* and the *cluster_master_version*
+The outcome shows some key information, like the *cluster_endpoint* and the *cluster_master_version*.
 
 ## Set Kubectl Context
 
@@ -300,11 +301,12 @@ We are now ready to install Jenkins X on our cluster!
 
 # Step 6 - Installing Jenkins X on Cluster
 
-To install Jenkins X, we simply run jx intall and follow the prompts.
+To install Jenkins X, we simply run `jx install` and follow the prompts.
 
-{{ alert }}
-NOTE that can pass additional flags as per your prefernces.  For example set the default admin password like so `--default-admin-password=MyPassw0rd` (see other options by typing `jx install --help`
-{{ /alert }}
+{{< alert >}}
+NOTE: you can pass additional flags as per your preferences.  For example: to set the default admin password you can use
+`--default-admin-password=MyPassw0rd` (see other options by typing `jx install --help`)
+{{< /alert >}}
 
 Now that we have Jenkins X installed, we can deploy an app etc.  We make sure it is up and running.
 
@@ -316,7 +318,7 @@ We are going to modify the cluster and add an add-on for the Dashboard which is 
 
 To do that we change the following within the cluster declaration in main.tf and add the following (in bold):
 
-```tf
+```javascript
 resource "google_container_cluster" "jx-cluster" {
     name                     = "${var.cluster_name}"
     description              = "jx k8s cluster provisioned and managed via Terraform."
@@ -382,9 +384,9 @@ can't guarantee that exactly these actions will be performed if
 
 Now that our change has taken effect on our cluster, lets access the Dashboard.
 
-{{ alert }}
+{{< alert >}}
 NOTE: This dashboard is deprecated, and we are only showing you in the context of modifying your cluster to add an add-on.  Please use the GKE built-in UI
-{{ /alert }}
+{{< /alert >}}
 
 ### Get Access token
 ```sh
