@@ -5,7 +5,7 @@ description: Using Boot On Premise
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01
-weight: 200
+weight: 40
 ---
 
 On premise kubernetes clusters tend to differ wildly so its hard for us to know your Jenkins X installation will totally work on any cluster given we typically rely on things like persistence, ingress, storage.
@@ -16,7 +16,7 @@ Here are some recommendations to hopefully get you started. If you hit any issue
 
 Please set your provider to `kubernetes` via this in your `jx-requirements.yml`:
 
-```yaml    
+```yaml
 clusterConfig:
     provider: kubernetes
 ```
@@ -31,7 +31,7 @@ By default boot will try to recreate the `ingress.domain` by discovering the IP 
 
 If you are on premise and using a hard coded IP address for ingress you may want to set this on your `jx-requirements.yml`
 
-```yaml    
+```yaml
 clusterConfig:
     provider: kubernetes
 ingress:
@@ -48,14 +48,18 @@ We recommend starting with the most simple possible installation and get that wo
 * TLS / certificates
 * cloud storage for artifacts
 
-Then once you have something working, incrementally try enabling each of those in turn. 
+Then once you have something working, incrementally try enabling each of those in turn.
 
 If a helm step fails some resources may have already been created, running the step again will result in a conflict (resource already exists). To delete all created resource:
-- configure jx to keep the tmp folder with compiled helm files:
-```
-export JX_NO_DELETE_TMP_DIR=true
-```
-- go to the tmp folder visible in the logs and execute:
-```
-helm template jenkins-x . --namespace jx | kubectl delete -f -
-```
+
+* configure jx to keep the tmp folder with compiled helm files:
+
+    ```sh
+    export JX_NO_DELETE_TMP_DIR=true
+   ```
+
+* go to the tmp folder visible in the logs and execute
+
+    ```sh
+    helm template jenkins-x . --namespace jx | kubectl delete -f -
+    ```
