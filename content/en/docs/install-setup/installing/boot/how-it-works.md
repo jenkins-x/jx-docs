@@ -18,7 +18,8 @@ Boot automatically sets up any source repositories which exist in the [repositor
 
 Boot also automatically creates or updates any required webhooks on the git provider for your [SourceRepository](/docs/reference/components/custom-resources/#sourcerepository) resources.
 
-If you are using GitOps we hope to automate the population of the [repositories/templates](https://github.com/jenkins-x/jenkins-x-boot-config/tree/master/repositories/templates) folder as you import/create projects. Until then you can manually create a Pull Request on your boot git repository via [jx step create pullrequest repositories](/commands/jx_step_create_pullrequest_repositories/)
+If you are using GitOps we hope to automate the population of the [repositories/templates](https://github.com/jenkins-x/jenkins-x-boot-config/tree/master/repositories/templates) folder as you import/create projects.
+Until then you can manually create a Pull Request on your boot git repository via [jx step create pullrequest repositories](/commands/jx_step_create_pullrequest_repositories/)
 
 ## Pipeline
 
@@ -28,7 +29,8 @@ Typically you won't need to edit this file; though if you do see the [editing gu
 
 ## Configuration
 
-The boot process is configured using helm style configuration in `values.yaml` files. Though we support a few [extensions to helm](https://github.com/jenkins-x/jx/issues/4328).
+The boot process is configured using Helm style configuration in `values.yaml` files.
+Though we support a few [extensions to Helm](https://github.com/jenkins-x/jx/issues/4328).
 
 ### Parameters file
 
@@ -68,11 +70,12 @@ env/
     values.yaml  # tekton specific config
 ```
 
-then you can omit the `prow:` indentation in the `env/prow/values.yaml` file to make the YAML you create/edit smaller and simpler. It also means longer term we can generate JSON schema files for each `env/$app/values.yaml` files so that we can support better editor/IDE integration
+then you can omit the `prow:` indentation in the `env/prow/values.yaml` file to make the YAML you create/edit smaller and simpler.
+It also means longer term we can generate JSON schema files for each `env/$app/values.yaml` files so that we can support better editor/IDE integration.
 
 #### values.tmpl.yaml templates
 
-When using `jx step helm apply` we now allow `values.tmpl.yaml` files to use go/helm templates just like `templates/foo.yaml` files support inside helm charts so that we can generate value/secret strings which can use templating to compose things from smaller secret values. e.g. creating a maven `settings.xml` file or docker `config.json` which includes many user/passwords for different registries.
+When using `jx step helm apply` we now allow `values.tmpl.yaml` files to use Go/Helm templates just like `templates/foo.yaml` files support inside Helm charts so that we can generate value/secret strings which can use templating to compose things from smaller secret values. e.g. creating a maven `settings.xml` file or docker `config.json` which includes many user/passwords for different registries.
 
 We can then check in the `values.tmpl.yaml` file which does all of this composition and reference the actual secret values via URLs (or template functions) to access vault or local vault files
 
