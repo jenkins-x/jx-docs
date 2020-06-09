@@ -5,7 +5,24 @@ slug: jx_edit_buildpack
 url: /commands/jx_edit_buildpack/
 description: list of jx commands
 ---
+## Customising buildpacks for boot based clusters
+
+If you want to specify a custom buildpack for a boot based cluster. Then you
+have to add the following fields to the jx-requirements.yml file before running
+boot. All the fields have to be added together otherwise jx won't be able to
+figure out where to get the buildpack from.
+
+```yaml
+buildPacks:
+  buildPackLibrary:
+    name: "Test name"
+    gitURL: "github.com/jx-user/test-repo"
+    gitRef: "master"
+```
+
 ## jx edit buildpack
+
+**This command only works for clusters created with install rather then boot.**
 
 Edits the build pack configuration for your team
 
@@ -22,13 +39,13 @@ jx edit buildpack [flags]
 ```
   # Edit the build pack configuration for your team, picking the build pack you wish to use from the available
   jx edit buildpack
-  
+
   # to switch to classic workloads for your team
   jx edit buildpack -n classic-workloads
-  
+
   # to switch to kubernetes workloads for your team
   jx edit buildpack -n kubernetes-workloads
-  
+
   For more documentation see: [https://jenkins-x.io/architecture/build-packs/](https://jenkins-x.io/architecture/build-packs/)
 ```
 
