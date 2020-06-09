@@ -8,7 +8,3 @@ aliases:
 ---
 
 currently the stable release of Jenkins X uses helm 2.x
-
-If you wish to use helm 3 then we recommend trying out the new [Labs work on Boot with helm 3 and helmfile](/docs/labs/boot/).
-
-Note that this code is currently early access and not yet integrated into the stable version of Jenkins X

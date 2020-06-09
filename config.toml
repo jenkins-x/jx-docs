@@ -3,6 +3,8 @@ title = "Jenkins X - Cloud Native CI/CD Built On Kubernetes"
 
 enableRobotsTXT = true
 
+ignorefiles = [ "docs/labs/.*" ]
+
 # Hugo allows theme composition (and inheritance). The precedence is from left to right.
 theme = ["docsy"]
 
@@ -22,21 +24,21 @@ enableMissingTranslationPlaceholders = true
 
 [languages]
 [languages.en]
-title = "Jenkins X - Cloud Native CI/CD Built On Kubernetes"
-description = "Documentation, guides and support for Jenkins X"
-languageName ="English"
-# Weight used for sorting.
-weight = 1
+	title = "Jenkins X - Cloud Native CI/CD Built On Kubernetes"
+	description = "Documentation, guides and support for Jenkins X"
+	languageName ="English"
+	# Weight used for sorting.
+	weight = 1
 [languages.zh]
-languageCode = "zh-CN"
-weight = 2
-languageName = "中文"
-contentDir = "content/zh"
+	languageCode = "zh-CN"
+	weight = 2
+	languageName = "中文"
+	contentDir = "content/zh"
 [languages.es]
-languageCode = "es-ES"
-weight = 3
-languageName = "Español"
-contentDir = "content/es"
+	languageCode = "es-ES"
+	weight = 3
+	languageName = "Español"
+	contentDir = "content/es"
 
 disableKinds = ["taxonomy", "taxonomyTerm"]
 

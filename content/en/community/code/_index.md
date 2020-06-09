@@ -3,21 +3,18 @@ title: Contribute code
 linktitle: Contribute Code
 description: How to contribute code to Jenkins X development.
 authors: [digitalcraftsman]
-weight: 2
+weight: 20
 type: docs
 no_list: true
-menu:
-  community:
-    weight: 2
 aliases:
     - /docs/contributing/
 ---
 
-# Introduction
+## Introduction
 
 Jenkins X is an open-source project and lives by the work of its [contributors](https://github.com/jenkins-x/jx/graphs/contributors). There are plenty of [open issues](https://github.com/jenkins-x/jx/issues), and we need your help to make Jenkins X even more awesome. You don't need to be a Go guru to contribute to the project's development.
 
-# Assumptions
+## Assumptions
 
 This contribution guide takes a step-by-step approach in hopes of helping newcomers. Therefore, we only assume the following:
 
@@ -28,19 +25,19 @@ This contribution guide takes a step-by-step approach in hopes of helping newcom
 If you're struggling at any point in this contribution guide, reach out to the Jenkins X community in [Jenkins X's Discussion forum](/community/).
 {{< /alert >}}
 
-# Prerequisites
+## Prerequisites
 
 To contribute to Jenkins X jx binary, you will need:
 
- - [Git](https://git-scm.com) and a [GitHub](https://github.com) account
- - [Go](https://golang.org/) `1.13.8`, with support for compiling to `linux/amd64`
- - [pre-commit](https://pre-commit.com/#install) - once installed, ensure you're at the root of the repository which contains a `.pre-commit-config.yaml` configuration file, then:
+* [Git](https://git-scm.com) and a [GitHub](https://github.com) account
+* [Go](https://golang.org/) `1.13.8`, with support for compiling to `linux/amd64`
+* [pre-commit](https://pre-commit.com/#install) - once installed, ensure you're at the root of the repository which contains a `.pre-commit-config.yaml` configuration file, then:
 
 ```sh
 pre-commit install
 ```
 
-## Install Go
+### Install Go
 
 We recommend `1.13.8` version of go as the pull request checks run against this version.
 
@@ -48,7 +45,7 @@ The installation of Go should take only a few minutes. You have more than one op
 
 If you are having trouble following the installation guides for go, check out [Go Bootcamp](http://www.golangbootcamp.com/book/get_setup) which contains setups for every platform or reach out to the Jenkins X community in the [Jenkins X Slack channels](/community/#slack).
 
-### Install Go on macOS
+#### Install Go on macOS
 
 If you are a macOS user and have [Homebrew](https://brew.sh/) installed on your machine, installing Go is as simple as the following command:
 
@@ -56,18 +53,17 @@ If you are a macOS user and have [Homebrew](https://brew.sh/) installed on your 
 brew install go
 ```
 
-### Install Go via GVM
+#### Install Go via GVM
 
 More experienced users can use the [Go Version Manager](https://github.com/moovweb/gvm) (GVM). GVM allows you to switch between different Go versions *on the same machine*. If you're a beginner, you probably don't need this feature. However, GVM makes it easy to upgrade to a new released Go version with just a few commands.
 
 GVM comes in especially handy if you follow the development of Jenkins X over a longer period of time. Future versions of Jenkins X will usually be compiled with the latest version of Go. Sooner or later, you will have to upgrade if you want to keep up.
 
-### Install Go on Windows
+#### Install Go on Windows
 
 Simply install the latest version by downloading the [installer](https://golang.org/dl/).
 
-
-## Clearing your go module cache
+### Clearing your go module cache
 
 If you have used an older version of go you may have old versions of go modules. So its good to run this command to clear your cache if you are having go build issues:
 
@@ -98,7 +94,7 @@ $ echo $GOPATH
 /Users/<yourusername>/Code/go
 ```
 
-## Install Git on your system
+### Install Git on your system
 
 Git is a [version control system](https://en.wikipedia.org/wiki/Version_control) to track the changes of source code.
 
@@ -108,11 +104,11 @@ Move back to the terminal and check if Git is already installed. Type in `git ve
 
 Finally, check again with `git version` if Git was installed successfully.
 
-### Git Graphical Front Ends
+#### Git Graphical Front Ends
 
 There are several [GUI clients](https://git-scm.com/downloads/guis) that help you to operate Git. Not all are available for all operating systems and maybe differ in their usage. Thus, we will use the command line since the commands are everywhere the same.
 
-### Install Hub on Your System (Optional)
+#### Install Hub on Your System (Optional)
 
 Hub is a great tool for working with GitHub. The main site for it is [hub.github.com](https://hub.github.com/). Feel free to install this little Git wrapper.
 
@@ -128,7 +124,7 @@ Now we'll create an [alias in Bash](http://tldp.org/LDP/abs/html/aliases.html) s
 echo "alias git='hub'" >> ~/.bash_profile
 ```
 
-## Create a GitHub Account
+### Create a GitHub Account
 
 If you're going to contribute code, you'll need to have an account on GitHub. Go to [www.github.com/join](https://github.com/join) and set up a personal account.
 
@@ -243,6 +239,7 @@ Run `make` to build the `jx` binaries:
 ```sh
 make build
 ```
+
 See below to get some advises on how to [test](#testing) and [debug](#debugging).
 
 ### Squash and rebase
@@ -300,6 +297,7 @@ In case you already pushed your work to your fork, you need to make a force push
 ```sh
 git push --force
 ```
+
 Last step, to ensure that your change would not conflict with other changes done in parallel by other contributors, you need to rebase your work on the latest changes done on jx master branch. Simply:
 
 ```sh
@@ -309,9 +307,10 @@ git merge upstream/master #Merge the change into your local master
 git checkout <BRANCH-NAME> #Move back to your local branch where you did your development
 git rebase master
 ```
+
 Handle any conflicts and make sure your code builds and all tests pass. Then force push your branch to your remote.
 
-## Signoff
+### Signoff
 
 A [Developer Certificate of Origin](https://en.wikipedia.org/wiki/Developer_Certificate_of_Origin) is required for all
 commits. It can be proivided using the [signoff](https://git-scm.com/docs/git-commit#Documentation/git-commit.txt---signoff)
@@ -367,8 +366,7 @@ git config --global user.signingkey <key id>
    time and allows git to run headless. If you are using a Mac GPG Suite is a good way to do this. If you are on another
    platform please open a PR against this document and add your recommendations!
 
-
-## The commit message
+### The commit message
 
 Jenkins X uses [conventional commits](https://www.conventionalcommits.org/en/v1.0.0-beta.4/) as it's commit message format. These are particularly important as semantic releases are in use, and they use the commit messages to determine the type of changes in the codebase. Following formalized conventions for commit messages the semantic release automatically determines the next [semantic version](https://semver.org) number and generates a changelog based on the conventional commit.
 
@@ -382,8 +380,7 @@ Here is an example of the release type that will be done based on a commit messa
 | `feat(pencil): add 'graphiteWidth' option`                                                                                                                                                       | ~~Minor~~ Feature Release  |
 | `perf(pencil): remove graphiteWidth option`<br><br>`BREAKING CHANGE: The graphiteWidth option has been removed.`<br>`The default graphite width of 10mm is always used for performance reasons.` | ~~Major~~ Breaking Release |
 
-
-## Open a pull request
+### Open a pull request
 
 We made a lot of progress. Good work. In this step we finally open a pull request to submit our additions. Open the [Jenkins X master repository](https://github.com/jenkins-x/jx/) on GitHub in your browser.
 
@@ -410,7 +407,7 @@ There are a number of automated checks that will run on your PR:
 
 Then Jenkins X itself and the maintainers will review your PR, potentially initiate discussion around your change and finally, merge it successfully in Jenkins X jx. Congratulations !
 
-## Getting a pull request merged
+### Getting a pull request merged
 
 Now your pull request is submitted, you need to get it merged. If you aren't a regular contributor you'll need a maintainer to manually review your PR and issue a `/ok-to-test` command in a PR comment. This will trigger the automated tests. If the tests fail, you'll need to ask one of the maintainers to send you the failure log (in the future we will make these public but first we need to check we are masking all secrets).
 
