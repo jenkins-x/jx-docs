@@ -4,8 +4,8 @@ linktitle: Binary Plugins
 description: Binary Plugins for the Jenkins X CLI
 weight: 10
 aliases:
-	- /docs/contributing/addons/plugins/
-	- /docs/guides/extending-jx/plugins/
+    - /docs/contributing/addons/plugins/
+    - /docs/guides/extending-jx/plugins/
 ---
 
 This guide shows you how to write plugins for the `jx` CLI. Plugins extend the `jx` CLI with new sub-commands allowing for new
