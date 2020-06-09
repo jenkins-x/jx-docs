@@ -2,12 +2,9 @@
 title:
 linktitle: Writing Documentation
 description: How to help improve the Jenkins X documentation
-weight: 2
+weight: 20
 type: docs
 no_list: true
-menu:
-  community:
-    weight: 2
 aliases:
     - docs/contributing/documentation/
 ---
