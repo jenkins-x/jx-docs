@@ -2,7 +2,7 @@
 title: Office Hours
 linktitle: Office Hours
 type: docs
-weight: 9
+weight: 70
 ---
 
 During office hours we demo the latest features, answer questions, and share knowledge together.
@@ -14,9 +14,6 @@ We meet for office hours **every other Tuesday** at 15:00 UTC (*See your timezon
 You can save Jenkins X office hours to your calendar by [clicking here](https://calendar.google.com/event?action=TEMPLATE&tmeid=NDFhNDVyNGdzMW9nZnBpNzhpdGZsMG5qZWpfMjAyMDA1MTlUMTUwMDAwWiAwMzJwcDVlMDJqMjJiMHFqdGs2YTRxc21lY0Bn&tmsrc=032pp5e02j22b0qjtk6a4qsmec%40group.calendar.google.com&scp=ALL). 
 
 <a target="_blank" href="https://calendar.google.com/event?action=TEMPLATE;tmeid=NDFhNDVyNGdzMW9nZnBpNzhpdGZsMG5qZWpfMjAyMDA1MTlUMTUwMDAwWiAwMzJwcDVlMDJqMjJiMHFqdGs2YTRxc21lY0Bn;tmsrc=032pp5e02j22b0qjtk6a4qsmec%40group.calendar.google.com;scp=ALL"><img border="0" src="https://www.google.com/calendar/images/ext/gc_button1_en-GB.gif"></a>
-
-
-
 
 <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Europe%2FLondon&amp;src=MDMycHA1ZTAyajIyYjBxanRrNmE0cXNtZWNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23EF6C00&amp;showTz=1" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 
