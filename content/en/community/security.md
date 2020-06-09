@@ -3,11 +3,7 @@ title: Jenkins X Security
 linktitle: Security
 description:
 type: docs
-no_list: true
-menu:
-  community:
-    weight: 7
-weight: 7
+weight: 80
 aliases:
     - /docs/contributing/security/
 ---

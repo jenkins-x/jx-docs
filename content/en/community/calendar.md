@@ -4,10 +4,7 @@ linktitle: Event Calendar
 description: This calendar tracks upcoming events related to Jenkins X.
 type: docs
 no_list: true
-menu:
-  community:
-    weight: 7
-weight: 7
+weight: 60
 aliases:
     - /docs/community/calendar/
 ---
