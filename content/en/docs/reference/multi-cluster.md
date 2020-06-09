@@ -18,7 +18,6 @@ The challenge is how to install and manage all the separate kubernetes clusters 
 
 We currently have this approach:
 
-
 ## Environment Controller
 
 With this approach you install the `Environment Controller` chart into your Staging or Production cluster.
@@ -28,8 +27,8 @@ This is good because its already integrated into the stable version of Jenkins X
 Though it has a number of drawbacks:
 
 * only works for github.com repositories
-* cannot be used to [add/remove any apps](/docs/labs/boot/apps/) like ingress, cert manager or external DNS for TLS
-* can only work with helm 2 
+* cannot be used to add/remove any apps like ingress, cert manager or external DNS for TLS
+* can only work with helm 2
 * can only support helm charts deployed into a single namespace
 
 Our assumption with the Environment Controller is that we need something that:
@@ -38,7 +37,6 @@ Our assumption with the Environment Controller is that we need something that:
 * has a small with minimal RBAC footprint so it can be installed in any namespace in any Staging/Production cluster which are usually really locked down for security
 * makes few assumptions about the cluster (e.g. does not depend on a particular Ingress controller)
 * does not require access to the development cluster or anything else in Jenkins X other than the environments git repository and a docker + chart repository
-
 
 ### Creating your Dev cluster
 
@@ -55,7 +53,6 @@ When creating your Environments via [jx create environment](/commands/jx_create_
 What this means is that if an environment is remote to the development cluster then we don't register the release pipeline
 of the environment in the Dev cluster; we leave that to the Environment Controller to perform running inside the remote cluster.
 
-
 ### Configure an existing Dev cluster
 
 If you already have a Dev cluster that was setup with `Staging` and `Production` namespaces inside your Dev cluster then please do the following:
@@ -70,7 +67,6 @@ jx edit env production --remote
 You need to manually disable the release pipeline in the Dev cluster.
 
 e.g. by removing the `postsubmit` setting in your Prow configuration if you are using [serverless Jenkins X Pipelines and tekton](/about/concepts/jenkins-x-pipelines/) - or comment out the `jx step helm apply` command in your `Jenkinsfile` if using static jenkins server
-
 
 ### Installing Environment Controller
 
@@ -94,7 +90,7 @@ If you prefer you can install the helm chart `jenkins-x/environment-controller` 
 
 You might run into the issue, that you cannot deploy the envirnment controller, since helm is unable to download the chart file. This might be due to the fact, that older helm versions have issues with a missing trailing slash on the repo url. See [helm/issues/4954](https://github.com/helm/helm/issues/4954)
 
-```
+```sh
 helm fetch -d /tmp/helm-template-workdir-742964675/jxet/chartFiles --untar environment-controller --repo https://storage.googleapis.com/chartmuseum.jenkins-x.io --version
 Error: Failed to fetch https://storage.googleapis.com/charts/environment-controller-0.0.617.tgz : 403 Forbidden
 ```
@@ -113,7 +109,6 @@ jx create addon ingctl
 
 This will setup the Ingress Controller; find its external domain and then setup a Pull Request on the environments git repository so that future promotions in the environment will use the correct `domain` value on the generated `Ingress` resources.
 
-
 ### How it works
 
 On startup the Environment Controller registers itself into the github repository as a webhook endpoint using its LoadBalancer service IP address. If you are using a custom ingress/DNS endpoint you can override this via the `webhookUrl` chart value or [--webhook-url CLI option](/commands/jx_create_addon_environment/)
@@ -125,7 +120,7 @@ Then the tekton controller turns this set of Pipeline resources is turned into o
 Because Environment Controller reacts purely to merges to the environment git repository and we are using canonical git source code; it works with both Static Jenkins Servers and [serverless Jenkins X Pipelines and tekton](/about/concepts/jenkins-x-pipelines/) in the Development cluster.
 
 ### Demo
- 
+
 There was a demo of using environment controller in the [April 19, 2019 Office Hours](/community/office_hours/2019-04-19/)
 
 ### Known limitations
@@ -142,5 +137,3 @@ pipelineConfig:
  ```
 
 You can do the above via the [jx create var -n CHART_REPOSITORY](/commands/jx_create_variable/) command if you are inside a clone of the staging/production git repository - then git commit + merge the change.
-
-

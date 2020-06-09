@@ -3,6 +3,6 @@
 	path = themes/docsy
 	url = https://github.com/google/docsy.git
 
-[submodule "labs-enhancements"]
-	path = content/en/docs/labs/enhancements
+[submodule "content/en/community/labs/enhancements"]
+	path = content/en/community/labs/enhancements
 	url = https://github.com/jenkins-x/enhancements.git
