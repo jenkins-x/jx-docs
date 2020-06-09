@@ -6,6 +6,7 @@ type: docs
 weight: 1
 aliases:
     - /docs/contributing/addons/
+    - /docs/guides/extending-jx/introduction/
 ---
 
 > This guide is still a work in progress!
