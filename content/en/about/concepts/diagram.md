@@ -31,22 +31,16 @@ This is a setup of Jenkins X with [Lighthouse](https://github.com/jenkins-x/ligh
 # What gets deployed in Kubernetes?
 Below are two diagrams depicting this.  We have one diagram with Prow enabled.  The other diagram is using Lighthouse, the Prow replacement.
 
+{{% alert color="info" %}}
+
 NOTE:  In the lighthouse edition of the diagram, we also show the HashiCorp Vault deployments
 
+{{% /alert %}}
 
-<figure>
-<img class="img-fluid" src="/images/deployments_prow.png"/>
-<figcaption>
-<h5>Kubernetes Resources - Prow</h5>
-</figcaption>
-</figure>
+## Diagram shows all Deployments when using Prow
+{{< svg "static/images/deployments_prow.svg" >}}
 
 
-
-<figure>
-<img class="img-fluid" src="/images/deployments_lighthouse.png"/>
-<figcaption>
-<h5>Kubernetes Resources - lighthouse</h5>
-</figcaption>
-</figure>
+## Diagram shows all Deployments when using Lighthouse
+{{< svg "static/images/deployments_lighthouse.svg" >}}
 

@@ -1,3 +1,30 @@
-<figure>
-    {{ readFile (print "static/images/" (index .Params 0)) | safeHTML }}
-    </figure>
+
+<div style="width: 980px; height: 500px; border:1px solid black;">
+    {{$svg := index .Params 0}}
+   {{ $svg  | readFile | safeHTML }}
+</div>
+    
+<script>
+    (function(){
+        console.log('configuring pan and zoom plugin...');
+       
+        var svgProwDeployments = document.querySelector("#deployments_prow");
+        var svgLighthouseDeployments = document.querySelector("#deployments_lighthouse");
+
+        var panZoomDeploymentsProw = svgPanZoom(svgProwDeployments,{ 
+            zoomEnabled: true,
+            controlIconsEnabled: true,
+            fit: true,
+            center: true
+         });
+
+         var panZoomDeploymentsProw = svgPanZoom(svgLighthouseDeployments,{ 
+            zoomEnabled: true,
+            controlIconsEnabled: true,
+            fit: false,
+            center: true
+         });
+
+    })();
+
+</script>
