@@ -2,7 +2,8 @@
 title: Worked Example
 linktitle: Worked Example
 description: Implement support for JUnit Test reports in Jenkins X
-weight: 20
+type: docs
+weight: 60
 aliases:
     - /docs/contributing/addons/worked-example/
     - /docs/guides/extending-jx/worked-example/
