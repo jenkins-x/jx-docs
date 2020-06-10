@@ -25,7 +25,6 @@ Planned features include:
 * storing Helm repository credentials in vault
 * taking existing `values.yaml` as defaults when asking questions based on JSON Schema during app upgrade
 * only asking new questions during app upgrade
-* `jx get apps` - the ability to list all apps that can be installed
 * integration for bash completion
 
 ### CLI Commands
