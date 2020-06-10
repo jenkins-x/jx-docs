@@ -3,6 +3,8 @@ title: Environments
 linktitle: Environments
 description: Working with Jenkins X environments
 weight: 30
+aliases:
+     - /docs/create-project/creating/environments/
 ---
 
 An _environment_ is a place where applications get deployed. Developers often refer to environments using a short name like `Testing, Staging/UAT or Production`.
