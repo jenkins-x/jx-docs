@@ -21,7 +21,7 @@ Import will perform the following actions (prompting you along the way):
 * push your code to the remote git service
 * add any required files to your project if they do not exist:
   * `Dockerfile` to build your application as a docker image
-  * `pipeline.yml` to implement the CI / CD pipeline
+  * `jenkins-x.yml` to implement the CI / CD pipeline
   * helm chart to run your application inside Kubernetes
 * register a webhook on the remote git repository to your teams Jenkins
 * trigger the first pipeline
@@ -44,7 +44,7 @@ jx import --url https://github.com/jenkins-x/spring-boot-web-example.git
 
 ### Importing GitHub projects
 
-If you wish to import projects from a github organisation you can use:
+If you wish to import projects from a github organization you can use:
 
 ```sh
 jx import --github --org myname
@@ -68,7 +68,7 @@ jx import --github --org myname --all --filter foo
 
 When importing projects into Jenkins X we use git branch patterns to determine which branch names are automatically setup for CI/CD.
 
-Typically that may default to something like `master|PR-.*|feature.*`. That means that the `master` branch, any branch starting with `PR-` or `feature` will be scanned to look for a `pipeline.yml` to setup the CI/CD pipelines.
+Typically that may default to something like `master|PR-.*|feature.*`. That means that the `master` branch, any branch starting with `PR-` or `feature` will be scanned to look for a `jenkins-x.yml` to setup the CI/CD pipelines.
 
 If you use another branch name than `master` such as `develop` or whatever you can change this pattern to be whatever you you like via the `--branches` argument whenever you run [jx import](/commands/jx_import/) or [jx create quickstart](/commands/jx_create_quickstart/).
 

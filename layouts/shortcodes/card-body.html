@@ -1,0 +1,9 @@
+    <div class="col-sm-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{ .Get "card-title" }}</h5>
+            <p class="card-text">{{ .Get "card-detail" }}</p>
+            <a href="{{ .Get "url" }}" class="btn btn-primary">Create {{ .Get "card-title" }} <i class="fas fa-{{ .Get "fa-symbol" }} ml-2 "></i></a>
+          </div>
+        </div>
+      </div>
