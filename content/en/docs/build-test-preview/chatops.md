@@ -13,13 +13,13 @@ These actions are performed via commenting on Pull Requests on your git provider
 | ChatOps Command | GitLab Command | Description |
 |       :---      |       :---     |    :---     |
 | `/lgtm` | `/lh-lgtm` | This PR looks good to me - this command can be from anyone with access to the repo |
-| `/approve` | `\lh-approve` | This PR can be merged - must be someone in the repo `OWNERS` file |
-| `/test this` | `\lh-test this` | Run the default test pipeline context for this PR |
+| `/approve` | `/lh-approve` | This PR can be merged - must be someone in the repo `OWNERS` file |
+| `/test this` | `/lh-test this` | Run the default test pipeline context for this PR |
 | `/test (context)` | N/A | Run a specific test pipeline context by name |
 | `/retest` | `/lh-retest` | Rerun any failed test pipeline contexts for this PR |
 | `/override (context)` | `/lh-override (context)` | Override a failed pipeline context |
 | `/hold` | `/lh-hold` | Set this PR to not automerge even if it has been set `lgtm` and approved |
-| `/hold cancel` | `/lh-hold cancel` | remove the `\hold` on the automerge |
+| `/hold cancel` | `/lh-hold cancel` | remove the `/hold` on the automerge |
 | `/assign (user)` | `/lh-assign (user)` | assign the PR to the given (`user`) |
 | `/unassign (user)` |  `/lh-unassign (user)` | remove the `user` as assignee |
 | `/cc (user)` |  `/lh-cc (user)` | add the given `user` as a reviewer for the PR |
