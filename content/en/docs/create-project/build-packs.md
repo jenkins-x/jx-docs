@@ -134,5 +134,29 @@ If your build pack requires custom logic to detect it then let us know
 and we can help patch [jx import](/commands/jx_import/) to work better for your build pack.
 For example, we have some custom logic for handling [Maven and Gradle better](https://github.com/jenkins-x/jx/blob/712d9edf5e55aafaadfb3e0ac57692bb44634b1c/pkg/jx/cmd/common_buildpacks.go#L82:L108).
 
+## Using custom build packs
+
+Sometimes you may want to specify a custom buildpack to use when setting up your
+applications. There are two distinct ways to create/setup clusters with
+Jenkins-x and the approach you take will determine how you specify a custom
+buildpack.
+
+If a cluster was setup using the jx install method then we have this
+[command](/commands/jx_edit_buildpack) that allows users to edit which buildpack
+to use, to build applications.
+
+However if a cluster is being setup with `jx boot`, then users have to edit
+their `jx-requirements.yml` file. You have to add the following fields to the
+jx-requirements.yml file before running boot pipeline again. All the fields have
+to be added together otherwise jx won't be able to figure out where to get the
+buildpack from.
+
+```yaml
+buildPacks:
+  buildPackLibrary:
+    name: "Test name"
+    gitURL: "github.com/jx-user/test-repo"
+    gitRef: "master"
+```
 
 If you need any more help [join the community](/community/)
