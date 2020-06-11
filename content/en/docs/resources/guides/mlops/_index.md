@@ -3,7 +3,7 @@ title: "MLOps with Jenkins X"
 date: 2020-03-13T14:57:07Z
 linkTitle: "MLOps with Jenkins X"
 description: Using Jenkins X to implement MLOps.
-weight: 5
+weight: 40
 aliases:
   - /documentation/mlops
 ---

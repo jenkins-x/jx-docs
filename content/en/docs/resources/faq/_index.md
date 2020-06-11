@@ -5,7 +5,7 @@ description: Questions about managing Jenkins X
 aliases:
   - /faq/setup/
 type: docs
-weight: 200
+weight: 40
 menu:
   docs:
     title: "FAQs"
