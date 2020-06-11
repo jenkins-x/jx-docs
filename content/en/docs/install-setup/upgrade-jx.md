@@ -1,6 +1,6 @@
 ---
-title: Upgrading Jenkins X
-linktitle: Upgrading Jenkins X
+title: Upgrade Jenkins X
+linktitle: Upgrade Jenkins X
 description:  Instructions on upgrading your Jenkins X installation
 date: 2019-05-01
 publishdate: 2019-05-01

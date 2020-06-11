@@ -1,6 +1,6 @@
 ---
-title: Securing Jenkins X
-linktitle: Securing Jenkins X
+title: Secure Jenkins X
+linktitle: Secure Jenkins X
 description: Security addons for Jenkins X
 weight: 30
 menu:
@@ -9,6 +9,7 @@ menu:
     title: "Securing Jenkins X"
 aliases:
     - /docs/resources/guides/managing-jx/common-tasks/security-features/
+draft: true
 ---
 
 Jenkins X has a few useful addons that can aid with ensuring the ongoing security of your deployed applications. There are static and container security, as well as dynamic security addons available.
@@ -39,8 +40,6 @@ Here is a video [showing it in action](https://youtu.be/rB8Sw0FqCQk). To remove 
 jx delete addon anchore
 ```
 
-
-
 ### Dynamic security
 
 The Open Web Application Security Project publishes a tool called ZAP: the [Zed Attack Proxy](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project). This provides various tools including a baseline command that can be run against an application endpoint looking for a base set of problems.
@@ -67,6 +66,4 @@ jx create post preview job --name owasp --image owasp/zap2docker-weekly:latest -
 
 You can have multiple hooks configured, so if you had specific containers that had probes/tests you would like to run against every preview app (ie every pull request) you could add it this way.
 
-
 [Preview Environments](/docs/reference/preview/)
-
