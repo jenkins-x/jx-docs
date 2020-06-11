@@ -80,7 +80,7 @@ For example for [maven libraries we use this pipeline.yaml file](https://github.
 
 Then the [maven kubernetes pipeline.yaml](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/blob/45819e05fa197d9069af682fbbcad0af8d8d605a/packs/maven/pipeline.yaml) then [extends](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/blob/45819e05fa197d9069af682fbbcad0af8d8d605a/packs/maven/pipeline.yaml#L2-L3) from the classic pipeline to add the kubernetes steps
 
-# Creating new build packs
+## Creating new build packs
 
 We love [contributions](/community/) so please consider adding new build packs and [pod templates](/docs/resources/guides/managing-jx/common-tasks/pod-templates/).
 
