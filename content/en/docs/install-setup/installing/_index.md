@@ -11,7 +11,8 @@ aliases:
     - docs/install-setup/
 ---
 
-Setting up Jenkins X consist of three steps.
-First you need to create and prepare a Kubernetes cluster for the installation of Jenkins X.
-Next you need to install the `jx` command line interface.
-Finally, use the `jx` CLI to run `jx boot`.
+Setting up Jenkins X consist of three steps:
+
+* First you need to [create and prepare a Kubernetes cluster](/docs/install-setup/installing/create-cluster/) for the installation of Jenkins X.
+* Next you need to [install the `jx` command line interface](/docs/install-setup/installing/install-binary/).
+* Finally, use the `jx` CLI to [run `jx boot`](/docs/install-setup/installing/boot/).
