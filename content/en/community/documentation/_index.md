@@ -1,6 +1,6 @@
 ---
 title:
-linktitle: Writing Documentation
+linktitle: Contribute Documentation
 description: How to help improve the Jenkins X documentation
 weight: 2
 type: docs
