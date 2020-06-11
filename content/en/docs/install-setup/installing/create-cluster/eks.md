@@ -20,9 +20,10 @@ The source is in the [terraform-aws-eks-jx](https://github.com/jenkins-x/terrafo
 The EKS Terraform module for Jenkins X allows you to create an [EKS](https://aws.amazon.com/eks/) cluster for installation of Jenkins X.
 You need the following binaries locally installed and configured on your _PATH_:
 
-- `terraform` (~> 0.12.0)
+- `terraform` (=> 0.12.17)
 - `kubectl` (>=1.10)
 - `aws-iam-authenticator`
+- `wget`
 
 ## Cluster provisioning
 
@@ -48,7 +49,7 @@ Due to the Vault issue [7450](https://github.com/hashicorp/vault/issues/7450), t
 It also creates an IAM access key whose id and secret are defined in the output above.
 You need the id and secret for running [`jx boot`](#running-jx-boot).
 
-If you do not want Terraform to create a new IAM user or you do not have permissions to create one, you need to provide the name of an existing IAM user.
+If you do not want Terraform to create a new IAM user, or you do not have permissions to create one, you need to provide the name of an existing IAM user.
 
 ```
 module "eks-jx" {
@@ -90,21 +91,25 @@ The following sections provide a full list of configuration in- and output varia
 ### Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:-----:|
+|------|-------------|------|---------|:--------:|
 | apex\_domain | The main domain to either use directly or to configure a subdomain from | `string` | `""` | no |
 | cluster\_name | Variable to provide your desired name for the cluster. The script will create a random name if this is empty | `string` | `""` | no |
+| cluster\_version | Kubernetes version to use for the EKS cluster. | `string` | `"1.15"` | no |
 | create\_and\_configure\_subdomain | Flag to create an NS record set for the subdomain in the apex domain's Hosted Zone | `bool` | `false` | no |
 | desired\_node\_count | The number of worker nodes to use for the cluster | `number` | `3` | no |
 | enable\_external\_dns | Flag to enable or disable External DNS in the final `jx-requirements.yml` file | `bool` | `false` | no |
 | enable\_logs\_storage | Flag to enable or disable long term storage for logs | `bool` | `true` | no |
 | enable\_reports\_storage | Flag to enable or disable long term storage for reports | `bool` | `true` | no |
 | enable\_repository\_storage | Flag to enable or disable the repository bucket storage | `bool` | `true` | no |
+| enable\_spot\_instances | Flag to enable Spot Instances | `bool` | `false` | no |
 | enable\_tls | Flag to enable TLS in the final `jx-requirements.yml` file | `bool` | `false` | no |
+| force\_destroy | Flag to determine whether storage buckets get forcefully destroyed. If set to false, empty the bucket first in the aws s3 console, else terraform destroy will fail with BucketNotEmpty error | `bool` | `false` | no |
 | max\_node\_count | The maximum number of worker nodes to use for the cluster | `number` | `5` | no |
 | min\_node\_count | The minimum number of worker nodes to use for the cluster | `number` | `3` | no |
 | node\_machine\_type | The instance type to use for the cluster's worker nodes | `string` | `"m5.large"` | no |
 | production\_letsencrypt | Flag to use the production environment of letsencrypt in the `jx-requirements.yml` file | `bool` | `false` | no |
 | region | The region to create the resources into | `string` | `"us-east-1"` | no |
+| spot_price | The ceiling price for spot instances | `string` | `"0.1"` | no |
 | subdomain | The subdomain to be added to the apex domain. If subdomain is set, it will be appended to the apex domain in  `jx-requirements-eks.yml` file | `string` | `""` | no |
 | tls\_email | The email to register the LetsEncrypt certificate with. Added to the `jx-requirements.yml` file | `string` | `""` | no |
 | vault\_user | The AWS IAM Username whose credentials will be used to authenticate the Vault pods against AWS | `string` | `""` | no |
@@ -136,7 +141,35 @@ The following sections provide a full list of configuration in- and output varia
 
 You can choose to create S3 buckets for long term storage and enable them in the generated _jx-requirements.yml_ file with `enable_logs_storage`, `enable_reports_storage` and `enable_repository_storage`.
 
+During `terraform apply` the enabledS3 buckets are created, and the generated `jx-requirements.yml` will contain the following section:
+
+```yaml
+    storage:
+      logs:
+        enabled: ${enable_logs_storage}
+        url: s3://${logs_storage_bucket}
+      reports:
+        enabled: ${enable_reports_storage}
+        url: s3://${reports_storage_bucket}
+      repository:
+        enabled: ${enable_repository_storage}
+        url: s3://${repository_storage_bucket}
+```
+If you just want to experiment with Jenkins X, you can set force_destroy to true. This allows you to remove all generated buckets when running terraform destroy.
+
+{{% alert title="Warning" %}}
+**Note**: If you set `force_destroy` to false, and run a `terraform destroy`, it will fail. In that case empty the s3 buckets from the aws s3 console, and re run `terraform destroy`.
+{{% /alert %}}
+
 For more information refer to the [Storage](/docs/resources/guides/managing-jx/common-tasks/storage/) section.
+
+
+## Using Spot Instances
+You can save up to 90% of cost when you use Spot Instances. You just need to make sure your applications are resilient. You can set the ceiling `spot_price` of what you want to pay then set `enable_spot_instances` to `true`.
+
+{{% alert="Warning" %}}
+**Note**: If the price of the instance reaches this point it will be terminated.
+{{% /alert %}}
 
 ## Vault
 
@@ -150,7 +183,9 @@ For more information refer around Vault refer to the [Vault](/docs/reference/com
 
 You can enable [ExternalDNS](https://github.com/kubernetes-sigs/external-dns) with the `enable_external_dns` variable. This modifies the generated _jx-requirements.yml_ file to enable External DNS when running `jx boot`.
 
-If `enable_external_dns` is _true_, additional configuration is required. If you want to use a domain with an already existing Route 53 Hosted Zone, you can provide it through the `apex_domain` variable:
+If `enable_external_dns` is _true_, additional configuration is required. 
+
+If you want to use a domain with an already existing Route 53 Hosted Zone, you can provide it through the `apex_domain` variable:
 
 This domain will be configured in the resulting _jx-requirements.yml_ file in the following section:
 
@@ -184,6 +219,33 @@ You can choose to use the `production` environment with the `production_letsencr
 
 You need to provide a valid email to register your domain in LetsEncrypt with `tls_email`.
 
+### Running `jx boot`
+
+An output of applying this Terraform module is a _jx-requirements.yml_ file in the current directory.
+This file can be used as input to [Jenkins X Boot](https://jenkins-x.io/docs/getting-started/setup/boot/) which is responsible for installing all the required Jenkins X components into the cluster created by this module.
+
+{{% alert title="Warning" %}}
+**Note**: The generated _jx-requirements.yml_ is only used for the first run of `jx boot`.
+During this first run a git repository containing the source code for Jenkins X Boot is created.
+This repository contains the _jx-requirements.yml_ used by successive runs of `jx boot`.
+{{% /alert %}}
+
+Change into  an empty directory and execute:
+
+```bash
+jx boot --requirements <path-to-jx-requirements.yml>
+```
+{{% alert="Warning" %}}
+Remember you need to export _VAULT_AWS_ACCESS_KEY_ID_ and _VAULT_AWS_SECRET_ACCESS_KEY_.
+{{% /alert %}}
+
+See [Cluster provisioning](#cluster-provisioning).
+
+You are prompted for any further required configuration.
+The number of prompts depends on how much you have [pre-configured](#inputs) via your Terraform variables.
+
+More information about the boot process can be found in the [Run Boot](/docs/getting-started/setup/boot) section.
+
 ## Production cluster considerations
 
 The configuration, as seen in [Cluster provisioning](#cluster-provisioning), is not suited for creating and maintaining a production Jenkins X cluster.
@@ -216,14 +278,3 @@ The [examples](https://github.com/jenkins-x/terraform-aws-eks-jx/examples) direc
 To use the _s3_ backend, you will need to create the bucket upfront.
 You need the S3 bucket as well as a Dynamo table for state locks.
 You can use [terraform-aws-tfstate-backend](https://github.com/cloudposse/terraform-aws-tfstate-backend) to create these resources.
-
-## Running `jx boot`
-
-Applying the _terraform-aws-eks-jx_ Terraform module will not only create the [required cloud resources](/docs/getting-started/setup/create-cluster/required-cloud-resources), but also create a _jx-requirements.yml_ file.
-From within an empty directory run:
-
-```bash
- jx boot -r <path-to-generated-jx-requirements.yml>
-```
-
-More information about the boot process can be found in the [Run Boot](/docs/getting-started/setup/boot) section.
