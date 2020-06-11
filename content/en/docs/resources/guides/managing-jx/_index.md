@@ -1,10 +1,8 @@
 ---
-title: "Managing Jenkins X"
-linkTitle: "Managing Jenkins X"
-weight: 10
-description: >
-  Learn how to manage Jenkins X.
-toc_hide: true
+title: Managing Jenkins X
+linkTitle: Managing Jenkins X
+description: Managing Jenkins X
+weight: 20
 aliases:
   - /docs/resources/guides/managing-jx/
 ---

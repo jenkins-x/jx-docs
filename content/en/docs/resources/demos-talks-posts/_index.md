@@ -1,7 +1,7 @@
 ---
 title: "Demos, talks and blog posts"
 date: 2017-01-05
-weight: 5
+weight: 30
 aliases:
   - /demos/  
 description: >
