@@ -13,6 +13,7 @@ weight: 20
 | **Terraform scripts for cluster creation** | Yes | Yes | No |
 | **`jx boot` for installation** | Yes | Yes | Yes |
 | **Vault for secret storage** | Yes | Yes | Self Provisioned |
+| **Bucket log storage** | Yes | Yes | No |
 | **Kubernetes Versions** | | | |
 | - 1.13 | Yes | No | N/A |
 | - 1.14 | Yes | Yes | N/A |
