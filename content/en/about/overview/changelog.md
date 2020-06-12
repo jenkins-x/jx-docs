@@ -9,24 +9,7 @@ weight: 10
 type: docs
 ---
 
-# Support Matrix
-
-| Install Kind | Supported Git Providers |
-| --- | ---  |
-| Serverless Jenkins X pipelines with Tekton | GitHub only (due to Prow restriction - we are working on it!) |
-| Static Jenkins Server | GitHub, GitHub Enterprise, BitBucket Cloud, BitBucket Server, GitLab. Gitea in beta |
-
-
-| Clouds with Kaniko Support |
-| --- |
-| GKE |
-| EKS |
-
-| Clouds supporting bucket log storage |
-| --- |
-| GKE |
-| EKS |
-
+Refer to the [Jenkins X Capabilities Matrix](../capabilities) for cloud provider support maturity.
 
 # Status Reports
 
