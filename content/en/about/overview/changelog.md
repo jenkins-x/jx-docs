@@ -9,7 +9,7 @@ weight: 10
 type: docs
 ---
 
-Refer to the [Jenkins X Capabilities Matrix](../capabilities) for cloud provider support maturity.
+Refer to the [Jenkins X Capabilities Matrix](/about/capabilities) for cloud provider support maturity.
 
 # Status Reports
 
