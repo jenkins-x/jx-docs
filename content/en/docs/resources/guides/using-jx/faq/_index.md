@@ -229,7 +229,7 @@ See how to [add a custom step to your pipeline](/about/concepts/jenkins-x-pipeli
 
 ### Staging/Production
 
-By default, [enabling Vault](/docs/install-setup/installing/boot/#vault) via `jx boot`'s `jx-requirements.yml` will only activate it in your pipeline and preview environments, not in staging and production. To also activate it in those environments, simply add a `jx-requirements.yml` file to the root of their repo, with at least the following content:
+By default, [enabling Vault](/docs/install-setup/installing/boot/secrets/) via `jx boot`'s `jx-requirements.yml` will only activate it in your pipeline and preview environments, not in staging and production. To also activate it in those environments, simply add a `jx-requirements.yml` file to the root of their repo, with at least the following content:
 
 ```yaml
 secretStorage: vault

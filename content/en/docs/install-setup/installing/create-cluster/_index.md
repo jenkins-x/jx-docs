@@ -1,7 +1,7 @@
 ---
 title: Create cluster
 linktitle: Create cluster
-description: How to create a Kubernetes cluster?
+description: How to prepare a Kubernetes cluster for Jnekins X
 weight: 10
 categories: [getting started]
 keywords: [cluster]

@@ -12,21 +12,20 @@ Jenkins X defaults to using [GitHub](https://github.com/), the free public git h
 
 However when working in the enterprise you may wish to use different git servers.
 
-
 ## Configuring git servers via boot
 
 We highly recommend you use [boot](/docs/getting-started/setup/boot/) to install and configure Jenkins X.
 
-If you are using boot then use [these instructions for configuring git](/docs/install-setup/installing/boot/#git)
-
+If you are using boot then use [these instructions for configuring git](/docs/install-setup/installing/boot/git-provider/#git)
 
 ## Listing git servers
 
 You can list the git servers configured via [jx get git](/commands/jx_get_git/):
 
-```
+```sh
 jx get git
 ```
+
 {{< alert >}}
 **NOTE:** All of the Git Providers mentioned here are supported if you are using Jenkins Static Masters.  However, if you are using **Jenkins X Serverless with Tekton**, only GitHub is supported.  This means that all other Git Providers including GitHub Enterprise are not currently supported due to how Prow communicates with the APIs.
 
@@ -38,7 +37,6 @@ However, we are integrating [Lighthouse](https://github.com/jenkins-x/lighthouse
 When you install Jenkins X it will create git repositories for `Staging` and `Production` using GitHub.
 
 If you wish to use a different git provider for your environments then when you install Jenkins X add the `--no-default-environments` argument on [jx create cluster](/commands/jx_create_cluster/) or [jx install](/commands/deprecation/)
-
 
 e.g. to [create a new cluster](/docs/getting-started/setup/create-cluster/)
 
@@ -52,7 +50,6 @@ or to [install in an existing cluster](/docs/resources/guides/managing-jx/common
 jx install --no-default-environments
 ```
 
-
 Then once Jenkins X is installed you can then [add a new git provider](#adding-a-new-git-provider).
 
 Then when the git provider is setup you can verify it is available and has the right `gitKind` via:
@@ -61,14 +58,12 @@ Then when the git provider is setup you can verify it is available and has the r
 jx get git server
 ```
 
-
 Now create the `Staging` and `Production` environments using whatever git provider you wish via:
 
 ```sh
 jx create env staging --git-provider-url=https://gitproviderhostname.com
 jx create env production --git-provider-url=https://gitproviderhostname.com
 ```
-
 
 ## Adding a new git provider
 
@@ -166,10 +161,8 @@ Now when you [install Jenkins X](/docs/getting-started/) it will also install th
 
 Then whenever Jenkins X needs to create a git repository for an Environment or for a new Project the gitea server will appear in the pick list.
 
-
 ### Known gitea limitations
 
 At the time of writing the [gitea plugin for Jenkins](https://issues.jenkins-ci.org/browse/JENKINS-50459) does not correctly update Pull Request and git commit build statuses which breaks the GitOps promotion pipelines. Promotion can work through manual approval, but the pipeline reports a failure.
 
 Another issue is new projects created by `jx` inside `gitea` do not get the [merge buttons enabled on Pull Requests](https://github.com/go-gitea/go-sdk/issues/100). The work around is after a project is created on github you go to the `Settings` page for the repository inside the `gitea` web console and enable the merge buttons there.
-

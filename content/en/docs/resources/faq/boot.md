@@ -12,10 +12,9 @@ For more detail check out how to use [jx boot](/docs/install-setup/installing/bo
 
 ## How do I upgrade boot?
 
-If you are using [jx boot](/docs/install-setup/installing/boot/) you can enable [automatic upgrades](/docs/install-setup/installing/boot/#auto-upgrades) or [manually trigger them yourself](/docs/install-setup/installing/boot/#manual-upgrades).
+If you are using [jx boot](/docs/install-setup/installing/boot/) you can enable [automatic upgrades](/docs/install-setup/installing/boot/upgrading/#auto-upgrades) or [manually trigger them yourself](/docs/install-setup/installing/boot/upgrading/#manual-upgrades).
 
 If anything ever goes wrong (e.g. your cluster, namespace or tekton gets deleted), you can always re-run [jx boot](/docs/install-setup/installing/boot/) on your laptop to restore your cluster.
-
 
 ## How do I add more resources?
 
@@ -50,10 +49,8 @@ It depends on which namespace you want the charts to be installed.
 
 If its in the development environment (the `jx` namespace by default) then `env/requirements.yaml` is where to add the chart and for a chart `foo` you can add `env/foo/values.yaml` to configure it. (or `env/foo/values.tmpl.yaml` if you want to use some [templating](/docs/install-setup/installing/boot/how-it-works/#improvements-to-valuesyaml) of the `values.yaml`)
 
-
 Though if you want our chart to be in another namespace then we use the convention of adding a folder in the `system` directory in the boot configuration (e.g. like we do for ingress, cert manager, velero, service mesh etc). So make a new folder in `system` and add the `jx step helm apply` step in the pipeline in `jenkins-x.yml` like we do for `cert-manager`, `nginx`, `velero` etc.
 
 ## How do I disable the ingress controller?
 
 If you already have your own ingress controller and do not want `jx boot` to install another one you can just delete the `install-nginx-controller` step in your dev environment git repository. e.g. [remove this step](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jenkins-x.yml#L85-L99) from the `jenkins-x.yml` in your dev environment git repository
-
