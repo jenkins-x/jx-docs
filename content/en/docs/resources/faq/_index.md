@@ -49,7 +49,7 @@ See the [access control documentation](/docs/resources/guides/managing-jx/common
 
 Our strategic direction for installing, configuring and upgrading Jenkins X is [jx boot](/docs/install-setup/installing/boot/).
 
-If you are using [jx boot](/docs/install-setup/installing/boot/) you can enable [automatic upgrades](/docs/install-setup/installing/boot/#auto-upgrades) or [manually trigger them yourself](/docs/install-setup/installing/boot/#manual-upgrades).
+If you are using [jx boot](/docs/install-setup/installing/boot/) you can enable [automatic upgrades](/docs/install-setup/installing/boot/upgrading/#auto-upgrades) or [manually trigger them yourself](/docs/install-setup/installing/boot/upgrading/#manual-upgrades).
 
 If anything ever goes wrong (e.g. your cluster, namespace or tekton gets deleted), you can always re-run [jx boot](/docs/install-setup/installing/boot/) on your laptop to restore your cluster.
 

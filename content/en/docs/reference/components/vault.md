@@ -30,14 +30,14 @@ The Bank-Vaults operator is currently only supported with GKE or EKS.
 ## Configuration
 
 The configuration of Vault occurs during Jenkins X [Boot](/docs/install-setup/installing/boot).
-Refer to [?](/docs/install-setup/installing/boot#vault) to see how to configure Jenkins X to use an internal or external Vault instance.
+Refer to the [Boot setup instructions for Vault](/docs/install-setup/installing/boot/secrets/#vault) to see how to configure Jenkins X to use an internal or external Vault instance.
 
 ### Security
 
 From a security point of view it is important that the communication with the Vault API is secured by TLS.
 If you use your own external Vault instance, TLS configuration is in your hands and hopefully already setup.
 If you let Jenkins X install and manage the Bank-Vaults operator, TLS is per default not enabled.
-Refer to ? for more information on how to secure your Jenkins X installation using TLS.
+Refer to [Configuring DNS and TLS on GKE](/docs/install-setup/installing/boot/clouds/google) and [Configuring DNS and TLS on EKS](/docs/install-setup/installing/boot/clouds/amazon/#configuring-dns-and-tls-on-eks) for more information on how to secure your Jenkins X installation using TLS for the cloud providers Google and AWS.
 
 ## Accessing secrets
 

@@ -1,15 +1,14 @@
 ---
 title: How it works
 linktitle: How it works
-description: Install, configure or upgrade Jenkins X via GitOps and a Jenkins X Pipeline
+description: How does Jenkins X Boot work
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01
-weight: 100
+weight: 20
 aliases:
   - /docs/getting-started/setup/boot/how-it-works
   - /docs/getting-started/setup/boot/how-it-works/
-toc_hide: true
 ---
 
 ## Source Repositories

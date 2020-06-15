@@ -31,13 +31,13 @@ If all storage options are enabled, the following buckets are created:
 Refer to [Configuring Storage](/docs/resources/guides/managing-jx/common-tasks/storage#configuring-storage) for more information.
 * Report bucket; Bucket for storing test and coverage reports.
 Refer to [Configuring Storage](/docs/resources/guides/managing-jx/common-tasks/storage#configuring-storage) for more information.
-* Repository bucket; Bucket used for storing artifacts when using [Bucketrepo](/docs/install-setup/installing/boot/#bucketrepo).
+* Repository bucket; Bucket used for storing artifacts when using [Bucketrepo](/docs/install-setup/installing/boot/repository/#bucketrepo).
 Bucketrepo  is a small footprint microservice that is an alternative to both Nexus and Chartmusem.
 * Velero bucket; Bucket for [Velero](https://velero.io) backups.
-Refer to [Backups](/docs/install-setup/installing/boot/#backups) for more information.
+Refer to [Backups](/docs/install-setup/installing/boot/upgrading/#backups) for more information.
 * Vault bucket; Bucket used by Vault for storing its data.
 Jenkins X uses Vault to store secrets.
-Refer to [Vault](/docs/install-setup/installing/boot/#vault) for more information.
+Refer to [Vault](/docs/install-setup/installing/boot/secrets/#vault) for more information.
 
 {{% /description-list %}}
 
