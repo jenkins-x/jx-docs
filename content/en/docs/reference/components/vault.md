@@ -96,6 +96,6 @@ vault kv put secret/<cluster-name>/my-secret token=my-service-account-base64.txt
 
 ## Rotating secrets
 
-To rotate a secret you follow the steps described in the [Updating a secret](/docs/reference/components/vault#updating-secrets) section followed by rerunning [Boot](/docs/install-setup/installing/boot) (`jx boot`).
+To rotate a secret, follow the steps described in the [Updating a secret](/docs/reference/components/vault#updating-secrets) section followed by rerunning [Boot](/docs/install-setup/installing/boot) (`jx boot`).
 The reason you need to run Boot, either locally or kicking of the master pipline of the dev repository, is that as part of the Boot process the secrets within Vault get copied into appropriate Kubernetes Secrets which then are accessed by the various components of Jenkins X.
 Without running Boot the changes to Vault will not take effect yet.

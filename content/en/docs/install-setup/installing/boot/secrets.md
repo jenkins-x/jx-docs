@@ -76,7 +76,7 @@ They also differ between cloud providers.
 In the case where you have an existing Vault instance and you want Jenkins X to store its secrets there, you also set `secretStorage: vault`.
 On top setting _secretStorage_ to _vault_, you have to specify the mandatory _url_ and _serviceAccount_ options.
 
-_url_ specifies the URL to your existing Vault instance and _serviceAccount_ is the Kubernets service account which is allowed to authenticate using Vault's [Kubernetes Auth Method](https://www.vaultproject.io/docs/auth/kubernetes).
+_url_ specifies the URL to your existing Vault instance and _serviceAccount_ is the Kubernetes service account which is allowed to authenticate using Vault's [Kubernetes Auth Method](https://www.vaultproject.io/docs/auth/kubernetes).
 
 ```yaml
 secretStorage: vault

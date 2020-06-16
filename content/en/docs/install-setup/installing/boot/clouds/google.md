@@ -51,14 +51,14 @@ zone](https://console.cloud.google.com/networking/dns/zones/~new)
 1. Click `Create`.
 
 Once created, the *Zone Details* page loads.
-*NS* (Name server) and *SOA* (Start of autority) records are automatically created for your domain (for example `acmecorp.example`)
+*NS* (Name server) and *SOA* (Start of authority) records are automatically created for your domain (for example `acmecorp.example`)
 
 ### Configuring External DNS in Jenkins X
 
 Once you have configured Google Cloud DNS, you can use browse the [Zones](https://console.cloud.google.com/net-services/dns/zones) page in your Google Cloud Platform project to setup your external domain.
 
 {{< alert >}}
-NOTE: External DNS will automatically updates DNS records if you reuse the domain name, so if you delete an old cluster and create a new one it will preserve the same domain configuration for the new cluster.
+NOTE: External DNS will automatically update DNS records if you reuse the domain name, so if you delete an old cluster and create a new one it will preserve the same domain configuration for the new cluster.
 {{< /alert >}}
 
 To setup External DNS:

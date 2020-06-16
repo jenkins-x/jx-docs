@@ -7,9 +7,9 @@ weight: 65
 
 ## Ingress
 
-If you don't specify anything in your [jx-requirements.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml) file then boot will default to using HTTP (rather than HTTPS) and using [nip.io](https://nip.io/) as the DNS mechanism.
+If you don't specify anything in your [jx-requirements.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml) file then Boot will default to using HTTP (rather than HTTPS) and using [nip.io](https://nip.io/) as the DNS mechanism.
 
-After running boot your `jx-requirements.yml` may look like:
+After running Boot your `jx-requirements.yml` may look like:
 
 ```yaml
 cluster:
