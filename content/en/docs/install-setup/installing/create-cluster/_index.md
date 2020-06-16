@@ -1,7 +1,7 @@
 ---
 title: Create cluster
 linktitle: Create cluster
-description: How to prepare a Kubernetes cluster for Jnekins X
+description: How to prepare a Kubernetes cluster for Jenkins X
 weight: 10
 categories: [getting started]
 keywords: [cluster]

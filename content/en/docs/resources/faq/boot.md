@@ -12,7 +12,8 @@ For more detail check out how to use [jx boot](/docs/install-setup/installing/bo
 
 ## How do I upgrade boot?
 
-If you are using [jx boot](/docs/install-setup/installing/boot/) you can enable [automatic upgrades](/docs/install-setup/installing/boot/upgrading/#auto-upgrades) or [manually trigger them yourself](/docs/install-setup/installing/boot/upgrading/#manual-upgrades).
+If you are using [jx boot](/docs/install-setup/installing/boot/) you can upgrade via `jx upgrade boot`.
+Refer to [Upgrading Jenkins X](/docs/install-setup/upgrade-jx/#upgrading-jenkins-x) for more information.
 
 If anything ever goes wrong (e.g. your cluster, namespace or tekton gets deleted), you can always re-run [jx boot](/docs/install-setup/installing/boot/) on your laptop to restore your cluster.
 
