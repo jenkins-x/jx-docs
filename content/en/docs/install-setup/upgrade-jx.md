@@ -49,7 +49,7 @@ jx upgrade cli -v 2.0.46
  After extracting the binary and adding it to the start of your path you can verify the correct version is available by running:
 
 ```sh
-jx --version  
+jx version --short
 ```
 
 Upgrading Jenkins X
