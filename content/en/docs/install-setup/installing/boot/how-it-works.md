@@ -74,7 +74,7 @@ It also means longer term we can generate JSON schema files for each `env/$app/v
 
 #### values.tmpl.yaml templates
 
-When using `jx step helm apply` we now allow `values.tmpl.yaml` files to use Go/Helm templates just like `templates/foo.yaml` files support inside Helm charts so that we can generate value/secret strings which can use templating to compose things from smaller secret values. e.g. creating a maven `settings.xml` file or docker `config.json` which includes many user/passwords for different registries.
+When using `jx step helm apply` we now allow `values.tmpl.yaml` files to use Go/Helm templates just like `templates/foo.yaml` files support inside Helm charts so that we can generate value/secret strings which can use templating to compose things from smaller secret values (for example, creating a maven `settings.xml` file or docker `config.json` which includes many user/passwords for different registries).
 
 We can then check in the `values.tmpl.yaml` file which does all of this composition and reference the actual secret values via URLs (or template functions) to access vault or local vault files
 
