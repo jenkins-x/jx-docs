@@ -45,30 +45,6 @@ To view the environments and any development tools like the Jenkins or Nexus con
 
 See the [access control documentation](/docs/resources/guides/managing-jx/common-tasks/access-control/)
 
-## How do I upgrade my Jenkins X installation?
-
-Our strategic direction for installing, configuring and upgrading Jenkins X is [jx boot](/docs/install-setup/installing/boot/).
-
-If you are using [jx boot](/docs/install-setup/installing/boot/) you can enable [automatic upgrades](/docs/install-setup/installing/boot/upgrading/#auto-upgrades) or [manually trigger them yourself](/docs/install-setup/installing/boot/upgrading/#manual-upgrades).
-
-If anything ever goes wrong (e.g. your cluster, namespace or tekton gets deleted), you can always re-run [jx boot](/docs/install-setup/installing/boot/) on your laptop to restore your cluster.
-
-Otherwise the older approach is as follows:
-
-### If not using boot
-
-You can upgrade via the [jx upgrade](/commands/jx_upgrade/) commands. Start with
-
-```sh
-jx upgrade cli
-```
-
-to get you on the latest CLI then you can upgrade the platform:
-
-```sh
-jx upgrade platform
-```
-
 ## How do I upgrade the jx binary used inside the builds when using serverless jenkins?
 
 We use specific `BuildTemplates` for different programming languages. These `BuildTemplates` describe the steps that will be executed as part of the job, which in case of the Jenkins X BuildTemplates, they all execute the `JenkinsfileRunner` to execute the project's Jenkinsfile.
