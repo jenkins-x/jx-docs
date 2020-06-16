@@ -1,7 +1,7 @@
 ---
-title: Install the jx binary
-linktitle: Install jx
-description: How to install the jx binary on your machine?
+title: Download the jx binary
+linktitle: Download jx
+description: How to download and install the jx binary on your machine
 weight: 10
 keywords: [install]
 aliases:
