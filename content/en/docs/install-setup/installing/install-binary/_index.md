@@ -35,10 +35,10 @@ Pick the most suitable instructions for your operating system:
     sudo mv jx /usr/local/bin
     ```
 
-1. Run `jx --version` to make sure you're on the latest stable version
+1. Run `jx version --short` to make sure you're on the latest stable version
 
    ```sh
-   jx --version
+   jx version --short
    ```
 
 ## Linux
@@ -58,10 +58,10 @@ To install Jenkins X on Linux, download the `.tar` file, and unarchive it in a d
     sudo mv jx /usr/local/bin
     ```
 
-1. Run `jx --version` to make sure you're on the latest stable version
+1. Run `jx version --short` to make sure you're on the latest stable version
 
     ```sh
-    jx --version
+    jx version --short
     ```
 
 ## Windows
