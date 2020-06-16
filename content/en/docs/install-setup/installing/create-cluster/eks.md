@@ -60,7 +60,7 @@ module "eks-jx" {
 ```
 
 The IAM user does not need any permissions attached to it.
-For more information, refer to [Configuring Vault for EKS](https://jenkins-x.io/docs/getting-started/setup/boot/clouds/amazon/#configuring-vault-for-eks) in the Jenkins X documentation.
+For more information, refer to [Configuring Vault for EKS](/docs/install-setup/installing/boot/clouds/amazon/#configuring-vault-for-eks) in the Jenkins X documentation.
 
 Once you have your initial configuration, you can apply it by running:
 
