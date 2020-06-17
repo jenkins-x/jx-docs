@@ -182,4 +182,4 @@ And we should keep some rules about this, please read related languages below:
 ## Contributing
 <a id="markdown-contributing" name="contributing"></a>
 
-Please refer to the documentation contributing guide available at [Jenkins X website](https://jenkins-x.io/docs/contributing/).
+Please refer to the documentation contributing guide available at [Jenkins X website](https://jenkins-x.io/community/documentation/).
