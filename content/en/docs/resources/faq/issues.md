@@ -157,7 +157,6 @@ helm repo add jenkins-x	http://chartmuseum.jenkins-x.io
 
 and you should be good to go again.
 
-
 Another possible cause is an old URL in your environment's git repository may have old references to the URL.
 
 So open your `env/requirements.yaml` in your staging/production git repositories and modify them to use the URL http://chartmuseum.jenkins-x.io instead of **chartmuseum.build.cd.jenkins-x.io** like this [env/requirements file](https://github.com/jenkins-x/default-environment-charts/blob/master/env/requirements.yaml)
@@ -172,9 +171,6 @@ To recreate it with a new API token value try the following (changing the git se
 jx delete git token -n github <yourUserName>
 jx create git token -n github <yourUserName>
 ```
-
-More details on [using git and Jenkins X here](/docs/resources/guides/managing-jx/common-tasks/git/)
-
 
 ## Invalid git token to scan a project
 
@@ -192,8 +188,6 @@ To recreate it with a new API token value try the following (changing the git se
 jx delete git token -n GitHub admin
 jx create git token -n GitHub admin
 ```
-
-More details on [using git and Jenkins X here](/docs/resources/guides/managing-jx/common-tasks/git/)
 
 ## What are the credentials to access core services?
 

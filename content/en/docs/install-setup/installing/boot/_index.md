@@ -1,6 +1,6 @@
 ---
 title: Boot
-linktitle: Run Boot
+linktitle: Run Jenkins X Boot
 description: How to install, configure or upgrade Jenkins X via GitOps and a Jenkins X Pipeline
 categories: [getting started]
 keywords: [install, cluster]
