@@ -1,7 +1,7 @@
 ---
 title: Lighthouse
 linktitle: Lighthouse
-description: lightweight webhook and [ChatOps](/docs/resources/guides/using-jx/faq/chatops/) handling for multiple git providers
+description: Lightweight webhook and [ChatOps](/docs/resources/guides/using-jx/faq/chatops/) handling for multiple Git providers
 weight: 41
 aliases:
   - /docs/resources/guides/managing-jx/common-tasks/lighthouse

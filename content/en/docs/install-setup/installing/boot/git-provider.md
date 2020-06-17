@@ -6,152 +6,86 @@ keywords: [git]
 weight: 40
 ---
 
-## Git
+Jenkins X supports several different Git providers via webhooks (user-defined HTTP callbacks).
+These webhooks trigger the Jenkins X Pipeline execution, based on repository events such as a push to the master branch or the creation of a pull request.
 
-Jenkins X supports a number of different Git providers.
-You can specify the Git provider you wish to use and the organisation to use for the Git providers for each environment in your [jx-requirements.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml) file.
+The default webhook handler for Jenkins X is [Lighthouse](/docs/reference/components/lighthouse/), which manages webhooks similarly to [Prow](https://github.com/kubernetes/test-infra/tree/master/prow).
+However, contrary to Prow, which only supports GitHub, Lighthouse supports a variety of Git providers.
 
-### GitHub
+The following sections describe how you change the Boot configuration to use the various supported Git providers.
+The configuration occurs in all cases via [`jx-requirements.yml`](/docs/install-setup/installing/boot/#requirements).
+
+{{% alert %}}
+After changing the configuration you need to make sure it gets applied by running the Boot pipeline.
+Either by running `jx boot` locally or by creating a pull request against the development repository.
+Refer to [changing your installation](/docs/install-setup/installing/boot/#changing-your-installation) for more information.
+{{% /alert %}}
+
+## GitHub
 
 This is the default Git provider if you don't specify one.
+Explicitly it is configured by _gitKind: github_ such as the following example:
 
 ```yaml
 cluster:
-  environmentGitOwner: myorg
-  provider: gke
-environments:
-- key: dev
-- key: staging
-- key: production
-kaniko: true
-storage:
-  logs:
-    enabled: false
-  reports:
-    enabled: false
-  repository:
-    enabled: false
-webhook: prow
-```
-
-### GitHub Enterprise
-
-The configuration is similar to the above but you need to specify the URL of the `gitServer` (if it differs from https://github.com) and `gitKind: github`
-
-```yaml
-cluster:
-  provider: gke
   environmentGitOwner: myorg
   gitKind: github
-  gitName: ghe
+```
+
+## GitHub Enterprise
+
+[GitHub Enterprise](https://github.com/enterprise) supports the same features as the github.com service but scaled for on-premises deployment on local networks.
+
+The configuration is similar to the above but you need to specify the URL of the `gitServer` and `gitKind: github`. 
+For example:
+
+```yaml
+cluster:
+  environmentGitOwner: myorg
+  gitKind: github
   gitServer: https://github.myserver.com
-environments:
-  - key: dev
-  - key: staging
-  - key: production
-kaniko: true
-secretStorage: local
-storage:
-  logs:
-    enabled: true
-    url: "gs://jx-logs"
-  reports:
-    enabled: true
-    url: "gs://jx-logs"
-  repository:
-    enabled: true
-    url: "gs://jx-logs"
 webhook: lighthouse
 ```
 
-### Bitbucket Server
+Ensure you specify [Lighthouse](/docs/install-setup/installing/boot/webhooks/#lighthouse) webhook handler by setting `webhook: lighthouse`.
+
+## Bitbucket Server
 
 For Bitbucket Server specify the URL of the `gitServer` and `gitKind: bitbucketserver`.
-If you want to use [Serverless Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/) then make sure you specify the [Lighthouse webhook](/docs/install-setup/installing/boot/webhooks/#lighthouse) via `webhook: lighthouse`.
 
 ```yaml
 cluster:
-  provider: gke
   environmentGitOwner: myorg
   gitKind: bitbucketserver
-  gitName: bs
   gitServer: https://bitbucket.myserver.com
-environments:
-  - key: dev
-  - key: staging
-  - key: production
-kaniko: true
-secretStorage: local
-storage:
-  logs:
-    enabled: true
-    url: "gs://jx-logs"
-  reports:
-    enabled: true
-    url: "gs://jx-logs"
-  repository:
-    enabled: true
-    url: "gs://jx-logs"
 webhook: lighthouse
 ```
 
-### Bitbucket Cloud
+Ensure you specify [Lighthouse](/docs/install-setup/installing/boot/webhooks/#lighthouse) webhook handler by setting `webhook: lighthouse`.
+
+## Bitbucket Cloud
 
 For Bitbucket Cloud specify`gitKind: bitbucketcloud`.
-If you want to use [Serverless Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/) then make sure you specify the [lighthouse webhook](/docs/install-setup/installing/boot/webhooks/#lighthouse) via `webhook: lighthouse`.
 
 ```yaml
 cluster:
-  provider: gke
   environmentGitOwner: myorg
   gitKind: bitbucketcloud
-  gitName: bc
-environments:
-  - key: dev
-  - key: staging
-  - key: production
-kaniko: true
-secretStorage: local
-storage:
-  logs:
-    enabled: true
-    url: "gs://jx-logs"
-  reports:
-    enabled: true
-    url: "gs://jx-logs"
-  repository:
-    enabled: true
-    url: "gs://jx-logs"
 webhook: lighthouse
 ```
 
-### GitLab
+Ensure you specify [Lighthouse](/docs/install-setup/installing/boot/webhooks/#lighthouse) webhook handler by setting `webhook: lighthouse`.
 
-For GitLab specify the URL of the `gitServer` and `gitKind: gitlab`.
-If you want to use [Serverless Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/) then make sure you specify the [Lighthouse webhook](/docs/install-setup/installing/boot/webhooks/#lighthouse) via `webhook: lighthouse`.
+## GitLab
+
+For [GitLab](https://about.gitlab.com/stages-devops-lifecycle/source-code-management/) specify the URL of the `gitServer` and `gitKind: gitlab`.
 
 ```yaml
 cluster:
-  provider: gke
   environmentGitOwner: myorg
   gitKind: gitlab
-  gitName: gl
   gitServer: https://gitlab.com
-environments:
-  - key: dev
-  - key: staging
-  - key: production
-kaniko: true
-secretStorage: local
-storage:
-  logs:
-    enabled: true
-    url: "gs://jx-logs"
-  reports:
-    enabled: true
-    url: "gs://jx-logs"
-  repository:
-    enabled: true
-    url: "gs://jx-logs"
 webhook: lighthouse
 ```
+
+Ensure you specify [Lighthouse](/docs/install-setup/installing/boot/webhooks/#lighthouse) webhook handler by setting `webhook: lighthouse`.
