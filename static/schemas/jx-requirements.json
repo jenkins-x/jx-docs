@@ -23,6 +23,31 @@
       "additionalProperties": false,
       "type": "object"
     },
+    "BuildPackConfig": {
+      "properties": {
+        "buildPackLibrary": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/BuildPackLibrary"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
+    "BuildPackLibrary": {
+      "properties": {
+        "gitRef": {
+          "type": "string"
+        },
+        "gitURL": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
     "ClusterConfig": {
       "properties": {
         "azure": {
@@ -204,6 +229,10 @@
         "bootConfigURL": {
           "type": "string"
         },
+        "buildPacks": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/BuildPackConfig"
+        },
         "cluster": {
           "$schema": "http://json-schema.org/draft-04/schema#",
           "$ref": "#/definitions/ClusterConfig"
@@ -363,13 +392,25 @@
         "keyring": {
           "type": "string"
         },
+        "kubernetesAuthPath": {
+          "type": "string"
+        },
         "name": {
+          "type": "string"
+        },
+        "namespace": {
           "type": "string"
         },
         "recreateBucket": {
           "type": "boolean"
         },
+        "secretEngineMountPoint": {
+          "type": "string"
+        },
         "serviceAccount": {
+          "type": "string"
+        },
+        "url": {
           "type": "string"
         }
       },
