@@ -67,7 +67,7 @@ It is not intended for a production cluster.
 Refer to [Production cluster considerations](/docs/install-setup/installing/create-cluster/gke/#production-cluster-considerations) for things to consider when creating a production cluster.
 {{% /alert %}}
 
-On completion of `terraform apply` there will be a _jx-requirements.yml_ in the working directory which can be used as input to `jx boot`.
+On completion of `terraform apply` there will be a _jx\_requirements_ output available which can be used as input to `jx boot` using the `--requirements` option.
 Refer to [Running `jx boot`](#running-jx-boot) for more information.
 
 In the default configuration, no custom domain is used.
@@ -122,6 +122,7 @@ The following two paragraphs provide the full list of configuration and output v
 | report\_storage\_url | The URL to the bucket for report storage |
 | repository\_storage\_url | The URL to the bucket for artifact storage |
 | vault\_bucket\_url | The URL to the bucket for secret storage |
+| jx\_requirements | The yaml formatted output for use with `jx boot` |
 
 ## Using a custom domain
 
@@ -192,14 +193,22 @@ gsutil versioning get gs://<my-bucket-name>
 
 ## Running `jx boot`
 
-An output of applying the Terraform module is a _jx-requirements.yml_ file in the current directory.
-This file can be used as input to [Jenkins X Boot](/docs/getting-started/setup/boot/) which is responsible for installing all the required Jenkins X components into the cluster.
-
 {{% alert title="Warning" color="warning" %}}
-The generated _jx-requirements.yml_ is only used for the first run of `jx boot`.
+The generated output _jx\_requirements_ is only used for the first run of `jx boot`.
 During this first run a git repository containing the source code for Jenkins X Boot is created.
 This repository contains the _jx-requirements.yml_ used by successive runs of `jx boot`.
+See the diagram below for more information on the typical lifecycle.
 {{% /alert %}}
+
+![Jenkins X Boot Lifecyckle](/images/getting-started/terraform_google_jx_boot.png)
+
+An output (_jx\_requirements_) is available after applying the Terraform module, it can be retrieved and pipped to a file.
+
+```sh
+terraform output jx_requirements > jx-requirements.yml
+```
+
+This file can be used as input to [Jenkins X Boot](/docs/getting-started/setup/boot/) which is responsible for installing all the required Jenkins X components into the cluster.
 
 Change into  an empty directory and execute:
 
