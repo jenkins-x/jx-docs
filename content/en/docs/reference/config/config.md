@@ -718,6 +718,90 @@ string
 </tr>
 </tbody>
 </table>
+<h3 id="config.jenkins.io/v1.BuildPackConfig">BuildPackConfig
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#config.jenkins.io/v1.RequirementsConfig">RequirementsConfig</a>)
+</p>
+<p>
+<p>BuildPackConfig contains build pack info</p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>buildPackLibrary</code></br>
+<em>
+<a href="#config.jenkins.io/v1.BuildPackLibrary">
+BuildPackLibrary
+</a>
+</em>
+</td>
+<td>
+<p>Location contains location config</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="config.jenkins.io/v1.BuildPackLibrary">BuildPackLibrary
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#config.jenkins.io/v1.BuildPackConfig">BuildPackConfig</a>)
+</p>
+<p>
+<p>BuildPackLibrary contains buildpack location</p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>name</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Name</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>gitURL</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>GitURL</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>gitRef</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>GitRef</p>
+</td>
+</tr>
+</tbody>
+</table>
 <h3 id="config.jenkins.io/v1.CRDsFromPipelineParams">CRDsFromPipelineParams
 </h3>
 <p>
@@ -1645,7 +1729,7 @@ bool
 <td>
 <code>promotionStrategy</code></br>
 <em>
-github.com/jenkins-x/jx/pkg/apis/jenkins.io/v1.PromotionStrategyType
+github.com/jenkins-x/jx/v2/pkg/apis/jenkins.io/v1.PromotionStrategyType
 </em>
 </td>
 <td>
@@ -2817,8 +2901,8 @@ string
 <td>
 <code>modules</code></br>
 <em>
-<a href="#config.jenkins.io/v1.*github.com/jenkins-x/jx/pkg/jenkinsfile.Module">
-[]*github.com/jenkins-x/jx/pkg/jenkinsfile.Module
+<a href="#config.jenkins.io/v1.*github.com/jenkins-x/jx/v2/pkg/jenkinsfile.Module">
+[]*github.com/jenkins-x/jx/v2/pkg/jenkinsfile.Module
 </a>
 </em>
 </td>
@@ -3155,8 +3239,8 @@ string
 <td>
 <code>steps</code></br>
 <em>
-<a href="#config.jenkins.io/v1.*github.com/jenkins-x/jx/pkg/tekton/syntax.Step">
-[]*github.com/jenkins-x/jx/pkg/tekton/syntax.Step
+<a href="#config.jenkins.io/v1.*github.com/jenkins-x/jx/v2/pkg/tekton/syntax.Step">
+[]*github.com/jenkins-x/jx/v2/pkg/tekton/syntax.Step
 </a>
 </em>
 </td>
@@ -3167,8 +3251,8 @@ string
 <td>
 <code>preSteps</code></br>
 <em>
-<a href="#config.jenkins.io/v1.*github.com/jenkins-x/jx/pkg/tekton/syntax.Step">
-[]*github.com/jenkins-x/jx/pkg/tekton/syntax.Step
+<a href="#config.jenkins.io/v1.*github.com/jenkins-x/jx/v2/pkg/tekton/syntax.Step">
+[]*github.com/jenkins-x/jx/v2/pkg/tekton/syntax.Step
 </a>
 </em>
 </td>
@@ -3190,7 +3274,7 @@ bool
 </tbody>
 </table>
 <h3 id="config.jenkins.io/v1.PipelineLifecycleArray">PipelineLifecycleArray
-(<code>[]github.com/jenkins-x/jx/pkg/jenkinsfile.NamedLifecycle</code> alias)</p></h3>
+(<code>[]github.com/jenkins-x/jx/v2/pkg/jenkinsfile.NamedLifecycle</code> alias)</p></h3>
 <p>
 <p>PipelineLifecycleArray an array of named lifecycle pointers</p>
 </p>
@@ -3357,8 +3441,8 @@ Step
 <td>
 <code>steps</code></br>
 <em>
-<a href="#config.jenkins.io/v1.*github.com/jenkins-x/jx/pkg/tekton/syntax.Step">
-[]*github.com/jenkins-x/jx/pkg/tekton/syntax.Step
+<a href="#config.jenkins.io/v1.*github.com/jenkins-x/jx/v2/pkg/tekton/syntax.Step">
+[]*github.com/jenkins-x/jx/v2/pkg/tekton/syntax.Step
 </a>
 </em>
 </td>
@@ -3512,8 +3596,8 @@ PipelineLifecycle
 <td>
 <code>overrides</code></br>
 <em>
-<a href="#config.jenkins.io/v1.*github.com/jenkins-x/jx/pkg/tekton/syntax.PipelineOverride">
-[]*github.com/jenkins-x/jx/pkg/tekton/syntax.PipelineOverride
+<a href="#config.jenkins.io/v1.*github.com/jenkins-x/jx/v2/pkg/tekton/syntax.PipelineOverride">
+[]*github.com/jenkins-x/jx/v2/pkg/tekton/syntax.PipelineOverride
 </a>
 </em>
 </td>
@@ -3833,6 +3917,19 @@ string
 </td>
 <td>
 <p>BootConfigURL contains the url to which the dev environment is associated with</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>buildPacks</code></br>
+<em>
+<a href="#config.jenkins.io/v1.BuildPackConfig">
+BuildPackConfig
+</a>
+</em>
+</td>
+<td>
+<p>BuildPackConfig contains custom build pack settings</p>
 </td>
 </tr>
 <tr>
@@ -4573,8 +4670,8 @@ string
 <td>
 <code>steps</code></br>
 <em>
-<a href="#config.jenkins.io/v1.*github.com/jenkins-x/jx/pkg/tekton/syntax.Step">
-[]*github.com/jenkins-x/jx/pkg/tekton/syntax.Step
+<a href="#config.jenkins.io/v1.*github.com/jenkins-x/jx/v2/pkg/tekton/syntax.Step">
+[]*github.com/jenkins-x/jx/v2/pkg/tekton/syntax.Step
 </a>
 </em>
 </td>
@@ -5142,7 +5239,7 @@ string
 <a href="#config.jenkins.io/v1.RequirementsConfig">RequirementsConfig</a>)
 </p>
 <p>
-<p>VaultConfig contains Vault configuration for boot</p>
+<p>VaultConfig contains Vault configuration for Boot</p>
 </p>
 <table>
 <thead>
@@ -5160,7 +5257,8 @@ string
 </em>
 </td>
 <td>
-<p>Name the name of the vault if using vault for secrets</p>
+<p>Name the name of the Vault if using Jenkins X managed Vault instance.
+Cannot be used in conjunction with the URL attribute</p>
 </td>
 </tr>
 <tr>
@@ -5168,6 +5266,16 @@ string
 <code>bucket</code></br>
 <em>
 string
+</em>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<code>recreateBucket</code></br>
+<em>
+bool
 </em>
 </td>
 <td>
@@ -5195,33 +5303,13 @@ string
 </tr>
 <tr>
 <td>
-<code>serviceAccount</code></br>
-<em>
-string
-</em>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<code>recreateBucket</code></br>
-<em>
-bool
-</em>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
 <code>disableURLDiscovery</code></br>
 <em>
 bool
 </em>
 </td>
 <td>
-<p>Optionally allow us to override the default lookup of the Vault URL, could be incluster service or external ingress</p>
+<p>DisableURLDiscovery allows us to optionally override the default lookup of the Vault URL, could be incluster service or external ingress</p>
 </td>
 </tr>
 <tr>
@@ -5234,6 +5322,66 @@ VaultAWSConfig
 </em>
 </td>
 <td>
+<p>AWSConfig describes the AWS specific configuration needed for the Vault Operator.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>url</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>URL specifies the URL of an Vault instance to use for secret storage.
+Needs to be specified together with the Service Account and namespace to use for connecting to Vault.
+This cannot be used in conjunction with the Name attribute.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>serviceAccount</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>ServiceAccount is the name of the Kubernetes service account allowed to authenticate against Vault.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>namespace</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Namespace of the Kubernetes service account allowed to authenticate against Vault.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>secretEngineMountPoint</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>SecretEngineMountPoint is the secret engine mount point to be used for writing data into the KV engine of Vault.
+If not specified the &lsquo;secret&rsquo; is used.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>kubernetesAuthPath</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>KubernetesAuthPath is the auth path of used for this cluster
+If not specified the &lsquo;kubernetes&rsquo; is used.</p>
 </td>
 </tr>
 </tbody>
@@ -5402,5 +5550,5 @@ string
 <hr/>
 <p><em>
 Generated with <code>gen-crd-api-reference-docs</code>
-on git commit <code>830820e33</code>.
+on git commit <code>0ac50e624</code>.
 </em></p>
