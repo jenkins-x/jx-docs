@@ -1,5 +1,5 @@
 ---
-date: 2020-06-19T00:57:42Z
+date: 2020-06-19T12:56:42Z
 title: "jx step verify dns"
 slug: jx_step_verify_dns
 url: /commands/jx_step_verify_dns/
