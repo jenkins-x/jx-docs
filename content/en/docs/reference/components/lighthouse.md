@@ -10,8 +10,7 @@ aliases:
 
 [Lighthouse](https://github.com/jenkins-x/lighthouse) is a lightweight [ChatOps](/docs/resources/guides/using-jx/faq/chatops/) based webhook handler which can trigger [Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) on webhooks from multiple git providers such as: GitHub, GitHub Enterprise, GitLab, and BitBucket Server. It is a successor to [Prow](/docs/reference/components/prow/), providing support for more SCM providers, a smaller footprint, and an easier path to adding features going forward. Lighthouse has been the default webhook handler in Jenkins X since early May, 2020.
 
-Currently Lighthouse is focused on using [Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) with tekton though longer term it could be reused with tekton orchestrating Jenkins pipelines via the [Custom Jenkins Server App](/docs/resources/guides/managing-jx/common-tasks/custom-jenkins/)
-
+Currently Lighthouse is focused on using [Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) with tekton.
 ## Features
 
 Currently Lighthouse supports the common [prow plugins](https://github.com/jenkins-x/lighthouse/tree/master/pkg/prow/plugins) and handles push webhooks to branches & Pull Request webhooks to then trigger Jenkins X pipelines.

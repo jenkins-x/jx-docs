@@ -23,7 +23,6 @@ If you are creating a cluster or installing on an existing cluster there is a qu
 
 The `—ng` flag is an alias for these flags: `—gitops —vault —no-tiller —tekton`. So it also comes with baked in support for [Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) - the modern cloud native pipeline engine based on Tekton.
 
-If you still want to use a Jenkins server as the execution engine for the automated CI/CD pipelines in Jenkins X then you can use `—gitops —vault` instead. Though note that even if using `—ng` and using [Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) powered by tekton - you can still create your own [custom Jenkins servers](/docs/resources/guides/managing-jx/common-tasks/custom-jenkins/) to run traditional Jenkins jobs and pipelines!
 
 Once you have installed Jenkins X using GitOps to manage the dev environment- the install of Jenkins X and it’s additional Apps - you get an extra git repository for Dev, Staging and Production. It also means that if you use an upgrade command like [jx upgrade platform](/commands/deprecation/) or add, upgrade or delete Apps via [jx add app](/commands/jx_add_app/) then those commands will generate Pull Requests on the dev environment git repository - rather like how promotion works when you release new versions of your microservices.
 
