@@ -44,8 +44,6 @@ So we highly recommend anyone who has created a Jenkins X installation using Kna
 
 Now the `jx` binary will warn that any attempt at using `--knative-build` when installing is deprecated.
 
-We will soon have a build pack for [Jenkinsfile runner](https://github.com/jenkinsci/jenkinsfile-runner) when using Tekton in case you need to reuse a Jenkinsfile within [Serverless Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) and Tekton along with support for orchestrating `Jenkinsfile` within a [custom Jenkins server](/docs/resources/guides/managing-jx/common-tasks/custom-jenkins/).
-
 ## 21st May 2019: Skaffold upgrade to v0.29.0
 
 We have noticed an incompatibility with older Skaffold configuration files and the new v0.29.0 Skaffold release.  Freshly generated applications will not suffer from this problem, but for existing applications changes to the configuration file may be required.
