@@ -63,7 +63,7 @@ Jenkins X builds upon the following core components:
   
 ### Kubernetes & Docker
 ---
-At the heart of the system is Kubernetes, which has become the de facto virtual infrastructure platform for DevOps. Every major Cloud provider now offers Kubernetes infrastructure on demand and the platform may also be installed in-house on private infrastructure, if required. Test environments may also be created on local development hardware using the Minikube installer.
+At the heart of the system is Kubernetes, which has become the de facto virtual infrastructure platform for DevOps. Every major Cloud provider now offers Kubernetes infrastructure on demand and the platform may also be installed in-house on private infrastructure, if required.
 
 Functionally, the Kubernetes platform extends the basic Containerization principles provided by Docker to span across multiple physical Nodes. 
 

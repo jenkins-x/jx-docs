@@ -12,7 +12,7 @@ A number of different public cloud providers are supported as shown below.
 
 __For the best getting started experience we currently recommend using Google Container Engine (GKE)__. The Google Cloud Platform offers a $300 free credit if you don't have a Google Cloud account.  See https://console.cloud.google.com/freetrial
 
-Here's a little demo showing GKE, AKS and Minikube in parallel. It can take some time to start on different machines/clouds so please be patient!
+Here's a little demo showing GKE, AKS and Minikube (not supported anymore) in parallel. It can take some time to start on different machines/clouds so please be patient!
 
 <iframe width="640" height="360" src="https://www.youtube.com/embed/ELA4tytdFeA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
@@ -308,64 +308,6 @@ jx create cluster iks --apikey=<IBM Cloud API Key>
 This will use [IBM Cloud CLI](https://console.bluemix.net/docs/cli/index.html#overview) on your IBM Cloud Infrastructure account to create a new IKS cluster and install Jenkins X.
 
 You need to make sure you have the $HOME/.jx/bin folder in your $PATH.
-
-Now **[develop apps faster with Jenkins X](/docs/getting-started/)**.
-
-## Using Minikube (local)
-
-Some folks have trouble getting minikube to work for a variety of reasons:
-
-* minikube requires up to date virtualisation software to be installed and your machine
-* you may have an old Docker installation or old minikube / kubectl or helm binaries and so forth.
-
-So we **highly** recommend using one of the public clouds above to try out Jenkins X. They all have free tiers so it should not cost you any significant cash and it'll give you a chance to try out the cloud.
-
-**minikube does not produce a public-facing IP so webhooks will not be able to reach the cluster. As a result, only polling for changes works and it might take a long while for pipelines to fire.**
-
-If you still want to try minikube then we recommend letting jx create the cluster for you (as opposed to installing jx into an existing minikube cluster) by running:
-
-```sh
-jx create cluster minikube
-```
-
-You'll be prompted for the amount of memory, cores, and disk size to use, and also the driver.
-
-A known good configuration on a 2015 model Macbook Pro is to use 8 GB of RAM, 8 cores*, a 150 GB disk size and hyperkit. For installing hyperkit, see the [hyperkit installation documentation](https://github.com/kubernetes/minikube/blob/master/docs/drivers.md#hyperkit-driver).
-
-The disk size is particularly large as a number of images will need to be downloaded. These are used by jx and here are the sizes at the time of this document:
-
-```sh
-jxpv1                           8Gi        RWO            Recycle          Bound       jx/jenkins-x-nexus                                                               5d
-jxpv2                           100Gi      RWO            Recycle          Bound       jx/jenkins-x-docker-registry                                                     6d
-jxpv3                           8Gi        RWO            Recycle          Bound       jx/jenkins-x-mongodb                                                             22h
-jxpv4                           30Gi       RWO            Recycle          Bound       jx/jenkins                                                                    6d
-```
-
-"I get `Error creating cluster exit status 1`, or it seems to be hanging - what should I do?"
-
-Check to see if `minikube status` reports that minikube is actually already running. If it is, do `minikube stop` and then repeat the cluster creation process. Removing your `~/.minikube` directory is also known to help: you want to make sure you have a clean environment with a working driver installed before attemping to run `jx create cluster minikube`.
-
-"I get `Error: Command failed kubectl create clusterrolebinding add-on-cluster-admin --clusterrole cluster-admin --serviceaccount kube-system:default`, help!"
-
-The cluster role binding may exist through your use of Minikube before with RBAC. Delete any existing cluster role binding with the above name (`kubectl delete clusterrolebinding add-on-cluster-admin`) and then repeat the `jx create cluster minikube` command.
-
-If the above proceeds OK, you'll be greeted with `Please enter the name you wish to use with git:`.
-
-* you can specify more cores than you actually have!
-
-Now **[develop apps faster with Jenkins X](/docs/getting-started/)**.
-
-## Using Minishift (local)
-
-If you want to try out Jenkins X on a local OpenShift cluster then you can try using minishift.
-
-**minishift does not produce a public-facing IP so webhooks will not be able to reach the cluster. As a result, only polling for changes works and it might take a long while for pipelines to fire.**
-
-To create a minishift VM with Jenkins X installed on it try the [jx create cluster minishift](/commands/deprecation/) command:
-
-```sh
-jx create cluster minishift
-```
 
 Now **[develop apps faster with Jenkins X](/docs/getting-started/)**.
 

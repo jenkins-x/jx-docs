@@ -65,7 +65,6 @@ Or if you know the kubernetes namespace you wish to switch to just type it as an
 
 ```sh
 jx ctx gke_jenkinsx-dev_europe-west2-a_myuserid-foo
-jx ctx minikube
 ```
 
 ### Local changes

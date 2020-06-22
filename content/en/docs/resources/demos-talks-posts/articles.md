@@ -29,7 +29,6 @@ weight: 10
 * [Jenkins X: Preview Environment](https://medium.com/@MichalFoksa/jenkins-x-preview-environment-3bf2424a05e4) by [Michal Foksa](https://medium.com/@MichalFoksa), January 10th, 2019
 * [Continuous Delivery with Amazon EKS and Jenkins X](https://aws.amazon.com/blogs/opensource/continuous-delivery-eks-jenkins-x/) by [Henryk Konsek](https://twitter.com/hekonsek), 7th November, 2018
 * [Trying out Jenkins X on Azure Kubernetes Service(AKS)](https://medium.com/@puichan/trying-out-jenkins-x-on-azure-kubernetes-service-aks-20fe94bd72d2) by [PC Chan](https://medium.com/@puichan) on October 29th, 2018
-* [SetUp Jenkins X on Minikube kubernetes Cluster](https://medium.com/@mayank.023/setup-jenkinsx-on-minikube-kubernetes-cluster-c519264bb991) by [mayank verma](https://medium.com/@mayank.023) on September 30th, 2018  
 * [Installing Jenkins X on IBM Cloud Kubernetes Service](https://www.ibm.com/blogs/bluemix/2018/08/installing-jenkins-x-on-ibm-cloud-kubernetes-service/) on August 28th, 2018 by [Ram Vennam](https://www.ibm.com/blogs/bluemix/author/rvennamus-ibm-com/) 
 * [Jenkins X and Pivotal PKS](http://www.routetocloud.com/2018/08/1969/) on 1st August, 2018 by [Roie Ben-haim](https://twitter.com/roie9876)
 * [Accelerate with Jenkins X](https://jenkins.io/blog/2018/07/19/jenkins-x-accelerate/) by [James Rawlings](https://twitter.com/jdrawlings/) on July 20, 2018 

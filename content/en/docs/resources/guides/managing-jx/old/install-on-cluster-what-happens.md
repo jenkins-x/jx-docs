@@ -36,11 +36,6 @@ If you are using a public cloud, there will be an associated CLI for interacting
 - `eksctl` for [AWS EKS](https://aws.amazon.com/eks/) cluster
 - `oci` for OKS cluster (Oracle Cloud)
 
-If you want to run Jenkins X locally via minikube or minishift, the following binaries are added:
-
-- `oc` (OpenShift CLI) and `minishift` for a local minishift cluster (OpenShift)
-- `minikube` for a local minikube cluster
-
 Last but not least, Jenkins X will install the VM driver when required, typically `xhyve` for Mac OS X or `hyperv` for Windows. Other drivers (VirtualBox, VMWare...) must be installed manually.
 
 ## Create the Kubernetes cluster
