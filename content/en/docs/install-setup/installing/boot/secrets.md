@@ -1,7 +1,7 @@
 ---
-title: Secrets
-linktitle: Secrets
-description: Configure secret management - local vs Vault
+title: Configure Secret Storage
+linktitle: Configure Secret Storage
+description: Configure secret storage - local vs Vault
 keywords: [vault]
 weight: 30
 ---

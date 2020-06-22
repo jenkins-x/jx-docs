@@ -1,7 +1,7 @@
 ---
-title: Ingress
-linktitle: Ingress
-description: Configure ingress
+title: Configure Ingress
+linktitle: Configure Ingress
+description: Configure Ingress, DNS and TLS
 weight: 65
 ---
 
