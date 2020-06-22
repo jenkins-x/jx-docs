@@ -1,7 +1,7 @@
 ---
-title: Git Provider
-linktitle: Git Provider
-description: Configure Git providers
+title: Configure Git Provider
+linktitle: Configure Git Provider
+description: Configure Git providers supported by Jenkins X
 keywords: [git]
 weight: 40
 ---

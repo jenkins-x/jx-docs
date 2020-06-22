@@ -1,6 +1,6 @@
 ---
-title: Webhooks
-linktitle: Webhooks
+title: Configure Webhooks
+linktitle: Configure Webhooks
 description: Configure Webhooks
 weight: 70
 ---

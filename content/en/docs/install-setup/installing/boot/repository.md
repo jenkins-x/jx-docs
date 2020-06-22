@@ -1,6 +1,6 @@
 ---
-title: Artifact Repository
-linktitle: Artifact Repository
+title: Configure Artifact Repositories
+linktitle: Configure Artifact Repositories
 description: Configure various artifact repositories used by Jenkins X
 weight: 80
 keywords: [nexus, bucketrepo]

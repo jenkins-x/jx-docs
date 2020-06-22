@@ -1,6 +1,6 @@
 ---
-title: Storage
-linktitle: Storage
+title: Configure Storage
+linktitle: Configure Storage
 description: Configure long term storage for logs and reports
 keywords: [logs]
 weight: 60
