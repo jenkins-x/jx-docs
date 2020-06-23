@@ -81,9 +81,6 @@ configuration.
 The configuration defines the pipeline agent, in this case a Google Container
 Registry image for the Go language build tools.
 
-The configuration defines the pipeline agent, in this case a Google Container
-Registry image for the Go language build tools.
-
 ```sh
         environment:
           - name: DEPLOY_NAMESPACE
