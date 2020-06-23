@@ -68,7 +68,7 @@ bugfixes, or security hotfix.
 The development bot created during the installation process sends a notification email to the developer as well as the designated repository approver that a PR is ready for review. During the approval process, the approver can click on the preview application with the code changes for testing and validation.
 
 When the approver confirms the code and functionality changes, they can
-approve the with a simple comment that merges the code changes back to
+approve with a simple comment that merges the code changes back to
 the master branch and initiate a production build with the new feature:
 
 ```sh
