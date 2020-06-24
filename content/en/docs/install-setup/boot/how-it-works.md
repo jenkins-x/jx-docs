@@ -7,8 +7,8 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 weight: 20
 aliases:
-  - /docs/getting-started/setup/boot/how-it-works
   - /docs/getting-started/setup/boot/how-it-works/
+  - /docs/install-setup/installing/boot/how-it-works/
 ---
 
 ## Source Repositories

@@ -2,7 +2,7 @@
 title: What's next?
 linktitle: What's next?
 description: What to do after Jenkins X is installed on a Kubernetes cluster
-weight: 6
+weight: 70
 draft: true
 toc_hide: true
 ---

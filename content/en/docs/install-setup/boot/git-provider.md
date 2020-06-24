@@ -6,6 +6,7 @@ keywords: [git]
 weight: 40
 aliases:
   - /docs/install-setup/configure-scm/
+  - /docs/install-setup/installing/boot/git-provider/
 ---
 
 Jenkins X supports several different Git providers via webhooks (user-defined HTTP callbacks).
@@ -15,12 +16,12 @@ The default webhook handler for Jenkins X is [Lighthouse](/docs/reference/compon
 However, contrary to Prow, which only supports GitHub, Lighthouse supports a variety of Git providers.
 
 The following sections describe how you change the Boot configuration to use the various supported Git providers.
-The configuration occurs in all cases via [`jx-requirements.yml`](/docs/install-setup/installing/boot/#requirements).
+The configuration occurs in all cases via [`jx-requirements.yml`](/docs/install-setup/boot/#requirements).
 
 {{% alert %}}
 After changing the configuration you need to make sure it gets applied by running the Boot pipeline.
 Either by running `jx boot` locally or by creating a pull request against the development repository.
-Refer to [changing your installation](/docs/install-setup/installing/boot/#changing-your-installation) for more information.
+Refer to [changing your installation](/docs/install-setup/boot/#changing-your-installation) for more information.
 {{% /alert %}}
 
 ## GitHub
@@ -49,7 +50,7 @@ cluster:
 webhook: lighthouse
 ```
 
-Ensure you specify [Lighthouse](/docs/install-setup/installing/boot/webhooks/#lighthouse) webhook handler by setting `webhook: lighthouse`.
+Ensure you specify [Lighthouse](/docs/install-setup/boot/webhooks/#lighthouse) webhook handler by setting `webhook: lighthouse`.
 
 ## Bitbucket Server
 
@@ -63,7 +64,7 @@ cluster:
 webhook: lighthouse
 ```
 
-Ensure you specify [Lighthouse](/docs/install-setup/installing/boot/webhooks/#lighthouse) webhook handler by setting `webhook: lighthouse`.
+Ensure you specify [Lighthouse](/docs/install-setup/boot/webhooks/#lighthouse) webhook handler by setting `webhook: lighthouse`.
 
 ## Bitbucket Cloud
 
@@ -76,7 +77,7 @@ cluster:
 webhook: lighthouse
 ```
 
-Ensure you specify [Lighthouse](/docs/install-setup/installing/boot/webhooks/#lighthouse) webhook handler by setting `webhook: lighthouse`.
+Ensure you specify [Lighthouse](/docs/install-setup/boot/webhooks/#lighthouse) webhook handler by setting `webhook: lighthouse`.
 
 ## GitLab
 
@@ -90,4 +91,4 @@ cluster:
 webhook: lighthouse
 ```
 
-Ensure you specify [Lighthouse](/docs/install-setup/installing/boot/webhooks/#lighthouse) webhook handler by setting `webhook: lighthouse`.
+Ensure you specify [Lighthouse](/docs/install-setup/boot/webhooks/#lighthouse) webhook handler by setting `webhook: lighthouse`.

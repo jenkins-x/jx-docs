@@ -98,7 +98,7 @@ We don't use `branch patterns` with tekton; they are a jenkins specific configur
 
 For Tekton we use the [prow](/docs/reference/components/prow/) / [lighthouse](/docs/reference/components/lighthouse/) configuration to specify which branches trigger which pipeline contexts.
 
-If you are using [boot](/docs/getting-started/setup/boot/) to install Jenkins X then you can create your own custom `Scheduler` custom resource in `env/templates/myscheduler.yaml` based on the [default one that is included](https://github.com/jenkins-x-charts/jxboot-resources/blob/master/jxboot-resources/templates/default-scheduler.yaml).
+If you are using [boot](/docs/install-setup/boot/) to install Jenkins X then you can create your own custom `Scheduler` custom resource in `env/templates/myscheduler.yaml` based on the [default one that is included](https://github.com/jenkins-x-charts/jxboot-resources/blob/master/jxboot-resources/templates/default-scheduler.yaml).
 
 e.g. here is how we specify the [branches used to create releases](https://github.com/jenkins-x-charts/jxboot-resources/blob/master/jxboot-resources/templates/default-scheduler.yaml#L48).
 
@@ -110,7 +110,7 @@ You can then associate your `SourceRepository` resources with your custom schedu
 * specifying the scheduler name when you import a project via `jx import --scheduler myname`
 * specifying the default scheduler name in your `dev` `Environment` at `spec.teamSettings.defaultScheduler.name` before you import projects
 
-If you are not using [boot](/docs/getting-started/setup/boot/) then you can use `kubectl edit cm config` and modify the prow configuration by hand - though we highly recommend using [boot](/docs/getting-started/setup/boot/) and GitOps instead; the prow configuration is easy to break if changing it by hand.
+If you are not using [boot](/docs/install-setup/boot/) then you can use `kubectl edit cm config` and modify the prow configuration by hand - though we highly recommend using [boot](/docs/install-setup/boot/) and GitOps instead; the prow configuration is easy to break if changing it by hand.
 
 ## How does promotion actually work?
 
@@ -229,7 +229,7 @@ See how to [add a custom step to your pipeline](/about/concepts/jenkins-x-pipeli
 
 ### Staging/Production
 
-By default, [enabling Vault](/docs/install-setup/installing/boot/secrets/) via `jx boot`'s `jx-requirements.yml` will only activate it in your pipeline and preview environments, not in staging and production. To also activate it in those environments, simply add a `jx-requirements.yml` file to the root of their repo, with at least the following content:
+By default, [enabling Vault](/docs/install-setup/boot/secrets/) via `jx boot`'s `jx-requirements.yml` will only activate it in your pipeline and preview environments, not in staging and production. To also activate it in those environments, simply add a `jx-requirements.yml` file to the root of their repo, with at least the following content:
 
 ```yaml
 secretStorage: vault

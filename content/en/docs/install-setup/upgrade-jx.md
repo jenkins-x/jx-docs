@@ -7,7 +7,7 @@ publishdate: 2019-05-01
 lastmod: 2020-06-09
 categories: [tutorials]
 keywords: [usage,docs]
-weight: 20
+weight: 50
 menu:
   docs:
     parent: "Install and Setup"
@@ -17,13 +17,13 @@ aliases:
 ---
 
 Keeping your Jenkins X environment updated can be done by command line
-using the `jx upgrade` command. When upgrading the version of Jenkins X 
-in your Kubernetes cluster we strongly recommend first updating your `jx` 
+using the `jx upgrade` command. When upgrading the version of Jenkins X
+in your Kubernetes cluster we strongly recommend first updating your `jx`
 cli to the version of Jenkins X that you are upgrading to.
 
 {{% alert %}}
-The following upgrade process is only applicable to Jenkins X clusters that 
-are managed via [jx boot](/docs/install-setup/installing/boot/).
+The following upgrade process is only applicable to Jenkins X clusters that
+are managed via [jx boot](/docs/install-setup/boot/).
 {{% /alert %}}
 
 Upgrading the CLI binary
@@ -71,7 +71,7 @@ The upgrade command performs the following tasks:
 
 * The version stream is checked for an updated [version](https://github.com/jenkins-x/jenkins-x-versions/blob/master/git/github.com/jenkins-x/jenkins-x-boot-config.yml) of [jenkins-x-boot-config](https://github.com/jenkins-x/jenkins-x-boot-config)
 
-* Changes from the jenkins-x-boot-config repository are cherry picked in to your dev environment repository 
+* Changes from the jenkins-x-boot-config repository are cherry picked in to your dev environment repository
 
 * Updates pipeline agent golang builder images from gcr.io.
 

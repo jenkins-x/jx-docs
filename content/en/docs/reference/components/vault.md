@@ -29,15 +29,15 @@ The Bank-Vaults operator is currently only supported with GKE or EKS.
 
 ## Configuration
 
-The configuration of Vault occurs during Jenkins X [Boot](/docs/install-setup/installing/boot).
-Refer to the [Boot setup instructions for Vault](/docs/install-setup/installing/boot/secrets/#vault) to see how to configure Jenkins X to use an internal or external Vault instance.
+The configuration of Vault occurs during Jenkins X [Boot](/docs/install-setup/boot/).
+Refer to the [Boot setup instructions for Vault](/docs/install-setup/boot/secrets/#vault) to see how to configure Jenkins X to use an internal or external Vault instance.
 
 ### Security
 
 From a security point of view it is important that the communication with the Vault API is secured by TLS.
 If you use your own external Vault instance, TLS configuration is in your hands and hopefully already setup.
 If you let Jenkins X install and manage the Bank-Vaults operator, TLS is per default not enabled.
-Refer to [Configuring DNS and TLS on GKE](/docs/install-setup/installing/boot/clouds/google) and [Configuring DNS and TLS on EKS](/docs/install-setup/installing/boot/clouds/amazon/#configuring-dns-and-tls-on-eks) for more information on how to secure your Jenkins X installation using TLS for the cloud providers Google and AWS.
+Refer to [Configuring DNS and TLS on GKE](/docs/install-setup/boot/clouds/google) and [Configuring DNS and TLS on EKS](/docs/install-setup/boot/clouds/amazon/#configuring-dns-and-tls-on-eks) for more information on how to secure your Jenkins X installation using TLS for the cloud providers Google and AWS.
 
 ## Accessing secrets
 
@@ -59,7 +59,7 @@ vault kv list secret
 
 _secret_ is the default [mount point](https://www.vaultproject.io/docs/secrets) for the Jenkins X secrets.
 If you are using an external Vault instance this mount point is configurable via the _secretEngineMountPoint_ option in _jx-requirements.yml_.
-You find more information in the Vault configuration paragraph of the [Boot](/docs/install-setup/installing/boot) documentation.
+You find more information in the Vault configuration paragraph of the [Boot](/docs/install-setup/boot/) documentation.
 
 {{% alert %}}
 The Vault configuration is also stored in the _jx-install-config_ ConfigMap of your Jenkins X development namespace.
@@ -96,6 +96,6 @@ vault kv put secret/<cluster-name>/my-secret token=my-service-account-base64.txt
 
 ## Rotating secrets
 
-To rotate a secret, follow the steps described in the [Updating a secret](/docs/reference/components/vault#updating-secrets) section followed by rerunning [Boot](/docs/install-setup/installing/boot) (`jx boot`).
+To rotate a secret, follow the steps described in the [Updating a secret](/docs/reference/components/vault#updating-secrets) section followed by rerunning [Boot](/docs/install-setup/boot/) (`jx boot`).
 The reason you need to run Boot, either locally or kicking of the master pipline of the dev repository, is that as part of the Boot process the secrets within Vault get copied into appropriate Kubernetes Secrets which then are accessed by the various components of Jenkins X.
 Without running Boot the changes to Vault will not take effect yet.

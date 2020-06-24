@@ -1,11 +1,13 @@
 ---
-title: Amazon 
+title: Amazon
 linktitle: Amazon
 description: Using Boot on Amazon (AWS)
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2020-02-27
 weight: 30
+aliases:
+  - /docs/install-setup/installing/boot/clouds/amazon/
 ---
 
 The information in this document assumes you have already created a Kubernetes cluster in AWS and you are now ready to `boot` your cluster with Jenkins X.

@@ -4,15 +4,14 @@ linktitle: Run Jenkins X Boot
 description: How to install, configure or upgrade Jenkins X via GitOps and a Jenkins X Pipeline
 categories: [getting started]
 keywords: [install, cluster]
-weight: 10
+weight: 40
 aliases:
   - /getting-started/boot/
   - /docs/reference/boot/
   - /architecture/tls/
-  - /docs/getting-started/setup/boot
   - /docs/getting-started/setup/boot/
-  - /docs/install-setup/boot
-  - docs/install-setup/boot/
+  - /docs/install-setup/boot/
+  - /docs/install-setup/boot/
 ---
 
 ## Overview
@@ -20,7 +19,7 @@ aliases:
 _Jenkins X Boot_ uses the following approach:
 
 - Create your Kubernetes cluster:
-    - use [Terraform](/docs/install-setup/installing/create-cluster/) to create your Kubernetes clusters + the associated cloud resources
+    - use [Terraform](/docs/install-setup/create-cluster/) to create your Kubernetes clusters + the associated cloud resources
     - use `jx create cluster --skip-installation` e.g. for Google Cloud use `jx create cluster gke --skip-installation`.
       To see all the different providers see [jx create cluster](/commands/jx_create_cluster/)  
 

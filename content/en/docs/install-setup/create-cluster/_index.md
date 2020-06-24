@@ -2,7 +2,7 @@
 title: Create cluster
 linktitle: Create cluster
 description: How to prepare a Kubernetes cluster for Jenkins X
-weight: 10
+weight: 20
 categories: [getting started]
 keywords: [cluster]
 aliases:
@@ -11,6 +11,7 @@ aliases:
   - /docs/getting-started/setup/create-cluster
   - /docs/install-setup/create-cluster
   - docs/install-setup/create-cluster
+  - /docs/install-setup/installing/create-cluster/
 ---
 
 Jenkins X runs on a Kubernetes cluster.

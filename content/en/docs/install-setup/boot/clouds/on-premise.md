@@ -6,6 +6,8 @@ date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01
 weight: 40
+aliases:
+  - /docs/install-setup/installing/boot/clouds/on-premise/
 ---
 
 On premise kubernetes clusters tend to differ wildly so its hard for us to know your Jenkins X installation will totally work on any cluster given we typically rely on things like persistence, ingress, storage.

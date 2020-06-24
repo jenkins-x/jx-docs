@@ -2,12 +2,12 @@
 title: Download the jx binary
 linktitle: Download jx
 description: How to download and install the jx binary on your machine
-weight: 10
+weight: 30
 keywords: [install]
 aliases:
-    - /getting-started/install
+    - /getting-started/install/
     - /docs/getting-started/setup/install/
-    - /docs/getting-started/setup/install
+    - /docs/install-setup/installing/install-binary/
 ---
 
 Pick the most suitable instructions for your operating system:

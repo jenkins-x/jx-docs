@@ -8,6 +8,7 @@ keywords: [cluster]
 aliases:
   - /docs/getting-started/setup/create-cluster/eks/
   - /docs/getting-started/setup/create-cluster/eks
+  - /docs/install-setup/installing/create-cluster/gke/
 ---
 
 {{% alert  %}}
@@ -60,7 +61,7 @@ module "eks-jx" {
 ```
 
 The IAM user does not need any permissions attached to it.
-For more information, refer to [Configuring Vault for EKS](/docs/install-setup/installing/boot/clouds/amazon/#configuring-vault-for-eks) in the Jenkins X documentation.
+For more information, refer to [Configuring Vault for EKS](/docs/install-setup/boot/clouds/amazon/#configuring-vault-for-eks) in the Jenkins X documentation.
 
 Once you have your initial configuration, you can apply it by running:
 
@@ -183,7 +184,7 @@ For more information refer around Vault refer to the [Vault](/docs/reference/com
 
 You can enable [ExternalDNS](https://github.com/kubernetes-sigs/external-dns) with the `enable_external_dns` variable. This modifies the generated _jx-requirements.yml_ file to enable External DNS when running `jx boot`.
 
-If `enable_external_dns` is _true_, additional configuration is required. 
+If `enable_external_dns` is _true_, additional configuration is required.
 
 If you want to use a domain with an already existing Route 53 Hosted Zone, you can provide it through the `apex_domain` variable:
 
@@ -222,7 +223,7 @@ You need to provide a valid email to register your domain in LetsEncrypt with `t
 ### Running `jx boot`
 
 An output of applying this Terraform module is a _jx-requirements.yml_ file in the current directory.
-This file can be used as input to [Jenkins X Boot](https://jenkins-x.io/docs/getting-started/setup/boot/) which is responsible for installing all the required Jenkins X components into the cluster created by this module.
+This file can be used as input to [Jenkins X Boot](/docs/install-setup/boot/) which is responsible for installing all the required Jenkins X components into the cluster created by this module.
 
 {{% alert title="Warning" %}}
 **Note**: The generated _jx-requirements.yml_ is only used for the first run of `jx boot`.
@@ -244,7 +245,7 @@ See [Cluster provisioning](#cluster-provisioning).
 You are prompted for any further required configuration.
 The number of prompts depends on how much you have [pre-configured](#inputs) via your Terraform variables.
 
-More information about the boot process can be found in the [Run Boot](/docs/getting-started/setup/boot) section.
+More information about the boot process can be found in the [Run Boot](/docs/install-setup/boot/) section.
 
 ## Production cluster considerations
 

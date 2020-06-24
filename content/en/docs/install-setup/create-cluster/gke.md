@@ -8,6 +8,7 @@ keywords: [cluster]
 aliases:
   - /docs/getting-started/setup/create-cluster/gke/
   - /docs/getting-started/setup/create-cluster/gke
+  - /docs/install-setup/create-cluster/gke/
 ---
 
 {{% alert %}}
@@ -64,7 +65,7 @@ This creates a cluster within the specified Google Cloud project with all possib
 {{% alert title="Warning" color="warning" %}}
 This example is for getting up and running quickly.
 It is not intended for a production cluster.
-Refer to [Production cluster considerations](/docs/install-setup/installing/create-cluster/gke/#production-cluster-considerations) for things to consider when creating a production cluster.
+Refer to [Production cluster considerations](/docs/install-setup/create-cluster/gke/#production-cluster-considerations) for things to consider when creating a production cluster.
 {{% /alert %}}
 
 On completion of `terraform apply` there will be a _jx\_requirements_ output available which can be used as input to `jx boot` using the `--requirements` option.
@@ -72,7 +73,7 @@ Refer to [Running `jx boot`](#running-jx-boot) for more information.
 
 In the default configuration, no custom domain is used.
 DNS resolution occurs via [nip.io](https://nip.io/).
-For more information on how to configure and use a custom domain, refer to [Using a custom domain](/docs/install-setup/installing/create-cluster/gke/#using-a-custom-domain).
+For more information on how to configure and use a custom domain, refer to [Using a custom domain](/docs/install-setup/create-cluster/gke/#using-a-custom-domain).
 
 If you just want to experiment with Jenkins X, you can set `force_destroy` to `true`.
 This allows you to remove all generated resources when running `terraform destroy`, including any generated buckets including their content.
@@ -126,7 +127,7 @@ The following two paragraphs provide the full list of configuration and output v
 
 ## Using a custom domain
 
-If you want to use a custom domain with your Jenkins X installation, you need to provide values for the [variables](/docs/install-setup/installing/create-cluster/gke/#inputs) _parent\_domain_ and _tls\_email_.
+If you want to use a custom domain with your Jenkins X installation, you need to provide values for the [variables](/docs/install-setup/create-cluster/gke/#inputs) _parent\_domain_ and _tls\_email_.
 _parent\_domain_ is the fully qualified domain name you want to use and _tls\_email_ is the email address you want to use for issuing Let's Encrypt TLS certificates.
 
 Before you apply the Terraform configuration, you also need to create a [Cloud DNS managed zone](https://cloud.google.com/dns/zones), with the DNS name in the managed zone matching your custom domain name, for example in the case of _example.jenkins-x.rocks_ as domain:
@@ -146,7 +147,7 @@ If _parent_domain_ id not set, your cluster will use [nip.io](https://nip.io/) i
 
 ## Production cluster considerations
 
-The configuration as seen in [Cluster provisioning](/docs/install-setup/installing/create-cluster/gke/#cluster-provisioning) is not suited for creating and maintaining a production Jenkins X cluster.
+The configuration as seen in [Cluster provisioning](/docs/install-setup/create-cluster/gke/#cluster-provisioning) is not suited for creating and maintaining a production Jenkins X cluster.
 The following is a list of considerations for a production usecase.
 
 - Specify the version attribute of the module, for example:
@@ -217,6 +218,6 @@ jx boot --requirements <path-to-jx-requirements.yml>
 ```
 
 You are prompted for any further required configuration.
-The number of prompts depends on how much you have [pre-configured](/docs/install-setup/installing/create-cluster/gke/#inputs) via your Terraform variables.
+The number of prompts depends on how much you have [pre-configured](/docs/install-setup/create-cluster/gke/#inputs) via your Terraform variables.
 
 More information about the boot process can be found in the [Jenkins X Boot](/docs/getting-started/setup/boot) configuration section.

@@ -4,6 +4,8 @@ linktitle: Configure Secret Storage
 description: Configure secret storage - local vs Vault
 keywords: [vault]
 weight: 30
+aliases:
+  - /docs/install-setup/installing/boot/secrets/
 ---
 
 ## Secrets
@@ -14,7 +16,7 @@ Boot currently supports the following options for managing secrets:
   This is useful for evaluating Jenkins X and avoids the need to install Vault.
   It is not recommended to use this option in production.
 - _vault_ - the recommended approach for secret management, allowing a team to easily colloborate managing a Jenkins X cluster using Boot.
-  
+
 Like many other key components of Jenkins X, the secret storage method is configured in [jx-requirements.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml).
 
 The following paragraphs outline the two options in more detail.

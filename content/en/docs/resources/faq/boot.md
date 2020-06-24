@@ -8,14 +8,14 @@ aliases:
   - /faq/issues/
 ---
 
-For more detail check out how to use [jx boot](/docs/install-setup/installing/boot/).
+For more detail check out how to use [jx boot](/docs/install-setup/boot/).
 
 ## How do I upgrade boot?
 
-If you are using [jx boot](/docs/install-setup/installing/boot/) you can upgrade via `jx upgrade boot`.
+If you are using [jx boot](/docs/install-setup/boot/) you can upgrade via `jx upgrade boot`.
 Refer to [Upgrading Jenkins X](/docs/install-setup/upgrade-jx/#upgrading-jenkins-x) for more information.
 
-If anything ever goes wrong (e.g. your cluster, namespace or tekton gets deleted), you can always re-run [jx boot](/docs/install-setup/installing/boot/) on your laptop to restore your cluster.
+If anything ever goes wrong (e.g. your cluster, namespace or tekton gets deleted), you can always re-run [jx boot](/docs/install-setup/boot/) on your laptop to restore your cluster.
 
 ## How do I add more resources?
 
@@ -36,7 +36,7 @@ then modify the YAML to suit, changing the names of the resources to avoid clash
 
 ## How to to manage SourceRepository resources?
 
-See how to update your [boot configuration with the latest SourceRepository resources](/docs/install-setup/installing/boot/how-it-works/#source-repositories)
+See how to update your [boot configuration with the latest SourceRepository resources](/docs/install-setup/boot/how-it-works/#source-repositories)
 
 ## How do I map SourceRepository to a custom Scheduler
 
@@ -48,7 +48,7 @@ See also [How do I add multiple parallel pipelines to a project?](/docs/resource
 
 It depends on which namespace you want the charts to be installed.
 
-If its in the development environment (the `jx` namespace by default) then `env/requirements.yaml` is where to add the chart and for a chart `foo` you can add `env/foo/values.yaml` to configure it. (or `env/foo/values.tmpl.yaml` if you want to use some [templating](/docs/install-setup/installing/boot/how-it-works/#improvements-to-valuesyaml) of the `values.yaml`)
+If its in the development environment (the `jx` namespace by default) then `env/requirements.yaml` is where to add the chart and for a chart `foo` you can add `env/foo/values.yaml` to configure it. (or `env/foo/values.tmpl.yaml` if you want to use some [templating](/docs/install-setup/boot/how-it-works/#improvements-to-valuesyaml) of the `values.yaml`)
 
 Though if you want our chart to be in another namespace then we use the convention of adding a folder in the `system` directory in the boot configuration (e.g. like we do for ingress, cert manager, velero, service mesh etc). So make a new folder in `system` and add the `jx step helm apply` step in the pipeline in `jenkins-x.yml` like we do for `cert-manager`, `nginx`, `velero` etc.
 
