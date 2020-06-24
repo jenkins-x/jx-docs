@@ -4,6 +4,8 @@ linktitle: Configure Storage
 description: Configure long term storage for logs and reports
 keywords: [logs]
 weight: 60
+aliases:
+  - /install-setup/installing/boot/storage/
 ---
 
 ## Storage

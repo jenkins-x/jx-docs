@@ -9,6 +9,7 @@ draft: true
 aliases:
   - /docs/getting-started/setup/create-cluster/aks/
   - /docs/getting-started/setup/create-cluster/aks
+  - /docs/install-setup/installing/create-cluster/gke/
 ---
 
 ## Azure Kubernetes Service (AKS)

@@ -6,8 +6,8 @@ weight: 20
 categories: [getting started]
 keywords: [cluster]
 aliases:
-  - /docs/getting-started/setup/create-cluster/required-cloud-resources
   - /docs/getting-started/setup/create-cluster/required-cloud-resources/
+  - /docs/install-setup/installing/create-cluster/required-cloud-resources/
 ---
 
 No matter which Terraform module you choose, each will create a similar set of resources.
@@ -31,12 +31,12 @@ If all storage options are enabled, the following buckets are created:
 Refer to [Configuring Storage](/docs/resources/guides/managing-jx/common-tasks/storage#configuring-storage) for more information.
 * Report bucket; Bucket for storing test and coverage reports.
 Refer to [Configuring Storage](/docs/resources/guides/managing-jx/common-tasks/storage#configuring-storage) for more information.
-* Repository bucket; Bucket used for storing artifacts when using [Bucketrepo](/docs/install-setup/installing/boot/repository/#bucketrepo).
+* Repository bucket; Bucket used for storing artifacts when using [Bucketrepo](/docs/install-setup/boot/repository//#bucketrepo).
 Bucketrepo  is a small footprint microservice that is an alternative to both Nexus and Chartmusem.
 * Velero bucket; Bucket for [Velero](https://velero.io) backups.
 * Vault bucket; Bucket used by Vault for storing its data.
 Jenkins X uses Vault to store secrets.
-Refer to [Vault](/docs/install-setup/installing/boot/secrets/#vault) for more information.
+Refer to [Vault](/docs/install-setup/boot/secrets/#vault) for more information.
 
 {{% /description-list %}}
 

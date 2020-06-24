@@ -14,7 +14,7 @@ However, for users who want services in the cluster to be available on a persona
 
 [ExternalDNS](https://github.com/kubernetes-incubator/external-dns) can be used to help expose Kubernetes Services and Ingresses by synchronizing with DNS providers.
 
-If you are using [jx boot](/docs/install-setup/installing/boot/) to install and configure your setup then modify your `jx-requirements.yml` file to enable `ingress.externalDNS: true` as described in the [boot ingress documentation](/docs/install-setup/installing/boot/ingress/)
+If you are using [jx boot](/docs/install-setup/boot/) to install and configure your setup then modify your `jx-requirements.yml` file to enable `ingress.externalDNS: true` as described in the [boot ingress documentation](/docs/install-setup/boot/ingress/)
 
 Otherwise to setup your cluster using ExternalDNS use:
 

@@ -4,6 +4,8 @@ linktitle: Configure Artifact Repositories
 description: Configure various artifact repositories used by Jenkins X
 weight: 80
 keywords: [nexus, bucketrepo]
+aliases:
+  - /docs/install-setup/installing/boot/repository/
 ---
 
 ## Repository
@@ -44,7 +46,7 @@ repository: bucketrepo
 
 By default the local file system in the bucket repo is used to store artifacts.
 
-To enable cloud storage for artifacts in `bucketrepo` you need to enable the `storage.repository` configuration in which case a cloud bucket is used instead. See the [storage section for more details](/docs/install-setup/installing/boot/storage).
+To enable cloud storage for artifacts in `bucketrepo` you need to enable the `storage.repository` configuration in which case a cloud bucket is used instead. See the [storage section for more details](/docs/install-setup/boot/storage).
 
 ### None
 

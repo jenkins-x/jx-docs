@@ -7,10 +7,9 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 weight: 10
 aliases:
-  - /docs/getting-started/setup/boot/clouds
   - /docs/getting-started/setup/boot/clouds/
-  - /docs/install-setup/boot/clouds
-  - docs/install-setup/boot/clouds/
+  - /docs/install-setup/boot/clouds/
+  - /docs/install-setup/installing/boot/clouds/
 ---
 
 Jenkins X is designed to work on any Kubernetes cluster; whether on premise, hybrid or public cloud.

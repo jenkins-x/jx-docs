@@ -24,7 +24,7 @@ If you are installing Jenkins X on a fresh cluster, not all steps are necessary 
 
 {{% alert %}}
 You need a checkout of your Boot configuration repository in which you run `jx boot` locally or create a pull request.
-For more information refer to [Changing your installation](/docs/install-setup/installing/boot/#changing-your-installation) in the Boot documentation.
+For more information refer to [Changing your installation](/docs/install-setup/boot/#changing-your-installation) in the Boot documentation.
 {{% /alert %}}
 
 ## Configure Docker registry
@@ -54,8 +54,8 @@ docker:
 If you have been using the default registry your `env/parameters.yaml` might not contain a _docker_ section at all.
 If so, add the required configuration and make sure to set `enableDocker: true`.
 
-The password uses a special format which allows to reference secrets from your configured [secret store](/docs/install-setup/installing/boot/secrets/).
-[Injecting secrets into the parameters](/docs/install-setup/installing/boot/how-it-works/#injecting-secrets-into-the-parameters) describes in more detail how secrets work in conjunction with `env/parameters.yaml`.
+The password uses a special format which allows to reference secrets from your configured [secret store](/docs/install-setup/boot/secrets/).
+[Injecting secrets into the parameters](/docs/install-setup/boot/how-it-works/#injecting-secrets-into-the-parameters) describes in more detail how secrets work in conjunction with `env/parameters.yaml`.
 
 {{% alert %}}
 An alternative approach is to just set `enableDocker: true` and run `jx boot` locally.
@@ -65,7 +65,7 @@ In this case, it will interactively ask for the required parameters again and pe
 ## Update secret store
 
 The next step is to make sure the password is stored in the secret store.
-Assuming you are using [Vault](/docs/install-setup/installing/boot/secrets/#vault) as the secret store, you need to make sure the secret identified by the URI _vault:\<cluster-name\>/docker:password_ exists.
+Assuming you are using [Vault](/docs/install-setup/boot/secrets/) as the secret store, you need to make sure the secret identified by the URI _vault:\<cluster-name\>/docker:password_ exists.
 This can be achieved by running (you need the `vault` CLI installed for that):
 
 ```sh

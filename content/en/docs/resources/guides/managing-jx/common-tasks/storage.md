@@ -33,7 +33,7 @@ Storage uses classifications which are used to define the folder in which the ki
 
 You can also use the special classification `default` which is used if you don't have a configuration for the classification in question. e.g. you could define a location of `default` and then just configure where `logs` go if thats different.
 
-If you are using [jx boot](/docs/install-setup/installing/boot/) to install and configure your setup then modify your `jx-requirements.yml` file to configure storage as described in the [boot storage documentation](/docs/install-setup/installing/boot/storage/)
+If you are using [jx boot](/docs/install-setup/boot/) to install and configure your setup then modify your `jx-requirements.yml` file to configure storage as described in the [boot storage documentation](/docs/install-setup/boot/storage/)
 
 Otherwise to configure the storage location for a classification and team you use the [jx edit storage](/commands/jx_edit_storage/)
 
