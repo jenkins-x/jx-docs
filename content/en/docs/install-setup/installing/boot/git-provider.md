@@ -1,9 +1,11 @@
 ---
-title: Configure Git Provider
-linktitle: Configure Git Provider
-description: Configure Git providers supported by Jenkins X
+title: Configure SCM / Git
+linktitle: Configure SCM Providers
+description: Configure SCM Providers / Git providers supported by Jenkins X
 keywords: [git]
 weight: 40
+aliases:
+  - /docs/install-setup/configure-scm/
 ---
 
 Jenkins X supports several different Git providers via webhooks (user-defined HTTP callbacks).
@@ -36,7 +38,7 @@ cluster:
 
 [GitHub Enterprise](https://github.com/enterprise) supports the same features as the github.com service but scaled for on-premises deployment on local networks.
 
-The configuration is similar to the above but you need to specify the URL of the `gitServer` and `gitKind: github`. 
+The configuration is similar to the above but you need to specify the URL of the `gitServer` and `gitKind: github`.
 For example:
 
 ```yaml
