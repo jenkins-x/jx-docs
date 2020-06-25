@@ -1,5 +1,5 @@
 ---
-title: Configure SCM / Git
+title: Configure SCM Providers / Git Providers
 linktitle: Configure SCM Providers
 description: Configure SCM Providers / Git providers supported by Jenkins X
 keywords: [git]
