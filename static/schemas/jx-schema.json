@@ -89,6 +89,32 @@
       "additionalProperties": false,
       "type": "object"
     },
+    "CSIVolumeSource": {
+      "properties": {
+        "driver": {
+          "type": "string"
+        },
+        "fsType": {
+          "type": "string"
+        },
+        "nodePublishSecretRef": {
+          "$ref": "#/definitions/LocalObjectReference"
+        },
+        "readOnly": {
+          "type": "boolean"
+        },
+        "volumeAttributes": {
+          "patternProperties": {
+            ".*": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    },
     "CephFSVolumeSource": {
       "properties": {
         "monitors": {
@@ -936,6 +962,9 @@
         "registry": {
           "type": "string"
         },
+        "tenant": {
+          "type": "string"
+        },
         "user": {
           "type": "string"
         },
@@ -1420,6 +1449,10 @@
         "configMap": {
           "$schema": "http://json-schema.org/draft-04/schema#",
           "$ref": "#/definitions/ConfigMapVolumeSource"
+        },
+        "csi": {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "$ref": "#/definitions/CSIVolumeSource"
         },
         "downwardAPI": {
           "$schema": "http://json-schema.org/draft-04/schema#",
