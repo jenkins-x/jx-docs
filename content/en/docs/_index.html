@@ -59,6 +59,10 @@ module "jx" {
 
   gcp_project = "<my-gcp-project-id>"
 }
+
+output "jx_requirements" {
+  value = module.jx.jx_requirements
+}
 {{</highlight>}}
 
         <p>
@@ -68,7 +72,6 @@ module "jx" {
 
         <p>
           2. Provision the cluster using Terraform.
-          The output of this command will include a file <code>jx-requirements.yml</code> which you will use in <strong>Step 3: Install Jenkins X on your cluster</strong>.
         </p>
 {{<highlight bash>}}
 terraform init
@@ -91,6 +94,10 @@ module "eks-jx" {
   source  = "jenkins-x/eks-jx/aws"
 }
 
+output "jx_requirements" {
+  value = module.eks-jx.jx_requirements
+}
+
 output "vault_user_id" {
   value       = module.eks-jx.vault_user_id
   description = "The Vault IAM user id"
@@ -108,7 +115,6 @@ output "vault_user_secret" {
 
         <p>
           2. Provision the cluster using Terraform.
-          The output of this command will include a file <code>jx-requirements.yml</code> which you will use in <strong>Step 3: Install Jenkins X on your cluster</strong> </p>
 {{<highlight bash>}}
 terraform init
 terraform apply
@@ -226,9 +232,9 @@ choco install jenkins-x
     </p>
 
 {{<highlight bash>}}
-# the parameter here, is the requirements yaml file
-# which was saved in the same directory you executed terraform apply.
-jx boot -r <path-to-terraform-directory>/jx-requirements.yml
+terraform output jx_requirements > <some_empty_dir>/jx-requirements.yml
+cd <some_empty_dir>
+jx boot --requirements jx-requirements.yml
 {{</highlight>}}
   </div>
 </div>

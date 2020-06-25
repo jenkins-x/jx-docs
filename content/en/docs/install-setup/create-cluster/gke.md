@@ -51,6 +51,10 @@ module "jx" {
 
   gcp_project = "<my-gcp-project-id>"
 }
+
+output "jx_requirements" {
+  value = module.jx.jx_requirements
+}  
 ```
 
 You can then apply this Terraform configuration via:
@@ -67,9 +71,6 @@ This example is for getting up and running quickly.
 It is not intended for a production cluster.
 Refer to [Production cluster considerations](/docs/install-setup/create-cluster/gke/#production-cluster-considerations) for things to consider when creating a production cluster.
 {{% /alert %}}
-
-On completion of `terraform apply` there will be a _jx\_requirements_ output available which can be used as input to `jx boot` using the `--requirements` option.
-Refer to [Running `jx boot`](#running-jx-boot) for more information.
 
 In the default configuration, no custom domain is used.
 DNS resolution occurs via [nip.io](https://nip.io/).
@@ -97,9 +98,10 @@ The following two paragraphs provide the full list of configuration and output v
 | max\_node\_count | Maximum number of cluster nodes | `number` | `5` | no |
 | min\_node\_count | Minimum number of cluster nodes | `number` | `3` | no |
 | node\_disk\_size | Node disk size in GB | `string` | `"100"` | no |
+| node\_disk\_type | Node disk type, either pd-standard or pd-ssd | `string` | `"pd-standard"` | no |
 | node\_machine\_type | Node type for the Kubernetes cluster | `string` | `"n1-standard-2"` | no |
 | parent\_domain | The parent domain to be allocated to the cluster | `string` | `""` | no |
-| release\_channel | GKE [Release Channel](https://cloud.google.com/kubernetes-engine/docs/concepts/release-channels) to subscribe to. | `string` | `UNSPECIFIED` | no |
+| release\_channel | The GKE release channel to subscribe to.  See https://cloud.google.com/kubernetes-engine/docs/concepts/release-channels | `string` | `"UNSPECIFIED"` | no |
 | resource\_labels | Set of labels to be applied to the cluster | `map` | `{}` | no |
 | tls\_email | Email used by Let's Encrypt. Required for TLS when parent\_domain is specified | `string` | `""` | no |
 | vault\_url | URL to an external Vault instance in case Jenkins X shall not create its own system Vault | `string` | `""` | no |
@@ -119,11 +121,11 @@ The following two paragraphs provide the full list of configuration and output v
 | cluster\_location | The location of the created Kubernetes cluster |
 | cluster\_name | The name of the created Kubernetes cluster |
 | gcp\_project | The GCP project in which the resources got created |
+| jx\_requirements | The jx-requirements rendered output |
 | log\_storage\_url | The URL to the bucket for log storage |
 | report\_storage\_url | The URL to the bucket for report storage |
 | repository\_storage\_url | The URL to the bucket for artifact storage |
 | vault\_bucket\_url | The URL to the bucket for secret storage |
-| jx\_requirements | The yaml formatted output for use with `jx boot` |
 
 ## Using a custom domain
 
@@ -158,7 +160,11 @@ The following is a list of considerations for a production usecase.
       version = "1.2.4"
       # insert your configuration
     }
-    ```
+
+   output "jx_requirements" {
+     value = module.jx.jx_requirements
+   }
+   ```
 
   Specifying the version ensures that you are using a fixed version and that version upgrades cannot occur unintented.
 
@@ -194,27 +200,27 @@ gsutil versioning get gs://<my-bucket-name>
 
 ## Running `jx boot`
 
-{{% alert title="Warning" color="warning" %}}
-The generated output _jx\_requirements_ is only used for the first run of `jx boot`.
-During this first run a git repository containing the source code for Jenkins X Boot is created.
-This repository contains the _jx-requirements.yml_ used by successive runs of `jx boot`.
-See the diagram below for more information on the typical lifecycle.
-{{% /alert %}}
-
-![Jenkins X Boot Lifecyckle](/images/getting-started/terraform_google_jx_boot.png)
-
-An output (_jx\_requirements_) is available after applying the Terraform module, it can be retrieved and pipped to a file.
+A terraform output (_jx\_requirements_) is available after applying this Terraform module.
 
 ```sh
-terraform output jx_requirements > jx-requirements.yml
+terraform output jx_requirements
 ```
 
-This file can be used as input to [Jenkins X Boot](/docs/getting-started/setup/boot/) which is responsible for installing all the required Jenkins X components into the cluster.
+This `jx_requirements` output can be used as input to [Jenkins X Boot](/docs/getting-started/setup/boot/) which is responsible for installing all the required Jenkins X components into the cluster created by this module.
 
-Change into  an empty directory and execute:
+{{% alert title="Warning" color="warning" %}}
+The generated _jx-requirements_ is only used for the first run of `jx boot`.
+During this first run of `jx boot` a git repository containing the source code for Jenkins X Boot is created.
+This (_new_) repository contains a _jx-requirements.yml_ (_which is now ahead of the jx-requirements output from terraform_) used by successive runs of `jx boot`.
+{{% /alert %}}
 
-```bash
-jx boot --requirements <path-to-jx-requirements.yml>
+Execute:
+
+```sh
+terraform output jx_requirements > <some_empty_dir>/jx-requirements.yml
+# jenkins-x creates the environment repository directory localy before pushing to the Git server of choice
+cd <some_empty_dir>
+jx boot --requirements jx-requirements.yml
 ```
 
 You are prompted for any further required configuration.
