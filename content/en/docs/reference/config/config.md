@@ -871,7 +871,7 @@ string
 <td>
 <code>TaskParams</code></br>
 <em>
-[]github.com/tektoncd/pipeline/pkg/apis/pipeline/v1alpha1.ParamSpec
+[]github.com/tektoncd/pipeline/pkg/apis/pipeline/v1beta1.ParamSpec
 </em>
 </td>
 <td>
@@ -5550,5 +5550,5 @@ string
 <hr/>
 <p><em>
 Generated with <code>gen-crd-api-reference-docs</code>
-on git commit <code>c72bac580</code>.
+on git commit <code>cf9079a05</code>.
 </em></p>
