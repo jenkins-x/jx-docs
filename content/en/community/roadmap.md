@@ -6,7 +6,8 @@ type: docs
 weight: 100
 ---
 
-The Jenkins X roadmap will be updated approximately once a month. Please join the office hours and the community Slack channels to ask questions and drive input on the future of the project!
+The Jenkins X roadmap will be updated approximately once a month. 
+Please join our [office hours](https://jenkins-x.io/community/#office-hours) and [Slack channels](https://jenkins-x.io/community/#slack) to ask questions and drive input on the future of the project!
 
 ## Current Work
 
