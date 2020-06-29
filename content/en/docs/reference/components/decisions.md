@@ -47,14 +47,6 @@ Jenkins X uses [Skaffold](https://github.com/GoogleContainerTools/skaffold) to p
 
 For folks that aren't running on a public cloud with container builder or registry services then Skaffold can also work with [kaniko](https://github.com/GoogleContainerTools/kaniko), this allows pipelines to build docker images using rootless containers.  This is significantly more secure than mounting the docker socket from each node in the cluster.
 
-## Jenkins
-
-Jenkins as a large JVM that isn't highly available, may seem a surprise to be selected as the pipeline engine to use in the Cloud, however the adoption of Jenkins by developers and the community it has means it is ideal to use and evolve it's own cloud native story.  Already Jenkins X generates Kubernetes Custom Resource Definitions for pipeline activities that our IDE and CLI tooling uses rather than querying Jenkins.  We will be storing Jenkins builds and runs objects in Kubernetes rather than in the `$JENKINS_HOME` which means we can scale Jenkins masters.  We are also switching to Prow to intercept Git webhook events rather than using Jenkins, this means we can have a highly available solution as well as hand off the scheduling of builds to Kubernetes.  
-
-TL;DR we are pushing more of the Jenkins master functionality down into the Kubernetes platform.
-
-Taking this approach also means we will be able to support other pipeline engines in the future as well.
-
 ## Prow
 
 [Prow](https://github.com/kubernetes/test-infra/tree/master/prow) handles Git events and can trigger workflows in Kubernetes.
