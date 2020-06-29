@@ -245,7 +245,7 @@ This _jx_requirements_ output can be used as input to [Jenkins X Boot](/docs/get
 The generated _jx-requirements_ is only used for the first run of `jx boot`.
 During this first run of `jx boot` a git repository containing the source code for Jenkins X Boot is created.
 This (_new_) repository contains a _jx-requirements.yml_ (_which is now ahead of the jx-requirements output from terraform_) used by successive runs of `jx boot`.
-
+{{% /alert %}}
 Execute:
 
 ```sh
@@ -295,3 +295,49 @@ The [examples](https://github.com/jenkins-x/terraform-aws-eks-jx/examples) direc
 To use the _s3_ backend, you will need to create the bucket upfront.
 You need the S3 bucket as well as a Dynamo table for state locks.
 You can use [terraform-aws-tfstate-backend](https://github.com/cloudposse/terraform-aws-tfstate-backend) to create these required resources.
+
+## Using spot instances
+You can save up to 90% of cost when you use Spot Instances. 
+You just need to make sure your applications are resilient. 
+You can set the ceiling `spot_price` of what you want to pay then set `enable_spot_instances` to `true`.
+
+{{% alert title="Warning" color="warning" %}} 
+If the price of the instance reaches this point it will be terminated.
+{{% /alert %}}
+
+### EKS node groups
+
+This module provisions self-managed worker nodes by default.
+If you want AWS to manage the provisioning and lifecycle of worker nodes for EKS, you can opt for [managed node groups](https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html).
+They have the added benefit of running the latest Amazon EKS-optimized AMIs and gracefully drain nodes before termination to ensure that your applications stay available.
+In order to provision EKS node groups create a _main.tf_ with the following content:
+
+```
+
+module "eks-jx" {
+  source  = "jenkins-x/eks-jx/aws"
+  enable_node_group   = true
+  enable_worker_group = false
+}
+
+output "jx_requirements" {
+  value = module.eks-jx.jx_requirements
+}
+
+output "vault_user_id" {
+  value       = module.eks-jx.vault_user_id
+  description = "The Vault IAM user id"
+}
+
+output "vault_user_secret" {
+  value       = module.eks-jx.vault_user_secret
+  description = "The Vault IAM user secret"
+}
+```
+
+{{% alert title="Warning" color="warning" %}}
+These things are important to keep in mind when provisioning eks node groups: 
+* If you forget to set `enable_worker_group = false`, then the module will provision both self managed worker groups and node groups.
+* EKS node groups are supported in kubernetes v1.14+ and platform version eks.3
+* Spot instances are not supported for EKS node groups. Check this AWS [issue](https://github.com/aws/containers-roadmap/issues/583) for more details.
+{{% /alert %}}
