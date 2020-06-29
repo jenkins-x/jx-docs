@@ -25,7 +25,7 @@ The `jx` command line clones the build packs to your `.~/.jx/draft/packs/` folde
 
 ## Pipeline extension model
 
-As part of the move to [cloud native Jenkins](/docs/resources/guides/managing-jx/common-tasks/cloud-native-jenkins/) we've refactored our [build packs](https://github.com/jenkins-x-buildpacks/) so that they are more modular and easier to compose and reuse across workloads.
+We have refactored our [build packs](https://github.com/jenkins-x-buildpacks/) so that they are more modular and easier to compose and reuse across workloads.
 
 For example the [jenkins-x-kubernetes](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) build pack inherits from the [jenkins-x-classic](https://github.com/jenkins-x-buildpacks/jenkins-x-classic) build pack, reusing the CI and release pipelines but then adding the kubernetes specific workloads (e.g. building docker images, creating helm charts, [Preview Environments](/about/concepts/features/#preview-environments) and [Promotion via GitOps](/about/concepts/features/#promotion))
 
