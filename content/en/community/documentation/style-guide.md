@@ -34,7 +34,6 @@ Then you can use the acronym in subsequent mentions.
 That way when you or other writers are making changes to the content, it will be easier for reviewers to find what has changed in one sentence rather than finding it in a long paragraph.
 
 * Use multiples of 10 when assigning the `weight` of a new page of content, as it will be easier to prioritize pages within a navigation menu. 
-
  Let's say you have 3 existing pages with a `weight` of `10`, `20`, and `30`, respectively.  
  Using this method, a writer can create a page with a weight of `11` that will appear between the page weighted `10` and `20` in the navigation menu.
 
