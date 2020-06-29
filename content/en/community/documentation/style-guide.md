@@ -1,3 +1,11 @@
+---
+title: Documentation Style Guide
+linktitle: Style Guide
+description: Guidelines for contributing to Jenkins X documentation
+type: docs
+weight: 21
+---
+
 # Documentation writer style guide
 
 The Jenkins X Documentation Special Interest Group (SIG) has established some guidelines for docs contribution. 
