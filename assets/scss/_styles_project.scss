@@ -11201,4 +11201,11 @@
    border-top-left-radius: 0;
    border-top-right-radius: 0;
  }
- 
+
+.text-secondary {
+  color: $gray-700 !important;
+}
+
+.blockquote-footer {
+  color: $gray-600;
+}

@@ -45,7 +45,7 @@ Last but not least, ensure you have the following binaries installed:
 
 A default Jenkins X ready cluster can be provisioned by creating a file _main.tf_ in an empty directory with the following content:
 
-```
+```terraform
 module "jx" {
   source  = "jenkins-x/jx/google"
 
@@ -153,18 +153,17 @@ The configuration as seen in [Cluster provisioning](/docs/install-setup/create-c
 The following is a list of considerations for a production usecase.
 
 - Specify the version attribute of the module, for example:
+```terraform
+module "jx" {
+  source  = "jenkins-x/jx/google"
+  version = "1.2.4"
+  # insert your configuration
+}
 
-    ```
-    module "jx" {
-      source  = "jenkins-x/jx/google"
-      version = "1.2.4"
-      # insert your configuration
-    }
-
-   output "jx_requirements" {
-     value = module.jx.jx_requirements
-   }
-   ```
+output "jx_requirements" {
+ value = module.jx.jx_requirements
+}
+```
 
   Specifying the version ensures that you are using a fixed version and that version upgrades cannot occur unintented.
 

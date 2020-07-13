@@ -78,7 +78,7 @@ This way we'll list out all the [gcloud](https://cloud.google.com/sdk/gcloud) co
 ### Creating the cloud resources
 
 <div class="highlight">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash hljs" data-lang="bash">{{<gcp-create-resources>}}</code></pre>
+<pre style="color:#f8f8f8;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash hljs" data-lang="bash">{{<gcp-create-resources>}}</code></pre>
 </div>
 
 <nav>
