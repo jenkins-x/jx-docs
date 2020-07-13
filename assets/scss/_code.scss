@@ -11,13 +11,13 @@
         border: none;
         background-color: transparent;
 
-        pre, div {
+        div {
             background-color: transparent !important;
         }
 
         pre {
             margin: 0;
-            padding: 0;
+            padding: $pre-padding;
         }
     }
 
@@ -45,12 +45,19 @@
      
 
         > code {
-            padding: 15px;
             margin: 0;
             font-size: 100%;
             word-break: normal;
             white-space: pre;
             border: 0;
         }
+    }
+}
+
+//
+.highlight {
+    pre {
+        margin: 0;
+        padding: $pre-padding;
     }
 }

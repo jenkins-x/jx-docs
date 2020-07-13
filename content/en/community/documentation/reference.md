@@ -21,10 +21,9 @@ We're using [DocSearch](https://community.algolia.com/docsearch/) by Algolia to 
 ## Markdown Syntax Reference
 
 ### Code examples
-
-Across all pages on the Jenkins X docs, the typical triple-back-tick markdown syntax is used. If you do not want to take the extra time to implement the following code block shortcodes, please use standard GitHub-flavored markdown. The Jenkins X docs use a version of [highlight.js](https://highlightjs.org/) with a specific set of languages.
-
-Your options for languages are `xml`/`html`, `go`/`golang`, `md`/`markdown`/`mkd`, `handlebars`, `apache`, `toml`, `yaml`, `json`, `css`, `asciidoc`, `ruby`, `powershell`/`ps`, `scss`, `sh`/`zsh`/`bash`/`git`, `http`/`https`, and `javascript`/`js`.
+Hugo uses [goldmark](https://gohugo.io/getting-started/configuration-markup#goldmark) parser to handle markdown and markdown related configuration and [chroma](https://gohugo.io/content-management/syntax-highlighting/) to handle syntax highlighting.
+Chroma supports the following [languages](https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages).
+All pages on the Jenkins X docs use the typical triple-back-tick markdown syntax.
 
 ````md
 ```go
