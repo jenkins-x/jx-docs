@@ -54,7 +54,9 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
+      hardWraps = false
       unsafe = true
+      xhtml = false
     [markup.goldmark.parser]
       attribute = true
       autoHeadingID = true
@@ -67,6 +69,16 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
       table = true
       taskList = true
       typographer = true
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = "monokai"
+    tabWidth = 4
 
 ###
 # Image processing configuration.

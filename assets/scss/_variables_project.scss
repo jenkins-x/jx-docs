@@ -141,15 +141,8 @@ $close-color:                       $gray-600 !default;
 $close-text-shadow:                 none !default;
 
 
-
-
-.text-secondary {
-  color: $gray-700 !important;
-}
-
-.blockquote-footer {
-  color: $gray-600;
-}
+// Pre padding
+$pre-padding: 15px;
 
 
 

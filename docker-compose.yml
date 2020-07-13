@@ -1,8 +1,8 @@
 version: "2"
 services:
   server:
-    image: gcr.io/jenkinsxio/hugo-extended:0.65.3-6
-    command: ["hugo", "server", "-s", "/src", "-D", "--bind", "0.0.0.0", "--ignoreCache"]
+    image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
+    command: ["server", "-s", "/src", "-D", "--bind", "0.0.0.0", "--ignoreCache"]
     volumes:
       - .:/src
     ports:

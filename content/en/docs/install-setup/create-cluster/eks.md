@@ -30,7 +30,7 @@ You need the following binaries locally installed and configured on your _PATH_:
 
 A default Jenkins X ready cluster can be provisioned by creating a _main.tf_ file in an empty directory with the following content:
 
-```
+```terraform
 module "eks-jx" {
   source  = "jenkins-x/eks-jx/aws"
 }
@@ -48,7 +48,6 @@ output "vault_user_secret" {
   value       = module.eks-jx.vault_user_secret
   description = "The Vault IAM user secret"
 }
-
 ```
 
 Due to the Vault issue [7450](https://github.com/hashicorp/vault/issues/7450), this Terraform module needs for now to create a new IAM user for installing Vault.
@@ -59,15 +58,16 @@ The _jx_requirements_ output is a helper for creating the initial input for `jx 
 
 If you do not want Terraform to create a new IAM user or you do not have permissions to create one, you need to provide the name of an existing IAM user.
 
-```
+```terraform
 module "eks-jx" {
-  source  = "jenkins-x/eks-jx/aws"
+    source  = "jenkins-x/eks-jx/aws"
+}
 
-  output "jx_requirements" {
+output "jx_requirements" {
     value = module.eks-jx.jx_requirements
-  }
+}
 
-  vault_user="<your_vault_iam_username>"
+vault_user="<your_vault_iam_username>"
 }
 ```
 
@@ -163,16 +163,16 @@ You can choose to create S3 buckets for [long term storage](/docs/install-setup/
 During `terraform apply` the enabledS3 buckets are created, and the _jx_requirements_ output will contain the following section:
 
 ```yaml
-    storage:
-      logs:
-        enabled: ${enable_logs_storage}
-        url: s3://${logs_storage_bucket}
-      reports:
-        enabled: ${enable_reports_storage}
-        url: s3://${reports_storage_bucket}
-      repository:
-        enabled: ${enable_repository_storage}
-        url: s3://${repository_storage_bucket}
+storage:
+  logs:
+    enabled: ${enable_logs_storage}
+    url: s3://${logs_storage_bucket}
+  reports:
+    enabled: ${enable_reports_storage}
+    url: s3://${reports_storage_bucket}
+  repository:
+    enabled: ${enable_repository_storage}
+    url: s3://${repository_storage_bucket}
 ```
 
 If you just want to experiment with Jenkins X, you can set the variable _force_destroy_ to true.
@@ -202,10 +202,10 @@ If you want to use a domain with an already existing Route 53 Hosted Zone, you c
 This domain will be configured in the _jx_requirements_ output in the following section:
 
 ```yaml
-    ingress:
-      domain: ${domain}
-      ignoreLoadBalancer: true
-      externalDNS: ${enable_external_dns}
+ingress:
+  domain: ${domain}
+  ignoreLoadBalancer: true
+  externalDNS: ${enable_external_dns}
 ```
 
 If you want to use a subdomain and have this module create and configure a new Hosted Zone with DNS delegation, you can provide the following variables:
@@ -266,17 +266,17 @@ The following is a list of considerations for a production use case.
 
 - Specify the version attribute of the module, for example:
 
-    ```
-    module "eks-jx" {
-      source  = "jenkins-x/eks-jx/aws"
-      version = "1.0.0"
-      # insert your configuration
-    }
+```terraform
+module "eks-jx" {
+  source  = "jenkins-x/eks-jx/aws"
+  version = "1.0.0"
+  # insert your configuration
+}
 
-    output "jx_requirements" {
-      value = module.eks-jx.jx_requirements
-    }  
-    ```
+output "jx_requirements" {
+  value = module.eks-jx.jx_requirements
+}  
+```
 
   Specifying the version ensures that you are using a fixed version and that version upgrades cannot occur unintended.
 
@@ -312,8 +312,7 @@ If you want AWS to manage the provisioning and lifecycle of worker nodes for EKS
 They have the added benefit of running the latest Amazon EKS-optimized AMIs and gracefully drain nodes before termination to ensure that your applications stay available.
 In order to provision EKS node groups create a _main.tf_ with the following content:
 
-```
-
+```terraform
 module "eks-jx" {
   source  = "jenkins-x/eks-jx/aws"
   enable_node_group   = true

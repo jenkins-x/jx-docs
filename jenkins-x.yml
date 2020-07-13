@@ -19,10 +19,10 @@ pipelineConfig:
           - name: HUGO_ENV
             value: production
           - name: HUGO_VERSION
-            value: '0.65.3/extended'
+            value: '0.74.0/extended'
           steps:
 
-          - image: gcr.io/jenkinsxio/hugo-extended:0.65.3-6
+          - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
             name: git-clone
             command: git
             args:
@@ -30,17 +30,17 @@ pipelineConfig:
               - https://github.com/jenkins-x/jenkins-x-website.git
               - --depth=20
 
-          - image: gcr.io/jenkinsxio/hugo-extended:0.65.3-6
+          - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
             name: git-submodules
             command: git
             args:
             - submodule update --init --recursive
 
-          - image: gcr.io/jenkinsxio/hugo-extended:0.65.3-6
+          - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
             name: update-content
             command: ./scripts/ci/update-content.sh
 
-          - image: gcr.io/jenkinsxio/hugo-extended:0.65.3-6
+          - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
             command: hugo
             args:
               - version
@@ -51,14 +51,14 @@ pipelineConfig:
             args: ['install']
 
           ## delete everything in the jenkins-x-website repo clone
-          - image: gcr.io/jenkinsxio/hugo-extended:0.65.3-6
+          - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
             name: remove-old
             command: git
             args:
             - -C jenkins-x-website rm -r '*'
 
           ## build the site into the cloned folder
-          - image: gcr.io/jenkinsxio/hugo-extended:0.65.3-6
+          - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
             name: build-website
             command: hugo
             args:
@@ -97,15 +97,15 @@ pipelineConfig:
           - name: APP_NAME
             value: jx-docs
           steps:
-          - image: gcr.io/jenkinsxio/hugo-extended:0.65.3-6
+          - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
             name: git-submodules
             command: git
             args:
             - submodule update --init --recursive
-          - image: gcr.io/jenkinsxio/hugo-extended:0.65.3-6
+          - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
             name: update-content
             command: ./scripts/ci/update-content.sh
-          - image: gcr.io/jenkinsxio/hugo-extended:0.65.3-6
+          - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
             name: version
             command: hugo
             args:
@@ -114,7 +114,7 @@ pipelineConfig:
             name: install-dependencies
             command: npm
             args: ['install']
-          - image: gcr.io/jenkinsxio/hugo-extended:0.65.3-6
+          - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
             name: build-website
             command: hugo
             args:
