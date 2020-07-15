@@ -70,7 +70,7 @@ This can be achieved by running (you need the `vault` CLI installed for that):
 
 ```sh
 eval $(jx get vault-config)
-vault kv put /secret/<cluster-name>/docker passwor=<my-password>
+vault kv put /secret/<cluster-name>/docker password=<my-password>
 ```
 
 You can find more information on how to interact with Vault secrets in the [Manage your secrets](/docs/reference/components/vault/) section.
