@@ -66,13 +66,13 @@ If you are using a free tier or small kubernetes cluster you can shrink the foot
  jx admin create --repository=bucketrepo
  ``` 
 
-This will avoid `nexus` and `chartmuseum` and deploy the small [bucketrepo](https://github.com/jenkins-x/bucketrepo) instead. More on the [configuration page](/docs/v3/boot/getting-started/config/#bucketrepo)
+This will avoid `nexus` and `chartmuseum` and deploy the small [bucketrepo](https://github.com/jenkins-x/bucketrepo) instead. More on the [configuration page](/docs/v3/install-setup/getting-started/config/#bucketrepo)
 
 
 
 ### Using Multi Cluster
 
-If you wish to use [multi cluster](/docs/v3/boot/multi-cluster/) where your `staging` and `production` environments are in separate repositories then please add the `--env-remote` flag then follow the [multi cluster documentation](/docs/v3/boot/multi-cluster/) after you have booted your development environment.
+If you wish to use [multi cluster](/docs/v3/install-setup/multi-cluster/) where your `staging` and `production` environments are in separate repositories then please add the `--env-remote` flag then follow the [multi cluster documentation](/docs/v3/install-setup/multi-cluster/) after you have booted your development environment.
 
 ```bash 
 jx admin create --env-remote
@@ -80,17 +80,9 @@ jx admin create --env-remote
 
 This will create the git repositories for your environments.
 
-The command will output instructions on how to setup the [secrets](/docs/v3/boot/getting-started/secrets/) and then [run the boot job](/docs/v3/boot/getting-started/run/).
+The command will output instructions on how to setup the [secrets](/docs/v3/install-setup/getting-started/secrets/) and then [run the boot job](/docs/v3/install-setup/getting-started/run/).
 
 ## Other options
-
-You can switch to use `istio` instead of `nginx` for ingress support via adding:
-
-```bash 
-jx admin create --ingress-kind=istio
-```                                 
-
-which then switches to adding `istio` instead and using `Gateway` and `VirtualService` resources from istio instead of the classic `Ingress` resources.
 
 You can enable TLS + cert manager and externaldns via:
 
@@ -98,9 +90,7 @@ You can enable TLS + cert manager and externaldns via:
 jx admin create --tls --externaldns
 ```                                 
 
-Though please note we are still working on [cert manager + externaldns integration](https://github.com/jenkins-x-labs/issues/issues/13) in `jx admin` so please be gentle.
-
-Incidentally you can also specify the [TLS secret](/docs/v3/boot/faq/#how-do-i-configure-the-ingress-tls-certificate-in-dev-staging-or-production)
+Incidentally you can also specify the [TLS secret](/docs/v3/install-setup/faq/#how-do-i-configure-the-ingress-tls-certificate-in-dev-staging-or-production)
 
 
 ## Upgrading an existing cluster
@@ -112,7 +102,7 @@ To do this connect to your current Kubernetes cluster so that `kubectl` can see 
 
 You can test this by running:
 
-```
+```bash 
 kubectl get environments 
 ```
 
@@ -122,7 +112,7 @@ You can use the `jx admin upgrade` command to help upgrade your existing Jenkins
 
 Connect to the cluster you wish to migrate and run:
 
-``` 
+```bash 
 jx admin upgrade
 ```
 
@@ -130,4 +120,4 @@ and follow the instructions.
 
 If your cluster is using GitOps the command will clone the development git repository to a temporary directory, modify it and submit a pull request.
 
-If your cluster is not using GitOps then a new git repository will be created along with instructions on how to setup the [secrets](/docs/v3/boot/getting-started/secrets/) and then [run the boot job](/docs/v3/boot/getting-started/run/).
+If your cluster is not using GitOps then a new git repository will be created along with instructions on how to setup the [secrets](/docs/v3/install-setup/getting-started/secrets/) and then [run the boot job](/docs/v3/install-setup/getting-started/run/).

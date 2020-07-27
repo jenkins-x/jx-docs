@@ -13,13 +13,13 @@ We recommend using separate clusters for your `Staging` and `Production` environ
 
 To enable multi cluster you need to specify `remoteCluster: true` on your `Staging` and/or `Production` environments in your `jx-requirements.yml`.
 
-The easiest way to do that is passing in `--env-remote`  when you [created your environment git repositories](/docs/v3/boot/getting-started/repository/):
+The easiest way to do that is passing in `--env-remote`  when you [created your environment git repositories](/docs/v3/install-setup/getting-started/repository/):
 
 ``` 
 jx admin create --env-remote
 ```
 
-Or if you've already [created your environment git repositories](/docs/v3/boot/getting-started/repository/) you can modify your `jx-requirements.yml` to something like this:
+Or if you've already [created your environment git repositories](/docs/v3/install-setup/getting-started/repository/) you can modify your `jx-requirements.yml` to something like this:
 
 ```yaml 
 bootConfigURL: https://github.com/jenkins-x/jenkins-x-boot-helmfile-config
@@ -47,7 +47,7 @@ webhook: lighthouse
 
 ### Setup the development cluster as normal
 
-Follow the [getting started guide for helm 3 boot](/docs/v3/boot/getting-started/) to setup the secrets and boot up the development cluster.
+Follow the [getting started guide for helm 3 boot](/docs/v3/install-setup/getting-started/) to setup the secrets and boot up the development cluster.
 
 ### Configure the Staging/Production git repository
 
@@ -57,7 +57,7 @@ First make sure you do:
 export NAMESPACE=jx-staging
 ```
 
-Then you will need to follow the instructions to [setup the cloud resources for the Staging/Production cluster](/docs/v3/boot/getting-started/cloud/)
+Then you will need to follow the instructions to [setup the cloud resources for the Staging/Production cluster](/docs/v3/install-setup/getting-started/cloud/)
 
 When you are connected to the Staging/Production cluster you will need to run:
 
@@ -67,7 +67,7 @@ jxl verify requirements --git-url=https://github.com/myorg/environment-mycluster
  
 This will ensure that your `jx-requirements.yml` file in your `staging` / `production` git repository is setup to point at the correct cloud resources.
 
-Then follow the [secrets setup](/docs/v3/boot/getting-started/secrets/) and  [run the boot job](/docs/v3/boot/getting-started/run/) for the `staging` / `production` environment
+Then follow the [secrets setup](/docs/v3/install-setup/getting-started/secrets/) and  [run the boot job](/docs/v3/install-setup/getting-started/run/) for the `staging` / `production` environment
 
 
 ## How it works
@@ -98,4 +98,4 @@ jx boot
 
 And your remote `Staging` or `Production` cluster should boot up.
 
-If you want to add any more apps to your cluster, use the [jx add app](/docs/v3/boot/apps/#adding-apps-or-charts) command.
+If you want to add any more apps to your cluster, use the [jx add app](/docs/v3/install-setup/apps/#adding-apps-or-charts) command.
