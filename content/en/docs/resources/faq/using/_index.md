@@ -1,10 +1,10 @@
 ---
-title: FAQ
-linktitle: FAQ
+title: "Using Jenkins X"
+linkTitle: "Using Jenkins X"
 description: Questions on how to develop cloud native application with Jenkins X
 weight: 40
 aliases:
-  - /faq/
+  - /resources/guides/using-jx/faq/
 ---
 
 ## How do I enable bash completion?

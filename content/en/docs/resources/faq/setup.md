@@ -1,11 +1,12 @@
 ---
-title: Boot Questions
-linktitle: Boot Questions
-description: Questions on using 'jx boot'
+title: Install and setup questions
+linktitle: Install and setup questions
+description: Questions on installing and setting up Jenkins X
 weight: 20
 autolink: false
 aliases:
-  - /faq/issues/
+  - /faq/setup/
+  - /resources/faq/boot/
 ---
 
 For more detail check out how to use [jx boot](/docs/install-setup/boot/).

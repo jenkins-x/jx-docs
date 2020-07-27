@@ -3,6 +3,8 @@ title: ChatOps
 linktitle: ChatOps
 description: Using ChatOps with Jenkins X
 weight: 20
+aliases:
+  - /resources/guides/using-jx/faq/chatops/
 ---
 
 ## What is ChatOps?
