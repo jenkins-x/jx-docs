@@ -10,13 +10,13 @@ aliases:
 
 ## Webhook
 
-Jenkins X supports a number of engines for handling webhooks and optionally supporting [ChatOps](/docs/resources/guides/using-jx/faq/chatops/).
+Jenkins X supports a number of engines for handling webhooks and optionally supporting [ChatOps](/docs/resources/faq/using/chatops/).
 
-[Prow](/docs/reference/components/prow/) and [Lighthouse](/architecture/lighthouse/) support webhooks and [ChatOps](/docs/resources/guides/using-jx/faq/chatops/) whereas Jenkins just supports webhooks.
+[Prow](/docs/reference/components/prow/) and [Lighthouse](/architecture/lighthouse/) support webhooks and [ChatOps](/docs/resources/faq/using/chatops/) whereas Jenkins just supports webhooks.
 
 ### Prow
 
-[Prow](/docs/reference/components/prow/) is currently the default webhook and [ChatOps](/docs/resources/guides/using-jx/faq/chatops/) engine when using [Serverless Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/) and GitHub.
+[Prow](/docs/reference/components/prow/) is currently the default webhook and [ChatOps](/docs/resources/faq/using/chatops/) engine when using [Serverless Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/) and GitHub.
 
 It's configured via the `webhook: prow` in `jx-requirements.yml`
 
@@ -40,7 +40,7 @@ webhook: prow
 
 ### Lighthouse
 
-[Lighthouse](/architecture/lighthouse/) is currently the default webhook and [ChatOps](/docs/resources/guides/using-jx/faq/chatops/) engine when using [Serverless Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/) and a git server other than https://github.com.
+[Lighthouse](/architecture/lighthouse/) is currently the default webhook and [ChatOps](/docs/resources/faq/using/chatops/) engine when using [Serverless Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/) and a git server other than https://github.com.
 
 Once Lighthouse is more stable and well tested we'll make it the default for all installations using [Serverless Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/).
 
