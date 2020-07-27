@@ -3,6 +3,8 @@ title: Pipelines Questions
 linktitle: Pipelines Questions
 description: Questions on how to use Serverless Jenkins X Pipelines
 weight: 10
+aliases:
+  - /resources/guides/using-jx/faq/pipelines/
 ---
 
 For more background see the guide on [Serverless Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) using [Tekton](https://tekton.dev/). There is also the [Jenkins X Pipelines Syntax Reference](/docs/reference/pipeline-syntax-reference/)

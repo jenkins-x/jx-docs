@@ -2,7 +2,7 @@
 title: Common Problems
 linktitle: Common Problems
 description: Questions on common issues setting up Jenkins X.
-weight: 50
+weight: 100
 aliases:
   - /faq/issues/
 ---
