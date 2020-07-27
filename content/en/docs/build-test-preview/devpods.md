@@ -21,17 +21,13 @@ Keep in mind, this development workflow helps you make changes before even check
 
 ## Develop Using DevPods and a desktop IDE
 
-In this scenario, you are using a desktop IDE such as VS Code or Intellij which in fact have [a plugin](/docs/resources/guides/using-jx/developing/ide/) for `Jenkins X`.  You are making **iterative** changes using your IDE and said changes are reflected immediately when you open the `url` assigned to your `DevPod`
+In this scenario, you are using a desktop IDE such as VS Code or Intellij.  You are making **iterative** changes using your IDE and said changes are reflected immediately when you open the `url` assigned to your `DevPod`
 
 <figure>
 <img src="/images/developing/developer_workflow_ide.png" />
 <figcaption>
 <h5>Developer Workflow - Develop Using DevPods and an IDE</h5>
 </figcaption>
-
-{{< alert >}}
-See [IDE](/docs/resources/guides/using-jx/developing/ide/#vs-code) for more details on using VSCode
-{{< /alert >}}
 
 To get started using this approach, simply execute the following command in the root of your app directory.  We are using a `NodeJS` app for this example, therefore we specify the language using the `-l` parameter.
 
