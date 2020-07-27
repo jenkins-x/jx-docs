@@ -111,12 +111,9 @@ Then pick the devpod to delete and confirm. Or pass in the name of the devpod yo
 
 
 ## Synchronizing source code
+If you are using a desktop IDE you can synchronise your local source code into your DevPod via the [jx sync](/commands/jx_sync/) command.
 
-If you are using one of our [IDE plugins](/docs/resources/guides/using-jx/developing/ide/) for your desktop IDE then synchronisation of local files to your DevPod will already be included.
-
-Otherwise if you are using a desktop IDE you can synchronise your local source code into your DevPod via the [jx sync](/commands/jx_sync/) command.
-
-This will allow you to edit source code in your preferred [IDE](/docs/resources/guides/using-jx/developing/ide/) like [VS Code](https://code.visualstudio.com/) or [IDEA](https://www.jetbrains.com/idea/).
+This will allow you to edit source code in your preferred IDE like [VS Code](https://code.visualstudio.com/) or [IDEA](https://www.jetbrains.com/idea/).
 
 
 ```sh
@@ -127,11 +124,12 @@ You just run this once on your system (if you are using the Visual Studio code e
 
 This command will download and install the excellent [ksync](https://github.com/vapor-ware/ksync) tool if its not already installed, run `ksync init` to add it to your cluster and then run `ksync watch` and then use `ksync create` to create a synchronisation spec.
 
-Then by default the code with be bidirectionally synchronized between the current directory and the `/code` folder in the `DevPod`. You can now edit the code in your IDE and run build/test commands inside the `DevPod`!
+Then by default the code with be bidirectionally synchronized between the current directory and the `/code` folder in the `DevPod`. 
+You can now edit the code in your IDE and run build/test commands inside the `DevPod`!
 
 e.g. you can build your code with whatever tools you are using (`maven, gradle, make` etc), perform `docker` builds or run `skaffold` in developer mode.
 
-Over time we are hoping to polish this experience to make it super easy to edit code in your IDE and get fast reloading working inside the kubernetes cluster using the same kubernetes resources, manifests and services!
+Over time, we are hoping to polish this experience to make it super easy to edit code in your IDE and get fast reloading working inside the kubernetes cluster using the same kubernetes resources, manifests and services!
 
 ## Incremental building
 
@@ -160,11 +158,4 @@ jx get applications
 ```
 
 Now if you edit code and trigger a docker rebuild, which for most languages is just changing the source code; though for Java apps its whenever you rebuild the jar - the image is regenerated and the helm chart updated!
-
-## Using an IDE
-
-One of the easiest ways to get started with DevPods is via an IDE such as [VS Code](https://code.visualstudio.com/). Check out the [Jenkins X plugins for IDEs](/docs/resources/guides/using-jx/developing/ide/)
-
-VS Code has support which automates all the above so you can run a shell/sync quite easily.
-
 
