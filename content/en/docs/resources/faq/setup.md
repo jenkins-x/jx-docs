@@ -43,7 +43,7 @@ See how to update your [boot configuration with the latest SourceRepository reso
 
 You need to map your `SourceRepository` to a `Scheduler` via either specifying `--scheduler` when you `jx create quickstart / jx import` your repository or modifying the `SourceRepository` CRD's `spec.scheduler.name` in your development git repository or specifying a different default scheduler on the `dev environment.spec.teamSettings.defaultScheduler.name` then the next time the prow configuration is generated (on `jx create quickstart / jx import / jx boot` it'll update the prow config to use your scheduler
 
-See also [How do I add multiple parallel pipelines to a project?](/docs/resources/guides/using-jx/faq/chatops/#how-do-i-add-multiple-parallel-pipelines-to-a-project)
+See also [How do I add multiple parallel pipelines to a project?](/docs/resources/faq/using/chatops/#how-do-i-add-multiple-parallel-pipelines-to-a-project)
 
 ## How do I add more charts to Jenkins X?
 

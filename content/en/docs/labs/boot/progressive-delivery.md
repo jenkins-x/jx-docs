@@ -133,7 +133,7 @@ you can enable/disable those 2 flags for canary releases and horizontal pod auto
 
 Once you have followed the above steps create a [quickstart application](/docs/getting-started/first-project/create-quickstart/) in the usual way.
 
-As you merge changes to the master branch of your application Jenkins X will create a new release and [promote it to the staging environment](/docs/resources/guides/using-jx/faq/#how-does-promotion-actually-work). 
+As you merge changes to the master branch of your application Jenkins X will create a new release and [promote it to the staging environment](/docs/resources/faq/using/#how-does-promotion-actually-work). 
 
 However if Canary deployment is enabled your new version will gradually be rolled out progressively: 
 
