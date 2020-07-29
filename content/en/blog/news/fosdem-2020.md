@@ -76,3 +76,17 @@ We're excited to hear all the talks and discussions in the CI/CD devroom and loo
     <link href="#" itemprop="url" content="https://fosdem.org/2020/" />
   </div>
 </div>
+
+
+<div id='discourse-comments'></div>
+
+<script type="text/javascript">
+  window.DiscourseEmbed = { discourseUrl: 'https://jenkinsx.discourse.group/',
+                     discourseEmbedUrl: 'https://jenkins-x.io/blog/2020/01/09/jxfosdem2020/' };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = window.DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>
