@@ -29,19 +29,3 @@ Jenkins X supports different execution engines; so it can orchestrate a Jenkins 
 No! Jenkins X can orchestrate Jenkins by reusing it inside a container and configures it to be as kubernetes native as possible.
 
 Though when using [serverless Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) we use [Tekton](https://tekton.dev/) rather than Jenkins as the underlying CI/CD engine to provide a modern highly available cloud native architecture.
-
-## Why create a sub project?
-
-We are huge fans of <a href="https://kubernetes.io/">Kubernetes</a> &amp; the cloud and think its
-the long term future approach for running software for many folks.
-
-However lots of folks will still want to run Jenkins in the regular jenkins way via: <code>java
--jar jenkins.war</code>
-
-So the idea of the Jenkins X sub project is to focus 100% on the Kubernetes and Cloud Native use
-case and let the core Jenkins project focus on the classic java approach.
-
-One of Jenkins big strengths has always been its flexibility and huge ecosystem of different
-plugins and capabilities. The separate Jenkins X sub project helps the community iterate and go fast
-improving both the Cloud Native and the classic distributions of Jenkins in parallel.
-
