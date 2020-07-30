@@ -103,8 +103,9 @@ The following sections provide a full list of configuration in- and output varia
 ### Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:-----:|
+|------|-------------|------|---------|:--------:|
 | apex\_domain | The main domain to either use directly or to configure a subdomain from | `string` | `""` | no |
+| cluster\_in\_private\_subnet | Flag to enable installation of cluster on private subnets | `bool` | `false` | no |
 | cluster\_name | Variable to provide your desired name for the cluster. The script will create a random name if this is empty | `string` | `""` | no |
 | cluster\_version | Kubernetes version to use for the EKS cluster. | `string` | `"1.15"` | no |
 | create\_and\_configure\_subdomain | Flag to create an NS record set for the subdomain in the apex domain's Hosted Zone | `bool` | `false` | no |
@@ -112,6 +113,7 @@ The following sections provide a full list of configuration in- and output varia
 | enable\_external\_dns | Flag to enable or disable External DNS in the final `jx-requirements.yml` file | `bool` | `false` | no |
 | enable\_key\_rotation | Flag to enable kms key rotation | `bool` | `true` | no |
 | enable\_logs\_storage | Flag to enable or disable long term storage for logs | `bool` | `true` | no |
+| enable\_nat\_gateway | Should be true if you want to provision NAT Gateways for each of your private networks | `bool` | `false` | no |
 | enable\_node\_group | Flag to enable node group | `bool` | `false` | no |
 | enable\_reports\_storage | Flag to enable or disable long term storage for reports | `bool` | `true` | no |
 | enable\_repository\_storage | Flag to enable or disable the repository bucket storage | `bool` | `true` | no |
@@ -119,13 +121,19 @@ The following sections provide a full list of configuration in- and output varia
 | enable\_tls | Flag to enable TLS in the final `jx-requirements.yml` file | `bool` | `false` | no |
 | enable\_worker\_group | Flag to enable worker group | `bool` | `true` | no |
 | force\_destroy | Flag to determine whether storage buckets get forcefully destroyed. If set to false, empty the bucket first in the aws s3 console, else terraform destroy will fail with BucketNotEmpty error | `bool` | `false` | no |
+| map\_accounts | Additional AWS account numbers to add to the aws-auth configmap. | `list(string)` | `[]` | no |
+| map\_roles | Additional IAM roles to add to the aws-auth configmap. | <pre>list(object({<br>    rolearn  = string<br>    username = string<br>    groups   = list(string)<br>  }))</pre> | `[]` | no |
+| map\_users | Additional IAM users to add to the aws-auth configmap. | <pre>list(object({<br>    userarn  = string<br>    username = string<br>    groups   = list(string)<br>  }))</pre> | `[]` | no |
 | max\_node\_count | The maximum number of worker nodes to use for the cluster | `number` | `5` | no |
 | min\_node\_count | The minimum number of worker nodes to use for the cluster | `number` | `3` | no |
 | node\_group\_ami | ami type for the node group worker intances | `string` | `"AL2_x86_64"` | no |
 | node\_group\_disk\_size | node group worker disk size | `string` | `"50"` | no |
 | node\_machine\_type | The instance type to use for the cluster's worker nodes | `string` | `"m5.large"` | no |
+| private\_subnets | The private subnet CIDR block to use in the created VPC | `list(string)` | <pre>[<br>  "10.0.4.0/24",<br>  "10.0.5.0/24",<br>  "10.0.6.0/24"<br>]</pre> | no |
 | production\_letsencrypt | Flag to use the production environment of letsencrypt in the `jx-requirements.yml` file | `bool` | `false` | no |
+| public\_subnets | The public subnet CIDR block to use in the created VPC | `list(string)` | <pre>[<br>  "10.0.1.0/24",<br>  "10.0.2.0/24",<br>  "10.0.3.0/24"<br>]</pre> | no |
 | region | The region to create the resources into | `string` | `"us-east-1"` | no |
+| single\_nat\_gateway | Should be true if you want to provision a single shared NAT Gateway across all of your private networks | `bool` | `false` | no |
 | spot\_price | The spot price ceiling for spot instances | `string` | `"0.1"` | no |
 | subdomain | The subdomain to be added to the apex domain. If subdomain is set, it will be appended to the apex domain in  `jx-requirements-eks.yml` file | `string` | `""` | no |
 | tls\_email | The email to register the LetsEncrypt certificate with. Added to the `jx-requirements.yml` file | `string` | `""` | no |
@@ -133,7 +141,6 @@ The following sections provide a full list of configuration in- and output varia
 | vault\_user | The AWS IAM Username whose credentials will be used to authenticate the Vault pods against AWS | `string` | `""` | no |
 | vpc\_cidr\_block | The vpc CIDR block | `string` | `"10.0.0.0/16"` | no |
 | vpc\_name | The name of the VPC to be created for the cluster | `string` | `"tf-vpc-eks"` | no |
-| vpc\_subnets | The subnet CIDR block to use in the created VPC | `list(string)` | <pre>[<br>  "10.0.1.0/24",<br>  "10.0.2.0/24",<br>  "10.0.3.0/24"<br>]</pre> | no |
 
 ### Outputs
 
@@ -230,6 +237,26 @@ If you use staging, you will receive self-signed certificates, but you are not r
 You can choose to use the `production` environment with the `production_letsencrypt` variable:
 
 You need to provide a valid email to register your domain in LetsEncrypt with `tls_email`.
+
+### Velero Backups
+
+This module can set up the resources required for running backups with Velero on your cluster by setting the flag `enable_backup` to `true`.
+
+#### Enabling backups on pre-existing clusters
+
+If your cluster is pre-existing and already contains a namespace named `velero`, then enabling backups will initially fail with an error that you are trying to create a namespace which already exists.
+
+```bash
+Error: namespaces "velero" already exists
+```
+
+If you get this error, consider it a warning - you may then adjust accordingly by importing that namespace to be managed by Terraform, deleting the previously existing ns if it wasn't actually in use, or setting `enable_backup` back to `false` to continue managing Velero in the previous manner.
+
+The recommended way is to import the namespace and then run another Terraform plan and apply:
+
+```bash
+terraform import module.eks-jx.module.backup.kubernetes_namespace.velero_namespace velero
+```
 
 ## Running `jx boot`
 
