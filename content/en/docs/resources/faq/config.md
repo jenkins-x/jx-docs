@@ -145,5 +145,4 @@ Whenever you modify the git repository for an environment the GitOps pipeline wi
 
 ## Is there a UI available for Jenkins X?
 
-There is one available for the [CloudBees Jenkins X Distribution](https://www.cloudbees.com/products/cloudbees-jenkins-x-distribution/overview). It should normally work on OSS Jenkins X as well, though CloudBees won't support it unless you're also using their distribution. You can read more about it here: [Using the CloudBees Jenkins X Distribution user interface
-](https://docs.cloudbees.com/docs/cloudbees-jenkins-x-distribution/latest/user-interface/)
+We have a new OSS UI for Jenkins X powered by the awesome extensible [Octant](https://octant.dev/)! You can watch James Strachan's demo of the UI [here](youtu.be/Njl247hjRuU). Find out more about the new Jenkins X UI and how extensible it is [here](https://github.com/jenkins-x/octant-jx).
