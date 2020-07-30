@@ -56,3 +56,20 @@ Though if you want our chart to be in another namespace then we use the conventi
 ## How do I disable the ingress controller?
 
 If you already have your own ingress controller and do not want `jx boot` to install another one you can just delete the `install-nginx-controller` step in your dev environment git repository. e.g. [remove this step](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jenkins-x.yml#L85-L99) from the `jenkins-x.yml` in your dev environment git repository
+
+## What do I do if `jx boot` hangs on `step-install-jenkins-x`?
+
+You may have a problem with Terminating a PVC that is protected.
+
+Describe your pvc.  In the case I saw, it was the jenkins pvc.
+```sh
+kubectl -n jx describe pvc jenkins
+```
+If it's stuck in Terminating and you see that the Finalizer has protection:
+```sh
+Finalizers:    [kubernetes.io/pvc-protection]
+```
+Then, you can remove the protection by issuing the following command and your install should continue.
+```sh
+kubectl -n jx patch pvc jenkins -p '{"metadata":{"finalizers": []}}' --type=merge
+```
