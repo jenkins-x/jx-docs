@@ -104,6 +104,9 @@ pipeline.
     * **[`containerOptions`](#containerOptions)** - Default configuration for
     step containers within this pipeline, overriding any common settings with
     [build pack or project](#top-level-configuration) default configuration.
+    * **`sidecars`** - One or more [Kubernetes containers](https://kubernetes.io/docs/concepts/containers/)
+    which will be added to every stage in the pipeline, to provide additional
+    features in the pods.
     * **`volumes`** - One or more [Kubernetes volumes](https://kubernetes.io/docs/concepts/storage/volumes/)
     which will be added to every stage in the pipeline, and can be mounted via
     `containerOptions`.
@@ -124,6 +127,8 @@ if one is specified.
     step containers within this stage, overriding any common settings with
     [the whole pipeline](#configuration-for-the-whole-pipeline) default
     configuration.
+    * **`sidecars`** - One or more [Kubernetes containers](https://kubernetes.io/docs/concepts/containers/)
+    which will be added to this stage's pod, to provide additional features.
     * **`volumes`** - One or more [Kubernetes volumes](https://kubernetes.io/docs/concepts/storage/volumes/)
     which will be added to this stage's pod, and can be mounted via `containerOptions`.
 * **[`env`](#env)** - Environment variables set for all steps or nested stages,
