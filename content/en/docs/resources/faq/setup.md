@@ -73,3 +73,9 @@ Then, you can remove the protection by issuing the following command and your in
 ```sh
 kubectl -n jx patch pvc jenkins -p '{"metadata":{"finalizers": []}}' --type=merge
 ```
+
+## How do I debug issues with terraform?
+Set the `TF_LOG` environment variable to `TRACE`, and then run your terraform commands such as `terraform apply` or `terraform plan`.
+```terraform
+TF_LOG=TRACE terraform apply
+```
