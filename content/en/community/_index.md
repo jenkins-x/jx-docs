@@ -1,9 +1,9 @@
 ---
-linktitle: "Join The Community"
+linktitle: "Join the Community"
 menu:
   community:
     weight: 1
-    name: Join The Community
+    name: Welcome to the Jenkins X Community
   main:
     weight: 10
     name: "Community"
@@ -12,18 +12,18 @@ no_list: true
 
 ---
 
-The Jenkins X Community is like no other, we are friendly, very open to feedback, provide guidance, best practices and much more. 
+Welcome to the Jenkins X community!
 
-Join us on [Slack](/community/#slack) or during [Office Hours](/community/#office-hours) to ask questions and tell us what you are building.
+Join us on [Slack](/community/#slack), [Discourse](https://jenkinsx.discourse.group/), and during [Office Hours](/community/#office-hours) to ask questions and tell us what you are building.
 Upcoming [events and webinars](/community/#events--webinars) are shown on our [Event Calendar](/community/calendar) or announced on [Twitter](https://twitter.com/jenkinsxio).
 
 We value respect and inclusiveness and follow the [CDF Code of Conduct](https://github.com/cdfoundation/toc/blob/master/CODE_OF_CONDUCT.md) in all interactions.
 
-{{< figure src="/images/community/GoCommunity-background.png" class="img-thumbnail" >}}
-image by Ashley McNamara, [creative commons license](https://github.com/ashleymcnamara/gophers/blob/master/GoCommunity.png)
+<!-- {{< figure src="/images/community/GoCommunity-background.png" class="img-thumbnail" >}}
+image by Ashley McNamara, [creative commons license](https://github.com/ashleymcnamara/gophers/blob/master/GoCommunity.png) -->
 
 
-### Slack
+### Slack 
 
 We'd love to talk with you about Jenkins X and are happy to help if you have any questions.
 
@@ -32,6 +32,12 @@ Join Kubernetes slack [here](http://slack.k8s.io/) and find us on our channels:
 
 * [\#jenkins-x-user](https://kubernetes.slack.com/messages/C9MBGQJRH) for users of Jenkins X
 * [\#jenkins-x-dev](https://kubernetes.slack.com/messages/C9LTHT2BB) for developers of Jenkins X
+
+### Discourse
+
+Discourse is a great place to ask questions about Jenkins X or post topics for discussion. 
+
+Join the [Jenkins X Discourse](https://jenkinsx.discourse.group/) forum to read answers to commonly asked questions and post additional questions.
 
 ### Office Hours
 
