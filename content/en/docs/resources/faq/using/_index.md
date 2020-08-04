@@ -53,9 +53,9 @@ You may need to modify your helm charts to add extra helm configuration if the c
 
 ## How do I manage secrets in each environment?
 
-We’re using sealed secrets ourselves to manage our production Jenkins X install for all of our CI/CD - so the secrets get encrypted and checked into the git repo of each environment. We use the [helm-secrets](https://github.com/futuresimple/helm-secrets) plugin to do this.
+[Hashicorp Vault](https://www.vaultproject.io/) is the preferred way in Jenkins X to manage secrets. For example, the GitHub personal access token generated for the pipeline bot is stored in Vault. [Read more about using Vault to manage your secrets with Jenkins X](https://jenkins-x.io/docs/reference/components/vault/).
 
-Though a nicer approach would be using a Vault operator which we’re investigating now - which would fetch + populate secrets (and recycle them etc) via Vault.
+In addition, the Jenkins X team are big fans of [Kubernetes External Secrets](https://github.com/godaddy/kubernetes-external-secrets) and are developing [jx-secret](https://github.com/jenkins-x/jx-secret), a small command line tool working with Kubernetes External Secrets.
 
 
 ## When do Preview Environments get removed?
@@ -92,9 +92,9 @@ With Jenkins X you are free to create your own pipeline to do the release if you
 
 We've specifically built this extension model to minimise the work your teams have in having to edit + maintain pipelines across many separate microservices; the idea is we're trying to automate both the pipelines and the extensions to the pipelines so teams can focus on their actual code and less on the CI/CD plumbing which is pretty much all undifferentiated heavy lifting these days.
 
-## How can I handle custom branches with tekton?
+## How can I handle custom branches with Tekton?
 
-We don't use `branch patterns` with tekton; they are a jenkins specific configuration.
+We don't use `branch patterns` with Tekton; they are a Jenkins specific configuration.
 
 For Tekton we use the [prow](/docs/reference/components/prow/) / [lighthouse](/docs/reference/components/lighthouse/) configuration to specify which branches trigger which pipeline contexts.
 
