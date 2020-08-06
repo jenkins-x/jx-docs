@@ -492,5 +492,4 @@ Using whatever your cloud providers bucket URLs are. For more background, check 
 
 ## User Interface
 
-If you're looking for a UI, there is one available for the [CloudBees Jenkins X Distribution](https://www.cloudbees.com/products/cloudbees-jenkins-x-distribution/overview). It should normally work on OSS Jenkins X as well, though CloudBees won't support it unless you're also using their distribution. You can read more about it here: [Using the CloudBees Jenkins X Distribution user interface
-](https://docs.cloudbees.com/docs/cloudbees-jenkins-x-distribution/latest/user-interface/)
+If you're looking for a UI check out [Octant the open source web UI for Jenkins X](/docs/reference/components/ui/)
