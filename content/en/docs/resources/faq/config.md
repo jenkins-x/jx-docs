@@ -145,4 +145,4 @@ Whenever you modify the git repository for an environment the GitOps pipeline wi
 
 ## Is there a UI available for Jenkins X?
 
-We have a new OSS UI for Jenkins X powered by the awesome extensible [Octant](https://octant.dev/)! You can watch James Strachan demo the UI [here](https://www.youtube.com/watch?v=Njl247hjRuU&feature=youtu.be). Find out more about the new Jenkins X UI and how extensible it is [here](https://github.com/jenkins-x/octant-jx).
+We have a new OSS [UI](/docs/reference/components/ui/) for Jenkins X powered by the awesome extensible [Octant](https://octant.dev/)! You can watch James Strachan demo the UI [here](https://www.youtube.com/watch?v=Njl247hjRuU&feature=youtu.be). Find out more about the new Jenkins X UI and how extensible it is [here](https://github.com/jenkins-x/octant-jx).
