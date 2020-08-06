@@ -25,7 +25,11 @@ We love [Octant](https://github.com/vmware-tanzu/octant) because:
 
 ## Features
 
-Longer term we're planning on making most of the developer and operations feaures of Jenkins X available through the UI via [octant-jx](https://github.com/jenkins-x/octant-jx) but already you can:
+Longer term we're planning on making most of the developer and operations features of Jenkins X available through the UI via [octant-jx](https://github.com/jenkins-x/octant-jx). 
+
+e.g. we hope as part of [Jenkins X 3.x](https://github.com/jenkins-x/enhancements/issues/36) you'll be able to install or upgrade Jenkins X and watch the installation proceed all via Octant.
+ 
+But already right now today you can:
 
 * view applications, environments, pipelines, repositories
 * for a pipeline quickly navigate to:
