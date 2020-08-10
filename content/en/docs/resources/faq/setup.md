@@ -74,8 +74,12 @@ Then, you can remove the protection by issuing the following command and your in
 kubectl -n jx patch pvc jenkins -p '{"metadata":{"finalizers": []}}' --type=merge
 ```
 
-## How do I debug issues with terraform?
+## How do I debug issues with terraform and JenkinsX?
 Set the `TF_LOG` environment variable to `TRACE`, and then run your terraform commands such as `terraform apply` or `terraform plan`.
-```terraform
+```bash
 TF_LOG=TRACE terraform apply
+```
+Use the global `--verbose` flag to add more verbosity to the JenkinsX logs:
+```bash
+jx boot --verbose
 ```

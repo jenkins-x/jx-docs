@@ -18,18 +18,12 @@ aliases:
 
 _Jenkins X Boot_ uses the following approach:
 
-- Create your Kubernetes cluster:
-    - use [Terraform](/docs/install-setup/create-cluster/) to create your Kubernetes clusters + the associated cloud resources
-    - use `jx create cluster --skip-installation` e.g. for Google Cloud use `jx create cluster gke --skip-installation`.
-      To see all the different providers see [jx create cluster](/commands/jx_create_cluster/)  
-
-    Please check out our [Cloud Providers Guide](/docs/getting-started/setup/boot/clouds/) on our recommendations for your cloud provider.
-
-    You can verify you can communicate correctly with your Kubernetes cluster via:
-
-    ``` sh
-    kubectl get ns
-    ```
+- Create your Kubernetes cluster using [Terraform](/docs/install-setup/create-cluster/).
+  Please check out our [Cloud Providers Guide](/docs/getting-started/setup/boot/clouds/) on our recommendations for your cloud provider.
+  To verify you can communicate correctly with your Kubernetes cluster run:
+  ``` sh
+  kubectl get ns
+  ```
 
 - Run the [jx boot](/commands/jx_boot/) command:
 
@@ -40,6 +34,15 @@ _Jenkins X Boot_ uses the following approach:
 You will now be prompted for any missing parameters required to install, such as your admin user/password, the Pipeline git user and token etc.
 
 Then Jenkins X should be installed and set up on your Kubernetes cluster.
+
+{{% alert %}}
+If one of the steps in `jx boot` fails for some reason, instead of running all the steps, you can start boot from that 
+particular step in two ways:
+* Using environment variable `JX_BOOT_START_STEP`: `JX_BOOT_START_STEP=<name of the step> jx boot`
+* Using the `--start-step` or it's shorthand `-s` flag: `jx boot -s=<name of the step>`
+
+Alternatively, you can also end `jx boot` at a step by using the environment variable `JX_BOOT_END_STEP`. 
+{{% /alert %}}
 
 ## About `jx boot`
 
