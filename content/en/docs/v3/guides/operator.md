@@ -25,7 +25,7 @@ jx admin operator --url=https://myusername:mytoken@github.com/myorg/env-mycluste
 This will use helm to install the [git operator](https://github.com/jenkins-x/jx-git-operator) which will trigger a Job whenever a change is merged to your git repository.
 
 
-You can now populate the [secrets](/docs/v3/install-setup/getting-started/secrets/) 
+You can now populate the [secrets](/docs/v3/guides/getting-started/secrets/) 
 
 <nav>
   <ul class="pagination">

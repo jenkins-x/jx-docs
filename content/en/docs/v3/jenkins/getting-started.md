@@ -6,7 +6,7 @@ weight: 20
 ---
 
 
-Make sure you have got the [jx 3.x binary](/docs/v3/jx3/) before proceeding.
+Make sure you have got the [jx 3.x binary](/docs/v3/guides/jx3/) before proceeding.
 
 
 ## Adding Jenkins Servers
