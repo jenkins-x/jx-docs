@@ -12,12 +12,12 @@ The git repository for the (development) environment git repository looks like t
 
 ```
 jx-requirements.yml   # the configuration of cluster, environments, storage, ingress etc
-jx-apps.yml           # the list of apps to be installed
+helmfile.yaml           # the list of apps to be installed
 jenkins-x.yml         # the Jenkins X Pipeline to boot up Jenkins X
 apps/
 system/
 ```
-We use the [jx-apps.yml](https://github.com/jenkins-x-labs/boot-helmfile-poc/blob/master/jx-apps.yml) file as source to generate 2 `helmfile.yaml` files to perform the installation. This is done by the [jx step create helmfile](https://jenkins-x.io/commands/jx_step_create_helmfile/) command.
+We use the [helmfile.yaml](https://github.com/jenkins-x-labs/boot-helmfile-poc/blob/master/helmfile.yaml) file as source to generate 2 `helmfile.yaml` files to perform the installation. This is done by the [jx step create helmfile](https://jenkins-x.io/commands/jx_step_create_helmfile/) command.
 
 After this command is run the git repository file system looks like this...
 
@@ -40,7 +40,7 @@ jx step verify env
 jx step verify install
 ```
 
-So the pipeline is very similar to the traditional helm 2 boot pipeline. The main differences is the change to `helmfile sync` to apply all the helm charts at the `system` or `apps` phase. Also the helm 2 pipeline has lots of steps related to installing specific individual charts (nginx/velero/cert-manager/externaldns) - with the helmfile solution thats all done by the `jx-apps.yml` file so we don't need to touch the `jenkins-x.yml` pipeline at all if we want to add/remove any apps.
+So the pipeline is very similar to the traditional helm 2 boot pipeline. The main differences is the change to `helmfile sync` to apply all the helm charts at the `system` or `apps` phase. Also the helm 2 pipeline has lots of steps related to installing specific individual charts (nginx/velero/cert-manager/externaldns) - with the helmfile solution thats all done by the `helmfile.yaml` file so we don't need to touch the `jenkins-x.yml` pipeline at all if we want to add/remove any apps.
 
 ### How the helmfile.yaml generation works
 
@@ -51,7 +51,7 @@ This is all done by the [jx step create helmfile](https://jenkins-x.io/commands/
 
 In an effort to try streamline the users boot configuration repository, we've tried to put as much common configuration into the [version stream](https://jenkins-x.io/about/concepts/version-stream/) as possible. 
 
-For example the default `namespace` for a chart and the `phase` (whether its installed via the `system` helmfile or the default `apps` helmfile) can be specified in the `defaults.yml` file in the version stream. e.g. here's where we define the [apps/stable/nginx-ingress/defaults.yml](https://github.com/jenkins-x/jenkins-x-versions/blob/master/apps/stable/nginx-ingress/defaults.yml) for `nginx-ingress`. This keeps the actual `jx-apps.yml` nice and simple...
+For example the default `namespace` for a chart and the `phase` (whether its installed via the `system` helmfile or the default `apps` helmfile) can be specified in the `defaults.yml` file in the version stream. e.g. here's where we define the [apps/stable/nginx-ingress/defaults.yml](https://github.com/jenkins-x/jenkins-x-versions/blob/master/apps/stable/nginx-ingress/defaults.yml) for `nginx-ingress`. This keeps the actual `helmfile.yaml` nice and simple...
 
 ```yaml
 apps:
@@ -59,7 +59,7 @@ apps:
 ...
 ```
 
-Though if you really want you can be completely specific in your `jx-apps.yml` file:
+Though if you really want you can be completely specific in your `helmfile.yaml` file:
 
 ```yaml
 apps:

@@ -405,7 +405,7 @@ ingress:
   domain: my.domain.com
 ```
 
-Edit the `jx-apps.yml` in your environment repository and add the external dns chart:
+Edit the `helmfile.yaml` in your environment repository and add the external dns chart:
 
 ```yaml
 apps:

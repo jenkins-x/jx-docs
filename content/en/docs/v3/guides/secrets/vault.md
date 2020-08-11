@@ -6,7 +6,7 @@ weight: 30
 ---
 
 
-To be able to use Vault as the storage engine for your Secrets you need to specify `--secret vault` when [creating your development git repository](/docs/v3/getting-started/repository/) or [configure vault](/docs/v3/getting-started/config/#vault) via `secretStorage: vault` in your `jx-requirements.yml`:
+To be able to use Vault as the storage engine for your Secrets you need to [configure vault](/docs/v3/guides/config/#vault) via `secretStorage: vault` in your `jx-requirements.yml`:
 
 ```yaml
 cluster:
@@ -22,7 +22,7 @@ webhook: lighthouse
 
 ## Installing Vault
 
-Make sure that your `jx-apps.yml` file has the necessary vault charts included such as...
+Make sure that your `helmfile.yaml` file has the necessary vault charts included such as...
 
 ```yaml 
 apps:

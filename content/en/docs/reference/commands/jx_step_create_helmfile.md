@@ -12,7 +12,7 @@ Alpha command, expect this to change or be removed, created: Jan 28 2020
 ### Synopsis
 
 Alpha command, expect this to change or be removed, created: Jan 28 2020
-** EXPERIMENTAL COMMAND ** Generates a helmfile from a jx-apps.yml see enhancement https://github.com/jenkins-x/enhancements/pull/1
+** EXPERIMENTAL COMMAND ** Generates a helmfile from a helmfile.yaml see enhancement https://github.com/jenkins-x/enhancements/pull/1
 
 ```
 jx step create helmfile [flags]
@@ -28,7 +28,7 @@ jx step create helmfile [flags]
 ### Options
 
 ```
-      --dir string           the directory to look for a 'jx-apps.yml' file (default ".")
+      --dir string           the directory to look for a 'helmfile.yaml' file (default ".")
   -h, --help                 help for helmfile
       --outputDir string     The directory to write the helmfile.yaml file
       --values stringArray   specify values in a YAML file or a URL(can specify multiple)

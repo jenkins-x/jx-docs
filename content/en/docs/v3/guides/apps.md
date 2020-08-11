@@ -6,7 +6,7 @@ weight: 100
 ---
 
 
-Jenkins X 3.x supports a new `jx-apps.yml` file format that can be used to define the helm charts you wish to install and their namespace.
+Jenkins X 3.x supports a new `helmfile.yaml` file format that can be used to define the helm charts you wish to install and their namespace.
 
 You can then add any charts you wish:
 
