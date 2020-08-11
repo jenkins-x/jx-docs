@@ -66,7 +66,7 @@ If you are using a free tier or small kubernetes cluster you can shrink the foot
  jx admin create --repository=bucketrepo
  ``` 
 
-This will avoid `nexus` and `chartmuseum` and deploy the small [bucketrepo](https://github.com/jenkins-x/bucketrepo) instead. More on the [configuration page](/docs/v3/guides/getting-started/config/#bucketrepo)
+This will avoid `nexus` and `chartmuseum` and deploy the small [bucketrepo](https://github.com/jenkins-x/bucketrepo) instead. More on the [configuration page](/docs/v3/getting-started/config/#bucketrepo)
 
 
 
@@ -80,7 +80,7 @@ jx admin create --env-remote
 
 This will create the git repositories for your environments.
 
-The command will output instructions on how to setup the [secrets](/docs/v3/guides/getting-started/secrets/) and then [run the boot job](/docs/v3/guides/getting-started/run/).
+The command will output instructions on how to setup the [secrets](/docs/v3/guides/secrets/) and then [run the boot job](/docs/v3/getting-started/run/).
 
 ## Other options
 
@@ -120,4 +120,4 @@ and follow the instructions.
 
 If your cluster is using GitOps the command will clone the development git repository to a temporary directory, modify it and submit a pull request.
 
-If your cluster is not using GitOps then a new git repository will be created along with instructions on how to setup the [secrets](/docs/v3/guides/getting-started/secrets/) and then [run the boot job](/docs/v3/guides/getting-started/run/).
+If your cluster is not using GitOps then a new git repository will be created along with instructions on how to setup the [secrets](/docs/v3/guides/secrets/) and then [run the boot job](/docs/v3/getting-started/run/).

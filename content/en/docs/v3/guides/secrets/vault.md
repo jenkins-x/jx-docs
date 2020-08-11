@@ -6,7 +6,7 @@ weight: 30
 ---
 
 
-To be able to use Vault as the storage engine for your Secrets you need to specify `--secret vault` when [creating your development git repository](/docs/v3/guides/getting-started/repository/) or [configure vault](/docs/v3/guides/getting-started/config/#vault) via `secretStorage: vault` in your `jx-requirements.yml`:
+To be able to use Vault as the storage engine for your Secrets you need to specify `--secret vault` when [creating your development git repository](/docs/v3/getting-started/repository/) or [configure vault](/docs/v3/getting-started/config/#vault) via `secretStorage: vault` in your `jx-requirements.yml`:
 
 ```yaml
 cluster:
@@ -57,7 +57,7 @@ jx secret vault portforward
 
 This will allow the [jx 3.x binary](/docs/v3/guides/jx3/) to access the Vault REST API.
 
-You can now follow the instructions to [populate secrets](/docs/v3/guides/getting-started/secrets/#populate-secrets) or [import secrets](/docs/v3/guides/getting-started/secrets/#importing-secrets).
+You can now follow the instructions to [populate secrets](/docs/v3/guides/secrets/#populate-secrets) or [import secrets](/docs/v3/guides/secrets/#importing-secrets).
 
 You can also access the vault web UI at [https://localhost:8200](https://localhost:8200)
 
