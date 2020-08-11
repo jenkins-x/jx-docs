@@ -6,7 +6,7 @@ weight: 10
 ---
 
 
-The [jx 3.x binary](/docs/v3/jx3/) includes an improved wizard for importing projects or creating new projects from quickstarts.
+The [jx 3.x binary](/docs/v3/guides/jx3/) includes an improved wizard for importing projects or creating new projects from quickstarts.
 
 You can invoke the wizard directly via:
 
