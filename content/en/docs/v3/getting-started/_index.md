@@ -40,4 +40,12 @@ This quickstart is similar to the above but does not use terraform so its ideal 
 
 *  <a href="https://github.com/jx3-gitops-repositories/jx3-gke-gcloud-vault/generate" target="github" class="btn bg-primary text-light">Create Git Repository</a> 
 
-*  Follow the `README.md` in your git repository or [follow these docs](https://github.com/jx3-gitops-repositories/jx3-gke-gcloud-vault/README.md)
+* `git clone` the new repository and `cd`  into the git clone
+
+*  <a href="https://github.com/jx3-gitops-repositories/jx3-gke-gcloud-vault/blob/master/bin/README.md" 
+    target="github" class="btn bg-primary text-light" 
+    title="use your new git repository to create your cloud infrastructure and install Jenkins X">
+    Create your infrastructure
+  </a> 
+
+*  <a href="https://github.com/jx3-gitops-repositories/jx3-gke-gcloud-vault/README.md" class="btn bg-primary text-light">Create or import projects</a> 

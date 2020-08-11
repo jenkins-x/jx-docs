@@ -29,7 +29,7 @@ To create a new project from a quickstart template use the [jx project import](h
 jx project import
 ```        
 
-See the [import documentation](/docs/create-project/create/import/) for more information
+See the [import documentation](/docs/create-project/creating/import/) for more information
 
 Note that the old Jenkins X 2.x alias `jx import` is still supported but will be deprecated eventually.
 

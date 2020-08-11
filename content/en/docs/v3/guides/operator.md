@@ -8,7 +8,7 @@ weight: 30
 Jenkins X 3.x uses a [git operator](https://github.com/jenkins-x/jx-git-operator) to manage installing + upgrading of Jenkins X and any other components in any environment.
 
 
-Usually if you have [created your git repository](repository) via the [jx admin create](repository) command then the operator will be installed for you so you can skip this step and proceed directly to [setting up secrets](../secrets).
+Usually if you have [created your git repository](/docs/v3/getting-started/) via the [jx admin create](/docs/v3/getting-started/) command then the operator will be installed for you so you can skip this step and proceed directly to [setting up secrets](../secrets).
 
 If you create the git repository via some other means (e.g. by hand via the github Fork button or something) then you can run the `jx admin operator` command to install the operator for your repository.
 
