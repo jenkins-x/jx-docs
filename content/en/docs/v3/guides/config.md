@@ -13,7 +13,6 @@ Make changes to the config using the help below or continue Next to run boot.
 <nav>
   <ul class="pagination">
     <li class="page-item"><a class="page-link" href="../secrets">Previous</a></li>
-    <li class="page-item"><a class="page-link" href="../../../wizard/overview/">Next</a></li>
   </ul>
 </nav>
 
