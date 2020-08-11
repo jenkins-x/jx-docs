@@ -15,23 +15,23 @@ Our recommendation for using progressive delivery with Jenkins X is to use:
 
 ## Configuring Progressive Delivery
 
-Please follow the usual [getting started guide for boot and helm 3](/docs/v3/getting-started/) but before [running boot](/docs/v3/getting-started/run/) please make sure you make the following configuration:
+Please follow the usual [getting started guide for boot and helm 3](/docs/v3/getting-started/)
 
 ### Add the istio and flagger apps
 
-Please make sure your `jx-apps.yml` has the necessary apps for using [flagger](https://flagger.app/) and [istio](https://istio.io/). Your `jx-apps.yml` in your development environment git repository should look something like this:
+Please make sure your `helmfile.yaml` has the necessary apps for using [flagger](https://flagger.app/) and [istio](https://istio.io/). Your `helmfile.yaml` in your development environment git repository should look something like this:
 
 ```yaml 
-apps:
-- name: jx-labs/istio
-- name: flagger/flagger
-- name: flagger/grafana
-- name: jx-labs/flagger-metrics
-- name: stable/kuberhealthy
+releases:
+- chart: jx-labs/istio
+- chart: flagger/flagger
+- chart: flagger/grafana
+- chart: jx-labs/flagger-metrics
+- chart: stable/kuberhealthy
 ...
 ```
 
-So that you remove `stable/nginx-ingress` from your `jx-apps.yml` file and ensure the above apps are added at the top of the file.
+So that you remove `stable/nginx-ingress` from your `helmfile.yaml` file and ensure the above apps are added at the top of the file.
 
 Also for now I'm afraid you will have to remove the `jenkins-x/jxui` chart as its currently not working yet with istio ingress - but we can hopefully get that working soon.
 
@@ -49,12 +49,9 @@ ingress:
 ...
 ```
 
-### Now boot 
-
 Now your development git repository should be setup and be ready. Now:
 
 * make sure you have setup [any secrets you need to boot](/docs/v3/guides/secrets/)
-* now [run boot](/docs/v3/getting-started/run/) to setup your installation
 
 When it is all complete you should see istio, flagger, grafana pods running in the `istio-system` namespace something like this:
 

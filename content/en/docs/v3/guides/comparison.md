@@ -24,7 +24,7 @@ Just like classic boot with the [jenkins-x-boot-config](https://github.com/jenki
 * we no longer use a composite chart for `env/Chart.yaml` and instead deploy each chart independently
   * this means that each chart has its own unique version number; so that `helm list` gives nice meaningful results
 * we have done away with the complexity of `jenkins-x-platform` (a composite chart containing logs of [dependencies](https://github.com/jenkins-x/jenkins-x-platform/blob/master/jenkins-x-platform/requirements.yaml) like `jenkins` + `chartmuseum` + `nexus` etc) so that each chart can be added/removed independently or swapped out with a different version/distribution
-* instead of using [env/requirements.yaml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/env/requirements.yaml) we now use a simple and more powerful [jx-apps.yml](https://github.com/jenkins-x-labs/boot-helmfile-poc/blob/master/jx-apps.yml) file which is similar but supports:
+* instead of using [env/requirements.yaml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/env/requirements.yaml) we now use a simple and more powerful [helmfile.yaml](https://github.com/jenkins-x-labs/boot-helmfile-poc/blob/master/helmfile.yaml) file which is similar but supports:
   * we can specify a `namespace` on any chart
   * we can add extra `valuesFiles` to use with the chart to override the helm `values.yaml` files
   * different `phase` values so that we can default some charts like `nginx-ingress` to the `system` phase before we setup ingress, DNS, TLS and certs
