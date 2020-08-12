@@ -8,7 +8,7 @@ weight: 30
 Jenkins X 3.x uses a [git operator](https://github.com/jenkins-x/jx-git-operator) to manage installing + upgrading of Jenkins X and any other components in any environment.
 
 
-To install the operator run the following, passing in the git URL from the [git repository](/docs/v3/getting-started/) you created previously via [jx admin operator](https://github.com/jenkins-x/jx-admin/blob/master/docs/cmd/jx-admin_operator.md):
+To install the operator run the following, passing in the git URL from the [git repository](/docs/v3/getting-started/) you created previously via [jx admin operator](https://github.com/jenkins-x/jx-admin/blob/master/docs/cmd/jx-admin_operator.md) command:
 
 
 ```bash 
@@ -32,7 +32,7 @@ This will use helm to install the [git operator](https://github.com/jenkins-x/jx
 
 The terminal will display the logs as the boot `Job` runs. 
 
-At any time you can tail the boot job logs via [jx admin log](https://github.com/jenkins-x/jx-admin/blob/master/docs/cmd/jx-admin_log.md):
+At any time you can tail the boot job logs via the [jx admin log](https://github.com/jenkins-x/jx-admin/blob/master/docs/cmd/jx-admin_log.md) command:
 
 ```bash 
 jx admin log

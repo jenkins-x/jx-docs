@@ -1,95 +1,114 @@
 ---
 title: How it works
 linktitle: How it works
-description: How boot works under the covers
+description: How Jenkins X 3.x works under the covers
 weight: 130
 ---
 
 
 ## How it works
 
-The git repository for the (development) environment git repository looks like this...
+The GitOps repository templates contain the source code, scripts and docs to help you get your cloud resources created (e.g. a kubernetes cluster and maybe buckets and/or a secret manager).
 
-```
-jx-requirements.yml   # the configuration of cluster, environments, storage, ingress etc
-helmfile.yaml           # the list of apps to be installed
-jenkins-x.yml         # the Jenkins X Pipeline to boot up Jenkins X
-apps/
-system/
-```
-We use the [helmfile.yaml](https://github.com/jenkins-x-labs/boot-helmfile-poc/blob/master/helmfile.yaml) file as source to generate 2 `helmfile.yaml` files to perform the installation. This is done by the [jx step create helmfile](https://jenkins-x.io/commands/jx_step_create_helmfile/) command.
+Once you have created the GitOps repository from one of the [available templates and followed the instructions](/docs/v3/getting-started/) to set up your infrastructure you [install the git operator](/docs/v3/guides/operator/) via the  via [jx admin operator](https://github.com/jenkins-x/jx-admin/blob/master/docs/cmd/jx-admin_operator.md) command:
 
-After this command is run the git repository file system looks like this...
 
-```
-apps/
-  helmfile.yaml
-system/
-  helmfile.yaml
+```bash
+    jx admin operator
 ```
 
-Then the pipeline is effectively this (slightly simplifying for clarity):
 
-```
-jx step verify preinstall
-jx step create helmfile
-cd system && helmfile sync
-jx step verify ingress
-cd apps && helmfile sync
-jx step verify env
-jx step verify install
-```
-
-So the pipeline is very similar to the traditional helm 2 boot pipeline. The main differences is the change to `helmfile sync` to apply all the helm charts at the `system` or `apps` phase. Also the helm 2 pipeline has lots of steps related to installing specific individual charts (nginx/velero/cert-manager/externaldns) - with the helmfile solution thats all done by the `helmfile.yaml` file so we don't need to touch the `jenkins-x.yml` pipeline at all if we want to add/remove any apps.
-
-### How the helmfile.yaml generation works
-
-This is all done by the [jx step create helmfile](https://jenkins-x.io/commands/jx_step_create_helmfile/) command if you want to look at the code. Essentially we take that YAML file and parse it and use it to generate one of the helmfiles: `system/helmfile.yaml` for system charts (installed before ingress, DNS, TLS and certs are setup and the domain is known) and any other charts in `apps/helmfile.yaml`.
+That command essentially installs the [git operator](https://github.com/jenkins-x/jx-git-operator) chart, passing in the git URL, username and token to run the boot process
 
 
-#### Defaulting configuration
+### Git Operator
 
-In an effort to try streamline the users boot configuration repository, we've tried to put as much common configuration into the [version stream](https://jenkins-x.io/about/concepts/version-stream/) as possible. 
+The [git operator](https://github.com/jenkins-x/jx-git-operator) works by polling the git repository looking for changes and running a kubernetes Job on each change. The Job resource is defined inside the git repository at **.jx/git-operator/job.yaml**
 
-For example the default `namespace` for a chart and the `phase` (whether its installed via the `system` helmfile or the default `apps` helmfile) can be specified in the `defaults.yml` file in the version stream. e.g. here's where we define the [apps/stable/nginx-ingress/defaults.yml](https://github.com/jenkins-x/jenkins-x-versions/blob/master/apps/stable/nginx-ingress/defaults.yml) for `nginx-ingress`. This keeps the actual `helmfile.yaml` nice and simple...
+You can view the boot Job log via the command:
 
-```yaml
-apps:
-- name: stable/nginx-ingress
-...
+
+```bash
+    jx admin log
 ```
 
-Though if you really want you can be completely specific in your `helmfile.yaml` file:
 
-```yaml
-apps:
-- name: stable/nginx-ingress
-  repository: https://kubernetes-charts.storage.googleapis.com
-  namespace: nginx
-  phase: system
-...
-```
+Or you can browse the log in the Octant UI in the operations tab.
 
-#### values.yaml* files
 
-In boot with helm 2 you can specify custom `values.yaml` files or `values.tmpl.yaml` (using go templates) files in a folder named after the chart in the `env` folder in the git repository. e.g. here's the [env/tekton/values.tmpl.yaml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/env/tekton/values.tmpl.yaml) file to customise tekton to the Jenkins X requirements and secrets.
+### Boot Job
 
-We use a similar approach of using `values.yaml` files or templates - which in helmfile are called `values.yaml.gotmpl` instead - which can be put in a folder named after the chart.
+The boot job runs on startup and on any git commit to the GitOps repository you used to install the operator.
 
-So to do something similar in helmfile and helm 3 you could create an `apps/tekton/values.yaml.gotmpl` file and it will be automatically picked up by [jx step create helmfile](https://jenkins-x.io/commands/jx_step_create_helmfile/) and referenced in the generated `apps/helmfile.yaml`.
+The boot job is defined in **.jx/git-operator/job.yaml** in git and essentially:
 
-However usually these `values.yaml*` files we write for each chart are bindings to the `jx-requirements.yml` and secrets and they usually don't change between cluster installations. 
 
-So we've allowed these files to be stored in the [version stream](https://jenkins-x.io/about/concepts/version-stream/) instead. e.g. here's the [apps/jenkins-x/tekton/values.yaml.gotmpl](https://github.com/jenkins-x/jenkins-x-versions/tree/master/apps/jenkins-x/tekton/values.yaml.gotmpl) file to customise the `tekton` chart for use in Jenkins X with helmfile and helm 3.
+* Runs the generate step
+* Runs the apply step
 
-This helps keep the git repository for your (dev) environment much smaller and easier to manage. You can still override the `values.yaml*` files for any app if you want inside your boot config git repository though..
- 
-                                      
-### Passing in jx-requirements.yml and secrets
 
-In boot with helm 2 we used [some custom values in the values.yaml.tmpl files](https://jenkins-x.io/docs/getting-started/setup/boot/how-it-works/#values-tmpl-yaml-templates) to inject values from the `jx-requirements.yml` and secrets.
+#### Generate step
 
-To make it easier to use helmfile and helm 3 easily without any custom modifications we've used a slightly different approach:
+This step is run in the following situations:
 
-* we turn the `jx-requirements.yml` file into a vanilla YAML file with the top level key `jxRequirements` - the file is generated by the boot pipeline called `jx-requirements.values.yaml.gotmpl` and referenced in the generated helmfiles. This means instead of expressions like `{{ .Requirements.cluster.provider }}` you can use the vanilla helm expression of `{{ .Values.jxRequirements.cluster.provider }}` in any `values.yaml.gotmpl` you use in helmfile like in the [tekton values.yaml.gotmpl](https://github.com/jenkins-x/jenkins-x-versions/blob/master/apps/jenkins-x/tekton/values.yaml.gotmpl#L8)
-* we put all secrets in a file called `secrets.yaml` with a top level key of `secrets` referenced by `$JX_SECRETS_DIR/secrets.yaml`. This means we can change any old boot expressions of `{{ .Parameters.pipelineUser.token }}` to the canonical helm expression `{{ .Values.secrets.pipelineUser.token }}` like in this [tekton values.yaml.gotmpl](https://github.com/jenkins-x/jenkins-x-versions/blob/master/apps/jenkins-x/tekton/values.yaml.gotmpl#L7)
+
+* On startup 
+* After each commit in a Pull Request
+* Whenever a commit is made to the main branch which isn’t a merge of a Pull Request merge
+
+
+The generate step does the following:
+
+
+* Resolves any missing values (cluster information, domain name) in the **jx-values.yaml** file
+* Resolves any missing versions or helm values.yaml files the **helmfile.yaml** file
+* Runs `helmfile template` to generate the kubernetes resources for all the charts
+* Copy all the generated resources into a tree of files in **config-root/namespaces/myns/somechart/*.yaml** where 
+    * **myns** is the namespace for the resources
+    * **Somechart** is the name of the chart (or chart alias) 
+* Any **Secret** resource is converted to an **ExternalSecret** so that it can be checked into git
+* A few extra steps are run on the YAMLs to help deployments
+    * Add a common label so that kubectl apply --prune --selector can be used
+    * Add some hashes to resources so that changes to configurations causes a rolling upgrade
+    * Add support for the [pusher wave](https://github.com/pusher/wave) operator so that changing of secret values (inside, say, vault or Amazon/Azure/Google secret manager) causes a rolling upgrade of pods.
+
+
+#### Apply step
+
+This step is run on any commit to the main branch(after the generate step has completed).
+
+It essentially does `kubectl apply` of the resources in the **config-root** tree in git.
+
+The apply step could be performed by other tools if need be (e.g. Google Anthos Config Sync or flux).
+
+
+### Promotion
+
+When you create a quickstart or import a new project a new release is created then promotion is triggered just like in Jenkins X 2.x.
+
+One change from Jenkins X 2.x is we default to including the specific kubernetes resources in git; rather than, say, just the name of a helm chart and the version.
+
+So what tends to happen is:
+
+
+* the promote step in a pipeline creates a Pull Request on the GitOps repository for the cluster to add or upgrade a helm chart and version
+* The above Generate and Apply steps run to fill in more details to the Pull Request of the actual kubernetes resources that will be added, modified or removed
+
+So you will see 2 commits on a typical promotion pull request; the high level change of the helm chart(s) and versions then the detail of the actual changes that will apply to kubernetes.
+
+
+## Comparison to 2.x
+
+From a high level Jenkins X 3.x similar to 2.x in that:
+
+* We use GitOps to manage applications, configurations and versions; keeping everything but secret values in git
+
+However we’ve made a few changes in 3.x:
+
+* We have a [simpler UX now for setting up Jenkins X](/docs/v3/getting-started/) which uses a library of GitOps repository templates you can start from
+    * This lets you choose the closest example to the kind of infrastructure, tools and secret store you want to use so it’s easier to get started if your requirements fit the common quickstarts
+* The setup/install/upgrade process runs inside kubernetes rather than on a developers laptop
+    * This avoids all kinds of issues with different installations of tools like git, kubectl, helm etc
+* In 2.x we always had a git repository for Dev, Staging and Production. In 3.x if those environments are all inside the same cluster we use the same git repository for configuring cluster level resources and resources in any namespaces.
+    * So by default there is 1 git repository with Jenkins X 3.x for the installation
+    * Whenever you create separate clusters (e.g. for muticluster support and you want Staging / Production environments to be separate), then each cluster gets its own git repository.
