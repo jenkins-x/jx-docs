@@ -1,14 +1,14 @@
 ---
 title: Comparison
 linktitle: Comparison
-description: Comparison of helm 3 + helmfile versus helm 2 with boot
+description: Comparison of 3.x to version 2.x
 weight: 90
 ---
 
 
-This document outlines the similarities and differences of the 3.x approach for those who are aware of `jx boot` with helm 2.
+This document outlines the similarities and differences of the 3.x approach for those who are aware of `jx boot` with helm 2 in 2.x of Jenkins X.
 
-## Similarities with `jx boot` and helm 2
+## Similarities between 2.x and 3.x
 
 Just like classic boot with the [jenkins-x-boot-config](https://github.com/jenkins-x/jenkins-x-boot-config/) git repository, this new [helmfile](https://github.com/roboll/helmfile) solution supports:
 
@@ -17,16 +17,16 @@ Just like classic boot with the [jenkins-x-boot-config](https://github.com/jenki
 * the git repository contains a `jenkins-x.yml` to implement the boot pipeline
 * a YAML file is used to store all the charts that are applied using `jx boot`
 
-## Differences with `jx boot` and helm 3
+## Differences with in 3.x
 
-* we use helm 3 along with [helmfile](https://github.com/roboll/helmfile) to actually apply the helm charts into a kubernetes cluster
+* we support any permutation of tools such as: [helm 3](https://helm.sh/), [helmfile](https://github.com/roboll/helmfile), [kustomize](https://kustomize.io/) and/or [kpt](https://googlecontainertools.github.io/kpt/) to create the kubernetes resources
 * any helm chart can be deployed in any namespace (previously we used 1 namespace for all charts in the [env/requirements.yaml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/env/requirements.yaml))
 * we no longer use a composite chart for `env/Chart.yaml` and instead deploy each chart independently
-  * this means that each chart has its own unique version number; so that `helm list` gives nice meaningful results
+  * this means that each chart has its own unique version number you can see in the `helmfile.yaml` file
 * we have done away with the complexity of `jenkins-x-platform` (a composite chart containing logs of [dependencies](https://github.com/jenkins-x/jenkins-x-platform/blob/master/jenkins-x-platform/requirements.yaml) like `jenkins` + `chartmuseum` + `nexus` etc) so that each chart can be added/removed independently or swapped out with a different version/distribution
 * instead of using [env/requirements.yaml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/env/requirements.yaml) we now use a simple and more powerful [helmfile.yaml](https://github.com/jenkins-x-labs/boot-helmfile-poc/blob/master/helmfile.yaml) file which is similar but supports:
   * we can specify a `namespace` on any chart
-  * we can add extra `valuesFiles` to use with the chart to override the helm `values.yaml` files
-  * different `phase` values so that we can default some charts like `nginx-ingress` to the `system` phase before we setup ingress, DNS, TLS and certs
-* instead of copying lots of `env/$appName/values*.yaml` files into the boot config like we do in [these folders](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/env/) such as [the lighthouse/values.tmpl.yaml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/env/lighthouse/values.tmpl.yaml) we can instead default all of these from the version stream at [apps/jenkins-x/lighthouse](https://github.com/jenkins-x/jenkins-x-versions/tree/master/apps/jenkins-x/lighthouse) - which means the boot config git repository is much simpler, we can share more configuration with the version stream and it avoids lots of git merge/rebase issues.
-* since we are using helm 3 directly you can add/remove apps and re-run `jx boot` and things are removed correctly.
+  * we can add extra `values` files to use with the chart to override the helm `values.yaml` files
+* instead of copying lots of `env/$appName/values*.yaml` files into the boot config like we do in [these folders](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/env/) such as [the lighthouse/values.tmpl.yaml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/env/lighthouse/values.tmpl.yaml) we can instead default all of these from the version stream at [apps/jenkins-x/lighthouse](https://github.com/jenkins-x/jxr-versions/tree/master/apps/jenkins-x/lighthouse) - which means the boot config git repository is much simpler, we can share more configuration with the version stream and it avoids lots of git merge/rebase issues.
+* adding and removing apps in your GitOps repository causes those resources to be properly installed or uninstalled
+  * you can also review exactly what kubernetes resources will change on the Pull Request
