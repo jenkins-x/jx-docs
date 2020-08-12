@@ -1,23 +1,32 @@
 ---
 title: Benefits
 linktitle: Benefits
-description: Benefits of the new helm 3 based boot
+description: Benefits of Jenkins X 3.x
 weight: 80
 ---
 
 
-* We can use vanilla helm 3 now to install, update or delete charts in any namespace without needing tiller or custom code to manage `helm template`
-  * We can avoid all the complexities of the `jx step helm apply` logic using our own helm template generation + post processing logic. We can also move away from boot's use of `{{ .Requirements.foo }}` and `{{ .Parameters.bar }}` expressions
-* It opens the door to a flexible [multi-cluster support](/docs/v3/guides/multi-cluster/) so that every cluster/environment can be managed in the same canonical GitOps approach (as each cluster can use `jx boot` whether its a dev environment or remote staging/production environment)
-* We can use the `helm list` command line to view versions of each chart/app nicely in the CLI.
-  * we can avoid composite charts to simplfiy configuration and upgrades
+* We can use vanilla tools like [helm 3](https://helm.sh/), [helmfile](https://github.com/roboll/helmfile), [kustomize](https://kustomize.io/), [kpt](https://googlecontainertools.github.io/kpt/) to install, update or delete charts in any namespace without needing helm 2.x or tiller or custom code to manage `helm template`
+  * We can avoid all the complexities of the `jx step helm apply` logic we used in Jenkins X 2.x
+  * Instead we can replace this with vanilla [helmfile](https://github.com/roboll/helmfile) to allow optional templating of `values.yaml` files when using helm
+* The new [Getting Started approach](/docs/v3/getting-started/) is much simpler, easier to configure and customise and is cleanly integrated with tools like Terraform and works well with diffent cloud infrastructure
+  * The default install/upgrade pipelines check in all the generated kubernetes resources and custom resources as YAML so its easy to understand
+* We use [Kubernetes External Secrets](https://github.com/godaddy/kubernetes-external-secrets) to provide a single way to manage secrets which supports the following back end systems:
+  * Alibaba Cloud KMS Secret Manager
+  * AWS Secrets Manager
+  * Azure Key Vault
+  * GCP Secret Manager
+  * Hashicorp Vault
+* It opens the door to a flexible [multi-cluster support](/docs/v3/guides/multi-cluster/) so that every cluster can be managed in the same canonical GitOps approach from a single git repository 
+* The new [getting started approach](/docs/v3/getting-started/) runs the boot pipeline as a `Job` inside the Kubernetes cluster. This ensures consistency in tooling used and also improves security by avoiding having the secrets on a developers laptop. 
+  * The only thing you run on your local machine when installing Jenkins X is [installing the git operator](/docs/v3/guides/operator/) which is a simple helm chart.
 * Everything is now an app. So if you want to remove our `nginx-ingress` chart and replace it with another ingress solution (knative / istio / gloo / ambassador / linkerd or whatever) just go ahead and use the [apps commands](/docs/v3/guides/apps/) to add/remove apps and have boot manage everything in a consistent way
-    * e.g. here's [an example](https://github.com/jstrachan/environment-bucketrepo-dev/blob/master/helmfile.yaml#L2-L5) of removing `nginx`, `chartmusem` and `nexus` and adding in `istio`, `flagger` and some other tools like `bucketrepo` and `kuberhealthy` via a single simple yaml change. Incidentally to replace the use of `Ingress` resources with istio's `Gateway` and `VirtualService` you also need to add the `kind: istio` flag in the [jx-requirements.yml](https://github.com/jstrachan/environment-bucketrepo-dev/blob/master/jx-requirements.yml#L57) file
+    * e.g. here's [an example](https://github.com/jx3-gitops-repositories/jx3-kind-vault/blob/master/helmfile.yaml#L17) of removing `chartmusem` and `nexus` and replacing it with `bucketrepo` via a single simple yaml change.
 * You can install an app in a specific namespace if you wish
     * This also opens the door to using boot to setup multi-team installations where multiple teams use different namespaces but share services in the same cluster
-* The new [getting started approach](/docs/v3/getting-started/) runs the boot pipeline as a `Job` inside the Kubernetes cluster. This ensures consistency in tooling used and also improves security by avoiding having the secrets on a developers laptop.
-* The boot git repository is much smaller and simpler; less to keep in sync/rebase/merge with the upstream git repository. Its mostly just 2 YAML files now `jx-requirements.yml` and `helmfile.yaml` which are both pretty much specific to your cluster installation. The `jenkins-x.yml` pipeline is configured inside the build pack so usually is 1 simple line long. So there's no need for all the git merge/rebase/cherry pick logic in jx 2.x
-  * we rely more instead on the [version stream](https://jenkins-x.io/about/concepts/version-stream/) which can be shared across installations
-* the install process how has a simpler [approach](/docs/v3/getting-started/) which works well with diffent cloud infrastructure
-* we no longer use `exposecontroller` and use regular helm configuration to create `Ingress` resources and [override domain names](/docs/v3/guides/faq/#how-do-i-configure-the-ingress-domain-in-dev-staging-or-production)
+* The cluster GitOps repository is simpler and easier to keep in sync/rebase/merge with the upstream git repositories.
+  * We use [kpt](https://googlecontainertools.github.io/kpt/) to do that for us
+  * We now include the [version stream](https://jenkins-x.io/about/concepts/version-stream/) inside your GitOps repository too inside the `versionStream` directory after installation so that all the information about your installation is inside a single git repository so its simpler to test changes & ensure consistency.
+* We can avoid composite charts to simplfiy configuration and upgrades
+* We no longer use `exposecontroller` and use regular helm configuration to create `Ingress` resources and [override domain names](/docs/v3/guides/faq/#how-do-i-configure-the-ingress-domain-in-dev-staging-or-production)
 * secret handling is currently much simpler using Kubernetes External Secrets for any secrets in any namespace or cluster for your own apps or for those used by Jenkins X.
