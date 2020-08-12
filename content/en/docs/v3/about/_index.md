@@ -2,7 +2,7 @@
 title: About
 linktitle: About
 type: docs
-description: Documentation about how Jenkins X 3 works and how it compares to 2.x
+description: Documentation about Jenkins X 3.x benefits, comparison and how it works
 weight: 60
 ---
 
