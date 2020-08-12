@@ -8,22 +8,27 @@ weight: 30
 Jenkins X 3.x uses a [git operator](https://github.com/jenkins-x/jx-git-operator) to manage installing + upgrading of Jenkins X and any other components in any environment.
 
 
-Usually if you have [created your git repository](/docs/v3/getting-started/) via the [jx admin create](/docs/v3/getting-started/) command then the operator will be installed for you so you can skip this step and proceed directly to [setting up secrets](../secrets).
+To install the operator run the following, passing in the git URL from the [git repository](/docs/v3/getting-started/) you created previously:
 
-If you create the git repository via some other means (e.g. by hand via the github Fork button or something) then you can run the `jx admin operator` command to install the operator for your repository.
 
 ```bash 
+export GIT_USER="myPipelineUsername"
+export GIT_TOKEN="myPipelineUserToken"
+
 jx admin operator --url=https://github.com/myorg/env-mycluster-dev.git
 ```
 
-If you are using a private git repository you can specify the user name and token to clone the git repository via `--git-username` and `--git-token` arguments or you can add them into the URL:
+If you are inside a git clone of the git repository you can omit the `--url`  option:
+
 
 ```bash 
-jx admin operator --url=https://myusername:mytoken@github.com/myorg/env-mycluster-dev.git
+export GIT_USER="myPipelineUsername"
+export GIT_TOKEN="myPipelineUserToken"
+
+jx admin operator
 ```
 
-This will use helm to install the [git operator](https://github.com/jenkins-x/jx-git-operator) which will trigger a Job whenever a change is merged to your git repository.
-
+This will use helm to install the [git operator](https://github.com/jenkins-x/jx-git-operator) which will trigger a Job to install Jenkins X (and re-trigger a Job whenever you commit to your git repository).
 
 You can now populate the [secrets](/docs/v3/guides/secrets/) 
 

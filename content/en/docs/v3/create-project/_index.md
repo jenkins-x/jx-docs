@@ -53,12 +53,13 @@ We've made a number of improvements over the the 2.x version of [jx import](http
 * if your repository contains a `Jenkinsfile` and you choose to import into a Jenkins server we don't run the build packs and generate a `Dockerfile`, helm chart or `jenkins-x.yml`
 
 
-## Changes since `jx import`
+## Changes since 2.x:
 
-For those of you who know [Jenkins X](https://jenkins-x.io/) and have used [jx import](https://jenkins-x.io/commands/jx_import/) before this wizard is a little different:
+For those of you who know [Jenkins X](https://jenkins-x.io/) and have used [jx import](https://jenkins-x.io/commands/jx_import/) before the new project wizard is a little different:
 
 * the commands are a little different:
+
   * `jx create import` is now `jx project import`
   * `jx create quickstart` is now `jx project quickstart`
-  * `jx create project` is now `jwizard`
+  * `jx create project` is now `jx project`
   * `jx create spring` is now `jx project spring`

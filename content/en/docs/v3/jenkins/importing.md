@@ -18,7 +18,7 @@ First you need to import the code via one of these approaches:
 If you are inside a git clone of the project you have with a `Jenkinsfile`  then run the import wizard:
 
 ```bash 
-jxl project import
+jx project import
 ``` 
 
 ### Import via a git URL 
@@ -27,7 +27,7 @@ If you don't have a local git clone then use:
 
 
 ```bash 
-jxl project import --git-url=https://github.com/myorg/myrepo.git
+jx project import --git-url=https://github.com/myorg/myrepo.git
 ```           
 
 ## Choose the remote Jenkins server 

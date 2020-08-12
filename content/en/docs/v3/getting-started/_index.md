@@ -8,7 +8,7 @@ lastmod: 2020-02-21
 weight: 5
 ---
 
-Jenkins X 3.x alpha includes a new install approach which uses tools like helm 3, kpt, kustomize and includes a number of [improvements](/docs/v3/guides/benefits/) over Jenkins X 2.x use of helm 2.
+Jenkins X 3.x alpha includes a new install approach which uses tools like helm 3, kpt, kustomize and includes a number of [improvements](/docs/v3/about/benefits/) over Jenkins X 2.x use of helm 2.
 
 ## Pick your initial git repository
 

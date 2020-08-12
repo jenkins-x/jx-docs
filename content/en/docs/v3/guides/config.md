@@ -397,7 +397,7 @@ Now update your dns provider so that [Google Cloud DNS](https://cloud.google.com
 
 Next you can edit the `jx-requirements.yml` and add your domain:
 
-__NOTE__ when using jxl on GKE the `externalDNS:` value is ignored and will be deprecated.  This flag used to create cloud resources but these have now been moved outside of the boot process.
+__NOTE__ when using jx on GKE the `externalDNS:` value is ignored and will be deprecated.  This flag used to create cloud resources but these have now been moved outside of the boot process.
 
 ```yaml
 ingress:
