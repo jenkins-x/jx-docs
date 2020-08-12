@@ -8,7 +8,7 @@ weight: 30
 Jenkins X 3.x uses a [git operator](https://github.com/jenkins-x/jx-git-operator) to manage installing + upgrading of Jenkins X and any other components in any environment.
 
 
-To install the operator run the following, passing in the git URL from the [git repository](/docs/v3/getting-started/) you created previously:
+To install the operator run the following, passing in the git URL from the [git repository](/docs/v3/getting-started/) you created previously via [jx admin operator](https://github.com/jenkins-x/jx-admin/blob/master/docs/cmd/jx-admin_operator.md):
 
 
 ```bash 
@@ -30,7 +30,17 @@ jx admin operator
 
 This will use helm to install the [git operator](https://github.com/jenkins-x/jx-git-operator) which will trigger a Job to install Jenkins X (and re-trigger a Job whenever you commit to your git repository).
 
-You can now populate the [secrets](/docs/v3/guides/secrets/) 
+The terminal will display the logs as the boot `Job` runs. 
+
+At any time you can tail the boot job logs via [jx admin log](https://github.com/jenkins-x/jx-admin/blob/master/docs/cmd/jx-admin_log.md):
+
+```bash 
+jx admin log
+```
+
+Jenkins X will now install itself.
+
+If you want to you can populate the [secrets](/docs/v3/guides/secrets/) once the `ExternalSecret` custom resources are created. 
 
 <nav>
   <ul class="pagination">

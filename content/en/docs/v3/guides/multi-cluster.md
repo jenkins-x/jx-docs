@@ -11,9 +11,14 @@ We recommend using separate clusters for your `Preprod` and `Production` environ
 
 ## Setting up multi cluster
 
-Follow new [getting started approach](/docs/v3/getting-started/) to setup a new cluster.
+Follow new [getting started approach](/docs/v3/getting-started/) to setup a new cluster. For `Preprod` and `Production` you typically won't need lots of the development tools like lighthouse and tekton; you will just want your actual applications and any additional services you need to run them (e.g. maybe nginx-ingress or cert-manager etc).
 
-Then when you have a git repository URL for your remote cluster, import the git repository like you wouu
-ld any other git repository into your development cluster:
+Then when you have a git repository URL for your `Preprod` or `Production`  cluster, [import the git repository](docs/v3/create-project/#import-an-existing-project) like you would any other git repository into your development cluster using the [jx project import](https://github.com/jenkins-x/jx-project/blob/master/docs/cmd/project_import.md) command:
+
+```bash 
+jx project import --url https://github.com/myowner/my-prod-repo.git
+```        
+
+This will create a Pull Request on your development cluster git repository to link to the `Preprod` or `Production` git repository on promotions of apps.
 
 
