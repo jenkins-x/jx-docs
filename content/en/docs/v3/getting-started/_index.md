@@ -31,7 +31,7 @@ This is our current recommended quickstart for Google Cloud:
     Create your infrastructure
   </a> 
 
-*  <a href="https://github.com/jx3-gitops-repositories/jx3-gke-terraform-vault/README.md" class="btn bg-primary text-light">Create or import projects</a> 
+*  <a href="/docs/v3/create-project/" class="btn bg-primary text-light">Create or import projects</a> 
 
 
 ## Google Cloud + gcloud + Vault 
@@ -48,4 +48,4 @@ This quickstart is similar to the above but does not use terraform so its ideal 
     Create your infrastructure
   </a> 
 
-*  <a href="https://github.com/jx3-gitops-repositories/jx3-gke-gcloud-vault/README.md" class="btn bg-primary text-light">Create or import projects</a> 
+*  <a href="/docs/v3/create-project/" class="btn bg-primary text-light">Create or import projects</a> 
