@@ -2,7 +2,7 @@
 title: Multi-Cluster
 linktitle: Multi-Cluster
 description: How to use multiple clusters with helm 3 and helmfile
-weight: 6
+weight: 100
 ---
 
 

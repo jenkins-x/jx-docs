@@ -6,7 +6,7 @@ weight: 30
 ---
 
 
-When importing a project `jxl project import` looks for a `Jenkinfile` in the source code. 
+When importing a project `jx project import` looks for a `Jenkinfile` in the source code. 
 
 If there is no `Jenkinsfile` then the wizard assumes you wish to proceed with a [Jenkins X Pipeline](https://jenkins-x.io/about/concepts/jenkins-x-pipelines/) based on Tekton and imports it in the usual Jenkins X way. You also get to confirm the kind of build pack and language you wish to use for the automated CI/CD - so its easy to import any workload whether its a library, a binary, a container image, a helm chart or a fully blown microservice for automated kubernetes based CI/CD.
 
