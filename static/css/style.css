@@ -1,6 +1,6 @@
 
 
-/* home page tab styling 
+/* home page tab styling
 .nav-tabs {
     border-bottom: 0px;
 }
@@ -34,15 +34,19 @@
 
 .td-sidebar {
     padding-top: 0px !important;
+    position: sticky;
+    margin-top: 5.5rem;
 }
 
 .td-main main {
     padding-top: 1.5rem !important;
+    margin-top: 5.5rem;
 }
 
 .td-toc {
-    top: 0rem;
+    top: 5.5rem;
     position: sticky;
+    /* padding-top: 5.5rem; */
 }
 
 a img {
