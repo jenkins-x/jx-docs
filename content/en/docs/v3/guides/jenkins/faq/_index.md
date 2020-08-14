@@ -23,4 +23,4 @@ As well as some commercial offerings:
 
 ## How can I connect to a remote Jenkins server?
 
-See [how to use the add jenkins server command](/docs/v3/jenkins/getting-started/#adding-jenkins-servers)
+See [how to use the add jenkins server command](/docs/v3/guides/jenkins/getting-started/#adding-jenkins-servers)

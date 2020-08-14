@@ -47,7 +47,7 @@ We've made a number of improvements over the the 2.x version of [jx import](http
 * when importing to Jenkins X we ask which build pack you wish to use (e.g. classic or kubernetes) so that you can import java libraries or node modules easily in addition to kubernetes native applications
 * the wizard will prompt you for the pack name (language) once the detection has occurred. Usually the pack name detection is good enough. e.g. detecting `maven` but you may wish to change the version of the pack (e.g. `maven-java11`)
 * when importing a project and you are using Jenkins X and Jenkins in the same cluster you get asked whether you want to import the project into [Jenkins X](https://jenkins-x.io/) or to pick which Jenkins server to use
-* we support 2 modes of importing projects to [a remote Jenkins server](/docs/v3/jenkins/)
+* we support 2 modes of importing projects to [a remote Jenkins server](/docs/v3/guides/jenkins/)
   * regular Jenkins import where a Multi Branch Project is used and Jenkins processes the webhooks
   * ChatOps mode: we use [lighthouse](https://github.com/jenkins-x/lighthouse) to handle the webhooks and ChatOps and then when triggered we trigger regular pipelines inside the Jenkins server 
 * if your repository contains a `Jenkinsfile` and you choose to import into a Jenkins server we don't run the build packs and generate a `Dockerfile`, helm chart or `jenkins-x.yml`
