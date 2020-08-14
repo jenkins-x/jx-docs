@@ -1,7 +1,7 @@
 ---
-title: Jenkins Support
-linktitle: Jenkins Support
-description: Support for remote Jenkins servers
+title: Jenkinsfile support
+linktitle: Jenkinsfile support
+description: How 3.x handles importing Jenkinsfiles
 weight: 30
 ---
 

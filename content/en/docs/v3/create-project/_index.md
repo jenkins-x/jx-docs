@@ -33,6 +33,11 @@ See the [import documentation](/docs/create-project/creating/import/) for more i
 
 Note that the old Jenkins X 2.x alias `jx import` is still supported but will be deprecated eventually.
 
+### Importing projects with Jenkinfiles
+
+Note that Jenkins X 3.x includes [new support for handling of importing Jenkinsfiles](jenkinsfile) if you are trying to combine Jenkins and Tekton together in Jenkins X.
+
+
 ## Top level wizard
 
 This gives you all of the above options in an interactive wizard via [jx project](https://github.com/jenkins-x/jx-project/blob/master/docs/cmd/project.md)
