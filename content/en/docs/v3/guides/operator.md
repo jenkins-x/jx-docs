@@ -5,8 +5,20 @@ description: Installing the Git Operator to install/upgrade Jenkins X
 weight: 30
 ---
 
-Jenkins X 3.x uses a [git operator](https://github.com/jenkins-x/jx-git-operator) to manage installing + upgrading of Jenkins X and any other components in any environment.
+Jenkins X 3.x uses a [git operator](https://github.com/jenkins-x/jx-git-operator) to manage installing + upgrading of Jenkins X and any other components in any environment. If you are interested you can read [how it works](/docs/v3/about/how-it-works/).
 
+## Git user and token
+
+To install the [git operator](https://github.com/jenkins-x/jx-git-operator) you will need a pipeline user and token for the git repository.
+
+This user and token needs read and write access to the git repository containing the installation configuration. Ideally the token will also have permissions to be able to create a webhook on the repository (to trigger CI/CD pipelines whenever someone creates a Pull Request on the git repository).
+
+You can always setup webhooks by hand yourself whenever a git repository is [created or imported](/docs/v3/create-project/) or the domain name of your [lighthouse](https://github.com/jenkins-x/lighthouse) hook endpoint changes via the [jx verify webhooks](https://github.com/jenkins-x/jx-verify/blob/master/docs/cmd/jx-verify_webhooks.md) command. Though its easier to get Jenkins X to automate this for you as part of the CI/CD pipelines; it just requires the git user and token to have sufficient permissions to list, create and modify webhooks.
+
+Note also that the same pipeline user and token is reused by default for all pipelines on [all repositories created or imported](/docs/v3/create-project/) which will need read, write and webhook permissions on all of those repositories too. Though if you really want you can change this later on by [editing the pipeline token](/docs/v3/guides/secrets/#editing-secrets).
+
+
+## Installing the operator
 
 To install the operator run the following, passing in the git URL from the [git repository](/docs/v3/getting-started/) you created previously via [jx admin operator](https://github.com/jenkins-x/jx-admin/blob/master/docs/cmd/jx-admin_operator.md) command:
 
