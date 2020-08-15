@@ -23,56 +23,45 @@ If you are using Vault as your back end for [Kubernetes External Secrets](https:
 
 To do this you can run the [jx secret vault portforward](https://github.com/jenkins-x/jx-secret/blob/master/docs/cmd/jx-secret_vault_portforward.md) command in a terminal. You should then be able to run the following `jx secret edit` or `jx secret import` commands.
 
-## Populate Secrets
+## Editing Secrets
 
-To populate the Secrets run:
+To edit the Secrets run:
 
-```
+```bash
 jx secret edit
 ```                  
 
-This will prompt you to enter all the missing Secrets required.
+This will prompt you to enter all the missing Secrets by default.
 
-<nav>
-  <ul class="pagination">
-    <li class="page-item"><a class="page-link" href="/docs/v3/getting-started">Previous</a></li>
-    <li class="page-item"><a class="page-link" href="../config">Next</a></li>
-  </ul>
-</nav>
+If you just want to enter a specific secret you can use `--filter` or `-f` to filter for a specific secret name.
 
-### Re-enter all secrets
+e.g.
 
-If you want to re-enter them all again or recreate tokens do the following:
+```bash
+jx secret edit -f nexus
+```                  
 
-```
-jx secret edit -a
-```                                                                        
 
-Note that once you have booted up a cluster you can omit the `--git-url` parameter as it can be discovered from the current kubernetes cluster (via the `dev` `Environment` resource)
+## Exporting Secrets
+
+You can export the current secrets to the file system via
+
+```bash
+jx secret export -f /tmp/mysecrets.yaml
+```                  
+
+Or to view them on the terminal...
+
+```bash
+jx secret export -c
+```                  
+
 
 ## Importing Secrets
 
-If you have an existing secrets.yaml file on the file system that looks kinda like this (with the actual values included)...
+If you have previously exported the secrets as shown above you can re-import them again (maybe into a different cluster):
 
-```yaml
-secrets:
-  adminUser:
-    username: todo
-    password: todo
-  docker:
-    url: ""
-    username: todo
-    password: todo
-  hmacToken: todo
-  pipelineUser:
-    username: todo
-    token: todo
-    email: todo
-```
-
-Then you can import this YAML file via:
-
-```
+```bash
 jx secret import -f /tmp/mysecrets.yaml 
 ```                  
 
@@ -83,25 +72,11 @@ If you have booted Jenkins X before you may well have secrets in your `~/.jx/loc
 
 If the file is valid you can just run:
 
-```
+```bash
 jx secret import -f ~/.jx/localSecrets/mycluster/secrets.yaml 
 ```                  
 
 ### Migrating Secrets from Vault
 
 If you have secrets already in a Vault then use the vault CLI tool to export the secrets to disk, reformat it in the above YAML layout and then import the secrets as above.
-
-## Exporting Secrets
-
-You can export the current secrets to the file system via
-
-```
-jx secret export -f /tmp/mysecrets.yaml
-```                  
-
-Or to view them on the terminal...
-
-```
-jx secret export -c
-```                  
 
