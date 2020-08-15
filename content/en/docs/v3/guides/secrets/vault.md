@@ -36,12 +36,12 @@ which ensures that:
 
 * [Kubernetes External Secrets](https://github.com/godaddy/kubernetes-external-secrets) is installed to populate Secrets from vault
 * the [vault operator](https://banzaicloud.com/products/bank-vaults/) is installed for operating vault 
-* a vault instance is created in the `vault-infra` namespace
+* a vault instance is created in the `secret-infra` namespace
 
-You can wait for the `vault-0` pod in namespace `vault-infra` to be ready via [jx vault wait](https://github.com/jenkins-x/jx-secret/blob/master/docs/cmd/jx-secret_vault_wait.md) command:
+You can wait for the `vault-0` pod in namespace `secret-infra` to be ready via [jx secret vault wait](https://github.com/jenkins-x/jx-secret/blob/master/docs/cmd/jx-secret_vault_wait.md) command:
 
 ```bash 
-jx vault wait
+jx secret vault wait
 ```
 
 Now your vault can be used.
@@ -57,7 +57,7 @@ jx secret vault portforward
 
 This will allow the [jx 3.x binary](/docs/v3/guides/jx3/) to access the Vault REST API.
 
-You can now follow the instructions to [populate secrets](/docs/v3/guides/secrets/#populate-secrets) or [import secrets](/docs/v3/guides/secrets/#importing-secrets).
+You can now follow the instructions to [edit secrets](/docs/v3/guides/secrets/#edit-secrets) or [import secrets](/docs/v3/guides/secrets/#importing-secrets).
 
 You can also access the vault web UI at [https://localhost:8200](https://localhost:8200)
 
@@ -70,10 +70,10 @@ Download the [vault CLI binary](https://www.vaultproject.io/downloads/) and add 
 You can now setup a shell to access vault as follows:
 
 ```bash 
-export VAULT_TOKEN=$(kubectl get secrets vault-unseal-keys -o jsonpath={.data.vault-root} | base64 --decode)
+export VAULT_TOKEN=$(kubectl get secrets vault-unseal-keys  -n secret-infra -o jsonpath={.data.vault-root} | base64 --decode)
 
 # Tell the CLI that the Vault Cert is signed by a custom CA
-kubectl get secret vault-tls -o jsonpath="{.data.ca\.crt}" | base64 --decode > $PWD/vault-ca.crt
+kubectl get secret vault-tls -n secret-infra -o jsonpath="{.data.ca\.crt}" | base64 --decode > $PWD/vault-ca.crt
 export VAULT_CACERT=$PWD/vault-ca.crt
 
 # Tell the CLI where Vault is listening (the certificate has 127.0.0.1 as well as alternate names)
