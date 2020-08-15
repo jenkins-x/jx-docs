@@ -20,27 +20,25 @@ Note also that the same pipeline user and token is reused by default for all pip
 
 ## Installing the operator
 
-To install the operator run the following, passing in the git URL from the [git repository](/docs/v3/getting-started/) you created previously via [jx admin operator](https://github.com/jenkins-x/jx-admin/blob/master/docs/cmd/jx-admin_operator.md) command:
-
-
-```bash 
-export GIT_USER="myPipelineUsername"
-export GIT_TOKEN="myPipelineUserToken"
-
-jx admin operator --url=https://github.com/myorg/env-mycluster-dev.git
-```
-
-If you are inside a git clone of the git repository you can omit the `--url`  option:
-
+Run [jx admin operator](https://github.com/jenkins-x/jx-admin/blob/master/docs/cmd/jx-admin_operator.md) command inside the git clone of the [git repository](/docs/v3/getting-started/) you created previously:
 
 ```bash 
-export GIT_USER="myPipelineUsername"
-export GIT_TOKEN="myPipelineUserToken"
-
 jx admin operator
 ```
 
-This will use helm to install the [git operator](https://github.com/jenkins-x/jx-git-operator) which will trigger a Job to install Jenkins X (and re-trigger a Job whenever you commit to your git repository).
+If you are not inside the git clone of the [git repository](/docs/v3/getting-started/) you will need to specify the `--url` parameter for the git URL:
+
+```bash 
+jx admin operator --url=https://github.com/myorg/env-mycluster-dev.git
+```
+
+If you know the git username and token you can pass those in on the command line too if you wish - otherwise the command will prompt you to enter the details:
+
+```bash 
+jx admin operator --url=https://github.com/myorg/env-mycluster-dev.git --username mygituser --token mygittoken
+```
+
+This command will use helm to install the [git operator](https://github.com/jenkins-x/jx-git-operator) which will trigger a Job to install Jenkins X (and re-trigger a Job whenever you commit to your git repository).
 
 The terminal will display the logs as the boot `Job` runs. 
 
@@ -52,7 +50,7 @@ jx admin log
 
 Jenkins X will now install itself.
 
-If you want to you can populate the [secrets](/docs/v3/guides/secrets/) once the `ExternalSecret` custom resources are created. 
+If you want to you can populate the [secrets](/docs/v3/guides/secrets/) once the `ExternalSecret` custom resources have been created. 
 
 <nav>
   <ul class="pagination">
