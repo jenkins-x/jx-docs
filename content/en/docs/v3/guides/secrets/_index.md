@@ -23,7 +23,7 @@ If you are using Vault as your back end for [Kubernetes External Secrets](https:
 
 To do this you can run the [jx secret vault portforward](https://github.com/jenkins-x/jx-secret/blob/master/docs/cmd/jx-secret_vault_portforward.md) command in a terminal. You should then be able to run the following `jx secret edit` or `jx secret import` commands.
 
-## Editing Secrets
+## Edit Secrets
 
 To edit the Secrets run:
 
@@ -42,7 +42,7 @@ jx secret edit -f nexus
 ```                  
 
 
-## Exporting Secrets
+## Export Secrets
 
 You can export the current secrets to the file system via
 
@@ -57,7 +57,7 @@ jx secret export -c
 ```                  
 
 
-## Importing Secrets
+## Import Secrets
 
 If you have previously exported the secrets as shown above you can re-import them again (maybe into a different cluster):
 

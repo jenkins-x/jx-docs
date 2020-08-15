@@ -57,7 +57,7 @@ jx secret vault portforward
 
 This will allow the [jx 3.x binary](/docs/v3/guides/jx3/) to access the Vault REST API.
 
-You can now follow the instructions to [edit secrets](/docs/v3/guides/secrets/#edit-secrets) or [import secrets](/docs/v3/guides/secrets/#importing-secrets).
+You can now follow the instructions to [edit secrets](/docs/v3/guides/secrets/#edit-secrets) or [import secrets](/docs/v3/guides/secrets/#import-secrets).
 
 You can also access the vault web UI at [https://localhost:8200](https://localhost:8200)
 
