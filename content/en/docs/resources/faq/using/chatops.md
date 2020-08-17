@@ -15,13 +15,13 @@ We use the phrase _ChatOps_ to mean operating code changes and GitOPs promotion 
 
 ChatOps helps developers collaborate on Pull Requests and speeds up merging of Pull Requests. We want to be able to merge changes as quickly as possible into master so that we continuously integrate code which minimises the downsides of long term feature branching and merge hell.
 
-ChatOps (and [tide in particular](#what-does-hook-do)) also helps automate and speeds up tasks e.g.
+ChatOps (and [tide in particular](#what-does-hook-do)) also helps automate and speeds up tasks:
 
 * developers don't have to keep hitting reload on a Pull Request page waiting for all the tests to pass so that they can click `Merge`. Just add a `/lgtm` comment or approve the code review and the Pull Request will automatically get merged once its tests go green. This also avoids developers accidentally hitting `Merge` before all the test pass!
 * all Pull Request are automatically rebased and tested against master before merging - further ensuring we don't accidentally break master
-* batch merging of Pull Request is supported to speed up merging Pull Requests.
+* batch merging of Pull Requests is supported to speed up merging Pull Requests.
 
-For more detail see [what does tide do](#what-does-hook-do)
+For more details see [what does tide do](#what-does-hook-do).
 
 ## Which kinds of webhook support ChatOps?
 
@@ -41,7 +41,7 @@ Note that you need to be in the `OWNERS` file as an [approver for this to work](
 
 ## How do I add multiple parallel pipelines to a project?
 
-It can be useful to have multiple pipelines to perform different kinds of long running tests on Pull Requests. e.g. running the same test suite using different databases, microsevice configurations or underlying infrastructure.
+It can be useful to have multiple pipelines to perform different kinds of long running tests on Pull Requests. e.g. running the same test suite using different databases, microservice configurations or underlying infrastructure.
 
 In Jenkins X you can create a custom `Scheduler` resource in your [jx boot](/docs/getting-started/setup/boot/) configuration (in `env/templates/myscheduler.yaml`) which you can add multiple named contexts in the `presubmits` section. Then for each context name make sure you have a file called `jenkins-x-${context}.yml` in your project. 
 
