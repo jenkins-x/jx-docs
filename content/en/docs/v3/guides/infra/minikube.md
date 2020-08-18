@@ -1,0 +1,68 @@
+---
+title: Minikube
+linktitle: Minikube
+description: Using minikube to run Jenkins X on your laptop
+weight: 50
+---
+
+
+This guide will walk you though how to setup Jenkins X on your laptop using [minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/)
+
+## Prerequisites
+
+* [Download and install the jx 3.x binary](/docs/v3/guides/jx3/)
+ 
+* [Install minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/)
+
+* You need to create a `minikube` cluster via the following command:
+
+```bash
+minikube start --cpus 4 --memory 8048 --disk-size=100g --addons=ingress
+```
+ 
+## Setup
+
+*  <a href="https://github.com/jx3-gitops-repositories/jx3-minikube-vault/generate" target="github" class="btn bg-primary text-light">Create Git Repository</a> to store the GitOps configuration of Jenkins X and the apps you want to deploy
+
+* `git clone` the new repository and `cd` into the git clone directory
+
+* configure the `ingress.domain` to point to your `$(minikube ip).nip.io`:
+
+```bash 
+export DOMAIN="$(minikube ip).nip.io"
+jx gitops requirements edit --domain $DOMAIN
+```
+
+* the `ingress.domain` in `jx-requirements.yml` should now be configured to the value of `$DOMAIN`
+
+* to enable webhooks you need to [install and setup ngrok](https://ngrok.com/)
+
+* setup a webhook tunnel to your laptop:
+
+```bash 
+ngrok http 8080
+``` 
+  
+* copy your personal ngrok domain name of the form `abcdef1234.ngrok.io` into the `charts/jenkins-x/jxboot-helmfile-resources/values.yaml` file in the `ingress.customHosts.hosts` file so that your file looks like this...
+
+```yaml 
+ingress:
+  customHosts:
+    hook: "abcdef1234.ngrok.io"
+...
+```
+
+* git add, commit and push your changes:
+
+```bash
+git add *
+git commit -a -m "fix: configurations for local minikube"
+git push origin master 
+``` 
+
+* now [install the git operator](/docs/v3/guides/operator/)
+
+*  <a href="/docs/v3/create-project/" class="btn bg-primary text-light">Create or import projects</a> 
+
+
+
