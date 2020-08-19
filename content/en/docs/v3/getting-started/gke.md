@@ -8,21 +8,27 @@ lastmod: 2020-02-21
 weight: 20
 ---
 
-### GKE + Terraform + Vault
-This is our current recommended quickstart for GKE:
+---
+**NOTE**
 
-*  <a href="https://github.com/jx3-gitops-repositories/jx3-gke-terraform-vault/generate" target="github" class="btn bg-primary text-light">Create Git Repository</a> 
+Ensure you are logged into GitHub else you will get a 404 error when clicking the links below
+
+---
+
+### GKE + Terraform
+This is our current recommended quickstart for Google Cloud Platform:
+
+*  <a href="https://github.com/jx3-gitops-repositories/jx3-terraform-gke/generate" target="github" class="btn bg-primary text-light">Create Git Repository</a> 
 
 * `git clone` the new repository and `cd`  into the git clone
 
-*  <a href="https://github.com/jx3-gitops-repositories/jx3-gke-terraform-vault/blob/master/bin/README.md" 
+*  <a href="https://github.com/jx3-gitops-repositories/jx3-terraform-gke/blob/master/README.md"
     target="github" class="btn bg-primary text-light" 
     title="use your new git repository to create your cloud infrastructure and install Jenkins X">
     Create your infrastructure
-  </a> 
+  </a>
 
-*  <a href="/docs/v3/create-project/" class="btn bg-primary text-light">Create or import projects</a> 
-
+*  <a href="/docs/v3/create-project/" class="btn bg-primary text-light">Create or import projects</a>
 
 ### GKE + gcloud + Vault 
 This quickstart is similar to the above but does not use terraform so its ideal if you just want to create a quick cluster to kick the tyres without needing to learn terraform.

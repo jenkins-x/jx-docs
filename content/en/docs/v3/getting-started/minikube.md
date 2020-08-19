@@ -8,6 +8,13 @@ lastmod: 2020-02-21
 weight: 100
 ---
 
+---
+**NOTE**
+
+Ensure you are logged into GitHub else you will get a 404 error when clicking the links below
+
+---
+
 ### Minikube + Vault
 
 This is our current recommended quickstart for Minikube:
