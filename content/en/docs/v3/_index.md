@@ -7,5 +7,3 @@ weight: 45
 aliases:
   - /labs
 ---
-
-
