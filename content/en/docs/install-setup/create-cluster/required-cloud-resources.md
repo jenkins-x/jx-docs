@@ -47,7 +47,7 @@ For example, the Build Controller needs to be able to store log files into the l
 Another example is [ExternalDNS](https://github.com/kubernetes-sigs/external-dns) creating dynamically new DNS entries for services.
 In this case ExternalDNS service needs access to the DNS APIs of the underyling cloud provider.
 
-To ensure that each service gets only the permissions it needs to fulfill its resposibilty, cloud providers allow to bind Kuberenetes service accounts to cloud provider specific service announts or roles.
+To ensure that each service gets only the permissions it needs to fulfill its responsibilty, cloud providers allow to bind Kubernetes service accounts to cloud provider specific service announts or roles.
 The mechanism to achieve this varies between cloud providers.
 For Google Cloud it is called [Workload Identity](https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity) and for AWS [IAM Roles for Service Accounts](https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html).
 It is the resposibilty of the corresponding Terraform module to configure these permissions.
@@ -56,13 +56,13 @@ At the moment Kubernetes service accounts for the following areas are created:
 
 {{% description-list %}}
 
-* Tekton; Service account used by Tekton for the actual pipline execution.
+* Tekton; Service account used by Tekton for the actual pipeline execution.
 The Tekton service account needs permissions to read and write to cloud storage.
 The name of the service account is _tekton-bot_.
 * Build Controller; Service account used by the Build Controller service which is responsible to track the overall progress of pipeline executions.
 The Build Controller service account needs permissions to read and write to cloud storage.
 The name of the service account is _jenkins-x-controllerbuild_.
-* DNS; There are three Kuberenetes services accounts created related to DNS.
+* DNS; There are three Kubernetes services accounts created related to DNS.
 One for ExternalDNS with the name _exdns-external-dns_ and two for [cert-manager](https://github.com/jetstack/cert-manager), namely _cm-cert-manager_ and _cm-cainjector_.
 Each of these services need access to the DNS API of the cloud provider.
 * Vault; Service account used by the Vault operator.
@@ -71,12 +71,12 @@ The name of the service account is _\<cluster-name\>-vt.
 * Velero; Service account used by the Velero backup service.
 The Velero service account needs permissions to read and write to cloud storage.
 The name of the service account is _velero-server_
-* Kaniko; Service account used by [Kaniko](https://github.com/GoogleContainerTools/kaniko) which is a safer option to build Docker images in Kuberenetes than the Docker daemon.
+* Kaniko; Service account used by [Kaniko](https://github.com/GoogleContainerTools/kaniko) which is a safer option to build Docker images in Kubernetes than the Docker daemon.
 The Kaniko service account needs permissions to read and write to cloud storage.
 The name of the service account is _kaniko-sa_.
 
 {{% /description-list %}}
 
-## Kryptograpphic key management
+## Cryptographic key management
 
-For using the Vault Operator, the Terraform module needs to create a krypographic keyring and key to seed Vault.
+For using the Vault Operator, the Terraform module needs to create a cryptographic keyring and key to seed Vault.
