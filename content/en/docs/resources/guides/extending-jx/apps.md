@@ -27,6 +27,10 @@ Planned features include:
 * only asking new questions during app upgrade
 * integration for bash completion
 
+### Official Apps repositry
+
+Jenkins X provides a lot Apps like: Gloo, Istio, Kubeless and more in https://github.com/jenkins-x-apps.
+
 ### CLI Commands
 
 * [jx add app](/commands/jx_add_app/) - Adds an app to Jenkins X
