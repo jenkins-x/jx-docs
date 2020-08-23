@@ -27,19 +27,19 @@
         ul {
             padding: 0;
             margin: 0;
- 
+
         }
 
         @include media-breakpoint-up(md) {
             & > ul {
                 padding-left: .5rem;
-                
+
             }
         }
 
 
         padding-left: 0;
-   
+
     }
 
     &__section-title {
@@ -90,9 +90,10 @@
 .td-sidebar {
     @include media-breakpoint-up(md) {
         padding-top: 4rem;
-        background-color: $td-sidebar-bg-color;
+        // background-color: $td-sidebar-bg-color;
         padding-right: 1rem;
         border-right: 1px solid $td-sidebar-border-color;
+        max-height: calc(100vh - 10rem);
     }
 
 
