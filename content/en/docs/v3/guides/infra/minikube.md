@@ -17,7 +17,7 @@ This guide will walk you though how to setup Jenkins X on your laptop using [min
 * You need to create a `minikube` cluster via the following command:
 
 ```bash
-minikube start --cpus 4 --memory 8048 --disk-size=100g --addons=ingress
+minikube start --cpus 4 --memory 8048 --disk-size=100g --addons=ingress --vm=true
 ```
  
 ## Setup
