@@ -62,6 +62,12 @@ git push origin master
 
 * now [install the git operator](/docs/v3/guides/operator/)
 
+* once Jenkins X is installed run the following command to enable webhooks via `ngrok`
+
+```bash   
+kubectl port-forward svc/hook 8080:80
+``` 
+
 *  <a href="/docs/v3/create-project/" class="btn bg-primary text-light">Create or import projects</a> 
 
 
