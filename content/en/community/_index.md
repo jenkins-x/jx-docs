@@ -14,10 +14,10 @@ no_list: true
 
 Welcome to the Jenkins X community!
 
+We value respect and inclusiveness and follow the [CDF Code of Conduct](/community/code_of_conduct/) in all interactions.
+
 Join us on [Slack](/community/#slack), [Discourse](https://jenkinsx.discourse.group/), and during [Office Hours](/community/#office-hours) to ask questions and tell us what you are building.
 Upcoming [events and webinars](/community/#events--webinars) are shown on our [Event Calendar](/community/calendar) or announced on [Twitter](https://twitter.com/jenkinsxio).
-
-We value respect and inclusiveness and follow the [CDF Code of Conduct](/community/code_of_conduct/) in all interactions.
 
 <!-- {{< figure src="/images/community/GoCommunity-background.png" class="img-thumbnail" >}}
 image by Ashley McNamara, [creative commons license](https://github.com/ashleymcnamara/gophers/blob/master/GoCommunity.png) -->
