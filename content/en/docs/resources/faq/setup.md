@@ -83,3 +83,15 @@ Use the global `--verbose` flag to add more verbosity to the JenkinsX logs:
 ```bash
 jx boot --verbose
 ```
+
+## How to get a clean terraform destroy
+The following steps need to be performed before a terraform destroy can be executed successfully for the EKS cluster.
+* Empty the s3 buckets created by jenkinsX (This is required if `force_destroy` was set to false, when provisioning 
+the EKS cluster)
+* Delete the Network load balancer (The load balancer is created outside terraform, so you need to delete it manually 
+in the EC2 console before executing a terraform destroy.
+You can also import it to terraform, and then execute destroy)
+
+If you do not delete the load balancer, you will have issues with detaching the internet gateway (IGW) and deleting it.
+This can lead to a race condition where terraform tries to destroy the auto scaling group and the IGW, and eventually
+times out.
