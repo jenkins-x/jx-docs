@@ -59,7 +59,7 @@ git add index.html server.js
     <img src="/images/pr-comment.png"/>
   </div>
 </div>
-The preview environment is created whenever a change is made to the
+The preview environment is created whenever a pull request to master is created in the
 repository, allowing any relevant user to validate or evaluate features,
 bugfixes, or security hotfix.
 
