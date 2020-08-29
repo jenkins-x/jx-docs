@@ -26,7 +26,7 @@ Jenkins X pipelines are configured in YAML configuration files. The files can be
 found in two locations serving distinct purposes:
 
 * In the Jenkins X project repository, called `jenkins-x.yml`.
-* In the build packs for creating applications, if it is specified in the project repository `jenkins-x.yml` file under `buildPack`.
+* In the build packs for creating applications, if it is specified in the project repository `pipeline.yaml` file under `buildPack`.
 
 ## Pipeline types
 
