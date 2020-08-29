@@ -61,7 +61,8 @@ git add index.html server.js
 </div>
 The preview environment is created whenever a pull request to master is created in the
 repository, allowing any relevant user to validate or evaluate features,
-bugfixes, or security hotfix.
+bugfixes, or security hotfix. Then, as additional commits are added to the PR branch
+the preview environment is automatically updated.
 
 ### Testing the preview environment
 
