@@ -7,12 +7,12 @@ description: list of jx commands
 ---
 ## jx step create helmfile
 
-[33mAlpha command, expect this to change or be removed, created: Jan 28 2020[0m
+Alpha command, expect this to change or be removed, created: Jan 28 2020
 
 ### Synopsis
 
-[33mAlpha command, expect this to change or be removed, created: Jan 28 2020
-** EXPERIMENTAL COMMAND ** Generates a helmfile from a jx-apps.yml see enhancement https://github.com/jenkins-x/enhancements/pull/1[0m
+Alpha command, expect this to change or be removed, created: Jan 28 2020
+** EXPERIMENTAL COMMAND ** Generates a helmfile from a jx-apps.yml see enhancement https://github.com/jenkins-x/enhancements/pull/1
 
 ```
 jx step create helmfile [flags]

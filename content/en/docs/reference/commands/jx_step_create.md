@@ -34,7 +34,7 @@ jx step create [flags]
 
 * [jx step](/commands/jx_step/)	 - pipeline steps
 * [jx step create devpod](/commands/jx_step_create_devpod/)	 - Creates the DevPod workspace files
-* [jx step create helmfile](/commands/jx_step_create_helmfile/)	 - [33mAlpha command, expect this to change or be removed, created: Jan 28 2020[0m
+* [jx step create helmfile](/commands/jx_step_create_helmfile/)	 - Alpha command, expect this to change or be removed, created: Jan 28 2020
 * [jx step create install](/commands/jx_step_create_install/)	 - Verifies the ingress configuration defaulting the ingress domain if necessary
 * [jx step create pullrequest](/commands/jx_step_create_pullrequest/)	 - create pullrequest [command]
 * [jx step create task](/commands/jx_step_create_task/)	 - Creates a Tekton PipelineRun for the current folder or given build pack
