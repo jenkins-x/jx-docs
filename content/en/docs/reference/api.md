@@ -2092,8 +2092,8 @@ ConfigUpdater
 <td>
 <code>welcome</code></br>
 <em>
-<a href="#jenkins.io/v1.*github.com/jenkins-x/jx/pkg/apis/jenkins.io/v1.Welcome">
-[]*github.com/jenkins-x/jx/pkg/apis/jenkins.io/v1.Welcome
+<a href="#jenkins.io/v1.*github.com/jenkins-x/jx-api/pkg/apis/jenkins.io/v1.Welcome">
+[]*github.com/jenkins-x/jx-api/pkg/apis/jenkins.io/v1.Welcome
 </a>
 </em>
 </td>
@@ -2116,8 +2116,8 @@ Periodics
 <td>
 <code>attachments</code></br>
 <em>
-<a href="#jenkins.io/v1.*github.com/jenkins-x/jx/pkg/apis/jenkins.io/v1.Attachment">
-[]*github.com/jenkins-x/jx/pkg/apis/jenkins.io/v1.Attachment
+<a href="#jenkins.io/v1.*github.com/jenkins-x/jx-api/pkg/apis/jenkins.io/v1.Attachment">
+[]*github.com/jenkins-x/jx-api/pkg/apis/jenkins.io/v1.Attachment
 </a>
 </em>
 </td>
@@ -3697,7 +3697,7 @@ namespace provided, or the default if it is not set.</p>
 <code>map</code></br>
 <em>
 <a href="#jenkins.io/v1.ConfigMapSpec">
-map[string]github.com/jenkins-x/jx/pkg/apis/jenkins.io/v1.ConfigMapSpec
+map[string]github.com/jenkins-x/jx-api/pkg/apis/jenkins.io/v1.ConfigMapSpec
 </a>
 </em>
 </td>
@@ -3991,7 +3991,7 @@ string
 </tr>
 <tr>
 <td>
-<code>component, omitempty</code></br>
+<code>component</code></br>
 <em>
 string
 </em>
@@ -4072,7 +4072,7 @@ string
 </tbody>
 </table>
 <h3 id="jenkins.io/v1.DependencyUpdatePath">DependencyUpdatePath
-(<code>[]github.com/jenkins-x/jx/pkg/apis/jenkins.io/v1.DependencyUpdateDetails</code> alias)</p></h3>
+(<code>[]github.com/jenkins-x/jx-api/pkg/apis/jenkins.io/v1.DependencyUpdateDetails</code> alias)</p></h3>
 <p>
 (<em>Appears on:</em>
 <a href="#jenkins.io/v1.DependencyUpdate">DependencyUpdate</a>)
@@ -6196,8 +6196,8 @@ ReplaceableSliceOfStrings
 <td>
 <code>entries</code></br>
 <em>
-<a href="#jenkins.io/v1.*github.com/jenkins-x/jx/pkg/apis/jenkins.io/v1.Periodic">
-[]*github.com/jenkins-x/jx/pkg/apis/jenkins.io/v1.Periodic
+<a href="#jenkins.io/v1.*github.com/jenkins-x/jx-api/pkg/apis/jenkins.io/v1.Periodic">
+[]*github.com/jenkins-x/jx-api/pkg/apis/jenkins.io/v1.Periodic
 </a>
 </em>
 </td>
@@ -7062,8 +7062,8 @@ configurations in the parent scheduler</p>
 <td>
 <code>entries</code></br>
 <em>
-<a href="#jenkins.io/v1.*github.com/jenkins-x/jx/pkg/apis/jenkins.io/v1.Postsubmit">
-[]*github.com/jenkins-x/jx/pkg/apis/jenkins.io/v1.Postsubmit
+<a href="#jenkins.io/v1.*github.com/jenkins-x/jx-api/pkg/apis/jenkins.io/v1.Postsubmit">
+[]*github.com/jenkins-x/jx-api/pkg/apis/jenkins.io/v1.Postsubmit
 </a>
 </em>
 </td>
@@ -7222,8 +7222,8 @@ string
 <td>
 <code>queries</code></br>
 <em>
-<a href="#jenkins.io/v1.*github.com/jenkins-x/jx/pkg/apis/jenkins.io/v1.Query">
-[]*github.com/jenkins-x/jx/pkg/apis/jenkins.io/v1.Query
+<a href="#jenkins.io/v1.*github.com/jenkins-x/jx-api/pkg/apis/jenkins.io/v1.Query">
+[]*github.com/jenkins-x/jx-api/pkg/apis/jenkins.io/v1.Query
 </a>
 </em>
 </td>
@@ -7282,8 +7282,8 @@ configurations in the parent scheduler</p>
 <td>
 <code>entries</code></br>
 <em>
-<a href="#jenkins.io/v1.*github.com/jenkins-x/jx/pkg/apis/jenkins.io/v1.Presubmit">
-[]*github.com/jenkins-x/jx/pkg/apis/jenkins.io/v1.Presubmit
+<a href="#jenkins.io/v1.*github.com/jenkins-x/jx-api/pkg/apis/jenkins.io/v1.Presubmit">
+[]*github.com/jenkins-x/jx-api/pkg/apis/jenkins.io/v1.Presubmit
 </a>
 </em>
 </td>
@@ -7750,8 +7750,8 @@ bool
 <td>
 <code>entries</code></br>
 <em>
-<a href="#jenkins.io/v1.*github.com/jenkins-x/jx/pkg/apis/jenkins.io/v1.ProtectionPolicy">
-map[string]*github.com/jenkins-x/jx/pkg/apis/jenkins.io/v1.ProtectionPolicy
+<a href="#jenkins.io/v1.*github.com/jenkins-x/jx-api/pkg/apis/jenkins.io/v1.ProtectionPolicy">
+map[string]*github.com/jenkins-x/jx-api/pkg/apis/jenkins.io/v1.ProtectionPolicy
 </a>
 </em>
 </td>
@@ -8312,8 +8312,8 @@ bool
 <td>
 <code>Items</code></br>
 <em>
-<a href="#jenkins.io/v1.*github.com/jenkins-x/jx/pkg/apis/jenkins.io/v1.ContextPolicy">
-map[string]*github.com/jenkins-x/jx/pkg/apis/jenkins.io/v1.ContextPolicy
+<a href="#jenkins.io/v1.*github.com/jenkins-x/jx-api/pkg/apis/jenkins.io/v1.ContextPolicy">
+map[string]*github.com/jenkins-x/jx-api/pkg/apis/jenkins.io/v1.ContextPolicy
 </a>
 </em>
 </td>
@@ -8395,8 +8395,8 @@ bool
 <td>
 <code>entries</code></br>
 <em>
-<a href="#jenkins.io/v1.*github.com/jenkins-x/jx/pkg/apis/jenkins.io/v1.ExternalPlugin">
-[]*github.com/jenkins-x/jx/pkg/apis/jenkins.io/v1.ExternalPlugin
+<a href="#jenkins.io/v1.*github.com/jenkins-x/jx-api/pkg/apis/jenkins.io/v1.ExternalPlugin">
+[]*github.com/jenkins-x/jx-api/pkg/apis/jenkins.io/v1.ExternalPlugin
 </a>
 </em>
 </td>
@@ -8862,8 +8862,8 @@ ConfigUpdater
 <td>
 <code>welcome</code></br>
 <em>
-<a href="#jenkins.io/v1.*github.com/jenkins-x/jx/pkg/apis/jenkins.io/v1.Welcome">
-[]*github.com/jenkins-x/jx/pkg/apis/jenkins.io/v1.Welcome
+<a href="#jenkins.io/v1.*github.com/jenkins-x/jx-api/pkg/apis/jenkins.io/v1.Welcome">
+[]*github.com/jenkins-x/jx-api/pkg/apis/jenkins.io/v1.Welcome
 </a>
 </em>
 </td>
@@ -8886,8 +8886,8 @@ Periodics
 <td>
 <code>attachments</code></br>
 <em>
-<a href="#jenkins.io/v1.*github.com/jenkins-x/jx/pkg/apis/jenkins.io/v1.Attachment">
-[]*github.com/jenkins-x/jx/pkg/apis/jenkins.io/v1.Attachment
+<a href="#jenkins.io/v1.*github.com/jenkins-x/jx-api/pkg/apis/jenkins.io/v1.Attachment">
+[]*github.com/jenkins-x/jx-api/pkg/apis/jenkins.io/v1.Attachment
 </a>
 </em>
 </td>
@@ -10211,5 +10211,5 @@ PromoteWorkflowStep
 <hr/>
 <p><em>
 Generated with <code>gen-crd-api-reference-docs</code>
-on git commit <code>90ca3ea85</code>.
+on git commit <code>11f2023</code>.
 </em></p>
