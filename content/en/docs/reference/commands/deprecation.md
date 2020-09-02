@@ -1,5 +1,5 @@
 ---
-date: 2020-06-30T11:00:19Z
+date: 2020-09-02T10:36:03-04:00
 title: "deprecated commands"
 slug: deprecation
 url: /commands/deprecation/
@@ -13,6 +13,7 @@ description: list of jx commands which have been deprecated
 
 | Command        | Removal Date   | Replacement  |
 |----------------|----------------|--------------|
+| jx create addon kubeless | Sep 1 2020 | jx add app jx-app-kubeless |
 | jx create spring | Sep 1 2020 | jx create project |
 | jx create vault | Sep 1 2020 |  |
 | jx delete vault | Sep 1 2020 |  |
