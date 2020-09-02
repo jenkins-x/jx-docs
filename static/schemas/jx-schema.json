@@ -759,6 +759,12 @@
         "pipeline": {
           "type": "string"
         },
+        "sidecars": {
+          "items": {
+            "$ref": "#/definitions/Container"
+          },
+          "type": "array"
+        },
         "stage": {
           "type": "string"
         },
@@ -1044,6 +1050,12 @@
         "retry": {
           "type": "integer"
         },
+        "sidecars": {
+          "items": {
+            "$ref": "#/definitions/Container"
+          },
+          "type": "array"
+        },
         "timeout": {
           "$schema": "http://json-schema.org/draft-04/schema#",
           "$ref": "#/definitions/Timeout"
@@ -1246,6 +1258,12 @@
         },
         "retry": {
           "type": "integer"
+        },
+        "sidecars": {
+          "items": {
+            "$ref": "#/definitions/Container"
+          },
+          "type": "array"
         },
         "stash": {
           "$schema": "http://json-schema.org/draft-04/schema#",
