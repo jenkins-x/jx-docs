@@ -21,7 +21,13 @@ You can then rotate secrets easily independent of git.
 
 If you are using Vault as your back end for [Kubernetes External Secrets](https://github.com/godaddy/kubernetes-external-secrets)  then before you try any of the following commands to populate secrets you need to make sure your termminal can access Vault.
 
-To do this you can run the [jx secret vault portforward](https://github.com/jenkins-x/jx-secret/blob/master/docs/cmd/jx-secret_vault_portforward.md) command in a terminal. You should then be able to run the following `jx secret edit` or `jx secret import` commands.
+To do this you can run the [jx secret vault portforward](https://github.com/jenkins-x/jx-secret/blob/master/docs/cmd/jx-secret_vault_portforward.md) command in a terminal:
+ 
+```bash
+jx secret vault portforward
+```                  
+ 
+You should then be able to run the following `jx secret edit` or `jx secret import` commands.
 
 ## Edit Secrets
 
