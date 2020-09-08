@@ -18,3 +18,9 @@ This will:
 * make any changes in the version stream to the [boot job and its configuration](/docs/v3/about/how-it-works/#boot-job)
 
 After running this command you will usually have some changes in git you can review. If you are happy with the changes commit them and create a Pull Request so that they can get applied on your cluster.
+
+```bash
+git add *
+git commit -a -m "fix: ugprade versions"
+git push
+```      
