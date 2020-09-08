@@ -95,3 +95,9 @@ You can also import it to terraform, and then execute destroy)
 If you do not delete the load balancer, you will have issues with detaching the internet gateway (IGW) and deleting it.
 This can lead to a race condition where terraform tries to destroy the auto scaling group and the IGW, and eventually
 times out.
+
+## Does Jenkins X install a load balancer?
+
+Jenkins X installs `nginx` which has a `LoadBalancer` kubernetes `Service`. But the underlying kubernetes platform needs to implement the load balancing network and infrastructure. This comes OOTB on all public clouds. 
+ 
+On premise you need to install something like [MetalLB](https://metallb.universe.tf/)
