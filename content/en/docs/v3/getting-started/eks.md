@@ -1,7 +1,7 @@
 ---
 title: Getting Started With EKS
 linktitle: Getting Started With EKS
-description: Getting started with Jenkins X, helm 3 and kustomize on EKS
+description: Getting started with Jenkins X and helm 3 on EKS
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2020-02-21

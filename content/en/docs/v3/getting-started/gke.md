@@ -1,7 +1,7 @@
 ---
 title: Getting Started With GKE
 linktitle: Getting Started With GKE
-description: Getting started with Jenkins X, helm 3 and kustomize on GKE
+description: Getting started with Jenkins X and helm 3 on GKE
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2020-02-21

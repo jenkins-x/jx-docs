@@ -1,7 +1,7 @@
 ---
 title: Getting Started With On Premise
 linktitle: Getting Started On Premise
-description: Getting started with Jenkins X, helm 3 and kustomize on vanilla Kubernetes
+description: Getting started with Jenkins X and helm 3 on vanilla Kubernetes
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2020-02-21
@@ -10,16 +10,16 @@ weight: 120
 
 ## On Premise Kubernetes
 
-If you are using kubernetes we highly recommend you use one of the managed cloud providers like [Amazon](eks) or [Google](gke) as this comes with lots of additional features like:
+If you are using kubernetes we highly recommend you use one of the managed cloud providers like [Amazon](/docs/v3/getting-started/eks/) or [Google](/docs/v3/getting-started/gke/) as this comes with lots of additional features like:
 
 * container registries and bucket storage
 * IAM and workload identity (e.g. so kubernetes Service Accounts can be assigned roles to be able to read/write to certain buckets or container registries) 
 
-However sometimes you need to run kubernetes on your premise. Longer term we hope the cloud providers can run their managed kubenretes and associated infrastructure on your premise too so you get to reuse the same storage + IAM anywhere. But until then, this guide is intended to get you started installing Jenkins X on a vanilla kubernetes cluster on premise.
+However sometimes you need to run kubernetes on your premise. Longer term we hope the cloud providers can run their managed kubernetes and associated infrastructure on your premise too so you get to reuse the same storage + IAM anywhere. But until then, this guide is intended to get you started installing Jenkins X on a vanilla kubernetes cluster on premise.
 
 ### Prerequisites
 
-The following are the prerequisites of your on premise kubernetes cluster:
+The following are the prerequisites of your on-premise kubernetes cluster:
 
 #### kubectl access
 
@@ -38,7 +38,7 @@ To use Jenkins X we need ingress to work. This means being able to create a kube
 
 Jenkins X installs `nginx` which has a `LoadBalancer` kubernetes `Service` to implement ingress. But the underlying kubernetes platform needs to implement the load balancing network and infrastructure. This comes out of the box on all public clouds.
  
-However on premise you need to install something like [MetalLB](https://metallb.universe.tf/)
+With an on-premise kubernetes cluster you need to install something like [MetalLB](https://metallb.universe.tf/)
 
 #### Storage
 
