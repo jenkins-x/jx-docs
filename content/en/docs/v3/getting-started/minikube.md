@@ -1,7 +1,7 @@
 ---
 title: Getting Started With Minikube
 linktitle: Getting Started With Minikube
-description: Getting started with Jenkins X, helm 3 and kustomize on Minikube
+description: Getting started with Jenkins X and helm 3 on Minikube
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2020-02-21
