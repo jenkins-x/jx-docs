@@ -86,3 +86,17 @@ jx secret import -f ~/.jx/localSecrets/mycluster/secrets.yaml
 
 If you have secrets already in a Vault then use the vault CLI tool to export the secrets to disk, reformat it in the above YAML layout and then import the secrets as above.
 
+
+### Replicating Secrets among namespaces
+
+Its quite common to need to replicate the same Secrets across namespaces. For example [Image Pull Secrets](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/) to pull images from container registries which may need to be used in dev, staging and production.
+
+The Jenkins X boot job does this automatically for any secret labelled with `secret.jenkins-x.io/replica-source=true` using the [jx secret replicate](https://github.com/jenkins-x/jx-secret/blob/master/docs/cmd/jx-secret_replicate.md) command:
+
+```bash 
+jx secret replicate --selector secret.jenkins-x.io/replica-source=true
+```
+
+This will replicate the secret to all permanent enivronments in the same cluster (e.g. a local Staging or Production environment).
+
+If you want to replicate another secret just add the label `secret.jenkins-x.io/replica-source=true` or you can add a new [jx secret replicate](https://github.com/jenkins-x/jx-secret/blob/master/docs/cmd/jx-secret_replicate.md) to the [boot makefile](/docs/v3/about/how-it-works/#boot-job)  
