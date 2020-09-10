@@ -32,4 +32,55 @@
 
 
 <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us7.list-manage.com","uuid":"d0c128ac1f69ba2bb20742976","lid":"84d053b0a0","uniqueMethods":true}) })</script>
+<script>
+    var body = document.body;
+    var aref = document.getElementsByClassName('td-sidebar-link__section');
+    var are = document.getElementsByClassName('td-sidebar-link td-sidebar-link__page');
+    var anav = document.getElementsByClassName('nav-link');
+    var intro_bg = document.getElementsByClassName('py-5 bg-light');
+    var paperclip = document.getElementsByClassName('fa-paperclip');
+    var elems = [aref,are,anav,intro_bg,paperclip];
+	var switcher = document.getElementsByClassName('js-toggle')[0];
+
+	//Click on dark mode icon. Add dark mode classes and wrappers. Store user preference through sessions
+	switcher.addEventListener("click", function() {
+        this.classList.toggle('js-toggle--checked');
+        this.classList.add('js-toggle--focus');
+		//If dark mode is selected
+		if (this.classList.contains('js-toggle--checked')) {
+			body.classList.add('dark-mode');
+            for (i = 0; i < elems.length; i++) {
+                for(j = 0;j<elems[i].length;j++){
+                    elems[i][j].classList.add('dark-mode');
+                }
+            }
+
+			//Save user preference in storage
+			localStorage.setItem('darkMode', 'true');
+		} else {
+			body.classList.remove('dark-mode');
+            for (i = 0; i < elems.length; i++) {
+                for(j = 0;j<elems[i].length;j++){
+                    elems[i][j].classList.remove('dark-mode');
+                }
+            }
+
+			setTimeout(function() {
+				localStorage.removeItem('darkMode');
+			}, 100);
+		}
+	})
+
+	//Check Storage. Keep user preference on page reload
+	if (localStorage.getItem('darkMode')) {
+		body.classList.add('dark-mode');
+        switcher.classList.add('js-toggle--checked');
+        for (i = 0; i < elems.length; i++) {
+            for(j = 0;j<elems[i].length;j++){
+                elems[i][j].classList.add('dark-mode');
+            }
+        }
+	}
+
+</script>
 {{ partial "hooks/body-end.html" . }}

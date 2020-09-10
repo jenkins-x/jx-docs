@@ -127,11 +127,9 @@
 
   a.nav-link.active.dark-mode{
       color: #000000 !important;
-      /* color: #008cba !important; */
   }
 
   a.nav-link.dark-mode{
-      /* color: #000000 !important; */
       color: #008cba !important;
   }
 
@@ -152,80 +150,4 @@
       background-color: #008cba !important;
       color: #f5f5f5;
   }
-
-
 </style>
-
-<script>
-    var body = document.body;
-    var aref = document.getElementsByClassName('td-sidebar-link__section');
-    var are = document.getElementsByClassName('td-sidebar-link td-sidebar-link__page');
-    var anav = document.getElementsByClassName('nav-link');
-    var intro_bg = document.getElementsByClassName('py-5 bg-light');
-    var paperclip = document.getElementsByClassName('fa-paperclip');
-
-    var elems = [aref,are,anav,intro_bg,paperclip];
-	var switcher = document.getElementsByClassName('js-toggle')[0];
-
-	//Click on dark mode icon. Add dark mode classes and wrappers. Store user preference through sessions
-	switcher.addEventListener("click", function() {
-        this.classList.toggle('js-toggle--checked');
-        this.classList.add('js-toggle--focus');
-		//If dark mode is selected
-		if (this.classList.contains('js-toggle--checked')) {
-			body.classList.add('dark-mode');
-            // aref.classList.add('dark-mode');
-            for (i = 0; i < elems.length; i++) {
-                for(j = 0;j<elems[i].length;j++){
-                    elems[i][j].classList.add('dark-mode');
-                }
-            }
-
-			//Save user preference in storage
-			localStorage.setItem('darkMode', 'true');
-		} else {
-			body.classList.remove('dark-mode');
-            // aref.classList.remove('dark-mode');
-            for (i = 0; i < elems.length; i++) {
-                for(j = 0;j<elems[i].length;j++){
-                    elems[i][j].classList.remove('dark-mode');
-                }
-            }
-
-			setTimeout(function() {
-				localStorage.removeItem('darkMode');
-			}, 100);
-		}
-	})
-
-	//Check Storage. Keep user preference on page reload
-    // NOTE: This still needed to be fixed as on keeping the user preference
-    // The dark mode is getting implemented partially
-
-	// if (localStorage.getItem('darkMode')) {
-	// 	//body.classList.add('dark-mode');
-    //     switcher.classList.add('js-toggle--checked');
-    //     body.classList.add('dark-mode');
-    //     // aref.classList.add('dark-mode');
-    //     // for (i = 0; i < elems.length; i++) {
-    //     //     for(j = 0;j<elems[i].length;j++){
-    //     //         elems[i][j].classList.add('dark-mode');
-    //     //     }
-    //     // }
-    //
-    //     for (i = 0; i < aref.length; i++) {
-    //       aref[i].classList.add('dark-mode');
-    //     }
-    //     for (i = 0; i < are.length; i++) {
-    //       are[i].classList.add('dark-mode');
-    //     }
-    //     for (i = 0; i < anav.length; i++) {
-    //       anav[i].classList.add('dark-mode');
-    //     }
-    //     for (i = 0;i<intro_bg.length; i++){
-    //       intro_bg[i].classList.add('dark-mode');
-    //     }
-    //     paperclip[0].classList.add('dark-mode');
-	// }
-
-</script>
