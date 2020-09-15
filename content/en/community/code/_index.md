@@ -321,50 +321,82 @@ by viewing the `Checks` tab in the GitHub pull request.
 
 ![DCO signoff check](https://user-images.githubusercontent.com/13410355/42352794-85fe1c9c-8071-11e8-834a-05a4aeb8cc90.png)
 
-You can use a hook to make sure all your commits messages are signed off.
+#### How to Sign Your Commits
 
-1. Run `mkdir -p ~/.git-templates/hooks`
-2. Run `git config --global init.templatedir ~/.git-templates`
-3. Add this to `~/.git-templates/hooks/prepare-commit-msg`:
+There are a couple of ways to ensure your commits are signed. 
+Described below are three different ways to sign your commits: using git signoff, using GPG, or using webhooks.
 
-    ```bash
-    #!/bin/sh
+##### Git signoff
+Git signoff adds a line to your commit message with the user.name and user.email values from your git config. 
+Use git signoff by adding the `--signoff` or `-s` flag when creating your commit. 
+This flag must be added to each commit you would like to sign.
 
-    COMMIT_MSG_FILE=$1  # The git commit file.
-    COMMIT_SOURCE=$2    # The current commit message.
+```sh
+git commit -m -s "docs: my commit message"
+```
 
-    # Add "Signed-off-by: <user> <email>" to every commit message.
-    SOB=$(git var GIT_COMMITTER_IDENT | sed -n 's/^\(.*>\).*$/Signed-off-by: \1/p')
-    git interpret-trailers --in-place --trailer "$SOB" "$COMMIT_MSG_FILE"
-    if test -z "$COMMIT_SOURCE"; then
-    /usr/bin/perl -i.bak -pe 'print "\n" if !$first_line++' "$COMMIT_MSG_FILE"
-    fi
-    ```
+If you'd like to keep your personal email address private, you can use a GitHub-provided `no-reply` email address as your commit email address. 
+GitHub provides [good instructions on setting your commit email address](https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/setting-your-commit-email-address).
 
-4. Make sure this file executable `chmod u+x ~/.git-templates/hooks/prepare-commit-msg`
-5. Run `git init` on the repo you want to use the hook on
+##### GPG sign your commits
+A more secure alternative is to GPG sign all your commits. 
+This has the advantage that as well as stating your agreement to the DCO it also creates a trust mechanism for your commits. 
+There is a good guide from GitHub on how to set this up:
 
-Note that this will not override the hooks already defined on your local repo. It adds the `Signed-off-by: ...` line
-after the commit message has been created by the user.
+1) If you don't already have a GPG key, then follow [this guide to create one](https://help.github.com/en/articles/generating-a-new-gpg-key).
+2) Now you have a GPG key, tell [tell GitHub about your key so that it can verify your commits](https://help.github.com/en/articles/adding-a-new-gpg-key-to-your-github-account). 
+Once you upload your public gpg key to your GitHub account, GitHub will mark commits that you sign with the `verified` label.
+3) To sign commits locally, you can add the `-S` flag when creating your commit. 
+For more information on signing commits locally, follow [this guide to see how to sign your commit](https://help.github.com/en/articles/signing-commits).
 
-A better alternative is to GPG sign all your commits. This has the advantage that as well as stating your agreement to
-the DCO it also creates a trust mechanism for your commits. It's a little harder to set up but there is a
-good guide from GitHub:
-
-1. If you don't already have a GPG key then follow [this guide to create one](https://help.github.com/en/articles/generating-a-new-gpg-key)
-2. Now you have a GPG key follow [this guide to see how to sign your commit](https://help.github.com/en/articles/signing-commits)
-3. Next, tell [tell GitHub about your key so that it can verify your commits](https://help.github.com/en/articles/adding-a-new-gpg-key-to-your-github-account)
-4. Now, configure git to always use sign commits by running
+4) You can configure git to always use signed commits by running
 
 ```sh
 git config --global user.signingkey <key id>
 ```
 
-   The process to find the key id is described in [https://help.github.com/en/articles/checking-for-existing-gpg-keys](https://help.github.com/en/articles/checking-for-existing-gpg-keys)
+The process to find the key id is described in [this guide on checking for existing GPG keys](https://help.github.com/en/articles/checking-for-existing-gpg-keys).
 
-5. Set up a keychain for your platform. This is entirely optional but means you don't need to type your passphrase every
-   time and allows git to run headless. If you are using a Mac GPG Suite is a good way to do this. If you are on another
-   platform please open a PR against this document and add your recommendations!
+5) Set up a keychain for your platform. 
+This is entirely optional but means you don't need to type your passphrase every time and allows git to run headless. 
+If you are using a Mac GPG Suite is a good way to do this. If you are on another platform please open a PR against this document and add your recommendations!
+
+##### Use a webhook to sign your commits
+Alternatively, you can use a hook to make sure all your commits messages are signed off. 
+1) Run:
+```sh
+mkdir -p ~/.git-templates/hooks
+```
+```sh
+git config --global init.templatedir ~/.git-templates
+```
+
+2) Then add this to `~/.git-templates/hooks/prepare-commit-msg`:
+
+```bash
+#!/bin/sh
+
+COMMIT_MSG_FILE=$1  # The git commit file.
+COMMIT_SOURCE=$2    # The current commit message.
+
+# Add "Signed-off-by: <user> <email>" to every commit message.
+SOB=$(git var GIT_COMMITTER_IDENT | sed -n 's/^\(.*>\).*$/Signed-off-by: \1/p')
+git interpret-trailers --in-place --trailer "$SOB" "$COMMIT_MSG_FILE"
+if test -z "$COMMIT_SOURCE"; then
+/usr/bin/perl -i.bak -pe 'print "\n" if !$first_line++' "$COMMIT_MSG_FILE"
+fi
+```
+
+3) Make sure the file is executable:
+```sh
+chmod u+x ~/.git-templates/hooks/prepare-commit-msg
+```
+
+4) Run `git init` on the repo you want to use the hook on.
+
+Note that this will not override the hooks already defined on your local repo. It adds the `Signed-off-by: ...` line
+after the commit message has been created by the user.
+
 
 ### The commit message
 
