@@ -1,7 +1,7 @@
 ---
-title: Getting Started With On Premise
-linktitle: Getting Started On Premise
-description: Getting started with Jenkins X and helm 3 on vanilla Kubernetes
+title: On Premise
+linktitle:  On Premise
+description: Setup Jenkins X on vanilla Kubernetes  
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2020-02-21
