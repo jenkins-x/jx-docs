@@ -53,7 +53,7 @@ layout="home"
           1. Create a <code>main.tf</code> file in an empty directory and add the code snippet below.
           You will need to provide the GCP project id in which to install the cluster.
         </p>
-{{<highlight javascript>}}
+{{<highlight terraform>}}
 module "jx" {
   source = "jenkins-x/jx/google"
 
@@ -89,7 +89,7 @@ terraform apply
         <p>
           1. Create a <code>main.tf</code> file in an empty directory and add the code snippet below.
         </p>
-{{<highlight javascript>}}
+{{<highlight terraform>}}
 module "eks-jx" {
   source  = "jenkins-x/eks-jx/aws"
 }
