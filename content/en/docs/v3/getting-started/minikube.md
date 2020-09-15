@@ -1,7 +1,7 @@
 ---
-title: Getting Started With Minikube
-linktitle: Getting Started With Minikube
-description: Getting started with Jenkins X and helm 3 on Minikube
+title: Minikube
+linktitle: Minikube
+description: Setup Jenkins X on your laptop
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2020-02-21
