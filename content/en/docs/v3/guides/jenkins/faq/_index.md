@@ -24,4 +24,4 @@ As well as some commercial offerings:
 ## How can I connect to a remote Jenkins server?
 
 
-See [how to add Jenkins into Jenkins X](adding-jenkins-servers-into-jenkins-x) or [registering external Jenkins servers](/docs/v3/guides/jenkins/getting-started/#registering-external-jenkins-servers)
+See [how to add Jenkins into Jenkins X](/docs/v3/guides/jenkins/getting-started/#adding-jenkins-servers-into-jenkins-x) or [registering external Jenkins servers](/docs/v3/guides/jenkins/getting-started/#registering-external-jenkins-servers)
