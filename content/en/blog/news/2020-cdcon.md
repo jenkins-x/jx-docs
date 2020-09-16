@@ -63,4 +63,4 @@ Don't miss out on these great talks. [Register for CDCon](https://events.linuxfo
 
 CDCon has pledged to donate 100% of the proceeds received from CDCon 2020 registration to charitable causes: Black Girls Code, Women Who Code and the CDF Diversity Fund. Registrants indicate which charitable fund they want their 25 USD registration fees to go to during registration. If you can’t afford the registration cost, please apply for the [diversity scholarship](https://events.linuxfoundation.org/cdcon/attend/scholarships/).
 
-![CDCon Banner](/assets/images/cdcon-register.png)
+![CDCon Banner](/images/cdcon-register.png)
