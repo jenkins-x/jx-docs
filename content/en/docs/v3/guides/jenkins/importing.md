@@ -6,7 +6,7 @@ weight: 50
 ---
 
 
-Once you have [added one or more Jenkins Servers to the registry](/docs/v3/guides/jenkins/getting-started/#adding-jenkins-servers) you can import a `Jenksinfile` based project.
+Once you have [added one or more Jenkins Servers to the registry](/docs/v3/guides/jenkins/getting-started/adding-jenkins-servers-into-jenkins-x) you can import a `Jenksinfile` based project.
 
 
 ## Import the code
