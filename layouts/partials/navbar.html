@@ -35,7 +35,7 @@
 			</svg>
 		</span>
 	</a>
-	<div class="navbar-nav d-none d-lg-block">{{ partial "toggle.html" . }}</div>
+
 	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
 		<ul class="navbar-nav mt-2 mt-lg-0">
 			{{ $p := . }}
@@ -62,5 +62,6 @@
 			{{ end }}
 		</ul>
 	</div>
+	<div class="navbar-nav d-none d-lg-block">{{ partial "toggle.html" . }}</div>
 	<div class="navbar-nav d-none d-lg-block">{{ partial "search-input.html" . }}</div>
 </nav>
