@@ -1,7 +1,7 @@
 ---
-title: Jenkins X 3.x Overview
+title: Overview
 linktitle: Overview
-description: Overview of the motivation and concepts for Jenkins X 3
+description: Overview of the architecture, concepts and motivations for Jenkins X 3.x
 weight: 50
 ---
  
