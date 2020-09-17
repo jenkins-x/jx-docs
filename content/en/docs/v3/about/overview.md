@@ -7,7 +7,7 @@ weight: 50
  
 Jenkins X 3.x creates clearer separation of concerns between conceptual areas and releasable components.
  
-![Jenkins X 3.x](/images/v3/overview.png)
+<iframe style="border:none" width="800" height="450" src="https://whimsical.com/embed/SnJBgXG6jz9pqQewiDTNRt@2Ux7TurymNDXVRa4FpLk"></iframe>
  
 __NOTE__ The diagram shows intent, as Jenkins X 3 is still in __alpha__ not all integrations are complete.
  
