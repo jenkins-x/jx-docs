@@ -32,19 +32,3 @@ This is our current recommended quickstart for Google Cloud Platform:
 
 The following demo walks through how to get started with Jenkins X 3 on GKE + Terraform 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/RYgKvRpjkoY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
-### GKE + gcloud + Vault 
-This quickstart is similar to the above but does not use terraform so its ideal if you just want to create a quick cluster to kick the tyres without needing to learn terraform.
-
-*  <a href="https://github.com/jx3-gitops-repositories/jx3-gke-gcloud-vault/generate" target="github" class="btn bg-primary text-light">Create Git Repository</a> 
-
-* `git clone` the new repository and `cd`  into the git clone
-
-*  <a href="https://github.com/jx3-gitops-repositories/jx3-gke-gcloud-vault/blob/master/bin/README.md" 
-    target="github" class="btn bg-primary text-light" 
-    title="use your new git repository to create your cloud infrastructure and install Jenkins X">
-    Create your infrastructure
-  </a> 
-
-*  <a href="/docs/v3/create-project/" class="btn bg-primary text-light">Create or import projects</a>
