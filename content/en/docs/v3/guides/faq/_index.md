@@ -2,7 +2,7 @@
 title: FAQ
 linktitle: FAQ
 description: Questions on using helm 3 and boot
-weight: 200
+weight: 500
 aliases:
   - /faq/
 ---

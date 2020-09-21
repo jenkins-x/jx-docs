@@ -1,7 +1,7 @@
 ---
-title: Apps framework
-linktitle: Apps framework
-description: Apps framework - coming soon!
+title: Apps
+linktitle: Apps
+description: Working with apps 
 weight: 100
 ---
 
