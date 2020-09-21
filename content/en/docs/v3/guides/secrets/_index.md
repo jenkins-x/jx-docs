@@ -17,9 +17,32 @@ This lets you check in all of your other kubernetes resources and custom resourc
 
 You can then rotate secrets easily independent of git.
 
+This is the exact same graph as [here](https://github.com/godaddy/kubernetes-external-secrets#system-architecture), with AWS Secrets Manager replaced by vault.
+{{<mermaid>}}
+graph TB
+    subgraph A[Kubernetes Cluster]
+        sqB[External Secrets Controller]
+        subgraph C[secrets-infra ns]
+            sqCV[Vault]
+        end
+        subgraph D[Kube api server]
+        end
+        D -- Get ExternalSecrets --> sqB
+        sqB --> D
+        sqB -- Fetch secrets properties --> sqCV
+        sqCV --> sqB
+        subgraph E[app ns]
+            sqEP[pods]
+            sqES[secrets]
+        end
+        sqB -- Upsert Secrets --> sqES
+    end
+{{</mermaid>}}
+
+
 ## Vault
 
-If you are using Vault as your back end for [Kubernetes External Secrets](https://github.com/godaddy/kubernetes-external-secrets)  then before you try any of the following commands to populate secrets you need to make sure your termminal can access Vault.
+If you are using Vault as your back end for [Kubernetes External Secrets](https://github.com/godaddy/kubernetes-external-secrets) then before you try any of the following commands to populate secrets you need to make sure your termminal can access Vault.
 
 To do this you can run the [jx secret vault portforward](https://github.com/jenkins-x/jx-secret/blob/master/docs/cmd/jx-secret_vault_portforward.md) command in a terminal:
  
@@ -99,4 +122,4 @@ jx secret replicate --selector secret.jenkins-x.io/replica-source=true
 
 This will replicate the secret to all permanent enivronments in the same cluster (e.g. a local Staging or Production environment).
 
-If you want to replicate another secret just add the label `secret.jenkins-x.io/replica-source=true` or you can add a new [jx secret replicate](https://github.com/jenkins-x/jx-secret/blob/master/docs/cmd/jx-secret_replicate.md) to the [boot makefile](/docs/v3/about/how-it-works/#boot-job)  
+If you want to replicate another secret just add the label `secret.jenkins-x.io/replica-source=true` or you can add a new [jx secret replicate](https://github.com/jenkins-x/jx-secret/blob/master/docs/cmd/jx-secret_replicate.md) to the [boot makefile](/docs/v3/about/how-it-works/#boot-job)
