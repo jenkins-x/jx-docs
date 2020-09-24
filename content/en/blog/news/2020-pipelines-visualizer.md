@@ -40,7 +40,7 @@ This project was shared very early with the community, after just a few hours of
 
 We did a [demo of jx-pipelines-visualizer](https://youtu.be/zv0Dn9RYzwE?t=709) at the last [office hours](https://jenkins-x.io/community/office_hours/):
 
- <iframe width="1292" height="654" src="https://www.youtube.com/embed/zv0Dn9RYzwE?start=709" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ <iframe width="80%" height="460" src="https://www.youtube.com/embed/zv0Dn9RYzwE?start=709" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Next steps
 
