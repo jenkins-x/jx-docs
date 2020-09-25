@@ -41,13 +41,13 @@ Jenkins X 3.x prefers to avoid wrapping other CLIs unless a consistent higher le
  
 We had lots of feedback from users about the Jenkins X documentation was incomplete, inconsistent, old, not relevant or claimed to work but simply did not.
  
-Jenkins X 3.x will clearly mark areas that have not been tested and are more experimental while also providing a clearer capability matrix indicating to users the maturity of features and supported platforms.  Added to this we plan to make it easier for users, teams, companies to contribute to areas that Jenkins X makes sense.
+Jenkins X 3.x will clearly mark areas that have not been tested and are more experimental while also providing a clearer capability matrix indicating to users the maturity of features and supported platforms.  Added to this we plan to make it easier for users, teams, companies to contribute to Jenkins X.
  
 A special interest group for docs has been set up with the focus on Jenkins X 3.x and will continue to evolve.
  
 # Open source
  
-Jenkins X 3.x is not only open source but developed and maintained in open source communities.  Slack, Discourse and focussed special interest groups provide ways for developers, users or keen people to be part of the Jenkins X journey.
+Jenkins X 3.x is not only open source but developed and maintained in open source communities.  Slack, Discourse and focused special interest groups provide ways for developers, users or keen people to be part of the Jenkins X journey.
  
 Jenkins X 3.x will provide clear extension points for non open source functionality to be added but not affect the OSS core.
  
