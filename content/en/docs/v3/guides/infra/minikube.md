@@ -11,15 +11,18 @@ This guide will walk you though how to setup Jenkins X on your laptop using [min
 ## Prerequisites
 
 * [Download and install the jx 3.x binary](/docs/v3/guides/jx3/)
- 
+
 * [Install minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/)
+
+NOTE:- User of windows 10 home (Hyper-V not supported). To install Minikube consider Docker as driver(docker should be pre-installed)
+       instead of virtualBox driver. Use command "minikube start --driver=docker".
 
 * You need to create a `minikube` cluster via the following command:
 
 ```bash
 minikube start --cpus 4 --memory 8048 --disk-size=100g --addons=ingress --vm=true
 ```
- 
+
 ## Setup
 
 *  <a href="https://github.com/jx3-gitops-repositories/jx3-minikube-vault/generate" target="github" class="btn bg-primary text-light">Create Git Repository</a> to store the GitOps configuration of Jenkins X and the apps you want to deploy
@@ -28,7 +31,7 @@ minikube start --cpus 4 --memory 8048 --disk-size=100g --addons=ingress --vm=tru
 
 * configure the `ingress.domain` to point to your `$(minikube ip).nip.io`:
 
-```bash 
+```bash
 export DOMAIN="$(minikube ip).nip.io"
 jx gitops requirements edit --domain $DOMAIN
 ```
@@ -39,13 +42,13 @@ jx gitops requirements edit --domain $DOMAIN
 
 * setup a webhook tunnel to your laptop:
 
-```bash 
+```bash
 ngrok http 8080
-``` 
-  
+```
+
 * copy your personal ngrok domain name of the form `abcdef1234.ngrok.io` into the `charts/jenkins-x/jxboot-helmfile-resources/values.yaml` file in the `ingress.customHosts.hosts` file so that your file looks like this...
 
-```yaml 
+```yaml
 ingress:
   customHosts:
     hook: "abcdef1234.ngrok.io"
@@ -57,8 +60,8 @@ ingress:
 ```bash
 git add *
 git commit -a -m "fix: configurations for local minikube"
-git push origin master 
-``` 
+git push origin master
+```
 
 * now [install the git operator](/docs/v3/guides/operator/)
 
@@ -66,9 +69,6 @@ git push origin master
 
 ```bash   
 kubectl port-forward svc/hook 8080:80
-``` 
+```
 
-*  <a href="/docs/v3/create-project/" class="btn bg-primary text-light">Create or import projects</a> 
-
-
-
+*  <a href="/docs/v3/create-project/" class="btn bg-primary text-light">Create or import projects</a>
