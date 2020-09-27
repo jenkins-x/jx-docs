@@ -1,7 +1,7 @@
 ---
 title: Comparison
 linktitle: Comparison
-description: Comparison of 3.x to version 2.x
+description: Comparison of Jenkins X version 3.x to 2.x
 weight: 90
 ---
 
@@ -23,7 +23,7 @@ Just like classic boot with the [jenkins-x-boot-config](https://github.com/jenki
 * in 3.x we use a single git repository for each cluster; which can manage as many teams/namespaces as you like within the cluster
   * so any local environments like `Staging` which reside in the same kubernetes cluster are defined in the same git repository in 3.x - whereas in 2.x we used a separate git repository for `Dev`, `Staging` and `Production` when sharing the same cluster.
   * if `Dev`, `Preprod` and `Production` environments are in separate kubernetes clusters then those will have a git repository each.
-* any helm chart can be deployed in any namespace (previously we used 1 namespace for all charts in the [env/requirements.yaml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/env/requirements.yaml))
+* any helm chart can be deployed in any namespace (previously we used a single namespace for all charts in the [env/requirements.yaml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/env/requirements.yaml))
 * instead of using [env/requirements.yaml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/env/requirements.yaml) we now use a simple and more powerful [helmfile.yaml](https://github.com/jenkins-x-labs/boot-helmfile-poc/blob/master/helmfile.yaml) file which is similar but supports:
   * we can specify a `namespace` on any chart
   * we can add extra `values` files to use with the chart to override the helm `values.yaml` files

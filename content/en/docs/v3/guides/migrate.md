@@ -20,7 +20,7 @@ You can then test the projects work fine in the new v3 cluster. If they do you c
 
 To batch import lots of projects from the old cluster:
 
-* git clone the new cluster's cluster git repository (with the `helmfile.yaml` file inside) and `cd` into the directory
+* git clone the new cluster's git repository (with the `helmfile.yaml` file inside) and `cd` into the directory
 * verify you are in the correct git clone by running this command
 
 ```bash 
@@ -29,7 +29,7 @@ ls -al helmfile.yaml
 
 * you should see the `helmfile.yaml` file from the v3 installation
 
-* now connect to your old Jenkins X cluster. Using jx v2 you can use `jx ctx` to switch contexts or refer to your cloud providers documentation on how to switch `kubectl` to point to different clsuters
+* now connect to your old Jenkins X cluster. Using jx v2 you can use `jx ctx` to switch contexts or refer to your cloud providers documentation on how to switch `kubectl` to point to different clusters
 
 * verify you can see the old source repositories via:
 

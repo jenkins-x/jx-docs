@@ -10,7 +10,7 @@ Jenkins X 3.x supports the `helmfile.yaml` file format from the [helmfile projec
 
 You can then add any charts you wish:
 
-```
+```yaml
 releases:
 - chart: jetstack/cert-manager 
 - chart: flagger/flagger

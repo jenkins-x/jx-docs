@@ -10,7 +10,7 @@ weight: 130
 
 The GitOps repository templates contain the source code, scripts and docs to help you get your cloud resources created (e.g. a kubernetes cluster and maybe buckets and/or a secret manager).
 
-Once you have created the GitOps repository from one of the [available templates and followed the instructions](/docs/v3/getting-started/) to set up your infrastructure you [install the git operator](/docs/v3/guides/operator/) via the  via [jx admin operator](https://github.com/jenkins-x/jx-admin/blob/master/docs/cmd/jx-admin_operator.md) command:
+Once you have created the GitOps repository from one of the [available templates and followed the instructions](/docs/v3/getting-started/) to set up your infrastructure you [install the git operator](/docs/v3/guides/operator/) via the [jx admin operator](https://github.com/jenkins-x/jx-admin/blob/master/docs/cmd/jx-admin_operator.md) command:
 
 
 ```bash
@@ -18,7 +18,7 @@ Once you have created the GitOps repository from one of the [available templates
 ```
 
 
-That command essentially installs the [git operator](https://github.com/jenkins-x/jx-git-operator) chart, passing in the git URL, username and token to run the boot process
+That command essentially installs the [git operator](https://github.com/jenkins-x/jx-git-operator) chart, passing in the git URL, username and token to run the boot process.
 
 
 ### Git Operator
@@ -68,7 +68,7 @@ The generate step does the following:
     * **Somechart** is the name of the chart (or chart alias) 
 * Any **Secret** resource is converted to an **ExternalSecret** so that it can be checked into git
 * A few extra steps are run on the YAMLs to help deployments
-    * Add a common label so that kubectl apply --prune --selector can be used
+    * Add a common label so that `kubectl apply --prune --selector` can be used
     * Add some hashes to resources so that changes to configurations causes a rolling upgrade
     * Add support for the [pusher wave](https://github.com/pusher/wave) operator so that changing of secret values (inside, say, vault or Amazon/Azure/Google secret manager) causes a rolling upgrade of pods.
 
@@ -89,7 +89,6 @@ When you create a quickstart or import a new project a new release is created th
 One change from Jenkins X 2.x is we default to including the specific kubernetes resources in git; rather than, say, just the name of a helm chart and the version.
 
 So what tends to happen is:
-
 
 * the promote step in a pipeline creates a Pull Request on the GitOps repository for the cluster to add or upgrade a helm chart and version
 * The above Generate and Apply steps run to fill in more details to the Pull Request of the actual kubernetes resources that will be added, modified or removed

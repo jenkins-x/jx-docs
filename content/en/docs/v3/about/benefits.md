@@ -1,15 +1,15 @@
 ---
 title: Benefits
 linktitle: Benefits
-description: Benefits of Jenkins X 3.x
+description: Benefits of using Jenkins X 3.x
 weight: 80
 ---
 
 
-* We can use vanilla tools like [helm 3](https://helm.sh/), [helmfile](https://github.com/roboll/helmfile), [kustomize](https://kustomize.io/), [kpt](https://googlecontainertools.github.io/kpt/) to install, update or delete charts in any namespace without needing helm 2.x or tiller or custom code to manage `helm template`
+* We can use vanilla tools like [helm 3](https://helm.sh/), [helmfile](https://github.com/roboll/helmfile), [kustomize](https://kustomize.io/), [kpt](https://googlecontainertools.github.io/kpt/) to install, update or delete charts in any namespace without needing helm 2.x or tiller or custom code to manage `helm template`.
   * We can avoid all the complexities of the `jx step helm apply` logic we used in Jenkins X 2.x
   * Instead we can replace this with vanilla [helmfile](https://github.com/roboll/helmfile) to allow optional templating of `values.yaml` files when using helm
-* The new [Getting Started](/docs/v3/getting-started/) approach is much simpler, easier to configure and customise and is cleanly integrated with tools like Terraform and works well with diffent cloud infrastructure
+* The new [Getting Started](/docs/v3/getting-started/) approach is much simpler, easier to configure and customise and is cleanly integrated with tools like Terraform and works well with different cloud infrastructure platforms.
   * The default install/upgrade pipelines check in all the generated kubernetes resources and custom resources as YAML so its easy to understand
   * You can read more about the [git layout here](https://github.com/jenkins-x/jx-gitops/blob/master/docs/git_layout.md)
     * The `config-root/cluster` folder contains all the global cluster level resources like `ClusterRole`, `Namespace` or Custom Resources
@@ -32,5 +32,5 @@ weight: 80
   * We use [kpt](https://googlecontainertools.github.io/kpt/) to do that for us
   * We now include the [version stream](https://jenkins-x.io/about/concepts/version-stream/) inside your GitOps repository too inside the `versionStream` directory after installation so that all the information about your installation is inside a single git repository so its simpler to test changes & ensure consistency.
 * We can avoid composite charts to simplfiy configuration and upgrades
-* We no longer use `exposecontroller` and use regular helm configuration to create `Ingress` resources and [override domain names](/docs/v3/guides/faq/#how-do-i-configure-the-ingress-domain-in-dev-staging-or-production)
+* We no longer use `exposecontroller`, instead use regular helm configuration to create `Ingress` resources and [override domain names](/docs/v3/guides/faq/#how-do-i-configure-the-ingress-domain-in-dev-staging-or-production)
 * secret handling is currently much simpler using Kubernetes External Secrets for any secrets in any namespace or cluster for your own apps or for those used by Jenkins X.

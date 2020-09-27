@@ -50,7 +50,7 @@ jx admin log
 
 Jenkins X will now install itself.
 
-If you want to you can populate the [secrets](/docs/v3/guides/secrets/) once the `ExternalSecret` custom resources have been created. 
+If you want to, you can populate the [secrets](/docs/v3/guides/secrets/) once the `ExternalSecret` custom resources have been created. 
 
 <nav>
   <ul class="pagination">

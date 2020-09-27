@@ -43,11 +43,9 @@ Note that Jenkins X 3.x includes [new support for handling of importing Jenkinsf
 This gives you all of the above options in an interactive wizard via [jx project](https://github.com/jenkins-x/jx-project/blob/master/docs/cmd/project.md)
 
 
-
-
 ## Improvements
 
-We've made a number of improvements over the the 2.x version of [jx import](https://jenkins-x.io/commands/jx_import/) command:
+We've made a number of improvements over the 2.x version of [jx import](https://jenkins-x.io/commands/jx_import/) command:
 
 * when importing to Jenkins X we ask which build pack you wish to use (e.g. classic or kubernetes) so that you can import java libraries or node modules easily in addition to kubernetes native applications
 * the wizard will prompt you for the pack name (language) once the detection has occurred. Usually the pack name detection is good enough. e.g. detecting `maven` but you may wish to change the version of the pack (e.g. `maven-java11`)
