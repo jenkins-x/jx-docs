@@ -83,8 +83,8 @@ _url_ specifies the URL to your existing Vault instance and _serviceAccount_ is 
 ```yaml
 secretStorage: vault
 vault:
-  kubernetesAuthPath: "secret"
-  secretEngineMountPoint: "kubernetes"
+  kubernetesAuthPath: "kubernetes"
+  secretEngineMountPoint: "secret"
   serviceAccount: my-sa
   url: https://my-vault.com
 ```
