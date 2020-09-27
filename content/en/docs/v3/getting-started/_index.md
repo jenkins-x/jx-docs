@@ -18,7 +18,7 @@ Jenkins X 3.x alpha has a simplified architecture and reduced complexity compare
 
 The new `jx` CLI uses a plugin system to add subcommands when working with Jenkins X.
 
-Once you have the new `jx` CLI, download the base set of subcommand plugins for admistrating and working with Jenkins X:
+Once you have the new `jx` CLI, download the base set of subcommand plugins for administrating and working with Jenkins X:
 
 ```bash
 jx upgrade plugins

@@ -19,13 +19,13 @@ Moving management of infrastructure outside of Jenkins X, favouring solutions li
  
 # Secret Management
  
-Adding an abstraction layer above secret management solutions so users can choose where the source of secrets can be stored, preferably outside of the Kubernetes cluster.  This is good practice for disaster recovery scenarios.
+Adding an abstraction layer above secret management solutions so users can choose where the source of secrets can be stored, preferably outside of the Kubernetes cluster.  This is a good practice for disaster recovery scenarios.
  
 # Developer experience
  
-Jenkins X 3.x includes a revived focus on developer experience.  The introduction of Jenkins X plugins for [Octant](https://octant.dev/) has addressed a long standing request from the open source community.  Jenkins X 3.x will be focussing new visualisations  to help developer, operators and cross functioning teams.
+Jenkins X 3.x includes a revived focus on developer experience.  The introduction of Jenkins X plugins for [Octant](https://octant.dev/) has addressed a long standing request from the open source community.  Jenkins X 3.x will be focussing on new visualisations  to help developers, operators and cross functioning teams.
  
-With the jx CLI refactoring described below Jenkins X 3.x is reviewing consistency and usability around CLI experience, please continue to raise issues and reach out in slack / discourse to help improve.
+With the jx CLI refactoring described below Jenkins X 3.x is reviewing consistency and usability around CLI experience, please continue to raise [issues](https://github.com/jenkins-x/jx-docs/issues) and reach out in slack / [discourse](https://jenkinsx.discourse.group/) to help improve.
  
 # Maintainability
  
@@ -43,12 +43,10 @@ We had lots of feedback from users about the Jenkins X documentation was incompl
  
 Jenkins X 3.x will clearly mark areas that have not been tested and are more experimental while also providing a clearer capability matrix indicating to users the maturity of features and supported platforms.  Added to this we plan to make it easier for users, teams, companies to contribute to Jenkins X.
  
-A special interest group for docs has been set up with the focus on Jenkins X 3.x and will continue to evolve.
+A [special interest group](https://github.com/jenkins-x/jx-community/tree/master/sig-docs) for docs has been set up with the focus on Jenkins X 3.x and will continue to evolve.
  
 # Open source
  
-Jenkins X 3.x is not only open source but developed and maintained in open source communities.  Slack, Discourse and focused special interest groups provide ways for developers, users or keen people to be part of the Jenkins X journey.
+Jenkins X 3.x is not only open source but developed and maintained in open source communities. Slack, Discourse and focused special interest groups provide ways for developers, users or keen people to be part of the Jenkins X journey.
  
 Jenkins X 3.x will provide clear extension points for non open source functionality to be added but not affect the OSS core.
- 
-

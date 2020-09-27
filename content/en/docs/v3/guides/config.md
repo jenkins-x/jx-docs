@@ -413,7 +413,7 @@ apps:
 
 Remember to repeat this in each environment git repository, you can also use different domains for each environment by repeating all the external dns steps here.
 
-__NOTE__ it can take a few minutes for DNS to propogate for each URL so please be patient when you first enable external dns or deploy a new application into an environment for the first time.
+__NOTE__ it can take a few minutes for DNS to propagate for each URL so please be patient when you first enable external dns or deploy a new application into an environment for the first time.
 
 
 ### Automated TLS
@@ -460,7 +460,7 @@ webhook: prow
 
 ### Recovering
 
-If anything ever goes wrong (e.g. your cluster, namespace or tekton gets deleted) and your installation is incabable of running tekton pipelines you can always re-run [jx boot](/docs/getting-started/setup/boot/) on your laptop to restore your cluster.
+If anything ever goes wrong (e.g. your cluster, namespace or tekton gets deleted) and your installation is incapable of running tekton pipelines you can always re-run [jx boot](/docs/getting-started/setup/boot/) on your laptop to restore your cluster.
 
 ## Backups
 

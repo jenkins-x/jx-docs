@@ -7,12 +7,12 @@ weight: 90
 
 ## CLI
 
-To upgrade the jx CLI urn:
+To upgrade the jx CLI run:
 ```bash
 jx upgrade cli
 ```
 
-To upgrade jx subcommand plugins run
+To upgrade jx subcommand plugins run:
 ```bash
 jx upgrade plugins
 ```

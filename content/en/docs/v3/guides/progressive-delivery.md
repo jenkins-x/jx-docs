@@ -11,7 +11,7 @@ Progressive delivery allows you to gradually rollout new versions of your applic
 Our recommendation for using progressive delivery with Jenkins X is to use: 
 
 * [flagger](https://flagger.app/) as the progressive delivery controller 
-* [istio](https://istio.io/) as the service mesh to provider advanced load balancing capabilities across internal or external networking
+* [istio](https://istio.io/) as the service mesh to provide advanced load balancing capabilities across internal or external networking
 
 ## Configuring Progressive Delivery
 
