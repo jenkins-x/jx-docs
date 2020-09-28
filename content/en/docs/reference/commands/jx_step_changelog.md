@@ -13,7 +13,7 @@ Creates a changelog for a git tag
 
 Generates a Changelog for the latest tag 
 
-This command will generate a Changelog as markdown for the git commit range given. If you are using GitHub it will also update the GitHub Release with the changelog. You can disable that by passing'--update-release=false' 
+This command will generate a Changelog as markdown for the git commit range given. If you are using GitHub it will also update the GitHub Release with the changelog. You can disable that by passing '--update-release=false' 
 
 If you have just created a git tag this command will try default to the changes between the last tag and the previous one. You can always specify the exact Git references (tag/sha) directly via '--previous-rev' and '--rev' 
 
