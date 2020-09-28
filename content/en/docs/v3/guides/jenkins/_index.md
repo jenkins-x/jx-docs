@@ -7,5 +7,5 @@ weight: 200
 ---
 
 
-The [jx 3.x binary](/docs/v3/guides/jx3/) includes the initial version of the [Trigger Jenkins Proposal](https://github.com/jstrachan/enhancements/blob/jenkins-trigger/proposals/trigger-jenkins/README.md) to improve the interoperability of Jenkins and Jenkins X
+[Jenkins X version 3 ](/docs/v3/guides/jx3/) includes experimental support for the interoperability of Jenkins and Jenkins X
 

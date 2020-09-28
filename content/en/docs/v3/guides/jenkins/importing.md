@@ -6,7 +6,7 @@ weight: 50
 ---
 
 
-Once you have [added one or more Jenkins Servers to the registry](/docs/v3/guides/jenkins/getting-started/#adding-jenkins-servers-into-jenkins-x) you can import a `Jenksinfile` based project.
+Once you have [added one or more Jenkins Servers to Jenkins X](/docs/v3/guides/jenkins/getting-started/) you can import a `Jenksinfile` based project in the usual way.
 
 
 ## Import the code
@@ -33,8 +33,3 @@ jx project import --git-url=https://github.com/myorg/myrepo.git
 ## Choose the remote Jenkins server 
 
 Next the wizard will prompt you to pick which Jenkins server you wish to use (if you have more than one).
-
-In addition you get to pick between:
-
-* importing the project directly into the Jenkins server as a Jenkins _multi branch project_ where Jenkins performs the webhook handling (the default)
-* using `lighthouse`  for ChatOps and webhook handling but when a pipeline is triggered we then trigger the pipeline directly into the remote Jenkins server
