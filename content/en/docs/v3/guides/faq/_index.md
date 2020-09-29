@@ -89,12 +89,20 @@ jxRequirements:
 ```
 
 
-## How do I uninstall boot?
+## How do I uninstall Jenkins X?
 
-From inside a git clone of your `dev`, `staging` or `production` environment's git repository you can run: 
+We don't yet have a nice uninstall command
 
-```
-jx step create helmfile 
-helmfile destroy
-```
+
+## Why does Jenkins X fail to download plugins?
+
+When I run a `jx` command I get an error like...
+
+``` Get https://github.com/jenkins-x/jx-..../releases/download/v..../jx-.....tar.gz: dial tcp: i/o timeout```
+
+This sounds like a network problem; the code in `jx` is trying to download from `github.com` and your laptop is having trouble resolving the `github.com` domain.
+
+* do you have a firewall / VPN / HTTP proxy blocking things?
+* is your `/etc/resolv.conf` causing issues? e.g. if you have multiple entries for your company VPN?
+
 
