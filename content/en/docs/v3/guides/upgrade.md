@@ -35,7 +35,7 @@ After running this command you will usually have some changes in git you can rev
 
 ```bash
 git add *
-git commit -a -m "fix: ugprade versions"
+git commit -a -m "fix: upgrade versions"
 git push
 ```               
 
