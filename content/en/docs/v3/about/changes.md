@@ -18,3 +18,10 @@ You may also find the [Roadmap](/community/roadmap/) and [Maturity Matrix](/docs
   * if you were planning on submitting a Pull Request on any plugin please make sure you rebase before submitting a Pull Request. Also upgrade to go `1.15.2` ASAP 
   
 * New [Maturity Matrix](/docs/v3/about/maturity-matrix/) published! You can now view at a glance the different capabilities across clouds and infrastructure. Many thanks [Nitin](https://github.com/borntorock) for all your hard work
+
+* Preview environments how use [helmfile](https://github.com/roboll/helmfile) as a declarative way to describe all of the dependencies you need in your preview environment. 
+
+  * This is all handled by the new [jx-preview](https://github.com/jenkins-x/jx-preview) plugin
+  * This also opens up the possibility of using multiple namespaces per preview; or using canary releases on multiple previews into a shared environment.
+  
+* The new Jenkins X version 3 CLI [jx-cli](https://github.com/jenkins-x/jx-cli) is now plugins all the way down; so that all of the features are implemented by [separate binary plugins](https://github.com/jenkins-x/jx-cli#plugins) making the CLI more modular and easier to work on.
