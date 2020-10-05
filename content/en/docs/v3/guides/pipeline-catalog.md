@@ -12,7 +12,7 @@ As part of the [Tekton Catalog enhancement proposal](https://github.com/jenkins-
 
 ## Source changes
 
-If you [upgrade your cluster to the latest version stream](docs/v3/guides/upgrade/#cluster) then you will find if you [create a new quickstart](/docs/v3/create-project/#create-a-new-project-from-a-quickstart) that:
+If you [upgrade your cluster to the latest version stream](/docs/v3/guides/upgrade/#cluster) then you will find if you [create a new quickstart](/docs/v3/create-project/#create-a-new-project-from-a-quickstart) that:
 
 * `.lighthouse/jenkins-x` directory contains the default CI/CD pipelines for Jenkins X with these files:
   * `triggers.yaml` to define the [lighthouse](https://github.com/jenkins-x/lighthouse) `presubmits` and `postsubmits` (i.e. Pull Request pipelines and releases).
