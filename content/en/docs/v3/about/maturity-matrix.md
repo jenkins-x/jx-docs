@@ -11,4 +11,8 @@ This maturity matrix descibes the status of the Jenkins X 3.x __Alpha__ release.
 
 <img src="/images/v3/jx-v3alpha-color-rep.png">
 
+<br />
 
+This maturity matrix describes the tentative plan post Jenkins X v3.0 __GA__ release. This matrix will continue to evolve as we progress further.
+
+<img src="/images/v3/jx-v3ga-maturity-matrix.png">
