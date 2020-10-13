@@ -84,7 +84,7 @@ A collection of best of breed software tools packaged as helm charts that come p
 
 ### Addons
 
-Some of these applications are baked in; like: Nexus, ChartMuseum, Monocular.  Others are provided as an `Addon`.
+Some of these applications are baked in; like: Nexus, ChartMuseum, Monocular.  Others are provided as an `Addon` like [Grafana](https://github.com/grafana/grafana)
 
 To install an addon then use the [jx create addon](/commands/jx_create_addon/) command. e.g.
 
