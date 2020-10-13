@@ -17,6 +17,13 @@ To create a new project from a quickstart template use the [jx project quickstar
 jx project quickstart
 ``` 
 
+**Note**: The above command does take _a_while_. You don't want to touch anything and wait for a bit. You may want to [make some coffee](https://www.roastycoffee.com/how-to-make-coffee-without-a-coffee-maker/) or the like. If you want to see what's going on, run in another terminal:
+
+```bash
+jx pipeline log
+```
+
+
 Note that the old Jenkins X 2.x alias `jx quickstart` is still supported but will be deprecated eventually.
 
 See the [quickstart documentation](/docs/create-project/creating/) for more information
