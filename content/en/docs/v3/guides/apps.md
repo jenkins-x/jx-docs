@@ -77,7 +77,7 @@ Note that many apps are already configured to make use of the `jx-requirements.y
 
 ### Version Stream folder
 
-Yoy may have noticed there is a folder called `versionStream` inside your clusters git repository. The [version stream](/about/concepts/version-stream/) is used to provide shared configuration such as:
+You may have noticed there is a folder called `versionStream` inside your clusters git repository. The [version stream](/about/concepts/version-stream/) is used to provide shared configuration such as:
 
 * the verified versions of charts, images and git repositories which have been tested to work together
 * the default namespace and configuration of charts.
