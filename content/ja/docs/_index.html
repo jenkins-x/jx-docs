@@ -1,0 +1,243 @@
++++
+title="Jenkins X ドキュメント"
+linkTitle="ドキュメント"
+
+aliases = [
+    "/getting-started/",
+    "/docs/getting-started/",
+]
+
+type= "docs"
+menu="main"
+weight="1"
+layout="home"
+
++++
+
+<h1>開始する</h1>
+
+<p>Jenkins X は、Tekton を基盤としたパイプラインエンジンとして使用することで、
+  プルリクエストのプレビュー環境を備えた Kubernetes 用の自動 CI+CD を提供しています。</p>
+<p>&nbsp;</p>
+
+<div class="row">
+  <div class="col col-lg-12">
+    <h2><strong>ステップ 1: Kubernetes クラスタのプロビジョニング</strong></h2>
+
+    <p>
+      Kubernetes クラスタのプロビジョニングは簡単です。
+      Jenkins X はクラスタのプロビジョニング方法をあまり気にしませんが、プロビジョニングされるリソースが多いので、
+      今回用意した Terraform モジュールを使うことをお勧めします。
+      それらを使用するための前提条件は、インストールされた <code>terraform</code> バイナリです。インストール手順は<a href="https://learn.hashicorp.com/terraform/getting-started/install">こちら</a>を参照してください。
+    </p>
+
+    <ul class="nav nav-tabs" id="provision-cluster-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#gcp">GCP</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#aws">AWS</a>
+      </li>
+    </ul>
+
+    <div id="provision-cluster-tabs" class="tab-content">
+      <div class="tab-pane fade show active" id="gcp">
+        <div class="row">
+          <div class="col-sm-4">
+            <a href="/docs/getting-started/setup/create-cluster/gke/"><img
+                src="https://www.pulumi.com/logos/tech/gcp.svg" /></i></a>
+          </div>
+        </div>
+        <p>&nbsp;</p>
+        <p>
+          1. 空のディレクトリに <code>main.tf</code> ファイルを作成し、以下のコードスニペットを追加します。
+          クラスタをインストールするための GCP プロジェクト ID を指定する必要があります。
+        </p>
+{{<highlight terraform>}}
+module "jx" {
+  source = "jenkins-x/jx/google"
+
+  gcp_project = "<my-gcp-project-id>"
+}
+
+output "jx_requirements" {
+  value = module.jx.jx_requirements
+}
+{{</highlight>}}
+
+        <p>
+          このセットアップでは、デフォルトのパラメータを使用します。
+          GKE Terraform モジュールを使用して Kubernetes クラスタをプロビジョニングする方法の詳細については、<a href="/docs/getting-started/setup/create-cluster/gke">GKE クラスタの作成</a>を参照してください。
+        </p>
+
+        <p>
+          2. Terraform を使用してクラスタをプロビジョニングします。
+        </p>
+{{<highlight bash>}}
+terraform init
+terraform apply
+{{</highlight>}}
+
+      </div>
+      <div class="tab-pane fade" id="aws">
+        <div class="row">
+          <div class="col-sm-4">
+            <a href="/docs/getting-started/setup/create-cluster/eks/"> <img
+                src="https://www.pulumi.com/logos/tech/aws.svg" class="mx-auto d-block" /></i></a>
+          </div>
+        </div>
+        <p>
+          1. 空のディレクトリに <code>main.tf</code> ファイルを作成し、以下のコードスニペットを追加します。
+        </p>
+{{<highlight terraform>}}
+module "eks-jx" {
+  source  = "jenkins-x/eks-jx/aws"
+}
+
+output "jx_requirements" {
+  value = module.eks-jx.jx_requirements
+}
+
+output "vault_user_id" {
+  value       = module.eks-jx.vault_user_id
+  description = "The Vault IAM user id"
+}
+
+output "vault_user_secret" {
+  value       = module.eks-jx.vault_user_secret
+  description = "The Vault IAM user secret"
+}
+{{</highlight>}}
+        <p>
+          このセットアップでは、デフォルトのパラメータを使用します。
+          EKS Terraform モジュールを使用して Kubernetes クラスタをプロビジョニングする方法の詳細については、<a href="/docs/getting-started/setup/create-cluster/eks">EKS クラスタの作成</a> を参照してください。
+        </p>
+
+        <p>
+          2. Terraform を使用してクラスタをプロビジョニングします。
+{{<highlight bash>}}
+terraform init
+terraform apply
+
+export VAULT_AWS_ACCESS_KEY_ID=$(terraform output vault_user_id)
+export VAULT_AWS_SECRET_ACCESS_KEY=$(terraform output vault_user_secret)
+{{</highlight>}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<div class="row">
+  <div class="col col-lg-12">
+    <h2><strong>ステップ 2: Jenkins X CLI のインストール</strong></h2>
+    <p>
+      次のステップは、オペレーティングシステム用の Jenkins X バイナリ <code>jx</code> をインストールすることです。
+    </p>
+    <ul class="nav nav-tabs" id="install-jx-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#osx">OS X</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#linux">Linux</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#windows">Windows</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="install-jx-tabs">
+      <div class="tab-pane fade show active" id="osx">
+        <h3>Homebrew の使用</h3>
+
+{{<highlight sh>}}
+brew install jenkins-x/jx/jx
+{{</highlight>}}
+
+        <h3>Curl の使用</h3>
+
+{{<highlight sh>}}
+# `.tar` ファイルをダウンロードし、展開します
+curl -L "https://github.com/jenkins-x/jx/releases/download/$(curl --silent https://api.github.com/repos/jenkins-x/jx/releases/latest | jq -r '.tag_name')/jx-darwin-amd64.tar.gz" | tar xzv "jx"
+
+# パスに `jx` を追加します
+sudo mv jx /usr/local/bin
+
+# インストールを確認します
+jx version --short
+{{</highlight>}}
+
+      </div>
+      <div class="tab-pane fade" id="linux">
+
+        &nbsp;
+
+{{<highlight sh>}}
+# `.tar` ファイルをダウンロードし、`jx` コマンドを実行できるディレクトリに展開します
+curl -L "https://github.com/jenkins-x/jx/releases/download/$(curl --silent "https://github.com/jenkins-x/jx/releases/latest" | sed 's#.*tag/\(.*\)\".*#\1#')/jx-linux-amd64.tar.gz" | tar xzv "jx"
+
+# バイナリを自分のパスに移動します
+sudo mv jx /usr/local/bin
+
+# インストールを確認します
+jx version --short
+{{</highlight>}}
+
+      </div>
+      <div class="tab-pane fade" id="windows">
+        &nbsp;
+
+        <h3>Chocolatey の使用</h3>
+
+        1. 右クリックメニュー：\[コマンドプロンプト (管理者)\] を開始します
+        <br><br>
+        2. シェルプロンプトで `powershell.exe` コマンドを実行して
+        `choco` バイナリをダウンロードしてインストールし、
+        バイナリを実行できるようにインストールパスを設定します
+
+{{<highlight sh>}}
+@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile `
+-InputFormat None -ExecutionPolicy Bypass `
+-Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" `
+&& SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+{{</highlight>}}
+
+        3. Chocolatey を使って Jenkins X をインストールします
+
+{{<highlight sh>}}
+choco install jenkins-x
+{{</highlight>}}
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<div class="row">
+  <div class="col col-lg-12">
+    <p>&nbsp;</p>
+    <h2><strong>ステップ 3: クラスタに Jenkins X をインストール</strong></h2>
+
+    <p>
+      Kubernetes クラスタをプロビジョニングし、<code>jx</code> CLI をインストールしました。
+      これで、Jenkins X をクラスタにインストールする準備ができました。
+      これを行うには、<code>jx boot</code> コマンドを使用します。
+      JX Boot の詳細については、<a href="/docs/getting-started/setup/boot">Run Boot</a> の項を参照してください。
+    </p>
+      空のディレクトリで実行します。
+    </p>
+
+{{<highlight bash>}}
+terraform output jx_requirements > <some_empty_dir>/jx-requirements.yml
+cd <some_empty_dir>
+jx boot --requirements jx-requirements.yml
+{{</highlight>}}
+  </div>
+</div>
+
+<p>&nbsp;</p>
+
