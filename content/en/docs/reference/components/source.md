@@ -22,7 +22,7 @@ This page lists the main organisations and repositories.
 * [jenkins-x-quickstarts](https://github.com/jenkins-x-quickstarts) the quickstart projects used by [create quickstart](/docs/getting-started/first-project/create-quickstart/)
 * [jenkins-x-test-projects](https://github.com/jenkins-x-test-projects) test projects we use in test cases 
 
-## V3 
+## Version 3.x
 
 The following organisations are for [version 3.x](https://jenkins-x.io/docs/v3/):
 
