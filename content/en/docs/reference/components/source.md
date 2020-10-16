@@ -22,6 +22,17 @@ This page lists the main organisations and repositories.
 * [jenkins-x-quickstarts](https://github.com/jenkins-x-quickstarts) the quickstart projects used by [create quickstart](/docs/getting-started/first-project/create-quickstart/)
 * [jenkins-x-test-projects](https://github.com/jenkins-x-test-projects) test projects we use in test cases 
 
+## V3 
+
+The following organisations are for [version 3.x](https://jenkins-x.io/docs/v3/):
+
+* [jenkins-x-plugins](https://github.com/jenkins-x-plugins) contains plugins to Jenkins X 3.x. See the [extension guide](https://jenkins-x.io/docs/v3/about/extending/#plugins) for details
+* [jx3-gitops-repositories](https://github.com/jx3-gitops-repositories) the quickstart repositories for creating new infrastructure and installations on different cloud providers
+
+Then this is the main v3 CLI:
+
+* [jenkins-x/jx-cli] is the 3.x CLI 
+
 ## Repositories
 
 Here we'll call out of some of the main repositories in the above organisations:
