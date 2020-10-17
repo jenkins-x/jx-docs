@@ -31,7 +31,7 @@ The following organisations are for [version 3.x](https://jenkins-x.io/docs/v3/)
 
 Then this is the main v3 CLI:
 
-* [jenkins-x/jx-cli](https://github.com/jjenkins-x/jx-cli) is the 3.x CLI 
+* [jenkins-x/jx-cli](https://github.com/jenkins-x/jx-cli) is the 3.x CLI 
 
 ## Repositories
 
