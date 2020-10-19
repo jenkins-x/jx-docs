@@ -20,7 +20,7 @@ This is our current recommended quickstart for EKS:
 
 *  <a href="https://github.com/jx3-gitops-repositories/jx3-eks-terraform-vault/generate" target="github" class="btn bg-primary text-light">Create Git Repository</a> 
 
-* `git clone` the new repository and `cd`  into the git clone
+* `git clone` the newly Generated repository and `cd` into it.
 
 *  <a href="https://github.com/jx3-gitops-repositories/jx3-eks-terraform-vault/blob/master/bin/README.md" 
     target="github" class="btn bg-primary text-light" 
