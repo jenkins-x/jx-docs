@@ -44,3 +44,18 @@ It is possible that you will have merge conflicts.  You can follow the inline gi
 Once ready, make a pull request onto your cluster repository, review changes and merge.  The [Jenkins X git operator](https://github.com/jenkins-x/jx-git-operator) will automatically apply the upgrades into your cluster.
 
 
+### Configure merge strategy
+
+You can configure the `kpt` strategy used to apply changes from the version stream into your `versionStream` folder via a custom configuration file.
+
+Create a file called `.jx/gitops/kpt-strategy.yaml` in your dev cluster git repository that looks like this:
+
+```yaml 
+config:
+- relativePath: versionStream
+  strategy: alpha-git-patch
+```
+
+this will configure that the `alpha-git-patch` strategy will be used whenever you try `jx gitops upgrade` which should preserve any local changes; though you may have to resolve some git conflicts in your IDE (as described above).
+
+To avoid any possible git merge issues its a good idea to try keep local source changes out of the `versionStream` folder if you can.
