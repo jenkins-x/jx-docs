@@ -5,7 +5,7 @@ description: Setup Jenkins X on GKE
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2020-02-21
-weight: 20
+weight: 40
 ---
 
 ---
