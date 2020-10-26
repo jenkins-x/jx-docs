@@ -10,7 +10,7 @@ Jenkins X 3.x uses a [git operator](https://github.com/jenkins-x/jx-git-operator
 
 ## Using Terraform
 
-*NOTE* iff you are using one of the public clouds to install Jenkins X then Terraform will install the [git operator](https://github.com/jenkins-x/jx-git-operator) for you so that there is no need for you to do so manually.
+*NOTE* if you are using one of the public clouds to install Jenkins X then Terraform will install the [git operator](https://github.com/jenkins-x/jx-git-operator) for you so that there is no need for you to do so manually.
 
 So the following approaches automatically install the operator for you:
 
