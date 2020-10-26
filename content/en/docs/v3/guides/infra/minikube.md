@@ -63,7 +63,7 @@ git commit -a -m "fix: configurations for local minikube"
 git push origin master
 ```
 
-* now [install the git operator](/docs/v3/guides/operator/)
+* <a href="/docs/v3/guides/operator/" class="btn bg-primary text-light">Install the Git Operator</a> 
 
 * once Jenkins X is installed run the following command to enable webhooks via `ngrok`
 
