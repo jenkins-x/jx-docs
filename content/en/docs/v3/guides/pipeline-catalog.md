@@ -92,3 +92,33 @@ It is possible that you can have merge conflicts.
 
 You can follow the inline git helper messages to resolve conflicts - or use your IDE to help figure out the merge issues more easily. 
 
+## Diagnosing problems
+
+If you edit pipelines or lighthouse trigger files and things don't work there's a couple of places the errors may show up.
+
+We will hopefully add much better linting/error messages on Pull Requests soon to give you better and faster feedback.
+
+Until then you could look in:
+
+* the `lighthouse-webhooks-*` pod(s) which take the webhooks from your git provider and convert them into `lighthousejob` resources
+* the `lighthouse-tekton-controller-*` pod(s) which watch for `lighthousejob` resources and create the Tekton [PipelineRun](https://tekton.dev/docs/pipelines/pipelineruns/#configuring-a-pipelinerun) resources
+* the `tekton-controller-*`  pod(s) watches for Tekton [PipelineRun](https://tekton.dev/docs/pipelines/pipelineruns/#configuring-a-pipelinerun) resources and conver them into Kubernetes `Pod` resources
+
+Any errors will usually be recorded in the `status` field of the resource that has issues (`lighthousejob` or `pipelinerun`).
+
+
+## Reference Guide
+
+The following are the links to the various configuration file formats:
+
+[Tekton](https://tekton.dev/) resources:
+
+* [Task](https://tekton.dev/docs/pipelines/tasks/#configuring-a-task)
+* [TaskRun](https://tekton.dev/docs/pipelines/taskruns/#configuring-a-taskrun)
+* [Pipeline](https://tekton.dev/docs/pipelines/pipelines/#configuring-a-pipeline) 
+* [PipelineRun](https://tekton.dev/docs/pipelines/pipelineruns/#configuring-a-pipelinerun)
+
+[Lighthouse](https://github.com/jenkins-x/lighthouse) [TriggerConfig](https://github.com/jenkins-x/lighthouse/blob/master/docs/trigger/github-com-jenkins-x-lighthouse-pkg-triggerconfig.md#Config):
+
+* [presubmits](https://github.com/jenkins-x/lighthouse/blob/master/docs/trigger/github-com-jenkins-x-lighthouse-pkg-config-job.md#Presubmit) for triggering pipelines on Pull Request
+* [postsubmits](https://github.com/jenkins-x/lighthouse/blob/master/docs/trigger/github-com-jenkins-x-lighthouse-pkg-config-job.md#Postsubmit) for triggering pipelines on a push to a branch (e.g. releasing)
