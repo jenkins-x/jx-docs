@@ -72,3 +72,16 @@ git push
 It is possible that you can have merge conflicts.  
 
 You can follow the inline git helper messages to resolve conflicts - or use your IDE to help figure out the merge issues more easily. 
+
+
+## Reusing Tasks from the Tekton Catalog
+
+The new [jx pipeline import](https://github.com/jenkins-x/jx-pipeline/blob/master/docs/cmd/jx-pipeline_import.md) command can be used to import `Task` resources from the [Tekton Catalog](https://github.com/tektoncd/catalog) and using them inside your project. 
+
+Here's a [demo of this in action](https://asciinema.org/a/368282):
+
+<script src="https://asciinema.org/a/368282.js" id="asciicast-368282" async></script>
+
+The tekton Task resources are copied into your `.lighthouse` directory in a folder using `kpt` so that you can modify things locally if you need to and can upgrade your local copy with upstream changes via the above `jx gitops upgrade` mechanism.
+
+  
