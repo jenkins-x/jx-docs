@@ -11,10 +11,10 @@ Jenkins X has a number of well defined extention points you can use to extend th
 
 [Helm](https://helm.sh/) [charts](https://helm.sh/docs/topics/charts/) are the standard way to package applications for kubernetes.
 
-It's easy to use GitOps to [add charts](/docs/v3/guides/apps/#adding-charts) to any of your clusters and [customize them](/docs/v3/guides/apps/#customising-charts) however you need.
+It's easy to use GitOps to [add charts](/docs/v3/develop/apps/#adding-charts) to any of your clusters and [customize them](/docs/v3/develop/apps/#customising-charts) however you need.
 
 
-You can also easily [add one or more kubernetes resources to a cluster via a source layout chart](/docs/v3/guides/apps/#adding-resources)
+You can also easily [add one or more kubernetes resources to a cluster via a source layout chart](/docs/v3/develop/apps/#adding-resources)
     
 
 ## Plugins
@@ -29,7 +29,7 @@ If you wish to create a new plugin try browse the [jenkins-x-plugins organisatio
 
 ## Triggers
 
-With version 3.x we default to using [Pipeline Catalogs](/docs/v3/guides/pipeline-catalog/) containing Tekton resources to define CI/CD pipelines.
+With version 3.x we default to using [Pipeline Catalogs](/docs/v3/develop/pipeline-catalog/) containing Tekton resources to define CI/CD pipelines.
 
 e.g. the default CI/CD pipelines from the [default Jenkins X Pipeline Catalog]() define tekton pipelines in the `.lighthouse/jenkins-x` folder.
 
@@ -42,7 +42,7 @@ If you define a pipeline you want to share with other repositories you can then 
 
 ## Octant
 
-Our preferred UI for Kubernetes, Tekton and Jenkins X is [octant](/docs/v3/guides/ui/#octant) as its easy to install/run and has fined grained RBAC and security without the hassle of setting up TLS, DNS and SSO on every cluster.
+Our preferred UI for Kubernetes, Tekton and Jenkins X is [octant](/docs/v3/develop/ui/#octant) as its easy to install/run and has fined grained RBAC and security without the hassle of setting up TLS, DNS and SSO on every cluster.
 
 One of the awesome features of [Octant](https://octant.dev/) is it supports plugins so that anyone can build a plugin to extend the UI. We've created the [octant-jx](https://github.com/jenkins-x/octant-jx) plugin to extend [Octant](https://octant.dev/) with the Jenkins X capabilities of environments, pipelines, source repositories and so forth. 
 

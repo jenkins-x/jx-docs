@@ -9,19 +9,19 @@ aliases:
 
 As part of the [Tekton Catalog enhancement proposal](https://github.com/jenkins-x/enhancements/issues/37) we've improved support for Tekton in Jenkins X so that you can
 
-  * easily [edit any pipeline in any git repository](/docs/v3/guides/pipeline-catalog/#editing-pipelines) by just modifying the [Task](https://tekton.dev/docs/pipelines/tasks/#configuring-a-task), [Pipeline](https://tekton.dev/docs/pipelines/pipelines/#configuring-a-pipeline) or [PipelineRun](https://tekton.dev/docs/pipelines/pipelineruns/#configuring-a-pipelinerun) files in your `.ligthhouse/jenkins-x` folder
+  * easily [edit any pipeline in any git repository](/docs/v3/develop/pipeline-catalog/#editing-pipelines) by just modifying the [Task](https://tekton.dev/docs/pipelines/tasks/#configuring-a-task), [Pipeline](https://tekton.dev/docs/pipelines/pipelines/#configuring-a-pipeline) or [PipelineRun](https://tekton.dev/docs/pipelines/pipelineruns/#configuring-a-pipelinerun) files in your `.ligthhouse/jenkins-x` folder
   * [add new pipelines to any git repository](#add-new-taskspipelines-by-hand) to reuse any [Task](https://tekton.dev/docs/pipelines/tasks/#configuring-a-task) files you find from places like the [tekton catalog](https://github.com/tektoncd/catalog) in your repositories
 
 ## Source changes
 
-If you [upgrade your cluster to the latest version stream](/docs/v3/guides/upgrade/#cluster) then you will find if you [create a new quickstart](/docs/v3/create-project/#create-a-new-project-from-a-quickstart) that:
+If you [upgrade your cluster to the latest version stream](/docs/v3/guides/upgrade/#cluster) then you will find if you [create a new quickstart](/docs/v3/develop/create-project/#create-a-new-project-from-a-quickstart) that:
 
 * `.lighthouse/jenkins-x` directory contains the default CI/CD pipelines for Jenkins X with these files:
   * `triggers.yaml` to define the [lighthouse](https://github.com/jenkins-x/lighthouse) [TriggerConfig](https://github.com/jenkins-x/lighthouse/blob/master/docs/trigger/github-com-jenkins-x-lighthouse-pkg-triggerconfig.md#Config) which has a [spec field](https://github.com/jenkins-x/lighthouse/blob/master/docs/trigger/github-com-jenkins-x-lighthouse-pkg-triggerconfig.md#ConfigSpec) which defines [presubmits](https://github.com/jenkins-x/lighthouse/blob/master/docs/trigger/github-com-jenkins-x-lighthouse-pkg-config-job.md#Presubmit) and [postsubmits](https://github.com/jenkins-x/lighthouse/blob/master/docs/trigger/github-com-jenkins-x-lighthouse-pkg-config-job.md#Postsubmit) (i.e. Pull Request pipelines and releases).
   * `pullrequest.yaml` defines the Pull Request pipeline using a Tekton [Task](https://tekton.dev/docs/pipelines/tasks/#configuring-a-task), [Pipeline](https://tekton.dev/docs/pipelines/pipelines/#configuring-a-pipeline) or [PipelineRun](https://tekton.dev/docs/pipelines/pipelineruns/#configuring-a-pipelinerun)
   * `release.yaml` defines the Release pipeline using a Tekton Tekton [Task](https://tekton.dev/docs/pipelines/tasks/#configuring-a-task), [Pipeline](https://tekton.dev/docs/pipelines/pipelines/#configuring-a-pipeline) or [PipelineRun](https://tekton.dev/docs/pipelines/pipelineruns/#configuring-a-pipelinerun)
   
-* `jenkins-x.yml` files are no longer used by default in new quickstarts instead we use the above. Note if you have projects using `jenkins-x.yml` files they are still supported if you [import them into v3](/docs/v3/create-project/#import-an-existing-project) or you can [use this tool to migrate them to tekton pipelines](https://github.com/jenkins-x-plugins/jx-v2-tekton-converter/blob/main/README.md)
+* `jenkins-x.yml` files are no longer used by default in new quickstarts instead we use the above. Note if you have projects using `jenkins-x.yml` files they are still supported if you [import them into v3](/docs/v3/develop/create-project/#import-an-existing-project) or you can [use this tool to migrate them to tekton pipelines](https://github.com/jenkins-x-plugins/jx-v2-tekton-converter/blob/main/README.md)
 
 
 ## Editing pipelines

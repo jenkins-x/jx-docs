@@ -24,7 +24,7 @@ weight: 80
 * It opens the door to a flexible [multi-cluster support](/docs/v3/guides/multi-cluster/) so that every cluster can be managed in the same canonical GitOps approach from a single git repository 
 * The new [getting started approach](/docs/v3/getting-started/) runs the boot pipeline as a `Job` inside the Kubernetes cluster. This ensures consistency in tooling used and also improves security by avoiding having the secrets on a developers laptop. 
   * The only thing you run on your local machine when installing Jenkins X is [installing the git operator](/docs/v3/guides/operator/) which is a simple helm chart.
-* Everything is now an app. So if you want to remove our `nginx-ingress` chart and replace it with another ingress solution (knative / istio / gloo / ambassador / linkerd or whatever) just go ahead and use the [apps commands](/docs/v3/guides/apps/) to add/remove apps and have boot manage everything in a consistent way
+* Everything is now an app. So if you want to remove our `nginx-ingress` chart and replace it with another ingress solution (knative / istio / gloo / ambassador / linkerd or whatever) just go ahead and use the [apps commands](/docs/v3/develop/apps/) to add/remove apps and have boot manage everything in a consistent way
     * e.g. here's [an example](https://github.com/jx3-gitops-repositories/jx3-kind-vault/blob/master/helmfile.yaml#L17) of removing `chartmusem` and `nexus` and replacing it with `bucketrepo` via a single simple yaml change.
 * You can install an app in a specific namespace if you wish
     * This also opens the door to using boot to setup multi-team installations where multiple teams use different namespaces but share services in the same cluster
@@ -32,5 +32,5 @@ weight: 80
   * We use [kpt](https://googlecontainertools.github.io/kpt/) to do that for us
   * We now include the [version stream](https://jenkins-x.io/about/concepts/version-stream/) inside your GitOps repository too inside the `versionStream` directory after installation so that all the information about your installation is inside a single git repository so its simpler to test changes & ensure consistency.
 * We can avoid composite charts to simplfiy configuration and upgrades
-* We no longer use `exposecontroller`, instead use regular helm configuration to create `Ingress` resources and [override domain names](/docs/v3/guides/faq/#how-do-i-configure-the-ingress-domain-in-dev-staging-or-production)
+* We no longer use `exposecontroller`, instead use regular helm configuration to create `Ingress` resources and [override domain names](/docs/v3/develop/faq/#how-do-i-configure-the-ingress-domain-in-dev-staging-or-production)
 * secret handling is currently much simpler using Kubernetes External Secrets for any secrets in any namespace or cluster for your own apps or for those used by Jenkins X.

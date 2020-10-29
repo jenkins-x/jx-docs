@@ -107,9 +107,9 @@ So you will see 2 commits on a typical promotion pull request:
 
 Due to the new GitOps model this is a little more complex than in v2 since imports are done via GitOps and the changes in git result in a Job / Pipeline running in the cluster to effect change.
 
-Here are the steps involved in [creating projects](/docs/v3/create-project/) via importing / creating quickstarts:
+Here are the steps involved in [creating projects](/docs/v3/develop/create-project/) via importing / creating quickstarts:
 
-* Run the `jx project quickstart` or `jx project import` command as [described here](/docs/v3/create-project/)
+* Run the `jx project quickstart` or `jx project import` command as [described here](/docs/v3/develop/create-project/)
 * New git repository is created if:
   * you are creating a quickstart via `jx project quickstart`
   * you are running `jx project import` inside a directory which has never been pushed to a git repository before
@@ -124,7 +124,7 @@ Here are the steps involved in [creating projects](/docs/v3/create-project/) via
 * When the Pull Request merges the above [Apply step](#apply-step) runs
   * Lighthouse configuration is updated
   * a Webhook is registered for Lighthouse on the app's repository
-* The `jx project` command now continues and pushes the new [tekton pipelines for your app](/docs/v3/guides/pipeline-catalog/) to the main branch of the git repository
+* The `jx project` command now continues and pushes the new [tekton pipelines for your app](/docs/v3/develop/pipeline-catalog/) to the main branch of the git repository
   * this triggers a new pipeline to run on your app which creates a new release of your app 
   * once the release is complete a Pull Request is created to start the [Promotion flow](#promotion) of the new app version
   * when this Promote Pull Request merges your application will be running in `Staging` 

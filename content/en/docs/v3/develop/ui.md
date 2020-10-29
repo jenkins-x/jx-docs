@@ -60,7 +60,7 @@ If you click the **Details** link that should open the [jx-pipelines-visualizer]
 
 ### Logging in to the Pipelines Visualizer
 
-Unless you [customize the chart](/docs/v3/guides/apps/#customising-charts) to change the `Ingress` the default will use _basic authentication_ to access the web UI to avoid your pipeline logs being visible on the internet.
+Unless you [customize the chart](/docs/v3/develop/apps/#customising-charts) to change the `Ingress` the default will use _basic authentication_ to access the web UI to avoid your pipeline logs being visible on the internet.
 
 The default username is `admin`. 
 
