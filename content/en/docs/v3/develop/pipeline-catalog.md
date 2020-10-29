@@ -1,8 +1,10 @@
 ---
 title: Pipeline Catalogs
 linktitle: Pipeline Catalogs
-description: Pipeline Catalogs for better integration with Tekton
-weight: 105
+description: Integration with Tekton Pipelines and Tekton Catalog
+weight: 200
+aliases:
+  - /docs/v3/guides/pipeline-catalog/
 ---
 
 As part of the [Tekton Catalog enhancement proposal](https://github.com/jenkins-x/enhancements/issues/37) we've improved support for Tekton in Jenkins X so that you can

@@ -1,28 +1,30 @@
 ---
 title: FAQ
 linktitle: FAQ
-description: Questions on using helm 3 and boot
+description: Questions on using Jenkins X 3.x and helm 3
 weight: 500
 aliases:
   - /faq/
+  - /docs/v3/guides/faq/
 ---
 
 
 
 ## How do I list the apps that have been deployed?
 
-You can use helm 3.x directly to list all the apps (charts) deployed in a namespace:
+You can see the helm charts that are installed along witht their version and namespaces by looking at the `releases` section of your `helmfile.yaml` file in your cluster git repository.
 
-``` 
-helm list
+You can view all of the current [Preview Environments](/docs/build-test-preview/preview/) via
+
+```bash 
+kubectl get preview
+```
+
+There could be some additional charts installed via Terraform for the [git operator](/docs/v3/guides/operator/) and [health subsystem](/docs/v3/guides/health/) which can be viewed via:
+  
+```bash 
+helm list --all-namespaces
 ```                                                                                
-
-To look in another namespace add it as an argument:
-
-``` 
-helm list -n nginx
-```                                                                                
-
 
 ## How do I customise an App in an Environment
 
