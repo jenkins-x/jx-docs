@@ -104,7 +104,7 @@ aliases:
     <div class="card text-center">
       <div class="card-body">
         <h5 class="card-title">
-          <a href="/docs/v3/getting-started/gcp/" title="GCP with GKE">Google</a>          
+          <a href="/docs/v3/getting-started/gke/" title="GCP with GKE">Google</a>          
         </h5>
         <p class="card-text">setup Jenkins X on Google Cloud with GKE</p>
       </div>
