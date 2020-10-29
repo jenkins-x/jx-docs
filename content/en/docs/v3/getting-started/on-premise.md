@@ -64,4 +64,4 @@ kubectl get node
     Install the git operator
   </a> from inside a git clone of your git repository.
 
-*  <a href="/docs/v3/create-project/" class="btn bg-primary text-light">Create or import projects</a> 
+*  <a href="/docs/v3/develop/create-project/" class="btn bg-primary text-light">Create or import projects</a> 

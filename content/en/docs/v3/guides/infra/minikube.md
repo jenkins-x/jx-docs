@@ -71,4 +71,4 @@ git push origin master
 kubectl port-forward svc/hook 8080:80
 ```
 
-*  <a href="/docs/v3/create-project/" class="btn bg-primary text-light">Create or import projects</a>
+*  <a href="/docs/v3/develop/create-project/" class="btn bg-primary text-light">Create or import projects</a>

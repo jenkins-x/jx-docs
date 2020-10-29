@@ -29,4 +29,4 @@ This is our current recommended quickstart for Azure:
     Create your infrastructure
   </a> 
 
-*  <a href="/docs/v3/create-project/" class="btn bg-primary text-light">Create or import projects</a>
+*  <a href="/docs/v3/develop/create-project/" class="btn bg-primary text-light">Create or import projects</a>

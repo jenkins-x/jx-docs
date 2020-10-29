@@ -10,10 +10,10 @@ You may also find the [Roadmap](/community/roadmap/) and [Maturity Matrix](/docs
 
 ## Changes 
 
-* We now have [Tekton Catalog integration](/docs/v3/guides/pipeline-catalog/) so that you can:
-  * easily [edit any pipeline in any git repository](/docs/v3/guides/pipeline-catalog/#editing-pipelines) by just modifying the `PipelineRun` files in your `.ligthhouse/jenkins-x` folder
-  * [reuse Tasks from the Tekton catalog](/docs/v3/guides/pipeline-catalog/#adding-tasks-from-the-tekton-catalog) and optionally modify them locally in your repository
-  * [add new pipelines to any git repository](/docs/v3/guides/pipeline-catalog/#add-new-taskspipelines-by-hand) to reuse any `PipelineRun` files you find from places like the [tekton catalog](https://github.com/tektoncd/catalog) into your repositories
+* We now have [Tekton Catalog integration](/docs/v3/develop/pipeline-catalog/) so that you can:
+  * easily [edit any pipeline in any git repository](/docs/v3/develop/pipeline-catalog/#editing-pipelines) by just modifying the `PipelineRun` files in your `.ligthhouse/jenkins-x` folder
+  * [reuse Tasks from the Tekton catalog](/docs/v3/develop/pipeline-catalog/#adding-tasks-from-the-tekton-catalog) and optionally modify them locally in your repository
+  * [add new pipelines to any git repository](/docs/v3/develop/pipeline-catalog/#add-new-taskspipelines-by-hand) to reuse any `PipelineRun` files you find from places like the [tekton catalog](https://github.com/tektoncd/catalog) into your repositories
 
 * We have migrated most of the [Jenkins X Plugins](https://github.com/jenkins-x/jx-cli#plugins) over to the new client-go 1.19.x version now which is a fairly major change due to the API changes in client-go. So we've moved many of the [libraries](https://github.com/jenkins-x/jx-cli#libraries) over to use `v3` instead such as using libraries like [jx-api](https://github.com/jenkins-x/jx-api) or [jx-helpers](https://github.com/jenkins-x/jx-helpers)
   * if you were planning on submitting a Pull Request on any plugin please make sure you rebase before submitting a Pull Request. Also upgrade to go `1.15.2` ASAP 
