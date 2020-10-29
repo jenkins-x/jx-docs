@@ -12,7 +12,7 @@ aliases:
 
 <div class="row">
   <div class="col-sm-4">
-    <div class="card text-center">
+    <div class="card text-center h-100">
       <div class="card-body">
         <h5 class="card-title">
           <a href="/docs/v3/about/what" title="What is Jenkins X and why would I use it">What is Jenkins X?</a>          
@@ -22,7 +22,7 @@ aliases:
     </div>
   </div>
   <div class="col-sm-4">
-    <div class="card text-center">
+    <div class="card text-center h-100">
       <div class="card-body">
         <h5 class="card-title">
           <a href="/docs/v3/about/overview/" title="Overview of Jenkins X and its architecture">Architecture</a>          
@@ -32,7 +32,7 @@ aliases:
     </div>
   </div>
   <div class="col-sm-4">
-    <div class="card text-center">
+    <div class="card text-center h-100">
       <div class="card-body">
         <h5 class="card-title">
           <a href="/docs/v3/about/how-it-works/" title="How Jenkins X works">How it works</a>          
@@ -45,7 +45,7 @@ aliases:
 
 <div class="row pt-4">
   <div class="col-sm-4">
-    <div class="card text-center">
+    <div class="card text-center h-100">
       <div class="card-body">
         <h5 class="card-title">
           <a href="/docs/v3/develop/create-project/" title="create quickstarts or import new repositories">Create Projects</a>          
@@ -55,7 +55,7 @@ aliases:
     </div>
   </div> 
   <div class="col-sm-4">
-    <div class="card text-center">
+    <div class="card text-center h-100">
       <div class="card-body">
         <h5 class="card-title">
           <a href="/docs/v3/about/changes/" title="what has changed">Whats new</a>          
@@ -65,7 +65,7 @@ aliases:
     </div>
   </div>
   <div class="col-sm-4">
-    <div class="card text-center">
+    <div class="card text-center h-100">
       <div class="card-body">
         <h5 class="card-title">
           <a href="/docs/v3/develop/" title="GCP with GKE">Developer Guides</a>          
@@ -76,12 +76,12 @@ aliases:
   </div>
 </div>
 
-## Administration
 
+## Administration
 
 <div class="row">
   <div class="col-sm-4">
-    <div class="card text-center">
+    <div class="card text-center h-100">
       <div class="card-body">
         <p class="card-text text-center">
           <a href="/docs/v3/getting-started/eks/" title="Amazon Web Services with EKS">
@@ -95,7 +95,7 @@ aliases:
     </div>
   </div>
   <div class="col-sm-4">
-    <div class="card text-center">
+    <div class="card text-center h-100">
       <div class="card-body">
         <p class="card-text text-center">
           <a href="/docs/v3/getting-started/azure/" title="Azure with AKS">
@@ -109,7 +109,7 @@ aliases:
     </div>
   </div>
   <div class="col-sm-4">
-    <div class="card text-center">
+    <div class="card text-center h-100">
       <div class="card-body">
         <p class="card-text text-center">
           <a href="/docs/v3/getting-started/gke/" title="GCP with GKE">
@@ -126,7 +126,7 @@ aliases:
 
 <div class="row pt-4">
   <div class="col-sm-4">
-    <div class="card text-center">
+    <div class="card text-center h-100">
       <div class="card-body">
         <p class="card-text text-center">
           <a href="/docs/v3/getting-started/on-premise/" title="Install on any Kubernetes cluster">
@@ -140,7 +140,7 @@ aliases:
     </div>
   </div>
   <div class="col-sm-4">
-    <div class="card text-center">
+    <div class="card text-center h-100">
       <div class="card-body">
         <p class="card-text text-center">
           <a href="/docs/v3/getting-started/minikube/" title="Run locally with minikube">
@@ -154,7 +154,7 @@ aliases:
     </div>
   </div>
   <div class="col-sm-4">
-    <div class="card text-center">
+    <div class="card text-center h-100">
       <div class="card-body">
         <h3 class="card-title">
           <a href="/docs/v3/guides/">
