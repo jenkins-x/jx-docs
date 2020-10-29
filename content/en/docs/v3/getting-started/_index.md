@@ -1,7 +1,7 @@
 ---
 title: Getting Started 
 linktitle: Getting Started
-description: Getting started with Jenkins X 3.x
+description: Setting up your Jenkins X 3.x installation
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2020-02-21

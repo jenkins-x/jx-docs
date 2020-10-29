@@ -1,8 +1,10 @@
 ---
 title: Apps
 linktitle: Apps
-description: Working with apps 
+description: Adding or configuration apps and charts 
 weight: 100
+aliases:
+  - /docs/v3/guides/apps/
 ---
 
 
