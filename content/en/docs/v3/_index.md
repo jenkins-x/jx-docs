@@ -137,7 +137,7 @@ aliases:
     <div class="card text-center">
       <div class="card-body">
         <h5 class="card-title">
-          <a href="/docs/v3/guide/" title="GCP with GKE">Admin Guides</a>          
+          <a href="/docs/v3/guides/" title="GCP with GKE">Admin Guides</a>          
         </h5>
         <p class="card-text">more detailed administration guides</p>
       </div>
