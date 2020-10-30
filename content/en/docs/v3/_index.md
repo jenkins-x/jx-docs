@@ -8,15 +8,15 @@ aliases:
 ---
 
 
-## Developers
+## Developing
 
 <div class="row">
   <div class="col-sm-4">
     <div class="card text-center h-100">
       <div class="card-body">
-        <h5 class="card-title">
+        <h1 class="card-title">
           <a href="/docs/v3/about/what" title="What is Jenkins X and why would I use it">What is Jenkins X?</a>          
-        </h5>
+        </h1>
         <p class="card-text">2 minute introduction to Jenkins X and why you would want to use it</p>
       </div>
     </div>
@@ -24,9 +24,9 @@ aliases:
   <div class="col-sm-4">
     <div class="card text-center h-100">
       <div class="card-body">
-        <h5 class="card-title">
+        <h1 class="card-title">
           <a href="/docs/v3/about/overview/" title="Overview of Jenkins X and its architecture">Architecture</a>          
-        </h5>
+        </h1>
         <p class="card-text">an overview of Jenkins X and its architecture</p>
       </div>
     </div>
@@ -34,9 +34,9 @@ aliases:
   <div class="col-sm-4">
     <div class="card text-center h-100">
       <div class="card-body">
-        <h5 class="card-title">
+        <h1 class="card-title">
           <a href="/docs/v3/about/how-it-works/" title="How Jenkins X works">How it works</a>          
-        </h5>
+        </h1>
         <p class="card-text">a guide for how Jenkins X installs, upgrades, imports projects and performs promotion</p>
       </div>
     </div>
@@ -47,9 +47,9 @@ aliases:
   <div class="col-sm-4">
     <div class="card text-center h-100">
       <div class="card-body">
-        <h5 class="card-title">
+        <h1 class="card-title">
           <a href="/docs/v3/develop/create-project/" title="create quickstarts or import new repositories">Create Projects</a>          
-        </h5>
+        </h1>
         <p class="card-text">create new quickstarts or import existing repositories into Jenkins XS</p>
       </div>
     </div>
@@ -57,9 +57,9 @@ aliases:
   <div class="col-sm-4">
     <div class="card text-center h-100">
       <div class="card-body">
-        <h5 class="card-title">
+        <h1 class="card-title">
           <a href="/docs/v3/about/changes/" title="what has changed">Whats new</a>          
-        </h5>
+        </h1>
         <p class="card-text">recent changes in Jenkins X 3.x</p>
       </div>
     </div>
@@ -67,9 +67,9 @@ aliases:
   <div class="col-sm-4">
     <div class="card text-center h-100">
       <div class="card-body">
-        <h5 class="card-title">
+        <h1 class="card-title">
           <a href="/docs/v3/develop/" title="GCP with GKE">Developer Guides</a>          
-        </h5>
+        </h1>
         <p class="card-text">more detailed developer guides</p>
       </div>
     </div>
@@ -156,12 +156,12 @@ aliases:
   <div class="col-sm-4">
     <div class="card text-center h-100">
       <div class="card-body">
-        <h3 class="card-title">
+        <h1 class="card-title">
           <a href="/docs/v3/guides/">
             <img width="70" height="70" src="/images/logo/user-guide.jpg" style="float: none;"/> 
             Admin Guides
         </a>          
-        </h3>
+        </h1>
         <p class="card-text">more detailed administration guides</p>
       </div>
     </div>
