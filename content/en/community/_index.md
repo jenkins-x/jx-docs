@@ -45,7 +45,7 @@ During office hours we demo the latest features, answer questions, and share kno
 We'd love to hear your feedback or show some of the work you are doing with Jenkins X!
 Feel free to [add your comments and questions to the doc](https://docs.google.com/document/d/1wHdBlZAN-ndPELuBoM5HBnYiQLvcz92-euXne2mKOEI/edit) or ask your questions in person.
 
-We meet for office hours **every other Tuesday** at 15:00 UTC (*See your timezone [here](https://time.is/1500_in_UTC)*).
+We meet for office hours **every other Tuesday** at 16:00 UTC (*See your timezone [here](https://time.is/1600_in_UTC)*).
 This is our [meeting link](https://zoom.us/j/397862697). 
 
 You can save Jenkins X office hours to your calendar by [clicking here](https://calendar.google.com/event?action=TEMPLATE&tmeid=NDFhNDVyNGdzMW9nZnBpNzhpdGZsMG5qZWpfMjAyMDA1MTlUMTUwMDAwWiAwMzJwcDVlMDJqMjJiMHFqdGs2YTRxc21lY0Bn&tmsrc=032pp5e02j22b0qjtk6a4qsmec%40group.calendar.google.com&scp=ALL). 

@@ -5,7 +5,7 @@ description: Setup Jenkins X on GKE
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2020-02-21
-weight: 20
+weight: 40
 ---
 
 ---
@@ -28,7 +28,7 @@ This is our current recommended quickstart for Google Cloud Platform:
     Create your infrastructure
   </a>
 
-*  <a href="/docs/v3/create-project/" class="btn bg-primary text-light">Create or import projects</a>
+*  <a href="/docs/v3/develop/create-project/" class="btn bg-primary text-light">Create or import projects</a>
 
 The following demo walks through how to get started with Jenkins X 3 on GKE + Terraform 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/RYgKvRpjkoY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

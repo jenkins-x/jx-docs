@@ -101,7 +101,7 @@ You can switch the defaults back again at any time or configure any app to chang
 
 ### Enabling/Disabling Canary/HPA in an Environment
 
-If you want to enable/disable canary or horizontal pod autoscaling for a specific app in an environment then you can [follow the app customisation approach](/docs/v3/guides/apps/#customising-charts).
+If you want to enable/disable canary or horizontal pod autoscaling for a specific app in an environment then you can [follow the app customisation approach](/docs/v3/develop/apps/#customising-charts).
 
 Assuming your app is called `myapp` then in the git repository for the environment (e.g. `Staging`) you can add/edit a file called `apps/mychart/values.yaml` to look like this:
 

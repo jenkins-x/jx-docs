@@ -90,11 +90,47 @@ One change from Jenkins X 2.x is we default to including the specific kubernetes
 
 So what tends to happen is:
 
-* the promote step in a pipeline creates a Pull Request on the GitOps repository for the cluster to add or upgrade a helm chart and version
-* The above Generate and Apply steps run to fill in more details to the Pull Request of the actual kubernetes resources that will be added, modified or removed
+* the promote step in a pipeline creates a Pull Request on the cluster repository for the cluster to add or upgrade a helm chart and version
+* The above [Generate](#generate-step) and [Apply step](#apply-step) runs to fill in more details to the Pull Request of the actual kubernetes resources that will be added, modified or removed
+* a second git commit is added to the Pull Request with the title `chore: regenerated`
+* the `updatebot` label is added to the Pull Request so that the Pull Request can be considered for automatic merging if all of the git checks are green (including the Pull Request pipelines)
+* once the Pull Request merges to the main branch the `git operator` will trigger to apply the kubernetes resources to the cluster via the above apply step
 
-So you will see 2 commits on a typical promotion pull request; the high level change of the helm chart(s) and versions then the detail of the actual changes that will apply to kubernetes.
 
+So you will see 2 commits on a typical promotion pull request:
+
+* the high level change of the helm chart(s) and versions. e.g. to change `myapp` to version `1.2.3` 
+* the detail of the actual changes that will apply to kubernetes resources. e.g. a new `Deployment` or changes to the `image:` of an existing `Deployment` 
+
+
+### Importing / Creating Quickstarts
+
+Due to the new GitOps model this is a little more complex than in v2 since imports are done via GitOps and the changes in git result in a Job / Pipeline running in the cluster to effect change.
+
+Here are the steps involved in [creating projects](/docs/v3/develop/create-project/) via importing / creating quickstarts:
+
+* Run the `jx project quickstart` or `jx project import` command as [described here](/docs/v3/develop/create-project/)
+* New git repository is created if:
+  * you are creating a quickstart via `jx project quickstart`
+  * you are running `jx project import` inside a directory which has never been pushed to a git repository before
+* A Pull Request is created on your cluster repo that registers your app's repository to the cluster
+  * this Pull Request will create or modify a file called `.jx/gitops/source-config.yaml`
+* The `jx project` command now waits for: 
+  * the Pull Request to merge
+  * Lighthhouse configuration to be updated to include the new repository
+  * a webhook to be setup for the new repository    
+* The Pull Request on your cluster repo triggers a pipeline like the above [Promotion flow](#promotion) 
+  * a second git commit is generated and pushed to the Pull Request with the title `chore: regenerated` to add the git repository to the Lighthouse configuration
+* When the Pull Request merges the above [Apply step](#apply-step) runs
+  * Lighthouse configuration is updated
+  * a Webhook is registered for Lighthouse on the app's repository
+* The `jx project` command now continues and pushes the new [tekton pipelines for your app](/docs/v3/develop/pipeline-catalog/) to the main branch of the git repository
+  * this triggers a new pipeline to run on your app which creates a new release of your app 
+  * once the release is complete a Pull Request is created to start the [Promotion flow](#promotion) of the new app version
+  * when this Promote Pull Request merges your application will be running in `Staging` 
+
+
+You can see an example of this in the [demo of Jenkins X V3](/blog/2020/09/16/jx-v3-alpha/)  
 
 ## Comparison to 2.x
 
