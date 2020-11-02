@@ -31,6 +31,7 @@ Contains the main development services of Jenkins X:
 * **jx-preview-gc-jobs** periodically garbage collects `Preview` resources and their associated preview environments created by [jx preview](https://github.com/jenkins-x/jx-preview)
 * **jxboot-helmfile-resources-gcactivities** periodically garbage collects old and completed `PipelineActivity` resources
 * **jxboot-helmfile-resources-gcpods** periodically garbage collects completed `Pods`
+* **jx-kh-check** supports additional [kuberhealthy](https://github.com/Comcast/kuberhealthy) based [health checks](/docs/v3/guides/health/) for Jenkins X specific resources
 
 [jenkins-x/lighthouse](https://github.com/jenkins-x/lighthouse) creates [tekton pipelines](https://tekton.dev/) and triggers [ChatOps](/docs/resources/faq/using/chatops/) on Pull Requests. Its made up of the following components:
 
@@ -46,6 +47,11 @@ the following are optional extras:
 * [chart museum](https://github.com/helm/chartmuseum) an optional chart repository
 * [nexus](https://www.sonatype.com/nexus/repository-oss) if used as an artifact repository and maven proxy
 
+
+### `kuberhealthy`
+
+Contains the [kuberhealthy](https://github.com/Comcast/kuberhealthy) service to support [health and improve observability](/docs/v3/guides/health/) which used by [jx health](https://github.com/jenkins-x-plugins/jx-health)
+
 ### `nginx`
 
 Contains the [nginx-ingress](https://github.com/helm/charts/tree/master/stable/nginx-ingress) provider if enabled
@@ -55,7 +61,7 @@ Contains the [nginx-ingress](https://github.com/helm/charts/tree/master/stable/n
 * **kubernetes-external-secrets** contains the [godaddy/kubernetes-external-secrets](https://github.com/godaddy/kubernetes-external-secrets) service for handling `ExternalSecrets`. See [how we use secrets](/docs/v3/guides/secrets/))
 * **pusher-wave** contains the [pusher/wave](https://github.com/pusher/wave) service for performing a rolling upgrade of any microservice which consumes `Secret` resources from either vault or a cloud providers secret store and the secrets change in the underlying store 
 
-the following are optional extras:
+the following are optional extras if not using your cloud providers native secret manager:
 
 * **vault-operator** contains the [vault operator](https://banzaicloud.com/docs/bank-vaults/operator/) which converts `Vault` resources into instances of [HashiCorp Vault](https://www.vaultproject.io/)
 * **vault-instance** contains the [vault instance](https://github.com/jenkins-x-charts/vault-instance) which creates the default `Vault` resource
