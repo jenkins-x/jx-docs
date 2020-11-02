@@ -144,7 +144,7 @@ make linkcheck
 
 **NOTE:** The initial run is really slow (due to external link checks) and that the cache is only build up when it finishes.
 
-**NOTE:**: It's safe to ignore the `... x509: certificate ...` errors for now
+**NOTE:** It's safe to ignore the `... x509: certificate ...` errors for now
 
 ### Adding redirects
 <a id="markdown-adding-redirects" name="adding-redirects"></a>
