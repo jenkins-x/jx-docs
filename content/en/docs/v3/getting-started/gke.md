@@ -20,7 +20,7 @@ This is our current recommended quickstart for Google Cloud Platform:
 
 *  <a href="https://github.com/jx3-gitops-repositories/jx3-terraform-gke/generate" target="github" class="btn bg-primary text-light">Create Git Repository</a> 
 
-* Note: Ensure **Owner** is the name of the Git Organisation that will hold the GitOps repositories used for Jenkins X.
+* Note: Ensure **Owner** is the Git Organisation that will hold the GitOps repositories used for Jenkins X.
 
 * `git clone` the new repository and `cd`  into the git clone
 
