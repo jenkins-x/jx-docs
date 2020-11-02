@@ -18,11 +18,11 @@ Jenkins X uses the following microservices by namespace.
 Note that if you have a working Jenkins X installation you can browse all the actual kubernetes resources used across each namespace via the `config-root/namespaces/$namespace/$chartName` folder in your cluster git repository.
 
 
-### jx-git-operator
+### `jx-git-operator`
 
 Contains the [git operator](/docs/v3/about/how-it-works/#git-operator) from [jenkins-x/git-operator](https://github.com/jenkins-x/jx-git-operator) microservice and the associated [boot jobs](/docs/v3/about/how-it-works/#boot-job).
 
-### jx 
+### `jx` 
 
 Contains the main development services of Jenkins X:
 
@@ -32,8 +32,6 @@ Contains the main development services of Jenkins X:
 * **jxboot-helmfile-resources-gcactivities** periodically garbage collects old and completed `PipelineActivity` resources
 * **jxboot-helmfile-resources-gcpods** periodically garbage collects completed `Pods`
 
-#### lighthouse
-
 [jenkins-x/lighthouse](https://github.com/jenkins-x/lighthouse) creates [tekton pipelines](https://tekton.dev/) and triggers [ChatOps](/docs/resources/faq/using/chatops/) on Pull Requests. Its made up of the following components:
 
 * **lighthouse-webhooks** converts webhooks from your git provider into `LighthouseJob` custom resources
@@ -42,27 +40,27 @@ Contains the main development services of Jenkins X:
 * **lighthouse-keeper** looks for open Pull Requests with green pipelines and the necessary **approve** labels to be able to auto merge
 * **lighthouse-gc-jobs** periodically garbage collects `LighthouseJob` resources and their associated resources (e.g. `PipelineRun` and `Pods`
 
-#### optional extras
+the following are optional extras:
 
 * [bucket repository](https://github.com/jenkins-x/bucketrepo) a lightweight cloud native artifact, chart repository and maven proxy that can be configured to use cloud storage. It's a lightweight cloud native alternative to [nexus](https://www.sonatype.com/nexus/repository-oss)
 * [chart museum](https://github.com/helm/chartmuseum) an optional chart repository
 * [nexus](https://www.sonatype.com/nexus/repository-oss) if used as an artifact repository and maven proxy
 
-### nginx
+### `nginx`
 
 Contains the [nginx-ingress](https://github.com/helm/charts/tree/master/stable/nginx-ingress) provider if enabled
 
-### secret-infra 
+### `secret-infra` 
 
 * **kubernetes-external-secrets** contains the [godaddy/kubernetes-external-secrets](https://github.com/godaddy/kubernetes-external-secrets) service for handling `ExternalSecrets`. See [how we use secrets](/docs/v3/guides/secrets/))
 * **pusher-wave** contains the [pusher/wave](https://github.com/pusher/wave) service for performing a rolling upgrade of any microservice which consumes `Secret` resources from either vault or a cloud providers secret store and the secrets change in the underlying store 
 
-#### optional extras
+the following are optional extras:
 
 * **vault-operator** contains the [vault operator](https://banzaicloud.com/docs/bank-vaults/operator/) which converts `Vault` resources into instances of [HashiCorp Vault](https://www.vaultproject.io/)
 * **vault-instance** contains the [vault instance](https://github.com/jenkins-x-charts/vault-instance) which creates the default `Vault` resource
 
-### tekton-pipelines
+### `tekton-pipelines`
 
 Contains the [tekton pipelines](https://tekton.dev/) controllers
  
