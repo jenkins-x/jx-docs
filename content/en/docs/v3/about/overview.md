@@ -11,42 +11,62 @@ Jenkins X 3.x creates clearer separation of concerns between conceptual areas an
  
 __NOTE__ The diagram shows intent, as Jenkins X 3 is still in __alpha__ not all integrations are complete.
  
-Jenkins X 3 focuses on a few main areas:
+## Microservices 
+
+Jenkins X uses the following microservices by namespace.
+
+Note that if you have a working Jenkins X installation you can browse all the actual kubernetes resources used across each namespace via the `config-root/namespaces/$namespace/$chartName` folder in your cluster git repository.
+
+
+### `jx-git-operator`
+
+Contains the [git operator](/docs/v3/about/how-it-works/#git-operator) from [jenkins-x/git-operator](https://github.com/jenkins-x/jx-git-operator) microservice and the associated [boot jobs](/docs/v3/about/how-it-works/#boot-job).
+
+### `jx` 
+
+Contains the main development services of Jenkins X:
+
+* **jx-build-controller** watches for `PipelineRun` resources and creates/updates the associated `PipelineActivity` resources used by `jx get build log`, [octant](/docs/v3/develop/ui/#octant) and the [pipelines visualizer](/docs/v3/develop/ui/#pipeline-visualizer) 
+* **jx-pipelines-visualizer** visualises `PipelineActivity` resources and the associated build logs in a read only UI
+* **jx-preview-gc-jobs** periodically garbage collects `Preview` resources and their associated preview environments created by [jx preview](https://github.com/jenkins-x/jx-preview)
+* **jxboot-helmfile-resources-gcactivities** periodically garbage collects old and completed `PipelineActivity` resources
+* **jxboot-helmfile-resources-gcpods** periodically garbage collects completed `Pods`
+* **jx-kh-check** supports additional [kuberhealthy](https://github.com/Comcast/kuberhealthy) based [health checks](/docs/v3/guides/health/) for Jenkins X specific resources
+
+[jenkins-x/lighthouse](https://github.com/jenkins-x/lighthouse) creates [tekton pipelines](https://tekton.dev/) and triggers [ChatOps](/docs/resources/faq/using/chatops/) on Pull Requests. Its made up of the following components:
+
+* **lighthouse-webhooks** converts webhooks from your git provider into `LighthouseJob` custom resources
+* **lighthouse-tekton-controller** converts `LighthouseJob` custom resources into [tekton](https://tekton.dev/) `PipelineRun` resources (the [tekton controller](https://tekton.dev/) converts `PipelineRun` resources into kubernetes `Pods`
+* **lighthouse-foghorn** watches the execution of `PipelineRun` resources triggered by lighthouse and updates the pipeline status in git so that you see pipelines start, complete or fail on your git provider along with having links the [pipelines visualizer](/docs/v3/develop/ui/#pipeline-visualizer) on each context on a Pull Request
+* **lighthouse-keeper** looks for open Pull Requests with green pipelines and the necessary **approve** labels to be able to auto merge
+* **lighthouse-gc-jobs** periodically garbage collects `LighthouseJob` resources and their associated resources (e.g. `PipelineRun` and `Pods`
+
+the following are optional extras:
+
+* [bucket repository](https://github.com/jenkins-x/bucketrepo) a lightweight cloud native artifact, chart repository and maven proxy that can be configured to use cloud storage. It's a lightweight cloud native alternative to [nexus](https://www.sonatype.com/nexus/repository-oss)
+* [chart museum](https://github.com/helm/chartmuseum) an optional chart repository
+* [nexus](https://www.sonatype.com/nexus/repository-oss) if used as an artifact repository and maven proxy
+
+
+### `kuberhealthy`
+
+Contains the [kuberhealthy](https://github.com/Comcast/kuberhealthy) service to support [health and improve observability](/docs/v3/guides/health/) which used by [jx health](https://github.com/jenkins-x-plugins/jx-health)
+
+### `nginx`
+
+Contains the [nginx-ingress](https://github.com/helm/charts/tree/master/stable/nginx-ingress) provider if enabled
+
+### `secret-infra` 
+
+* **kubernetes-external-secrets** contains the [godaddy/kubernetes-external-secrets](https://github.com/godaddy/kubernetes-external-secrets) service for handling `ExternalSecrets`. See [how we use secrets](/docs/v3/guides/secrets/))
+* **pusher-wave** contains the [pusher/wave](https://github.com/pusher/wave) service for performing a rolling upgrade of any microservice which consumes `Secret` resources from either vault or a cloud providers secret store and the secrets change in the underlying store 
+
+the following are optional extras if not using your cloud providers native secret manager:
+
+* **vault-operator** contains the [vault operator](https://banzaicloud.com/docs/bank-vaults/operator/) which converts `Vault` resources into instances of [HashiCorp Vault](https://www.vaultproject.io/)
+* **vault-instance** contains the [vault instance](https://github.com/jenkins-x-charts/vault-instance) which creates the default `Vault` resource
+
+### `tekton-pipelines`
+
+Contains the [tekton pipelines](https://tekton.dev/) controllers
  
-# Infrastructure
- 
-Moving management of infrastructure outside of Jenkins X, favouring solutions like Terraform.  This reduces the surface area of Jenkins X and leverages expert OSS projects and communities around managing infrastructure and cloud resources.
- 
-# Secret Management
- 
-Adding an abstraction layer above secret management solutions so users can choose where the source of secrets can be stored, preferably outside of the Kubernetes cluster.  This is a good practice for disaster recovery scenarios.
- 
-# Developer experience
- 
-Jenkins X 3.x includes a revived focus on developer experience.  The introduction of Jenkins X plugins for [Octant](https://octant.dev/) has addressed a long standing request from the open source community.  Jenkins X 3.x will be focussing on new visualisations  to help developers, operators and cross functioning teams.
- 
-With the jx CLI refactoring described below Jenkins X 3.x is reviewing consistency and usability around CLI experience, please continue to raise [issues](https://github.com/jenkins-x/jx-docs/issues) and reach out in slack / [discourse](https://jenkinsx.discourse.group/) to help improve.
- 
-# Maintainability
- 
-Created a new `jx` CLI which includes an extensible plugin model where each main subcommand off the jx base is it's own releasable git repository.  This has significantly improved the Jenkins X codebase which helps with maintainability and contributions.
- 
-# Removing complexity and magic
- 
-Removing complexity out of Jenkins X and reusing other solutions wherever possible.  Jenkins X 2.x was tightly coupled to helm 2 for example.  There were `jx` CLI steps that wrapped helm commands when installing applications into the cluster which injected secrets from an internal Vault and ultimately made it very confusing for users and maintainers. 
- 
-Jenkins X 3.x prefers to avoid wrapping other CLIs unless a consistent higher level UX is being provided say around managing secrets and underlying commands being executed are clearly printed in users terminals.
- 
-# Documentation
- 
-We had lots of feedback from users about the Jenkins X documentation was incomplete, inconsistent, old, not relevant or claimed to work but simply did not.
- 
-Jenkins X 3.x will clearly mark areas that have not been tested and are more experimental while also providing a clearer capability matrix indicating to users the maturity of features and supported platforms.  Added to this we plan to make it easier for users, teams, companies to contribute to Jenkins X.
- 
-A [special interest group](https://github.com/jenkins-x/jx-community/tree/master/sig-docs) for docs has been set up with the focus on Jenkins X 3.x and will continue to evolve.
- 
-# Open source
- 
-Jenkins X 3.x is not only open source but developed and maintained in open source communities. Slack, Discourse and focused special interest groups provide ways for developers, users or keen people to be part of the Jenkins X journey.
- 
-Jenkins X 3.x will provide clear extension points for non open source functionality to be added but not affect the OSS core.

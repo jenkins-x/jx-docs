@@ -1,7 +1,7 @@
 ---
-title: Getting Started 
-linktitle: Getting Started
-description: Getting started with Jenkins X 3.x
+title: Installation
+linktitle: Installation
+description: Getting you started with your Jenkins X 3.x installation
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2020-02-21
@@ -32,4 +32,4 @@ Before you chose which Git template you start with, note that part of removing c
 
 - __Secrets Management__ - Jenkins X requires a number of secrets, some are generated and some are provided at installation by the user. These need to be managed and there are a number of solutions that help.  Jenkins X prefers to use managed cloud services where possible. [Google Secrets manager](https://cloud.google.com/secret-manager) is a good example where secrets are stored out of the cluster and syncronsied in cluster using [external secrets](https://github.com/godaddy/kubernetes-external-secrets). Where managed cloud services are not available or desired, Jenkins X can also use Vault.
 
-We have a [number of quickstart git repositories](https://github.com/jx3-gitops-repositories) that are GitHub Repository templates that make it easy to start when installing Jenkins X 3.x.
+We have a [number of quickstart git repositories](https://github.com/jx3-gitops-repositories). These are GitHub Repository templates that make it easy to start when installing Jenkins X 3.x.

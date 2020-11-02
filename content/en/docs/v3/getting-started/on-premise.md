@@ -62,12 +62,6 @@ kubectl get node
     target="github" class="btn bg-primary text-light" 
     title="install the git operator to setup Jenkins X in your cluster">
     Install the git operator
-  </a> from inside a git clone of your git repository via something like: 
+  </a> from inside a git clone of your git repository.
 
-```bash 
-git clone https://github.com/myuser/mygitops-repo.git myrepo
-cd myrepo
-jx admin operator    
-```  
-
-*  <a href="/docs/v3/create-project/" class="btn bg-primary text-light">Create or import projects</a> 
+*  <a href="/docs/v3/develop/create-project/" class="btn bg-primary text-light">Create or import projects</a> 
