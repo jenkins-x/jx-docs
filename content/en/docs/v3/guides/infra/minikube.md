@@ -25,7 +25,7 @@ minikube start --cpus 4 --memory 8048 --disk-size=100g --addons=ingress --vm=tru
 
 ## Setup
 
-*  <a href="https://github.com/jx3-gitops-repositories/jx3-minikube-vault/generate" target="github" class="btn bg-primary text-light">Create the cluster Git Repository</a> based on the [jx3-gitops-repositories/jx3-minikube template](https://github.com/jx3-gitops-repositories/jx3-minikube/generate) 
+*  <a href="https://github.com/jx3-gitops-repositories/jx3-minikube/generate" target="github" class="btn bg-primary text-light">Create the cluster Git Repository</a> based on the [jx3-gitops-repositories/jx3-minikube template](https://github.com/jx3-gitops-repositories/jx3-minikube/generate) 
 
 * `git clone` the new repository and `cd` into the git clone directory
 
