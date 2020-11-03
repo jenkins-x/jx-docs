@@ -19,7 +19,7 @@ Ensure you are logged into GitHub else you will get a 404 error when clicking th
 
 This is our current recommended quickstart for Minikube:
 
-*  <a href="https://github.com/jx3-gitops-repositories/jx3-minikube/generate" target="github" class="btn bg-primary text-light">Create the cluster Git Repository</a> based on the [jx3-gitops-repositories/jx3-minikube template](https://github.com/jx3-gitops-repositories/jx3-minikube/generate)  
+*  <a href="https://github.com/jx3-gitops-repositories/jx3-minikube/generate" target="github" class="btn bg-primary text-light">Create the cluster Git Repository</a> based on the [jx3-gitops-repositories/jx3-minikube](https://github.com/jx3-gitops-repositories/jx3-minikube/generate) template 
 
 * `git clone` the new repository you created above and `cd`  into the git clone
 
