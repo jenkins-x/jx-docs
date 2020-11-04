@@ -15,8 +15,6 @@ Ensure you are logged into GitHub else you will get a 404 error when clicking th
 
 ---
 
-### Minikube + Vault
-
 This is our current recommended quickstart for Minikube:
 
 *  <a href="https://github.com/jx3-gitops-repositories/jx3-minikube/generate" target="github" class="btn bg-primary text-light">Create the cluster Git Repository</a> based on the [jx3-gitops-repositories/jx3-minikube](https://github.com/jx3-gitops-repositories/jx3-minikube/generate) template 
@@ -27,6 +25,6 @@ This is our current recommended quickstart for Minikube:
     target="github" class="btn bg-primary text-light" 
     title="use your new git repository to create your cloud infrastructure and install Jenkins X">
     Create your infrastructure
-  </a> 
-
+  </a> to setup minikube and configure webhooks
+  
 *  <a href="/docs/v3/develop/create-project/" class="btn bg-primary text-light">Create or import projects</a> 
