@@ -78,10 +78,16 @@ If your cluster is not accessible on the internet and you can't open a firewall 
 
 * [install and setup ngrok](https://ngrok.com/)
 
-* setup a webhook tunnel to your laptop:
+* setup a webhook tunnel to your laptop find your hook host name:
 
 ```bash
-ngrok http yourDomainURL
+kubectl get ing
+```
+
+* copy the hook host name into...
+ 
+```bash
+ngrok http http://yourHookHost
 ```
 
 * copy your personal ngrok domain name of the form `abcdef1234.ngrok.io` into the `charts/jenkins-x/jxboot-helmfile-resources/values.yaml` file in the `ingress.customHosts.hosts` file so that your file looks like this...
