@@ -58,6 +58,24 @@ This is our current recommended quickstart for on premise kubernetes:
 
 *  <a href="https://github.com/jx3-gitops-repositories/jx3-kubernetes/generate" target="github" class="btn bg-primary text-light">Create the cluster Git Repository</a> based on the [jx3-gitops-repositories/jx3-kubernetes](https://github.com/jx3-gitops-repositories/jx3-kubernetes/generate) template
 
+* find out what your ingress domain is for your cluster then modify the `jx-requirements.yml` file and modify the `ingress.domain` section...
+
+```yaml
+cluster:
+...
+ingress:
+  domain: mydomain.com
+...
+```
+
+* git add, commit and push your changes:
+
+```bash
+git add *
+git commit -a -m "fix: added domain"
+git push origin master
+```
+
 * ensure you are connected to your cluster so you can run the following [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) commands 
 
 ```bash 
