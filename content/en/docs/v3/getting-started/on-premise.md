@@ -17,7 +17,7 @@ Ensure you are logged into GitHub else you will get a 404 error when clicking th
 
 ## On Premise Kubernetes
 
-If you are using kubernetes we highly recommend you use one of the managed cloud providers like [Amazon](/docs/v3/getting-started/eks/) or [Google](/docs/v3/getting-started/gke/) as this comes with lots of additional features like:
+If you are using kubernetes we highly recommend you use one of the [managed cloud providers](/docs/v3/#administration) as this comes with lots of additional features like:
 
 * container registries and bucket storage
 * IAM and workload identity (e.g. so kubernetes Service Accounts can be assigned roles to be able to read/write to certain buckets or container registries) 
@@ -28,6 +28,12 @@ However sometimes you need to run kubernetes on your premise. Longer term we hop
 
 The following are the prerequisites of your on-premise kubernetes cluster:
 
+#### Kubernetes cluster
+
+We obviously need a working kubernetes cluster. There are many approaches to [setting up on premise clusters](https://kubernetes.io/docs/setup/production-environment/tools/) obviously the easiest approach is to use the [cloud](/docs/v3/#administration).
+
+If you are going the bare metal route you could try [these instructions](https://007ba7.us/howto/k8s-install/)
+ 
 #### kubectl access
 
 You need to be able to connect to your kubernetes cluster via [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) so that you can run commands like:
@@ -47,10 +53,13 @@ Jenkins X installs `nginx` which has a `LoadBalancer` kubernetes `Service` to im
  
 With an on-premise kubernetes cluster you need to install something like [MetalLB](https://metallb.universe.tf/)
 
+If you are on bare metal you could try [these instructions](https://007ba7.us/howto/metallb/)
+
 #### Storage
 
 We need your kubernetes cluster to have a default [storage class](https://kubernetes.io/docs/concepts/storage/storage-classes/) so that `PersistentVolumeClaim` resources in helm charts get resolved to `PersistentVolume` resources so that persistent disks can be used.
 
+You may find [these instructions useful](https://007ba7.us/howto/nfs-storage/)
 
 ### Getting Started
 
