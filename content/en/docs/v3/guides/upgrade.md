@@ -70,7 +70,7 @@ Once ready, make a pull request onto your cluster repository, review changes and
 
 ### Replacing your local versionStream
 
-If you are having merge conflicts trying to upgrade your installation you could just replace the `versionStream`  directory with the latest version stream folder. **NOTE* this will overwrite any local changes you have made inside the `verisonStream` folder. Though everything is versioned in git so you can always review the changes.
+If you are having merge conflicts trying to upgrade your installation you could just replace the `versionStream`  directory with the latest version stream folder. **NOTE** this will overwrite any local changes you have made inside the `verisonStream` folder. Though everything is versioned in git so you can always review the changes.
 
 Inside your cluster git repository run this command:
 
