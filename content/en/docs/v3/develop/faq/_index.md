@@ -91,6 +91,37 @@ jxRequirements:
 ```
 
 
+## How do I use a custom container registry?
+
+To allow a pipeline to be able to push to a container registry you can add this secret...
+
+```bash
+kubectl create secret generic container-registry-auth  \
+  --from-literal=url=myserver.com \
+  --from-literal=username=myuser \
+  --from-literal=password=mypwd
+```
+
+This will then take effect the next time a commit merges on your cluster git repository e.g. next time you [upgrade your cluster](/docs/v3/guides/upgrade/#cluster).
+
+The various container registry secrets get merged into a `Secret` called `tekton-container-registry-auth` in the `jx` namespace which is associated with the default pipeline `ServiceAccount` `tekton-bot`.
+
+
+If you want all pipelines to use this container registry then modify the `cluster.registry` field in your `jx-requirements.yml` file:
+
+```yaml
+cluster:
+  registry: myserver.com 
+...
+```
+
+Otherwise you can enable this new container registry on a specific application/repository by adding this `.jx/variables.sh` file into the git repository if it doesn't exist...
+ 
+```bash
+export DOCKER_REGISTRY="myserver.com"
+```
+
+
 ## How do I uninstall Jenkins X?
 
 We don't yet have a nice uninstall command
