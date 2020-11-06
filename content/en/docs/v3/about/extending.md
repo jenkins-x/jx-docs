@@ -42,7 +42,7 @@ If you define a pipeline you want to share with other repositories you can then 
 
 ## Octant
 
-Our preferred UI for Kubernetes, Tekton and Jenkins X is [octant](/docs/v3/develop/ui/#octant) as its easy to install/run and has fined grained RBAC and security without the hassle of setting up TLS, DNS and SSO on every cluster.
+Our preferred UI for Kubernetes, Tekton and Jenkins X is [octant](/docs/v3/develop/ui/octant) as its easy to install/run and has fined grained RBAC and security without the hassle of setting up TLS, DNS and SSO on every cluster.
 
 One of the awesome features of [Octant](https://octant.dev/) is it supports plugins so that anyone can build a plugin to extend the UI. We've created the [octant-jx](https://github.com/jenkins-x/octant-jx) plugin to extend [Octant](https://octant.dev/) with the Jenkins X capabilities of environments, pipelines, source repositories and so forth. 
 

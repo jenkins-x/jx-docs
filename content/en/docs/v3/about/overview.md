@@ -26,7 +26,7 @@ Contains the [git operator](/docs/v3/about/how-it-works/#git-operator) from [jen
 
 Contains the main development services of Jenkins X:
 
-* **jx-build-controller** watches for `PipelineRun` resources and creates/updates the associated `PipelineActivity` resources used by `jx get build log`, [octant](/docs/v3/develop/ui/#octant) and the [pipelines visualizer](/docs/v3/develop/ui/#pipeline-visualizer) 
+* **jx-build-controller** watches for `PipelineRun` resources and creates/updates the associated `PipelineActivity` resources used by `jx get build log`, [octant](/docs/v3/develop/ui/octant) and the [pipelines visualizer](/docs/v3/develop/ui/dashboard) 
 * **jx-pipelines-visualizer** visualises `PipelineActivity` resources and the associated build logs in a read only UI
 * **jx-preview-gc-jobs** periodically garbage collects `Preview` resources and their associated preview environments created by [jx preview](https://github.com/jenkins-x/jx-preview)
 * **jxboot-helmfile-resources-gcactivities** periodically garbage collects old and completed `PipelineActivity` resources
@@ -37,7 +37,7 @@ Contains the main development services of Jenkins X:
 
 * **lighthouse-webhooks** converts webhooks from your git provider into `LighthouseJob` custom resources
 * **lighthouse-tekton-controller** converts `LighthouseJob` custom resources into [tekton](https://tekton.dev/) `PipelineRun` resources (the [tekton controller](https://tekton.dev/) converts `PipelineRun` resources into kubernetes `Pods`
-* **lighthouse-foghorn** watches the execution of `PipelineRun` resources triggered by lighthouse and updates the pipeline status in git so that you see pipelines start, complete or fail on your git provider along with having links the [pipelines visualizer](/docs/v3/develop/ui/#pipeline-visualizer) on each context on a Pull Request
+* **lighthouse-foghorn** watches the execution of `PipelineRun` resources triggered by lighthouse and updates the pipeline status in git so that you see pipelines start, complete or fail on your git provider along with having links the [pipelines visualizer](/docs/v3/develop/ui/dashboard) on each context on a Pull Request
 * **lighthouse-keeper** looks for open Pull Requests with green pipelines and the necessary **approve** labels to be able to auto merge
 * **lighthouse-gc-jobs** periodically garbage collects `LighthouseJob` resources and their associated resources (e.g. `PipelineRun` and `Pods`
 
