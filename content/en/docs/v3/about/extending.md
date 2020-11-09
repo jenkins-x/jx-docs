@@ -43,7 +43,7 @@ If you define a pipeline you want to share with other repositories you can then 
 
 The `pipeline catalog` contains default triggers, tekton pipelines and associated files (e.g. `Dockerfile` and helm charts) for different languages and runtimes.
 
-The pipeline catalog is used to default the triggers, pipelines and other files for [new projects](docs/v3/develop/create-project/) when you import or create new quickstarts.
+The pipeline catalog is used to default the triggers, pipelines and other files for [new projects](/docs/v3/develop/create-project/) when you import or create new quickstarts.
 
 You can browse the [default Jenkins X Pipeline Catalog here](https://github.com/jenkins-x/jx3-pipeline-catalog/tree/master/packs).
 
@@ -64,7 +64,7 @@ buildPacks:
 
 ## QuickStarts
 
-Quickstarts are sample projects which are used `jx project quickstart` when you [create new projects](docs/v3/develop/create-project/)
+Quickstarts are sample projects which are used `jx project quickstart` when you [create new projects](/docs/v3/develop/create-project/)
 
 The default quickstart projects are in the [jenkins-x-quickstarts](https://github.com/jenkins-x-quickstarts/) github organisation.
 
