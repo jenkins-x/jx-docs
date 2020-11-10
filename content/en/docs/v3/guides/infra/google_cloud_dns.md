@@ -14,7 +14,7 @@ Go to [Google Domains](https://domains.google.com/registrar) and purchase a doma
 
 Create a DNS zone which will contain the managed DNS records.
 
-```
+```bash
 gcloud dns managed-zones create "foo-io" \
     --dns-name "foo.io." \
     --description "Automatically managed zone by kubernetes.io/external-dns" \
@@ -22,7 +22,7 @@ gcloud dns managed-zones create "foo-io" \
 ```
 
 Make a note of the nameservers that were assigned to your new zone.
-```
+```bash
 gcloud dns record-sets list \
     --zone "foo-io" \
     --name "foo.io." \

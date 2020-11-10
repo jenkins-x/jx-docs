@@ -13,8 +13,8 @@ This section contains links to the various readmes that will help you configure 
 
 Jenkins X cluster git repositories use cloud specific Terraform modules you can use to configure your cloud resources.
 
-[GCP](https://github.com/jenkins-x/terraform-google-jx#inputs)
+* <a href="https://github.com/jenkins-x/terraform-google-jx#inputs" class="btn bg-primary text-light">GCP</a>
 
-[AWS](https://github.com/jenkins-x/terraform-aws-eks-jx#inputs)
+* <a href="https://github.com/jenkins-x/terraform-aws-eks-jx#inputs" class="btn bg-primary text-light">AWS</a>
 
-[Azure](https://github.com/jenkins-x/terraform-azurerm-jx#inputs)
+* <a href="https://github.com/jenkins-x/terraform-azurerm-jx#inputs" class="btn bg-primary text-light">Azure</a>
