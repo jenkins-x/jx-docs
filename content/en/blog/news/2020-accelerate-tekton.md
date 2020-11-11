@@ -11,7 +11,7 @@ aliases: []
 author: James Strachan
 ---
 
-One of the goals of [Jenkins X](https://jenkins-x.io/) has always been to help [accelerate](about/overview/accelerate/) and automate Continuous Delivery so that developers can focus on delivering value to their customers; either by creating that new microservice or adding features to an existing project and not writing and managing pipelines.
+One of the goals of [Jenkins X](https://jenkins-x.io/) has always been to help [accelerate](/about/overview/accelerate/) and automate Continuous Delivery so that developers can focus on delivering value to their customers; either by creating that new microservice or adding features to an existing project and not writing and managing pipelines.
 
 Pipeline engines like [Jenkins](https://www.jenkins.io/) and [Tekton](https://tekton.dev/) are awesome - they can do anything! But they start as a blank sheet of paper where you have to fill in all the details of how to compile your code, test it, verify it, tag it, release, distribute and delivery it to production. Figuring all that stuff out can take a huge amount of time to create and maintain. This gets even more complex as we are all creating more and more microservices each with their own pipelines making more and more things to create and manage.
 
