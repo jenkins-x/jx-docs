@@ -6,7 +6,7 @@ description: how to reuse, share and customise Tekton Pipelines and the Tekton C
   
 categories: [blog]
 keywords: [Community, 2020]
-slug: "jx-reuse-tekton-catalog"
+slug: "accelerate-tekton"
 aliases: []
 author: James Strachan
 ---
