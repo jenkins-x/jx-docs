@@ -67,6 +67,11 @@ The generate step does the following:
     * **myns** is the namespace for the resources
     * **Somechart** is the name of the chart (or chart alias) 
 * Any **Secret** resource is converted to an **ExternalSecret** so that it can be checked into git
+  * we use [secret mapping](https://github.com/jenkins-x/jx-secret#mappings) to generate **ExternalSecret** resources which define where the `Secret` will be populated from (e.g. vault or your cloud provider secret store)
+  * secrets can be populated by either:
+    * directly in the secret store (e.g. via vault or the cloud secret store directly). If you are using vault you can [follow these instructions](/docs/v3/guides/secrets/vault/#using-vault) to access the vault UI
+    * via [jx secret edit](/docs/v3/guides/secrets/#edit-secrets) command
+    * via the [jx secret populate](https://github.com/jenkins-x/jx-secret/blob/master/docs/cmd/jx-secret_populate.md) command inside the boot job which uses the `versionStream/charts/*/secret-schema.yaml` files to populate with generators and default values from the [secret schema files](https://github.com/jenkins-x/jx-secret#schema) 
 * A few extra steps are run on the YAMLs to help deployments
     * Add a common label so that `kubectl apply --prune --selector` can be used
     * Add some hashes to resources so that changes to configurations causes a rolling upgrade
