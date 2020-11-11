@@ -98,7 +98,7 @@ If you need to modify anything, just open the Tekton files in your [IDE](/docs/v
 To handle change going forward from upstream pipeline catalogs while preserving any local modifications we use a generic [update mechanism on all git repositories](/docs/v3/develop/pipeline-catalog/#upgrading-pipelines-and-helm-charts) which is powered by [kpt](https://googlecontainertools.github.io/kpt/)  
 
 
-### Using Tekton Catalog Tasks
+### Reusing Tekton Catalog Tasks
 
 The [Tekton Catalog](https://github.com/tektoncd/catalog) contains a ton of reusable Tekton `Tasks` for doing all kinds of things in the Continuous Delivery landscape with a variety of tools.
  
@@ -113,10 +113,52 @@ Here's a [demo of this in action](https://asciinema.org/a/368282):
 The tekton Task resources are copied into your **.lighthouse** directory in a folder using [kpt](https://googlecontainertools.github.io/kpt/) so that you can modify things locally if you need to and can [upgrade your local copy with upstream changes](/docs/v3/develop/pipeline-catalog/#upgrading-pipelines-and-helm-charts).
 
 This lets you work with shared resources from the Tekton community and, when required, modify them to suit and manage them easily over time.
- 
-We hope that over time you can take your Pipelines and make your own Pipeline Catalogs and share them with folks inside and outside of your company. 
 
-Hopefully this can help us all accelerate our Tekton pipelines and catalogs towards more continuous delivery awesome! If you want to give this a try [check out Jenkins X 3.x](/docs/v3/)
+
+### Sharing steps between Tasks
+
+[Tekton](https://tekton.dev/) makes it super easy to share `Task` resources between different `Pipeline` instances. Though there is a current [limitation](https://github.com/tektoncd/pipeline/issues/3476) where splitting a `Pipeline` into multiple reusable `Task` instances results in the pipeline being split among multiple `Pod` resources; which means to share state between the Tasks you need to use a `Persistent Volume` for each pipeline run which can be a bit of an overhead. 
+
+For example: you may think it's a nice idea to have a reusable `Task` to git clone your source code then use it with your other `Task` to run your tests. It turns out that can be quite expensive infrastructure wise; as it means your cluster will end up making a Persistent Volume for each pipeline invocation so that the git clone pod can clone git and store the state on the PV so that your real Task pod can start and mount the same volume to see the contents of git. Its much easier to just share the git clone steps in each Task; so that there's no need for the PV; just git clone in each separate Task directly.
+
+So for cases where you want to reuse a collection of steps inside `Task` resources we added an annotation in [lighthouse](https://github.com/jenkins-x/lighthouse) so that we can import steps from a URL to avoid the copy/paste. 
+
+e.g. in our [pipeline catalog](https://github.com/jenkins-x/jx3-pipeline-catalog/tree/master/packs) we use this approach to share the git clone Task steps such as [this example](https://github.com/jenkins-x/jx3-pipeline-catalog/blob/master/packs/javascript/.lighthouse/jenkins-x/release.yaml#L4-L5):
+
+```yaml 
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  annotations:        
+    # lets share the git clone tasks as the initial steps in this Task
+    lighthouse.jenkins-x.io/prependStepsURL: https://raw.githubusercontent.com/jenkins-x/jx3-pipeline-catalog/005e78cf69b643862344397a635736a51dd1bd89/tasks/git-clone/git-clone.yaml
+spec:
+  ...
+```
+
+Hopefully we can migrate to a standard tekton based approach [if this issue is resolved](https://github.com/tektoncd/pipeline/issues/3476).  
+
+
+### Custom Pipeline Catalogs
+
+[Tekton Catalog](https://github.com/tektoncd/catalog) is an awesome way to reuse Tasks but it doesn't help when trying to reuse complete `PipelineRun` and `Pipeline` resources across projects and repositories while also being able to modify them as needed on a per team or repository basis.
+
+[Jenkins X 3.x](/docs/v3/) comes with its own default [pipeline catalog for different languages, tools and frameworks](https://github.com/jenkins-x/jx3-pipeline-catalog/tree/master/packs). This catalog contains reusable steps, Tasks and Pipelines you can use on any project. 
+
+It's easy for you to fork this catalog to make changes for your team or share between teams in your company. You can make as many catalogs as you like and put whichever catalogs you want in the `extensions/pipeline-catalogs.yaml` file of your cluster git repository of your [Jenkins X 3.x install](/docs/v3/). For more detail there's the [configuration reference here](https://github.com/jenkins-x/jx-project/blob/master/docs/config.md#project.jenkins-x.io/v1alpha1.PipelineCatalog).
+
+Then when developers [create a new quickstart](/docs/v3/develop/create-project/#create-a-new-project-from-a-quickstart) or [import a repository](/docs/v3/develop/create-project/#import-an-existing-project) developers will be asked to pick the catalog they want from your list if there is more than one, or the configured catalog is silently used.
+
+This gives you complete freedom to configure things at a global, team or repository level while also making it easy to share changes across projects, teams and companies.
+
+
+### Conclusion
+
+We are super excited about the combination of [Jenkins X 3.x](/docs/v3/), [Tekton](https://tekton.dev/), [Tekton Catalog](https://github.com/tektoncd/catalog) and ChatOps.  
+ 
+We hope that you can use the above capabilities to solve your Continuous Delivery needs and over time you can take your Pipelines and make your own Pipeline Catalogs and share them with folks inside and outside of your company. 
+
+Hopefully this can help us all accelerate our Tekton pipelines and catalogs towards more continuous delivery awesome with flexible reusable tasks and pipelines! If you want to give this a try [check out Jenkins X 3.x](/docs/v3/)
 
 
 
