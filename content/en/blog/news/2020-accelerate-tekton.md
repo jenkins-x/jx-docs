@@ -40,8 +40,8 @@ This was a pretty good approach; it lets us reuse common pipelines in a shared g
 However we've found that this approach as a few downsides:
 
 * we have to create and maintain a DSL above Tekton which adds complexity and can be a leaky abstraction
-  * e.g. the DSL does not yet support all of the semantics of Tekton yet such as conditions and sidecars
-  * tekton moves fast; its hard to keep up ;)
+  * e.g. the DSL does not yet support all of the semantics of Tekton yet such as conditions, [runAfter](https://github.com/tektoncd/pipeline/blob/master/docs/pipelines.md#using-the-runafter-parameter) or [finally tasks](https://github.com/tektoncd/pipeline/blob/master/docs/pipelines.md#adding-finally-to-the-pipeline)
+  * tekton moves fast; it's hard to keep up in a DSL ;)
 * its complex trying to understand how to make local modifications of pipelines
   * particularly if you just want to add an environment variable; modify a command line argument or something
 * we can't use [IDE tooling](/docs/v3/develop/pipeline-catalog/#ide-support) for [Tekton](https://tekton.dev/) to edit/visualise pipelines
