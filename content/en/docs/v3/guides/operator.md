@@ -2,7 +2,7 @@
 title: Installing the Operator
 linktitle: Installing the Operator
 description: Installing the Git Operator to install/upgrade Jenkins X
-weight: 30
+weight: 20
 ---
 
 Jenkins X 3.x uses a [git operator](https://github.com/jenkins-x/jx-git-operator) to manage installing + upgrading of Jenkins X and any other components in any environment. If you are interested you can read [how it works](/docs/v3/about/how-it-works/).
