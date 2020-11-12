@@ -1,12 +1,14 @@
 ---
-title: Infrastructure
-linktitle: Infrastructure
-description: Setting up your cloud infrastructure
-weight: 30
+title: Infrastructure guides
+linktitle: Infrastructure guides
+description: Additional infrastructure specific guides
+weight: 25
 ---
 
 If you are looking for instructions on how to install for a specific cloud provider see:
 
-<h2><a href="/docs/v3/#administration">Administration page</a></h2>
+<h3><a href="/docs/v3/#administration">Administration getting started</a></h3>
+
+Here follows some additional custom guides:
 
 
