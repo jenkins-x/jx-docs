@@ -59,7 +59,7 @@ The current approach has a [number of benefits](/docs/v3/about/benefits/):
 
   * e.g. promoting from `1.2.3` to `1.3.0` of application `cheese` may look innocent enough, but did you notice those new `ClusterRole` and `PersistentVolume` resources that it now brings in?
   
-* we can default to using [canonical secret management mechanism](/docs/v3/guides/secrets/) based on [kubernetes external secrets](https://github.com/godaddy/kubernetes-external-secrets) (see [how it works](docs/v3/about/how-it-works/#generate-step)) to ensure that:
+* we can default to using [canonical secret management mechanism](/docs/v3/guides/secrets/) based on [kubernetes external secrets](https://github.com/godaddy/kubernetes-external-secrets) (see [how it works](/docs/v3/about/how-it-works/#generate-step)) to ensure that:
  
   * no Secret value accidentally gets checked into git by mistake
   * all secrets can be managed, versioned, stored and rotated using vault or your cloud providers native secret storage mechanism
