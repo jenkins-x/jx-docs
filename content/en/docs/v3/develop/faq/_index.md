@@ -10,15 +10,28 @@ aliases:
 
 
 
+## How do I customise an App in an Environment
+
+With the new helm 3 based boot every environment uses boot - so there is a single way to configure anything whether its in the `dev`, `staging` or `production` environment and whether or not you are using [multiple clusters](/docs/v3/guides/multi-cluster/).
+
+See [how to customise a chart](/docs/v3/develop/apps/#customising-charts)
+
+
 ## How do I list the apps that have been deployed?
 
-You can see the helm charts that are installed along witht their version and namespaces by looking at the `releases` section of your `helmfile.yaml` file in your cluster git repository.
+You can see the helm charts that are installed along with their version, namespaces and any configuration values by looking at the `releases` section of your `helmfile.yaml` file in your cluster git repository.
 
-You can view all of the current [Preview Environments](/docs/build-test-preview/preview/) via
-
+You can browse all the kubernetes resources in each namespace using the canonical layout in the `config-root` folder. e.g. all charts are versioned in git as follows:
+ 
 ```bash 
-kubectl get preview
+config-root/
+  namespaces/
+    jx/
+      lighthouse/
+        lighthouse-webhooks-deploy.yaml    
 ```
+
+You can see the above kubernetes resource, a `Deployment` with name `lighthouse-webhooks` in the namespace `jx` which comes from the `lighthouse` chart.
 
 There could be some additional charts installed via Terraform for the [git operator](/docs/v3/guides/operator/) and [health subsystem](/docs/v3/guides/health/) which can be viewed via:
   
@@ -26,11 +39,62 @@ There could be some additional charts installed via Terraform for the [git opera
 helm list --all-namespaces
 ```                                                                                
 
-## How do I customise an App in an Environment
 
-With the new helm 3 based boot every environment uses boot - so there is a single way to configure anything whether its in the `dev`, `staging` or `production` environment and whether or not you are using [multiple clusters](/docs/v3/guides/multi-cluster/).
+## Why does Jenkins X use `helmfile template`?
 
-See [how to customise a chart](/docs/v3/develop/apps/#customising-charts)
+If you look into the **versionStream/src/Makefile.mk** file in your cluster git repository to see how the boot proccess works you may notice its defined a simple makefile and uses the [jx gitops helmfile template](https://github.com/jenkins-x/jx-gitops/blob/master/docs/cmd/jx-gitops_helmfile_template.md) command to convert the [helmfile](https://github.com/roboll/helmfile) `helmfile.yaml` files referencing helm charts into YAML.
+
+So why don't we use `helmfile sync` instead to apply the kubernetes resources from the charts directly into kubernetes?
+
+The current approach has a [number of benefits](/docs/v3/about/benefits/):
+
+* we want to version all kubernetes resources (apart from `Secrets`) in git so that you can use git tooling to view the history of every kubernetes resource over time. 
+
+
+  * by checking in all the kubernetes resources (apart from `Secrets`) its very easy to trace (and `git blame`) any change in any kubernetes resource in any chart and namespace to diagnose issues.
+  * the upgrade of any tool such as [helm](https://helm.sh/), [helmfile](https://github.com/roboll/helmfile), [kustomize](https://kustomize.io/), [kpt](https://googlecontainertools.github.io/kpt/), [kubectl](https://kubernetes.io/docs/reference/kubectl/kubectl/) or [jx](/docs/v3/guides/jx3/) could result in different YAML being generated changing the behaivour of your applications in Production.
+
+
+* this approach makes it super easy to review all Pull Requests on all promotions and configuration changes and review what is actually going to change in kubernetes inside the git commit diff.
+
+  * e.g. promoting from `1.2.3` to `1.3.0` of application `cheese` may look innocent enough, but did you notice those new `ClusterRole` and `PersistentVolume` resources that it now brings in?
+  
+* we can default to using [canonical secret management mechanism](/docs/v3/guides/secrets/) based on [kubernetes external secrets](https://github.com/godaddy/kubernetes-external-secrets) (see [how it works](docs/v3/about/how-it-works/#generate-step)) to ensure that:
+ 
+  * no Secret value accidentally gets checked into git by mistake
+  * all secrets can be managed, versioned, stored and rotated using vault or your cloud providers native secret storage mechanism
+  * the combination of git and your secret store means your cluster becomes ephemeral and can be recreated if required (which often can happen if using tools like Terraform to manage infrastructure and you change significant infrastructure configuration values like node pools, version, location and so forth) 
+
+You can browse all the kubernetes resources in each namespace using the canonical layout in the `config-root` folder. e.g. all charts are versioned in git as follows:
+                    
+```bash 
+config-root/
+ namespaces/
+   jx/
+     lighthouse/
+       lighthouse-webhooks-deploy.yaml    
+```
+
+You can see the above kubernetes resource, a `Deployment` with name `lighthouse-webhooks` in the namespace `jx` which comes from the `lighthouse` chart.
+
+However since the steps to deploy a kubernetes cluster in Jenkins X is defined in a simple makefile its easy for developers to modify their cluster git repository to add any combination of tools to the makefile to use any permutation of  [helm 3](https://helm.sh/), [helmfile](https://github.com/roboll/helmfile), [kustomize](https://kustomize.io/), [kpt](https://googlecontainertools.github.io/kpt/)  and [kubectl](https://kubernetes.io/docs/reference/kubectl/kubectl/)
+
+So if you really wanted to opt out of the canonical GitOps model above you can add a `helm upgrade` or `helmfile sync` command to your makefile. 
+
+
+## What is the directory layout?
+
+To understand the directory layout see [this document](https://github.com/jenkins-x/jx-gitops/blob/master/docs/git_layout.md)
+
+
+## Does Jenkins X support helmfile hooks?
+
+Helmfile hooks allow programs to be executed during the lifecycle of the application of your helmfiles.
+
+Since we default to using [helmfile template](/docs/v3/develop/faq/#why-does-jenkins-x-use-helmfile-template) helmfile hooks are not supported for cluster git repositories (though you can use them in preview environments).
+
+However its easy to add steps into the **versionStream/src/Makefile.mk** to simulate helmfile hooks.
+
 
 ## How do I configure the ingress domain in Dev, Staging or Production?
 
@@ -63,6 +127,8 @@ jxRequirements:
     domain: mydomain.com  
     namespaceSubDomain: "."
 ```
+
+
 
 ## How do I configure the ingress TLS certificate in Dev, Staging or Production?
 
