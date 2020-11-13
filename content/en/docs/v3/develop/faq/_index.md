@@ -65,7 +65,7 @@ The current approach has a [number of benefits](/docs/v3/about/benefits/):
   * all secrets can be managed, versioned, stored and rotated using vault or your cloud providers native secret storage mechanism
   * the combination of git and your secret store means your cluster becomes ephemeral and can be recreated if required (which often can happen if using tools like Terraform to manage infrastructure and you change significant infrastructure configuration values like node pools, version, location and so forth) 
 
-You can browse all the kubernetes resources in each namespace using the canonical layout in the `config-root` folder. e.g. all charts are versioned in git as follows:
+* its easier for developers to understand what is going on as you can browse all the kubernetes resources in each namespace using the canonical layout in the `config-root` folder. e.g. all charts are versioned in git as follows:
                     
 ```bash 
 config-root/
@@ -75,9 +75,17 @@ config-root/
        lighthouse-webhooks-deploy.yaml    
 ```
 
-You can see the above kubernetes resource, a `Deployment` with name `lighthouse-webhooks` in the namespace `jx` which comes from the `lighthouse` chart.
+   * you can see the above kubernetes resource, a `Deployment` with name `lighthouse-webhooks` in the namespace `jx` which comes from the `lighthouse` chart. 
 
-However since the steps to deploy a kubernetes cluster in Jenkins X is defined in a simple makefile its easy for developers to modify their cluster git repository to add any combination of tools to the makefile to use any permutation of  [helm 3](https://helm.sh/), [helmfile](https://github.com/roboll/helmfile), [kustomize](https://kustomize.io/), [kpt](https://googlecontainertools.github.io/kpt/)  and [kubectl](https://kubernetes.io/docs/reference/kubectl/kubectl/)
+* its easy to enrich the generated YAML with a combination of any additional tools [kustomize](https://kustomize.io/), [kpt](https://googlecontainertools.github.io/kpt/) or [jx](/docs/v3/guides/jx3/). e.g.
+
+  * its trivial to run [kustomize](https://kustomize.io/) or [kpt](https://googlecontainertools.github.io/kpt/) to modify any resource in any chart before it's applied to Production and to review the generated values first 
+
+  * its easy to use [jx gitops hash](https://github.com/jenkins-x/jx-gitops/blob/master/docs/cmd/jx-gitops_hash.md) to add some hash annotations to cause rolling upgrade to `Deployments` when git changes (when the `Deployment` YAML does not)
+
+  * use [jx gitops annotate](https://github.com/jenkins-x/jx-gitops/blob/master/docs/cmd/jx-gitops_annotate.md) to add add support for tools like [pusher wave](https://github.com/pusher/wave) so that rotating secrets in your underlying secret store can cause rolling upgrades in your `Deployments`
+
+However since the steps to deploy a kubernetes cluster in Jenkins X is defined in a simple makefile stored in your cluster git repository its easy for developers to modify their cluster git repository to add any combination of tools to the makefile to use any permutation of  [helm 3](https://helm.sh/), [helmfile](https://github.com/roboll/helmfile), [kustomize](https://kustomize.io/), [kpt](https://googlecontainertools.github.io/kpt/)  and [kubectl](https://kubernetes.io/docs/reference/kubectl/kubectl/)
 
 So if you really wanted to opt out of the canonical GitOps model above you can add a `helm upgrade` or `helmfile sync` command to your makefile. 
 
