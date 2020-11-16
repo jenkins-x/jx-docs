@@ -40,9 +40,7 @@ You can test out changes to the Pull Request pipeline by submitting changes in a
 
 ## IDE support
   
-If you use [IntelliJ IDEA](https://www.jetbrains.com/idea/) or [Goland](https://www.jetbrains.com/go/) you might find the [RedHat's intellij-tekton plugin](https://plugins.jetbrains.com/plugin/14096-tekton-pipelines-by-red-hat) useful for editing pipelines.
-
-Though until [this issue is fixed](https://github.com/redhat-developer/intellij-tekton/issues/263) you can't use it at the same time as the excellent [intellij-kubernetes plugin](https://plugins.jetbrains.com/plugin/10485-kubernetes) 
+If you use [IntelliJ IDEA](https://www.jetbrains.com/idea/) or [Goland](https://www.jetbrains.com/go/) you might find the [RedHat's intellij-tekton plugin](https://plugins.jetbrains.com/plugin/14096-tekton-pipelines-by-red-hat) useful for editing pipelines with schema validation and completion.
 
 If you use [VS Code](https://code.visualstudio.com/) you may want to try [Red Hat's Tekton Pipelines Extension tekton](https://github.com/redhat-developer/vscode-tekton#tekton-pipelines-extension--)
 
