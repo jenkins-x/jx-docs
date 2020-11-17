@@ -50,7 +50,7 @@ aliases:
         <h1 class="card-title">
           <a href="/docs/v3/develop/create-project/" title="create quickstarts or import new repositories">Create Projects</a>          
         </h1>
-        <p class="card-text align-bottom">create new quickstarts or import existing repositories into Jenkins XS</p>
+        <p class="card-text align-bottom">create new quickstarts or import existing repositories into Jenkins X</p>
       </div>
     </div>
   </div> 
