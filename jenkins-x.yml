@@ -132,6 +132,7 @@ pipelineConfig:
               - --check-html
               - --checks-to-ignore ScriptCheck
               - --empty-alt-ignore
+              - --url-ignore "/#.*/"
               - --file-ignore /.*apidocs.*/,/.*\/zh.*/,/.*\/es.*/,/.*\/docs\/reference\/api.*/,/.*\/docs\/reference\/config.*/,/.*\/community\/events.*/
 
           - image: gcr.io/kaniko-project/executor:9912ccbf8d22bbafbf971124600fbb0b13b9cbd6
