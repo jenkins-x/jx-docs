@@ -1,6 +1,6 @@
 ---
 title: Jenkins X 3.x alpha
-linktitle: 3.x Alpha
+linktitle: Docs
 type: docs
 weight: 45
 aliases:
@@ -51,7 +51,7 @@ aliases:
         <h1 class="card-title">
           <a href="/docs/v3/develop/create-project/" title="create quickstarts or import new repositories">Create Projects</a>          
         </h1>
-        <p class="card-text align-bottom">create new quickstarts or import existing repositories into Jenkins XS</p>
+        <p class="card-text align-bottom">create new quickstarts or import existing repositories into Jenkins X</p>
       </div>
     </div>
   </div> 
