@@ -1,0 +1,25 @@
+
+environments:
+  default:
+    values:
+    - jx-values.yaml
+repositories:
+- name: jx3
+  url: https://storage.googleapis.com/jenkinsxio/charts
+releases:
+- chart: jx3/acme
+  name: tls
+  namespace: '{{ requiredEnv "PREVIEW_NAMESPACE" }}'
+  values:
+  - jx-values.yaml
+  - issuer:
+      cluster: true
+- chart: '.'
+  name: preview
+  wait: true
+  createNamespace: true
+  namespace: '{{ requiredEnv "PREVIEW_NAMESPACE" }}'
+  values:
+  - values.yaml
+  - jx-values.yaml
+  - values.yaml.gotmpl

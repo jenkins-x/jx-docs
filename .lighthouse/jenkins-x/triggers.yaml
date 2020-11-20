@@ -11,7 +11,7 @@ spec:
     source: "pullrequest.yaml"
   - name: preview
     context: "preview"
-    always_run: false
+    always_run: true
     optional: false
     trigger: "/jx preview"
     rerun_command: "/retest"

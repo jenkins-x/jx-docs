@@ -49,14 +49,9 @@ spec:
 
         - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
           name: build-website
-          command:
-          - hugo
-          args:
-          - -d
-          - tmp-website
-          - --enableGitInfo
-          - --baseURL
-          - "http://$REPO_NAME.jx-$REPO_OWNER-$REPO_NAME-pr-$PULL_NUMBER.$DOMAIN/"
+          script: |
+            #!/bin/sh
+            hugo -d tmp-website --enableGitInfo --baseURL https://${REPO_NAME}-jx-${REPO_OWNER}-${REPO_NAME}-pr-${PULL_NUMBER}.${DOMAIN}/
 
         - image: gcr.io/jenkinsxio/jx-boot:3.0.738
           name: jx-variables
@@ -72,19 +67,15 @@ spec:
             source .jx/variables.sh
             /kaniko/executor --context=/workspace/source --dockerfile=/workspace/source/Dockerfile --destination=gcr.io/jx-labs-infra/jx-docs:$VERSION
 
-        - image: gcr.io/jenkinsxio/builder-go:2.1.150-770
-          name: make-preview
+        - image: gcr.io/jenkinsxio/jx-preview:0.0.122
+          name: promote-jx-preview
+          resources: {}
           script: |
-            #!/bin/bash
-            cd /workspace/source/charts/preview
-            make preview
+            #!/usr/bin/env sh
+            source /workspace/source/.jx/variables.sh
+            # sleep infinity
+            jx preview create --file charts/preview/helmfile.yaml
 
-        - image: gcr.io/jenkinsxio/builder-go:2.1.150-770
-          name: jx-preview
-          script: |
-            #!/bin/bash
-            cd /workspace/source/charts/preview
-            jx preview --app jx-docs --dir ../../
           env:
             - name: DOCKER_REGISTRY
               value: gcr.io
