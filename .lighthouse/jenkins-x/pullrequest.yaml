@@ -25,6 +25,16 @@ spec:
                   name: ingress-config
                   key: domain
         steps:
+
+        - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
+          name: git-clone-website
+          command:
+          - git
+          args:
+          - clone
+          - https://github.com/jenkins-x/jenkins-x-website.git
+          - --depth=20
+
         - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
           name: git-submodules
           command:
