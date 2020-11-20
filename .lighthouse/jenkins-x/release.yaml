@@ -32,14 +32,6 @@ spec:
           - name: HUGO_VERSION
             value: '0.74.0'
         steps:
-        - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
-          name: git-clone
-          command:
-          - git
-          args:
-            - clone
-            - https://github.com/jenkins-x/jenkins-x-website.git
-            - --depth=20
 
         - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
           name: git-submodules
