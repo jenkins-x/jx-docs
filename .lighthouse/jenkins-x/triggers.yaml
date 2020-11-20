@@ -9,6 +9,13 @@ spec:
     trigger: "/test"
     rerun_command: "/retest"
     source: "pullrequest.yaml"
+  - name: preview
+    context: "preview"
+    always_run: false
+    optional: false
+    trigger: "/jx preview"
+    rerun_command: "/retest"
+    source: "preview.yaml"
   postsubmits:
   - name: release
     context: "release"

@@ -37,15 +37,8 @@ spec:
 
         - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
           name: update-content
-          command:
+          command: 
           - ./scripts/ci/update-content.sh
-
-        - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
-          name: version
-          command:
-          - hugo
-          args:
-          - version
 
         - image: gcr.io/cloud-builders/npm
           name: install-dependencies
@@ -53,6 +46,7 @@ spec:
           - npm
           args:
           - install
+
         - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
           name: build-website
           command:
@@ -64,23 +58,36 @@ spec:
           - --baseURL
           - "http://$REPO_NAME.jx-$REPO_OWNER-$REPO_NAME-pr-$PULL_NUMBER.$DOMAIN/"
 
+        - image: gcr.io/jenkinsxio/jx-boot:3.0.738
+          name: jx-variables
+          resources: {}
+          script: |
+            #!/usr/bin/env sh
+            jx gitops variables
 
-        - image: chabad360/htmlproofer:latest
-          name: htmlproofer
-          command:
-          - htmlproofer
-          args:
-          - ./tmp-website
-          - --allow-hash-href
-          - --disable-external
-          - --check-html
-          - --checks-to-ignore
-          - ScriptCheck
-          - --empty-alt-ignore
-          - --url-ignore
-          - "/#.*/"
-          - --file-ignore
-          - /.*apidocs.*/,/.*\/zh.*/,/.*\/es.*/,/.*\/docs\/reference\/api.*/,/.*\/docs\/reference\/config.*/,/.*\/community\/events.*/
+        - image: gcr.io/kaniko-project/executor:debug-v1.3.0
+          name: build-and-push-image
+          script: |
+            #!/busybox/sh
+            source .jx/variables.sh
+            /kaniko/executor --context=/workspace/source --dockerfile=/workspace/source/Dockerfile --destination=gcr.io/jx-labs-infra/jx-docs:$VERSION
+
+        - image: gcr.io/jenkinsxio/builder-go:2.1.150-770
+          name: make-preview
+          script: |
+            #!/bin/bash
+            cd /workspace/source/charts/preview
+            make preview
+
+        - image: gcr.io/jenkinsxio/builder-go:2.1.150-770
+          name: jx-preview
+          script: |
+            #!/bin/bash
+            cd /workspace/source/charts/preview
+            jx preview --app jx-docs --dir ../../
+          env:
+            - name: DOCKER_REGISTRY
+              value: gcr.io
 
   podTemplate: {}
   serviceAccountName: tekton-bot
