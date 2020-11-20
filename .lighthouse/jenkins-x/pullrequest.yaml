@@ -27,24 +27,29 @@ spec:
         steps:
         - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
           name: git-submodules
-          command: git
+          command:
+          - git
           args:
           - submodule update --init --recursive
         - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
           name: update-content
-          command: ./scripts/ci/update-content.sh
+          command: 
+          - ./scripts/ci/update-content.sh
         - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
           name: version
-          command: hugo
+          command:
+          - hugo
           args:
           - version
         - image: gcr.io/cloud-builders/npm
           name: install-dependencies
-          command: npm
+          command:
+          - npm
           args: ['install']
         - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
           name: build-website
-          command: hugo
+          command:
+          - hugo
           args:
           - -d
           - tmp-website
@@ -52,7 +57,8 @@ spec:
           - --baseURL http://${APP_NAME}.jx-${REPO_OWNER}-${REPO_NAME}-pr-${PULL_NUMBER}.${DOMAIN}/
         - image: chabad360/htmlproofer:latest
           name: htmlproofer
-          command: htmlproofer
+          command:
+          - htmlproofer
           args:
             - ./tmp-website
             - --allow-hash-href
@@ -65,7 +71,8 @@ spec:
 
         - image: gcr.io/kaniko-project/executor:9912ccbf8d22bbafbf971124600fbb0b13b9cbd6
           name: build-and-push-image
-          command: /kaniko/executor
+          command:
+          - /kaniko/executor
           args:
           - --dockerfile=/workspace/source/Dockerfile
           - --destination=gcr.io/jenkins-x-infra/jx-docs:${inputs.params.version}
@@ -75,7 +82,8 @@ spec:
         - image: gcr.io/jenkinsxio/builder-go
           name: make-preview
           dir: /workspace/source/charts/preview
-          command: make
+          command: 
+          - make
           args:
           - preview
 

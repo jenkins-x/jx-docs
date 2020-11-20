@@ -34,7 +34,8 @@ spec:
         steps:
         - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
           name: git-clone
-          command: git
+          command:
+          - git
           args:
             - clone
             - https://github.com/jenkins-x/jenkins-x-website.git
@@ -42,35 +43,41 @@ spec:
 
         - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
           name: git-submodules
-          command: git
+          command:
+          - git
           args:
           - submodule update --init --recursive
 
         - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
           name: update-content
-          command: ./scripts/ci/update-content.sh
+          command:
+          - ./scripts/ci/update-content.sh
 
         - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
-          command: hugo
+          command:
+          - hugo
           args:
             - version
 
         - image: gcr.io/cloud-builders/npm
           name: install-dependencies
-          command: npm
+          command:
+          - npm
           args: ['install']
 
         ## delete everything in the jenkins-x-website repo clone
         - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
           name: remove-old
-          command: git
+          command:
+          - git
           args:
           - -C jenkins-x-website rm -r '*'
 
         ## build the site into the cloned folder
         - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
           name: build-website
-          command: hugo
+          command:
+          - hugo
           args:
             - -d
             - jenkins-x-website
@@ -80,12 +87,14 @@ spec:
         ## add, commit, and push changes
         - image: gcr.io/jenkinsxio/builder-go
           name: update-website
-          command: ./scripts/ci/update-website.sh
+          command:
+          - ./scripts/ci/update-website.sh
 
         # Create the release notes
         - name: changelog
           image: gcr.io/jenkinsxio/builder-go:0.1.571
-          command: ./scripts/ci/changelog.sh
+          command:
+          - ./scripts/ci/changelog.sh
   podTemplate: {}
   serviceAccountName: tekton-bot
   timeout: 240h0m0s
