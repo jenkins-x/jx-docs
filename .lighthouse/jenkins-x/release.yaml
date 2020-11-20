@@ -108,12 +108,13 @@ spec:
             jx gitops variables
 
         # Create the release notes
-        - name: changelog
-          image: gcr.io/jenkinsxio/builder-go:0.1.571
+        - image: gcr.io/jenkinsxio/builder-go:2.1.142-761
+          name: changelog
+          resources: {}
           script: |
             #!/bin/bash
             source .jx/variables.sh
-            ./scripts/ci/changelog.sh
+            jx step changelog --verbose --version=$VERSION --rev=$PULL_BASE_SHA --output-markdown=changelog.md --update-release=false
 
   podTemplate: {}
   serviceAccountName: tekton-bot
