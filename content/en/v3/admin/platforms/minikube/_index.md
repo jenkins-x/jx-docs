@@ -2,12 +2,19 @@
 title: Minikube
 linktitle: Minikube
 type: docs
-description: Using minikube to run Jenkins X on your laptop
-weight: 50
+description: Setup Jenkins X on your laptop
+date: 2017-02-01
+publishdate: 2017-02-01
+lastmod: 2020-02-21
+weight: 100
 aliases:
-  - /docs/v3/guides/infra/minikube
+  - /docs/v3/getting-started/minikube
 ---
 
+---
+**NOTE**
+
+Ensure you are logged into GitHub else you will get a 404 error when clicking the links below
 
 This guide will walk you though how to setup Jenkins X on your laptop using [minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/)
 

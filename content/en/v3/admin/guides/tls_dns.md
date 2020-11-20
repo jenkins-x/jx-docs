@@ -3,7 +3,7 @@ title: TLS and DNS
 linktitle: TLS and DNS
 type: docs
 description: Automated TLS and DNS
-weight: 35
+weight: 92
 aliases:
   - /docs/v3/guides/infra/tls_dns
 ---
