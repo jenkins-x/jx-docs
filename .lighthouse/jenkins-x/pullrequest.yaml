@@ -1,0 +1,96 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  annotations:
+    lighthouse.jenkins-x.io/prependStepsURL: https://raw.githubusercontent.com/jenkins-x/jx3-pipeline-catalog/005e78cf69b643862344397a635736a51dd1bd89/tasks/git-clone/git-clone-pr.yaml
+  name: pullrequest
+spec:
+  pipelineSpec:
+    tasks:
+    - name: from-build-pack
+      resources: {}
+      taskSpec:
+        metadata: {}
+        stepTemplate:
+          name: ""
+          resources:
+            requests:
+              cpu: 400m
+              memory: 512Mi
+          workingDir: /workspace/source
+          env:
+            - name: DOMAIN
+              valueFrom:
+                configMapKeyRef:
+                  name: ingress-config
+                  key: domain
+        steps:
+        - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
+          name: git-submodules
+          command: git
+          args:
+          - submodule update --init --recursive
+        - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
+          name: update-content
+          command: ./scripts/ci/update-content.sh
+        - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
+          name: version
+          command: hugo
+          args:
+          - version
+        - image: gcr.io/cloud-builders/npm
+          name: install-dependencies
+          command: npm
+          args: ['install']
+        - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
+          name: build-website
+          command: hugo
+          args:
+          - -d
+          - tmp-website
+          - --enableGitInfo
+          - --baseURL http://${APP_NAME}.jx-${REPO_OWNER}-${REPO_NAME}-pr-${PULL_NUMBER}.${DOMAIN}/
+        - image: chabad360/htmlproofer:latest
+          name: htmlproofer
+          command: htmlproofer
+          args:
+            - ./tmp-website
+            - --allow-hash-href
+            - --disable-external
+            - --check-html
+            - --checks-to-ignore ScriptCheck
+            - --empty-alt-ignore
+            - --url-ignore "/#.*/"
+            - --file-ignore /.*apidocs.*/,/.*\/zh.*/,/.*\/es.*/,/.*\/docs\/reference\/api.*/,/.*\/docs\/reference\/config.*/,/.*\/community\/events.*/
+
+        - image: gcr.io/kaniko-project/executor:9912ccbf8d22bbafbf971124600fbb0b13b9cbd6
+          name: build-and-push-image
+          command: /kaniko/executor
+          args:
+          - --dockerfile=/workspace/source/Dockerfile
+          - --destination=gcr.io/jenkins-x-infra/jx-docs:${inputs.params.version}
+          - --context=/workspace/source
+          - --cache-dir=/workspace
+
+        - image: gcr.io/jenkinsxio/builder-go
+          name: make-preview
+          dir: /workspace/source/charts/preview
+          command: make
+          args:
+          - preview
+
+        - image: gcr.io/jenkinsxio/builder-go
+          command: jx
+          dir: /workspace/source/charts/preview
+          name: jx-preview
+          args:
+          - preview
+          - --app jx-docs
+          - --dir ../../
+          env:
+            - name: DOCKER_REGISTRY
+              value: gcr.io
+  podTemplate: {}
+  serviceAccountName: tekton-bot
+  timeout: 240h0m0s
+status: {}

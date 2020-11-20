@@ -1,0 +1,92 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  annotations:
+    lighthouse.jenkins-x.io/prependStepsURL: https://raw.githubusercontent.com/jenkins-x/jx3-pipeline-catalog/005e78cf69b643862344397a635736a51dd1bd89/tasks/git-clone/git-clone.yaml
+  name: release
+spec:
+  pipelineSpec:
+    tasks:
+    - name: from-build-pack
+      resources: {}
+      taskSpec:
+        metadata: {}
+        stepTemplate:
+          name: ""
+          resources:
+            requests:
+              cpu: 400m
+              memory: 512Mi
+          workingDir: /workspace/source
+          env:
+          - name: GIT_COMMITTER_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_COMMITTER_NAME
+            value: jenkins-x-bot
+          - name: GIT_AUTHOR_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_AUTHOR_NAME
+            value: jenkins-x-bot
+          - name: HUGO_ENV
+            value: production
+          - name: HUGO_VERSION
+            value: '0.74.0'
+        steps:
+        - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
+          name: git-clone
+          command: git
+          args:
+            - clone
+            - https://github.com/jenkins-x/jenkins-x-website.git
+            - --depth=20
+
+        - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
+          name: git-submodules
+          command: git
+          args:
+          - submodule update --init --recursive
+
+        - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
+          name: update-content
+          command: ./scripts/ci/update-content.sh
+
+        - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
+          command: hugo
+          args:
+            - version
+
+        - image: gcr.io/cloud-builders/npm
+          name: install-dependencies
+          command: npm
+          args: ['install']
+
+        ## delete everything in the jenkins-x-website repo clone
+        - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
+          name: remove-old
+          command: git
+          args:
+          - -C jenkins-x-website rm -r '*'
+
+        ## build the site into the cloned folder
+        - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
+          name: build-website
+          command: hugo
+          args:
+            - -d
+            - jenkins-x-website
+            - --enableGitInfo
+            - --baseURL https://jenkins-x.io
+
+        ## add, commit, and push changes
+        - image: gcr.io/jenkinsxio/builder-go
+          name: update-website
+          command: ./scripts/ci/update-website.sh
+
+        # Create the release notes
+        - name: changelog
+          image: gcr.io/jenkinsxio/builder-go:0.1.571
+          command: ./scripts/ci/changelog.sh
+  podTemplate: {}
+  serviceAccountName: tekton-bot
+  timeout: 240h0m0s
+status: {}
