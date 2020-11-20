@@ -1,13 +1,14 @@
 ---
-title: Google Cloud
-linktitle: Google Cloud
+title: Google
+linktitle: Google
 type: docs
-description: Setup Jenkins X on GKE 
+description: Setup Jenkins X on Google Cloud with GKE 
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2020-02-21
 weight: 40
 aliases:
+  - /v3/admin/platforms/gke
   - /docs/v3/getting-started/gke
 ---
 

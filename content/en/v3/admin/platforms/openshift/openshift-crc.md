@@ -5,6 +5,7 @@ type: docs
 description: Use Jenkins X and OpenShift 4.x on your laptop
 weight: 70
 aliases:
+  - /v3/admin/guides/infra/openshift-crc
   - /docs/v3/guides/infra/openshift-crc
 ---
 

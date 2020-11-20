@@ -481,7 +481,3 @@ velero:
 ```
 
 Using whatever your cloud providers bucket URLs are. For more background, check out the [storage guide](/docs/resources/guides/managing-jx/common-tasks/storage/)
-
-## User Interface
-
-If you're looking for a UI check out [Octant the open source web UI for Jenkins X](/docs/reference/components/ui/)

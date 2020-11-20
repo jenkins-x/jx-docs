@@ -1,8 +1,7 @@
 ---
 title: Configure Google Cloud DNS to manage my domain
-linktitle: Configure Google Cloud DNS to manage my domain
+linktitle: Cloud DNS
 type: docs
-description: Configure Google Cloud DNS to manage my domain
 weight: 100
 aliases:
   - /docs/v3/guides/infra/google_cloud_dns/
