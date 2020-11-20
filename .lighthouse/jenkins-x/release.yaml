@@ -38,7 +38,10 @@ spec:
           command:
           - git
           args:
-          - submodule update --init --recursive
+          - submodule
+          - update
+          - --init
+          - --recursive
 
         - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
           name: update-content
@@ -49,13 +52,14 @@ spec:
           command:
           - hugo
           args:
-            - version
+          - version
 
         - image: gcr.io/cloud-builders/npm
           name: install-dependencies
           command:
           - npm
-          args: ['install']
+          args:
+          - install
 
         ## delete everything in the jenkins-x-website repo clone
         - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
@@ -63,7 +67,11 @@ spec:
           command:
           - git
           args:
-          - -C jenkins-x-website rm -r '*'
+          - -C
+          - jenkins-x-website
+          - rm 
+          - -r 
+          - '*'
 
         ## build the site into the cloned folder
         - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
