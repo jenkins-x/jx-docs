@@ -100,11 +100,21 @@ spec:
           command:
           - ./scripts/ci/update-website.sh
 
+        - image: gcr.io/jenkinsxio/jx-boot:3.0.738
+          name: jx-variables
+          resources: {}
+          script: |
+            #!/usr/bin/env sh
+            jx gitops variables
+
         # Create the release notes
         - name: changelog
           image: gcr.io/jenkinsxio/builder-go:0.1.571
-          command:
-          - ./scripts/ci/changelog.sh
+          script: |
+            #!/bin/bash
+            source .jx/variables.sh
+            ./scripts/ci/changelog.sh
+
   podTemplate: {}
   serviceAccountName: tekton-bot
   timeout: 240h0m0s
