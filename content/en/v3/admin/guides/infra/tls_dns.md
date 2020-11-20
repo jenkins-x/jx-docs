@@ -208,6 +208,12 @@ If you do not have permission to update the recordset of the apex domain then yo
 apex_domain_integration_enabled: false
 ```
 
+## How can I remove the namespace subdomain (e.g. -jx.) from my URLs?
+
+In your cluster git repository find the `namespaceSubdomain` property in your jx-requirements.yml file and change its value to `namespaceSubdomain: "."`
+
+Be aware that the same application deployed in multiple namespaces will end up with the same URL if you change `namespaceSubdomain` to be the same for all environments.
+
 ## How can I check if cert-manager has issued a certificate?
 
 You can check the status of the certificate by running
