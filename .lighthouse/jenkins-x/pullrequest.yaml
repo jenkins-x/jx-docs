@@ -63,17 +63,12 @@ spec:
           - npm
           args:
           - install
+
         - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
           name: build-website
-          command:
-          - hugo
-          args:
-          - -d
-          - tmp-website
-          - --enableGitInfo
-          - --baseURL
-          - "http://$REPO_NAME.jx-$REPO_OWNER-$REPO_NAME-pr-$PULL_NUMBER.$DOMAIN/"
-
+          script: |
+            #!/bin/sh
+            hugo -d tmp-website --enableGitInfo --baseURL https://${REPO_NAME}-jx-${REPO_OWNER}-${REPO_NAME}-pr-${PULL_NUMBER}.${DOMAIN}/
 
         - image: chabad360/htmlproofer:latest
           name: htmlproofer
