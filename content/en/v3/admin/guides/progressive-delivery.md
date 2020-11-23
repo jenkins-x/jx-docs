@@ -18,7 +18,7 @@ Our recommendation for using progressive delivery with Jenkins X is to use:
 
 ## Configuring Progressive Delivery
 
-Please follow the usual [getting started guide for boot and helm 3](/docs/v3/getting-started/)
+Please follow the usual [getting started guide for boot and helm 3](/v3/admin/platform/)
 
 ### Add the istio and flagger apps
 

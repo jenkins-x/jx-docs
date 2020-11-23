@@ -8,11 +8,11 @@ aliases:
   - /docs/v3/guides/migrate
 ---
 
-If you wish to migrate from older versions of Jenkins X to v3 we recommend [spinning up a new cluster for v3](/docs/v3/getting-started/) and then incrementally moving projects from the old cluster to the new cluster.
+If you wish to migrate from older versions of Jenkins X to v3 we recommend [spinning up a new cluster for v3](/v3/admin/platform/) and then incrementally moving projects from the old cluster to the new cluster.
 
 This might sound heavy handed but the issue with working with multiple versions of a number of charts like `lighthouse` and `tekton` is that they use cluster scoped resources (CRDs and `clusterrole` resources for example) which can compete with each other. e.g. installing a new version of a chart may well break an old installation.
 
-So its safer to [spin up a new cluster and install v3 there](/docs/v3/getting-started/).
+So its safer to [spin up a new cluster and install v3 there](/v3/admin/platform/).
 
 Once you have a new cluster you can just [import projects](/docs/v3/develop/create-project/#import-an-existing-project) into the new cluster via [jx project import](/docs/v3/develop/create-project/#import-an-existing-project)
 

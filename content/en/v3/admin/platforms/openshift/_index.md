@@ -8,7 +8,7 @@ publishdate: 2017-02-01
 lastmod: 2020-02-21
 weight: 200
 aliases:
-  - /docs/v3/getting-started/openshift
+  - /v3/admin/platform/openshift
 ---
 
 If you don't have a cluster or want to try Openshift on your laptop then please try <a href="/docs/v3/guides/infra/openshift-crc/" target="github" class="btn bg-primary text-light">Install Jenkins X with OpenShift CodeReady Containers</a> 

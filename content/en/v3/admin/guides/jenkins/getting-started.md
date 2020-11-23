@@ -9,7 +9,7 @@ aliases:
 ---
 
 
-Make sure you have got the [jx 3.x binary](/docs/v3/guides/jx3/) and you have installed [version 3](/docs/v3/getting-started/) before proceeding.
+Make sure you have got the [jx 3.x binary](/docs/v3/guides/jx3/) and you have installed [version 3](/v3/admin/platform/) before proceeding.
 
 
 ## Adding Jenkins Servers into Jenkins X

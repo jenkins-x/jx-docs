@@ -13,7 +13,7 @@ aliases:
 
 The GitOps repository templates contain the source code, scripts and docs to help you get your cloud resources created (e.g. a kubernetes cluster and maybe buckets and/or a secret manager).
 
-Once you have created the GitOps repository from one of the [available templates and followed the instructions](/docs/v3/getting-started/) to set up your infrastructure you [install the git operator](/docs/v3/guides/operator/) via the [jx admin operator](https://github.com/jenkins-x/jx-admin/blob/master/docs/cmd/jx-admin_operator.md) command:
+Once you have created the GitOps repository from one of the [available templates and followed the instructions](/v3/admin/platform/) to set up your infrastructure you [install the git operator](/docs/v3/guides/operator/) via the [jx admin operator](https://github.com/jenkins-x/jx-admin/blob/master/docs/cmd/jx-admin_operator.md) command:
 
 
 ```bash
@@ -148,7 +148,7 @@ From a high level Jenkins X 3.x similar to 2.x in that:
 
 However we’ve made a few changes in 3.x:
 
-* We have a [simpler UX now for setting up Jenkins X](/docs/v3/getting-started/) which uses a library of GitOps repository templates you can start from
+* We have a [simpler UX now for setting up Jenkins X](/v3/admin/platform/) which uses a library of GitOps repository templates you can start from
     * This lets you choose the closest example to the kind of infrastructure, tools and secret store you want to use so it’s easier to get started if your requirements fit the common quickstarts
 * The setup/install/upgrade process runs inside kubernetes rather than on a developers laptop
     * This avoids all kinds of issues with different installations of tools like git, kubectl, helm etc

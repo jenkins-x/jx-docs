@@ -17,9 +17,9 @@ Jenkins X 3.x uses a [git operator](https://github.com/jenkins-x/jx-git-operator
 
 So the following approaches automatically install the operator for you:
 
-* [Amazon](/docs/v3/getting-started/eks/)
-* [Azure](/docs/v3/getting-started/azure/)
-* [Google Cloud](/docs/v3/getting-started/gke/)
+* [Amazon](/v3/admin/platform/eks/)
+* [Azure](/v3/admin/platform/azure/)
+* [Google Cloud](/v3/admin/platform/gke/)
 
 ## Git user and token
 
@@ -40,7 +40,7 @@ To create a git token for passing into the operator use this button:
 
 ## Installing the operator
 
-Run [jx admin operator](https://github.com/jenkins-x/jx-admin/blob/master/docs/cmd/jx-admin_operator.md) command inside the git clone of the [git repository](/docs/v3/getting-started/) you created previously:
+Run [jx admin operator](https://github.com/jenkins-x/jx-admin/blob/master/docs/cmd/jx-admin_operator.md) command inside the git clone of the [git repository](/v3/admin/platform/) you created previously:
 
 ```bash
 jx admin operator --username mygituser --token mygittoken
@@ -48,7 +48,7 @@ jx admin operator --username mygituser --token mygittoken
 
 If you don't specify the `username` or `token` parameters you will be prompted for them.
 
-If you are not inside the git clone of the [git repository](/docs/v3/getting-started/) you will need to specify the `--url` parameter for the git URL:
+If you are not inside the git clone of the [git repository](/v3/admin/platform/) you will need to specify the `--url` parameter for the git URL:
 
 ```bash 
 jx admin operator --url=https://github.com/myorg/env-mycluster-dev.git --username mygituser --token mygittoken

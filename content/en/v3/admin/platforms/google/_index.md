@@ -9,7 +9,7 @@ lastmod: 2020-02-21
 weight: 40
 aliases:
   - /v3/admin/platforms/gke
-  - /docs/v3/getting-started/gke
+  - /v3/admin/platform/gke
 ---
 
 ---

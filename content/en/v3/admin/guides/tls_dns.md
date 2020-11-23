@@ -38,7 +38,7 @@ To start with we are focussed on GCP but will expand to other cloud providers.
 
 ## Prerequisites
 
-- cluster created using Jenkins X [GCP Terraform getting started](/docs/v3/getting-started/gke/)
+- cluster created using Jenkins X [GCP Terraform getting started](/v3/admin/platform/gke/)
 - own a domain and have GCP manage it, [configure cloud dns to manage a domain](/docs/v3/guides/infra/google_cloud_dns)
 - latest Jenkins X CLI, Infrastructure and Cluster git repository updates [upgrade](/docs/v3/guides/upgrade)
 

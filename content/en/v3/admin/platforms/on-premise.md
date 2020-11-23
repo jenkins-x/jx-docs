@@ -8,7 +8,7 @@ publishdate: 2017-02-01
 lastmod: 2020-02-21
 weight: 150
 aliases:
-  - /docs/v3/getting-started/on-premise
+  - /v3/admin/platform/on-premise
 ---
 
 ---
