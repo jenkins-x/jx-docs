@@ -82,10 +82,8 @@ spec:
           - --checks-to-ignore
           - ScriptCheck
           - --empty-alt-ignore
-          - --url-ignore
-          - "/#.*/"
           - --file-ignore
-          - /.*apidocs.*/,/.*\/zh.*/,/.*\/es.*/,/.*\/docs\/reference\/api.*/,/.*\/docs\/reference\/config.*/,/.*\/community\/events.*/
+          - "/.*apidocs.*/,/.*\/zh.*/,/.*\/es.*/,/.*\/docs\/reference\/api.*/,/.*\/docs\/reference\/config.*/,/.*\/community\/events.*/"
 
   podTemplate: {}
   serviceAccountName: tekton-bot
