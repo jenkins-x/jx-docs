@@ -68,14 +68,14 @@ spec:
           name: build-website
           script: |
             #!/bin/sh
+            rm -rf tmp-website*
             hugo -d tmp-website --enableGitInfo --baseURL https://${REPO_NAME}-jx-${REPO_OWNER}-${REPO_NAME}-pr-${PULL_NUMBER}.${DOMAIN}/
 
         - image: chabad360/htmlproofer:latest
           name: htmlproofer
           script: |
             #!/bin/sh
-            sleep 100000
-            htmlproofer ./tmp-website --allow-hash-href --disable-external --check-html --checks-to-ignore ScriptCheck --empty-alt-ignore --file-ignore "/.*apidocs.*/,/.*\/zh.*/,/.*\/es.*/,/.*\/docs\/reference\/api.*/,/.*\/docs\/reference\/config.*/,/.*\/community\/events.*/"
+            htmlproofer ./tmp-website --allow-hash-href --disable-external --check-html --checks-to-ignore ScriptCheck --empty-alt-ignore --file-ignore "docs\/index.html,/.*apidocs.*/,/.*\/zh.*/,/.*\/es.*/,/.*\/docs\/reference\/api.*/,/.*\/docs\/reference\/config.*/,/.*\/community\/events.*/"
   podTemplate: {}
   serviceAccountName: tekton-bot
   timeout: 240h0m0s
