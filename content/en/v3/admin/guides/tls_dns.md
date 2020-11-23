@@ -104,25 +104,14 @@ Add cert-manager to your clusters helmfile.yaml `releases` section:
 
 Next we install
 - a cluster wide [Issuer](https://cert-manager.io/docs/concepts/issuer/) which tells cert-manager how to validate you own your domain
-- a namespaced [Certificate](https://cert-manager.io/docs/concepts/certificate/) to request a TLS certificate for services running in the `jx` namespace
+- a namespaced [Certificate](https://cert-manager.io/docs/concepts/certificate/) to request a TLS certificate for applications running in your cluster
 
 ```bash
 - chart: jx3/acme
   name: acme-jx
 ```
 
-Cert-manager will use the cluster issuer to request a TLS certificate for each namespaces [Certificate](https://cert-manager.io/docs/concepts/certificate/) found.  The advantage here is that the same wildcard certificate is cached and reused for multiple namespaces reducing the risk of being [rate limited](https://letsencrypt.org/docs/rate-limits/) by Lets Encrypt.
-
-Now install the `acme` chart into any namespace you require TLS, e.g.
-```bash
-- chart: jx3/acme
-  name: tls-jx-staging
-  namespace: jx-staging
-
-- chart: jx3/acme
-  name: tls-jx-production
-  namespace: jx-production
-```
+Cert-manager will use the cluster issuer to request a TLS certificate.  A Kubernetes secret will be automatically created and contain the TLS cert.  Ingresses for applications in any namespace will reference this secret in the `jx` namespace.
 
 The domain from setting up your infrastructure in step one should appear in the `jx-requirements.yml` of you cluster git repo.  Next configure your TLS options, update your `jx-requirements.yml` with below.
 
@@ -166,27 +155,31 @@ You should be able to verify the TLS certificate from Lets Encrypt in your brows
 
 ![Working TLS](/images/v3/working_tls.png)
 
-## How to get TLS in my preview environment?
+## How do I enable TLS on non Jenkins X quickstarts?
 
-In your applications preview helmfile.yaml you can add the same acme helm chart used above however because your application git repository does not have the version stream your cluster git repository above has you will need to add the default values yourself.
+If you are creating your own Ingress resources and not using Jenkins X quickstarts then add this:
 
-Add this to you applications `./preview/helmfile.yaml`
+First take note of your TLS secret name in the `jx` namespace
+```bash
+kc get secret -n jx | grep tls
 
 ```
-repositories:
-- name: jx3
-  url: https://storage.googleapis.com/jenkinsxio/charts
-releases:
-- chart: jx3/acme
-  name: tls
-  namespace: '{{ requiredEnv "PREVIEW_NAMESPACE" }}'
-  values:
-  - jx-values.yaml
-  - issuer:
-      cluster: true
-```
 
-_Note_ as this will request a certificate that matches your existing domain configured above, cert-manager will reuse a cached certificate rather than issue a new one which can cause rate limitting by Lets Encrypt. 
+Now add the reference including the `jx/` prefix to your ingress
+```bash
+spec:
+  rules:
+  - host: [your hostname]
+    http:
+      paths:
+      - backend:
+          serviceName: [your kubernetes service name]
+          servicePort: [your kubernetes service port]
+  tls:
+  - hosts:
+    - [your hostname]
+    secretName: jx/[your TLS secret name from step above]
+```
 
 ## What if I have a chartmuseum with charts running using nip.io?
 

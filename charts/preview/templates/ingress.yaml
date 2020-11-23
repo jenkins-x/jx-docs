@@ -17,8 +17,8 @@ spec:
   - hosts:
     - {{ .Values.service.name }}{{ .Values.jxRequirements.ingress.namespaceSubDomain }}{{ .Values.jxRequirements.ingress.domain }}
 {{- if .Values.jxRequirements.ingress.tls.production }}
-    secretName: "tls-{{ .Values.jxRequirements.ingress.domain | replace "." "-" }}-p"
+    secretName: "jx/tls-{{ .Values.jxRequirements.ingress.domain | replace "." "-" }}-p"
 {{- else }}
-    secretName: "tls-{{ .Values.jxRequirements.ingress.domain | replace "." "-" }}-s"
+    secretName: "jx/tls-{{ .Values.jxRequirements.ingress.domain | replace "." "-" }}-s"
 {{- end }}
 {{- end }}
