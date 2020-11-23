@@ -74,6 +74,7 @@ spec:
           name: htmlproofer
           script: |
             #!/bin/sh
+            sleep 100000
             htmlproofer ./tmp-website --allow-hash-href --disable-external --check-html --checks-to-ignore ScriptCheck --empty-alt-ignore --file-ignore "/.*apidocs.*/,/.*\/zh.*/,/.*\/es.*/,/.*\/docs\/reference\/api.*/,/.*\/docs\/reference\/config.*/,/.*\/community\/events.*/"
   podTemplate: {}
   serviceAccountName: tekton-bot
