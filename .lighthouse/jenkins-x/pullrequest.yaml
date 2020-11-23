@@ -72,19 +72,9 @@ spec:
 
         - image: chabad360/htmlproofer:latest
           name: htmlproofer
-          command:
-          - htmlproofer
-          args:
-          - ./tmp-website
-          - --allow-hash-href
-          - --disable-external
-          - --check-html
-          - --checks-to-ignore
-          - ScriptCheck
-          - --empty-alt-ignore
-          - --file-ignore
-          - /.*apidocs.*/,/.*\/zh.*/,/.*\/es.*/,/.*\/docs\/reference\/api.*/,/.*\/docs\/reference\/config.*/,/.*\/community\/events.*/
-
+          script: |
+            #!/bin/sh
+            htmlproofer ./tmp-website --allow-hash-href --disable-external --check-html --checks-to-ignore ScriptCheck --empty-alt-ignore --file-ignore "/.*apidocs.*/,/.*\/zh.*/,/.*\/es.*/,/.*\/docs\/reference\/api.*/,/.*\/docs\/reference\/config.*/,/.*\/community\/events.*/"
   podTemplate: {}
   serviceAccountName: tekton-bot
   timeout: 240h0m0s
