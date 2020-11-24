@@ -8,7 +8,7 @@ publishdate: 2017-02-01
 lastmod: 2020-02-21
 weight: 30
 aliases:
-  - /docs/v3/getting-started/azure
+  - /v3/admin/platform/azure
 ---
 
 ---
@@ -32,4 +32,4 @@ This is our current recommended quickstart for Azure:
     Create your infrastructure
   </a> 
 
-*  <a href="/docs/v3/develop/create-project/" class="btn bg-primary text-light">Create or import projects</a>
+*  <a href="/v3/develop/create-project/" class="btn bg-primary text-light">Create or import projects</a>

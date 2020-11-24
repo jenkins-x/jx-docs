@@ -5,11 +5,11 @@ type: docs
 description: Importing Jenkinsfile based projects
 weight: 50
 aliases:
-  - /docs/v3/guides/jenkins/importing
+  - /v3/guides/jenkins/importing
 ---
 
 
-Once you have [added one or more Jenkins Servers to Jenkins X](/docs/v3/guides/jenkins/getting-started/) you can import a `Jenksinfile` based project in the usual way.
+Once you have [added one or more Jenkins Servers to Jenkins X](/v3/guides/jenkins/getting-started/) you can import a `Jenksinfile` based project in the usual way.
 
 
 ## Import the code

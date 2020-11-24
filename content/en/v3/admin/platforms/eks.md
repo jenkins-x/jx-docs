@@ -8,7 +8,7 @@ publishdate: 2017-02-01
 lastmod: 2020-02-21
 weight: 20
 aliases:
-  - /docs/v3/getting-started/eks
+  - /v3/admin/platform/eks
 ---
 
 ---
@@ -31,4 +31,4 @@ This is our current recommended quickstart for EKS:
     Create your infrastructure
   </a> 
 
-*  <a href="/docs/v3/develop/create-project/" class="btn bg-primary text-light">Create or import projects</a>
+*  <a href="/v3/develop/create-project/" class="btn bg-primary text-light">Create or import projects</a>

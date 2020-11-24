@@ -4,7 +4,7 @@ linktitle: Cloud DNS
 type: docs
 weight: 100
 aliases:
-  - /docs/v3/guides/infra/google_cloud_dns/
+  - /v3/guides/infra/google_cloud_dns/
 ---
 
 This guide will describe how to purchase a domain and configure GCP to manage it with [Cloud DNS](https://cloud.google.com/dns)

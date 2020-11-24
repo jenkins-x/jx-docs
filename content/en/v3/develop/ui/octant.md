@@ -5,12 +5,12 @@ type: docs
 description: Jenkins X Console based on Octant 
 weight: 50
 aliases:
-  - /docs/v3/develop/ui/octant
+  - /v3/develop/ui/octant
 ---
 
 As a general purpose console for working with Kubernetes, Jenkins X, Tekton and more resources we highly recommend [Octant](https://octant.dev/)
 
-To run Octant with the Jenkins X plugins if you [have a recent jx binary](/docs/v3/guides/upgrade/#cli) run:
+To run Octant with the Jenkins X plugins if you [have a recent jx binary](/v3/guides/upgrade/#cli) run:
 
 ```bash 
 jx ui

@@ -5,7 +5,7 @@ type: docs
 description: Documentation about Jenkins X 3.x benefits, comparison and how it works
 weight: 5
 aliases: 
-    - /docs/v3/about/
+    - /v3/about/
 ---
 
 

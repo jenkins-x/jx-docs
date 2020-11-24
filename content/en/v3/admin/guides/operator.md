@@ -5,10 +5,10 @@ type: docs
 description: Installing the Git Operator to install/upgrade Jenkins X
 weight: 20
 aliases:
-  - /docs/v3/guides/operator
+  - /v3/guides/operator
 ---
 
-Jenkins X 3.x uses a [git operator](https://github.com/jenkins-x/jx-git-operator) to manage installing + upgrading of Jenkins X and any other components in any environment. If you are interested you can read [how it works](/docs/v3/about/how-it-works/).
+Jenkins X 3.x uses a [git operator](https://github.com/jenkins-x/jx-git-operator) to manage installing + upgrading of Jenkins X and any other components in any environment. If you are interested you can read [how it works](/v3/about/how-it-works/).
 
 
 ## Using Terraform
@@ -17,9 +17,9 @@ Jenkins X 3.x uses a [git operator](https://github.com/jenkins-x/jx-git-operator
 
 So the following approaches automatically install the operator for you:
 
-* [Amazon](/docs/v3/getting-started/eks/)
-* [Azure](/docs/v3/getting-started/azure/)
-* [Google Cloud](/docs/v3/getting-started/gke/)
+* [Amazon](/v3/admin/platform/eks/)
+* [Azure](/v3/admin/platform/azure/)
+* [Google Cloud](/v3/admin/platform/gke/)
 
 ## Git user and token
 
@@ -27,9 +27,9 @@ To install the [git operator](https://github.com/jenkins-x/jx-git-operator) you 
 
 This user and token needs read and write access to the git repository containing the installation configuration. Ideally the token will also have permissions to be able to create a webhook on the repository (to trigger CI/CD pipelines whenever someone creates a Pull Request on the git repository).
 
-You can always setup webhooks by hand yourself whenever a git repository is [created or imported](/docs/v3/develop/create-project/) or the domain name of your [lighthouse](https://github.com/jenkins-x/lighthouse) hook endpoint changes via the [jx verify webhooks](https://github.com/jenkins-x/jx-verify/blob/master/docs/cmd/jx-verify_webhooks.md) command. Though its easier to get Jenkins X to automate this for you as part of the CI/CD pipelines; it just requires the git user and token to have sufficient permissions to list, create and modify webhooks.
+You can always setup webhooks by hand yourself whenever a git repository is [created or imported](/v3/develop/create-project/) or the domain name of your [lighthouse](https://github.com/jenkins-x/lighthouse) hook endpoint changes via the [jx verify webhooks](https://github.com/jenkins-x/jx-verify/blob/master/docs/cmd/jx-verify_webhooks.md) command. Though its easier to get Jenkins X to automate this for you as part of the CI/CD pipelines; it just requires the git user and token to have sufficient permissions to list, create and modify webhooks.
 
-Note also that the same pipeline user and token is reused by default for all pipelines on [all repositories created or imported](/docs/v3/develop/create-project/) which will need read, write and webhook permissions on all of those repositories too. Though if you really want you can change this later on by [editing the pipeline token](/docs/v3/guides/secrets/#edit-secrets).
+Note also that the same pipeline user and token is reused by default for all pipelines on [all repositories created or imported](/v3/develop/create-project/) which will need read, write and webhook permissions on all of those repositories too. Though if you really want you can change this later on by [editing the pipeline token](/v3/guides/secrets/#edit-secrets).
 
 
 ## Create a git token
@@ -40,7 +40,7 @@ To create a git token for passing into the operator use this button:
 
 ## Installing the operator
 
-Run [jx admin operator](https://github.com/jenkins-x/jx-admin/blob/master/docs/cmd/jx-admin_operator.md) command inside the git clone of the [git repository](/docs/v3/getting-started/) you created previously:
+Run [jx admin operator](https://github.com/jenkins-x/jx-admin/blob/master/docs/cmd/jx-admin_operator.md) command inside the git clone of the [git repository](/v3/admin/platform/) you created previously:
 
 ```bash
 jx admin operator --username mygituser --token mygittoken
@@ -48,7 +48,7 @@ jx admin operator --username mygituser --token mygittoken
 
 If you don't specify the `username` or `token` parameters you will be prompted for them.
 
-If you are not inside the git clone of the [git repository](/docs/v3/getting-started/) you will need to specify the `--url` parameter for the git URL:
+If you are not inside the git clone of the [git repository](/v3/admin/platform/) you will need to specify the `--url` parameter for the git URL:
 
 ```bash 
 jx admin operator --url=https://github.com/myorg/env-mycluster-dev.git --username mygituser --token mygittoken
@@ -66,7 +66,7 @@ jx admin log
 
 Jenkins X will now install itself.
 
-If you want to, you can populate the [secrets](/docs/v3/guides/secrets/) once the `ExternalSecret` custom resources have been created. 
+If you want to, you can populate the [secrets](/v3/guides/secrets/) once the `ExternalSecret` custom resources have been created. 
 
 <nav>
   <ul class="pagination">

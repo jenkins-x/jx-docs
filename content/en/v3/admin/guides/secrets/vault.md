@@ -5,11 +5,11 @@ type: docs
 description: Using Vault for your Secret storage
 weight: 30
 aliases:
-  - /docs/v3/guides/secrets/vault
+  - /v3/guides/secrets/vault
 ---
 
 
-To be able to use Vault as the storage engine for your Secrets you need to [configure vault](/docs/v3/guides/config/#vault) via `secretStorage: vault` in your `jx-requirements.yml`:
+To be able to use Vault as the storage engine for your Secrets you need to [configure vault](/v3/guides/config/#vault) via `secretStorage: vault` in your `jx-requirements.yml`:
 
 ```yaml
 cluster:
@@ -58,9 +58,9 @@ To be able to import, export or edit secrets from your laptop you need to make s
 jx secret vault portforward
 ```                  
 
-This will allow the [jx 3.x binary](/docs/v3/guides/jx3/) to access the Vault REST API.
+This will allow the [jx 3.x binary](/v3/guides/jx3/) to access the Vault REST API.
 
-You can now follow the instructions to [edit secrets](/docs/v3/guides/secrets/#edit-secrets) or [import secrets](/docs/v3/guides/secrets/#import-secrets).
+You can now follow the instructions to [edit secrets](/v3/guides/secrets/#edit-secrets) or [import secrets](/v3/guides/secrets/#import-secrets).
 
 You can also access the vault web UI at [https://localhost:8200](https://localhost:8200)
 

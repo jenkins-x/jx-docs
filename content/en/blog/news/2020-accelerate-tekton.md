@@ -44,7 +44,7 @@ However we've found that this approach as a few downsides:
   * tekton moves fast; it's hard to keep up in a DSL ;)
 * its complex trying to understand how to make local modifications of pipelines
   * particularly if you just want to add an environment variable; modify a command line argument or something
-* we can't use [IDE tooling](/docs/v3/develop/pipeline-catalog/#ide-support) for [Tekton](https://tekton.dev/) to edit/visualise pipelines
+* we can't use [IDE tooling](/v3/develop/pipeline-catalog/#ide-support) for [Tekton](https://tekton.dev/) to edit/visualise pipelines
 * we can't reuse [Tekton Catalog tasks](https://github.com/tektoncd/catalog)
 
 
@@ -72,7 +72,7 @@ From a technical perspective:
 
 ## Version 3.x
 
-For [Jenkins X 3.x](/docs/v3/) we really wanted to move closer to this vision: to _accelerate_ the adoption of Tekton and help give developers Tekton super powers.
+For [Jenkins X 3.x](/v3/) we really wanted to move closer to this vision: to _accelerate_ the adoption of Tekton and help give developers Tekton super powers.
 
 Re-reading [Brian Grant's document on Declarative application management in Kubernetes](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/declarative-application-management.md) really got us thinking about this problem of how to reuse complex YAML files for pipelines and tasks while also allowing local modifications while also avoiding a complex leaky DSL for composition.
 
@@ -81,7 +81,7 @@ Then we tried out [kpt](https://googlecontainertools.github.io/kpt/) (pronounced
 
 ### Using Tekton in your repository
 
-When you [create a new quickstart](/docs/v3/develop/create-project/#create-a-new-project-from-a-quickstart) or [import a repository](/docs/v3/develop/create-project/#import-an-existing-project) into [Jenkins X 3.x](/docs/v3/) you get a new folder: **.lighthouse/jenkins-x** added to your source code which contains the Tekton pipeline files you need for your application.
+When you [create a new quickstart](/v3/develop/create-project/#create-a-new-project-from-a-quickstart) or [import a repository](/v3/develop/create-project/#import-an-existing-project) into [Jenkins X 3.x](/v3/) you get a new folder: **.lighthouse/jenkins-x** added to your source code which contains the Tekton pipeline files you need for your application.
 
 So for a typical application the **.lighthouse/jenkins-x** folder will contain: 
 
@@ -89,13 +89,13 @@ So for a typical application the **.lighthouse/jenkins-x** folder will contain:
 * **pullrequest.yaml** the Tekton `PipelineRun` for perform continuous integration testing, verification and the creation of a Preview Environment for your proposed changes before they merge to the main branch
 * **triggers.yaml** to define the [lighthouse](https://github.com/jenkins-x/lighthouse) [TriggerConfig](https://github.com/jenkins-x/lighthouse/blob/master/docs/trigger/github-com-jenkins-x-lighthouse-pkg-triggerconfig.md#Config) which defines the [ChatOps](/docs/resources/faq/using/chatops/#what-is-chatops) and triggering configuration via a [spec field](https://github.com/jenkins-x/lighthouse/blob/master/docs/trigger/github-com-jenkins-x-lighthouse-pkg-triggerconfig.md#ConfigSpec) which defines [presubmits](https://github.com/jenkins-x/lighthouse/blob/master/docs/trigger/github-com-jenkins-x-lighthouse-pkg-config-job.md#Presubmit) and [postsubmits](https://github.com/jenkins-x/lighthouse/blob/master/docs/trigger/github-com-jenkins-x-lighthouse-pkg-config-job.md#Postsubmit) (i.e. Pull Request and Release triggers).
 
-See the [Pipeline Catalog documentation](/docs/v3/develop/pipeline-catalog/) for more details on how this works and go to the [reference guide](/docs/v3/develop/pipeline-catalog/#reference-guide) if you want to dive into the details.
+See the [Pipeline Catalog documentation](/v3/develop/pipeline-catalog/) for more details on how this works and go to the [reference guide](/v3/develop/pipeline-catalog/#reference-guide) if you want to dive into the details.
 
 As a developer you can mostly ignore the `.lighthouse` folder if you don't care about how the pipelines work. If you are interested you can look inside.
 
-If you need to modify anything, just open the Tekton files in your [IDE](/docs/v3/develop/pipeline-catalog/#ide-support) and modify them. No complex DSL to understand other than Tekton itself. Then the changes will be used when you submit your local changes via a Pull Request (for the pull request pipeline) or they get merged to the main branch (for release pipeline changes).
+If you need to modify anything, just open the Tekton files in your [IDE](/v3/develop/pipeline-catalog/#ide-support) and modify them. No complex DSL to understand other than Tekton itself. Then the changes will be used when you submit your local changes via a Pull Request (for the pull request pipeline) or they get merged to the main branch (for release pipeline changes).
 
-To handle change going forward from upstream pipeline catalogs while preserving any local modifications we use a generic [update mechanism on all git repositories](/docs/v3/develop/pipeline-catalog/#upgrading-pipelines-and-helm-charts) which is powered by [kpt](https://googlecontainertools.github.io/kpt/)  
+To handle change going forward from upstream pipeline catalogs while preserving any local modifications we use a generic [update mechanism on all git repositories](/v3/develop/pipeline-catalog/#upgrading-pipelines-and-helm-charts) which is powered by [kpt](https://googlecontainertools.github.io/kpt/)  
 
 
 ### Reusing Tekton Catalog Tasks
@@ -110,7 +110,7 @@ Here's a [demo of this in action](https://asciinema.org/a/368282):
 
 <script src="https://asciinema.org/a/368282.js" id="asciicast-368282" async></script>
 
-The tekton Task resources are copied into your **.lighthouse** directory in a folder using [kpt](https://googlecontainertools.github.io/kpt/) so that you can modify things locally if you need to and can [upgrade your local copy with upstream changes](/docs/v3/develop/pipeline-catalog/#upgrading-pipelines-and-helm-charts).
+The tekton Task resources are copied into your **.lighthouse** directory in a folder using [kpt](https://googlecontainertools.github.io/kpt/) so that you can modify things locally if you need to and can [upgrade your local copy with upstream changes](/v3/develop/pipeline-catalog/#upgrading-pipelines-and-helm-charts).
 
 This lets you work with shared resources from the Tekton community and, when required, modify them to suit and manage them easily over time.
 
@@ -143,22 +143,22 @@ Hopefully we can migrate to a standard tekton based approach [if this issue is r
 
 [Tekton Catalog](https://github.com/tektoncd/catalog) is an awesome way to reuse Tasks but it doesn't help when trying to reuse complete `PipelineRun` and `Pipeline` resources across projects and repositories while also being able to modify them as needed on a per team or repository basis.
 
-[Jenkins X 3.x](/docs/v3/) comes with its own default [pipeline catalog for different languages, tools and frameworks](https://github.com/jenkins-x/jx3-pipeline-catalog/tree/master/packs). This catalog contains reusable steps, Tasks and Pipelines you can use on any project. 
+[Jenkins X 3.x](/v3/) comes with its own default [pipeline catalog for different languages, tools and frameworks](https://github.com/jenkins-x/jx3-pipeline-catalog/tree/master/packs). This catalog contains reusable steps, Tasks and Pipelines you can use on any project. 
 
-It's easy for you to fork this catalog to make changes for your team or share between teams in your company. You can make as many catalogs as you like and put whichever catalogs you want in the `extensions/pipeline-catalogs.yaml` file of your cluster git repository of your [Jenkins X 3.x install](/docs/v3/). For more detail there's the [configuration reference here](https://github.com/jenkins-x/jx-project/blob/master/docs/config.md#project.jenkins-x.io/v1alpha1.PipelineCatalog).
+It's easy for you to fork this catalog to make changes for your team or share between teams in your company. You can make as many catalogs as you like and put whichever catalogs you want in the `extensions/pipeline-catalogs.yaml` file of your cluster git repository of your [Jenkins X 3.x install](/v3/). For more detail there's the [configuration reference here](https://github.com/jenkins-x/jx-project/blob/master/docs/config.md#project.jenkins-x.io/v1alpha1.PipelineCatalog).
 
-Then when developers [create a new quickstart](/docs/v3/develop/create-project/#create-a-new-project-from-a-quickstart) or [import a repository](/docs/v3/develop/create-project/#import-an-existing-project) developers will be asked to pick the catalog they want from your list if there is more than one, or the configured catalog is silently used.
+Then when developers [create a new quickstart](/v3/develop/create-project/#create-a-new-project-from-a-quickstart) or [import a repository](/v3/develop/create-project/#import-an-existing-project) developers will be asked to pick the catalog they want from your list if there is more than one, or the configured catalog is silently used.
 
 This gives you complete freedom to configure things at a global, team or repository level while also making it easy to share changes across projects, teams and companies.
 
 
 ### Conclusion
 
-We are super excited about the combination of [Jenkins X 3.x](/docs/v3/), [Tekton](https://tekton.dev/), [Tekton Catalog](https://github.com/tektoncd/catalog) and ChatOps.  
+We are super excited about the combination of [Jenkins X 3.x](/v3/), [Tekton](https://tekton.dev/), [Tekton Catalog](https://github.com/tektoncd/catalog) and ChatOps.  
  
 We hope that you can use the above capabilities to solve your Continuous Delivery needs and over time you can take your Pipelines and make your own Pipeline Catalogs and share them with folks inside and outside of your company. 
 
-Hopefully this can help us all accelerate our Tekton pipelines and catalogs towards more continuous delivery awesome with flexible reusable tasks and pipelines! If you want to give this a try [check out Jenkins X 3.x](/docs/v3/)
+Hopefully this can help us all accelerate our Tekton pipelines and catalogs towards more continuous delivery awesome with flexible reusable tasks and pipelines! If you want to give this a try [check out Jenkins X 3.x](/v3/)
 
 
 

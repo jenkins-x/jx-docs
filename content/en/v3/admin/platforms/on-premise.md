@@ -8,7 +8,7 @@ publishdate: 2017-02-01
 lastmod: 2020-02-21
 weight: 150
 aliases:
-  - /docs/v3/getting-started/on-premise
+  - /v3/admin/platform/on-premise
 ---
 
 ---
@@ -20,7 +20,7 @@ Ensure you are logged into GitHub else you will get a 404 error when clicking th
 
 ## On Premise Kubernetes
 
-If you are using kubernetes we highly recommend you use one of the [managed cloud providers](/docs/v3/#administration) as this comes with lots of additional features like:
+If you are using kubernetes we highly recommend you use one of the [managed cloud providers](/v3/#administration) as this comes with lots of additional features like:
 
 * container registries and bucket storage
 * IAM and workload identity (e.g. so kubernetes Service Accounts can be assigned roles to be able to read/write to certain buckets or container registries) 
@@ -33,7 +33,7 @@ The following are the prerequisites of your on-premise kubernetes cluster:
 
 #### Kubernetes cluster
 
-We obviously need a working kubernetes cluster. There are many approaches to [setting up on premise clusters](https://kubernetes.io/docs/setup/production-environment/tools/) obviously the easiest approach is to use the [cloud](/docs/v3/#administration).
+We obviously need a working kubernetes cluster. There are many approaches to [setting up on premise clusters](https://kubernetes.io/docs/setup/production-environment/tools/) obviously the easiest approach is to use the [cloud](/v3/#administration).
 
 If you are going the bare metal route you could try [these instructions](https://007ba7.us/howto/k8s-install/)
  
@@ -95,7 +95,7 @@ kubectl get ns
 kubectl get node      
 ```        
 
-*  <a href="/docs/v3/guides/operator/" 
+*  <a href="/v3/guides/operator/" 
     target="github" class="btn bg-primary text-light" 
     title="install the git operator to setup Jenkins X in your cluster">
     Install the git operator
@@ -107,7 +107,7 @@ kubectl get node
 jx ns jx
 ```        
 
-*  <a href="/docs/v3/develop/create-project/" class="btn bg-primary text-light">Create or import projects</a> 
+*  <a href="/v3/develop/create-project/" class="btn bg-primary text-light">Create or import projects</a> 
 
 
 ## Enable WebHooks

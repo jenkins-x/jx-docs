@@ -5,7 +5,7 @@ type: docs
 description: How to extend Jenkins X 3.x 
 weight: 500
 aliases: 
-    - /docs/v3/about/extending/
+    - /v3/about/extending/
 ---
 
 Jenkins X has a number of extension points you can use to extend the CI/CD platform to suit your needs:
@@ -14,10 +14,10 @@ Jenkins X has a number of extension points you can use to extend the CI/CD platf
 
 [Helm](https://helm.sh/) [charts](https://helm.sh/docs/topics/charts/) are the standard way to package applications for kubernetes.
 
-It's easy to use GitOps to [add charts](/docs/v3/develop/apps/#adding-charts) to any of your clusters and [customize them](/docs/v3/develop/apps/#customising-charts) however you need.
+It's easy to use GitOps to [add charts](/v3/develop/apps/#adding-charts) to any of your clusters and [customize them](/v3/develop/apps/#customising-charts) however you need.
 
 
-You can also easily [add one or more kubernetes resources to a cluster via a source layout chart](/docs/v3/develop/apps/#adding-resources)
+You can also easily [add one or more kubernetes resources to a cluster via a source layout chart](/v3/develop/apps/#adding-resources)
     
 
 ## Plugins
@@ -32,7 +32,7 @@ If you wish to create a new plugin try browse the [jenkins-x-plugins organisatio
 
 ## Triggers
 
-With version 3.x we default to using [Pipeline Catalogs](/docs/v3/develop/pipeline-catalog/) containing Tekton resources to define CI/CD pipelines.
+With version 3.x we default to using [Pipeline Catalogs](/v3/develop/pipeline-catalog/) containing Tekton resources to define CI/CD pipelines.
 
 e.g. the default CI/CD pipelines from the [default Jenkins X Pipeline Catalog](https://github.com/jenkins-x/jx3-pipeline-catalog/tree/master/packs) define tekton pipelines in the `.lighthouse/jenkins-x` folder.
 
@@ -40,13 +40,13 @@ Inside each repository there is now a trigger file called `triggers.yaml` define
 
 You can add any number of folders with the `.lighthouse` folder to add any number of `presubmits` and `postsubmits` (i.e. Pull Request pipelines and releases).
 
-If you define a pipeline you want to share with other repositories you can then use [kpt pkg get](https://googlecontainertools.github.io/kpt/reference/pkg/get/) to copy the folder into other repositories. Later on you can then use [kpt pkg update](https://googlecontainertools.github.io/kpt/reference/pkg/update/) to replicate upstream changes to other repositories. Or use the [jx gitops upgrade](/docs/v3/guides/upgrade/#cluster) command which uses `kpt pkg update` under the covers.
+If you define a pipeline you want to share with other repositories you can then use [kpt pkg get](https://googlecontainertools.github.io/kpt/reference/pkg/get/) to copy the folder into other repositories. Later on you can then use [kpt pkg update](https://googlecontainertools.github.io/kpt/reference/pkg/update/) to replicate upstream changes to other repositories. Or use the [jx gitops upgrade](/v3/guides/upgrade/#cluster) command which uses `kpt pkg update` under the covers.
 
 ## Pipeline Catalog
 
 The `pipeline catalog` contains default triggers, tekton pipelines and associated files (e.g. `Dockerfile` and helm charts) for different languages and runtimes.
 
-The pipeline catalog is used to default the triggers, pipelines and other files for [new projects](/docs/v3/develop/create-project/) when you import or create new quickstarts.
+The pipeline catalog is used to default the triggers, pipelines and other files for [new projects](/v3/develop/create-project/) when you import or create new quickstarts.
 
 You can browse the [default Jenkins X Pipeline Catalog here](https://github.com/jenkins-x/jx3-pipeline-catalog/tree/master/packs).
 
@@ -67,7 +67,7 @@ buildPacks:
 
 ## QuickStarts
 
-Quickstarts are sample projects which are used `jx project quickstart` when you [create new projects](/docs/v3/develop/create-project/)
+Quickstarts are sample projects which are used `jx project quickstart` when you [create new projects](/v3/develop/create-project/)
 
 The default quickstart projects are in the [jenkins-x-quickstarts](https://github.com/jenkins-x-quickstarts/) github organisation.
 
@@ -77,7 +77,7 @@ So you can add your own quickstarts by just modifying that file to add any quick
 
 ## Octant
 
-Our preferred UI for Kubernetes, Tekton and Jenkins X is [octant](/docs/v3/develop/ui/octant) as its easy to install/run and has fined grained RBAC and security without the hassle of setting up TLS, DNS and SSO on every cluster.
+Our preferred UI for Kubernetes, Tekton and Jenkins X is [octant](/v3/develop/ui/octant) as its easy to install/run and has fined grained RBAC and security without the hassle of setting up TLS, DNS and SSO on every cluster.
 
 One of the awesome features of [Octant](https://octant.dev/) is it supports plugins so that anyone can build a plugin to extend the UI. We've created the [octant-jx](https://github.com/jenkins-x/octant-jx) plugin to extend [Octant](https://octant.dev/) with the Jenkins X capabilities of environments, pipelines, source repositories and so forth. 
 

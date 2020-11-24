@@ -5,7 +5,7 @@ type: docs
 description: Changing your configuration
 weight: 80
 aliases:
-  - /docs/v3/guides/config
+  - /v3/guides/config
 ---
 
 

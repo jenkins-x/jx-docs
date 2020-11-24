@@ -5,7 +5,7 @@ type: docs
 description: How to download the jx 3.x alpha
 weight: 1
 aliases:
-  - /docs/v3/guides/jx3
+  - /v3/guides/jx3
 ---
 
 To try out the 3.x Alpha of Jenkins X you will need the 3.x version of the `jx` binary.

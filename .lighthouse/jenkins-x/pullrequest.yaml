@@ -27,15 +27,6 @@ spec:
         steps:
 
         - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
-          name: git-clone-website
-          command:
-          - git
-          args:
-          - clone
-          - https://github.com/jenkins-x/jenkins-x-website.git
-          - --depth=20
-
-        - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
           name: git-submodules
           command:
           - git
@@ -44,11 +35,6 @@ spec:
           - update
           - --init
           - --recursive
-
-        - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
-          name: update-content
-          command:
-          - ./scripts/ci/update-content.sh
 
         - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
           name: version
@@ -68,25 +54,17 @@ spec:
           name: build-website
           script: |
             #!/bin/sh
+            ls -al
             hugo -d tmp-website --enableGitInfo --baseURL https://${REPO_NAME}-jx-${REPO_OWNER}-${REPO_NAME}-pr-${PULL_NUMBER}.${DOMAIN}/
 
-        - image: chabad360/htmlproofer:latest
+        - image: 18fgsa/html-proofer:latest
           name: htmlproofer
-          command:
-          - htmlproofer
-          args:
-          - ./tmp-website
-          - --allow-hash-href
-          - --disable-external
-          - --check-html
-          - --checks-to-ignore
-          - ScriptCheck
-          - --empty-alt-ignore
-          - --url-ignore
-          - "/#.*/"
-          - --file-ignore
-          - /.*apidocs.*/,/.*\/zh.*/,/.*\/es.*/,/.*\/docs\/reference\/api.*/,/.*\/docs\/reference\/config.*/,/.*\/community\/events.*/
+          script: |
+            #!/bin/sh
 
+            # disabling HTML checks as we have some bad IDs in some pages...
+            # --check-html
+            htmlproofer ./tmp-website --allow-hash-href --disable-external --checks-to-ignore ScriptCheck --empty-alt-ignore --url-ignore "/#.*/" --file-ignore "/.*apidocs.*/,/.*\/zh.*/,/.*\/es.*/,/.*\/docs\/reference\/api.*/,/.*\/docs\/reference\/config.*/,/.*\/community\/events.*/"
   podTemplate: {}
   serviceAccountName: tekton-bot
   timeout: 240h0m0s

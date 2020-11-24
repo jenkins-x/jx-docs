@@ -5,7 +5,7 @@ type: docs
 description: How to use progressive delivery with helm 3 and helmfile
 weight: 120
 aliases:
-  - /docs/v3/guides/progressive-delivery
+  - /v3/guides/progressive-delivery
 ---
 
 
@@ -18,7 +18,7 @@ Our recommendation for using progressive delivery with Jenkins X is to use:
 
 ## Configuring Progressive Delivery
 
-Please follow the usual [getting started guide for boot and helm 3](/docs/v3/getting-started/)
+Please follow the usual [getting started guide for boot and helm 3](/v3/admin/platform/)
 
 ### Add the istio and flagger apps
 
@@ -54,7 +54,7 @@ ingress:
 
 Now your development git repository should be setup and be ready. Now:
 
-* make sure you have setup [any secrets you need to boot](/docs/v3/guides/secrets/)
+* make sure you have setup [any secrets you need to boot](/v3/guides/secrets/)
 
 When it is all complete you should see istio, flagger, grafana pods running in the `istio-system` namespace something like this:
 
@@ -104,7 +104,7 @@ You can switch the defaults back again at any time or configure any app to chang
 
 ### Enabling/Disabling Canary/HPA in an Environment
 
-If you want to enable/disable canary or horizontal pod autoscaling for a specific app in an environment then you can [follow the app customisation approach](/docs/v3/develop/apps/#customising-charts).
+If you want to enable/disable canary or horizontal pod autoscaling for a specific app in an environment then you can [follow the app customisation approach](/v3/develop/apps/#customising-charts).
 
 Assuming your app is called `myapp` then in the git repository for the environment (e.g. `Staging`) you can add/edit a file called `apps/mychart/values.yaml` to look like this:
 

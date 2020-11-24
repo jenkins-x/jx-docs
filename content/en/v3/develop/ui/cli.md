@@ -5,10 +5,10 @@ type: docs
 description: Jenkins X Command Line Interface
 weight: 10
 aliases:
-  - /docs/v3/develop/ui/cli
+  - /v3/develop/ui/cli
 ---
 
-For those who like command lines you can view and watch most things via the [jx](/docs/v3/guides/jx3/) command line.
+For those who like command lines you can view and watch most things via the [jx](/v3/guides/jx3/) command line.
 
 You can download 3.x of jx from here: https://github.com/jenkins-x/jx-cli/releases
 

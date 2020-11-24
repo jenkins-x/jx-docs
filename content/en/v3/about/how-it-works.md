@@ -5,7 +5,7 @@ type: docs
 description: How Jenkins X 3.x works under the covers
 weight: 130
 aliases: 
-    - /docs/v3/about/how-it-works/
+    - /v3/about/how-it-works/
 ---
 
 
@@ -13,7 +13,7 @@ aliases:
 
 The GitOps repository templates contain the source code, scripts and docs to help you get your cloud resources created (e.g. a kubernetes cluster and maybe buckets and/or a secret manager).
 
-Once you have created the GitOps repository from one of the [available templates and followed the instructions](/docs/v3/getting-started/) to set up your infrastructure you [install the git operator](/docs/v3/guides/operator/) via the [jx admin operator](https://github.com/jenkins-x/jx-admin/blob/master/docs/cmd/jx-admin_operator.md) command:
+Once you have created the GitOps repository from one of the [available templates and followed the instructions](/v3/admin/platform/) to set up your infrastructure you [install the git operator](/v3/guides/operator/) via the [jx admin operator](https://github.com/jenkins-x/jx-admin/blob/master/docs/cmd/jx-admin_operator.md) command:
 
 
 ```bash
@@ -72,8 +72,8 @@ The generate step does the following:
 * Any **Secret** resource is converted to an **ExternalSecret** so that it can be checked into git
   * we use [secret mapping](https://github.com/jenkins-x/jx-secret#mappings) to generate **ExternalSecret** resources which define where the `Secret` will be populated from (e.g. vault or your cloud provider secret store)
   * secrets can be populated by either:
-    * directly in the secret store (e.g. via vault or the cloud secret store directly). If you are using vault you can [follow these instructions](/docs/v3/guides/secrets/vault/#using-vault) to access the vault UI
-    * via [jx secret edit](/docs/v3/guides/secrets/#edit-secrets) command
+    * directly in the secret store (e.g. via vault or the cloud secret store directly). If you are using vault you can [follow these instructions](/v3/guides/secrets/vault/#using-vault) to access the vault UI
+    * via [jx secret edit](/v3/guides/secrets/#edit-secrets) command
     * via the [jx secret populate](https://github.com/jenkins-x/jx-secret/blob/master/docs/cmd/jx-secret_populate.md) command inside the boot job which uses the `versionStream/charts/*/secret-schema.yaml` files to populate with generators and default values from the [secret schema files](https://github.com/jenkins-x/jx-secret#schema) 
 * A few extra steps are run on the YAMLs to help deployments
     * Add a common label so that `kubectl apply --prune --selector` can be used
@@ -115,9 +115,9 @@ So you will see 2 commits on a typical promotion pull request:
 
 Due to the new GitOps model this is a little more complex than in v2 since imports are done via GitOps and the changes in git result in a Job / Pipeline running in the cluster to effect change.
 
-Here are the steps involved in [creating projects](/docs/v3/develop/create-project/) via importing / creating quickstarts:
+Here are the steps involved in [creating projects](/v3/develop/create-project/) via importing / creating quickstarts:
 
-* Run the `jx project quickstart` or `jx project import` command as [described here](/docs/v3/develop/create-project/)
+* Run the `jx project quickstart` or `jx project import` command as [described here](/v3/develop/create-project/)
 * New git repository is created if:
   * you are creating a quickstart via `jx project quickstart`
   * you are running `jx project import` inside a directory which has never been pushed to a git repository before
@@ -132,7 +132,7 @@ Here are the steps involved in [creating projects](/docs/v3/develop/create-proje
 * When the Pull Request merges the above [Apply step](#apply-step) runs
   * Lighthouse configuration is updated
   * a Webhook is registered for Lighthouse on the app's repository
-* The `jx project` command now continues and pushes the new [tekton pipelines for your app](/docs/v3/develop/pipeline-catalog/) to the main branch of the git repository
+* The `jx project` command now continues and pushes the new [tekton pipelines for your app](/v3/develop/pipeline-catalog/) to the main branch of the git repository
   * this triggers a new pipeline to run on your app which creates a new release of your app 
   * once the release is complete a Pull Request is created to start the [Promotion flow](#promotion) of the new app version
   * when this Promote Pull Request merges your application will be running in `Staging` 
@@ -148,7 +148,7 @@ From a high level Jenkins X 3.x similar to 2.x in that:
 
 However we’ve made a few changes in 3.x:
 
-* We have a [simpler UX now for setting up Jenkins X](/docs/v3/getting-started/) which uses a library of GitOps repository templates you can start from
+* We have a [simpler UX now for setting up Jenkins X](/v3/admin/platform/) which uses a library of GitOps repository templates you can start from
     * This lets you choose the closest example to the kind of infrastructure, tools and secret store you want to use so it’s easier to get started if your requirements fit the common quickstarts
 * The setup/install/upgrade process runs inside kubernetes rather than on a developers laptop
     * This avoids all kinds of issues with different installations of tools like git, kubectl, helm etc
