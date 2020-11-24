@@ -27,6 +27,8 @@ If you are using kubernetes we highly recommend you use one of the [managed clou
 
 However sometimes you need to run kubernetes on your premise. Longer term we hope the cloud providers can run their managed kubernetes and associated infrastructure on your premise too so you get to reuse the same storage + IAM anywhere. But until then, this guide is intended to get you started installing Jenkins X on a vanilla kubernetes cluster on premise.
 
+Here are some detailed [instructions](https://007ba7.us/howto/jx-install/) on getting JX running in a Lab Environment.
+
 ### Prerequisites
 
 The following are the prerequisites of your on-premise kubernetes cluster:
