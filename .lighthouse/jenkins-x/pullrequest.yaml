@@ -61,10 +61,7 @@ spec:
           name: htmlproofer
           script: |
             #!/bin/sh
-            # for some reason this page has lots of bad links
-            #rm ./tmp-website/docs/index.html
-            # disabled --check-html as we get lots of errors about IDs
-            htmlproofer ./tmp-website --allow-hash-href --disable-external --checks-to-ignore ScriptCheck --empty-alt-ignore --url-ignore "/#.*/" --file-ignore "/.*apidocs.*/,/.*\/zh.*/,/.*\/es.*/,/.*\/docs\/reference\/api.*/,/.*\/docs\/reference\/config.*/,/.*\/community\/events.*/"
+            htmlproofer ./tmp-website --allow-hash-href --disable-external --check-html --checks-to-ignore ScriptCheck --empty-alt-ignore --url-ignore "/#.*/" --file-ignore "/.*apidocs.*/,/.*\/zh.*/,/.*\/es.*/,/.*\/docs\/reference\/api.*/,/.*\/docs\/reference\/config.*/,/.*\/community\/events.*/"
   podTemplate: {}
   serviceAccountName: tekton-bot
   timeout: 240h0m0s
