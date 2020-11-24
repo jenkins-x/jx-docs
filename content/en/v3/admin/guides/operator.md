@@ -58,15 +58,42 @@ This command will use helm to install the [git operator](https://github.com/jenk
 
 The terminal will display the logs as the boot `Job` runs. 
 
+Jenkins X will now install itself.
+
+## Viewing the logs 
+
 At any time you can tail the boot job logs via the [jx admin log](https://github.com/jenkins-x/jx-admin/blob/master/docs/cmd/jx-admin_log.md) command:
 
 ```bash 
 jx admin log
 ```
 
-Jenkins X will now install itself.
+If you know you have just done a git commit and are waiting for the boot job to start you can run:
 
-If you want to, you can populate the [secrets](/v3/guides/secrets/) once the `ExternalSecret` custom resources have been created. 
+```bash 
+jx admin log --wait
+```
+
+Which will wait for a running Job to display.
+
+## Insecure git repositories 
+
+If you are using an on premise git repository you may need to configure git in the git operator and boot job to support insecure git repositories via a `git config` command or two.
+
+When installing the git operator you can pass in any git configuration commands via the `--setup` argument. You can supply multiple of these arguments if you need them.
+
+e.g.
+
+
+```bash
+export GIT_USERNAME=someone
+export GIT_TOKEN=mytoken      
+
+git clone https://github.com/myorg/env-mycluster-dev.git
+cd env-mycluster-dev.git
+
+jx admin operator --setup "git config --global http.sslverify false"
+```
 
 <nav>
   <ul class="pagination">
