@@ -6,7 +6,7 @@ description: Use Jenkins X and OpenShift 4.x on your laptop
 weight: 70
 aliases:
   - /v3/admin/guides/infra/openshift-crc
-  - /docs/v3/guides/infra/openshift-crc
+  - /v3/guides/infra/openshift-crc
 ---
 
 
@@ -79,7 +79,7 @@ git commit -a -m "fix: configure webhooks"
 git push origin master
 ```
 
-* <a href="/docs/v3/guides/operator/" class="btn bg-primary text-light">Install the Git Operator</a> 
+* <a href="/v3/guides/operator/" class="btn bg-primary text-light">Install the Git Operator</a> 
 
 * switch to the `jx` namespace
 
@@ -87,4 +87,4 @@ git push origin master
 jx ns jx
 ```        
 
-*  <a href="/docs/v3/develop/create-project/" class="btn bg-primary text-light">Create or import projects</a>
+*  <a href="/v3/develop/create-project/" class="btn bg-primary text-light">Create or import projects</a>

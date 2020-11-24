@@ -5,8 +5,8 @@ type: docs
 description: Adding or configuration apps and charts 
 weight: 100
 aliases:
-  - /docs/v3/guides/apps/
-  - /docs/v3/develop/apps
+  - /v3/guides/apps/
+  - /v3/develop/apps
 ---
 
 
@@ -91,8 +91,8 @@ This means we can share canonical files and metadata across clusters and git rep
 
 #### Keeping the version stream in sync
 
-When you [upgrade your cluster](/docs/v3/guides/upgrade/#cluster) the local `versionStream` folder will be upgraded to the latest upstream version stream contents.
+When you [upgrade your cluster](/v3/guides/upgrade/#cluster) the local `versionStream` folder will be upgraded to the latest upstream version stream contents.
 
 We mentioned [above how you can cusomize charts](#customising-charts). Please try keep as many of your customizations as you can outside of the `versionStream` folder as you can so that there's no risk of your configurations getting overridden or causing merge conflicts with upstream [version stream](/about/concepts/version-stream/) changes.
 
-Any changes in the local `helmfile.yaml` or `charts` folder are excluded by the [upgrade mechanism](/docs/v3/guides/upgrade/#cluster) and so are totally safe.
+Any changes in the local `helmfile.yaml` or `charts` folder are excluded by the [upgrade mechanism](/v3/guides/upgrade/#cluster) and so are totally safe.

@@ -5,7 +5,7 @@ type: docs
 description: Comparison of Jenkins X version 3.x to 2.x
 weight: 90
 aliases: 
-    - /docs/v3/about/comparison/
+    - /v3/about/comparison/
 ---
 
 

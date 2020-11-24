@@ -20,7 +20,7 @@ This guide will walk you though how to setup Jenkins X on your laptop using [min
 
 ## Prerequisites
 
-* [Download and install the jx 3.x binary](/docs/v3/guides/jx3/)
+* [Download and install the jx 3.x binary](/v3/guides/jx3/)
 
 * [Install minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/)
 
@@ -73,7 +73,7 @@ git commit -a -m "fix: configurations for local minikube"
 git push origin master
 ```
 
-* <a href="/docs/v3/guides/operator/" class="btn bg-primary text-light">Install the Git Operator</a> 
+* <a href="/v3/guides/operator/" class="btn bg-primary text-light">Install the Git Operator</a> 
 
 * switch to the `jx` namespace
 
@@ -87,4 +87,4 @@ jx ns jx
 kubectl port-forward svc/hook 8080:80
 ```
 
-*  <a href="/docs/v3/develop/create-project/" class="btn bg-primary text-light">Create or import projects</a>
+*  <a href="/v3/develop/create-project/" class="btn bg-primary text-light">Create or import projects</a>

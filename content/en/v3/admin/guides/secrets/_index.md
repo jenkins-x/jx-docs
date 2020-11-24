@@ -5,7 +5,7 @@ type: docs
 description: Setting up the secrets for your installation
 weight: 30
 aliases:
-  - /docs/v3/guides/secrets
+  - /v3/guides/secrets
 ---
 
 Jenkins X 3.x uses [Kubernetes External Secrets](https://github.com/godaddy/kubernetes-external-secrets) to manage populating secrets from your underlying secret store such as:
@@ -125,4 +125,4 @@ jx secret replicate --selector secret.jenkins-x.io/replica-source=true
 
 This will replicate the secret to all permanent enivronments in the same cluster (e.g. a local Staging or Production environment).
 
-If you want to replicate another secret just add the label `secret.jenkins-x.io/replica-source=true` or you can add a new [jx secret replicate](https://github.com/jenkins-x/jx-secret/blob/master/docs/cmd/jx-secret_replicate.md) to the [boot makefile](/docs/v3/about/how-it-works/#boot-job)
+If you want to replicate another secret just add the label `secret.jenkins-x.io/replica-source=true` or you can add a new [jx secret replicate](https://github.com/jenkins-x/jx-secret/blob/master/docs/cmd/jx-secret_replicate.md) to the [boot makefile](/v3/about/how-it-works/#boot-job)

@@ -5,7 +5,7 @@ type: docs
 weight: 45
 aliases:
   - /labs
-  - /docs/v3/
+  - /v3/
 ---
 
 

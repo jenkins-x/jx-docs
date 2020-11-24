@@ -5,14 +5,14 @@ type: docs
 description: Automated TLS and DNS
 weight: 92
 aliases:
-  - /docs/v3/guides/infra/tls_dns
+  - /v3/guides/infra/tls_dns
 ---
 
 This section will describe how to enable automated TLS and DNS for your Jenkins X installation.
 
 To achieve this we will use a couple of open source projects to help enable automated DNS for your applications.
 
-For this guide we are going to assume you own a domain called `foo.io` which is managed by Google Cloud DNS, if it is not see [configure cloud dns to manage a domain](/docs/v3/guides/infra/google_cloud_dns).  
+For this guide we are going to assume you own a domain called `foo.io` which is managed by Google Cloud DNS, if it is not see [configure cloud dns to manage a domain](/v3/guides/infra/google_cloud_dns).  
 
 
 A common requirement for domains is to have production services accessed using a parent / [apex domain](https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/about-custom-domains-and-github-pages#using-an-apex-domain-for-your-github-pages-site)
@@ -39,8 +39,8 @@ To start with we are focussed on GCP but will expand to other cloud providers.
 ## Prerequisites
 
 - cluster created using Jenkins X [GCP Terraform getting started](/v3/admin/platform/gke/)
-- own a domain and have GCP manage it, [configure cloud dns to manage a domain](/docs/v3/guides/infra/google_cloud_dns)
-- latest Jenkins X CLI, Infrastructure and Cluster git repository updates [upgrade](/docs/v3/guides/upgrade)
+- own a domain and have GCP manage it, [configure cloud dns to manage a domain](/v3/guides/infra/google_cloud_dns)
+- latest Jenkins X CLI, Infrastructure and Cluster git repository updates [upgrade](/v3/guides/upgrade)
 
 ### Cloud Infrastructure
 First we will configure the cloud infrastructure requirements:

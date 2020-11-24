@@ -11,7 +11,7 @@ aliases:
   - /v3/admin/platform/openshift
 ---
 
-If you don't have a cluster or want to try Openshift on your laptop then please try <a href="/docs/v3/guides/infra/openshift-crc/" target="github" class="btn bg-primary text-light">Install Jenkins X with OpenShift CodeReady Containers</a> 
+If you don't have a cluster or want to try Openshift on your laptop then please try <a href="/v3/guides/infra/openshift-crc/" target="github" class="btn bg-primary text-light">Install Jenkins X with OpenShift CodeReady Containers</a> 
  
 
 ---
@@ -63,7 +63,7 @@ git commit -a -m "fix: added domain"
 git push origin master
 ```
 
-* <a href="/docs/v3/guides/operator/" class="btn bg-primary text-light">Install the Git Operator</a> 
+* <a href="/v3/guides/operator/" class="btn bg-primary text-light">Install the Git Operator</a> 
 
 * switch to the `jx` namespace
 
@@ -71,7 +71,7 @@ git push origin master
 jx ns jx
 ```        
 
-*  <a href="/docs/v3/develop/create-project/" class="btn bg-primary text-light">Create or import projects</a>
+*  <a href="/v3/develop/create-project/" class="btn bg-primary text-light">Create or import projects</a>
 
 
 ## Enable WebHooks

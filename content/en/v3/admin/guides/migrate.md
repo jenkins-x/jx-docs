@@ -5,7 +5,7 @@ type: docs
 description: Migrate to v3 from older Jenkins X installations
 weight: 95
 aliases:
-  - /docs/v3/guides/migrate
+  - /v3/guides/migrate
 ---
 
 If you wish to migrate from older versions of Jenkins X to v3 we recommend [spinning up a new cluster for v3](/v3/admin/platform/) and then incrementally moving projects from the old cluster to the new cluster.
@@ -14,7 +14,7 @@ This might sound heavy handed but the issue with working with multiple versions 
 
 So its safer to [spin up a new cluster and install v3 there](/v3/admin/platform/).
 
-Once you have a new cluster you can just [import projects](/docs/v3/develop/create-project/#import-an-existing-project) into the new cluster via [jx project import](/docs/v3/develop/create-project/#import-an-existing-project)
+Once you have a new cluster you can just [import projects](/v3/develop/create-project/#import-an-existing-project) into the new cluster via [jx project import](/v3/develop/create-project/#import-an-existing-project)
 
 
 You can then test the projects work fine in the new v3 cluster. If they do you can remove them from the old cluster via `jx delete application`.

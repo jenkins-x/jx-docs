@@ -23,9 +23,9 @@ This page lists the main organisations and repositories.
 
 ### 3.x
 
-The following organisations are for [version 3.x](https://jenkins-x.io/docs/v3/):
+The following organisations are for [version 3.x](https://jenkins-x.io/v3/):
 
-* [jenkins-x-plugins](https://github.com/jenkins-x-plugins) contains plugins to Jenkins X 3.x. See the [extension guide](https://jenkins-x.io/docs/v3/about/extending/#plugins) for details
+* [jenkins-x-plugins](https://github.com/jenkins-x-plugins) contains plugins to Jenkins X 3.x. See the [extension guide](https://jenkins-x.io/v3/about/extending/#plugins) for details
 * [jx3-gitops-repositories](https://github.com/jx3-gitops-repositories) the quickstart repositories for creating new infrastructure and installations on different cloud providers
 
 ## 2.x
@@ -43,10 +43,10 @@ Here we'll call out of some of the main repositories in the above organisations:
 
 ### 3.x
 
-The following repositories are for [version 3.x](https://jenkins-x.io/docs/v3/):
+The following repositories are for [version 3.x](https://jenkins-x.io/v3/):
 
 * [jenkins-x/jx-cli](https://github.com/jenkins-x/jx-cli) is the 3.x CLI 
-* [jenkins-x/jx3-pipeline-catalog](https://github.com/jenkins-x/jx3-pipeline-catalog) the main [Pipeline Catalog](https://jenkins-x.io/docs/v3/guides/pipeline-catalog/)
+* [jenkins-x/jx3-pipeline-catalog](https://github.com/jenkins-x/jx3-pipeline-catalog) the main [Pipeline Catalog](https://jenkins-x.io/v3/guides/pipeline-catalog/)
 * [jenkins-x/jxr-versions](https://github.com/jenkins-x/jxr-versions) contains the [version stream](/about/concepts/version-stream/) - the stable versions of all _charts_ and CLI _packages_
 
 ### 2.x
