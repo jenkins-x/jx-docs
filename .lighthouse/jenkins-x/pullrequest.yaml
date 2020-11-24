@@ -75,6 +75,7 @@ spec:
           name: htmlproofer
           script: |
             #!/bin/sh
+            sleep infinity
             # disabled --check-html as we get lots of errors about IDs
             htmlproofer ./tmp-website --allow-hash-href --disable-external --checks-to-ignore ScriptCheck --empty-alt-ignore --url-ignore "/#.*/" --file-ignore "/.*apidocs.*/,/.*\/zh.*/,/.*\/es.*/,/.*\/docs\/reference\/api.*/,/.*\/docs\/reference\/config.*/,/.*\/community\/events.*/"
   podTemplate: {}
