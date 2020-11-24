@@ -12,7 +12,6 @@ aliases:
 
 Jenkins X 3.x supports the `helmfile.yaml` file format from the [helmfile project](https://github.com/roboll/helmfile) that can be used to define the [Helm](https://helm.sh/) [charts](https://helm.sh/docs/topics/charts/) you wish to install and their namespace.
 
-* [testing bad link](/does/not/exist)
 
 ### Adding Charts
 
