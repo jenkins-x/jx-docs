@@ -111,7 +111,7 @@ Next we install
   name: acme-jx
 ```
 
-Cert-manager will use the cluster issuer to request a TLS certificate.  A Kubernetes secret will be automatically created and contain the TLS cert.  Ingresses for applications in any namespace will reference this secret in the `jx` namespace.
+Cert-manager will use the cluster issuer to request a TLS certificate.  A Kubernetes secret will be automatically created and contain the TLS cert.  The nginx controllers in the `nginx` namespace will use this secret in the `jx` namespace for the default SSL certificate which will automatically enable TLS for all applications in your cluster.
 
 The domain from setting up your infrastructure in step one should appear in the `jx-requirements.yml` of you cluster git repo.  Next configure your TLS options, update your `jx-requirements.yml` with below.
 
@@ -154,32 +154,6 @@ It can take a short while for DNS to propagate so you may need to wait for 5 - 1
 You should be able to verify the TLS certificate from Lets Encrypt in your browser (beware of browser caching if you don't see any changes)
 
 ![Working TLS](/images/v3/working_tls.png)
-
-## How do I enable TLS on non Jenkins X quickstarts?
-
-If you are creating your own Ingress resources and not using Jenkins X quickstarts then add this:
-
-First take note of your TLS secret name in the `jx` namespace
-```bash
-kc get secret -n jx | grep tls
-
-```
-
-Now add the reference including the `jx/` prefix to your ingress
-```bash
-spec:
-  rules:
-  - host: [your hostname]
-    http:
-      paths:
-      - backend:
-          serviceName: [your kubernetes service name]
-          servicePort: [your kubernetes service port]
-  tls:
-  - hosts:
-    - [your hostname]
-    secretName: jx/[your TLS secret name from step above]
-```
 
 ## What if I have a chartmuseum with charts running using nip.io?
 
