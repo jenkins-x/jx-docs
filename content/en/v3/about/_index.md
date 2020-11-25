@@ -8,4 +8,12 @@ aliases:
     - /v3/about/
 ---
 
+## Developing
+
+{{< developcards >}}
+
+
+## Administration
+
+{{< admincards >}}
 
