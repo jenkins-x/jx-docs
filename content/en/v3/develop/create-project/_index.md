@@ -26,7 +26,7 @@ See the [quickstart documentation](/docs/create-project/creating/) for more info
 
 ## Import an existing project
 
-To create a new project from a quickstart template use the [jx project import](https://github.com/jenkins-x/jx-project/blob/master/docs/cmd/project_import.md) command:
+To import an existing project use the [jx project import](https://github.com/jenkins-x/jx-project/blob/master/docs/cmd/project_import.md) command:
 
 ```bash 
 jx project import
