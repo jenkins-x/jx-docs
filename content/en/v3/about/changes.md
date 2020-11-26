@@ -13,6 +13,13 @@ You may also find the [Roadmap](/community/roadmap/) and [Maturity Matrix](/v3/a
 
 ## Changes 
 
+* You can now easily open the [Octant Console](/v3/develop/ui/octant/) or [Pipeline Dashboard](/v3/develop/ui/dashboard/) via 2 easy commands:
+
+```bash 
+jx ui
+jx dash
+```    
+
 * We now have [Tekton Catalog integration](/v3/develop/pipeline-catalog/) so that you can:
   * easily [edit any pipeline in any git repository](/v3/develop/pipeline-catalog/#editing-pipelines) by just modifying the `PipelineRun` files in your `.ligthhouse/jenkins-x` folder
   * [reuse Tasks from the Tekton catalog](/v3/develop/pipeline-catalog/#adding-tasks-from-the-tekton-catalog) and optionally modify them locally in your repository
