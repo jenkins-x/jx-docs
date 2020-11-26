@@ -11,22 +11,35 @@ aliases:
 
 We recommend using separate clusters for your `Preprod` and `Production` environments. This lets you completely isolate your environments which improves security.
 
-
 ## Setting up multi cluster
 
-Follow new [getting started approach](/v3/admin/platform/) to setup a new cluster. For `Preprod` and `Production` you typically won't need lots of the development tools like lighthouse and tekton; you will just want your actual applications and any additional services you need to run them (e.g. maybe nginx-ingress or cert-manager etc).
+1. Follow the [administration documentation](/v3/admin/platform/) to setup a new Development Cluster (or skip this step if already in place). 
 
-Then when you have a git repository URL for your `Preprod` or `Production`  cluster, [import the git repository](/v3/develop/create-project/#import-an-existing-project) like you would any other git repository into your development cluster using the [jx project import](https://github.com/jenkins-x/jx-project/blob/master/docs/cmd/project_import.md) command:
+2. Follow the mentioned approach at the previous point in order to setup new and additional clusters for the desired remote environments:
+    * For remote environments (e.g. `Preprod` and `Production`) you typically won't need lots of the development tools such as:
+      * Lighthouse
+      * Tekton
+      * Webhooks
+      * Nexus / Bucketrepo
+    * And install only services to run and expose your applications, e.g.:
+      * Nginx-ingress
+      * Cert-manager
+      * [kubernetes external secrets](https://github.com/external-secrets/kubernetes-external-secrets) for [populating Secrets from your secret store](/v3/admin/guides/secrets/) (vault or cloud provider secret manager)
+      * [push-wave](https://github.com/jenkins-x-charts/pusher-wave#wave) for automatically performing rolling upgrades when secrets are rotated in your secret store
 
-```bash 
-jx project import --url https://github.com/myowner/my-prod-repo.git
-```        
-
-This will create a Pull Request on your development cluster git repository to link to the `Preprod` or `Production` git repository on promotions of apps.
+3. Then when you have a git repository URL for your `Preprod` or `Production` cluster, [import the git repository](/v3/develop/create-project/#import-an-existing-project) like you would any other git repository into your Development cluster using the [jx project import](https://github.com/jenkins-x/jx-project/blob/master/docs/cmd/project_import.md) command (command should be run in the `jx` namespace):
+    
+    ```bash 
+    jx project import --url https://github.com/myowner/my-prod-repo.git
+    ```
+    
+    This will create a Pull Request on your development cluster git repository to link to the `Preprod` or `Production` git repository on promotions of apps.
+     
+    **NOTE**: Jenkins X will [push additional configuration files](/v3/about/how-it-works/#importing--creating-quickstarts) to the created Pull Request, so it is recommended to wait until the Pull Request is auto-merged and avoid manual intervention.
 
 ### Changes to `jx-requirements.yml`
 
-The above should modify your `jx-requirements.yml` file in your development cluster to reference the remote production/pre-production cluster.
+The above [jx project import](https://github.com/jenkins-x/jx-project/blob/master/docs/cmd/project_import.md) should modify your `jx-requirements.yml` file in your development cluster to reference the remote production/pre-production cluster.
 
 So your `jx-requirements.yml` should have started something like:
 
@@ -49,6 +62,11 @@ environments:
   repository: my-prod-repo
   remoteCluster: true
 ``` 
+
+
+Once everything is correctly setup, it will be possible to deploy applications to the newly created remote environment/s. 
+
+
 
 
 ## How it works
@@ -84,7 +102,7 @@ We do recommend using the Jenkins X GitOps pipeline approach in [production and 
 
 You may want to reuse existing built in charts such as:
 
-* [kubernetes external secrets](https://github.com/external-secrets/kubernetes-external-secrets) for [populating Secrets from your secret store(/v3/admin/guides/secrets/) (vault or cloud provider secret manager)
+* [kubernetes external secrets](https://github.com/external-secrets/kubernetes-external-secrets) for [populating Secrets from your secret store](/v3/admin/guides/secrets/) (vault or cloud provider secret manager)
 * [push-wave](https://github.com/jenkins-x-charts/pusher-wave#wave) for automatically performing rolling upgrades when secrets are rotated in your secret store
 
 
