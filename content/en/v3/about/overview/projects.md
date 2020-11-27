@@ -18,6 +18,7 @@ Jenkins X stands on the shoulders of many open source giants...
 * [kustomize](https://kustomize.io/) a tool for configuring and modifying kubernetes resources 
 * [mink](https://github.com/mattmoor/mink) a command line tool for building container images and resolving the image digest in JSON/YAML files for local development or for use inside pipelines (we use the [mink plugin for this](https://github.com/jenkins-x-plugins/mink)
 * [skaffold](https://github.com/GoogleContainerTools/skaffold) a tool for incremental development of container images and deployemnts
+* [tekton cli](https://github.com/tektoncd/cli) the CLI tool for working with [tekton pipelines](https://github.com/tektoncd/pipeline)
 
 ## Microservices
 
@@ -26,6 +27,9 @@ Jenkins X stands on the shoulders of many open source giants...
 * [external-dns](https://github.com/kubernetes-sigs/external-dns) for managing certificates for [TLS and DNS](/v3/admin/guides/tls_dns/)
 * [knative](https://knative.dev/) a framework for building auto scaling (to zero) serverless style applications on kubernetes
 * [kubernetes external secrets](https://github.com/godaddy/kubernetes-external-secrets) for [managing secrets](/v3/admin/guides/secrets/) via [Hashicorp Vault](https://www.vaultproject.io/) or the cloud native secret managers on Alibaba, Amazon, Azure, Google etc
+* [lighthouse](https://github.com/jenkins-x/lighthouse) our strategic solution for webhooks and ChatOps for multiple git providers
 * [push-wave](https://github.com/jenkins-x-charts/pusher-wave#wave) for automatically performing rolling upgrades when secrets are rotated in your secret store
+* [tekton pipelines](https://github.com/tektoncd/pipeline) cloud native pipeline engine for kubernetes
+* [tekton catalog](https://github.com/tektoncd/catalog) a catalog of reusable [tekton pipelines](https://github.com/tektoncd/pipeline) which [can be used easily with Jenkins X](/v3/develop/pipeline-catalog/#adding-tasks-from-the-tekton-catalog)
 * [vault](https://www.vaultproject.io/) a secret store
 * [vault operator](https://banzaicloud.com/products/bank-vaults/) an operator for installing and unsealing [vault](https://www.vaultproject.io/)
