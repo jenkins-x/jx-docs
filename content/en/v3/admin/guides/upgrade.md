@@ -79,7 +79,13 @@ After running this command you will usually have some changes in git you can rev
 git add *
 git commit -a -m "fix: upgrade versions"
 git push
-```               
+```
+
+The jx-git-operator will trigger a boot job in the `jx-git-operator` namespace, to track the progress of the upgrade you can run:
+
+```bash
+jx admin logs
+```
 
 ### Merge conflicts 
 
