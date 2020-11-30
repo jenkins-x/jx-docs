@@ -4,6 +4,7 @@ linkTitle: "CVE Scanning"
 date: 2018-05-05T10:36:00+02:00
 description: "Detect security vulnerabilities in your Docker images using Anchore" 
 weight: 10
+deprecated: true
 ---
 
 There is a [blog on Announcing CVE docker image analysis with Anchore](https://jenkins.io/blog/2018/05/08/jenkins-x-anchore/)

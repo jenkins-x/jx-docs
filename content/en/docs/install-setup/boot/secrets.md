@@ -4,6 +4,7 @@ linktitle: Configure Secret Storage
 description: Configure secret storage - local vs Vault
 keywords: [vault]
 weight: 30
+deprecated: true
 aliases:
   - /docs/install-setup/installing/boot/secrets/
 ---

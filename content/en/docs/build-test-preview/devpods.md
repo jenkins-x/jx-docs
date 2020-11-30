@@ -3,6 +3,7 @@ title: Developing Using DevPods
 linktitle: DevPods
 description: Using Jenkins X to continuously deliver value to your customers
 weight: 50
+deprecated: true
 aliases:
     - /docs/resources/guides/using-jx/developing/devpods/
 ---

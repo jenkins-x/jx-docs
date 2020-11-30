@@ -4,6 +4,7 @@ date: 2020-03-13T15:03:05Z
 linktitle: "Managing Data"
 description: Approaches for working with data.
 weight: 20
+deprecated: true
 aliases:
   - /documentation/mlops/data
 ---

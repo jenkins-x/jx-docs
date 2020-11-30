@@ -3,6 +3,7 @@ title: Docker Registry
 linktitle: Docker Registry
 description: Configuring your docker registry
 weight: 90
+deprecated: true
 aliases:
   - /docs/resources/guides/managing-jx/common-tasks/docker-registry
 ---

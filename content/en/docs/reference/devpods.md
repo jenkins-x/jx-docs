@@ -3,6 +3,7 @@ title: Dev Pods
 linktitle: Dev Pods
 description: Develop in a pod on your cloud
 weight: 20
+deprecated: true
 aliases:
   - /developing/devpods
 ---

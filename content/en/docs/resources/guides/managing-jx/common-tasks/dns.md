@@ -3,6 +3,7 @@ title: DNS
 linktitle: DNS
 description: Configuring DNS for external access to cluster services
 weight: 80
+deprecated: true
 ---
 
 To be able to access services hosted within your cluster we default to an [nip.io](https://nip.io/) domain. This makes it super easy to setup and manage DNS.

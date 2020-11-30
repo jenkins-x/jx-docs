@@ -3,6 +3,7 @@ title: Lighthouse
 linktitle: Lighthouse
 description: Lightweight webhook and [ChatOps](/docs/resources/faq/using/chatops/) handling for multiple Git providers
 weight: 41
+deprecated: true
 aliases:
   - /docs/resources/guides/managing-jx/common-tasks/lighthouse
   - /architecture/lighthouse

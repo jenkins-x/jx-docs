@@ -3,6 +3,7 @@ title: Create Quickstart
 linktitle: Create Quickstart
 description: How to create a new microservice from a template and import it into Jenkins X
 weight: 10
+deprecated: true
 aliases:
   - /docs/resources/guides/using-jx/creating/create-quickstart
 toc_hide: true

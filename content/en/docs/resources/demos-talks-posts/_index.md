@@ -2,6 +2,7 @@
 title: "Demos, talks and blog posts"
 date: 2017-01-05
 weight: 30
+deprecated: true
 aliases:
   - /demos/  
 description: >

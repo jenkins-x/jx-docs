@@ -3,6 +3,7 @@ title: Connectivity
 linktitle: Connectivity
 description: Connectivity requirements for running Jenkins-X
 weight: 30
+deprecated: true
 ---
 
 The tables below list some of the connectivity requirements for Jenkins X. These tables only apply to JX clusters

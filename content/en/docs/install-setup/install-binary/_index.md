@@ -4,6 +4,7 @@ linktitle: Download jx
 description: How to download and install the jx binary on your machine
 weight: 30
 keywords: [install]
+deprecated: true
 aliases:
     - /getting-started/install/
     - /docs/getting-started/setup/install/

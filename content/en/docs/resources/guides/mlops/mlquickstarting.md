@@ -4,6 +4,7 @@ date: 2020-03-13T15:03:05Z
 linktitle: "Using ML Quickstarts"
 description: How to use Machine Learning quickstarts.
 weight: 5
+deprecated: true
 aliases:
   - /documentation/mlops/mlquickstarting
 ---

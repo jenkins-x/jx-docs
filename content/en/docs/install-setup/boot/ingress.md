@@ -3,6 +3,7 @@ title: Configure Ingress
 linktitle: Configure Ingress
 description: Configure Ingress, DNS and TLS
 weight: 65
+deprecated: true
 aliases:
   - /docs/install-setup/installing/boot/ingress/
 ---

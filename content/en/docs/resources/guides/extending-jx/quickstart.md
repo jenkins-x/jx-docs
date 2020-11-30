@@ -4,6 +4,7 @@ linktitle: Custom Quickstarts
 description: Extending Jenkins X building custom quickstarts
 type: docs
 weight: 50
+deprecated: true
 ---
 
 ## Custom Quickstarts

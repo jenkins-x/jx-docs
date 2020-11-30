@@ -2,6 +2,7 @@
 title: Configuration Reference
 linktitle: Reference
 weight: 9
+deprecated: true
 ---
 <p>Packages:</p>
 <ul>

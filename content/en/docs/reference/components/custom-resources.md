@@ -4,6 +4,7 @@ linktitle: Custom Resources
 description: Custom Resources defined by Jenkins X
 parent: "components"
 weight: 10
+deprecated: true
 aliases:
   - /docs/resources/guides/managing-jx/common-tasks/custom-resources
 ---

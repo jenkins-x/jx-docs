@@ -6,6 +6,7 @@ date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01
 weight: 20
+deprecated: true
 aliases:
   - /docs/getting-started/setup/boot/how-it-works/
   - /docs/install-setup/installing/boot/how-it-works/

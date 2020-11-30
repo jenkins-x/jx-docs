@@ -2,6 +2,7 @@
 title: Environments
 linktitle: Environments
 description: Working with Jenkins X environments
+deprecated: true
 weight: 30
 ---
 

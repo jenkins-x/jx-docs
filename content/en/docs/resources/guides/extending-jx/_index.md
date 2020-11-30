@@ -4,6 +4,7 @@ linkTitle: Extending Jenkins X
 description: Learn how to extend Jenkins X using the Apps Framework
 type: docs
 weight: 30
+deprecated: true
 aliases:
   - /docs/guides/extending-jx/
 ---

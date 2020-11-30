@@ -6,6 +6,7 @@ date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2020-02-27
 weight: 30
+deprecated: true
 aliases:
   - /docs/install-setup/installing/boot/clouds/amazon/
 ---

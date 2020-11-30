@@ -3,6 +3,7 @@ title: Configure Artifact Repositories
 linktitle: Configure Artifact Repositories
 description: Configure various artifact repositories used by Jenkins X
 weight: 80
+deprecated: true
 keywords: [nexus, bucketrepo]
 aliases:
   - /docs/install-setup/installing/boot/repository/

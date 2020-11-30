@@ -5,6 +5,7 @@ description: How to install, configure or upgrade Jenkins X via GitOps and a Jen
 categories: [getting started]
 keywords: [install, cluster]
 weight: 40
+deprecated: true
 aliases:
   - /getting-started/boot/
   - /docs/reference/boot/

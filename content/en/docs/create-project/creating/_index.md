@@ -4,6 +4,7 @@ linkTitle: "Creating Quickstarts"
 weight: 20
 description: >
   How to create a new quickstart application and import it into Jenkins X
+deprecated: true  
 aliases:
   - /docs/resources/guides/using-jx/creating/
   - /docs/getting-started/first-project/create-quickstart/

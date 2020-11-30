@@ -3,6 +3,7 @@ title: Progressive Delivery
 linktitle: Progressive Delivery
 description: Gradually rollout changes and canary releases
 weight: 30
+deprecated: true
 ---
 
 

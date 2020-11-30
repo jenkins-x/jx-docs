@@ -3,6 +3,7 @@ title: Import
 linktitle: Import
 description: How to import existing projects into Jenkins X
 weight: 70
+deprecated: true
 aliases:
   - /docs/resources/guides/using-jx/creating/import/
 ---

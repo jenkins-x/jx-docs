@@ -2,6 +2,7 @@
 title: "Build and test"
 date: 2017-01-05
 weight: 40
+deprecated: true
 description: >
   This chapter helps you understand how to build, test and preview your app in various built-in **environments** in Jenkins X
 aliases:

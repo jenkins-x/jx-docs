@@ -2,6 +2,7 @@
 title: "Tutorials"
 linkTitle: "Tutorials"
 weight: 20
+deprecated: true
 description: >
   Tutorials on how to setup and use Jenkins X
 aliases:

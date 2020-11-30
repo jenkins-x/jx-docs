@@ -4,6 +4,7 @@ linktitle: UI
 description: Octant the OSS web UI for Jenkins X
 parent: "components"
 weight: 5
+deprecated: true
 ---
 
 If you want an open source web UI for working with Jenkins X we highly recommend [Octant](https://github.com/vmware-tanzu/octant) along with the [octant-jx](https://github.com/jenkins-x/octant-jx) plugin.

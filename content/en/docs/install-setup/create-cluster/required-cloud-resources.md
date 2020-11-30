@@ -5,6 +5,7 @@ description: What cloud resources are created?
 weight: 20
 categories: [getting started]
 keywords: [cluster]
+deprecated: true
 aliases:
   - /docs/getting-started/setup/create-cluster/required-cloud-resources/
   - /docs/install-setup/installing/create-cluster/required-cloud-resources/

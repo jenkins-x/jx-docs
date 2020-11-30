@@ -4,6 +4,7 @@ linktitle: Presentations and artwork
 type: docs
 description: Artwork and resources to help you evangelize and showcase Jenkins X to your team!
 weight: 50
+deprecated: true
 ---
 
 ## Presentations

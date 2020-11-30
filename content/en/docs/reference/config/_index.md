@@ -3,6 +3,7 @@ title: Configuration
 linktitle: Configuration
 description: Configuration File Reference
 weight: 8
+deprecated: true
 ---
 
 Jenkins X supports a number of different configuration file formats.

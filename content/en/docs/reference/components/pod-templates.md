@@ -3,6 +3,7 @@ title: Pod Templates
 linktitle: Pod Templates
 description: Pods used to implement Jenkins pipelines
 weight: 160
+deprecated: true
 aliases:
   - /docs/resources/guides/managing-jx/common-tasks/pod-templates
 ---

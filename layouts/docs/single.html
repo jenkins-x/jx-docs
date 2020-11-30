@@ -1,0 +1,10 @@
+{{ define "main" }}
+    {{ with .Params.Deprecated }}
+    <div class="alert alert-warning" role="alert">
+        JenkinsX v2 is not in active development. Refer to v3 docs for more information.
+    </div>
+    {{ end }}
+    {{ with .Content }}
+        {{ . }}
+    {{ end }}
+{{ end }}

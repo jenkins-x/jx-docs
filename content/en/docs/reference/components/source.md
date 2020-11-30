@@ -4,6 +4,7 @@ linktitle: Source
 description: The location of the various source code repositories
 parent: "components"
 weight: 400
+deprecated: true
 aliases:
   - /docs/resources/guides/managing-jx/common-tasks/source
 ---

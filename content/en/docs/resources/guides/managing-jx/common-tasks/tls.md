@@ -4,6 +4,7 @@ linktitle: TLS
 description: Configuring TLS with Jenkins X
 date: 2019-08-28
 weight: 190
+deprecated: true
 ---
 
 As documented in the [Ingress](/docs/install-setup/boot/ingress/) section of the Boot documentation, you can configure a global default certificate for all Jenkins X ingresses.

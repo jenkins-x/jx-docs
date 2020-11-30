@@ -4,6 +4,7 @@ linktitle: Binary Plugins
 description: Binary Plugins for the Jenkins X CLI
 type: docs
 weight: 30
+deprecated: true
 aliases:
     - /docs/contributing/addons/plugins/
     - /docs/guides/extending-jx/plugins/

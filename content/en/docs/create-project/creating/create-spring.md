@@ -3,6 +3,7 @@ title: Create Spring Boot
 linktitle: Create Spring Boot
 description: How to create new Spring Boot applications and import them into Jenkins X
 weight: 40
+deprecated: true
 aliases:
   - /docs/resources/guides/using-jx/common-tasks/create-spring/
   - /docs/resources/guides/using-jx/creating/create-spring/

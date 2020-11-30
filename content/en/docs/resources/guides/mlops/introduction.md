@@ -4,6 +4,7 @@ date: 2020-03-13T15:03:05Z
 linktitle: "Introduction"
 description: An introduction to MLOps with Jenkins X.
 weight: 1
+deprecated: true
 aliases:
   - /documentation/mlops/introduction
 ---

@@ -3,6 +3,7 @@ title: Storage
 linktitle: Storage
 description: Let's save your pipeline files somewhere cloud native!
 weight: 180
+deprecated: true
 aliases:
   - /architecture/storage/
 ---

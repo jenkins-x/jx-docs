@@ -4,6 +4,7 @@ linktitle: Configure SCM Providers
 description: Configure SCM Providers / Git providers supported by Jenkins X
 keywords: [git]
 weight: 40
+deprecated: true
 aliases:
   - /docs/install-setup/configure-scm/
   - /docs/install-setup/installing/boot/git-provider/

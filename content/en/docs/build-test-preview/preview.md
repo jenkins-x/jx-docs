@@ -3,6 +3,7 @@ title: Preview Environments
 linktitle: Preview Environments
 description: Preview pull requests before changes merge to master
 weight: 30
+deprecated: true
 aliases:
   - /docs/reference/preview/
 ---

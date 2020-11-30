@@ -5,6 +5,7 @@ description: Manage your secrets
 date: 2019-01-08
 publishdate: 2019-01-08
 weight: 200
+deprecated: true
 aliases:
   - /docs/resources/guides/managing-jx/common-tasks/vault
   - /architecture/vault

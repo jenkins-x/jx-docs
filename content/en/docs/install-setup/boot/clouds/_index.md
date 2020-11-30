@@ -6,6 +6,7 @@ date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01
 weight: 10
+
 aliases:
   - /docs/getting-started/setup/boot/clouds/
   - /docs/install-setup/boot/clouds/

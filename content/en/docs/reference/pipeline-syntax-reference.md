@@ -6,6 +6,7 @@ date: 2019-06-20
 publishdate: 2019-06-20
 keywords: [tekton]
 weight: 8
+deprecated: true
 aliases:
   - /architecture/pipeline-syntax-reference
 ---

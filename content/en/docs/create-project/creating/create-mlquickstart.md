@@ -3,6 +3,7 @@ title: "Create MLquickstart"
 linktitle: Create MLquickstart
 description: How to create a new machine-learning quickstart application and import it into Jenkins X
 weight: 30
+deprecated: true
 aliases:
   - /docs/resources/guides/using-jx/creating/create-mlquickstart/
 ---

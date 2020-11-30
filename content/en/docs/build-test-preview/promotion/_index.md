@@ -3,6 +3,7 @@ title: Promotion and Environments
 linktitle: Promotion and Environments
 description: Promote new versions of your application to environments
 weight: 40
+deprecated: true
 aliases:
   - /developing/promote/
   - /about/features/#promotion

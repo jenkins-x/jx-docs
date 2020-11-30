@@ -3,6 +3,7 @@ title: Build Packs
 linktitle: Build Packs
 description: Turning source code into applications on kubernetes
 weight: 10
+deprecated: true
 aliases:
   - /architecture/build-packs
   - /docs/resources/guides/managing-jx/common-tasks/build-packs

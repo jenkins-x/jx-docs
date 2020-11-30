@@ -5,6 +5,7 @@ description: cloud native serverless pipelines
 date: 2019-03-04
 publishdate: 2019-03-04
 keywords: [tekton]
+deprecated: true
 aliases:
   - /architecture/jenkins-x-pipelines
   - /getting-started/next-gen-pipeline

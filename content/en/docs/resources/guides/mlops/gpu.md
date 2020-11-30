@@ -4,6 +4,7 @@ date: 2020-03-13T15:03:05Z
 linktitle: "Working with GPUs"
 description: Setting up Jenkins X for use with GPU resources.
 weight: 15
+deprecated: true
 aliases:
   - /documentation/mlops/gpu
 ---

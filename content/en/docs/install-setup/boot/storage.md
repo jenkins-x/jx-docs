@@ -4,6 +4,7 @@ linktitle: Configure Storage
 description: Configure long term storage for logs and reports
 keywords: [logs]
 weight: 60
+deprecated: true
 aliases:
   - /install-setup/installing/boot/storage/
 ---

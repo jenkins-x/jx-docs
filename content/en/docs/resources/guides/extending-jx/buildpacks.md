@@ -4,6 +4,7 @@ linktitle: Build Packs
 description: Extending Jenkins X using custom Build Packs
 type: docs
 weight: 40
+deprecated: true
 ---
 
 ## Build Packs & Pod Templates

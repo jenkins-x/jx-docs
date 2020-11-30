@@ -5,6 +5,7 @@ description: How to prepare a Kubernetes cluster for Jenkins X
 weight: 20
 categories: [getting started]
 keywords: [cluster]
+deprecated: true
 aliases:
   - /getting-started/create-cluster
   - /docs/getting-started/setup/create-cluster/

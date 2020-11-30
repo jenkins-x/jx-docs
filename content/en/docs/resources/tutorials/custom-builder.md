@@ -6,6 +6,7 @@ date: 2018-08-01
 publishdate: 2018-08-01
 lastmod: 2018-08-01
 weight: 10
+deprecated: true
 ---
 
 </br>

@@ -5,6 +5,7 @@ description: Using Boot On OpenShift
 date: 2020-05-06
 publishdate: 2020-05-06
 lastmod: 2020-05-06
+deprecated: true
 weight: 200
 ---
 

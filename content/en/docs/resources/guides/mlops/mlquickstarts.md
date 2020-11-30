@@ -4,6 +4,7 @@ date: 2020-03-13T15:03:05Z
 linktitle: "ML Quickstarts Directory"
 description: Directory of template Machine Learning projects.
 weight: 10
+deprecated: true
 aliases:
   - /documentation/mlops/mlquickstarts
 ---

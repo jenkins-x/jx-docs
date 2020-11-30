@@ -3,6 +3,7 @@ title: Configure Webhooks
 linktitle: Configure Webhooks
 description: Configure Webhooks
 weight: 70
+deprecated: true
 aliases:
   - /docs/install-setup/installing/boot/ingress/
   - /docs/install-setup/installing/boot/webhooks/

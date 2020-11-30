@@ -3,6 +3,7 @@ title: Serverless Apps
 linktitle: Serverless Apps
 description: Develop serverless applications with Knative
 weight: 40
+deprecated: true
 ---
 
 Serverless applications are regular applications that "scale to zero". This means when your application isn't in use - no resources at all will be used. You only pay for what you use. These applications scale up elastically to meet the workload.

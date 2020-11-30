@@ -2,6 +2,7 @@
 title: Using ChatOps and PR commands
 linktitle: ChatOps and PRs
 description: Using ChatOps and managing pull requests with Jenkins X
+deprecated: true
 weight: 20
 ---
 
