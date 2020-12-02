@@ -124,7 +124,7 @@ Then if you navigate to the pipeline you are interested in and select the envelo
 
 If that doesn't help another option is to [edit the pipeline step](/v3/develop/pipeline-catalog/#editing-pipelines) via the `.lighthouse/jenkins-x/release.yaml` or  `.lighthouse/jenkins-x/pullrequest.yaml` file to add the command: `sleep infinity` in the `script:` value before the command that is not working.
 
-You can then `kubectl exec` into the pod at that step and look around and try running commands locally.
+You can then `kubectl exec` into the pod at that step and look around and try running commands inside the pod/container.
 
 e.g. using the pod name from the above page and the container name you can do something like:
 
