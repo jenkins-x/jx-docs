@@ -1,8 +1,8 @@
 ---
-title: Developing
-linktitle: Developing
+title: User Guide
+linktitle: User Guide
 type: docs
-description: Guides on developing software with Jenkins X
+description: Guides on using Jenkins X to develop and deliver software continuously
 weight: 100
 aliases: 
     - /v3/develop/
