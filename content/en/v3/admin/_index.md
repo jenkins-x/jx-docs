@@ -1,6 +1,6 @@
 ---
-title: Administration
-linktitle: Administration
+title: Admin Guide
+linktitle: Admin Guide
 type: docs
 description: Installing, configuring and upgrading your Jenkins X installation
 date: 2017-02-01

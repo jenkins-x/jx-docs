@@ -95,7 +95,42 @@ So if you really wanted to opt out of the canonical GitOps, resource and secret 
 ## What is the directory layout?
 
 To understand the directory layout see [this document](https://github.com/jenkins-x/jx-gitops/blob/master/docs/git_layout.md)
+       
 
+## How do I diagnose a step in a pipeline?
+
+If you are wondering what image, command, environment variables are being used in a step in the pipeline the simplest thing is to [open the octant console](/v3/develop/ui/octant/) via:
+
+```bash 
+jx ui
+```
+
+Then if you navigate to the pipeline you are interested in and select the envelope icon next to a step name that will take you to the Step details page. e.g. if you click on the icon pointed to by the big red arrow:
+
+<figure>
+<img src="/images/developing/octant-step-click.png" />
+<figcaption>
+<h5>Click on the step icon to see details of a step which then takes you to the step details page</h5>
+</figcaption>
+</figure>
+
+
+<figure>
+<img src="/images/developing/octant-step.png" />
+<figcaption>
+<h5>Step details page lets you see the command, image, environment variables and volumes</h5>
+</figcaption>
+</figure>
+
+If that doesn't help another option is to [edit the pipeline step](/v3/develop/pipeline-catalog/#editing-pipelines) via the `.lighthouse/jenkins-x/release.yaml` or  `.lighthouse/jenkins-x/pullrequest.yaml` file to add the command: `sleep infinity` in the `script:` value before the command that is not working.
+
+You can then `kubectl exec` into the pod at that step and look around and try running commands locally.
+
+e.g. using the pod name from the above page and the container name you can do something like:
+
+```bash 
+kubectl exec -it -c name-of-step-container name-of-pod sh
+```
 
 ## Does Jenkins X support helmfile hooks?
 
