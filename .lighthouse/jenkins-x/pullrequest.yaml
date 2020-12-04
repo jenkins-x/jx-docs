@@ -18,53 +18,19 @@ spec:
               cpu: 400m
               memory: 512Mi
           workingDir: /workspace/source
-          env:
-            - name: DOMAIN
-              valueFrom:
-                configMapKeyRef:
-                  name: ingress-config
-                  key: domain
         steps:
-
-        - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
-          name: git-submodules
-          command:
-          - git
-          args:
-          - submodule
-          - update
-          - --init
-          - --recursive
-
-        - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
-          name: version
-          command:
-          - hugo
-          args:
-          - version
-
-        - image: gcr.io/cloud-builders/npm
-          name: install-dependencies
-          command:
-          - npm
-          args:
-          - install
-
-        - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
-          name: build-website
+        - image: gcr.io/jenkinsxio/jx-boot:3.0.773
+          name: jx-variables
+          resources: {}
+          script: |
+            #!/usr/bin/env sh
+            jx gitops variables
+        - image: gcr.io/jenkinsxio/jx-boot:3.0.773
+          name: build-helm-build
+          resources: {}
           script: |
             #!/bin/sh
-            ls -al
-            hugo -d tmp-website --enableGitInfo --baseURL https://${REPO_NAME}-jx-${REPO_OWNER}-${REPO_NAME}-pr-${PULL_NUMBER}.${DOMAIN}/
-
-        - image: 18fgsa/html-proofer:latest
-          name: htmlproofer
-          script: |
-            #!/bin/sh
-
-            # disabling HTML checks as we have some bad IDs in some pages...
-            # --check-html
-            htmlproofer ./tmp-website --allow-hash-href --disable-external --checks-to-ignore ScriptCheck --empty-alt-ignore --url-ignore "/#.*/" --file-ignore "/.*apidocs.*/,/.*\/zh.*/,/.*\/es.*/,/.*\/docs\/reference\/api.*/,/.*\/docs\/reference\/config.*/,/.*\/community\/events.*/"
+            jx gitops helm build
   podTemplate: {}
   serviceAccountName: tekton-bot
   timeout: 240h0m0s

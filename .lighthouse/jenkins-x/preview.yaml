@@ -19,11 +19,11 @@ spec:
               memory: 512Mi
           workingDir: /workspace/source
           env:
-            - name: DOMAIN
-              valueFrom:
-                configMapKeyRef:
-                  name: ingress-config
-                  key: domain
+          - name: DOMAIN
+            valueFrom:
+              configMapKeyRef:
+                name: ingress-config
+                key: domain
         steps:
         - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
           name: git-submodules
@@ -34,39 +34,33 @@ spec:
           - update
           - --init
           - --recursive
-
         - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
           name: update-content
-          command: 
+          command:
           - ./scripts/ci/update-content.sh
-
         - image: gcr.io/cloud-builders/npm
           name: install-dependencies
           command:
           - npm
           args:
           - install
-
         - image: gcr.io/jenkinsxio/hugo-extended:0.74.0-10
           name: build-website
           script: |
             #!/bin/sh
             hugo -d tmp-website --enableGitInfo --baseURL https://${REPO_NAME}-jx-${REPO_OWNER}-${REPO_NAME}-pr-${PULL_NUMBER}.${DOMAIN}/
-
         - image: gcr.io/jenkinsxio/jx-boot:3.0.788
           name: jx-variables
           resources: {}
           script: |
             #!/usr/bin/env sh
             jx gitops variables
-
         - image: gcr.io/kaniko-project/executor:debug-v1.3.0
           name: build-and-push-image
           script: |
             #!/busybox/sh
             source .jx/variables.sh
             /kaniko/executor --context=/workspace/source --dockerfile=/workspace/source/Dockerfile --destination=gcr.io/jx-labs-infra/jx-docs:$VERSION
-
         - image: gcr.io/jenkinsxio/jx-preview:0.0.128
           name: promote-jx-preview
           resources: {}
@@ -75,11 +69,9 @@ spec:
             source /workspace/source/.jx/variables.sh
             # sleep infinity
             jx preview create --file charts/preview/helmfile.yaml
-
           env:
-            - name: DOCKER_REGISTRY
-              value: gcr.io
-
+          - name: DOCKER_REGISTRY
+            value: gcr.io
   podTemplate: {}
   serviceAccountName: tekton-bot
   timeout: 240h0m0s
