@@ -13,28 +13,6 @@ You may also find the [Roadmap](/community/roadmap/) and [Maturity Matrix](/v3/a
 
 ## Pre beta changes
 
-* The 3.0 beta is almost ready, so we've rolled out the new `jx-requirements.yml` file format which uses API versioning and removes lots of old deprecated content.
-  
-* Your cluster git repository will be upgraded automatically when you [upgrade your cluster](/v3/admin/guides/upgrade/#cluster)
-  
-**NOTE** once you upgrade your cluster you will also need to make sure all the quickstarts and imported projects are using the latest pipeline catalogs. 
-
-So in each repository for your quickstarts / imports you can:
-
-* run the `jx gitops upgrade` command on each of your repositories like when you  [upgrade your cluster](/v3/admin/guides/upgrade/#cluster). You may well get [merge conflicts](/v3/admin/guides/upgrade/#merge-conflicts) which you can resolve with your IDE (if in doubt choose to accept the remote changes)
-
-* if you want to avoid merge conflicts and have not made any local changes to the pipelines you can use this command:
-
-
-```bash 
-jx gitops upgrade --strategy force-delete-replace
-```
-
-that should replace all your pipelines with the latest greatest pipelines using locked down versions. 
-
-This is a one time upgrade; hopefully no more changes like this between beta and GA.
-
-
 ## Changes 
 
   
