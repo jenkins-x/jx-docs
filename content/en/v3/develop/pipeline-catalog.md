@@ -94,6 +94,12 @@ It is possible that you can have merge conflicts.
 
 You can follow the inline git helper messages to resolve conflicts - or use your IDE to help figure out the merge issues more easily. 
 
+### Upgrading all repositories
+
+You can now perform a batch of Pull Requests if you need to upgrade your pipelines on your repositories if the upstream pipeline catalogs have upgraded.
+
+See: [generate pull requests to upgrade pipelines](/v3/admin/guides/migrate/v3-alpha/#upgrading-pipelines-in-your-repositories)
+
 ## Diagnosing problems
 
 If you edit pipelines or lighthouse trigger files and things don't work there's a couple of places the errors may show up.
