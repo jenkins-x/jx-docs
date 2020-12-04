@@ -34,3 +34,25 @@ To be totally sure you don't miss any local changes to pipelines you can use the
 Though you can get [merge conflicts](/v3/admin/guides/upgrade/#merge-conflicts) which you then need to resolve in your IDE so its probably easier if you do those changes by hand in each repository via `jx gitops upgrade`
 
 The other option is to allow the above `resource-merge` to create a PR and merge; then if you have lost some changes use your IDE to see the differences and bring things back you need.
+             
+
+### If you hit issues on your alpha cluster 
+
+If you are not yet ready to migrate to the beta and hit some issues these tips may help.
+
+If you have pipelines on your alpha that start to fail with issues around requirements parsing (missing fields or encoding of storage or whatever) then edit your pipeline files to replace any `latest` images for `jx-cli` with `jx-cli:3.0.766` instead.
+
+You may find new quickstarts / imports created on your cluster start to fail too. 
+
+To avoid that modify your pipeline catalog to use the `alpha` tag rather than `master`. e.g. if you edit your [extensions/pipeline-catalog.yaml](https://github.com/jx3-gitops-repositories/jx3-kubernetes/blob/master/extensions/pipeline-catalog.yaml#L7) file just make sure it has the `alpha` reference like this:
+
+
+```yaml
+apiVersion: project.jenkins-x.io/v1alpha1
+kind: PipelineCatalog
+spec:
+  repositories:
+  - label: JX3 Pipeline Catalog
+    gitUrl: https://github.com/jenkins-x/jx3-pipeline-catalog
+    gitRef: alpha
+```
