@@ -26,7 +26,7 @@ That command essentially installs the [git operator](https://github.com/jenkins-
 
 ### Git Operator
 
-The [git operator](https://github.com/jenkins-x/jx-git-operator) works by polling the git repository looking for changes and running a kubernetes Job on each change. The Job resource is defined inside the git repository at **.jx/git-operator/job.yaml**
+The [git operator](https://github.com/jenkins-x/jx-git-operator) works by polling the git repository looking for changes and running a kubernetes Job on each change. The Job resource is defined inside the git repository at **versionStream/git-operator/job.yaml**
 
 You can view the boot Job log via the command:
 
@@ -43,7 +43,7 @@ Or you can browse the log in the Octant UI in the operations tab.
 
 The boot job runs on startup and on any git commit to the GitOps repository you used to install the operator.
 
-The boot job is defined in **.jx/git-operator/job.yaml** in git and essentially:
+The boot job is defined in **versionStream/git-operator/job.yaml** in git and essentially:
 
 
 * Runs the generate step
