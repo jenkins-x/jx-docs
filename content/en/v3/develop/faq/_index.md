@@ -67,6 +67,14 @@ helmfiles:
             
 Note that `$namespace` in the above files should be expanded to the actual namespace you are deploying it to; e.g. `jx` or `jx-staging` or whatever.
 
+The above may seem like a bit of work compared to `kubectl apply` but it does mean at any time you can upgrade the app by re-running the command:
+
+```bash
+curl -L https://acme.com/foo.yaml > charts/myname/templates/resources.yaml
+```
+
+You can also easily uninstall the application or modify the YAML in git at any time.
+
 
 ## How do I list the apps that have been deployed?
 
