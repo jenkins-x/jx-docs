@@ -1,5 +1,4 @@
-{{ $urlPre := "https://api.github.com" }}
-{{ $contributors := getJSON $urlPre "/repos/jenkins-x/jx/stats/contributors" }}
+{{ $contributors := getJSON "layouts/shortcodes/contributors.json" }}
 {{ $sortedContributors := sort $contributors "total" "desc" }}
 
   <table>
