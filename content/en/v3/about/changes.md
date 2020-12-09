@@ -16,6 +16,7 @@ You may also find the [Roadmap](/community/roadmap/) and [Maturity Matrix](/v3/a
 ## Changes 
 
 
+* We now use multiple helmfiles per namespace so its easier to understand the organisation of your charts across namespaces
 * The [3.0 beta is almost ready](/blog/2020/12/04/jx-v3-update/) so if you have been using the 3.0 alpha we now have a [migration guide](/v3/admin/guides/migrate/v3-alpha/) to smooth your transition to the beta
 
 * You can now easily open the [Octant Console](/v3/develop/ui/octant/) or [Pipeline Dashboard](/v3/develop/ui/dashboard/) via 2 easy commands:
