@@ -67,7 +67,7 @@ spec:
             source .jx/variables.sh
             /kaniko/executor --context=/workspace/source --dockerfile=/workspace/source/Dockerfile --destination=gcr.io/jx-labs-infra/jx-docs:$VERSION
 
-        - image: gcr.io/jenkinsxio/jx-preview:0.0.128
+        - image: gcr.io/jenkinsxio/jx-preview:0.0.135
           name: promote-jx-preview
           resources: {}
           script: |
