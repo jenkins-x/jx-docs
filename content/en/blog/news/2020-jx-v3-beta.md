@@ -14,15 +14,26 @@ I'm super excited to announce the 3.0 beta of Jenkins X! Christmas has come earl
 
 <img width="387px" src="/images/jxxx.png">
 
-There are detailed breakdowns of what has [changed since 3.x started](/v3/about/changes/) and how [3.x compares to 2.x](/v3/about/comparison/) but here's a brief summary fo the differences.
+the main documentation of the changes are:
+
+* [the new architecture](/v3/about/overview/) with modular plugins and improved [extension points](/v3/about/extending/)
+* [what has changed since 3.x started](/v3/about/changes/) 
+* [how 3.x compares to 2.x](/v3/about/comparison/) 
+  
+but here's a brief summary of the differences:
 
 ### User Changes
 
-As a user the high level UX of Jenkins X is similar; it automates Continuous Delivery for you with automatic promotion between your enviroments and Preview environments on Pull Requests. 
+As a user the high level UX of Jenkins X is similar:
 
-Though there are some changes:
+* [automated Continuous Delivery pipelines](/about/concepts/features/#automated-pipelines) for using [tekton](/v3/develop/pipeline-catalog/) your repositories with [automatic promotion](/about/concepts/features/#promotion) between your [environments](/about/concepts/features/#environments)
+* pull requests on your repositories create separate [Preview Environments](/about/concepts/features/#preview-environments) where your team can review your changes and give fast feedback before your changes are approved and merged into the main trunk.
 
-* we now default to [vanilla tekton YAML for defining pipelines](/v3/develop/pipeline-catalog/#source-changes) while [accelerating your tekton](/blog/2020/11/11/accelerate-tekton/) with for [tekton catalog](/v3/develop/pipeline-catalog/#adding-tasks-from-the-tekton-catalog)
+<img width="600" src="/images/pr-comment.png" class="img-thumbnail">
+
+#### New features
+
+* we now default to [vanilla tekton YAML for defining pipelines](/v3/develop/pipeline-catalog/#source-changes) while [accelerating your tekton](/blog/2020/11/11/accelerate-tekton/) with [tekton catalog](/v3/develop/pipeline-catalog/#adding-tasks-from-the-tekton-catalog)
 * we include an open source [dashboard](/v3/develop/ui/dashboard/) for visualising pipelines and logs which you can invoke via:
 ```bash 
 jx dash
@@ -46,6 +57,7 @@ jx ui
   * This means we can support various secret backends such as Alibaba Cloud KMS Secret Manager, Amazon Secret Manager, Azure Key Vault, Hashicorp Vault or GCP Secret Manager
   * It also means we can then check in all kubernetes resources and custom resources directly into git (apart from Kubernetes `Secrets`) so that it super easy to version, review and reason about your kubernetes resources in a GitOps way.
 * built in [TLS and DNS](/v3/admin/guides/tls_dns/) support along with [Heath](/v3/admin/guides/health/) reporting and visualising via [kuberhealthy](https://github.com/Comcast/kuberhealthy) 
+* we now have an [LTS distribution](/v3/admin/guides/upgrades/lts/) which lets you switch to a much more slower cadence of releases of Jenkins X
 
 In general Jenkins X 3.x is now much simpler and more flexible. It supports [lots more platforms than before](/v3/admin/) and should be easy to extend and configure for other platforms too.
 
