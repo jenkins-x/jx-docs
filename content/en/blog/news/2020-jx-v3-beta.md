@@ -12,22 +12,9 @@ author: James Strachan
  
 I'm super excited to announce the 3.0 beta of Jenkins X! Christmas has come early this year! 
 
+<img width="387px" src="/images/jxxx.png">
+
 There are detailed breakdowns of what has [changed since 3.x started](/v3/about/changes/) and how [3.x compares to 2.x](/v3/about/comparison/) but here's a brief summary fo the differences.
-
-### Platform Changes
-
-* we now use [helm](https://helm.sh/) (3.x) and [helmfile](https://github.com/roboll/helmfile) along with optionally [kustomize](https://kustomize.io/) in a GitOps style to define and configure both Jenkins X itself, your tools and applications in any namespace
-* support [multi cluster](/v3/admin/guides/multi-cluster/) out of the box so you can keep `Staging` and `Production` in separate clusters to your development cluster where your pipelines run, you create and release immutable container images and other artifacts.
-* to [setup or upgrade](/v3/admin/) Jenkins X we use [terraform](https://www.terraform.io/) to setup your cloud resources on [Azure](/v3/admin/platforms/azure/), [Amazon](/v3/admin/platforms/eks/) or [Google](/v3/admin/platforms/google/) while also supporting on premise, minkube and OpenShift - see the [Admin Guides](/v3/admin/) for more detail
-  * the actual installation of kubernetes resources takes place using the [git operator](/v3/admin/guides/operator/) so it runs reliably inside the cluster itself
-* we default to using [Kubernetes External Secrets
-](https://github.com/external-secrets/kubernetes-external-secrets) to manage all secrets for Jenkins X itself, development tools and your applications too. 
-  * This means we can support various secret backends such as Alibaba Cloud KMS Secret Manager, Amazon Secret Manager, Azure Key Vault, Hashicorp Vault or GCP Secret Manager
-  * It also means we can then check in all kubernetes resources and custom resources directly into git (apart from Kubernetes `Secrets`) so that it super easy to version, review and reason about your kubernetes resources in a GitOps way.
-* built in [TLS and DNS](/v3/admin/guides/tls_dns/) support along with [Heath](/v3/admin/guides/health/) reporting and visualising via [kuberhealthy](https://github.com/Comcast/kuberhealthy) 
-
-In general Jenkins X 3.x is now much simpler and more flexible. It supports [lots more platforms than before](/v3/admin/) and should be easy to extend and configure for other platforms too.
-   
 
 ### User Changes
 
@@ -44,6 +31,26 @@ jx dash
 ```bash 
 jx ui
 ```
+            
+<iframe width="600" height="300" src="https://www.youtube.com/embed/2LCPHi0BnUg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+### Platform Changes
+
+* we now use [helm](https://helm.sh/) (3.x) and [helmfile](https://github.com/roboll/helmfile) along with optionally [kustomize](https://kustomize.io/) in a GitOps style to define and configure both Jenkins X itself, your tools and applications in any namespace
+* support [multi cluster](/v3/admin/guides/multi-cluster/) out of the box so you can keep `Staging` and `Production` in separate clusters to your development cluster where your pipelines run, you create and release immutable container images and other artifacts.
+* to [setup or upgrade](/v3/admin/) Jenkins X we use [terraform](https://www.terraform.io/) to setup your cloud resources on [Azure](/v3/admin/platforms/azure/), [Amazon](/v3/admin/platforms/eks/) or [Google](/v3/admin/platforms/google/) while also supporting on premise, minkube and OpenShift - see the [Admin Guides](/v3/admin/) for more detail
+  * the actual installation of kubernetes resources takes place using the [git operator](/v3/admin/guides/operator/) so it runs reliably inside the cluster itself
+* we default to using [Kubernetes External Secrets
+](https://github.com/external-secrets/kubernetes-external-secrets) to manage all secrets for Jenkins X itself, development tools and your applications too. 
+  * This means we can support various secret backends such as Alibaba Cloud KMS Secret Manager, Amazon Secret Manager, Azure Key Vault, Hashicorp Vault or GCP Secret Manager
+  * It also means we can then check in all kubernetes resources and custom resources directly into git (apart from Kubernetes `Secrets`) so that it super easy to version, review and reason about your kubernetes resources in a GitOps way.
+* built in [TLS and DNS](/v3/admin/guides/tls_dns/) support along with [Heath](/v3/admin/guides/health/) reporting and visualising via [kuberhealthy](https://github.com/Comcast/kuberhealthy) 
+
+In general Jenkins X 3.x is now much simpler and more flexible. It supports [lots more platforms than before](/v3/admin/) and should be easy to extend and configure for other platforms too.
+
+{{< admincards >}}
+
 
 ### Getting started
 
