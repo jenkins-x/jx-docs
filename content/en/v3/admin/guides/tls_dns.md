@@ -51,7 +51,7 @@ First we will configure the cloud infrastructure requirements:
 To satisfy these requirements go to your infrastructure repository (contains Terraform main.tf) and add to your `values.auto.tfvars` the following:
 
 ```yaml
-parent_domain = "foo.io"
+apex_domain = "foo.io"
 ```
 
 Most people prefer to use a subdomain for a specific installation rather than purchasing one domain per cluster.  For example in a multi cluster setup you will probably want all using the same parent domain but two clusters using a different subdomain like development.foo.io, staging.foo.io leaving production using just the parent domain foo.io.
@@ -61,6 +61,15 @@ To use a subdomain for this cluster add the following configuration:
 ```yaml
 subdomain     = "dev"
 ```
+
+We will now add details that will be passed to Jenkins X as requirements when booting the cluster.
+
+Add these to `values.auto.tfvars`
+```yaml
+lets_encrypt_production = false
+tls_email               = your_email_address@googlegroups.com
+```
+
 
 Now apply these changes:
 
@@ -82,78 +91,53 @@ terraform apply
 
 If using a subdomain you will now see your managed zone in GCP [here](https://console.cloud.google.com/net-services/dns/zones)
 
-### Cluster
+Once terraform has finished you can follow the jx boot installation using the instructions given in the terraform output, connect to the cluster and run:
 
-Next we will configure the cluster requirements:
-
-- Install [external-dns](https://github.com/kubernetes-sigs/external-dns#externaldns) - Kubernetes controller which watches for new Kubernetes Ingress resources and creates A records in Google Cloud DNS which will propagate globally across the internet
-- Install [cert-manager](https://cert-manager.io/docs/) - Kubernetes controller which watches for requests to ask [Let's Encrypt](https://letsencrypt.org/) to issue a new wildcard TLS certificate for your domain and will manage this including renewals
-
-To satisfy these requirements go to your cluster repository (contains helmfile.yaml)
-
-Add external-dns to your clusters helmfile.yaml `releases` section:
-
-```bash
-- chart: bitnami/external-dns
-```
-
-Add cert-manager to your clusters helmfile.yaml `releases` section:
-```bash
-- chart: jetstack/cert-manager
-```
-
-Next we install
-- a cluster wide [Issuer](https://cert-manager.io/docs/concepts/issuer/) which tells cert-manager how to validate you own your domain
-- a namespaced [Certificate](https://cert-manager.io/docs/concepts/certificate/) to request a TLS certificate for applications running in your cluster
-
-```bash
-- chart: jx3/acme
-  name: acme-jx
-```
-
-Cert-manager will use the cluster issuer to request a TLS certificate.  A Kubernetes secret will be automatically created and contain the TLS cert.  The nginx controllers in the `nginx` namespace will use this secret in the `jx` namespace for the default SSL certificate which will automatically enable TLS for all applications in your cluster.
-
-The domain from setting up your infrastructure in step one should appear in the `jx-requirements.yml` of you cluster git repo.  Next configure your TLS options, update your `jx-requirements.yml` with below.
-
-__NOTE__ this is the top level `ingress:` section and __NOT__ in the `environments:` section:
-
-```bash
-ingress:
-  domain: dev.foo.io
-  externalDNS: false # this is unused and will be deprecated
-  namespaceSubDomain: -jx.
-  tls:
-    email: "joe@gmail.com"
-    enabled: true
-    production: false
-```
-
-When first installing set `tls.production=false` so you use the Lets Encrypt staging service which allows for more API calls before rate limiting requests.  They will issue a self-signed certificate so once happy everything is working change this to `tls.production=true`.
-
-__NOTE__ Helmfile is not able to skip insecure TLS when adding helm repositories, therefore staging certificates will not work with chartmuseum that is running in the cluster.  Therefore once you have verified cert-manager can issue certificates from staging, switch to the production service.
-
-Jenkins X uses a version stream to rollout tested versions of images, charts and default configuration.  The `jx-boot` job will apply these versions to your helmfile but you can also run the step yourself to see the defaults.
-
-```bash
-jx gitops helmfile resolve
-```
-
-```bash
-git add helmfile.yaml
-git commit -m 'feat: enable DNS and TLS'
-git push
-```
-
-Now tail the admin logs and wait for the job to complete
 ```bash
 jx admin logs
 ```
 
+There is a timing issue with the latest cert-manager so the first boot job may fail but second will automatically run and succeed.
+
+
 It can take a short while for DNS to propagate so you may need to wait for 5 - 10 minutes.  https://dnschecker.org/ is a useful way to check the status of DNS propagating.
+
+To verify using the CLI run:
+```bash
+kubectl get ingress -n jx
+```
+and use the hook URL
+```bash
+jx verify tls hook-jx.dev.foo.io  --production=false --timeout 20m
+```
 
 You should be able to verify the TLS certificate from Lets Encrypt in your browser (beware of browser caching if you don't see any changes)
 
 ![Working TLS](/images/v3/working_tls.png)
+
+Once this is working you can switch to the production service from Lets Encrypt.  Clone your cluster git repository and change the jx-requirements.yaml enabling production:
+
+```yaml
+ingress:
+  domain: dev.foo.io
+  externalDNS: true
+  namespaceSubDomain: -jx.
+  tls:
+    email: "joe@gmail.com"
+    enabled: true
+    production: true
+```
+
+Git commit and push the change back to your remote git repository and follow the installation:
+
+```bash
+jx admin logs
+```
+You will now be issued a valid TLS certificate
+
+```bash
+jx verify tls hook-jx.dev.foo.io  --production=true --timeout 20m
+```
 
 ## What if I have a chartmuseum with charts running using nip.io?
 
@@ -197,4 +181,53 @@ kubectl get certificaterequest -n jx
 ```
 ```
 kubectl describe certificaterequest -n jx
+```
+
+## How can I install the charts if not using terraform to autamatically enable them?
+
+If you are not using the Jenkins X Terraform above then you can manually update your cluster git repository and add the charts needed.
+
+### Cluster
+
+Next we will configure the cluster requirements:
+
+- Install [external-dns](https://github.com/kubernetes-sigs/external-dns#externaldns) - Kubernetes controller which watches for new Kubernetes Ingress resources and creates A records in Google Cloud DNS which will propagate globally across the internet
+- Install [cert-manager](https://cert-manager.io/docs/) - Kubernetes controller which watches for requests to ask [Let's Encrypt](https://letsencrypt.org/) to issue a new wildcard TLS certificate for your domain and will manage this including renewals
+
+Cert-manager will use the cluster issuer to request a TLS certificate.  A Kubernetes secret will be automatically created and contain the TLS cert.  The nginx controllers in the `nginx` namespace will use this secret in the `jx` namespace for the default SSL certificate which will automatically enable TLS for all applications in your cluster.
+
+The domain from setting up your infrastructure in step one should appear in the `jx-requirements.yml` of you cluster git repo.  Next configure your TLS options, update your `jx-requirements.yml` with below.
+
+__NOTE__ this is the top level `ingress:` section and __NOT__ in the `environments:` section:
+
+```bash
+ingress:
+  domain: dev.foo.io
+  externalDNS: true
+  namespaceSubDomain: -jx.
+  tls:
+    email: "joe@gmail.com"
+    enabled: true
+    production: false
+```
+
+When first installing set `tls.production=false` so you use the Lets Encrypt staging service which allows for more API calls before rate limiting requests.  They will issue a self-signed certificate so once happy everything is working change this to `tls.production=true`.
+
+__NOTE__ Helmfile is not able to skip insecure TLS when adding helm repositories, therefore staging certificates will not work with chartmuseum that is running in the cluster.  Therefore once you have verified cert-manager can issue certificates from staging, switch to the production service.
+
+Jenkins X uses a version stream to rollout tested versions of images, charts and default configuration.  The `jx-boot` job will apply these versions to your helmfile but you can also run the step yourself to see the defaults.
+
+```bash
+jx gitops helmfile resolve
+```
+
+```bash
+git add helmfile.yaml
+git commit -m 'feat: enable DNS and TLS'
+git push
+```
+
+Now tail the admin logs and wait for the job to complete
+```bash
+jx admin logs
 ```
