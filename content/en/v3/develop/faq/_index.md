@@ -11,8 +11,16 @@ aliases:
 ---
 
 
+                
+## Where do I raise issues?
 
-## How do I customise an App in an Environment
+One of the challenges with Jenkins X 3.x is the [source code is spread across a number of organisations and repositories](/v3/about/overview/source/) since its highly decoupled into many [plugins and microservices](/v3/about/overview/) so it can be confusing 
+
+If you know the specific plugin causing an issue, say [jx-preview](https://github.com/jenkins-x/jx-preview) then just raise the issue there in the issue tracker.
+
+Otherwise use the [issue tracker for Jenkins X 3.x](https://github.com/jenkins-x/issues) and we can triage as required.
+
+## How do I customise an App in an Environment?
 
 With the new helm 3 based boot every environment uses boot - so there is a single way to configure anything whether its in the `dev`, `staging` or `production` environment and whether or not you are using [multiple clusters](/v3/guides/multi-cluster/).
 

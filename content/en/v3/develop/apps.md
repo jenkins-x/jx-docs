@@ -77,7 +77,23 @@ You can also use a file called `values.yaml.gotmpl` if you wish to use go templa
 To see an example of this in action check out the [charts/jenkins-x/tekton/values.yaml.gotmpl](https://github.com/jenkins-x/jxr-versions/blob/master/charts/jenkins-x/tekton/values.yaml.gotmpl) file in the [version stream](https://jenkins-x.io/about/concepts/version-stream/).
 
 Note that many apps are already configured to make use of the `jx-requirements.yml` settings via the [version stream](https://jenkins-x.io/about/concepts/version-stream/) - but you are free to add your own custom configuration. 
+   
+#### Using requirements in charts
 
+The `jx-requirements.yml` file gets converted to a namespace specific set of values, `jx-values.yaml` in each namespace so it can be easily consumed in the namespace specific helmfile in `helmfiles/$namespace/helmefile.yaml`.
+
+If your chart wishes to reuse some of the configuration from the requirements, you can add a reference to the `jx-values.yaml` file in your chart in the `helmfiles/$namespace/helmefile.yaml` for your namespace:
+       
+```yaml
+- chart: jenkins-x/bucketrepo
+  version: 0.1.47
+  name: bucketrepo
+  values:
+  # reuse the standard jx values for ingress domain and so forth:
+  - jx-values.yaml
+```
+
+There is also a file called `jx-global-values.yaml` which can include various global values like `jx.imagePullSecrets`. You can add your own global values into that file if you wish; it will be replicated into the `helmfiles/*/jx-values.yaml` files so they can be easily consumed in a chart.
 
 ### Version Stream folder
 

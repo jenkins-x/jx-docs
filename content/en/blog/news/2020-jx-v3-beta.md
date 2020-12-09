@@ -81,7 +81,8 @@ Once your cluster has been installed or migrated then check out the [User Guide]
 
 A huge thanks goes out to all the [contributors](/community/#contributors), folks in the [Jenkins X community](/community/) and the [community around all the open source projects we reuse](/v3/about/overview/projects/) who've helped get this beta together. The improvements in Jenkins X 3.x since 2.x are totally amazing, well done everyone!
 
-Please give Jenkins X a try and [let us know what you think](https://jenkins-x.io/community/#slack). All feedback highly appreciated - particularly how we can keep improving to help you develop faster.
+Please give Jenkins X a try and [let us know what you think](https://jenkins-x.io/community/#slack) or [raise an issue](https://github.com/jenkins-x/issues
+). All feedback highly appreciated - particularly how we can keep improving to help you develop faster.
 
 If you are at all interested in Continuous Delivery with kubernetes using [tools](/v3/about/overview/projects/) like [helm](https://helm.sh/), [helmfile](https://github.com/roboll/helmfile), [knative](https://knative.dev/),  [lighthouse](https://github.com/jenkins-x/lighthouse) and last but definitely not least, [tekton](https://github.com/tektoncd/cli)  then please join the [community](/community/) - its great fun!
 
