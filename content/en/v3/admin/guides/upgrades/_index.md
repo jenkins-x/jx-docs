@@ -6,6 +6,7 @@ description: Upgrades when using Jenkins X 3.x
 weight: 90
 aliases:
   - /v3/guides/upgrade
+  - /v3/admin/guides/upgrades
 ---
 
 There are a few areas to consider when upgrading Jenkins X.
