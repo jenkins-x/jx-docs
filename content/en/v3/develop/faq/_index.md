@@ -297,12 +297,6 @@ Otherwise you can enable this new container registry on a specific application/r
 export DOCKER_REGISTRY="myserver.com"
 ```
 
-
-## How do I uninstall Jenkins X?
-
-We don't yet have a nice uninstall command
-
-
 ## Why does Jenkins X fail to download plugins?
 
 When I run a `jx` command I get an error like...
@@ -313,5 +307,18 @@ This sounds like a network problem; the code in `jx` is trying to download from 
 
 * do you have a firewall / VPN / HTTP proxy blocking things?
 * is your `/etc/resolv.conf` causing issues? e.g. if you have multiple entries for your company VPN?
+
+
+
+## How do I uninstall Jenkins X?
+
+We don't yet have a nice uninstall command. 
+
+Though if you git clone your development git repository and cd into it you can run:
+
+```bash 
+kubectl delete -R -f config-root/namespaces
+kubectl delete -R -f config-root/cluster
+```
 
 
