@@ -22,11 +22,11 @@ Ensure you are logged into GitHub else you will get a 404 error when clicking th
 
 This is our current recommended quickstart for Azure:
 
-*  <a href="https://github.com/jx3-gitops-repositories/jx3-azure-terraform/generate" target="github" class="btn bg-primary text-light">Create Git Repository</a> 
+*  <a href="https://github.com/jx3-gitops-repositories/jx3-terraform-azure/generate" target="github" class="btn bg-primary text-light">Create Git Repository</a> 
 
 * `git clone` the new repository and `cd`  into the git clone
 
-*  <a href="https://github.com/jx3-gitops-repositories/jx3-azure-terraform/blob/master/README.md" 
+*  <a href="https://github.com/jx3-gitops-repositories/jx3-terraform-azure/blob/master/README.md" 
     target="github" class="btn bg-primary text-light" 
     title="use your new git repository to create your cloud infrastructure and install Jenkins X">
     Create your infrastructure
