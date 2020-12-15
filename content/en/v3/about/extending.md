@@ -54,16 +54,20 @@ If you want you can fork the [jenkins-x/jx3-pipeline-catalog](https://github.com
 
 We'd prefer if any improvements or enhancements could be submitted back to the project via a Pull Request then we all get to share your improvements; but its totally fine to have some local modifications for your specific business requirements. 
 
-To use your custom fork modify the `jx-requirements.yml` file in your cluster git repository to link to your fork instead of the  [jenkins-x/jx3-pipeline-catalog](https://github.com/jenkins-x/jx3-pipeline-catalog) repository:
+To use your custom fork modify the [extensions/pipeline-catalog.yaml](https://github.com/jx3-gitops-repositories/jx3-kubernetes/blob/master/extensions/pipeline-catalog.yaml) file in your cluster git repository to link to your fork instead of the  [jenkins-x/jx3-pipeline-catalog](https://github.com/jenkins-x/jx3-pipeline-catalog) repository:
 
 ```yaml 
 ...
-buildPacks:
-  buildPackLibrary:
-    gitRef: master
-    gitURL: https://github.com/myorg/jx3-pipeline-catalog.git
-```  
-
+apiVersion: project.jenkins-x.io/v1alpha1
+kind: PipelineCatalog
+metadata:
+  creationTimestamp: null
+spec:
+  repositories:
+  - gitRef: 0ad0e49dca4d3a1e952c6f7c548e77b2136c5035
+    gitUrl: https://github.com/myorg/jx3-pipeline-catalog
+    label: My Pipeline Catalog
+ ```
 
 ## QuickStarts
 
@@ -71,11 +75,36 @@ Quickstarts are sample projects which are used `jx project quickstart` when you 
 
 The default quickstart projects are in the [jenkins-x-quickstarts](https://github.com/jenkins-x-quickstarts/) github organisation.
 
-The quickstarts are versioned in the version stream in your cluster git repository at `versionStream/quickstarts.yml`.
+The quickstarts are defined in your [extensions/quickstarts.yaml](https://github.com/jx3-gitops-repositories/jx3-kubernetes/blob/master/extensions/quickstarts.yaml) file and defaults to including all of the quickstarts in the [versionStream/quickstarts.yml](jx3-kubernetes/blob/master/versionStream/quickstarts.yaml) file.
+         
+You can include/exclude quickstarts from the version stream using the `includes` and `excludes` regular expressions in the [extensions/quickstarts.yaml](https://github.com/jx3-gitops-repositories/jx3-kubernetes/blob/master/extensions/quickstarts.yaml) file as shown below. 
+             
+You can add your own quickstarts into the [extensions/quickstarts.yaml](https://github.com/jx3-gitops-repositories/jx3-kubernetes/blob/master/extensions/quickstarts.yaml) file as follows
 
-So you can add your own quickstarts by just modifying that file to add any quickstart you like. 
+
+```yaml 
+apiVersion: project.jenkins-x.io/v1alpha1
+kind: Quickstarts
+spec:
+  defaultOwner: myorg
+
+  # custom quickstarts
+  quickstarts:
+  - name: cheese
+    language: JavaScript
+    downloadZipURL: https://codeload.github.com/jenkins-x-quickstarts/cheese/zip/master
+
+  # shared quickstarts from the version stream
+  imports:
+  - file: versionStream/quickstarts.yaml
+    includes:
+    - ".*"
+    excludes:
+    - ".*/node.*"
+```
 
 ## Octant
+
 
 Our preferred UI for Kubernetes, Tekton and Jenkins X is [octant](/v3/develop/ui/octant) as its easy to install/run and has fined grained RBAC and security without the hassle of setting up TLS, DNS and SSO on every cluster.
 
