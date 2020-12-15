@@ -308,7 +308,13 @@ This sounds like a network problem; the code in `jx` is trying to download from 
 * do you have a firewall / VPN / HTTP proxy blocking things?
 * is your `/etc/resolv.conf` causing issues? e.g. if you have multiple entries for your company VPN?
 
-          
+               
+## Why did my quickstart / import not work?
+
+If you are not able to create quickstarts or import projects its most probably webhooks not being setup correctly.
+
+Check out the [webhooks troubleshooting guide](/v3/admin/troubleshooting/webhooks/)
+
 ## How do I add an Environment
 
 With v3 everything is done via GitOps - so if in doubt the answer is to modify git. 

@@ -145,7 +145,7 @@ You can see an example of this in the [demo of Jenkins X V3](/blog/2020/09/16/jx
 
 If you are not able to create quickstarts or import projects its most probably webhooks not being setup correctly.
 
-Check out the [webhoks troubleshooting guide](/v3/admin/troubleshooting/webhooks/)
+Check out the [webhooks troubleshooting guide](/v3/admin/troubleshooting/webhooks/)
 
 ## Comparison to 2.x
 
