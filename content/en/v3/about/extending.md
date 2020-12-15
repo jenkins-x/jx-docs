@@ -75,7 +75,7 @@ Quickstarts are sample projects which are used `jx project quickstart` when you 
 
 The default quickstart projects are in the [jenkins-x-quickstarts](https://github.com/jenkins-x-quickstarts/) github organisation.
 
-The quickstarts are defined in your [extensions/quickstarts.yaml](https://github.com/jx3-gitops-repositories/jx3-kubernetes/blob/master/extensions/quickstarts.yaml) file and defaults to including all of the quickstarts in the [versionStream/quickstarts.yml](jx3-kubernetes/blob/master/versionStream/quickstarts.yaml) file.
+The quickstarts are defined in your [extensions/quickstarts.yaml](https://github.com/jx3-gitops-repositories/jx3-kubernetes/blob/master/extensions/quickstarts.yaml) file and defaults to including all of the quickstarts in the [versionStream/quickstarts.yml](https://github.com/jx3-gitops-repositories/jx3-kubernetes/blob/master/versionStream/quickstarts.yaml) file.
          
 You can include/exclude quickstarts from the version stream using the `includes` and `excludes` regular expressions in the [extensions/quickstarts.yaml](https://github.com/jx3-gitops-repositories/jx3-kubernetes/blob/master/extensions/quickstarts.yaml) file as shown below. 
              
