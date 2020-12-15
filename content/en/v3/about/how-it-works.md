@@ -5,6 +5,7 @@ type: docs
 description: How Jenkins X 3.x works under the covers
 weight: 130
 aliases: 
+    - /docs/v3/about/how-it-works/
     - /v3/about/how-it-works/
 ---
 
