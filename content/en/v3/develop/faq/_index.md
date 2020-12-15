@@ -308,6 +308,12 @@ This sounds like a network problem; the code in `jx` is trying to download from 
 * do you have a firewall / VPN / HTTP proxy blocking things?
 * is your `/etc/resolv.conf` causing issues? e.g. if you have multiple entries for your company VPN?
 
+          
+## How do I add an Environment
+
+With v3 everything is done via GitOps - so if in doubt the answer is to modify git. 
+
+You can create new environments by adding to the `environments:` section of [jx-requirements.yml](https://github.com/jx3-gitops-repositories/jx3-kubernetes/blob/master/jx-requirements.yml#L18)
 
 
 ## How do I uninstall Jenkins X?
