@@ -40,26 +40,26 @@ Note that the old Jenkins X 2.x alias `jx import` is still supported but will be
 
 Note that Jenkins X 3.x includes [new support for handling of importing Jenkinsfiles](jenkinsfile) if you are trying to combine Jenkins and Tekton together in Jenkins X.
 
+This means we can create quickstarts and import projects using the same UX whether you wish to use the automated CI/CD pipelines from Jenkins X using Tekton or wish to reuse your own existing `Jenkinsfile` files (or even a combination of both on the same repository!)
 
 ## Top level wizard
+               
+If you just run the [jx project](https://github.com/jenkins-x/jx-project/blob/master/docs/cmd/project.md) you get a top level wizard that asks you which kind of approach you wish to take (e.g. quickstart versus import etc)
 
-This gives you all of the above options in an interactive wizard via [jx project](https://github.com/jenkins-x/jx-project/blob/master/docs/cmd/project.md)
-
-
-## Improvements
+## Improvements since v3
 
 We've made a number of improvements over the 2.x version of [jx import](https://jenkins-x.io/commands/jx_import/) command:
 
-* when importing to Jenkins X we ask which build pack you wish to use (e.g. classic or kubernetes) so that you can import java libraries or node modules easily in addition to kubernetes native applications
+* when importing to Jenkins X we ask which pipeline catalog you wish to use which you can now [configure easily](/v3/about/extending/#pipeline-catalog)
 * the wizard will prompt you for the pack name (language) once the detection has occurred. Usually the pack name detection is good enough. e.g. detecting `maven` but you may wish to change the version of the pack (e.g. `maven-java11`)
-* when importing a project and you are using Jenkins X and Jenkins in the same cluster you get asked whether you want to import the project into [Jenkins X](https://jenkins-x.io/) or to pick which Jenkins server to use
-* we support 2 modes of importing projects to [a remote Jenkins server](/v3/guides/jenkins/)
-  * regular Jenkins import where a Multi Branch Project is used and Jenkins processes the webhooks
-  * ChatOps mode: we use [lighthouse](https://github.com/jenkins-x/lighthouse) to handle the webhooks and ChatOps and then when triggered we trigger regular pipelines inside the Jenkins server 
-* if your repository contains a `Jenkinsfile` and you choose to import into a Jenkins server we don't run the build packs and generate a `Dockerfile`, helm chart or `jenkins-x.yml`
+* when importing a project which has a `Jenkinfiles` you are given the choice to:
+  * ignore the `Jenkinsfile` and let Jenkins X automate the CI/CD via Tekton 
+  * use a Jenkins server you have configured via Jenkins X to implement the CI
+  * add a new Jenkins server for the CI managed via GitOps in Jenkins X 
+  * use the Jenkinfile Runner via Tekton
+  
 
-
-## Changes since 2.x:
+### Changes since 2.x:
 
 For those of you who know [Jenkins X](https://jenkins-x.io/) and have used [jx import](https://jenkins-x.io/commands/jx_import/) before the new project wizard is a little different:
 
