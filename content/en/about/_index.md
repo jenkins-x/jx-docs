@@ -3,9 +3,6 @@ title: About
 linktitle: About
 description: An overview of the concepts in Jenkins X
 type: docs
-menu:
-  main:
-    weight: 10
 cascade:
   type: docs
 aliases:
