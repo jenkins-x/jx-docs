@@ -2,29 +2,33 @@
 title: Jenkinsfile support
 linktitle: Jenkinsfile support
 type: docs
-description: How 3.x handles importing Jenkinsfiles
+description: Working with Jenkinsfiles, Jenkins and Tekton
 weight: 30
 aliases: 
     - /v3/develop/jenkinsfile
 ---
 
 
-When importing a project `jx project import` looks for a `Jenkinfile` in the source code. 
+When importing a project [jx project import](https://github.com/jenkins-x/jx-project/blob/master/docs/cmd/project_import.md) looks for a `Jenkinfile` in the source code. 
 
-If there is no `Jenkinsfile` then the wizard assumes you wish to proceed with a [Jenkins X Pipeline](https://jenkins-x.io/about/concepts/jenkins-x-pipelines/) based on Tekton and imports it in the usual Jenkins X way. You also get to confirm the kind of build pack and language you wish to use for the automated CI/CD - so its easy to import any workload whether its a library, a binary, a container image, a helm chart or a fully blown microservice for automated kubernetes based CI/CD.
+If there is no `Jenkinsfile` then the wizard assumes you wish to proceed with automated CI/CD pipelines based on [tekton](https://github.com/tektoncd/pipeline) and imports it in the usual Jenkins X way. You also get to confirm the kind of pipeline catalog  and language you wish to use for the automated CI/CD - so its easy to import any workload whether its a library, a binary, a container image, a helm chart or a fully blown microservice for automated kubernetes based CI/CD.
 
-If a `Jenkinsfile` is present  then the wizard assumes you may wish to use a [remote Jenkins server](/v3/guides/jenkins/) or [Jenkinsfile Runner](https://github.com/jenkinsci/jenkinsfile-runner) to run the pipelines, so it presents you with a list of the available Jenkins options to choose from. 
+If a `Jenkinsfile` is present then the wizard asks you how you want to proceed:
 
-When using a Jenkins Server you get two options:
+* use the automated CI/CD pipelines based on [tekton](https://github.com/tektoncd/pipeline). 
+  * this option will ignore the `Jenkinfile` for now - you can always use it later
+* use a [Jenkins server](/v3/admin/guides/jenkins/) to execute the `Jenkinfile` pipeline 
+* use [Jenkinsfile Runner](https://github.com/jenkinsci/jenkinsfile-runner) to run the pipelines
 
-* use vanilla Jenkins pipelines via `Multi Branch Project` to perform the webhook handling and run the pipelines
-* use  [lighthouse](https://github.com/jenkins-x/lighthouse) for webhook handling and ChatOps on Pull Requests. Then when a pipeline is triggered we use the [trigger-pipeline](https://github.com/jenkins-x-labs/trigger-pipeline) as a step to run the pipeline remotely inside a specific Jenkins server (without using the `Multi Branch Project`).
+### Using Jenkins Server
 
-### Supported Integrations
+If you choose the [Jenkins server](/v3/admin/guides/jenkins/) option and you have not yet configured a Jenkins server in your cluster, the wizard will prompt you for the new Jenkins server name and will automatically [create you a Jenkins server via GitOps](/v3/admin/guides/jenkins/getting-started/#adding-jenkins-servers-into-jenkins-x)
 
-When importing a project these approaches are supported:
+Otherwise you choose which Jenkins server to use for your project. You could have multiple jenkins servers with different configurations and plugins.
 
-* [Jenkins X Pipeline](https://jenkins-x.io/about/concepts/jenkins-x-pipelines/) using Tekton 
-* Jenkins pipelines via `Multi Branch Project`
-* [lighthouse](https://github.com/jenkins-x/lighthouse) for ChatOps triggering a remote Jenkins pipeline via [trigger-pipeline](https://github.com/jenkins-x-labs/trigger-pipeline) (without using `Multi Branch Project`)
-* [Jenkinsfile Runner](https://github.com/jenkinsci/jenkinsfile-runner) based pipelines in Tekton. You can override the container image used for the pipeline on import via the `--jenkinsfilerunner myimage:1.2.3` command line argument 
+When using a Jenkins Server you get to use the full power of the Jenkins server and `Jenkinfile`. Jenkins X uses the [upstream Jenkins helm chart](https://github.com/jenkinsci/helm-charts) which you can [configure fully via GitOps](/v3/admin/guides/jenkins/getting-started/#configure-jenkins)
+
+
+### Using Jenkinsfile Runner
+
+When using [Jenkinsfile Runner](https://github.com/jenkinsci/jenkinsfile-runner) we still reuse [tekton](https://github.com/tektoncd/pipeline) to run the pipelines and [lighthouse](https://github.com/jenkins-x/lighthouse) to handle webhooks and to trigger pipelines. The [Jenkinsfile Runner](https://github.com/jenkinsci/jenkinsfile-runner) container runs as a step in a [Tekton pipeline](https://github.com/jenkins-x/jx3-pipeline-catalog/tree/master/packs/jenkinsfilerunner/.lighthouse/jenkins-x)

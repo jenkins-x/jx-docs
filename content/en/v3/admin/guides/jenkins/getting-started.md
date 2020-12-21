@@ -17,10 +17,10 @@ Make sure you have got the [jx 3.x binary](/v3/guides/jx3/) and you have install
 You can use Jenkins X to install one or more Jenkins servers by running the following command in a git clone of your dev cluster git repository:
 
 ```bash 
-jx gitops helmfile add --chart jenkinsci/jenkins --namespace myjenkins
+jx gitops jenkins add --name myjenkins
 ```
 
-That will add a new `helmfile/myjenkins/helmfile.yaml` file.
+That will add a new `helmfile/myjenkins/helmfile.yaml` file for the jenkins charts along with `helmfile/myjenkins/values.yaml` file that can be used to configure the [jenkins helm chart configuration values](https://github.com/jenkinsci/helm-charts/blob/main/charts/jenkins/VALUES_SUMMARY.md).
 
 Now git commit that file:
 
@@ -28,7 +28,20 @@ Now git commit that file:
 git commit -a -m "fix: added new jenkins service"
 ```
 
-To see how to customize your Jenkins server see [how to customize the charts](/v3/develop/apps/#customising-charts) by adding a `values.yaml` file via the `values:` entry in the helmfile to configure whatever you need (e.g. Jenkins plugins and jobs etc).
+### Configure Jenkins 
+
+To configure your Jenkins server edit the `helmfile/myjenkins/values.yaml` according to the [configuration guide](https://github.com/jenkinsci/helm-charts/blob/main/charts/jenkins/VALUES_SUMMARY.md).
+
+Each Jenkins server has its own namespace so that its possible to use fine grained role based access for each server using Kubernetes RBAC.
+
+In addition by default each Jenkins server gets to share the pipeline git user name and token so that it can access private git repositories in the same way as tekton pipelines.
+
+
+### Importing projects or creating quickstarts
+
+If you want to import repositories into your jenkins server or create quickstarts using `Jenkinsfile` files then follow the usual [user guide approach of creating projects](/v3/develop/create-project/).
+
+Your new jenkins server will be added to the `.jx/gitops/source-config.yaml` file and so will be available to developers as a Jenkins server that can be used when importing projects.
 
 
 ### Accessing the Jenkins server 
