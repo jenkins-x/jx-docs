@@ -330,6 +330,40 @@ With v3 everything is done via GitOps - so if in doubt the answer is to modify g
 
 You can create new environments by adding to the `environments:` section of [jx-requirements.yml](https://github.com/jx3-gitops-repositories/jx3-kubernetes/blob/master/jx-requirements.yml#L18)
 
+## How do I switch to bucketrepo?
+
+To switch from `nexus` to `bucketrepo` in V3 there are a few changes you need to make. 
+
+Incidetally the [jx3-kubernetes](https://github.com/jx3-gitops-repositories/jx3-kubernetes/blob/master/) repository is already setup for`bucketrepo`.
+
+Please make the following changes...
+
+* remove your old `nexus` chart from `helmfiles/jx/helmfile.yaml`
+* add this to your `jx-requirements.yml` file so its like [this one](https://github.com/jx3-gitops-repositories/jx3-kubernetes/blob/master/jx-requirements.yml#L8)
+
+```yaml 
+apiVersion: core.jenkins-x.io/v4beta1
+kind: Requirements
+spec:
+  ...
+  cluster:
+    chartRepository: http://bucketrepo.jx.svc.cluster.local/bucketrepo/charts
+...
+  repository: bucketrepo
+    
+```
+* add the `bucketrepo` chart to your `helmfiles/jx/helmfile.yaml` file [like this](https://github.com/jx3-gitops-repositories/jx3-kubernetes/blob/master/helmfiles/jx/helmfile.yaml#L42):
+
+```yaml 
+...
+releases:
+- chart: jenkins-x/bucketrepo
+  name: bucketrepo
+...
+```
+
+then git commit and you should have your cluster switched to bucketrepo
+
 
 ## How do I uninstall Jenkins X?
 
