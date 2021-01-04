@@ -63,7 +63,7 @@ Contains the [nginx-ingress](https://github.com/helm/charts/tree/master/stable/n
 
 ### `secret-infra` 
 
-* **kubernetes-external-secrets** contains the [godaddy/kubernetes-external-secrets](https://github.com/godaddy/kubernetes-external-secrets) service for handling `ExternalSecrets`. See [how we use secrets](/v3/guides/secrets/))
+* **kubernetes-external-secrets** contains the [external-secrets/kubernetes-external-secrets](https://github.com/external-secrets/kubernetes-external-secrets) service for handling `ExternalSecrets`. See [how we use secrets](/v3/guides/secrets/))
 * **pusher-wave** contains the [pusher/wave](https://github.com/pusher/wave) service for performing a rolling upgrade of any microservice which consumes `Secret` resources from either vault or a cloud providers secret store and the secrets change in the underlying store 
 
 the following are optional extras if not using your cloud providers native secret manager:
