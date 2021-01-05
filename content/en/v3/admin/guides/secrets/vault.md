@@ -87,7 +87,7 @@ export VAULT_ADDR=https://127.0.0.1:8200
 # List all the current secrets
 vault kv list secret
 
-# Lets store a secert
+# Lets store a secret
 vault kv put secret/mything foo=bar whatnot=cheese
 ```
 
