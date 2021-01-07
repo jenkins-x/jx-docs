@@ -7,14 +7,12 @@ spec:
     always_run: true
     optional: false
     trigger: "/test"
-    rerun_command: "/retest"
     source: "pullrequest.yaml"
   - name: preview
     context: "preview"
     always_run: true
     optional: false
     trigger: "/jx preview"
-    rerun_command: "/retest"
     source: "preview.yaml"
   postsubmits:
   - name: release
