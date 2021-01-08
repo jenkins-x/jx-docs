@@ -29,6 +29,43 @@ It turns out anyone can create a new plugin to wrap up some functionality that i
 Plugins usually written in [Go](https://golang.org/) as it has awesome Kubernetes support and generates easy to use statically compiled binaries - though you are free to create plugins in any programming language.
 
 If you wish to create a new plugin try browse the [jenkins-x-plugins organisation](https://github.com/jenkins-x-plugins) for inspiration or check out the [standard plugins used in the jx-cli](https://github.com/jenkins-x/jx-cli#plugins)
+  
+
+### Developing Plugins
+
+The easiest way to work on the plugins is to clone the source of a plugin locally and make local changes and build the code (you will need a [go 1.15 installation](https://golang.org/doc/install)).
+
+e.g.
+
+```bash 
+git clone https://github.com/jenkins-x/jx-gitops 
+cd jx-gitops
+make build
+```
+
+Now you can test out the local build of a plugin by calling **./build/jx-gitops** instead of using, say **jx gitops**
+
+### Testing local builds with **jx**
+
+If you add your **./build** for your locally built plugin to your **$PATH** environment variable you can invoke your local **./build/jx-gitops** binary as if its a regular **jx** plugin via:
+
+```bash 
+jx gitops help
+```
+
+Basically **jx myplugin** will normally download the **jx-myplugin** binary and invoke that - unless it finds **jx-myplugin** on the **$PATH**.
+
+
+### Using a specific version of a plugin
+
+If you want to test a new plugin version before its been tested released in the version stream you can use an environment variable...
+
+```bash 
+export JX_GITOPS_VERSION 1.2.3
+
+# we will now try version 1.2.3 of the gitops plugin:
+jx gitops help
+```
 
 ## Triggers
 
