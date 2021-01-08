@@ -36,6 +36,8 @@ Contains the main development services of Jenkins X:
 * **jxboot-helmfile-resources-gcpods** periodically garbage collects completed `Pods`
 * **jx-kh-check** supports additional [kuberhealthy](https://github.com/Comcast/kuberhealthy) based [health checks](/v3/guides/health/) for Jenkins X specific resources
 
+### `lighthouse`
+
 [jenkins-x/lighthouse](https://github.com/jenkins-x/lighthouse) creates [tekton pipelines](https://tekton.dev/) and triggers [ChatOps](/docs/resources/faq/using/chatops/) on Pull Requests. Its made up of the following components:
 
 * **lighthouse-webhooks** converts webhooks from your git provider into `LighthouseJob` custom resources
