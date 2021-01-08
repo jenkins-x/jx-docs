@@ -6,13 +6,11 @@ spec:
     context: "pr"
     always_run: true
     optional: false
-    trigger: "/test"
     source: "pullrequest.yaml"
   - name: preview
     context: "preview"
     always_run: true
     optional: false
-    trigger: "/jx preview"
     source: "preview.yaml"
   postsubmits:
   - name: release
