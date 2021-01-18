@@ -1,5 +1,5 @@
 ---
-title: Jenkins X 3.x alpha
+title: Jenkins X 3.x beta
 linktitle: Docs
 type: docs
 weight: 45
