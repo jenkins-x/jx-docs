@@ -8,7 +8,7 @@ aliases:
     - /v3/about/maturity-matrix/
 ---
 
-This maturity matrix descibes the status of the Jenkins X 3.x __Alpha__ release.  This will continue to evolve as we progress towards Beta.
+This maturity matrix descibes the status of the Jenkins X 3.x __Beta__ release.  This will continue to evolve as we progress towards Beta.
 
 <img src="/images/v3/jx-v3alpha-maturity-matrix.png">
 

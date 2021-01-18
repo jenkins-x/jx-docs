@@ -1,14 +1,14 @@
 ---
-title: Getting jx 3.x alpha
-linktitle: Getting jx 3.x alpha
+title: Getting jx 3.x beta
+linktitle: Getting jx 3.x beta
 type: docs
-description: How to download the jx 3.x alpha
+description: How to download the jx 3.x beta
 weight: 1
 aliases:
   - /v3/guides/jx3
 ---
 
-To try out the 3.x Alpha of Jenkins X you will need the 3.x version of the `jx` binary.
+To try out the 3.x Beta of Jenkins X you will need the 3.x version of the `jx` binary.
 
 You can download 3.x of `jx` from here: https://github.com/jenkins-x/jx-cli/releases
 
