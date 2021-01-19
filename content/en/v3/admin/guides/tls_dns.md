@@ -66,7 +66,7 @@ We will now add details that will be passed to Jenkins X as requirements when bo
 
 Add these to `values.auto.tfvars`
 ```yaml
-lets_encrypt_production = false
+lets_encrypt_production = true
 tls_email               = your_email_address@googlegroups.com
 ```
 
@@ -91,13 +91,15 @@ terraform apply
 
 If using a subdomain you will now see your managed zone in GCP [here](https://console.cloud.google.com/net-services/dns/zones)
 
-Once terraform has finished you can follow the jx boot installation using the instructions given in the terraform output, connect to the cluster and run:
+__Once terraform has finished for now there is a manual trigger of the Jenkins X cluster repository required.  This will not be needed in the future but for now please make a dummy commit on your cluster git repository and follow the boot job as in applies the updates to your cluster.__
+
+To follow the jx boot installation using the instructions given in the terraform output, connect to the cluster and run:
 
 ```bash
 jx admin logs
 ```
 
-There is a timing issue with the latest cert-manager so the first boot job may fail but second will automatically run and succeed.
+There is a timing issue with cert-manager and the admission controller so the first boot job may fail but second will run automatically and succeed.
 
 
 It can take a short while for DNS to propagate so you may need to wait for 5 - 10 minutes.  https://dnschecker.org/ is a useful way to check the status of DNS propagating.
@@ -115,7 +117,7 @@ You should be able to verify the TLS certificate from Lets Encrypt in your brows
 
 ![Working TLS](/images/v3/working_tls.png)
 
-Once this is working you can switch to the production service from Lets Encrypt.  Clone your cluster git repository and change the jx-requirements.yaml enabling production:
+Once this is working you can switch any of the configuration using your cluster git repository and change the jx-requirements.yaml, e.g. toggling the cert-manager production service or editing the email address used:
 
 ```yaml
 ingress:
