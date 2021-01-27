@@ -54,15 +54,18 @@ Now your vault can be used.
 To be able to import, export or edit secrets from your laptop you need to make sure you are running the [jx secret vault portforward](https://github.com/jenkins-x/jx-secret/blob/master/docs/cmd/jx-secret_vault_portforward.md) command to port forward the 8200 port on your laptop to the vault service:
 
 
-```
+```bash
 jx secret vault portforward
 ```                  
 
 This will allow the [jx 3.x binary](/v3/guides/jx3/) to access the Vault REST API.
 
 You can now follow the instructions to [edit secrets](/v3/guides/secrets/#edit-secrets) or [import secrets](/v3/guides/secrets/#import-secrets).
+       
 
-You can also access the vault web UI at [https://localhost:8200](https://localhost:8200)
+## Using the vault web UI
+
+Once you are running the `jx secret vault portforward` command described above you can access the vault web UI at [https://localhost:8200](https://localhost:8200)
 
 ## Using the vault CLI directly
 

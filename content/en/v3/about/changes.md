@@ -10,12 +10,11 @@ aliases:
 
 You may also find the [Roadmap](/community/roadmap/) and [Maturity Matrix](/v3/about/maturity-matrix/) documents useful:
 
-
-## Pre beta changes
-
+       
 ## Changes 
 
-
+* the boot job now upgrades the `docs` folder to show what charts and versions are deployed in each namespace. You can view the `docs` folder in your own git repositories once you've [upgraded your cluster](/v3/admin/guides/upgrades/cluster/)
+  * you can see the default reports for [kubernetes](https://github.com/jx3-gitops-repositories/jx3-kubernetes/tree/master/docs ), [aws](https://github.com/jx3-gitops-repositories/jx3-eks-vault/tree/master/docs), [azure](https://github.com/jx3-gitops-repositories/jx3-azure-akv) and [gke](https://github.com/jx3-gitops-repositories/jx3-gke-gsm/tree/master/docs )
 * We now use multiple helmfiles per namespace so its easier to understand the organisation of your charts across namespaces
 * The [3.0 beta is almost ready](/blog/2020/12/04/jx-v3-update/) so if you have been using the 3.0 alpha we now have a [migration guide](/v3/admin/guides/migrate/v3-alpha/) to smooth your transition to the beta
 
