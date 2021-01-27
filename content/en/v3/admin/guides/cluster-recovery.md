@@ -9,7 +9,16 @@ weight: 94
 This section describes cluster recovery situations for when things go bad.  It can also be used to reguary recreate clusters, this is something the Jenkins X project does itself as we prefer to treat our clusters as cattle and not pets, giving confidence that we can restore services at any time.
  
 Disclaimer: there may well be better approaches so if you know of better ways please contribute and help improve the experience.  There are some manual steps below that we know to work but expect we can improve.
- 
+
+# Demo
+              
+The following demo walks you through cluster recovery
+
+<iframe width="700" height="315" src="https://www.youtube.com/embed/2QgX3cn0GqU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+see [other demos here](https://www.youtube.com/playlist?list=PLr_PmC4W69dKM3fo8OK729fdmX_MTqdHd)
+
+
 # Cluster applications and services
  
 Jenkins X embraces GitOps, details of any application or configuration are stored declaratively in Git.  Jenkins X recommends using external storage if you require persistence to be preserved.  Cloud Storage buckets are great at achieving this.  With that said Jenkins X has one service that writes data to a persistent volume and is not backed up in cloud storage.  The current use of Chartmuseuam to store helm charts for applications means if we need to recreate a cluster we will need to retrigger release pipelines for any application running in the staging or production cluster.
