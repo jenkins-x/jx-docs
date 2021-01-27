@@ -10,6 +10,14 @@ aliases:
 
 This section will describe how to enable automated TLS and DNS for your Jenkins X installation.
 
+## Demo
+              
+The following demo walks you through how to setup TLS and DNS:
+
+<iframe width="700" height="315" src="https://www.youtube.com/embed/OqsSqZqF0gY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Background 
+
 To achieve this we will use a couple of open source projects to help enable automated DNS for your applications.
 
 For this guide we are going to assume you own a domain called `foo.io` which is managed by Google Cloud DNS, if it is not see [configure cloud dns to manage a domain](/v3/guides/infra/google_cloud_dns). A similar procedure is described for an external registrar, see the Azure section.
