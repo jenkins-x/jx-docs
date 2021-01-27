@@ -45,10 +45,22 @@ graph TB
 
 ## Demo
       
-
 The following demo walks through how to manage External Secrets via GitOps: 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/_gjGfwlxEY4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="700" height="315" src="https://www.youtube.com/embed/_gjGfwlxEY4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      
+
+## Verify 
+
+To view which secrets have been populated use:
+
+```bash
+jx secret verify
+```   
+
+This will list all of the `ExternalSecret` resources and visualise which ones are populated correctly.
+
+You can also use [UI](/v3/develop/ui/octant/) via `jx ui` and navigate to the [Secrets View](http://127.0.0.1:7777/#/ojx/secrets)
 
 ## Vault
 

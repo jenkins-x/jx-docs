@@ -9,6 +9,12 @@ aliases:
 ---
 
 ## Cluster 
+           
+ 
+The following demo walks through how to upgrade your cluster: 
+
+<iframe width="700" height="315" src="https://www.youtube.com/embed/9ZaqdwD3cTs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 ### prerequisite
 - make sure you have upgraded your [jx CLI](/v3/guides/upgrades/cli) to make sure you are using the correct version for the next steps.
