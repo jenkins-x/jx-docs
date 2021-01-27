@@ -28,10 +28,10 @@ webhook: lighthouse
 Make sure that your `helmfile.yaml` file has the necessary vault charts included such as...
 
 ```yaml 
-apps:
-- name: external-secrets/kubernetes-external-secrets
-- name: banzaicloud-stable/vault-operator
-- name: jx-labs/vault-instance   
+releases:
+- chart: external-secrets/kubernetes-external-secrets
+- chart: banzaicloud-stable/vault-operator
+- chart: jx-labs/vault-instance   
 ...
 ```
 

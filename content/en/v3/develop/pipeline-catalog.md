@@ -43,6 +43,14 @@ You can test out changes to the Pull Request pipeline by submitting changes in a
 If you use [IntelliJ IDEA](https://www.jetbrains.com/idea/) or [Goland](https://www.jetbrains.com/go/) you might find the [RedHat's intellij-tekton plugin](https://plugins.jetbrains.com/plugin/14096-tekton-pipelines-by-red-hat) useful for editing pipelines with schema validation and completion.
 
 If you use [VS Code](https://code.visualstudio.com/) you may want to try [Red Hat's Tekton Pipelines Extension tekton](https://github.com/redhat-developer/vscode-tekton#tekton-pipelines-extension--)
+     
+
+## Demo
+
+The following demo walks through how to manage External Secrets via GitOps: 
+
+<iframe width="700" height="315" src="https://www.youtube.com/embed/cJcwV4jgE0Y" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 ## Adding Tasks from the Tekton Catalog
 
