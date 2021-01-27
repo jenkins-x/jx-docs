@@ -1,0 +1,13 @@
+FROM gcr.io/jenkinsxio/hugo-extended:0.74.0-10 as builder
+
+WORKDIR /work
+COPY . .
+RUN git submodule update --init --recursive && \
+	./scripts/ci/update-content.sh && \
+	npm install && \
+	hugo -d public
+
+FROM abiosoft/caddy
+EXPOSE 2015
+WORKDIR /srv
+COPY --from=builder /work/public .
