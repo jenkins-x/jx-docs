@@ -196,6 +196,29 @@ e.g. using the pod name from the above page and the container name you can do so
 ```bash 
 kubectl exec -it -c name-of-step-container name-of-pod sh
 ```
+           
+## How do I configure pipelines to use GPUs?
+
+You can install the [nvidia k8s device plugin](https://github.com/NVIDIA/k8s-device-plugin) as a daemonset to expose which nodes have GPUs and their status.
+
+You can then view the nodes via:
+
+```bash 
+kubectl get nodes "-o=custom-columns=NAME:.metadata.name,GPU:.status.allocatable.nvidia\.com/gpu"  
+```
+        
+You can then use the `resources` on your tekton steps as follows:
+
+```yaml 
+- image: gcr.io/kaniko-project/executor:v1.3.0-debug
+  name: build-my-image
+  resources:
+    limits:
+      # This job requires an instance with 1 GPU, 4 CPUs and 16GB memory - g4dn.2xlarge
+      nvidia.com/gpu: 1
+  script: |
+    #!/busybox/sh
+```
 
 ## Does Jenkins X support helmfile hooks?
 
