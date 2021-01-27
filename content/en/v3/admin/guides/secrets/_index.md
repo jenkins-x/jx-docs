@@ -41,7 +41,14 @@ graph TB
         sqB -- Upsert Secrets --> sqES
     end
 {{</mermaid>}}
+    
 
+## Demo
+      
+
+The following demo walks through how to manage External Secrets via GitOps: 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_gjGfwlxEY4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Vault
 
@@ -72,6 +79,48 @@ e.g.
 ```bash
 jx secret edit -f nexus
 ```                  
+
+
+## Create a new Secret
+
+If you wish to add a new custom Secret to your cluster so that you can reference it inside a Pipeline then follow these steps:
+
+* Add an `ExternalSecret` (or `Secret` with empty values) resource via the  [add a kubernetes resources guide](/v3/develop/apps/#adding-resources).
+* Submit your change as a Pull Request then merge the change.
+* This should now trigger a [boot Job](/v3/about/how-it-works/#boot-job) to apply the changes in your repository
+* You should now be able to see the `ExternalSecret` in the namespace you wanted via:
+
+```bash 
+kubectl get es --namespace jx
+```
+
+* You can view which External Secrets are [populated via the External Secrets service](/v3/admin/guides/secrets/) via:
+  
+```bash 
+jx secret verify
+```
+                
+* The `Secret` gets created by the [the External Secrets service](/v3/admin/guides/secrets/) when the underlying secret store (e.g. vault / cloud provider secret manager) is populated or updated. You can populate the secrets in a number of ways...
+
+  * using the underlying secret store directly. e.g. using the [vault CLI directly](/v3/admin/guides/secrets/vault/#using-the-vault-cli-directly) or [vault web UI](/v3/admin/guides/secrets/vault/#using-the-vault-web-ui) or use your cloud providers secret manager's CLI or web UI
+  * using `jx secret edit -f mysecret-name`
+  * using a generator or template. You can define a `secret-schema.yaml` in `versionStream/charts/chartRepoName/chartName/secret-schema.yaml` file which describes how to generate the secret (e.g. using a random password generator or a template) such as [this example to generate a dynamic password for MySQL](https://github.com/jenkins-x/jx3-versions/blob/master/charts/presslabs/mysql-operator/secret-schema.yaml) 
+    
+
+## Replicating Secrets among namespaces
+
+Its quite common to need to replicate the same Secrets across namespaces. For example [Image Pull Secrets](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/) to pull images from container registries which may need to be used in dev, staging and production.
+
+The Jenkins X boot job does this automatically for any secret labelled with `secret.jenkins-x.io/replica-source=true` using the [jx secret replicate](https://github.com/jenkins-x/jx-secret/blob/master/docs/cmd/jx-secret_replicate.md) command:
+
+```bash 
+jx secret replicate --selector secret.jenkins-x.io/replica-source=true
+```
+
+This will replicate the secret to all permanent enivronments in the same cluster (e.g. a local Staging or Production environment).
+
+If you want to replicate another secret just add the label `secret.jenkins-x.io/replica-source=true` or you can add a new [jx secret replicate](https://github.com/jenkins-x/jx-secret/blob/master/docs/cmd/jx-secret_replicate.md) to the [boot makefile](/v3/about/how-it-works/#boot-job)
+       
 
 
 ## Export Secrets
@@ -111,18 +160,3 @@ jx secret import -f ~/.jx/localSecrets/mycluster/secrets.yaml
 ### Migrating Secrets from Vault
 
 If you have secrets already in a Vault then use the vault CLI tool to export the secrets to disk, reformat it in the above YAML layout and then import the secrets as above.
-
-
-### Replicating Secrets among namespaces
-
-Its quite common to need to replicate the same Secrets across namespaces. For example [Image Pull Secrets](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/) to pull images from container registries which may need to be used in dev, staging and production.
-
-The Jenkins X boot job does this automatically for any secret labelled with `secret.jenkins-x.io/replica-source=true` using the [jx secret replicate](https://github.com/jenkins-x/jx-secret/blob/master/docs/cmd/jx-secret_replicate.md) command:
-
-```bash 
-jx secret replicate --selector secret.jenkins-x.io/replica-source=true
-```
-
-This will replicate the secret to all permanent enivronments in the same cluster (e.g. a local Staging or Production environment).
-
-If you want to replicate another secret just add the label `secret.jenkins-x.io/replica-source=true` or you can add a new [jx secret replicate](https://github.com/jenkins-x/jx-secret/blob/master/docs/cmd/jx-secret_replicate.md) to the [boot makefile](/v3/about/how-it-works/#boot-job)

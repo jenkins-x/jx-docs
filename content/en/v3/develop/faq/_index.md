@@ -205,6 +205,26 @@ Since we default to using [helmfile template](/v3/develop/faq/#why-does-jenkins-
 
 However its easy to add steps into the **versionStream/src/Makefile.mk** to simulate helmfile hooks.
 
+           
+## How do I add a chart?
+
+To add a new chart add to the `helmfiles/mynamespace/helmfile.yaml` file follow the [add chart guide](/v3/develop/apps/#adding-charts).
+
+## How do I add a kubernetes resource?
+
+To add a new kubernetes resource [follow the add resources guide](/v3/develop/apps/#adding-resources).
+
+## How do I add a new Secret?
+ 
+ See [how to add a new Secret](/v3/admin/guides/secrets/#create-a-new-secret)
+ 
+## If I add a file to `config-root` it gets deleted, why?
+
+The `config-root` directory is regenerated on every boot job - basically every time you promote an application or merge a change into the main branch of your git dev cluster git repository.  For background see the [dev git repository layout docs](https://github.com/jenkins-x/jx-gitops/blob/master/docs/git_layout.md))
+
+To add a new chart add to the `helmfiles/mynamespace/helmfile.yaml` file follow the [add chart guide](/v3/develop/apps/#adding-charts).
+
+To add a new kubernetes resource [follow the add resources guide](/v3/develop/apps/#adding-resources).
 
 ## How do I configure the ingress domain in Dev, Staging or Production?
 
