@@ -5,8 +5,6 @@ weight: 30
 type: docs
 description: >
   现在，已经安装好了平台，开始创建你的第一个项目。
-aliases: 
-    - /v3/develop/create-project/
 ---
 
 想要创建或者导入项目的话，你需要下载 [jx 3.x 二进制文件](/v3/guides/jx3/)，并移动到你的环境变量 `$PATH` 下。
