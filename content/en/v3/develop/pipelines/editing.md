@@ -29,6 +29,19 @@ e.g. for the default Jenkins X CI/CD pipelines edit either:
   * `release.yaml` to edit the Release [Task](https://tekton.dev/docs/pipelines/tasks/#configuring-a-task), [Pipeline](https://tekton.dev/docs/pipelines/pipelines/#configuring-a-pipeline) or [PipelineRun](https://tekton.dev/docs/pipelines/pipelineruns/#configuring-a-pipelinerun) 
 
 You can test out changes to the Pull Request pipeline by submitting changes in a Pull Request. Changes to a release only take place after merging the change to the main branch.
+       
+## Linting
+
+You can run the [jx pipeline lint](https://github.com/jenkins-x/jx-pipeline/blob/master/docs/cmd/jx-pipeline_lint.md#jx-pipeline-lint) command from a clone of your repository.
+
+```bash
+jx pipeline lint
+``` 
+
+which will verify that have not made any typos.
+
+You can also [view the effective pipeline](/v3/develop/pipelines/catalog/#viewing-the-effective-pipeline)
+
 
 ## IDE support
   
