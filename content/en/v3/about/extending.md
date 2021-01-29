@@ -69,7 +69,7 @@ jx gitops help
 
 ## Triggers
 
-With version 3.x we default to using [Pipeline Catalogs](/v3/develop/pipeline-catalog/) containing Tekton resources to define CI/CD pipelines.
+With version 3.x we default to using [Pipeline Catalogs](/v3/develop/pipelines/) containing Tekton resources to define CI/CD pipelines.
 
 e.g. the default CI/CD pipelines from the [default Jenkins X Pipeline Catalog](https://github.com/jenkins-x/jx3-pipeline-catalog/tree/master/packs) define tekton pipelines in the `.lighthouse/jenkins-x` folder.
 

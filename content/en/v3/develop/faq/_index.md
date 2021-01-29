@@ -187,7 +187,7 @@ Then if you navigate to the pipeline you are interested in and select the envelo
 </figcaption>
 </figure>
 
-If that doesn't help another option is to [edit the pipeline step](/v3/develop/pipeline-catalog/#editing-pipelines) via the `.lighthouse/jenkins-x/release.yaml` or  `.lighthouse/jenkins-x/pullrequest.yaml` file to add the command: `sleep infinity` in the `script:` value before the command that is not working.
+If that doesn't help another option is to [edit the pipeline step](/v3/develop/pipelines/#editing-pipelines) via the `.lighthouse/jenkins-x/release.yaml` or  `.lighthouse/jenkins-x/pullrequest.yaml` file to add the command: `sleep infinity` in the `script:` value before the command that is not working.
 
 You can then `kubectl exec` into the pod at that step and look around and try running commands inside the pod/container.
 
@@ -241,6 +241,15 @@ To add a new kubernetes resource [follow the add resources guide](/v3/develop/ap
  
  See [how to add a new Secret](/v3/admin/guides/secrets/#create-a-new-secret)
  
+
+## How do I access a Secret from my pipeline?
+
+Once you have a kubernetes Secret (see [how to create them](/v3/admin/guides/secrets/#create-a-new-secret)) you can access then in a pipeline either:
+
+* as an [environment variable in a step](https://kubernetes.io/docs/concepts/configuration/secret/#using-secrets-as-environment-variables)
+* via [a volume mount](https://kubernetes.io/docs/concepts/configuration/secret/#using-secrets-as-files-from-a-pod)
+
+
 ## If I add a file to `config-root` it gets deleted, why?
 
 The `config-root` directory is regenerated on every boot job - basically every time you promote an application or merge a change into the main branch of your git dev cluster git repository.  For background see the [dev git repository layout docs](https://github.com/jenkins-x/jx-gitops/blob/master/docs/git_layout.md))

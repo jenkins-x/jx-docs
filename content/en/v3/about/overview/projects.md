@@ -36,6 +36,6 @@ Jenkins X stands on the shoulders of many open source giants...
 * [lighthouse](https://github.com/jenkins-x/lighthouse) our strategic solution for webhooks and ChatOps for multiple git providers
 * [push-wave](https://github.com/jenkins-x-charts/pusher-wave#wave) for automatically performing rolling upgrades when secrets are rotated in your secret store
 * [tekton pipelines](https://github.com/tektoncd/pipeline) cloud native pipeline engine for kubernetes and a fellow [CDF founding project](https://cd.foundation/projects/)
-* [tekton catalog](https://github.com/tektoncd/catalog) a catalog of reusable [tekton pipelines](https://github.com/tektoncd/pipeline) which [can be used easily with Jenkins ](/v3/develop/pipeline-catalog/#adding-tasks-from-the-tekton-catalog)
+* [tekton catalog](https://github.com/tektoncd/catalog) a catalog of reusable [tekton pipelines](https://github.com/tektoncd/pipeline) which [can be used easily with Jenkins ](/v3/develop/pipelines/#adding-tasks-from-the-tekton-catalog)
 * [vault](https://www.vaultproject.io/) a secret store
 * [vault operator](https://banzaicloud.com/products/bank-vaults/) an operator for installing and unsealing [vault](https://www.vaultproject.io/)
