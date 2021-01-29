@@ -26,5 +26,5 @@ The release pipelines use the [jx promote --all](https://github.com/jenkins-x/jx
 
 If you want to disable promotion Pull Requests on an environment just remove the entry in `jx-requirements.yml` or configure the `promotionStrategy` to be **Never**
 
-If you want your application to promote to different environments to the defaults for your cluster you can always [modify your pipeline](/v3/develop/pipeline-catalog/#editing-pipelines) and change the promote step to use different [jx promote](https://github.com/jenkins-x/jx-promote/blob/master/docs/cmd/jx-promote.md#jx-promote) arguments; e.g. pass in the explicit environments or repositories you want to promote to in the pipeline step.
+If you want your application to promote to different environments to the defaults for your cluster you can always [modify your pipeline](/v3/develop/pipelines/#editing-pipelines) and change the promote step to use different [jx promote](https://github.com/jenkins-x/jx-promote/blob/master/docs/cmd/jx-promote.md#jx-promote) arguments; e.g. pass in the explicit environments or repositories you want to promote to in the pipeline step.
 

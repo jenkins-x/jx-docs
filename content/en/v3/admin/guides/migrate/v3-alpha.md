@@ -22,7 +22,7 @@ You can create Pull Requests on all the repositories you've imported or created 
 jx updatebot pipeline
 ```
 
-This will use the default [kpt](https://googlecontainertools.github.io/kpt/) strategy of `resource-merge` which will try merge any local changes with those changes in the [pipeline catalog](/v3/develop/pipeline-catalog/)
+This will use the default [kpt](https://googlecontainertools.github.io/kpt/) strategy of `resource-merge` which will try merge any local changes with those changes in the [pipeline catalog](/v3/develop/pipelines/)
 
 You can use the `--strategy` to change this default if you wish. See `jx updatebot pipeline --help` for more detail.
 
