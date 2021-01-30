@@ -181,6 +181,15 @@ If you use [Intellij](https://www.jetbrains.com/idea/) or any of [JetBrains othe
 jx pipeline effective -e idea
 ```
 
+If you want to always view an effective pipeline in your editor then define the `JX_EDITOR` environment variable...
+
+```bash
+export JX_EDITOR="code"
+
+# now we will always open effective pipelines inside VS Code
+jx pipeline effective
+```
+
 ### Overriding a pipeline step locally
 
 If you want to edit a step that is inherited from a pipeline catalog just run the [jx pipeline override](https://github.com/jenkins-x/jx-pipeline/blob/master/docs/cmd/jx-pipeline_override.md#jx-pipeline-override) command from a clone of your repository.
