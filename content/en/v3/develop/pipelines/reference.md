@@ -25,6 +25,8 @@ A `Task` is made up of `Steps` which each support all of the properties you can 
 
 * [presubmits](https://github.com/jenkins-x/lighthouse/blob/master/docs/trigger/github-com-jenkins-x-lighthouse-pkg-config-job.md#Presubmit) for triggering pipelines on Pull Request
 * [postsubmits](https://github.com/jenkins-x/lighthouse/blob/master/docs/trigger/github-com-jenkins-x-lighthouse-pkg-config-job.md#Postsubmit) for triggering pipelines on a push to a branch (e.g. releasing)
+ 
+Also check out the [lighthouse pipeline configuration docs](https://github.com/jenkins-x/lighthouse/blob/master/docs/pipelines.md)
 
 ### Parameters and Environment Variables
 
