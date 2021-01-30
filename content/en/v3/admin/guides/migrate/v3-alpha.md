@@ -26,6 +26,13 @@ This will use the default [kpt](https://googlecontainertools.github.io/kpt/) str
 
 You can use the `--strategy` to change this default if you wish. See `jx updatebot pipeline --help` for more detail.
 
+## Converting pipelines
+
+You can follow the [guide on migrating pipelines individually](/v3/develop/pipelines/upgrading/#converting-older-pipelines) via  [jx pipeline convert](https://github.com/jenkins-x/jx-pipeline/blob/master/docs/cmd/jx-pipeline_convert.md#jx-pipeline-convert) command to convert pipelines in a repository:
+
+```bash
+jx pipeline convert 
+```        
 
 ### If you lose some pipeline changes
 
