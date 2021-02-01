@@ -33,12 +33,12 @@ https://github.com/jenkins-x/jx3-lts-versions/pull/209/files
  
 Included in the release is a switch of the NGINX Helm chart from the old Helm stable registry.  It was discussed on the community slack that some users on EKS and not using a custom domain had to change the domain in their cluster jx-requirements.yml file.
  
-The change of Chart repository meant that the old resources were removed and new ones added, which means a new Kubernetes LoadBalancer service was created, resulting in a new external IP address.  You may need to update the domain in your `jx-requirements.yml`.  To get the external IP run:
+The change of Chart repository meant the old resources were removed and new ones added, resulting in a new Kubernetes LoadBalancer service was created, resulting in a new external IP address.  You may need to update the domain in your `jx-requirements.yml`.  To get the external IP run:
  
 ```bash
 kubectl get service -n nginx
 ```
-Not the external ip address and update your cluster git repository, `jx-requirements.yml`:
+Note the external ip address and update your cluster git repository, `jx-requirements.yml`:
 ```bash
 domain: $EXTERNAL_IP_FROM_ABOVE.nip.io
 ```
@@ -54,5 +54,5 @@ kubectl get ing -n jx
 ```
 
 # What's next?
-March LTS release aims to switch the incluster boot jobs to use https://carvel.dev/kapp/ rather than using `kubectl` to apply and prune Kubernetes resources.  `kapp` us a dependency aware approach to installing Kubernetes resources, this aims to help avoid timing issues when installing resources before certain services like cert-manager are fully up and running.
+March LTS release aims to switch the incluster boot jobs to use https://carvel.dev/kapp/ rather than using `kubectl` to apply and prune Kubernetes resources.  `kapp` is a dependency aware approach to installing Kubernetes resources, this aims to help avoid timing issues when installing resources before certain services like cert-manager are fully up and running.
  
