@@ -12,7 +12,9 @@ You may also find the [Roadmap](/community/roadmap/) and [Maturity Matrix](/v3/a
 
        
 ## Changes 
-
+            
+* the new tekton version (0.20.x) now requires kubernetes 1.17 or later. If your cluster is older and you are using the cloud just ugprade your kubernetes version before upgrading your cluster. Otherwise you may want to explicitly override your `tekton-pipeline` version to pin it at `0.19.1` instead in your [helmfiles/tekton-pipelines/helmfile.yaml](https://github.com/jx3-gitops-repositories/jx3-kubernetes/blob/master/helmfiles/tekton-pipelines/helmfile.yaml#L12) file               
+* you can now use [jx pipeline convert](https://github.com/jenkins-x/jx-pipeline/blob/master/docs/cmd/jx-pipeline_convert.md#jx-pipeline-convert) to [convert any old pipelines](/v3/develop/pipelines/upgrading/#converting-older-pipelines) across to the latest [concise syntax](/v3/develop/pipelines/catalog/)
 * we have an awesome [new syntax to help share pipelines across git repositories](/v3/develop/pipelines/catalog/) that makes it easier to simplify the pipelines in each repository while keeping things vanilla Tekton YAML and letting you override and customise anything anywhere 
 * the boot job now upgrades the `docs` folder to show what charts and versions are deployed in each namespace. You can view the `docs` folder in your own git repositories once you've [upgraded your cluster](/v3/admin/guides/upgrades/cluster/)
   * you can see the default reports for [kubernetes](https://github.com/jx3-gitops-repositories/jx3-kubernetes/tree/master/docs ), [aws](https://github.com/jx3-gitops-repositories/jx3-eks-vault/tree/master/docs), [azure](https://github.com/jx3-gitops-repositories/jx3-azure-akv) and [gke](https://github.com/jx3-gitops-repositories/jx3-gke-gsm/tree/master/docs )
