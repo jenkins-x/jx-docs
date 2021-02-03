@@ -228,4 +228,6 @@ Here's a [demo of this in action](https://asciinema.org/a/368282):
 
 The tekton Task resources are copied into your `.lighthouse` directory in a folder using `kpt` so that you can modify things locally if you need to and can [upgrade your local copy with upstream changes](#upgrading-pipelines-and-helm-charts) via the `jx gitops upgrade` command described below.
 
+## Custom Pipeline Catalog
 
+See [this section](https://jenkins-x.io/v3/about/extending/#pipeline-catalog) to configure your custom pipeline catalog.
