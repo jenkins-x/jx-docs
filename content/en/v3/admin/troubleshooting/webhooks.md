@@ -55,3 +55,7 @@ Then click the `GIT URL` link for your repository.
 Now look at the **Webbooks** page to see if your git provider could send webhooks to your hook endpoint. On GitHub thats **Settings** ->  **Webhooks**
 
 It could be your git provider can't see public ingress endpoint? If thats the case you may need to look at setting up a tunnel via something like [ngrok to enable on premise webhooks](/v3/admin/platforms/on-premise/#enable-webhooks) 
+
+### AWS specific issues
+
+If you are using AWS you can check out the [AWS docs on using ELB](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-elb-load-balancer.html)
