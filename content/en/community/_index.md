@@ -46,7 +46,7 @@ We'd love to hear your feedback or show some of the work you are doing with Jenk
 Feel free to [add your comments and questions to the doc](https://docs.google.com/document/d/1wHdBlZAN-ndPELuBoM5HBnYiQLvcz92-euXne2mKOEI/edit) or ask your questions in person.
 
 We meet for office hours **every other Tuesday** at 16:00 UTC (*See your timezone [here](https://time.is/1600_in_UTC)*).
-This is our [meeting link](https://zoom.us/j/397862697). 
+This is our [meeting link](https://us02web.zoom.us/j/89081347704?pwd=U2lob3JVamsxQ1RyK1hSa0prMWczdz09). 
 
 You can save Jenkins X office hours to your calendar by [clicking here](https://calendar.google.com/event?action=TEMPLATE&tmeid=NDFhNDVyNGdzMW9nZnBpNzhpdGZsMG5qZWpfMjAyMDA1MTlUMTUwMDAwWiAwMzJwcDVlMDJqMjJiMHFqdGs2YTRxc21lY0Bn&tmsrc=032pp5e02j22b0qjtk6a4qsmec%40group.calendar.google.com&scp=ALL). 
 
