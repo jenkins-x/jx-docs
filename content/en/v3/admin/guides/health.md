@@ -25,5 +25,14 @@ When using Terraform (the recommended approach) Kuberhealthy and health checks a
 You can use the new health CLI plugin to get health statuses that run periodically checking different things, our favorite is the watch for checks across all namespaces.
 
 ```
-jx health get status --all-namespaces --watch
+jx health status --all-namespaces --watch
 ```
+
+You can also view the health status via the [UI Console](/v3/develop/ui/octant/) via:
+
+```bash 
+jx ui
+```
+
+Then navigating to the [Heath view](http://127.0.0.1:7777/#/ojx/health)
+
