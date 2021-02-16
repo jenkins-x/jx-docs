@@ -18,7 +18,7 @@ aliases:
     * The `config-root/cluster` folder contains all the global cluster level resources like `ClusterRole`, `Namespace` or Custom Resources
     * The `config-root/namespaces/jx` folder contains all the namespaced resources in the `jx` namespace
   * This makes it easy to use flexible apply logic in different boot `Jobs` with different RBAC (or a system admin could apply the cluster level resources for you by hand) - to make it easier to install Jenkins X on more locked down and restricted clusters
-* We use [Kubernetes External Secrets](https://github.com/godaddy/kubernetes-external-secrets) to provide a single way to manage secrets which supports the following back end systems:
+* We use [Kubernetes External Secrets](https://github.com/external-secrets/kubernetes-external-secrets) to provide a single way to manage secrets which supports the following back end systems:
   * Alibaba Cloud KMS Secret Manager
   * AWS Secrets Manager
   * Azure Key Vault

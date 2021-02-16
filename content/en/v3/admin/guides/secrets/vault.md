@@ -37,7 +37,7 @@ releases:
 
 which ensures that:
 
-* [Kubernetes External Secrets](https://github.com/godaddy/kubernetes-external-secrets) is installed to populate Secrets from vault
+* [Kubernetes External Secrets](https://github.com/external-secrets/kubernetes-external-secrets) is installed to populate Secrets from vault
 * the [vault operator](https://banzaicloud.com/products/bank-vaults/) is installed for operating vault 
 * a vault instance is created in the `secret-infra` namespace
 

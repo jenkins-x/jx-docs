@@ -55,7 +55,7 @@ You may need to modify your helm charts to add extra helm configuration if the c
 
 [Hashicorp Vault](https://www.vaultproject.io/) is the preferred way in Jenkins X to manage secrets. For example, the GitHub personal access token generated for the pipeline bot is stored in Vault. [Read more about using Vault to manage your secrets with Jenkins X](https://jenkins-x.io/docs/reference/components/vault/).
 
-In addition, the Jenkins X team are big fans of [Kubernetes External Secrets](https://github.com/godaddy/kubernetes-external-secrets) and are developing [jx-secret](https://github.com/jenkins-x/jx-secret), a small command line tool working with Kubernetes External Secrets.
+In addition, the Jenkins X team are big fans of [Kubernetes External Secrets](https://github.com/external-secrets/kubernetes-external-secrets) and are developing [jx-secret](https://github.com/jenkins-x/jx-secret), a small command line tool working with Kubernetes External Secrets.
 
 
 ## When do Preview Environments get removed?
