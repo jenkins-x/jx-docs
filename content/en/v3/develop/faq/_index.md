@@ -126,7 +126,7 @@ The current approach has a [number of benefits](/v3/about/benefits/):
 
   * e.g. promoting from `1.2.3` to `1.3.0` of application `cheese` may look innocent enough, but did you notice those new `ClusterRole` and `PersistentVolume` resources that it now brings in?
   
-* we can default to using [canonical secret management mechanism](/v3/guides/secrets/) based on [kubernetes external secrets](https://github.com/godaddy/kubernetes-external-secrets) (see [how it works](/v3/about/how-it-works/#generate-step)) to ensure that:
+* we can default to using [canonical secret management mechanism](/v3/guides/secrets/) based on [kubernetes external secrets](https://github.com/external-secrets/kubernetes-external-secrets) (see [how it works](/v3/about/how-it-works/#generate-step)) to ensure that:
  
   * no Secret value accidentally gets checked into git by mistake
   * all secrets can be managed, versioned, stored and rotated using vault or your cloud providers native secret storage mechanism
@@ -393,6 +393,10 @@ Check out the [webhooks troubleshooting guide](/v3/admin/troubleshooting/webhook
 With v3 everything is done via GitOps - so if in doubt the answer is to modify git. 
 
 You can create new environments by adding to the `environments:` section of [jx-requirements.yml](https://github.com/jx3-gitops-repositories/jx3-kubernetes/blob/master/jx-requirements.yml#L18)
+     
+## How do I specify DOCKER_REGISTRY_ORG?
+
+If you need to you can override in a specific repository (via a `.jx/settings.yaml` in your repository) but usually its common to all repos and is inherited from your `jx-requirements.yml` in your development environment repository
 
 ## How do I switch to bucketrepo?
 
