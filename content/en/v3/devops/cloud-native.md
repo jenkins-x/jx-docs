@@ -82,3 +82,10 @@ So to manage your infrastructure use a git repository with your [terraform](http
 There is a catch 22 of how do you start to provision your first, say, kubernetes cluster using [terraform](https://www.terraform.io/) before you have any cloud infrastructure.
 
 You could look at using [Terraform Cloud](https://www.terraform.io/cloud) as the place to setup your core cloud infrastructure.
+
+
+## Try use the same GitOps approach everywhere
+
+If you treat different clusters very differently in how you setup them up, install, upgrade, manage and monitor them you've given yourself more work to do and increase the changes of things going wrong or getting out of step.
+
+So try using the same [GitOps approach](/v3/admin/guides/jenkins/gitops/) for all clusters in all environments.
