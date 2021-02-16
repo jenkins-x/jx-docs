@@ -59,6 +59,18 @@ Get used to the idea you can delete a kubernetes cluster at any time and recreat
 e.g. to change region or machine type this will usually happen.
 
 
+## Map IAM Roles to kubernetes Service Accounts
+
+On AWS use [IAM roles for service accounts](https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html)
+
+On GCP use [Workload Identity](https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity)
+
+In both cases this maps cloud IAM roles to kubernetes `ServiceAccount` resources using annotations. 
+
+This means that you don't have to populate your kubernetes cluster with cluster-admin style cloud IAM secrets - which makes your system more secure and reduces the possibility of accidentally exposing a secret.
+
+Note that if you use [Jenkins X to configure your clusters with Terraform and GitOps](/v3/admin/) then you get this out of the box! 
+
 ## Terraform for cloud infrastructure
 
 We are all using an increasing amount of cloud infrastructure. You can use your cloud providers CLI or web console to set things up. However it's hard to manage and version.

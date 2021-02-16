@@ -18,9 +18,11 @@ So rather than connecting to a machine in your cluster, you make changes via Pul
 
 ### Secrets
 
-One of the biggest challenges with GitOps is dealing with secrets. You really don't want to check in your secrets (user, passwords, tokens, certificates etc) into git - particularly public repositories!
+One of the biggest challenges with GitOps is dealing with secrets. 
 
-There are techniques like [helm sealed secrets]() so that you can encrypt secrets for storage in git. 
+You really want to check in all of your source code into git. But you really don't want to check in your secrets (user, passwords, tokens, certificates etc) into git - particularly public repositories!
+
+There are techniques like [helm sealed secrets](https://github.com/bitnami-labs/sealed-secrets) so that you can encrypt secrets for storage in git. 
 
 However we are not huge fans of the UX of using this approach; its harder to modify or rotate secrets.
 
