@@ -257,6 +257,14 @@ The `config-root` directory is regenerated on every boot job - basically every t
 To add a new chart add to the `helmfiles/mynamespace/helmfile.yaml` file follow the [add chart guide](/v3/develop/apps/#adding-charts).
 
 To add a new kubernetes resource [follow the add resources guide](/v3/develop/apps/#adding-resources).
+      
+## How do I use testcontainers?
+
+If you want to use a container, such as a database, inside your pipeline so that you can run tests against your database inside your pipeline then use a [sidecar container in Tekton](https://tekton.dev/vault/pipelines-v0.16.3/tasks/#specifying-sidecars).
+
+Here is [another example of a sidecar in a pipeline](https://tekton.dev/vault/pipelines-v0.16.3/tasks/#using-a-sidecar-in-a-task)
+
+If you want to use a separate container inside a preview environment then add [charts or resources](/v3/develop/apps/#adding-charts) to the `preview/helmfile.yaml`
 
 ## How do I configure the ingress domain in Dev, Staging or Production?
 
