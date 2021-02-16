@@ -23,6 +23,8 @@ The ingress defaults to using the domain name specified in `ingress.domain` in y
 
 
 ### Diagnosing issues
+        
+You can check on the health of your system and webhooks via the [Health guide](/v3/admin/guides/health/)
 
 First make sure you have a valid ingress for hook...
 
