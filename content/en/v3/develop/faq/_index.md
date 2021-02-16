@@ -382,7 +382,11 @@ This sounds like a network problem; the code in `jx` is trying to download from 
 
 If you are not able to create quickstarts or import projects its most probably webhooks not being setup correctly.
 
-Check out the [webhooks troubleshooting guide](/v3/admin/troubleshooting/webhooks/)
+When the `jx project import` or `jx project quickstart` runs it creates a Pull Request on your dev cluster repository. This should [trigger a webhook](/v3/about/how-it-works/#importing--creating-quickstarts) on your git provider which should then trigger a Pipeline (via [lighthouse webhooks](/v3/about/overview/#lighthouse)). The pipeline should then  [create a second commit on the pull request](/v3/about/how-it-works/#importing--creating-quickstarts) to configure your repository which then should get labelled and auto-merge.
+
+If this does not happen its usually your webhooks are not working. You can check on the health of your system and webhooks via the [Health guide](/v3/admin/guides/health/)
+
+Check out the [webhooks troubleshooting guide](/v3/admin/troubleshooting/webhooks/) 
 
 ## How do I add an Environment
 
