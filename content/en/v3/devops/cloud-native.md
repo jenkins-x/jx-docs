@@ -61,9 +61,9 @@ e.g. to change region or machine type this will usually happen.
 
 ## Map IAM Roles to kubernetes Service Accounts
 
-On AWS use [IAM roles for service accounts](https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html)
+On AWS use [IAM roles for service accounts](https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html) (IRSA)
 
-On GCP use [Workload Identity](https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity)
+On GCP use [Workload Identity](https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity) (WLI)
 
 In both cases this maps cloud IAM roles to kubernetes `ServiceAccount` resources using annotations. 
 
