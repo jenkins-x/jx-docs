@@ -10,6 +10,14 @@ aliases:
 
 As a general purpose console for working with Kubernetes, Jenkins X, Tekton and more resources we highly recommend [Octant](https://octant.dev/)
 
+To run the [Octant](https://octant.dev/) UI please make sure you are in a local terminal (not inside a VM) as it will run a local process and open a web browser to access a local port. 
+
+Also make sure you are connected to the kubernetes cluster you wish to use first. e.g. run something like this to check you are connected first:
+
+```bash 
+kubectl get ns
+```
+
 To run Octant with the Jenkins X plugins if you [have a recent jx binary](/v3/guides/upgrade/#cli) run:
 
 ```bash 
