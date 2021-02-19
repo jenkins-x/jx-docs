@@ -388,6 +388,11 @@ If this does not happen its usually your webhooks are not working. You can check
 
 Check out the [webhooks troubleshooting guide](/v3/admin/troubleshooting/webhooks/) 
 
+If you manually merge the Pull Request by hand then you'll miss out the [create a second commit on the pull request](/v3/about/how-it-works/#importing--creating-quickstarts) which means your project won't properly import. To work around that you can do a dummy commit on your dev cluster repository which will trigger a regeneration.
+
+If the `jx project import` or `jx project quickstart` times out before the pipeline triggers the [second commit on the pull request](/v3/about/how-it-works/#importing--creating-quickstarts) and it auto merges and triggers a boot job to setup webhooks for the new repository - you will have pipeline catalog files locally on your laptop which are not pushed to git. e.g. the `.lighthouse/*` files and maybe other files like `charts/*` and `Dockerfile`. You can always try add those files to git locally and push once you have got your webhooks working.
+
+
 ## How do I add an Environment
 
 With v3 everything is done via GitOps - so if in doubt the answer is to modify git. 
