@@ -392,6 +392,11 @@ If you manually merge the Pull Request by hand then you'll miss out the [create 
 
 If the `jx project import` or `jx project quickstart` times out before the pipeline triggers the [second commit on the pull request](/v3/about/how-it-works/#importing--creating-quickstarts) and it auto merges and triggers a boot job to setup webhooks for the new repository - you will have pipeline catalog files locally on your laptop which are not pushed to git. e.g. the `.lighthouse/*` files and maybe other files like `charts/*` and `Dockerfile`. You can always try add those files to git locally and push once you have got your webhooks working.
 
+Also make sure that the boot Job that is triggered by the pull request merging has the necessary scopes on the git personal access token to be able to registry the webhooks on the new repository. You will see if the webhook registration has been successful in the boot log:
+
+```bash 
+jx admin log 
+```
 
 ## How do I add an Environment
 
