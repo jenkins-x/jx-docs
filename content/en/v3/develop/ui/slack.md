@@ -84,3 +84,12 @@ slack:
 ```
 
 You can configure the `channel` globally or for different groups or repositories differently too. You can also filter by `branch`, pipeline `context` or `pullRequestLabel`.
+
+
+## Other slack bots
+
+We recommend the [Toast slack bot](https://toast.ninja/) as a way to get DM'd with changes to your Pull Requests and its not too noisy.
+
+There is also the [github slack integration](https://slack.github.com/) which is quite good - though it can be quite noisy.
+
+If you have found any other good slack bots please [let us know](http://localhost:1313/community/#slack) or click on the `Edit this page` link on the right of this page to submit a new link!
