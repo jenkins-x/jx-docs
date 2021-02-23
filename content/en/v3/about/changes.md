@@ -18,6 +18,7 @@ You may also find the [Roadmap](/community/roadmap/) and [Maturity Matrix](/v3/a
 ## Changes 
              
 * we have a shiny new [Slack bot for Jenkins X](/v3/develop/ui/slack/) to help notify developers of failing pipelines
+* its now much easier to [write system tests against Preview Environments](https://github.com/jenkins-x/jx-preview#system-tests-in-previews) so it's easier to test images and charts function as you expect inside a Pull Request before you are happy to merge the work for faster feedback
 * check out the new [DevOps, GitOps and Cloud Native](https://jenkins-x.io/v3/devops/) documentation we're putting together based on the learnings of continuously deliverying Jenkins X with Jenkins X.
 * new clusters created using Terraform that use Vault will be using the `jx-vault` namespace to setup Vault (so that its managed by Terraform)       
 * you can now use [jx pipeline convert](https://github.com/jenkins-x/jx-pipeline/blob/master/docs/cmd/jx-pipeline_convert.md#jx-pipeline-convert) to [convert any old pipelines](/v3/develop/pipelines/upgrading/#converting-older-pipelines) across to the latest [concise syntax](/v3/develop/pipelines/catalog/)
