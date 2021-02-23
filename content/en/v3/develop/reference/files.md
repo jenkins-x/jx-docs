@@ -19,6 +19,7 @@ Jenkins X uses [GitOps](/v3/devops/gitops/) and so has a number of different sou
 | `charts` | [helm chart](https://helm.sh/) | Defines the kubernetes resources to be installed in a kubernetes cluster |
 | `Dockerfile` | [Dockerfile](https://docs.docker.com/engine/reference/builder/) | Defines how to create a container image for repositories that create images |
 | `OWNERS` | [OWNERS](https://github.com/jenkins-x/lighthouse/tree/master/pkg/plugins/approve/approvers#overview) | this [lighthouse](https://github.com/jenkins-x/lighthouse) configuration file defines who can review and approve files |
+| `OWNERS_ALIASES` | [OWNERS_ALIASES](https://github.com/jenkins-x/lighthouse/tree/master/pkg/plugins/approve/approvers#overview) | this [lighthouse](https://github.com/jenkins-x/lighthouse) configuration file defines aliases for who can review and approve files |
 | `preview/helmfile.yaml` | [helmfile](https://github.com/roboll/helmfile#configuration) | The [helmfile](https://github.com/roboll/helmfile) defines the helm charts, version and value mappings to be installed in a preview environment |
 
 
