@@ -17,6 +17,8 @@ Jenkins X uses [GitOps](/v3/devops/gitops/) and so has a number of different sou
 | `.lighthouse/*/triggers.yaml` | [TriggerConfig](/v3/develop/reference/pipelines/#lighthouse) | Defines the pipeline triggers in [lighthouse](https://github.com/jenkins-x/lighthouse) which start tekton pipelines in response to git or ChatOps activity |
 | `.lighthouse/*/*.yaml`  | [PipelineRun](https://tekton.dev/docs/pipelines/pipelineruns/#configuring-a-pipelinerun) | Tekton pipelines to define pull request pipelines (or `presubmits`) and release pipelines (`postsubmits`). For more detail check out the [pipeline reference](/v3/develop/pipelines/reference) |
 | `charts` | [helm chart](https://helm.sh/) | Defines the kubernetes resources to be installed in a kubernetes cluster |
+| `Dockerfile` | [Dockerfile](https://docs.docker.com/engine/reference/builder/) | Defines how to create a container image for repositories that create images |
+| `OWNERS` | [OWNERS](https://github.com/jenkins-x/lighthouse/tree/master/pkg/plugins/approve/approvers#overview) | this [lighthouse](https://github.com/jenkins-x/lighthouse) configuration file defines who can review and approve files |
 | `preview/helmfile.yaml` | [helmfile](https://github.com/roboll/helmfile#configuration) | The [helmfile](https://github.com/roboll/helmfile) defines the helm charts, version and value mappings to be installed in a preview environment |
 
 
