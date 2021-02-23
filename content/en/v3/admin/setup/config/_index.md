@@ -6,6 +6,7 @@ description: Changing your configuration
 weight: 80
 aliases:
   - /v3/guides/config
+  - /v3/admin/guides/config
 ---
 
 

@@ -6,6 +6,7 @@ description: Setting up the secrets for your installation
 weight: 30
 aliases:
   - /v3/guides/secrets
+  - /v3/admin/guides/secrets
 ---
 
 Jenkins X 3.x uses [Kubernetes External Secrets](https://github.com/external-secrets/kubernetes-external-secrets) to manage populating secrets from your underlying secret store such as:
