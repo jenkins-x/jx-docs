@@ -1,11 +1,12 @@
 ---
-title: Installing the Operator
-linktitle: Installing the Operator
+title: Install the Operator
+linktitle: Install the Operator
 type: docs
-description: Installing the Git Operator to install/upgrade Jenkins X
+description: Install the Git Operator to install/upgrade Jenkins X
 weight: 20
 aliases:
   - /v3/guides/operator
+  - /v3/admin/guides/operator
 ---
 
 Jenkins X 3.x uses a [git operator](https://github.com/jenkins-x/jx-git-operator) to manage installing + upgrading of Jenkins X and any other components in any environment. If you are interested you can read [how it works](/v3/about/how-it-works/).

@@ -6,6 +6,7 @@ description: Check the health of a Jenkins X installation
 weight: 92
 aliases:
   - /v3/guides/health
+  - /v3/admin/guides/health
 ---
 
 Jenkins X v3.x now has a CLI plugin that works with [Kuberhealthy](https://github.com/Comcast/kuberhealthy) to check the health of a working Jenkins X.
