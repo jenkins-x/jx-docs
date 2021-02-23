@@ -1,12 +1,12 @@
 ---
-title: Reference
-linktitle: Reference
+title: Pipelines
+linktitle: Pipelines
 type: docs
 description: Reference for all things Pipelines
-weight: 900
+weight: 100
+aliases:
+- /v3/develop/pipelines/reference
 ---
-
-## Reference Guide
 
 The following are the links to the various configuration file formats:
 
