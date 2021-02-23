@@ -24,7 +24,7 @@ We recommend using separate clusters for your `Preprod` and `Production` environ
     * And install only services to run and expose your applications, e.g.:
       * Nginx-ingress
       * Cert-manager
-      * [kubernetes external secrets](https://github.com/external-secrets/kubernetes-external-secrets) for [populating Secrets from your secret store](/v3/admin/guides/secrets/) (vault or cloud provider secret manager)
+      * [kubernetes external secrets](https://github.com/external-secrets/kubernetes-external-secrets) for [populating Secrets from your secret store](/v3/admin/setup/secrets/) (vault or cloud provider secret manager)
       * [push-wave](https://github.com/jenkins-x-charts/pusher-wave#wave) for automatically performing rolling upgrades when secrets are rotated in your secret store
 
 3. Then when you have a git repository URL for your `Preprod` or `Production` cluster, [import the git repository](/v3/develop/create-project/#import-an-existing-project) like you would any other git repository into your Development cluster using the [jx project import](https://github.com/jenkins-x/jx-project/blob/master/docs/cmd/project_import.md) command (command should be run in the `jx` namespace):
@@ -92,7 +92,7 @@ The development cluster:
 
 ### Remote Cluster
 
-* runs the [git operator](/v3/admin/guides/operator/) which polls the main branch in the remote cluster for changes
+* runs the [git operator](/v3/admin/setup/operator/) which polls the main branch in the remote cluster for changes
 * when a change is found a `Job` is run to perform the `kubectl apply` or `helmfile sync` or whatever 
 
 
@@ -102,7 +102,7 @@ We do recommend using the Jenkins X GitOps pipeline approach in [production and 
 
 You may want to reuse existing built in charts such as:
 
-* [kubernetes external secrets](https://github.com/external-secrets/kubernetes-external-secrets) for [populating Secrets from your secret store](/v3/admin/guides/secrets/) (vault or cloud provider secret manager)
+* [kubernetes external secrets](https://github.com/external-secrets/kubernetes-external-secrets) for [populating Secrets from your secret store](/v3/admin/setup/secrets/) (vault or cloud provider secret manager)
 * [push-wave](https://github.com/jenkins-x-charts/pusher-wave#wave) for automatically performing rolling upgrades when secrets are rotated in your secret store
 
 

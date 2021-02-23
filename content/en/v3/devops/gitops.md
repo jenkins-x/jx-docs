@@ -26,7 +26,7 @@ There are techniques like [helm sealed secrets](https://github.com/bitnami-labs/
 
 However we are not huge fans of the UX of using this approach; its harder to modify or rotate secrets.
 
-We prefer [using external secrets stores](/v3/admin/guides/secrets/) via the open source  [Kubernetes External Secrets](https://github.com/external-secrets/kubernetes-external-secrets) project
+We prefer [using external secrets stores](/v3/admin/setup/secrets/) via the open source  [Kubernetes External Secrets](https://github.com/external-secrets/kubernetes-external-secrets) project
 
 This means that we [automatically convert Secret resources to ExternalSecrets which can then be stored safely in git](/v3/develop/faq/#why-does-jenkins-x-use-helmfile-template)
 

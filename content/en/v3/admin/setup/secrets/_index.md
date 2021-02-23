@@ -107,15 +107,15 @@ If you wish to add a new custom Secret to your cluster so that you can reference
 kubectl get es --namespace jx
 ```
 
-* You can view which External Secrets are [populated via the External Secrets service](/v3/admin/guides/secrets/) via:
+* You can view which External Secrets are [populated via the External Secrets service](/v3/admin/setup/secrets/) via:
   
 ```bash 
 jx secret verify
 ```
                 
-* The `Secret` gets created by the [the External Secrets service](/v3/admin/guides/secrets/) when the underlying secret store (e.g. vault / cloud provider secret manager) is populated or updated. You can populate the secrets in a number of ways...
+* The `Secret` gets created by the [the External Secrets service](/v3/admin/setup/secrets/) when the underlying secret store (e.g. vault / cloud provider secret manager) is populated or updated. You can populate the secrets in a number of ways...
 
-  * using the underlying secret store directly. e.g. using the [vault CLI directly](/v3/admin/guides/secrets/vault/#using-the-vault-cli-directly) or [vault web UI](/v3/admin/guides/secrets/vault/#using-the-vault-web-ui) or use your cloud providers secret manager's CLI or web UI
+  * using the underlying secret store directly. e.g. using the [vault CLI directly](/v3/admin/setup/secrets/vault/#using-the-vault-cli-directly) or [vault web UI](/v3/admin/setup/secrets/vault/#using-the-vault-web-ui) or use your cloud providers secret manager's CLI or web UI
   * using `jx secret edit -f mysecret-name`
   * using a generator or template. You can define a `secret-schema.yaml` in `versionStream/charts/chartRepoName/chartName/secret-schema.yaml` file which describes how to generate the secret (e.g. using a random password generator or a template) such as [this example to generate a dynamic password for MySQL](https://github.com/jenkins-x/jx3-versions/blob/master/charts/presslabs/mysql-operator/secret-schema.yaml) 
     
