@@ -84,6 +84,16 @@ slack:
 ```
 
 You can configure the `channel` globally or for different groups or repositories differently too. You can also filter by `branch`, pipeline `context` or `pullRequestLabel`.
+     
+## Example 
+
+Here's an example of some messages sent to the channel for a repository. In this case its our BDD tests on the version stream.
+
+As you can see a few tests fail then we get a successful pipeline.
+
+You'll notice the links on the git owner, repository, and build number all resolve to links to your git provider or the associated pipeline page in the [Pipeline Visualiser](/v3/develop/ui/dashboard/) 
+
+<img src="/images/slack/slack-bot.png" class="img-thumbnail" width="542" height="224">
 
 
 ## Other slack bots

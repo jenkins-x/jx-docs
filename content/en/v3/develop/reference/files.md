@@ -25,7 +25,7 @@ Jenkins X uses [GitOps](/v3/devops/gitops/) and so has a number of different sou
 
 ## Files in a dev cluster repository
 
-The following files are only used in a developent cluster git repository
+The following files are only used in a development cluster git repository
 
 
 | File | Schema | Description |
