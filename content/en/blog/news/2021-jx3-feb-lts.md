@@ -10,7 +10,7 @@ aliases: []
 author: James Rawlings
 ---
 
-This is the first [LTS release](/v3/admin/guides/upgrades/lts/) for Jenkins X 3.x.  We are  still in the Beta release and the leadup to GA includes ensuring the process for LTS monthly releases is validated and working well.
+This is the first [LTS release](/v3/admin/setup/upgrades/lts/) for Jenkins X 3.x.  We are  still in the Beta release and the leadup to GA includes ensuring the process for LTS monthly releases is validated and working well.
 This first releases focuses on:
 - community feedback following the Beta release
 - general helm chart upgrades
