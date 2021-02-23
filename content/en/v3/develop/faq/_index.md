@@ -239,12 +239,12 @@ To add a new kubernetes resource [follow the add resources guide](/v3/develop/ap
 
 ## How do I add a new Secret?
  
- See [how to add a new Secret](/v3/admin/guides/secrets/#create-a-new-secret)
+ See [how to add a new Secret](/v3/admin/setup/secrets/#create-a-new-secret)
  
 
 ## How do I access a Secret from my pipeline?
 
-Once you have a kubernetes Secret (see [how to create them](/v3/admin/guides/secrets/#create-a-new-secret)) you can access then in a pipeline either:
+Once you have a kubernetes Secret (see [how to create them](/v3/admin/setup/secrets/#create-a-new-secret)) you can access then in a pipeline either:
 
 * as an [environment variable in a step](https://kubernetes.io/docs/concepts/configuration/secret/#using-secrets-as-environment-variables)
 * via [a volume mount](https://kubernetes.io/docs/concepts/configuration/secret/#using-secrets-as-files-from-a-pod)
@@ -384,7 +384,7 @@ If you are not able to create quickstarts or import projects its most probably w
 
 When the `jx project import` or `jx project quickstart` runs it creates a Pull Request on your dev cluster repository. This should [trigger a webhook](/v3/about/how-it-works/#importing--creating-quickstarts) on your git provider which should then trigger a Pipeline (via [lighthouse webhooks](/v3/about/overview/#lighthouse)). The pipeline should then  [create a second commit on the pull request](/v3/about/how-it-works/#importing--creating-quickstarts) to configure your repository which then should get labelled and auto-merge.
 
-If this does not happen its usually your webhooks are not working. You can check on the health of your system and webhooks via the [Health guide](/v3/admin/guides/health/)
+If this does not happen its usually your webhooks are not working. You can check on the health of your system and webhooks via the [Health guide](/v3/admin/setup/health/)
 
 Check out the [webhooks troubleshooting guide](/v3/admin/troubleshooting/webhooks/) 
 
