@@ -57,9 +57,9 @@ jx ui
   * This means we can support various secret backends such as Alibaba Cloud KMS Secret Manager, Amazon Secret Manager, Azure Key Vault, Hashicorp Vault or GCP Secret Manager
   * It also means we can then check in all kubernetes resources and custom resources directly into git (apart from Kubernetes `Secrets`) so that it super easy to version, review and reason about your kubernetes resources in a GitOps way.
 * built in [TLS and DNS](/v3/admin/guides/tls_dns/) support along with [Heath](/v3/admin/guides/health/) reporting and visualising via [kuberhealthy](https://github.com/Comcast/kuberhealthy) 
-* we now have an [LTS distribution](/v3/admin/guides/upgrades/lts/) which lets you switch to a much more slower cadence of releases of Jenkins X
+* we now have an [LTS distribution](/v3/admin/setup/upgrades/lts/) which lets you switch to a much more slower cadence of releases of Jenkins X
  
-We have been using Jenkins X 3.x in production now for many months (for CI/CD of all of the [3.x codebase](/v3/about/overview/source/) and [continuously upgrading our cluster in the standard way](/v3/admin/guides/upgrades/) and it's been much simpler and easier to use, operate and configure. 
+We have been using Jenkins X 3.x in production now for many months (for CI/CD of all of the [3.x codebase](/v3/about/overview/source/) and [continuously upgrading our cluster in the standard way](/v3/admin/setup/upgrades/) and it's been much simpler and easier to use, operate and configure. 
 
 In general Jenkins X 3.x is now much simpler and more flexible. It supports [lots more platforms than before](/v3/admin/) and should be easy to extend and configure for other platforms too.
 
