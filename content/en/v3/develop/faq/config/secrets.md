@@ -1,6 +1,6 @@
 ---
 title: Secrets
-linktitle: Charts and resources
+linktitle: Secrets
 type: docs
 description: Questions on secrets and external secrets
 weight: 200
