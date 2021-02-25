@@ -3,7 +3,7 @@ title: Using
 linktitle: Using
 type: docs
 description: Questions on using Jenkins X
-weight: 350
+weight: 150
 ---
 
 ## How do I list the apps that have been deployed?
