@@ -3,7 +3,7 @@ title: Secrets
 linktitle: Secrets
 type: docs
 description: Setting up the secrets for your installation
-weight: 30
+weight: 60
 aliases:
   - /v3/guides/secrets
   - /v3/admin/guides/secrets
