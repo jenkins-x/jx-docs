@@ -17,17 +17,36 @@ author: James Strachan
 * each pipeline executes independently of any others 
 * pipelines are orchestrated via the sophisticated kubernetes scheduler:
     * can use pipeline specific metadata for resource limits and node selectors: memory, CPU, machine type (GPU, windows/macOS/linux etc)
-* its easy to associate pipelines with [Cloud IAM roles](/v3/devops/cloud-native/#map-iam-roles-to-kubernetes-service-accounts) to avoid you having to upload cluster admin secrets to your public CI service which really helps security
+* its easy to associate pipelines with [Cloud IAM roles](/v3/devops/cloud-native/#map-iam-roles-to-kubernetes-service-accounts) to avoid you having to upload cluster admin secrets to your public CI service which really helps security and helps reduce accidental bitcoin mining on your cloud account
 
 In a previous blog we talked about how you can [accelerate your use of tekton with Jenkins X](/blog/2020/11/11/accelerate-tekton/).
 
-However there is a challenge; we are moving towards a microservice kind of world with many teams writing many bits of software in many repositories. So there are lots and lots of pipelines. How can we manage, configure and maintain them all?
+## The problem
 
-So how can you apply the benefits of [GitOps](/v3/devops/gitops/) to your cloud native pipelines while also avoiding copy-paste of lots of YAML into all of your repositories?
+We are moving towards a microservice kind of world with many teams writing many bits of software in many repositories. So there are lots and lots of pipelines. These pipelines keep getting more sophisticated over time; doing much more (all kinds of building, analysis, reporting, testing, ChatOps etc) and the software/images/approaches they use change. 
+
+So how can we manage, configure and maintain them all so that there are many pipelines for many repositories; where each repository can customise anything it needs but we can easily maintain everything continuously and its easy to understand and tool around?
+                               
+
+### Previous solutions
+
+We've tried to tackle this problem in a number of ways over the years; each has pros and cons.
+
+One option is to put all your pipelines in a shared library. You can then reference the pipelines by name in each of your repositories. 
+
+But what if you want to change a bit of a pipeline for a specific repository? If you change it globally for everyone you can break things. You may just want local customisation for your repository only. 
+
+You can add parameters into your pipelines. They are [quite verbose on Pipelines and PipelineRuns](https://github.com/tektoncd/pipeline/issues/1484); but it's hard to think up front of every parameterisation that may be required by downstream repositories. e.g. changing any image; changing any command line argument in any step, adding/changing any environment variables or volumes? How about adding extra steps before/after a particular step? It can soon get very complex and results in very complex pipelines that are hard to understand and use.
+        
+Another option is if you need to change a pipeline file you just copy the entire file or create a fork. But then you end up with 100s of copies or forks of pipelines that are hard to synchronise and manage. You end using ancient image versions or older approaches in some repositories which leads to maintenance nightmare. How do you roll out security updates to images in all those repositories, copies and forks?
+
+Another approach we tried is using a tool like [kpt](https://googlecontainertools.github.io/kpt/) to share YAML files across git repositories and then upgrade them via git. This does work quite well; though the downside is whenever you upgrade a new version (e.g. we roll out a new pipeline catalog or a new image change to a tool for security reasons) you need to generate a pull request on every git repository to upgrade them and usually you end up with merge conflicts as the tekton YAML is not trivial; even fairly minor local customisations lead to merge conflict hell.
+
+So how can you apply the benefits of [GitOps](/v3/devops/gitops/) to your cloud native pipelines while also avoiding copy-paste of lots of YAML into all of your repositories, keeping things easy to understand and flexible so any repository can customize things when required but at the same time make it painless to move reliably forward as the pipeline catalogs and images change?
 
 ## GitOps your pipelines
 
-Our recommendation on the [Jenkins X](https://jenkins-x.io/) project is to use [GitOps](/v3/devops/gitops/) for your pipelines too:
+Now our recommendation on the [Jenkins X](https://jenkins-x.io/) project is to use [GitOps](/v3/devops/gitops/) for your pipelines as well as for your source code and deployment configuration:
 
 * store your pipelines as declarative YAML files inside each of your git repositories.
 * use the standard [Tekton YAML syntax](/v3/develop/reference/pipelines/) so that you get [IDE support](/v3/develop/pipelines/editing/#ide-support) and [easy linting](/v3/develop/pipelines/editing/#linting) 
@@ -40,7 +59,7 @@ If you need to [edit your pipelines in any repository](/v3/develop/pipelines/edi
 
 Rather than copy pasting [task and step YAML](https://tekton.dev/docs/pipelines/tasks/#configuring-a-task) between repositories we can refer to a `Task` or a `Step` in a Task as follows:
 
-* refer to all the steps in a task by using
+* refer to all the steps in a shared task by using
 
 ```yaml
 taskSpec:
@@ -48,7 +67,7 @@ taskSpec:
   - image: uses:sourceURI
 ```
 
-* refer to a single _named_ step from a task
+* refer to a single _named_ step from a shared task
 
 ```yaml
   taskSpec:
@@ -69,15 +88,15 @@ You can refer to the [detailed documentation](https://github.com/jenkins-x/light
 For a [github.com](https://github.com) source URI we use the syntax:
 
 ```yaml
-- image: uses:owner/repository/pathToFile@versionBranchOrSha
+- image: uses:owner/repository/pathToFile@version
 ```
 
-This references the https://github.com repository for `owner/repository`.
+This references the https://github.com repository for `owner/repository` and **@version** can be a git tag, branch or SHA.
 
 If you are not using [github.com](https://github.com) to host your git repositories you can access a pipeline task or step from your custom git serve use the **uses:lighthouse:** prefix before `owner`:
 
 ```yaml
-- image: uses:lighthouse:owner/repository/pathToFile@versionBranchOrSha
+- image: uses:lighthouse:owner/repository/pathToFile@version
 ```
 
 We [recommend you version everything with GitOps](/v3/devops/gitops/#recommendations) so you know exactly what versions are being used from git. 
@@ -230,12 +249,14 @@ jx pipeline effective
                    
 ## Summary
 
-We've been on our own digital transformation journey in the world of pipelines and used many different approaches over the years to manage many pipelines across many repositories. A few months ago we moved to the above GitOps approach to cloud native pipelines and we are absolutely loving it!
+We've been on our own digital transformation journey in the world of pipelines and used many different approaches over the years to manage many pipelines across many repositories. 
+
+A few months ago we moved to the above GitOps approach for our cloud native pipelines and we are absolutely loving it!
 
 Its super easy to:
 
 * share pipelines across all of your git repositories without copy/paste
 * easily customise pipelines in any project and be able to easily understand what the local changes are and roll them back if required  
-* upgrade pipelines across your repositories in a consistent way as you [upgrade your cluster via GitOps](/v3/admin/setup/upgrades/cluster/) so that new versions of pipeline catalogs are upgraded once they pass the system tests.
+* upgrade pipelines across your repositories in a consistent way as you [upgrade your images, applications and cluster via GitOps](/v3/admin/setup/upgrades/cluster/) so that new versions of pipeline catalogs are upgraded once they pass the system tests.
 
 If you are thinking about using cloud native pipelines with [Tekton](https://tekton.dev/) please try it out and see what you think. We'd love to hear your [feedback](/community/)

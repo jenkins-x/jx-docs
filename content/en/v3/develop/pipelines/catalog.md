@@ -68,15 +68,15 @@ You can refer to the [detailed documentation](https://github.com/jenkins-x/light
 For a [github.com](https://github.com) source URI we use the syntax:
 
 ```yaml
-- image: uses:owner/repository/pathToFile@versionBranchOrSha
+- image: uses:owner/repository/pathToFile@version
 ```
 
-This references the https://github.com repository for `owner/repository`.
+This references the https://github.com repository for `owner/repository` and **@version** can be a git tag, branch or SHA.
 
 If you are not using [github.com](https://github.com) to host your git repositories you can access a pipeline task or step from your custom git serve use the **uses:lighthouse:** prefix before `owner`:
 
 ```yaml
-- image: uses:lighthouse:owner/repository/pathToFile@versionBranchOrSha
+- image: uses:lighthouse:owner/repository/pathToFile@version
 ```
 
 We [recommend you version everything with GitOps](/v3/devops/gitops/#recommendations) so you know exactly what versions are being used from git. 
@@ -101,6 +101,59 @@ If there's no @version on a uses string its interpreted as a local file:
 ```yaml
 - image: uses:some-file.yaml
 ```
+
+## How it looks
+
+So here is an [example release pipeline](https://github.com/jenkins-x/jx3-pipeline-catalog/blob/master/packs/javascript/.lighthouse/jenkins-x/release.yaml) generated via the [Jenkins X Pipeline catalog](https://github.com/jenkins-x/jx3-pipeline-catalog/tree/master/tasks) if you create a [JavaScript quickstart](/v3/develop/pipelines/catalog)
+
+```yaml 
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: release
+spec:
+  pipelineSpec:
+    tasks:
+    - name: from-build-pack
+      taskSpec:
+        stepTemplate:
+          env:
+          - name: NPM_CONFIG_USERCONFIG
+            value: /tekton/home/npm/.npmrc
+          image: uses:jenkins-x/jx3-pipeline-catalog/tasks/javascript/release.yaml@versionStream
+          name: ""
+          resources:
+            requests:
+              cpu: 400m
+              memory: 512Mi
+          volumeMounts:
+          - mountPath: /tekton/home/npm
+            name: npmrc
+          workingDir: /workspace/source
+        steps:
+        - image: uses:jenkins-x/jx3-pipeline-catalog/tasks/git-clone/git-clone.yaml@versionStream
+          name: ""
+        - name: next-version
+        - name: jx-variables
+        - name: build-npm-install
+        - name: build-npm-test
+        - name: check-registry
+        - name: build-container-build
+        - name: promote-changelog
+        - name: promote-helm-release
+        - name: promote-jx-promote
+        volumes:
+        - name: npmrc
+          secret:
+            optional: true
+            secretName: npmrc
+  serviceAccountName: tekton-bot
+  timeout: 240h0m0s
+```
+
+You can see it mounts an npm secret for using npm package management and specifies CPU and memory requirements. It then is using the **uses:** notation to inherit a bunch of steps from the [jenkins-x/jx3-pipeline-catalog/tasks/javascript/release.yaml](https://github.com/jenkins-x/jx3-pipeline-catalog/blob/master/tasks/javascript/release.yaml) as well as sharing the [jenkins-x/jx3-pipeline-catalog/tasks/git-clone/git-clone.yaml](https://github.com/jenkins-x/jx3-pipeline-catalog/blob/master/tasks/git-clone/git-clone.yaml) task
+
+Also notice we don't have to copy and paste the exact details of the images, commands, arguments, environment variables and volume mounts required for each step; we can just reference them via Git. Also each pipeline in each repository can reference different versions if required.
 
 ### Adding your own steps
 
