@@ -16,7 +16,13 @@ To understand the directory layout see [this document](https://github.com/jenkin
 With v3 everything is done via GitOps - so if in doubt the answer is to modify git. 
 
 You can create new environments by adding to the `environments:` section of [jx-requirements.yml](https://github.com/jx3-gitops-repositories/jx3-kubernetes/blob/master/jx-requirements.yml#L18)
-     
+ 
+## How do I change promotion for my app?
+
+Usually when you [import a repository or create a quickstart](/v3/develop/create-project/) they inherit the default environments for [promotion](/v3/develop/environments/promotion/). It is common to share the same environments across all of your microservices.
+
+If you want to change that on a per repository/microservice basis you can [configure custom environments for a repository](/v3/develop/environments/config/#custom-environments-per-repository)
+
 ## How do I specify DOCKER_REGISTRY_ORG?
 
 If you need to you can override in a specific repository (via a `.jx/settings.yaml` in your repository) but usually its common to all repos and is inherited from your `jx-requirements.yml` in your development environment repository

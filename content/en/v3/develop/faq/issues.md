@@ -48,7 +48,14 @@ jx ui
 
 * on the **Pipelines** page pick the pipeline that is having trouble (see the links you can click on the **Build** column)
 * on the **Pipeline** page there is then a **Pod** link in the navigation bar which takes you to the **Pod** view in [octant](https://octant.dev/) that lets you view the detail of the pod. From there you should be able to see any events/issues with the pod such as bad images, missing secrets or whatever.
-        
+          
+e.g. see the **Pod** link to the left of the  **Steps** / **Logs** links in the nav bar
+
+<iframe width="646" height="327" src="https://www.youtube.com/embed/2LCPHi0BnUg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+### Diagnose pipeline failure via the CLI
+
 To do this via the command line try
 
 ```bash
