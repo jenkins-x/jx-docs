@@ -43,4 +43,4 @@ We look forward to reading your proposal!
 
 [Submit your talk](https://events.linuxfoundation.org/cdcon/program/cfp/)
 
-![cfp image](/static/images/cdcon-cfp-jx.png)
+![cfp image](/images/cdcon-cfp-jx.png)
