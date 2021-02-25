@@ -7,6 +7,8 @@ weight: 200
 ---
 
 Jenkins X uses [GitOps](/v3/devops/gitops/) and so has a number of different source files with declarative schemas. 
+
+You may also find the [git layout document](https://github.com/jenkins-x/jx-gitops/blob/master/docs/git_layout.md) useful. 
                      
 ## Files in any repository
 
