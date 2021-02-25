@@ -59,13 +59,13 @@ taskSpec:
 
 ### SourceURI notation
 
-The source URI notation is triggered if you use `image: uses:*` text on a step - or if an image on a step is blank and the `stepTemplate:` has an `image: uses:*`
+The source URI notation is enabled by a special `image` prefix of **uses:** on step or if an image on a step is blank and the `stepTemplate:` has an `image` prefix of **uses:**
 
 We borrowed this idea from [ko](https://github.com/google/ko) and [mink](https://github.com/mattmoor/mink); the idea of using a custom prefix on image URIs.
 
 You can refer to the [detailed documentation](https://github.com/jenkins-x/lighthouse/blob/master/docs/pipelines.md) on how the step inheritence and overriding works.
 
-For a git source URI we use the syntax:
+For a [github.com](https://github.com) source URI we use the syntax:
 
 ```yaml
 - image: uses:owner/repository/pathToFile@versionBranchOrSha
@@ -73,19 +73,19 @@ For a git source URI we use the syntax:
 
 This references the https://github.com repository for `owner/repository`.
 
-If you wish to access a pipeline task or step from your local git server in lighthouse use the `lighthouse:` prefix before `owner`:
+If you are not using [github.com](https://github.com) to host your git repositories you can access a pipeline task or step from your custom git serve use the **uses:lighthouse:** prefix before `owner`:
 
 ```yaml
 - image: uses:lighthouse:owner/repository/pathToFile@versionBranchOrSha
 ```
 
-We recommend you version everything with GitOps so you know exactly what versions are being used from git. 
+We [recommend you version everything with GitOps](/v3/devops/gitops/#recommendations) so you know exactly what versions are being used from git. 
 
-However you can use `@HEAD` to reference the latest version.
+However you can use **@HEAD** to reference the latest version.
 
-To use a locked down version based on the _version stream_ of your cluster, you can use `@versionStream` which means use the git SHA for the repository which is configured in the version stream.
+To use a locked down version based on the _version stream_ of your cluster, you can use **@versionStream** which means use the git SHA for the repository which is configured in the version stream.
 
-The nice thing about `@versionStream` is that the pipeline catalog you inherit tasks and steps from is locked down to an exact SHA in the version stream; but it avoids you having to go through every one of your git repositories whenever you upgrade a pipeline catalog.
+The nice thing about **@versionStream** is that the pipeline catalog you inherit tasks and steps from is locked down to an exact SHA in the version stream; but it avoids you having to go through every one of your git repositories whenever you upgrade a pipeline catalog.
 
 
 #### file and URL syntax
@@ -117,7 +117,7 @@ spec:
     - name: from-build-pack
       taskSpec:
         stepTemplate:
-          image: uses:jenkins-x/jx3-pipeline-catalog/tasks/javascript/release.yaml@v1.2.3
+          image: uses:jenkins-x/jx3-pipeline-catalog/tasks/javascript/release.yaml@versionStream
         steps:
         - name: jx-variables
         
@@ -146,7 +146,7 @@ spec:
     tasks:
     - taskSpec:
         stepTemplate:
-          image: uses:jenkins-x/jx3-pipeline-catalog/tasks/javascript/release.yaml@v1.2.3
+          image: uses:jenkins-x/jx3-pipeline-catalog/tasks/javascript/release.yaml@versionStream
         steps:
         - name: jx-variables
           script: |
@@ -207,7 +207,7 @@ You can use the git compare to see the changes and remove any properties you don
                         
 The [Tekton Catalog](https://github.com/tektoncd/catalog) git repository defines a ton of Tekton pipelines you can reuse in your pipelines
 
-## Referencing Tasks or Steps from the Tekton Catalog
+## Referencing Tasks or Steps from a Catalog
 
 You can `image: uses:sourceURI` notation inside any pipeline file in your `.lighthouse/jenkins-x/mypipeline.yaml` file like this:
 
@@ -218,15 +218,8 @@ steps:
 
 This will then include the steps from the [git-clone.yaml](https://github.com/tektoncd/catalog/blob/master/task/git-clone/0.2/git-clone.yaml) file 
 
-## Including Tasks from the Tekton Catalog
+It's not just the [Tekton Catalog](https://github.com/tektoncd/catalog) - you can use this same approach to reuse Tasks or steps from any git repository of your choosing; such as the [Jenkins X Pipeline catalog](https://github.com/jenkins-x/jx3-pipeline-catalog/tree/master/tasks)
 
-The new [jx pipeline import](https://github.com/jenkins-x/jx-pipeline/blob/master/docs/cmd/jx-pipeline_import.md) command can be used to import `Task` resources from the [Tekton Catalog](https://github.com/tektoncd/catalog) and using them inside your project. 
-
-Here's a [demo of this in action](https://asciinema.org/a/368282):
-
-<script src="https://asciinema.org/a/368282.js" id="asciicast-368282" async></script>
-
-The tekton Task resources are copied into your `.lighthouse` directory in a folder using `kpt` so that you can modify things locally if you need to and can [upgrade your local copy with upstream changes](#upgrading-pipelines-and-helm-charts) via the `jx gitops upgrade` command described below.
 
 ## Custom Pipeline Catalog
 
