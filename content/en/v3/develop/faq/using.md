@@ -7,8 +7,10 @@ weight: 150
 ---
 
 ## How do I list the apps that have been deployed?
- 
-You can see the helm charts that are installed along with their version, namespaces and any configuration values by looking at the `releases` section of your `helmfile.yaml` file in your cluster git repository.
+
+There is a handy HTML report in your cluster dev git repository at **docs/README.md** which lists all the charts deployed in every namespace with their version.
+
+You can see the helm charts that are installed along with their version, namespaces and any configuration values by looking at the `releases` section of your `helmfile.yaml` and `helmfile/*/helmfile.yaml` files in your cluster git repository.
 
 You can browse all the kubernetes resources in each namespace using the canonical layout in the `config-root` folder. e.g. all charts are versioned in git as follows:
 

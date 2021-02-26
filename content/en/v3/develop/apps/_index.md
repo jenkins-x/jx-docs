@@ -14,13 +14,33 @@ Jenkins X 3.x supports the `helmfile.yaml` file format from the [helmfile projec
 
 
 ### Adding Charts
+            
+Jenkins X uses [helmfile](https://github.com/roboll/helmfile#configuration) to configure helm charts. 
 
-You can then add any charts you wish into the `helmfile.yaml` file in the `releases:` section as follows:
+There is a root `helmfile.yaml` file and then a tree of helmfiles for each namespace:
+
+```bash 
+helmfile.yaml
+helmfiles/
+  nginx/
+    helmfile.yaml
+  jx/
+    helmfile.yaml
+```
+
+To add a new helm chart find the namespace you wish to add it to and add the chart to that file.
+
+e.g. to add to the `jx` namespace modify the `helmfiles/jx/helmfile.yaml` file.
+
+
+Then add any charts you like in the `releases:` section as follows:
 
 ```yaml
+# file: helmfiles/jx/helmfile.yaml 
+...
 releases:
-- chart: jetstack/cert-manager 
 - chart: flagger/flagger
+...
 ``` 
 
 The `namespace` and `version` properties of the charts get resolved during deployment via the [version stream](https://jenkins-x.io/about/concepts/version-stream/) or you can specify them explicitly.
@@ -29,6 +49,11 @@ The `namespace` and `version` properties of the charts get resolved during deplo
 The prefix of the chart name is the chart repository name. There are a few chart repository names already defined in the `helmfile.yaml` in the `repositories:` section. You can add any number of chart repositories to the `helmfile.yaml` that you need.
 
 We are trying to increase consistency and use canonical names in `helmfile.yaml` files for chart repositories. You can see the default [chart repository names and URLs in this file](https://github.com/jenkins-x/jxr-versions/blob/master/charts/repositories.yml). Feel free to use any name and URL you like.
+
+
+#### Helmfile reference guide
+
+If you need more help editing `helmfile.yaml` files check out the [helmfile configuration guide](https://github.com/roboll/helmfile#configuration)  
 
 #### Using the CLI
 
