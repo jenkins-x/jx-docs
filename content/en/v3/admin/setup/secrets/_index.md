@@ -84,7 +84,7 @@ jx secret edit
 ```                  
 
 This will prompt you to enter all the missing Secrets by default.
-
+       
 If you just want to enter a specific secret you can use `--filter` or `-f` to filter for a specific secret name.
 
 e.g.
@@ -92,6 +92,16 @@ e.g.
 ```bash
 jx secret edit -f nexus
 ```                  
+
+### Interactive mode
+
+If you want to pick which secrets you wish to edit you can use interactive mode via:
+
+```bash
+jx secret edit -i
+```                  
+
+You will then be prompted for the Secret name to edit. When you pick a Secret name you are then prompted to pick the names of the properties in the secret you wish to edit.
 
 
 ## Create a new Secret
