@@ -14,9 +14,13 @@ You may also find the [Roadmap](/community/roadmap/) and [Maturity Matrix](/v3/a
 ## Breaking Changes
 
 * the new tekton version (0.20.x) now requires kubernetes 1.17 or later. If your cluster is older and you are using the cloud just ugprade your kubernetes version before upgrading your cluster. Otherwise you may want to explicitly override your `tekton-pipeline` version to pin it at `0.19.1` instead in your [helmfiles/tekton-pipelines/helmfile.yaml](https://github.com/jx3-gitops-repositories/jx3-kubernetes/blob/master/helmfiles/tekton-pipelines/helmfile.yaml#L12) file
+* if you are upgrading from an alpha cluster you may have vault installed in the `secret-infra` namespace. check out the [FAQ on vault in the wrong namespace](/v3/develop/faq/config/vault/#after-an-upgrade-the-boot-job-is-waiting-for-vault-in-jx-vault) for how to upgrade.
 
 ## Changes 
-             
+
+* A preview can fail to create for a multitude of reasons; bad helm charts, missing secrets/volumes, invalid configuration in `jx-requirements.yml`, bad image names, no capacity on the server to name but a few. Unfortunately `helmfile sync` does not give much information other than it succeeded of failed. 
+  * to improve feedback on why some previews can fail we have added additional output in the [jx preview create](https://github.com/jenkins-x/jx-preview/blob/master/docs/cmd/jx-preview_create.md) command to tail the kubernetes events in the preview namespace. This basically runs `kubectl exec get event -n $PREVIEW_NAMESPACE -w` and adds the output to the pipeline output (prefixed with `$PREVIEW_NAMESPACE:`      
+  * this means the reason for why a preview fails should appear as a kubernetes event in the pipeline log
 * we have a shiny new [Slack bot for Jenkins X](/v3/develop/ui/slack/) to help notify developers of failing pipelines
 * its now much easier to [write system tests against Preview Environments](https://github.com/jenkins-x/jx-preview#system-tests-in-previews) so it's easier to test images and charts function as you expect inside a Pull Request before you are happy to merge the work for faster feedback
 * check out the new [DevOps, GitOps and Cloud Native](https://jenkins-x.io/v3/devops/) documentation we're putting together based on the learnings of continuously deliverying Jenkins X with Jenkins X.
