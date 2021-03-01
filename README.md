@@ -7,7 +7,6 @@ This repository contains the source for [jenkins-x.io](http://jenkins-x.io/)
 
 ----
 
-
 <!-- TOC -->
 
 - [Building the docs](#building-the-docs)
