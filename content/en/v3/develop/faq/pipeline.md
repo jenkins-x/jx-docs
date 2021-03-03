@@ -40,6 +40,13 @@ e.g. using the pod name from the above page and the container name you can do so
 ```bash 
 kubectl exec -it -c name-of-step-container name-of-pod sh
 ```
+    
+## How do I access the preview namespace or URL?
+             
+After the [jx preview create](https://github.com/jenkins-x/jx-preview/blob/master/docs/cmd/jx-preview_create.md) step in a pull request pipeline you can access a number of [preview environment variables](/v3/develop/environments/preview/#environment-variables).
+
+For details see [how to add additional preview steps](/v3/develop/environments/preview/#additional-preview-steps)
+
 
 ## How do I access a Secret from my pipeline?
 

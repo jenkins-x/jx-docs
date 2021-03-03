@@ -53,8 +53,33 @@ e.g. see the **Pod** link to the left of the  **Steps** / **Logs** links in the 
 
 <iframe width="646" height="327" src="https://www.youtube.com/embed/2LCPHi0BnUg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+         
+## My cluster is out of resources
 
-### Diagnose pipeline failure via the CLI
+If your cluster is out of resources and cannot deploy pods:
+
+* try modify your terraform / cluster to add more nodes, increase the auto scaling or add bigger nodes to the node pool. You can also add an additional node pool with bigger nodes
+
+* as a short term fix try scaling down some deployments - though note the next boot job will scale things back up again:
+
+```bash 
+kubectl get deploy
+
+# pick one to scale down
+kubectl scale deploy someDeploymentName --replicas=0
+```
+
+* remove preview environments via:
+
+```bash 
+jx delete preview 
+```
+
+* remove deployments you don't need by removing entries from the `releases:` section in `helmfiles/$namespace/helmfile.yaml`
+  * e.g. e.g. to remove an application from the `jx-staging` namespace remove releases from  `helmfiles/jx-staging/helmfile.yaml`
+    
+
+## Diagnose pipeline failure via the CLI
 
 To do this via the command line try
 
