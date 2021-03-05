@@ -58,7 +58,7 @@ You may also want to remove the webhook from the repository to be safe.
 
 
 
-## How do I use testcontainers?
+## How do I use Testcontainers?
 
 If you want to use a container, such as a database, inside your pipeline so that you can run tests against your database inside your pipeline then use a [sidecar container in Tekton](https://tekton.dev/vault/pipelines-v0.16.3/tasks/#specifying-sidecars).
 
