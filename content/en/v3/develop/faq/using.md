@@ -40,7 +40,17 @@ Once the pull request is merged, the [boot job will trigger](/v3/about/how-it-wo
 
 If the application you are removing was released via Jenkins X then the next time there is a change committed to your applications git repsitory a new release will be triggered which will be promoted again.
 
-So to stop new releases you need to remove the application from the `.jx/gitops/source-configy.yaml` repository.
+So to stop new releases you need to remove the application from the `.jx/gitops/source-config.yaml` repository.
+
+You should also ensure that the `SourceRepository` has been deleted. Unfortunately when using `kubectl apply` this does usually get removed (though it does with `kapp`) so you may want to do:
+
+```bash
+# view all the SourceRepository resources:
+kubectl get sr
+
+# find the one that you want remove then:
+kubectl delete sr $theNameToDelete
+````
 
 This will stop Jenkins X creating webhooks and firing pipelines when you make changes.
 
