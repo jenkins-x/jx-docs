@@ -32,7 +32,6 @@ You can always setup webhooks by hand yourself whenever a git repository is [cre
 
 Note also that the same pipeline user and token is reused by default for all pipelines on [all repositories created or imported](/v3/develop/create-project/) which will need read, write and webhook permissions on all of those repositories too. Though if you really want you can change this later on by [editing the pipeline token](/v3/guides/secrets/#edit-secrets).
 
-
 ## Create a git token
 
 To create a git token for passing into the operator use this button:
