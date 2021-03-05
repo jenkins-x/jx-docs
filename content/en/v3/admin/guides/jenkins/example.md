@@ -8,7 +8,7 @@ aliases:
   - /v3/guides/infra/jenkins/example
 ---
 
-	This is an example on building a JX3 Google/GSM environment from scratch which includes a Jenkins server and the import of a pipeline. It will utilize DNS (`jx3rocks.com`), TLS, Let's Encrypt certificates,  and additional Jenkins plugins and installer resources. It is inteded for an audience already familiar with Jenkins X operability and focuses on an example of actual commands required to build and operate the  environment. Additional information regarding using Google as the provider for this example can be found under [Google Cloud Platform Prequisites](/v3/admin/guides/tls_dns/#prerequisites).
+This is an example on building a JX3 Google/GSM environment from scratch which includes a Jenkins server and the import of a pipeline. It will utilize DNS (`jx3rocks.com`), TLS, Let's Encrypt certificates,  and additional Jenkins plugins and installer resources. It is inteded for an audience already familiar with Jenkins X operability and focuses on an example of actual commands required to build and operate the  environment. Additional information regarding using Google as the provider for this example can be found under [Google Cloud Platform Prequisites](/v3/admin/guides/tls_dns/#prerequisites).
 ### Initialize the Infra and Cluster Repos
 Using a command-line based approach, the example employs a process modeled after the doc [Setup Jenkins X on Google Cloud with GKE](/v3/admin/platforms/google), and will use Google Secret Manger. It requires installation of [Git](https://git-scm.com/downloads) and [Hub](https://hub.github.com/) command line tools. 
 
@@ -144,7 +144,7 @@ Additional detail on Terraform settings can be found under [Google Terraform Qui
 
 Commands to build intrastructure: 
 ```bash
-cd $JX3HOME/jx3-gke-gsm
+cd $JX3HOME/jx3-terraform-gke
 bin/create.sh                # Performs terraform init, plan and apply
 ```
 ### Enable prod certificate
