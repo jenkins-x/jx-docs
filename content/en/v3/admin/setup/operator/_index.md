@@ -37,7 +37,7 @@ Note also that the same pipeline user and token is reused by default for all pip
 
 To create a git token for passing into the operator use this button:
 
-<a href="https://github.com/settings/tokens/new?scopes=repo,read:user,read:org,user:email,admin:repo_hook,delete_repo,write:packages,read:packages,write:discussion,workflow" target="github" class="btn bg-primary text-light">Create new GitHub Token</a> 
+<a href="https://github.com/settings/tokens/new?scopes=repo,read:user,read:org,user:email,admin:repo_hook,write:packages,read:packages,write:discussion,workflow" target="github" class="btn bg-primary text-light">Create new GitHub Token</a> 
 
 ## Installing the operator
 
