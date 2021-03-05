@@ -48,7 +48,7 @@ You should also ensure that the `SourceRepository` has been deleted. Unfortunate
 # view all the SourceRepository resources:
 kubectl get sr
 
-# find the one that you want remove then:
+# find the one that you want to remove then:
 kubectl delete sr $theNameToDelete
 ````
 
@@ -65,5 +65,6 @@ If you want to use a container, such as a database, inside your pipeline so that
 Here is [another example of a sidecar in a pipeline](https://tekton.dev/vault/pipelines-v0.16.3/tasks/#using-a-sidecar-in-a-task)
 
 If you want to use a separate container inside a preview environment then add [charts or resources](/v3/develop/apps/#adding-charts) to the `preview/helmfile.yaml`
+
 
 
