@@ -30,6 +30,23 @@ There could be some additional charts installed via Terraform for the [git opera
 helm list --all-namespaces
 ```                                                                                
 
+## How do I delete an application?
+
+You can remove an application or helm chart from an environment by removing the `chart:` entry in the `helmfiles/$namespace/helmfile.yaml` file in your dev git repository and peforming a git commit and pushing the change (usually via a Pull Request). 
+
+Once the pull request is merged, the [boot job will trigger](/v3/about/how-it-works/#boot-job) which will remove the application from kubernetes.
+
+### Stopping new releases 
+
+If the application you are removing was released via Jenkins X then the next time there is a change committed to your applications git repsitory a new release will be triggered which will be promoted again.
+
+So to stop new releases you need to remove the application from the `.jx/gitops/source-configy.yaml` repository.
+
+This will stop Jenkins X creating webhooks and firing pipelines when you make changes.
+
+You may also want to remove the webhook from the repository to be safe.
+
+
 
 ## How do I use testcontainers?
 
