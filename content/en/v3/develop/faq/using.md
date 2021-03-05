@@ -42,7 +42,7 @@ If the application you are removing was released via Jenkins X then the next tim
 
 So to stop new releases you need to remove the application from the `.jx/gitops/source-config.yaml` repository.
 
-You should also ensure that the `SourceRepository` has been deleted. Unfortunately when using `kubectl apply` this does usually get removed (though it does with `kapp`) so you may want to do:
+You should also ensure that the `SourceRepository` has been deleted. Unfortunately when using `kubectl apply` this doesn't usually get removed (though it does with `kapp`) so you may want to do:
 
 ```bash
 # view all the SourceRepository resources:
@@ -65,6 +65,5 @@ If you want to use a container, such as a database, inside your pipeline so that
 Here is [another example of a sidecar in a pipeline](https://tekton.dev/vault/pipelines-v0.16.3/tasks/#using-a-sidecar-in-a-task)
 
 If you want to use a separate container inside a preview environment then add [charts or resources](/v3/develop/apps/#adding-charts) to the `preview/helmfile.yaml`
-
 
 
