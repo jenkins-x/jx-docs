@@ -158,7 +158,7 @@ To validate the prod certificate is active and health checks pass:
 gcloud container clusters get-credentials jx3dev --zone us-east1-b --project <dev gcp project>
 export DEV_CONTEXT=`kubectl config current-context`
 jx ns jx
-# Wait till the following status is all "green"
+# Wait until the following status are all "green"
 jx health status --all-namespaces -w
 
 NAME                          NAMESPACE                     STATUS                        ERROR MESSAGE
