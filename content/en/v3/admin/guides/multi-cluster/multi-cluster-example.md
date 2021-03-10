@@ -63,7 +63,7 @@ git commit -a -m "chore: Initial"
 git push -u origin master
 ```
 ### Initialize the Prod cluster repo
-Prior to building the prod infra repo prepare the productdion cluster repo for use by removing unecessary components.
+Prior to building the prod infra repo, prepare the production cluster repo for use by removing unecessary components.
 ```bash
 cd ${JX3HOME}/jx3-gke-gsm.prd
 sed -i '/- key: production/d' jx-requirements.yml 
