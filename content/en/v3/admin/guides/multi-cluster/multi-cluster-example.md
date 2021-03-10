@@ -92,7 +92,7 @@ TF_VAR_force_destroy=true
 ```
 Additional details on Terraform settings can be found under [Google Terraform Quickstart Template](https://github.com/jx3-gitops-repositories/jx3-terraform-gke/blob/master/README.md)
 
-Commands to build intrastructure: 
+Commands to build infrastructure: 
 ```bash
 cd ${JX3HOME}/jx3-terraform-gke.prd
 bin/create.sh                # Performs terraform init, plan and apply
