@@ -153,7 +153,7 @@ Commands to build intrastructure:
 cd ${JX3HOME}/jx3-terraform-gke.dev
 bin/create.sh                # Performs terraform init, plan and apply
 ```
-To validate the prod certificate is actiuve and health checks pass:
+To validate the prod certificate is active and health checks pass:
 ```bash
 gcloud container clusters get-credentials jx3dev --zone us-east1-b --project <dev gcp project>
 export DEV_CONTEXT=`kubectl config current-context`
