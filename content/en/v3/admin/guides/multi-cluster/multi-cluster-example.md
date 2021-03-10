@@ -32,7 +32,7 @@ hub create -p ${JX3ORG}/jx3-terraform-gke.prd
 git commit -a -m "chore: Initial"
 git push -u origin master
 ```
-Buidling `PROD CLUSTER` repo: `https://github.com/${JX3ORG}/jx3-gke-gsm.prd`
+Building `PROD CLUSTER` repo: `https://github.com/${JX3ORG}/jx3-gke-gsm.prd`
 ```bash
 cd ${JX3HOME}
 git clone https://github.com/jx3-gitops-repositories/jx3-gke-gsm.git jx3-gke-gsm.prd
