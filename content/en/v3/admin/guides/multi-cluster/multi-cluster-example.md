@@ -146,7 +146,7 @@ TF_VAR_jx_git_url=https://github.com/${JX3ORG}/jx3-gke-gsm.dev.git
 TF_VAR_lets_encrypt_production=true
 TF_VAR_force_destroy=true
 ```
-Additional detail on Terraform settings can be found under [Google Terraform Quickstart Template](https://github.com/jx3-gitops-repositories/jx3-terraform-gke/blob/master/README.md)
+Additional details on Terraform settings can be found under [Google Terraform Quickstart Template](https://github.com/jx3-gitops-repositories/jx3-terraform-gke/blob/master/README.md)
 
 Commands to build intrastructure: 
 ```bash
