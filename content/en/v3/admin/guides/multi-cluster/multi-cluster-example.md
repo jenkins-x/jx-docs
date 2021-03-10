@@ -177,7 +177,7 @@ network-connection-check      kuberhealthy                  OK
 ### Import Remote Prod Repo
 ```bash
 # Make sure you're in the dev cluster
-kubectl config set-context $DEV_CONTEXT
+kubectl config use-context $DEV_CONTEXT
 jx ns jx
 jx project import --url https://github.com/jx3rocks/jx3-gke-gsm.prd.git 
 ```
@@ -205,7 +205,7 @@ error: failed to wait for the pipeline to be setup jx3rocks/jx3-gke-gsm-prd: fai
 ### Environments
 ```bash
 # Development
-kubectl config set-context $DEV_CONTEXT
+kubectl config use-context $DEV_CONTEXT
 kubectl get env
 NAME              NAMESPACE            KIND          PROMOTION   ORDER   GIT URL                                           GIT BRANCH
 dev               jx                   Development   Never               https://github.com/jx3rocks/jx3-gke-gsm.dev.git   master
@@ -213,7 +213,7 @@ jx3-gke-gsm-prd   jx-jx3-gke-gsm-prd   Permanent     Auto        500     https:/
 staging           jx-staging           Permanent     Auto        100     
 
 # Production
-kubectl config set-context $PROD_CONTEXT
+kubectl config use-context $PROD_CONTEXT
 kubectl get env
 NAME      NAMESPACE    KIND          PROMOTION   ORDER   GIT URL                                           GIT BRANCH
 dev       jx           Development   Never               https://github.com/jx3rocks/jx3-gke-gsm.prd.git   master
@@ -226,13 +226,13 @@ In order to deploy applications to the remote prod environment it is required th
 ### Deploy Quickstart Project
 To ensure everything is working as intended, the following commands will create and deploy a simple NodeJS app to staging and the remote production.
 ```bash
-kubectl config set-context $DEV_CONTEXT
+kubectl config use-context $DEV_CONTEXT
 jx ns jx
 # Using quickstart deploy app to staging
 jx project quickstart --git-token ${TF_VAR_jx_bot_token} --git-username ${TF_VAR_jx_bot_user} --filter node-http --org ${JX3ORG} --batch-mode  --name node-http01
 
 # Confirm deployments
-kubectl config set-context $DEV_CONTEXT
+kubectl config use-context $DEV_CONTEXT
 kubectl get environments
 NAME              NAMESPACE            KIND          PROMOTION   ORDER   GIT URL                                           GIT BRANCH
 dev               jx                   Development   Never               https://github.com/jx3rocks/jx3-gke-gsm.dev.git   master
@@ -247,7 +247,7 @@ jx get applications -e jx3-gke-gsm-prd
 APPLICATION
 node-http01
 
-kubectl config set-context $PROD_CONTECT
+kubectl config use-context $PROD_CONTECT
 kubectl get environments
 kubectl get env
 NAME      NAMESPACE    KIND          PROMOTION   ORDER   GIT URL                                           GIT BRANCH
