@@ -224,7 +224,7 @@ In order to deploy applications to the remote prod environment it is required th
 
 ![Container Setting](/images/v3/setContainer.png)
 ### Deploy Quickstart Project
-The following commands will deploy a simple JSnode app to staging and the remote production
+To ensure everything is working as intended, the following commands will create and deploy a simple NodeJS app to staging and the remote production.
 ```bash
 kubectl config set-context $DEV_CONTEXT
 jx ns jx
