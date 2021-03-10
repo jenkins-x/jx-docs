@@ -50,7 +50,7 @@ environments:
 - key: staging                                                   
 ```                                                              
 
-after importing the remote environment via [jx project import](https://github.com/jenkins-x/jx-project/blob/master/docs/cmd/project_import.md) and the pull request merging it should look like: 
+After importing the remote environment via [jx project import](https://github.com/jenkins-x/jx-project/blob/master/docs/cmd/project_import.md) and merging the pull request, it should look like: 
 
 ```yaml 
 environments:
