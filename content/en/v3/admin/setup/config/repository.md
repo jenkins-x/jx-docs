@@ -53,7 +53,7 @@ spec:
   cluster:
     chartRepository: http://bucketrepo.jx.svc.cluster.local/bucketrepo/charts
 ```
-Another alternative for the helm chart repository is to use Github gh-pages, as explained [here](/v3/develop/faq/config/registries/#how-do-i-switch-to-github-pages-for-charts), in which case you don't need bucketrepo.
+Another alternative for the helm chart repository is to use Github gh-pages, as explained [here](/v3/develop/faq/config/registries/#how-do-i-switch-to-github-pages-for-charts). Note that in that case and if you don't have any maven artifact, you don't need bucketrepo.
 
 By default the local file system in the bucket repo is used to store artifacts.
 
