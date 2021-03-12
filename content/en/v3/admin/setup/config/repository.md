@@ -33,15 +33,38 @@ The [bucketrepo](https://github.com/jenkins-x/bucketrepo) chart is a small footp
 * act as an artifact repository (e.g. to deploy maven artifacts)
 * implement a chart repository for releasing helm charts
 
-To enable `bucketrepo` use the following `jx-requirements.yml` file:
+To replace `nexus` by `bucketrepo` use the following `jx-requirements.yml` file:
 
 ```yaml
 repository: bucketrepo
 ```
+Then replace the nexus chart in `helmfiles/jx/helmfile.yaml` by:
+```yaml
+- chart: jenkins-x/bucketrepo
+  name: bucketrepo
+```
+
+If you also want to replace `chartmuseum` by bucketrepo, change `jx-requirements.yml` with:
+```yaml
+apiVersion: core.jenkins-x.io/v4beta1
+kind: Requirements
+spec:
+  ...
+  cluster:
+    chartRepository: http://bucketrepo.jx.svc.cluster.local/bucketrepo/charts
+```
+Another alternative for the helm chart repository is to use Github gh-pages, as explained [here](/v3/develop/faq/config/registries/#how-do-i-switch-to-github-pages-for-charts).  You can keep bucketrepo instead of nexus in combination with gh-pages as helm chart repository.
 
 By default the local file system in the bucket repo is used to store artifacts.
 
-To enable cloud storage for artifacts in `bucketrepo` you need to enable the `storage.repository` configuration in which case a cloud bucket is used instead. See the [storage section for more details](#storage).
+To enable cloud storage for artifacts in `bucketrepo` you need to enable the `storage.repository` configuration in `jx-requirements.yml`, in which case a cloud bucket is used instead. See the [storage section for more details](#storage).
+Example for Azure:
+```yaml
+  storage:
+  ...
+  - name: repository
+    url: azblob://repository
+```
 
 ### None
 
