@@ -57,7 +57,7 @@ Another alternative for the helm chart repository is to use Github gh-pages, as 
 
 By default the local file system in the bucket repo is used to store artifacts.
 
-To enable cloud storage for artifacts in `bucketrepo` you need to enable the `storage.repository` configuration in `jx-requirements.yml`, in which case a cloud bucket is used instead. See the [storage section for more details](/v3/admin/setup/storage.md).
+To enable cloud storage for artifacts in `bucketrepo` you need to enable the `storage.repository` configuration in `jx-requirements.yml`, in which case a cloud bucket is used instead. See the [storage section for more details](/v3/admin/setup/config/storage.md).
 
 ### None
 
