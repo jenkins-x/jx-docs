@@ -41,7 +41,7 @@ repository: bucketrepo
 
 By default the local file system in the bucket repo is used to store artifacts.
 
-To enable cloud storage for artifacts in `bucketrepo` you need to enable the `storage.repository` configuration in which case a cloud bucket is used instead. See the [storage section for more details](#storage).
+To enable cloud storage for artifacts in `bucketrepo` you need to enable the `storage.repository` configuration in which case a cloud bucket is used instead. See the [storage section for more details](/v3/admin/setup/storage.md).
 
 ### None
 
