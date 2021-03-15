@@ -56,7 +56,9 @@ This will stop Jenkins X creating webhooks and firing pipelines when you make ch
 
 You may also want to remove the webhook from the repository to be safe.
 
+## How do I use dev pods?
 
+See the [inner loop documentation](/v3/develop/pipelines/inner-loop/)
 
 ## How do I use Testcontainers?
 
