@@ -112,3 +112,6 @@ This sounds like a network problem; the code in `jx` is trying to download from 
 * is your `/etc/resolv.conf` causing issues? e.g. if you have multiple entries for your company VPN?
 
                
+## Tekton webhook certs have expired?
+
+Delete the tekton `webhook-certs` tls secret. Then delete the `tekton-pipelines-webhook` pod and the cert should be recreated again.
