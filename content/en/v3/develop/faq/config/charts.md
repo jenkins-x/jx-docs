@@ -15,7 +15,40 @@ To add a new chart add to the `helmfiles/mynamespace/helmfile.yaml` file follow 
 With the new helm 3 based boot every environment uses boot - so there is a single way to configure anything whether its in the `dev`, `staging` or `production` environment and whether or not you are using [multiple clusters](/v3/guides/multi-cluster/).
 
 See [how to customise a chart](/v3/develop/apps/#customising-charts)
+     
 
+## How do I use a chart from a secure repository
+
+Some chart repositories need a username and password to access them.
+
+So to access those chart repositories you can the username and password into the `helmfile.yaml` 
+
+However the username/passwords are probably secret. So you can [create a kubernetes Secret](secret) called `jx-boot-job-env-vars` which is automatically used in the [boot Job](v3/about/how-it-works/#boot-job)
+        
+e.g. 
+
+```bash
+# lets make sure we are in the jx-git-operator namespace
+jx ns jx-git-operator
+
+kubectl create secret generic jx-boot-job-env-vars \
+  --from-literal=MYREPO_USERNAME=someuser \
+  --from-literal=MYREPO_PASSWORD='S!B\*d$zDsb='
+```
+
+Any environment variables defined in the `jx-boot-job-env-vars` Secret can then be used in your `helmfile.yaml` as follows:
+
+```yaml
+repositories:
+- name: myrepo
+  url: https://something.com 
+  username: '{{ requiredEnv "MYREPO_USERNAME" }}' 
+  password: '{{ requiredEnv "MYREPO_PASSWORD" }}'
+releases:
+- chart: myrepo/mychart 
+  name: mychart
+  version: 1.2.3
+```
 
 ## How do I add a kubernetes resource?
 
