@@ -23,7 +23,7 @@ Some chart repositories need a username and password to access them.
 
 So to access those chart repositories you can the username and password into the `helmfile.yaml` 
 
-However the username/passwords are probably secret. So you can [create a kubernetes Secret](secret) called `jx-boot-job-env-vars` which is automatically used in the [boot Job](v3/about/how-it-works/#boot-job)
+However the username/passwords are probably secret. So you can [create a kubernetes Secret](https://kubernetes.io/docs/tasks/configmap-secret/managing-secret-using-kubectl/) called `jx-boot-job-env-vars` which is automatically used in the [boot Job](v3/about/how-it-works/#boot-job)
         
 e.g. 
 
