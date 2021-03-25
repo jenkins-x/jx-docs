@@ -3,7 +3,7 @@ title: Version Stream Manual Migrations
 linktitle: Version Stream Manual Migrations
 type: docs
 description: Upgrading the jx cli
-weight: 10
+weight: 590
 aliases:
 - /v3/guides/upgrades/changelog
 ---
