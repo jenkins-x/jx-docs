@@ -63,13 +63,88 @@ git commit -a -m "chore: Initial"
 git push -u origin master
 ```
 ### Initialize the Prod cluster repo
-Prior to building the prod infra repo, prepare the production cluster repo for use by removing unecessary components.
+Prepare the remote prod cluster repo by using the out of the box (OOTB) config (i.e.  dev, jx-staging, and jx-production environemnts). Also remove the default '-jx' URL value and insert jx-production '-prd' URL value (optional).  Prior to building the prod infra repo, prepare the production cluster repo for use by removing unecessary components. The components to modify/remove in the designated remote prod environment are:
+* Remove default '-jx.' URL format (optional)
+* Remove Non-used JX charts 
+* Remove Tekton pipelines
+* Add jx3/local-external-secrets chart (optional)
+* Insert imagePullSecret in jx-global-variables.yaml (optional)
+* Disable webhooks
 ```bash
 cd ${JX3HOME}/jx3-gke-gsm.prd
-sed -i '/- key: production/d' jx-requirements.yml 
+# File removals
+rm -rf helmfiles/tekton-pipelines
+# Modifications
 sed -i 's/-jx././g' jx-requirements.yml 
+sed -i '/tekton-pipelines/d' helmfile.yaml
+
+# JX Chart removals
+sed -i '/- chart: jx3\/jx-pipelines-visualizer/,/  - jx-values.yaml/d' helmfiles/jx/helmfile.yaml
+sed -i '/- chart: jxgh\/jx-preview/,/  - jx-values.yaml/d' helmfiles/jx/helmfile.yaml
+sed -i '/- chart: jenkins-x\/lighthouse/,/  - jx-values.yaml/d' helmfiles/jx/helmfile.yaml
+sed -i '/- chart: jenkins-x\/bucketrepo/,/  - jx-values.yaml/d' helmfiles/jx/helmfile.yaml
+sed -i '/- chart: jx3\/jx-build-controller/,/  - jx-values.yaml/d' helmfiles/jx/helmfile.yaml
+
+# JX Chart additions (jx3/local-external-secrets chart)
+sed -i '/templates:/ i - chart: jx3/local-external-secrets' helmfiles/jx/helmfile.yaml
+sed -i '/templates:/ i   version: 0.0.6' helmfiles/jx/helmfile.yaml
+sed -i '/templates:/ i   name: local-external-secrets' helmfiles/jx/helmfile.yaml
+sed -i '/templates:/ i   values:' helmfiles/jx/helmfile.yaml
+sed -i '/templates:/ i   - jx-values.yaml' helmfiles/jx/helmfile.yaml
+
+# jx-global-values changes 
+sed -i '/imagePullSecrets:/d' jx-global-values.yaml
+sed -i '/jx:/ a\ \ \ - tekton-container-registry-auth' jx-global-values.yaml
+sed -i '/jx:/ a\ \ imagePullSecrets:' jx-global-values.yaml
+
+# Makefile changes
+sed -i '/include/ i # lets disable the dev cluster settings' Makefile
+sed -i '/include/ i COPY_SOURCE = no-copy-source' Makefile
+sed -i '/include/ i GENERATE_SCHEDULER = no-gitops-scheduler' Makefile
+sed -i '/include/ i REPOSITORY_RESOLVE = no-repository-resolve' Makefile
+sed -i '/include/ i GITOPS_WEBHOOK_UPDATE = no-gitops-webhook-update' Makefile
+
+jx gitops helmfile resolve
+
 git commit -a -m "chore: prod cluster repo init"
 git push
+
+### Remote Prod Chart List
+for i in `find helmfiles -name helmfile.yaml`; do echo; echo $i; grep -- ^-\ chart $i ; done
+```
+### Remote Prod Chart List
+```
+helmfiles/kuberhealthy/helmfile.yaml
+- chart: jx3/kh-tls-check
+
+helmfiles/jx-staging/helmfile.yaml
+- chart: jx3/jx-verify
+
+helmfiles/secret-infra/helmfile.yaml
+- chart: external-secrets/kubernetes-external-secrets
+- chart: jx3/pusher-wave
+
+helmfiles/jx/helmfile.yaml
+- chart: bitnami/external-dns
+- chart: jx3/acme
+- chart: jx3/jxboot-helmfile-resources
+- chart: jx3/jenkins-x-crds
+- chart: jenkins-x/nexus
+- chart: stable/chartmuseum
+- chart: jx3/jx-kh-check
+- chart: jx3/local-external-secrets
+
+helmfiles/jx-production/helmfile.yaml
+- chart: jx3/jx-verify
+
+helmfiles/cert-manager/helmfile.yaml
+- chart: jetstack/cert-manager
+
+helmfiles/nginx/helmfile.yaml
+- chart: ingress-nginx/ingress-nginx
+
+helmfiles/tekton-pipelines/helmfile.yaml
+- chart: cdf/tekton-pipeline
 ```
 ### Build the prod infra with Terraform
 The following TF_VAR environment variables are set prior to running Terraform commands:
@@ -119,13 +194,55 @@ jx-webhook-events             jx                            OK
 network-connection-check      kuberhealthy                  OK   
 ```
 ### Initialize the Dev cluster repo
-Prepare the dev cluster repo for use by removing unecessary components.
+Prepare the dev cluster repo by using the out of the box (OOTB) config (i.e.  dev, jx-staging, and jx-production environemnts). Also remove the default '-jx' URL value and insert jx-production '-prd' URL value (optional). Later on prior to importing the external steps will be used to remove the jx-prodcution environment (optional).
 ```bash
 cd ${JX3HOME}/jx3-gke-gsm.dev
-sed -i '/- key: production/d' jx-requirements.yml 
 sed -i 's/-jx././g' jx-requirements.yml 
+sed -i '/- key: production/ a\ \ \ \ \  namespaceSubDomain: -prd.' jx-requirements.yml
+sed -i '/- key: production/ a\ \ \ \ ingress:' jx-requirements.yml
+jx gitops helmfile resolve
 git commit -a -m "chore: dev cluster repo init"
 git push
+
+### Dev Chart List (Initial)
+for i in `find helmfiles -name helmfile.yaml`; do echo; echo $i; grep -- ^-\ chart $i ; done
+```
+### Dev Chart List (Initial)
+```
+helmfiles/kuberhealthy/helmfile.yaml
+- chart: jx3/kh-tls-check
+
+helmfiles/jx-staging/helmfile.yaml
+- chart: jx3/jx-verify
+
+helmfiles/secret-infra/helmfile.yaml
+- chart: external-secrets/kubernetes-external-secrets
+- chart: jx3/pusher-wave
+
+helmfiles/jx/helmfile.yaml
+- chart: bitnami/external-dns
+- chart: jx3/acme
+- chart: jx3/jxboot-helmfile-resources
+- chart: jx3/jenkins-x-crds
+- chart: jx3/jx-pipelines-visualizer
+- chart: jxgh/jx-preview
+- chart: jenkins-x/lighthouse
+- chart: jenkins-x/nexus
+- chart: stable/chartmuseum
+- chart: jx3/jx-build-controller
+- chart: jx3/jx-kh-check
+
+helmfiles/jx-production/helmfile.yaml
+- chart: jx3/jx-verify
+
+helmfiles/cert-manager/helmfile.yaml
+- chart: jetstack/cert-manager
+
+helmfiles/nginx/helmfile.yaml
+- chart: ingress-nginx/ingress-nginx
+
+helmfiles/tekton-pipelines/helmfile.yaml
+- chart: cdf/tekton-pipeline
 ```
 ### Build the dev infra with Terraform
 The following TF_VAR environment variables are set prior to running Terraform commands:
@@ -175,84 +292,147 @@ jx-webhook-events             jx                            OK
 network-connection-check      kuberhealthy                  OK   
 ```
 ### Import Remote Prod Repo
+Add the remote prod repo as your production target by importing. PLEASE NOTE: Prior to importing the remote repo make sure all updates to the dev repo have completed.
 ```bash
 # Make sure you're in the dev cluster
 kubectl config use-context $DEV_CONTEXT
 jx ns jx
-jx project import --url https://github.com/jx3rocks/jx3-gke-gsm.prd.git 
+# Make sure you're not in the cluster repo directory
+cd $JX3HOME
+jx project import --url https://github.com/${JX3ORG}/jx3-gke-gsm.prd.git 
 ```
+The '`jx project import`' command will begin to display the following:
 ```
 we are now going to create a Pull Request on the development cluster git repository to setup CI/CD via GitOps
 
-created file /tmp/jx-git-643546451/.jx/gitops/source-config.yaml
-Created Pull Request: https://github.com/jx3rocks/jx3-gke-gsm.dev/pull/1
+created file /tmp/jx-git-973407466/.jx/gitops/source-config.yaml
+Created Pull Request: https://github.com/jx3rocks/jx3-gke-gsm.src/pull/1
 
 we now need to wait for the Pull Request to merge so that CI/CD can be setup via GitOps
 
-Waiting up to 20m0s for the pull request https://github.com/jx3rocks/jx3-gke-gsm.dev/pull/1 to merge with poll period 20s....
-Pull Request https://github.com/jx3rocks/jx3-gke-gsm.dev/pull/1 was merged at sha 92e226e6e52cc96c1a84ba8dc455900d41cfe09d after waiting 2m1.698196955s
+Waiting up to 20m0s for the pull request https://github.com/jx3rocks/jx3-gke-gsm.src/pull/1 to merge with poll period 20s....
+
+```
+Merge the outstanding pull request for 
+```bash
+${JX3ORG}/jx3-gke-gsm.src chore: import repository https://github.com/${JX3ORG}/jx3-gke-gsm.prd.git  env/dev
+```
+Below is an example of the URL for the PR:
+```bash
+https://github.com/${JX3ORG}/jx3-gke-gsm.src/pull/1
+```
+Once the pull request is merged, it proceeds to wait for a trigger to be added to the lighthouse config:
+```
+Pull Request https://github.com/${JX3ORG}/jx3-gke-gsm.src/pull/1 was merged at sha a07df43fcad60df439dad087cf4502f00e002190 after waiting 12m7.719699579s
 
 waiting up to 20m0s for a trigger to be added to the lighthouse configuration in ConfigMap config in namespace jx for repository: jx3rocks/jx3-gke-gsm-prd
 you can watch the boot job to update the configuration via: jx admin log
 for more information on how this works see: https://jenkins-x.io/docs/v3/about/how-it-works/#importing--creating-quickstarts
-
-
+```
+Eventually the process appears to time out waiting for the adding of the trigger.
+```
 WARNING: It looks like the boot job failed to setup this project.
 You can view the log via: jx admin log
 error: failed to wait for repository to be setup in lighthouse: failed to find trigger in the lighthouse configuration in ConfigMap config in namespace jx for repository: jx3rocks/jx3-gke-gsm-prd within 20m0s
 error: failed to wait for the pipeline to be setup jx3rocks/jx3-gke-gsm-prd: failed to run 'jx pipeline wait --owner jx3rocks --repo jx3-gke-gsm-prd' command in directory '', output: ''
 ```
+### Adjust Prod Repo Promotion Type (optional)
+The newly imported prod repo has a promotion type of 'Auto'. To change this 'Manual' to provide greater deployment ccontrol make adjustments in the jx-requirements.yml file:
+```bash
+## current environment settings
+kubectl get env
+NAME              NAMESPACE            KIND          PROMOTION   ORDER   GIT URL                                           GIT BRANCH
+dev               jx                   Development   Never               https://github.com/${JX3ORG}/jx3-gke-gsm.src.git   master
+jx3-gke-gsm-prd   jx-jx3-gke-gsm-prd   Permanent     Auto        500     https://github.com/${JX3ORG}/jx3-gke-gsm.prd.git   master
+production        jx-production        Permanent     Manual      500                                                       
+staging           jx-staging           Permanent     Auto        100      
+
+cd ${JX3HOME}/jx3-gke-gsm.dev
+git pull
+sed -i 's/promotionStrategy: Auto/promotionStrategy: Manual/g' jx-requirements.yml 
+git commit -a -m "chore: remote repo manual promotion"
+git push
+
+## new environment settings 
+kubectl get env
+NAME              NAMESPACE            KIND          PROMOTION   ORDER   GIT URL                                           GIT BRANCH
+dev               jx                   Development   Never               https://github.com/${JX3ORG}/jx3-gke-gsm.src.git   master
+jx3-gke-gsm-prd   jx-jx3-gke-gsm-prd   Permanent     Manual        500     https://github.com/${JX3ORG}/jx3-gke-gsm.prd.git   master
+production        jx-production        Permanent     Manual      500                                                       
+staging           jx-staging           Permanent     Auto        100      
+
+```
+### Remove jx-production environment (optional)
+To have a single designated production environment remove the dev repo's jx-production environment.
+```bash
+cd ${JX3HOME}/jx3-gke-gsm.dev
+sed -i '/- key: production/d' jx-requirements.yml 
+sed -i '/jx-production/d' helmfile.yaml
+rm -rf helmfiles/jx-production
+jx gitops helmfile resolve
+git commit -a -m "chore: remove jx-production"
+git push
+``` 
 ### Environments
+Both the dev and remote prod repos are now ready for deployments.
 ```bash
 # Development
 kubectl config use-context $DEV_CONTEXT
 kubectl get env
 NAME              NAMESPACE            KIND          PROMOTION   ORDER   GIT URL                                           GIT BRANCH
-dev               jx                   Development   Never               https://github.com/jx3rocks/jx3-gke-gsm.dev.git   master
-jx3-gke-gsm-prd   jx-jx3-gke-gsm-prd   Permanent     Auto        500     https://github.com/jx3rocks/jx3-gke-gsm.prd.git   master
-staging           jx-staging           Permanent     Auto        100     
+dev               jx                   Development   Never               https://github.com/${JX3ORG}/jx3-gke-gsm.src.git   master
+jx3-gke-gsm-prd   jx-jx3-gke-gsm-prd   Permanent     Manual      500     https://github.com/${JX3ORG}/jx3-gke-gsm.prd.git   master
+staging           jx-staging           Permanent     Auto        100 
 
 # Production
 kubectl config use-context $PROD_CONTEXT
 kubectl get env
-NAME      NAMESPACE    KIND          PROMOTION   ORDER   GIT URL                                           GIT BRANCH
-dev       jx           Development   Never               https://github.com/jx3rocks/jx3-gke-gsm.prd.git   master
-staging   jx-staging   Permanent     Auto        100           
+NAME   NAMESPACE   KIND          PROMOTION   ORDER   GIT URL                                           GIT BRANCH
+dev    jx          Development   Never               https://github.com/${JX3ORG}/jx3-gke-gsm.prd.git   master
 ```
 ### Set Dev Container Registry to Public
 In order to deploy applications to the remote prod environment it is required that the dev container registry is publically available. The image below highlights how you can make the change using the Google console.
 
 ![Container Setting](/images/v3/setContainer.png)
+
+Or you can use the following command:
+```bash
+gsutil iam ch allUsers:objectViewer gs://artifacts.${PROJECT}.appspot.com
+```
 ### Deploy Quickstart Project
 To ensure everything is working as intended, the following commands will create and deploy a simple NodeJS app to staging and the remote production.
 ```bash
 kubectl config use-context $DEV_CONTEXT
 jx ns jx
+cd ${JX3HOME}
 # Using quickstart deploy app to staging
 jx project quickstart --git-token ${TF_VAR_jx_bot_token} --git-username ${TF_VAR_jx_bot_user} --filter node-http --org ${JX3ORG} --batch-mode  --name node-http01
-
-# Confirm deployments
+```
+### Merge Pull Requests
+For deployment to remote prod you must merge the auto generated pull request.
+```bash
+https://github.com/${JX3ORG}/jx3-gke-gsm.prd/pulls
+```
+### Project Deployments
+```bash
+# Confirm deployment for Development
 kubectl config use-context $DEV_CONTEXT
-kubectl get environments
-NAME              NAMESPACE            KIND          PROMOTION   ORDER   GIT URL                                           GIT BRANCH
-dev               jx                   Development   Never               https://github.com/jx3rocks/jx3-gke-gsm.dev.git   master
-jx3-gke-gsm-prd   jx-jx3-gke-gsm-prd   Permanent     Auto        500     https://github.com/jx3rocks/jx3-gke-gsm.prd.git   master
-staging           jx-staging           Permanent     Auto        100   
-
+jx ns jx
 jx get applications
 APPLICATION STAGING PODS URL
 node-http01 0.0.1   1/1  https://node-http01.dev.jx3rocks.com
 
+# Confirm deployment for reomote prod
 jx get applications -e jx3-gke-gsm-prd
 APPLICATION
 node-http01
 
-kubectl config use-context $PROD_CONTECT
-kubectl get environments
-kubectl get env
-NAME      NAMESPACE    KIND          PROMOTION   ORDER   GIT URL                                           GIT BRANCH
-dev       jx           Development   Never               https://github.com/jx3rocks/jx3-gke-gsm.prd.git   master
-staging   jx-staging   Permanent     Auto        100           
+kubectl config use-context $PROD_CONTEXT
+jx ns jx
+kubectl get ing -n jx-jx3-gke-gsm-prd
+NAME          CLASS    HOSTS                           ADDRESS         PORTS     AGE
+node-http01   <none>   node-http01.prd.jx3rocks.com   34.86.236.247   80, 443   6m9s
+
 
 # URLS
 Dev:  https://node-http01.dev.jx3rocks.com
