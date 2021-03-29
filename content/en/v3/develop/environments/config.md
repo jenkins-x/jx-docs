@@ -6,7 +6,7 @@ description: Configuration of Environments and Promotion
 weight: 200
 ---
 
-In your development cluster the [jx-requirements.yml](https://github.com/jenkins-x/jx-api/blob/master/docs/config.md#requirements) file is used to define which are the default environments are used for promotion on your repositories.
+In your development cluster git repository the [jx-requirements.yml](https://github.com/jenkins-x/jx-api/blob/master/docs/config.md#requirements) file is used to define which are the default environments are used for promotion on your repositories.
        
 
 The [default configuration](https://github.com/jx3-gitops-repositories/jx3-kubernetes/blob/master/jx-requirements.yml#L18) for environments looks something like this:
@@ -69,4 +69,68 @@ spec:
     repository: some-other-repo-name    
 ```
 
+## Custom environments per group of repositories
+
+If you have different teams sharing the same Jenkins X installation you may wish to organise the repositories into _groups_ (e.g. a group of repositories per team).
+ 
+The simplest way to do this is to use a separate git organisation (owner) per team and then you already get separate configurations per group/owner in the `.jx/gitops/source-config.yaml` file in your development cluster git repository.
+                                                    
+The added benefit of using separate git organisations is that already the [dashboard](/v3/develop/ui/dashboard/) supports filtering all pipelines by owner; so each team will get effectively their own separate UI for viewing pipelines. You can easily bookmark the dashboards view for a single owner / repository.
+
+e.g. here's an example `.jx/gitops/source-config.yaml in the development cluster git repository:
+
+```yaml 
+apiVersion: gitops.jenkins-x.io/v1alpha1
+kind: SourceConfig
+metadata:
+  creationTimestamp: null
+spec:
+  groups:
+  - owner: team1
+    provider: https://github.com
+    providerKind: github
+    repositories:
+    - name: cheese-frontend
+    - name: cheese-backend
+    scheduler: in-repo
+    settings:
+      destination:
+        chartRepository: https://github.com/team1/charts.git
+        chartKind: pages
+      # lets replace the promote environments
+      ignoreDevEnvironments: true
+      promoteEnvironments:
+      - key: my-staging
+        owner: team1
+        repository: some-repo-name
+      - key: my-prod
+        owner: team1
+        repository: some-other-repo-name    
+  - owner: team2
+    provider: https://github.com
+    providerKind: github
+    repositories:
+    - name: another
+    - name: somerepo
+    scheduler: in-repo
+    settings:
+      destination:
+        chartRepository: https://github.com/team2/charts.git
+        chartKind: pages
+      # lets replace the promote environments
+      ignoreDevEnvironments: true
+      promoteEnvironments:
+      - key: my-staging
+        owner: team2
+        repository: some-repo-name
+      - key: my-prod
+        owner: team2
+        repository: some-other-repo-name    
+```
+
+If using different git organisations isn't practical you can at least get some of the benefits by just creating multiple groups in the `.jx/gitops/source-config.yaml` and associating different `settings:` to each group.
+
+Note that any settings in a local repository `.jx/settings.yaml` file will be used; putting shared settings in the development git repository is used if there is no `.jx/settings.yaml` file.
+
+          
 
