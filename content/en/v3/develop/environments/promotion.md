@@ -16,7 +16,7 @@ The release pipelines use the [jx promote --all](https://github.com/jenkins-x/jx
 
   * **Auto** means the Pull Request will automatically merge if its successful (the Pull Request pipeline succeeds)
 
-  * **Manual** means the Pull Request is a draft and won't automatically merge. i.e. the Pull Request needs to be manually approved. 
+  * **Manual** means the Pull Request is a draft and won't automatically merge. i.e. the Pull Request needs to be manually approved (comment `/approve`) and taken off hold (comment `/hold cancel`). 
 
 * all local Environments in your `jx-requirements.yml` of the promotion kind **Auto** are promoted using a single Pull Request so that all the promotions automatically merge if the pull request pipeline validates successfully.
 
