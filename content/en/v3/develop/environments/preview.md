@@ -160,6 +160,9 @@ The following variables are added to the `.jx/variables.sh` file by the [jx prev
 * `PREVIEW_NAME` the name of the `Preview` custom resource which has the full metadata
 * `PREVIEW_NAMESPACE` the namespace of the preview environment which you can use via `myservice.$PREVIEW_NAMESPACE.svc.cluster.local` to access services in your preview
 
+## Scaling Preview Environments
+
+A classic issue with preview environments is the number of pods that will grow with the number of applications, pull requests and dependencies. One solution is to use [Osiris](https://github.com/dailymotion-oss/osiris) to automatically scale down the preview environments which are idle. You can read the [admin guide on scaling preview environments](/v3/guides/preview-environments) to install Osiris in your cluster.
 
 ## Further reading
 
