@@ -22,7 +22,9 @@ aliases:
 ### EKS + Terraform
 This is our current recommended quickstart for EKS:
 
-*  <a href="https://github.com/jx3-gitops-repositories/jx3-terraform-eks/generate" target="github" class="btn bg-primary text-light">Create Git Repository</a>
+*  <a href="https://github.com/jx3-gitops-repositories/jx3-terraform-eks/generate" target="github" class="btn bg-primary text-light">Create Git Repository</a> based on the [jx3-gitops-repositories/jx3-terraform-eks](https://github.com/jx3-gitops-repositories/jx3-terraform-eks)  
+   
+    * if the above button does not work then please [Login to GitHub](https://github.com/login) first and then retry the button
 
 * `git clone` the new repository and `cd`  into the git clone
 

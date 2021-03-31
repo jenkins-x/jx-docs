@@ -50,7 +50,8 @@ oc adm policy add-scc-to-user anyuid -z tekton-pipelines-webhook
 
 ## Setup
 
-*  <a href="https://github.com/jx3-gitops-repositories/jx3-openshift-crc/generate" target="github" class="btn bg-primary text-light">Create the cluster Git Repository</a> based on the [jx3-gitops-repositories/jx3-openshift-crc](https://github.com/jx3-gitops-repositories/jx3-openshift-crc/generate)                                                                                                                                       template
+*  <a href="https://github.com/jx3-gitops-repositories/jx3-openshift-crc/generate" target="github" class="btn bg-primary text-light">Create the cluster Git Repository</a> based on the [jx3-gitops-repositories/jx3-openshift-crc](https://github.com/jx3-gitops-repositories/jx3-openshift-crc)                                                                                                                                       template
+    * if the above button does not work then please [Login to GitHub](https://github.com/login) first and then retry the button
 
 * `git clone` the new repository and `cd` into the git clone directory
 
