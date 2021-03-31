@@ -72,6 +72,8 @@ This is our current recommended quickstart for on premise kubernetes:
 
 *  <a href="https://github.com/jx3-gitops-repositories/jx3-kubernetes/generate" target="github" class="btn bg-primary text-light">Create the cluster Git Repository</a> based on the [jx3-gitops-repositories/jx3-kubernetes](https://github.com/jx3-gitops-repositories/jx3-kubernetes/generate) template
 
+    * if the above button does not work then please [Login to GitHub](https://github.com/login) first and then retry the button
+
 * find out what your ingress domain is for your cluster then modify the `jx-requirements.yml` file and modify the `ingress.domain` section...
 
 ```yaml
