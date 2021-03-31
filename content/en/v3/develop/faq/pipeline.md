@@ -78,3 +78,19 @@ Once you have a kubernetes Secret (see [how to create them](/v3/admin/setup/secr
    script: |
      #!/busybox/sh
  ```
+             
+
+## How can I use a monorepo?
+
+If you have an existing monorepo you want to import into Jenkins X you can; just be aware that you'll have to [create and maintain your own pipelines](/v3/develop/pipelines/editing/) for your monorepo. 
+
+We currently have no special tekton steps to analyse git changes and conditionally run different sets of tekton steps based on what has changed.
+
+So you may need to write your own steps to handle this nicely based on whatever kind of monorepo you have. Or you may want to look at using a tool like [Bazel](https://bazel.build/) or some similar tool to implement your monorepo build and just invoke that from the Tekton pipeline. 
+
+You could start with the automated CI/CD pipelines that most match your technology choices and edit them to suit.
+
+
+
+
+
