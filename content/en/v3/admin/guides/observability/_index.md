@@ -81,7 +81,7 @@ The default credentials are stored in the `grafana` Kubernetes Secret:
 - the default password has been auto-generated at installation time, you can retrieve it with the following command:
 
 ```bash 
-$ kubectl -n jx-observability get secret grafana --template='{{index .data "admin-password"}}' | base64 -D
+$ kubectl -n jx-observability get secret grafana --template='{{index .data "admin-password"}}' | base64 --decode
 ```
 
 Once you are logged-in, you can play with the pre-defined dashboards, or with the [Grafana Explorer](https://grafana.com/docs/grafana/latest/explore/).
