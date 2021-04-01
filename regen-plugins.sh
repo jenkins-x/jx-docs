@@ -17,13 +17,20 @@ cd ..
 
 echo "build the tool"
 
-ls -al jx-plugin-doc/build
+ls -al 
 
 DIR=$(pwd)
 
 jx-plugin-doc/build/jx-plugin-doc $DIR
 
-echo "run the generator"
+echo "ran the generator"
+
+ls jx-plugins
+
+echo generated 
+ls -al content/en/v3/develop/reference/jx
+
+echo git commit
 
 git add content/en/v3/develop/reference/jx
 git status
