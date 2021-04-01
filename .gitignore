@@ -18,5 +18,6 @@ nohup.out
 **/.DS_Store
 /tmp
 
+jx-plugin
 jx-plugins
 jx-plugin-doc
