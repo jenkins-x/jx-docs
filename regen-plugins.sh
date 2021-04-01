@@ -19,7 +19,9 @@ echo "build the tool"
 
 ls -al jx-plugin-doc/build
 
-jx-plugin-doc/build/jx-plugin-doc
+DIR=$(pwd)/jx-plugin
+
+jx-plugin-doc/build/jx-plugin-doc $DIR
 
 echo "run the generator"
 
