@@ -19,7 +19,7 @@ echo "build the tool"
 
 ls -al jx-plugin-doc/build
 
-DIR=$(pwd)/jx-plugin
+DIR=$(pwd)
 
 jx-plugin-doc/build/jx-plugin-doc $DIR
 
