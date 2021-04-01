@@ -25,10 +25,12 @@ jx-plugin-doc/build/jx-plugin-doc $DIR
 
 echo "run the generator"
 
+git add content/en/v3/develop/reference/jx/
+git status
+
 if [ -z "$DISABLE_COMMIT" ]
 then
     echo "adding generated content"
-    git add content
     git commit -a -m "chore: regenerated plugin docs"
     git push
 else
