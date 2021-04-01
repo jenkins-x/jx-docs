@@ -15,10 +15,17 @@ cd jx-plugin-doc
 make build
 cd ..
 
+echo "build the tool"
+
+ls -al jx-plugin-doc/build
+
 jx-plugin-doc/build/jx-plugin-doc
+
+echo "run the generator"
 
 if [ -z "$DISABLE_COMMIT" ]
 then
+    echo "adding generated content"
     git add content
     git commit -a -m "chore: regenerated plugin docs"
     git push
