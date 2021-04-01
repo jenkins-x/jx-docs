@@ -17,3 +17,5 @@ tmp-website
 nohup.out
 **/.DS_Store
 /tmp
+
+jx-plugin-doc

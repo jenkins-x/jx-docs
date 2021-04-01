@@ -1,0 +1,17 @@
+name: Regenerate the plugin docs code
+on:
+  schedule:
+    # run a bit before midnight when go deps change
+    - cron: '0 23 * * *'
+
+  # allow manual triggering
+  workflow_dispatch: {}
+jobs:
+  issue:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: docker://golang:1.15
+        name: Regenerate the plugins docs
+        with:
+          entrypoint: ./regen-plugins.sh
