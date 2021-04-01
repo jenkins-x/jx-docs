@@ -90,6 +90,13 @@ So you may need to write your own steps to handle this nicely based on whatever 
 
 You could start with the automated CI/CD pipelines that most match your technology choices and edit them to suit.
 
+There are a few tools around that could help:
+              
+* [bazel](https://bazel.build/)
+* [lerna](https://github.com/lerna/lerna)
+* [meta](https://github.com/mateodelnorte/meta) see [the blog](https://patrickleet.medium.
+  x§com/mono-repo-or-multi-repo-why-choose-one-when-you-can-have-both-e9c77bd0c668)
+
 
 
 
