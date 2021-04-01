@@ -104,7 +104,7 @@ If you want to change anything from the default configuration, you can either:
 ## Next steps
 
 Once the Grafana stack is installed and configured, you can:
-- install the [Continuous Delivery Indicators](v3/admin/guides/observability/cd-indicators/) addon
+- install the [Continuous Delivery Indicators](/v3/admin/guides/observability/cd-indicators/) addon
 - expose Prometheus metrics from your own applications
 - create Grafana dashboards for your applications
 - contribute to the [Jenkins X Grafana Dashboards](https://github.com/jenkins-x-charts/grafana-dashboard)
