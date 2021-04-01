@@ -9,9 +9,31 @@ aliases:
 ---
 
 ## Cluster 
-           
+
+
+### Automatic upgrades
+
+To enable automatic upgrades of your cluster you need to modify your `jx-requirements.yml` file in your development git cluster repository:
+
+```yaml 
+apiVersion: core.jenkins-x.io/v4beta1
+kind: Requirements
+spec:
+  autoUpdate:
+    enabled: true
+    schedule: "0 0 * * *"
+```
+
+Once you commit and push that change and your [boot job has completed](/v3/about/how-it-works/#boot-job) you should have a `CronJob` running at the above schedule (every night at midnight) creating a Pull Request to upgrade your cluster's versions of charts and images.
+
+Note that we don't automatically merge these Pull Requests yet; so you need to approve them when you are happy to do so.
+
+For more help on the Cron scheduler syntax check out [crontab.guru](https://crontab.guru/)
  
-The following demo walks through how to upgrade your cluster: 
+
+### Manual upgrades
+
+The following demo walks through how to manually upgrade your cluster: 
 
 <iframe width="700" height="315" src="https://www.youtube.com/embed/9ZaqdwD3cTs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
