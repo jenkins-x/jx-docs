@@ -25,7 +25,7 @@ jx-plugin-doc/build/jx-plugin-doc $DIR
 
 echo "run the generator"
 
-git add content/en/v3/develop/reference/jx/
+git add content/en/v3/develop/reference/jx
 git status
 
 if [ -z "$DISABLE_COMMIT" ]
@@ -36,3 +36,5 @@ then
 else
     echo "disabled commiting changes"
 fi
+
+echo "complete"
