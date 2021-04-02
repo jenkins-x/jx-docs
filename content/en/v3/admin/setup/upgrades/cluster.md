@@ -22,11 +22,13 @@ spec:
   autoUpdate:
     enabled: true
     schedule: "0 0 * * *"
+    autoMerge: true
 ```
-
+      
 Once you commit and push that change and your [boot job has completed](/v3/about/how-it-works/#boot-job) you should have a `CronJob` running at the above schedule (every night at midnight) creating a Pull Request to upgrade your cluster's versions of charts and images.
 
-Note that we don't automatically merge these Pull Requests yet; so you need to approve them when you are happy to do so.
+
+If you set `autoMerge: true` then the upgrade Pull Requests will get auto merged if the CI/CD pipelines all succeed; otherwise you need to manually approve the Pull Requests when you are happy for the upgrade to be applied.
 
 For more help on the Cron scheduler syntax check out [crontab.guru](https://crontab.guru/)
  
