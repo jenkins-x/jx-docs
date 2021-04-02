@@ -29,7 +29,7 @@ Commands for working with Jenkins GitOps configuration
 
 ### SEE ALSO
 
-* [jx-gitops](jx-gitops)	 - GitOps utility commands
+* [jx-gitops](..)	 - GitOps utility commands
 * [jx-gitops jenkins add](jx-gitops_jenkins_add)	 - Adds a new Jenkins server to the git repository
 * [jx-gitops jenkins jobs](jx-gitops_jenkins_jobs)	 - Generates the Jenkins Jobs helm files
 

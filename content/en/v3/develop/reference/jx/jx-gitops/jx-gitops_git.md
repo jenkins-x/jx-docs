@@ -29,7 +29,7 @@ Commands for working with Git
 
 ### SEE ALSO
 
-* [jx-gitops](jx-gitops)	 - GitOps utility commands
+* [jx-gitops](..)	 - GitOps utility commands
 * [jx-gitops git clone](jx-gitops_git_clone)	 - Clones the cluster git repository using the URL, git user and token from the Secret
 * [jx-gitops git get](jx-gitops_git_get)	 - Gets a file from a git repository or environment git repository
 * [jx-gitops git merge](jx-gitops_git_merge)	 - Merge a number of SHAs into the HEAD of the main branch

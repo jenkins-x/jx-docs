@@ -31,7 +31,7 @@ Commands for working with jx-requirements.yml
 
 ### SEE ALSO
 
-* [jx-gitops](jx-gitops)	 - GitOps utility commands
+* [jx-gitops](..)	 - GitOps utility commands
 * [jx-gitops requirement edit](jx-gitops_requirement_edit)	 - Edits the local 'jx-requirements.yml file
 * [jx-gitops requirement merge](jx-gitops_requirement_merge)	 - Merges values from the given file to the local jx-requirements.yml file
 * [jx-gitops requirement publish](jx-gitops_requirement_publish)	 - Publishes the current jx-requirements.yml to the dev Environment so it can be easily used in pipelines

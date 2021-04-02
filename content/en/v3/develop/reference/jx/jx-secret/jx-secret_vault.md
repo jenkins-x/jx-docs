@@ -29,7 +29,7 @@ Commands for working with Vault
 
 ### SEE ALSO
 
-* [jx-secret](jx-secret)	 - External Secrets utility commands
+* [jx-secret](..)	 - External Secrets utility commands
 * [jx-secret vault portforward](jx-secret_vault_portforward)	 - Runs a port forward process so you can access the vault in a kubernetes cluster
 * [jx-secret vault shell](jx-secret_vault_shell)	 - Runs a shell so you can access the vault in a kubernetes cluster
 * [jx-secret vault wait](jx-secret_vault_wait)	 - Waits for vault to be ready for use

@@ -29,7 +29,7 @@ Commands for working with plugins
 
 ### SEE ALSO
 
-* [jx-gitops](jx-gitops)	 - GitOps utility commands
+* [jx-gitops](..)	 - GitOps utility commands
 * [jx-gitops plugin get](jx-gitops_plugin_get)	 - Display the binary plugins
 * [jx-gitops plugin upgrade](jx-gitops_plugin_upgrade)	 - Upgrades the binary plugins for this plugin
 

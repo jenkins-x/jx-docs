@@ -29,7 +29,7 @@ Commands for garbage collecting resources
 
 ### SEE ALSO
 
-* [jx-gitops](jx-gitops)	 - GitOps utility commands
+* [jx-gitops](..)	 - GitOps utility commands
 * [jx-gitops gc activities](jx-gitops_gc_activities)	 - garbage collection for PipelineActivity resources
 * [jx-gitops gc pods](jx-gitops_gc_pods)	 - garbage collection for pods
 

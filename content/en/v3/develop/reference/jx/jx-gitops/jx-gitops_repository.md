@@ -31,7 +31,7 @@ Commands for working with source repositories
 
 ### SEE ALSO
 
-* [jx-gitops](jx-gitops)	 - GitOps utility commands
+* [jx-gitops](..)	 - GitOps utility commands
 * [jx-gitops repository add](jx-gitops_repository_add)	 - Add one or more git URLs to the source configuration
 * [jx-gitops repository create](jx-gitops_repository_create)	 - Creates any missing SourceRepository resources
 * [jx-gitops repository export](jx-gitops_repository_export)	 - Exports the 'source-config.yaml' file from the kubernetes resources in the current cluster

@@ -29,7 +29,7 @@ Commands for working with kpt packages
 
 ### SEE ALSO
 
-* [jx-gitops](jx-gitops)	 - GitOps utility commands
+* [jx-gitops](..)	 - GitOps utility commands
 * [jx-gitops kpt recreate](jx-gitops_kpt_recreate)	 - Recreates the kpt packages in the given directory
 * [jx-gitops kpt update](jx-gitops_kpt_update)	 - Updates any kpt packages installed in a sub directory
 

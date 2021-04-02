@@ -31,7 +31,7 @@ Commands for working with helmfile
 
 ### SEE ALSO
 
-* [jx-gitops](jx-gitops)	 - GitOps utility commands
+* [jx-gitops](..)	 - GitOps utility commands
 * [jx-gitops helmfile add](jx-gitops_helmfile_add)	 - Adds a chart to the local 'helmfile.yaml' file
 * [jx-gitops helmfile move](jx-gitops_helmfile_move)	 - Moves the generated template files from 'helmfile template' into the right gitops directory
 * [jx-gitops helmfile report](jx-gitops_helmfile_report)	 - Generates a markdown report of the helmfile based deployments in each namespace

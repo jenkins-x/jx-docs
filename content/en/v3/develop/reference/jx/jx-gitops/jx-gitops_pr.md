@@ -31,7 +31,7 @@ Commands for working with Pull Requests
 
 ### SEE ALSO
 
-* [jx-gitops](jx-gitops)	 - GitOps utility commands
+* [jx-gitops](..)	 - GitOps utility commands
 * [jx-gitops pr comment](jx-gitops_pr_comment)	 - Add comment to the pull request
 * [jx-gitops pr get](jx-gitops_pr_get)	 - Gets a pull request and displays fields from it
 * [jx-gitops pr label](jx-gitops_pr_label)	 - Add label to the pull request

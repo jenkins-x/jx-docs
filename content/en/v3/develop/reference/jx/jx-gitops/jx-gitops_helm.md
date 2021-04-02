@@ -29,7 +29,7 @@ Commands for working with helm charts
 
 ### SEE ALSO
 
-* [jx-gitops](jx-gitops)	 - GitOps utility commands
+* [jx-gitops](..)	 - GitOps utility commands
 * [jx-gitops helm build](jx-gitops_helm_build)	 - Builds and lints any helm charts
 * [jx-gitops helm escape](jx-gitops_helm_escape)	 - Escapes any {{ or }} characters in the YAML files so they can be included in a helm chart
 * [jx-gitops helm mirror](jx-gitops_helm_mirror)	 - Creates a helm mirror 
