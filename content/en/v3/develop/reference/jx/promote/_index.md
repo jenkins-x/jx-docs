@@ -25,6 +25,7 @@ For more documentation see: https://jenkins-x.io/docs/getting-started/promotion/
 
 ### Examples
 
+  ```bash
   # Promote a version of the current application to staging
   # discovering the application name from the source code
   jx promote --version 1.2.3 --env staging
@@ -42,6 +43,7 @@ For more documentation see: https://jenkins-x.io/docs/getting-started/promotion/
   # To create or update a Preview Environment please see the 'jx preview' command if you are inside a git clone of a repo
   jx preview
 
+  ```
 ### Options
 
 ```
