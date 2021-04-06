@@ -34,7 +34,7 @@ If your pipeline runs the [jx gitops variables](https://github.com/jenkins-x/jx-
 So that your step looks something like this...
 
 ```yaml
-- image: gcr.io/jenkinsxio/jx-cli:latest
+- image: gcr.io/jenkinsxio/jx:latest
   name: my-step
   script: |
     #!/usr/bin/env bash

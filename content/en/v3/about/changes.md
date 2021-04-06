@@ -18,6 +18,8 @@ You may also find the [Roadmap](/community/roadmap/) and [Maturity Matrix](/v3/a
 
 ## Changes 
 
+* The [reference guide](/v3/develop/reference/) now has a full [Command Line Reference](/v3/develop/reference/jx/) for browsing the command line of the various [Jenkins X Plugins](https://github.com/jenkins-x-plugins)
+* There is now support for [automatic upgrades](/v3/admin/setup/upgrades/cluster/#automatic-upgrades) where a Pull Request is automatically generated on your development cluster repository to upgrade the versions of charts in your installation. You can define the upgrade schedule and whether or not the Pull Request is auto merged or requires a manual approval/merge.
 * A preview can fail to create for a multitude of reasons; bad helm charts, missing secrets/volumes, invalid configuration in `jx-requirements.yml`, bad image names, no capacity on the server to name but a few. Unfortunately `helmfile sync` does not give much information other than it succeeded of failed. 
   * to improve feedback on why some previews can fail we have added additional output in the [jx preview create](https://github.com/jenkins-x/jx-preview/blob/master/docs/cmd/jx-preview_create.md) command to tail the kubernetes events in the preview namespace. This basically runs `kubectl exec get event -n $PREVIEW_NAMESPACE -w` and adds the output to the pipeline output (prefixed with `$PREVIEW_NAMESPACE:`      
   * this means the reason for why a preview fails should appear as a kubernetes event in the pipeline log
@@ -44,7 +46,7 @@ jx dash
   * [reuse Tasks from the Tekton catalog](/v3/develop/pipelines/#adding-tasks-from-the-tekton-catalog) and optionally modify them locally in your repository
   * [add new pipelines to any git repository](/v3/develop/pipelines/#add-new-taskspipelines-by-hand) to reuse any `PipelineRun` files you find from places like the [tekton catalog](https://github.com/tektoncd/catalog) into your repositories
 
-* We have migrated most of the [Jenkins X Plugins](https://github.com/jenkins-x/jx-cli#plugins) over to the new client-go 1.19.x version now which is a fairly major change due to the API changes in client-go. So we've moved many of the [libraries](https://github.com/jenkins-x/jx-cli#libraries) over to use `v3` instead such as using libraries like [jx-api](https://github.com/jenkins-x/jx-api) or [jx-helpers](https://github.com/jenkins-x/jx-helpers)
+* We have migrated most of the [Jenkins X Plugins](https://github.com/jenkins-x/jx#plugins) over to the new client-go 1.19.x version now which is a fairly major change due to the API changes in client-go. So we've moved many of the [libraries](https://github.com/jenkins-x/jx#libraries) over to use `v3` instead such as using libraries like [jx-api](https://github.com/jenkins-x/jx-api) or [jx-helpers](https://github.com/jenkins-x/jx-helpers)
   * if you were planning on submitting a Pull Request on any plugin please make sure you rebase before submitting a Pull Request. Also upgrade to go `1.15.2` ASAP 
   
 * New [Maturity Matrix](/v3/about/maturity-matrix/) published! You can now view at a glance the different capabilities across clouds and infrastructure. Many thanks [Nitin](https://github.com/borntorock) for all your hard work
@@ -54,4 +56,4 @@ jx dash
   * This is all handled by the new [jx-preview](https://github.com/jenkins-x/jx-preview) plugin
   * This also opens up the possibility of using multiple namespaces per preview; or using canary releases on multiple previews into a shared environment.
   
-* The new Jenkins X version 3 CLI [jx-cli](https://github.com/jenkins-x/jx-cli) is now plugins all the way down; so that all of the features are implemented by [separate binary plugins](https://github.com/jenkins-x/jx-cli#plugins) making the CLI more modular and easier to work on.
+* The new Jenkins X version 3 CLI [jx-cli](https://github.com/jenkins-x/jx) is now plugins all the way down; so that all of the features are implemented by [separate binary plugins](https://github.com/jenkins-x/jx#plugins) making the CLI more modular and easier to work on.
