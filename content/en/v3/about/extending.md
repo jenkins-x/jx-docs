@@ -22,13 +22,13 @@ You can also easily [add one or more kubernetes resources to a cluster via a sou
 
 ## Plugins
 
-The `jx` command line in version 3 is build on [plugins](https://github.com/jenkins-x/jx-cli#plugins).
+The `jx` command line in version 3 is build on [plugins](https://github.com/jenkins-x/jx#plugins).
 
 It turns out anyone can create a new plugin to wrap up some functionality that is either ran on a developer laptop or is used via a container image inside a pipeline step.
 
 Plugins usually written in [Go](https://golang.org/) as it has awesome Kubernetes support and generates easy to use statically compiled binaries - though you are free to create plugins in any programming language.
 
-If you wish to create a new plugin try browse the [jenkins-x-plugins organisation](https://github.com/jenkins-x-plugins) for inspiration or check out the [standard plugins used in the jx-cli](https://github.com/jenkins-x/jx-cli#plugins)
+If you wish to create a new plugin try browse the [jenkins-x-plugins organisation](https://github.com/jenkins-x-plugins) for inspiration or check out the [standard plugins used in the jx-cli](https://github.com/jenkins-x/jx#plugins)
   
 
 ### Developing Plugins

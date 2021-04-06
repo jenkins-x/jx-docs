@@ -24,7 +24,7 @@ This page lists the main organisations and repositories.
 
 Here we'll call out of some of the main repositories in the above organisations:
 
-* [jenkins-x/jx-cli](https://github.com/jenkins-x/jx-cli) is the 3.x CLI 
+* [jenkins-x/jx](https://github.com/jenkins-x/jx) is the 3.x CLI 
 * [jenkins-x/jx3-pipeline-catalog](https://github.com/jenkins-x/jx3-pipeline-catalog) the main [Pipeline Catalog](https://jenkins-x.io/v3/guides/pipeline-catalog/)
 * [jenkins-x/jxr-versions](https://github.com/jenkins-x/jxr-versions) contains the [version stream](/about/concepts/version-stream/) - the stable versions of all _charts_ and CLI _packages_
 
