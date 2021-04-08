@@ -82,7 +82,7 @@ The code is merged to the `main` branch, and the release is created and will app
 
 ## How it works
     
-the [jx preview create](/v3/develop/reference/jx/preview/create) command creates a new [Preview](https://github.com/jenkins-x/jx-preview/blob/master/docs/crds/github-com-jenkins-x-jx-preview-pkg-apis-preview-v1alpha1.md#Preview) custom resource for each Pull Request on each repository so that we can track the resources and cleanly remove them when you run [jx preview destroy](/v3/develop/reference/jx/preview/destroy) pr [jx preview gc]((/v3/develop/reference/jx/preview/gc))
+the [jx preview create](/v3/develop/reference/jx/preview/create) command creates a new [Preview](https://github.com/jenkins-x/jx-preview/blob/master/docs/crds/github-com-jenkins-x-jx-preview-pkg-apis-preview-v1alpha1.md#Preview) custom resource for each Pull Request on each repository so that we can track the resources and cleanly remove them when you run [jx preview destroy](/v3/develop/reference/jx/preview/destroy) pr [jx preview gc](/v3/develop/reference/jx/preview/gc)
 
 For reference see the [Preview.Spec](https://github.com/jenkins-x/jx-preview/blob/master/docs/crds/github-com-jenkins-x-jx-preview-pkg-apis-preview-v1alpha1.md#PreviewSpec) documentation
 
