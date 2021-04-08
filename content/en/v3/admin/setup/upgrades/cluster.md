@@ -45,7 +45,7 @@ The following demo walks through how to manually upgrade your cluster:
 
 ---
 
-You can upgrade your Jenkins X installation at any time by running the [jx gitops upgrade](/v3/develop/reference/jx/gitops/update) command inside a git checkout of your cluster GitOps repository:
+You can upgrade your Jenkins X installation at any time by running the [jx gitops upgrade](/v3/develop/reference/jx/gitops/upgrade) command inside a git checkout of your cluster GitOps repository:
 
 First make sure you have the latest git contents as the [boot job will push changes](/v3/about/how-it-works/#boot-job):
 

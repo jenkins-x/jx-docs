@@ -21,7 +21,7 @@ If you have any old `jenkins-x.yml` files, those will be converted across to the
 
 ## Upgrading pipelines and helm charts via kpt
 
-You can upgrade any git repository in the same way you upgrade your [clusters git repository](/v3/guides/upgrade/#cluster) by running the [jx gitops upgrade](/v3/develop/reference/jx/gitops/update) command inside a git checkout of your repository:
+You can upgrade any git repository in the same way you upgrade your [clusters git repository](/v3/guides/upgrade/#cluster) by running the [jx gitops upgrade](/v3/develop/reference/jx/gitops/upgrade) command inside a git checkout of your repository:
 
 ```bash
 cd my-quickstart-thingy
