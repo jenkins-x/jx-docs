@@ -19,7 +19,7 @@ Otherwise use the [issue tracker for Jenkins X 3.x](https://github.com/jenkins-x
 
 ## Why does Jenkins X use `helmfile template`?
 
-If you look into the **versionStream/src/Makefile.mk** file in your cluster git repository to see how the boot proccess works you may notice its defined a simple makefile and uses the [jx gitops helmfile template](https://github.com/jenkins-x/jx-gitops/blob/master/docs/cmd/jx-gitops_helmfile_template.md) command to convert the [helmfile](https://github.com/roboll/helmfile) `helmfile.yaml` files referencing helm charts into YAML.
+If you look into the **versionStream/src/Makefile.mk** file in your cluster git repository to see how the boot process works you may notice its defined a simple makefile and uses the `helmfile template` command to convert the [helmfile](https://github.com/roboll/helmfile) `helmfile.yaml` files referencing helm charts into YAML.
 
 So why don't we use `helmfile sync` instead to apply the kubernetes resources from the charts directly into kubernetes?
 
@@ -58,9 +58,9 @@ config-root/
 
   * its trivial to run [kustomize](https://kustomize.io/) or [kpt](https://googlecontainertools.github.io/kpt/) to modify any resource in any chart before it's applied to Production and to review the generated values first 
 
-  * its easy to use [jx gitops hash](https://github.com/jenkins-x/jx-gitops/blob/master/docs/cmd/jx-gitops_hash.md) to add some hash annotations to cause rolling upgrade to `Deployments` when git changes (when the `Deployment` YAML does not)
+  * its easy to use [jx gitops hash](/v3/develop/reference/jx/gitops/hash) to add some hash annotations to cause rolling upgrade to `Deployments` when git changes (when the `Deployment` YAML does not)
 
-  * use [jx gitops annotate](https://github.com/jenkins-x/jx-gitops/blob/master/docs/cmd/jx-gitops_annotate.md) to add add support for tools like [pusher wave](https://github.com/pusher/wave) so that rotating secrets in your underlying secret store can cause rolling upgrades in your `Deployments`
+  * use [jx gitops annotate](/v3/develop/reference/jx/gitops/annotate) to add add support for tools like [pusher wave](https://github.com/pusher/wave) so that rotating secrets in your underlying secret store can cause rolling upgrades in your `Deployments`
 
 However since the steps to deploy a kubernetes cluster in Jenkins X is defined in a simple makefile stored in your cluster git repository its easy for developers to modify their cluster git repository to add any combination of tools to the makefile to use any permutation of  [helm 3](https://helm.sh/), [helmfile](https://github.com/roboll/helmfile), [kustomize](https://kustomize.io/), [kpt](https://googlecontainertools.github.io/kpt/)  and [kubectl](https://kubernetes.io/docs/reference/kubectl/kubectl/)
 

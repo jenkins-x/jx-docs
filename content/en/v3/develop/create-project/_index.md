@@ -14,7 +14,7 @@ To create or import projects you will need to get the [jx 3.x binary](/v3/guides
 
 ## Create a new project from a quickstart
 
-To create a new project from a quickstart template use the [jx project quickstart](https://github.com/jenkins-x/jx-project/blob/master/docs/cmd/project_quickstart.md) command:
+To create a new project from a quickstart template use the [jx project quickstart](/v3/develop/reference/jx/project/quickstart) command:
 
 ```bash 
 jx project quickstart
@@ -26,7 +26,7 @@ See the [quickstart documentation](/docs/create-project/creating/) for more info
 
 ## Import an existing project
 
-To import an existing project use the [jx project import](https://github.com/jenkins-x/jx-project/blob/master/docs/cmd/project_import.md) command:
+To import an existing project use the [jx project import](/v3/develop/reference/jx/project/import) command:
 
 ```bash 
 jx project import
@@ -44,7 +44,7 @@ This means we can create quickstarts and import projects using the same UX wheth
 
 ## Top level wizard
                
-If you just run the [jx project](https://github.com/jenkins-x/jx-project/blob/master/docs/cmd/project.md) you get a top level wizard that asks you which kind of approach you wish to take (e.g. quickstart versus import etc)
+If you just run the [jx project](/v3/develop/reference/jx/project) you get a top level wizard that asks you which kind of approach you wish to take (e.g. quickstart versus import etc)
 
 ## Improvements since v3
 

@@ -27,7 +27,7 @@ We recommend using separate clusters for your `Preprod` and `Production` environ
       * [kubernetes external secrets](https://github.com/external-secrets/kubernetes-external-secrets) for [populating Secrets from your secret store](/v3/admin/setup/secrets/) (vault or cloud provider secret manager)
       * [push-wave](https://github.com/jenkins-x-charts/pusher-wave#wave) for automatically performing rolling upgrades when secrets are rotated in your secret store
 
-3. Then when you have a git repository URL for your `Preprod` or `Production` cluster, [import the git repository](/v3/develop/create-project/#import-an-existing-project) like you would any other git repository into your Development cluster using the [jx project import](https://github.com/jenkins-x/jx-project/blob/master/docs/cmd/project_import.md) command (command should be run in the `jx` namespace):
+3. Then when you have a git repository URL for your `Preprod` or `Production` cluster, [import the git repository](/v3/develop/create-project/#import-an-existing-project) like you would any other git repository into your Development cluster using the [jx project import](/v3/develop/reference/jx/project/import) command (command should be run in the `jx` namespace):
     
     ```bash 
     jx project import --url https://github.com/myowner/my-prod-repo.git
@@ -39,7 +39,7 @@ We recommend using separate clusters for your `Preprod` and `Production` environ
 
 ### Changes to `jx-requirements.yml`
 
-The above [jx project import](https://github.com/jenkins-x/jx-project/blob/master/docs/cmd/project_import.md) should modify your `jx-requirements.yml` file in your development cluster to reference the remote production/pre-production cluster.
+The above [jx project import](/v3/develop/reference/jx/project/import) should modify your `jx-requirements.yml` file in your development cluster to reference the remote production/pre-production cluster.
 
 So your `jx-requirements.yml` should have started something like:
 
@@ -50,7 +50,7 @@ environments:
 - key: staging                                                   
 ```                                                              
 
-After importing the remote environment via [jx project import](https://github.com/jenkins-x/jx-project/blob/master/docs/cmd/project_import.md) and merging the pull request, it should look like: 
+After importing the remote environment via [jx project import](/v3/develop/reference/jx/project/import) and merging the pull request, it should look like: 
 
 ```yaml 
 environments:

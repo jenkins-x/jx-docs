@@ -37,7 +37,7 @@ You can test out changes to the Pull Request pipeline by submitting changes in a
 
 ### Linting
 
-You can run the [jx pipeline lint](https://github.com/jenkins-x/jx-pipeline/blob/master/docs/cmd/jx-pipeline_lint.md#jx-pipeline-lint) command from a clone of your repository.
+You can run the [jx pipeline lint](/v3/develop/reference/jx/pipeline/lint) command from a clone of your repository.
 
 ```bash
 jx pipeline lint

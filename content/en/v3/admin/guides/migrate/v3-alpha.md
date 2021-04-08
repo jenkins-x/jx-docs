@@ -28,7 +28,7 @@ You can use the `--strategy` to change this default if you wish. See `jx updateb
 
 ## Converting pipelines
 
-You can follow the [guide on migrating pipelines individually](/v3/develop/pipelines/upgrading/#converting-older-pipelines) via  [jx pipeline convert](https://github.com/jenkins-x/jx-pipeline/blob/master/docs/cmd/jx-pipeline_convert.md#jx-pipeline-convert) command to convert pipelines in a repository:
+You can follow the [guide on migrating pipelines individually](/v3/develop/pipelines/upgrading/#converting-older-pipelines) via  [jx pipeline convert](/v3/develop/reference/jx/pipeline/convert) command to convert pipelines in a repository:
 
 ```bash
 jx pipeline convert 

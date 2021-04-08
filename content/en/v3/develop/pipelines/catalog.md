@@ -216,7 +216,7 @@ To help understand the inheriance and overriding of steps we have a few command 
 
 ### Viewing the effective pipeline
 
-To see the actual Tekton pipeline that would be executed from your local source directory you can run the [jx pipeline effective](https://github.com/jenkins-x/jx-pipeline/blob/master/docs/cmd/jx-pipeline_effective.md#jx-pipeline-effective) command:
+To see the actual Tekton pipeline that would be executed from your local source directory you can run the [jx pipeline effective](/v3/develop/reference/jx/pipeline/effective) command:
 
 ```bash
 jx pipeline effective
@@ -245,7 +245,7 @@ jx pipeline effective
 
 ### Overriding a pipeline step locally
 
-If you want to edit a step that is inherited from a pipeline catalog just run the [jx pipeline override](https://github.com/jenkins-x/jx-pipeline/blob/master/docs/cmd/jx-pipeline_override.md#jx-pipeline-override) command from a clone of your repository.
+If you want to edit a step that is inherited from a pipeline catalog just run the [jx pipeline override](/v3/develop/reference/jx/pipeline/override) command from a clone of your repository.
 
 ```bash
 jx pipeline override
