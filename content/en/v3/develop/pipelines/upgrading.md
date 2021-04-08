@@ -9,7 +9,7 @@ weight: 500
 
 ## Converting older pipelines
 
-If you have older pipelines in your git repository created with an older version of Jenkins X you can convert them to the new concise `image: uses:sourceURI` syntax via the [jx pipeline convert](https://github.com/jenkins-x/jx-pipeline/blob/master/docs/cmd/jx-pipeline_convert.md#jx-pipeline-convert) command:
+If you have older pipelines in your git repository created with an older version of Jenkins X you can convert them to the new concise `image: uses:sourceURI` syntax via the [jx pipeline convert](/v3/develop/reference/jx/pipeline/convert) command:
 
 ```bash
 jx pipeline convert 
@@ -21,7 +21,7 @@ If you have any old `jenkins-x.yml` files, those will be converted across to the
 
 ## Upgrading pipelines and helm charts via kpt
 
-You can upgrade any git repository in the same way you upgrade your [clusters git repository](/v3/guides/upgrade/#cluster) by running the [jx gitops upgrade](https://github.com/jenkins-x/jx-gitops/blob/master/docs/cmd/jx-gitops_update.md) command inside a git checkout of your repository:
+You can upgrade any git repository in the same way you upgrade your [clusters git repository](/v3/guides/upgrade/#cluster) by running the [jx gitops upgrade](/v3/develop/reference/jx/gitops/update) command inside a git checkout of your repository:
 
 ```bash
 cd my-quickstart-thingy

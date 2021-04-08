@@ -9,7 +9,7 @@ aliases:
 ---
 
 
-When importing a project [jx project import](https://github.com/jenkins-x/jx-project/blob/master/docs/cmd/project_import.md) looks for a `Jenkinfile` in the source code. 
+When importing a project [jx project import](/v3/develop/reference/jx/project/import) looks for a `Jenkinfile` in the source code. 
 
 If there is no `Jenkinsfile` then the wizard assumes you wish to proceed with automated CI/CD pipelines based on [tekton](https://github.com/tektoncd/pipeline) and imports it in the usual Jenkins X way. You also get to confirm the kind of pipeline catalog  and language you wish to use for the automated CI/CD - so its easy to import any workload whether its a library, a binary, a container image, a helm chart or a fully blown microservice for automated kubernetes based CI/CD.
 

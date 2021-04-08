@@ -31,7 +31,7 @@ When you setup a [Remote Cluster](/v3/admin/guides/multi-cluster/) for `Staging`
 
 Then when you import the remote cluster repository into the development environment (to setup the CI/CD on pull requests and enable promotion) the generated Pull Request will modify your `jx-requirements.yml` to add remote entries for the remote cluster.
 
-e.g. after importing the remote `production` environment via [jx project import](https://github.com/jenkins-x/jx-project/blob/master/docs/cmd/project_import.md) and the pull request merging it should look like: 
+e.g. after importing the remote `production` environment via [jx project import](/v3/develop/reference/jx/project/import) and the pull request merging it should look like: 
 
 ```yaml 
 apiVersion: core.jenkins-x.io/v4beta1
