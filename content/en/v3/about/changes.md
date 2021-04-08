@@ -56,4 +56,4 @@ jx dash
   * This is all handled by the new [jx-preview](https://github.com/jenkins-x/jx-preview) plugin
   * This also opens up the possibility of using multiple namespaces per preview; or using canary releases on multiple previews into a shared environment.
   
-* The new Jenkins X version 3 CLI [jx-cli](https://github.com/jenkins-x/jx) is now plugins all the way down; so that all of the features are implemented by [separate binary plugins](https://github.com/jenkins-x/jx#plugins) making the CLI more modular and easier to work on.
+* The new Jenkins X version 3 CLI [jx](https://github.com/jenkins-x/jx) is now plugins all the way down; so that all of the features are implemented by [separate binary plugins](https://github.com/jenkins-x/jx#plugins) making the CLI more modular and easier to work on.
