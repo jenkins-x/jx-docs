@@ -82,25 +82,25 @@ The code is merged to the `main` branch, and the release is created and will app
 
 ## How it works
     
-the [jx preview create]((/v3/develop/reference/jx/preview/create)) command creates a new [Preview](https://github.com/jenkins-x/jx-preview/blob/master/docs/crds/github-com-jenkins-x-jx-preview-pkg-apis-preview-v1alpha1.md#Preview) custom resource for each Pull Request on each repository so that we can track the resources and cleanly remove them when you run [jx preview destroy]((/v3/develop/reference/jx/preview/destroy)) pr [jx preview gc]((/v3/develop/reference/jx/preview/gc))
+the [jx preview create](/v3/develop/reference/jx/preview/create) command creates a new [Preview](https://github.com/jenkins-x/jx-preview/blob/master/docs/crds/github-com-jenkins-x-jx-preview-pkg-apis-preview-v1alpha1.md#Preview) custom resource for each Pull Request on each repository so that we can track the resources and cleanly remove them when you run [jx preview destroy](/v3/develop/reference/jx/preview/destroy) pr [jx preview gc]((/v3/develop/reference/jx/preview/gc))
 
 For reference see the [Preview.Spec](https://github.com/jenkins-x/jx-preview/blob/master/docs/crds/github-com-jenkins-x-jx-preview-pkg-apis-preview-v1alpha1.md#PreviewSpec) documentation
 
-Once the  [Preview](https://github.com/jenkins-x/jx-preview/blob/master/docs/crds/github-com-jenkins-x-jx-preview-pkg-apis-preview-v1alpha1.md#Preview) resource is created with its associated preview namespace the  [jx preview create]((/v3/develop/reference/jx/preview/create))  command will execute `helmfile sync` of the **preview/helmfile.yaml** file to deploy all of the associated helm charts to the preview namespace. 
+Once the  [Preview](https://github.com/jenkins-x/jx-preview/blob/master/docs/crds/github-com-jenkins-x-jx-preview-pkg-apis-preview-v1alpha1.md#Preview) resource is created with its associated preview namespace the  [jx preview create](/v3/develop/reference/jx/preview/create)  command will execute `helmfile sync` of the **preview/helmfile.yaml** file to deploy all of the associated helm charts to the preview namespace. 
 
 When the `helmfile sync` is complete a comment is added to the Pull Request that the preview has been created. If a URL can be detected in the preview namespace it is added to the Pull Request as a comment so that your team can try it out and give fast feedback. 
 
 <img src="/images/pr-comment.png" class="img-thumbnail">
 
 
-When the Pull Request is merged or closed the [jx preview gc]((/v3/develop/reference/jx/preview/gc)) command kicks in periodically to remove any old preview environments.
+When the Pull Request is merged or closed the [jx preview gc](/v3/develop/reference/jx/preview/gc) command kicks in periodically to remove any old preview environments.
 
 
 ## When previews fail
 
 A preview can fail to create for a multitude of reasons; bad helm charts, missing secrets/volumes, invalid configuration in `jx-requirements.yml`, bad image names, no capacity on the server to name but a few. Unfortunately `helmfile sync` does not give much information other than it succeeded of failed which can be confusing. 
 
-To improve feedback on why some previews can fail we have added additional output in the [jx preview create]((/v3/develop/reference/jx/preview/create)) command to tail the kubernetes events in the preview namespace. This basically runs `kubectl exec get event -n $PREVIEW_NAMESPACE -w` and adds the output to the pipeline output (prefixed with `$PREVIEW_NAMESPACE:`      
+To improve feedback on why some previews can fail we have added additional output in the [jx preview create](/v3/develop/reference/jx/preview/create) command to tail the kubernetes events in the preview namespace. This basically runs `kubectl exec get event -n $PREVIEW_NAMESPACE -w` and adds the output to the pipeline output (prefixed with `$PREVIEW_NAMESPACE:`      
 
 This means the reason for why a preview fails should appear as a kubernetes event in the pipeline log.
 
@@ -154,7 +154,7 @@ e.g. here is an additional step to curl the preview URL after the `jx preview cr
            
 ### Environment variables
 
-The following variables are added to the `.jx/variables.sh` file by the [jx preview create]((/v3/develop/reference/jx/preview/create)) command:
+The following variables are added to the `.jx/variables.sh` file by the [jx preview create](/v3/develop/reference/jx/preview/create) command:
    
 * `PREVIEW_URL` the URL of the preview environment if it can be discovered
 * `PREVIEW_NAME` the name of the `Preview` custom resource which has the full metadata

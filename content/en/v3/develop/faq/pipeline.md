@@ -43,7 +43,7 @@ kubectl exec -it -c name-of-step-container name-of-pod sh
     
 ## How do I access the preview namespace or URL?
              
-After the [jx preview create]((/v3/develop/reference/jx/preview/create)) step in a pull request pipeline you can access a number of [preview environment variables](/v3/develop/environments/preview/#environment-variables).
+After the [jx preview create](/v3/develop/reference/jx/preview/create) step in a pull request pipeline you can access a number of [preview environment variables](/v3/develop/environments/preview/#environment-variables).
 
 For details see [how to add additional preview steps](/v3/develop/environments/preview/#additional-preview-steps)
 
