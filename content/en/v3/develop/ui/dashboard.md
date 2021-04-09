@@ -24,6 +24,8 @@ jx dash
 
 and it will open the dashboard using the basic authentication login and password.
 
+![](/images/jx-pipelines-visualizer/v1-home.png)
+
 ### Viewing from a Pull Request
 
 If you create a Pull Request on a git repository you have [created or imported](/v3/develop/create-project/) in Jenkins X you should see a link on the Pull Request. 
@@ -33,6 +35,8 @@ Here's an example - see the **Details** link on the right of the Pull Request pi
 <img src="/images/quickstart/pr-link.png" class="img-thumbnail">
 
 If you click the **Details** link that should open the [jx-pipelines-visualizer](https://github.com/jenkins-x/jx-pipelines-visualizer) UI for this pipeline build.
+
+![](/images/jx-pipelines-visualizer/v1-pipeline-success.png)
 
 ### Logging in to the Pipelines Visualizer
 
@@ -51,4 +55,8 @@ That should display the randomly generated password.
 
 If you type the username and password into your browser it should open the dashboard.
 
+### Pipelines Traces
 
+If you [enable the observability stack](/v3/admin/guides/observability/), then you will get a new link **Trace** in your pipeline view - once the pipeline is finished - that will open the pipeline trace in Grafana so that you can see the timings of each stage and steps in your pipeline:
+
+![](/images/jx-pipelines-visualizer/pipeline-trace.gif)
