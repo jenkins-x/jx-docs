@@ -12,6 +12,13 @@ Mostly you just use your IDE and git to change code in your usual way.
 
 Though we do prefer you submit code changes via [Pull Requests](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests) to then trigger CI and [Preview Environment](/v3/develop/environments/preview/) for each Pull Request. 
 
+## Demo
+
+To see how to develop with Jenkins X check out this demo:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4wqwulEzseM?t=279s" title="Demo of developing with Jenkins X" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 ## Pull Requests
 
 The pull request (PR) is the foundation of Jenkins X CI/CD pipeline execution. 
@@ -62,12 +69,5 @@ You can [Configure promotion to behave differently if you need it](/v3/develop/e
 _ChatOps_ lets you interact with the Pull Request via special comments on the Pull Request via your git providers website.
 
 See the [ChatOps Command Reference](/v3/develop/reference/chatops/)
-
-
-## Demo
-
-To see how to develop with Jenkins X check out this demo:
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/4wqwulEzseM?t=279s" title="Demo of developing with Jenkins X" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 

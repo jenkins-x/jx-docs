@@ -163,9 +163,9 @@ linkTitle = "Jenkins X - Cloud Native CI/CD Built On Kubernetes"
         </div>
       </div>
       <p>
-        <a href="/v3/" class="btn btn-lg bg-primary text-light my-4"> <i class="fa fa-paperclip fa-2x align-middle"></i> Get Started with 3.0 Beta </a>&nbsp&nbsp;
+        <a href="/v3/" class="btn btn-lg bg-primary text-light my-4"> <i class="fa fa-paperclip fa-2x align-middle"></i> Get Started</a>&nbsp&nbsp;
 
-        <a href="/docs/" class="btn btn-secondary btn-lg"> <i class="fa fa-paperclip fa-2x align-middle"></i> Use 2.x </a>&nbsp;
+        <a href="/v3/develop/developing/#demo" class="btn btn-secondary btn-lg"> <i class="fa fa-paperclip fa-2x align-middle"></i> Watch a demo </a>&nbsp;
 
         <a href="https://github.com/jenkins-x/jx" class="btn btn-secondary btn-lg" target="_BLANK" rel="noopener noreferrer"><i class="fa fa-github fa-2x align-middle"></i>  View Repo </a>
       </p>
@@ -634,10 +634,11 @@ linkTitle = "Jenkins X - Cloud Native CI/CD Built On Kubernetes"
               <i class="fa fa-stopwatch fa-4x"></i>
             </span>
             <div class="media-body pl-4">
-              <h2 class="mt-0">Jenkins X Pipelines</h2>
-              <h3>Automated CI/CD</h3>
-              <p>Rather than having to have deep knowledge of Kubernetes and Tekton, Jenkins X will
-                default awesome pipelines for your projects that fully implements CI and CD.</p>
+              <h2 class="mt-0"><a href="/v3/develop/create-project/">Automated CI/CD</a></h2>
+              <h3>GitOps based Tekton pipelines</h3>
+              <p>Rather than having to have deep knowledge of Kubernetes, containers or Tekton, Jenkins X will
+                automate awesome Tekton pipelines for your projects that fully implements CI and CD
+                which you can <a href="/v3/develop/pipelines/editing/">manage via GitOps</a></p>
             </div>
           </div>
         </div>
@@ -648,7 +649,7 @@ linkTitle = "Jenkins X - Cloud Native CI/CD Built On Kubernetes"
               <i class="fa fa-server fa-3x" data-fa-transform="shrink-11 down-4.2 right-4" style="color: Dodgerblue;"></i>
             </span>
             <div class="media-body pl-4">
-              <h2 class="mt-0">Environments</h2>
+              <h2 class="mt-0"><a href="/v3/develop/environments/promotion/">Environments</a></h2>
               <h3>Environment Promotion via GitOps</h3>
               <p>Each team gets a set of Environments. Jenkins X then automates the management of the Environments and
                 the Promotion of new versions of Applications between Environments via GitOps</p>
@@ -664,7 +665,7 @@ linkTitle = "Jenkins X - Cloud Native CI/CD Built On Kubernetes"
               <i class="fa fa-server fa-4x"></i>
             </span>
             <div class="media-body pl-4">
-              <h2 class="mt-0">Preview Environments</h2>
+              <h2 class="mt-0"><a href="/v3/develop/environments/preview/">Preview Environments</a></h2>
               <h3>Pull Request Preview Environments</h3>
               <p>Jenkins X automatically spins up Preview Environments for your Pull Requests so you can get fast
                 feedback before changes are merged to master</p>
@@ -677,11 +678,11 @@ linkTitle = "Jenkins X - Cloud Native CI/CD Built On Kubernetes"
               <i class="fa fa-comments fa-4x"></i>
             </span>
             <div class="media-body pl-4">
-              <h2 class="mt-0">Feedback</h2>
-              <h3>Feedback on Issues and Pull Requests</h3>
+              <h2 class="mt-0"><a href="/v3/develop/developing/#using-chatops">ChatOps</a></h2>
+              <h3>Feedback and chat on Issues and Pull Requests</h3>
               <p>Jenkins X automatically comments on your Commits, Issues and Pull Requests with feedback as code is
                 ready to be previewed, is promoted to environments or if Pull Requests are generated automatically to
-                upgrade versions.</p>
+                upgrade versions</p>
             </div>
           </div>
         </div>
@@ -689,7 +690,7 @@ linkTitle = "Jenkins X - Cloud Native CI/CD Built On Kubernetes"
       <div class="row">
         <div class="col text-center">
           <p class="mt-4">
-            <a href="/v3/about/" class="btn btn-lg bg-primary text-light">Learn More</a>
+            <a href="/v3/develop/" class="btn btn-lg bg-primary text-light">Learn More</a>
           </p>
         </div>
       </div>
