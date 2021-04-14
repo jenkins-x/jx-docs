@@ -2,14 +2,14 @@
 title: jx secret
 linktitle: secret
 type: docs
-description: "External Secrets utility commands"
+description: "commands for working with Secrets, ExternalSecrets and external secret stores"
 aliases:
   - jx-secret
 ---
 
 ## jx secret
 
-External Secrets utility commands
+commands for working with Secrets, ExternalSecrets and external secret stores
 
 ### Usage
 
@@ -19,7 +19,7 @@ jx secret
 
 ### Synopsis
 
-External Secrets utility commands
+commands for working with Secrets, ExternalSecrets and external secret stores
 
 ### Options
 

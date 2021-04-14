@@ -2,14 +2,14 @@
 title: jx gitops
 linktitle: gitops
 type: docs
-description: "GitOps utility commands"
+description: "commands for working with GitOps based git repositories"
 aliases:
   - jx-gitops
 ---
 
 ## jx gitops
 
-GitOps utility commands
+commands for working with GitOps based git repositories
 
 ### Usage
 
@@ -19,7 +19,7 @@ jx gitops
 
 ### Synopsis
 
-GitOps utility commands
+commands for working with GitOps based git repositories
 
 ### Options
 
