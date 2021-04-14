@@ -26,8 +26,12 @@ __IMPORTANT__
  
 As an example here are two screenshots for using Google and GitHub
  
+### GitHub example
+ 
 ![GitHub](/images/v3/oauth_gh.png)
  
+### Google example
+
 ![Google](/images/v3/oauth_google.png)
  
 # Setup
@@ -109,7 +113,9 @@ Once the logs start applying the generated Kubernetes resources you can CTRL+C t
 jx secret edit -i
 ```
 filter for `oauth` and select `client id` and `client secret` options using the space bar
- 
+
+![jx secret edit -i](/images/v3/oauth_secret_edit.png)
+
 Now enter the client id and secret you got from the Prerequisites step above.
  
 Once entered you can wait to see the oauth2-proxy pod become Available using
