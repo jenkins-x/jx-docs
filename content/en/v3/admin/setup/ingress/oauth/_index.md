@@ -40,7 +40,7 @@ We will be editing helmfiles so clone your cluster git repository and move into 
  
 Add the oauth2 proxy helm chart, this will redirect requests to to the configured OAuth provider:
 ```bash
-jx gitops helmfile add --chart k8s-at-home/oauth2-proxy
+jx gitops helmfile add --chart k8s-at-home/oauth2-proxy --repository https://k8s-at-home.com/charts/
 jx gitops helmfile resolve
 ```
 you should see the new chart added to the end of the file `./helmfiles/jx/helmfile.yaml`
