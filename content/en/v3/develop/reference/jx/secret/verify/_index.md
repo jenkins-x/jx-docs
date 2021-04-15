@@ -32,9 +32,12 @@ Verifies that the ExternalSecret resources have the required properties populate
 ### Options
 
 ```
+  -b, --batch-mode         Runs in batch mode without prompting for user input
   -f, --filter string      the filter to filter on ExternalSecret names
   -h, --help               help for verify
+      --log-level string   Sets the logging level. If not specified defaults to $JX_LOG_LEVEL
   -n, --namespace string   the namespace to filter the ExternalSecret resources
   -s, --source string      the source location for the ExternalSecrets, valid values include filesystem or kubernetes (default "kubernetes")
+      --verbose            Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
 ```
 

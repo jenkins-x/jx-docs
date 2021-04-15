@@ -2,14 +2,14 @@
 title: jx gitops yset
 linktitle: yset
 type: docs
-description: "Modifies a value in a YAML file at a given path"
+description: "Modifies a value in a YAML file at a given path expression while preserving comments"
 aliases:
   - jx-gitops_yset
 ---
 
 ## jx gitops yset
 
-Modifies a value in a YAML file at a given path
+Modifies a value in a YAML file at a given path expression while preserving comments
 
 ### Usage
 
@@ -19,7 +19,7 @@ jx gitops yset
 
 ### Synopsis
 
-Modifies one or more yaml files using a path expression
+Modifies one or more yaml files using a path expression while preserving comments
 
 ### Examples
 
