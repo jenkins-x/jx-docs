@@ -8,7 +8,7 @@ aliases:
     - /v3/about/maturity-matrix/
 ---
 
-<img src="/images/v3/jx-v3alpha-maturity-matrix.png">
+<img src="/images/v3/v3-maturity.png">
 
 <img src="/images/v3/jx-v3alpha-color-rep.png">
 
