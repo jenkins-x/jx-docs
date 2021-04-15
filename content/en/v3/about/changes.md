@@ -17,7 +17,8 @@ You may also find the [Roadmap](/community/roadmap/) and [Maturity Matrix](/v3/a
 * if you are upgrading from an alpha cluster you may have vault installed in the `secret-infra` namespace. check out the [FAQ on vault in the wrong namespace](/v3/develop/faq/config/vault/#after-an-upgrade-the-boot-job-is-waiting-for-vault-in-jx-vault) for how to upgrade.
 
 ## Changes 
-
+        
+* we have a new [jx pipeline grid](/v3/develop/reference/jx/pipeline/grid/) command to easily view whats happening in your cluster on the CLI in a similar way to the [Octant Console](/v3/develop/ui/octant/) or [Dashboard](/v3/develop/ui/dashboard/)
 * The [reference guide](/v3/develop/reference/) now has a full [Command Line Reference](/v3/develop/reference/jx/) for browsing the command line of the various [Jenkins X Plugins](https://github.com/jenkins-x-plugins)
 * There is now support for [automatic upgrades](/v3/admin/setup/upgrades/cluster/#automatic-upgrades) where a Pull Request is automatically generated on your development cluster repository to upgrade the versions of charts in your installation. You can define the upgrade schedule and whether or not the Pull Request is auto merged or requires a manual approval/merge.
 * A preview can fail to create for a multitude of reasons; bad helm charts, missing secrets/volumes, invalid configuration in `jx-requirements.yml`, bad image names, no capacity on the server to name but a few. Unfortunately `helmfile sync` does not give much information other than it succeeded of failed. 
