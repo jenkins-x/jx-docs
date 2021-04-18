@@ -91,7 +91,7 @@ ingress:
 ```bash
 git add *
 git commit -a -m "fix: added domain"
-git push origin master
+git push origin main
 ```
 
 * ensure you are connected to your cluster so you can run the following [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) commands 
