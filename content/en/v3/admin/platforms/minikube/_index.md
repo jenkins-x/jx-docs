@@ -73,7 +73,7 @@ ingress:
 ```bash
 git add *
 git commit -a -m "fix: configurations for local minikube"
-git push origin master
+git push origin main
 ```
 
 * <a href="/v3/guides/operator/" class="btn bg-primary text-light">Install the Git Operator</a> 

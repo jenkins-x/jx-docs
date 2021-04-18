@@ -64,7 +64,7 @@ ingress:
 ```bash
 git add *
 git commit -a -m "fix: added domain"
-git push origin master
+git push origin main
 ```
 
 * <a href="/v3/guides/operator/" class="btn bg-primary text-light">Install the Git Operator</a> 
