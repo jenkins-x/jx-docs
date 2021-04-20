@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_git_setup
 ---
 
-## jx gitops git setup
-
-Sets up git to ensure the git user name and email is setup
-
 ### Usage
 
 ```
@@ -45,3 +41,8 @@ This is typically used in a pipeline to ensure git can do commits.
       --secret string               the name of the Secret to find the git URL, username and password for creating a git credential if running inside the cluster (default "jx-boot")
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

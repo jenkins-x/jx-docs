@@ -7,12 +7,6 @@ aliases:
   - jx-admin_plugins
 ---
 
-## jx admin plugins
-
-Commands for working with Plugins
-
-***Aliases**: plugin*
-
 ### Usage
 
 ```
@@ -29,3 +23,8 @@ Commands for working with Plugins
   -h, --help   help for plugins
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-admin](https://github.com/jenkins-x-plugins/jx-admin)

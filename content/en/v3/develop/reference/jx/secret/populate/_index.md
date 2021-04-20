@@ -7,10 +7,6 @@ aliases:
   - jx-secret_populate
 ---
 
-## jx secret populate
-
-Populates any missing secret values which can be automatically generated, generated using a template or that have default values
-
 ### Usage
 
 ```
@@ -46,3 +42,8 @@ Populates any missing secret values which can be automatically generated or that
   -w, --wait duration                  the maximum time period to wait for the vault pod to be ready if using the vault backendType (default 2h0m0s)
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-secret](https://github.com/jenkins-x-plugins/jx-secret)

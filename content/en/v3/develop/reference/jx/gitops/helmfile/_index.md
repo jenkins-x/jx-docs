@@ -7,12 +7,6 @@ aliases:
   - jx-gitops_helmfile
 ---
 
-## jx gitops helmfile
-
-Commands for working with helmfile
-
-***Aliases**: helmfiles*
-
 ### Usage
 
 ```
@@ -29,3 +23,8 @@ Commands for working with helmfile
   -h, --help   help for helmfile
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_repository_resolve
 ---
 
-## jx gitops repository resolve
-
-Resolves the git repository URL for the cluster/environment
-
 ### Usage
 
 ```
@@ -42,3 +38,8 @@ Resolves the git repository URL for the cluster/environment
   -s, --source-dir string         the directory to recursively look for the *.yaml or *.yml source Environment/SourceRepository files (default ".")
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

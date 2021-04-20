@@ -7,10 +7,6 @@ aliases:
   - jx-pipeline_fmt
 ---
 
-## jx pipeline fmt
-
-Formats the local pipeline files
-
 ### Usage
 
 ```
@@ -39,3 +35,8 @@ Formats the local pipeline files
       --sha string   The git commit SHA of the pipeline catalog repository https://github.com/jenkins-x/jx3-pipeline-catalog. If not specified we clone git and find it
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-pipeline](https://github.com/jenkins-x-plugins/jx-pipeline)

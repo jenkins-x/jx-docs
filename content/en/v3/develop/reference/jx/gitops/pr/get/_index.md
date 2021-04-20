@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_pr_get
 ---
 
-## jx gitops pr get
-
-Gets a pull request and displays fields from it
-
 ### Usage
 
 ```
@@ -43,3 +39,8 @@ Gets a pull request and displays fields from it
       --source-url string   the git source URL of the repository
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

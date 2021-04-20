@@ -7,10 +7,6 @@ aliases:
   - jx-admin
 ---
 
-## jx admin
-
-commands for creating and upgrading Jenkins X environments using GitOps
-
 ### Usage
 
 ```
@@ -27,3 +23,8 @@ commands for creating and upgrading Jenkins X environments using GitOps
   -h, --help   help for jx-admin
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-admin](https://github.com/jenkins-x-plugins/jx-admin)

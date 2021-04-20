@@ -7,12 +7,6 @@ aliases:
   - jx-secret_vault_portforward
 ---
 
-## jx secret vault portforward
-
-Runs a port forward process so you can access the vault in a kubernetes cluster
-
-***Aliases**: portfwd,port-forward*
-
 ### Usage
 
 ```
@@ -39,3 +33,8 @@ Runs a port forward process so you can access the vault in a kubernetes cluster
       --poll duration       the polling period to check if the secrets are valid (default 2s)
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-secret](https://github.com/jenkins-x-plugins/jx-secret)

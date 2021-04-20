@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_rename
 ---
 
-## jx gitops rename
-
-Renames yaml files to use canonical file names based on the resource name and kind
-
 ### Usage
 
 ```
@@ -35,3 +31,8 @@ Renames yaml files to use canonical file names based on the resource name and ki
   -h, --help         help for rename
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

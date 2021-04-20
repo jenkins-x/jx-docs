@@ -7,10 +7,6 @@ aliases:
   - jx-updatebot
 ---
 
-## jx updatebot
-
-Updatebot commands
-
 ### Usage
 
 ```
@@ -27,3 +23,8 @@ Updatebot commands
   -h, --help   help for jx-updatebot
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-updatebot](https://github.com/jenkins-x-plugins/jx-updatebot)

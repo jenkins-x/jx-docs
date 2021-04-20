@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_helm_build
 ---
 
-## jx gitops helm build
-
-Builds and lints any helm charts
-
 ### Usage
 
 ```
@@ -37,3 +33,8 @@ Builds and lints any helm charts
       --use-helm-plugin     uses the jx binary plugin for helm rather than whatever helm is on the $PATH
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

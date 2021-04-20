@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_split
 ---
 
-## jx gitops split
-
-Splits any YAML files which define multiple resources into separate files
-
 ### Usage
 
 ```
@@ -35,3 +31,8 @@ Splits any YAML files which define multiple resources into separate files
   -h, --help         help for split
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

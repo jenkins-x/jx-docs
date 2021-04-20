@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_pr_comment
 ---
 
-## jx gitops pr comment
-
-Add comment to the pull request
-
 ### Usage
 
 ```
@@ -43,3 +39,8 @@ Adds a comment to the current pull request
       --source-url string   the git source URL of the repository
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

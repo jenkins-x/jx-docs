@@ -7,10 +7,6 @@ aliases:
   - jx-scm
 ---
 
-## jx scm
-
-GitOps utility commands
-
 ### Usage
 
 ```
@@ -27,3 +23,8 @@ GitOps utility commands
   -h, --help   help for jx-scm
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-scm](https://github.com/jenkins-x-plugins/jx-scm)

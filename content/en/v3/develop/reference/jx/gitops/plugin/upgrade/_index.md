@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_plugin_upgrade
 ---
 
-## jx gitops plugin upgrade
-
-Upgrades the binary plugins for this plugin
-
 ### Usage
 
 ```
@@ -35,3 +31,8 @@ Upgrades the binary plugins for this plugin
       --path string   creates a symlink to the binary plugins in this bin path dir
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

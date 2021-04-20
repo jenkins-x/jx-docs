@@ -7,12 +7,6 @@ aliases:
   - jx-secret_vault_shell
 ---
 
-## jx secret vault shell
-
-Runs a shell so you can access the vault in a kubernetes cluster
-
-***Aliases**: sh*
-
 ### Usage
 
 ```
@@ -41,3 +35,8 @@ Runs a shell so you can access the vault in a kubernetes cluster
   -s, --shell string        the command line shell to execute (default "bash")
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-secret](https://github.com/jenkins-x-plugins/jx-secret)

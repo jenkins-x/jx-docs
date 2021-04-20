@@ -7,10 +7,6 @@ aliases:
   - jx-updatebot_pr
 ---
 
-## jx updatebot pr
-
-Create a Pull Request on each downstream repository
-
 ### Usage
 
 ```
@@ -51,3 +47,8 @@ Create a Pull Request on each downstream repository
       --version-file string         the file to load the version from if not specified directly or via a $VERSION environment variable. Defaults to VERSION in the current dir
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-updatebot](https://github.com/jenkins-x-plugins/jx-updatebot)

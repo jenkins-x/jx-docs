@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_pr_push
 ---
 
-## jx gitops pr push
-
-Pushes the current git directory to the branch used to create the Pull Request
-
 ### Usage
 
 ```
@@ -45,3 +41,8 @@ Pushes the current git directory to the branch used to create the Pull Request
       --source-url string   the git source URL of the repository
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

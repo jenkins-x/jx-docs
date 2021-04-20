@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_helmfile_status
 ---
 
-## jx gitops helmfile status
-
-Updates the git deployment status after a release
-
 ### Usage
 
 ```
@@ -36,3 +32,8 @@ Updates the git deployment status after a release
   -h, --help         help for status
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

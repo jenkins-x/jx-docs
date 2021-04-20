@@ -7,10 +7,6 @@ aliases:
   - jx-health_get
 ---
 
-## jx health get
-
-used for getting resources
-
 ### Usage
 
 ```
@@ -27,3 +23,8 @@ used for getting resources
   -h, --help   help for get
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-health](https://github.com/jenkins-x-plugins/jx-health)

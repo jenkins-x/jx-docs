@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_image
 ---
 
-## jx gitops image
-
-Updates images in the kubernetes resources from the version stream
-
 ### Usage
 
 ```
@@ -43,3 +39,8 @@ Updates images in the kubernetes resources from the version stream
       --version-stream-dir string   the directory for the version stream. Defaults to 'versionStream' in the current --dir
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

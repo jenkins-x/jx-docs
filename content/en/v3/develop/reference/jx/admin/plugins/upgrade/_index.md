@@ -7,10 +7,6 @@ aliases:
   - jx-admin_plugins_upgrade
 ---
 
-## jx admin plugins upgrade
-
-Upgrades the binary plugins of the secret command (e.g. the Vault binary)
-
 ### Usage
 
 ```
@@ -35,3 +31,8 @@ Upgrades the binary plugins of the secret command (e.g. the helm binary)
   -h, --help         help for upgrade
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-admin](https://github.com/jenkins-x-plugins/jx-admin)

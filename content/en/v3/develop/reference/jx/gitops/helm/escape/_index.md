@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_helm_escape
 ---
 
-## jx gitops helm escape
-
-Escapes any {{ or }} characters in the YAML files so they can be included in a helm chart
-
 ### Usage
 
 ```
@@ -35,3 +31,8 @@ Escapes any {{ or }} characters in the YAML files so they can be included in a h
   -h, --help         help for escape
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

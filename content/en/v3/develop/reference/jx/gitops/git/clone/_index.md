@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_git_clone
 ---
 
-## jx gitops git clone
-
-Clones the cluster git repository using the URL, git user and token from the Secret
-
 ### Usage
 
 ```
@@ -44,3 +40,8 @@ Clones the cluster git repository using the URL, git user and token from the Sec
       --secret string               the name of the Secret to find the git URL, username and password for creating a git credential if running inside the cluster (default "jx-boot")
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

@@ -7,12 +7,6 @@ aliases:
   - jx-verify_tls
 ---
 
-## jx verify tls
-
-Verifies TLS for a Cluster
-
-***Aliases**: cert*
-
 ### Usage
 
 ```
@@ -39,3 +33,8 @@ Verifies a TLS certificate, useful to ensure a HTTPS endpoint is using a certifi
   -t, --timeout duration   timeout (default 10m0s)
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-verify](https://github.com/jenkins-x-plugins/jx-verify)

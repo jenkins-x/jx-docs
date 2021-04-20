@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_copy
 ---
 
-## jx gitops copy
-
-Copies resources (by default confimaps) with the given selector or name from a source namespace to a destination namespace
-
 ### Usage
 
 ```
@@ -48,3 +44,8 @@ Copies kubernetes resources (by default confimaps) from a namespace to the curre
       --version string     the API version of the resources to copy (default "v1")
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

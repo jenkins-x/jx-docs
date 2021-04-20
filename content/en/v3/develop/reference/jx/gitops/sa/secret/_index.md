@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_sa_secret
 ---
 
-## jx gitops sa secret
-
-Adds one or more secrets to the given ServiceAccount files
-
 ### Usage
 
 ```
@@ -40,3 +36,8 @@ Adds one or more secrets to the given ServiceAccount files
       --selector stringToString   adds Kubernetes label selector to filter on, e.g. -s app=pusher-wave,heritage=Helm (default [])
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

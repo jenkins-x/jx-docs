@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_repository_create
 ---
 
-## jx gitops repository create
-
-Creates any missing SourceRepository resources
-
 ### Usage
 
 ```
@@ -41,3 +37,8 @@ Creates any missing SourceRepository resources
   -s, --source-dir string         the directory to look for and generate the SourceConfig files
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

@@ -7,10 +7,6 @@ aliases:
   - jx-project_import
 ---
 
-## jx project import
-
-Imports a local project or Git repository into Jenkins
-
 ### Usage
 
 ```
@@ -91,3 +87,8 @@ For more documentation see: https://jenkins-x.io/docs/using-jx/creating/import/
       --wait-for-pr                    waits for the Pull Request generated on the cluster environment git repository to merge (default true)
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-project](https://github.com/jenkins-x-plugins/jx-project)

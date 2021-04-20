@@ -7,12 +7,6 @@ aliases:
   - jx-verify_pods
 ---
 
-## jx verify pods
-
-Verifies that all pods start OK in the current namespace; killing any Pods which have ErrImagePull
-
-***Aliases**: pod*
-
 ### Usage
 
 ```
@@ -39,3 +33,8 @@ Verifies that all pods start OK in the current namespace; killing any Pods which
   -s, --selector string    The selector to query for all pods being running
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-verify](https://github.com/jenkins-x-plugins/jx-verify)

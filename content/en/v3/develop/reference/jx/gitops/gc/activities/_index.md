@@ -7,12 +7,6 @@ aliases:
   - jx-gitops_gc_activities
 ---
 
-## jx gitops gc activities
-
-garbage collection for PipelineActivity resources
-
-***Aliases**: pa,act,pr*
-
 ### Usage
 
 ```
@@ -46,3 +40,8 @@ Garbage collect the Jenkins X PipelineActivity resources
   -l, --release-history-limit int   Maximum number of PipelineActivities to keep around per repository release (default 5)
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

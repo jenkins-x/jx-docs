@@ -7,12 +7,6 @@ aliases:
   - jx-updatebot_pipeline
 ---
 
-## jx updatebot pipeline
-
-Upgrades the pipelines in the source repositories to the latest version stream and pipeline catalog
-
-***Aliases**: pipelines*
-
 ### Usage
 
 ```
@@ -44,3 +38,8 @@ Upgrades the pipelines in the source repositories to the latest version stream a
   -s, --strategy string             the 'kpt' strategy to use. To see available strategies type 'kpt pkg update --help'. Typical values are: resource-merge, fast-forward, alpha-git-patch, force-delete-replace (default "resource-merge")
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-updatebot](https://github.com/jenkins-x-plugins/jx-updatebot)

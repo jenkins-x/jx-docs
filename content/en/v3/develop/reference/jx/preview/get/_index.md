@@ -7,12 +7,6 @@ aliases:
   - jx-preview_get
 ---
 
-## jx preview get
-
-Display one or more Previews
-
-***Aliases**: list*
-
 ### Usage
 
 ```
@@ -41,3 +35,8 @@ Display one or more preview environments.
   -h, --help      help for get
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-preview](https://github.com/jenkins-x-plugins/jx-preview)

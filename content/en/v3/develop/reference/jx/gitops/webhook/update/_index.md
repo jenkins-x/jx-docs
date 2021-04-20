@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_webhook_update
 ---
 
-## jx gitops webhook update
-
-Updates the webhooks for all the source repositories optionally filtering by owner and/or repository
-
 ### Usage
 
 ```
@@ -55,3 +51,8 @@ Updates the webhooks for all the source repositories optionally filtering by own
       --warn-on-fail               If enabled lets just log a warning that we could not update the webhook
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

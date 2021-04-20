@@ -7,12 +7,6 @@ aliases:
   - jx-scm_repository
 ---
 
-## jx scm repository
-
-Commands for working with source repositories
-
-***Aliases**: repo,repos,repositories*
-
 ### Usage
 
 ```
@@ -29,3 +23,8 @@ Commands for working with source repositories
   -h, --help   help for repository
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-scm](https://github.com/jenkins-x-plugins/jx-scm)

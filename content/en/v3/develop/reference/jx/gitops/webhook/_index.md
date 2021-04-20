@@ -7,12 +7,6 @@ aliases:
   - jx-gitops_webhook
 ---
 
-## jx gitops webhook
-
-Commands for working with WebHooks on your source repositories
-
-***Aliases**: webhooks,hook,hooks*
-
 ### Usage
 
 ```
@@ -29,3 +23,8 @@ Commands for working with WebHooks on your source repositories
   -h, --help   help for webhook
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

@@ -7,10 +7,6 @@ aliases:
   - jx-verify_ingress
 ---
 
-## jx verify ingress
-
-Verifies the ingress configuration defaulting the ingress domain if necessary
-
 ### Usage
 
 ```
@@ -37,3 +33,8 @@ Verifies the ingress configuration defaulting the ingress domain if necessary
       --ingress-service string     The name of the Ingress controller Service (default "ingress-nginx-controller")
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-verify](https://github.com/jenkins-x-plugins/jx-verify)

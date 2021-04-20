@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_requirement_publish
 ---
 
-## jx gitops requirement publish
-
-Publishes the current jx-requirements.yml to the dev Environment so it can be easily used in pipelines
-
 ### Usage
 
 ```
@@ -36,3 +32,8 @@ Publishes the current jx-requirements.yml to the dev Environment so it can be ea
       --namespace string   the namespace used to find dev-environment.yaml (default "jx")
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

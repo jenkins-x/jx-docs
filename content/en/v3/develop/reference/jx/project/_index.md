@@ -7,10 +7,6 @@ aliases:
   - jx-project
 ---
 
-## jx project
-
-Create a new project by importing code, creating a quickstart or custom wizard for spring
-
 ### Usage
 
 ```
@@ -34,3 +30,8 @@ Create a new project by importing code, creating a quickstart or custom wizard f
   -h, --help   help for jx-project
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-project](https://github.com/jenkins-x-plugins/jx-project)

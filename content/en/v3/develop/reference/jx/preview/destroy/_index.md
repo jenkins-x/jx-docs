@@ -7,12 +7,6 @@ aliases:
   - jx-preview_destroy
 ---
 
-## jx preview destroy
-
-Destroys a preview environment
-
-***Aliases**: delete,remove*
-
 ### Usage
 
 ```
@@ -41,3 +35,8 @@ Destroys a preview environment
   -h, --help              help for destroy
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-preview](https://github.com/jenkins-x-plugins/jx-preview)

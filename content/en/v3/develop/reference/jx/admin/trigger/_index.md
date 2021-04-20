@@ -7,12 +7,6 @@ aliases:
   - jx-admin_trigger
 ---
 
-## jx admin trigger
-
-triggers the latest boot Job to rerun
-
-***Aliases**: rerun*
-
 ### Usage
 
 ```
@@ -43,3 +37,8 @@ Views the boot Job logs in the cluster
       --verbose             Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-admin](https://github.com/jenkins-x-plugins/jx-admin)

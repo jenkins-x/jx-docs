@@ -7,10 +7,6 @@ aliases:
   - jx-secret_edit
 ---
 
-## jx secret edit
-
-Edits secret values in the underlying secret stores for ExternalSecrets
-
 ### Usage
 
 ```
@@ -43,3 +39,8 @@ Edits secret values in the underlying secret stores for ExternalSecrets
   -n, --ns string       the namespace to filter the ExternalSecret resources
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-secret](https://github.com/jenkins-x-plugins/jx-secret)

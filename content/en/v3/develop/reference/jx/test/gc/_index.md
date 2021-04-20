@@ -7,10 +7,6 @@ aliases:
   - jx-test_gc
 ---
 
-## jx test gc
-
-Garbage collects test resources
-
 ### Usage
 
 ```
@@ -36,3 +32,8 @@ Garbage collects test resources
   -l, --selector string     the selector to find the Terraform resources to remove (default "kind=jx-test")
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-test](https://github.com/jenkins-x-plugins/jx-test)

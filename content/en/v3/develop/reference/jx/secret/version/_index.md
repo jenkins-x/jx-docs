@@ -7,10 +7,6 @@ aliases:
   - jx-secret_version
 ---
 
-## jx secret version
-
-Displays the version of this command
-
 ### Usage
 
 ```
@@ -27,3 +23,8 @@ Displays the version of this command
   -h, --help   help for version
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-secret](https://github.com/jenkins-x-plugins/jx-secret)

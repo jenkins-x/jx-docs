@@ -7,12 +7,6 @@ aliases:
   - jx-pipeline_wait
 ---
 
-## jx pipeline wait
-
-Waits for a pipeline to be imported and activated by the boot Job
-
-***Aliases**: build,run*
-
 ### Usage
 
 ```
@@ -45,3 +39,8 @@ Waits for a pipeline to be imported and activated by the boot Job
       --verbose                Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-pipeline](https://github.com/jenkins-x-plugins/jx-pipeline)

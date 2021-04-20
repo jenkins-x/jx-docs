@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_git_merge
 ---
 
-## jx gitops git merge
-
-Merge a number of SHAs into the HEAD of the main branch
-
 ### Usage
 
 ```
@@ -45,3 +41,8 @@ Merge a number of SHAs into the HEAD of the main branch
       --sha stringArray          The SHA(s) to merge, if not specified then the value of the env var $PULL_REFS is parsed
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

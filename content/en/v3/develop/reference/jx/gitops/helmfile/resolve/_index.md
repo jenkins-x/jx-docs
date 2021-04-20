@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_helmfile_resolve
 ---
 
-## jx gitops helmfile resolve
-
-Resolves any missing versions or values files in the helmfile.yaml file from the version stream
-
 ### Usage
 
 ```
@@ -42,3 +38,8 @@ Resolves the helmfile.yaml from the version stream to specify versions and helm 
       --version-stream-dir string   the directory for the version stream. Defaults to 'versionStream' in the current --dir
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

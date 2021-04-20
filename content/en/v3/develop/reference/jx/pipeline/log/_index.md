@@ -7,12 +7,6 @@ aliases:
   - jx-pipeline_log
 ---
 
-## jx pipeline log
-
-Display a build log
-
-***Aliases**: logs*
-
 ### Usage
 
 ```
@@ -69,3 +63,8 @@ Display a build log
   -d, --wait-duration duration   Timeout period waiting for the given pipeline to be created (default 20m0s)
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-pipeline](https://github.com/jenkins-x-plugins/jx-pipeline)

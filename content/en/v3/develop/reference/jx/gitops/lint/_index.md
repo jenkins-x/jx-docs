@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_lint
 ---
 
-## jx gitops lint
-
-Lints the gitops files in the file system
-
 ### Usage
 
 ```
@@ -35,3 +31,8 @@ Lints the gitops files in the file system
   -h, --help         help for lint
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

@@ -7,10 +7,6 @@ aliases:
   - jx-secret_convert_edit
 ---
 
-## jx secret convert edit
-
-Edits the local 'secret-mappings.yaml' file
-
 ### Usage
 
 ```
@@ -35,3 +31,8 @@ Edits the local 'secret-mappings.yaml' file
   -h, --help         help for edit
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-secret](https://github.com/jenkins-x-plugins/jx-secret)

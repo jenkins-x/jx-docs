@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_requirement_edit
 ---
 
-## jx gitops requirement edit
-
-Edits the local 'jx-requirements.yml file
-
 ### Usage
 
 ```
@@ -65,3 +61,8 @@ Edits the local 'jx-requirements.yml file
   -z, --zone string                  configures the cloud zone
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

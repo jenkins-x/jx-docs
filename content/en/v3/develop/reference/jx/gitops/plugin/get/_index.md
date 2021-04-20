@@ -7,12 +7,6 @@ aliases:
   - jx-gitops_plugin_get
 ---
 
-## jx gitops plugin get
-
-Display the binary plugins
-
-***Aliases**: list,ls*
-
 ### Usage
 
 ```
@@ -36,3 +30,8 @@ Display the binary plugins
   -h, --help   help for get
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

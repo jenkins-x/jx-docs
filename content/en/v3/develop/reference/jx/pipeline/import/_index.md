@@ -7,12 +7,6 @@ aliases:
   - jx-pipeline_import
 ---
 
-## jx pipeline import
-
-Imports tekton pipelines from a catalog
-
-***Aliases**: build,run*
-
 ### Usage
 
 ```
@@ -49,3 +43,8 @@ Imports tekton pipelines from a catalog.
   -v, --version string               The version of the task folder to use
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-pipeline](https://github.com/jenkins-x-plugins/jx-pipeline)

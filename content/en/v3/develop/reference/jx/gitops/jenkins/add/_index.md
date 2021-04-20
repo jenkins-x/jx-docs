@@ -7,12 +7,6 @@ aliases:
   - jx-gitops_jenkins_add
 ---
 
-## jx gitops jenkins add
-
-Adds a new Jenkins server to the git repository
-
-***Aliases**: create,new*
-
 ### Usage
 
 ```
@@ -40,3 +34,8 @@ Adds a new Jenkins server to the git repository
   -v, --version string      the version of the helm chart. If not specified the versionStream will be checked otherwise the latest version is used
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

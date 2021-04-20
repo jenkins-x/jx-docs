@@ -7,12 +7,6 @@ aliases:
   - jx-gitops_helmfile_move
 ---
 
-## jx gitops helmfile move
-
-Moves the generated template files from 'helmfile template' into the right gitops directory
-
-***Aliases**: mv*
-
 ### Usage
 
 ```
@@ -47,3 +41,8 @@ So this command applies the namespace to all the generated resources and then mo
       --selector stringToString     adds Kubernetes label selector to filter on, e.g. -s app=pusher-wave,heritage=Helm (default [])
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

@@ -7,12 +7,6 @@ aliases:
   - jx-admin_log
 ---
 
-## jx admin log
-
-views the boot Job logs in the cluster
-
-***Aliases**: logs*
-
 ### Usage
 
 ```
@@ -49,3 +43,8 @@ Views the boot Job logs in the cluster
   -w, --wait                           wait for the next active Job to start
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-admin](https://github.com/jenkins-x-plugins/jx-admin)

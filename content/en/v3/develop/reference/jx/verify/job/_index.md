@@ -7,12 +7,6 @@ aliases:
   - jx-verify_job
 ---
 
-## jx verify job
-
-Verifies that the job(s) with the given label succeeds and tails the log as it executes
-
-***Aliases**: logs*
-
 ### Usage
 
 ```
@@ -51,3 +45,8 @@ Verifies that the job(s) with the given label succeeds and tails the log as it e
       --verify-result           if the pod succeeds lets look for the last line starting with POD RESULT:  to determine the test result
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-verify](https://github.com/jenkins-x-plugins/jx-verify)

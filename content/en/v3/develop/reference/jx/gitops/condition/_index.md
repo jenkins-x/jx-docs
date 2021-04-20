@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_condition
 ---
 
-## jx gitops condition
-
-Runs a command if the condition is true
-
 ### Usage
 
 ```
@@ -43,3 +39,8 @@ Runs a command if the condition is true
       --last-commit-msg-suffix string     matches if last-commit-msg has the given suffix
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

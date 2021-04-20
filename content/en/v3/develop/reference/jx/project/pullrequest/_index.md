@@ -7,12 +7,6 @@ aliases:
   - jx-project_pullrequest
 ---
 
-## jx project pullrequest
-
-Create a Pull Request on the git project for the current directory
-
-***Aliases**: pr,pull request*
-
 ### Usage
 
 ```
@@ -59,3 +53,8 @@ If --push is specified the contents of the directory will be committed, pushed a
   -t, --title string        The title of the pullrequest to create
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-project](https://github.com/jenkins-x-plugins/jx-project)

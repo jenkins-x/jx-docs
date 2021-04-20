@@ -7,10 +7,6 @@ aliases:
   - jx-pipeline_lint
 ---
 
-## jx pipeline lint
-
-Lints the lighthouse trigger and tekton pipelines
-
 ### Usage
 
 ```
@@ -44,3 +40,8 @@ Lints the lighthouse trigger and tekton pipelines
   -r, --recursive              Recurisvely find all '.lighthouse' folders such as if linting a Pipeline Catalog
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-pipeline](https://github.com/jenkins-x-plugins/jx-pipeline)

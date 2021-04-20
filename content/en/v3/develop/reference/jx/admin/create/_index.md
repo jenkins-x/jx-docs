@@ -7,10 +7,6 @@ aliases:
   - jx-admin_create
 ---
 
-## jx admin create
-
-Creates a new git repository for a new Jenkins X installation
-
 ### Usage
 
 ```
@@ -90,3 +86,8 @@ Creates a new git repository for a new Jenkins X installation
   -z, --zone string                  configures the cloud zone
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-admin](https://github.com/jenkins-x-plugins/jx-admin)

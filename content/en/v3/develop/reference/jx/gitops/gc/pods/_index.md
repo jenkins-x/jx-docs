@@ -7,12 +7,6 @@ aliases:
   - jx-gitops_gc_pods
 ---
 
-## jx gitops gc pods
-
-garbage collection for pods
-
-***Aliases**: pod*
-
 ### Usage
 
 ```
@@ -42,3 +36,8 @@ Garbage collect old Pods that have completed or failed
   -s, --selector string    The selector to use to filter the pods
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

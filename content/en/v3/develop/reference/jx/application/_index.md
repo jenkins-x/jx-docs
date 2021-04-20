@@ -7,12 +7,6 @@ aliases:
   - jx-application
 ---
 
-## jx application
-
-command for viewing deployed Applications across Environments
-
-***Aliases**: application,version,versions*
-
 ### Usage
 
 ```
@@ -58,3 +52,8 @@ Display applications across environments.
       --verbose            Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-application](https://github.com/jenkins-x-plugins/jx-application)

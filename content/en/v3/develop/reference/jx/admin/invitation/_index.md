@@ -7,12 +7,6 @@ aliases:
   - jx-admin_invitation
 ---
 
-## jx admin invitation
-
-Accept bot user invitations
-
-***Aliases**: invitations*
-
 ### Usage
 
 ```
@@ -36,3 +30,8 @@ List and accept git repository invitations for the pipeline bot user
   -h, --help   help for invitation
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-admin](https://github.com/jenkins-x-plugins/jx-admin)

@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_helmfile_report
 ---
 
-## jx gitops helmfile report
-
-Generates a markdown report of the helmfile based deployments in each namespace
-
 ### Usage
 
 ```
@@ -45,3 +41,8 @@ Generates a markdown report of the helmfile based deployments in each namespace
       --verbose                 Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

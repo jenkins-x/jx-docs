@@ -7,10 +7,6 @@ aliases:
   - jx-project_spring
 ---
 
-## jx project spring
-
-Create a new Spring Boot application and import the generated code into Git and Jenkins for CI/CD
-
 ### Usage
 
 ```
@@ -96,3 +92,8 @@ See Also:
       --wait-for-pr                    waits for the Pull Request generated on the cluster environment git repository to merge (default true)
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-project](https://github.com/jenkins-x-plugins/jx-project)

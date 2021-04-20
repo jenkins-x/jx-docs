@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_kustomize
 ---
 
-## jx gitops kustomize
-
-Generates a kustomize layout by comparing a source and target directories
-
 ### Usage
 
 ```
@@ -39,3 +35,8 @@ If you are using kpt to consume templates and you make lots of modifications and
   -t, --target string   the directory to recursively look for the target *.yaml or *.yml files
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

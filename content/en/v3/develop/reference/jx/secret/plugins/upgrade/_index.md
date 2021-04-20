@@ -7,10 +7,6 @@ aliases:
   - jx-secret_plugins_upgrade
 ---
 
-## jx secret plugins upgrade
-
-Upgrades the binary plugins of the secret command (e.g. the Vault binary)
-
 ### Usage
 
 ```
@@ -34,3 +30,8 @@ Upgrades the binary plugins of the secret command (e.g. the vault binary)
   -h, --help   help for upgrade
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-secret](https://github.com/jenkins-x-plugins/jx-secret)

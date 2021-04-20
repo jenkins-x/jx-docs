@@ -7,12 +7,6 @@ aliases:
   - jx-gitops_namespace
 ---
 
-## jx gitops namespace
-
-Updates all kubernetes resources in the given directory to the given namespace
-
-***Aliases**: ns*
-
 ### Usage
 
 ```
@@ -50,3 +44,8 @@ Updates all kubernetes resources in the given directory to the given namespace
       --selector stringToString   adds Kubernetes label selector to filter on, e.g. -s app=pusher-wave,heritage=Helm (default [])
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

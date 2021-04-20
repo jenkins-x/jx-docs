@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_git_get
 ---
 
-## jx gitops git get
-
-Gets a file from a git repository or environment git repository
-
 ### Usage
 
 ```
@@ -45,3 +41,8 @@ Gets a file from a git repository or environment git repository
       --to string           the destination of the file. If not specified defaults to the path
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

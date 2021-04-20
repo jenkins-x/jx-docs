@@ -7,12 +7,6 @@ aliases:
   - jx-admin_operator
 ---
 
-## jx admin operator
-
-installs the git operator in a cluster
-
-***Aliases**: boot*
-
 ### Usage
 
 ```
@@ -69,3 +63,8 @@ Installs the git operator in a cluster
       --username string             specify the git user name the operator will use to clone the environment git repository if there is no username in the git URL. If not specified defaults to $GIT_USERNAME
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-admin](https://github.com/jenkins-x-plugins/jx-admin)

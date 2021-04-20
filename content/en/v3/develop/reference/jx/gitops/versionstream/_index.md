@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_versionstream
 ---
 
-## jx gitops versionstream
-
-Administer the cluster version stream settings
-
 ### Usage
 
 ```
@@ -46,3 +42,8 @@ Administer the cluster version stream settings
       --url string         The git URL to clone to fetch the initial set of files for a helm 3 / helmfile based git configuration if this command is not run inside a git clone or against a GitOps based cluster
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

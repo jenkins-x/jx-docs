@@ -7,12 +7,6 @@ aliases:
   - jx-pipeline_start
 ---
 
-## jx pipeline start
-
-Starts one or more pipelines
-
-***Aliases**: build,run*
-
 ### Usage
 
 ```
@@ -57,3 +51,8 @@ Starts the pipeline build.
       --wait                     Waits until the trigger has been setup in Lighthouse for when a new repository is being imported via GitOps
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-pipeline](https://github.com/jenkins-x-plugins/jx-pipeline)

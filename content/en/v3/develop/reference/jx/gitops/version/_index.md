@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_version
 ---
 
-## jx gitops version
-
-Displays the version of this command
-
 ### Usage
 
 ```
@@ -27,3 +23,8 @@ Displays the version of this command
   -h, --help   help for version
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

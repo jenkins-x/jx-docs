@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_yset
 ---
 
-## jx gitops yset
-
-Modifies a value in a YAML file at a given path expression while preserving comments
-
 ### Usage
 
 ```
@@ -37,3 +33,8 @@ Modifies one or more yaml files using a path expression while preserving comment
   -v, --value string       the value to modify
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

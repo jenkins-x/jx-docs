@@ -7,12 +7,6 @@ aliases:
   - jx-verify_context
 ---
 
-## jx verify context
-
-Verifies the current kubernetes context matches a given name
-
-***Aliases**: ctx*
-
 ### Usage
 
 ```
@@ -37,3 +31,8 @@ Verifies the current kubernetes context matches a given name
   -h, --help             help for context
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-verify](https://github.com/jenkins-x-plugins/jx-verify)

@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_gc
 ---
 
-## jx gitops gc
-
-Commands for garbage collecting resources
-
 ### Usage
 
 ```
@@ -27,3 +23,8 @@ Commands for garbage collecting resources
   -h, --help   help for gc
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

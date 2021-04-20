@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_apply
 ---
 
-## jx gitops apply
-
-Performs a GitOps regeneration and apply on a cluster git repository
-
 ### Usage
 
 ```
@@ -40,3 +36,8 @@ Also the process detects if an ingress has changed (or similar changes) and retr
       --pull-request   specifies to apply the pull request contents into the PR branch
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

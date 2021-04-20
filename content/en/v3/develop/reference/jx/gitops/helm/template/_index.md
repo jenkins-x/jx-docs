@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_helm_template
 ---
 
-## jx gitops helm template
-
-Generate the kubernetes resources from a helm chart
-
 ### Usage
 
 ```
@@ -48,3 +44,8 @@ Generate the kubernetes resources from a helm chart
   -v, --version string          the version of the helm chart to use. If not specified then the latest one is used
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

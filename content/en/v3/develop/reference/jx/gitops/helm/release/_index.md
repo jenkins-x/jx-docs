@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_helm_release
 ---
 
-## jx gitops helm release
-
-Performs a release of all the charts in the charts folder
-
 ### Usage
 
 ```
@@ -51,3 +47,8 @@ Generate the kubernetes resources from a helm chart
       --version-file string        the file to load the version from if not specified directly or via a $VERSION environment variable (default "VERSION")
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

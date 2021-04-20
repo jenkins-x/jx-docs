@@ -7,12 +7,6 @@ aliases:
   - jx-project_quickstart
 ---
 
-## jx project quickstart
-
-Create a new app from a Quickstart and import the generated code into Git and Jenkins for CI/CD
-
-***Aliases**: arch*
-
 ### Usage
 
 ```
@@ -88,3 +82,8 @@ For more documentation see: https://jenkins-x.io/developing/create-quickstart/
       --wait-for-pr                    waits for the Pull Request generated on the cluster environment git repository to merge (default true)
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-project](https://github.com/jenkins-x-plugins/jx-project)

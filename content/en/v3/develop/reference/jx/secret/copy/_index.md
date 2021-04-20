@@ -7,10 +7,6 @@ aliases:
   - jx-secret_copy
 ---
 
-## jx secret copy
-
-Copies secrets with the given selector or name to a destination namespace
-
 ### Usage
 
 ```
@@ -42,3 +38,8 @@ Copies secrets with the given selector or name to a destination namespace
   -t, --to string          the namespace to copy the secrets to
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-secret](https://github.com/jenkins-x-plugins/jx-secret)

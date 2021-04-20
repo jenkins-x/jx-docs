@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_postprocess
 ---
 
-## jx gitops postprocess
-
-Post processes kubernetes resources to enrich resources like ServiceAccounts with cloud specific sensitive data to enable IAM rles
-
 ### Usage
 
 ```
@@ -40,3 +36,8 @@ Post processes kubernetes resources to enrich resources like ServiceAccounts wit
       --shell string       the location of the shell binary to execute (default "sh")
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

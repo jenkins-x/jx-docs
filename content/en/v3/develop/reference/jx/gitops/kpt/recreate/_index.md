@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_kpt_recreate
 ---
 
-## jx gitops kpt recreate
-
-Recreates the kpt packages in the given directory
-
 ### Usage
 
 ```
@@ -39,3 +35,8 @@ Updates the kpt packages in the given directory
       --version string   if specified overrides the versions used in the kpt packages (e.g. to 'master')
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

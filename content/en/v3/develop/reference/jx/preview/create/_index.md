@@ -7,10 +7,6 @@ aliases:
   - jx-preview_create
 ---
 
-## jx preview create
-
-Creates a preview
-
 ### Usage
 
 ```
@@ -47,3 +43,8 @@ Creates a preview
       --preview-url-timeout duration   Time to wait for the preview URL to be available (default 1m0.000000005s)
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-preview](https://github.com/jenkins-x-plugins/jx-preview)

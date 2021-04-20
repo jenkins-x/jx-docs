@@ -7,10 +7,6 @@ aliases:
   - jx-test_create
 ---
 
-## jx test create
-
-Create a new TestRun resource to record the test case resources
-
 ### Usage
 
 ```
@@ -51,3 +47,8 @@ Garbage collects test resources
       --version string       the version number. Defaults to $VERSION (default "2.0.1300-dev")
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-test](https://github.com/jenkins-x-plugins/jx-test)

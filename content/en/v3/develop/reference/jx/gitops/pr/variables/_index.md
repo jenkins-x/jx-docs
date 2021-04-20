@@ -7,12 +7,6 @@ aliases:
   - jx-gitops_pr_variables
 ---
 
-## jx gitops pr variables
-
-Adds Pull Request environment variables to the .jx/variables.sh file
-
-***Aliases**: var,variable*
-
 ### Usage
 
 ```
@@ -45,3 +39,8 @@ Adds Pull Request environment variables to the .jx/variables.sh file
       --source-url string   the git source URL of the repository
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

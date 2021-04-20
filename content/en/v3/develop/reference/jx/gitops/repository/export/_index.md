@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_repository_export
 ---
 
-## jx gitops repository export
-
-Exports the 'source-config.yaml' file from the kubernetes resources in the current cluster
-
 ### Usage
 
 ```
@@ -42,3 +38,8 @@ jx gitops repository export
       --selector stringToString   adds Kubernetes label selector to filter on, e.g. -s app=pusher-wave,heritage=Helm (default [])
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

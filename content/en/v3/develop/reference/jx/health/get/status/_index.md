@@ -7,12 +7,6 @@ aliases:
   - jx-health_get_status
 ---
 
-## jx health get status
-
-Gets health statuses
-
-***Aliases**: statuses*
-
 ### Usage
 
 ```
@@ -50,3 +44,8 @@ Prints health statuses in a table
   -w, --watch              after listing/getting the requested object, watch for changes
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-health](https://github.com/jenkins-x-plugins/jx-health)

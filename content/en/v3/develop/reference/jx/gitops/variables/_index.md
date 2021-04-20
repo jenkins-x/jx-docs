@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_variables
 ---
 
-## jx gitops variables
-
-Lazily creates a .jx/variables.sh script with common pipeline environment variables
-
 ### Usage
 
 ```
@@ -48,3 +44,8 @@ Lazily creates a .jx/variables.sh script with common pipeline environment variab
       --version-file string     the file to load the version from if not specified directly or via a $VERSION environment variable. Defaults to VERSION in the current dir
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

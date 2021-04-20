@@ -7,10 +7,6 @@ aliases:
   - jx-secret_import
 ---
 
-## jx secret import
-
-Imports a YAML file of secret values
-
 ### Usage
 
 ```
@@ -36,3 +32,8 @@ Imports a YAML of secret values into the underlying secret store
   -n, --ns string             the namespace to filter the ExternalSecret resources
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-secret](https://github.com/jenkins-x-plugins/jx-secret)

@@ -7,10 +7,6 @@ aliases:
   - jx-secret_export
 ---
 
-## jx secret export
-
-Exports the current populated values to a YAML file
-
 ### Usage
 
 ```
@@ -36,3 +32,8 @@ Exports the current populated values to a YAML file
   -n, --ns string     the namespace to filter the ExternalSecret resources
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-secret](https://github.com/jenkins-x-plugins/jx-secret)

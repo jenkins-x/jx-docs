@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_helmfile_add
 ---
 
-## jx gitops helmfile add
-
-Adds a chart to the local 'helmfile.yaml' file
-
 ### Usage
 
 ```
@@ -48,3 +44,8 @@ Adds a chart to the local 'helmfile.yaml' file
       --version-stream-dir string   the directory for the version stream. Defaults to 'versionStream' in the current --dir
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

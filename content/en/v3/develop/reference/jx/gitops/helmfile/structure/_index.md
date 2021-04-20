@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_helmfile_structure
 ---
 
-## jx gitops helmfile structure
-
-Runs 'helmfile structure' on the helmfile in specified directory which will split in to multiple helmfiles based around namespace
-
 ### Usage
 
 ```
@@ -35,3 +31,8 @@ Runs 'helmfile structure' on the helmfile in specified directory which will spli
   -h, --help         help for structure
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

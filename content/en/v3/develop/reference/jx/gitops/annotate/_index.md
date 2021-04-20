@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_annotate
 ---
 
-## jx gitops annotate
-
-Annotates all kubernetes resources in the given directory tree
-
 ### Usage
 
 ```
@@ -42,3 +38,8 @@ Annotates all kubernetes resources in the given directory tree
       --selector stringToString   adds Kubernetes label selector to filter on, e.g. -s app=pusher-wave,heritage=Helm (default [])
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

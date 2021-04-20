@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_helm_mirror
 ---
 
-## jx gitops helm mirror
-
-Creates a helm mirror 
-
 ### Usage
 
 ```
@@ -43,3 +39,8 @@ Escapes any {{ or }} characters in the YAML files so they can be included in a h
   -u, --url string            the git URL of the repository to mirror the charts into
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

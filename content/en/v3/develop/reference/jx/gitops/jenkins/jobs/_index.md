@@ -7,12 +7,6 @@ aliases:
   - jx-gitops_jenkins_jobs
 ---
 
-## jx gitops jenkins jobs
-
-Generates the Jenkins Jobs helm files
-
-***Aliases**: job*
-
 ### Usage
 
 ```
@@ -41,3 +35,8 @@ Generates the Jenkins Jobs helm files
   -o, --out string                the output directory for the generated config files. If not specified defaults to the jenkins dir in the current directory
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

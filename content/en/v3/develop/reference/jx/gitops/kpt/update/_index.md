@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_kpt_update
 ---
 
-## jx gitops kpt update
-
-Updates any kpt packages installed in a sub directory
-
 ### Usage
 
 ```
@@ -50,3 +46,8 @@ If you know a specific directory which needs updating you can always use 'kpt' d
   -v, --version string      the git version of the kpt package to upgrade to
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

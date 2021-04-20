@@ -7,10 +7,6 @@ aliases:
   - jx-secret_wait
 ---
 
-## jx secret wait
-
-Waits for the mandatory Secrets to be populated from their External Secrets
-
 ### Usage
 
 ```
@@ -36,3 +32,8 @@ Waits for the mandatory Secrets to be populated from their External Secrets
   -t, --timeout duration   the maximum amount of time to wait for the secrets to be valid (default 30m0s)
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-secret](https://github.com/jenkins-x-plugins/jx-secret)

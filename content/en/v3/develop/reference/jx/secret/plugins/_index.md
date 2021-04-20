@@ -7,12 +7,6 @@ aliases:
   - jx-secret_plugins
 ---
 
-## jx secret plugins
-
-Commands for working with Plugins
-
-***Aliases**: plugin*
-
 ### Usage
 
 ```
@@ -29,3 +23,8 @@ Commands for working with Plugins
   -h, --help   help for plugins
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-secret](https://github.com/jenkins-x-plugins/jx-secret)

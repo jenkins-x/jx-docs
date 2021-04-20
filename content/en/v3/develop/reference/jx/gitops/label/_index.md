@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_label
 ---
 
-## jx gitops label
-
-Updates all kubernetes resources in the given directory tree to add/override the given label
-
 ### Usage
 
 ```
@@ -41,3 +37,8 @@ Updates all kubernetes resources in the given directory tree to add/override the
       --selector stringToString   adds Kubernetes label selector to filter on, e.g. -s app=pusher-wave,heritage=Helm (default [])
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

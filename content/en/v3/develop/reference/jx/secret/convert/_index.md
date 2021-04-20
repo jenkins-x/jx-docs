@@ -7,12 +7,6 @@ aliases:
   - jx-secret_convert
 ---
 
-## jx secret convert
-
-Converts all Secret resources in the path to ExternalSecret resources so they can be checked into git
-
-***Aliases**: secretmappings,sm,secretmapping*
-
 ### Usage
 
 ```
@@ -46,3 +40,8 @@ Converts all Secret resources in the path to ExternalSecret resources so they ca
       --version-stream-dir string   the directory containing the version stream. If not specified defaults to the 'versionStream' folder in the dir
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-secret](https://github.com/jenkins-x-plugins/jx-secret)

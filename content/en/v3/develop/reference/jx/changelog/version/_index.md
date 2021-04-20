@@ -1,16 +1,16 @@
 ---
-title: jx test version
+title: jx changelog version
 linktitle: version
 type: docs
 description: "Displays the version of this command"
 aliases:
-  - jx-test_version
+  - jx-changelog_version
 ---
 
 ### Usage
 
 ```
-jx test version
+jx changelog version
 ```
 
 ### Synopsis
@@ -27,4 +27,4 @@ Displays the version of this command
 
 ### Source
 
-[jenkins-x-plugins/jx-test](https://github.com/jenkins-x-plugins/jx-test)
+[jenkins-x-plugins/jx-changelog](https://github.com/jenkins-x-plugins/jx-changelog)

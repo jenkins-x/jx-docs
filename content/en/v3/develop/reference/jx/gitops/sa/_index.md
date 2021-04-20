@@ -7,12 +7,6 @@ aliases:
   - jx-gitops_sa
 ---
 
-## jx gitops sa
-
-Commands for working with kubernetes ServiceAccount resources
-
-***Aliases**: serviceaccount,serviceaccounts*
-
 ### Usage
 
 ```
@@ -29,3 +23,8 @@ Commands for working with kubernetes ServiceAccount resources
   -h, --help   help for sa
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

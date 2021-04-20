@@ -7,10 +7,6 @@ aliases:
   - jx-preview_gc
 ---
 
-## jx preview gc
-
-Garbage collect Preview environments for closed or merged Pull Requests
-
 ### Usage
 
 ```
@@ -36,3 +32,8 @@ If a pull request is merged or closed the associated preview environment will be
   -h, --help   help for gc
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-preview](https://github.com/jenkins-x-plugins/jx-preview)

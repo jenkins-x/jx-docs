@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_hash
 ---
 
-## jx gitops hash
-
-Annotates the given files with a hash of the given source files for ConfigMaps/Secrets
-
 ### Usage
 
 ```
@@ -40,3 +36,8 @@ Annotates the given files with a hash of the given source files for ConfigMaps/S
   -s, --source stringArray        the source files to hash
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

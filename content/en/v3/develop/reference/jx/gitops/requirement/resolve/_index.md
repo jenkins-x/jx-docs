@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_requirement_resolve
 ---
 
-## jx gitops requirement resolve
-
-Resolves any missing values in the jx-requirements.yml which can be detected
-
 ### Usage
 
 ```
@@ -40,3 +36,8 @@ For example if the provider is GKE then this step will automatically default the
       --secret string      the name of the Secret to find the git URL, username and password for creating a git credential if running inside the cluster (default "jx-boot")
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

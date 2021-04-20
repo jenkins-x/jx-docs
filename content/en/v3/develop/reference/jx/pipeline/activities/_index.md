@@ -7,12 +7,6 @@ aliases:
   - jx-pipeline_activities
 ---
 
-## jx pipeline activities
-
-Display one or more Activities on projects
-
-***Aliases**: activity,act*
-
 ### Usage
 
 ```
@@ -49,3 +43,8 @@ Display the current activities for one or more projects.
   -w, --watch              Whether to watch the activities for changes
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-pipeline](https://github.com/jenkins-x-plugins/jx-pipeline)

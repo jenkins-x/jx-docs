@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_repository_add
 ---
 
-## jx gitops repository add
-
-Add one or more git URLs to the source configuration
-
 ### Usage
 
 ```
@@ -44,3 +40,8 @@ Add one or more repositories to the SourceConfig
       --selector stringToString   adds Kubernetes label selector to filter on, e.g. -s app=pusher-wave,heritage=Helm (default [])
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

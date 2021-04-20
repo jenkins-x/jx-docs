@@ -7,12 +7,6 @@ aliases:
   - jx-pipeline_pods
 ---
 
-## jx pipeline pods
-
-Displays the build pods and their details
-
-***Aliases**: pod*
-
 ### Usage
 
 ```
@@ -61,3 +55,8 @@ Display the Tekton build pods
       --verbose            Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-pipeline](https://github.com/jenkins-x-plugins/jx-pipeline)

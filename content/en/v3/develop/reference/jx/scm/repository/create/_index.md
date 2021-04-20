@@ -7,10 +7,6 @@ aliases:
   - jx-scm_repository_create
 ---
 
-## jx scm repository create
-
-Creates a new git provider in a git server
-
 ### Usage
 
 ```
@@ -43,3 +39,8 @@ Creates a new git provider in a git server
   -u, --username string      the user name to use on the git server
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-scm](https://github.com/jenkins-x-plugins/jx-scm)

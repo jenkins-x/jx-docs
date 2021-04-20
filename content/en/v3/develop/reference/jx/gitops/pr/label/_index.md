@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_pr_label
 ---
 
-## jx gitops pr label
-
-Add label to the pull request
-
 ### Usage
 
 ```
@@ -51,3 +47,8 @@ Adds a label to the current pull request
       --verbose             Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

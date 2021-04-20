@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_git
 ---
 
-## jx gitops git
-
-Commands for working with Git
-
 ### Usage
 
 ```
@@ -27,3 +23,8 @@ Commands for working with Git
   -h, --help   help for git
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

@@ -7,10 +7,6 @@ aliases:
   - jx-secret_vault_wait
 ---
 
-## jx secret vault wait
-
-Waits for vault to be ready for use
-
 ### Usage
 
 ```
@@ -37,3 +33,8 @@ Waits for vault to be ready for use
       --poll duration       the polling period to check if the secrets are valid (default 2s)
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-secret](https://github.com/jenkins-x-plugins/jx-secret)

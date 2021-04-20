@@ -7,12 +7,6 @@ aliases:
   - jx-project_enable
 ---
 
-## jx project enable
-
-Enables lighthouse pipelines in the current directory
-
-***Aliases**: dump*
-
 ### Usage
 
 ```
@@ -45,3 +39,8 @@ Enables lighthouse pipelines in the current directory
       --verbose               Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-project](https://github.com/jenkins-x-plugins/jx-project)

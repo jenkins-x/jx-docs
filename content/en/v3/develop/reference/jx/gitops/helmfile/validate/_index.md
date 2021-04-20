@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_helmfile_validate
 ---
 
-## jx gitops helmfile validate
-
-Validates helmfile.yaml against a jx canonical tree of helmfiles
-
 ### Usage
 
 ```
@@ -36,3 +32,8 @@ Parses a helmfile and any nested helmfiles and validates they conform to a canon
   -h, --help              help for validate
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

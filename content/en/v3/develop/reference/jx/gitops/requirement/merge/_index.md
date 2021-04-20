@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_requirement_merge
 ---
 
-## jx gitops requirement merge
-
-Merges values from the given file to the local jx-requirements.yml file
-
 ### Usage
 
 ```
@@ -44,3 +40,8 @@ This lets you take requirements from, say, the output of a terraform plan and me
       --retries int        Specify the number of times the command should be reattempted on failure (default 3)
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_ingress
 ---
 
-## jx gitops ingress
-
-Updates Ingress resources with the current ingress domain
-
 ### Usage
 
 ```
@@ -37,3 +33,8 @@ Updates Ingress resources with the current ingress domain
   -h, --help                  help for ingress
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

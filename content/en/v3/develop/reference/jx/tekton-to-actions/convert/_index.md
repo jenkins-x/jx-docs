@@ -7,12 +7,6 @@ aliases:
   - jx-tekton-to-actions_convert
 ---
 
-## jx tekton to actions convert
-
-Converts tekton pipelines to github actions
-
-***Aliases**: kill*
-
 ### Usage
 
 ```
@@ -43,3 +37,8 @@ Converts tekton pipelines to github actions
       --runs-on string              The machine this runs on (default "ubuntu-latest")
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-tekton-to-actions](https://github.com/jenkins-x-plugins/jx-tekton-to-actions)

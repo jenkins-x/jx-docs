@@ -7,10 +7,6 @@ aliases:
   - jx-secret_replicate
 ---
 
-## jx secret replicate
-
-Replicates the given ExternalSecret resources into other Environments or Namespaces
-
 ### Usage
 
 ```
@@ -46,3 +42,8 @@ Replicates the given ExternalSecret resources into other Environments or Namespa
       --verbose             Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-secret](https://github.com/jenkins-x-plugins/jx-secret)

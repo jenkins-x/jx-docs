@@ -7,12 +7,6 @@ aliases:
   - jx-gitops_scheduler
 ---
 
-## jx gitops scheduler
-
-Generates the Lighthouse configuration from the SourceRepository and Scheduler resources
-
-***Aliases**: schedulers,lighthouse*
-
 ### Usage
 
 ```
@@ -42,3 +36,8 @@ Generates the Lighthouse configuration from the SourceRepository and Scheduler r
       --scheduler-dir stringArray   the directory to look for Scheduler resources. If not specified defaults 'schedulers' and 'versionStream/schedulers'
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

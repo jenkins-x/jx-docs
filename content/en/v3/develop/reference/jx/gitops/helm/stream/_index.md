@@ -7,10 +7,6 @@ aliases:
   - jx-gitops_helm_stream
 ---
 
-## jx gitops helm stream
-
-Generate the kubernetes resources for all helm charts in a version stream
-
 ### Usage
 
 ```
@@ -44,3 +40,8 @@ Generate the kubernetes resources for all helm charts in a version stream
   -n, --url string              the git clone URL of the version stream
 ```
 
+
+
+### Source
+
+[jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)
