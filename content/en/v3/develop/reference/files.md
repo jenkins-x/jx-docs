@@ -41,5 +41,6 @@ The following files are only used in a development cluster git repository
 | `extensions/quickstarts.yaml` | [Quickstarts](https://github.com/jenkins-x/jx-gitops/blob/master/docs/config.md#gitops.jenkins-x.io/v1alpha1.Quickstarts) | Defines the quickstarts used by your team when [creating a quickstart project](/v3/develop/create-project/) |
 | `jx-requirements.yml` | [Requirements](https://github.com/jenkins-x/jx-api/blob/master/docs/config.md#requirements) | The kubernetes cluster and infrastructure requirements such as kubernetes provider kind, chart repository, container registry and environments |
 | `helmfiles/ns/helmfile.yaml` | [helmfile](https://github.com/roboll/helmfile#configuration) | The [helmfile](https://github.com/roboll/helmfile) defines the helm charts, version and value mappings to be installed in a namespace in a cluster. We use a folder inside `helmfiles` for each namespace so its easy to keep namespaces separate in git |
+| `schedulers/*.yaml` | [Scheduler](https://github.com/jenkins-x-plugins/jx-gitops/blob/main/docs/scheduler-config.md#scheduler) | The scheduler used to configure ChatOps and merging |
 | `versionStream` | | The shared version stream which contains chart, image and git versions and default configuration files |
 
