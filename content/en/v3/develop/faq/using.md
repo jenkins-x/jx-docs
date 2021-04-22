@@ -59,7 +59,7 @@ You may also want to remove the webhook from the repository to be safe.
 
 ## How do I stop jx asking for git credentials
 
-When you run commands like [jx project](/v3/develop/reference/jx/project/) to create/import repositories or [jx application](v3/develop/reference/jx/application/) to list applications need to be able to access git repositories using tokens.
+When you run commands like [jx project](/v3/develop/reference/jx/project/) to create/import repositories or [jx application](/v3/develop/reference/jx/application/) to list applications need to be able to access git repositories using tokens.
 
 You can define the git credentials so that you can do `git clone` of your private git repositories via...
 
