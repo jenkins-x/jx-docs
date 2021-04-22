@@ -74,9 +74,29 @@ Helmfile hooks allow programs to be executed during the lifecycle of the applica
 
 Since we default to using [helmfile template](/v3/develop/faq/#why-does-jenkins-x-use-helmfile-template) helmfile hooks are not supported for cluster git repositories (though you can use them in preview environments).
 
-However its easy to add steps into the **versionStream/src/Makefile.mk** to simulate helmfile hooks.
+However you can support it with the following example:
 
-           
+## How do I add a post install hook in a cluster?
+                                                
+If you want to perform some tasks after a promotion or configuration change in your cluster you can modify the `Makefile` in your git repository.
+
+e.g. use something like this:
+
+
+```makefile 
+POST_APPLY_HOOK = post-apply-hook
+
+post-apply-hook:
+	echo "TODO run some tests now or trigger a Job or something..."
+
+include versionStream/src/Makefile.mk
+```
+
+To trigger the tests you could:
+
+* download binaries and run them locally via a shell script 
+* create a kubernetes `Job` and verify that the job succeeds via [jx verify job](https://jenkins-x.io/v3/develop/reference/jx/verify/job/) which also tails the log
+* trigger a pipeline via [jx pipeline start](https://jenkins-x.io/v3/develop/reference/jx/pipeline/start/ )
 
 
 ## How do I uninstall Jenkins X?
