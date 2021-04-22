@@ -23,13 +23,6 @@ Displays the version of this command
   -h, --help   help for version
 ```
 
-### Options inherited from parent commands
-
-```
-  -b, --batch-mode   Runs in batch mode without prompting for user input
-      --verbose      Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
-```
-
 
 
 ### Source
