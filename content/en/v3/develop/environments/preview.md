@@ -117,7 +117,7 @@ You can modify the **preview/helmfile.yaml** file to add any helm chart dependen
 
 You can find possible charts to install by searching helm. e.g. to find a `postgresql` chart try:
 
-```
+```bash
 helm search repo postgres
 ```
 
