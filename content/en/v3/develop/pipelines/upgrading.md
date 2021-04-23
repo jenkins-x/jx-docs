@@ -18,6 +18,34 @@ jx pipeline convert
 The pipelines should be modified and if you have a `Kptfile` it will be removed.
 
 If you have any old `jenkins-x.yml` files, those will be converted across to the new `.lighthouse` tekton notation too.
+        
+
+## Recreating pipelines
+
+If you created/imported your repository a long time ago (particularly before the GA version of 3.x) you may have old steps and images inside your `.lighthouse/jenkins-x/*.yaml` files.
+
+So it's a good idea to recreate them from the latest catalog which are then simpler and [easier to keep up to date with the version stream](/blog/2021/02/25/gitops-pipelines/#sharing-tasks-and-steps-across-repositories) and [easier to custommize locally](/blog/2021/02/25/gitops-pipelines/#customizing-an-inherited-step)
+
+You can do that via the following from inside a git clone of your repository:
+
+
+```bash
+rm -rf .lighthouse charts preview
+jx project import
+```              
+
+This should recreate the directories:
+
+* `.lighthouse`
+* `charts`
+* `preview`
+
+from the latest pipeline catalog; there should be no need to create a Pull Request on your dev cluster git repository as all the webhooks should be setup already. 
+
+You can use the git history to compare changes in case you had made any custom pipeline changes.
+
+If you are worried about losing changes you can add `--dry-run` to [jx project import](/v3/develop/reference/jx/project/import/) which will give you a chance to review the changes before committing. Though you can always use git to revert thing too ;)
+
 
 ## Upgrading pipelines and helm charts via kpt
 
