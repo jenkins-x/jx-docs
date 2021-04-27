@@ -11,7 +11,7 @@ weight: 300
 The following tekton parameters and environment variables are available inside the pipeline catalog. They are populated by [lighthouse](https://github.com/jenkins-x/lighthouse)
 
 | Variable | Description |
- | --- | --- |
+| --- | --- |
 | BUILD_ID | a unique long number for this build |
 | JOB_NAME | the name of the build which matches the name in the `presubmit` or `postsubmit` in your [lighthouse](https://github.com/jenkins-x/lighthouse) `triggers.yaml` |
 | JOB_SPEC|  is of the form `type:presumit` or `type:postsubmit` so you know what kind of job you are inside |
