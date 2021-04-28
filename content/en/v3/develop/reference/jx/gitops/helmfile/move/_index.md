@@ -19,7 +19,9 @@ Moves the generated template files from 'helmfile template' into the right gitop
   
 The output of 'helmfile template' ignores the namespace specified in the 'helmfile.yaml' and there is a dummy top level directory. 
 
-So this command applies the namespace to all the generated resources and then moves the namespaced resources into the config-root/namespaces/$ns/$releaseName directory and then moves any CRDs or cluster level resources into 'config-root/cluster/$releaseName'
+So this command applies the namespace to all the generated resources and then moves the namespaced resources into the config-root/namespaces/$ns/$releaseName directory and then moves any CRDs or cluster level resources into 'config-root/cluster/$releaseName' 
+
+If supplied with --dir-includes-release-name then by default we will annotate the resources with the annotation 'meta.helm.sh/release-name' to preserve the helm release name
 
 ### Examples
 
@@ -31,6 +33,7 @@ So this command applies the namespace to all the generated resources and then mo
 ### Options
 
 ```
+      --annotate-release-name       if using --dir-includes-release-name layout then lets add the 'meta.helm.sh/release-name' annotation to record the helm release name (default true)
       --dir string                  the directory containing the generated resources
       --dir-includes-release-name   the directory containing the generated resources has a path segment that is the release name
   -h, --help                        help for move
