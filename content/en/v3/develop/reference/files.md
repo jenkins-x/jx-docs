@@ -44,3 +44,7 @@ The following files are only used in a development cluster git repository
 | `schedulers/*.yaml` | [Scheduler](https://github.com/jenkins-x-plugins/jx-gitops/blob/main/docs/scheduler-config.md#scheduler) | The scheduler used to configure ChatOps and merging |
 | `versionStream` | | The shared version stream which contains chart, image and git versions and default configuration files |
 
+          
+## JSON Schemas
+
+See the [JSON Schemas](https://github.com/jenkins-x/jenkins-x-schemas/tree/main/docs)

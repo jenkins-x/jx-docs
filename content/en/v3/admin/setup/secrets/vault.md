@@ -9,7 +9,32 @@ aliases:
 ---
 
 
-To be able to use Vault as the storage engine for your Secrets you need to [configure vault](/v3/guides/config/#vault) via `secretStorage: vault` in your `jx-requirements.yml`:
+## Installing Vault
+
+If you are using Terraform with one of the [Cloud Providers](/v3/admin/) then your Vault will be installed automatically via Terraform.
+
+
+Otherwise please see the [On Premise Vault Install Guide](/v3/admin/platforms/on-premise/vault/)
+
+
+whichever apporoach take you should have:
+
+* [Kubernetes External Secrets](https://github.com/external-secrets/kubernetes-external-secrets) is installed to populate Secrets from vault
+* the [vault operator](https://banzaicloud.com/products/bank-vaults/) is installed for operating vault 
+* a vault instance is created in the `jx-vault` namespace
+
+You can wait for the `vault-0` pod in namespace `jx-vault` to be ready via [jx secret vault wait](https://github.com/jenkins-x/jx-secret/blob/master/docs/cmd/jx-secret_vault_wait.md) command:
+
+```bash 
+jx secret vault wait
+```
+
+Now your vault can be used.
+       
+     
+### Configuration
+
+To indicate that Vault is being used as the storage engine for your Secrets you need to [configure vault](/v3/guides/config/#vault) via `secretStorage: vault` in your `jx-requirements.yml`. Note that this is usually done automatically for Cloud providers and Terraform:
 
 ```yaml
 cluster:
@@ -23,31 +48,6 @@ secretStorage: vault
 webhook: lighthouse
 ```
 
-## Installing Vault
-
-Make sure that your `helmfile.yaml` file has the necessary vault charts included such as...
-
-```yaml 
-releases:
-- chart: external-secrets/kubernetes-external-secrets
-- chart: banzaicloud-stable/vault-operator
-- chart: jx-labs/vault-instance   
-...
-```
-
-which ensures that:
-
-* [Kubernetes External Secrets](https://github.com/external-secrets/kubernetes-external-secrets) is installed to populate Secrets from vault
-* the [vault operator](https://banzaicloud.com/products/bank-vaults/) is installed for operating vault 
-* a vault instance is created in the `secret-infra` namespace
-
-You can wait for the `vault-0` pod in namespace `secret-infra` to be ready via [jx secret vault wait](https://github.com/jenkins-x/jx-secret/blob/master/docs/cmd/jx-secret_vault_wait.md) command:
-
-```bash 
-jx secret vault wait
-```
-
-Now your vault can be used.
 
 ## Using Vault
 
@@ -76,10 +76,10 @@ Download the [vault CLI binary](https://www.vaultproject.io/downloads/) and add 
 You can now setup a shell to access vault as follows:
 
 ```bash 
-export VAULT_TOKEN=$(kubectl get secrets vault-unseal-keys  -n secret-infra -o jsonpath={.data.vault-root} | base64 --decode)
+export VAULT_TOKEN=$(kubectl get secrets vault-unseal-keys  -n jx-vault -o jsonpath={.data.vault-root} | base64 --decode)
 
 # Tell the CLI that the Vault Cert is signed by a custom CA
-kubectl get secret vault-tls -n secret-infra -o jsonpath="{.data.ca\.crt}" | base64 --decode > $PWD/vault-ca.crt
+kubectl get secret vault-tls -n jx-vault -o jsonpath="{.data.ca\.crt}" | base64 --decode > $PWD/vault-ca.crt
 export VAULT_CACERT=$PWD/vault-ca.crt
 
 # Tell the CLI where Vault is listening (the certificate has 127.0.0.1 as well as alternate names)
