@@ -31,13 +31,26 @@ The second step is to create the `helmfiles/jx-observability/helmfile.yaml` file
 
 ```yaml 
 namespace: jx-observability
+repositories:
+- name: jx3
+  url: https://storage.googleapis.com/jenkinsxio/charts
+- name: grafana
+  url: https://grafana.github.io/helm-charts
+- name: prometheus-community
+  url: https://prometheus-community.github.io/helm-charts
 releases:
 - chart: jx3/grafana-dashboard
+  name: grafana-dashboard
 - chart: grafana/loki
+  name: loki
 - chart: grafana/promtail
+  name: promtail
 - chart: grafana/tempo
+  name: tempo
 - chart: grafana/grafana
+  name: grafana
 - chart: prometheus-community/prometheus
+  name: prometheus
 ```
 
 Commit and push these changes, and after a few minutes you should see grafana, loki, promtail, tempo, and prometheus pods running in the `jx-observability` namespace:
