@@ -32,6 +32,7 @@ Generate the kubernetes resources from a helm chart
       --dir string                 the root directory to look for .jx/requirements.yaml (default ".")
       --ghpage-url string          the github pages URL used if creating the first README.md in the github pages branch so we can link to how to add a chart repository
   -h, --help                       help for release
+  -I, --ignore stringArray         the names of helm charts to not release (default [preview])
       --namespace string           the namespace to look for the dev Environment. Defaults to the current namespace
       --no-oci-login               disables using the 'helm registry login' command when using OCI
       --no-release                 disables publishing the release. Useful for a Pull Request pipeline
