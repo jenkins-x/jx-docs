@@ -29,23 +29,34 @@ And install only services to run and expose your applications, e.g.:
  
 ### Create a repository
 
-1. Create a git repository for your remote cluster using [a cut down repository](https://github.com/jx3-gitops-repositories/jx3-kubernetes-production) you might want to start with:
+Create a git repository for your remote cluster using [a cut down repository](https://github.com/jx3-gitops-repositories/jx3-kubernetes-production) you might want to start with:
 
-*  <a href="https://github.com/jx3-gitops-repositories/jx3-kubernetes-production/generate" target="github" class="btn bg-primary text-light">Create Git Repository</a> 
+ <a href="https://github.com/jx3-gitops-repositories/jx3-kubernetes-production/generate" target="github" class="btn bg-primary text-light">Create Git Repository</a> 
  
-     * if the above button does not work then please [Login to GitHub](https://github.com/login) first and then retry the button
+  * if the above button does not work then please [Login to GitHub](https://github.com/login) first and then retry the button
 
-2. Follow the [administration documentation](/v3/admin/platform/) to setup a new Cluster (or skip this step if already in place) but using the git URL you created above for the cluster git repository 
+Follow the [administration documentation](/v3/admin/platform/) to setup a new Cluster (or skip this step if already in place) but using the git URL you created above for the cluster git repository  
 
-3. Then when you have a git repository URL for your `Preprod` or `Production` cluster, [import the git repository](/v3/develop/create-project/#import-an-existing-project) like you would any other git repository into your Development cluster using the [jx project import](/v3/develop/reference/jx/project/import) command (command should be run in the `jx` namespace):
+### Import the remote cluster into your Development cluster
+
+Then when you have a git repository URL for your `Preprod` or `Production` cluster, [import the git repository](/v3/develop/create-project/#import-an-existing-project) like you would any other git repository into your Development cluster using the [jx project import](/v3/develop/reference/jx/project/import) command (command should be run in the `jx` namespace):
+
+**NOTE** make sure you are connected to the development cluster:
+
+```bash
+# echo make sure we are connected to the development cluster
+jx ns nx
+jx ctx -b
+
+# lets clone the remote cluster repository and import it...
+git clone https://github.com/myowner/my-prod-repo.git
+cd  my-prod-repo
+jx project import
+```
     
-    ```bash 
-    jx project import --url https://github.com/myowner/my-prod-repo.git
-    ```
-    
-    This will create a Pull Request on your development cluster git repository to link to the `Preprod` or `Production` git repository on promotions of apps.
-     
-    **NOTE**: Jenkins X will [push additional configuration files](/v3/about/how-it-works/#importing--creating-quickstarts) to the created Pull Request, so it is recommended to wait until the Pull Request is auto-merged and avoid manual intervention.
+This will create a Pull Request on your development cluster git repository to link to the `Preprod` or `Production` git repository on promotions of apps.
+ 
+**NOTE**: Jenkins X will [push additional configuration files](/v3/about/how-it-works/#importing--creating-quickstarts) to the created Pull Request, so it is recommended to wait until the Pull Request is auto-merged and avoid manual intervention.
 
 ### Changes to `jx-requirements.yml`
 
