@@ -26,7 +26,7 @@ This is our current recommended quickstart for Azure:
    
     * if the above button does not work then please [Login to GitHub](https://github.com/login) first and then retry the button
 
-* `git clone` the new repository and `cd`  into the git clone
+* `git clone` the new repository via **HTTPS** and `cd` into the git clone directory
 
 *  <a href="https://github.com/jx3-gitops-repositories/jx3-terraform-azure/blob/master/README.md" 
     target="github" class="btn bg-primary text-light" 

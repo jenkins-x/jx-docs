@@ -74,6 +74,8 @@ This is our current recommended quickstart for on premise kubernetes:
 
     * if the above button does not work then please [Login to GitHub](https://github.com/login) first and then retry the button
 
+* `git clone` the new repository via **HTTPS** and `cd` into the git clone directory
+
 * find out what your ingress domain is for your cluster then modify the `jx-requirements.yml` file and modify the `ingress.domain` section...
 
 ```yaml
