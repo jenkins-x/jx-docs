@@ -33,6 +33,8 @@ Here are some detailed [instructions](https://007ba7.us/howto/jx-install/) on ge
 
 The following are the prerequisites of your on-premise kubernetes cluster:
 
+* [Download and install the jx 3.x binary](/v3/guides/jx3/)
+
 #### Kubernetes cluster
 
 We obviously need a working kubernetes cluster. There are many approaches to [setting up on premise clusters](https://kubernetes.io/docs/setup/production-environment/tools/) obviously the easiest approach is to use the [cloud](/v3/#administration).
