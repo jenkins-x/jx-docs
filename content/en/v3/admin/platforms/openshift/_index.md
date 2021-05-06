@@ -47,7 +47,7 @@ oc adm policy add-scc-to-user anyuid -z tekton-pipelines-webhook
 
     * if the above button does not work then please [Login to GitHub](https://github.com/login) first and then retry the button
 
-* `git clone` the new repository and `cd` into the git clone directory
+* `git clone` the new repository via **HTTPS** and `cd` into the git clone directory
 
 * find out what your ingress domain is for your cluster then modify the `jx-requirements.yml` file and modify the `ingress.domain` section...
 

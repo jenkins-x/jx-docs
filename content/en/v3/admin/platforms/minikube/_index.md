@@ -40,7 +40,7 @@ minikube start --cpus 4 --memory 8048 --disk-size=100g --addons=ingress --vm=tru
    * if the above button does not work then please [Login to GitHub](https://github.com/login) first and then retry the button
 
 
-* `git clone` the new repository and `cd` into the git clone directory
+* `git clone` the new repository via **HTTPS** and `cd` into the git clone directory
 
 * configure the `ingress.domain` to point to your `$(minikube ip).nip.io`:
 
