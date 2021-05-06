@@ -119,7 +119,7 @@ The development cluster:
 
 ## Remote Cluster Recommendations
 
-We do recommend using the Jenkins X GitOps pipeline approach in [production and preproduction for these reasons](/v3/develop/faq/#why-does-jenkins-x-use-helmfile-template) then all changes to git result in the [kubernetes resources being checked into git](/v3/about/how-it-works/#boot-job) so they can be easily reviewed without reviewers needing access to production.
+We do recommend using the Jenkins X GitOps pipeline approach in [production and preproduction for these reasons](/v3/develop/faq/general/#why-does-jenkins-x-use-helmfile-template) then all changes to git result in the [kubernetes resources being checked into git](/v3/about/how-it-works/#boot-job) so they can be easily reviewed without reviewers needing access to production.
 
 You may want to reuse existing built in charts such as:
 
@@ -139,7 +139,7 @@ pr:
     helmfile lint
 ```
 
-though you will lose [these benefits](/v3/develop/faq/#why-does-jenkins-x-use-helmfile-template). You will also need to:
+though you will lose [these benefits](/v3/develop/faq/general/#why-does-jenkins-x-use-helmfile-template). You will also need to:
 
 * add your own [pusher-wave integration](https://github.com/jenkins-x-charts/pusher-wave#quick-start) for each chart you want to perform a rolling upgrade if the underlying secrets are rotated.
 * manually populate all secrets in each remote environments via the underlying secret store as you will not be using the [jx-secret](https://github.com/jenkins-x/jx-secret) mechanism built into the default Jenkins X GitOps pipelines for doing this. 
