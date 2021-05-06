@@ -13,7 +13,7 @@ aliases:
 Jenkins X 3.x supports the `helmfile.yaml` file format from the [helmfile project](https://github.com/roboll/helmfile) that can be used to define the [Helm](https://helm.sh/) [charts](https://helm.sh/docs/topics/charts/) you wish to install and their namespace.
 
 
-### Adding Charts
+## Adding Charts
             
 Jenkins X uses [helmfile](https://github.com/roboll/helmfile#configuration) to configure helm charts. 
 
@@ -55,11 +55,11 @@ We are trying to increase consistency and use canonical names in `helmfile.yaml`
 
 If you need more help editing `helmfile.yaml` files check out the [helmfile configuration guide](https://github.com/roboll/helmfile#configuration)  
 
-#### Using the CLI
+### Using the CLI
 
 There is also a simple CLI command [jx gitops helmfile add](https://github.com/jenkins-x/jx-gitops/blob/master/docs/cmd/jx-gitops_helmfile_add.md) to add charts into the `helmfile.yaml` but its just as easy to do by hand really.
 
-### Adding resources
+## Adding resources
 
 If you want to create one or more kubernetes resources that are not already packaged as a helm chart you can easily add these into your cluster git repository using the _local chart_ layout.
 
@@ -76,7 +76,7 @@ releases:
 
 Create a Pull Request. You should see the effective kubernetes resources show up as a commit on your Pull Request
  
-### Customising charts
+## Customising charts
 
 You can add a custom `values.yaml` file to any chart and reference it in the `values:` section of the `helmfile.yaml` file.
 
@@ -103,7 +103,7 @@ To see an example of this in action check out the [charts/jenkins-x/tekton/value
 
 Note that many apps are already configured to make use of the `jx-requirements.yml` settings via the [version stream](https://jenkins-x.io/about/concepts/version-stream/) - but you are free to add your own custom configuration. 
    
-#### Using requirements in charts
+### Using requirements in charts
 
 The `jx-requirements.yml` file gets converted to a namespace specific set of values, `jx-values.yaml` in each namespace so it can be easily consumed in the namespace specific helmfile in `helmfiles/$namespace/helmefile.yaml`.
 
@@ -130,7 +130,7 @@ You may have noticed there is a folder called `versionStream` inside your cluste
 This means we can share canonical files and metadata across clusters and git repositories.
 
 
-#### Keeping the version stream in sync
+### Keeping the version stream in sync
 
 When you [upgrade your cluster](/v3/guides/upgrade/#cluster) the local `versionStream` folder will be upgraded to the latest upstream version stream contents.
 
