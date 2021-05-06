@@ -25,6 +25,9 @@ And install only services to run and expose your applications, e.g.:
   * Cert-manager
   * [kubernetes external secrets](https://github.com/external-secrets/kubernetes-external-secrets) for [populating Secrets from your secret store](/v3/admin/setup/secrets/) (vault or cloud provider secret manager)
   * [push-wave](https://github.com/jenkins-x-charts/pusher-wave#wave) for automatically performing rolling upgrades when secrets are rotated in your secret store
+         
+ 
+### Create a repository
 
 1. Create a git repository for your remote cluster using [a cut down repository](https://github.com/jx3-gitops-repositories/jx3-kubernetes-production) you might want to start with:
 
