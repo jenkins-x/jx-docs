@@ -13,19 +13,26 @@ We recommend using separate clusters for your `Preprod` and `Production` environ
 
 ## Setting up multi cluster
 
-1. Follow the [administration documentation](/v3/admin/platform/) to setup a new Development Cluster (or skip this step if already in place). 
+For remote environments (e.g. `Preprod` and `Production`) you typically won't need lots of the development tools such as:
+  * Lighthouse
+  * Tekton
+  * Webhooks
+  * Nexus / Bucketrepo
 
-2. Follow the mentioned approach at the previous point in order to setup new and additional clusters for the desired remote environments:
-    * For remote environments (e.g. `Preprod` and `Production`) you typically won't need lots of the development tools such as:
-      * Lighthouse
-      * Tekton
-      * Webhooks
-      * Nexus / Bucketrepo
-    * And install only services to run and expose your applications, e.g.:
-      * Nginx-ingress
-      * Cert-manager
-      * [kubernetes external secrets](https://github.com/external-secrets/kubernetes-external-secrets) for [populating Secrets from your secret store](/v3/admin/setup/secrets/) (vault or cloud provider secret manager)
-      * [push-wave](https://github.com/jenkins-x-charts/pusher-wave#wave) for automatically performing rolling upgrades when secrets are rotated in your secret store
+And install only services to run and expose your applications, e.g.:
+
+  * Nginx-ingress
+  * Cert-manager
+  * [kubernetes external secrets](https://github.com/external-secrets/kubernetes-external-secrets) for [populating Secrets from your secret store](/v3/admin/setup/secrets/) (vault or cloud provider secret manager)
+  * [push-wave](https://github.com/jenkins-x-charts/pusher-wave#wave) for automatically performing rolling upgrades when secrets are rotated in your secret store
+
+1. Create a git repository for your remote cluster using [a cut down repository](https://github.com/jx3-gitops-repositories/jx3-kubernetes-production) you might want to start with:
+
+*  <a href="https://github.com/jx3-gitops-repositories/jx3-kubernetes-production/generate" target="github" class="btn bg-primary text-light">Create Git Repository</a> 
+ 
+     * if the above button does not work then please [Login to GitHub](https://github.com/login) first and then retry the button
+
+2. Follow the [administration documentation](/v3/admin/platform/) to setup a new Cluster (or skip this step if already in place) but using the git URL you created above for the cluster git repository 
 
 3. Then when you have a git repository URL for your `Preprod` or `Production` cluster, [import the git repository](/v3/develop/create-project/#import-an-existing-project) like you would any other git repository into your Development cluster using the [jx project import](/v3/develop/reference/jx/project/import) command (command should be run in the `jx` namespace):
     
