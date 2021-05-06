@@ -66,3 +66,13 @@ jxRequirements:
       secretName: my-tls-secret-name
 ```
 
+            
+## How do I diagnose webhooks?
+
+See [How to diagnose webhooks](/v3/admin/troubleshooting/webhooks/)
+
+## How do I use webhooks without a public IP?
+
+If you are running on your laptop or in a private cluster you won't be able to use webhooks on your git provider to trigger pipelines.
+
+A workaround is to use [use something like ngrok to enable webhooks](/v3/admin/platforms/on-premise/webhooks/)
