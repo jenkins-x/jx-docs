@@ -2,7 +2,7 @@
 title: jx updatebot
 linktitle: updatebot
 type: docs
-description: "Updatebot commands"
+description: "commands for creating Pull Requests on repositories when versions change"
 aliases:
   - jx-updatebot
 ---
@@ -15,7 +15,7 @@ jx updatebot
 
 ### Synopsis
 
-Updatebot commands
+commands for creating Pull Requests on repositories when versions change
 
 ### Options
 

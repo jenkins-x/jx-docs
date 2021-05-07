@@ -30,6 +30,7 @@ Creates a Pull Request to upgrade the environment git repository from the versio
       --git-token string            the git token used to operate on the git repository. If not specified it's loaded from the git credentials file
       --git-username string         the git username used to operate on the git repository. If not specified it's loaded from the git credentials file
   -h, --help                        help for environment
+      --labels strings              a list of labels to apply to the PR (default [jx-boot-upgrade])
       --pull-request-body string    the PR body
       --pull-request-title string   the PR title (default "chore: upgrade the cluster git repository from the version stream")
   -s, --strategy string             the 'kpt' strategy to use. To see available strategies type 'kpt pkg update --help'. Typical values are: resource-merge, fast-forward, alpha-git-patch, force-delete-replace

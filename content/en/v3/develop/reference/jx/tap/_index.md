@@ -2,7 +2,7 @@
 title: jx tap
 linktitle: tap
 type: docs
-description: "commands for stashing results"
+description: "commands for processing TAP (Test Anything Protocol) files"
 aliases:
   - jx-tap
 ---
@@ -15,7 +15,7 @@ jx tap
 
 ### Synopsis
 
-commands for stashing results
+commands for processing TAP (Test Anything Protocol) files
 
 ### Options
 
