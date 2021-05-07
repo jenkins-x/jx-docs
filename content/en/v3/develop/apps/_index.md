@@ -57,12 +57,15 @@ If you need more help editing `helmfile.yaml` files check out the [helmfile conf
 
 ### Using the CLI
 
-There is also a simple CLI command [jx gitops helmfile add](/v3/develop/reference/jx/gitops/helmfile/add/) to add charts into the `helmfile.yaml` but its just as easy to do by hand really.
+There is also a simple CLI command [jx gitops helmfile add](/v3/develop/reference/jx/gitops/helmfile/add/) to add charts into the right`helmfile.yaml` for the namespace:
 
 ```bash
 # from inside a git clone of your cluster git repository
 jx gitops helmfile add --chart somerepo/mychart --repository https://acme.com/myrepo --namespace foo --version 1.2.3
 ```
+
+Once you get a feel for how `helmfile` works and the layout of the `helmfiles/*/helmfile.yaml` files you can probably just do these kinds of changes directly in the source code.
+
 
 ## Adding resources
 
