@@ -2,7 +2,7 @@
 title: jx updatebot sync
 linktitle: sync
 type: docs
-description: "Synchonizes all or some applications in an environment from another environment"
+description: "Synchronizes some or all applications in an environment/namespace to another environment/namespace to reduce version drift"
 aliases:
   - jx-updatebot_sync
 ---
@@ -15,7 +15,11 @@ jx updatebot sync
 
 ### Synopsis
 
-Synchonizes all or some applications in an environment from another environment to reduce version drift
+Synchronizes some or all applications in an environment/namespace to another environment/namespace to reduce version drift 
+
+Supports synchronizing environments or namespaces within the same cluster or namespaces between remote clusters (possibly using different namespaces). 
+
+Create a Pull Request on the target GitOps repository to apply the changes so that you can review the changes before they happen. You can use different labels to enable/disable auto-merging.
 
 ### Examples
 
