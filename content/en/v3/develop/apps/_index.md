@@ -15,7 +15,25 @@ Jenkins X 3.x supports the `helmfile.yaml` file format from the [helmfile projec
 
 ## Adding Charts
             
-Jenkins X uses [helmfile](https://github.com/roboll/helmfile#configuration) to configure helm charts. 
+Jenkins X uses [helmfile](https://github.com/roboll/helmfile#configuration) to configure which versions of which helm charts are to be deployed in which namespace along with its configuration. 
+
+
+### Using the CLI
+
+The easiest way to add apps/charts to your cluster is via a CLI command [jx gitops helmfile add](/v3/develop/reference/jx/gitops/helmfile/add/) to add charts into the right`helmfile.yaml` for the namespace:
+
+Make sure you are in a git clone of your cluster git repository then run:
+
+```bash
+# from inside a git clone of your cluster git repository
+jx gitops helmfile add --chart somerepo/mychart --repository https://acme.com/myrepo --namespace foo --version 1.2.3
+```
+
+### Using the source code directly
+
+Instead of using the above command line you can just modify the source code in git via your IDE.
+
+If you need more help on how to edit the helmfiles files check out the [helmfile configuration guide](https://github.com/roboll/helmfile#configuration)  
 
 There is a root `helmfile.yaml` file and then a tree of helmfiles for each namespace:
 
@@ -31,7 +49,6 @@ helmfiles/
 To add a new helm chart find the namespace you wish to add it to and add the chart to that file.
 
 e.g. to add to the `jx` namespace modify the `helmfiles/jx/helmfile.yaml` file.
-
 
 Then add any charts you like in the `releases:` section as follows:
 
@@ -50,21 +67,6 @@ The prefix of the chart name is the chart repository name. There are a few chart
 
 We are trying to increase consistency and use canonical names in `helmfile.yaml` files for chart repositories. You can see the default [chart repository names and URLs in this file](https://github.com/jenkins-x/jxr-versions/blob/master/charts/repositories.yml). Feel free to use any name and URL you like.
 
-
-#### Helmfile reference guide
-
-If you need more help editing `helmfile.yaml` files check out the [helmfile configuration guide](https://github.com/roboll/helmfile#configuration)  
-
-### Using the CLI
-
-There is also a simple CLI command [jx gitops helmfile add](/v3/develop/reference/jx/gitops/helmfile/add/) to add charts into the right`helmfile.yaml` for the namespace:
-
-```bash
-# from inside a git clone of your cluster git repository
-jx gitops helmfile add --chart somerepo/mychart --repository https://acme.com/myrepo --namespace foo --version 1.2.3
-```
-
-Once you get a feel for how `helmfile` works and the layout of the `helmfiles/*/helmfile.yaml` files you can probably just do these kinds of changes directly in the source code.
 
 
 ## Adding resources
