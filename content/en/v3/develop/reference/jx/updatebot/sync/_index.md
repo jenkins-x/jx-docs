@@ -70,6 +70,7 @@ Create a Pull Request on the target GitOps repository to apply the changes so th
       --target-git-url string       git URL to clone for the target
       --target-helmfile string      the helmfile to resolve. If not specified defaults to 'helmfile.yaml' in the git clone dir
       --target-ns string            the namespace for the target
+      --update-only                 only update versions in the target environment/namespace - do not add any new charts that are missing
       --verbose                     Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
 ```
 
