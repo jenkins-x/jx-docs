@@ -33,7 +33,7 @@ Starts the pipeline build.
 ### Options
 
 ```
-      --branch string            The branch to start. If not specified defaults to master
+      --branch string            The branch to start. If not specified then the default branch of the repository is used
       --configmap string         The name of the Lighthouse ConfigMap to find the trigger configurations (default "config")
   -c, --context string           An optional context name to find the specific kind of postsubmit/presubmit if there are more than one triggers
       --duration duration        Maximum duration to wait for one or more matching triggers to be setup in Lighthouse. Useful for when a new repository is being imported via GitOps (default 20m0s)
