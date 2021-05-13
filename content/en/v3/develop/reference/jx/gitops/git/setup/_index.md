@@ -46,8 +46,8 @@ Secret resource provisioned together with `jx-git-operator` in your Kubernetes n
 
 The Git username and email are preferentially determined from `PipelineUser` field from `jx-requirements.yaml`, but if
 they are not available there then default email address `jenkins-x@googlegroups.com` is used (which is the reason why
-you are seeing commits from `pow-devops2020` user made on your repositories). If the username could not be
-determined from `jx-requirements.yaml`, then it is determined from:
+you are seeing commits from `pow-devops2020` user made on your repositories). If the username could not be determined
+from `jx-requirements.yaml`, then it is determined from:
 
 - `GIT_USERNAME` environment variable or
 - `GITHUB_ACTOR` environment variable
