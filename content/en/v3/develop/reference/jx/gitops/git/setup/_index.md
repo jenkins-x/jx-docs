@@ -29,7 +29,7 @@ This is typically used in a pipeline to ensure git can do commits.
 ### Details
 
 The `jx gitops git setup` command ensures that we can authenticate with configured Git server by configuring the local
-credentials file in the home directory. This command tries to ensure following things:
+credentials file in the home directory. This command tries to ensure the following things:
 
 - The user can be authenticated with Git provider (for example Github)
 - An email is associated with each automated commit message
