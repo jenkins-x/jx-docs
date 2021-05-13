@@ -27,7 +27,7 @@ base branch.
 
 If `--include-comment` or `--exclude-comment` flags are specified, then `--pull-number` flag needs to be set as well.
 If only one of `--include-comment` or `--exclude-comment`, then only that one is used to filter commits while other is
-ignored. If both are specified, then only those commits which satisfy ``--include-comment` and do not satisfy the
+ignored. If both are specified, then only those commits which satisfy `--include-comment` and do not satisfy the
 `--exclude-comment` regex are added. Only those commits which are reachable by from pull request and are not reachable
 by base branch are included to be merged into the base branch.
 
