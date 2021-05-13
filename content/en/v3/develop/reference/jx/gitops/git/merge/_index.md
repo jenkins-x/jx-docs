@@ -15,7 +15,21 @@ jx gitops git merge
 
 ### Synopsis
 
-Merge a number of SHAs into the HEAD of the main branch
+Merge a number of SHAs into the HEAD of the main branch.
+
+### Details
+
+This command merges a list of commits into a specified branch. If the branch does not exist among local branches, then
+it is first created.
+
+If both `--pull-refs` and `--sha` flags are specified then only those commits specified by `--sha` are merged into the
+base branch.
+
+If `--include-comment` or `--exclude-comment` flags are specified, then `--pull-number` flag needs to be set as well.
+If only one of `--include-comment` or `--exclude-comment`, then only that one is used to filter commits while other is
+ignored. If both are specified, then only those commits which satisfy ``--include-comment` and do not satisfy the
+`--exclude-comment` regex are added. Only those commits which are reachable by from pull request and are not reachable
+by base branch are included to be merged into the base branch.
 
 ### Examples
 
@@ -40,8 +54,6 @@ Merge a number of SHAs into the HEAD of the main branch
       --remote string            The name of the remote (default "origin")
       --sha stringArray          The SHA(s) to merge, if not specified then the value of the env var $PULL_REFS is parsed
 ```
-
-
 
 ### Source
 
