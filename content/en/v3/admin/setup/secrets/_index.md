@@ -77,7 +77,7 @@ You should then be able to run the following `jx secret edit` or `jx secret impo
 
 ## Edit Secrets
 
-To edit the Secrets run:
+To edit the Secrets use the [jx secret edit](https://jenkins-x.io/v3/develop/reference/jx/secret/edit/) command:
 
 ```bash
 jx secret edit
