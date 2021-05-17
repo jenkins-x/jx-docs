@@ -85,6 +85,8 @@ If you have not even started yet on your journey to kubernetes and have no idea 
 * [automate setting up the CI / CD](/v3/develop/create-project/) for your projects including automatically creating versioned container images and helm charts whenever you merge changes to the main branch
 * [automatic promotion through environments via GitOps](https://jenkins-x.io/v3/develop/environments/promotion/) so that new versions of your services are automatically promoted to your `Staging` environment and, by default, when approved are promoted to `Production`
 * [Preview Environments](https://jenkins-x.io/v3/develop/environments/preview/) automatically spin up Preview Environments for your Pull Requests so you can get fast feedback before changes are merged to the main branch
+    
+Once someone on your team has [setup up Jenkins X](https://jenkins-x.io/v3/admin/) then please follow the [development guide](/v3/develop/developing/)
 
 ### other handy kubectl commands
 
@@ -94,6 +96,11 @@ You may find these handy:
 
 * [kubectl port-forward](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#port-forward) lets you easily port forward from a pod to a local port so you can easily test things out without having to expose things via ingress
                                                                                                     
+
+### inner loop
+
+If you want to optimise your inner loop so you can edit source code and see the changes running quickly on kubernetes then please check out the options for [inner development loop](/v3/develop/pipelines/inner-loop/)
+
 
 ## Conclusion
 
