@@ -79,9 +79,11 @@ So just reuse all of them when running things locally in your own cluster/namesp
 Then you don't have to keep 2 completely different configuration files in sync; you can usually just reuse the same helm charts in all environments and clusters.
   
 
-### testcontainers => sidecars
+### testcontainers => sidecars / kubedock
 
 Some folks use [testcontainers](https://www.testcontainers.org/) for running extra containers in docker to make it easier to do testing. e.g. to run a database service to run tests using the database.
+
+You could try [kubedock](https://github.com/joyrex2001/kubedock) with testcontainers to see if that solves your problem without requiring a local docker installation.
 
 It does depend a little on what your solution is for CI. 
 
@@ -101,6 +103,7 @@ If you have not even started on your journey to kubernetes and have no idea what
 * [Preview Environments](https://jenkins-x.io/v3/develop/environments/preview/) automatically spin up Preview Environments for your Pull Requests so you can get fast feedback before changes are merged to the main branch
     
 Once someone on your team has [setup up Jenkins X](https://jenkins-x.io/v3/admin/) then please follow the [development guide](/v3/develop/developing/)
+          
 
 ### other handy kubectl commands
 
