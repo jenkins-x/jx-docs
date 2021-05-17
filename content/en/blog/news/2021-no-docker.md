@@ -39,7 +39,7 @@ If you have zero budget you could try [minikube](https://minikube.sigs.k8s.io/do
 
 If you are deploying software on kubernetes then I'd hope you've some managed kubernetes solution; so why not use that and spin up another cluster for your team for development?
 
-If your budget is so stretched that you can't afford 2 kubernetes clusters; one for production and one for development + staging; maybe it's time to look at using just pure serverless / FaaS instead of kubernetes anyway? Even in that case its better to use your serverless / FaaS infrastructure than docker locally for similar reasons                    
+If your budget is so stretched that you can't afford 2 kubernetes clusters; one for production and one for development + staging; maybe it's time to look at using just pure serverless / FaaS instead of kubernetes anyway? Even in that case it's better to use your serverless / FaaS infrastructure than docker locally for similar reasons.  
          
 ## How do I connect to kubernetes?
 
@@ -109,6 +109,5 @@ Lots of developers have grown fond of their docker installation over the years. 
 However if you are building/testing/debugging software to deploy on kubernetes we highly recommend you consider reclaiming the memory, CPU & disk from your laptop and stop running docker locally and just use more kubernetes. 
 
 It will help you go faster, find those kubernetes related issues sooner and help you learn more about kubernetes which will be handy for figuring out production issues. 
-
 
 
