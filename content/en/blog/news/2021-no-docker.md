@@ -14,12 +14,12 @@ Are you developing software that's intended to run on kubernetes? If so we recom
 
 Docker on Windows/MacOS helps you run a VM that can then run linux containers easily. But why bother?
 
-We highly recommend just use a development kubernetes cluster - build and run your containers there instead then you're already closer to production already. 
+We highly recommend just use a development kubernetes cluster - build and run your containers there instead then you're closer to a production like environment. 
 
 ## Why use kubernetes instead of docker?
 
 * why test on a completely different VM and container orchestrator than production? It's better to test on a similar environment to where you are really going to deploy your code
-* test your kubernetes yaml / helm chart and associated configuration at the same time as you run your containers helps you catch mistakes earlier
+* test your kubernetes yaml / helm chart and associated configuration at the same time as you run your containers helps you catch mistakes earlier:
     * it's not just about running the container image; it's about lots of other things too like networking, configuration, secrets, storage/volumes, cloud infrastructure, service mesh, liveness/readiness/startup probes - so why not test all of those things rather than just the image?
 * some corporate environments don't let you run VMs on your laptop anyway so running docker locally isn't an option
 
@@ -77,10 +77,24 @@ If you have deployed your applications to staging/production then you are probab
 So just reuse all of them when running things locally in your own cluster/namespace.
                                                                                      
 Then you don't have to keep 2 completely different configuration files in sync; you can usually just reuse the same helm charts in all environments and clusters.
- 
+  
+
+### testcontainers => sidecars
+
+Some folks use [testcontainers](https://www.testcontainers.org/) for running extra containers in docker to make it easier to do testing. e.g. to run a database service to run tests using the database.
+
+It does depend a little on what your solution is for CI. 
+
+If you are using [Jenkins X](https://jenkins-x.io/v3) or [tekton pipelines](https://github.com/tektoncd/pipeline) then you can [define sidecars](https://github.com/tektoncd/pipeline/blob/main/docs/taskruns.md#specifying-sidecars) in your pipeline to make sure you have whatever additional services you need when running your tests.
+
+If you are using [Jenkins](https://www.jenkins.io/) then you can add the side cars to the `pod.yaml` you use with the [kubernetes plugin](https://plugins.jenkins.io/kubernetes/) or you could reuse the [tekton client plugin](https://www.jenkins.io/blog/2021/04/21/tekton-plugin/) and use tekton pipelines and sidecars 
+
+If you are [GitHub Actions](https://github.com/features/actions) then you can spin up a kubernetes cluster using [kind](https://kind.sigs.k8s.io/) via this [kind github action](https://github.com/marketplace/actions/kind-kubernetes-in-docker-action) - you can then spin up whatever services you need for your tests via [kubectl apply](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#apply) or `helm install`
+
+
 ### help! we are not even using kubernetes yet
 
-If you have not even started yet on your journey to kubernetes and have no idea what a [helm chart](https://helm.sh/) is yet, you could consider [setting up Jenkins X](https://jenkins-x.io/v3/admin/) in your cluster which will then: 
+If you have not even started on your journey to kubernetes and have no idea what a [helm chart](https://helm.sh/) is, you could consider [setting up Jenkins X](https://jenkins-x.io/v3/admin/) in your cluster which will then: 
 
 * [automate setting up the CI / CD](/v3/develop/create-project/) for your projects including automatically creating versioned container images and helm charts whenever you merge changes to the main branch
 * [automatic promotion through environments via GitOps](https://jenkins-x.io/v3/develop/environments/promotion/) so that new versions of your services are automatically promoted to your `Staging` environment and, by default, when approved are promoted to `Production`
@@ -108,6 +122,6 @@ Lots of developers have grown fond of their docker installation over the years. 
 
 However if you are building/testing/debugging software to deploy on kubernetes we highly recommend you consider reclaiming the memory, CPU & disk from your laptop and stop running docker locally and just use more kubernetes. 
 
-It will help you go faster, find those kubernetes related issues sooner and help you learn more about kubernetes which will be handy for figuring out production issues. 
+It will help you go faster, find those kubernetes related issues sooner and help you learn more about kubernetes which will be useful for figuring out production issues whenever they happen. 
 
 
