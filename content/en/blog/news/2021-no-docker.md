@@ -18,7 +18,7 @@ We highly recommend just use a development kubernetes cluster - build and run yo
 
 ## Why use kubernetes instead of docker?
 
-* why test on a completely different VM and container orchestrator than production? its better to test on a similar environment to where you are really going to deploy your code
+* why test on a completely different VM and container orchestrator than production? It's better to test on a similar environment to where you are really going to deploy your code
 * test your kubernetes yaml / helm chart and associated configuration at the same time as you run your containers helps you catch mistakes earlier
     * it's not just about running the container image; it's about lots of other things too like networking, configuration, secrets, storage/volumes, cloud infrastructure, service mesh, liveness/readiness/startup probes - so why not test all of those things rather than just the image?
 * some corporate environments don't let you run VMs on your laptop anyway so running docker locally isn't an option
@@ -109,7 +109,6 @@ Lots of developers have grown fond of their docker installation over the years. 
 However if you are building/testing/debugging software to deploy on kubernetes we highly recommend you consider reclaiming the memory, CPU & disk from your laptop and stop running docker locally and just use more kubernetes. 
 
 It will help you go faster, find those kubernetes related issues sooner and help you learn more about kubernetes which will be handy for figuring out production issues. 
-
 
 
 
