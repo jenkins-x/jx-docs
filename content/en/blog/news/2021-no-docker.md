@@ -77,9 +77,16 @@ If you have deployed your applications to staging/production then you are probab
 So just reuse all of them when running things locally in your own cluster/namespace.
                                                                                      
 Then you don't have to keep 2 completely different configuration files in sync; you can usually just reuse the same helm charts in all environments and clusters.
+ 
+### help! we are not even using kubernetes yet
 
+If you have not even started yet on your journey to kubernetes and have no idea what a [helm chart](https://helm.sh/) is yet, you could consider [setting up Jenkins X](https://jenkins-x.io/v3/admin/) in your cluster which will then: 
 
-## other handy kubectl commands
+* [automate setting up the CI / CD](/v3/develop/create-project/) for your projects including automatically creating versioned container images and helm charts whenever you merge changes to the main branch
+* [automatic promotion through environments via GitOps](https://jenkins-x.io/v3/develop/environments/promotion/) so that new versions of your services are automatically promoted to your `Staging` environment and, by default, when approved are promoted to `Production`
+* [Preview Environments](https://jenkins-x.io/v3/develop/environments/preview/) automatically spin up Preview Environments for your Pull Requests so you can get fast feedback before changes are merged to the main branch
+
+### other handy kubectl commands
 
 You may find these handy:
 
