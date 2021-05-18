@@ -54,8 +54,6 @@ You can save Jenkins X office hours to your calendar by [clicking here](https://
 
 {{< calendar >}}
 
-<!-- Zoom link: <https://zoom.us/j/397862697> -->
-
 Previous office hour recordings can be found on our [Jenkins X YouTube channel](https://www.youtube.com/channel/UCN2kblPjXKMcjjVYmwvquvg/playlists) in the Office Hours playlist.
 Alternatively, see our office hours [archives](/community/office_hours/).
 
