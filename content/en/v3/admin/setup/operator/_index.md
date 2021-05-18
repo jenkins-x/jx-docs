@@ -60,6 +60,32 @@ The terminal will display the logs as the boot `Job` runs.
 
 Jenkins X will now install itself.
 
+## HTTP proxy settings
+
+If you are behind a HTTP proxy and need to configure environment variables for HTTP proxy support then you can do this as follows.
+
+For each environment variable you want to pass in use the `--set jxBootJobEnvVarSecrets.NAME=value` argument.
+
+e.g. something like this:
+
+
+```bash 
+export HTTP_PROXY=http://my.proxy.com
+export NO_PROXY=localhost,127.0.0.1,.local,0,1,2,3,4,5,6,7,8,9
+
+jx admin operator --url=https://github.com/myorg/env-mycluster-dev.git \
+  --username mygituser --token mygittoken \
+  --set jxBootJobEnvVarSecrets.HTTP_PROXY=$HTTP_PROXY \
+  --set jxBootJobEnvVarSecrets.HTTPS_PROXY=$HTTP_PROXY \
+  --set jxBootJobEnvVarSecrets.http_proxy=$HTTP_PROXY \
+  --set jxBootJobEnvVarSecrets.https_proxy=$HTTP_PROXY \
+  --set jxBootJobEnvVarSecrets.NO_PROXY=$NO_PROXY \
+  --set jxBootJobEnvVarSecrets.no_proxy=$NO_PROXY \
+```
+      
+This should result in a secret called `jx-boot-job-env-vars` being created in the `jx-git-operator` namespace. This secret should get replicated to the `jx` namespace during the [boot job]().
+
+
 ## Viewing the logs 
 
 At any time you can tail the boot job logs via the [jx admin log](https://github.com/jenkins-x/jx-admin/blob/master/docs/cmd/jx-admin_log.md) command:
