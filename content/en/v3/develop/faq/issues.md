@@ -115,7 +115,11 @@ This sounds like a network problem; the code in `jx` is trying to download from 
 
 When you first install tekton your cluster can get in a bit of a mess if the kubernetes admission/mutation webhooks are registered but tekton didn't startup.
 
-View the tekton based hooks via:
+Another time folks hit this is if they delete the `tekton-pipelines` namespace thinking that gets rid of tekton and then they find they can't re-install tekton.
+
+This is because admission/mutation webhooks are cluster scoped; not namespace scoped - so removing the tekton namespace does not remove these webhook resources - which then breaks any attempt to install tekton until you remove them.
+
+You can view the current tekton based hooks via:
 
 ```bash 
 kubectl get mutatingwebhookconfigurations | grep tekton
