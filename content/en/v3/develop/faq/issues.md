@@ -110,8 +110,35 @@ This sounds like a network problem; the code in `jx` is trying to download from 
 
 * do you have a firewall / VPN / HTTP proxy blocking things?
 * is your `/etc/resolv.conf` causing issues? e.g. if you have multiple entries for your company VPN?
+       
+## Tekton failed calling webhook "config.webhook.pipeline.tekton.dev"
 
-               
+When you first install tekton your cluster can get in a bit of a mess if the kubernetes admission/mutation webhooks are registered but tekton didn't startup.
+
+View the tekton based hooks via:
+
+```bash 
+kubectl get mutatingwebhookconfigurations | grep tekton
+kubectl get validatingwebhookconfigurations | grep tekton
+ ```
+
+Then find the tekton based ones and remove them. e.g. via:
+
+```bash 
+kubectl delete mutatingwebhookconfigurations webhook.pipeline.tekton.dev
+kubectl delete validatingwebhookconfigurations config.webhook.pipeline.tekton.dev
+kubectl delete validatingwebhookconfigurations validation.webhook.pipeline.tekton.dev
+```
+
+Then try do a dummy git commit in your git repository which will [trigger another boot job](/v3/about/how-it-works/#boot-job)
+
+You can watch the boot job run via:
+
+```bash 
+jx admin log -w
+```
+
+
 ## Tekton webhook certs have expired?
 
 Delete the tekton `webhook-certs` tls secret. Then delete the `tekton-pipelines-webhook` pod and the cert should be recreated again.
