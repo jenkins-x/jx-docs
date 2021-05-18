@@ -77,7 +77,8 @@ If you have deployed your applications to staging/production then you are probab
 So just reuse all of them when running things locally in your own cluster/namespace.
                                                                                      
 Then you don't have to keep 2 completely different configuration files in sync; you can usually just reuse the same helm charts in all environments and clusters.
-  
+
+If you have some compose files you could try out [kompose](https://github.com/kubernetes/kompose) to help use them more effectively on kubernetes  
 
 ### testcontainers => sidecars / kubedock
 
