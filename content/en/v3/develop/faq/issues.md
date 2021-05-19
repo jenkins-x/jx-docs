@@ -99,6 +99,8 @@ Then you should be able to see the pod name for the pipeline in question. You ca
 ```bash
 kubectl describe pod the-actual-pod-name-for-your-pipeline```
 ```
+   
+
 
 ## Why does Jenkins X fail to download plugins?
 
@@ -110,7 +112,34 @@ This sounds like a network problem; the code in `jx` is trying to download from 
 
 * do you have a firewall / VPN / HTTP proxy blocking things?
 * is your `/etc/resolv.conf` causing issues? e.g. if you have multiple entries for your company VPN?
-       
+
+## Failed calling webhook validate.nginx.ingress.kubernetes.io
+
+This is often caused if you remove the `nginx` namespace after you installed nginx.
+
+This is because admission webhooks are cluster scoped; not namespace scoped - so removing the nginx namespace does not remove these webhook resources - which then breaks any attempt to create `Ingress` resources until you remove them.
+
+You can view the current tekton based hooks via:
+
+```bash 
+kubectl get validatingwebhookconfigurations | grep nginx
+ ```
+
+You can remove the nginx one via:
+
+```bash 
+kubectl delete validatingwebhookconfigurations ingress-nginx-admission
+```
+
+Then try do a dummy git commit in your git repository which will [trigger another boot job](/v3/about/how-it-works/#boot-job)
+
+You can watch the boot job run via:
+
+```bash 
+jx admin log -w
+```
+
+
 ## Tekton failed calling webhook "config.webhook.pipeline.tekton.dev"
 
 When you first install tekton your cluster can get in a bit of a mess if the kubernetes admission/mutation webhooks are registered but tekton didn't startup.

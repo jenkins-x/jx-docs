@@ -66,7 +66,38 @@ jxRequirements:
       secretName: my-tls-secret-name
 ```
 
-            
+
+## How To Add Custom Annotations to Ingress Controller?
+
+There may be times when you need to add your custom annotations to ingress resources.
+
+The simplest way to do this is to modify the `jx-requirements.yml` in your development git repository to add any ingress annotations you wish:
+
+
+```yaml
+apiVersion: core.jenkins-x.io/v4beta1
+kind: Requirements
+spec:
+  ...
+  ingress:
+    annotations:
+      myannotation: somevalue
+    domain: my.domain.com
+```
+
+Once you have commit and push this change it will [trigger another boot job](/v3/about/how-it-works/#boot-job)
+
+You can watch the boot job run via:
+
+```bash 
+jx admin log -w
+```
+
+Once its complete you should see the new annotations on any Ingress created by Jenkins X.
+
+If you wish to add custom annotations to only a specific ingress then you can [customise the chart](/v3/develop/apps/#customising-charts) in the usual [helmfile](https://github.com/roboll/helmfile) way via a `values.yaml` file you reference in your `helmfile.yaml` file
+
+
 ## How do I diagnose webhooks?
 
 See [How to diagnose webhooks](/v3/admin/troubleshooting/webhooks/)

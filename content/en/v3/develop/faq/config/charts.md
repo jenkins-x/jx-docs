@@ -12,10 +12,12 @@ To add a new chart add to the `helmfiles/mynamespace/helmfile.yaml` file follow 
 
 ## How do I customise an App in an Environment?
 
-With the new helm 3 based boot every environment uses boot - so there is a single way to configure anything whether its in the `dev`, `staging` or `production` environment and whether or not you are using [multiple clusters](/v3/guides/multi-cluster/).
+We use [helmfile](https://github.com/roboll/helmfile) to configure helm charts whether its in the `dev`, `staging` or `production` environment and whether you are using [multiple clusters](/v3/guides/multi-cluster/).
 
 See [how to customise a chart](/v3/develop/apps/#customising-charts)
-     
+
+Essentially you can create your own `values.yaml` file for a chart in an environment to customise the chart for a specific environment and then reference that in the `releases:` section in the `helmfile.yaml`.
+
 
 ## How do I use a chart from a secure repository
 
@@ -23,7 +25,7 @@ Some chart repositories need a username and password to access them.
 
 So to access those chart repositories you can the username and password into the `helmfile.yaml` 
 
-However the username/passwords are probably secret. So you can [create a kubernetes Secret](https://kubernetes.io/docs/tasks/configmap-secret/managing-secret-using-kubectl/) called `jx-boot-job-env-vars` which is automatically used in the [boot Job](v3/about/how-it-works/#boot-job)
+However the username/passwords are probably secret. So you can [create a kubernetes Secret](https://kubernetes.io/docs/tasks/configmap-secret/managing-secret-using-kubectl/) called `jx-boot-job-env-vars` which is automatically used in the [boot Job](/v3/about/how-it-works/#boot-job)
         
 e.g. 
 

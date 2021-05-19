@@ -41,13 +41,6 @@ e.g. using the pod name from the above page and the container name you can do so
 kubectl exec -it -c name-of-step-container name-of-pod sh
 ```
     
-## How do I access the preview namespace or URL?
-             
-After the [jx preview create](/v3/develop/reference/jx/preview/create) step in a pull request pipeline you can access a number of [preview environment variables](/v3/develop/environments/preview/#environment-variables).
-
-For details see [how to add additional preview steps](/v3/develop/environments/preview/#additional-preview-steps)
-
-
 ## How do I access a Secret from my pipeline?
 
 Once you have a kubernetes Secret (see [how to create them](/v3/admin/setup/secrets/#create-a-new-secret)) you can access then in a pipeline either:
@@ -95,7 +88,23 @@ There are a few tools around that could help:
 * [bazel](https://bazel.build/)
 * [lerna](https://github.com/lerna/lerna)
 * [meta](https://github.com/mateodelnorte/meta) see the [blog post introducing meta](https://patrickleet.medium.com/mono-repo-or-multi-repo-why-choose-one-when-you-can-have-both-e9c77bd0c668)
+                                                                                       
+## How do I configure a different branch for releases?
+
+If you look at the `postsubmits` section  of the [trigger config](/v3/develop/reference/pipelines/#lighthouse) in your `.lighthouse/jenkins-x/triggers.yaml` file you will see the post submits (which is prow/lighthouse terminology for release pipelines).
+
+By default the `branches:` is setup with regular expressions for either `main` or `master` branches:
 
 
+```yaml 
+  ...
+  postsubmits:
+  - name: release
+    context: "release"
+    source: "release.yaml"
+    branches:
+    - ^main$
+    - ^master$
+```
 
-
+Modify the `branches` to use a different regular expression to denote the branch(s) you wish to use to trigger a new release.
