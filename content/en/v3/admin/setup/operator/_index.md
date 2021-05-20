@@ -70,17 +70,17 @@ e.g. something like this:
 
 
 ```bash 
-export HTTP_PROXY=http://my.proxy.com
-export NO_PROXY=localhost,127.0.0.1,.local,0,1,2,3,4,5,6,7,8,9
+export HPROXY=http://my.proxy.com
+export NPROXY=localhost\\,127.0.0.1\\,.local\\,0\\,1\\,2\\,3\\,4\\,5\\,6\\,7\\,8\\,9
 
 jx admin operator --url=https://github.com/myorg/env-mycluster-dev.git \
   --username mygituser --token mygittoken \
-  --set jxBootJobEnvVarSecrets.HTTP_PROXY=$HTTP_PROXY \
-  --set jxBootJobEnvVarSecrets.HTTPS_PROXY=$HTTP_PROXY \
-  --set jxBootJobEnvVarSecrets.http_proxy=$HTTP_PROXY \
-  --set jxBootJobEnvVarSecrets.https_proxy=$HTTP_PROXY \
-  --set jxBootJobEnvVarSecrets.NO_PROXY=$NO_PROXY \
-  --set jxBootJobEnvVarSecrets.no_proxy=$NO_PROXY \
+  --set jxBootJobEnvVarSecrets.HTTP_PROXY=$HPROXY \
+  --set jxBootJobEnvVarSecrets.HTTPS_PROXY=$HPROXY \
+  --set jxBootJobEnvVarSecrets.http_proxy=$HPROXY \
+  --set jxBootJobEnvVarSecrets.https_proxy=$HPROXY \
+  --set jxBootJobEnvVarSecrets.NO_PROXY=$NPROXY \
+  --set jxBootJobEnvVarSecrets.no_proxy=$NPROXY
 ```
       
 This should result in a secret called `jx-boot-job-env-vars` being created in the `jx-git-operator` namespace. This secret should get replicated to the `jx` namespace during the [boot job]().
