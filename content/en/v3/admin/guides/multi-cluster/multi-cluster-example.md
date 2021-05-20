@@ -337,7 +337,7 @@ error: failed to wait for repository to be setup in lighthouse: failed to find t
 error: failed to wait for the pipeline to be setup jx3rocks/jx3-gke-gsm-prd: failed to run 'jx pipeline wait --owner jx3rocks --repo jx3-gke-gsm-prd' command in directory '', output: ''
 ```
 ### Adjust Prod Repo Promotion Type (optional)
-The newly imported prod repo has a promotion type of 'Auto'. To change this 'Manual' to provide greater deployment ccontrol make adjustments in the jx-requirements.yml file:
+The newly imported prod repo has a promotion type of 'Auto'. To change this 'Manual' to provide greater deployment control make adjustments in the jx-requirements.yml file:
 ```bash
 ## current environment settings
 kubectl get env
