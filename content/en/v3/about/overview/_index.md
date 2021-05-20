@@ -66,15 +66,18 @@ Contains the [kuberhealthy](https://github.com/Comcast/kuberhealthy) service to 
 
 Contains the [nginx-ingress](https://github.com/helm/charts/tree/master/stable/nginx-ingress) provider if enabled
 
-### `secret-infra` 
-
-* **kubernetes-external-secrets** contains the [external-secrets/kubernetes-external-secrets](https://github.com/external-secrets/kubernetes-external-secrets) service for handling `ExternalSecrets`. See [how we use secrets](/v3/guides/secrets/))
-* **pusher-wave** contains the [pusher/wave](https://github.com/pusher/wave) service for performing a rolling upgrade of any microservice which consumes `Secret` resources from either vault or a cloud providers secret store and the secrets change in the underlying store 
+### `jx-valut` 
 
 the following are optional extras if not using your cloud providers native secret manager:
 
 * **vault-operator** contains the [vault operator](https://banzaicloud.com/docs/bank-vaults/operator/) which converts `Vault` resources into instances of [HashiCorp Vault](https://www.vaultproject.io/)
 * **vault-instance** contains the [vault instance](https://github.com/jenkins-x-charts/vault-instance) which creates the default `Vault` resource
+
+
+### `secret-infra` 
+
+* **kubernetes-external-secrets** contains the [external-secrets/kubernetes-external-secrets](https://github.com/external-secrets/kubernetes-external-secrets) service for handling `ExternalSecrets`. See [how we use secrets](/v3/guides/secrets/))
+* **pusher-wave** contains the [pusher/wave](https://github.com/pusher/wave) service for performing a rolling upgrade of any microservice which consumes `Secret` resources from either vault or a cloud providers secret store and the secrets change in the underlying store 
 
 ### `tekton-pipelines`
 
