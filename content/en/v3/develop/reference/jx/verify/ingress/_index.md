@@ -21,7 +21,7 @@ Verifies the ingress configuration defaulting the ingress domain if necessary
 
   ```bash
   # populate the ingress domain if not using a configured 'ingress.domain' setting
-  jx verify ingress%!(EXTRA string=jx-verify)
+  jx verify ingress
 
   ```
 ### Options
@@ -29,8 +29,8 @@ Verifies the ingress configuration defaulting the ingress domain if necessary
 ```
   -d, --dir string                 the directory to look for the values.yaml file (default ".")
   -h, --help                       help for ingress
-      --ingress-namespace string   The namespace for the Ingress controller (default "nginx")
-      --ingress-service string     The name of the Ingress controller Service (default "ingress-nginx-controller")
+      --ingress-namespace string   The namespace for the Ingress controller. If not specified it defaults to $JX_INGRESS_NAMESPACE. Otherwise it defaults to: nginx
+      --ingress-service string     The name of the Ingress controller Service. If not specified it defaults to $JX_INGRESS_SERVICE. Otherwise it defaults to: ingress-nginx-controller
 ```
 
 
