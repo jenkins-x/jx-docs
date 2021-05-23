@@ -83,6 +83,20 @@ slack:
   pipeline: release
 ```
 
+kind values and their behaviors are:
+* `""`: no notifications
+* never: never notify - no notifications
+* always: always send a notification
+* failure: notify only failures
+* failureOrNextSuccess: notify only failures or first success after failure
+* success: notify only on success
+
+pipeline values and their behaviors are:
+* `""`: no notifications
+* all: notify on all pipelines
+* release: only notify on release pipelines
+* pullRequest: only notify on pullRequest pipelines
+
 You can configure the `channel` globally or for different groups or repositories differently too. You can also filter by `branch`, pipeline `context` or `pullRequestLabel`.
      
 ## Example 
