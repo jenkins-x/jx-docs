@@ -7,7 +7,7 @@ weight: 70
 
 During office hours we demo the latest features, answer questions, and share knowledge together.
 
-We meet for office hours **every other Tuesday** at 16:00 UTC (*See your timezone [here](https://time.is/1600_in_UTC)*). This is our [meeting link](https://zoom.us/j/397862697). 
+We meet for office hours **every other Tuesday** at 16:00 UTC (*See your timezone [here](https://time.is/1600_in_UTC)*).
 
 <a href="https://us02web.zoom.us/j/89081347704?pwd=U2lob3JVamsxQ1RyK1hSa0prMWczdz09" class="btn btn-lg bg-primary text-white">join the Office Hours meeting</a>
 
@@ -18,7 +18,5 @@ You can save Jenkins X office hours to your calendar by [clicking here](https://
 <a target="_blank" href="https://calendar.google.com/event?action=TEMPLATE;tmeid=NDFhNDVyNGdzMW9nZnBpNzhpdGZsMG5qZWpfMjAyMDA1MTlUMTUwMDAwWiAwMzJwcDVlMDJqMjJiMHFqdGs2YTRxc21lY0Bn;tmsrc=032pp5e02j22b0qjtk6a4qsmec%40group.calendar.google.com;scp=ALL"><img border="0" src="https://www.google.com/calendar/images/ext/gc_button1_en-GB.gif"></a>
 
 <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Europe%2FLondon&amp;src=MDMycHA1ZTAyajIyYjBxanRrNmE0cXNtZWNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23EF6C00&amp;showTz=1" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-
-<!-- Zoom link: <https://zoom.us/j/397862697> -->
 
 Previous office hour recordings can be found on our [Jenkins X YouTube channel](https://www.youtube.com/channel/UCN2kblPjXKMcjjVYmwvquvg/playlists) in the Office Hours playlist. Alternatively, past office hours are listed below.

@@ -39,7 +39,7 @@ We meet for office hours **every other Thursday** at 4pm UK / 11am US Eastern / 
 
 Next office hours: **31 October 2019**
 
-Join us: <https://zoom.us/j/397862697>
+<a href="https://us02web.zoom.us/j/89081347704?pwd=U2lob3JVamsxQ1RyK1hSa0prMWczdz09" class="btn btn-lg bg-primary text-white">join the Office Hours meeting</a>
 
 Feel free to [add your questions to the doc](https://docs.google.com/document/d/1wHdBlZAN-ndPELuBoM5HBnYiQLvcz92-euXne2mKOEI/edit) or ask your questions in person.
 
