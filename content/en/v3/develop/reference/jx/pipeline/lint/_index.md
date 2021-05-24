@@ -27,6 +27,7 @@ Lints the lighthouse trigger and tekton pipelines
 ### Options
 
 ```
+  -a, --all                    Rather than looking for .lighthouse and triggers.yaml files it looks for all YAML files which are tekton kinds
       --catalog-owner string   The github owner for the default catalog (default "jenkins-x")
       --catalog-repo string    The github repository name for the default catalog (default "jx3-pipeline-catalog")
   -d, --dir string             The directory to look for the .lighthouse and/or .git folders (default ".")
