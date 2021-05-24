@@ -126,7 +126,7 @@ Here are the steps involved in [creating projects](/v3/develop/create-project/) 
   * this Pull Request will create or modify a file called `.jx/gitops/source-config.yaml`
 * The `jx project` command now waits for: 
   * the Pull Request to merge
-  * Lighthhouse configuration to be updated to include the new repository
+  * Lighthouse configuration to be updated to include the new repository
   * a webhook to be setup for the new repository    
 * The Pull Request on your cluster repo triggers a pipeline like the above [Promotion flow](#promotion) 
   * a second git commit is generated and pushed to the Pull Request with the title `chore: regenerated` to add the git repository to the Lighthouse configuration
