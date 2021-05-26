@@ -27,6 +27,12 @@ This guide will walk you though how to setup Jenkins X on your laptop using [min
 NOTE:- User of windows 10 home (Hyper-V not supported). To install Minikube consider Docker as driver(docker should be pre-installed)
        instead of virtualBox driver. Use command "minikube start --driver=docker".
 
+* If you have previously used `minikube` please delete the current cluster:
+
+```bash
+minikube delete
+```
+
 * You need to create a `minikube` cluster via the following command:
 
 ```bash
