@@ -15,8 +15,55 @@ To add a new chart add to the `helmfiles/mynamespace/helmfile.yaml` file follow 
 We use [helmfile](https://github.com/roboll/helmfile) to configure helm charts whether its in the `dev`, `staging` or `production` environment and whether you are using [multiple clusters](/v3/guides/multi-cluster/).
 
 See [how to customise a chart](/v3/develop/apps/#customising-charts)
+                                                                                
+For a given namespace called `ns` there is a folder in the cluster git repository at:
 
-Essentially you can create your own `values.yaml` file for a chart in an environment to customise the chart for a specific environment and then reference that in the `releases:` section in the `helmfile.yaml`.
+```bash 
+helmfiles/ns/
+```
+
+which contains the `helmfile.yaml` file to configure all the charts for that namespace.
+
+To override the environment configuration for the namespace `ns` you can create your own `values.yaml` file in this folder (or `values.yaml.gotmpl` if you want to use go templating inside it).
+
+If the configuration only applies to a single chart you could prefix the file with the chart name. 
+
+So create `helmfiles/ns/mychart-values.yaml` and put whatever environment specific configuration changes you need for your helm chart.
+
+To set a custom environment variable try a  `helmfiles/ns/mychart-values.yaml` file of something like:
+
+```yaml 
+env:
+  MY_ENV: someValue
+```
+
+Then you need to reference this YAML file in the `releases:` section in the `helmfiles/ns/helmfile.yaml`.
+
+e.g. your  `helmfiles/ns/helmfile.yaml` should look something like this - see the new `mychart-values.yaml` entry in the `releases.values` section for `mychart`:
+
+
+```yaml 
+filepath: ""
+environments:
+  default:
+    values:
+    - jx-values.yaml
+namespace: jx-staging
+repositories:
+- name: dev
+  url: http://chartmuseum-$mydomain/
+releases:
+- chart: dev/mychart
+  version: 0.0.12
+  name: mychart
+  values:
+  - jx-values.yaml
+  - mychart-values.yaml
+templates: {}
+renderedvalues: {}
+```
+
+
 
 
 ## How do I use a chart from a secure repository
