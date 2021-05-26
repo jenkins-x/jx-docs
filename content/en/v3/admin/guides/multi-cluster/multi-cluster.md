@@ -29,7 +29,7 @@ And install only services to run and expose your applications, e.g.:
  
 ### Create a repository
 
-Create a git repository for your remote cluster using [a cut down repository](https://github.com/jx3-gitops-repositories/jx3-kubernetes-production) you might want to start with:
+Create a git repository for your remote cluster using [a cut down repository](https://github.com/jx3-gitops-repositories/jx3-kubernetes-production/generate) you might want to start with:
 
  <a href="https://github.com/jx3-gitops-repositories/jx3-kubernetes-production/generate" target="github" class="btn bg-primary text-light">Create Git Repository</a> 
  
