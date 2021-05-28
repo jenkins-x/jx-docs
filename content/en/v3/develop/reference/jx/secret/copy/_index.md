@@ -30,12 +30,13 @@ Copies secrets with the given selector or name to a destination namespace
 ### Options
 
 ```
-      --create-namespace   create the to Namespace if it does not already exist
-  -h, --help               help for copy
-      --name string        the name of the Secret to copy
-  -n, --ns string          the namespace to filter the Secret resources
-  -l, --selector string    the label selector to find the secrets to copy
-  -t, --to string          the namespace to copy the secrets to
+      --create-namespace    create the to Namespace if it does not already exist
+  -h, --help                help for copy
+      --ignore-missing-to   ignore this command if the target namespace does not exist
+      --name string         the name of the Secret to copy
+  -n, --ns string           the namespace to filter the Secret resources
+  -l, --selector string     the label selector to find the secrets to copy
+  -t, --to string           the namespace to copy the secrets to
 ```
 
 
