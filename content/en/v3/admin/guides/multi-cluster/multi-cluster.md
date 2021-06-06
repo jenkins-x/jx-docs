@@ -45,7 +45,7 @@ Then when you have a git repository URL for your `Preprod` or `Production` clust
 
 ```bash
 # echo make sure we are connected to the development cluster
-jx ns nx
+jx ns jx
 jx ctx -b
 
 # lets clone the remote cluster repository and import it...
