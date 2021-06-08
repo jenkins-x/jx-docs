@@ -15,7 +15,15 @@ jx gitops git get
 
 ### Synopsis
 
-Gets a file from a git repository or environment git repository
+Gets a file from the specified git repository or the git repository described in specified JX Environment resource. 
+
+Copies a file specified by --file flag from a Git repository into local file system. The repository from which the file is read is either the one specified via command line flags or the one defined as the target repository of the Jenkins X Environment object, whose name too can be passed in via CLI flags. 
+
+In case that repository is read out from the environment, then if we are running in Kubernetes cluster the Environment object is searched for either in the namespace defined by the current kubeconfig context (if command is executed locally) or is searched for in the namespace of the Pod on which the command is being executed. 
+
+In case that command is not executed in Kubernetes and the repository has not been set via command line flags, then the repository from which file is read needs to be configured in environment variable: JX ENVIRONMENT GIT _URL. 
+
+The file is either copied to the path specified by the command line flag --to or is written under the same path from which it was read into the current working directory.
 
 ### Examples
 

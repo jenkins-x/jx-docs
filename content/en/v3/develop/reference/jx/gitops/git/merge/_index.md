@@ -15,7 +15,13 @@ jx gitops git merge
 
 ### Synopsis
 
-Merge a number of SHAs into the HEAD of the main branch
+Merge a number of SHAs into the HEAD of the main branch. 
+
+This command merges a list of commits into a specified branch. If the branch does not exist among local branches, then it is first created. 
+
+If both --pull-refs and --sha flags are specified then only those commits specified by --sha are merged into the base branch. 
+
+If --include-comment or --exclude-comment flags are specified, then --pull-number flag needs to be set as well. If only one of --include-comment or --exclude-comment, then only that one is used to filter commits while other is ignored. If both are specified, then only those commits which satisfy --include-comment and do not satisfy the --exclude-comment regex are added. Only those commits which are reachable by from pull request and are not reachable by base branch are included to be merged into the base branch.
 
 ### Examples
 
@@ -34,6 +40,7 @@ Merge a number of SHAs into the HEAD of the main branch
       --fake-in-cluster          for testing: lets you fake running this command inside a kubernetes cluster so that it can create the file: $XDG_CONFIG_HOME/git/credentials or $HOME/git/credentials
   -h, --help                     help for merge
       --include-comment string   the regular expression to filter commit comment to include in the merge
+      --merge-arg stringArray    the extra arguments to pass to the 'git merge $sha' command to perform the merge
   -n, --name string              the git user name to use if one is not setup
       --pull-number string       The Pull Request number to use when filtering commits to merge
       --pull-refs string         The PullRefs to parse
