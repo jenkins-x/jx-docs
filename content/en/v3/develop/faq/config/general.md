@@ -28,6 +28,29 @@ If you want to change that on a per repository/microservice basis you can [confi
 If you need to you can override in a specific repository (via a `.jx/settings.yaml` in your repository) but usually its common to all repos and is inherited from your `jx-requirements.yml` in your development environment repository
 
 See the [file reference](/v3/develop/reference/files/)
+       
+## How do I configure Kaniko flags?
+
+If you want to globally define a kaniko flag for all pipelines you can add the flags to your `jx-requirements.yml` file:
+
+e.g. add something like this:
+
+```yaml 
+apiVersion: core.jenkins-x.io/v4beta1
+kind: Requirements
+spec:
+  autoUpdate:
+    autoMerge: true
+    enabled: true
+    schedule: 0 0 * * *
+  cluster:
+    kanikoFlags: "--snapshotMode=redo"     
+```
+
+To override it for a specific repository you can use the `.jx/settings.yaml` to configure the same thing.
+
+See the [file reference](/v3/develop/reference/files/)
+
 
 ## If I add a file to `config-root` it gets deleted, why?
 
