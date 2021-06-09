@@ -16,6 +16,12 @@ When the Preview Environment is up and running Jenkins X will comment on your Pu
 <img src="/images/pr-comment.png" class="img-thumbnail">
 
 
+## Demo
+
+To see how to create a Preview Environment on a Pull Request see this demo:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/x-GtKmmhDSI" title="Demo of creating Preview Environments on Pull Requestss with Jenkins X" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ### Generating a preview environment
 
 In a typical Jenkins X development scenario, users make changes to an  application that has been [imported or created via a quickstart](/v3/develop/create-project/).

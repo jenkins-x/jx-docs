@@ -1,5 +1,9 @@
 <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
 	<ol class="breadcrumb spb-1">
+		{{ if hasPrefix .File.Path "docs/" }}
+		v2
+		{{ end }}
+
 		{{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
 	</ol>
 </nav	>

@@ -13,8 +13,15 @@ Mostly you just use your IDE and git to change code in your usual way.
 Though we do prefer you submit code changes via [Pull Requests](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests) to then trigger CI and [Preview Environment](/v3/develop/environments/preview/) for each Pull Request. 
 
 ## Demo
+                                               
+To see how to create a [Preview Environment](/v3/develop/environments/preview/) on a Pull Request see this demo:
 
-To see how to develop with Jenkins X check out this demo:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/x-GtKmmhDSI" title="Demo of creating Preview Environments on Pull Requestss with Jenkins X" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+   
+### Creating a project 
+
+To see how to [create a new project](/v3/develop/create-project/) and get started developing with Jenkins X check out this demo:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/4wqwulEzseM?t=279s" title="Demo of developing with Jenkins X" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
