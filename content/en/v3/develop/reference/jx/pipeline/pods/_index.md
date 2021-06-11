@@ -49,7 +49,7 @@ Display the Tekton build pods
       --log-level string   Sets the logging level. If not specified defaults to $JX_LOG_LEVEL
   -n, --namespace string   The namespace to look for the build pods. Defaults to the current namespace
   -o, --owner string       Filters the owner (person/organisation) of the repository
-  -p, --pending            Only display logs which are currently pending to choose from if no build name is supplied
+  -p, --pending            Only include pipeline pods which are currently pending to choose from if no build name is supplied
       --pod string         The pod name to view
   -r, --repo string        Filters the build repository
       --verbose            Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace

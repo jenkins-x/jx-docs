@@ -54,7 +54,7 @@ Display a build log
   -h, --help                     help for log
       --log-level string         Sets the logging level. If not specified defaults to $JX_LOG_LEVEL
   -o, --owner string             Filters the owner (person/organisation) of the repository
-  -p, --pending                  Only display logs which are currently pending to choose from if no build name is supplied
+  -p, --pending                  Only include pipeline pods which are currently pending to choose from if no build name is supplied
       --pod string               The pod name to view
   -r, --repo string              Filters the build repository
   -t, --tail                     Tails the build log to the current terminal (default true)
