@@ -44,6 +44,7 @@ If --include-comment or --exclude-comment flags are specified, then --pull-numbe
   -n, --name string              the git user name to use if one is not setup
       --pull-number string       The Pull Request number to use when filtering commits to merge
       --pull-refs string         The PullRefs to parse
+  -r, --rebase                   use git rebase instead of merge
       --remote string            The name of the remote (default "origin")
       --sha stringArray          The SHA(s) to merge, if not specified then the value of the env var $PULL_REFS is parsed
 ```
