@@ -28,6 +28,9 @@ Starts the pipeline build.
   
   # Select the pipeline to start and tail the log
   jx pipeline start -t
+  
+  # Start the given local pipeline file
+  jx pipeline start -F .lighthouse/jenkins-x/mypipeline.yaml
 
   ```
 ### Options
@@ -38,6 +41,7 @@ Starts the pipeline build.
   -c, --context string           An optional context name to find the specific kind of postsubmit/presubmit if there are more than one triggers
       --duration duration        Maximum duration to wait for one or more matching triggers to be setup in Lighthouse. Useful for when a new repository is being imported via GitOps (default 20m0s)
   -e, --env stringArray          List of custom environment variables to be applied to the generated PipelineRun that are created (can be use multiple times)
+  -F, --file string              The pipeline file to start
   -f, --filter string            Filters all the available jobs by those that contain the given text
       --git-token string         the git token used to access the git repository for in-repo configurations in lighthouse
       --git-username string      the git username used to access the git repository for in-repo configurations in lighthouse
