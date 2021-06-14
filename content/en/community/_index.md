@@ -28,7 +28,7 @@ image by Ashley McNamara, [creative commons license](https://github.com/ashleymc
 We'd love to talk with you about Jenkins X and are happy to help if you have any questions.
 
 Talk to us on our slack channels, which are part of the Kubernetes slack.
-Join Kubernetes slack [here](http://slack.k8s.io/) and find us on our channels:
+Join Kubernetes slack [here](https://slack.k8s.io/) and find us on our channels:
 
 * [\#jenkins-x-user](https://kubernetes.slack.com/messages/C9MBGQJRH) for users of Jenkins X
 * [\#jenkins-x-dev](https://kubernetes.slack.com/messages/C9LTHT2BB) for developers of Jenkins X
