@@ -66,7 +66,7 @@ Contains the [kuberhealthy](https://github.com/Comcast/kuberhealthy) service to 
 
 Contains the [nginx-ingress](https://github.com/helm/charts/tree/master/stable/nginx-ingress) provider if enabled
 
-### `jx-valut` 
+### `jx-vault` 
 
 the following are optional extras if not using your cloud providers native secret manager:
 
