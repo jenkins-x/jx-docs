@@ -15,11 +15,16 @@ jx updatebot argo
 
 ### Synopsis
 
-Promotes a new Application version in an ArgoCD git repository
+Promotes a new Application version in an ArgoCD git repository 
+
+This command will use the source git repository URL and version to find the ArgoCD Application resource in the target git URL and create a Pull Request if the version is chThis lets you push promotion pull requests into ArgoCD repositories as part of your CI release pipeline.
 
 ### Examples
 
   ```bash
+  # lets use the $VERSION env var or a VERSION file in the current dir
+  jx updatebot argo --target-git-url https://github.com/myorg/my-argo-repo.git
+  
   # lets promote a specific version in the current git clone to a remote repo
   jx updatebot argo --version v1.2.3 --target-git-url https://github.com/myorg/my-argo-repo.git
   
@@ -46,6 +51,7 @@ Promotes a new Application version in an ArgoCD git repository
       --target-git-url string       the target git URL to create a Pull Request on
       --version string              the version number to promote. If not specified uses $VERSION or the version file
       --version-file string         the file to load the version from if not specified directly or via a $VERSION environment variable. Defaults to VERSION in the current dir
+      --version-prefix string       the prefix added to the version number that will be used in the Argo CD Application YAML if --version option is not specified and the version is defaulted from $VERSION or the VERSION file (default "v")
 ```
 
 
