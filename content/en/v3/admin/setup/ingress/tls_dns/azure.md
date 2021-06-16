@@ -99,9 +99,8 @@ You can finally remove this test A record:
 
 Generate a new infrastructure repository and a new a new cluster repository, then put this at the end of your **infrastructure** repository `values.auto.tfvars`:
 ```
-dns_enabled = "true"
-domain_name = "jx"
-apex_domain_name = "foo.io"
+subdomain = "jx"
+apex_domain = "foo.io"
 apex_domain_integration_enabled = "true"
 apex_resource_group_name = "rg-dns"
 ```
