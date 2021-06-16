@@ -103,6 +103,7 @@ subdomain = "jx"
 apex_domain = "foo.io"
 apex_domain_integration_enabled = "true"
 apex_resource_group_name = "rg-dns"
+
 ```
 
 Commit these changes:
