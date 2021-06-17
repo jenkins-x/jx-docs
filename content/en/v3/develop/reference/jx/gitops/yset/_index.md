@@ -20,8 +20,14 @@ Modifies one or more yaml files using a path expression while preserving comment
 ### Examples
 
   ```bash
+  # sets the foo.bar=abc in the files *.yaml
+  jx gitops yset --path foo.bar --value abc *.yaml
+  
   # sets the foo.bar=abc in the file foo.yaml
-  jx gitops yset --file foo.yaml --path foo.bar --value abc%!(EXTRA string=jx-gitops, string=jx-gitops)
+  jx gitops yset --path foo.bar --value abc --file foo.yaml
+  
+  # sets the foo.bar=abc in the file foo.yaml and bar.yaml
+  jx gitops yset --path foo.bar --value abc --file bar.yaml --file foo.yaml%!(EXTRA string=jx-gitops, string=jx-gitops)
 
   ```
 ### Options
