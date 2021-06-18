@@ -156,3 +156,9 @@ curl -L https://acme.com/foo.yaml > charts/myname/templates/resources.yaml
 ```
 
 You can also easily uninstall the application or modify the YAML in git at any time.
+            
+## How do I annotate a namespace?
+
+For permanent environments like `Dev`, `Staging` or `Production` you can add the annotated `Namespace` [resource into a chart](/v3/develop/apps/#adding-resources)
+
+For [Preview Environments](/v3/develop/environments/preview/) you can add the `kubectl annotate ns foo` step into a helmfile hook in the `preview/helmfile.yaml`
