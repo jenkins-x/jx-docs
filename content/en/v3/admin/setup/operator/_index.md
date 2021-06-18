@@ -104,7 +104,7 @@ Which will wait for a running Job to display.
 
 ## Insecure git repositories 
 
-If you are using an on premise git repository you may need to configure git in the git operator and boot job to support insecure git repositories via a `git config` command or two.
+If you are using an on-premises git repository you may need to configure git in the git operator and boot job to support insecure git repositories via a `git config` command or two.
 
 When installing the git operator you can pass in any git configuration commands via the `--setup` argument. You can supply multiple of these arguments if you need them.
 

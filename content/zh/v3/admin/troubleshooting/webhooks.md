@@ -55,7 +55,7 @@ kubectl get environments
 
 打开你的 git 提供商的 **Webbooks** 页面， 查看发送到 hook 地址的请求是否成功。对于 GitHub，你可以在 **Settings** ->  **Webhooks** 这里找到。
 
-如果你的 git 无法访问 ingress 地址的话，你可以设置一个转发通道。请查看[借助 ngrok 使用 webhooks](/v3/admin/platforms/on-premise/#enable-webhooks) 
+如果你的 git 无法访问 ingress 地址的话，你可以设置一个转发通道。请查看[借助 ngrok 使用 webhooks](/v3/admin/platforms/on-premises/#enable-webhooks) 
 
 ### AWS 相关的问题
 

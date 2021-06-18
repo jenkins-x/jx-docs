@@ -1,16 +1,17 @@
 ---
-title: On Premise
-linktitle: On Premise
-description: Using Boot On Premise
+title: On-Premises
+linktitle: On-Premises
+description: Using Boot On-Premises
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01
 weight: 40
 aliases:
+  - /docs/install-setup/boot/clouds/on-premise/
   - /docs/install-setup/installing/boot/clouds/on-premise/
 ---
 
-On premise kubernetes clusters tend to differ wildly so its hard for us to know your Jenkins X installation will totally work on any cluster given we typically rely on things like persistence, ingress, storage.
+On-premises kubernetes clusters tend to differ wildly so its hard for us to know your Jenkins X installation will totally work on any cluster given we typically rely on things like persistence, ingress, storage.
 
 Here are some recommendations to hopefully get you started. If you hit any issues please [join our community](/community/) we can hopefully help you.
 
@@ -25,13 +26,13 @@ clusterConfig:
 
 ### Ingress
 
-If you don't have a real ingress solution for your on premise cluster you can start off using the `nginx-controller` and the IP address of your api server.
+If you don't have a real ingress solution for your on-premises cluster you can start off using the `nginx-controller` and the IP address of your api server.
 
 You can set `ingress.domain` to be `1.2.3.4.nip.io` where `1.2.3.4` is the IP address of your ingress service.
 
 By default boot will try to recreate the `ingress.domain` by discovering the IP address on the nginx controller service - which is commonly generated dynamically on the public clouds.
 
-If you are on premise and using a hard coded IP address for ingress you may want to set this on your `jx-requirements.yml`
+If you are on-premises and using a hard coded IP address for ingress you may want to set this on your `jx-requirements.yml`
 
 ```yaml
 clusterConfig:

@@ -14,7 +14,7 @@ aliases:
 If you are using Terraform with one of the [Cloud Providers](/v3/admin/) then your Vault will be installed automatically via Terraform.
 
 
-Otherwise please see the [On Premise Vault Install Guide](/v3/admin/platforms/on-premise/vault/)
+Otherwise please see the [On-Premises Vault Install Guide](/v3/admin/platforms/on-premises/vault/)
 
 
 whichever apporoach take you should have:

@@ -2,17 +2,19 @@
 title: Vault
 linktitle: Vault
 type: docs
-description: How to use an on premise kubernetes cluster with vault
+description: How to use an on-premises kubernetes cluster with vault
 weight: 100
+aliases:
+  - /v3/admin/platforms/on-premise/vault/
 ---
 
 **NOTE** that in the following instructions it is left to the user to manage, backup and restore the vault installation once it has been installed. 
 
-For production workloads [we recommend you use a cloud provider secret store](/v3/devops/patterns/prefer_cloud_over_kube/) or [Vault as a service](https://www.hashicorp.com/resources/running-vault-as-a-service-on-hashicorp-cloud-platform). Managing on premise vault instances is undifferentiated heavy lifting that should be outsourced to a cloud provider if you can. 
+For production workloads [we recommend you use a cloud provider secret store](/v3/devops/patterns/prefer_cloud_over_kube/) or [Vault as a service](https://www.hashicorp.com/resources/running-vault-as-a-service-on-hashicorp-cloud-platform). Managing on-premises vault instances is undifferentiated heavy lifting that should be outsourced to a cloud provider if you can. 
 
 ### Prerequisites
 
-The prerequisites are the [same as regular on premise kubernetes](/v3/admin/platforms/on-premise/#prerequisites) around having a kubernetes cluster with ingress and storage
+The prerequisites are the [same as regular on-premises kubernetes](/v3/admin/platforms/on-premises/#prerequisites) around having a kubernetes cluster with ingress and storage
 
 The difference is for vault:
 

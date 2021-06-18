@@ -2,8 +2,10 @@
 title: Enable WebHooks
 linktitle: Enable WebHooks
 type: docs
-description: How to enable webhooks if you are on premise
+description: How to enable webhooks if you are on-premises
 weight: 100
+aliases:
+  - /v3/admin/platforms/on-premise/webhooks/
 ---
 
 If your cluster is not accessible on the internet and you can't open a firewall to allow services like GitHub to access your ingress then you will need to enable webhooks as follows:

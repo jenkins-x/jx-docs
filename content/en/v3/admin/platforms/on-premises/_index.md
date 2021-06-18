@@ -1,6 +1,6 @@
 ---
-title: On Premise
-linktitle:  On Premise
+title: On-Premises
+linktitle:  On-Premises
 type: docs
 description: Setup Jenkins X on vanilla Kubernetes  
 date: 2017-02-01
@@ -9,6 +9,7 @@ lastmod: 2020-02-21
 weight: 150
 aliases:
   - /v3/admin/platform/on-premise
+  - /v3/admin/platforms/on-premise
 ---
 
 ---
@@ -18,26 +19,26 @@ Ensure you are logged into GitHub else you will get a 404 error when clicking th
 
 ---
 
-## On Premise Kubernetes
+## On-Premises Kubernetes
 
 If you are using kubernetes we highly recommend you use one of the [managed cloud providers](/v3/#administration) as this comes with lots of additional features like:
 
 * container registries and bucket storage
 * IAM and workload identity (e.g. so kubernetes Service Accounts can be assigned roles to be able to read/write to certain buckets or container registries) 
 
-However sometimes you need to run kubernetes on your premise. Longer term we hope the cloud providers can run their managed kubernetes and associated infrastructure on your premise too so you get to reuse the same storage + IAM anywhere. But until then, this guide is intended to get you started installing Jenkins X on a vanilla kubernetes cluster on premise.
+However sometimes you need to run kubernetes on your premises. Longer term we hope the cloud providers can run their managed kubernetes and associated infrastructure on your premises too so you get to reuse the same storage + IAM anywhere. But until then, this guide is intended to get you started installing Jenkins X on a vanilla kubernetes cluster on-premises.
 
 Here are some detailed [instructions](https://007ba7.us/howto/jx-install/) on getting JX running in a Lab Environment.
 
 ### Prerequisites
 
-The following are the prerequisites of your on-premise kubernetes cluster:
+The following are the prerequisites of your on-premises kubernetes cluster:
 
 * [Download and install the jx 3.x binary](/v3/guides/jx3/)
 
 #### Kubernetes cluster
 
-We obviously need a working kubernetes cluster. There are many approaches to [setting up on premise clusters](https://kubernetes.io/docs/setup/production-environment/tools/) obviously the easiest approach is to use the [cloud](/v3/#administration).
+We obviously need a working kubernetes cluster. There are many approaches to [setting up on-premises clusters](https://kubernetes.io/docs/setup/production-environment/tools/) obviously the easiest approach is to use the [cloud](/v3/#administration).
 
 If you are going the bare metal route you could try [these instructions](https://007ba7.us/howto/k8s-install/)
  
@@ -58,7 +59,7 @@ To use Jenkins X we need ingress to work. This means being able to create a kube
 
 Jenkins X installs `nginx` which has a `LoadBalancer` kubernetes `Service` to implement ingress. But the underlying kubernetes platform needs to implement the load balancing network and infrastructure. This comes out of the box on all public clouds.
  
-With an on-premise kubernetes cluster you need to install something like [MetalLB](https://metallb.universe.tf/)
+With an on-premises kubernetes cluster you need to install something like [MetalLB](https://metallb.universe.tf/)
 
 If you are on bare metal you could try [these instructions](https://007ba7.us/howto/metallb/)
 
@@ -70,7 +71,7 @@ You may find [these instructions useful](https://007ba7.us/howto/nfs-storage/)
 
 ### Getting Started
 
-This is our current recommended quickstart for on premise kubernetes:
+This is our current recommended quickstart for on-premises kubernetes:
 
 *  <a href="https://github.com/jx3-gitops-repositories/jx3-kubernetes/generate" target="github" class="btn bg-primary text-light">Create the cluster Git Repository</a> based on the [jx3-gitops-repositories/jx3-kubernetes](https://github.com/jx3-gitops-repositories/jx3-kubernetes/generate) template
 

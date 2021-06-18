@@ -51,7 +51,7 @@ jx ui
 
 * we now use [helm](https://helm.sh/) (3.x) and [helmfile](https://github.com/roboll/helmfile) along with optionally [kustomize](https://kustomize.io/) in a GitOps style to define and configure both Jenkins X itself, your tools and applications in any namespace
 * support [multi cluster](/v3/admin/guides/multi-cluster/) out of the box so you can keep `Staging` and `Production` in separate clusters to your development cluster where your pipelines run, you create and release immutable container images and other artifacts.
-* to [setup or upgrade](/v3/admin/) Jenkins X we use [terraform](https://www.terraform.io/) to setup your cloud resources on [Azure](/v3/admin/platforms/azure/), [Amazon](/v3/admin/platforms/eks/) or [Google](/v3/admin/platforms/google/) while also supporting on premise, minkube and OpenShift - see the [Admin Guides](/v3/admin/) for more detail
+* to [setup or upgrade](/v3/admin/) Jenkins X we use [terraform](https://www.terraform.io/) to setup your cloud resources on [Azure](/v3/admin/platforms/azure/), [Amazon](/v3/admin/platforms/eks/) or [Google](/v3/admin/platforms/google/) while also supporting on-premises, minkube and OpenShift - see the [Admin Guides](/v3/admin/) for more detail
   * the actual installation of kubernetes resources takes place using the [git operator](/v3/admin/guides/operator/) so it runs reliably inside the cluster itself
 * we default to using [Kubernetes External Secrets](https://github.com/external-secrets/kubernetes-external-secrets) to manage all secrets for Jenkins X itself, development tools and your applications too. 
   * This means we can support various secret backends such as Alibaba Cloud KMS Secret Manager, Amazon Secret Manager, Azure Key Vault, Hashicorp Vault or GCP Secret Manager
@@ -68,7 +68,7 @@ In general Jenkins X 3.x is now much simpler and more flexible. It supports [lot
 
 ### Getting started
 
-If you have never tried [3.x](/v3/about/) before then please follow the [Admin Guide](/v3/admin/) to get Jenkins X installed on your cloud provider, on premise kubernetes cluster or minikube.
+If you have never tried [3.x](/v3/about/) before then please follow the [Admin Guide](/v3/admin/) to get Jenkins X installed on your cloud provider, on-premises kubernetes cluster or minikube.
 
 If you previously tried the 3.x alpha then the [migration instructions are here](/v3/admin/guides/migrate/v3-alpha/).
 
