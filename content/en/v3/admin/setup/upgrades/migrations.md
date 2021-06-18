@@ -18,7 +18,7 @@ not possible or practical
 NB: These steps are only relevant if you are using Hashicorp Vault as secret storage within `jx`. Ignore for all other secret stores
 
 v0.0.969 introduced a change to remove Hashicorp Vault from `jx` control and become an explicit cluster dependency
-installed either via Terraform (for cloud environments) or Helm (for on-premise). The reasoning behind this is to reduce
+installed either via Terraform (for cloud environments) or Helm (for on-premises). The reasoning behind this is to reduce
 cyclic complexity within `jx` where the platform requires secrets and the `jx` platform is also responsible for provisioning
 where to store these secrets.
 

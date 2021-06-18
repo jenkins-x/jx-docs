@@ -12,7 +12,7 @@ aliases:
   - /docs/install-setup/installing/boot/clouds/
 ---
 
-Jenkins X is designed to work on any Kubernetes cluster; whether on premise, hybrid or public cloud.
+Jenkins X is designed to work on any Kubernetes cluster; whether on-premises, hybrid or public cloud.
 
 However, if you try doing any significant work with Kubernetes particularly with things like storage, networking, ingress, TLS, certificates, DNS,secrets - you will find that things can be different on different cloud providers.
 

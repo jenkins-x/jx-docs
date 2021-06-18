@@ -106,4 +106,4 @@ See [How to diagnose webhooks](/v3/admin/troubleshooting/webhooks/)
 
 If you are running on your laptop or in a private cluster you won't be able to use webhooks on your git provider to trigger pipelines.
 
-A workaround is to use [use something like ngrok to enable webhooks](/v3/admin/platforms/on-premise/webhooks/)
+A workaround is to use [use something like ngrok to enable webhooks](/v3/admin/platforms/on-premises/webhooks/)

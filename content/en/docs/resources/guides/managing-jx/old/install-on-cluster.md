@@ -164,14 +164,14 @@ If you know the provider, you can specify the provider on the command line. e.g.
 jx install --provider=aws
 ```
 
-## Installing Jenkins X on premises
+## Installing Jenkins X on-premises
 
 __Prerequisits__
 - Kubernetes > 1.8
 - RBAC enabled
 - A default cluster [dynamic storage class](https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/) for provisioning persistent volumes.
 
-When using an on premise Kubernetes cluster, you can use this command line:
+When using an on-premises Kubernetes cluster, you can use this command line:
 
 ```sh
 jx install --provider=kubernetes --on-premise
@@ -185,7 +185,7 @@ If you wish to use a different external IP address, you can use:
 jx install --provider=kubernetes --external-ip 1.2.3.4
 ```
 
-Otherwise, the `jx install` will try and wait for the Ingress Controllers `Service.Status.LoadBalancer.Ingress` to resolve to an IP address - which can fail on premise.
+Otherwise, the `jx install` will try and wait for the Ingress Controllers `Service.Status.LoadBalancer.Ingress` to resolve to an IP address - which can fail on-premises.
 
 If you already have an ingress controller installed, then try:
 
@@ -232,7 +232,7 @@ Create `ClusterImagePolicies` on IBM Cloud Private version 3.1.0 and set the fol
 
 Specify the following two `jx install` parameters with the command line or when prompted by the IBM Cloud Private provider:
 - The `domain=''` parameter is the domain to expose ingress endpoints, for example, `jenkinsx.io`.
-- The `external-ip=''` parameter is the external IP that is used to access ingress endpoints from outside the Kubernetes cluster and for bare metal on premise clusters.
+- The `external-ip=''` parameter is the external IP that is used to access ingress endpoints from outside the Kubernetes cluster and for bare metal on-premises clusters.
 
 If you don't specify these parameters, then the `jx install --provider=icp` command first prompts you to enter the `external-ip` parameter. Next, it prompts you to enter the `domain` parameter and offers you the `<external-ip>.nip.io` default value. After you enter these values, an ingress endpoint becomes available at `http://jenkins.jx.<your cluster IP>.nip.io`.
 

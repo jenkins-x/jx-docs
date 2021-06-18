@@ -100,4 +100,4 @@ times out.
 
 Jenkins X installs `nginx` which has a `LoadBalancer` kubernetes `Service`. But the underlying kubernetes platform needs to implement the load balancing network and infrastructure. This comes OOTB on all public clouds. 
  
-On premise you need to install something like [MetalLB](https://metallb.universe.tf/)
+On-premises you need to install something like [MetalLB](https://metallb.universe.tf/)
