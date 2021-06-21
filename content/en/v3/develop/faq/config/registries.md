@@ -3,7 +3,7 @@ title: Registries
 linktitle: Registries
 type: docs
 description: Questions on registries and repositories
-weight: 150
+weight: 154
 ---
 
 ## How do I use a custom container registry?

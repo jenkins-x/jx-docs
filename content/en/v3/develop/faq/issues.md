@@ -52,6 +52,15 @@ jx ui
 e.g. see the **Pod** link to the left of the  **Steps** / **Logs** links in the nav bar
 
 <iframe width="646" height="327" src="https://www.youtube.com/embed/2LCPHi0BnUg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+       
+
+## Releasing a chart fails with 500
+
+If your release pipeline fails with a HTTP 500 error pushing a helm chart to chartmuseum it could be that the chart name and version has already been released before and chartmuseum won't let you re-publish the same version of the helm chart.
+
+If you retrigger a release on your repository (e.g. merging a git commit to the main branch), you should see a new version being created and released?
+
+If not try create a new git tag on your repository for the next version e.g. if 0.1.2 was the last release, create a git tag of `v0.1.3` then then next release will be `0.1.4`). Then trigger a new release via a commit to the main branch.
 
          
 ## My cluster is out of resources
