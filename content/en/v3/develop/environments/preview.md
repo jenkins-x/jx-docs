@@ -127,11 +127,17 @@ You can find possible charts to install by searching helm. e.g. to find a `postg
 helm search repo postgres
 ```
 
-Once you know the chart and the repository its in you can add it to your `charts/preview/requirements.yaml` file (the `postgresql` section in dependencies array):
+Once you know the chart and the repository its in you can add it to your `repositories` and `releases` section of the  `preview/helmfile.yaml` file (the `postgresql` section in dependencies array):
 
 ```yaml
+repositories:
+- name: stable
+  url: https://charts.helm.sh/stable
+...  
+
 releases:
 - chart: stable/postgresql
+  name: mydb
   version: 2.6.2
 
 ...
