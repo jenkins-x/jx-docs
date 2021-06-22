@@ -107,3 +107,55 @@ See [How to diagnose webhooks](/v3/admin/troubleshooting/webhooks/)
 If you are running on your laptop or in a private cluster you won't be able to use webhooks on your git provider to trigger pipelines.
 
 A workaround is to use [use something like ngrok to enable webhooks](/v3/admin/platforms/on-premises/webhooks/)
+
+## How do I configure to use v1beta1 Ingress?
+
+We recently upgraded to default to `Ingress` `networking.k8s.io/v1` which is included from version 1.19 as the older `networking.k8s.io/v1beta1` is deprecated and to be removed in v 1.22. 
+
+If you are on 1.18 we recommend you upgrade to 1.19 if you can.
+
+If not here's how to configure Jenkins X to use the deprecated `networking.k8s.io/v1beta1` version:
+
+* create this file at `helmfiles/jx/jxboot-helmfile-values.yaml`:
+
+```yaml 
+ingress:
+  apiVersion: networking.k8s.io/v1beta1
+```
+
+* then add it at the last item in `helmfiles/jx/helmfile.yaml` for the release of the chart `jx3/jxboot-helmfile-resources`. So your file should look something like
+
+```yaml
+releases:
+... 
+- chart: jx3/jxboot-helmfile-resources
+  version: 1.0.63
+  name: jxboot-helmfile-resources
+  values:
+  - ../../versionStream/charts/jx3/jxboot-helmfile-resources/values.yaml.gotmpl
+  - jx-values.yaml
+  - jxboot-helmfile-values.yaml
+```
+
+* create this file at `helmfiles/jx/jx-pipelines-visualizer-values.yaml`:
+
+```yaml 
+ingress:
+  apiVersion: networking.k8s.io/v1beta1
+```
+
+* then add it at the last item in `helmfiles/jx/helmfile.yaml` for the release of the chart `jx3/jx-pipelines-visualizer`. So your file should look something like
+
+```yaml
+releases:
+... 
+- chart: jx3/jx-pipelines-visualizer
+  version: 1.7.1
+  name: jx-pipelines-visualizer
+  values:
+  - ../../versionStream/charts/jx3/jx-pipelines-visualizer/values.yaml.gotmpl
+  - jx-values.yaml
+  - jx-pipelines-visualizer-values.yaml
+```
+
+Then when you git commit these changes and your build job completes (e.g. watch it via `jx admin log -w`) your ingress resources should now be using `networking.k8s.io/v1beta1`
