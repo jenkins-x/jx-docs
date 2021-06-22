@@ -156,7 +156,16 @@ curl -L https://acme.com/foo.yaml > charts/myname/templates/resources.yaml
 ```
 
 You can also easily uninstall the application or modify the YAML in git at any time.
-            
+   
+## How do I add a database?
+
+If you are building a new microservice that needs a database there's a few ways to do it.
+
+If your microservice has its own database that is not used by any other microservices you can create a _nested chart_ add it to the `Chart.yaml` `dependencies` section as [described here](https://helm.sh/docs/helm/helm_dependency/). Though that can be confusing as you now need to configure the dependent chart by wrapping its configuration in a YAML key (e.g. the release name you picked or maybe the chart name) which can be confusing - particularly if someone wants to [configure your database differently in a separate environment](/v3/develop/faq/config/charts/#how-do-i-customise-an-app-in-an-environment)
+
+So we recommend you avoid nested charts and just add your dependent charts to your `preview/helmfile.yaml` for [Preview Environments](/v3/develop/environments/preview/) and [add it to the staging and production environments](/v3/develop/apps/#adding-charts) so they can all be [configured in the same way](/v3/develop/faq/config/charts/#how-do-i-customise-an-app-in-an-environment) via [helmfile configuration](https://github.com/roboll/helmfile#configuration) usually via adding a [custom values.yaml file and adding it into the releases section](/v3/develop/apps/#customising-charts) 
+
+
 ## How do I annotate a namespace?
 
 For permanent environments like `Dev`, `Staging` or `Production` you can add the annotated `Namespace` [resource into a chart](/v3/develop/apps/#adding-resources)
