@@ -90,7 +90,11 @@ Create a Pull Request. You should see the effective kubernetes resources show up
 
 You can add a custom `values.yaml` file to any chart and reference it in the `values:` section of the `helmfile.yaml` file.
 
-e.g. to customise a chart such as `nginx-ingress` you can create a file at `charts/nginx-ingress/values.yaml`. You can then reference the file in the `helmfile.yaml` file:
+e.g. to customise a chart such as `nginx-ingress` first find the `helmfile.yaml` file that is installing this chart. 
+
+We tend to use a separate `helmfile.yaml` file for each namespace so for `nginx` we have   `helmfiles/nginx/helmfile.yaml`
+
+So create a file `helmfiles/nginx/values.yaml`  and then modify the `helmfiles/nginx/helmfile.yaml` to reference it (see the last line):
 
 ```yaml 
 releases:
@@ -101,11 +105,8 @@ releases:
   namespace: nginx
   values:
   - versionStream/charts/stable/nginx-ingress/values.yaml.gotmpl
-  - charts/nginx-ingress/values.yaml
-```  
-
-In the above example we added `charts/nginx-ingress/values.yaml` after the version stream configuration thats automatically added for you.
-
+  - values.yaml
+```
   
 You can also use a file called `values.yaml.gotmpl` if you wish to use go templating of the values file. For example this lets you reference properties from the `jx-requirements.yml` file via expressions like `{{ .Values.jxRequirements.ingress.domain }}`.
 
