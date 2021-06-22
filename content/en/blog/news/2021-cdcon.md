@@ -13,7 +13,12 @@ author: Jenkins Strachan
 [cdCon 2021](https://events.linuxfoundation.org/cdcon/) is about to start with lots of [great sessions](https://events.linuxfoundation.org/cdcon/program/schedule/).
 
 Here' a list of the [Jenkins X related](https://jenkins-x.io/) sessions:
-         
+            
+## Tuesday, June 22 GitOps Summit
+
+* [Best Practices for Secret Management with GitOps](https://sched.co/il6v) - [Kara de la Marck](https://gitopssummit2021.sched.com/speaker/kdelamarck), CloudBees
+    * GitOps uses Git as the “single source of truth” for declarative infrastructure and enables developers to manage infrastructure with the same Git-based workflows they use to manage a codebase. Having all configuration files version-controlled by Git has many advantages, but best practices for securely managing secrets with GitOps remain contested. Join us in this presentation about GitOps and Secret Management. Attendees will learn about different approaches to secret management with GitOps, the issues involved, and the secret management solutions offered by various tools and platforms. We will discuss the pros and cons of Vault, SOPS, offerings by public cloud providers, and more.
+
 ## Wednesday, June 23
                  
 * [MLOps with Jenkins-X: Production-ready Machine Learning](https://sched.co/ios6) by [Terry Cox](https://cdcon2021.sched.com/speaker/terry289)
