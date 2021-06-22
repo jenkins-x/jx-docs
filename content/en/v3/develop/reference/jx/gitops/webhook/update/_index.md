@@ -26,7 +26,7 @@ Updates the webhooks for all the source repositories optionally filtering by own
   # only update the webhooks for a given owner
   jx-gitops update --org=mycorp
   
-  # use a custom hook webhook endpoint (e.g. if you are on-premises using node ports or something)
+  # use a custom hook webhook endpoint (e.g. if you are on premise using node ports or something)
   jx-gitops update --endpoint http://mything.com
 
   ```
