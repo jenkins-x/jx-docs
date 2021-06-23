@@ -36,6 +36,7 @@ The second step is to create the `helmfiles/osiris-system/helmfile.yaml` file, w
 namespace: osiris-system
 releases:
 - chart: osiris/osiris
+  name: osiris
 ```
 
 Commit and push these changes, and after a few minutes you should see a few osiris pods running in the `osiris-system` namespace:
