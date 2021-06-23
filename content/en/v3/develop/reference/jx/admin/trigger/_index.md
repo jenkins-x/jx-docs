@@ -2,7 +2,7 @@
 title: jx admin trigger
 linktitle: trigger
 type: docs
-description: "triggers the latest boot Job to rerun ***Aliases**: rerun*"
+description: "triggers the latest boot Job to run again ***Aliases**: rerun*"
 aliases:
   - jx-admin_trigger
 ---
@@ -15,14 +15,14 @@ jx admin trigger
 
 ### Synopsis
 
-Views the boot Job logs in the cluster
+Triggers the latest boot Job to run again
 
 ### Examples
 
-  * views the current boot logs
+  * trigger the boot job again
   
   ```bash
-  jx-admin log
+  jx-admin trigger
   ```
 
 ### Options
