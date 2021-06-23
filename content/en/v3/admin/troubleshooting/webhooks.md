@@ -29,6 +29,9 @@ You can check on the health of your system and webhooks via the [Health guide](/
 First make sure you have a valid ingress for hook...
 
 ```bash 
+# switch to the jx namespace
+jx ns jx
+
 kubectl get ing
 ```
 
