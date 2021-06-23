@@ -60,3 +60,19 @@ If you type the username and password into your browser it should open the dashb
 If you [enable the observability stack](/v3/admin/guides/observability/), then you will get a new link **Trace** in your pipeline view - once the pipeline is finished - that will open the pipeline trace in Grafana so that you can see the timings of each stage and steps in your pipeline:
 
 ![](/images/jx-pipelines-visualizer/pipeline-trace.gif)
+
+
+### Lighthouse UI
+
+There is an additional [optional UI for viewing lighthouse](https://github.com/jenkins-x-plugins/lighthouse-webui-plugin).
+
+To install it add the following to the `releases:`  section of your `helmfiles/jx/helmfile.yaml`:
+
+```yaml 
+- chart: jx3/lighthouse-webui-plugin
+  version: 0.1.2
+  name: lighthouse-webui-plugin
+  values:
+  - ../../versionStream/charts/jx3/lighthouse-webui-plugin/values.yaml.gotmpl
+  - jx-values.yaml
+```
