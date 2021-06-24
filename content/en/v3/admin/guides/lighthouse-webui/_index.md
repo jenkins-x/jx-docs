@@ -18,7 +18,7 @@ Then, open the `helmfiles/jx/helmfile.yaml` file located in your development env
 
 ```yaml 
 - chart: jx3/lighthouse-webui-plugin
-  name: jx3/lighthouse-webui-plugin
+  name: lighthouse-webui-plugin
 ```
 
 You should have something like:
@@ -29,7 +29,7 @@ repositories:
 - ...
 releases:
 - chart: jx3/lighthouse-webui-plugin
-  name: jx3/lighthouse-webui-plugin
+  name: lighthouse-webui-plugin
 - chart: ...
 ```
 
