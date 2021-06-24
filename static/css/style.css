@@ -54,3 +54,12 @@ a img {
     max-width: -webkit-fill-available;
     float: left;
 }
+
+@media only screen and (min-width: 480px) and (max-width: 767px)
+{.x-content-band 
+    {
+        height: auto !important;
+        background-size: contain !important;
+        background-position: top center !important;
+    } 
+}
