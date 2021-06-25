@@ -1,6 +1,6 @@
 ---
 title: "Continuous microservices with databases in Jenkins X"
-date: 2021-06-24
+date: 2021-06-25
 draft: false
 description: automate your CI/CD with microsevices, databases and preview environments
 categories: [blog]
