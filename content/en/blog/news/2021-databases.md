@@ -36,6 +36,8 @@ Then git commit and push that change to your cluster. You can watch it run via `
 
 ## Create the quickstart
 
+Make sure you have an [up to date cluster](/v3/admin/setup/upgrades/cluster/) as this particular quickstart is new and only shows up in recent clusters. 
+
 Now [create the quickstart](/v3/develop/create-project/#create-a-new-project-from-a-quickstart) in the usual way...
 
 ```bash
