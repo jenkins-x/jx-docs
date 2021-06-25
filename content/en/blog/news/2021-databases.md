@@ -128,13 +128,14 @@ We prefer [cloud over kubernetes](/v3/devops/patterns/prefer_cloud_over_kube/) s
 
 There are a number of other ways to define cloud infrastructure via [Custom Resources](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/) such as:
               
-* [AWS Controllers for Kubernetes](https://aws-controllers-k8s.github.io/community/) 
+* [AWS Controllers for Kubernetes](https://aws-controllers-k8s.github.io/community/)
+* [Azure Service Operator](https://github.com/Azure/azure-service-operator)  
 * [Crossplane](https://crossplane.io/)
 * [Google Config Connector](https://cloud.google.com/config-connector/docs/overview)
 
 So it'd be interesting to see if we can replicate this model for other kinds of cloud database on different cloud providers. Mostly it'd be a [Custom Resources](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/) to define the database instance and a way to inject the host and secret.  Some database providers require an additional sidecar proxy too.
 
-It would be easy to add optional configuration in the quickstart to support either the [postgres-operator](https://github.com/zalando/postgres-operator) or equivalents in [AWS Controllers for Kubernetes](https://aws-controllers-k8s.github.io/community/),[Crossplane](https://crossplane.io/) or  [Google Config Connector](https://cloud.google.com/config-connector/docs/overview) via a simple flag in the `chart/$name/values.yaml` file
+It would be easy to add optional configuration in the quickstart to support either the [postgres-operator](https://github.com/zalando/postgres-operator) or equivalents in [AWS Controllers for Kubernetes](https://aws-controllers-k8s.github.io/community/), [Azure Service Operator](https://github.com/Azure/azure-service-operator), [Crossplane](https://crossplane.io/) or [Google Config Connector](https://cloud.google.com/config-connector/docs/overview) via a simple flag in the `chart/$name/values.yaml` file
 
 ### More modularity options
 
