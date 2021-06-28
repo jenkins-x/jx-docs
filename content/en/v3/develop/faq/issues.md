@@ -1,6 +1,6 @@
 ---
-title: Troublehshooting
-linktitle: Troublehshooting
+title: Troubleshooting
+linktitle: Troubleshooting
 type: docs
 description: Questions on common issues folks hit using the cloud, kubernetes and Jenkins X
 weight: 400
