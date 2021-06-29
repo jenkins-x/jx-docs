@@ -41,6 +41,8 @@ For more documentation see: https://jenkins-x.io/developing/create-quickstart/
       --dir string                     Specify the directory to import (default ".")
       --docker-registry-org string     The name of the docker registry organisation to use. If not specified then the Git provider organisation will be used
       --dry-run                        Performs local changes to the repo but skips the import into Jenkins X
+      --env-name string                The name of the environment to create (only used for env projects)
+      --env-strategy string            The promotion strategy of the environment to create (only used for env projects) (default "Never")
   -f, --filter string                  The text filter
       --framework string               The framework to filter on
       --git-host string                The Git server host if not using GitHub when pushing created project

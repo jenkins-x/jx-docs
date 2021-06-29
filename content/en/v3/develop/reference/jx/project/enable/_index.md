@@ -28,6 +28,7 @@ Enables lighthouse pipelines in the current directory
 
 ```
   -b, --batch-mode            Runs in batch mode without prompting for user input
+      --charts                Should we regen the charts
       --dir string            Specify the directory to import (default ".")
       --git-kind string       the kind of git server to connect to
       --git-server string     the git server URL to create the scm client
