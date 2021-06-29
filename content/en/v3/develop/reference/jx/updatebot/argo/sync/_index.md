@@ -22,6 +22,9 @@ Creates a Pull Request on the target GitOps repository.
 ### Examples
 
   ```bash
+  # create a Pull Request if any of the versions in the current directory are newer than the target repo
+  jx updatebot argo sync --target-git-url https://github.com/myorg/my-production-repo
+  
   # create a Pull Request if any of the versions are out of sync
   jx updatebot argo sync --source-git-url https://github.com/myorg/my-staging-repo --target-git-url https://github.com/myorg/my-production-repo
   

@@ -2,7 +2,7 @@
 title: jx updatebot argo
 linktitle: argo
 type: docs
-description: "Commands for working with ArgoCD ***Aliases**: argocd*"
+description: "Commands for working with ArgoCD git repositories ***Aliases**: argocd*"
 aliases:
   - jx-updatebot_argo
 ---
@@ -15,7 +15,7 @@ jx updatebot argo
 
 ### Synopsis
 
-Commands for working with ArgoCD
+Commands for working with ArgoCD git repositories
 
 ### Options
 

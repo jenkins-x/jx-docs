@@ -1,41 +1,41 @@
 ---
-title: jx updatebot argo promote
+title: jx updatebot flux promote
 linktitle: promote
 type: docs
-description: "Promotes a new Application version in an ArgoCD git repository"
+description: "Promotes a new HelmRelease version in a FluxCD git repository"
 aliases:
-  - jx-updatebot_argo_promote
+  - jx-updatebot_flux_promote
 ---
 
 ### Usage
 
 ```
-jx updatebot argo promote
+jx updatebot flux promote
 ```
 
 ### Synopsis
 
-Promotes a new Application version in an ArgoCD git repository 
+Promotes a new HelmRelease version in a FluxCD git repository 
 
-This command will use the source git repository URL and version to find the ArgoCD Application resource in the target git URL and create a Pull Request if the version is different. This lets you push promotion pull requests into ArgoCD repositories as part of your CI release pipeline.
+This command will use the given chart name and version along with an optional sourceRefName of the helm or git repository or bucket to find the HelmRelease resource in the target git repository and create a Pull Request if the version is different. This lets you push promotion pull requests into FluxCD repositories as part of your CI release pipeline. 
+
+If you don't supply a version the $VERSION or VERSION file will be used. If you don't supply a chart the current folder name is used.
 
 ### Examples
 
   ```bash
-  # lets use the $VERSION env var or a VERSION file in the current dir
-  jx updatebot argo promote --target-git-url https://github.com/myorg/my-argo-repo.git
+  # lets promote a specific version of a chart with a source ref (repository) name to a git repo
+  jx updatebot flux promote --version v1.2.3 --chart mychart --source-ref-name myrepo --target-git-url https://github.com/myorg/my-flux-repo.git
   
-  # lets promote a specific version in the current git clone to a remote repo
-  jx updatebot argo promote --version v1.2.3 --target-git-url https://github.com/myorg/my-argo-repo.git
-  
-  # lets promote a specific version of the given spec.source.repoURL (--source-git-url)
-  jx updatebot argo promote --version v1.2.3 --source-git-url https://github.com/myorg/my-chart-repo.git --target-git-url https://github.com/myorg/my-argo-repo.git
+  # lets use the $VERSION env var or a VERSION file in the current dir and detect the chart name from the current folder
+  jx updatebot flux promote --target-git-url https://github.com/myorg/my-flux-repo.git
 
   ```
 ### Options
 
 ```
       --auto-merge                  should we automatically merge if the PR pipeline is green
+  -c, --chart string                the name of the chart to promote. If not specified defaults to the current directory name
       --commit-message string       the commit message
       --commit-title string         the commit title
   -d, --dir string                  the directory look for the VERSION file (default ".")
@@ -47,11 +47,11 @@ This command will use the source git repository URL and version to find the Argo
       --labels strings              a list of labels to apply to the PR (default [promote])
       --pull-request-body string    the PR body
       --pull-request-title string   the PR title (default "chore: upgrade the cluster git repository from the version stream")
-      --source-git-url string       the source repo git URL to upgrade the version
+      --source-ref-name string      the source ref name of the HelmRepository, GitRepository or Bucket containing the helm chart
       --target-git-url string       the target git URL to create a Pull Request on
       --version string              the version number to promote. If not specified uses $VERSION or the version file
       --version-file string         the file to load the version from if not specified directly or via a $VERSION environment variable. Defaults to VERSION in the current dir
-      --version-prefix string       the prefix added to the version number that will be used in the Argo CD Application YAML if --version option is not specified and the version is defaulted from $VERSION or the VERSION file (default "v")
+      --version-prefix string       the prefix added to the version number that will be used in the Flux CD Application YAML if --version option is not specified and the version is defaulted from $VERSION or the VERSION file (default "v")
 ```
 
 
