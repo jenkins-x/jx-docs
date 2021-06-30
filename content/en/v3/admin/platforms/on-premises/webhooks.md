@@ -16,7 +16,7 @@ If your cluster is not accessible on the internet and you can't open a firewall 
 * setup a webhook tunnel to your laptop find your hook host name:
 
 ```bash
-kubectl get ing
+kubectl get ing -n jx
 ```
 
 * copy the hook host name into...
@@ -24,13 +24,39 @@ kubectl get ing
 ```bash
 ngrok http http://yourHookHost
 ```
-
-* copy your personal ngrok domain name of the form `abcdef1234.ngrok.io` into the `charts/jenkins-x/jxboot-helmfile-resources/values.yaml` file in the `ingress.customHosts.hosts` file so that your file looks like this...
+                         
+* copy the following YAML to a file: **helmfiles/jx/jxboot-helmfile-resources-values.yaml**
 
 ```yaml
 ingress:
   customHosts:
     hook: "abcdef1234.ngrok.io"
-...
 ```
 
+  
+* modify the `hook:` line in your **helmfiles/jx/jxboot-helmfile-resources-values.yaml** file to use your personal ngrok domain name of the form `abcdef1234.ngrok.io`
+
+* add the **jxboot-helmfile-resources-values.yaml** file name to the `values:` entry in the `helmfiles/jx/helmfile.yaml` file for the `jxgh/jxboot-helmfile-resources` chart like this: (see the last line)
+
+```yaml 
+releases:
+- chart: jxgh/jxboot-helmfile-resources
+  name: jxboot-helmfile-resources
+  values:
+  - ../../versionStream/charts/jx3/jxboot-helmfile-resources/values.yaml.gotmpl
+  - jx-values.yaml
+  - jxboot-helmfile-resources-values.yaml
+...  
+```
+
+* now git commit the changed files....
+
+```bash 
+git add helmfiles 
+git commit -a -m "fix: add ngrok webhook"
+git push
+
+
+echo "now lets watch the boot job complete"
+jx admin log -w
+```
