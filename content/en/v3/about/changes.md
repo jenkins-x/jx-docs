@@ -12,6 +12,16 @@ You may also find the [Roadmap](/community/roadmap/) and [Maturity Matrix](/v3/a
 
        
 ## Breaking Changes
+        
+* we have [noticed a regression](https://github.com/jenkins-x/jx/issues/7870) in the [auto upgrade jobs](/v3/admin/setup/upgrades/cluster/#automatic-upgrades) which causes them to fail with an error like this:
+```bash 
+updatebot WARNING: no $GIT_SECRET_MOUNT_PATH environment variable set                      
+updatebot error: failed to setup git: failed to clone the cluster git URL: failed to clone cluster git repository https://github.com/myorg/myrepo.git: failed to clone cluster git repo https://github.com/
+updatebot fatal: could not read Username for 'https://github.com': No such device or address
+```
+
+* you can fix this by following the [workarounds on this issue](https://github.com/jenkins-x/jx/issues/7870) which should get you past this and working [auto upgrade jobs](/v3/admin/setup/upgrades/cluster/#automatic-upgrades) again
+  
 
 * we now default to using `Ingress` `v1` which was introduced in kubernetes 1.19. The `v1beta1` version of `Ingress` has been deprecated since 1.14 and is removed in 1.22. If you are on 1.18 of kubernetes you could upgrade to 1.19 or later. Otherwise you can [configure your cluster to keep on v1beta1 if you want](/v3/develop/faq/config/ingress/#how-do-i-configure-to-use-v1beta1-ingress) until you can move forwards to 1.19 or later.
 * the new tekton version (0.20.x) now requires kubernetes 1.17 or later. If your cluster is older and you are using the cloud just upgrade your kubernetes version before upgrading your cluster. Otherwise you may want to explicitly override your `tekton-pipeline` version to pin it at `0.19.1` instead in your [helmfiles/tekton-pipelines/helmfile.yaml](https://github.com/jx3-gitops-repositories/jx3-kubernetes/blob/master/helmfiles/tekton-pipelines/helmfile.yaml#L12) file
