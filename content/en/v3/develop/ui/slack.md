@@ -40,7 +40,7 @@ Once you have pushed the change to git and your [boot job has retriggered](/v3/a
 jx secret verify 
 ```
 
-You can populate your slack bot token via:
+You can populate your slack bot token via the following. **Note** that if you are using vault [you need to run the port forward first](/v3/admin/setup/secrets/vault/#using-vault):
 
 ```bash 
 jx secret edit -f jx-slack
