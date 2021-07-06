@@ -21,18 +21,20 @@ Runs a shell so you can access the vault in a kubernetes cluster
 
   ```bash
   jx-secret vault shell
+  
+  jx-secret vault shell bash
+  
+  jx-secret vault shell -- bash -i
 
   ```
 ### Options
 
 ```
-      --args stringArray    the arguments to pass to the shell command
   -d, --duration duration   the maximum time period to wait for vault to be ready (default 5m0s)
   -h, --help                help for shell
   -n, --ns string           the namespace where vault is running (default "jx-vault")
   -p, --pod string          the name of the vault pod which needs to be running before the port forward can take place (default "vault-0")
       --poll duration       the polling period to check if the secrets are valid (default 2s)
-  -s, --shell string        the command line shell to execute (default "bash")
 ```
 
 
