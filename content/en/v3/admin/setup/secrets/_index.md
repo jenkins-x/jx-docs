@@ -145,41 +145,6 @@ This will replicate the secret to all permanent enivronments in the same cluster
 If you want to replicate another secret just add the label `secret.jenkins-x.io/replica-source=true` or you can add a new [jx secret replicate](https://github.com/jenkins-x/jx-secret/blob/master/docs/cmd/jx-secret_replicate.md) to the [boot makefile](/v3/about/how-it-works/#boot-job)
        
 
-
-## Export Secrets
-
-You can export the current secrets to the file system via
-
-```bash
-jx secret export -f /tmp/mysecrets.yaml
-```                  
-
-Or to view them on the terminal...
-
-```bash
-jx secret export -c
-```                  
-
-
-## Import Secrets
-
-If you have previously exported the secrets as shown above you can re-import them again (maybe into a different cluster):
-
-```bash
-jx secret import -f /tmp/mysecrets.yaml 
-```                  
-
-
-### Migrating Local Secrets
-
-If you have booted Jenkins X before you may well have secrets in your `~/.jx/localSecrets/mycluster/secrets.yaml`
-
-If the file is valid you can just run:
-
-```bash
-jx secret import -f ~/.jx/localSecrets/mycluster/secrets.yaml 
-```                  
-
 ### Migrating Secrets from Vault
 
 If you have secrets already in a Vault then use the vault CLI tool to export the secrets to disk, reformat it in the above YAML layout and then import the secrets as above.
