@@ -43,7 +43,7 @@ Join the [Jenkins X Discourse](https://jenkinsx.discourse.group/) forum to read 
 
 During office hours we demo the latest features, answer questions, and share knowledge together.
 
-We meet for office hours **every other Tuesday** at 16:00 UTC (*See your timezone [here](https://time.is/1600_in_UTC)*).
+We meet for office hours **every other Tuesday** at 15:00 UTC (*See your timezone [here](https://time.is/1600_in_UTC)*).
 
 <a href="https://us02web.zoom.us/j/89081347704?pwd=U2lob3JVamsxQ1RyK1hSa0prMWczdz09" class="btn btn-lg bg-primary text-white">join the Office Hours meeting</a>
 
