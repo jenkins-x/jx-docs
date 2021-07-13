@@ -108,15 +108,18 @@ This will trigger the boot pipeline which you can follow with
 ```
 jx admin logs
 ```
-Once the logs start applying the generated Kubernetes resources you can CTRL+C to stop following the logs and populate the secrets in you secret store such as Vault, or Google Secrets Manager for example:
+By default, you need to provide three secrets for oauth2-proxy: `client id`, `client secret` and `secret-cookie`. For `secret-cookie`, you can generate and copy a random one. Once the logs start applying the generated Kubernetes resources you can CTRL+C to stop following the logs, generate a random `secret-cookie` and populate the secrets in you secret store such as Vault, or Google Secrets Manager for example:
 ```bash
+# this generates a random secret-cookie, then you select and copy the output
+python -c 'import os,base64; print(base64.b64encode(os.urandom(16)).decode("ascii"))'
+# populate secrets
 jx secret edit -i
 ```
-filter for `oauth` and select `client id` and `client secret` options using the space bar
+filter for `oauth2-proxy` and select `client id`, `client secret` and `secret-cookie` options using the space bar
 
 ![jx secret edit -i](/images/v3/oauth_secret_edit.png)
 
-Now enter the client id and secret you got from the Prerequisites step above.
+Now enter the client id and secret you got from the Prerequisites step above,as well as the generated random `secret-cookie`.
  
 Once entered you can wait to see the oauth2-proxy pod become Available using
 ```
