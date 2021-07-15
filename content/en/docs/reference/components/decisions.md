@@ -23,13 +23,13 @@ Jenkins X strongly recommends using public cloud managed Kubernetes clusters whe
 i.e. let folks that know how to run containers and manage clusters at scale so you can focus on adding value to your business.
 
 
-## Draft
+## Draft (deprecated)
 
 [Draft](https://draft.sh) has a few capabilities but Jenkins X only uses the language detection and pack creation feature.  Jenkins X maintains it's own [draft packs](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) tailored to run with Jenkins X.
 
 Draft provides a great way to bootstrap a source code project with the necessary packaging needed to run the application on Kubernetes.
 
-The Draft project came from Deis who were acquired by Microsoft and continue to invest and evolve their Kubernetes developer story.
+The Draft project came from Deis who were acquired by Microsoft and continue to invest and evolve their Kubernetes developer story. 
 
 ## Helm
 
@@ -45,7 +45,7 @@ The Helm project came from Deis who were acquired by Microsoft and continue to i
 
 Jenkins X uses [Skaffold](https://github.com/GoogleContainerTools/skaffold) to perform the build and push image actions in a pipeline.  Skaffold allows us to implement different image builder and registries services like [Google Container Builder](https://cloud.google.com/container-builder/), [Azure Container Builder](https://github.com/Azure/acr-builder) and [ECR](https://aws.amazon.com/ecr/).  
 
-For folks that aren't running on a public cloud with container builder or registry services then Skaffold can also work with [kaniko](https://github.com/GoogleContainerTools/kaniko), this allows pipelines to build docker images using rootless containers.  This is significantly more secure than mounting the docker socket from each node in the cluster.
+For folks that aren't running on a public cloud with container builder or registry services then Skaffold can also work with [kaniko](https://github.com/GoogleContainerTools/kaniko), this allows pipelines to build docker images using rootless containers.  This is significantly more secure than mounting the docker socket from each node in the cluster. 
 
 ## Prow
 
