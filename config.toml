@@ -39,6 +39,11 @@ enableMissingTranslationPlaceholders = true
 	weight = 3
 	languageName = "Español"
 	contentDir = "content/es"
+[languages.ja]
+	languageCode = "ja"
+	weight = 4
+	languageName = "日本語"
+	contentDir = "content/ja"
 
 disableKinds = ["taxonomy", "taxonomyTerm"]
 
