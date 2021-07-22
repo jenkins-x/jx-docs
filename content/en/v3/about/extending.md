@@ -106,6 +106,42 @@ spec:
     label: My Pipeline Catalog
  ```
 
+#### Updatebot for custom pipeline catalogs
+
+You can use _updatebot_ to keep your custom pipeline catalog up to date. Add this config to your cluster repo in _.jx/updatebot.yaml_:
+
+```yaml
+apiVersion: updatebot.jenkins-x.io/v1alpha1
+kind: UpdateConfig
+spec:
+  rules:
+    - urls:
+        - https://github.com/my-org/jx3-pipeline-catalog
+      changes:
+        - regex:
+            pattern: "jenkins-x/jx:(.*)"
+            files:
+              - "**/*.yaml"
+        - regex:
+            pattern: "jenkins-x/jx-boot:(.*)"
+            files:
+              - "**/*.yaml"
+```
+
+To update your pipeline catalog with every cluster upgrade, add these steps to your _.lighthouse/jenkins-x/release.yaml_  before the _admin-log_ step:
+
+```yaml
+- image: perl:slim
+  name: next-version
+  script: |
+    #!/usr/bin/env sh
+    perl -ne'/version: (.*)/ && print $1' versionStream/packages/jx.yml > VERSION
+- image: uses:jenkins-x/jx3-pipeline-catalog/tasks/updatebot/release.yaml@versionStream
+  name: promote-release
+```
+
+This will open a PR on the pipeline catalog repo if updates are available. If Jenkins X manages the pipeline catalog repo, the PRs will be automatically merged.
+
 ## QuickStarts
 
 Quickstarts are sample projects which are used `jx project quickstart` when you [create new projects](/v3/develop/create-project/)
