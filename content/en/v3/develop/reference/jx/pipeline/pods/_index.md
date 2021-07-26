@@ -43,6 +43,7 @@ Display the Tekton build pods
       --branch string      Filters the branch
       --build string       The build number to view
       --context string     Filters the context of the build
+  -e, --env string         The name of the environment to view pipelines for the git repository
   -f, --filter string      Filters all the available jobs by those that contain the given text
   -g, --giturl string      The git URL to filter on. If you specify a link to a github repository or PR we can filter the query of build pods accordingly
   -h, --help               help for pods

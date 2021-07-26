@@ -48,6 +48,7 @@ Display a build log
       --context string           Filters the context of the build
   -c, --current                  Display logs using current folder as repo name, and parent folder as owner
       --dir string               the directory to search for the .git to discover the git source URL (default ".")
+  -e, --env string               The name of the environment to view pipelines for the git repository
       --fail-with-pod            Return an error if the pod fails
   -f, --filter string            Filters all the available jobs by those that contain the given text
   -g, --giturl string            The git URL to filter on. If you specify a link to a github repository or PR we can filter the query of build pods accordingly
