@@ -78,3 +78,28 @@ If a non-reviewer submits a Pull Request it won't trigger CI pipelines by defaul
 
 If you have public git repositories this also avoids the security issue of a non-approver submitting a Pull Request to change the pipeline to email them your security credentials in the CI pipeline ;)
 
+## How do I configure multiple approvers
+
+You may want to use multiple people to approve pull requests. e.g. to approve promotion Pull Requests on your Production cluster git repository
+
+If so you could let github perform the approval and auto-merge for you.
+
+You can then use the `review_approved_required` property in the `Scheduler` to disable keeper from trying to automatically merge pull requests.
+
+The version stream comes with a scheduler configured for this called [environment-review-required.yaml](https://github.com/jenkins-x/jx3-versions/blob/master/schedulers/environment-review-required.yaml) so just modify your `.jx/gitops/source-config.yaml` file to specify `scheduler: environment-review-required` for the repository in question like this:
+
+```yaml 
+apiVersion: gitops.jenkins-x.io/v1alpha1
+kind: SourceConfig
+metadata:
+  creationTimestamp: null
+spec:
+  groups:
+  - owner: myorg
+    provider: https://github.com
+    providerKind: github
+    repositories:
+    - name: some-env-repo
+      scheduler: environment-review-required
+    scheduler: in-repo
+```
