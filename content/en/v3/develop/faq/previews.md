@@ -37,3 +37,16 @@ For details see [how to add additional preview steps](/v3/develop/environments/p
 ## How do I add other services into a Preview?
 
 see [how to add resources to your previews](/v3/develop/environments/preview/#adding-more-resources)
+
+## How do I inject the Preview URL into other services?
+
+The preview namespace and URL are [available as environment variables](/v3/develop/environments/preview/#environment-variables) after the preview has been created.
+
+However if you want to pass in the preview URL to [other charts included in your preview](/v3/develop/environments/preview/#adding-more-resources) via the `preview/helmfile.yaml` file you can:
+
+* use the service URL rather than ingress which is much simpler and does not depend on the namespace or domain. e.g. just use `http://my-app-name`
+* add a `values.yaml.gotmpl` file for the chart to [configure its values](/v3/develop/apps/#customising-charts) you wish to inject the URL into and pass in whatever yaml is required to configure the preview URL using the following expression. The example below uses `someValue` as the key to specify the URL but use whatever yaml keys your chart expects: 
+
+```yaml 
+someValue:  "{{ requiredEnv "APP_NAME" }}-pr{{ requiredEnv "PULL_NUMBER" }}.{{ .Values.jxRequirements.ingress.domain }}"
+```
