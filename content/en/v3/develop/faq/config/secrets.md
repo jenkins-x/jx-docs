@@ -73,6 +73,48 @@ e.g. if you have [ksd](https://github.com/mfuentesg/ksd) installed on your `$PAT
  ```bash
 kubectl get secret -oyaml lighthouse-oauth-token | ksd
  ```                  
+          
+## How do I configure secrets differently in Staging versus Production?
+
+The simplest solution is to use [multiple clusters](/v3/admin/guides/multi-cluster/) then you can have a separate secrets manager (cloud secret store or vault instance) per cluster.
+
+Otherwise here are a few options:
+
+* add an `ExternalSecret` into your helm charts instead of a kubernetes `Secret` and configure it based on the namespace (or other settings in your chart) to choose different secret store locations to populate the `Secret`. 
+  * e.g. if you are sharing a Vault between staging and production then you can use different paths in vault; or if you are using a cloud secret store you can use different projects / accounts / secret locations etc.
+  * to help migrate from Secret -> ExternalSecret you could start off with the generated ExternalSecret yaml file in the `config-root/namespaces/$namespace/$chart/$name-secret.yaml` file and copy it into your apps `charts/$appName/templates` directory then parameterise it in the usual helm way with `{{ .Values.something }}` expressions where you need to configure things differently per namespace/environment.   
+
+* for Vault you can specify an annotation on your `Secret` to use a custom prefix in the vault paths for different namespaces or environments:
+
+e.g. in your `Secret` in `charts/$appName/templates/something-secret.yaml` you can use something like this:
+
+```yaml 
+apiVersion: v1
+kind: Secret
+metadata:
+  name: something
+  annotations:
+    secret.jenkins-x.io/prefix: "{{ .Values.secretPrefix }}" 
+type: Opaque
+data:  
+...
+```
+
+Then add to your `charts/$appName/values.yaml`  file something like:
+
+```yaml
+# default secret prefix location in vault
+secretPrefix: staging 
+```
+                     
+Then in the production environment you can create a values.yaml file like this:
+
+```yaml
+secretPrefix: production
+```
+and passing this values.yaml file into the `helmfiles/jx-production/helmfile.yaml` file for your charts `release:` entry [to customize the chart](/v3/develop/apps/#customising-charts)
+
+This will then use different paths in vault for staging: `secret/data/staging/$appName/something/$key` to production: `secret/data/production/$appName/something/$key`
 
 
 ## How do I change the secret poll period in kubernetes external secrets?
