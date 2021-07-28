@@ -32,7 +32,16 @@ helm list --all-namespaces
 
 ## How do I delete an application?
 
-You can remove an application or helm chart from an environment by removing the `chart:` entry in the `helmfiles/$namespace/helmfile.yaml` file in your dev git repository and peforming a git commit and pushing the change (usually via a Pull Request). 
+There is a [jx application delete](/v3/develop/reference/jx/application/delete/) command to remove a repository from the source configuration and for removing any deployed instances of the application.
+
+e.g.
+
+
+```bash 
+jx application delete --name myapp
+```
+
+Or you can remove an application or helm chart from an environment by removing the entry in the `releases:` list in the `helmfiles/$namespace/helmfile.yaml` file in your dev git repository and peforming a git commit and pushing the change (usually via a Pull Request). 
 
 Once the pull request is merged, the [boot job will trigger](/v3/about/how-it-works/#boot-job) which will remove the application from kubernetes.
 
