@@ -2,7 +2,7 @@
 title: jx application delete
 linktitle: delete
 type: docs
-description: "Deletes the application from the lighthouse configuration and optionally promoted namespaces"
+description: "Deletes the application deployments and removes the lighthouse configuration"
 aliases:
   - jx-application_delete
 ---
@@ -15,16 +15,24 @@ jx application delete
 
 ### Synopsis
 
-Deletes the application from the lighthouse configuration and optionally promoted namespaces
+Deletes the application deployments and removes the lighthouse configuration 
+
+This command actually create a Pull Request on the development cluster git repository so you can review the changes to be made.
 
 ### Examples
 
   ```bash
-  # deletes the application with the given name
+  # deletes the application with the given name from the development cluster
   jx application delete --name myapp
   
+  # deletes the deployed application for the remote production cluster only
+  jx application delete --name myapp --env production
+  
   # deletes the application with the given name with the git owner
-  jx application delete --name myapp --owner myorg%!(EXTRA string=jx-gitops, string=jx-gitops, string=jx-gitops)
+  jx application delete --name myapp --owner myorg
+  
+  # deletes the deployed applications but doesn't remove the '.jx/gitops/source-config.yaml' entry - so new releases come back
+  jx application delete --name myapp --owner myorg --no-source
 
   ```
 ### Options
