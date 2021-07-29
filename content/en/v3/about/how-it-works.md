@@ -140,6 +140,23 @@ Here are the steps involved in [creating projects](/v3/develop/create-project/) 
 
 
 You can see an example of this in the [demo of Jenkins X V3](/blog/2020/09/16/jx-v3-alpha/)  
+   
+
+### Secrets 
+
+We want to [check all of the kubernetes resources into git](/v3/develop/faq/general/#why-does-jenkins-x-use-helmfile-template) so they are all nicely versioned through time so its easy to diagnose when things start to misbehave.
+
+So we do this:
+
+* Any **Secret** resource generated in a helm chart is is converted to an **ExternalSecret** so that it can be checked into git
+  * we use [secret mapping](https://github.com/jenkins-x/jx-secret#mappings) to generate **ExternalSecret** resources which define where the `Secret` will be populated from (e.g. vault or your cloud provider secret store)
+* secrets can be populated by either:
+  * directly in the secret store (e.g. via vault or the cloud secret store directly). If you are using vault you can [follow these instructions](/v3/guides/secrets/vault/#using-vault) to access the vault UI
+  * via [jx secret edit](/v3/guides/secrets/#edit-secrets) command
+  * via the [jx secret populate](/v3/develop/reference/jx/secret/populate) command inside the boot job which uses the `versionStream/charts/*/secret-schema.yaml` files to populate with generators and default values from the [secret schema files](https://github.com/jenkins-x/jx-secret#schema) 
+
+
+What this basically means is that helm charts with secrets just work and you can then modify secrets or rotate secrets via the secret store. Also if you lose or move a cluster, GitOps will restore your cluster again using the contents of your git repository and whatever is in your secret store. 
 
 #### Troubleshooting
 
