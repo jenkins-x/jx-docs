@@ -10,7 +10,7 @@ When changes are merged to the main branch in the Jenkins X pipeline catalog a n
 
 ## How it works
 
-The release pipelines use the [jx promote --all](https://github.com/jenkins-x/jx-promote/blob/master/docs/cmd/jx-promote.md#jx-promote) command which creates Pull Requests on all Environments conigured in your `jx-requirements.yml` file (see the [Configuration](/v3/develop/environments/config/)) 
+The release pipelines use the [jx promote --all](https://github.com/jenkins-x/jx-promote/blob/master/docs/cmd/jx-promote.md#jx-promote) command which creates Pull Requests on all Environments configured in your `jx-requirements.yml` file (see the [Configuration](/v3/develop/environments/config/)) 
 
 * every environment which is defined in `jx-requirements.yml` as `promotionStrategy` **Auto** or **Manual** is included in a Pull Request to promote the new version to that environment
 
