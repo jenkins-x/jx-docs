@@ -112,10 +112,32 @@ This means the reason for why a preview fails should appear as a kubernetes even
 
 e.g. if you make a mistake configuraing the helm chart on your preview you should see the error in the pipeline log. To fix the error just modify the code and git commit and push the fix and you should see the new results in the pipeline log.
 
+  
+## Configure the preview URL
 
-## Adding more resources
+Depending on your helm chart or dependent charts you may wish to customise the kubernetes `Service` or `Ingress` name used to find the URL to use in the Preview Pull Request command and in the [UI integrations](/v3/develop/ui/) to visualise the current Previews.
 
-Its common when creating, for example, a web front end to need a backend or database to work from to verify that the microservice works.
+You can specify the `Service` or `Ingress` name via the **JX_PREVIEW_SERVICE** environment variable name.
+
+e.g. add the following line to your **.jx/variables.sh** file, creating the file if it doesn't exist:
+
+```bash 
+export JX_PREVIEW_SERVICE="my-custom-service-or-ingress"
+```
+
+If you need to add a path to the current preview service URL host name you can set **JX_PREVIEW_PATH** 
+
+e.g. add the following line to your **.jx/variables.sh** file, creating the file if it doesn't exist:
+
+```bash 
+export JX_PREVIEW_PATH="/customers/acme"
+```
+
+Then that path will be appended to the preview URL's host name.
+
+## Adding more charts
+
+It's common when creating, for example, a web front end to need a backend or database to work from to verify that the microservice works.
 
 For each application the preview environment is defined by [helmfile](https://github.com/roboll/helmfile) at **preview/helmfile.yaml**.
 
@@ -142,6 +164,11 @@ releases:
 
 ...
 ```
+      
+
+## Adding more resources
+
+If you need to add some kubernetes resources you can add those using the local chart source code model as described in [how to add new kubernetes resources](/v3/develop/apps/#adding-resources)
 
 
 ## Additional preview steps
