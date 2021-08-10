@@ -1,14 +1,14 @@
 ---
-title: Console
-linktitle: Console
+title: Octant
+linktitle: Octant
 type: docs
-description: Jenkins X Console based on Octant 
-weight: 50
+description: desktop Jenkins X Console based on Octant 
+weight: 60
 aliases:
   - /v3/develop/ui/octant
 ---
 
-As a general purpose console for working with Kubernetes, Jenkins X, Tekton and more resources we highly recommend [Octant](https://octant.dev/)
+As a general purpose console for working with Kubernetes, Jenkins X, Tekton and more resources we highly recommend either [Octant](https://octant.dev/) or [Lens](/v3/develop/ui/lens/)
 
 To run the [Octant](https://octant.dev/) UI please make sure you are in a local terminal (not inside a VM) as it will run a local process and open a web browser to access a local port. 
 

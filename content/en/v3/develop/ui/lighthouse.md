@@ -1,9 +1,9 @@
 ---
-title: Lighthouse WebUI
-linktitle: Lighthouse WebUI
+title: Lighthouse Dashboard
+linktitle: Lighthouse Dashboard
 type: docs
 description: Read-only web UI view of Lighthouse events, jobs and merge status/history
-weight: 100
+weight: 25
 aliases:
   - /v3/develop/ui/lighthouse
 ---
