@@ -7,8 +7,8 @@ weight: 50
 ---
     
 [Lens](https://k8slens.dev/) is a desktop console for Kubernetes which runs locally on your laptop as a desktop application.
-                             
 
+![](/images/lens/lens.png)
 
 ## Install Lens
 
