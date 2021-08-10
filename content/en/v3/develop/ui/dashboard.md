@@ -3,7 +3,7 @@ title: Dashboard
 linktitle: Dashboard
 type: docs
 description: Read only dashboard view of pipelines and logs
-weight: 100
+weight: 20
 aliases:
   - /v3/develop/ui/dashboard
 ---

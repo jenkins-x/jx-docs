@@ -1,9 +1,9 @@
 ---
-title: Console
-linktitle: Console
+title: Octant
+linktitle: Octant
 type: docs
 description: desktop Jenkins X Console based on Octant 
-weight: 50
+weight: 60
 aliases:
   - /v3/develop/ui/octant
 ---
