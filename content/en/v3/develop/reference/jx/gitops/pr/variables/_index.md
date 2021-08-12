@@ -20,8 +20,11 @@ Adds Pull Request environment variables to the .jx/variables.sh file
 ### Examples
 
   ```bash
-  # add Pull Request env vars to the .jx/variables.sh file
-  jx-gitops pr variables
+  # add variables from the Pull Request and labels to the .jx/variables.sh file
+  jx gitops pr variables
+  
+  # add variables from the Pull Request, labels and comments of the form '/jx-var FOO=bar' to the .jx/variables.sh file
+  jx gitops pr variables --comments
 
   ```
 ### Options
@@ -29,7 +32,7 @@ Adds Pull Request environment variables to the .jx/variables.sh file
 ```
       --branch string           specifies the branch if not inside a git clone
       --comment-prefix string   the comment prefix to specify environment variables (default "/jx-var")
-      --comments                should we query all the comments on the Pull Request and find any variables using special comments starting with the comment prefix
+      --comments                if enabled query all the comments on the Pull Request and find any variables using special comments starting with the comment prefix
       --dir string              the directory to search for the .git to discover the git source URL (default ".")
       --env-prefix string       the prefix added to any variable name defined via a comment. e.g. a comment of '/jx-var CHEESE=edam' would generate 'export PR_COMMENT_CHEESE=edam' (default "PR_COMMENT_")
   -f, --file string             the default variables file to lazily create or enrich (default ".jx/variables.sh")
