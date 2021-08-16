@@ -52,7 +52,22 @@ jx ui
 e.g. see the **Pod** link to the left of the  **Steps** / **Logs** links in the nav bar
 
 <iframe width="646" height="327" src="https://www.youtube.com/embed/2LCPHi0BnUg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-       
+
+
+## Upgrading CLI fails 
+
+I run `jx upgrade cli` and get a failure:
+
+
+```bash
+$ jx upgrade cli   
+using latest upstream versionstream URL https://github.com/jenkins-x/jxr-versions.git from Kptfile to resolve jx-cli version
+error: failed to find jx cli version: invalid version requested: : Version string empty `
+```
+
+The issue is you are using an old alpha of the `jx` binary which no longer auto upgrades with the GA [jx releases](https://github.com/jenkins-x/jx/releases)
+
+To fix please [download a new `jx` binary](/v3/admin/setup/jx3/).
 
 ## Releasing a chart fails with 500
 
