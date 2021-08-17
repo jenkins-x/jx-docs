@@ -68,3 +68,49 @@ repository: none
 ```
 
 Note that without using an artifact repository you will not be able to deploy Maven artifacts; though [ChartMuseum](https://chartmuseum.com/) will still be used as a repository of charts
+
+
+## Maven Repository
+
+If you are using Nexus or Bucketrepo things should just work out of the box. 
+          
+For other solutions try the following:
+
+### GitHub
+
+If you want to use github packages to publish maven artifacts use the following in your `jx-requirements.yml`
+
+```yaml
+repository: github
+repositories:
+  maven:
+    releaseUrl: https://maven.pkg.github.com/myowner/myrepo/
+
+    # optional if different to the above
+    snapshotURL: https://maven.pkg.github.com/myowner/mysnapshots/
+```
+
+### Custom
+
+If you want to use a custom maven repository then populate it as follows:
+
+```yaml
+repository: mycustomrepo
+repositories:
+  maven:
+    releaseUrl: https://myrepo.acme.com/releases/
+
+    # optional if different to the above
+    snapshotURL: https://myrepo.acme.com/releases/snapshots/
+```
+
+Then the `myrepo` `Secret` will be used with properties `username` and `password` to generate the equivalent `<server>` section in your maven settings XML file:
+
+
+```xml 
+<server>
+  <id>mycystomrepo</id>
+  <username>$secret.mycystomrepo.username</username>
+  <password>$secret.mycystomrepo.password</password>
+</server>
+```

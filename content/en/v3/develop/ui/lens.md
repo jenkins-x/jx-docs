@@ -25,7 +25,7 @@ Follow the Lens documentation on [installing an extension](https://docs.k8slens.
 
 * go to the **File** (or **Lens** on macOS) > **Extensions** in the application menu
 * enter the following URL into the **Install Extension** input field
-  * https://registry.npmjs.org/@jenkins-x-plugins/jx-lens/-/jx-lens-{{< jx-lens-version >}}.tgz
+  * @jenkins-x-plugins/jx-lens
 * make sure the extension is **Enabled**
 
 
