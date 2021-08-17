@@ -109,8 +109,8 @@ Then the `myrepo` `Secret` will be used with properties `username` and `password
 
 ```xml 
 <server>
-  <id>mycystomrepo</id>
-  <username>$secret.mycystomrepo.username</username>
-  <password>$secret.mycystomrepo.password</password>
+  <id>mycustomrepo</id>
+  <username>$secret.mycustomrepo.username</username>
+  <password>$secret.mycustomrepo.password</password>
 </server>
 ```
