@@ -254,6 +254,23 @@ jx pipeline override
 This will then prompt you to pick which pipeline and step that's inherited via the `image: uses:sourceURI` notation. When chosen the step will be inlined into your local file so you can [edit any of the properties](#customizing-an-inherited-step).
 
 You can use the git compare to see the changes and remove any properties you don't wish to override.
+        
+
+### Overriding specific properties of a step locally
+
+Rather than completely replacing the entire step with whatever is in the catalog; you can just specify the properties you wish to override.
+
+e.g. usually you may just want to override the `script` blog to modify, say, a command line argument passed into a command.
+
+To do this just specify the **-P** with the name of the property.
+
+e.g.
+
+```bash
+jx pipeline override -P script
+```
+
+You will then just have a locally modified `script` property in the Tekton YAML for the step you overrode. You can then locally modify to suit - or remove to go back to the inherited catalog properties.
 
 
 ## Tekton Catalog
