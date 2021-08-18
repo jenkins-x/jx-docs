@@ -41,7 +41,7 @@ see [how to add resources to your previews](/v3/develop/environments/preview/#ad
 
 ## How do I configure Secrets in a Preview?
 
-Previews are installed via `helmfile sync` unlike the [usual approach for promoted environments](v3/develop/faq/general/#why-does-jenkins-x-use-helmfile-template) like `Dev`, `Staging` and `Production` as the changes have not yet been released.
+Previews are installed via `helmfile sync` unlike the [usual approach for promoted environments](/v3/develop/faq/general/#why-does-jenkins-x-use-helmfile-template) like `Dev`, `Staging` and `Production` as the changes have not yet been released.
 
 This means the usual [conversion from Secret resources to ExternalSecrets](/v3/about/how-it-works/#secrets) is not enabled for previews.
 
