@@ -101,5 +101,5 @@ Another option is to reuse the Jenkins X `Makefile` and pipeline to setup the `c
 
 If you are looking at adopting GitOps then we highly recommend you [check into git all of your kubernetes resources including those that come from a helm charts or kustomize scripts](/v3/develop/faq/general/#why-does-jenkins-x-use-helmfile-template) (apart from `Secrets`!) as it massively simplifies understanding how kubernetes resources change over time using just pure git.
 
-If you are using GitOps you may want to look into using [Kubernetes External Secrets](https://github.com/external-secrets/kubernetes-external-secrets) to simplify integrating secrets for cloud native secret stores into your kubernetes cluster to provide finer grained RBAC and easier secret rotion.
+If you are using GitOps you may want to look into using [Kubernetes External Secrets](https://github.com/external-secrets/kubernetes-external-secrets) to simplify integrating secrets for cloud native secret stores into your kubernetes cluster to provide finer grained RBAC and easier secret rotation.
 
