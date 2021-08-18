@@ -26,7 +26,7 @@ Here is a demo which shows how to debug pipelines:
 
 Make sure [your cluster is upgraded to the latest version stream](/v3/admin/setup/upgrades/cluster/). 
 
-If you intend to use the `jx` in the below examples make sure you [upgrade the CLI too](v3/admin/setup/upgrades/cli/)
+If you intend to use the `jx` in the below examples make sure you [upgrade the CLI too](/v3/admin/setup/upgrades/cli/)
 
 
 ### Enable a breakpoint
