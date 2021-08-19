@@ -27,22 +27,22 @@ For more documentation see: https://jenkins-x.io/docs/using-jx/creating/import/
 
   ```bash
   # Import the current folder
-  jx-project import
+  jx project import
   
   # Import a different folder
-  jx-project import /foo/bar
+  jx project import /foo/bar
   
   # Import a Git repository from a URL
-  jx-project import --url https://github.com/jenkins-x/spring-boot-web-example.git
+  jx project import --url https://github.com/jenkins-x/spring-boot-web-example.git
   
   # Select a number of repositories from a GitHub organisation
-  jx-project import --github --org myname
+  jx project import --github --org myname
   
   # Import all repositories from a GitHub organisation selecting ones to not import
-  jx-project import --github --org myname --all
+  jx project import --github --org myname --all
   
   # Import all repositories from a GitHub organisation which contain the text foo
-  jx-project import --github --org myname --all --filter foo
+  jx project import --github --org myname --all --filter foo
 
   ```
 ### Options
