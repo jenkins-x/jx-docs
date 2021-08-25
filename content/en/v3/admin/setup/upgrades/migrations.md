@@ -42,11 +42,11 @@ terraform apply
 3. Alternatively if not using Terraform, simply install the following charts in the `jx-vault` namespace,
 
 ```shell
-helm repo add jx3 https://storage.googleapis.com/jenkinsxio/charts
+helm repo add jx3 https://jenkins-x-charts.github.io/repo
 helm repo add banzaicloud-stable https://kubernetes-charts.banzaicloud.com
 helm repo update
 helm install vault-operator banzaicloud-stable/vault-operator --version 1.10.0 -n jx-vault 
-helm install vault-instance jx3/vault-instance --version 1.0.15 -n jx-vault 
+helm install vault-instance jx3/vault-instance --version 1.0.20 -n jx-vault 
 ```
 
 4. If you wish to migrate secrets from your existing (soon to be decommissioned) Vault then now is the time to do that by
