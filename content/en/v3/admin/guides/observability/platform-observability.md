@@ -32,14 +32,14 @@ The second step is to create the `helmfiles/jx-observability/helmfile.yaml` file
 ```yaml 
 namespace: jx-observability
 repositories:
-- name: jx3
-  url: https://storage.googleapis.com/jenkinsxio/charts
+- name: jxgh
+  url: https://jenkins-x-charts.github.io/repo
 - name: grafana
   url: https://grafana.github.io/helm-charts
 - name: prometheus-community
   url: https://prometheus-community.github.io/helm-charts
 releases:
-- chart: jx3/grafana-dashboard
+- chart: jxgh/grafana-dashboard
   name: grafana-dashboard
 - chart: grafana/loki
   name: loki
