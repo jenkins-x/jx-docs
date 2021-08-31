@@ -32,9 +32,23 @@ To import an existing project use the [jx project import](/v3/develop/reference/
 jx project import
 ```        
 
-See the [import documentation](/docs/create-project/creating/import/) for more information
+**NOTE** that we recommend [trying out a quickstart first](h/v3/develop/create-project/#create-a-new-project-from-a-quickstart) before importing a project so that:
 
-Note that the old Jenkins X 2.x alias `jx import` is still supported but will be deprecated eventually.
+* you can verify your cluster is setup correctly so that you can create new charts + images, promote them to staging and create Preview Environments on Pull Requests etc.
+* as you start to import projects which may have their own custom `Dockerfile` or custom charts you can compare your custom chart versus the charts included in the Jenkins X catalog to see how it works. e.g.
+  * the way the default pipelines update the image tag on each release to use a versioned image in the helm chart or the
+  * how the ingress domain URL is injected into the `Ingress` resource in the helm chart from the environment (preview / staging / production etc) so that the same chart can be deployed into any environment and things just work (with and without TLS)
+
+
+### Default file layout
+
+If you are importing your own repository which has a `Dockerfile` and/or a helm chart the default pipelines look for these files at:
+
+* `Dockerfile` in the root directory of your repository
+* `charts/$repoName/Chart.yaml` for the helm chart
+
+You are free to use other conventions if you prefer; though you'll need to modify the pipelines to look in different locations for these files.
+
 
 ### Importing projects with Jenkinfiles
 
