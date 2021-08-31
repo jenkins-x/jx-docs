@@ -31,6 +31,8 @@ Then if you navigate to the pipeline you are interested in and select the envelo
 </figcaption>
 </figure>
 
+If a command fails it can be useful to enable [debugging of pipeline steps](/v3/develop/pipelines/debugging/) so that you can open a terminal inside a failed pipeline pod and try determine why things failed and to try out alternative commands to get things working.
+
 If that doesn't help another option is to [edit the pipeline step](/v3/develop/pipelines/#editing-pipelines) via the `.lighthouse/jenkins-x/release.yaml` or  `.lighthouse/jenkins-x/pullrequest.yaml` file to add the command: `sleep infinity` in the `script:` value before the command that is not working.
 
 You can then `kubectl exec` into the pod at that step and look around and try running commands inside the pod/container.
