@@ -29,7 +29,16 @@ e.g. for the default Jenkins X CI/CD pipelines edit either:
   * `release.yaml` to edit the Release [Task](https://tekton.dev/docs/pipelines/tasks/#configuring-a-task), [Pipeline](https://tekton.dev/docs/pipelines/pipelines/#configuring-a-pipeline) or [PipelineRun](https://tekton.dev/docs/pipelines/pipelineruns/#configuring-a-pipelinerun) 
 
 You can test out changes to the Pull Request pipeline by submitting changes in a Pull Request. Changes to a release only take place after merging the change to the main branch.
-          
+
+### Overriding steps
+
+The default pipelines use the default [Jenkins X Catalog](/v3/develop/pipelines/catalog/) and so the details of the steps such as the container image and commands used are often inherited.
+
+You can override steps locally by:
+
+* [Overriding a pipeilne step locally](/v3/develop/pipelines/catalog/#overriding-a-pipeline-step-locally) so that you inline the step details into your local YAML file and then edit accordingly.
+* [Override a specific step property locally such as the script property](/v3/develop/pipelines/catalog/#overriding-specific-properties-of-a-step-locally) which lets you just inline, say, the `script` commands to modify the commands run
+
 ### Tools
 
 * [viewing the effective pipeline](/v3/develop/pipelines/catalog/#viewing-the-effective-pipeline)

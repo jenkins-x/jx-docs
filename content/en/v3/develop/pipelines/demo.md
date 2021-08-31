@@ -3,7 +3,7 @@ title: Demo
 linktitle: Demo
 type: docs
 description: Demo of triggering and customising pipelines
-weight: 300
+weight: 150
 ---
 
 
