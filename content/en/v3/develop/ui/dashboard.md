@@ -18,9 +18,9 @@ This provides a simple read only web UI for viewing pipelines and pipeline logs 
 
 If you [have a recent jx binary](/v3/guides/upgrade/#cli) run:
 
-```bash 
+```bash
 jx dash
-``` 
+```
 
 and it will open the dashboard using the basic authentication login and password.
 
@@ -28,7 +28,7 @@ and it will open the dashboard using the basic authentication login and password
 
 ### Viewing from a Pull Request
 
-If you create a Pull Request on a git repository you have [created or imported](/v3/develop/create-project/) in Jenkins X you should see a link on the Pull Request. 
+If you create a Pull Request on a git repository you have [created or imported](/v3/develop/create-project/) in Jenkins X you should see a link on the Pull Request.
 
 Here's an example - see the **Details** link on the right of the Pull Request pipeline:
 
@@ -42,11 +42,11 @@ If you click the **Details** link that should open the [jx-pipelines-visualizer]
 
 Unless you [customize the chart](/v3/develop/apps/#customising-charts) to change the `Ingress` the default will use _basic authentication_ to access the web UI to avoid your pipeline logs being visible on the internet.
 
-The default username is `admin`. 
+The default username is `admin`.
 
 To find the generated random password to access the UI type:
 
-```bash 
+```bash
 jx ns jx
 kubectl get secret jx-basic-auth-user-password -o jsonpath="{.data.password}" | base64 --decode
 ```
@@ -61,14 +61,13 @@ If you [enable the observability stack](/v3/admin/guides/observability/), then y
 
 ![](/images/jx-pipelines-visualizer/pipeline-trace.gif)
 
-
 ### Lighthouse UI
 
 There is an additional [optional UI for viewing lighthouse](https://github.com/jenkins-x-plugins/lighthouse-webui-plugin).
 
 To install it add the following to the `releases:`  section of your `helmfiles/jx/helmfile.yaml`:
 
-```yaml 
+```yaml
 - chart: jx3/lighthouse-webui-plugin
   version: 0.1.2
   name: lighthouse-webui-plugin

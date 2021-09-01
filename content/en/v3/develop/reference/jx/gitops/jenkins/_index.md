@@ -23,8 +23,6 @@ Commands for working with Jenkins GitOps configuration
   -h, --help   help for jenkins
 ```
 
-
-
 ### Source
 
 [jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

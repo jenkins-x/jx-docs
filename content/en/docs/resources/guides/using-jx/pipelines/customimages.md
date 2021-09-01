@@ -5,9 +5,10 @@ weight: 5
 description: >
   Using custom docker images in your steps
 ---
-Jenkins X supports various types of Docker builder images, as long as the image is published in an accessible registry. 
+Jenkins X supports various types of Docker builder images, as long as the image is published in an accessible registry.
 
 One example is to re-use Google’s fairly small [cloud builder images](https://github.com/GoogleCloudPlatform/cloud-builders) to perform quick tasks:
+
 ```yaml
          - image: gcr.io/cloud-builders/npm
            name: install-dependencies
@@ -16,6 +17,7 @@ One example is to re-use Google’s fairly small [cloud builder images](https://
 ```
 
 Or you can use your own published images like this:
+
 ```yaml
           - image: gcr.io/jenkinsxio/hugo-extended:0.60.1-3
             name: build-website

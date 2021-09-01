@@ -9,8 +9,6 @@ description: list of jx commands which have been deprecated
 
 ## Deprecated Commands
 
-
-
 | Command        | Removal Date   | Replacement  |
 |----------------|----------------|--------------|
 | jx create addon kubeless | Sep 1 2020 | jx add app jx-app-kubeless |

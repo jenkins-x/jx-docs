@@ -24,6 +24,7 @@ Adds one or more secrets to the given ServiceAccount files
   jx-gitops sa secret -f config-root/namespaces/jx/mychart/my-sa.yaml --secret my-secret-name%!(EXTRA string=jx-gitops)
 
   ```
+
 ### Options
 
 ```
@@ -35,8 +36,6 @@ Adds one or more secrets to the given ServiceAccount files
   -s, --secret stringArray        the Secret names to add to the ServiceAccount
       --selector stringToString   adds Kubernetes label selector to filter on, e.g. -s app=pusher-wave,heritage=Helm (default [])
 ```
-
-
 
 ### Source
 

@@ -13,6 +13,7 @@ weight: 100
 - latest Jenkins X CLI, Infrastructure and Cluster git repository updates [upgrade](/v3/guides/upgrade)
 
 ### Cloud Infrastructure
+
 First we will configure the cloud infrastructure requirements:
 
 - a GCP Service Account with the `dns.admin` role, see [here](https://cloud.google.com/iam/docs/understanding-roles#dns-roles) for more information
@@ -35,11 +36,11 @@ subdomain     = "dev"
 We will now add details that will be passed to Jenkins X as requirements when booting the cluster.
 
 Add these to `values.auto.tfvars`
+
 ```yaml
 lets_encrypt_production = true
 tls_email               = your_email_address@googlegroups.com
 ```
-
 
 Now apply these changes:
 
@@ -48,12 +49,16 @@ git add values.auto.tfvars
 git commit -m 'feat: enable DNS cloud resources'
 git push
 ```
+
 You may want to set two environment variables here so that Terraform does not prompt for values
+
 ```
 export TF_VAR_jx_bot_username=
 export TF_VAR_jx_bot_token=
 ```
+
 now run
+
 ```bash
 terraform plan
 terraform apply
@@ -71,14 +76,16 @@ jx admin logs
 
 There is a timing issue with cert-manager and the admission controller so the first boot job may fail but second will run automatically and succeed.
 
-
-It can take a short while for DNS to propagate so you may need to wait for 5 - 10 minutes.  https://dnschecker.org/ is a useful way to check the status of DNS propagating.
+It can take a short while for DNS to propagate so you may need to wait for 5 - 10 minutes.  <https://dnschecker.org/> is a useful way to check the status of DNS propagating.
 
 To verify using the CLI run:
+
 ```bash
 kubectl get ingress -n jx
 ```
+
 and use the hook URL
+
 ```bash
 jx verify tls hook-jx.dev.foo.io  --production=false --timeout 20m
 ```
@@ -105,6 +112,7 @@ Git commit and push the change back to your remote git repository and follow the
 ```bash
 jx admin logs
 ```
+
 You will now be issued a valid TLS certificate
 
 ```bash

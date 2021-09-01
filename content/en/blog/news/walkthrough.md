@@ -11,17 +11,18 @@ aliases: []
 author: Kara de la Marck
 ---
 
-In this tutorial, we'll walk you through setting up Jenkins X on a Kubernetes cluster hosted on GKE. We will use GitHub as our Git provider. 
+In this tutorial, we'll walk you through setting up Jenkins X on a Kubernetes cluster hosted on GKE. We will use GitHub as our Git provider.
 
-The purpose of this tutorial is to give a detailed step-by-step walkthrough of setting up Jenkins X. 
-
+The purpose of this tutorial is to give a detailed step-by-step walkthrough of setting up Jenkins X.
 
 ### Setup used in this tutorial
-* GitHub as our Git provider and a GitHub user account, eg `MarckK` 
+
+* GitHub as our Git provider and a GitHub user account, eg `MarckK`
 * A Google Cloud Platform (GCP) account with the ability to provision kubernetes resources / create kubernetes clusters
-* Jenkins X `jx` binary installed. See [here for instructions on installing the `jx` binary](https://jenkins-x.io/docs/getting-started/setup/install/). 
+* Jenkins X `jx` binary installed. See [here for instructions on installing the `jx` binary](https://jenkins-x.io/docs/getting-started/setup/install/).
 
 * The Kubernetes command-line tool, which can be installed to your local installation using the `jx install` command:
+
 ```
 jx install dependencies -d kubectl
 ```
@@ -36,7 +37,7 @@ We are going to create a GitHub organisation which will have two members, a GitH
 
     Create an entirely new account that will be only for your bot. Name your bot anything you like, eg `jx-bot`.
 
-    The bot account must have a token created in your organization that authenticates the bot and allows it to perform various tasks on the repositories within your organization. 
+    The bot account must have a token created in your organization that authenticates the bot and allows it to perform various tasks on the repositories within your organization.
 
     Generate a Git token for your Pipeline Bot with the correct permissions via this [GitHub Link](https://github.com/settings/tokens/new?scopes=repo,read:user,read:org,user:email,write:repo_hook,delete_repo) and **copy the 40 character token**.
 
@@ -87,10 +88,10 @@ This has been implemented for `jx create` or `jx install` [apparently](https://j
 * First clone the [Jenkins X Boot configuration repo](https://github.com/jenkins-x/jenkins-x-boot-config) and `cd` into your newly cloned repo.
 
 * Open the `jx-requirements.yml` file of your newly cloned repo, eg. `jenkinx-x-boot-config/jx-requirements.yml`. This specifies the requirements of your installation, including:
-    * what Kubernetes provider to use
-    * whether to store secrets in the local file system or vault
-    * if you are using Terraform to manage your cloud resources
-   
+  * what Kubernetes provider to use
+  * whether to store secrets in the local file system or vault
+  * if you are using Terraform to manage your cloud resources
+
     Note, this is the main configuration file for `jx boot` and where you make most of your configuration changes.
 
     The `jx-requirements.yml` file is interesting to review, see the defaults in place, and make any changes you need.  
@@ -105,14 +106,13 @@ jx boot
 
 If you are not in a clone of a boot git repository then `jx boot` will clone this repository and `cd` into the clone.
 
-
 You can read more about [Jenkins X Boot in the documentation](https://jenkins-x.io/docs/getting-started/setup/boot/).
 
-Your Git and the pre-installation set up for Jenkins X will be checked and validated. You will see printed out: 
+Your Git and the pre-installation set up for Jenkins X will be checked and validated. You will see printed out:
 
 `Currently connected cluster is ```<cluster_name>``` in ```<cluster_location>``` in project ```<your_chosen_project>``
 
-You will be asked to confirm that you would like to `jx boot` your `<cluster_name>`. 
+You will be asked to confirm that you would like to `jx boot` your `<cluster_name>`.
 
 Then you will be asked a series of questions to ensure Jenkins X is installed properly on your cluster:
 
@@ -120,7 +120,7 @@ Then you will be asked a series of questions to ensure Jenkins X is installed pr
 
 * You will be asked to provide `Comma-separated git provider usernames of approvers for development environment repository`: Type in the name of the GitHub account that is a member of the organisation you created, eg `MarckK`.
 
-* You may receive a Warning that `TLS is not enabled so your webhooks will be called using HTTP.` You will be asked for confirmation to continue. 
+* You may receive a Warning that `TLS is not enabled so your webhooks will be called using HTTP.` You will be asked for confirmation to continue.
   * If you type 'No', the `jx boot` process will end with `error: cannot continue because TLS is not enabled.`
 
   * If you type 'Yes', then namespace `jx` will be created in your cluster and Jenkins X booted in that namespace.
@@ -145,7 +145,7 @@ Then you will be asked a series of questions to ensure Jenkins X is installed pr
 
 * More pipeline steps will be run. You should see output that your pods are running and other verification information telling you the state of your Jenkins x set-up.
 
-Then you will see confirmation on the state of your installation process, such as: 
+Then you will see confirmation on the state of your installation process, such as:
 
 `Installation is currently looking: GOOD`
 
@@ -158,6 +158,7 @@ To see the Jenkins X environments that have been created, the corresponding GitO
 ```bash
 jx get environments
 ```
+
 You should see something similar to:
 
 ```bash
@@ -190,6 +191,7 @@ To run this command, change your directory so that you are no longer within the 
 ```bash
 jx create quickstart --git-public=true
 ```
+
 We are adding the `--git-public=true` flag to ensure that our new quickstart application will create repositories that are public on GitHub, as our freemium GitHub organisation requires.
 
 For this example, select `golang-http`.
@@ -211,6 +213,7 @@ To view the status of the application, you can use the following:
 ```bash
 jx get activity -f jx-tutorial -w
 ```
+
 Note: -f is for --filter and -w is for --watch
 
 When the pipeline is complete, to view the application in each environment along with urls:
@@ -227,6 +230,7 @@ production.
 ```bash
 cd jx-tutorial
 ```
+
 _If you have 2FA enabled on your GitHub account, then you may need to use an api token as your password when prompted._
 
 ```bash
@@ -260,4 +264,3 @@ To delete the cluster run:
 ```bash
 gcloud container clusters delete <clustername> --zone <zone>
 ```
-

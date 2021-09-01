@@ -23,6 +23,7 @@ Exports the current populated values to a YAML file
   jx-secret export
 
   ```
+
 ### Options
 
 ```
@@ -31,8 +32,6 @@ Exports the current populated values to a YAML file
   -h, --help          help for export
   -n, --ns string     the namespace to filter the ExternalSecret resources
 ```
-
-
 
 ### Source
 

@@ -15,8 +15,6 @@ aliases:
 
 {{< developcards >}}
 
-
 ## Administration
 
 {{< admincards >}}
-

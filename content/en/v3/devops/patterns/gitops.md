@@ -20,12 +20,10 @@ However with the `GitOps` pattern developers don't modify kubernetes directly; i
 * it is easy to revert changes if things go bad
 * it helps share information between the team and to get feedback and reviews on changes to infrastructure
 
-
 ### Implementation approaches
 
-You could implement the GitOps pattern by just running `helm install mychart` in some kind of script or operator. 
+You could implement the GitOps pattern by just running `helm install mychart` in some kind of script or operator.
 
-We recommend checking in every kubernetes resource and custom resource definition to git - apart from kubernetes Secrets. For details why see [the reasoning behind this decision](/v3/develop/faq/general/#why-does-jenkins-x-use-helmfile-template). 
+We recommend checking in every kubernetes resource and custom resource definition to git - apart from kubernetes Secrets. For details why see [the reasoning behind this decision](/v3/develop/faq/general/#why-does-jenkins-x-use-helmfile-template).
 
-
-Essentially having a canonical file in git for every non-Secret kubernetes and custom resource really helps when it comes to diagnosing issues with a cluster; since you don't have to keep in your head what tools like [helm](https://helm.sh/), [helmfile](https://github.com/roboll/helmfile), [kustomize](https://kustomize.io/), [kpt](https://googlecontainertools.github.io/kpt/), [kubectl](https://kubernetes.io/docs/reference/kubectl/kubectl/) or [jx](/v3/guides/jx3/) do - you can just look at how the resource has changed in git to see why things are going wrong. 
+Essentially having a canonical file in git for every non-Secret kubernetes and custom resource really helps when it comes to diagnosing issues with a cluster; since you don't have to keep in your head what tools like [helm](https://helm.sh/), [helmfile](https://github.com/roboll/helmfile), [kustomize](https://kustomize.io/), [kpt](https://googlecontainertools.github.io/kpt/), [kubectl](https://kubernetes.io/docs/reference/kubectl/kubectl/) or [jx](/v3/guides/jx3/) do - you can just look at how the resource has changed in git to see why things are going wrong.

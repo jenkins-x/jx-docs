@@ -18,17 +18,16 @@ Jenkins X 可以通过jx的命令行界面CLI安装到Kubernetes集群里。
 ---
 
 或者您可以使用kubernetes提供程序特定的方法：
-                
+
 通过已经安装的 Jenkins X 创建一个新的集群，使用命令  [jx create cluster](/commands/jx_create_cluster/) 。
 
 如下所示，支持很多不同的公有云提供商。
 
-__为了最好的入门体验，我们目前推荐使用 Google Container Engine (GKE)__。如果你没有谷歌云账号的话，谷歌云平台提供三百美元的额度。查看 https://console.cloud.google.com/freetrial
+__为了最好的入门体验，我们目前推荐使用 Google Container Engine (GKE)__。如果你没有谷歌云账号的话，谷歌云平台提供三百美元的额度。查看 <https://console.cloud.google.com/freetrial>
 
 这有一个小的演示，同时展示 GKE、AKS 和 Minikube。在不同的设备（云）上启动需要花点时间，请耐心等待！
 
 <iframe width="640" height="360" src="https://www.youtube.com/embed/ELA4tytdFeA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
 
 ### 使用谷歌云 (GKE)
 
@@ -62,7 +61,6 @@ jx create cluster aws
 
 现在 **[使用 Jenkins X 更快速地开发应用](/zh/docs/getting-started/)**。
 
-
 ### 使用 Azure (AKS)
 
 使用命令 [jx create cluster aks](/commands/jx_create_cluster_aks/) ：
@@ -93,4 +91,3 @@ jx create cluster minikube
 ### 故障排除
 
 如果你在安装 Jenkins X 时遇到任何问题，请检查我们的 [故障排除](/zh/troubleshooting/faq/) 或者 [让我们知道](/zh/community/)，我们会尽力给予帮助。
-

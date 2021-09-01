@@ -24,6 +24,7 @@ Verifies that all pods start OK in the current namespace; killing any Pods which
   jx verify pods%!(EXTRA string=jx-verify)
 
   ```
+
 ### Options
 
 ```
@@ -32,8 +33,6 @@ Verifies that all pods start OK in the current namespace; killing any Pods which
   -n, --namespace string   The namespace to look for events
   -s, --selector string    The selector to query for all pods being running
 ```
-
-
 
 ### Source
 

@@ -35,7 +35,6 @@ jx env staging
 
 使用 [jx namespace](/commands/jx_namespace/) 在 Kubernetes 不同的命名空间之间进行切换。
 
-
 ```sh
 jx namespace
 ```
@@ -82,6 +81,3 @@ jx ctx minikube
 你可以使用 [jx prompt](/commands/jx_prompt/) 把当前 Kubernetes 集群和命名空间添加到你的终端提示符中。
 
 要为 [jx 命令](/commands/jx/) 添加命令自动补充，尝试 [jx 自动补充](/commands/jx_completion/) 。
-
-
-

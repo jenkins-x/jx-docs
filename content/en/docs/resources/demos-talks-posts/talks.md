@@ -14,7 +14,7 @@ weight: 20
 
 * [2019-07-18 Progressive Delivery en Kubernetes (Spanish)](https://www.youtube.com/watch?v=u7Z1V_NcmPY)🎥 with [NorthemQuality](https://northemquality.github.io/) by [Carlos Sanchez](https://csanchez.org)
 
-* [2019-07-04 Modern CI/CD with Tekton and Prow Automated via Jenkins X](https://kccnceu19.sched.com/event/MPZ4?iframe=no) at [KubeCon (Barcelona)](https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2019/) by [Christie Wilson ](https://twitter.com/bobcatwilson) and [James Rawlings](https://twitter.com/jdrawlings) [🎥 YouTube](https://www.youtube.com/watch?v=4EyTGYB7GvA)
+* [2019-07-04 Modern CI/CD with Tekton and Prow Automated via Jenkins X](https://kccnceu19.sched.com/event/MPZ4?iframe=no) at [KubeCon (Barcelona)](https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2019/) by [Christie Wilson](https://twitter.com/bobcatwilson) and [James Rawlings](https://twitter.com/jdrawlings) [🎥 YouTube](https://www.youtube.com/watch?v=4EyTGYB7GvA)
 
 * [2019-06-25 GitOps by courtesy of Jenkins X](https://containerdays.sched.com/event/Q4Oc/gitops-by-courtesy-of-jenkins-x) at [ContainerDays 2019, Hamburg (Germany)](https://www.containerdays.io/) by [Gerd Aschemann](https://twitter.com/GerdAschemann) [🎥 YouTube](https://www.youtube.com/watch?v=XzZIeCrB8p0) ([Slides](http://aschemann.net/gerd/publications/jx-talk-condays-2019/))
 
@@ -32,7 +32,7 @@ weight: 20
 
 * [2019-03-26 Ten Commandments Of GitOps Applied To Continuous Delivery](https://www.meetup.com/Barcelona-Jenkins-Area-Meetup/events/259869827/) at [Barcelona Jenkins Area Meetup](https://www.meetup.com/Barcelona-Jenkins-Area-Meetup/) by [Viktor Farcic](https://twitter.com/vfarcic) [🎥 YouTube](https://www.youtube.com/watch?v=PtC6YvoL_W8&t=2s)
 
-* [2019-03-06 Cloud Native CI/CD for Kubernetes with JenkinsX](https://www.meetup.com/Dubai-Jenkins-Area-Meetup/events/258523035/) at [Jenkins Area Meetup(JAM) Dubai](https://www.meetup.com/Dubai-Jenkins-Area-Meetup/) by [Viktor Farcic](https://twitter.com/vfarcic) [🎥 YouTube](https://www.youtube.com/watch?v=PtC6YvoL_W8) 
+* [2019-03-06 Cloud Native CI/CD for Kubernetes with JenkinsX](https://www.meetup.com/Dubai-Jenkins-Area-Meetup/events/258523035/) at [Jenkins Area Meetup(JAM) Dubai](https://www.meetup.com/Dubai-Jenkins-Area-Meetup/) by [Viktor Farcic](https://twitter.com/vfarcic) [🎥 YouTube](https://www.youtube.com/watch?v=PtC6YvoL_W8)
 
 * [2019-03-05 Cloud Native CI/CD with Jenkins X and Tekton Pipelines](https://qconlondon.com/london2019/presentation/cloud-native-cicd-jenkins-x-and-knative-pipelines) at [QConLondon](https://qconlondon.com/) by [James Rawlings](https://twitter.com/jdrawlings) and [Christie Wilson](https://twitter.com/bobcatwilson) [slides](https://qconlondon.com/system/files/presentation-slides/cloud_native_ci_cd_with_jenkins_x_and_knative_pipelines.pdf) [🎥 InfoQ](https://www.infoq.com/presentations/cloud-native-ci-cd-jenkins-knative/?utm_source=presentations&utm_medium=london&utm_campaign=qcon)
 
@@ -76,6 +76,4 @@ weight: 20
 
 * [2018-04-12 CI/CD with Jenkins X on Kubernetes](https://skillsmatter.com/skillscasts/11833-kubernetes-april)🎥 at [Kubernetes Meetup, London](https://skillsmatter.com/meetups/10867-kubernetes-april)  by [Rob Davies](https://twitter.com/rajdavies) and [JamesRawlings](https://twitter.com/jdrawlings)
 
-
 Also check out the [Jenkins X Blog](/blog/news/) and [Articles](/docs/resources/demos-talks-posts/articles/)
-

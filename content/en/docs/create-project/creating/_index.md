@@ -16,7 +16,6 @@ starting from scratch.
 You can create new applications from our list of curated Quickstart applications
 via the [jx create quickstart](/commands/jx_create_quickstart/) command.
 
-
 ```sh
 jx create quickstart
 ```
@@ -52,7 +51,7 @@ automated for you:
 * if you are using Jenkins X Pipelines and tekton then:
   * a webhook is registered on the remote git repository which triggers prow/lighthouse to trigger a tekton pipeline
   * add the repository to the prow configuration
-* if you are using a Jenkins Server then:  
+* if you are using a Jenkins Server then:
   * a webhook is registered on the remote git repository which triggers a pipeline in Jenkins
   * create a multi-branch project in your Jenkins server
 * trigger the first pipeline
@@ -78,11 +77,13 @@ Master Jenkin), you can view all the languages supported via build packs on your
 machine via:
 
 *Serverless Jenkins*:
+
 ```sh
 ls -al ~/.jx/draft/packs/github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/packs
 ```
 
 *Static Master Jenkins*:
+
 ```sh
 ls -al ~/.jx/draft/packs/github.com/jenkins-x-buildpacks/jenkins-x-classic/packs
 ```
@@ -137,7 +138,6 @@ Kubernetes.
 To add the location of a set of quickstarts you can use the [jx create
 quickstartlocation](/commands/jx_create_quickstartlocation/) command.
 
-
 ```sh
 jx create quickstartlocation --url https://mygit.server.com --owner my-quickstarts
 ```
@@ -178,4 +178,3 @@ jx get qsloc
 There is also [jx delete
 quickstartlocation](/commands/jx_delete_quickstartlocation/) if you need to
 remove a git organisation.
-

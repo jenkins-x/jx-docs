@@ -24,6 +24,7 @@ Adds a new Jenkins server to the git repository
   jx-gitops jenkins add --name myjenkins
 
   ```
+
 ### Options
 
 ```
@@ -33,8 +34,6 @@ Adds a new Jenkins server to the git repository
   -r, --repository string   the helm chart repository URL of the chart (default "https://charts.jenkins.io")
   -v, --version string      the version of the helm chart. If not specified the versionStream will be checked otherwise the latest version is used
 ```
-
-
 
 ### Source
 

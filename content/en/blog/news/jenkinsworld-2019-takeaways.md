@@ -55,11 +55,13 @@ Jenkins X has two modes:
   syntax.
 
 There are two interactive quick start commands. The older and presumably more stable is:
+
 ```sh
 jx create quickstart
 ```
 
 The new way to install, configure and upgrade Jenkins X is:
+
 ```sh
 jx boot
 ```
@@ -74,16 +76,19 @@ Jenkins X.
 ## Getting status
 
 Get logs using:
+
 ```sh
 jx get build logs
 ```
 
 Track execution with:
+
 ```sh
 jx get activity
 ```
 
 List preview environments using:
+
 ```sh
 jx get environments
 ```
@@ -149,11 +154,13 @@ in a default pipeline.
 ## Validating syntax and IDE autocompletion
 
 Check your pipelines using:
+
 ```sh
 jx step syntax validate
 ```
 
 Pipelines are usually defined by multiple YAML files. See how they fit together in a single flat pipeline file:
+
 ```sh
 jx step syntax effective
 ```
@@ -187,12 +194,14 @@ It is difficult to get HTTPS to work in preview environments because each previe
 
 1. Specify that you want to use DNS for HTTPS in `jx boot`. This will cause [external-dns](https://github.com/kubernetes-incubator/external-dns) to be installed automatically.
 2. Add `externalDNS` in `requirements.yml`:
+
    ```
    ingress:
      externalDNS: true
    ```
 
 3. Then, create the domain (this example assumes you are using GKE):
+
    ```
    jx create domain gke --domain rawlingsdemo.co.uk
    ```

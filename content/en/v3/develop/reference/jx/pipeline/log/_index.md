@@ -39,6 +39,7 @@ Display a build log
   jx pipeline log --pod my-pod-name
 
   ```
+
 ### Options
 
 ```
@@ -63,8 +64,6 @@ Display a build log
   -w, --wait                     Waits for the build to start before failing
   -d, --wait-duration duration   Timeout period waiting for the given pipeline to be created (default 20m0s)
 ```
-
-
 
 ### Source
 

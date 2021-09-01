@@ -71,6 +71,7 @@ You can define your own environment variables either at the pipeline level:
           - name: PIPELINE_VAR
             value: A value for the pipeline variable
 ```
+
 at a stage level:
 
 ```yaml

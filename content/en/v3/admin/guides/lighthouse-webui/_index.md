@@ -16,7 +16,7 @@ Please follow the usual [getting started guide for boot and helm 3](/v3/admin/pl
 
 Then, open the `helmfiles/jx/helmfile.yaml` file located in your development environment git repository, and add the following content under the `releases` section:
 
-```yaml 
+```yaml
 - chart: jx3/lighthouse-webui-plugin
   name: lighthouse-webui-plugin
 ```
@@ -37,7 +37,7 @@ Don't worry if your new chart doesn't have a `version` field, or a list of `valu
 
 Commit and push these changes, and after a few minutes you should see a new `lighthouse-webui-plugin` pod running in the `jx` namespace:
 
-```bash 
+```bash
 $ kubectl get pod -n jx
 NAME                                           READY   STATUS    RESTARTS   AGE
 lighthouse-webui-plugin-696b8c85f9-99hnn       1/1     Running   0          31m
@@ -52,6 +52,7 @@ See the [Lighthouse Web UI documentation](/v3/develop/ui/lighthouse/) for how to
 The configuration is defined in a ["values file" stored in the Jenkins X Version Stream](https://github.com/jenkins-x/jx3-versions/tree/master/charts/jx3/lighthouse-webui-plugin/values.yaml.gotmpl).
 
 If you want to change anything from the default configuration, you can either:
+
 - submit a Pull Request if you believe this change is beneficial for everybody
 - or create a new values file in your development environment git repositor: `values/lighthouse-webui-plugin/values.yaml`
 

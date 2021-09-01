@@ -23,6 +23,7 @@ Imports a YAML of secret values into the underlying secret store
   jx-secret import -f mysecrets.yaml
 
   ```
+
 ### Options
 
 ```
@@ -31,8 +32,6 @@ Imports a YAML of secret values into the underlying secret store
   -h, --help                  help for import
   -n, --ns string             the namespace to filter the ExternalSecret resources
 ```
-
-
 
 ### Source
 

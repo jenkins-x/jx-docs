@@ -30,6 +30,7 @@ Updates the webhooks for all the source repositories optionally filtering by own
   jx-gitops update --endpoint http://mything.com
 
   ```
+
 ### Options
 
 ```
@@ -50,8 +51,6 @@ Updates the webhooks for all the source repositories optionally filtering by own
       --verbose                    Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
       --warn-on-fail               If enabled lets just log a warning that we could not update the webhook
 ```
-
-
 
 ### Source
 

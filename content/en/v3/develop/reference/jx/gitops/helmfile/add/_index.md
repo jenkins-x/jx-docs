@@ -27,6 +27,7 @@ Adds a chart to the local 'helmfile.yaml' file
   jx-gitops helmfile add --chart somerepo/mychart --repository https://acme.com/myrepo --namespace foo --version 1.2.3
 
   ```
+
 ### Options
 
 ```
@@ -46,8 +47,6 @@ Adds a chart to the local 'helmfile.yaml' file
   -v, --version string              the version of the helm chart. If not specified the versionStream will be checked otherwise the latest version is used
       --version-stream-dir string   the directory for the version stream. Defaults to 'versionStream' in the current --dir
 ```
-
-
 
 ### Source
 

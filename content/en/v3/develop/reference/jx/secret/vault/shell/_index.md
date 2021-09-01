@@ -27,6 +27,7 @@ Runs a shell so you can access the vault in a kubernetes cluster
   jx-secret vault shell -- bash -i
 
   ```
+
 ### Options
 
 ```
@@ -36,8 +37,6 @@ Runs a shell so you can access the vault in a kubernetes cluster
   -p, --pod string          the name of the vault pod which needs to be running before the port forward can take place (default "vault-0")
       --poll duration       the polling period to check if the secrets are valid (default 2s)
 ```
-
-
 
 ### Source
 

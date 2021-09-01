@@ -6,7 +6,7 @@ type: docs
 weight: 100
 ---
 
-The Jenkins X roadmap will be updated approximately once a month. 
+The Jenkins X roadmap will be updated approximately once a month.
 Please join our [office hours](https://jenkins-x.io/community/#office-hours) and [Slack channels](/community/#slack) to ask questions and drive input on the future of the project!
 
 Please note that the [Current Work](/community/roadmap/#current-work) is being done in Jenkins X 2 and that most of the listed [Near Term](/community/roadmap/#near-term-work) and [Future Work](/community/roadmap/#future-work) are proposals that are being discussed in the [Jenkins X enhancements repo](https://github.com/jenkins-x/enhancements) and will likely form the basis of Jenkins X 3. Some of the proposed enhancements will land in Jenkins X 2 as well, but the focus for future work is on Jenkins X 3. Read more about [Jenkins X 3 alpha](https://jenkins-x.io/v3/)

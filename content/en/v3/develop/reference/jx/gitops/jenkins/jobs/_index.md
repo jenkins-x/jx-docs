@@ -24,6 +24,7 @@ Generates the Jenkins Jobs helm files
   jx-gitops jenkins jobs
 
   ```
+
 ### Options
 
 ```
@@ -34,8 +35,6 @@ Generates the Jenkins Jobs helm files
       --no-create-helmfile        disables the creation of the helmfiles/jenkinsName/helmfile.yaml file if a jenkins server does not yet exist
   -o, --out string                the output directory for the generated config files. If not specified defaults to the jenkins dir in the current directory
 ```
-
-
 
 ### Source
 

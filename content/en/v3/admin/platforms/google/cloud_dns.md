@@ -9,7 +9,6 @@ aliases:
 
 This guide will describe how to purchase a domain and configure GCP to manage it with [Cloud DNS](https://cloud.google.com/dns)
 
-
 Setup below is a cut down version of the original docs located [here](https://github.com/kubernetes-sigs/external-dns/blob/master/docs/tutorials/gke.md#gke-node-scopes)
 
 Go to [Google Domains](https://domains.google.com/registrar) and purchase a domain.
@@ -24,6 +23,7 @@ gcloud dns managed-zones create "foo-io" \
 ```
 
 Make a note of the nameservers that were assigned to your new zone.
+
 ```bash
 gcloud dns record-sets list \
     --zone "foo-io" \

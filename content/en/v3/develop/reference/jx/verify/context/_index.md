@@ -24,14 +24,13 @@ Verifies the current kubernetes context matches a given name
   jx verify context -c "gke_$PROJECT_ID-bdd_$REGION_$CLUSTER_NAME"%!(EXTRA string=jx-verify)
 
   ```
+
 ### Options
 
 ```
   -c, --context string   The kubernetes context to match against
   -h, --help             help for context
 ```
-
-
 
 ### Source
 

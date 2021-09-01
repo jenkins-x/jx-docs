@@ -26,6 +26,7 @@ Annotates all kubernetes resources in the given directory tree
   jx-gitops annotate --dir myresource-dir foo=bar
 
   ```
+
 ### Options
 
 ```
@@ -39,8 +40,6 @@ Annotates all kubernetes resources in the given directory tree
       --type string       the patch type such as 'yaml' or 'json'
       --version string    the API version of the resources to copy (default "v1")
 ```
-
-
 
 ### Source
 

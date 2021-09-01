@@ -23,6 +23,7 @@ Create a Pull Request on each downstream repository
   jx-updatebot pr --test-url https://github.com/myorg/mytest.git
 
   ```
+
 ### Options
 
 ```
@@ -46,8 +47,6 @@ Create a Pull Request on each downstream repository
       --version string              the version number to promote. If not specified uses $VERSION or the version file
       --version-file string         the file to load the version from if not specified directly or via a $VERSION environment variable. Defaults to VERSION in the current dir
 ```
-
-
 
 ### Source
 

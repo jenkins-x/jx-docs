@@ -6,7 +6,7 @@ description: GitOps overview
 weight: 100
 ---
 
-The idea of GitOps is to treat everything as source code, including your infrastructure, and check it into git and version it. 
+The idea of GitOps is to treat everything as source code, including your infrastructure, and check it into git and version it.
 
 So rather than connecting to a machine in your cluster, you make changes via Pull Requests in git. This means:
 
@@ -18,11 +18,11 @@ So rather than connecting to a machine in your cluster, you make changes via Pul
 
 ### Secrets
 
-One of the biggest challenges with GitOps is dealing with secrets. 
+One of the biggest challenges with GitOps is dealing with secrets.
 
 You really want to check in all of your source code into git. But you really don't want to check in your secrets (user, passwords, tokens, certificates etc) into git - particularly public repositories!
 
-There are techniques like [helm sealed secrets](https://github.com/bitnami-labs/sealed-secrets) so that you can encrypt secrets for storage in git. 
+There are techniques like [helm sealed secrets](https://github.com/bitnami-labs/sealed-secrets) so that you can encrypt secrets for storage in git.
 
 However we are not huge fans of the UX of using this approach; its harder to modify or rotate secrets.
 
@@ -30,8 +30,7 @@ We prefer [using external secrets stores](/v3/admin/setup/secrets/) via the open
 
 This means that we [automatically convert Secret resources to ExternalSecrets which can then be stored safely in git](/v3/develop/faq/#why-does-jenkins-x-use-helmfile-template)
 
-
-### Source code 
+### Source code
 
 Saying use git is all well and good but what is the source code layout?
 
@@ -41,12 +40,11 @@ It does depend a little on the GitOps tool you are using. We recommend trying to
 
 Here is our current [recommended source code layout](https://github.com/jenkins-x/jx-gitops/blob/master/docs/git_layout.md)
 
-
 ## Recommendations
 
 We spend more time reading source code than writing it. So try focus on things like:
 
-* use canonical file formats that are easy to understand. 
+* use canonical file formats that are easy to understand.
   * e.g. [helm](https://helm.sh/), [helmfile](https://github.com/roboll/helmfile) and [Tekton YAML syntax](/v3/develop/reference/pipelines/) so that you get [IDE support](/v3/develop/pipelines/editing/#ide-support) and [easy linting](/v3/develop/pipelines/editing/#linting)
 * make good use of reporting. Jenkins X generates easy to read reports to view what applications are deployed in what namespace and with what versions etc:
   * e.g. see the reports for [kubernetes](https://github.com/jx3-gitops-repositories/jx3-kubernetes/tree/master/docs ), [aws](https://github.com/jx3-gitops-repositories/jx3-eks-vault/tree/master/docs), [azure](https://github.com/jx3-gitops-repositories/jx3-azure-akv) and [gke](https://github.com/jx3-gitops-repositories/jx3-gke-gsm/tree/master/docs)

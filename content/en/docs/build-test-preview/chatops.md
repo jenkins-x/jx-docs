@@ -28,7 +28,7 @@ These actions are performed via commenting on Pull Requests on your git provider
 
 ## Pull Requests
 
-The pull request (PR) is the foundation of Jenkins X CI/CD pipeline execution. 
+The pull request (PR) is the foundation of Jenkins X CI/CD pipeline execution.
 In PRs, Jenkins X allows developers and reviewers to:
 
 * Verify changes
@@ -37,7 +37,7 @@ In PRs, Jenkins X allows developers and reviewers to:
 * Approve PRs and trigger automatic merge and promotion
 * Manual promotion of PRs to production environments and software releases
 
-Pull requests can be marked as work in progress, blocking automerging, either via making the PR a draft on GitHub, or by adding `WIP:`, `wip:`, `[wip]:`, or similar at the beginning of the PR title. 
+Pull requests can be marked as work in progress, blocking automerging, either via making the PR a draft on GitHub, or by adding `WIP:`, `wip:`, `[wip]:`, or similar at the beginning of the PR title.
 The PR will be moved out of work-in-progress when no longer in draft or when the `WIP` prefix in the PR title has been removed.
 
 ### How Lighthouse merges a PR

@@ -11,7 +11,6 @@ aliases:
 
 Jenkins X 3.x uses a [git operator](https://github.com/jenkins-x/jx-git-operator) to manage installing + upgrading of Jenkins X and any other components in any environment. If you are interested you can read [how it works](/v3/about/how-it-works/).
 
-
 ## Using Terraform
 
 *NOTE* if you are using one of the public clouds to install Jenkins X then Terraform will install the [git operator](https://github.com/jenkins-x/jx-git-operator) for you so that there is no need for you to do so manually.
@@ -36,7 +35,7 @@ Note also that the same pipeline user and token is reused by default for all pip
 
 To create a git token for passing into the operator use this button:
 
-<a href="https://github.com/settings/tokens/new?scopes=repo,read:user,read:org,user:email,admin:repo_hook,write:packages,read:packages,write:discussion,workflow" target="github" class="btn bg-primary text-light">Create new GitHub Token</a> 
+<a href="https://github.com/settings/tokens/new?scopes=repo,read:user,read:org,user:email,admin:repo_hook,write:packages,read:packages,write:discussion,workflow" target="github" class="btn bg-primary text-light">Create new GitHub Token</a>
 
 ## Installing the operator
 
@@ -50,13 +49,13 @@ If you don't specify the `username` or `token` parameters you will be prompted f
 
 If you are not inside the git clone of the [git repository](/v3/admin/platform/) you will need to specify the `--url` parameter for the git URL:
 
-```bash 
+```bash
 jx admin operator --url=https://github.com/myorg/env-mycluster-dev.git --username mygituser --token mygittoken
 ```
 
 This command will use helm to install the [git operator](https://github.com/jenkins-x/jx-git-operator) which will trigger a Job to install Jenkins X (and re-trigger a Job whenever you commit to your git repository).
 
-The terminal will display the logs as the boot `Job` runs. 
+The terminal will display the logs as the boot `Job` runs.
 
 Jenkins X will now install itself.
 
@@ -68,8 +67,7 @@ For each environment variable you want to pass in use the `--set jxBootJobEnvVar
 
 e.g. something like this:
 
-
-```bash 
+```bash
 export HPROXY=http://my.proxy.com
 export NPROXY=localhost\\,127.0.0.1\\,.local\\,0\\,1\\,2\\,3\\,4\\,5\\,6\\,7\\,8\\,9
 
@@ -82,34 +80,32 @@ jx admin operator --url=https://github.com/myorg/env-mycluster-dev.git \
   --set jxBootJobEnvVarSecrets.NO_PROXY=$NPROXY \
   --set jxBootJobEnvVarSecrets.no_proxy=$NPROXY
 ```
-      
+
 This should result in a secret called `jx-boot-job-env-vars` being created in the `jx-git-operator` namespace. This secret should get replicated to the `jx` namespace during the [boot job]().
 
-
-## Viewing the logs 
+## Viewing the logs
 
 At any time you can tail the boot job logs via the [jx admin log](https://github.com/jenkins-x/jx-admin/blob/master/docs/cmd/jx-admin_log.md) command:
 
-```bash 
+```bash
 jx admin log
 ```
 
 If you know you have just done a git commit and are waiting for the boot job to start you can run:
 
-```bash 
+```bash
 jx admin log --wait
 ```
 
 Which will wait for a running Job to display.
 
-## Insecure git repositories 
+## Insecure git repositories
 
 If you are using an on-premises git repository you may need to configure git in the git operator and boot job to support insecure git repositories via a `git config` command or two.
 
 When installing the git operator you can pass in any git configuration commands via the `--setup` argument. You can supply multiple of these arguments if you need them.
 
 e.g.
-
 
 ```bash
 export GIT_USERNAME=someone

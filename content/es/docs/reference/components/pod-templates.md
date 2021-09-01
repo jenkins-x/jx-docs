@@ -81,7 +81,7 @@ Hay intentos de facilitar la inserción de definiciones de plantillas de pod den
 Hoy, la forma más fácil de agregar nuevas plantillas de pod es a través de la consola Jenkins. p.ej.
 
 ```sh
-$ jx console
+jx console
 ```
 
 Eso abrirá la consola de Jenkins. Luego navegue a `Manage Jenkins` (en el menú de la izquierda) y luego a `Configure System`.

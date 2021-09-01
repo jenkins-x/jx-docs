@@ -24,6 +24,7 @@ Converts tekton pipelines to github actions
   jx tekton-to-actions convert
 
   ```
+
 ### Options
 
 ```
@@ -36,8 +37,6 @@ Converts tekton pipelines to github actions
       --remove-steps stringArray    The steps to remove (default [git-clone,setup-builder-home,git-merge])
       --runs-on string              The machine this runs on (default "ubuntu-latest")
 ```
-
-
 
 ### Source
 

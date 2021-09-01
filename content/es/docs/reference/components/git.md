@@ -22,6 +22,7 @@ Puede listar los servidores Git configurados a través del comando [jx get git](
 ```
 jx get git
 ```
+
 {{< alert >}}
 **NOTA:** Todos los proveedores de Git mencionados aquí son compatibles si está utilizando Jenkins Static Masters. Sin embargo, si está utilizando **Jenkins X Serverless con Tekton**, solo se admite GitHub. Esto significa que todos los demás proveedores de Git, incluido GitHub Enterprise, no son compatibles actualmente debido a cómo Prow se comunica con las API.
 
@@ -37,13 +38,13 @@ Si desea utilizar un proveedor de Git diferente para sus entornos, cuando instal
 p.ej. para [crear un nuevo clúster](/es/docs/getting-started/setup/create-cluster/).
 
 ```sh
-$ jx create cluster gke --no-default-environments
+jx create cluster gke --no-default-environments
 ```
 
 o [instalarlo en un clúster existente](/docs/resources/guides/managing-jx/common-tasks/install-on-cluster/)
 
 ```sh
-$ jx install --no-default-environments
+jx install --no-default-environments
 ```
 
 Luego, una vez que Jenkins X esté instalado, puede [agregar un nuevo proveedor git](#agregar-un-nuevo-proveedor-git).
@@ -51,14 +52,14 @@ Luego, una vez que Jenkins X esté instalado, puede [agregar un nuevo proveedor 
 Luego, cuando el proveedor git está configurado, puede verificar que esté disponible y que tenga el `gitKind` correcto a través de:
 
 ```sh
-$ jx get git server
+jx get git server
 ```
 
 Ahora cree los entornos `Staging` y `Production` utilizando el proveedor de git que desee a través de:
 
 ```sh
-$ jx create env staging --git-provider-url=https://gitproviderhostname.com
-$ jx create env production --git-provider-url=https://gitproviderhostname.com
+jx create env staging --git-provider-url=https://gitproviderhostname.com
+jx create env production --git-provider-url=https://gitproviderhostname.com
 ```
 
 ## Agregar un nuevo proveedor git
@@ -76,6 +77,7 @@ Puede verificar qué URL del servidor y los valores `gitKind` se configuran a tr
 ```sh
 jx get git server
 ```
+
 **NOTA:** asegúrese de establecer el `gitKind` correcto para su proveedor de git; de lo contrario, se invocará el proveedor de API REST subyacente incorrecto.
 
 ## GitHub Enterprise

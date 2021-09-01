@@ -16,9 +16,7 @@ Jenkins X has a number of extension points you can use to extend the CI/CD platf
 
 It's easy to use GitOps to [add charts](/v3/develop/apps/#adding-charts) to any of your clusters and [customize them](/v3/develop/apps/#customising-charts) however you need.
 
-
 You can also easily [add one or more kubernetes resources to a cluster via a source layout chart](/v3/develop/apps/#adding-resources)
-    
 
 ## Plugins
 
@@ -30,14 +28,13 @@ Plugins usually written in [Go](https://golang.org/) as it has awesome Kubernete
 
 If you wish to create a new plugin try browse the [jenkins-x-plugins organisation](https://github.com/jenkins-x-plugins) for inspiration or check out the [standard plugins used in the jx cli](https://github.com/jenkins-x/jx#plugins)
   
-
 ### Developing Plugins
 
 The easiest way to work on the plugins is to clone the source of a plugin locally and make local changes and build the code (you will need a [go 1.15 installation](https://golang.org/doc/install)).
 
 e.g.
 
-```bash 
+```bash
 git clone https://github.com/jenkins-x/jx-gitops 
 cd jx-gitops
 make build
@@ -49,18 +46,17 @@ Now you can test out the local build of a plugin by calling **./build/jx-gitops*
 
 If you add your **./build** for your locally built plugin to your **$PATH** environment variable you can invoke your local **./build/jx-gitops** binary as if its a regular **jx** plugin via:
 
-```bash 
+```bash
 jx gitops help
 ```
 
 Basically **jx myplugin** will normally download the **jx-myplugin** binary and invoke that - unless it finds **jx-myplugin** on the **$PATH**.
 
-
 ### Using a specific version of a plugin
 
 If you want to test a new plugin version before its been tested released in the version stream you can use an environment variable...
 
-```bash 
+```bash
 export JX_GITOPS_VERSION 1.2.3
 
 # we will now try version 1.2.3 of the gitops plugin:
@@ -89,11 +85,11 @@ You can browse the [default Jenkins X Pipeline Catalog here](https://github.com/
 
 If you want you can fork the [jenkins-x/jx3-pipeline-catalog](https://github.com/jenkins-x/jx3-pipeline-catalog) repository and make your modifications to add/remove folders for different languages or modify the pipelines and associated files.
 
-We'd prefer if any improvements or enhancements could be submitted back to the project via a Pull Request then we all get to share your improvements; but its totally fine to have some local modifications for your specific business requirements. 
+We'd prefer if any improvements or enhancements could be submitted back to the project via a Pull Request then we all get to share your improvements; but its totally fine to have some local modifications for your specific business requirements.
 
 To use your custom fork modify the [extensions/pipeline-catalog.yaml](https://github.com/jx3-gitops-repositories/jx3-kubernetes/blob/master/extensions/pipeline-catalog.yaml) file in your cluster git repository to link to your fork instead of the  [jenkins-x/jx3-pipeline-catalog](https://github.com/jenkins-x/jx3-pipeline-catalog) repository:
 
-```yaml 
+```yaml
 ...
 apiVersion: project.jenkins-x.io/v1alpha1
 kind: PipelineCatalog
@@ -149,13 +145,12 @@ Quickstarts are sample projects which are used `jx project quickstart` when you 
 The default quickstart projects are in the [jenkins-x-quickstarts](https://github.com/jenkins-x-quickstarts/) github organisation.
 
 The quickstarts are defined in your [extensions/quickstarts.yaml](https://github.com/jx3-gitops-repositories/jx3-kubernetes/blob/master/extensions/quickstarts.yaml) file and defaults to including all of the quickstarts in the [versionStream/quickstarts.yml](https://github.com/jx3-gitops-repositories/jx3-kubernetes/blob/master/versionStream/quickstarts.yaml) file.
-         
-You can include/exclude quickstarts from the version stream using the `includes` and `excludes` regular expressions in the [extensions/quickstarts.yaml](https://github.com/jx3-gitops-repositories/jx3-kubernetes/blob/master/extensions/quickstarts.yaml) file as shown below. 
-             
+
+You can include/exclude quickstarts from the version stream using the `includes` and `excludes` regular expressions in the [extensions/quickstarts.yaml](https://github.com/jx3-gitops-repositories/jx3-kubernetes/blob/master/extensions/quickstarts.yaml) file as shown below.
+
 You can add your own quickstarts into the [extensions/quickstarts.yaml](https://github.com/jx3-gitops-repositories/jx3-kubernetes/blob/master/extensions/quickstarts.yaml) file as follows
 
-
-```yaml 
+```yaml
 apiVersion: project.jenkins-x.io/v1alpha1
 kind: Quickstarts
 spec:
@@ -178,9 +173,8 @@ spec:
 
 ## Octant
 
-
 Our preferred UI for Kubernetes, Tekton and Jenkins X is [octant](/v3/develop/ui/octant) as its easy to install/run and has fined grained RBAC and security without the hassle of setting up TLS, DNS and SSO on every cluster.
 
-One of the awesome features of [Octant](https://octant.dev/) is it supports plugins so that anyone can build a plugin to extend the UI. We've created the [octant-jx](https://github.com/jenkins-x/octant-jx) plugin to extend [Octant](https://octant.dev/) with the Jenkins X capabilities of environments, pipelines, source repositories and so forth. 
+One of the awesome features of [Octant](https://octant.dev/) is it supports plugins so that anyone can build a plugin to extend the UI. We've created the [octant-jx](https://github.com/jenkins-x/octant-jx) plugin to extend [Octant](https://octant.dev/) with the Jenkins X capabilities of environments, pipelines, source repositories and so forth.
 
 If you wish to extend [Octant](https://octant.dev/) further either contribute to the [octant-jx](https://github.com/jenkins-x/octant-jx) plugin or create your own!

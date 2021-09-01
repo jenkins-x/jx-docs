@@ -11,8 +11,8 @@ aliases: []
 author: Kara de la Marck
 ---
 
-<figure> 
-<img src="/images/community/events/outreachy_group_photo.png"/> 
+<figure>
+<img src="/images/community/events/outreachy_group_photo.png"/>
 </figure>
 
 With sponsorship from the [CDF (Continuous Delivery Foundation)](https://cd.foundation/), Jenkins X is participating in the [Outreachy mentorship program](https://www.outreachy.org/). This is the first time that Jenkins X will be participating in Outreachy and we are fortunate to be working with such a phenomenal organisation. You can read more about our decision to participate in Outreachy [here](/blog/2019/10/01/outreachy2019/).
@@ -21,4 +21,4 @@ We're excited to announce that an intern has been selected! [Neha Gupta](https:/
 
 We are grateful for the contributions that we received from all applicants. While we can only offer one paid internship at this time, [our community](/community/) is willing to help all newcomers to the Jenkins X project to learn and grow in their skills.
 
-Welcome to the team, Neha! 🎉 
+Welcome to the team, Neha! 🎉

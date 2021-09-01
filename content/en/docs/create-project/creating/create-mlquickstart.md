@@ -11,7 +11,6 @@ Machine learning quickstarts are pre-made machine-learning applications you can 
 
 You can create new applications from our list of curated machine learning quickstart applications via the [jx create mlquickstart](/commands/jx_create_mlquickstart/) command.
 
-
 ```sh
 jx create mlquickstart
 ```
@@ -71,6 +70,7 @@ You can restart training with the command:
 ```sh
 jx start pipeline
 ```
+
 and then select the name of the training project you wish to run again, or you may edit your training script, commit your changes and push them to automatically trigger another training run.
 
 Once training has completed successfully, the version of your model that has just been trained and the metrics associated with this run will be passed to your `-service` project using a pull request. You now need to review the `-service` project repository and check the training metrics for suitability. The `-service` project will automatically rebuild using the newly trained model instance and deploy into a preview environment where you can test it using its API.
@@ -143,7 +143,6 @@ You can configure at a team level the quickstarts which are presented to you in 
 
 To add the location of a set of machine learning quickstarts you can use the [jx create quickstartlocation](/commands/jx_create_quickstartlocation/) command.
 
-
 ```sh
 jx create quickstartlocation --url https://mygit.server.com --owner my-mlquickstarts --includes=[ML-*]
 ```
@@ -171,4 +170,3 @@ jx get qsloc
 ```
 
 There is also [jx delete quickstartlocation](/commands/jx_delete_quickstartlocation/) if you need to remove a git organisation.
-

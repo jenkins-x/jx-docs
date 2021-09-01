@@ -27,6 +27,7 @@ Adds Pull Request environment variables to the .jx/variables.sh file
   jx gitops pr variables --comments
 
   ```
+
 ### Options
 
 ```
@@ -44,8 +45,6 @@ Adds Pull Request environment variables to the .jx/variables.sh file
   -r, --repo string             the full git repository name of the form 'owner/name'
       --source-url string       the git source URL of the repository
 ```
-
-
 
 ### Source
 

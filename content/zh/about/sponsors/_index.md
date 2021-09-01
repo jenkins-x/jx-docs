@@ -16,4 +16,4 @@ type: docs
 
 <img src="/images/sponsors/cb.svg" class="img-thumbnail">
 
-* [CloudBees Jenkins X Support](https://www.cloudbees.com/products/jenkins-x-support) 
+* [CloudBees Jenkins X Support](https://www.cloudbees.com/products/jenkins-x-support)

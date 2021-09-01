@@ -10,7 +10,7 @@ If you [install okteto](https://okteto.com/docs/getting-started/installation/ind
 
 Then if your application is deployed to your staging environment you can `cd` into a git clone of your application and run...
 
-```bash 
+```bash
 # switch to the staging namespace
 jx ns jx-staging
 

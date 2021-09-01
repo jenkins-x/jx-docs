@@ -23,8 +23,6 @@ commands for working with Jenkins X Pipelines
   -h, --help   help for jx-pipeline
 ```
 
-
-
 ### Source
 
 [jenkins-x-plugins/jx-pipeline](https://github.com/jenkins-x-plugins/jx-pipeline)

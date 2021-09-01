@@ -37,7 +37,6 @@ Jenkins X invites technical writers to engage with our ongoing efforts to restru
 
 * Create FAQs for select docs pages. The GSoD writer would read through our [Kubernetes slack channels](/community/#slack) and [closed issues](https://github.com/jenkins-x/jx/issues?q=is%3Aissue+is%3Aclosed) to identify the most common questions we are asked and to take the answers given to build out the FAQs.
 
-
 ### 📆 Important Dates
 
 The main part of Season of Docs runs for three months, from September to December 2020, but the application period for technical writers ends on July 9, 2020. [Detailed GSoD Timeline can be found here](https://developers.google.com/season-of-docs/docs/timeline).
@@ -46,7 +45,6 @@ The main part of Season of Docs runs for three months, from September to Decembe
 * May 11 - June 8, 2020: Technical writers discuss project ideas with mentoring organisations
 * July 9, 2020: Deadline for technical writer applications
 * September 14 - December 5, 2020: Technical writers work on their projects with guidance from mentors
-
 
 ### 👋 Come meet us and ask us questions
 
@@ -59,16 +57,18 @@ Talk to us on our slack channels, which are part of the Kubernetes slack. Join  
 
 We also have online office hours, during which we talk about new developments in Jenkins X and you are welcome to ask us questions. We meet for office hours **every other Tuesday** at 15:00 UTC (*See your timezone [here](https://time.is/1500_in_UTC)*).
 
-Next office hours are on **5 May**. Join us here: https://zoom.us/j/397862697
+Next office hours are on **5 May**. Join us here: <https://zoom.us/j/397862697>
 
 ### Additional Information
 
 #### Technical Writers
+
 * [Contributing to the Jenkins X documentation](https://jenkins-x.io/community/documentation/)
 * [GSoD Technical Writer guide](https://developers.google.com/season-of-docs/docs/tech-writer-guide)
 * [GSoD Timeline](https://developers.google.com/season-of-docs/docs/timeline)
 
 #### Mentors
+
 * [GSoD Mentor Guide](https://developers.google.com/season-of-docs/docs/mentor-guide)
 * [GSoD Timeline](https://developers.google.com/season-of-docs/docs/timeline)
 * [Selecting projects](https://developers.google.com/season-of-docs/docs/project-selection)

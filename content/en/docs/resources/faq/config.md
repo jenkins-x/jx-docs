@@ -95,7 +95,7 @@ Image:       jenkinsxio/jenkins-go:256.0.50
 ## How does `--prow` differ from `--gitops`
 
 * `--prow` uses [serverless jenkins](/news/serverless-jenkins/) and uses [prow](https://github.com/kubernetes/test-infra/tree/master/prow) to implement ChatOps on Pull Requests.
-*  `--gitops` is still work in progress but will use GitOps to manage the Jenkins X installation (the dev environment) so that the platform installation is all stored in a git repo and upgrading / adding Apps / changing config is all changed via Pull Requests like changes to promotion of applications to the Staging or Production environments
+* `--gitops` is still work in progress but will use GitOps to manage the Jenkins X installation (the dev environment) so that the platform installation is all stored in a git repo and upgrading / adding Apps / changing config is all changed via Pull Requests like changes to promotion of applications to the Staging or Production environments
 
 ## How do I reuse my existing Ingress controller?
 
@@ -121,7 +121,6 @@ For more detail see these blogs posts:
 * [Upgrading Ingress Rules And Adding TLS Certificates With Jenkins X](https://technologyconversations.com/2019/05/31/upgrading-ingress-rules-and-adding-tls-certificates-with-jenkins-x/) by [Viktor Farcic](https://technologyconversations.com)
 * [Jenkins X — TLS enabled Previews](https://itnext.io/jenkins-x-tls-enabled-previews-d04fa68c7ce9?source=friends_link&sk=c13828b223f56ed662fd7ec0872c3d1e) by [Steve Boardwell](https://medium.com/@sboardwell)
 * [Jenkins X — Securing the Cluster](https://itnext.io/jenkins-x-securing-the-cluster-e1b9fcd8dd05?source=friends_link&sk=e1e46e780908b2e3c8415c3191e82c56) by [Steve Boardwell](https://medium.com/@sboardwell)
-
 
 ## How do I change the URLs in an environment?
 

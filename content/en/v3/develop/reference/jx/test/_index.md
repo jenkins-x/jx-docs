@@ -23,8 +23,6 @@ Test commands
   -h, --help   help for jx-test
 ```
 
-
-
 ### Source
 
 [jenkins-x-plugins/jx-test](https://github.com/jenkins-x-plugins/jx-test)

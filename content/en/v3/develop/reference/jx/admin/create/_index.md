@@ -24,6 +24,7 @@ Creates a new git repository for a new Jenkins X installation
   jx-admin create
 
   ```
+
 ### Options
 
 ```
@@ -85,8 +86,6 @@ Creates a new git repository for a new Jenkins X installation
       --vault-sa string              specify the vault Service Account name
   -z, --zone string                  configures the cloud zone
 ```
-
-
 
 ### Source
 

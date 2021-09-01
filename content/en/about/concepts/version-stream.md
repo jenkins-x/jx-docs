@@ -52,7 +52,6 @@ Its not always easy/possible to update upstream pipelines to push version change
 
 e.g. to upgrade the versions of all the `jenkins-x` maintained charts you can run this command:
 
-
 ```sh
 jx step create version pr -f "jenkins-x/*"
 ```
@@ -78,4 +77,3 @@ jx step bdd --dir . --config jx/bdd/staticjenkins.yaml --gopath /tmp --git-provi
 ```
 
 The various YAML files in the [jx/bdd folder](https://github.com/jenkins-x/jenkins-x-versions/tree/master/jx/bdd) contains a selection of different cluster configurations that can be used
-

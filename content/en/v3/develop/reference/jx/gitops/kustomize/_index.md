@@ -26,6 +26,7 @@ If you are using kpt to consume templates and you make lots of modifications and
   jx-gitops kustomize --source src/base --target config-root --output src/overlays/default
 
   ```
+
 ### Options
 
 ```
@@ -34,8 +35,6 @@ If you are using kpt to consume templates and you make lots of modifications and
   -s, --source string   the directory to recursively look for the source *.yaml or *.yml files (default ".")
   -t, --target string   the directory to recursively look for the target *.yaml or *.yml files
 ```
-
-
 
 ### Source
 

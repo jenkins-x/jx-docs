@@ -58,6 +58,7 @@ Jenkins X pipeline YAML configuration are:
   to another environment, such as Staging or Production.
 
 ## Understanding Jenkins X pipelines
+
 The Jenkins X cluster configuration process creates a YAML-based pipeline
 configuration file called jenkins-x.yml. This file configures the default
 development pipeline for building applications on kubernetes clusters with
@@ -192,17 +193,17 @@ YAML using the following methods:
   ```sh
   extends:
     file: ../jenkins-x.yaml
-  ```  
+  ```
 
 * Using import to reference a YAML file:
-  
+
   ```sh
   extends:
     import: classic
     file: maven/pipeline.yaml
   ```
 
-which then refers to a named imported module via git:  
+which then refers to a named imported module via git:
 
   ```sh
   modules:

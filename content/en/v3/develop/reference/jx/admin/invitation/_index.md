@@ -24,13 +24,12 @@ List and accept git repository invitations for the pipeline bot user
   jx-admin invitations
 
   ```
+
 ### Options
 
 ```
   -h, --help   help for invitation
 ```
-
-
 
 ### Source
 

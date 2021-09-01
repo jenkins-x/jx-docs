@@ -14,7 +14,7 @@ You can see the helm charts that are installed along with their version, namespa
 
 You can browse all the kubernetes resources in each namespace using the canonical layout in the `config-root` folder. e.g. all charts are versioned in git as follows:
 
-```bash 
+```bash
 config-root/
   namespaces/
    jx/
@@ -26,9 +26,9 @@ You can see the above kubernetes resource, a `Deployment` with name `lighthouse-
 
 There could be some additional charts installed via Terraform for the [git operator](/v3/guides/operator/) and [health subsystem](/v3/guides/health/) which can be viewed via:
 
-```bash 
+```bash
 helm list --all-namespaces
-```                                                                                
+```
 
 ## How do I delete an application?
 
@@ -36,16 +36,15 @@ There is a [jx application delete](/v3/develop/reference/jx/application/delete/)
 
 e.g.
 
-
-```bash 
+```bash
 jx application delete --name myapp
 ```
 
-Or you can remove an application or helm chart from an environment by removing the entry in the `releases:` list in the `helmfiles/$namespace/helmfile.yaml` file in your dev git repository and peforming a git commit and pushing the change (usually via a Pull Request). 
+Or you can remove an application or helm chart from an environment by removing the entry in the `releases:` list in the `helmfiles/$namespace/helmfile.yaml` file in your dev git repository and peforming a git commit and pushing the change (usually via a Pull Request).
 
 Once the pull request is merged, the [boot job will trigger](/v3/about/how-it-works/#boot-job) which will remove the application from kubernetes.
 
-### Stopping new releases 
+### Stopping new releases
 
 If the application you are removing was released via Jenkins X then the next time there is a change committed to your applications git repsitory a new release will be triggered which will be promoted again.
 
@@ -64,7 +63,6 @@ kubectl delete sr $theNameToDelete
 This will stop Jenkins X creating webhooks and firing pipelines when you make changes.
 
 You may also want to remove the webhook from the repository to be safe.
-        
 
 ## How do I stop jx asking for git credentials
 
@@ -91,6 +89,3 @@ If you want to use a container, such as a database, inside your pipeline so that
 Here is [another example of a sidecar in a pipeline](https://tekton.dev/vault/pipelines-v0.16.3/tasks/#using-a-sidecar-in-a-task)
 
 If you want to use a separate container inside a preview environment then add [charts or resources](/v3/develop/apps/#adding-charts) to the `preview/helmfile.yaml`
-
-
-

@@ -79,6 +79,7 @@ In case you already have a git clone locally (from before the theme change) then
 ```sh
 git submodule update --init --recursive
 ```
+
 {{< /alert >}}
 
 Add the conventional upstream `git` remote in order to fetch changes from the `jx-docs` master
@@ -125,7 +126,7 @@ In order to use this setup, first make sure you're in the folder with your local
 docker-compose up -d server
 ```
 
-This will make the site available on http://localhost:1313/ and it will auto-update when you save changes to any of the files in the repo.
+This will make the site available on <http://localhost:1313/> and it will auto-update when you save changes to any of the files in the repo.
 
 To be able to see what's going on, and know when the site is ready (can take a bit to process when you first start up), you can run this command (ctrl-c to stop watching the logs):
 
@@ -220,7 +221,7 @@ Web Server is available at //localhost:1313/ (bind address 127.0.0.1)
 Press Ctrl+C to stop
 ```
 
-Preview your site in your browser at: http://localhost:1313. You can use `Ctrl + c` to stop the Hugo server whenever you like.
+Preview your site in your browser at: <http://localhost:1313>. You can use `Ctrl + c` to stop the Hugo server whenever you like.
 
 It may be a good idea to run the server in a separate terminal so that you can keep it running while also using git or other commands.
 
@@ -411,40 +412,42 @@ We're using [DocSearch](https://community.algolia.com/docsearch/) by Algolia to 
 Across all pages on the Jenkins X docs, the typical triple-back-tick markdown syntax is used. If you do not want to take the extra time to implement the following code block shortcodes, please use standard GitHub-flavored markdown. The Jenkins X docs use a version of [highlight.js](https://highlightjs.org/) with a specific set of languages.
 
 Your options for languages are `xml`/`html`, `go`/`golang`, `md`/`markdown`/`mkd`, `handlebars`, `apache`, `toml`, `yaml`, `json`, `css`, `asciidoc`, `ruby`, `powershell`/`ps`, `scss`, `sh`/`zsh`/`bash`/`git`, `http`/`https`, and `javascript`/`js`.
+
 ````md
 ```go
 // CommandInterface defines the interface for a Command
 //go:generate pegomock generate github.com/jenkins-x/jx/pkg/util CommandInterface -o mocks/command_interface.go
 type CommandInterface interface {
-	DidError() bool
-	DidFail() bool
-	Error() error
-	Run() (string, error)
-	RunWithoutRetry() (string, error)
-	SetName(string)
-	SetDir(string)
-	SetArgs(\[]string)
-	SetTimeout(time.Duration)
-	SetExponentialBackOff(\*backoff.ExponentialBackOff)
+ DidError() bool
+ DidFail() bool
+ Error() error
+ Run() (string, error)
+ RunWithoutRetry() (string, error)
+ SetName(string)
+ SetDir(string)
+ SetArgs(\[]string)
+ SetTimeout(time.Duration)
+ SetExponentialBackOff(\*backoff.ExponentialBackOff)
 }
 ```
 ````
+
 becomes
 
 ```go
 // CommandInterface defines the interface for a Command
 //go:generate pegomock generate github.com/jenkins-x/jx/pkg/util CommandInterface -o mocks/command_interface.go
 type CommandInterface interface {
-	DidError() bool
-	DidFail() bool
-	Error() error
-	Run() (string, error)
-	RunWithoutRetry() (string, error)
-	SetName(string)
-	SetDir(string)
-	SetArgs(\[]string)
-	SetTimeout(time.Duration)
-	SetExponentialBackOff(\*backoff.ExponentialBackOff)
+ DidError() bool
+ DidFail() bool
+ Error() error
+ Run() (string, error)
+ RunWithoutRetry() (string, error)
+ SetName(string)
+ SetDir(string)
+ SetArgs(\[]string)
+ SetTimeout(time.Duration)
+ SetExponentialBackOff(\*backoff.ExponentialBackOff)
 }
 ```
 

@@ -19,7 +19,7 @@ Triggers the latest boot Job to run again
 
 ### Examples
 
-  * trigger the boot job again
+* trigger the boot job again
   
   ```bash
   jx-admin trigger
@@ -36,8 +36,6 @@ Triggers the latest boot Job to run again
   -s, --selector string     the selector of the boot Job pods (default "app=jx-boot")
       --verbose             Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
 ```
-
-
 
 ### Source
 

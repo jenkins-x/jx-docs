@@ -24,13 +24,12 @@ Upgrades the binary plugins of the secret command (e.g. the vault binary)
   jx upgrade
 
   ```
+
 ### Options
 
 ```
   -h, --help   help for upgrade
 ```
-
-
 
 ### Source
 

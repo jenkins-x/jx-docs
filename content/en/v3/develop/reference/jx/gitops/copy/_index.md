@@ -30,6 +30,7 @@ Copies kubernetes resources (by default confimaps) from a namespace to the curre
   jx-gitops copy --kind ingresses -l mylabel=something --to=foo
 
   ```
+
 ### Options
 
 ```
@@ -43,8 +44,6 @@ Copies kubernetes resources (by default confimaps) from a namespace to the curre
   -t, --to string          the namespace to copy the secrets to
       --version string     the API version of the resources to copy (default "v1")
 ```
-
-
 
 ### Source
 

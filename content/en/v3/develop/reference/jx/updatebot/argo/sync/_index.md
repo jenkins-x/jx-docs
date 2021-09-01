@@ -15,7 +15,7 @@ jx updatebot argo sync
 
 ### Synopsis
 
-Synchronizes some or all applications in an ArgoCD git repository to reduce version drift 
+Synchronizes some or all applications in an ArgoCD git repository to reduce version drift
 
 Creates a Pull Request on the target GitOps repository.
 
@@ -35,6 +35,7 @@ Creates a Pull Request on the target GitOps repository.
   jx updatebot argo sync --source-git-url https://github.com/myorg/my-staging-repo --target-git-url https://github.com/myorg/my-production-repo --repourl-excludes water
 
   ```
+
 ### Options
 
 ```
@@ -64,8 +65,6 @@ Creates a Pull Request on the target GitOps repository.
       --target-git-url string       git URL to clone for the target
       --verbose                     Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
 ```
-
-
 
 ### Source
 

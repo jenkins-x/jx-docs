@@ -23,8 +23,6 @@ Commands for working with plugins
   -h, --help   help for plugin
 ```
 
-
-
 ### Source
 
 [jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

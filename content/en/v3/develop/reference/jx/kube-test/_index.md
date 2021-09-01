@@ -23,8 +23,6 @@ commands for working with GitOps based git repositories
   -h, --help   help for jx-kube-test
 ```
 
-
-
 ### Source
 
 [jenkins-x-plugins/jx-kube-test](https://github.com/jenkins-x-plugins/jx-kube-test)

@@ -10,6 +10,7 @@ aliases:
 ---
 
 There are a few areas to consider when upgrading Jenkins X.
+
 - infrastructure typically managed by tools like Terraform
 - the jx CLI used to interact with Jenkins X
 - cluster managed by GitOps and the Jenkins X version streams

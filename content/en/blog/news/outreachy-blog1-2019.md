@@ -16,7 +16,8 @@ author: Neha Gupta
 
 Neha Gupta is adding support for Kustomize in Jenkins X, to enable Kubernetes native configuration management, while participating in Outreachy from December 2019 to March 2020.
 
-### Motivation to apply to Outreachy :
+### Motivation to apply to Outreachy
+
 In my graduation class of fifty people we were three girls struggling to set up our space and comfort with the weird reactions we got from fellow students for trying to understand technology.
 When my professor asked us to make an autonomous drone. I couldn’t make one, I was shattered, until a friend from computer science batch helped me make one. He showed me some of the cool apps he made, that sparked an interest, and I started building apps, realising that computer science is beyond just coding, it’s more about solving real life problems.
 
@@ -25,6 +26,7 @@ I’ve transitioned from mobile to web apps, server-end development, robotics, c
 When I heard about Outreachy program and I liked how women and other minority communities are being supported and motivated. It felt something similar to what I’m trying to do with the young girls around me (breaking the stereotypical phenomenon of “girls can’t code”). I felt participating in Outreachy will not only boost my but other girls motivation too! and it’ll also definitely help me grow technologically, socially and mentally.
 
 ### Why excited about Outreachy?
+
 To me it feels really cool to work with a team remotely. The interactions, networking and feel is completely different, especially when it’s open-source (Like ..I get anxious before asking questions on public channels, if the question is too logical and stupid). Also, I’m a fan of open-source contributions, so… (here was the chance).
 
 Another reason was to interact with the minority community (people who are facing similar issues in STEM like me) and share some instances with them, be on the same page, enlighten and get enlightened (all that networking sounds fun..). I am also excited about the trip.
@@ -35,6 +37,7 @@ The Cloud Storage backed Helm repository idea seemed interesting, so I started e
 Also the community was very welcoming and communications with my mentor were good. He helped me making contributions to the project, he guided me to some good first issues, helped me correct my PR’s. Jenkins-X looked as an interesting open-source project so I’m glad I tried to be a part of it and got selected.
 
 ### What would I tell someone who is worried about applying to Outreachy?
+
 If you are someone who has just started open source contributions and are fear stricken on how is it gonna work? These all things seems so confusing and you’re overwhelmed.
 
 Don’t worry! ..

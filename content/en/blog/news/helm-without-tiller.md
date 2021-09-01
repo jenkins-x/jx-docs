@@ -21,7 +21,7 @@ However Tiller has a number of issues...
 
 * complicates RBAC since its not using the RBAC of the user or pod running the helm commands to read/write kubernetes resources - helm is talking to the remote tiller pod to do the work. If you are using a global tiller then thats often got something like the `cluster-admin` role which means anyone running helm commands effectively side steps RBAC completely! :).
 * helm forces all releases to have a unique name within a tiller. This means if you have one global tiller then each release name must be globally unique across all namespaces. This leads to very long release names since they must typically append the namespace too. This means often service names are very different between environments as the release name is often included in the service name in many charts which [breaks lots of the promise of using canonical service discovery in kubernetes](https://kubernetes.io/docs/concepts/services-networking/service/#discovering-services).
-  * We prefer to use same service names in every environment (development, testing, staging, production) - to minimise the amount of per-environment configuration that is required which avoids manual effort and reduces errors. e.g. refer to http://my-service/ in your app and it should just work in every namespace/environment your app is deployed in without wiring up special configuration.
+  * We prefer to use same service names in every environment (development, testing, staging, production) - to minimise the amount of per-environment configuration that is required which avoids manual effort and reduces errors. e.g. refer to <http://my-service/> in your app and it should just work in every namespace/environment your app is deployed in without wiring up special configuration.
 * can cause lots of version conflicts between helm clients + tiller versions. We've seen this a lot in Jenkins X this year. e.g. a user has, say, helm 2.9 installed locally and installs Jenkins X. Then a build pod with helm 2.10 runs and barfs as the tiller and helm versions don't match.
 
 ### Helm 3 will be tiller-less
@@ -73,13 +73,13 @@ metadata:
     jenkins.io/chart-release: my-release
     jenkins.io/version: 1.2.3
 ```
+
 * after an upgrade we remove any resources for the same helm release name but different version (to remove any old resources) via the selector `jenkins.io/chart-release=my-release,jenkins.io/version!=1.2.3`
 * to remove a release completely we just delete all resources with the label selector: `jenkins.io/chart-release=my-release`
 
 ### Kustomize?
 
 One nice benefit of using `helm template` to generate the YAML then using `kubectl apply` means that we can look at optionally using tools like [kustomize](https://github.com/kubernetes-sigs/kustomize) post process the output of `helm template` to allow resources to be overridden or enriched in ways that the chart author did not think of.
-
 
 ### Other helm feature flags
 
@@ -91,7 +91,6 @@ Another feature flag we added was allowing different helm binaries to be used; s
 
 Though its looking like helm 3 is still some way off so its not recommended any time soon but as helm 3 gets near to RC stage we'll be able to reuse the helm 3 feature flag again to let folks experiment with helm 3 until its GA and we make it the default in Jenkins X.
 
-
 ### Summary
 
 If you use helm then we highly recommend you avoid tiller!
@@ -101,4 +100,3 @@ If you are using Jenkins X then please consider using the `--no-tiller`  option 
 We're working  on Jenkins X 2.0 - most of its features are already available hidden behind feature flags. So in Jenkins X 2.0 we will default disable tiller by default along with enabling other things like Prow integration and using _serverless_ Jenkins by default (more on those in a separate blog!).
 
 We are also really looking forward to helm 3! :). Helm rocks, but tiller does not!
-

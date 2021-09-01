@@ -9,6 +9,7 @@ weight: 125
 This guide will help you install, configure and use an observability stack in your Jenkins X cluster.
 
 We selected the [Grafana](http://grafana.com/) stack because:
+
 - it's [open-source](https://grafana.com/oss/)
 - it has support for [logs](https://grafana.com/oss/loki/), [metrics](https://grafana.com/oss/prometheus/), and [distributed traces](https://grafana.com/oss/tempo/)
 - it has a low memory footprint, and a great Kubernetes integration
@@ -29,7 +30,7 @@ helmfiles:
 
 The second step is to create the `helmfiles/jx-observability/helmfile.yaml` file, with the following content:
 
-```yaml 
+```yaml
 namespace: jx-observability
 repositories:
 - name: jxgh
@@ -55,7 +56,7 @@ releases:
 
 Commit and push these changes, and after a few minutes you should see grafana, loki, promtail, tempo, and prometheus pods running in the `jx-observability` namespace:
 
-```bash 
+```bash
 $ kubectl get pod -n jx-observability
 NAME                                             READY   STATUS    RESTARTS   AGE
 grafana-5858dbfcc4-ldhtc                         2/2     Running   0          8m25s
@@ -86,16 +87,17 @@ tempo-0                                          1/1     Running   0          10
 
 Grafana is exposed through an ingress - you can retrieve its URL with the following command:
 
-```bash 
-$ kubectl get ing -n jx-observability
+```bash
+kubectl get ing -n jx-observability
 ```
 
 The default credentials are stored in the `grafana` Kubernetes Secret:
+
 - the default user is `admin`
 - the default password has been auto-generated at installation time, you can retrieve it with the following command:
 
-```bash 
-$ kubectl -n jx-observability get secret grafana --template='{{index .data "admin-password"}}' | base64 --decode
+```bash
+kubectl -n jx-observability get secret grafana --template='{{index .data "admin-password"}}' | base64 --decode
 ```
 
 Once you are logged in, you can play with the pre-defined dashboards, or with the [Grafana Explorer](https://grafana.com/docs/grafana/latest/explore/).
@@ -107,6 +109,7 @@ This is an example of a pre-defined dashboard, for [cert-manager](https://cert-m
 ## Configuration
 
 The configuration is defined in "values files" stored in the Jenkins X Version Stream:
+
 - [Grafana configuration](https://github.com/jenkins-x/jx3-versions/tree/master/charts/grafana/grafana)
 - [Loki configuration](https://github.com/jenkins-x/jx3-versions/tree/master/charts/grafana/loki)
 - [Promtail configuration](https://github.com/jenkins-x/jx3-versions/tree/master/charts/grafana/promtail)
@@ -114,6 +117,7 @@ The configuration is defined in "values files" stored in the Jenkins X Version S
 - [Prometheus configuration](https://github.com/jenkins-x/jx3-versions/tree/master/charts/prometheus-community/prometheus)
 
 If you want to change anything from the default configuration, you can either:
+
 - submit a Pull Request if you believe this change is beneficial for everybody
 - or create a new values file in your development environment git repository, in the `values` directory
   - for example, `values/grafana/values.yaml` for Grafana, or `values/prometheus/values.yaml` for Prometheus
@@ -121,6 +125,7 @@ If you want to change anything from the default configuration, you can either:
 ## Next steps
 
 Once the Grafana stack is installed and configured, you can:
+
 - visualize pipelines traces from the [Jenkins X Pipelines Visualizer](/v3/develop/ui/dashboard/)
 - install the [Continuous Delivery Indicators](/v3/admin/guides/observability/cd-indicators/) addon
 - expose Prometheus metrics from your own applications

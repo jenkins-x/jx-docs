@@ -11,9 +11,9 @@ aliases:
 
 Progressive delivery allows you to gradually rollout new versions of your application to an environment using _canaries_ and gradually giving traffic to the new version until you are happy to fully rollover to the new version.
 
-Our recommendation for using progressive delivery with Jenkins X is to use: 
+Our recommendation for using progressive delivery with Jenkins X is to use:
 
-* [flagger](https://flagger.app/) as the progressive delivery controller 
+* [flagger](https://flagger.app/) as the progressive delivery controller
 * [istio](https://istio.io/) as the service mesh to provide advanced load balancing capabilities across internal or external networking
 
 ## Configuring Progressive Delivery
@@ -24,7 +24,7 @@ Please follow the usual [getting started guide for boot and helm 3](/v3/admin/pl
 
 Please make sure your `helmfile.yaml` has the necessary apps for using [flagger](https://flagger.app/) and [istio](https://istio.io/). Your `helmfile.yaml` in your development environment git repository should look something like this:
 
-```yaml 
+```yaml
 releases:
 - chart: jx-labs/istio
 - chart: flagger/flagger
@@ -40,12 +40,11 @@ Also for now I'm afraid you will have to remove the `jenkins-x/jxui` chart as it
 
 ### Enable istio based ingress
 
-To avoid having 2 `LoadBalancer` services for both `istio` and `nginx` (which costs more money) its easier to switch to pure istio for both internal and external load balancing. This also results in a smaller footprint. 
+To avoid having 2 `LoadBalancer` services for both `istio` and `nginx` (which costs more money) its easier to switch to pure istio for both internal and external load balancing. This also results in a smaller footprint.
 
 To do that ensure that `kind: istio` is added to the `jx-requirements.yml` file in the top level `ingress:` section like this:
 
-
-```yaml 
+```yaml
 ingress:
   domain: ""
   kind: istio
@@ -58,7 +57,7 @@ Now your development git repository should be setup and be ready. Now:
 
 When it is all complete you should see istio, flagger, grafana pods running in the `istio-system` namespace something like this:
 
-```bash 
+```bash
 $ kubectl get pod -n istio-system
 NAME                                    READY   STATUS    RESTARTS   AGE
 flagger-66dc49cd-g6ptp                  1/1     Running   0          32h
@@ -68,10 +67,9 @@ istiod-7d9c7bdd6-vjp9j                  1/1     Running   0          32h
 kuberhealthy-f54f7f7df-b5gbf            1/1     Running   2          32h
 kuberhealthy-f54f7f7df-j6qwt            1/1     Running   0          32h
 prometheus-b47d8c58c-n974m              2/2     Running   0          32h
-```                                                                     
+```
 
 From 1.5 onwards istio is pretty small; just 2 pods. Note that those `kuberhealthy` pods are optional and just help with reporting.
-
 
 ### Enable istio in staging/production
 
@@ -79,13 +77,13 @@ If you wish to use a Canary with [flagger](https://flagger.app/) and [istio](htt
 
 To enable istio in staging:
 
-```bash 
+```bash
 kubectl label namespace jx-staging istio-injection=enabled
 ```
 
 To enable istio in production:
 
-```bash 
+```bash
 kubectl label namespace jx-production istio-injection=enabled
 ```
 
@@ -93,7 +91,7 @@ kubectl label namespace jx-production istio-injection=enabled
 
 Run the following command to default to using canary deployments and horizontal pod autoscaling whenever you [create a new quickstart](/docs/getting-started/first-project/create-quickstart/) or [import a project](/docs/resources/guides/using-jx/creating/import/)
 
-```bash 
+```bash
 jx edit deploy --team --canary --hpa
 ```
 
@@ -101,37 +99,34 @@ This will enable all new quickstarts and imported projects to use canary rollout
 
 You can switch the defaults back again at any time or configure any app to change its defaults by running `jx edit deploy` inside a git clone of an application.
 
-
 ### Enabling/Disabling Canary/HPA in an Environment
 
 If you want to enable/disable canary or horizontal pod autoscaling for a specific app in an environment then you can [follow the app customisation approach](/v3/develop/apps/#customising-charts).
 
 Assuming your app is called `myapp` then in the git repository for the environment (e.g. `Staging`) you can add/edit a file called `apps/mychart/values.yaml` to look like this:
 
-```yaml 
+```yaml
 canary:
   enabled: true
 
 hpa:
   enabled: true
-``` 
+```
 
 you can enable/disable those 2 flags for canary releases and horizontal pod autoscaler at any point in any environment.
-
 
 ## Using Progressive Delivery
 
 Once you have followed the above steps create a [quickstart application](/docs/getting-started/first-project/create-quickstart/) in the usual way.
 
-As you merge changes to the master branch of your application Jenkins X will create a new release and [promote it to the staging environment](/docs/resources/faq/using/#how-does-promotion-actually-work). 
+As you merge changes to the master branch of your application Jenkins X will create a new release and [promote it to the staging environment](/docs/resources/faq/using/#how-does-promotion-actually-work).
 
-However if Canary deployment is enabled your new version will gradually be rolled out progressively: 
+However if Canary deployment is enabled your new version will gradually be rolled out progressively:
 
 * the defaults are that 20% of the traffic will go to the new version
 * flagger will keep monitoring the metrics used in the Canary resource to determine if the canary is good
 * after the configured time period is over the traffic will be increased to 40% then 60%
 * eventually if things look good the new version will fully rollout to 100% traffic
 * if anything goes bad during the rollout time period the old version is restored
- 
-There is an excellent [video showing this in action](https://youtu.be/7eePqtxW7NM).
 
+There is an excellent [video showing this in action](https://youtu.be/7eePqtxW7NM).

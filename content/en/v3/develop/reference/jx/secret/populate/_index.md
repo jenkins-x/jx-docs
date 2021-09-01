@@ -23,6 +23,7 @@ Populates any missing secret values which can be automatically generated or that
   jx-secret populate
 
   ```
+
 ### Options
 
 ```
@@ -41,8 +42,6 @@ Populates any missing secret values which can be automatically generated or that
       --verbose                        Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
   -w, --wait duration                  the maximum time period to wait for the vault pod to be ready if using the vault backendType (default 2h0m0s)
 ```
-
-
 
 ### Source
 

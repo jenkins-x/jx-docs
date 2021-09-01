@@ -15,13 +15,13 @@ jx project import
 
 ### Synopsis
 
-Imports a local folder or Git repository into Jenkins X. 
+Imports a local folder or Git repository into Jenkins X.
 
-If you specify no other options or arguments then the current directory is imported. Or you can use '--dir' to specify a directory to import. 
+If you specify no other options or arguments then the current directory is imported. Or you can use '--dir' to specify a directory to import.
 
-You can specify the git URL as an argument. 
+You can specify the git URL as an argument.
 
-For more documentation see: https://jenkins-x.io/docs/using-jx/creating/import/
+For more documentation see: <https://jenkins-x.io/docs/using-jx/creating/import/>
 
 ### Examples
 
@@ -45,6 +45,7 @@ For more documentation see: https://jenkins-x.io/docs/using-jx/creating/import/
   jx-project import --github --org myname --all --filter foo
 
   ```
+
 ### Options
 
 ```
@@ -88,8 +89,6 @@ For more documentation see: https://jenkins-x.io/docs/using-jx/creating/import/
       --verbose                        Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
       --wait-for-pr                    waits for the Pull Request generated on the cluster environment git repository to merge (default true)
 ```
-
-
 
 ### Source
 

@@ -22,7 +22,7 @@ brew install jenkins-x/jx/jx
 
 或者，如果您尚未安装 [brew](https://brew.sh/) ，并且喜欢手动安装的话，请执行如下指令安装:
 
-1.  Download the `jx` binary archive using `curl` and pipe (`|`) the compressed archive to
+1. Download the `jx` binary archive using `curl` and pipe (`|`) the compressed archive to
     the `tar` command:
 
 ```sh
@@ -35,8 +35,7 @@ curl -L "https://github.com/jenkins-x/jx/releases/download/$(curl --silent https
 curl -L "https://github.com/jenkins-x/jx/releases/download/$(curl --silent "https://github.com/jenkins-x/jx/releases/latest" | sed 's#.*tag/\(.*\)\".*#\1#')/jx-darwin-amd64.tar.gz" | tar xzv "jx"
 ```
 
-
-2.  Install the `jx` binary by moving it to a location which should be on your environments PATH, using
+2. Install the `jx` binary by moving it to a location which should be on your environments PATH, using
     the `mv` command:
 
 ```sh
@@ -53,7 +52,7 @@ jx version
 
 To install Jenkins X on Linux, download the `.tar` file, and unarchive it in a directory where you can run the `jx` command.
 
-1.  Download the `jx` binary archive using `curl` and pipe (`|`) the compressed archive to
+1. Download the `jx` binary archive using `curl` and pipe (`|`) the compressed archive to
     the `tar` command:
 
 ```sh
@@ -66,7 +65,7 @@ curl -L "https://github.com/jenkins-x/jx/releases/download/$(curl --silent https
 curl -L "https://github.com/jenkins-x/jx/releases/download/$(curl --silent "https://github.com/jenkins-x/jx/releases/latest" | sed 's#.*tag/\(.*\)\".*#\1#')/jx-linux-amd64.tar.gz" | tar xzv "jx"
 ```
 
-2.  Install the `jx` binary by moving it to a location which should be on your environments PATH, using
+2. Install the `jx` binary by moving it to a location which should be on your environments PATH, using
     the `mv` command:
 
 ```sh

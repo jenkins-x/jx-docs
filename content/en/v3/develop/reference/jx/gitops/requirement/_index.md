@@ -23,8 +23,6 @@ Commands for working with jx-requirements.yml
   -h, --help   help for requirement
 ```
 
-
-
 ### Source
 
 [jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

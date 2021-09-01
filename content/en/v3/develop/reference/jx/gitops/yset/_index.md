@@ -30,6 +30,7 @@ Modifies one or more yaml files using a path expression while preserving comment
   jx gitops yset --path foo.bar --value abc --file bar.yaml --file foo.yaml%!(EXTRA string=jx-gitops, string=jx-gitops)
 
   ```
+
 ### Options
 
 ```
@@ -38,8 +39,6 @@ Modifies one or more yaml files using a path expression while preserving comment
   -p, --path string        the path expression to modify (separated by dots)
   -v, --value string       the value to modify
 ```
-
-
 
 ### Source
 

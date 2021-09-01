@@ -100,7 +100,7 @@ Las siguientes variables de entornos son utilizadas:
 | Nombre  |  Descripción |
 | ------------- | ------------- |
 | `GIT_KIND` | el tipo de servidor git: `github, bitbucket, gitea, stash` |
-| `GIT_SERVER` | la URL del servidor si no usa los proveedores públicos alojados de Git: https://github.com or https://bitbucket.org https://gitlab.com |
+| `GIT_SERVER` | la URL del servidor si no usa los proveedores públicos alojados de Git: <https://github.com> or <https://bitbucket.org> <https://gitlab.com> |
 | `GIT_USER` | el usuario git (bot name) a utilizar en las operacionse de Git |
 | `GIT_TOKEN` | el token de git para realizar las operaciones en el repositorio (agregar comentarios, etiquetas, etc) |
 | `HMAC_TOKEN` | el token enviado desde el proveedor Git en los webhooks |

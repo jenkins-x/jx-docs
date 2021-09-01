@@ -57,9 +57,9 @@ jx edit userrole --login joe --role committer
 ```
 
 If you have fine-grained roles and want to grant multiple roles to a user, you can specify the roles as a comma-separated list:
+
 ```sh
 jx edit userrole --login joe --role committer,viewer
 ```
-
 
 Modifying a user's roles changes the `EnvironmentRoleBinding`. The [role controller](/commands/jx_controller_role/#jx-controller-role) will replicate these changes to all the underlying Environment namespaces.

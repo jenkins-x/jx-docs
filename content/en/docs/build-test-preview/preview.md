@@ -31,12 +31,11 @@ development environment:
 git checkout -b acme-feature1
 ```
 
-2.  The developer makes changes to the source code in their branch and adds the affected files to the commit queue:
+2. The developer makes changes to the source code in their branch and adds the affected files to the commit queue:
 
 ```sh
 git add index.html server.js
 ```
-
 
 3. The developer commits the files adding a comment about what has changed:
 
@@ -49,9 +48,11 @@ git add index.html server.js
 ```sh
     git push origin acme-feature1
 ```
+
 5. The program displays a link to a pull request. The developer can highlight the URL, right-click and choose *Open URL* to see the GitHub page in their browser.
 
 6. Jenkins X creates a preview environment in the PR for the application changes and displays a link to evaluate the new feature:
+
 <div class="row">
   <div class="col col-lg-9">
     <img src="/images/pr-comment.png"/>
@@ -94,8 +95,6 @@ jx preview
 
 <img src="/images/pr-comment.png" class="img-thumbnail">
 
-
-
 ## Adding more resources
 
 Its common when creating, for example, a web front end to need a backend or database to work from to verify that the microservice works.
@@ -126,7 +125,7 @@ dependencies:
   repository: http://chartmuseum.jenkins-x.io
   version: 2.3.56
 
-  # Ephemeral PostgeSQL created in preview environment.
+  # Ephemeral PostgreSQL created in preview environment.
 - name: postgresql
   repository: https://kubernetes-charts.storage.googleapis.com
   version: 2.6.2
@@ -138,7 +137,8 @@ dependencies:
   repository: file://../demo179
 
 ```
-Note: `- alias: preview` must be last entry in dependecies array and `requirements.yaml` file must end with empty line.
+
+Note: `- alias: preview` must be last entry in dependencies array and `requirements.yaml` file must end with empty line.
 
 ## Service Linking
 
@@ -187,7 +187,6 @@ jx delete post preview job --name=NAME_HERE
 ```
 
 And it will remove that post preview job (for the whole team).
-
 
 ## Further reading
 

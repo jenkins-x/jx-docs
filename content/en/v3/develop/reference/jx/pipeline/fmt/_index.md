@@ -15,10 +15,10 @@ jx pipeline fmt
 
 ### Synopsis
 
-Formats the local pipeline files 
+Formats the local pipeline files
 
-  * removes any unnecessary parameters  
-  * converts any shell commands to use 'script:' notation
+* removes any unnecessary parameters  
+* converts any shell commands to use 'script:' notation
 
 ### Examples
 
@@ -27,6 +27,7 @@ Formats the local pipeline files
   jx pipeline fmt
 
   ```
+
 ### Options
 
 ```
@@ -34,8 +35,6 @@ Formats the local pipeline files
   -h, --help         help for fmt
       --sha string   The git commit SHA of the pipeline catalog repository https://github.com/jenkins-x/jx3-pipeline-catalog. If not specified we clone git and find it
 ```
-
-
 
 ### Source
 

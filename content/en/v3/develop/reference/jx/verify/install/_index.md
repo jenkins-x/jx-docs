@@ -24,6 +24,7 @@ Verifies the installation is ready
   jx verify install%!(EXTRA string=jx-verify)
 
   ```
+
 ### Options
 
 ```
@@ -36,8 +37,6 @@ Verifies the installation is ready
   -p, --poll duration            The period between polls (default 10s)
       --verbose                  Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
 ```
-
-
 
 ### Source
 

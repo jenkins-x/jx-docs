@@ -10,7 +10,6 @@ One of the [Accelerate](/v3/devops/accelerate/) recommendations is around using 
 
 Here are a few of the lessons we have learnt about using the cloud well.
 
-
 ## Prefer cloud over kubernetes
 
 You can deploy a database via a helm chart in your kubernetes cluster. Or you can configure your cloud provider to create a managed database offering.
@@ -22,18 +21,17 @@ You can deploy, say, [vault](https://www.vaultproject.io/) as helm charts inside
 * Azure Key Vault
 * GCP Secret Manager
 
-We recommend that if you have a choice; go with the cloud version. 
+We recommend that if you have a choice; go with the cloud version.
 
 The main reason is these kinds of things are undifferentiated heavy lifting. Your cloud provider already can install, upgrade, backup and manage these services for you.
 
 If you go with helm charts inside kubernetes then you need to make sure you backup to long term storage all the data (e.g. every Persistent Volume) and test out your backup and restore mechanisms.
 
-
 ### Prefer cloud databases
 
 As your cloud provider can handle backups, upgrades and elastic scaling for you.
 
-### Prefer cloud secret stores 
+### Prefer cloud secret stores
 
 Over installing, upgrading, backing up + managing your own Vault
 
@@ -50,7 +48,6 @@ Over installing and managing your own gitlab / gitea / bitbucket server
 Similar to the above; if you use cloud storage, cloud buckets, cloud container registries you have less data to backup since the cloud provider typically does this for you.
 
 Remember that `Persistent Volume` resources in kubernetes are not free; you need to backup and manage them.
-                                                                       
 
 ## Treat kubernetes clusters as cattle not pets
 
@@ -58,18 +55,17 @@ Get used to the idea you can delete a kubernetes cluster at any time and recreat
 
 e.g. to change region or machine type this will usually happen.
 
-
 ## Map IAM Roles to kubernetes Service Accounts
 
 On AWS use [IAM roles for service accounts](https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html) (IRSA)
 
 On GCP use [Workload Identity](https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity) (WLI)
 
-In both cases this maps cloud IAM roles to kubernetes `ServiceAccount` resources using annotations. 
+In both cases this maps cloud IAM roles to kubernetes `ServiceAccount` resources using annotations.
 
 This means that you don't have to populate your kubernetes cluster with cluster-admin style cloud IAM secrets - which makes your system more secure and reduces the possibility of accidentally exposing a secret.
 
-Note that if you use [Jenkins X to configure your clusters with Terraform and GitOps](/v3/admin/) then you get this out of the box! 
+Note that if you use [Jenkins X to configure your clusters with Terraform and GitOps](/v3/admin/) then you get this out of the box!
 
 ## Terraform for cloud infrastructure
 
@@ -82,7 +78,6 @@ So to manage your infrastructure use a git repository with your [terraform](http
 There is a catch 22 of how do you start to provision your first, say, kubernetes cluster using [terraform](https://www.terraform.io/) before you have any cloud infrastructure.
 
 You could look at using [Terraform Cloud](https://www.terraform.io/cloud) as the place to setup your core cloud infrastructure.
-
 
 ## Try use the same GitOps approach everywhere
 

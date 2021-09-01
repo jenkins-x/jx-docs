@@ -15,7 +15,7 @@ jx gitops git clone
 
 ### Synopsis
 
-Clones the cluster git repository from the URL provided to the jx-git-operator watching the said repository, and authenticating as git user with token provided by jx-boot secret, also provided by jx-git-operator installation. 
+Clones the cluster git repository from the URL provided to the jx-git-operator watching the said repository, and authenticating as git user with token provided by jx-boot secret, also provided by jx-git-operator installation.
 
 Effectively this command runs jx gitops git setup before proceeding to simply clone the repository into either the folder passed in via --clone-dir or into the ./setup directory.
 
@@ -25,6 +25,7 @@ Effectively this command runs jx gitops git setup before proceeding to simply cl
   jx-gitops git clone
 
   ```
+
 ### Options
 
 ```
@@ -41,8 +42,6 @@ Effectively this command runs jx gitops git setup before proceeding to simply cl
       --password string             the git password/token to use. if not specified it is detected from the git operator Secret
       --secret string               the name of the Secret to find the git URL, username and password for creating a git credential if running inside the cluster (default "jx-boot")
 ```
-
-
 
 ### Source
 

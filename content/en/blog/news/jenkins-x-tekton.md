@@ -11,12 +11,12 @@ aliases: []
 author: Ethan Jones
 ---
 
-Jenkins X is committing fully to Tekton as its pipeline execution engine. We are convinced that this is the right choice for Jenkins X, as a cloud-native CI/CD platform on Kubernetes, and for our users. 
+Jenkins X is committing fully to Tekton as its pipeline execution engine. We are convinced that this is the right choice for Jenkins X, as a cloud-native CI/CD platform on Kubernetes, and for our users.
 
-This means we are formally deprecating - and will be removing - traditional Jenkins static masters support inside Jenkins X. We are excited about the new way forward, which we’ll discuss further below, but it’s important to be clear about what this means for current users. If you are already using Jenkins X with Tekton-based pipelines, then nothing will change for you, and you do not need to change anything. If you’re running a traditional Jenkinsfile on Jenkins X, then you have three choices: 
+This means we are formally deprecating - and will be removing - traditional Jenkins static masters support inside Jenkins X. We are excited about the new way forward, which we’ll discuss further below, but it’s important to be clear about what this means for current users. If you are already using Jenkins X with Tekton-based pipelines, then nothing will change for you, and you do not need to change anything. If you’re running a traditional Jenkinsfile on Jenkins X, then you have three choices:
 
 * Continue using static masters with a version of Jenkins X that supports Jenkins static masters
-    * Note that for versions of Jenkins X that support Jenkins static masters we will not provide any security fixes either to the jx CLI or to the Jenkins image used after mid April.
+  * Note that for versions of Jenkins X that support Jenkins static masters we will not provide any security fixes either to the jx CLI or to the Jenkins image used after mid April.
 * Return to a more optimized Jenkins installation
 * Or, if you plan on updating your version of Jenkins X to keep up with the latest features, then you will need to adapt your setup
 
@@ -24,7 +24,7 @@ In this post, we will discuss how we arrived at this decision, why there is curr
 
 ## A story of Pipeline Engines
 
-When Jenkins X was founded two years ago, Jenkins was chosen as its pipeline execution engine. Why? 
+When Jenkins X was founded two years ago, Jenkins was chosen as its pipeline execution engine. Why?
 
 1) Familiarity: Jenkins is the most widely used orchestration system in history, and at CloudBees we know it quite well.
 
@@ -40,7 +40,7 @@ As more functionality is added to the project which fits seamlessly with Tekton,
 
 The way we see it, traditional Jenkins running on Kubernetes makes sense for Jenkins-based apps that already exist and for teams that aren’t ready to change their tooling and their process. Jenkins is rock-solid and can run forever doing what it does today for the hundreds of thousands of teams that use it. But, that’s not what Jenkins X is for. Jenkins X is for brand new applications, being built from the ground up for the world of Kubernetes-based, cloud-native development - and we want to make things as great as possible for all the developers building those kinds of applications right now.
 
-## Kubernetes native 
+## Kubernetes native
 
 Although for users the pipeline execution engine should be an implementation detail, for the Jenkins X project Tekton is clearly a better, more natural, fit. Like Jenkins X, Tekton is Kubernetes native: it was designed from the ground up to leverage Kubernetes, not merely integrate with Kubernetes.
 
@@ -48,17 +48,17 @@ The Jenkins X core team has chosen to standardize on Tekton as a pipeline execut
 
 * Kubernetes native
 * Declarative, not scripted
-    * This makes pipelines easier to author, read, and maintain
-    * Highly opinionated syntax, making it easier to work in a best-practices way
-    * YAML! Not Groovy or Groovy-based syntax 
+  * This makes pipelines easier to author, read, and maintain
+  * Highly opinionated syntax, making it easier to work in a best-practices way
+  * YAML! Not Groovy or Groovy-based syntax
 
 However, Jenkins X has its own syntax on top of Tekton, to improve the user experience. Tekton’s syntax is very explicit, which is excellent for the level at which Tekton is operating. Jenkins X, as a developer-centric CI/CD platform, is able to take the information already available regarding a user’s configuration and provide that context. Additionally, Jenkins X provides an opinionated, best-practices based workflow. For these reasons, the amount of information a user needs to provide is reduced and the user experience is guided and simplified.
 
 For Jenkins X, as a CI/CD platform on Kubernetes, Tekton is the right choice for the pipeline execution engine. Focusing on one pipeline engine going forward will enable a leaner, cleaner codebase and a better end-user experience. Standardizing on Tekton as the pipeline execution engine for Jenkins X enables the core team to focus on improving the Jenkins X user experience without having to support compatibility with two different pipeline engines.
 
-## What’s next 
+## What’s next
 
-We’re deprecating traditional Jenkins masters in all new versions of Jenkins X. They will be removed from the codebase of future Jenkins X versions from April 20th. 
+We’re deprecating traditional Jenkins masters in all new versions of Jenkins X. They will be removed from the codebase of future Jenkins X versions from April 20th.
 
 While this is an aggressive timeline, it’s important to know that if you’re currently running Jenkins X with traditional Jenkins today, it’s not going to disappear. You won’t be able to upgrade to new versions - but we will cut one final release right before the deadline to give you a stable version to use for as long as you need.
 
@@ -68,6 +68,6 @@ And finally, if you’d like to keep your Jenkins jobs running but as individual
 
 ## Conclusion
 
-We know this is a big announcement on a fast timeline and a lot of ideas to take in. We’d love to talk to you about it! Please join the [office hours we have arranged on March 19th](https://jenkins-x.io/community/office_hours/) that will be fully dedicated to discussing this. 
+We know this is a big announcement on a fast timeline and a lot of ideas to take in. We’d love to talk to you about it! Please join the [office hours we have arranged on March 19th](https://jenkins-x.io/community/office_hours/) that will be fully dedicated to discussing this.
 
 You may reach out to me, [Ethan Jones](mailto:ejones@cloudbees.com), if you’d like to discuss things one on one with some of our product and engineering team members.

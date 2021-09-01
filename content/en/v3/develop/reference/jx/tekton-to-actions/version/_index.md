@@ -23,8 +23,6 @@ Displays the version of this command
   -h, --help   help for version
 ```
 
-
-
 ### Source
 
 [jenkins-x-plugins/jx-tekton-to-actions](https://github.com/jenkins-x-plugins/jx-tekton-to-actions)

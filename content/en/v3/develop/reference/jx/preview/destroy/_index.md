@@ -24,6 +24,7 @@ Destroys a preview environment
   jx-preview destroy jx-myorg-myapp-pr-4
 
   ```
+
 ### Options
 
 ```
@@ -34,8 +35,6 @@ Destroys a preview environment
       --git-user string   The user name to git clone the environment repository
   -h, --help              help for destroy
 ```
-
-
 
 ### Source
 

@@ -11,10 +11,9 @@ weight: 50
 
 It works like other package mangers (brew, yum, npm etc) where there's one or more repositories with packages to install (called `charts` in helm to keep with the nautical kubernetes theme) which can be searched/installed and upgraded.
 
-A [helm chart is basically a versioned tarball of kubernetes yaml](https://docs.helm.sh/developing_charts/#charts) which can be easily installed on any kubnernetes cluster.
+A [helm chart is basically a versioned tarball of kubernetes yaml](https://docs.helm.sh/developing_charts/#charts) which can be easily installed on any kubernetes cluster.
 
 Helm supports composition (a chart can contain other charts) via the `requirements.yaml` file.
-
 
 ## What is Skaffold?
 
@@ -29,7 +28,6 @@ One of the challenges of building docker images inside a kubernetes cluster is t
 Whats nice about skaffold is it abstracts your code or CLI away from those details; you can define the policy for building docker images in your `skaffold.yaml` file to switch between docker daemon, GCB or kaniko etc.
 
 Skaffold is also really useful inside [DevPods](/docs/reference/devpods/) for doing fast incremental builds if you change the source code.
-
 
 ## How does Helm compare to Skaffold?
 
@@ -54,4 +52,3 @@ If you look inside your environment git repository you may notice 2 `exposecontr
 Those are 2 jobs we use by default to automate generating or cleaning `Ingress` resources to expose labeled `Services`resources that you want to access from outside of the cluster. Eg web apps or rest apis.
 
 You can opt out of exposecontroller if you want - just don’t use the exposecontroller labels on your services. You could remove the exposecontroller job from an environment if you want - though none of our QuickStarts will be accessible from outside the cluster if you do!
-

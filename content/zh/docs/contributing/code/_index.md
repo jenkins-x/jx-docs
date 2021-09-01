@@ -9,7 +9,6 @@ authors: [digitalcraftsman]
 
 Jenkins X 是由众多[开发者][contributors]开发的开源项目。还有很多 [open issues][issues]，我们需要你的帮助来使 Jenkins X 变得更棒。即使你不是一个 Go 语言的专家，也可以对项目的开发贡献力量。
 
-
 ## 假设
 
 本篇指导文档将帮助新接触 Jenkins X 的读者逐步熟悉它，因此我们假定：
@@ -26,7 +25,6 @@ Jenkins X 是由众多[开发者][contributors]开发的开源项目。还有很
 Go 语言环境的安装仅需要几分钟。并且多种方式可供选择。
 
 如果在安装过程当中遇到问题，请查阅 [Go Bootcamp,which contains setups for every platform][gobootcamp] 或者向 Jenkins X [论坛][forums]中寻求帮助。
-
 
 ### 从源码安装 Go
 
@@ -70,6 +68,7 @@ brew install go
 如果你想要贡献代码的话，需要创建一个 Github 账号。登录 [www.github.com/join](https://github.com/join) 注册个人账号。
 
 ## 在你的系统上安装 Git
+
 Jenkins X 开发过程当中需要在本机安装 Git 客户端。Git 的使用学习不包含在 Jenkins X 的文档中，如果你不确定从哪里开始的话，我们推荐通过 [Git book][gitbook] 学习使用 Git 的基本知识。使用的词汇将会通过注解进行解释。
 
 Git 是一个[版本控制系统](https://en.wikipedia.org/wiki/Version_control)，用于跟踪源代码的变化。为了不重复造轮子，Jenkins X 使用了第三方的软件包来扩展功能。
@@ -161,6 +160,7 @@ git remote add <YOUR-GITHUB-USERNAME> <COPIED REMOTE-URL>
 #### 使用 Hub 派生
 
 相类似的，可以使用 Git 的封装工具 Hub 进行操作。Hub 使得创建分之仓库变得容易：
+
 ```sh
 git fork
 ```
@@ -196,6 +196,7 @@ origin  https://github.com/jenkins-x/jx (push)
 git checkout master
 git pull
 ```
+
 现在，为你的附加功能创建一个新的版本：
 
 ```sh
@@ -221,6 +222,7 @@ go build -o hugo main.go
 ```
 
 ### 测试
+
 有时对代码的修改可能会带来没有注意到的负面影响。或者是并不像预期的那样工作。大部分的功能都有其相对应的测试用例。这些测试文件都以 `_test.go` 结尾。
 
 请确保 `go test ./...` 命令通过没有异常以及 `go build` 执行完毕。
@@ -278,7 +280,6 @@ git commit --amend
 {{< /alert >}}
 
 这一部分的操作需要更高的技能。Git 允许你对多次提交进行[修改](https://git-scm.com/docs/git-rebase)。换句话说：它允许你对历史的提交进行修改。
-
 
 ```sh
 git rebase --interactive @~6
@@ -352,7 +353,6 @@ git push --set-upstream <YOUR-GITHUB-USERNAME> <BRANCHNAME>
 
 在新的页面当中，将会包含你的 pull request 中的重要信息。滚动鼠标你会发现所有的提交信息。确保所有的一切与构想的一致并点击按钮 “Create pull request”。
 
-
 ### 同意贡献者授权协议
 
 最后也同样重要的是，你应该同意贡献者授权协议（CLA）。一个新的评论信息应该会自动的添加到你的 pull request 当中。点击黄色的徽章，同意协议并用你自己的 GitHub 账号进行认证。它仅需要几步点击之后即可完成。
@@ -382,7 +382,6 @@ git push --set-upstream <YOUR-GITHUB-USERNAME> <BRANCHNAME>
 * [The Git Book][gitbook] (免费)
 * [Go Bootcamp][gobootcamp]
 * [GitHub Pull Request Tutorial, Thinkful][thinkful]
-
 
 [codecademy]: https://www.codecademy.com/learn/learn-git
 [contributors]: https://github.com/jenkins-x/jx/graphs/contributors

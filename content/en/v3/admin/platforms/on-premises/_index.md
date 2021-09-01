@@ -24,7 +24,7 @@ Ensure you are logged into GitHub else you will get a 404 error when clicking th
 If you are using kubernetes we highly recommend you use one of the [managed cloud providers](/v3/#administration) as this comes with lots of additional features like:
 
 * container registries and bucket storage
-* IAM and workload identity (e.g. so kubernetes Service Accounts can be assigned roles to be able to read/write to certain buckets or container registries) 
+* IAM and workload identity (e.g. so kubernetes Service Accounts can be assigned roles to be able to read/write to certain buckets or container registries)
 
 However sometimes you need to run kubernetes on your premises. Longer term we hope the cloud providers can run their managed kubernetes and associated infrastructure on your premises too so you get to reuse the same storage + IAM anywhere. But until then, this guide is intended to get you started installing Jenkins X on a vanilla kubernetes cluster on-premises.
 
@@ -41,24 +41,24 @@ The following are the prerequisites of your on-premises kubernetes cluster:
 We obviously need a working kubernetes cluster. There are many approaches to [setting up on-premises clusters](https://kubernetes.io/docs/setup/production-environment/tools/) obviously the easiest approach is to use the [cloud](/v3/#administration).
 
 If you are going the bare metal route you could try [these instructions](https://007ba7.us/howto/k8s-install/)
- 
+
 #### kubectl access
 
 You need to be able to connect to your kubernetes cluster via [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) so that you can run commands like:
 
-```bash 
+```bash
 kubectl get ns
 kubectl get node
 ```
 
 To view the namespaces and nodes respectively.
- 
+
 #### Ingress
 
 To use Jenkins X we need ingress to work. This means being able to create a kubernetes `Ingress`  resource with a domain name which can be resolved outside of kubernetes to network into kubernetes services.
 
 Jenkins X installs `nginx` which has a `LoadBalancer` kubernetes `Service` to implement ingress. But the underlying kubernetes platform needs to implement the load balancing network and infrastructure. This comes out of the box on all public clouds.
- 
+
 With an on-premises kubernetes cluster you need to install something like [MetalLB](https://metallb.universe.tf/)
 
 If you are on bare metal you could try [these instructions](https://007ba7.us/howto/metallb/)
@@ -73,9 +73,9 @@ You may find [these instructions useful](https://007ba7.us/howto/nfs-storage/)
 
 This is our current recommended quickstart for on-premises kubernetes:
 
-*  <a href="https://github.com/jx3-gitops-repositories/jx3-kubernetes/generate" target="github" class="btn bg-primary text-light">Create the cluster Git Repository</a> based on the [jx3-gitops-repositories/jx3-kubernetes](https://github.com/jx3-gitops-repositories/jx3-kubernetes/generate) template
+* <a href="https://github.com/jx3-gitops-repositories/jx3-kubernetes/generate" target="github" class="btn bg-primary text-light">Create the cluster Git Repository</a> based on the [jx3-gitops-repositories/jx3-kubernetes](https://github.com/jx3-gitops-repositories/jx3-kubernetes/generate) template
 
-    * if the above button does not work then please [Login to GitHub](https://github.com/login) first and then retry the button
+  * if the above button does not work then please [Login to GitHub](https://github.com/login) first and then retry the button
 
 * `git clone` the new repository via **HTTPS** and `cd` into the git clone directory
 
@@ -99,25 +99,23 @@ git commit -a -m "fix: added domain"
 git push origin main
 ```
 
-* ensure you are connected to your cluster so you can run the following [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) commands 
+* ensure you are connected to your cluster so you can run the following [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) commands
 
-```bash 
+```bash
 kubectl get ns
 kubectl get node      
-```        
+```
 
-*  <a href="/v3/guides/operator/" 
-    target="github" class="btn bg-primary text-light" 
+* <a href="/v3/guides/operator/"
+    target="github" class="btn bg-primary text-light"
     title="install the git operator to setup Jenkins X in your cluster">
     Install the git operator
   </a> from inside a git clone of the git repository you created above.
 
 * switch to the `jx` namespace
 
-```bash    
+```bash
 jx ns jx
-```        
+```
 
-*  <a href="/v3/develop/create-project/" class="btn bg-primary text-light">Create or import projects</a> 
-
-
+* <a href="/v3/develop/create-project/" class="btn bg-primary text-light">Create or import projects</a>

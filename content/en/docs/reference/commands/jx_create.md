@@ -15,10 +15,10 @@ Creates a new resource.
   
   Valid resource types include:
   
-  * cluster  
-  * env  
-  * git  
-  * spring (aka 'springboot')
+* cluster  
+* env  
+* git  
+* spring (aka 'springboot')
 
 ```
 jx create [flags]
@@ -39,31 +39,31 @@ jx create [flags]
 
 ### SEE ALSO
 
-* [jx](/commands/jx/)	 - jx is a command line tool for working with Jenkins X
-* [jx create addon](/commands/jx_create_addon/)	 - Creates an addon
-* [jx create branchpattern](/commands/jx_create_branchpattern/)	 - Create a git branch pattern for your team
-* [jx create chat](/commands/jx_create_chat/)	 - Creates a chat server resource
-* [jx create cluster](/commands/jx_create_cluster/)	 - Create a new Kubernetes cluster
-* [jx create devpod](/commands/jx_create_devpod/)	 - Creates a DevPod for running builds and tests inside the cluster
-* [jx create docker](/commands/jx_create_docker/)	 - Create/update Docker auth for a given host and user in the config.json file
-* [jx create docs](/commands/jx_create_docs/)	 - Creates the documentation files
-* [jx create domain](/commands/jx_create_domain/)	 - Create a domain in a managed DNS service provider
-* [jx create environment](/commands/jx_create_environment/)	 - Create a new Environment which is used to promote your Team's Applications via Continuous Delivery
-* [jx create etc-hosts](/commands/jx_create_etc-hosts/)	 - Creates a new Git server URL
-* [jx create git](/commands/jx_create_git/)	 - Creates a Git resource
-* [jx create gke-service-account](/commands/jx_create_gke-service-account/)	 - Creates a GKE service account
-* [jx create issue](/commands/jx_create_issue/)	 - Create an issue on the git project for the current directory
-* [jx create jenkins](/commands/jx_create_jenkins/)	 - Creates a Jenkins resource
-* [jx create mlquickstart](/commands/jx_create_mlquickstart/)	 - Create a new machine learning app from a set of quickstarts and import the generated code into Git and Jenkins for CI/CD
-* [jx create project](/commands/jx_create_project/)	 - Create a new Project by importing code, using a Quickstart or custom wizard for Spring
-* [jx create pullrequest](/commands/jx_create_pullrequest/)	 - Create a Pull Request on the git project for the current directory
-* [jx create quickstart](/commands/jx_create_quickstart/)	 - Create a new app from a Quickstart and import the generated code into Git and Jenkins for CI/CD
-* [jx create quickstartlocation](/commands/jx_create_quickstartlocation/)	 - Create a location of quickstarts for your team
-* [jx create step](/commands/jx_create_step/)	 - Creates a step in the Jenkins X Pipeline
-* [jx create team](/commands/jx_create_team/)	 - Create a new Team which is then provisioned later on
-* [jx create token](/commands/jx_create_token/)	 - Creates a new user token for a service
-* [jx create tracker](/commands/jx_create_tracker/)	 - Creates an issue tracker resource
-* [jx create user](/commands/jx_create_user/)	 - Create a new User which is then provisioned by the user controller
-* [jx create variable](/commands/jx_create_variable/)	 - Creates an environment variable in the Jenkins X Pipeline
+* [jx](/commands/jx/)  - jx is a command line tool for working with Jenkins X
+* [jx create addon](/commands/jx_create_addon/)  - Creates an addon
+* [jx create branchpattern](/commands/jx_create_branchpattern/)  - Create a git branch pattern for your team
+* [jx create chat](/commands/jx_create_chat/)  - Creates a chat server resource
+* [jx create cluster](/commands/jx_create_cluster/)  - Create a new Kubernetes cluster
+* [jx create devpod](/commands/jx_create_devpod/)  - Creates a DevPod for running builds and tests inside the cluster
+* [jx create docker](/commands/jx_create_docker/)  - Create/update Docker auth for a given host and user in the config.json file
+* [jx create docs](/commands/jx_create_docs/)  - Creates the documentation files
+* [jx create domain](/commands/jx_create_domain/)  - Create a domain in a managed DNS service provider
+* [jx create environment](/commands/jx_create_environment/)  - Create a new Environment which is used to promote your Team's Applications via Continuous Delivery
+* [jx create etc-hosts](/commands/jx_create_etc-hosts/)  - Creates a new Git server URL
+* [jx create git](/commands/jx_create_git/)  - Creates a Git resource
+* [jx create gke-service-account](/commands/jx_create_gke-service-account/)  - Creates a GKE service account
+* [jx create issue](/commands/jx_create_issue/)  - Create an issue on the git project for the current directory
+* [jx create jenkins](/commands/jx_create_jenkins/)  - Creates a Jenkins resource
+* [jx create mlquickstart](/commands/jx_create_mlquickstart/)  - Create a new machine learning app from a set of quickstarts and import the generated code into Git and Jenkins for CI/CD
+* [jx create project](/commands/jx_create_project/)  - Create a new Project by importing code, using a Quickstart or custom wizard for Spring
+* [jx create pullrequest](/commands/jx_create_pullrequest/)  - Create a Pull Request on the git project for the current directory
+* [jx create quickstart](/commands/jx_create_quickstart/)  - Create a new app from a Quickstart and import the generated code into Git and Jenkins for CI/CD
+* [jx create quickstartlocation](/commands/jx_create_quickstartlocation/)  - Create a location of quickstarts for your team
+* [jx create step](/commands/jx_create_step/)  - Creates a step in the Jenkins X Pipeline
+* [jx create team](/commands/jx_create_team/)  - Create a new Team which is then provisioned later on
+* [jx create token](/commands/jx_create_token/)  - Creates a new user token for a service
+* [jx create tracker](/commands/jx_create_tracker/)  - Creates an issue tracker resource
+* [jx create user](/commands/jx_create_user/)  - Create a new User which is then provisioned by the user controller
+* [jx create variable](/commands/jx_create_variable/)  - Creates an environment variable in the Jenkins X Pipeline
 
 ###### Auto generated by spf13/cobra on 2-Sep-2020

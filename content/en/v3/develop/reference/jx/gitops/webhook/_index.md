@@ -23,8 +23,6 @@ Commands for working with WebHooks on your source repositories
   -h, --help   help for webhook
 ```
 
-
-
 ### Source
 
 [jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

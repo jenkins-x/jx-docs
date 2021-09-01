@@ -24,6 +24,7 @@ Updates Ingress resources with the current ingress domain
   jx-gitops ingress
 
   ```
+
 ### Options
 
 ```
@@ -32,8 +33,6 @@ Updates Ingress resources with the current ingress domain
       --fail-on-parse-error   if enabled we fail if we cannot parse a yaml file as a kubernetes resource
   -h, --help                  help for ingress
 ```
-
-
 
 ### Source
 

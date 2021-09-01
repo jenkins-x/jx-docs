@@ -24,6 +24,7 @@ Resolves the helmfile.yaml from the version stream to specify versions and helm 
   jx-gitops helmfile resolve
 
   ```
+
 ### Options
 
 ```
@@ -40,8 +41,6 @@ Resolves the helmfile.yaml from the version stream to specify versions and helm 
       --verbose                     Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
       --version-stream-dir string   the directory for the version stream. Defaults to 'versionStream' in the current --dir
 ```
-
-
 
 ### Source
 

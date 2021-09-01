@@ -19,15 +19,13 @@ You can check out the [catalog documentation](https://docs.k8slens.dev/main/cata
 ## Install the Jenkins X extension
 
 [Lens](https://k8slens.dev/) supports [extensions](https://k8slens.dev/#extensions) to support custom UIs for different extensions to Kubernetes such as Jenkins X.
-                
-Follow the Lens documentation on [installing an extension](https://docs.k8slens.dev/main/extensions/usage/#installing-an-extension) using the following URL for the [Jenkins X Lens extension](https://github.com/jenkins-x-plugins/jx-lens)
 
+Follow the Lens documentation on [installing an extension](https://docs.k8slens.dev/main/extensions/usage/#installing-an-extension) using the following URL for the [Jenkins X Lens extension](https://github.com/jenkins-x-plugins/jx-lens)
 
 * go to the **File** (or **Lens** on macOS) > **Extensions** in the application menu
 * enter the following URL into the **Install Extension** input field
   * @jenkins-x-plugins/jx-lens
 * make sure the extension is **Enabled**
-
 
 ## Using the Jenkins X extension
 

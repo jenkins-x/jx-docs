@@ -15,9 +15,9 @@ jx gitops apply
 
 ### Synopsis
 
-Performs a gitops regeneration and apply on a cluster git repository 
+Performs a gitops regeneration and apply on a cluster git repository
 
-If the last commit was a merge from a pull request the regeneration is skipped. 
+If the last commit was a merge from a pull request the regeneration is skipped.
 
 Also the process detects if an ingress has changed (or similar changes) and retriggers another regeneration which typically is only required when installing for the first time or if no explicit domain name is being used and the LoadBalancer service has been removed.
 
@@ -28,6 +28,7 @@ Also the process detects if an ingress has changed (or similar changes) and retr
   jx-gitops apply
 
   ```
+
 ### Options
 
 ```
@@ -35,8 +36,6 @@ Also the process detects if an ingress has changed (or similar changes) and retr
   -h, --help           help for apply
       --pull-request   specifies to apply the pull request contents into the PR branch
 ```
-
-
 
 ### Source
 

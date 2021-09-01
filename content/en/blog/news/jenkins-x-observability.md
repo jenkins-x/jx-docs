@@ -18,6 +18,7 @@ author: Oscar Medina
 Credit: [Minds Eye Creative](https://www.mindseyecreative.ca/) | [DevOps Days Toronto](https://devopsdays.org/events/2018-toronto/program/clay-smith/)
 
 # Overview
+
 You might have heard of Observability given that folks have been talking about this for a while now.  Sure, you might think it is just the latest tech buzzword.  However, the practice has been around for a long time now.
 
 Observability is certainly relevant today given the Microservices architectures, distributed systems, and the characteristics of modern applications being deployed at a faster pace by leveraging CI/CD pipelines to Kubernetes, in this case using Jenkins X.  Indeed old practices of setting up monitoring after an app is deployed, are no longer acceptable.
@@ -27,12 +28,12 @@ Let’s face it, modern apps call for modern instrumentation, not only once they
 Given that Jenkins X is the native CI/CD platform for Kubernetes, we must start thinking of Observability in the context of the build and release of our containerized applications via this platform, and not after the deployment process itself.
 
 # What we are doing today
+
 Today, I walk you through the process of increasing observability in your build and release pipeline by implementing tracing for a couple of events such as `npm install` and `npm test` which are part of a sample NodeJS application.
 
 {{< alert >}}
 NOTE: Tracing is only a small portion of other things that need to be in place.  Logging and Metrics are also required.  The combination and aggregation of this data allows you to understand how observable your pipeline is.
 {{< /alert >}}
-
 
 <figure>
 <img src="https://peter.bourgon.org/img/instrumentation/01.png"/>
@@ -42,7 +43,6 @@ NOTE: Tracing is only a small portion of other things that need to be in place. 
 </figure>
 Diagram by: [Peter Bourgon](https://peter.bourgon.org/blog/2017/02/21/metrics-tracing-and-logging.html)
 
-
 ## Leveraging Third-Party Tools
 
 Jenkins X was built with extensibility and flexibility in mind.  Today, you can easily create **QuickStarts** for a language not implemented.  You can also build **addOns** to augment the platform functionality.  There are currently **addOns** for `istio`, `prometheus` and `anchore` to name a few.  Given this extensibility, we encourage our community to build these components and share with everyone.
@@ -51,23 +51,24 @@ If you look around, you’ll find that [Honeycomb.io](http://Honeycomb.io) is at
 
 In this post, we use the Honeycomb.io API to trace our pipeline events.
 
-
 ### Tracing CI/CD Pipeline Events
-In this scenario we want to trace start and end times for certain events.  In our example NodeJS app, we have commands such as `npm install` and `npm test`, which are part of our **build-pack** pipeline out of the box.  To do start tracing, we modify the Tekton pipeline and inject calls to the Honeycomb.io API before and after these specific **build pack** named steps.
 
+In this scenario we want to trace start and end times for certain events.  In our example NodeJS app, we have commands such as `npm install` and `npm test`, which are part of our **build-pack** pipeline out of the box.  To do start tracing, we modify the Tekton pipeline and inject calls to the Honeycomb.io API before and after these specific **build pack** named steps.
 
 {{< alert >}}
 NOTE: Please be sure to sign up for [honeycomb.io](http://honeycomb.io) to obtain your **API Key**
 {{< /alert >}}
 
-
 #### Create Kubernetes Secret
+
 Once we have our API Key, we want to create a Kubernetes Secret which is required to make API calls within our pipeline.  To do this, we create it in the `jx` and `jx-staging` namespaces.  For each namespace execute the following command (be sure to modify the namespace value as needed).
 
 ```sh
 kubectl create secret generic honeycomb-creds —from-literal=BUILDEVENT_APIKEY=<KEY> --namespace=<NAMESPACE>
 ```
+
 #### Modify Tekton Pipeline
+
 Now that we have our Kubernetes Secret in place, we will modify the `jenkins-x.yaml` file, which currently has exactly one line as follows:
 
 ```yaml
@@ -95,6 +96,7 @@ pipelineConfig:
         name: honeycomb-creds
 
 ```
+
 The **build-pack** used for a NodeJS app is **javascript** as detected by the language.  Hence, why the single line we had as the contents of the `jenkins-x.yaml` file.
 
 Because we know which build-pack is being used, we can determine which named steps exist.  As you can imagine, a typical `npm install` and `npm test` typically exist.
@@ -145,6 +147,7 @@ Therefore, we want to inject a timestamp **before** and **after** each of these 
       type: after
 
 ```
+
 Now that I have  captured timestamps for these two named steps, I want to send an API call to honeycomb as follows.  You will notice how I am using a binary called **buildevents** this is downloaded during the setup of my pipelines which I discuss shortly.
 
 By concatenating a few metadata pieces that exist as **environment variables** in Jenkins X, I build a unique name which is needed by honeycomb to track things correctly.
@@ -203,6 +206,7 @@ This is portion of the pipeline executes first hence the **setup** node.  There 
 - Create the timestamp we will use to track the **pullRequest** pipeline execution.  I do this by saving a temporary file with the timestamp.
 
 This is done for both pipelines, as we are working with both.
+
 ```yaml
 
     pullRequest:
@@ -236,12 +240,7 @@ This is done for both pipelines, as we are working with both.
 
 Once this pipeline executes, the dashboard on the honeycomb.io site will show us the execution tracing as follows.
 
-
-
-
 ![Honeycomb Dashboard](/news/jenkins-x-observability/honeycomb_trace_example.png)
-
-
 
 As you can see, we have a unique name for our build being traced, underneath that we are tracking the two events `npm install` and `npm test` time spans.  We can easily see how long our dependencies are taking to download, and how long does it take to run the tests for the app.
 
@@ -249,10 +248,9 @@ As you can see, we have a unique name for our build being traced, underneath tha
 
 Hopefully I’ve enticed you to at least look into why you might consider incorporating observability into your build and release process. There is a lot more that can be done.  In a future post, we will cover additional setup.
 
-
 ## Jenkins World | DevOps World 2019
-I'll be demoing this solution at various times while at the conference this year.  You can still register and get a big discount by using code: **PREVIEW**.  You can find my full schedule on the [official website](https://www.cloudbees.com/devops-world/san-francisco/agenda)
 
+I'll be demoing this solution at various times while at the conference this year.  You can still register and get a big discount by using code: **PREVIEW**.  You can find my full schedule on the [official website](https://www.cloudbees.com/devops-world/san-francisco/agenda)
 
 Cheers,<br/>
 [@SharePointOscar](https://twitter.com/SharePointOscar)

@@ -7,7 +7,7 @@ weight: 210
 ---
 
 ## After an upgrade the boot job is waiting for vault in jx-vault
- 
+
 In the alpha we used to install vault via the `helmfile/secret-infra/helmfile.yaml` file and install vault into the `secret-infra` namespace.
 
 A production installation of vault requires cloud resources such as a key ring, crypto key and bucket.
@@ -18,7 +18,7 @@ So ideally you would re-apply your terraform using the latest terraform modules 
 
 A workaround if you wish to keep using your vault in your `secret-infra` namespace is to modify the first few lines starting with `VAULT` of the file: `versionStream/Makefile.mk` as follows:
 
-```makefile 
+```makefile
 VAULT_ADDR ?= https://vault.secret-infra:8200
 VAULT_NAMESPACE ?= secret-infra
 VAULT_ROLE ?= secret-infra

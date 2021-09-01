@@ -82,9 +82,9 @@ pipelinerunner:
 
 ## ¿Debo usar prow o lighthouse?
 
-Si está utilizando un servidor Git que no sea https://github.com, le recomendamos [Lighthouse](/architecture/lighthouse/).
+Si está utilizando un servidor Git que no sea <https://github.com>, le recomendamos [Lighthouse](/architecture/lighthouse/).
 
-Si está utilizando https://github.com recomendamos por ahora [Prow](/docs/reference/components/prow/), ya que ha tenido más pruebas que [Lighthouse](/architecture/lighthouse/).
+Si está utilizando <https://github.com> recomendamos por ahora [Prow](/docs/reference/components/prow/), ya que ha tenido más pruebas que [Lighthouse](/architecture/lighthouse/).
 
 Aunque [Lighthouse](/architecture/lighthouse/) es nuestra dirección estratégica. Estamos comenzando a mover gradualmente nuestros repositorios de código abierto a [Lighthouse](/architecture/lighthouse/). En algún momento en el futuro, una vez que hayamos estado usando [Lighthouse](/architecture/lighthouse/) en producción para todos nuestros repositorios de código abierto y comerciales, [Lighthouse](/architecture/lighthouse/) se convertirá en nuestra solución recomendada para todos los proveedores Git para que podamos tener una base de código única, más simple y más pequeña para mantener.
 

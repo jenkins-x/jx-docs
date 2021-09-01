@@ -24,6 +24,7 @@ Sets a property on the given Pipeline / PipelineRun / Task files.
   jx pipeline set --dir tasks --template-env FOO=bar
 
   ```
+
 ### Options
 
 ```
@@ -32,8 +33,6 @@ Sets a property on the given Pipeline / PipelineRun / Task files.
   -h, --help                       help for set
   -t, --template-env stringArray   List of environment variables to set of the form 'NAME=value' on the step template
 ```
-
-
 
 ### Source
 

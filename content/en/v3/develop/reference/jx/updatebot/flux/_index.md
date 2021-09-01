@@ -23,8 +23,6 @@ Commands for working with FluxCD git repositories
   -h, --help   help for flux
 ```
 
-
-
 ### Source
 
 [jenkins-x-plugins/jx-updatebot](https://github.com/jenkins-x-plugins/jx-updatebot)

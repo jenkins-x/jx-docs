@@ -19,7 +19,7 @@ This page lists the main organisations and repositories.
 * [jenkins-x-charts](https://github.com/jenkins-x-charts) the main helm charts we distribute
 * [jenkins-x-images](https://github.com/jenkins-x-images) contains some custom docker image builds
 * [jenkins-x-quickstarts](https://github.com/jenkins-x-quickstarts) the quickstart projects used by [create quickstart](/docs/getting-started/first-project/create-quickstart/)
-* [jenkins-x-test-projects](https://github.com/jenkins-x-test-projects) test projects we use in test cases 
+* [jenkins-x-test-projects](https://github.com/jenkins-x-test-projects) test projects we use in test cases
 
 ### 3.x
 
@@ -45,7 +45,7 @@ Here we'll call out of some of the main repositories in the above organisations:
 
 The following repositories are for [version 3.x](https://jenkins-x.io/v3/):
 
-* [jenkins-x/jx](https://github.com/jenkins-x/jx) is the 3.x CLI 
+* [jenkins-x/jx](https://github.com/jenkins-x/jx) is the 3.x CLI
 * [jenkins-x/jx3-pipeline-catalog](https://github.com/jenkins-x/jx3-pipeline-catalog) the main [Pipeline Catalog](https://jenkins-x.io/v3/guides/pipeline-catalog/)
 * [jenkins-x/jxr-versions](https://github.com/jenkins-x/jxr-versions) contains the [version stream](/about/concepts/version-stream/) - the stable versions of all _charts_ and CLI _packages_
 
@@ -58,10 +58,9 @@ The following repositories are for 2.x code:
 * [jenkins-x/jenkins-x-versions](https://github.com/jenkins-x/jenkins-x-versions) contains the [version stream](/about/concepts/version-stream/) - the stable versions of all _charts_ and CLI _packages_
 * [jenkins-x/jenkins-x-boot-config](https://github.com/jenkins-x/jenkins-x-boot-config) the default boot configuration for a `jx boot` based install
 
-
 ### Build pods and images
 
-* [jenkins-x/jenkins-x-builders](https://github.com/jenkins-x/jenkins-x-builders) generates the static jenkins server build pod docker images        
+* [jenkins-x/jenkins-x-builders](https://github.com/jenkins-x/jenkins-x-builders) generates the static jenkins server build pod docker images
 * [jenkins-x/jenkins-x-image](https://github.com/jenkins-x/jenkins-x-image) generates the docker image for the static jenkins server we use by default
 
 ### Tools
@@ -72,4 +71,4 @@ The following repositories are for 2.x code:
 
 #### Legacy tools
 
-* [jenkins-x/exposecontroller](https://github.com/jenkins-x/exposecontroller) a `Deployment` or `Job` that can be used to generate/update `Ingress` resources (or `Route` on OpenShift) if you change your DNS domain or enable TLS - it can also inject external URLs into your application via `ConfigMap` injection 
+* [jenkins-x/exposecontroller](https://github.com/jenkins-x/exposecontroller) a `Deployment` or `Job` that can be used to generate/update `Ingress` resources (or `Route` on OpenShift) if you change your DNS domain or enable TLS - it can also inject external URLs into your application via `ConfigMap` injection

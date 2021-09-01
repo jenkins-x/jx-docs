@@ -27,6 +27,7 @@ Imports tekton pipelines from a catalog.
   jx pipeline import -f build --no-trigger
 
   ```
+
 ### Options
 
 ```
@@ -42,8 +43,6 @@ Imports tekton pipelines from a catalog.
   -u, --url string                   The tekton catalog git URL which is cloned if no --catalog-dir is specified (default "https://github.com/tektoncd/catalog.git")
   -v, --version string               The version of the task folder to use
 ```
-
-
 
 ### Source
 

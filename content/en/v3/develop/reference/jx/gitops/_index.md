@@ -23,8 +23,6 @@ commands for working with GitOps based git repositories
   -h, --help   help for jx-gitops
 ```
 
-
-
 ### Source
 
 [jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

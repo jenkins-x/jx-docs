@@ -24,6 +24,7 @@ Enables lighthouse pipelines in the current directory
   jx project enable
 
   ```
+
 ### Options
 
 ```
@@ -39,8 +40,6 @@ Enables lighthouse pipelines in the current directory
       --pack string           The name of the pipeline catalog pack to use. If none is specified it will be chosen based on matching the source code languages
       --verbose               Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
 ```
-
-
 
 ### Source
 

@@ -72,7 +72,6 @@ Typically that may default to something like `master|PR-.*|feature.*`. That mean
 
 If you use another branch name than `master` such as `develop` or whatever you can change this pattern to be whatever you you like via the `--branches` argument whenever you run [jx import](/commands/jx_import/) or [jx create quickstart](/commands/jx_create_quickstart/).
 
-
 ```sh
 jx import --branches "develop|PR-.*|feature.*"
 ```
@@ -94,6 +93,7 @@ To set the branch patterns for your team  [jx create branchpattern](/commands/jx
 ```sh
 jx create branchpattern  "develop|PR-.*|feature.*"
 ```
+
 You can then view the current branch patterns for your team via the [jx get branchpattern](/commands/jx_get_branchpattern/) command:
 
 ```sh

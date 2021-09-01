@@ -15,16 +15,16 @@ jx project mlquickstart
 
 ### Synopsis
 
-Create a new machine learning project from a sample/starter (found in https://github.com/machine-learning-quickstarts)
+Create a new machine learning project from a sample/starter (found in <https://github.com/machine-learning-quickstarts>)
   
       This will create two new projects for you from the selected template. One for training and one for deploying a model as a service.
       It will exclude any work-in-progress repos (containing the "WIP-" pattern)
   
       For more documentation see: [https://jenkins-x.io/developing/create-mlquickstart/](https://jenkins-x.io/developing/create-mlquickstart/)
   
-See Also: 
+See Also:
 
-  * jx project : https://jenkins-x.io/commands/jx_project
+* jx project : <https://jenkins-x.io/commands/jx_project>
 
 ### Examples
 
@@ -39,6 +39,7 @@ See Also:
   jx project mlquickstart -f pytorch
 
   ```
+
 ### Options
 
 ```
@@ -90,8 +91,6 @@ See Also:
       --verbose                        Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
       --wait-for-pr                    waits for the Pull Request generated on the cluster environment git repository to merge (default true)
 ```
-
-
 
 ### Source
 

@@ -24,6 +24,7 @@ Waits for a pipeline to be imported and activated by the boot Job
   jx pipeline wait --owner myorg --repo myrepo
 
   ```
+
 ### Options
 
 ```
@@ -38,8 +39,6 @@ Waits for a pipeline to be imported and activated by the boot Job
   -r, --repo string            The repository name o wait for
       --verbose                Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
 ```
-
-
 
 ### Source
 

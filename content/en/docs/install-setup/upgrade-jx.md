@@ -94,6 +94,7 @@ by using the `jx` cli to check for upgrades with the command:
 ```sh
 jx upgrade apps
 ```
+
 The `apps` specified includes *all* installed apps in your kubernetes
 cluster if upgrades are available. If you want to upgrade only specific
 apps, you can use the `jx upgrade app` command and the specified app:
@@ -103,6 +104,7 @@ jx upgrade app cb-app-slack
 ```
 
 Further information
---------------    
+--------------
+
 Details information on the upgrade commands are available at [the Jenkins X documentation site for the
-command.](/commands/jx_upgrade/)    
+command.](/commands/jx_upgrade/)

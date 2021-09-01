@@ -112,7 +112,6 @@ kops update cluster --yes
 
 You should now be good to go!
 
-
 #### Enabling insecure registries on kops ####
 
 Do the following:
@@ -167,9 +166,9 @@ jx install --provider=aws
 ## Installing Jenkins X on-premises
 
 __Prerequisits__
-- Kubernetes > 1.8
-- RBAC enabled
-- A default cluster [dynamic storage class](https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/) for provisioning persistent volumes.
+* Kubernetes > 1.8
+* RBAC enabled
+* A default cluster [dynamic storage class](https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/) for provisioning persistent volumes.
 
 When using an on-premises Kubernetes cluster, you can use this command line:
 
@@ -210,8 +209,8 @@ If you want an explanation of what the [jx install](/commands/deprecation/) comm
 ## Installing Jenkins X on IBM Cloud Private
 
 __Prerequisites__
-- IBM Cloud Private version 3.1.0 is compatible with Jenkins X version 1.3.572.
-- You might have to clean up with the `helm delete --purge jenkins-x` or `jx uninstall` commands. However, the `jx uninstall` command might not correctly pick up Helm releases at the `default` namespace if you point to the `kube-system` Tiller.
+* IBM Cloud Private version 3.1.0 is compatible with Jenkins X version 1.3.572.
+* You might have to clean up with the `helm delete --purge jenkins-x` or `jx uninstall` commands. However, the `jx uninstall` command might not correctly pick up Helm releases at the `default` namespace if you point to the `kube-system` Tiller.
 
 IBM Cloud Private includes a Docker registry and ingress controller. You can install Jenkins X into IBM Cloud Private with the following command:
 
@@ -231,8 +230,8 @@ Create `ClusterImagePolicies` on IBM Cloud Private version 3.1.0 and set the fol
 ```
 
 Specify the following two `jx install` parameters with the command line or when prompted by the IBM Cloud Private provider:
-- The `domain=''` parameter is the domain to expose ingress endpoints, for example, `jenkinsx.io`.
-- The `external-ip=''` parameter is the external IP that is used to access ingress endpoints from outside the Kubernetes cluster and for bare metal on-premises clusters.
+* The `domain=''` parameter is the domain to expose ingress endpoints, for example, `jenkinsx.io`.
+* The `external-ip=''` parameter is the external IP that is used to access ingress endpoints from outside the Kubernetes cluster and for bare metal on-premises clusters.
 
 If you don't specify these parameters, then the `jx install --provider=icp` command first prompts you to enter the `external-ip` parameter. Next, it prompts you to enter the `domain` parameter and offers you the `<external-ip>.nip.io` default value. After you enter these values, an ingress endpoint becomes available at `http://jenkins.jx.<your cluster IP>.nip.io`.
 

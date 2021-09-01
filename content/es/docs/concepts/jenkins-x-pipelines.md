@@ -117,4 +117,3 @@ Las siguientes variables de entorno están disponibles para su uso en los pasos 
 | PULL_BASE_SHA | el SHA en Git que ha sido construido |
 | PULL_NUMBER | para los PRs este será el número sin el prefijo `PR-`
 | PULL_REFS | para combinar por lotes todas las referencias de Git |
-

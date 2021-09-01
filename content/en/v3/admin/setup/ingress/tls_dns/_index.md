@@ -10,5 +10,3 @@ aliases:
 ---
 
 This section will describe how to enable automated TLS and DNS for your Jenkins X installation.
-
-

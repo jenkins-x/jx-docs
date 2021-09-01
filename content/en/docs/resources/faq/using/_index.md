@@ -40,7 +40,6 @@ You can use vanilla helm to do things like injecting the current namespace if yo
 
 To see a more complex example of how you can use a `values.yaml` file to inject into charts, see how we use these files to [configure Jenkins X itself](/docs/resources/guides/managing-jx/common-tasks/config/)
 
-
 ## How do I inject preview specific configuration?
 
 See the [above question on how to inject environment specific configuration into environments](#how-do-i-inject-environment-specific-configuration)
@@ -57,7 +56,6 @@ You may need to modify your helm charts to add extra helm configuration if the c
 
 In addition, the Jenkins X team are big fans of [Kubernetes External Secrets](https://github.com/external-secrets/kubernetes-external-secrets) and are developing [jx-secret](https://github.com/jenkins-x/jx-secret), a small command line tool working with Kubernetes External Secrets.
 
-
 ## When do Preview Environments get removed?
 
 We have a background garbage collection job which removes Preview Environments after the Pull Request is closed/merged. You can run it any time you like via the [jx gc previews](/commands/jx_gc_previews/) command
@@ -72,7 +70,6 @@ You can also view the current previews via  [jx get previews](/commands/jx_get_p
 jx get previews
 ```
 
-
 and delete a preview by choosing one to delete via [jx delete preview](/commands/jx_delete_preview/):
 
 ```sh
@@ -84,7 +81,6 @@ jx delete preview
 When you create a Pull Request by default Jenkins X creates a new [Preview Environment](/about/concepts/features/#preview-environments). Since this is a new dynamic namespace you may want to configure additional microservices in the namespace so you can properly test your preview build.
 
 To find out more see [how to add dependent charts, services or configuration to your preview environment](/docs/build-test-preview/preview/#adding-more-resources)
-
 
 ## Can I use my existing release pipeline?
 
@@ -138,6 +134,7 @@ There's a few options for defining which docker registry owner to use:
 dockerRegistryHost: gcr.io
 dockerRegistryOwner: my-gcr-project-id
 ```
+
 * specify it in the [Environment CRD](/docs/reference/components/custom-resources/) called `dev` at `env.spec.teamSettings.dockerRegistryOrg`
 * define the environment variable `DOCKER_REGISTRY_ORG`
 
@@ -217,7 +214,6 @@ service:
 ```
 
 To see an example of where we add multiple annotations that the `exposecontroller` adds to generated ingress rules, take a look at this [values.yaml](https://github.com/jenkins-x/jenkins-x-platform/blob/08a304ff03a3e19a8eb270888d320b4336237005/values.yaml#L655)
-
 
 ## How can I use a monorepo?
 

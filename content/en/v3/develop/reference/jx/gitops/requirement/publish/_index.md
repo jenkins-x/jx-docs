@@ -23,6 +23,7 @@ Publishes the current jx-requirements.yml to the dev Environment so it can be ea
   jx-gitops requirements publish
 
   ```
+
 ### Options
 
 ```
@@ -31,8 +32,6 @@ Publishes the current jx-requirements.yml to the dev Environment so it can be ea
   -h, --help               help for publish
       --namespace string   the namespace used to find dev-environment.yaml (default "jx")
 ```
-
-
 
 ### Source
 

@@ -15,7 +15,7 @@ Los roles son por equipo, por lo que es posible tener roles especiales por equip
 
 ## Implicaciones de Seguridad para el namespace admin
 
-Jenkins X almacena varias configuraciones y ajustes (por ejemplo, `Users`,` Teams`) en el namespace de administración principal (`jx`). Tenga cuidado al otorgar roles en el equipo `jx` predeterminado, ya que permitir a los usuarios editar algunos de estos archivos puede permitirles escalar sus permisos.
+Jenkins X almacena varias configuraciones y ajustes (por ejemplo, `Users`,`Teams`) en el namespace de administración principal (`jx`). Tenga cuidado al otorgar roles en el equipo `jx` predeterminado, ya que permitir a los usuarios editar algunos de estos archivos puede permitirles escalar sus permisos.
 En lugar de otorgar a los usuarios que no son administradores acceso al espacio de nombres `jx`, cree equipos y otorgue acceso a los usuarios cuando usen un clúster compartido.
 
 ## Roles Predeterminados
@@ -46,6 +46,7 @@ Para modificar los roles de un usuario utilice el comando [jx edit userroles](/c
 ```sh
 jx edit userrole --login joe
 ```
+
 Si no utiliza el parámetro `--login` (`-l`) en la línea de comando el sistema le pedirá que elija el usuario a editar.
 
 Por ejemplo, para asignarle a `joe` el role `committer` (y elimine cualquier otro rol existente):
@@ -55,6 +56,7 @@ jx edit userrole --login joe --role committer
 ```
 
 Si tiene roles específicos y desea otorgar múltiples roles a un usuario, puede especificar los roles como una lista separada por comas:
+
 ```sh
 jx edit userrole --login joe --role committer,viewer
 ```

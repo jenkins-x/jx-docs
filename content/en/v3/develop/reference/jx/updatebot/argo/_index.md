@@ -23,8 +23,6 @@ Commands for working with ArgoCD git repositories
   -h, --help   help for argo
 ```
 
-
-
 ### Source
 
 [jenkins-x-plugins/jx-updatebot](https://github.com/jenkins-x-plugins/jx-updatebot)

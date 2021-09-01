@@ -9,6 +9,7 @@ weight: 130
 This guide will help you install, configure and use the [Continuous Delivery Indicators](https://github.com/jenkins-x/cd-indicators) addon in your Jenkins X cluster.
 
 This addon will automatically:
+
 - collect metrics from cluster events and git events: pull requests, pipelines, releases, deployments, ...
 - store them in a [PostgreSQL](https://www.postgresql.org/) database
 - expose [Grafana](http://grafana.com/) dashboards to visualize Continuous Delivery Indicators
@@ -34,7 +35,7 @@ releases:
 
 Commit and push these changes, and after a few minutes you should see 2 new pods running in the `jx` namespace:
 
-```bash 
+```bash
 $ kubectl get pod -n jx
 NAME                             READY   STATUS    RESTARTS   AGE
 cd-indicators-57f85df9fb-fltjp   1/1     Running   0          13m
@@ -45,12 +46,14 @@ cd-indicators-postgresql-0       1/1     Running   0          13m
 ## Usage
 
 This addon will also expose:
+
 - a [Grafana datasource](https://grafana.com/docs/grafana/latest/datasources/) for the embedded PostgreSQL database - named `Indicators` - in a Kubernetes Secret
 - multiple [Grafana dashboards](https://grafana.com/docs/grafana/latest/dashboards/) - with the `cd-indicators` tag - in Kubernetes ConfigMaps
 
 The Grafana instance will automatically find these new resources and use them. So if you go to your Grafana URL, you should now see a new datasource and new dashboards. Of course, it might take a few hours/days/weeks to get enough data to get nice-looking dashboards.
 
 You can either:
+
 - enrich the existing dashboards, and submit Pull Requests on the [cd-indicators github repository](https://github.com/jenkins-x/cd-indicators) so that everybody can benefit from your improvements
 - or create your own dashboards. We recommend that you store them in a git repository, and publish them as ConfigMaps in your cluster - see the [cd-indicators github repository](https://github.com/jenkins-x/cd-indicators) for an example.
 
@@ -61,6 +64,7 @@ And because we're re-using the same Grafana instance which already has the Prome
 The configuration is defined in a ["values file" stored in the Jenkins X Version Stream](https://github.com/jenkins-x/jx3-versions/tree/master/charts/jx3/cd-indicators/values.yaml).
 
 If you want to change anything from the default configuration, you can either:
+
 - submit a Pull Request if you believe this change is beneficial for everybody
 - or create a new values file in your development environment git repositor: `values/cd-indicators/values.yaml`
 

@@ -28,7 +28,7 @@ Jenkins X 建立在巨人的肩膀上，并且拥有许多不同的源码仓库�
 * [jenkins-x/jenkins-x-platform](https://github.com/jenkins-x/jenkins-x-platform) Jenkins X 平台主要合成物的 helm 图表
 * [jenkins-x/jenkins-x-versions](https://github.com/jenkins-x/jenkins-x-versions) 包括[版本流](/about/concepts/version-stream/) - 所有 _图表_ 和 CLI _包_ 的稳定版本
 * [jenkins-x/cloud-environments](https://github.com/jenkins-x/cloud-environments) 不同 cloud providers 的 helm 配置
- 
+
 ### 构建 pods 和 镜像
 
 * [jenkins-x/jenkins-x-builders](https://github.com/jenkins-x/jenkins-x-builders) 生成静态 jenkins 服务的构建 pod 和 docker 镜像

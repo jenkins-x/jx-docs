@@ -37,7 +37,6 @@ jx env staging
 
 Use [jx namespace](/commands/jx_namespace/) to switch between different kubernetes namespaces.
 
-
 ```sh
 jx namespace
 ```
@@ -53,7 +52,6 @@ jx ns jx-production
 ### Changing Cluster
 
 Use [jx context](/commands/jx_context/) to switch between different kubernetes clusters (or contexts).
-
 
 ```sh
 jx context
@@ -86,6 +84,3 @@ and adds bash completion via [jx prompt](/commands/jx_prompt/).
 You can use [jx prompt](/commands/jx_prompt/)  to add the current kubernetes cluster and namespace to your terminals prompt.
 
 To add bash completion to your shell for [jx commands](/commands/jx/) then try the  [jx completion](/commands/jx_completion/).
-
-
-

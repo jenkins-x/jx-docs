@@ -27,6 +27,7 @@ Garbage collect the Jenkins X PipelineActivity resources
   jx gitops gc pa --dry-run
 
   ```
+
 ### Options
 
 ```
@@ -39,8 +40,6 @@ Garbage collect the Jenkins X PipelineActivity resources
   -r, --release-age duration        Maximum age to keep PipelineActivities for Releases (default 720h0m0s)
   -l, --release-history-limit int   Maximum number of PipelineActivities to keep around per repository release (default 5)
 ```
-
-
 
 ### Source
 

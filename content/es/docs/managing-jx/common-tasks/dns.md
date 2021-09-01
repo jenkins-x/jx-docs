@@ -10,6 +10,7 @@ Para poder acceder a los servicios alojados dentro de su clúster, usamos un dom
 Sin embargo, para los usuarios que desean que los servicios del clúster estén disponibles en un dominio personal, utilizamos DNS externos, que es igual de fácil.
 
 ## DNS Externos
+
 **NOTA**: *Actualmente solo disponible en GKE*
 
 Puede utilizar el servicio [ExternalDNS](https://github.com/kubernetes-incubator/external-dns) para exponer los Servicios (`Services`) y Entradas (`Ingress`) de Kubernetes mediante la sincronización con proveedores de DNS.

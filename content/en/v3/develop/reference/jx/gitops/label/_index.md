@@ -26,6 +26,7 @@ Updates all kubernetes resources in the given directory tree to add/override the
   jx-gitops label --dir myresource-dir foo=bar
 
   ```
+
 ### Options
 
 ```
@@ -36,8 +37,6 @@ Updates all kubernetes resources in the given directory tree to add/override the
       --kind-ignore stringArray   adds Kubernetes resource kinds to exclude. For kind expressions see: https://github.com/jenkins-x/jx-helpers/v3/tree/master/docs/kind_filters.md
       --selector stringToString   adds Kubernetes label selector to filter on, e.g. -s app=pusher-wave,heritage=Helm (default [])
 ```
-
-
 
 ### Source
 

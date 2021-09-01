@@ -11,7 +11,6 @@ Jenkins X ayuda a admitir _Jenkins nativo en la nube_ a través de:
 * cada equipo puede instalar su propio Jenkins X en su propio namespace (a través de `jx install --namespace myteam`)
 * soporte para diferentes cargas de trabajo por equipo (ver [jx edit buildpack](/commands/jx_edit_buildpack/)).
 
-
 ## Diferentes cargas de trabajo
 
 Algunos equipos desarrollan aplicaciones nativas en la nube en Kubernetes y, por lo tanto, deberían usar la opción `kubernetes workloads`.

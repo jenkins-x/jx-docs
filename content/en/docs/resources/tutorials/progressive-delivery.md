@@ -22,7 +22,6 @@ In particular we focused on Canary releases and made it really easy to adopt the
 
 You can [read more on Canaries at Martin Fowler’s website](https://martinfowler.com/bliki/CanaryRelease.html).
 
-
 # Jenkins X Promotion with Canaries
 
 If you already have an application in Jenkins X you know that you can promote it to the *production* environment with `jx promote myapp --version 1.0 --env production`. But it can also be automatically and gradually rolled it out to a percentage of users while checking that the new version is not failing. If that happens the application will be automatically rolled back. No human intervention at all during the process.
@@ -158,7 +157,7 @@ Flagger includes a Grafana dashboard for visualization purposes as it is not nee
 kubectl --namespace istio-system port-forward deploy/flagger-grafana 3000
 ```
 
-Then accessing http://localhost:3000 using admin/admin, selecting the canary-analysis dashboard and
+Then accessing <http://localhost:3000> using admin/admin, selecting the canary-analysis dashboard and
 
 * namespace: jx-production
 * primary: jx-production-myapp-primary
@@ -167,7 +166,6 @@ Then accessing http://localhost:3000 using admin/admin, selecting the canary-ana
 would provide us with a view of different metrics (cpu, memory, request duration, response errors,…) of the incumbent and new versions side by side.
 
 <img src="/images/grafana-canary-analysis.png" class="img-thumbnail">
-
 
 ## Caveats
 

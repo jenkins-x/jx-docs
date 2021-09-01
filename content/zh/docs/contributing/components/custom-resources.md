@@ -40,7 +40,6 @@ Jenkins X 流水线生成了一个自定义资源 `发版`，我们可以用来�
 * Jenkins 流水线地址和执行日志用于执行发布
 * 提交日志、问题和 Pull Requests 是每次发版的一部分，因此我们可以实现[在 Staging/生产环境中修复的问题反馈](/zh/about/concepts/features/#feedback)
 
-
 ### 流水线活动
 
 该资源保存了基于 Jenkins 流水线阶段以及 [升级活动](/about/concepts/features/#promotion) 的流水线状态

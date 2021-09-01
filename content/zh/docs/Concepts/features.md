@@ -62,7 +62,6 @@ Jenkins X 允许你给 Pull Requests 设置一个预发环境，这样就可以�
 
 <img src="/images/issue-comment.png" class="img-thumbnail">
 
-
 ## 应用
 
 一些最好的软件工具已经被打包为 helm charts，部分预先集成在了 Jenkins X 中，例如：Nexus、ChartMuseum、Monocular、Prometheus、Grafana等等。

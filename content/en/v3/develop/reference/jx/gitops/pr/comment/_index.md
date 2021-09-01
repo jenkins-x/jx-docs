@@ -24,6 +24,7 @@ Adds a comment to the current pull request
   jx-gitops pr comment -c "message from Jenkins X pipeline"
 
   ```
+
 ### Options
 
 ```
@@ -38,8 +39,6 @@ Adds a comment to the current pull request
   -r, --repo string         the full git repository name of the form 'owner/name'
       --source-url string   the git source URL of the repository
 ```
-
-
 
 ### Source
 

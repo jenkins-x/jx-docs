@@ -14,26 +14,26 @@ We recommend using separate clusters for your `Preprod` and `Production` environ
 ## Setting up multi cluster
 
 For remote environments (e.g. `Preprod` and `Production`) you typically won't need lots of the development tools such as:
-  * Lighthouse
-  * Tekton
-  * Webhooks
-  * Nexus / Bucketrepo
+
+* Lighthouse
+* Tekton
+* Webhooks
+* Nexus / Bucketrepo
 
 And install only services to run and expose your applications, e.g.:
 
-  * Nginx-ingress
-  * Cert-manager
-  * [kubernetes external secrets](https://github.com/external-secrets/kubernetes-external-secrets) for [populating Secrets from your secret store](/v3/admin/setup/secrets/) (vault or cloud provider secret manager)
-  * [push-wave](https://github.com/jenkins-x-charts/pusher-wave#wave) for automatically performing rolling upgrades when secrets are rotated in your secret store
-         
- 
+* Nginx-ingress
+* Cert-manager
+* [kubernetes external secrets](https://github.com/external-secrets/kubernetes-external-secrets) for [populating Secrets from your secret store](/v3/admin/setup/secrets/) (vault or cloud provider secret manager)
+* [push-wave](https://github.com/jenkins-x-charts/pusher-wave#wave) for automatically performing rolling upgrades when secrets are rotated in your secret store
+
 ### Create a repository
 
 Create a git repository for your remote cluster using [a cut down repository](https://github.com/jx3-gitops-repositories/jx3-kubernetes-production/generate) you might want to start with:
 
- <a href="https://github.com/jx3-gitops-repositories/jx3-kubernetes-production/generate" target="github" class="btn bg-primary text-light">Create Git Repository</a> 
- 
-  * if the above button does not work then please [Login to GitHub](https://github.com/login) first and then retry the button
+ <a href="https://github.com/jx3-gitops-repositories/jx3-kubernetes-production/generate" target="github" class="btn bg-primary text-light">Create Git Repository</a>
+
+* if the above button does not work then please [Login to GitHub](https://github.com/login) first and then retry the button
 
 Follow the [administration documentation](/v3/admin/platform/) to setup a new Cluster (or skip this step if already in place) but using the git URL you created above for the cluster git repository  
 
@@ -53,9 +53,9 @@ git clone https://github.com/myowner/my-prod-repo.git
 cd  my-prod-repo
 jx project import
 ```
-    
+
 This will create a Pull Request on your development cluster git repository to link to the `Preprod` or `Production` git repository on promotions of apps.
- 
+
 **NOTE**: Jenkins X will [push additional configuration files](/v3/about/how-it-works/#importing--creating-quickstarts) to the created Pull Request, so it is recommended to wait until the Pull Request is auto-merged and avoid manual intervention.
 
 ### Changes to `jx-requirements.yml`
@@ -64,16 +64,16 @@ The above [jx project import](/v3/develop/reference/jx/project/import) should mo
 
 So your `jx-requirements.yml` should have started something like:
 
-```yaml 
+```yaml
 environments:
 - key: dev
   repository: my-dev-environment
 - key: staging                                                   
-```                                                              
+```
 
-After importing the remote environment via [jx project import](/v3/develop/reference/jx/project/import) and merging the pull request, it should look like: 
+After importing the remote environment via [jx project import](/v3/develop/reference/jx/project/import) and merging the pull request, it should look like:
 
-```yaml 
+```yaml
 environments:
 - key: dev
   repository: my-dev-environment
@@ -82,13 +82,9 @@ environments:
   owner: myowner
   repository: my-prod-repo
   remoteCluster: true
-``` 
+```
 
-
-Once everything is correctly setup, it will be possible to deploy applications to the newly created remote environment/s. 
-
-
-
+Once everything is correctly setup, it will be possible to deploy applications to the newly created remote environment/s.
 
 ## How it works
 
@@ -99,7 +95,6 @@ The multi cluster setup of Jenkins X is designed around the following goals:
 * immutable infrastructure configured via GitOps with maximum traceability and feedback
   * easy to review changes on production via git and not requiring access to production
   
-  
 ### Development Cluster
 
 The development cluster:
@@ -107,15 +102,14 @@ The development cluster:
 * runs all pipelines on your applications to handle pull requests and performs releases
   * releases of applications create pull requests on remote cluster repositories
 * handles all webhooks for pull requests on remove environments and runs pipelines to validate changes to remote environments
-  * reports back to GitHub the status of pull request pipelines 
+  * reports back to GitHub the status of pull request pipelines
   * visualises the pipelines in the [usual Jenkins X UIs](/v3/develop/ui/)
   * supports auto-merge via ChatOps when approved
 
 ### Remote Cluster
 
 * runs the [git operator](/v3/admin/setup/operator/) which polls the main branch in the remote cluster for changes
-* when a change is found a `Job` is run to perform the `kubectl apply` or `helmfile sync` or whatever 
-
+* when a change is found a `Job` is run to perform the `kubectl apply` or `helmfile sync` or whatever
 
 ## Remote Cluster Recommendations
 
@@ -126,12 +120,11 @@ You may want to reuse existing built in charts such as:
 * [kubernetes external secrets](https://github.com/external-secrets/kubernetes-external-secrets) for [populating Secrets from your secret store](/v3/admin/setup/secrets/) (vault or cloud provider secret manager)
 * [push-wave](https://github.com/jenkins-x-charts/pusher-wave#wave) for automatically performing rolling upgrades when secrets are rotated in your secret store
 
-
 ### using `helmfile sync`
 
 If you want to just use something like `helmfile sync` to deploy charts in production you could use the following `Makefile` in your production/pre-production repository:
 
-```make 
+```make
 apply:
     helmfile sync
     
@@ -142,4 +135,4 @@ pr:
 though you will lose [these benefits](/v3/develop/faq/general/#why-does-jenkins-x-use-helmfile-template). You will also need to:
 
 * add your own [pusher-wave integration](https://github.com/jenkins-x-charts/pusher-wave#quick-start) for each chart you want to perform a rolling upgrade if the underlying secrets are rotated.
-* manually populate all secrets in each remote environments via the underlying secret store as you will not be using the [jx-secret](https://github.com/jenkins-x/jx-secret) mechanism built into the default Jenkins X GitOps pipelines for doing this. 
+* manually populate all secrets in each remote environments via the underlying secret store as you will not be using the [jx-secret](https://github.com/jenkins-x/jx-secret) mechanism built into the default Jenkins X GitOps pipelines for doing this.

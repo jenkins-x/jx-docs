@@ -24,6 +24,7 @@ Generate the kubernetes resources from a helm chart
   jx-gitops step helm template
 
   ```
+
 ### Options
 
 ```
@@ -43,8 +44,6 @@ Generate the kubernetes resources from a helm chart
   -f, --values stringArray      the helm values.yaml file used to template values in the generated template
   -v, --version string          the version of the helm chart to use. If not specified then the latest one is used
 ```
-
-
 
 ### Source
 

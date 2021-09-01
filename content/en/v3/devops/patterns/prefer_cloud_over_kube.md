@@ -19,8 +19,8 @@ However installing a chart in kubernetes is a very different thing to having a f
 
 * backups and replication of state across regions
 * upgrades and schema migration
-                  
-So we recommend using the cloud provider implementation for things like databases, secret stores, log storage and and other services as it removes undifferentiated heavy lifting. 
+
+So we recommend using the cloud provider implementation for things like databases, secret stores, log storage and and other services as it removes undifferentiated heavy lifting.
 
 [More background here](/v3/devops/cloud-native/#prefer-cloud-over-kubernetes)
 

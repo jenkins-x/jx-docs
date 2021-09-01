@@ -19,7 +19,7 @@ Views the boot Job logs in the cluster
 
 ### Examples
 
-  * views the current boot logs
+* views the current boot logs
   
   ```bash
   jx-admin log
@@ -42,8 +42,6 @@ Views the boot Job logs in the cluster
       --verbose                        Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
   -w, --wait                           wait for the next active Job to start
 ```
-
-
 
 ### Source
 

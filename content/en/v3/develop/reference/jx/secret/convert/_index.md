@@ -24,6 +24,7 @@ Converts all Secret resources in the path to ExternalSecret resources so they ca
   jx-secret convert --source-dir=config-root
 
   ```
+
 ### Options
 
 ```
@@ -39,8 +40,6 @@ Converts all Secret resources in the path to ExternalSecret resources so they ca
       --verbose                     Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
       --version-stream-dir string   the directory containing the version stream. If not specified defaults to the 'versionStream' folder in the dir
 ```
-
-
 
 ### Source
 

@@ -24,6 +24,7 @@ Lints the lighthouse trigger and tekton pipelines
   jx pipeline lint
 
   ```
+
 ### Options
 
 ```
@@ -40,8 +41,6 @@ Lints the lighthouse trigger and tekton pipelines
   -o, --out string             The TAP format file to output with the results. If not specified the tap file is output to the terminal
   -r, --recursive              Recurisvely find all '.lighthouse' folders such as if linting a Pipeline Catalog
 ```
-
-
 
 ### Source
 

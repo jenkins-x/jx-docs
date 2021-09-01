@@ -8,7 +8,7 @@ weight: 200
           
 You can use [ksync](https://ksync.github.io/ksync/) to synchronise your local source code with a running pod which you can then use to perform incremental builds inside kubernetes.
 
-```bash 
+```bash
 kubectl run -ti --image maven maven-build-pod bash
 ksync create -n jx --pod maven-build-pod $(pwd) /
 ksync watch

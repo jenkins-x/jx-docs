@@ -84,7 +84,6 @@ On [EKS](/commands/jx_create_cluster_eks/) we default to using ECR to avoid this
 
 So a workaround is to use a real [external docker registry](/docs/resources/guides/managing-jx/common-tasks/docker-registry/) or enable `insecure-registry` on your docker daemons on your compute nodes on your Kubernetes cluster.
 
-
 ## Helm fails with Error: UPGRADE FAILED: incompatible versions client[...] server[...]'
 
 Generally speaking this happens when your laptop has a different version of helm to the version used in our build pack docker images and/or the version of tiller thats running in your server.
@@ -100,7 +99,6 @@ Or you can try switch tiller to match your client version:
 * run `helm init --upgrade`
 
 Though as soon as a pipeline runs it'll switch the tiller version again so you'll have to keep repeating the above.
-
 
 ## error creating jenkins credential jenkins-x-chartmuseum 500 Server Error
 
@@ -129,37 +127,37 @@ Looks like "https://chartmuseum.build.cd.jenkins-x.io" is not a valid chart repo
 
 then it looks like you have a reference to an old chart museum URL for Jenkins X charts.
 
-The new URL is: http://chartmuseum.jenkins-x.io
+The new URL is: <http://chartmuseum.jenkins-x.io>
 
 It could be your helm install has an old repository URL installed. You should see...
 
 ```sh
 $ helm repo list
-NAME     	URL
-stable   	https://kubernetes-charts.storage.googleapis.com
-jenkins-x	http://chartmuseum.jenkins-x.io
+NAME      URL
+stable    https://kubernetes-charts.storage.googleapis.com
+jenkins-x http://chartmuseum.jenkins-x.io
 ```
 
 If you see this...
 
 ```sh
 $ helm repo list
-NAME     	URL
-jenkins-x	https://chartmuseum.build.cd.jenkins-x.io
+NAME      URL
+jenkins-x https://chartmuseum.build.cd.jenkins-x.io
 ```
 
 then please run...
 
 ```sh
 helm repo remove jenkins-x
-helm repo add jenkins-x	http://chartmuseum.jenkins-x.io
+helm repo add jenkins-x http://chartmuseum.jenkins-x.io
 ```
 
 and you should be good to go again.
 
 Another possible cause is an old URL in your environment's git repository may have old references to the URL.
 
-So open your `env/requirements.yaml` in your staging/production git repositories and modify them to use the URL http://chartmuseum.jenkins-x.io instead of **chartmuseum.build.cd.jenkins-x.io** like this [env/requirements file](https://github.com/jenkins-x/default-environment-charts/blob/master/env/requirements.yaml)
+So open your `env/requirements.yaml` in your staging/production git repositories and modify them to use the URL <http://chartmuseum.jenkins-x.io> instead of **chartmuseum.build.cd.jenkins-x.io** like this [env/requirements file](https://github.com/jenkins-x/default-environment-charts/blob/master/env/requirements.yaml)
 
 ## git errors: POST 401 Bad credentials
 
@@ -194,6 +192,7 @@ jx create git token -n GitHub admin
 Authenticated core services of Jenkins X include Jenkins, Nexus, ChartMuseum.  The default username is `admin`and the password by default is generated and printed out in the terminal after `jx create cluster` or `jx install`.
 
 ### Set Admin Username and Password values for Core Services
+
 You can also set the admin username via the `--default-admin-username=username` flag.
 
 {{< alert >}}
@@ -213,7 +212,6 @@ If you notice that the persistent volume claims created when installing Jenkins 
     kubectl get pvc
 
 The you should check that you have a cluster default storage class for dynamic persistent volume provisioning.  See [here](https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/) for more details.
-
 
 ## I cannot connect to nodes on AWS
 
@@ -249,7 +247,6 @@ kail -l job-name=expose -n jx-staging
 
 If you then promote to the Staging environment or retrigger the pipeline on the `master` branch of your Staging git repository (e.g. via [jx start pipeline](/commands/jx_start_pipeline/)) then you should see the output of the [exposecontroller](https://github.com/jenkins-x/exposecontroller) pod.
 
-
 ## Why is promotion really slow?
 
 If you find you get lots of warnings in your pipelines like this...
@@ -284,13 +281,11 @@ If you cannot use public webhooks you could look at something like [ultrahook](h
 
 Usually we run the [exposecontroller]() as a post install `Job` when we perform promotion to `Staging` or `Production` to expose services over Ingress and possibly inject external URLs into applications configuration.
 
-
 So the `Job` will trigger a short lived `Pod` to run in the namespace of your environment, then the pod will be deleted.
 
 If you want to view the logs of the `exposecontroller` you will need to watch for the logs using a selector then trigger the promotion pipeline to capture it.
 
 One way to do that is via the [kail](https://github.com/boz/kail) CLI:
-
 
 ```sh
 kail -l  job-name=expose
@@ -312,16 +307,19 @@ Timeout reached while waiting for TLS certificates to be ready
 This issue is caused by the _cert-manager_ pod not having the `disable-validation` label set, which is a known cert-manager issue which is [documented on their website](https://docs.cert-manager.io/en/latest/getting-started/install/kubernetes.html). The following steps, taken from the [cert-manager/troubleshooting-installation](https://docs.cert-manager.io/en/latest/getting-started/troubleshooting.html#troubleshooting-installation) webpage, should resolve the issue:
 
 Check if the _disable-validation_ label exists on the _cert-manager_ pod.
+
 ```sh
 kubectl describe namespace cert-manager
 ```
 
 If you cannot see the `certmanager.k8s.io/disable-validation=true` label on your namespace, you should add it with:
+
 ```sh
 kubectl label namespace cert-manager certmanager.k8s.io/disable-validation=true
 ```
 
 Confirm the label has been added to the _cert-manager_ pod.
+
 ```sh
 kubectl describe namespace cert-manager
 
@@ -333,38 +331,43 @@ Status:       Active
 ```
 
 Now rerun _jx_ Ingress setup:
+
 ```sh
 jx upgrade ingress
 ```
 
 While the ingress command is running, you can tail the _cert-manager_ logs in another terminal and see what is happening. You will need to find the name of your _cert-manager_ pod using:
+
 ```sh
 kubectl get pods --namespace cert-manager
 ```
 
 Then tail the logs of the _cert-manager_ pod.
+
 ```sh
 kubectl logs YOUR_CERT_MNG_POD --namespace cert-manager -f
 ```
 
 Your TLS certificates should now be set up and working, otherwise checkout the [official _cert-manager_ troubleshooting](https://docs.cert-manager.io/en/latest/getting-started/troubleshooting.html) instructions.
 
-
 ## Recreating a cluster with the same name
 
 If you want to destroy a cluster that was created with boot and recreate it with the exact same name, there is some clean that needs to be done first.
 
 Make sure you uninstall jx:
+
 ```sh
 jx uninstall
 ```
 
 Delete the cluster either from the web console or terminal by using the Kubernetes provider CLI command:
+
 ```sh
 gcloud container clusters delete <cluster-name> --zone <cluster-zone>
 ```
 
 After you have successfully done this, remove the `~/.jx` and `~/.kube` directories:
+
 ```sh
 rm -rf ~/.jx ~/.kube
 ```
@@ -380,22 +383,26 @@ That should leave your Kubernetes provider and your local environment in a clean
 If you have never created an Elastic Load Balancer (ELB) in AWS, then the `jx boot` command will fail to assign an ip to the ingress controller.
 
 In this case, the output from `jx boot` might look like this:
+
 ```sh
 error: failed to discover the Ingress domain: getting a domain for ingress service kube-system/jxing-nginx-ingress-controller: Timed out after 5m0s, last error: %!s(<nil>)
 ```
 
 To verify this is the case, run:
+
 ```sh
 kubectl get svc --all-namespaces
 ```
 
 If you see `pending` for external IP for `jxing-nginx-ingress-controller`
+
 ```sh
 NAMESPACE     NAME                                  TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)                      AGE
 .....
 kube-system   jxing-nginx-ingress-controller        LoadBalancer   X.X.X.X         <pending>     80:32632/TCP,443:32036/TCP   4h45m
 ...
 ```
+
 then create an ELB manually outside of EKS, and tear it down.
 
 After that, run `jx boot` again.

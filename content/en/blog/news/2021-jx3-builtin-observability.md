@@ -15,6 +15,7 @@ As a Continuous Delivery platform, Jenkins X has a central part in your infrastr
 {{< tweet 1341177825525547012 >}}
 
 This is why observability is a critical topic for Jenkins X, and work has started to get observability built-in for Jenkins X v3:
+
 - **Platform Observability**: visualize logs and metrics for everything running in the Kubernetes cluster: Jenkins X's own components - Tekton, Lighthouse, cert-manager, ... - but also your own applications, that will be deployed either in preview environments or in the staging/prod environments.
 - **Continuous Delivery Indicators**: visualize pull requests, pipelines, releases, and deployments metrics, collected from cluster events and git events.
 
@@ -45,11 +46,13 @@ Here is an example of such a dashboard, displaying various indicators for a sing
 ## Roadmap
 
 This is only the beginning! The next steps - in no particular order:
+
 - configure alerting - using Prometheus alertmanager and Grafana alerting features - with a set of pre-defined alerts
 - improve the dashboards
 - enable it by default, so that users can benefit from it out of the box
 
 Contributions are welcomed:
+
 - [Grafana/loki/prometheus/... configuration in the versionstream](https://github.com/jenkins-x/jx3-versions)
 - [Grafana dashboards](https://github.com/jenkins-x-charts/grafana-dashboard)
 - [Continuous Delivery Indicators Collector & Grafana dashboards](https://github.com/jenkins-x/cd-indicators)

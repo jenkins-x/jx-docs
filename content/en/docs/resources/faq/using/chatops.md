@@ -37,13 +37,13 @@ If you think the pipeline failed due to some temporary infrastructure reason the
 * `/test all` reruns all failed pipelines.
 * `/test foo` reruns the pipeline called `foo` only
 
-Note that you need to be in the `OWNERS` file as an [approver for this to work](#why-did-a-pullrequest-have-no-pipeline-triggered). 
+Note that you need to be in the `OWNERS` file as an [approver for this to work](#why-did-a-pullrequest-have-no-pipeline-triggered).
 
 ## How do I add multiple parallel pipelines to a project?
 
 It can be useful to have multiple pipelines to perform different kinds of long running tests on Pull Requests. e.g. running the same test suite using different databases, microservice configurations or underlying infrastructure.
 
-In Jenkins X you can create a custom `Scheduler` resource in your [jx boot](/docs/getting-started/setup/boot/) configuration (in `env/templates/myscheduler.yaml`) which you can add multiple named contexts in the `presubmits` section. Then for each context name make sure you have a file called `jenkins-x-${context}.yml` in your project. 
+In Jenkins X you can create a custom `Scheduler` resource in your [jx boot](/docs/getting-started/setup/boot/) configuration (in `env/templates/myscheduler.yaml`) which you can add multiple named contexts in the `presubmits` section. Then for each context name make sure you have a file called `jenkins-x-${context}.yml` in your project.
 
 Then Jenkins X will invoke each context on demand via `/test mycontext` or automatically if you enable `alwaysRun: true`.
 
@@ -73,7 +73,6 @@ When using [Lighthouse](/architecture/lighthouse/) that just means modifying the
 replicaCount: 3
 ```
 
-
 When using [Prow](/docs/reference/components/prow/) you need to scale up `hook` and `pipelinerunner`. e.g. in your [boot](/docs/getting-started/setup/boot/) git repository try changing `env/prow/values.tmpl.yaml` to:
 
 ```yaml
@@ -83,12 +82,11 @@ pipelinerunner:
   replicaCount: 3
 ```
 
-
 ## Should I use prow or lighthouse?
 
-If you are using a git server other than https://github.com then we recommend [Lighthouse](/architecture/lighthouse/).
+If you are using a git server other than <https://github.com> then we recommend [Lighthouse](/architecture/lighthouse/).
 
-If you are using https://github.com then for your git server then for now we recommend [Prow](/docs/reference/components/prow/) as it has had more testing than [Lighthouse](/architecture/lighthouse/).
+If you are using <https://github.com> then for your git server then for now we recommend [Prow](/docs/reference/components/prow/) as it has had more testing than [Lighthouse](/architecture/lighthouse/).
 
 Though [Lighthouse](/architecture/lighthouse/) is our strategic direction. We are starting to incrementally move our open source repositories over to [Lighthouse](/architecture/lighthouse/). At some point in the future once we've been using [Lighthouse](/architecture/lighthouse/) in production for all of our open source and commercial repositories [Lighthouse](/architecture/lighthouse/) will become our recommended solution for all git providers so that we can have a single, simpler & smaller codebase to maintain.
 
@@ -103,4 +101,3 @@ If you have a pending Pull Request which is blocked on a flaky test or an incorr
 If a non-reviewer submits a Pull Request it won't trigger CI pipelines by default until a reviewer adds an `/ok-to-test` comment on the Pull Request.
 
 If you have public git repositories this also avoids the security issue of a non-approver submitting a Pull Request to change the pipeline to email them your security credentials in the CI pipeline ;)
-

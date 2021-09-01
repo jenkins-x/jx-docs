@@ -30,6 +30,7 @@ Updates all kubernetes resources in the given directory to the given namespace
   jx-gitops namespace --dir-mode --dir config-root/namespaces
 
   ```
+
 ### Options
 
 ```
@@ -43,8 +44,6 @@ Updates all kubernetes resources in the given directory to the given namespace
   -n, --namespace string          the namespace to modify the resources to
       --selector stringToString   adds Kubernetes label selector to filter on, e.g. -s app=pusher-wave,heritage=Helm (default [])
 ```
-
-
 
 ### Source
 

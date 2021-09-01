@@ -17,9 +17,9 @@ jx pipeline previews
 
 Display one or more preview environments.
   
-See Also: 
+See Also:
 
-  * jx get env : https://jenkins-x.io/commands/jx_get_env
+* jx get env : <https://jenkins-x.io/commands/jx_get_env>
 
 ### Examples
 
@@ -32,6 +32,7 @@ See Also:
   jx get preview --current
 
   ```
+
 ### Options
 
 ```
@@ -46,8 +47,6 @@ See Also:
   -b, --batch-mode   Runs in batch mode without prompting for user input
       --verbose      Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
 ```
-
-
 
 ### Source
 

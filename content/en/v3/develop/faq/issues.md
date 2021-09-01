@@ -14,7 +14,7 @@ When the `jx project import` or `jx project quickstart` runs it creates a Pull R
 
 If this does not happen its usually your webhooks are not working. You can check on the health of your system and webhooks via the [Health guide](/v3/admin/setup/health/)
 
-Check out the [webhooks troubleshooting guide](/v3/admin/troubleshooting/webhooks/) 
+Check out the [webhooks troubleshooting guide](/v3/admin/troubleshooting/webhooks/)
 
 If you manually merge the Pull Request by hand then you'll miss out the [create a second commit on the pull request](/v3/about/how-it-works/#importing--creating-quickstarts) which means your project won't properly import. To work around that you can do a dummy commit on your dev cluster repository which will trigger a regeneration.
 
@@ -22,10 +22,9 @@ If the `jx project import` or `jx project quickstart` times out before the pipel
 
 Also make sure that the boot Job that is triggered by the pull request merging has the necessary scopes on the git personal access token to be able to registry the webhooks on the new repository. You will see if the webhook registration has been successful in the boot log:
 
-```bash 
+```bash
 jx admin log 
 ```
-
 
 ## Why does my pipeline not start?
 
@@ -35,29 +34,26 @@ Try [linting your YAML configuration](/v3/develop/pipelines/editing/#linting) to
 
 Also make sure you are in the git repository collaborators group and are in the `OWNERS` file in the main branch.
 
-       
 ## Why is my pipeline pending?
 
 If your pipeline shows pending in the [CLI](/v3/develop/ui/cli/), [Console](/v3/develop/ui/octant/) or [Dashboard](/v3/develop/ui/dashboard/) there could be various causes such as invalid images, pipeline configuration, missing secrets or insufficient cluster capacity to name but a few.
-                                                         
+
 To diagnose why a pipeline pod can't run the simplest thing is to use the [Console](/v3/develop/ui/octant/)
 
-```bash 
+```bash
 jx ui
 ```
 
 * on the **Pipelines** page pick the pipeline that is having trouble (see the links you can click on the **Build** column)
 * on the **Pipeline** page there is then a **Pod** link in the navigation bar which takes you to the **Pod** view in [octant](https://octant.dev/) that lets you view the detail of the pod. From there you should be able to see any events/issues with the pod such as bad images, missing secrets or whatever.
-          
+
 e.g. see the **Pod** link to the left of the  **Steps** / **Logs** links in the nav bar
 
 <iframe width="646" height="327" src="https://www.youtube.com/embed/2LCPHi0BnUg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
-## Upgrading CLI fails 
+## Upgrading CLI fails
 
 I run `jx upgrade cli` and get a failure:
-
 
 ```bash
 $ jx upgrade cli   
@@ -77,7 +73,6 @@ If you retrigger a release on your repository (e.g. merging a git commit to the 
 
 If not try create a new git tag on your repository for the next version e.g. if 0.1.2 was the last release, create a git tag of `v0.1.3` then then next release will be `0.1.4`). Then trigger a new release via a commit to the main branch.
 
-         
 ## My cluster is out of resources
 
 If your cluster is out of resources and cannot deploy pods:
@@ -86,7 +81,7 @@ If your cluster is out of resources and cannot deploy pods:
 
 * as a short term fix try scaling down some deployments - though note the next boot job will scale things back up again:
 
-```bash 
+```bash
 kubectl get deploy
 
 # pick one to scale down
@@ -95,13 +90,12 @@ kubectl scale deploy someDeploymentName --replicas=0
 
 * remove preview environments via:
 
-```bash 
+```bash
 jx delete preview 
 ```
 
 * remove deployments you don't need by removing entries from the `releases:` section in `helmfiles/$namespace/helmfile.yaml`
   * e.g. e.g. to remove an application from the `jx-staging` namespace remove releases from  `helmfiles/jx-staging/helmfile.yaml`
-    
 
 ## Diagnose pipeline failure via the CLI
 
@@ -113,24 +107,21 @@ jx get build pod
 
 if you know the repository name:
 
-
 ```bash
 jx get build pod -r myrepo
 ```
-                          
+
 Then you should be able to see the pod name for the pipeline in question. You can then use `kubectl` to destribe the issue:
 
 ```bash
 kubectl describe pod the-actual-pod-name-for-your-pipeline```
 ```
-   
-
 
 ## Why does Jenkins X fail to download plugins?
 
 When I run a `jx` command I get an error like...
 
-``` Get https://github.com/jenkins-x/jx-..../releases/download/v..../jx-.....tar.gz: dial tcp: i/o timeout```
+```Get https://github.com/jenkins-x/jx-..../releases/download/v..../jx-.....tar.gz: dial tcp: i/o timeout```
 
 This sounds like a network problem; the code in `jx` is trying to download from `github.com` and your laptop is having trouble resolving the `github.com` domain.
 
@@ -145,13 +136,13 @@ This is because admission webhooks are cluster scoped; not namespace scoped - so
 
 You can view the current tekton based hooks via:
 
-```bash 
+```bash
 kubectl get validatingwebhookconfigurations | grep nginx
  ```
 
 You can remove the nginx one via:
 
-```bash 
+```bash
 kubectl delete validatingwebhookconfigurations ingress-nginx-admission
 ```
 
@@ -159,10 +150,9 @@ Then try do a dummy git commit in your git repository which will [trigger anothe
 
 You can watch the boot job run via:
 
-```bash 
+```bash
 jx admin log -w
 ```
-
 
 ## Tekton failed calling webhook "config.webhook.pipeline.tekton.dev"
 
@@ -174,14 +164,14 @@ This is because admission/mutation webhooks are cluster scoped; not namespace sc
 
 You can view the current tekton based hooks via:
 
-```bash 
+```bash
 kubectl get mutatingwebhookconfigurations | grep tekton
 kubectl get validatingwebhookconfigurations | grep tekton
  ```
 
 Then find the tekton based ones and remove them. e.g. via:
 
-```bash 
+```bash
 kubectl delete mutatingwebhookconfigurations webhook.pipeline.tekton.dev
 kubectl delete validatingwebhookconfigurations config.webhook.pipeline.tekton.dev
 kubectl delete validatingwebhookconfigurations validation.webhook.pipeline.tekton.dev
@@ -191,10 +181,9 @@ Then try do a dummy git commit in your git repository which will [trigger anothe
 
 You can watch the boot job run via:
 
-```bash 
+```bash
 jx admin log -w
 ```
-
 
 ## Tekton webhook certs have expired?
 

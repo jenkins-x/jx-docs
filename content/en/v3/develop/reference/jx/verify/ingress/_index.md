@@ -24,6 +24,7 @@ Verifies the ingress configuration defaulting the ingress domain if necessary
   jx verify ingress
 
   ```
+
 ### Options
 
 ```
@@ -32,8 +33,6 @@ Verifies the ingress configuration defaulting the ingress domain if necessary
       --ingress-namespace string   The namespace for the Ingress controller. If not specified it defaults to $JX_INGRESS_NAMESPACE. Otherwise it defaults to: nginx
       --ingress-service string     The name of the Ingress controller Service. If not specified it defaults to $JX_INGRESS_SERVICE. Otherwise it defaults to: ingress-nginx-controller
 ```
-
-
 
 ### Source
 

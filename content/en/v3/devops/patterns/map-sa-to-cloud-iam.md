@@ -12,8 +12,8 @@ On AWS use [IAM roles for service accounts](https://docs.aws.amazon.com/eks/late
 
 On GCP use [Workload Identity](https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity) (WLI)
 
-In both cases this maps cloud IAM roles to kubernetes `ServiceAccount` resources using annotations. 
+In both cases this maps cloud IAM roles to kubernetes `ServiceAccount` resources using annotations.
 
 This means that you don't have to populate your kubernetes cluster with cluster-admin style cloud IAM secrets - which makes your system more secure and reduces the possibility of accidentally exposing a secret.
 
-Note that if you use [Jenkins X to configure your clusters with Terraform and GitOps](/v3/admin/) then you get this out of the box! 
+Note that if you use [Jenkins X to configure your clusters with Terraform and GitOps](/v3/admin/) then you get this out of the box!

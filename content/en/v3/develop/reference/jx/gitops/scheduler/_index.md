@@ -24,6 +24,7 @@ Generates the Lighthouse configuration from the SourceRepository and Scheduler r
   jx-gitops scheduler --dir config-root/namespaces/jx -out src/base/namespaces/jx/lighthouse-config
 
   ```
+
 ### Options
 
 ```
@@ -35,8 +36,6 @@ Generates the Lighthouse configuration from the SourceRepository and Scheduler r
       --repo-dir string             the directory to look for SourceRepository resources. If not specified defaults config-root/namespaces/$ns
       --scheduler-dir stringArray   the directory to look for Scheduler resources. If not specified defaults 'schedulers' and 'versionStream/schedulers'
 ```
-
-
 
 ### Source
 

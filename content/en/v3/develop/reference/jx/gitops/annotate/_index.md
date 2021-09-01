@@ -26,6 +26,7 @@ Annotates all kubernetes resources in the given directory tree
   jx-gitops annotate --dir myresource-dir foo=bar
 
   ```
+
 ### Options
 
 ```
@@ -37,8 +38,6 @@ Annotates all kubernetes resources in the given directory tree
   -p, --pod-spec                  annotate the PodSpec in spec.templates.metadata.annotations rather than the top level annotations
       --selector stringToString   adds Kubernetes label selector to filter on, e.g. -s app=pusher-wave,heritage=Helm (default [])
 ```
-
-
 
 ### Source
 

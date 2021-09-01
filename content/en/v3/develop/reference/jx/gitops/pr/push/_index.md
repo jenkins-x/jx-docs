@@ -24,6 +24,7 @@ Pushes the current git directory to the branch used to create the Pull Request
   jx-gitops pr push
 
   ```
+
 ### Options
 
 ```
@@ -41,8 +42,6 @@ Pushes the current git directory to the branch used to create the Pull Request
   -r, --repo string         the full git repository name of the form 'owner/name'
       --source-url string   the git source URL of the repository
 ```
-
-
 
 ### Source
 

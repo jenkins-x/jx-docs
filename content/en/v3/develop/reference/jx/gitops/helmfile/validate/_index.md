@@ -24,6 +24,7 @@ Parses a helmfile and any nested helmfiles and validates they conform to a canon
   jx-gitops helmfile validate%!(EXTRA string=jx-gitops)
 
   ```
+
 ### Options
 
 ```
@@ -31,8 +32,6 @@ Parses a helmfile and any nested helmfiles and validates they conform to a canon
       --helmfile string   the helmfile to template. Defaults to 'helmfile.yaml' in the directory
   -h, --help              help for validate
 ```
-
-
 
 ### Source
 

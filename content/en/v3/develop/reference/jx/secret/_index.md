@@ -23,8 +23,6 @@ commands for working with Secrets, ExternalSecrets and external secret stores
   -h, --help   help for jx-secret
 ```
 
-
-
 ### Source
 
 [jenkins-x-plugins/jx-secret](https://github.com/jenkins-x-plugins/jx-secret)

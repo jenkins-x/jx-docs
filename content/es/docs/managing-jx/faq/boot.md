@@ -24,8 +24,8 @@ Agregue un nuevo recurso `SourceRepository` y `Environment` a la carpeta `env/te
 Desde su clúster en ejecución, siempre puede tomar el recurso `SourceRepository` and `Environment` a través de lo siguiente (donde XXX es el nombre del repositorio de Staging devuelto a través de `kubectl get sr`):
 
 ```sh
-$ kubectl get env staging -oyaml > env/templates/myenv.yaml
-$ kubectl get sr XXX -oyaml > env/templates/myenv-sr.yaml
+kubectl get env staging -oyaml > env/templates/myenv.yaml
+kubectl get sr XXX -oyaml > env/templates/myenv-sr.yaml
 ```
 
 luego modifique el YAML para adaptarlo, cambiando los nombres de los recursos para evitar chocar con su repositorio de Staging.

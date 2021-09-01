@@ -18,7 +18,7 @@ At a high level, your workflow will likely look something like this:
 * Commit and push your changes to your fork of `jx-docs`
 * Raise a Pull Request (PR) to have your changes merged into the main `jx-docs` repo
 * Wait for and then participate in a review of your changes
-    * might involve making adjustments or adding a bit more
+  * might involve making adjustments or adding a bit more
 * See your changes go live on the [Jenkins X site](https://jenkins-x.io)
 
 We'll go though each of the steps below in more detail

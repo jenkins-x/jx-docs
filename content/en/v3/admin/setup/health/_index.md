@@ -11,11 +11,11 @@ aliases:
 
 Jenkins X v3.x now has a CLI plugin that works with [Kuberhealthy](https://github.com/Comcast/kuberhealthy) to check the health of a working Jenkins X.
 
-The `jx health` plugin is self contained in the git repository https://github.com/jenkins-x-plugins/jx-health.  This provides a way to query teh result of health checks that run periodically in each Kubernetes namespace.
+The `jx health` plugin is self contained in the git repository <https://github.com/jenkins-x-plugins/jx-health>.  This provides a way to query teh result of health checks that run periodically in each Kubernetes namespace.
 
-The plugin is also useful in a more locked down cluster for developers with reduced RBAC permissions.  A user only needs permissions to read the Kuberhealth state custom resources https://github.com/jenkins-x-plugins/jx-health#rbac-requirements.
+The plugin is also useful in a more locked down cluster for developers with reduced RBAC permissions.  A user only needs permissions to read the Kuberhealth state custom resources <https://github.com/jenkins-x-plugins/jx-health#rbac-requirements>.
 
-Kuberhealthy provides an easy way to extend using custom health checks to report errors.  To see how to write your own check see the docs [here](https://github.com/Comcast/kuberhealthy/blob/master/docs/EXTERNAL_CHECK_CREATION.md).  Jenkins X already comes with a set of custom health checks that can be installed that report errors, for example with webhooks, missing secrets, a bad install or invalid bot token.  For more details take a look here https://github.com/jenkins-x-plugins/jx-kh-check/tree/master/cmd.
+Kuberhealthy provides an easy way to extend using custom health checks to report errors.  To see how to write your own check see the docs [here](https://github.com/Comcast/kuberhealthy/blob/master/docs/EXTERNAL_CHECK_CREATION.md).  Jenkins X already comes with a set of custom health checks that can be installed that report errors, for example with webhooks, missing secrets, a bad install or invalid bot token.  For more details take a look here <https://github.com/jenkins-x-plugins/jx-kh-check/tree/master/cmd>.
 
 We'd like to encourrage contributions to add extra checks as Jenkins X v3 matures.  If you have a check that you would like to add please reach out in the community channels or create an issue or pull request.
 
@@ -31,9 +31,8 @@ jx health status --all-namespaces --watch
 
 You can also view the health status via the [UI Console](/v3/develop/ui/octant/) via:
 
-```bash 
+```bash
 jx ui
 ```
 
 Then navigating to the [Heath view](http://127.0.0.1:7777/#/ojx/health)
-

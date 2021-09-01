@@ -15,7 +15,7 @@ jx project pullrequest
 
 ### Synopsis
 
-Creates a Pull Request in a the git project of the current directory. 
+Creates a Pull Request in a the git project of the current directory.
 
 If --push is specified the contents of the directory will be committed, pushed and used to create the pull request
 
@@ -36,6 +36,7 @@ If --push is specified the contents of the directory will be committed, pushed a
   "
 
   ```
+
 ### Options
 
 ```
@@ -52,8 +53,6 @@ If --push is specified the contents of the directory will be committed, pushed a
       --push                If true the contents of the source directory will be committed, pushed, and used to create the pull request
   -t, --title string        The title of the pullrequest to create
 ```
-
-
 
 ### Source
 

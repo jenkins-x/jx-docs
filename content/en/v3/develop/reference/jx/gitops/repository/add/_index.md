@@ -24,6 +24,7 @@ Add one or more repositories to the SourceConfig
   jx-gitops repository add https://github.com/myorg/myrepo.git%!(EXTRA string=jx-gitops)
 
   ```
+
 ### Options
 
 ```
@@ -39,8 +40,6 @@ Add one or more repositories to the SourceConfig
   -s, --scheduler string          the name of the Scheduler to use for the repository
       --selector stringToString   adds Kubernetes label selector to filter on, e.g. -s app=pusher-wave,heritage=Helm (default [])
 ```
-
-
 
 ### Source
 

@@ -29,7 +29,7 @@ Planned features include:
 
 ### Official Apps repositry
 
-Jenkins X provides a lot Apps like: Gloo, Istio, Kubeless and more in https://github.com/jenkins-x-apps.
+Jenkins X provides a lot Apps like: Gloo, Istio, Kubeless and more in <https://github.com/jenkins-x-apps>.
 
 ### CLI Commands
 

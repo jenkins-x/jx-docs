@@ -14,9 +14,9 @@ El objetivo de Spring Boot es crear software basado en Spring, como microservici
 
 Puede incorporar Jenkins X en su proyecto Spring Boot de dos formas:
 
-1.  Importando un proyecto existente de Spring BootBy utilizando `jx import`
+1. Importando un proyecto existente de Spring BootBy utilizando `jx import`
 
-2.  Creando una aplicación Spring Boot desde cero utilizando `jx create spring`
+2. Creando una aplicación Spring Boot desde cero utilizando `jx create spring`
 
 ## Importando un proyecto existente de Spring Boot
 
@@ -35,19 +35,19 @@ Los pasos para lograr este objetivo son:
 cd my-springapp/
 ```
 
-1.  Ejecute el comando import desde la línea de comando:
+1. Ejecute el comando import desde la línea de comando:
 
 ```sh
 jx import
 ```
 
-3.  La aplicación le pregunta su nombre de usuario Git (p.ej `myuser`).
+3. La aplicación le pregunta su nombre de usuario Git (p.ej `myuser`).
 
-4.  La aplicación le pregunta si desea inicializar su proyecto en Git.
+4. La aplicación le pregunta si desea inicializar su proyecto en Git.
 
-5.  La aplicaicón le pregunta qué organización utilizar para las construcciones (p.ej, `myorg`).
+5. La aplicaicón le pregunta qué organización utilizar para las construcciones (p.ej, `myorg`).
 
-6.  La aplicación le pregunta qué nombre ponerle al repositorio remoto en Git (p.ej `my-springapp`)
+6. La aplicación le pregunta qué nombre ponerle al repositorio remoto en Git (p.ej `my-springapp`)
 
 Ahora puede realizar compilaciones, adicionar código del proyecto en su repositorio Git recién creado, y Jenkins X procesará automáticamente los PR y creará [vistas previas](/docs/reference/preview/) de sus aplicaciones para pruebas y validación.
 
@@ -94,15 +94,15 @@ Recomendamos que siempre incluya la dependencia **actuator** en sus aplicaciones
 
 Los dos métodos para configurar proyectos Spring Boot en Jenkins X realizan varias acciones:
 
-- Crea una nueva aplicación Spring Boot en un subdirectorio local
-- Adiciona el código fuente a un repositorio Git
-- Crea un repositorio Git remoto en plataformas como [GitHub](https://github.com)
-- Agrega el código al repositorio Git remoto
-- Agrega los siguientes ficheros al proyecto:
-  - Un `Dockerfile` para construir la imagen de Docker del proyecto
-  - Un `pipeline.yaml` para implementar el pipeline CI/CD
-  - Un chart de Helm para ejecutar la aplicacion en Kubernetes
-- Registra un enlace (p.ej `http://hook-jx.192.169.1.100.nip.io/hook`) en el repositorio Git remoto
-- Inicia el primer pipeline de construcción
+* Crea una nueva aplicación Spring Boot en un subdirectorio local
+* Adiciona el código fuente a un repositorio Git
+* Crea un repositorio Git remoto en plataformas como [GitHub](https://github.com)
+* Agrega el código al repositorio Git remoto
+* Agrega los siguientes ficheros al proyecto:
+  * Un `Dockerfile` para construir la imagen de Docker del proyecto
+  * Un `pipeline.yaml` para implementar el pipeline CI/CD
+  * Un chart de Helm para ejecutar la aplicacion en Kubernetes
+* Registra un enlace (p.ej `http://hook-jx.192.169.1.100.nip.io/hook`) en el repositorio Git remoto
+* Inicia el primer pipeline de construcción
 
 Ahora puede usar su subdirectorio de proyecto local habilitado para Git para realizar cambios en su aplicación Spring Boot, enviar esos cambios a Git y hacer que Jenkins X construya automáticamente, cree [vistas previas](/docs/reference/preview/) para pruebas y validación, y [promueva](/developing/promote/) su aplicación a producción para uso general.

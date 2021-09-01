@@ -11,13 +11,13 @@ Display one or more resources
 
 ### Synopsis
 
-Display one or more resources. 
+Display one or more resources.
 
-Valid resource types include: 
+Valid resource types include:
 
-  * environments (aka 'env')  
-  * pipelines (aka 'pipe')  
-  * urls (aka 'url')
+* environments (aka 'env')  
+* pipelines (aka 'pipe')  
+* urls (aka 'url')
 
 ```
 jx get TYPE [flags]
@@ -48,41 +48,41 @@ jx get TYPE [flags]
 
 ### SEE ALSO
 
-* [jx](/commands/jx/)	 - jx is a command line tool for working with Jenkins X
-* [jx get activities](/commands/jx_get_activities/)	 - Display one or more Activities on projects
-* [jx get addons](/commands/jx_get_addons/)	 - Lists the addons
-* [jx get applications](/commands/jx_get_applications/)	 - Display one or more Applications and their versions
-* [jx get apps](/commands/jx_get_apps/)	 - Display one or more installed Apps (an app is similar to an addon)
-* [jx get branchpattern](/commands/jx_get_branchpattern/)	 - Display the git branch patterns for the current Team used on creating and importing projects
-* [jx get build](/commands/jx_get_build/)	 - Display one or more build resources
-* [jx get buildpack](/commands/jx_get_buildpack/)	 - Display the teams build pack Git repository and references used for the current Team used on creating and importing projects
-* [jx get chat](/commands/jx_get_chat/)	 - Display the current registered chat service URLs
-* [jx get config](/commands/jx_get_config/)	 - Display the project configuration
-* [jx get crd](/commands/jx_get_crd/)	 - Display resources count for all custom resources
-* [jx get cve](/commands/jx_get_cve/)	 - Display Common Vulnerabilities and Exposures (CVEs)
-* [jx get devpod](/commands/jx_get_devpod/)	 - Lists the DevPods
-* [jx get environments](/commands/jx_get_environments/)	 - Display one or more Environments
-* [jx get git](/commands/jx_get_git/)	 - Display the current registered Git service URLs
-* [jx get helmbin](/commands/jx_get_helmbin/)	 - Display the Helm binary name used in the pipelines
-* [jx get issue](/commands/jx_get_issue/)	 - Display the status of an issue
-* [jx get issues](/commands/jx_get_issues/)	 - Display one or more issues
-* [jx get lang](/commands/jx_get_lang/)	 - Display the pack of the current working directory
-* [jx get limits](/commands/jx_get_limits/)	 - Displays the git user limits
-* [jx get pipelines](/commands/jx_get_pipelines/)	 - Display one or more Pipelines
-* [jx get plugins](/commands/jx_get_plugins/)	 - List all visible plugin executables on a user's PATH
-* [jx get previews](/commands/jx_get_previews/)	 - Display one or more Preview Environments
-* [jx get quickstartlocation](/commands/jx_get_quickstartlocation/)	 - Display one or more Quickstart Locations
-* [jx get quickstarts](/commands/jx_get_quickstarts/)	 - Lists the available quickstarts
-* [jx get releases](/commands/jx_get_releases/)	 - Display the Release or Releases the current user is a member of
-* [jx get storage](/commands/jx_get_storage/)	 - Display the storage configuration for different classifications
-* [jx get stream](/commands/jx_get_stream/)	 - Displays the version of a chart, package or docker image from the Version Stream
-* [jx get teamroles](/commands/jx_get_teamroles/)	 - Display the Team or Teams the current user is a member of
-* [jx get teams](/commands/jx_get_teams/)	 - Display the Team or Teams the current user is a member of
-* [jx get token](/commands/jx_get_token/)	 - Display the tokens for different kinds of services
-* [jx get tracker](/commands/jx_get_tracker/)	 - Display the current registered issue tracker service URLs
-* [jx get urls](/commands/jx_get_urls/)	 - Display one or more URLs
-* [jx get users](/commands/jx_get_users/)	 - Display the User or Users the current user is a member of
-* [jx get vault](/commands/jx_get_vault/)	 - Display one or more Vaults
-* [jx get vault-config](/commands/jx_get_vault-config/)	 - Gets the configuration for using the Vault CLI
+* [jx](/commands/jx/)  - jx is a command line tool for working with Jenkins X
+* [jx get activities](/commands/jx_get_activities/)  - Display one or more Activities on projects
+* [jx get addons](/commands/jx_get_addons/)  - Lists the addons
+* [jx get applications](/commands/jx_get_applications/)  - Display one or more Applications and their versions
+* [jx get apps](/commands/jx_get_apps/)  - Display one or more installed Apps (an app is similar to an addon)
+* [jx get branchpattern](/commands/jx_get_branchpattern/)  - Display the git branch patterns for the current Team used on creating and importing projects
+* [jx get build](/commands/jx_get_build/)  - Display one or more build resources
+* [jx get buildpack](/commands/jx_get_buildpack/)  - Display the teams build pack Git repository and references used for the current Team used on creating and importing projects
+* [jx get chat](/commands/jx_get_chat/)  - Display the current registered chat service URLs
+* [jx get config](/commands/jx_get_config/)  - Display the project configuration
+* [jx get crd](/commands/jx_get_crd/)  - Display resources count for all custom resources
+* [jx get cve](/commands/jx_get_cve/)  - Display Common Vulnerabilities and Exposures (CVEs)
+* [jx get devpod](/commands/jx_get_devpod/)  - Lists the DevPods
+* [jx get environments](/commands/jx_get_environments/)  - Display one or more Environments
+* [jx get git](/commands/jx_get_git/)  - Display the current registered Git service URLs
+* [jx get helmbin](/commands/jx_get_helmbin/)  - Display the Helm binary name used in the pipelines
+* [jx get issue](/commands/jx_get_issue/)  - Display the status of an issue
+* [jx get issues](/commands/jx_get_issues/)  - Display one or more issues
+* [jx get lang](/commands/jx_get_lang/)  - Display the pack of the current working directory
+* [jx get limits](/commands/jx_get_limits/)  - Displays the git user limits
+* [jx get pipelines](/commands/jx_get_pipelines/)  - Display one or more Pipelines
+* [jx get plugins](/commands/jx_get_plugins/)  - List all visible plugin executables on a user's PATH
+* [jx get previews](/commands/jx_get_previews/)  - Display one or more Preview Environments
+* [jx get quickstartlocation](/commands/jx_get_quickstartlocation/)  - Display one or more Quickstart Locations
+* [jx get quickstarts](/commands/jx_get_quickstarts/)  - Lists the available quickstarts
+* [jx get releases](/commands/jx_get_releases/)  - Display the Release or Releases the current user is a member of
+* [jx get storage](/commands/jx_get_storage/)  - Display the storage configuration for different classifications
+* [jx get stream](/commands/jx_get_stream/)  - Displays the version of a chart, package or docker image from the Version Stream
+* [jx get teamroles](/commands/jx_get_teamroles/)  - Display the Team or Teams the current user is a member of
+* [jx get teams](/commands/jx_get_teams/)  - Display the Team or Teams the current user is a member of
+* [jx get token](/commands/jx_get_token/)  - Display the tokens for different kinds of services
+* [jx get tracker](/commands/jx_get_tracker/)  - Display the current registered issue tracker service URLs
+* [jx get urls](/commands/jx_get_urls/)  - Display one or more URLs
+* [jx get users](/commands/jx_get_users/)  - Display the User or Users the current user is a member of
+* [jx get vault](/commands/jx_get_vault/)  - Display one or more Vaults
+* [jx get vault-config](/commands/jx_get_vault-config/)  - Gets the configuration for using the Vault CLI
 
 ###### Auto generated by spf13/cobra on 2-Sep-2020

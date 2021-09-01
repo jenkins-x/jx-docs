@@ -23,8 +23,6 @@ Displays the version of this command
   -h, --help   help for version
 ```
 
-
-
 ### Source
 
 [jenkins-x-plugins/jx-pipeline](https://github.com/jenkins-x-plugins/jx-pipeline)

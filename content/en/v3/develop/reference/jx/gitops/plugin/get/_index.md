@@ -24,13 +24,12 @@ Display the binary plugins
   jx plugin get
 
   ```
+
 ### Options
 
 ```
   -h, --help   help for get
 ```
-
-
 
 ### Source
 

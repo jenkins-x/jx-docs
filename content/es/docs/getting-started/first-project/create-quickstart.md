@@ -9,7 +9,6 @@ Los inicios rápidos son aplicaciones prefabricadas desde las que puede iniciar 
 
 Puedes crear nuevas aplicaciones desde nuestra lista de aplicaciones de inicio rápido seleccionadas a través del comando [jx create quickstart](/commands/jx_create_quickstart/).
 
-
 ```sh
 jx create quickstart
 ```
@@ -59,11 +58,13 @@ Cuando utilizas [jx create](/docs/getting-started/setup/create-cluster/), [jx in
 Dependiendo del tipo de instalación de Jenkins X (Serverless Jenkins vs Static Master Jenkins), puedes ver todos los lenguajes disponibles en los paquetes de construcción si listas los elementos de la siguiente ubicación de tu máquina:
 
 *Serverless Jenkins*:
+
 ```sh
 ls -al ~/.jx/draft/packs/github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/packs
 ```
 
 *Static Master Jenkins*:
+
 ```sh
 ls -al ~/.jx/draft/packs/github.com/jenkins-x-buildpacks/jenkins-x-classic/packs
 ```
@@ -121,4 +122,3 @@ jx get qsloc
 ```
 
 Existe el comando [jx delete quickstartlocation](/commands/jx_delete_quickstartlocation/) por si necesitas eliminar la ubicación del repositorio git.
-

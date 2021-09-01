@@ -51,7 +51,7 @@ pipeline {
 
 一旦你的 `Jenkinsfile` 可以在你的示例工程为你的语言实现 CI/CD 的话，我们因该把 `Dockerfile`, `Jenkinsfile` 和 charts 文件夹拷贝到你的派生 [jenkins-x/draft-packs 仓库](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes) 中。
 
-你可以通过把他们添加到构建包的本地库 ` ~/.jx/draft/packs/github.com/jenkins-x/draft-packs/packs` 中来尝试。
+你可以通过把他们添加到构建包的本地库 `~/.jx/draft/packs/github.com/jenkins-x/draft-packs/packs` 中来尝试。
 
 例如：
 

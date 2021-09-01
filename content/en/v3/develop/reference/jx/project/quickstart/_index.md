@@ -15,11 +15,11 @@ jx project quickstart
 
 ### Synopsis
 
-Create a new project from a sample/starter (found in https://github.com/jenkins-x-quickstarts) 
+Create a new project from a sample/starter (found in <https://github.com/jenkins-x-quickstarts>)
 
-This will create a new project for you from the selected template. It will exclude any work-in-progress repos (containing the "WIP-" pattern) 
+This will create a new project for you from the selected template. It will exclude any work-in-progress repos (containing the "WIP-" pattern)
 
-For more documentation see: https://jenkins-x.io/developing/create-quickstart/
+For more documentation see: <https://jenkins-x.io/developing/create-quickstart/>
 
 ### Examples
 
@@ -31,6 +31,7 @@ For more documentation see: https://jenkins-x.io/developing/create-quickstart/
   jx-project quickstart -f http
 
   ```
+
 ### Options
 
 ```
@@ -83,8 +84,6 @@ For more documentation see: https://jenkins-x.io/developing/create-quickstart/
       --verbose                        Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
       --wait-for-pr                    waits for the Pull Request generated on the cluster environment git repository to merge (default true)
 ```
-
-
 
 ### Source
 

@@ -13,12 +13,11 @@ If you have older pipelines in your git repository created with an older version
 
 ```bash
 jx pipeline convert 
-```        
+```
 
 The pipelines should be modified and if you have a `Kptfile` it will be removed.
 
 If you have any old `jenkins-x.yml` files, those will be converted across to the new `.lighthouse` tekton notation too.
-        
 
 ## Recreating pipelines
 
@@ -28,11 +27,10 @@ So it's a good idea to recreate them from the latest catalog which are then simp
 
 You can do that via the following from inside a git clone of your repository:
 
-
 ```bash
 rm -rf .lighthouse charts preview
 jx project import
-```              
+```
 
 This should recreate the directories:
 
@@ -40,12 +38,11 @@ This should recreate the directories:
 * `charts`
 * `preview`
 
-from the latest pipeline catalog; there should be no need to create a Pull Request on your dev cluster git repository as all the webhooks should be setup already. 
+from the latest pipeline catalog; there should be no need to create a Pull Request on your dev cluster git repository as all the webhooks should be setup already.
 
 You can use the git history to compare changes in case you had made any custom pipeline changes.
 
 If you are worried about losing changes you can add `--dry-run` to [jx project import](/v3/develop/reference/jx/project/import/) which will give you a chance to review the changes before committing. Though you can always use git to revert thing too ;)
-
 
 ## Upgrading pipelines and helm charts via kpt
 
@@ -54,7 +51,7 @@ You can upgrade any git repository in the same way you upgrade your [clusters gi
 ```bash
 cd my-quickstart-thingy
 jx gitops upgrade
-```              
+```
 
 This will then upgrade any helm charts or pipeline catalogs you are using in your git repository with the latest versions.
 
@@ -64,11 +61,11 @@ After running this command you will usually have some changes in `git` you can r
 git add *
 git commit -a -m "fix: upgrade pipeline catalog"
 git push
-```               
+```
 
 It is possible that you can have merge conflicts.  
 
-You can follow the inline git helper messages to resolve conflicts - or use your IDE to help figure out the merge issues more easily. 
+You can follow the inline git helper messages to resolve conflicts - or use your IDE to help figure out the merge issues more easily.
 
 ### Converting all repositories
 

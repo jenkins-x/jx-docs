@@ -45,7 +45,6 @@ You can also use the [jx create team](/commands/jx_create_team/) CLI which creat
 
 See the [configuration guide](/docs/resources/guides/managing-jx/common-tasks/config/) for more details on how to share resources like Nexus across Teams.
 
-
 ## Promotion
 
 Promotion is implemented with GitOps by generating a pull request on the Environment's git repository  so that all changes go through git for audit, approval and so that any change is easy to revert.
@@ -66,7 +65,6 @@ When the Preview Environment is up and running Jenkins X will comment on your Pu
 
 <img src="/images/pr-comment.png" class="img-thumbnail">
 
-
 ## Feedback
 
 As you can see above Jenkins X automatically comments on your Pull Requests when using Preview Environments.
@@ -76,7 +74,6 @@ If the commit comments reference issues (e.g. via the text `fixes #123`) then Je
 Also as the version with those new commits is promoted to `Staging` or `Production` you will get automated comments on each fixed issue that the issue is now available for review in the corresponding environment. e.g.
 
 <img src="/images/issue-comment.png" class="img-thumbnail">
-
 
 ## Applications
 

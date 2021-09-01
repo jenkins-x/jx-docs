@@ -80,4 +80,3 @@ jx get addons
 在写本文时，[gitea plugin for Jenkins](https://issues.jenkins-ci.org/browse/JENKINS-50459)不能够正确地更新 Pull Request 和 git 提交构建状态，这会打断 GitOps 升级流水线。可以手工审核来升级；但是，流水线会报告失败。
 
 另一个问题是，由 `jx` 在 `gitea` 创建的新项目，无法使得 [在 Pull Requests 中合并按钮可用](https://github.com/go-gitea/go-sdk/issues/100)。要使得可用的话，当一个项目在 GitHub 中创建后，你到仓库的 `Settings` 页面，在 `gitea` 的 web 控制台中，启用合并按钮。
-

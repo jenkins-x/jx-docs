@@ -19,12 +19,12 @@ During the time, I've migrated all addons to apps via Helm chart way.
 
 The following is my make apps:
 
-- https://github.com/nodece/jx-app-kubeless
-- https://github.com/nodece/jx-app-owasp-zap
-- https://github.com/nodece/jx-app-flagger
-- https://github.com/nodece/jx-app-gloo
-- https://github.com/nodece/jx-app-istio
-- https://github.com/nodece/jx-app-ingress
+- <https://github.com/nodece/jx-app-kubeless>
+- <https://github.com/nodece/jx-app-owasp-zap>
+- <https://github.com/nodece/jx-app-flagger>
+- <https://github.com/nodece/jx-app-gloo>
+- <https://github.com/nodece/jx-app-istio>
+- <https://github.com/nodece/jx-app-ingress>
 
 Current, we only move to jx-app-kubeless to the [jenkins-x-apps](https://github.com/jenkins-x-apps) repository, other apps haven't been moved to the [jenkins-x-apps](https://github.com/jenkins-x-apps) repository.
 
@@ -42,17 +42,17 @@ The following is my plan for the next phase:
 
 - Follow up on jx issues to improve jx.
 
-### Demo for coding phase 1 
+### Demo for coding phase 1
 
-I presentation my coding phase 1 demo on YouTube lase week. 
+I presentation my coding phase 1 demo on YouTube lase week.
 
 > Notes: the video language is Chinese.
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Ka2Uor_oTWc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Last week, Jenkins hold a meeting for Jenkins GSoC students to present their phase 1 work, I also present my coding phase 1 work on the meeting. 
+Last week, Jenkins hold a meeting for Jenkins GSoC students to present their phase 1 work, I also present my coding phase 1 work on the meeting.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/HQLhakpx5mk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 #### Feedback
 
-If you are interested in the project, or to guide me. Welcome to join #jenkins-x-gsoc channel on [CDF Slack](https://cdeliveryfdn.slack.com/join/shared_invite/enQtODM2NDI1NDc0MzIxLTA1MDcxMzUyMGU2NWVlNmQwN2M1N2M4MWJjOWFkM2UzMDY0OWNkNjAzNzM0NzVkNjQ5M2NkMmY2MTRkMWY4MWY#/). 🙌 
+If you are interested in the project, or to guide me. Welcome to join #jenkins-x-gsoc channel on [CDF Slack](https://cdeliveryfdn.slack.com/join/shared_invite/enQtODM2NDI1NDc0MzIxLTA1MDcxMzUyMGU2NWVlNmQwN2M1N2M4MWJjOWFkM2UzMDY0OWNkNjAzNzM0NzVkNjQ5M2NkMmY2MTRkMWY4MWY#/). 🙌

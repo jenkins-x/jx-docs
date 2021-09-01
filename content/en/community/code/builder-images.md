@@ -8,7 +8,7 @@ aliases:
     - /docs/contributing/code/builder-images/
 ---
 
-Jenkins X relies on a set of Docker images to run the actual builds. You can find the list here: https://github.com/jenkins-x/jenkins-x-builders
+Jenkins X relies on a set of Docker images to run the actual builds. You can find the list here: <https://github.com/jenkins-x/jenkins-x-builders>
 
 In case you don't see the image you need, you have two options:
 
@@ -32,7 +32,7 @@ We'll go over each step in the following.
 
 ## Getting Started
 
-Before you can get started, you'll need to first fork & clone https://github.com/jenkins-x/jenkins-x-builders. See [Development](/community/code/) section for more details on setting up your local environment, link to upstream, and branching out from your master.
+Before you can get started, you'll need to first fork & clone <https://github.com/jenkins-x/jenkins-x-builders>. See [Development](/community/code/) section for more details on setting up your local environment, link to upstream, and branching out from your master.
 
 ## Create Builder
 
@@ -45,10 +45,13 @@ First off though, create a new folder for your builder following the format of `
 There's only a few things that you'll need to include in your `Dockerfile`:
 
 1. always start with
+
   ```Dockerfile
 FROM: gcr.io/jenkinsxio/builder-base:0.0.56
   ```
+
 1. always end the file with
+
   ```Dockerfile
 # jx
 ENV JX_VERSION 2.0.693
@@ -65,6 +68,7 @@ In between these two things is where you'll add what your builder needs.
 To make sure that the image is built correctly, a test is run which usually just checks that the image can output something expected.
 
 Here's an example of a test that check that the included CLI outputs the correct version:
+
 ```yml
 schemaVersion: '2.0.0' # Make sure to test the latest schema version
 commandTests:
@@ -78,6 +82,7 @@ commandTests:
 ### File structure
 
 The two files are placed in the following structure:
+
 ```dir
 builder-<your builder name>
   |- Dockerfile
@@ -107,7 +112,7 @@ jx step create pr chart --name gcr.io/jenkinsxio/builder-ruby --name gcr.io/jenk
 
 Basically you'd want to add `--name gcr.io/jenkinsxio/builder-<your builder name>` somewhere in there.
 
-## Now we wait...
+## Now we wait
 
 At this point you'll have to wait until your new builder has been approves, merged, built, etc.
 

@@ -25,5 +25,3 @@ where `1.2.3.4` is your external IP address of your nginx `LoadBalancer` service
 Incidentally when you use a public cloud and create a [kubernetes service of type LoadBalancer](https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/) it is automatically associated with a public IP.
 
 Note that if you are [on-premises](/v3/admin/platforms/on-premises/) then the `LoadBalancer` service probably won't automatically get resolved to an external IP. So you will probably need to setup a load balancer like [MetalLB](https://metallb.universe.tf/)
-
-

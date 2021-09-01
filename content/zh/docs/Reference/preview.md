@@ -22,6 +22,3 @@ jx preview
 * 添加一条注释到 Pull Request 中，让你们团队知道该预览应用已经准备好可以测试了，并带有打开应用的链接。因此，只要点击一下就可以让你们团队成员体验预览环境！
 
 <img src="/images/pr-comment.png" class="img-thumbnail">
-
-
-

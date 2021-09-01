@@ -6,7 +6,6 @@ description: 如何帮助改善 Jenkins X 的 API 文档
 
 Jenkins X 有两种类型的 API 文档：[Kubernetes Custom Resource Documentation](/apidocs/) 和 [Godoc](https://godoc.org/github.com/jenkins-x/jx)。这两种类型都是由 [jx](https://github.com/jenkins-x/jx) 的代码生成。
 
-
 ## 设置你的开发环境
 
 最好在你的本地电脑上对 Jenkinx X 的代码进行修改。按照 [开发](/development) 指导文档进行配置。
@@ -21,6 +20,7 @@ resources](https://github.com/jenkins-x/jx/tree/master/pkg/apis/jenkins.io/v1) �
 自定义资源文档是由与 Kubernetes [同样的工具链](https://kubernetes.io/docs/contribute/generate-ref-docs/kubernetes-api/)而生成的，但是一系列的 `jx` 的命令将其包装了起来，因此你不需要下载以及配置这些不同的工具。
 
 HTML 文档是由 [OpenAPI 说明](https://github.com/jenkins-x/jx/tree/master/docs/apidocs/openapi-spec) 生成的，依次的由 [Go 结构体](https://github.com/jenkins-x/jx/tree/master/pkg/client/openapi) 生成，而这些结构体是由代码的注释生成的。想要生成结构体和 OpenAPI 说明执行命令：
+
  ```sh
  make generate-openapi
  ```
@@ -85,8 +85,8 @@ OpenAPI 说明是由代码生成的。其结构由结构体以及字段生成。
 
 ```go
   metav1.TypeMeta `json:",inline"
-	// +optional
-	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
+ // +optional
+ metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
   Spec BuildPackSpec `json:"spec,omitempty" protobuf:"bytes,2,opt,name=spec"`
 ```
 
@@ -99,25 +99,26 @@ OpenAPI 说明是由代码生成的。其结构由结构体以及字段生成。
 自定义类型不会直接的映射到 OpenAPI 当中，而是会通过实现名为 "OpenAPIDefinition" 的方法如下面所示，来覆盖他们的 OpenAPI 说明：
 
 ```go
-	import openapi "k8s.io/kube-openapi/pkg/common"
+ import openapi "k8s.io/kube-openapi/pkg/common"
 
-	// ...
+ // ...
 
-	type Time struct {
-		time.Time
-	}
+ type Time struct {
+  time.Time
+ }
 
-	func (_ Time) OpenAPIDefinition() openapi.OpenAPIDefinition {
-		return openapi.OpenAPIDefinition{
-			Schema: spec.Schema{
-				SchemaProps: spec.SchemaProps{
-					Type:   []string{"string"},
-					Format: "date-time",
-				},
-			},
-		}
-	}
+ func (_ Time) OpenAPIDefinition() openapi.OpenAPIDefinition {
+  return openapi.OpenAPIDefinition{
+   Schema: spec.Schema{
+    SchemaProps: spec.SchemaProps{
+     Type:   []string{"string"},
+     Format: "date-time",
+    },
+   },
+  }
+ }
 ```
+
 此外，类型可以通过定义下面的方法来避免引用 "openapi"。下面的例子会和上面的例子产生相同的 OpenAPI 说明：
 
 ```go

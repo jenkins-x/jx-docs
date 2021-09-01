@@ -9,5 +9,4 @@ aliases:
 ---
 
 
-[Jenkins X version 3 ](/v3/guides/jx3/) includes support for the interoperability of [Jenkins](https://jenkins.io), [Jenkins X](/v3/about/) and [Tekton](https://github.com/tektoncd/pipeline)
-
+[Jenkins X version 3](/v3/guides/jx3/) includes support for the interoperability of [Jenkins](https://jenkins.io), [Jenkins X](/v3/about/) and [Tekton](https://github.com/tektoncd/pipeline)

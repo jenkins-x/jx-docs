@@ -57,10 +57,3 @@ Then
 * enter the name of the project in the issue tracker (e.g. the upper case name of the JIRA project)
 
 A file called `jenkins-x.yml` will be modified in your project source code which should be added to your git repository.
-
-
-
-
-
-
-

@@ -97,4 +97,3 @@ Note though that longer term we are hoping to [maintain your development environ
 So longer term we're hoping to add the Pod Templates into your `values.yaml` file in your developer environment git repository like we do for the [jenkins-x-platform chart](https://github.com/jenkins-x/jenkins-x-platform/blob/master/values.yaml#L194-L431).
 
 If you are creating pod templates using open source build tools then it may be simpler for you to just [submit your pod template in a Pull Request](#submitting-new-pod-templates) and we can bake that pod template into future releases of Jenkins X?
-

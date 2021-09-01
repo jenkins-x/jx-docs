@@ -28,6 +28,7 @@ Lets you pick a step to override locally in a pipeline
   jx pipeline override -P script
 
   ```
+
 ### Options
 
 ```
@@ -49,8 +50,6 @@ Lets you pick a step to override locally in a pipeline
   -t, --trigger string           The path to the trigger file. If not specified you will be prompted to choose one
       --verbose                  Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
 ```
-
-
 
 ### Source
 

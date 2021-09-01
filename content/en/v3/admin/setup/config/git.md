@@ -25,7 +25,7 @@ environments:
 
 ### GitHub Enterprise
 
-The configuration is similar to the above but you need to specify the URL of the `gitServer` (if it differs from https://github.com) and `gitKind: github`
+The configuration is similar to the above but you need to specify the URL of the `gitServer` (if it differs from <https://github.com>) and `gitKind: github`
 
 ```yaml
 cluster:
@@ -59,7 +59,7 @@ environments:
 
 ### Bitbucket Cloud
 
-For this specify`gitKind: bitbucketcloud`. 
+For this specify`gitKind: bitbucketcloud`.
 
 ```yaml
 cluster:

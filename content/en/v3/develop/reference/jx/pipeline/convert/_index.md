@@ -30,6 +30,7 @@ So that pipelines are smaller, simpler and easier to upgrade pipelines with the 
   jx pipeline convert --catalog
 
   ```
+
 ### Options
 
 ```
@@ -50,8 +51,6 @@ So that pipelines are smaller, simpler and easier to upgrade pipelines with the 
       --use-sha string         The catalog SHA to use in the converted pipelines. If not specified defaults to @versionStream
       --verbose                Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
 ```
-
-
 
 ### Source
 

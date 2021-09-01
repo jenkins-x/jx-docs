@@ -36,7 +36,7 @@ Cada fichero Pipeline YAML tiene un número de pipelines separados lógicamente:
 
 ## Ciclos de Vida
 
-Luego, cada pipeline tiene una serie de fases distintas del ciclo de vida, algo así como Maven tiene `clean`,` compile`, `compile-test`,` package` etc.
+Luego, cada pipeline tiene una serie de fases distintas del ciclo de vida, algo así como Maven tiene `clean`,`compile`, `compile-test`,`package` etc.
 
 Estas fases de ciclos de vida en Jenkins X Pipeline YAML son:
 
@@ -105,6 +105,7 @@ pipeline {
             sh "foo deploy"
           }
 ```
+
 Una vez que su `Jenkinsfile` sea capaz de hacer CI/CD para su lenguage/tiempo de ejecución en su proyecto de muestra, entonces deberíamos poder tomar el `Dockerfile`, el `Jenkinsfile` y la carpeta de charts y copiarlos en una carpeta en su bifurcación del [jenkins-x/draft-packs repository](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes).
 
 Puede probarlo localmente agregando estos archivos a su clon local del repositorio de paquetes de compilación en `~/.jx/draft/packs/github.com/jenkins-x/draft-packs/packs`.

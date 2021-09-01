@@ -38,16 +38,15 @@ If you think the pipeline failed due to some temporary infrastructure reason the
 * `/test all` reruns all failed pipelines.
 * `/test foo` reruns the pipeline called `foo` only
 
-Note that you need to be in the `OWNERS` file as an [approver for this to work](#why-did-a-pullrequest-have-no-pipeline-triggered). 
+Note that you need to be in the `OWNERS` file as an [approver for this to work](#why-did-a-pullrequest-have-no-pipeline-triggered).
 
 See the [ChatOps commands](/v3/develop/reference/chatops/)
-                    
 
 ## How do I add multiple parallel pipelines to a project?
 
 It can be useful to have multiple pipelines to perform different kinds of long running tests on Pull Requests. e.g. running the same test suite using different databases, microservice configurations or underlying infrastructure.
 
-In Jenkins X you can create a custom `Scheduler` resource in your [jx boot](/docs/getting-started/setup/boot/) configuration (in `env/templates/myscheduler.yaml`) which you can add multiple named contexts in the `presubmits` section. Then for each context name make sure you have a file called `jenkins-x-${context}.yml` in your project. 
+In Jenkins X you can create a custom `Scheduler` resource in your [jx boot](/docs/getting-started/setup/boot/) configuration (in `env/templates/myscheduler.yaml`) which you can add multiple named contexts in the `presubmits` section. Then for each context name make sure you have a file called `jenkins-x-${context}.yml` in your project.
 
 Then Jenkins X will invoke each context on demand via `/test mycontext` or automatically if you enable `alwaysRun: true`.
 
@@ -60,7 +59,6 @@ See also [How do I map SourceRepository to a custom Scheduler?](/docs/resources/
 Lighthouse handles webhooks and implements these [ChatOps commands](/v3/develop/reference/chatops/)
 
 To see what each of the parts of lighthouse do please refer to the [lighthouse components overview](/v3/about/overview/#lighthouse)
-
 
 ## How can I make ChatOps HA?
 
@@ -88,7 +86,7 @@ You can then use the `review_approved_required` property in the `Scheduler` to d
 
 The version stream comes with a scheduler configured for this called [environment-review-required.yaml](https://github.com/jenkins-x/jx3-versions/blob/master/schedulers/environment-review-required.yaml) so just modify your `.jx/gitops/source-config.yaml` file to specify `scheduler: environment-review-required` for the repository in question like this:
 
-```yaml 
+```yaml
 apiVersion: gitops.jenkins-x.io/v1alpha1
 kind: SourceConfig
 metadata:

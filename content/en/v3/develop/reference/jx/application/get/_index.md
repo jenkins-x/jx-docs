@@ -34,6 +34,7 @@ Display applications across environments.
   jx get applications -u -p
 
   ```
+
 ### Options
 
 ```
@@ -43,8 +44,6 @@ Display applications across environments.
   -p, --pod                Hide the pod counts
   -u, --url                Hide the URLs
 ```
-
-
 
 ### Source
 

@@ -71,10 +71,10 @@ Si lo necesita, puede recuperar los ficheros previamente almacenados a través d
 
 Si está en algún código fuente de Go y tiene una URL de Jenkins X, como una URL de registro de compilación o un archivo adjunto de un [PipelineActivity Custom Resource](/docs/reference/components/custom-resources/), la URL podría tener varias formas, como:
 
-  * `gs://anotherBucket/mydir/something.txt` : utilizando un bucket GCS en GCP
-  * `s3://nameOfBucket/mydir/something.txt` : utilizando un bucket S3 en AWS
-  * `azblob://thatBucket/mydir/something.txt` : utiliznado un bucket de Azure
-  * `http://foo/bar` : fichero almacenado en un repositorio git HTTP
-  * `https://foo/bar` : fichero almacenado en un repositorio git HTTPS
+* `gs://anotherBucket/mydir/something.txt` : utilizando un bucket GCS en GCP
+* `s3://nameOfBucket/mydir/something.txt` : utilizando un bucket S3 en AWS
+* `azblob://thatBucket/mydir/something.txt` : utiliznado un bucket de Azure
+* `http://foo/bar` : fichero almacenado en un repositorio git HTTP
+* `https://foo/bar` : fichero almacenado en un repositorio git HTTPS
 
 Si desea poder leer fácilmente desde la URL del código fuente de Go, puede usar [la función `ReadURL`](https://github.com/jenkins-x/jx/blob/e5a7943dc0c3d79c27f30aea73235f18b3f5dcff/pkg/cloud/buckets/buckets.go#L44-L45).

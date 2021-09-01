@@ -20,7 +20,6 @@ Luego sigue las instrucciones para [crear un clúster EKS con eksctl](https://ek
 Si deseas utilizar EC2 y Kops debes descargar la [liberación de Kops](https://github.com/kubernetes/kops/releases).
 Luego debes seguir las instrucciones para [crear un clúster en AWS utilizando Kops](https://kubernetes.io/docs/setup/production-environment/tools/kops/).
 
-
 ## Utilizando jx CLI
 
 Asegúrese de [tener instalado la CLI jx](/es/docs/getting-started/setup/install/) para luego poder utilizar Kops:

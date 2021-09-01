@@ -23,8 +23,6 @@ Commands for working with helm charts
   -h, --help   help for helm
 ```
 
-
-
 ### Source
 
 [jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

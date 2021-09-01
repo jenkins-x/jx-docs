@@ -24,6 +24,7 @@ Escapes any {{ or }} characters in the YAML files so they can be included in a h
   jx-gitops helm escape --dir myyaml
 
   ```
+
 ### Options
 
 ```
@@ -38,8 +39,6 @@ Escapes any {{ or }} characters in the YAML files so they can be included in a h
   -m, --message string        the commit message (default "chore: upgrade mirrored charts")
   -u, --url string            the git URL of the repository to mirror the charts into
 ```
-
-
 
 ### Source
 

@@ -24,13 +24,12 @@ Create a new project by importing code, creating a quickstart or custom wizard f
   jx-project
 
   ```
+
 ### Options
 
 ```
   -h, --help   help for jx-project
 ```
-
-
 
 ### Source
 

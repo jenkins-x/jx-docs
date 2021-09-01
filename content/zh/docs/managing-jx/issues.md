@@ -6,7 +6,6 @@ description: Issues using Jenkins X 常见问题的解决方案。
 
 我们已经试图把一些常见的问题整理到这里。如果你遇到的问题没有在这里列出来，请[让我们知道](https://github.com/jenkins-x/jx/issues/new)。
 
-
 ### 无法创建 minikube 集群
 
 如果你使用的是 Mac，那么， `hyperkit` 是最好的虚拟机驱动——但首先需要你安装最新的[Docker for Mac](https://docs.docker.com/docker-for-mac/install/)。之后，尝试 `jx create cluster minikube`。

@@ -25,7 +25,6 @@ jx create devpod -l maven
 
 This will then create a new `DevPod` based on the maven based [pod template](/docs/resources/guides/managing-jx/common-tasks/pod-templates/) and open your terminal inside that pod. You are now free to use the various tools like `git, docker, maven, skaffold, jx` which will all be using the same exact configuration as the CI/CD pipelines will.
 
-
 ## Using web based VS Code
 
 If you don't use `--sync` then the DevPod will embed the [web based version of VS Code](https://github.com/cdr/code-server) in your DevPod so that you can open the IDE in a browser and work on the source code inside your DevPod!
@@ -46,8 +45,6 @@ Here's a [demo showing how to use web based VS Code in a DevPod](/images/develop
 <h5>Use web based VS Code inside a DevPod</h5>
 </figcaption>
 </figure>
-
-
 
 ## Using Theia IDE
 
@@ -75,8 +72,6 @@ When you run `jx get applications` you will see your "edit" application listed. 
 
 _if you are using the Visual Studio code extension to do this, you don't need to worry about this, it will be done automatically for you_
 
-
-
 ## Opening a DevPod shell
 
 If you have other terminals that want to connect into an existing `DevPod` use [jx rsh -d](/commands/jx_rsh/)
@@ -93,7 +88,6 @@ If you use `jx create devpod --reuse` it will lazily create a devpod if one does
 
 Use the [jx get devpod](/commands/jx_get_devpod/) command:
 
-
 ```sh
 jx get devpod
 ```
@@ -102,19 +96,17 @@ jx get devpod
 
 Use the [jx delete devpod](/commands/jx_delete_devpod/) command:
 
-
 ```sh
 jx delete devpod
 ```
 
 Then pick the devpod to delete and confirm. Or pass in the name of the devpod you want to delete as an argument.
 
-
 ## Synchronizing source code
+
 If you are using a desktop IDE you can synchronise your local source code into your DevPod via the [jx sync](/commands/jx_sync/) command.
 
 This will allow you to edit source code in your preferred IDE like [VS Code](https://code.visualstudio.com/) or [IDEA](https://www.jetbrains.com/idea/).
-
 
 ```sh
 jx sync
@@ -124,7 +116,7 @@ You just run this once on your system (if you are using the Visual Studio code e
 
 This command will download and install the excellent [ksync](https://github.com/vapor-ware/ksync) tool if its not already installed, run `ksync init` to add it to your cluster and then run `ksync watch` and then use `ksync create` to create a synchronisation spec.
 
-Then by default the code with be bidirectionally synchronized between the current directory and the `/code` folder in the `DevPod`. 
+Then by default the code with be bidirectionally synchronized between the current directory and the `/code` folder in the `DevPod`.
 You can now edit the code in your IDE and run build/test commands inside the `DevPod`!
 
 e.g. you can build your code with whatever tools you are using (`maven, gradle, make` etc), perform `docker` builds or run `skaffold` in developer mode.
@@ -158,4 +150,3 @@ jx get applications
 ```
 
 Now if you edit code and trigger a docker rebuild, which for most languages is just changing the source code; though for Java apps its whenever you rebuild the jar - the image is regenerated and the helm chart updated!
-

@@ -23,6 +23,7 @@ Generate the kubernetes resources for all helm charts in a version stream
   jx-gitops step helm stream
 
   ```
+
 ### Options
 
 ```
@@ -39,8 +40,6 @@ Generate the kubernetes resources for all helm charts in a version stream
   -c, --ref string              the git ref (branch, tag, revision) to git clone (default "master")
   -n, --url string              the git clone URL of the version stream
 ```
-
-
 
 ### Source
 

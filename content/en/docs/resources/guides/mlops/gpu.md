@@ -43,6 +43,7 @@ pipelineConfig:
               memory: 8Gi
               nvidia.com/gpu: 1
 ```
+
 Note that at the moment, it is not possible to modify the container resources of a single pipeline step, but only the resources for every container in a stage. As a result, it is necessary to perform all ML build activities in a single step in a dedicated stage or Kubernetes will attempt to allocate a physical GPU to a new container for every step in the stage, draining all available resources and likely blocking the build.
 
 This pipeline config is set up for you in all the existing GPU quickstarts.

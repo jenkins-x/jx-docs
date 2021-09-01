@@ -32,4 +32,3 @@ jx create spring -d web -d actuator
 * 为你的 Jenkins 在 git 远程库上注册 webhook
 * 为你的 Jenkins 添加 git 库
 * 首次触发流水线
-

@@ -24,6 +24,7 @@ Creates any missing SourceRepository resources
   jx-gitops repository create https://github.com/myorg/myrepo.git%!(EXTRA string=jx-gitops)
 
   ```
+
 ### Options
 
 ```
@@ -36,8 +37,6 @@ Creates any missing SourceRepository resources
       --selector stringToString   adds Kubernetes label selector to filter on, e.g. -s app=pusher-wave,heritage=Helm (default [])
   -s, --source-dir string         the directory to look for and generate the SourceConfig files
 ```
-
-
 
 ### Source
 

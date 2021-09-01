@@ -33,6 +33,7 @@ Starts the pipeline build.
   jx pipeline start -F .lighthouse/jenkins-x/mypipeline.yaml
 
   ```
+
 ### Options
 
 ```
@@ -54,8 +55,6 @@ Starts the pipeline build.
   -t, --tail                     Tails the build log to the current terminal
       --wait                     Waits until the trigger has been setup in Lighthouse for when a new repository is being imported via GitOps
 ```
-
-
 
 ### Source
 

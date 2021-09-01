@@ -24,14 +24,13 @@ Edits the local 'secret-mappings.yaml' file
   jx-secret secretsmapping edit --gcp-project-id foo --cluster-name
 
   ```
+
 ### Options
 
 ```
       --dir string   base directory containing '.jx/secret/mapping/secret-mappings.yaml' file
   -h, --help         help for edit
 ```
-
-
 
 ### Source
 

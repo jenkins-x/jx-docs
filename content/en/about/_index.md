@@ -11,12 +11,13 @@ aliases:
 ---
 
 ## Concepts
+
 ---
 Jenkins X is designed to make it simple for developers to work to DevOps principles and best practices. The approaches taken
 are based on the comprehensive research done for the book [*ACCELERATE: Building and Scaling High Performing Technology Organisations*](https://goo.gl/vZ8BFN). You can read why we use [Accelerate](../about/overview/accelerate/) for the principles behind Jenkins X.
 
-
 ## Principles
+
 ---
 *"DevOps is a set of practices intended to reduce the time between committing a change to a system and the change being placed into normal production, while ensuring high quality."*
 
@@ -37,6 +38,7 @@ The Mean Time To Recover from a failure should also be less than one hour.
 Jenkins X has been designed from first principles to allow teams to apply DevOps best practices to hit top-of-industry performance goals.
 
 ## Practices
+
 ---
 The following best practices are considered key to operating a successful DevOps approach:
 
@@ -64,9 +66,10 @@ Jenkins X builds upon the DevOps model of loosely-coupled architectures and is d
 
 ## Building Blocks
 
-Jenkins X builds upon the following core components:  
+Jenkins X builds upon the following core components:
 
 ### Kubernetes & Docker
+
 ---
 At the heart of the system is Kubernetes, which has become the defacto virtual infrastructure platform for DevOps. Every major Cloud provider now offers Kubernetes infrastructure on demand and the platform may also be installed in-house on private infrastructure, if required.
 
@@ -95,6 +98,7 @@ Developers should be aware of the capabilities that Kubernetes provides for dist
 By default, Pod state is transient. Any data written to the local file system of a Pod is lost when that Pod is deleted. Developers should be aware that Kubernetes may unilaterally decide to delete instances of Pods and recreate them at any time as part of the general load balancing process for Nodes so local data may be lost at any time. Where stateful data is required, Persistent Volumes should be declared and mounted within the file system of specific Pods.
 
 ### Helm and Draft
+
 ---
 Interacting directly with Kubernetes involves either manual configuration using the `kubectl` command line utility, or passing various flavours of YAML data to the API. This can be complex and is open to human error creeping in. In keeping with the DevOps principle of 'configuration as code', Jenkins X leverages Helm and Draft to create atomic blocks of configuration for your applications.
 

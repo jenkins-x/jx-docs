@@ -15,9 +15,11 @@ _Jenkins X Boot_ utiliza el siguiente enfoque:
   * utilice Terraform para crear su clúster de Kubernetes junto a los recursos que sean necesarios de la plataforma.
   * utilice la consola web de su proveedor cloud para crear su clúster de Kubernetes.
   * utilice `jx create cluster --skip-installation`. Por ejemplo:
+
     ``` sh
     jx create cluster gke --skip-installation
     ```
+
   * utilice alguna herramienta personalizada de su elección o tal vez una proporcionado por su equipo de operaciones.
 
 * seguramente va a desear verificar que puede comunicarse correctamente con su clúster de Kubernetes a través de:
@@ -27,6 +29,7 @@ kubectl get ns
 ```
 
 * ejecute el comando [jx boot](/commands/jx_boot/):
+
 ```sh
 jx boot
 ```
@@ -41,7 +44,7 @@ El comando [jx boot](/commands/jx_boot/) interpreta y ejecuta el pipeline de arr
 
 #### Pre and Post Validation
 
-Antes de intentar cualquier tipo de instalación `boot` ejecutará [jx step verify preinstall](/commands/jx_step_verify_preinstall/) para comprobar que todo esté bien. También verificará que las versiones de los paquetes que requiere que estén instalados se encuentran dentro de los límites superior e inferior. Mas información al respecto, [aquí](https://github.com/jenkins-x/jenkins-x-versions/tree/master/packages). Si usas Terraform (tu archivo `jx-requirements.yml` tiene `terraform: true`)  `boot` fallará si Terraform aún no ha creado los recursos requeridos en la nube. Si no lo estás usando los recursos se crearán automáticamente. 
+Antes de intentar cualquier tipo de instalación `boot` ejecutará [jx step verify preinstall](/commands/jx_step_verify_preinstall/) para comprobar que todo esté bien. También verificará que las versiones de los paquetes que requiere que estén instalados se encuentran dentro de los límites superior e inferior. Mas información al respecto, [aquí](https://github.com/jenkins-x/jenkins-x-versions/tree/master/packages). Si usas Terraform (tu archivo `jx-requirements.yml` tiene `terraform: true`)  `boot` fallará si Terraform aún no ha creado los recursos requeridos en la nube. Si no lo estás usando los recursos se crearán automáticamente.
 
 Una vez que la instalación se ha completado, se ejecuta el comando [jx step verify install](/commands/jx_step_verify_install/) para verificar que su instalación sea válida.
 
@@ -51,7 +54,7 @@ Para instalaciones basadas en `boot`, las versiones de paquetes que usa `jx` han
 
 ##### Brew
 
-Este [gist] (https://gist.github.com/rdump/b79a63084b47f99a41514432132bd408) describe cómo puede cambiar a diferentes versiones del paquete `kubectl` usando el administrador de paquetes `brew`.
+Este [gist] (<https://gist.github.com/rdump/b79a63084b47f99a41514432132bd408>) describe cómo puede cambiar a diferentes versiones del paquete `kubectl` usando el administrador de paquetes `brew`.
 
 ## Modificando su instalación
 
@@ -183,7 +186,6 @@ Jenkins X admite diferentes proveedores de git. Puedes especificar el proveedor 
 Para fines de evaluación, puede usar una cuenta privada de GitHub como propietario de los repositorios, y cambiar a una cuenta de organización paga una vez que esté listo para entrar. Alternativamente, puede habilitar los repositorios de entorno público estableciendo `environmentGitPublic` en `true` en su configuración de jx boot. En caso de que esté utilizando `jx create` o `jx install`, deberá agregar la opción `--git-public` como parte del comando para habilitar el repositorio público.
 {{< /pageinfo >}}
 
-
 ### GitHub
 
 Esta es la configuración pre-establecida si no especificas nada.
@@ -209,7 +211,7 @@ webhook: prow
 
 ### GitHub Enterprise
 
-La configuración es similar a la descrita anteriormente con la diferencia que necesitas especificar la URL del `gitServer` en caso de que sea diferente de https://github.com. Se configura a través de: `gitKind: github`
+La configuración es similar a la descrita anteriormente con la diferencia que necesitas especificar la URL del `gitServer` en caso de que sea diferente de <https://github.com>. Se configura a través de: `gitKind: github`
 
 ```yaml
 cluster:
@@ -295,7 +297,6 @@ storage:
     url: "gs://jx-logs"
 webhook: lighthouse
 ```
-
 
 ### Gitlab
 
@@ -528,7 +529,6 @@ Una vez mezclado los cambios la configuración del boot se ha actualizado y por 
 ### Restauración
 
 Si algo en algún momento va mal, por ejemplo, el clúster, el namespace o Tekton, y su instalación no puede ejecutar pipelines, puedes siempre volver a ejecutar [jx boot](/docs/getting-started/setup/boot/) en su laptop para restaurar el clúster.
-
 
 ## Salvas
 

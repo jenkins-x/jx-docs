@@ -26,6 +26,7 @@ Updates images in the kubernetes resources from the version stream
   jx-gitops image --source-dir ./src --dir .
 
   ```
+
 ### Options
 
 ```
@@ -41,8 +42,6 @@ Updates images in the kubernetes resources from the version stream
       --verbose                     Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
       --version-stream-dir string   the directory for the version stream. Defaults to 'versionStream' in the current --dir
 ```
-
-
 
 ### Source
 

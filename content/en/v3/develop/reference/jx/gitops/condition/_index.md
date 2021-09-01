@@ -29,6 +29,7 @@ Runs a command if the condition is true
   jx-gitops condition --last-commit-msg-prefix '!Merge pull request' -- make all commit push
 
   ```
+
 ### Options
 
 ```
@@ -38,8 +39,6 @@ Runs a command if the condition is true
       --last-commit-msg-prefix string     matches if last-commit-msg has the given prefix
       --last-commit-msg-suffix string     matches if last-commit-msg has the given suffix
 ```
-
-
 
 ### Source
 

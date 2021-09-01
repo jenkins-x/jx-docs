@@ -14,5 +14,5 @@ Jenkins X 在很大程度上依赖于开源社区的热情参与。我们需要�
 * 如果你想要 [贡献代码](development/) 那么尝试浏览 [当前问题](https://github.com/jenkins-x/jx/issues).
   * 我们已经标记了问题 [需要帮助](https://github.com/jenkins-x/jx/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) 或者 [好的首个问题](https://github.com/jenkins-x/jx/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) 为你节省寻找问题的时间。
   * 我们特别乐意帮助您 [在 Windows 上运行 Jenkins X](https://github.com/jenkins-x/jx/issues?q=is%3Aopen+is%3Aissue+label%3Awindows) 或者 [和云服务，git 提供程序以及问题跟踪器集成](https://github.com/jenkins-x/jx/issues?q=is%3Aissue+is%3Aopen+label%3Aintegrations)。
- * 为了更长远的目标，我们制定了 [长期路线图](roadmap)。
- * 我们总是接收更多的测试用例并提高测试覆盖率。
+* 为了更长远的目标，我们制定了 [长期路线图](roadmap)。
+* 我们总是接收更多的测试用例并提高测试覆盖率。

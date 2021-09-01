@@ -23,8 +23,6 @@ commands for generating Helm Chart CRDs for better reporting and insight
   -h, --help   help for jx-charter
 ```
 
-
-
 ### Source
 
 [jenkins-x-plugins/jx-charter](https://github.com/jenkins-x-plugins/jx-charter)

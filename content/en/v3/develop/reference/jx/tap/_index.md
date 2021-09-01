@@ -23,8 +23,6 @@ commands for processing TAP (Test Anything Protocol) files
   -h, --help   help for jx-tap
 ```
 
-
-
 ### Source
 
 [jenkins-x-plugins/jx-tap](https://github.com/jenkins-x-plugins/jx-tap)

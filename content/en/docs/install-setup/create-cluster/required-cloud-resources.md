@@ -32,7 +32,7 @@ Refer to [Configuring Storage](/docs/resources/guides/managing-jx/common-tasks/s
 * Report bucket; Bucket for storing test and coverage reports.
 Refer to [Configuring Storage](/docs/resources/guides/managing-jx/common-tasks/storage#configuring-storage) for more information.
 * Repository bucket; Bucket used for storing artifacts when using [Bucketrepo](/docs/install-setup/boot/repository//#bucketrepo).
-Bucketrepo  is a small footprint microservice that is an alternative to both Nexus and Chartmusem.
+Bucketrepo  is a small footprint microservice that is an alternative to both Nexus and Chartmuseum.
 * Velero bucket; Bucket for [Velero](https://velero.io) backups.
 * Vault bucket; Bucket used by Vault for storing its data.
 Jenkins X uses Vault to store secrets.
@@ -45,12 +45,12 @@ Refer to [Vault](/docs/install-setup/boot/secrets/#vault) for more information.
 Several Jenkins X services need to interact with the underlying cloud infrastructure.
 For example, the Build Controller needs to be able to store log files into the log storage bucket.
 Another example is [ExternalDNS](https://github.com/kubernetes-sigs/external-dns) creating dynamically new DNS entries for services.
-In this case ExternalDNS service needs access to the DNS APIs of the underyling cloud provider.
+In this case ExternalDNS service needs access to the DNS APIs of the underlying cloud provider.
 
-To ensure that each service gets only the permissions it needs to fulfill its responsibilty, cloud providers allow to bind Kubernetes service accounts to cloud provider specific service announts or roles.
+To ensure that each service gets only the permissions it needs to fulfill its responsibility, cloud providers allow to bind Kubernetes service accounts to cloud provider specific service accounts or roles.
 The mechanism to achieve this varies between cloud providers.
 For Google Cloud it is called [Workload Identity](https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity) and for AWS [IAM Roles for Service Accounts](https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html).
-It is the resposibilty of the corresponding Terraform module to configure these permissions.
+It is the responsibility of the corresponding Terraform module to configure these permissions.
 
 At the moment Kubernetes service accounts for the following areas are created:
 
@@ -66,7 +66,7 @@ The name of the service account is _jenkins-x-controllerbuild_.
 One for ExternalDNS with the name _exdns-external-dns_ and two for [cert-manager](https://github.com/jetstack/cert-manager), namely _cm-cert-manager_ and _cm-cainjector_.
 Each of these services need access to the DNS API of the cloud provider.
 * Vault; Service account used by the Vault operator.
-The Vault service account needs permissions to read and write to cloud storage and access to kryptographic key managment.
+The Vault service account needs permissions to read and write to cloud storage and access to cryptographic key management.
 The name of the service account is _\<cluster-name\>-vt.
 * Velero; Service account used by the Velero backup service.
 The Velero service account needs permissions to read and write to cloud storage.

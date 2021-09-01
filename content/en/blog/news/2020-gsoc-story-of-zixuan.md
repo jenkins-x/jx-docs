@@ -11,7 +11,7 @@ aliases: []
 author: Zixuan Liu
 ---
 
-I'm Zixuan, and I'm very happy to be recognized by the Jenkins and Jenkins X teams in Google Summer of Code 2020. 
+I'm Zixuan, and I'm very happy to be recognized by the Jenkins and Jenkins X teams in Google Summer of Code 2020.
 
 I'm working on [Consolidate the use of Apps / Addons](https://jenkins.io/projects/gsoc/2020/project-ideas/jenkins-x-apps-consolidation/).
 
@@ -37,13 +37,13 @@ If you want to test completed apps, you can open the repository below.
 
 #### Completed Work
 
-- [jx-app-kubeless](https://github.com/jenkins-x-apps/jx-app-kubeless)
+* [jx-app-kubeless](https://github.com/jenkins-x-apps/jx-app-kubeless)
 
 #### Work in Progress
 
-- [jx-app-owasp-zap](https://github.com/nodece/jx-app-owasp-zap)
-- [jx-app-flagger](https://github.com/nodece/jx-app-flagger)
-- [jx-app-gloo](https://github.com/nodece/jx-app-gloo)
+* [jx-app-owasp-zap](https://github.com/nodece/jx-app-owasp-zap)
+* [jx-app-flagger](https://github.com/nodece/jx-app-flagger)
+* [jx-app-gloo](https://github.com/nodece/jx-app-gloo)
 
 *🙌 I also welcome other developers of this project to guide me!*
 

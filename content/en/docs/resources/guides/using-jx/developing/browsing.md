@@ -98,8 +98,6 @@ You can also filter the apps by an environment:
 jx get applications -e staging
 ```
 
-
-
 ### Environments
 
 To view the [environments](/about/concepts/features/#environments) defined for your team use [jx get environments](/commands/jx_get_environments/):

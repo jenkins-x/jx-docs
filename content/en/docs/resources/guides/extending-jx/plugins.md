@@ -36,13 +36,13 @@ Here is a simple plugin that simply outputs a log statement.
 package main
 
 import (
-	"fmt"
-	"os"
+ "fmt"
+ "os"
 )
 
 func main() {
-	fmt.Println("Have some tasty brie.")
-	os.Exit(0)
+ fmt.Println("Have some tasty brie.")
+ os.Exit(0)
 }
 ```
 
@@ -61,6 +61,7 @@ go build -o jx-brie brie.go
 ```
 
 2. Add it to your path
+
 ```sh
 sudo mv ./jx-brie /usr/local/bin
 ```

@@ -8,9 +8,9 @@ aliases:
   - /v3/admin/platforms/on-premise/vault/
 ---
 
-**NOTE** that in the following instructions it is left to the user to manage, backup and restore the vault installation once it has been installed. 
+**NOTE** that in the following instructions it is left to the user to manage, backup and restore the vault installation once it has been installed.
 
-For production workloads [we recommend you use a cloud provider secret store](/v3/devops/patterns/prefer_cloud_over_kube/) or [Vault as a service](https://www.hashicorp.com/resources/running-vault-as-a-service-on-hashicorp-cloud-platform). Managing on-premises vault instances is undifferentiated heavy lifting that should be outsourced to a cloud provider if you can. 
+For production workloads [we recommend you use a cloud provider secret store](/v3/devops/patterns/prefer_cloud_over_kube/) or [Vault as a service](https://www.hashicorp.com/resources/running-vault-as-a-service-on-hashicorp-cloud-platform). Managing on-premises vault instances is undifferentiated heavy lifting that should be outsourced to a cloud provider if you can.
 
 ### Prerequisites
 
@@ -18,16 +18,15 @@ The prerequisites are the [same as regular on-premises kubernetes](/v3/admin/pla
 
 The difference is for vault:
 
-*  <a href="https://github.com/jx3-gitops-repositories/jx3-kubernetes-vault/generate" target="github" class="btn bg-primary text-light">Create the cluster Git Repository</a> based on the [jx3-gitops-repositories/jx3-kubernetes-vault](https://github.com/jx3-gitops-repositories/jx3-kubernetes-vault/generate) template
+* <a href="https://github.com/jx3-gitops-repositories/jx3-kubernetes-vault/generate" target="github" class="btn bg-primary text-light">Create the cluster Git Repository</a> based on the [jx3-gitops-repositories/jx3-kubernetes-vault](https://github.com/jx3-gitops-repositories/jx3-kubernetes-vault/generate) template
 
-    * if the above button does not work then please [Login to GitHub](https://github.com/login) first and then retry the button
-
+  * if the above button does not work then please [Login to GitHub](https://github.com/login) first and then retry the button
 
 * make sure you have a recent [helmfile](https://github.com/roboll/helmfile) binary installed on your `$PATH`
   
 * setup the Vault instance in your cluster. From inside a git clone of the git repository you have just created above run the following:
 
-```bash 
+```bash
 cd infra
 helmfile sync
 sleep 20
@@ -57,25 +56,23 @@ git commit -a -m "fix: added domain"
 git push origin master
 ```
 
-* ensure you are connected to your cluster so you can run the following [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) commands 
+* ensure you are connected to your cluster so you can run the following [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) commands
 
-```bash 
+```bash
 kubectl get ns
 kubectl get node      
-```        
+```
 
-*  <a href="/v3/guides/operator/" 
-    target="github" class="btn bg-primary text-light" 
+* <a href="/v3/guides/operator/"
+    target="github" class="btn bg-primary text-light"
     title="install the git operator to setup Jenkins X in your cluster">
     Install the git operator
   </a> from inside a git clone of the git repository you created above.
 
 * switch to the `jx` namespace
 
-```bash    
+```bash
 jx ns jx
-```        
+```
 
-*  <a href="/v3/develop/create-project/" class="btn bg-primary text-light">Create or import projects</a> 
-
-                                                                   
+* <a href="/v3/develop/create-project/" class="btn bg-primary text-light">Create or import projects</a>

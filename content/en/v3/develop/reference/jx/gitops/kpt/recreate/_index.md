@@ -24,6 +24,7 @@ Updates the kpt packages in the given directory
   jx-gitops kpt --dir .
 
   ```
+
 ### Options
 
 ```
@@ -34,8 +35,6 @@ Updates the kpt packages in the given directory
   -o, --out-dir string   the output directory to generate the output
       --version string   if specified overrides the versions used in the kpt packages (e.g. to 'master')
 ```
-
-
 
 ### Source
 

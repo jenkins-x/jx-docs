@@ -13,6 +13,3 @@ In Jenkins X you can see the [Source Layout](/v3/develop/pipelines/editing/#sour
 One downside with Pipelines As Code is that you can end up copy/pasting lots of YAML into lots of repositories which can become tricky to both maintain and to keep on recent images and configurations.
 
 For details of the approach we use on Jenkins X check out [this blog post on GitOps your cloud native pipelines](/blog/2021/02/25/gitops-pipelines/) which lets us share versioned pipelines via git while also making it super easy to override pipeline steps as and when required keeping things super flexible while maximising reuse and making it easy to maintain and upgrade.
-
-
-

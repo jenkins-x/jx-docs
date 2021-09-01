@@ -136,6 +136,7 @@ Hay algunas opciones para definir qué propietario de registro de docker usar:
 dockerRegistryHost: gcr.io
 dockerRegistryOwner: my-gcr-project-id
 ```
+
 * especificándolo en el [CRD del Entorno](/docs/reference/components/custom-resources/) llamado `dev` en `env.spec.teamSettings.dockerRegistryOrg`
 * defina una variable de entorno `DOCKER_REGISTRY_ORG`
 

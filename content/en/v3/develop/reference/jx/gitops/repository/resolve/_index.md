@@ -26,6 +26,7 @@ Resolves the git repository URL for the cluster/environment
   jx-gitops repository resolve --dir something https://github.com/myorg/myrepo.git
 
   ```
+
 ### Options
 
 ```
@@ -37,8 +38,6 @@ Resolves the git repository URL for the cluster/environment
       --selector stringToString   adds Kubernetes label selector to filter on, e.g. -s app=pusher-wave,heritage=Helm (default [])
   -s, --source-dir string         the directory to recursively look for the *.yaml or *.yml source Environment/SourceRepository files (default ".")
 ```
-
-
 
 ### Source
 

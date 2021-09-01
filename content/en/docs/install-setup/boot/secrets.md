@@ -37,16 +37,16 @@ You can use `$JX_HOME` to change the location of `~/.jx`.
 
 There are two ways you can use Vault in Jenkins X.
 If you are already a Vault instance, you can configure Jenkins X to use this instance to store its secrets.
-This way you have a central location for managing all secrets of your infrastucture.
+This way you have a central location for managing all secrets of your infrastructure.
 This approach is referred to as the _external_ Vault setup.
 
 {{% alert %}}
-In case you are looking for a way to run Vault in your Kubernetes cluster, have a look at the offical [Vault Helm Chart](https://github.com/hashicorp/vault-helm).
+In case you are looking for a way to run Vault in your Kubernetes cluster, have a look at the official [Vault Helm Chart](https://github.com/hashicorp/vault-helm).
 {{% /alert %}}
 
 If you do not have a Vault instance, Jenkins X can, depending on where you run your cluster, install Vault as part of the installation process.
 In this case, the Banzai Cloud [Bank-Vaults operator](https://github.com/banzaicloud/bank-vaults) is provisioned in the Jenkins X development namespace.
-This apporach is referred to as the _internal_ Vault setup.
+This approach is referred to as the _internal_ Vault setup.
 
 #### Internal
 

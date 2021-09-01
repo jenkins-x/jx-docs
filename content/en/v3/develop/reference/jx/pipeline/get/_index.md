@@ -24,6 +24,7 @@ Display one or more pipelines.
   jx pipeline get
 
   ```
+
 ### Options
 
 ```
@@ -37,8 +38,6 @@ Display one or more pipelines.
       --presubmit          Views the available lighthouse presubmit triggers rather than just the current PipelineRuns
       --verbose            Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
 ```
-
-
 
 ### Source
 

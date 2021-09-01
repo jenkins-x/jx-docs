@@ -15,7 +15,7 @@ jx updatebot argo promote
 
 ### Synopsis
 
-Promotes a new Application version in an ArgoCD git repository 
+Promotes a new Application version in an ArgoCD git repository
 
 This command will use the source git repository URL and version to find the ArgoCD Application resource in the target git URL and create a Pull Request if the version is different. This lets you push promotion pull requests into ArgoCD repositories as part of your CI release pipeline.
 
@@ -32,6 +32,7 @@ This command will use the source git repository URL and version to find the Argo
   jx updatebot argo promote --version v1.2.3 --source-git-url https://github.com/myorg/my-chart-repo.git --target-git-url https://github.com/myorg/my-argo-repo.git
 
   ```
+
 ### Options
 
 ```
@@ -53,8 +54,6 @@ This command will use the source git repository URL and version to find the Argo
       --version-file string         the file to load the version from if not specified directly or via a $VERSION environment variable. Defaults to VERSION in the current dir
       --version-prefix string       the prefix added to the version number that will be used in the Argo CD Application YAML if --version option is not specified and the version is defaulted from $VERSION or the VERSION file (default "v")
 ```
-
-
 
 ### Source
 

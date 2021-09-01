@@ -21,6 +21,7 @@ We're using [DocSearch](https://community.algolia.com/docsearch/) by Algolia to 
 ## Markdown Syntax Reference
 
 ### Code examples
+
 Hugo uses [goldmark](https://gohugo.io/getting-started/configuration-markup#goldmark) parser to handle markdown and markdown related configuration and [chroma](https://gohugo.io/content-management/syntax-highlighting/) to handle syntax highlighting.
 Chroma supports the following [languages](https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages).
 All pages on the Jenkins X docs use the typical triple-back-tick markdown syntax.

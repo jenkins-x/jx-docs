@@ -27,6 +27,7 @@ Add one or more repositories to the SourceConfig
   jx gitops repository delete --name myrepo --owner myowner
 
   ```
+
 ### Options
 
 ```
@@ -36,8 +37,6 @@ Add one or more repositories to the SourceConfig
   -n, --name string     the name of the repository to remove
   -o, --owner string    the owner of the repository to remove
 ```
-
-
 
 ### Source
 

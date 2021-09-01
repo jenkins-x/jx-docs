@@ -26,7 +26,6 @@ Under the covers that command uses the custom Kubernetes resource `Environments`
 
 So you can also query the environments via [kubectl](https://kubernetes.io/docs/reference/kubectl/overview/) as well:
 
-
 ```sh
 kubectl get environments
 ```
@@ -61,7 +60,6 @@ This lets you setup a default `Scheduler` for a team and then you don't have to 
 
 Or when you perform `jx import` or `jx create quickstart` you can pass in a `--scheduler` command line argument to use a specific scheduler.
 
-
 ## PipelineActivity
 
 This resource stores the pipeline status in terms of Jenkins Pipeline stages plus the [promotion activity](/about/concepts/features/#promotion).
@@ -83,5 +81,3 @@ It is also used by the [jx edit userroles](/commands/jx_edit_userroles/) to chan
 The `EnvironmentRoleBinding` resource is like the standard Kubernetes [RoleBinding](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.13/#rolebinding-v1-rbac-authorization-k8s-io) resource, but it allows mapping of a `Role` to multiple [environments](/about/concepts/features/#environments) and [preview environments](/about/concepts/features/#preview-environments) in a team by using a selector of Environments on which to bind roles.
 
 This makes it easy to bind a `Role` to either all environments, all preview environments or both or a given set of users.
-
-

@@ -24,6 +24,7 @@ Runs the charter controller which watches helm Secrets and creates helm Chart CR
   jx-charter run
 
   ```
+
 ### Options
 
 ```
@@ -35,8 +36,6 @@ Runs the charter controller which watches helm Secrets and creates helm Chart CR
       --resync-interval duration   resync interval between full re-list operations (default 1m0s)
       --verbose                    Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
 ```
-
-
 
 ### Source
 

@@ -27,6 +27,7 @@ Verifies that the job(s) with the given label succeeds and tails the log as it e
   jx verify job --name jx-bdd
 
   ```
+
 ### Options
 
 ```
@@ -44,8 +45,6 @@ Verifies that the job(s) with the given label succeeds and tails the log as it e
       --verbose                 Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
       --verify-result           if the pod succeeds lets look for the last line starting with POD RESULT:  to determine the test result
 ```
-
-
 
 ### Source
 

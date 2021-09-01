@@ -62,4 +62,3 @@ kops rolling-update cluster --yes
 如果你知道提供商的话，可以通过命令行来指定。例如：
 
     jx install --provider=aws
-

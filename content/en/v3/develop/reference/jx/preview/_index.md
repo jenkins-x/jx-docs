@@ -23,8 +23,6 @@ Preview commands
   -h, --help   help for jx-preview
 ```
 
-
-
 ### Source
 
 [jenkins-x-plugins/jx-preview](https://github.com/jenkins-x-plugins/jx-preview)

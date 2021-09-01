@@ -28,14 +28,13 @@ Display one or more preview environments.
   jx-preview get --current
 
   ```
+
 ### Options
 
 ```
   -c, --current   Output the URL of the current Preview application the current pipeline just deployed
   -h, --help      help for get
 ```
-
-
 
 ### Source
 

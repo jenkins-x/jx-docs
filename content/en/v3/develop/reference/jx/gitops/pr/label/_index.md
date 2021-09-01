@@ -27,6 +27,7 @@ Adds a label to the current pull request
   jx-gitops pr label -n mylabel --matches "env/.*"
 
   ```
+
 ### Options
 
 ```
@@ -46,8 +47,6 @@ Adds a label to the current pull request
       --source-url string   the git source URL of the repository
       --verbose             Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
 ```
-
-
 
 ### Source
 

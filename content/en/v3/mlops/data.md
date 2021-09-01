@@ -12,6 +12,7 @@ aliases:
 In most scenarios, you will be expecting to remotely access data hosted elsewhere on your network and can manage this in code as part of your training scripts and service implementations. There are however a couple of situations in which Jenkins X can help you to manage certain types of data.
 
 ## Handling data in Buckets
+
 If you are working with data in the form of arbitrary files, you can transfer these to your training environment via a Storage Bucket in your Cloud project.
 
 This usually results in your data being located at a URL thas should be in the form: s3://mybucket/tests/myOrg/myData/trainingset.xml where the protocol is set as appropriate to the Cloud provider you are using. You can then reference this in your training script.
@@ -19,6 +20,7 @@ This usually results in your data being located at a URL thas should be in the f
 You must ensure that the data has been uploaded to this bucket prior to starting the training build and should bear in mind that this command copies the specified file from the bucket to the working volume of the build container executing the current build step.
 
 ## Working with Volumes
+
 Under some circumstances, you may wish to create versioned collections of immutable training data that can be shared across multiple models and which are too large to easily copy from buckets in a timely manner.
 
 Under these circumstances, it is straightforward to create a named, persistent Kubernetes Volume within your Cloud project, mount it in read/write mode and upload your training data files to it, then unmount it ready for use.
@@ -96,4 +98,5 @@ spec:
   timeout: 12h0m0s
 status: {}
 ```
+
 Note that it is only possible to simultaneously share volumes that are mounted read-only.

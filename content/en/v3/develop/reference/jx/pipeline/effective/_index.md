@@ -34,6 +34,7 @@ Displays the effective tekton pipeline
   jx pipeline effective
 
   ```
+
 ### Options
 
 ```
@@ -57,8 +58,6 @@ Displays the effective tekton pipeline
   -t, --trigger string         The path to the trigger file. If not specified you will be prompted to choose one
       --verbose                Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
 ```
-
-
 
 ### Source
 

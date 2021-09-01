@@ -17,7 +17,6 @@ jx create addon gloo
 
 And you are then good to go. Any new projects you create will be created in this serverless style.
 
-
 ## Converting existing applications
 
 If you already have a microservice and you want to convert it over to Knative Serve just [import the source repository into Jenkins X](/docs/resources/guides/using-jx/creating/import/) and you should be all done.
@@ -30,7 +29,6 @@ jx edit deploy
 
 This command will modify the `knativeDeploy` flag in your helm `charts/myapp/values.yaml` file to enable / disable Knative Serve. Once you have committed that code change and merged to master your application will be released to staging using Knative Serve by the automated CI/CD pipeline in Jenkins X.
 
-
 ## Edit your team’s deploy kind
 
 You can edit the default deployment kind for your team which is used when’re you create a QuickStart or import a repository via the [jx edit deploy](/commands/deprecation/) command with the `-t` argument:
@@ -38,7 +36,6 @@ You can edit the default deployment kind for your team which is used when’re y
 ```sh
 jx edit deploy -t
 ```
-
 
 ### How it works
 
@@ -50,8 +47,6 @@ We use an open source project called [Knative](https://www.knative.dev/) to prov
 
 The Jenkins X builld packs create a Knative Serve resource in your helm chart at `charts/myapp/templates/ksvc.yaml`. This resource is only created if the `knativeDeploy` flag is true / otherwise the default kubernetes `Service` & `Deployment` are created.
 
-
-
 ## Installing Knative Serve
 
 [Gloo](https://gloo.solo.io/) is much smaller and simpler to install than [Istio](https://istio.io/) so in this guide we are going to use that.
@@ -61,6 +56,7 @@ We have a simple command [jx create addon gloo](/commands/jx_create_addon_gloo/)
 ```sh
 jx create addon gloo
 ```
+
 This command will install Knative Serve into the `knative-serving` namespace and Gloo into the `gloo-system` namespace. You can check it’s all installed and working via:
 
 ```sh
@@ -79,9 +75,8 @@ You can check if Knative Serve is being used on your application by doing:
 ```sh
 kubectl get ksvc -n jx-staging
 ```
+
 Which should show all of the Knative Service resources in your Staging environment.
-
-
 
 ## Demo
 

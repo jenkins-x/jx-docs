@@ -18,4 +18,3 @@ There are a number of ways to change the configuration:
 * [customize charts](/v3/develop/apps/#customising-charts)
 
 Here are some more specific configuration guides:
-

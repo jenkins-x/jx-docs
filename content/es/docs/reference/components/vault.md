@@ -57,7 +57,6 @@ ahora debe poder utilizar [safe](https://github.com/starkandwayne/safe) CLI para
 
 Puede entonces obtener un secreto a través de:
 
-
 ```
 safe get /secret/my-cluster-name/creds/my-secret
 ```
@@ -119,8 +118,9 @@ Para configurar DNS Externo:
 2. Ejecute el comando `jx create domain` contra su nombre de dominio, por ejemplo:
 
 ```
-$ jx create domain gke --domain cluster1.acmecorp.example
+jx create domain gke --domain cluster1.acmecorp.example
 ```
+
     Se le preguntará la información que se necesite para la configuración:
 
     1. Seleccione su proyecto Google Cloud Platform del listado disponible.
@@ -167,7 +167,7 @@ Recuerde ejecutar el comando `jx boot` para que los cambios tengan efecto en su 
 De forma predeterminada, se crea un servicio Vault utilizando [jx boot](/getting-started/boot/) para crear su clúster, a menos que haya especificado durante la configuración del clúster no cree Vault. En este caso, puede crear una instalación posterior con la interfaz de línea de comandos `jx create`:
 
 ```
-$ jx create vault
+jx create vault
 ```
 
 1. El programa le preguntará el nombre para su Vault (p.ej `acmevault`)

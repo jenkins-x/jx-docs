@@ -213,6 +213,7 @@ We need a place to store the reports. A simple Go program will suffice for now.
     ```
 
     Now modify `charts/jenkins-x-reports/values.yaml` and modify the `service` and add (just after `internalPort` will work well):
+
     ```yaml
       reportVolumeName: reports-volume
       reportMountPath: /reports
@@ -262,12 +263,12 @@ We need a place to store the reports. A simple Go program will suffice for now.
 
     This file is simply a copy of `service.yaml` with the `service` variable changed to `serviceUpload`.
 
-
     We also need to add the upload port to the list of container ports. Just below `containerPort: {{ .Values.service.internalPort }}` add:
 
     ```yaml
               containerPort: {{ .Values.serviceUpload.internalPort }}
     ```
+
 1. Run this as an app on your Jenkins X cluster by pushing your code changes to GitHub. The app will build and can be tested in the staging environment.
 1. Validate you can upload and download files. In the DevPod for the sample app run `curl -F upload=@target/site/surefire-report.html http://jenkins-x-reports-upload.jx-staging/test/1` and then validate that the file is there by running `curl http://jenkins-x-reports.jx-staging/test/1`.
 2. Promote the app to production using `jx promote -a jenkins-x-reports -e production -v 0.0.1` (assuming you are still on your first version of the app)
@@ -305,6 +306,7 @@ We need a place to store the reports. A simple Go program will suffice for now.
 
 1. Make the script executable by running `chmod u+x junit.sh`
 1. Tell Jenkins to execute the script by adding this snippet to the `Jenkinsfile` just above the `jx step post build` lines in both the `CI Build and push snapshot` and `Build Release` stages:
+
 ```bash
             sh "VERSION=`cat VERSION` ./junit.sh"
 ```
@@ -389,7 +391,7 @@ We'll use Kibana and ElasticSearch to create dashboards to visualize the test re
     }
     ```
 
-1. An initial client for sending data to Kibana is available at (https://github.com/pmuir/junit-runner). Download it and get it building.
+1. An initial client for sending data to Kibana is available at (<https://github.com/pmuir/junit-runner>). Download it and get it building.
 As we start to convert the functionality we've built so far to a Jenkins X extension, we'll move the scripted code we've written so far into this Go program. For now, we can just use the current version.
 1. Add this function to `junit.sh`:
 
@@ -648,25 +650,26 @@ Just above where we write the success message to the HTTP stream, add this code 
 
     ```go
     cm, err := getOrCreateConfigMap(org, app, client)
-		if err != nil {
-			renderError(w, "ERROR_CREATING_CONFIG_MAP", http.StatusInternalServerError)
-			log.Println(err)
-		}
-		reportHost, err := getReportHost(client)
-		if err != nil {
-			renderError(w, "ERROR_CREATING_CONFIG_MAP", http.StatusInternalServerError)
-			log.Println(err)
-		}
+  if err != nil {
+   renderError(w, "ERROR_CREATING_CONFIG_MAP", http.StatusInternalServerError)
+   log.Println(err)
+  }
+  reportHost, err := getReportHost(client)
+  if err != nil {
+   renderError(w, "ERROR_CREATING_CONFIG_MAP", http.StatusInternalServerError)
+   log.Println(err)
+  }
 
-		url := fmt.Sprintf("%s/%s/%s/%s/%s", reportHost, org, app, version, filename)
-		cm, err = updateConfigMap(cm, version, filename, url, client )
-		if err != nil {
-			renderError(w, "ERROR_UPDATING_CONFIG_MAP", http.StatusInternalServerError)
-			log.Println(err)
-		}
+  url := fmt.Sprintf("%s/%s/%s/%s/%s", reportHost, org, app, version, filename)
+  cm, err = updateConfigMap(cm, version, filename, url, client )
+  if err != nil {
+   renderError(w, "ERROR_UPDATING_CONFIG_MAP", http.StatusInternalServerError)
+   log.Println(err)
+  }
     ```
+
 1. We can also improve the way we are storing the files now, using the headers to create the path rather than just copying the path that was used for upload by changing the variable `dir` to look more like `dir := filepath.Join(uploadPath, org, app, version)`
-2. Finally, let's tidy up `junit.sh` by removing the remnants of the patching code and adding the version header. Your final curl command should look like: `    curl -H "X-Content-Type: text/vnd.junit-xml" -H "X-Org: ${ORG}" -H "X-App: ${APP_NAME}" -H "X-Version: ${VERSION}" -s -F upload=@$1 http://jenkins-x-reports-upload.jx-production/$filename`
+2. Finally, let's tidy up `junit.sh` by removing the remnants of the patching code and adding the version header. Your final curl command should look like: `curl -H "X-Content-Type: text/vnd.junit-xml" -H "X-Org: ${ORG}" -H "X-App: ${APP_NAME}" -H "X-Version: ${VERSION}" -s -F upload=@$1 http://jenkins-x-reports-upload.jx-production/$filename`
 
 ## Progress Review
 
@@ -678,7 +681,7 @@ We still have some steps to complete.
 At this point the JX team have also learned that we want to build some additional extension points into Jenkins X:
 
 * A `jx step post` support for a 'post build` steps. This will allow us to implement build health, as it will allow us to:
-   * Inject additional steps into the build that allow us to run e.g. `mvn surefire-report:report` without modifying the build
+  * Inject additional steps into the build that allow us to run e.g. `mvn surefire-report:report` without modifying the build
 * `jx step collect` for collecting build artifact that will run even if the build fails
   * Add URLs to the `PipelineActivity` CRD
 

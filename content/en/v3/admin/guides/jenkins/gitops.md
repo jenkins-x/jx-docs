@@ -17,7 +17,7 @@ We have been using the GitOps approach to managing things in production for the 
 So we recommend trying to follow the GitOps approaches for your Jenkins servers too. e.g.
 
 * try store in git all of the Jenkins servers with their [configuration](/v3/admin/guides/jenkins/getting-started/#configure-jenkins)
-* try use the [Job DSL in git](/v3/admin/guides/jenkins/getting-started/#job-dsl) to import projects into your jenkins servers then its very easy to move projects to different servers via a simple Pull Request on the `.jx/gitops/source-config.yaml` file 
+* try use the [Job DSL in git](/v3/admin/guides/jenkins/getting-started/#job-dsl) to import projects into your jenkins servers then its very easy to move projects to different servers via a simple Pull Request on the `.jx/gitops/source-config.yaml` file
 * try use [Jenkins Configuration As Code](https://www.jenkins.io/projects/jcasc/) as much as you can as its simpler and easier to work with via GitOps
 * try use use [kubernetes external secrets](https://github.com/external-secrets/kubernetes-external-secrets) to manage all of your secrets in a secret store like vault or your cloud providers secret manager via [Jenkins X secret support](/v3/admin/setup/secrets/)
   * you can then consume the secrets managed via [kubernetes external secrets](https://github.com/external-secrets/kubernetes-external-secrets) using the [kubernetes credentials provider plugin](https://plugins.jenkins.io/kubernetes-credentials-provider/)

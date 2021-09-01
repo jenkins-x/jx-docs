@@ -23,8 +23,6 @@ commands for converting tekton pipelines to github actions
   -h, --help   help for jx-tekton-to-actions
 ```
 
-
-
 ### Source
 
 [jenkins-x-plugins/jx-tekton-to-actions](https://github.com/jenkins-x-plugins/jx-tekton-to-actions)

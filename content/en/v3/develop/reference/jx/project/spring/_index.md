@@ -21,9 +21,9 @@ Creates a new Spring Boot application and then optionally setups CI/CD pipelines
   
       For more documentation see: [https://jenkins-x.io/developing/create-spring/](https://jenkins-x.io/developing/create-spring/)
   
-See Also: 
+See Also:
 
-  * jx create project : https://jenkins-x.io/commands/jx_create_project
+* jx create project : <https://jenkins-x.io/commands/jx_create_project>
 
 ### Examples
 
@@ -41,6 +41,7 @@ See Also:
   jx-project spring --type gradle-project
 
   ```
+
 ### Options
 
 ```
@@ -93,8 +94,6 @@ See Also:
       --verbose                        Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
       --wait-for-pr                    waits for the Pull Request generated on the cluster environment git repository to merge (default true)
 ```
-
-
 
 ### Source
 

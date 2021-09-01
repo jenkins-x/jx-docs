@@ -45,6 +45,7 @@ git push
 ```
 
 Now tail the admin logs and wait for the job to complete
+
 ```bash
 jx admin logs
 ```

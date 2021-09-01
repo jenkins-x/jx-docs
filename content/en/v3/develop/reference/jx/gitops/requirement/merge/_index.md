@@ -29,6 +29,7 @@ This lets you take requirements from, say, the output of a terraform plan and me
   jx-gitops requirements merge
 
   ```
+
 ### Options
 
 ```
@@ -39,8 +40,6 @@ This lets you take requirements from, say, the output of a terraform plan and me
       --namespace string   the namespace used to find the ConfigMap if using the ConfigMap mode (default "default")
       --retries int        Specify the number of times the command should be reattempted on failure (default 3)
 ```
-
-
 
 ### Source
 

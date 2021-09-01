@@ -23,8 +23,6 @@ Commands for working with Vault
   -h, --help   help for vault
 ```
 
-
-
 ### Source
 
 [jenkins-x-plugins/jx-secret](https://github.com/jenkins-x-plugins/jx-secret)

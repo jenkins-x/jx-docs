@@ -29,9 +29,9 @@ Gradle project support.
 You can incorporate Jenkins X into your Spring
 Boot projects in two ways:
 
-1.  By importing existing Spring Boot code using `jx import`
+1. By importing existing Spring Boot code using `jx import`
 
-2.  By creating a Spring Boot application from scratch using
+2. By creating a Spring Boot application from scratch using
     `jx create spring`
 
 ## Importing existing Spring Boot projects
@@ -43,26 +43,26 @@ Spring Boot project as a Docker image, a `pipeline.yaml` to your
 `~/.jx/` directory that manages the development pipeline, and a Helm
 chart for running as a package in Kubernetes.
 
-1.  Change into your Spring Boot project directory:
+1. Change into your Spring Boot project directory:
 
 ```sh
 cd my-springapp/
 ```
 
-2.  Run the import from a command-line:
+2. Run the import from a command-line:
 
 ```sh
 jx import
 ```
 
-3.  The application asks for your Git username (such as `myuser`).
+3. The application asks for your Git username (such as `myuser`).
 
-4.  The application asks if you wan to initialize your project in Git.
+4. The application asks if you wan to initialize your project in Git.
 
-5.  The application asks you what organization to use for managing
+5. The application asks you what organization to use for managing
     builds (for example, `myorg`)
 
-6.  The application asks if you want to name your repository (such as
+6. The application asks if you want to name your repository (such as
     `my-springapp`)
 
 You can now perform builds, commit project code to your newly created
@@ -73,27 +73,27 @@ process pull requests and create [previews](/docs/reference/preview/) of your ap
 
 If you are evaluating Spring Boot in your Jenkins X environment and need an application template of a Spring Boot project that is preconfigured with CI/CD pipeline and GitOps promotion, use `jx create` to make the preconfigured project.
 
-1.  Run the Spring Boot creation via command-line:
+1. Run the Spring Boot creation via command-line:
 
 ```sh
 jx create spring
 ```
 
-2.  The application asks for your Git username (such as `myuser`)
+2. The application asks for your Git username (such as `myuser`)
 
-3.  The application lets you choose your Git organization from an
+3. The application lets you choose your Git organization from an
     available list
 
-4.  The application asks for a repository name, such as
+4. The application asks for a repository name, such as
     `my-springapp1`
 
-5.  The application prompts you for the development language for your
+5. The application prompts you for the development language for your
     project (by default, `java`)
 
-6.  The application prompts you for a group ID (by default,
+6. The application prompts you for a group ID (by default,
     `com.example`)
 
-7.  The application prompts you for any Spring Boot starters, or
+7. The application prompts you for any Spring Boot starters, or
     dependency descriptors that you can use to make your development
     smoother and quicker.
 
@@ -118,28 +118,28 @@ We recommend you always include the **actuator** dependency in your Spring Boot 
 
 The two methods of configuring Spring Boot projects in Jenkins X performs several actions:
 
--   Create a new Spring Boot application in a local subdirectory
+- Create a new Spring Boot application in a local subdirectory
 
--   Add your source code into a Git repository
+- Add your source code into a Git repository
 
--   Create a remote git repository on a git service, such as
+- Create a remote git repository on a git service, such as
     [GitHub](https://github.com)
 
--   Commit your code to the remote Git service
+- Commit your code to the remote Git service
 
--   Adds default build files to your project:
+- Adds default build files to your project:
 
-    -   A `Dockerfile` to build your application as a docker image
+  - A `Dockerfile` to build your application as a docker image
 
-    -   A `pipeline.yaml` to implement the CI / CD pipeline
+  - A `pipeline.yaml` to implement the CI / CD pipeline
 
-    -   A helm chart to run your application inside Kubernetes
+  - A helm chart to run your application inside Kubernetes
 
--   Registers a webhook (such as
+- Registers a webhook (such as
     `http://hook-jx.192.169.1.100.nip.io/hook`) on the remote git
     repository
 
--   trigger the first pipeline build
+- trigger the first pipeline build
 
 You can now use your Git-enabled local project subdirectory to make
 changes to your Spring Boot application, push those changes to Git, and

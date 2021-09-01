@@ -15,12 +15,12 @@ To add a new custom step to your `jenkins-x.yml` file see [how to use the jx cre
 
 ## How do I override a step?
 
-If there is a named step in the pipeline you wish to override you can add some YAML to your `jenkins-x.yml` file as 
+If there is a named step in the pipeline you wish to override you can add some YAML to your `jenkins-x.yml` file as
  follows:
 
 In this case were are going to replace the step called `helm-release` in the `release` pipeline
 
-``` 
+```
 pipelineConfig:
   pipelines:
     overrides:
@@ -29,11 +29,11 @@ pipelineConfig:
         step: 
           image: busybox
           sh: echo "this command is replaced"
-```   
+```
 
 You can see the effect of this change locally before you commit it to git via the [jx step syntax effective](/commands/jx_step_syntax_effective/) command:
 
-``` 
+```
 jx step syntax effective -s
 ```
 
@@ -45,7 +45,7 @@ For more detail check out [how to override steps](/docs/reference/pipeline-synta
 
 As you can see above you can override any step in any build pack; but you can also override the container image used by default in all the steps by adding this YAML to your `jenkins-x.yml`:
 
-``` 
+```
 pipelineConfig:
   agent:
     label: jenkins-go
@@ -54,16 +54,15 @@ pipelineConfig:
 
 You can see the effect of this change locally before you commit it to git via the [jx step syntax effective](/commands/jx_step_syntax_effective/) command:
 
-``` 
+```
 jx step syntax effective -s
-```         
+```
 
 For more detail check out [how to override steps](/docs/reference/pipeline-syntax-reference/#specifying-and-overriding-release-pull-request-and-feature-pipelines)
 
 ## How do Jenkins X Pipelines compare to Jenkins pipelines?
 
 See [Jenkins X Pipelines](/docs/build-test-preview/jenkins-x-pipelines/)
-
 
 ## What environment variables are available by default inside a pipeline?
 
@@ -91,12 +90,8 @@ You can also do things like use Nexus as a network cache for fetching maven depe
 
 Hopefully the Tekton community will figure out some even better caching solutions to speed up builds.
 
-
 ## How do I define an environment variable inside a step for other steps to use?
 
 Files are the easiest approach as the `/workspace` directory is shared with all steps. So write in one step and use the value from other steps etc.
 
 The other option is mounting a `ConfigMap` as environment variables into each step and modifying that on one step; but files are easier really.
-
-
-

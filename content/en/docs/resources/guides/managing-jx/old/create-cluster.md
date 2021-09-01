@@ -10,12 +10,11 @@ To create a new Kubernetes cluster with Jenkins X installed use the  [jx create 
 
 A number of different public cloud providers are supported as shown below.
 
-__For the best getting started experience we currently recommend using Google Container Engine (GKE)__. The Google Cloud Platform offers a $300 free credit if you don't have a Google Cloud account.  See https://console.cloud.google.com/freetrial
+__For the best getting started experience we currently recommend using Google Container Engine (GKE)__. The Google Cloud Platform offers a $300 free credit if you don't have a Google Cloud account.  See <https://console.cloud.google.com/freetrial>
 
 Here's a little demo showing GKE, AKS and Minikube (not supported anymore) in parallel. It can take some time to start on different machines/clouds so please be patient!
 
 <iframe width="640" height="360" src="https://www.youtube.com/embed/ELA4tytdFeA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
 
 ## Using Google Cloud (GKE)
 
@@ -70,7 +69,7 @@ The Jenkins X cluster creation process is a multi-step interactive
 process performed via command-line interface and your desktop web
 browser.
 
-1.  Open a terminal or command prompt window (or the GCP Cloud Shell in
+1. Open a terminal or command prompt window (or the GCP Cloud Shell in
     your web browser) and commence the Jenkins X installation process.
     In this example, the Google Kubernetes Engine is used as the
     Kubernetes provider:
@@ -79,7 +78,7 @@ browser.
 jx create cluster gke
 ```
 
-2.  The installation is interactive, stepping you through the entire
+2. The installation is interactive, stepping you through the entire
     installation and configuration of the Kubernetes cluster creation
     process.
 
@@ -88,43 +87,43 @@ jx create cluster gke
     kubernetes, the installer prompts you for your administrative
     password to complete the installation process.
 
-3.  A browser window appears prompting you to choose the email address
+3. A browser window appears prompting you to choose the email address
     associated with your Google Cloud Platform account, then prompts you
     to accept rights permission to associate your GCP account
 
-4.  The installer prompts you to choose a `regional` or `zonal` cluster:
+4. The installer prompts you to choose a `regional` or `zonal` cluster:
 
-    -   Regional clusters spread kubernetes resources in a region to
+    - Regional clusters spread kubernetes resources in a region to
         multiple zones with each zone having a cluster master.
 
-    -   Zonal clusters run multiple kubernetes resources to multiple
+    - Zonal clusters run multiple kubernetes resources to multiple
         cluster nodes using one cluster master.
 
-5.  The installer prompts you for your Cloud node machine type:
+5. The installer prompts you for your Cloud node machine type:
 
-    -   Standard: a machine that scales CPU and Memory evenly, (1 vCPU
+    - Standard: a machine that scales CPU and Memory evenly, (1 vCPU
         with 3.75GB RAM, 2 vCPU with 7.5GB RAM, and so on).
 
-    -   High-memory: a machine with higher memory allocation for each
+    - High-memory: a machine with higher memory allocation for each
         CPU (2 vCPU with 13GB RAM, 4 vCPU with 26GB RAM, and so on).
 
-    -   High-CPU: a machine with higher vCPU allocation relative to
+    - High-CPU: a machine with higher vCPU allocation relative to
         Memory (2 vCPU 1.8GB RAM, 4 vCPU 3.6GB RAM, and so on).
 
-6.  The installer asks to enter the *minimum* quantity of nodes for the
+6. The installer asks to enter the *minimum* quantity of nodes for the
     cluster. The recommended minimum for a Jenkins X cluster is 3 nodes
     for each cluster zone.
 
-7.  The installer asks you to enter the *maximum* quantity of nodes per
+7. The installer asks you to enter the *maximum* quantity of nodes per
     zone. The recommended maximum for Jenkins X is 5 nodes per cluster
 
-8.  The installer asks if you want to use *preemptible VMs*. Preemptible
+8. The installer asks if you want to use *preemptible VMs*. Preemptible
     VMs are used typically for less than 24 hours for specific tasks
     such as short-term compute cluster calculations, media rendering or
     transcoding, financial industry asset performance modeling, and
     others. It is *not* recommended for typical Jenkins X deployments.
 
-9.  The installer asks if you want access to Google Cloud Storage or
+9. The installer asks if you want access to Google Cloud Storage or
     Google Container Registry. If you enter `Y` for yes, the installer
     creates Oauth enabled scopes for accessing Google Cloud Storage and
     Google Cloud Registry API authentication and access. Default is
@@ -155,21 +154,21 @@ jx create cluster gke
     users and Jenkins X administrators can access the cluster.
 
 13. The installer asks for a local git user for GitHub access:
-    1.  Enter the GitHub User Name you want to associate to the cluster
+    1. Enter the GitHub User Name you want to associate to the cluster
 
-    2.  Choose whether or not you want to use GitHub as the CI/CD
+    2. Choose whether or not you want to use GitHub as the CI/CD
         pipeline `git` server. The default is `yes`.
 
-    3.  When prompted, copy and paste the provided URL into a browser
+    3. When prompted, copy and paste the provided URL into a browser
         and create a GitHub API token for use in your cluster.
 
-    4.  Choose whether you want to use Serverless Jenkins X Pipelines
+    4. Choose whether you want to use Serverless Jenkins X Pipelines
         with Tekton or traditional Jenkins with Jenkinsfile. Choose
         Serverless Jenkins X Pipelines with Tekton, as that method
         supports cloud native CI/CD declarative pipelines for kubernetes
         clusters using Tekton custom resources.
 
-    5.  The installer creates an autogenerated password for
+    5. The installer creates an autogenerated password for
         administrative access to the cluster. Copy that password and
         paste it for later access.
 

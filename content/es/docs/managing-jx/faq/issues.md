@@ -14,13 +14,13 @@ Si su instalación no se inicia, podría haber algunas razones diferentes por la
 Su clúster podría estar sin recursos. Puede revisar los recursos de reserva de su clúster a través del comando [jx status](/commands/jx_status/):
 
 ```sh
-$ jx status
+jx status
 ```
 
 También tenemos un comando de diagnóstico para detectar problemas comunes, [jx step verify install](/commands/jx_step_verify_install/):
 
 ```sh
-$ jx step verify install
+jx step verify install
 ```
 
 Un problema común para lo cual pudieran no iniciar los pods es si el clúster no tiene una [clase de almacenamiento predeterminado](https://kubernetes.io/docs/concepts/storage/storage-classes/) configurada, por lo tanto, los recursos `Persistent Volume Claims` no pueden obtener los `Persistent Volumes` como se describe en las [instrucciones de instalación](/docs/resources/guides/managing-jx/common-tasks/install-on-cluster/).
@@ -28,7 +28,7 @@ Un problema común para lo cual pudieran no iniciar los pods es si el clúster n
 Puede revisar su clase de almacenamiento y volúmenes persistentes a través de:
 
 ```sh
-$ kubectl get pvc
+kubectl get pvc
 ```
 
 Si las cosas están funcionando debe ver algo similar a esto:
@@ -50,13 +50,13 @@ Por favor, intente crear una [clase de almacenamiento predeterminada](https://ku
 Si todos los `Persistent Volume Claims` tienen el estado `Bound` y todavía no se ha iniciado, entonces intente:
 
 ```sh
-$ kubectl get pod
+kubectl get pod
 ```
 
 Si un pod no puede iniciarse, intente:
 
 ```sh
-$ kubectl describe pod some-pod-name
+kubectl describe pod some-pod-name
 ```
 
 Tal vez este comando le de alguna pista. Podría estar relacionado RBAC?
@@ -107,7 +107,7 @@ Básciamente sucede cuando tienes un token viejo de API en `~/.jx/jenkinsAuth.ya
 * eliminarlo del fichero manualmente
 * ejecutar el siguiente comando [jx delete jenkins token](/commands/deprecation/):
 
-        $ jx delete jenkins token admin
+        jx delete jenkins token admin
 
 ## errores con chartmuseum.build.cd.jenkins-x.io
 
@@ -125,37 +125,37 @@ Looks like "https://chartmuseum.build.cd.jenkins-x.io" is not a valid chart repo
 
 entonces parece que tienes una referencia hacia una URL caducada del chartmuseum para los charts en Jenkins X.
 
-La nueva URL es: http://chartmuseum.jenkins-x.io
+La nueva URL es: <http://chartmuseum.jenkins-x.io>
 
 Puede ser que tu instalación Helm tenga una URL del repositorio vieja. Puedes verla así:
 
 ```sh
 $ helm repo list
-NAME     	URL
-stable   	https://kubernetes-charts.storage.googleapis.com
-jenkins-x	http://chartmuseum.jenkins-x.io
+NAME      URL
+stable    https://kubernetes-charts.storage.googleapis.com
+jenkins-x http://chartmuseum.jenkins-x.io
 ```
 
 Si está viendo esto ...
 
 ```sh
 $ helm repo list
-NAME     	URL
-jenkins-x	https://chartmuseum.build.cd.jenkins-x.io
+NAME      URL
+jenkins-x https://chartmuseum.build.cd.jenkins-x.io
 ```
 
 entonces por favor, ejecute ...
 
 ```sh
 helm repo remove jenkins-x
-helm repo add jenkins-x	http://chartmuseum.jenkins-x.io
+helm repo add jenkins-x http://chartmuseum.jenkins-x.io
 ```
 
 y podrá resolver su problema y seguir adelante.
 
 Otra causa posible es tener una URL vieja en tu repositorio Git del entorno, tal vez tenga una referencia a la anterior URL.
 
-Entonces abra su fichero `env/requirements.yaml` en sus repositorios Git staging/production y modifíquelos para usar la URL http://chartmuseum.jenkins-x.io en lugar de **chartmuseum.build.cd.jenkins-x.io** como este [fichero de requisitos](https://github.com/jenkins-x/default-environment-charts/blob/master/env/requirements.yaml).
+Entonces abra su fichero `env/requirements.yaml` en sus repositorios Git staging/production y modifíquelos para usar la URL <http://chartmuseum.jenkins-x.io> en lugar de **chartmuseum.build.cd.jenkins-x.io** como este [fichero de requisitos](https://github.com/jenkins-x/default-environment-charts/blob/master/env/requirements.yaml).
 
 ## errores de git: POST 401 Bad credentials
 
@@ -164,8 +164,8 @@ Esto indica que su token API de git se ingresó incorrectamente o se ha regenera
 Para recrearlo con un nuevo valor de token de API, intente lo siguiente (cambiar el nombre del servidor git para que coincida con su proveedor git):
 
 ```sh
-$ jx delete git token -n github <yourUserName>
-$ jx create git token -n github <yourUserName>
+jx delete git token -n github <yourUserName>
+jx create git token -n github <yourUserName>
 ```
 
 Puede ver más detalles en [cómo utilizar Git y Jenkins X aquí](/docs/resources/guides/managing-jx/common-tasks/git/).
@@ -183,8 +183,8 @@ Entonces su token para la API de Git debe ser incorrecta o estar vencida.
 Para recrear el valor del token para la API intente lo siguiente (cambiar el nombre del servidor git para que coincida con su proveedor git):
 
 ```sh
-$ jx delete git token -n GitHub admin
-$ jx create git token -n GitHub admin
+jx delete git token -n GitHub admin
+jx create git token -n GitHub admin
 ```
 
 Puede ver más detalles en [cómo utilizar Git y Jenkins X aquí](/docs/resources/guides/managing-jx/common-tasks/git/).
@@ -211,13 +211,13 @@ Si ya no tiene la salida de la consola del terminal, puede buscar en el archivo 
 
 Si observa que las peticiones de volumen persistentes creados al instalar Jenkins X no se unen con
 
-    $ kubectl get pvc
+    kubectl get pvc
 
 Debe comprobar que tiene una clase de almacenamiento predeterminada de clúster para el aprovisionamiento dinámico de volumen persistente. Consulte [aquí](https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/) para obtener más detalles.
 
 ## No puedo conectarme a nodos en AWS
 
-Si no ve ningún nodo válido devuelto por `kubectl get node` u obtiene errores al ejecutar` jx status`, algo como:
+Si no ve ningún nodo válido devuelto por `kubectl get node` u obtiene errores al ejecutar`jx status`, algo como:
 
 ```sh
 Unable to connect to the server: dial tcp: lookup abc.def.regino.eks.amazonaws.com on 10.0.0.2:53: no such host
@@ -247,7 +247,7 @@ Luego ejecute este comando:
 kail -l job-name=expose -n jx-staging
 ```
 
-Si luego promueve el entorno Staging o vuelve a activar el pipeline en la rama `master` de su repositorio Git de Staging (p.ej, a través de [jx start pipeline](/commands/jx_start_pipeline/)), debería ver la salida del [exposecontroller] (https://github.com/jenkins-x/exposecontroller) pod.
+Si luego promueve el entorno Staging o vuelve a activar el pipeline en la rama `master` de su repositorio Git de Staging (p.ej, a través de [jx start pipeline](/commands/jx_start_pipeline/)), debería ver la salida del [exposecontroller] (<https://github.com/jenkins-x/exposecontroller>) pod.
 
 ## ¿Por qué la promoción es realmente lenta?
 
@@ -277,7 +277,7 @@ Entonces:
 * selecciona la URL del webhook de Jenkins X
 * vea el último webhook - ¿Tuvo éxito? Intenta reactivarlo? Eso debería resaltar cualquier problema de red, etc.
 
-Si no puede usar webhooks públicos, puede mirar algo como [ultrahook] (http://www.ultrahook.com/)
+Si no puede usar webhooks públicos, puede mirar algo como [ultrahook] (<http://www.ultrahook.com/>)
 
 ## No puede crear un clúster en minikube
 
@@ -286,8 +286,8 @@ Si estás utilizando Mac, entonces `hyperkit` es el mejor controlador de Máquin
 Si su minikube está fallando al inicio, entonces puede intentar:
 
 ```sh
-$ minikube delete
-$ rm -rf ~/.minikube
+minikube delete
+rm -rf ~/.minikube
 ```
 
 Si el comando `rm` falla, tal vez necesite:
@@ -321,7 +321,7 @@ Es posible que haya encontrado [este problema en minikube e hyperkit](https://gi
 La solución es intentar lo siguiente:
 
 ```sh
-$ rm ~/.minikube/machines/minikube/hyperkit.pid
+rm ~/.minikube/machines/minikube/hyperkit.pid
 ```
 
 Entonces vuelva a intentarlo. Esperamos que esta vez funcione correctamente!
@@ -368,7 +368,7 @@ Si desea ver los registros del `exposecontroller`, deberá observar los registro
 Una forma de hacerlo es a través de la CLI de [kail](https://github.com/boz/kail):
 
 ```sh
-$ kail -l  job-name=expose
+kail -l  job-name=expose
 ```
 
 Esto buscará registros de exposecontroller y luego los volcará a la consola. Ahora active un pipeline de promoción y debería ver la salida dentro de un minuto más o menos.
@@ -389,13 +389,13 @@ Este problema se debe a que el pod _cert-manager_ no tiene la etiqueta `disable-
 Compruebe si existe la etiqueta _disable-validation_ en el pod de cert-manager.
 
 ```sh
-$ kubectl describe namespace cert-manager
+kubectl describe namespace cert-manager
 ```
 
 Si no puede ver la etiqueta `certmanager.k8s.io/disable-validation=true` en su namespace, debe agregarla con:
 
 ```sh
-$ kubectl label namespace cert-manager certmanager.k8s.io/disable-validation=true
+kubectl label namespace cert-manager certmanager.k8s.io/disable-validation=true
 ```
 
 Confirme que la etiqueta ha sido adicionada al pod _cert-manager_.

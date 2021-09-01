@@ -33,6 +33,7 @@ Display the Pipeline step environment variables for a step in a chosen pipeline 
   jx pipeline env -t idea
 
   ```
+
 ### Options
 
 ```
@@ -54,8 +55,6 @@ Display the Pipeline step environment variables for a step in a chosen pipeline 
   -r, --repo string           Filters the build repository
       --verbose               Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
 ```
-
-
 
 ### Source
 

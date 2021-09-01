@@ -22,12 +22,12 @@ weight: 200
 Ingress 默认会采用文件 `jx-requirements.yml` 中 `ingress.domain` 指定的域名。
 
 ### 问题诊断
-        
+
 你可以根据[健康性指南](/v3/admin/setup/health/)来检查你系统以及 webhooks 是否健康。
 
 首先，请确保 ingress 正常
 
-```bash 
+```bash
 kubectl get ing
 ```
 
@@ -55,7 +55,7 @@ kubectl get environments
 
 打开你的 git 提供商的 **Webbooks** 页面， 查看发送到 hook 地址的请求是否成功。对于 GitHub，你可以在 **Settings** ->  **Webhooks** 这里找到。
 
-如果你的 git 无法访问 ingress 地址的话，你可以设置一个转发通道。请查看[借助 ngrok 使用 webhooks](/v3/admin/platforms/on-premises/#enable-webhooks) 
+如果你的 git 无法访问 ingress 地址的话，你可以设置一个转发通道。请查看[借助 ngrok 使用 webhooks](/v3/admin/platforms/on-premises/#enable-webhooks)
 
 ### AWS 相关的问题
 

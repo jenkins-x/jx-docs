@@ -23,8 +23,6 @@ used for getting resources
   -h, --help   help for get
 ```
 
-
-
 ### Source
 
 [jenkins-x-plugins/jx-health](https://github.com/jenkins-x-plugins/jx-health)

@@ -11,6 +11,7 @@ aliases:
 [Lighthouse](https://github.com/jenkins-x/lighthouse) is a lightweight [ChatOps](/docs/resources/faq/using/chatops/) based webhook handler which can trigger [Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) on webhooks from multiple git providers such as: GitHub, GitHub Enterprise, GitLab, and BitBucket Server. It is a successor to [Prow](/docs/reference/components/prow/), providing support for more SCM providers, a smaller footprint, and an easier path to adding features going forward. Lighthouse has been the default webhook handler in Jenkins X since early May, 2020.
 
 Currently Lighthouse is focused on using [Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) with tekton.
+
 ## Features
 
 Currently Lighthouse supports the common [prow plugins](https://github.com/jenkins-x/lighthouse/tree/master/pkg/prow/plugins) and handles push webhooks to branches & Pull Request webhooks to then trigger Jenkins X pipelines.
@@ -20,7 +21,6 @@ Lighthouse uses the same `config.yaml` and `plugins.yaml` file structure from Pr
 This also means we get to reuse the clean generation of Prow configuration from the `SourceRepository`, `SourceRepositoryGroup` and `Scheduler` CRDs integrated into [jx boot](/docs/reference/boot/). e.g. here's the [default scheduler configuration](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/env/templates/default-scheduler.yaml) which is used for any project imported into your Jenkins X cluster; without you having to touch the actual prow configuration files. You can create many schedulers and associate them to different `SourceRepository` resources.
 
 We can also reuse Prow's capability of defining many separate pipelines on a repository (for PRs or releases) via having separate `contexts`. Then on a Pull Request we can use `/test something` or `/test all` to trigger pipelines and use the `/ok-to-test` and `/approve` or `/lgtm` commands
-
 
 ## Using Lighthouse with boot
 
@@ -92,7 +92,6 @@ e.g. compare the `githubClient` API for the [Prow lgtm](https://github.com/kuber
 
 All the Prow-descended plugin related code lives in the [pkg/plugins](https://github.com/jenkins-x/lighthouse/tree/master/pkg/plugins) tree of packages. Mostly all we've done is switch to using [jenkins-x/go-scm](https://github.com/jenkins-x/go-scm) and switch out the current Prow agents and instead use a single `tekton` agent using the [PipelineLauncher](https://github.com/jenkins-x/lighthouse/blob/master/pkg/launcher/interface.go#L12) to trigger pipelines.
 
-
 ## Environment variables
 
 The following environment variables are used:
@@ -100,7 +99,7 @@ The following environment variables are used:
 | Name  |  Description |
 | ------------- | ------------- |
 | `GIT_KIND` | the kind of git server: `github, bitbucket, gitea, stash` |
-| `GIT_SERVER` | the URL of the server if not using the public hosted git providers: https://github.com or https://bitbucket.org https://gitlab.com |
+| `GIT_SERVER` | the URL of the server if not using the public hosted git providers: <https://github.com> or <https://bitbucket.org> <https://gitlab.com> |
 | `GIT_USER` | the git user (bot name) to use on git operations |
 | `GIT_TOKEN` | the git token to perform operations on git (add comments, labels etc) |
 | `HMAC_TOKEN` | the token sent from the git provider in webhooks |

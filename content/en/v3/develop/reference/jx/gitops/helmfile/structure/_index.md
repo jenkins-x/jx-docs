@@ -24,14 +24,13 @@ Runs 'helmfile structure' on the helmfile in specified directory which will spli
   jx-gitops helmfile structure --dir /path/to/gitops/repo
 
   ```
+
 ### Options
 
 ```
   -d, --dir string   the directory to run the commands inside (default ".")
   -h, --help         help for structure
 ```
-
-
 
 ### Source
 

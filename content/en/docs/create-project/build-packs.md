@@ -31,7 +31,6 @@ For example the [jenkins-x-kubernetes](https://github.com/jenkins-x-buildpacks/j
 
 To do this we've introduced a simple new YAML file format for defining pipelines.
 
-
 ## Pipelines
 
 Each Pipeline YAML file has a number of separate logical pipelines:
@@ -65,7 +64,7 @@ Rather like classes in languages like Java you can override steps in a Pipeline 
 
 By default any steps you define are added after the base pipeline YAML steps like in [this example](https://github.com/jenkins-x/jx/blob/0520fe3d9740cbcb1cc9754e173fe7726219f58e/pkg/jx/cmd/test_data/step_buildpack_apply/inheritence/pipeline.yaml#L7).
 
-You can add steps before the base pipeline steps using the `preSteps: ` property like [this example](https://github.com/jenkins-x/jx/blob/0520fe3d9740cbcb1cc9754e173fe7726219f58e/pkg/jx/cmd/test_data/step_buildpack_apply/inheritence2/pipeline.yaml#L6)
+You can add steps before the base pipeline steps using the `preSteps:` property like [this example](https://github.com/jenkins-x/jx/blob/0520fe3d9740cbcb1cc9754e173fe7726219f58e/pkg/jx/cmd/test_data/step_buildpack_apply/inheritence2/pipeline.yaml#L6)
 
 If you want to completely replace all the steps from a base pipeline for a particular life cycle you can use `replace: true` like in [this example](https://github.com/jenkins-x/jx/blob/0520fe3d9740cbcb1cc9754e173fe7726219f58e/pkg/jx/cmd/test_data/step_buildpack_apply/inheritence2/pipeline.yaml#L11-L14)
 
@@ -114,7 +113,7 @@ pipeline {
 
 Once your `Jenkinsfile` is capable of doing CI/CD for your language/runtime on your sample project then we should be able to take the `Dockerfile`, `Jenkinsfile` and charts folder and copy them into a folder in your fork of the [jenkins-x/draft-packs repository](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes).
 
-You can try that out locally by adding these files to your local clone of the build packs repository at ` ~/.jx/draft/packs/github.com/jenkins-x/draft-packs/packs`
+You can try that out locally by adding these files to your local clone of the build packs repository at `~/.jx/draft/packs/github.com/jenkins-x/draft-packs/packs`
 
 e.g.
 

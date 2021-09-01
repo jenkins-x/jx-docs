@@ -24,6 +24,7 @@ Display one or more preview environments.
   jx preview template
 
   ```
+
 ### Options
 
 ```
@@ -32,8 +33,6 @@ Display one or more preview environments.
       --helmfile-binary string   specifies the helmfile binary location to use. If not specified defaults to using the downloaded helmfile plugin
   -h, --help                     help for template
 ```
-
-
 
 ### Source
 

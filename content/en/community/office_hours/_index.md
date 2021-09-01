@@ -13,7 +13,7 @@ We meet for office hours **every other Tuesday** at 16:00 UTC (*See your timezon
 
 We'd love to hear your feedback or show some of the work you are doing with Jenkins X! Feel free to [add your comments and questions to the doc](https://docs.google.com/document/d/1wHdBlZAN-ndPELuBoM5HBnYiQLvcz92-euXne2mKOEI/edit) or ask your questions in person.
 
-You can save Jenkins X office hours to your calendar by [clicking here](https://calendar.google.com/event?action=TEMPLATE&tmeid=NDFhNDVyNGdzMW9nZnBpNzhpdGZsMG5qZWpfMjAyMDA1MTlUMTUwMDAwWiAwMzJwcDVlMDJqMjJiMHFqdGs2YTRxc21lY0Bn&tmsrc=032pp5e02j22b0qjtk6a4qsmec%40group.calendar.google.com&scp=ALL). 
+You can save Jenkins X office hours to your calendar by [clicking here](https://calendar.google.com/event?action=TEMPLATE&tmeid=NDFhNDVyNGdzMW9nZnBpNzhpdGZsMG5qZWpfMjAyMDA1MTlUMTUwMDAwWiAwMzJwcDVlMDJqMjJiMHFqdGs2YTRxc21lY0Bn&tmsrc=032pp5e02j22b0qjtk6a4qsmec%40group.calendar.google.com&scp=ALL).
 
 <a target="_blank" href="https://calendar.google.com/event?action=TEMPLATE;tmeid=NDFhNDVyNGdzMW9nZnBpNzhpdGZsMG5qZWpfMjAyMDA1MTlUMTUwMDAwWiAwMzJwcDVlMDJqMjJiMHFqdGs2YTRxc21lY0Bn;tmsrc=032pp5e02j22b0qjtk6a4qsmec%40group.calendar.google.com;scp=ALL"><img border="0" src="https://www.google.com/calendar/images/ext/gc_button1_en-GB.gif"></a>
 

@@ -90,6 +90,7 @@ If you are in some Go source code and you have a URL from Jenkins X, such as a B
 If you want to easily be able to read from the URL from Go source code you can use the [`ReadURL` function](https://github.com/jenkins-x/jx/blob/e5a7943dc0c3d79c27f30aea73235f18b3f5dcff/pkg/cloud/buckets/buckets.go#L44-L45).
 
 ## GKE Storage Permissions
+
 In GKE your node-pool requires additional permissions to be able to write into GCS buckets,
 more specifically the `devstorage.full_control` permission.
 

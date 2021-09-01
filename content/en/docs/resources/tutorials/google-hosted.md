@@ -19,8 +19,6 @@ At the end of this guide you will have:
 * created an application using a quickstart
 * promoted that application to production
 
-
-
 [<svg height="54" width="274"
    xmlns="http://www.w3.org/2000/svg"
    version="1.2">

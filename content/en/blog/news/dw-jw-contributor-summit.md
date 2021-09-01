@@ -41,5 +41,4 @@ We've had [a fantastic time at past contributor summits](https://jenkins.io/blog
 <img src="/images/contributor_summit_sf.jpg"/>
 </figure>
 
-
 A [DevOps World | Jenkins World](https://www.cloudbees.com/devops-world/san-francisco) conference pass is not necessary to attend the Contributor Summit, but if you don't want to miss out on [DevOps World | Jenkins World](https://www.cloudbees.com/devops-world/san-francisco) you can get yours using **JWFOSS** for a 30% discount.

@@ -16,19 +16,16 @@ Features like Vault integration and Long Term Storage for logs and artifacts are
 
 The OpenShift installation documentation will be split in two categories:
 
- - Installing OpenShift with admin permissions.
- - Installing OpenShift with restricted permissions.
-
+- Installing OpenShift with admin permissions.
+- Installing OpenShift with restricted permissions.
 
 Here are some recommendations to hopefully get you started. If you hit any issues please [join our community](/community/) we can hopefully help you.
-
-
 
 ## Common configuration
 
 Please set your provider to `openshift` via this in your `jx-requirements.yml`:
 
-```yaml    
+```yaml
 clusterConfig:
     provider: openshift
 ```
@@ -41,20 +38,21 @@ This means that, even if `nginx-ingress-controller` is installed, it will not be
 
 To make Jenkins X work with your `Routes` and your defined cluster `Domain`, you will need to modify the `jx-requirements.yml` file like this:
 
-```yaml    
+```yaml
 ingress:
   domain: <your_openshift_domain>
   exposer: Route
 ```
+
 `ExposeController` will be configured to use Routes with the domain that you provided.
 
 ### TLS
 
-As the domain will be created and managed by the cluster before Jenkins X is installed, the domain will need to be secured independently. 
+As the domain will be created and managed by the cluster before Jenkins X is installed, the domain will need to be secured independently.
 
 This means that the usual Jenkins X `cert-manager` integration will do nothing on OpenShift.
 
-If you need your OpenShift domain to be secured, you will need to manage `cert-manager` and your `Issuer` and `Certificate` yourself.    
+If you need your OpenShift domain to be secured, you will need to manage `cert-manager` and your `Issuer` and `Certificate` yourself.
 
 ### External Docker Registry
 
@@ -62,10 +60,11 @@ Right now, the supported way to store your docker images is using an external Do
 
 To configure it, you'll need to modify `jx-requirements.yml` like:
 
-```yaml    
+```yaml
 clusterConfig:
   registry: docker.io
 ```
+
 During the boot process, you will be asked `Do you want to configure non default Docker Registry?`. You'll need to answer yes and provide extra information to connect to Docker Hub.
 
 ```console
@@ -74,14 +73,15 @@ During the boot process, you will be asked `Do you want to configure non default
 ? Docker Registry password [? for help] <your_dockerhub_password>
 ? Docker Registry email <your_dockerhub_email>
 ```
+
 ## General advice
 
 We recommend starting with the most simple possible installation and get that working, then gradually try to be more complex. e.g. start off by ignoring these features:
 
-* vault
-* cloud storage for artifacts
+- vault
+- cloud storage for artifacts
 
-Then once you have something working, incrementally try enabling each of those in turn. 
+Then once you have something working, incrementally try enabling each of those in turn.
 
 ## Installing Jenkins X with admin rights
 
@@ -97,8 +97,8 @@ This usually means having very limited permissions like not being able to create
 
 In this case, the installation will need to be split in two phases:
 
- - Cluster admin phase
- - Restricted permissions phase
+- Cluster admin phase
+- Restricted permissions phase
 
 Your user may have admin rights and still want to install Jenkins X with limited permissions, so there will just be a phase in this case, but it will need to be configured to let Jenkins X know how to install itself.
 
@@ -106,12 +106,12 @@ Your user may have admin rights and still want to install Jenkins X with limited
 
 In order to let Jenkins X know that it should install all of its resources with limited permissions, you'll need to edit `jx-requirements.yml` like:
 
-```yaml    
+```yaml
 clusterConfig:
   strictPermissions: true
 ```
 
-What this flag will do is the following: 
+What this flag will do is the following:
 
 - It will default to `Roles` and `RoleBindings` instead of `ClusterRoles` and `ClusterRoleBindings`.
 
@@ -127,7 +127,7 @@ For now, it also comes with a limitation: Previews will not work on this kind of
 
 This phase will need to be executed by an user with cluster-admin role or with enough permissions to install `CustomResourceDefinitions`, `SecurityContextConstraints`, `ClusterRoles`, `ClusterRoleBindings` etc.
 
-#### Jenkins X CRDS:
+#### Jenkins X CRDS
 
 The admin will need to install Jenkins X `CustomResourceDefinitions` by executing:
 
@@ -139,27 +139,32 @@ jx upgrade crd
 
 These manifest files will need to be executed in order:
 
+- Tekton CRDS:
 
-* Tekton CRDS:
 ```console
 kubectl apply --wait -f https://raw.githubusercontent.com/jenkins-x/jenkins-x-boot-config/master/kubeProviders/openshift/templates/tekton-crds.yaml
 ```
 
-* Namespaces:
-```console    
+- Namespaces:
+
+```console
 kubectl apply --wait -f https://raw.githubusercontent.com/jenkins-x/jenkins-x-boot-config/master/kubeProviders/openshift/templates/namespaces.yaml
 ```
-* Service Accounts
+
+- Service Accounts
+
 ```console
 kubectl apply --wait -f https://raw.githubusercontent.com/jenkins-x/jenkins-x-boot-config/master/kubeProviders/openshift/templates/service-accounts.yaml
 ```
 
-* JX Admin Role
+- JX Admin Role
+
 ```console
 kubectl apply --wait -f https://raw.githubusercontent.com/jenkins-x/jenkins-x-boot-config/master/kubeProviders/openshift/templates/jx-admin-role.yaml
 ```
 
-* ControllerBuild SecurityContextConstraint
+- ControllerBuild SecurityContextConstraint
+
 ```console
 kubectl apply --wait -f https://raw.githubusercontent.com/jenkins-x/jenkins-x-boot-config/master/kubeProviders/openshift/templates/controller-build-scc.yaml
 ```

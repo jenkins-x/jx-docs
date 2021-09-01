@@ -24,6 +24,7 @@ Generate the kubernetes resources from a helm chart
   jx-gitops step helm template
 
   ```
+
 ### Options
 
 ```
@@ -47,8 +48,6 @@ Generate the kubernetes resources from a helm chart
       --version string             specify the version to release
       --version-file string        the file to load the version from if not specified directly or via a $VERSION environment variable (default "VERSION")
 ```
-
-
 
 ### Source
 

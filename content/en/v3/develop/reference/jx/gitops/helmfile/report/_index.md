@@ -24,6 +24,7 @@ Generates a markdown report of the helmfile based deployments in each namespace
   jx-gitops helmfile report
 
   ```
+
 ### Options
 
 ```
@@ -40,8 +41,6 @@ Generates a markdown report of the helmfile based deployments in each namespace
   -o, --out-dir string          the output directory (default "docs")
       --verbose                 Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
 ```
-
-
 
 ### Source
 

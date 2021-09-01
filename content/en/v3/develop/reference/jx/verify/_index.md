@@ -23,8 +23,6 @@ commands for verifying Jenkins X environments
   -h, --help   help for jx-verify
 ```
 
-
-
 ### Source
 
 [jenkins-x-plugins/jx-verify](https://github.com/jenkins-x-plugins/jx-verify)

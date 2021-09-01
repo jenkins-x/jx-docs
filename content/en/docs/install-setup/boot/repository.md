@@ -32,7 +32,7 @@ repository: nexus
 
 ### Bucketrepo
 
-The [bucketrepo](https://github.com/jenkins-x/bucketrepo) chart is a small footprint microservice that is an alternative to both [Nexus](https://www.sonatype.com/nexus-repository-oss) and [Chartmusem](https://chartmuseum.com/) which can:
+The [bucketrepo](https://github.com/jenkins-x/bucketrepo) chart is a small footprint microservice that is an alternative to both [Nexus](https://www.sonatype.com/nexus-repository-oss) and [Chartmuseum](https://chartmuseum.com/) which can:
 
 - act as a Maven proxy to cache maven dependencies when using java/maven builds
 - act as an artifact repository (e.g. to deploy maven artifacts)

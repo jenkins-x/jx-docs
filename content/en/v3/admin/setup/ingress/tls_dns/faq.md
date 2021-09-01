@@ -39,13 +39,17 @@ You can check the status of the certificate by running
 ```
 kubectl get cert -n jx
 ```
+
 ```
 kubectl describe cert -n jx
 ```
+
 if `Ready` continues to be `false` after 10-15 mins you can check on the request using
+
 ```
 kubectl get certificaterequest -n jx
 ```
+
 ```
 kubectl describe certificaterequest -n jx
 ```

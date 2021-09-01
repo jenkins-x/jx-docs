@@ -12,7 +12,7 @@ weight: 210
 
 The Jenkins X CLI will do the following when installing the Jenkins X platform:
 
-##  Install client binaries to manage your cluster
+## Install client binaries to manage your cluster
 
 {{< alert >}}
 If you are running on Mac OS X, Jenkins X is using `Homebrew` to install the various CLI. It will install it if not present.
@@ -20,7 +20,7 @@ If you are running on Mac OS X, Jenkins X is using `Homebrew` to install the var
 
 ### Install kubectl
 
-[kubectl](https://kubernetes.io/docs/reference/kubectl/kubectl/) is the CLI of Kubernetes. It allows you to interact with your Kubernetes cluster via the API server. 
+[kubectl](https://kubernetes.io/docs/reference/kubectl/kubectl/) is the CLI of Kubernetes. It allows you to interact with your Kubernetes cluster via the API server.
 
 ### Install Helm
 
@@ -76,11 +76,11 @@ Jenkins X generates an administration password for Monocular/Nexus/Jenkins and s
 
 ### Clone the cloud environments repo
 
-The [cloud environment repository](https://github.com/jenkins-x/cloud-environments) holds all the specific configuration and encrypted secrets that will be applied to the Jenkins Platform on your Kubernetes cluster. The secrets are encrypted and unencrypted by the Helm package manager. 
+The [cloud environment repository](https://github.com/jenkins-x/cloud-environments) holds all the specific configuration and encrypted secrets that will be applied to the Jenkins Platform on your Kubernetes cluster. The secrets are encrypted and unencrypted by the Helm package manager.
 
 ## Install the Jenkins X platform
 
-The [Jenkins X Platform](https://github.com/jenkins-x/jenkins-x-platform) holds the Helm charts for installing the components that provide the Jenkins X true CD solution. These include 
+The [Jenkins X Platform](https://github.com/jenkins-x/jenkins-x-platform) holds the Helm charts for installing the components that provide the Jenkins X true CD solution. These include
 
 - [Jenkins](https://github.com/jenkinsci/jenkins) a CI/CD pipeline solution
 - [Nexus](https://www.sonatype.com/nexus-repository-oss) an artifact repository

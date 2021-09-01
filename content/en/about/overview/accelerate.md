@@ -9,7 +9,7 @@ aliases:
 
 <img src="/images/accelerate.jpg" class="img-thumbnail">
 
-Jenkins X is a reimagined CI/CD implementation for the Cloud which is heavily influenced by the State of DevOps reports and more recently the [Accelerate](https://www.amazon.co.uk/Accelerate-Software-Performing-Technology-Organizations/dp/1942788339) book from [Nicole Forsgren](https://twitter.com/nicolefv), [Jez Humble](https://twitter.com/jezhumble) and [Gene Kim](https://twitter.com/RealGeneKim?).  
+Jenkins X is a reimagined CI/CD implementation for the Cloud which is heavily influenced by the State of DevOps reports and more recently the [Accelerate](https://www.amazon.co.uk/Accelerate-Software-Performing-Technology-Organizations/dp/1942788339) book from [Nicole Forsgren](https://twitter.com/nicolefv), [Jez Humble](https://twitter.com/jezhumble) and [Gene Kim](https://twitter.com/RealGeneKim?).
 
 Years of gathering data from real world teams and organizations which has been analyzed by inspiring thought leaders and data scientists from the DevOps world.  The Accelerate book recommends a number of capabilities that Jenkins X is implementing so users gain the scientifically proven benefits, out of the box.  We've started documenting the capabilities that are available today and will continue as more become available.
 
@@ -35,11 +35,11 @@ We are trying to move as much testing, security, validation and experimentation 
 
 Ultimately Jenkins X wants to provide a way that developers, testers, designers and product managers can be as sure as they can that when a change is merged to master it works as expected.  We want to be confident the proposed change does not negatively affect any service or feature as well as deliver the value it is intended to.
 
-Where Preview Environments get really interesting is when we are able to progress a short term PR through various stages of maturity and confidence where we begin to direct a percentage of real production traffic (either shadow traffic or even beta users).  We can then analyze the value of the proposed change and possible run multiple automated experiments over time using Hypothesis Driven Development.  This helps give us better understanding of how the change will perform when released to all users. Though we need to make sure PRs stay short lived for trunk based development; lets try avoid PRs turning into long term feature branches! 
+Where Preview Environments get really interesting is when we are able to progress a short term PR through various stages of maturity and confidence where we begin to direct a percentage of real production traffic (either shadow traffic or even beta users).  We can then analyze the value of the proposed change and possible run multiple automated experiments over time using Hypothesis Driven Development.  This helps give us better understanding of how the change will perform when released to all users. Though we need to make sure PRs stay short lived for trunk based development; lets try avoid PRs turning into long term feature branches!
 
 _Related Accelerate capability: Foster and enable team experimentation_
 
-Using preview environments is a great way to introduce better test automation.  While Jenkins X enables this we don't yet have examples of automated tests being run against a preview environment.  A simple test would be to ensure the application starts ok and Kubernetes liveness check pass for an amount of time. This relates to 
+Using preview environments is a great way to introduce better test automation.  While Jenkins X enables this we don't yet have examples of automated tests being run against a preview environment.  A simple test would be to ensure the application starts ok and Kubernetes liveness check pass for an amount of time. This relates to
 
 _Related Accelerate capability: Implement Test Automation_
 _Related Accelerate capability: Automate your deployment process_

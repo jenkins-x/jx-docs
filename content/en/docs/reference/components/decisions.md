@@ -19,9 +19,7 @@ The Kubernetes ecosystem is rich with innovation and with a vibrant, forward thi
 
 Jenkins X strongly recommends using public cloud managed Kubernetes clusters where possible. GKE, AKS and EKS all offer managed Kubernetes services, which dramatically reduces risk of installing, upgrading and maintaining your Kubernetes cluster so you can focus on developing awesome code.
 
-
 i.e. let folks that know how to run containers and manage clusters at scale so you can focus on adding value to your business.
-
 
 ## Draft
 
@@ -43,7 +41,7 @@ The Helm project came from Deis who were acquired by Microsoft and continue to i
 
 ## Skaffold
 
-Jenkins X uses [Skaffold](https://github.com/GoogleContainerTools/skaffold) to perform the build and push image actions in a pipeline.  Skaffold allows us to implement different image builder and registries services like [Google Container Builder](https://cloud.google.com/container-builder/), [Azure Container Builder](https://github.com/Azure/acr-builder) and [ECR](https://aws.amazon.com/ecr/).  
+Jenkins X uses [Skaffold](https://github.com/GoogleContainerTools/skaffold) to perform the build and push image actions in a pipeline.  Skaffold allows us to implement different image builder and registries services like [Google Container Builder](https://cloud.google.com/container-builder/), [Azure Container Builder](https://github.com/Azure/acr-builder) and [ECR](https://aws.amazon.com/ecr/).
 
 For folks that aren't running on a public cloud with container builder or registry services then Skaffold can also work with [kaniko](https://github.com/GoogleContainerTools/kaniko), this allows pipelines to build docker images using rootless containers.  This is significantly more secure than mounting the docker socket from each node in the cluster.
 
@@ -55,7 +53,7 @@ Prow can run in a highly available mode where multiple pods for a webhook ingres
 
 ## Nexus
 
-[Nexus](https://help.sonatype.com/repomanager3) is an overweight JVM that recently moved to OSGi however it does the job we need of it.  Cache dependencies for faster builds and provide a shared repository where teams can share their released artifacts.  
+[Nexus](https://help.sonatype.com/repomanager3) is an overweight JVM that recently moved to OSGi however it does the job we need of it.  Cache dependencies for faster builds and provide a shared repository where teams can share their released artifacts.
 
 If someone developed an open source artifact repository server in a more cloud friendly language like Go then Jenkins X would likely switch to save on cloud bills.
 

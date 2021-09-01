@@ -16,7 +16,7 @@ Jenkins X stands on the shoulders of many open source giants...
 * [kapp](https://get-kapp.io/) is a tool for applying changes to kubernetes resources safely with dependency tracking
 * [kpt](https://googlecontainertools.github.io/kpt/) provides tools for sharing and configuring YAML files across git repositories
 * [kubectl](https://kubernetes.io/docs/reference/kubectl/kubectl/) a command line tool for interacting with kubernetes clusters
-* [kustomize](https://kustomize.io/) a tool for configuring and modifying kubernetes resources 
+* [kustomize](https://kustomize.io/) a tool for configuring and modifying kubernetes resources
 * [mink](https://github.com/mattmoor/mink) a command line tool for building container images and resolving the image digest in JSON/YAML files for local development or for use inside pipelines (we use the [mink plugin for this](https://github.com/jenkins-x-plugins/mink)
 * [octant](https://octant.dev/) an awesome kubernetes console with plugins which we use for the [Jenkins X Console](/v3/develop/ui/octant/)
 * [skaffold](https://github.com/GoogleContainerTools/skaffold) a tool for incremental development of container images and deployments
@@ -36,6 +36,6 @@ Jenkins X stands on the shoulders of many open source giants...
 * [lighthouse](https://github.com/jenkins-x/lighthouse) our strategic solution for webhooks and ChatOps for multiple git providers
 * [push-wave](https://github.com/jenkins-x-charts/pusher-wave#wave) for automatically performing rolling upgrades when secrets are rotated in your secret store
 * [tekton pipelines](https://github.com/tektoncd/pipeline) cloud native pipeline engine for kubernetes and a fellow [CDF founding project](https://cd.foundation/projects/)
-* [tekton catalog](https://github.com/tektoncd/catalog) a catalog of reusable [tekton pipelines](https://github.com/tektoncd/pipeline) which [can be used easily with Jenkins ](/v3/develop/pipelines/#adding-tasks-from-the-tekton-catalog)
+* [tekton catalog](https://github.com/tektoncd/catalog) a catalog of reusable [tekton pipelines](https://github.com/tektoncd/pipeline) which [can be used easily with Jenkins](/v3/develop/pipelines/#adding-tasks-from-the-tekton-catalog)
 * [vault](https://www.vaultproject.io/) a secret store
 * [vault operator](https://banzaicloud.com/products/bank-vaults/) an operator for installing and unsealing [vault](https://www.vaultproject.io/)

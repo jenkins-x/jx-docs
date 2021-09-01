@@ -16,16 +16,14 @@ This guide will walk you though how to setup Jenkins X on your laptop using [Ope
 
 * [download OpenShift 4.x with CodeReady Containers](https://cloud.redhat.com/openshift/install/crc/installer-provisioned)
 
-
 * once you have the `crc` binary setup the amount of memory and disk:
-
 
 ```bash
 crc config set cpus 6
 crc config set memory 11264
 
 crc start
-```      
+```
 
 * once your cluster boots up you can setup your environment...
 
@@ -41,7 +39,6 @@ oc login -u kubeadmin -p XXXX https://api.crc.testing:6443
 
 * to allow Tekton to be installed on OpenShift you also need to run the [following commands](https://github.com/tektoncd/pipeline/blob/master/docs/install.md#installing-tekton-pipelines-on-openshift):
 
-
 ```bash
 oc new-project tekton-pipelines
 oc adm policy add-scc-to-user anyuid -z tekton-pipelines-controller
@@ -50,8 +47,8 @@ oc adm policy add-scc-to-user anyuid -z tekton-pipelines-webhook
 
 ## Setup
 
-*  <a href="https://github.com/jx3-gitops-repositories/jx3-openshift-crc/generate" target="github" class="btn bg-primary text-light">Create the cluster Git Repository</a> based on the [jx3-gitops-repositories/jx3-openshift-crc](https://github.com/jx3-gitops-repositories/jx3-openshift-crc)                                                                                                                                       template
-    * if the above button does not work then please [Login to GitHub](https://github.com/login) first and then retry the button
+* <a href="https://github.com/jx3-gitops-repositories/jx3-openshift-crc/generate" target="github" class="btn bg-primary text-light">Create the cluster Git Repository</a> based on the [jx3-gitops-repositories/jx3-openshift-crc](https://github.com/jx3-gitops-repositories/jx3-openshift-crc)                                                                                                                                       template
+  * if the above button does not work then please [Login to GitHub](https://github.com/login) first and then retry the button
 
 * `git clone` the new repository via **HTTPS** and `cd` into the git clone directory
 
@@ -80,12 +77,12 @@ git commit -a -m "fix: configure webhooks"
 git push origin master
 ```
 
-* <a href="/v3/guides/operator/" class="btn bg-primary text-light">Install the Git Operator</a> 
+* <a href="/v3/guides/operator/" class="btn bg-primary text-light">Install the Git Operator</a>
 
 * switch to the `jx` namespace
 
-```bash    
+```bash
 jx ns jx
-```        
+```
 
-*  <a href="/v3/develop/create-project/" class="btn bg-primary text-light">Create or import projects</a>
+* <a href="/v3/develop/create-project/" class="btn bg-primary text-light">Create or import projects</a>

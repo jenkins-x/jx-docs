@@ -23,8 +23,6 @@ Commands for working with Pull Requests
   -h, --help   help for pr
 ```
 
-
-
 ### Source
 
 [jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

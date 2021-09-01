@@ -23,8 +23,6 @@ commands for working with container registries
   -h, --help   help for jx-registry
 ```
 
-
-
 ### Source
 
 [jenkins-x-plugins/jx-registry](https://github.com/jenkins-x-plugins/jx-registry)

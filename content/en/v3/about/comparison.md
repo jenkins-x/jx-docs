@@ -38,13 +38,11 @@ Just like classic boot with the [jenkins-x-boot-config](https://github.com/jenki
 * we have done away with the complexity of `jenkins-x-platform` (a composite chart containing logs of [dependencies](https://github.com/jenkins-x/jenkins-x-platform/blob/master/jenkins-x-platform/requirements.yaml) like `jenkins` + `chartmuseum` + `nexus` etc) so that each chart can be added/removed independently or swapped out with a different version/distribution
 
 ## Removing complexity and magic
- 
-Removing complexity out of Jenkins X and reusing other solutions wherever possible.  Jenkins X 2.x was tightly coupled to helm 2 for example.  There were `jx` CLI steps that wrapped helm commands when installing applications into the cluster which injected secrets from an internal Vault and ultimately made it very confusing for users and maintainers. 
+
+Removing complexity out of Jenkins X and reusing other solutions wherever possible.  Jenkins X 2.x was tightly coupled to helm 2 for example.  There were `jx` CLI steps that wrapped helm commands when installing applications into the cluster which injected secrets from an internal Vault and ultimately made it very confusing for users and maintainers.
 
 Jenkins X 3.x prefers to avoid wrapping other CLIs unless a consistent higher level UX is being provided say around managing secrets and underlying commands being executed are clearly printed in users terminals.
 
 ## Maintainability
- 
-Created a new `jx` CLI which includes an extensible plugin model where each main subcommand off the jx base is it's own releasable git repository.  This has significantly improved the Jenkins X codebase which helps with maintainability and contributions.
 
- 
+Created a new `jx` CLI which includes an extensible plugin model where each main subcommand off the jx base is it's own releasable git repository.  This has significantly improved the Jenkins X codebase which helps with maintainability and contributions.

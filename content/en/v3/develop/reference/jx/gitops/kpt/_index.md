@@ -23,8 +23,6 @@ Commands for working with kpt packages
   -h, --help   help for kpt
 ```
 
-
-
 ### Source
 
 [jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

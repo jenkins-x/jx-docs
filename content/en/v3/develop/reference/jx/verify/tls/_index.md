@@ -24,6 +24,7 @@ Verifies a TLS certificate, useful to ensure a HTTPS endpoint is using a certifi
   jx-verify step verify tls hook.foo.bar.com --insecure --issuer 'CN=Fake LE Intermediate X1' --subject 'CN=*.foo.bar.com'
 
   ```
+
 ### Options
 
 ```
@@ -32,8 +33,6 @@ Verifies a TLS certificate, useful to ensure a HTTPS endpoint is using a certifi
       --production         override the detection of whether to verify TLS is using Production or Staging LetsEncrypt service (default true)
   -t, --timeout duration   timeout (default 10m0s)
 ```
-
-
 
 ### Source
 

@@ -24,14 +24,13 @@ Renames yaml files to use canonical file names based on the resource name and ki
   jx-gitops rename --dir .
 
   ```
+
 ### Options
 
 ```
   -d, --dir string   the directory to recursively look for the *.yaml or *.yml files (default ".")
   -h, --help         help for rename
 ```
-
-
 
 ### Source
 

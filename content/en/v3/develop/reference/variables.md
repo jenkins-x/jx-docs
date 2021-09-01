@@ -69,11 +69,11 @@ Available variables:
 
 | Variable | Description |
 | --- | --- |
-| PR_BASE_REF | the git branch which a Pull Request pipeline will |   
-| PR_BASE_SHA | the git sha which the Pull Request has been rebased on from the base branch the PR will merge to | 
+| PR_BASE_REF | the git branch which a Pull Request pipeline will |
+| PR_BASE_SHA | the git sha which the Pull Request has been rebased on from the base branch the PR will merge to |
 | PR_HEAD_REF | the git branch of the source of the Pull Request |  
 | PR_HEAD_SHA | the latest git sha of the Pull Request being processed |
-| PR_LABEL_${LabelName} = 'true' | where `${labelName}` is the upper case name of the Pull Request label with any special character like `-` or `/` replaced by `_` e.g. `PR_LABEL_ENV_STAGING` for the label `env/staging` | 
+| PR_LABEL_${LabelName} = 'true' | where `${labelName}` is the upper case name of the Pull Request label with any special character like `-` or `/` replaced by `_` e.g. `PR_LABEL_ENV_STAGING` for the label `env/staging` |
 
 #### Pull Request variables from Comments
 
@@ -99,13 +99,10 @@ Then for any Pull Request comments lines like these:
 
 You will get these variables added:
 
-| Variable | 
+| Variable |
 | --- |
-| export PR_COMMENT_BEER="stella" |        
-| export PR_COMMENT_CHEESE="edam" | 
+| export PR_COMMENT_BEER="stella" |
+| export PR_COMMENT_CHEESE="edam" |
 | export PR_COMMENT_WITH_QUOTES=" some value " |
-
-
-
 
 If you want to define dynamic environment variables in one step for use in later steps you can append new variables to `.jx/variables.sh` and then add the `source .jx/variables.sh` later in your pipeline

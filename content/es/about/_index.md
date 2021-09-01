@@ -11,11 +11,13 @@ cascade:
 ---
 
 ## Concepts
+
 ---
 
 Jenkins X está diseñado para simplificar el trabajo de los desarrolladores según los principios y las buenas prácticas de DevOps. Los enfoques adoptados se basan en la investigación exhaustiva realizada para el libro [*ACCELERATE: Building and Scaling High Performing Technology Organsiations*](https://goo.gl/vZ8BFN). Puedes leer por qué usamos [Accelerate](/about/overview/accelerate/) como base para los principios de Jenkins X.
 
 ## Principios
+
 ---
 
 *"DevOps es un conjunto de prácticas destinadas a reducir el tiempo entre la confirmación de un cambio en un sistema y el momento en que se aplica en producción, al tiempo que garantiza una alta calidad."*
@@ -37,6 +39,7 @@ El tiempo medio para recuperarse de una falla también debe ser inferior a una h
 Jenkins X ha sido diseñado desde los primeros principios para permitir que los equipos apliquen las mejores prácticas de DevOps para alcanzar los objetivos de rendimiento más importantes de la industria.
 
 ## Prácticas
+
 ---
 Las siguientes mejores prácticas son consideradas clave para manjar una estrategia exitosa de DevOps:
 
@@ -67,6 +70,7 @@ Jenkins X se basa en el modelo DevOps de arquitecturas con bajo acoplamiento y e
 Jenkins X se basa en los siguientes principales componentes:
 
 ### Kubernetes & Docker
+
 ---
 
 En el corazón del sistema está Kubernetes, que se ha convertido en la plataforma de infraestructura virtual de facto para DevOps. Todos los principales proveedores de Cloud ahora ofrecen Kubernetes como servicio bajo demanda y la plataforma también se puede instalar internamente en una infraestructura privada, si es necesario. Los entornos de prueba también se pueden crear en el hardware de desarrollo local utilizando el instalador de Minikube.
@@ -96,6 +100,7 @@ Los desarrolladores deben conocer las capacidades que proporciona Kubernetes par
 Por defecto, el estado del Pod es efímero. Cualquier dato escrito en el sistema de archivos local de un Pod se pierde cuando se elimina ese Pod. Los desarrolladores deben tener en cuenta que Kubernetes puede decidir de forma unilateral eliminar instancias de Pods y volver a crearlos en cualquier momento como parte del proceso general de balanceo de carga para los nodos, por lo que los datos locales pueden perderse en cualquier momento. Cuando se requieren datos con estado, los volúmenes persistentes deben declararse y montarse dentro del sistema de archivos de Pods específicos.
 
 ### Helm y Draft
+
 ---
 La interacción directa con Kubernetes implica realizar configuraciones de forma manual utilizando la línea de comandos `kubectl` o pasando varios tipos de datos YAML a la API. Esto puede ser complejo y está abierto a la aparición de errores humanos. De acuerdo con el principio de DevOps de 'configuración como código', Jenkins X aprovecha Helm y Draft para crear bloques atómicos de configuración para sus aplicaciones.
 

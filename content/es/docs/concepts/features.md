@@ -64,7 +64,6 @@ Cuando el Entorno de Vista Previa esté en funcionamiento, Jenkins X comentará 
 
 <img src="/images/pr-comment.png" class="img-thumbnail">
 
-
 ## Retroalimentación
 
 Como puede ver arriba, Jenkins X agrega comentarios automáticamente en los PR cuando utilizar Entornos de Vista Previa.

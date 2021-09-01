@@ -6,10 +6,10 @@ description: File names and formats when using GitOps
 weight: 200
 ---
 
-Jenkins X uses [GitOps](/v3/devops/gitops/) and so has a number of different source files with declarative schemas. 
+Jenkins X uses [GitOps](/v3/devops/gitops/) and so has a number of different source files with declarative schemas.
 
-You may also find the [git layout document](https://github.com/jenkins-x/jx-gitops/blob/master/docs/git_layout.md) useful. 
-                     
+You may also find the [git layout document](https://github.com/jenkins-x/jx-gitops/blob/master/docs/git_layout.md) useful.
+
 ## Files in any repository
 
 | File | Schema | Description |
@@ -24,11 +24,9 @@ You may also find the [git layout document](https://github.com/jenkins-x/jx-gito
 | `OWNERS_ALIASES` | [OWNERS_ALIASES](https://github.com/jenkins-x/lighthouse/tree/master/pkg/plugins/approve/approvers#overview) | this [lighthouse](https://github.com/jenkins-x/lighthouse) configuration file defines aliases for who can review and approve files |
 | `preview/helmfile.yaml` | [helmfile](https://github.com/roboll/helmfile#configuration) | The [helmfile](https://github.com/roboll/helmfile) defines the helm charts, version and value mappings to be installed in a preview environment |
 
-
 ## Files in a dev cluster repository
 
 The following files are only used in a development cluster git repository
-
 
 | File | Schema | Description |
 | --- | ---| --- |
@@ -44,7 +42,6 @@ The following files are only used in a development cluster git repository
 | `schedulers/*.yaml` | [Scheduler](https://github.com/jenkins-x-plugins/jx-gitops/blob/main/docs/scheduler-config.md#scheduler) | The scheduler used to configure ChatOps and merging |
 | `versionStream` | | The shared version stream which contains chart, image and git versions and default configuration files |
 
-          
 ## JSON Schemas
 
 See the [JSON Schemas](https://github.com/jenkins-x/jenkins-x-schemas/tree/main/docs)

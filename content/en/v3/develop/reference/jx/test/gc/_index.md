@@ -23,6 +23,7 @@ Garbage collects test resources
   jx-test gc
 
   ```
+
 ### Options
 
 ```
@@ -31,8 +32,6 @@ Garbage collects test resources
   -n, --ns string           the namespace to query the Terraform resources
   -l, --selector string     the selector to find the Terraform resources to remove (default "kind=jx-test")
 ```
-
-
 
 ### Source
 

@@ -24,4 +24,3 @@ Give your users next steps from the Overview. For example:
 
 * [Getting Started](/zh/docs/getting-started/): Get started with $project
 * [Examples](/examples/): Check out some example code!
-

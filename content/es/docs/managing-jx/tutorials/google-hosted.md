@@ -17,7 +17,6 @@ Al finalizar esta guía deberás tener:
 * creada una aplciación de inicio rápido
 * promovida esta aplicación a producción
 
-
 [<svg height="54" width="274"
    xmlns="http://www.w3.org/2000/svg"
    version="1.2">

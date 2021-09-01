@@ -11,11 +11,13 @@ aliases:
 ## CLI
 
 To upgrade the jx CLI run:
+
 ```bash
 jx upgrade cli
 ```
 
 To upgrade jx subcommand plugins run:
+
 ```bash
 jx upgrade plugins
 ```

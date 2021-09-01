@@ -23,6 +23,7 @@ Garbage collects test resources
   jx-test create --test-url https://github.com/myorg/mytest.git
 
   ```
+
 ### Options
 
 ```
@@ -46,8 +47,6 @@ Garbage collects test resources
       --verify-result        verifies the output of the boot job to ensure it succeeded
       --version string       the version number. Defaults to $VERSION (default "2.0.1300-dev")
 ```
-
-
 
 ### Source
 

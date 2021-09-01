@@ -31,7 +31,7 @@ pipelineConfig:
 Puede ver el efecto de este cambio localmente antes de enviarlo a Git mediante el comando [jx step syntax effective](/commands/jx_step_syntax_effective/):
 
 ```
-$ jx step syntax effective -s
+jx step syntax effective -s
 ```
 
 Puede anular etapas enteras o reemplazar un paso específico con un solo paso o una secuencia de pasos. También puede agregar pasos antes/después de otro paso.
@@ -52,7 +52,7 @@ pipelineConfig:
 Puede ver el efecto de este cambio localmente antes de enviarlo a Git mediante el comando [jx step syntax effective](/commands/jx_step_syntax_effective/):
 
 ```
-$ jx step syntax effective -s
+jx step syntax effective -s
 ```
 
 Para obtener más detalles, consulte [cómo modificar los pasos](/docs/reference/pipeline-syntax-reference/#specifying-and-overriding-release-pull-request-and-feature-pipelines).

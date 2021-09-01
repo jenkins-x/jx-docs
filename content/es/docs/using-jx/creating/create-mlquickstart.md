@@ -12,6 +12,7 @@ Puede crear nuevas aplicaciones desde nuestra lista de inicio rápido de aprendi
 ```sh
 jx create mlquickstart
 ```
+
 Luego se le solicita que elija de un listado de aplicaciones posibles.
 
 Verá que estos vienen en grupos de tres:

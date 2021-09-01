@@ -27,6 +27,7 @@ Edits secret values in the underlying secret stores for ExternalSecrets
   jx-secret edit --filter nexus
 
   ```
+
 ### Options
 
 ```
@@ -38,8 +39,6 @@ Edits secret values in the underlying secret stores for ExternalSecrets
   -m, --multiple        for interactive mode do you want to select multiple secrets to edit. If not defaults to just picking a single secret
   -n, --ns string       the namespace to filter the ExternalSecret resources
 ```
-
-
 
 ### Source
 

@@ -24,6 +24,7 @@ Edits the local 'jx-requirements.yml file
   jx-gitops requirements edit --domain foo.com --tls --provider eks
 
   ```
+
 ### Options
 
 ```
@@ -60,8 +61,6 @@ Edits the local 'jx-requirements.yml file
   -w, --webhook string               configures the kind of webhook. Values lighthouse
   -z, --zone string                  configures the cloud zone
 ```
-
-
 
 ### Source
 

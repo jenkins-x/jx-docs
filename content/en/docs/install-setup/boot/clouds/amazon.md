@@ -26,9 +26,11 @@ If you wish to setup your EKS cluster by hand and not use [eksctl](https://eksct
 We recommend using [Jenkins X Pipelines](/architecture/jenkins-x-pipelines/) as this works out of the box with kaniko for creating container images without needing a docker daemon and works well with ECR.
 
 ## Authentication Mechanisms
+
 There are two standard authentication mechanisms that are recommended depending on use case: Enhanced permissions for the nodepool role, and IRSA.
 
 ### Enhanced permissions for the nodepool role
+
 The default authentication and permissions mechanism used by EKS in order to give nodepool access to certain AWS services.
 
 When an EKS cluster is created, the control plane for the cluster is managed directly by AWS but its nodepool and all the worker nodes are created as EC2 instances. These EC2 instances are assigned an IAM Role with specific permissions to allow these nodes to authenticate against AWS.

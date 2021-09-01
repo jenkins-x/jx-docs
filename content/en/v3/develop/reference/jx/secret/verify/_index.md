@@ -23,6 +23,7 @@ Verifies that the ExternalSecret resources have the required properties populate
   jx-secret verify
 
   ```
+
 ### Options
 
 ```
@@ -34,8 +35,6 @@ Verifies that the ExternalSecret resources have the required properties populate
   -s, --source string      the source location for the ExternalSecrets, valid values include filesystem or kubernetes (default "kubernetes")
       --verbose            Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
 ```
-
-
 
 ### Source
 

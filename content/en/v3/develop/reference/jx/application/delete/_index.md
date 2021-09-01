@@ -15,7 +15,7 @@ jx application delete
 
 ### Synopsis
 
-Deletes the application deployments and removes the lighthouse configuration 
+Deletes the application deployments and removes the lighthouse configuration
 
 This command actually create a Pull Request on the development cluster git repository so you can review the changes to be made.
 
@@ -35,6 +35,7 @@ This command actually create a Pull Request on the development cluster git repos
   jx application delete --name myapp --owner myorg --no-source
 
   ```
+
 ### Options
 
 ```
@@ -58,8 +59,6 @@ This command actually create a Pull Request on the development cluster git repos
   -u, --url string                  The git URL of the cluster git repository to modify
       --verbose                     Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
 ```
-
-
 
 ### Source
 

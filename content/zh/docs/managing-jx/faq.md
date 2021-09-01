@@ -31,7 +31,6 @@ foo:
 
 要查看如何使用 `values.yaml` 文件注入 chart 的更复杂示例，请参阅我们如何使用这些文件[配置 Jenkins X 本身](/zh/docs/resources/guides/managing-jx/common-tasks/config/)
 
-
 ## 如何管理每个环境中的 Secret ？
 
 我们自己使用封闭 Secrets 来管理我们所有 CI/CD 的 Jenkins X 安装 - 所以 Secret 被加密并检出到每个环境的 git 仓库。 我们使用 [helm-secrets](https://github.com/futuresimple/helm-secrets) 插件来执行此操作。

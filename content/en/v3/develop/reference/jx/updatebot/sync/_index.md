@@ -15,9 +15,9 @@ jx updatebot sync
 
 ### Synopsis
 
-Synchronizes some or all applications in an environment/namespace to another environment/namespace to reduce version drift 
+Synchronizes some or all applications in an environment/namespace to another environment/namespace to reduce version drift
 
-Supports synchronizing environments or namespaces within the same cluster or namespaces between remote clusters (possibly using different namespaces). 
+Supports synchronizing environments or namespaces within the same cluster or namespaces between remote clusters (possibly using different namespaces).
 
 Create a Pull Request on the target GitOps repository to apply the changes so that you can review the changes before they happen. You can use different labels to enable/disable auto-merging.
 
@@ -38,6 +38,7 @@ Create a Pull Request on the target GitOps repository to apply the changes so th
   jx updatebot sync --source-env staging --target-env production --charts edam --charts beer
 
   ```
+
 ### Options
 
 ```
@@ -73,8 +74,6 @@ Create a Pull Request on the target GitOps repository to apply the changes so th
       --update-only                 only update versions in the target environment/namespace - do not add any new charts that are missing
       --verbose                     Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
 ```
-
-
 
 ### Source
 

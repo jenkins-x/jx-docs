@@ -18,7 +18,7 @@ Si está utilizando la nube pública, puede aprovechar el registro de docker de 
 Para especificar el host/puerto Docker Registry, puede usar la consola Jenkins:
 
 ```sh
-$ jx console
+jx console
 ```
 
 Luego navegue a `Manage Jenkins -> Configure System` y cambie la variable de entorno `DOCKER_REGISTRY` para apuntar a su registro de docker de elección.
@@ -40,7 +40,7 @@ Va a necesitar actualizar el valor del secreto de docker almacenado en `config.j
 Puede logarlo a través del comando [jx create docker auth](/commands/jx_create_docker/):
 
 ```
-$ jx create docker auth --host "foo.private.docker.registry" --user "foo" --secret "FooDockerHubToken" --email "fakeemail@gmail.com"
+jx create docker auth --host "foo.private.docker.registry" --user "foo" --secret "FooDockerHubToken" --email "fakeemail@gmail.com"
 
 ```
 
@@ -62,15 +62,15 @@ Para AWS es como esto:
 
 ```json
 {
-	"credsStore": "ecr-login"
+ "credsStore": "ecr-login"
 }
 ```
 
 Para actualizar el secreto `jenkins-docker-cfg` puede hacerlo de la siguiente forma:
 
 ```
-$ kubectl delete secret jenkins-docker-cfg
-$ kubectl create secret generic jenkins-docker-cfg --from-file=./config.json
+kubectl delete secret jenkins-docker-cfg
+kubectl create secret generic jenkins-docker-cfg --from-file=./config.json
 ```
 
 **NOTA** el archivo debe llamarse `config.json` ya que el nombre del archivo se usa en la clave del `secret` subyacente en kubernetes
@@ -97,7 +97,7 @@ Utilizar JFrog BinTray como registro privado para docker es posible. Esto ha sid
 1. Borre el `Secret` existente con el nombre `jenkins-docker-cfg` ejecutando:
 
 ```sh
-$ kubectl delete secret jenkins-docker-cfg
+kubectl delete secret jenkins-docker-cfg
 ```
 
 1. Cree un fichero local con el nombre `config.json` y su valor debe estar en el siguiente formato (actualice los valores basados en su registro de usuario y FQDN):
@@ -116,7 +116,7 @@ $ kubectl delete secret jenkins-docker-cfg
 1. Cree el nuevo recurso `Secret` con nombre `jenkins-docker-cfg` con el contenido del fichero `config.json` como lo siguiente:
 
 ```sh
-$ kubectl create secret generic jenkins-docker-cfg --from-file=./config.json
+kubectl create secret generic jenkins-docker-cfg --from-file=./config.json
 ```
 
 Con esto debe ser sufiente, ahora debe poder ejecutar los pipelines y almacenar las imágenes en registro jFrog BinTray.

@@ -7,7 +7,7 @@ weight: 200
 ---
 
 If you are using [Trunk Based Development](/v3/devops/patterns/trunk_based_development/) you want to keep the main branch clean and ready to release at all times so you can quickly get important bug fixes out.
-                                                                                                       
+
 But how can you shift left and do more testing on changes before you are ready to merge to the main branch?
 
 The idea of a `Preview Environment` is to spin up a temporary environment to deploy the code from a Pull Request before the change is merged to get fast feedback from your team on the change and to shift left and get more testing done before you agree to merge the change.

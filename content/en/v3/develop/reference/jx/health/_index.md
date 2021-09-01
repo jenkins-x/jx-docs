@@ -23,8 +23,6 @@ Health commands
   -h, --help   help for jx-health
 ```
 
-
-
 ### Source
 
 [jenkins-x-plugins/jx-health](https://github.com/jenkins-x-plugins/jx-health)

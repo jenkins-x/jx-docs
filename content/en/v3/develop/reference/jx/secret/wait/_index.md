@@ -23,6 +23,7 @@ Waits for the mandatory Secrets to be populated from their External Secrets
   jx-secret wait
 
   ```
+
 ### Options
 
 ```
@@ -31,8 +32,6 @@ Waits for the mandatory Secrets to be populated from their External Secrets
   -p, --poll duration      the polling period to check if the secrets are valid (default 2s)
   -t, --timeout duration   the maximum amount of time to wait for the secrets to be valid (default 30m0s)
 ```
-
-
 
 ### Source
 

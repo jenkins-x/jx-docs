@@ -13,25 +13,22 @@ aliases:
 
 If you are using Terraform with one of the [Cloud Providers](/v3/admin/) then your Vault will be installed automatically via Terraform.
 
-
 Otherwise please see the [On-Premises Vault Install Guide](/v3/admin/platforms/on-premises/vault/)
-
 
 whichever apporoach take you should have:
 
 * [Kubernetes External Secrets](https://github.com/external-secrets/kubernetes-external-secrets) is installed to populate Secrets from vault
-* the [vault operator](https://banzaicloud.com/products/bank-vaults/) is installed for operating vault 
+* the [vault operator](https://banzaicloud.com/products/bank-vaults/) is installed for operating vault
 * a vault instance is created in the `jx-vault` namespace
 
 You can wait for the `vault-0` pod in namespace `jx-vault` to be ready via [jx secret vault wait](https://github.com/jenkins-x/jx-secret/blob/master/docs/cmd/jx-secret_vault_wait.md) command:
 
-```bash 
+```bash
 jx secret vault wait
 ```
 
 Now your vault can be used.
-       
-     
+
 ### Configuration
 
 To indicate that Vault is being used as the storage engine for your Secrets you need to [configure vault](/v3/guides/config/#vault) via `secretStorage: vault` in your `jx-requirements.yml`. Note that this is usually done automatically for Cloud providers and Terraform:
@@ -48,20 +45,17 @@ secretStorage: vault
 webhook: lighthouse
 ```
 
-
 ## Using Vault
 
 To be able to import, export or edit secrets from your laptop you need to make sure you are running the [jx secret vault portforward](https://github.com/jenkins-x/jx-secret/blob/master/docs/cmd/jx-secret_vault_portforward.md) command to port forward the 8200 port on your laptop to the vault service:
 
-
 ```bash
 jx secret vault portforward
-```                  
+```
 
 This will allow the [jx 3.x binary](/v3/guides/jx3/) to access the Vault REST API.
 
 You can now follow the instructions to [edit secrets](/v3/guides/secrets/#edit-secrets) or [import secrets](/v3/guides/secrets/#import-secrets).
-       
 
 ## Using the vault web UI
 
@@ -75,7 +69,7 @@ Download the [vault CLI binary](https://www.vaultproject.io/downloads/) and add 
 
 You can now setup a shell to access vault as follows:
 
-```bash 
+```bash
 export VAULT_TOKEN=$(kubectl get secrets vault-unseal-keys  -n jx-vault -o jsonpath={.data.vault-root} | base64 --decode)
 
 # Tell the CLI that the Vault Cert is signed by a custom CA
@@ -93,4 +87,3 @@ vault kv list secret
 # Lets store a secret
 vault kv put secret/mything foo=bar whatnot=cheese
 ```
-

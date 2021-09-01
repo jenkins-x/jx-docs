@@ -14,12 +14,12 @@ Essentially you do the following:
 * `cd` into a git clone of your application
 * run
 
-```bash 
+```bash
 skaffold init
 ```
 
 * then to run your application
 
-```bash 
+```bash
 skaffold run --tail
 ```

@@ -21,10 +21,12 @@ When viewing a pipeline, the biggest new feature is the **collapsed logs**. No m
 Clicking on a log line will expand the logs for this specific container. You can also use the "Toggle Steps" button to expand/collapse the logs for all the steps at once.
 
 While we're talking about the logs, you can notice the 2 new buttons:
+
 - View raw logs
 - Download raw logs
 
 On top of the logs, we now display some information about the pipeline:
+
 - the pipeline **meta information**: name, context, build, and a link to see the raw YAML representation of the pipeline
 - the pipeline **status**: status, started/finished date/time, and duration
 - the pipeline **source**: git repository, pull request or branch, commit SHA, author
@@ -39,6 +41,7 @@ Note that for a pipeline which includes a deployment to a Preview Environment, t
 ## Homepage
 
 The homepage got some love too, with:
+
 - a few stats about the pipelines: top statuses, repositories, authors and durations - with links to filter the pipelines
 - direct links to the git repositories and pull requests
 - the Jenkins X logo
@@ -51,12 +54,13 @@ The homepage got some love too, with:
 We started this project at v0, and we believe that now it has enough features to be a v1!
 
 On our roadmap - without any specific order - we have:
+
 - [#73](https://github.com/jenkins-x/jx-pipelines-visualizer/issues/73) **live refresh of a running pipeline** - for now only the logs are updated live, not the meta information of the pipeline (status, stages/steps timings)
 - [#42](https://github.com/jenkins-x/jx-pipelines-visualizer/issues/42) **support local timezone** - for now everything is in UTC
 - **improve the support for archived pipelines**: load pipelines archived in the long-term storage
 
 ### Contributing
 
-Thanks to all the contributors! 
+Thanks to all the contributors!
 
 All contributions are welcomed, the source code is: [github.com/jenkins-x/jx-pipelines-visualizer](https://github.com/jenkins-x/jx-pipelines-visualizer).

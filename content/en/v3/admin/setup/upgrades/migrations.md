@@ -26,13 +26,14 @@ where to store these secrets.
 
 1. First delete all your external-secrets and secrets within your cluster to temporarily stop External Secrets trying to synchronise
    these by running the following
-   
+
 ```shell
 kubectl get es -n jx --no-headers=true | awk '/./{print $1}' | tee >(xargs kubectl delete -n jx es) >(xargs kubectl delete -n jx secret)
 ```
 
 2. If using Terraform then upgrade your infrastructure using the latest jx terraform module for your provider
 From your Terraform repo,
+
 ```shell
 rm -rf .terraform
 terraform init
@@ -55,8 +56,9 @@ connecting to the new Vault instance in `jx-vault` and putting secrets you want 
 5. Run the `jx gitops upgrade` process and commit the files to git and push to trigger the boot job. (Don't worry if
 you've already done this step previously - in which case just re-trigger a boot job with a dummy commit).
    This boot job will populate any missing secrets in Vault within the `jx secret populate` step
-   
+
 6. After the boot job completes confirm the presence of synchronised External Secrets by running
+
 ```shell
 kubectl get es -n jx
 ```

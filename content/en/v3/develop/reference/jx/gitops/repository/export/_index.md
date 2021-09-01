@@ -24,6 +24,7 @@ jx gitops repository export
   jx-gitops repository export%!(EXTRA string=jx-gitops)
 
   ```
+
 ### Options
 
 ```
@@ -37,8 +38,6 @@ jx gitops repository export
   -n, --namespace string          the namespace to look for SourceRepository, SourceRepositoryGroup and Scheduler resources
       --selector stringToString   adds Kubernetes label selector to filter on, e.g. -s app=pusher-wave,heritage=Helm (default [])
 ```
-
-
 
 ### Source
 

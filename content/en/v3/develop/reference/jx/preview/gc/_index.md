@@ -15,7 +15,7 @@ jx preview gc
 
 ### Synopsis
 
-Garbage collect Jenkins X preview environments. 
+Garbage collect Jenkins X preview environments.
 
 If a pull request is merged or closed the associated preview environment will be deleted.
 
@@ -26,13 +26,12 @@ If a pull request is merged or closed the associated preview environment will be
   %s gc
 
   ```
+
 ### Options
 
 ```
   -h, --help   help for gc
 ```
-
-
 
 ### Source
 

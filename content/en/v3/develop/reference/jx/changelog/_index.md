@@ -26,8 +26,6 @@ Command for working with Changelogs
       --verbose            Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
 ```
 
-
-
 ### Source
 
 [jenkins-x-plugins/jx-changelog](https://github.com/jenkins-x-plugins/jx-changelog)

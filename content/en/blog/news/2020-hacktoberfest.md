@@ -58,4 +58,3 @@ Find out more about becoming involved in the Jenkins X community [here](https://
 <img src="/images/404-page/GOPHER RIDING REX.png" class="img-thumbnail">
 
 image by Ashley McNamara, [creative commons license](https://github.com/ashleymcnamara/gophers/blob/master/GOPHER%20RIDING%20REX.png)
-

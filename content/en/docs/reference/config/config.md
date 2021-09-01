@@ -440,10 +440,10 @@ BasicAuth
 </h3>
 <p>
 (<em>Appears on:</em>
-<a href="#config.jenkins.io/v1.ParsedPipeline">ParsedPipeline</a>, 
-<a href="#config.jenkins.io/v1.PipelineConfig">PipelineConfig</a>, 
-<a href="#config.jenkins.io/v1.PipelineOverride">PipelineOverride</a>, 
-<a href="#config.jenkins.io/v1.Stage">Stage</a>, 
+<a href="#config.jenkins.io/v1.ParsedPipeline">ParsedPipeline</a>,
+<a href="#config.jenkins.io/v1.PipelineConfig">PipelineConfig</a>,
+<a href="#config.jenkins.io/v1.PipelineOverride">PipelineOverride</a>,
+<a href="#config.jenkins.io/v1.Stage">Stage</a>,
 <a href="#config.jenkins.io/v1.Step">Step</a>)
 </p>
 <p>
@@ -1753,7 +1753,7 @@ string
 </h3>
 <p>
 (<em>Appears on:</em>
-<a href="#config.jenkins.io/v1.HelmValuesConfig">HelmValuesConfig</a>, 
+<a href="#config.jenkins.io/v1.HelmValuesConfig">HelmValuesConfig</a>,
 <a href="#config.jenkins.io/v1.PreviewValuesConfig">PreviewValuesConfig</a>)
 </p>
 <p>
@@ -2278,7 +2278,7 @@ string
 </h3>
 <p>
 (<em>Appears on:</em>
-<a href="#config.jenkins.io/v1.EnvironmentConfig">EnvironmentConfig</a>, 
+<a href="#config.jenkins.io/v1.EnvironmentConfig">EnvironmentConfig</a>,
 <a href="#config.jenkins.io/v1.RequirementsConfig">RequirementsConfig</a>)
 </p>
 <p>
@@ -2980,7 +2980,7 @@ string
 </h3>
 <p>
 (<em>Appears on:</em>
-<a href="#config.jenkins.io/v1.PipelineLifecycles">PipelineLifecycles</a>, 
+<a href="#config.jenkins.io/v1.PipelineLifecycles">PipelineLifecycles</a>,
 <a href="#config.jenkins.io/v1.Pipelines">Pipelines</a>)
 </p>
 <p>
@@ -3220,8 +3220,8 @@ string
 </h3>
 <p>
 (<em>Appears on:</em>
-<a href="#config.jenkins.io/v1.NamedLifecycle">NamedLifecycle</a>, 
-<a href="#config.jenkins.io/v1.PipelineLifecycles">PipelineLifecycles</a>, 
+<a href="#config.jenkins.io/v1.NamedLifecycle">NamedLifecycle</a>,
+<a href="#config.jenkins.io/v1.PipelineLifecycles">PipelineLifecycles</a>,
 <a href="#config.jenkins.io/v1.Pipelines">Pipelines</a>)
 </p>
 <p>
@@ -3282,7 +3282,7 @@ bool
 </h3>
 <p>
 (<em>Appears on:</em>
-<a href="#config.jenkins.io/v1.CreatePipelineArguments">CreatePipelineArguments</a>, 
+<a href="#config.jenkins.io/v1.CreatePipelineArguments">CreatePipelineArguments</a>,
 <a href="#config.jenkins.io/v1.Pipelines">Pipelines</a>)
 </p>
 <p>
@@ -3622,7 +3622,7 @@ ParsedPipeline
 </h3>
 <p>
 (<em>Appears on:</em>
-<a href="#config.jenkins.io/v1.ParsedPipeline">ParsedPipeline</a>, 
+<a href="#config.jenkins.io/v1.ParsedPipeline">ParsedPipeline</a>,
 <a href="#config.jenkins.io/v1.Stage">Stage</a>)
 </p>
 <p>
@@ -4155,7 +4155,7 @@ RequirementsConfig
 </h3>
 <p>
 (<em>Appears on:</em>
-<a href="#config.jenkins.io/v1.ParsedPipeline">ParsedPipeline</a>, 
+<a href="#config.jenkins.io/v1.ParsedPipeline">ParsedPipeline</a>,
 <a href="#config.jenkins.io/v1.StageOptions">StageOptions</a>)
 </p>
 <p>
@@ -4266,7 +4266,7 @@ map[string]string
 </h3>
 <p>
 (<em>Appears on:</em>
-<a href="#config.jenkins.io/v1.ParsedPipeline">ParsedPipeline</a>, 
+<a href="#config.jenkins.io/v1.ParsedPipeline">ParsedPipeline</a>,
 <a href="#config.jenkins.io/v1.Stage">Stage</a>)
 </p>
 <p>
@@ -4514,8 +4514,8 @@ string
 </h3>
 <p>
 (<em>Appears on:</em>
-<a href="#config.jenkins.io/v1.Loop">Loop</a>, 
-<a href="#config.jenkins.io/v1.PipelineOverride">PipelineOverride</a>, 
+<a href="#config.jenkins.io/v1.Loop">Loop</a>,
+<a href="#config.jenkins.io/v1.PipelineOverride">PipelineOverride</a>,
 <a href="#config.jenkins.io/v1.Stage">Stage</a>)
 </p>
 <p>

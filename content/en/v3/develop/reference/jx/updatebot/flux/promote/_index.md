@@ -15,9 +15,9 @@ jx updatebot flux promote
 
 ### Synopsis
 
-Promotes a new HelmRelease version in a FluxCD git repository 
+Promotes a new HelmRelease version in a FluxCD git repository
 
-This command will use the given chart name and version along with an optional sourceRefName of the helm or git repository or bucket to find the HelmRelease resource in the target git repository and create a Pull Request if the version is different. This lets you push promotion pull requests into FluxCD repositories as part of your CI release pipeline. 
+This command will use the given chart name and version along with an optional sourceRefName of the helm or git repository or bucket to find the HelmRelease resource in the target git repository and create a Pull Request if the version is different. This lets you push promotion pull requests into FluxCD repositories as part of your CI release pipeline.
 
 If you don't supply a version the $VERSION or VERSION file will be used. If you don't supply a chart the current folder name is used.
 
@@ -31,6 +31,7 @@ If you don't supply a version the $VERSION or VERSION file will be used. If you 
   jx updatebot flux promote --target-git-url https://github.com/myorg/my-flux-repo.git
 
   ```
+
 ### Options
 
 ```
@@ -53,8 +54,6 @@ If you don't supply a version the $VERSION or VERSION file will be used. If you 
       --version-file string         the file to load the version from if not specified directly or via a $VERSION environment variable. Defaults to VERSION in the current dir
       --version-prefix string       the prefix added to the version number that will be used in the Flux CD Application YAML if --version option is not specified and the version is defaulted from $VERSION or the VERSION file (default "v")
 ```
-
-
 
 ### Source
 

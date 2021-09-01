@@ -24,14 +24,13 @@ Escapes any {{ or }} characters in the YAML files so they can be included in a h
   jx-gitops helm escape --dir myyaml
 
   ```
+
 ### Options
 
 ```
   -d, --dir string   the directory to recursively look for the *.yaml or *.yml files (default ".")
   -h, --help         help for escape
 ```
-
-
 
 ### Source
 

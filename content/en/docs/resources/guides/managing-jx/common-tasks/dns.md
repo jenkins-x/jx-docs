@@ -10,6 +10,7 @@ To be able to access services hosted within your cluster we default to an [nip.i
 However, for users who want services in the cluster to be available on a personal domain, we use external-dns which is just as easy.
 
 ## external-dns
+
 **NOTE**: *Currently only supported on GKE*
 
 [ExternalDNS](https://github.com/kubernetes-incubator/external-dns) can be used to help expose Kubernetes Services and Ingresses by synchronizing with DNS providers.

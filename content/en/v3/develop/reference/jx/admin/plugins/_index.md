@@ -23,8 +23,6 @@ Commands for working with Plugins
   -h, --help   help for plugins
 ```
 
-
-
 ### Source
 
 [jenkins-x-plugins/jx-admin](https://github.com/jenkins-x-plugins/jx-admin)

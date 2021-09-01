@@ -15,7 +15,6 @@ When the Preview Environment is up and running Jenkins X will comment on your Pu
 
 <img src="/images/pr-comment.png" class="img-thumbnail">
 
-
 ## Demo
 
 To see how to create a Preview Environment on a Pull Request see this demo:
@@ -40,12 +39,11 @@ development environment:
 git checkout -b acme-feature1
 ```
 
-2.  The developer makes changes to the source code in their branch and adds the affected files to the commit queue:
+2. The developer makes changes to the source code in their branch and adds the affected files to the commit queue:
 
 ```sh
 git add index.html server.js
 ```
-
 
 3. The developer commits the files adding a comment about what has changed:
 
@@ -58,9 +56,11 @@ git add index.html server.js
 ```sh
     git push origin acme-feature1
 ```
+
 5. The program displays a link to a pull request. The developer can highlight the URL, right-click and choose *Open URL* to see the GitHub page in their browser.
 
 6. Jenkins X creates a preview environment in the PR for the application changes and displays a link to evaluate the new feature:
+
 <div class="row">
   <div class="col col-lg-9">
     <img src="/images/pr-comment.png"/>
@@ -85,34 +85,30 @@ the main branch and initiate a release candidate build with the new feature:
 
 The code is merged to the `main` branch, and the release is created and will appear in the `Releases` tab of the git repository along with any associated images or helm charts. Usually this then triggers [Promotion](/v3/develop/environments/promotion/) to other environments.
 
-
 ## How it works
-    
+
 the [jx preview create](/v3/develop/reference/jx/preview/create) command creates a new [Preview](https://github.com/jenkins-x/jx-preview/blob/master/docs/crds/github-com-jenkins-x-jx-preview-pkg-apis-preview-v1alpha1.md#Preview) custom resource for each Pull Request on each repository so that we can track the resources and cleanly remove them when you run [jx preview destroy](/v3/develop/reference/jx/preview/destroy) pr [jx preview gc](/v3/develop/reference/jx/preview/gc)
 
 For reference see the [Preview.Spec](https://github.com/jenkins-x/jx-preview/blob/master/docs/crds/github-com-jenkins-x-jx-preview-pkg-apis-preview-v1alpha1.md#PreviewSpec) documentation
 
-Once the  [Preview](https://github.com/jenkins-x/jx-preview/blob/master/docs/crds/github-com-jenkins-x-jx-preview-pkg-apis-preview-v1alpha1.md#Preview) resource is created with its associated preview namespace the  [jx preview create](/v3/develop/reference/jx/preview/create)  command will execute `helmfile sync` of the **preview/helmfile.yaml** file to deploy all of the associated helm charts to the preview namespace. 
+Once the  [Preview](https://github.com/jenkins-x/jx-preview/blob/master/docs/crds/github-com-jenkins-x-jx-preview-pkg-apis-preview-v1alpha1.md#Preview) resource is created with its associated preview namespace the  [jx preview create](/v3/develop/reference/jx/preview/create)  command will execute `helmfile sync` of the **preview/helmfile.yaml** file to deploy all of the associated helm charts to the preview namespace.
 
-When the `helmfile sync` is complete a comment is added to the Pull Request that the preview has been created. If a URL can be detected in the preview namespace it is added to the Pull Request as a comment so that your team can try it out and give fast feedback. 
+When the `helmfile sync` is complete a comment is added to the Pull Request that the preview has been created. If a URL can be detected in the preview namespace it is added to the Pull Request as a comment so that your team can try it out and give fast feedback.
 
 <img src="/images/pr-comment.png" class="img-thumbnail">
 
-
 When the Pull Request is merged or closed the [jx preview gc](/v3/develop/reference/jx/preview/gc) command kicks in periodically to remove any old preview environments.
-
 
 ## When previews fail
 
-A preview can fail to create for a multitude of reasons; bad helm charts, missing secrets/volumes, invalid configuration in `jx-requirements.yml`, bad image names, no capacity on the server to name but a few. Unfortunately `helmfile sync` does not give much information other than it succeeded of failed which can be confusing. 
+A preview can fail to create for a multitude of reasons; bad helm charts, missing secrets/volumes, invalid configuration in `jx-requirements.yml`, bad image names, no capacity on the server to name but a few. Unfortunately `helmfile sync` does not give much information other than it succeeded of failed which can be confusing.
 
-To improve feedback on why some previews can fail we have added additional output in the [jx preview create](/v3/develop/reference/jx/preview/create) command to tail the kubernetes events in the preview namespace. This basically runs `kubectl exec get event -n $PREVIEW_NAMESPACE -w` and adds the output to the pipeline output (prefixed with `$PREVIEW_NAMESPACE:`      
+To improve feedback on why some previews can fail we have added additional output in the [jx preview create](/v3/develop/reference/jx/preview/create) command to tail the kubernetes events in the preview namespace. This basically runs `kubectl exec get event -n $PREVIEW_NAMESPACE -w` and adds the output to the pipeline output (prefixed with `$PREVIEW_NAMESPACE:`
 
 This means the reason for why a preview fails should appear as a kubernetes event in the pipeline log.
 
 e.g. if you make a mistake configuraing the helm chart on your preview you should see the error in the pipeline log. To fix the error just modify the code and git commit and push the fix and you should see the new results in the pipeline log.
 
-  
 ## Configure the preview URL
 
 Depending on your helm chart or dependent charts you may wish to customise the kubernetes `Service` or `Ingress` name used to find the URL to use in the Preview Pull Request command and in the [UI integrations](/v3/develop/ui/) to visualise the current Previews.
@@ -121,15 +117,15 @@ You can specify the `Service` or `Ingress` name via the **JX_PREVIEW_SERVICE** e
 
 e.g. add the following line to your **.jx/variables.sh** file, creating the file if it doesn't exist:
 
-```bash 
+```bash
 export JX_PREVIEW_SERVICE="my-custom-service-or-ingress"
 ```
 
-If you need to add a path to the current preview service URL host name you can set **JX_PREVIEW_PATH** 
+If you need to add a path to the current preview service URL host name you can set **JX_PREVIEW_PATH**
 
 e.g. add the following line to your **.jx/variables.sh** file, creating the file if it doesn't exist:
 
-```bash 
+```bash
 export JX_PREVIEW_PATH="/customers/acme"
 ```
 
@@ -164,12 +160,10 @@ releases:
 
 ...
 ```
-      
 
 ## Adding more resources
 
 If you need to add some kubernetes resources you can add those using the local chart source code model as described in [how to add new kubernetes resources](/v3/develop/apps/#adding-resources)
-
 
 ## Additional preview steps
 
@@ -190,11 +184,11 @@ e.g. here is an additional step to curl the preview URL after the `jx preview cr
     source .jx/variables.sh
     curl -v $PREVIEW_URL
 ```
-           
+
 ### Environment variables
 
 The following variables are added to the `.jx/variables.sh` file by the [jx preview create](/v3/develop/reference/jx/preview/create) command:
-   
+
 * `PREVIEW_URL` the URL of the preview environment if it can be discovered
 * `PREVIEW_NAME` the name of the `Preview` custom resource which has the full metadata
 * `PREVIEW_NAMESPACE` the namespace of the preview environment which you can use via `myservice.$PREVIEW_NAMESPACE.svc.cluster.local` to access services in your preview

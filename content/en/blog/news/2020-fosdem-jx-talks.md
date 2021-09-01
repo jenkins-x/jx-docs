@@ -11,7 +11,7 @@ aliases: []
 author: Kara de la Marck
 ---
 
-[FOSDEM 2020](https://fosdem.org/2020/) was fantastic! We were thrilled to be there, answering questions about Jenkins X at the Jenkins X - CDF - Jenkins booth. 
+[FOSDEM 2020](https://fosdem.org/2020/) was fantastic! We were thrilled to be there, answering questions about Jenkins X at the Jenkins X - CDF - Jenkins booth.
 
 <figure>
 <img src="/images/community/events/fosdem_booth.jpg" class="img-thumbnail"/>
@@ -24,6 +24,7 @@ This was the first year there was a [CI/CD devroom](https://fosdem.org/2020/sche
 * A Practical CI/CD Framework for Machine Learning at Massive Scale, by [Alejandro Saucedo](https://twitter.com/axsaucedo)
 
 ### Choosing The Right Deployment Strategy
+
 by [Viktor Farcic](https://technologyconversations.com/)
 
 <section class="py-5">
@@ -62,6 +63,7 @@ by [Viktor Farcic](https://technologyconversations.com/)
   </section>
 
 ### Progressive Delivery: Continuous Delivery the Right Way
+
 by [Carlos Sanchez](https://twitter.com/csanchez)
 
   <section class="py-5">
@@ -96,6 +98,7 @@ by [Carlos Sanchez](https://twitter.com/csanchez)
   </section>
 
 ### A Practical CI/CD Framework for Machine Learning at Massive Scale
+
 by [Alejandro Saucedo](https://twitter.com/axsaucedo)
 
 <section class="py-5">
@@ -129,4 +132,3 @@ by [Alejandro Saucedo](https://twitter.com/axsaucedo)
       </div>
     </div>
   </section>
-

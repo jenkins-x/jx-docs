@@ -8,6 +8,7 @@ weight: 20
 There are several architectures based on how you choose to install Jenkins X. We show you two common architectures below.
 
 ## Jenkins X with Tekton
+
 This is the default setup of Jenkins X
 
 <figure>
@@ -18,6 +19,7 @@ This is the default setup of Jenkins X
 </figure>
 
 ## Jenkins X with Tekton & Lighthouse
+
 This is a setup of Jenkins X with [Lighthouse](https://github.com/jenkins-x/lighthouse) instead of Prow (soon to be default)
 
 <figure>

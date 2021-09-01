@@ -24,6 +24,7 @@ Runs all of the kubernetes tests
   jx kube test run
 
   ```
+
 ### Options
 
 ```
@@ -54,8 +55,6 @@ Runs all of the kubernetes tests
       --verbose                      Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
   -w, --work-dir string              the work directory used to generate the output. If not specified a new temporary dir is created
 ```
-
-
 
 ### Source
 

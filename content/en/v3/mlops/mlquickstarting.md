@@ -14,11 +14,13 @@ The Jenkins X MLOps Quickstarts Library provides template projects to make it qu
 Each quickstart project comprises two repositories, one which contains your training script and a second which takes the final model you have trained and wraps it as a RESTful service for deployment into your overall solution.
 
 ## Getting started
+
 You can create an instance of a project using the command:
 
 ```
 > jx project mlquickstart
 ```
+
 and follow the instructions to select a template from the list. You will need to specify which git account to use and a name for the project, which will become the prefix for the two git repositories that will be created for you.
 
 Once the quickstart process completes, you will find two new projects in your current folder, one with the suffix `-training` and the other with the suffix `-service`.
@@ -38,6 +40,7 @@ At this stage, a preview environment will have been created for the service and 
 Once you are happy with the model, merge the PR and the service will be redeployed into staging with the model you trained.
 
 ## Customising your project
+
 Now you are ready to go back to the local copy of your training project and can start editing the training script to change the model.
 
 You will see that there are several steps annotated in the comments.
@@ -53,6 +56,7 @@ Step four is only executed if your model passes the success threshold. If it doe
 The training script exits at this point, however the Jenkins X pipeline for the training build will take the ONNX model and anything you placed in the 'metrics' folder and will create a PR against the service repo as shown earlier.
 
 ## Starting a training run
+
 To trigger a training run after modifying the training script, you need to commit your changes to the remote repository associated with this project:
 
 ```
@@ -68,14 +72,17 @@ This will trigger Jenkins X to start a new training run which you can monitor vi
 ```
 
 ## Additional training runs
+
 If you would like to trigger a training run to start again without modifying the script, perhaps because your initial run failed to meet your success criteria you can run:
 
 ```
 > jx start pipeline --branch master
 ```
+
 and select the name of the training project you would like to trigger.
 
 ## Versioned assets
+
 Every successful model trained creates a new version of your microservice. This enables you to do things like promoting an initial version of a model to your staging environment so that others on the team can focus on integrating your ML component with the rest of the application whilst you test alternate versions of the model in your preview environment to optimise performance. Once you are happy with your optimised model, you can promote it for integration by merging the Pull Request.
 
 You can also use the git repository to go back to previous model instances in the event that you need to investigate any issues that might occur with deployed versions of earlier code. This gives you full traceability and an audit trail for your models.

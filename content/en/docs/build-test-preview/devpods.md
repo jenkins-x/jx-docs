@@ -9,7 +9,6 @@ aliases:
 
 Jenkins X allows you to edit app code by using a Kubernetes Pod which we call `DevPod`.  This helps you develop inside the cloud with the same software tools, platform, container images and pod templates as the CI/CD pipelines. This helps keep everyone in the team and your CI/CD pipelines using the same platform and tools all the time to reduce waste and avoid those pesky 'it works on my laptop but not in production' issues.
 
-
 There are a couple of ways that you as a developer can quickly become productive when editing an app, and add value ultra fast.
 
 There are specific steps for each approach, and we provide you a visual representation of each workflow, as well as the specific steps to quickly get started.
@@ -34,6 +33,7 @@ To get started using this approach, simply execute the following command in the 
 ```sh
 jx create devpod -l nodejs --reuse --sync
 ```
+
 A successful execution will ensures the following happened:
 
 - Output the `URLs` available to access the `Pod`
@@ -50,11 +50,10 @@ Once this happens, you must execute one more command within your ssh session to 
  From this point forward, any changes you make **(step 1 in diagram)**, trigger a Docker Image build, and you should see the output of that build command in your terminal as it happens.
 {{< /alert >}}
 
-Once you are happy with changes to your app, you go to **(step 2 in diagram)** and check-in your code, create a `Pull Request` at which point a `Jenkins X Pipeline` is triggered immediately to promote your changes to `Staging` enviornment.
-
-
+Once you are happy with changes to your app, you go to **(step 2 in diagram)** and check-in your code, create a `Pull Request` at which point a `Jenkins X Pipeline` is triggered immediately to promote your changes to `Staging` environment.
 
 ## Develop Using DevPods and a Web-based IDE
+
 If you prefer not to use an IDE on your desktop using a similar workflow as above.  To edit the app code, you use the well known [Theia](https://www.theia-ide.org/) IDE.
 
 <figure>
@@ -92,7 +91,7 @@ cd /workspace
  **NOTE**: We are not passing the `--sync` flag because we plan on using the web based IDE
 {{< /alert >}}
 
-A succesful execution of the command above, will ensure the following has happened:
+A successful execution of the command above, will ensure the following has happened:
 
 - DevPod is created, and exposed for you to access app via URL
 - Theia Docker container is running
@@ -106,10 +105,12 @@ To see your changes in real-time, you must also execute the following command wi
 ```
 
 ### Promote to Staging
+
 Once you are happy with the changes you made to the app, you can simply check-in your code and create a `pull request`.  This will trigger the pipeline to promote your changes to the `Staging` environment (**Step 2 and 3 in diagram**)
 
 ### Promote to Production
-Most of the time,the Production environment in **Jenkins X** will have its `Promote` setting set to `MANUAL`.  Therefore, promoting your app can happen manually after stakeholders have reviewed the staging envionment, for example.
+
+Most of the time,the Production environment in **Jenkins X** will have its `Promote` setting set to `MANUAL`.  Therefore, promoting your app can happen manually after stakeholders have reviewed the staging environment, for example.
 
 To promote the app to production, you can execute the following commands:
 

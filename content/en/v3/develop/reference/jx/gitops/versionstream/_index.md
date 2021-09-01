@@ -30,6 +30,7 @@ Administer the cluster version stream settings
   jx-gitops versionstream --custom --url https://github.com/foo/bar.git --ref main
 
   ```
+
 ### Options
 
 ```
@@ -41,8 +42,6 @@ Administer the cluster version stream settings
       --ref string         The kind of git server for the development environment
       --url string         The git URL to clone to fetch the initial set of files for a helm 3 / helmfile based git configuration if this command is not run inside a git clone or against a GitOps based cluster
 ```
-
-
 
 ### Source
 

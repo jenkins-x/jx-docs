@@ -28,6 +28,7 @@ So while Octant answers to a lot of use-cases, there is one for which it is not 
 We want to keep it small, focused, and fast. It's a read-only UI, so there won't be "actions" to trigger a pipeline - because it can already be done using "chatops" commands in the Pull Request for example.
 
 But there are a few interesting features already:
+
 - first, it's very fast to get the logs. Much faster than the old JXUI.
 - it can retrieve the logs from pipelines that have been garbage-collected - if you configure the URL of the buckets where the logs are stored.
 - it has URLs compatible with the old JXUI - so it's very easy to replace the old JXUI with this new UI and keep all the links working.

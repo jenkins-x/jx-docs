@@ -73,7 +73,6 @@ jx get activities -f myapp -w
 
 为了查看你的团队所有环境的所有应用的URL和 pod 数量，使用 [jx get applications](/commands/jx_get_applications/)：
 
-
 ```sh
 jx get applications
 ```
@@ -95,8 +94,6 @@ jx get applications -p
 ```sh
 jx get applications -e staging
 ```
-
-
 
 ### 环境
 

@@ -15,9 +15,9 @@ jx gitops kpt update
 
 ### Synopsis
 
-Updates any kpt packages installed in a sub directory 
+Updates any kpt packages installed in a sub directory
 
-If you know a specific directory which needs updating you can always use 'kpt' directly via: 
+If you know a specific directory which needs updating you can always use 'kpt' directly via:
 
           kpt pkg update mySubDir
 
@@ -29,6 +29,7 @@ If you know a specific directory which needs updating you can always use 'kpt' d
   jx-gitops kpt --dir .
 
   ```
+
 ### Options
 
 ```
@@ -45,8 +46,6 @@ If you know a specific directory which needs updating you can always use 'kpt' d
       --verbose             Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
   -v, --version string      the git version of the kpt package to upgrade to
 ```
-
-
 
 ### Source
 

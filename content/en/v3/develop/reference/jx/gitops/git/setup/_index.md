@@ -15,27 +15,27 @@ jx gitops git setup
 
 ### Synopsis
 
-Sets up git to ensure the git user name and email is setup. This is typically used in a pipeline to ensure git can do commits. 
+Sets up git to ensure the git user name and email is setup. This is typically used in a pipeline to ensure git can do commits.
 
-The jx gitops git setup command ensures that we can authenticate with configured Git server by configuring the local credentials file in the home directory. This command tries to ensure the following things: 
+The jx gitops git setup command ensures that we can authenticate with configured Git server by configuring the local credentials file in the home directory. This command tries to ensure the following things:
 
-  * The user can be authenticated with Git provider (for example Github)  
-  * An email is associated with each automated commit message  
+* The user can be authenticated with Git provider (for example Github)  
+* An email is associated with each automated commit message  
 
-These credentials are written to ${HOME}/git/credentials file, where the ${HOME} directory is determined as: 
+These credentials are written to ${HOME}/git/credentials file, where the ${HOME} directory is determined as:
 
-  * value stored in XGD CONFIG HOME environment variable or  
-  * value stored in HOME environment variable or  
-  * value stored in USERPROFILE environment variable or  
-  * as current directory ./  
+* value stored in XGD CONFIG HOME environment variable or  
+* value stored in HOME environment variable or  
+* value stored in USERPROFILE environment variable or  
+* as current directory ./  
 
-The credentials are determined by reading out the jx-requirements.yaml from the cluster repository and jx-boot Secret resource provisioned together with jx-git-operator in your Kubernetes namespace. 
+The credentials are determined by reading out the jx-requirements.yaml from the cluster repository and jx-boot Secret resource provisioned together with jx-git-operator in your Kubernetes namespace.
 
-The Git username and email are preferentially determined from PipelineUser field from jx-requirements.yaml, but if they are not available there then default email address jenkins-x@googlegroups.com is used . If the username could not be determined from jx-requirements.yaml, then it is determined from: 
+The Git username and email are preferentially determined from PipelineUser field from jx-requirements.yaml, but if they are not available there then default email address jenkins-x@googlegroups.com is used . If the username could not be determined from jx-requirements.yaml, then it is determined from:
 
-  * GIT _USERNAME environment variable or  
-  * GITHUB _ACTOR environment variable  
-  * In case that we are running in Kubernetes cluster from "username" field of the "jx-boot" Secret provisioned with "jx-git-operator"  
+* GIT _USERNAME environment variable or  
+* GITHUB _ACTOR environment variable  
+* In case that we are running in Kubernetes cluster from "username" field of the "jx-boot" Secret provisioned with "jx-git-operator"  
 
 The password for Github user (or a token for the robot account, depending on which you configued) is determined in similar fashion. Namely the token is first determined from environment variable GITHUB TOKEN, but if that fails, then further determination is dependent on execution environment of the command. Namely if it is running within Github actions, then the GITHUB TOKEN environment variable is our last stop. Otherwise if the command is executed within Kubernetes cluster, then the secret is determined by reading the password field of the "jx-boot" Secret provisioned with the "jx-git-operator".
 
@@ -45,6 +45,7 @@ The password for Github user (or a token for the robot account, depending on whi
   jx-gitops git setup
 
   ```
+
 ### Options
 
 ```
@@ -60,8 +61,6 @@ The password for Github user (or a token for the robot account, depending on whi
       --password string             the git password/token to use. if not specified it is detected from the git operator Secret
       --secret string               the name of the Secret to find the git URL, username and password for creating a git credential if running inside the cluster (default "jx-boot")
 ```
-
-
 
 ### Source
 

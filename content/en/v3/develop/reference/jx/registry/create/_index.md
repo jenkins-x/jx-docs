@@ -24,6 +24,7 @@ Lazy create a container registry for ECR as well as putting a lifecycle policy i
   jx-registry create
 
   ```
+
 ### Options
 
 ```
@@ -43,8 +44,6 @@ Lazy create a container registry for ECR as well as putting a lifecycle policy i
       --registry-id string            The registry ID to use. If not specified finds the first path of the registry. $REGISTRY_ID
       --verbose                       Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
 ```
-
-
 
 ### Source
 

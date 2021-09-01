@@ -4,22 +4,24 @@ linktitle: 分类问题
 description: 如何对 Jenkins X 项目中的问题进行分类
 ---
 
-Jenkins X 项目主要的问题跟踪系统是 https://github.com/jenkins-x/jx/issues。这旨在捕捉问题、想法和开发工作。如有疑问请提交一个问题，一名 Jenkins X 团队成员将考虑尽快给它分类。
+Jenkins X 项目主要的问题跟踪系统是 <https://github.com/jenkins-x/jx/issues>。这旨在捕捉问题、想法和开发工作。如有疑问请提交一个问题，一名 Jenkins X 团队成员将考虑尽快给它分类。
 
 由于 Jenkins X 使用来自 Kubernetes 生态的 [prow](/https://www.cloudbees.com/blog/serverless-jenkins-jenkins-x)，我们认为，我们应该带领他们参与处理分类大量问题，以帮助和鼓励贡献者。我们正在重用标签的样式，包括颜色，以尝试在跨开源项目时创建熟悉度，并减少贡献的障碍。
 
 # 分类问题
 
-所有可用标签列表请参考：https://github.com/jenkins-x/jx/labels
+所有可用标签列表请参考：<https://github.com/jenkins-x/jx/labels>
 
 当对问题进行分类时，来自 Jenkins X 团队的某个成员将分配标签用来描述问题的 __area__ 和 __kind__ 。有可能，他们还将增加一个 priority ，但是，在进一步分析或更广泛的可见性之后，这些 priority 可能会发生变化。
 
 标签通过 prow [label](https://prow.k8s.io/plugins) 插件使用 GitHub 评论被添加。例如：
+
 ```text
 /kind bug
 /area prow
 /priority important-soon
 ```
+
 ![Triage](/images/contribute/triage.png)
 
 # 分配问题

@@ -24,14 +24,13 @@ Upgrades the binary plugins for this plugin
   jx-gitops plugins upgrade
 
   ```
+
 ### Options
 
 ```
   -h, --help          help for upgrade
       --path string   creates a symlink to the binary plugins in this bin path dir
 ```
-
-
 
 ### Source
 

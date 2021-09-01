@@ -24,14 +24,13 @@ Lints the gitops files in the file system
   jx-gitops lint --dir .
 
   ```
+
 ### Options
 
 ```
   -d, --dir string   the directory to recursively look for the *.yaml or *.yml files (default ".")
   -h, --help         help for lint
 ```
-
-
 
 ### Source
 

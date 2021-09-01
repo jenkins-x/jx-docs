@@ -33,6 +33,7 @@ Stops the pipeline build.
   jx pipeline stop --context pr --branch PR-456
 
   ```
+
 ### Options
 
 ```
@@ -45,8 +46,6 @@ Stops the pipeline build.
       --log-level string   Sets the logging level. If not specified defaults to $JX_LOG_LEVEL
       --verbose            Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
 ```
-
-
 
 ### Source
 

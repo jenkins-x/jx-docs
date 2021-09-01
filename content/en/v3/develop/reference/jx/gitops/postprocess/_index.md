@@ -27,6 +27,7 @@ Post processes kubernetes resources to enrich resources like ServiceAccounts wit
   kubectl create secret generic jx-post-process -n default  --from-literal=commands="kubectl annotate sa tekton-bot hello=world"%!(EXTRA string=jx-gitops)
 
   ```
+
 ### Options
 
 ```
@@ -35,8 +36,6 @@ Post processes kubernetes resources to enrich resources like ServiceAccounts wit
   -s, --secret string      the name of the Secret with the post process scripts to apply (default "jx-post-process")
       --shell string       the location of the shell binary to execute (default "sh")
 ```
-
-
 
 ### Source
 

@@ -314,7 +314,7 @@ Handle any conflicts and make sure your code builds and all tests pass. Then for
 
 A [Developer Certificate of Origin](https://en.wikipedia.org/wiki/Developer_Certificate_of_Origin) is required for all
 commits. It can be proivided using the [signoff](https://git-scm.com/docs/git-commit#Documentation/git-commit.txt---signoff)
-option for `git commit` or by GPG signing the commit. The developer certificate is available at (https://developercertificate.org/).
+option for `git commit` or by GPG signing the commit. The developer certificate is available at (<https://developercertificate.org/>).
 
 Jenkins X enforces the DCO using the a [bot](https://github.com/probot/dco). You can view the details on the DCO check
 by viewing the `Checks` tab in the GitHub pull request.
@@ -323,30 +323,32 @@ by viewing the `Checks` tab in the GitHub pull request.
 
 #### How to Sign Your Commits
 
-There are a couple of ways to ensure your commits are signed. 
+There are a couple of ways to ensure your commits are signed.
 Described below are three different ways to sign your commits: using git signoff, using GPG, or using webhooks.
 
 ##### Git signoff
-Git signoff adds a line to your commit message with the user.name and user.email values from your git config. 
-Use git signoff by adding the `--signoff` or `-s` flag when creating your commit. 
+
+Git signoff adds a line to your commit message with the user.name and user.email values from your git config.
+Use git signoff by adding the `--signoff` or `-s` flag when creating your commit.
 This flag must be added to each commit you would like to sign.
 
 ```sh
 git commit -m -s "docs: my commit message"
 ```
 
-If you'd like to keep your personal email address private, you can use a GitHub-provided `no-reply` email address as your commit email address. 
+If you'd like to keep your personal email address private, you can use a GitHub-provided `no-reply` email address as your commit email address.
 GitHub provides [good instructions on setting your commit email address](https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/setting-your-commit-email-address).
 
 ##### GPG sign your commits
-A more secure alternative is to GPG sign all your commits. 
-This has the advantage that as well as stating your agreement to the DCO it also creates a trust mechanism for your commits. 
+
+A more secure alternative is to GPG sign all your commits.
+This has the advantage that as well as stating your agreement to the DCO it also creates a trust mechanism for your commits.
 There is a good guide from GitHub on how to set this up:
 
 1) If you don't already have a GPG key, then follow [this guide to create one](https://help.github.com/en/articles/generating-a-new-gpg-key).
-2) Now you have a GPG key, tell [tell GitHub about your key so that it can verify your commits](https://help.github.com/en/articles/adding-a-new-gpg-key-to-your-github-account). 
+2) Now you have a GPG key, tell [tell GitHub about your key so that it can verify your commits](https://help.github.com/en/articles/adding-a-new-gpg-key-to-your-github-account).
 Once you upload your public gpg key to your GitHub account, GitHub will mark commits that you sign with the `verified` label.
-3) To sign commits locally, you can add the `-S` flag when creating your commit. 
+3) To sign commits locally, you can add the `-S` flag when creating your commit.
 For more information on signing commits locally, follow [this guide to see how to sign your commit](https://help.github.com/en/articles/signing-commits).
 
 4) You can configure git to always use signed commits by running
@@ -357,16 +359,20 @@ git config --global user.signingkey <key id>
 
 The process to find the key id is described in [this guide on checking for existing GPG keys](https://help.github.com/en/articles/checking-for-existing-gpg-keys).
 
-5) Set up a keychain for your platform. 
-This is entirely optional but means you don't need to type your passphrase every time and allows git to run headless. 
+5) Set up a keychain for your platform.
+This is entirely optional but means you don't need to type your passphrase every time and allows git to run headless.
 If you are using a Mac GPG Suite is a good way to do this. If you are on another platform please open a PR against this document and add your recommendations!
 
 ##### Use a webhook to sign your commits
-Alternatively, you can use a hook to make sure all your commits messages are signed off. 
+
+Alternatively, you can use a hook to make sure all your commits messages are signed off.
+
 1) Run:
+
 ```sh
 mkdir -p ~/.git-templates/hooks
 ```
+
 ```sh
 git config --global init.templatedir ~/.git-templates
 ```
@@ -388,6 +394,7 @@ fi
 ```
 
 3) Make sure the file is executable:
+
 ```sh
 chmod u+x ~/.git-templates/hooks/prepare-commit-msg
 ```
@@ -396,7 +403,6 @@ chmod u+x ~/.git-templates/hooks/prepare-commit-msg
 
 Note that this will not override the hooks already defined on your local repo. It adds the `Signed-off-by: ...` line
 after the commit message has been created by the user.
-
 
 ### The commit message
 
@@ -452,26 +458,31 @@ If the retest against `HEAD` of `master` fail, then it will notify you on the pu
 ## Testing
 
 The jx test suite is divided into three sections:
- - The standard unit test suite
- - Slow unit tests
- - Integration tests
+
+* The standard unit test suite
+* Slow unit tests
+* Integration tests
 
 To run the standard test suite:
+
 ```sh
 make test
 ```
 
 To run the standard test suite including slow running tests:
+
 ```sh
 make test-slow
 ```
 
 To run all tests including integration tests (NOTE These tests are not encapsulated):
+
 ```sh
 make test-slow-integration
 ```
 
 To get a nice HTML report on the tests:
+
 ```sh
 make test-report-html
 ```
@@ -483,13 +494,15 @@ make test-report-html
 Unit tests should be isolated (see below what is an unencapsulated test), and should contain the `t.Parallel()` directive in order to keep things nice and speedy.
 
 If you add a slow running (more than a couple of seconds) test, it needs to be wrapped like so:
+
 ```golang
 if testing.Short() {
-	t.Skip("skipping a_long_running_test")
+ t.Skip("skipping a_long_running_test")
 } else {
-	// Slow test goes here...
+ // Slow test goes here...
 }
 ```
+
 Slows tests can (and should) still include `t.Parallel()`.
 
 Best practice for unit tests is to define the testing package appending _test to the name of your package, e.g. `mypackage_test` and then import `mypackage` inside your tests.
@@ -502,44 +515,52 @@ To add an integration test, create a separate file for your integration tests us
 ```golang
 // +build integration
 ```
+
 Note that there needs to be a blank line before you declare the package name.
 
 This directive will ensure that integration tests are automatically separated from unit tests, and will not be run as part of the normal test suite.
 You should **NOT** add `t.Parallel()` to an unencapsulated test as it may cause intermittent failures.
 
 ### What is an unencapsulated test?
+
 A test is unencapsulated (not isolated) if it cannot be run (with repeatable success) without a certain surrounding state. Relying on external binaries that may not be present, writing or reading from the filesystem without care to specifically avoid collisions, or relying on other tests to run in a specific sequence for your test to pass are all examples of a test that you should carefully consider before committing. If you would like to easily check that your test is isolated before committing simply run: `make docker-test`, or if your test is marked as slow: `make docker-test-slow`. This will mount the jx project folder into a golang docker container that does not include any of your host machines environment. If your test passes here, then you can be happy that the test is encapsulated.
 
 ### Mocking / Stubbing
+
 <a name="mocking--stubbing"></a>
 
 Mocking or stubbing methods in your unit tests will get you a long way towards test isolation. Coupled with the use of interface based APIs you should be able to make your methods easily testable and useful to other packages that may need to import them.
 [Pegomock](https://github.com/petergtz/pegomock) is our current mocking library of choice, mainly because it is very easy to use and doesn't require you to write your own mocks (Yay!)
 We place all interfaces for each package in a file called `interface.go` in the relevant folder. So you can find all interfaces for `github.com/jenkins-x/jx/pkg/util` in `github.com/jenkins-x/jx/pkg/util/interface.go`
 Generating/regenerating a mock for a given interface is easy, just go to the `interface.go` file that corresponds with the interface you would like to mock and add a comment directly above your interface definition that will look something like this:
+
 ```golang
 // CommandInterface defines the interface for a Command
 //go:generate pegomock generate github.com/jenkins-x/jx/pkg/util CommandInterface -o mocks/command_interface.go
 type CommandInterface interface {
-	DidError() bool
-	DidFail() bool
-	Error() error
-	Run() (string, error)
-	RunWithoutRetry() (string, error)
-	SetName(string)
-	SetDir(string)
-	SetArgs([]string)
-	SetTimeout(time.Duration)
-	SetExponentialBackOff(*backoff.ExponentialBackOff)
+ DidError() bool
+ DidFail() bool
+ Error() error
+ Run() (string, error)
+ RunWithoutRetry() (string, error)
+ SetName(string)
+ SetDir(string)
+ SetArgs([]string)
+ SetTimeout(time.Duration)
+ SetExponentialBackOff(*backoff.ExponentialBackOff)
 }
 ```
+
 In the example you can see that we pass the generator to use: `pegomock generate` the package path name: `github.com/jenkins-x/jx/pkg/util` the name of the interface: `CommandInterface` and finally an output directive to write the generated file to a mock sub-folder. To keep things nice and tidy it's best to write each mocked interface to a separate file in this folder. So in this case: `-o mocks/command_interface.go`
 
 Now simply run:
+
 ```sh
 go generate ./...
 ```
+
 or
+
 ```sh
 make generate-mocks
 ```
@@ -547,41 +568,46 @@ make generate-mocks
 You now have a mock to test your new interface!
 The new mock can now be imported into your test file and used for easy mocking/stubbing.
 Here's an example:
+
 ```golang
 package util_test
 
 import (
-	"errors"
-	"testing"
+ "errors"
+ "testing"
 
-	"github.com/jenkins-x/jx/pkg/util"
-	mocks "github.com/jenkins-x/jx/pkg/util/mocks"
-	. "github.com/petergtz/pegomock"
-	"github.com/stretchr/testify/assert"
+ "github.com/jenkins-x/jx/pkg/util"
+ mocks "github.com/jenkins-x/jx/pkg/util/mocks"
+ . "github.com/petergtz/pegomock"
+ "github.com/stretchr/testify/assert"
 )
 
 func TestJXBinaryLocationSuccess(t *testing.T) {
-	t.Parallel()
-	commandInterface := mocks.NewMockCommandInterface()
-	When(commandInterface.RunWithoutRetry()).ThenReturn("/test/something/bin/jx", nil)
+ t.Parallel()
+ commandInterface := mocks.NewMockCommandInterface()
+ When(commandInterface.RunWithoutRetry()).ThenReturn("/test/something/bin/jx", nil)
 
-	res, err := util.JXBinaryLocation(commandInterface)
-	assert.Equal(t, "/test/something/bin", res)
-	assert.NoError(t, err, "Should not error")
+ res, err := util.JXBinaryLocation(commandInterface)
+ assert.Equal(t, "/test/something/bin", res)
+ assert.NoError(t, err, "Should not error")
 }
 ```
+
 Here we're importing the mock we need in our import declaration:
+
 ```golang
 mocks "github.com/jenkins-x/jx/pkg/util/mocks"
 ```
+
 Then inside the test we're instantiating `NewMockCommandInterface` which was automatically generated for us by pegomock.
 
 Next we're stubbing something that we don't actually want to run when we execute our test. In this case we don't want to make a call to an external binary as that could break our tests isolation. We're using some handy matchers which are provided by pegomock, and importing using a `.` import to keep the syntax neat (You probably shouldn't do this outside of tests):
+
 ```golang
 When(commandInterface.RunWithoutRetry()).ThenReturn("/test/something/bin/jx", nil)
 ```
-Now when we can set up our  test using the mock interface and make assertions as normal.
 
+Now when we can set up our  test using the mock interface and make assertions as normal.
 
 ### Debug logging
 
@@ -616,9 +642,9 @@ If you want to debug using `jx` with `stdin` to test out terminal interaction, y
 1. Find the `pid` of the jx command via something like `ps -elaf | grep jx`
 2. Start Delve, attaching to the pid:
 
-	```sh
-	dlv --listen=:2345 --headless=true --api-version=2 attach SomePID
-	```
+ ```sh
+ dlv --listen=:2345 --headless=true --api-version=2 attach SomePID
+ ```
 
 ### Debugging jx boot pipeline
 
@@ -701,7 +727,6 @@ Once you have a preview docker image you can then edit the jenkins pod template 
 * now retrigger a pipeline
 
 We don't yet do the same for serverless jenkins images am afraid - for that you'll have to make your own Docker image replacing the `jx` binary then edit the Prow configuration (`kubectl edit cm config`).
-
 
 Another approach is you can make your own docker image, then pause a pipeline and `kubectl cp` your linux build of `jx` into the docker image and `kubectl exec` or `jx rsh` into the build pod and run the `jx` command there.
 

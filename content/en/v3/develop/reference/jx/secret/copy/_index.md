@@ -27,6 +27,7 @@ Copies secrets with the given selector or name to a destination namespace
   jx secret copy --name my-awesome-secret --to my-preview-ns%!(EXTRA string=jx-secret)
 
   ```
+
 ### Options
 
 ```
@@ -38,8 +39,6 @@ Copies secrets with the given selector or name to a destination namespace
   -l, --selector string     the label selector to find the secrets to copy
   -t, --to string           the namespace to copy the secrets to
 ```
-
-
 
 ### Source
 

@@ -2,7 +2,7 @@
 
 To make upcoming Jenkins X events show up more prominently in Google search and map results, we mark up our event information in structured data.
 
-More information here: https://developers.google.com/search/docs/data-types/event
+More information here: <https://developers.google.com/search/docs/data-types/event>
 
 ## Sample Event Data
 

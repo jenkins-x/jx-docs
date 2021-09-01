@@ -33,6 +33,7 @@ Prints health statuses in a table
   jx-health get status --watch
 
   ```
+
 ### Options
 
 ```
@@ -43,8 +44,6 @@ Prints health statuses in a table
   -n, --namespace string   namespace to get status checks, defaults to current namespace
   -w, --watch              after listing/getting the requested object, watch for changes
 ```
-
-
 
 ### Source
 

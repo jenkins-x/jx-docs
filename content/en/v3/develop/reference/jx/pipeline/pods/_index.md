@@ -36,6 +36,7 @@ Display the Tekton build pods
   jx pipeline pods --repo cheese --branch PR-1234
 
   ```
+
 ### Options
 
 ```
@@ -55,8 +56,6 @@ Display the Tekton build pods
   -r, --repo string        Filters the build repository
       --verbose            Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
 ```
-
-
 
 ### Source
 

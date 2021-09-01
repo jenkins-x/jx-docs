@@ -26,7 +26,7 @@ Relax!
 
 * There are some pre-requisites that may help you get into open-source development better..
 
-* Learn basics of git operations. (https://learngitbranching.js.org , I find this easy and helpful).
+* Learn basics of git operations. (<https://learngitbranching.js.org> , I find this easy and helpful).
 
 * Try to find an open-source project (remember : you’re going to contribute to a part of it, so it’s okay if some/many things doesn’t make sense in the beginning, because it’s easier to write code than to understand someone else’s code).
 
@@ -44,5 +44,4 @@ After selecting the project :
 
 * If you are facing any error — Google search it, or try to look into the existing issues, if you’re not able to move forward and you’re stuck on the same error for more than 45 mins, just ask! Trust me! There’s no harm. In-fact, people of open-source communities appreciate it, feels motivated when there are users asking them about something that they’re passionately building. It also sometimes, helps the community to re-define and re-align the product and some features.
 
-Happy learning! :) 
-
+Happy learning! :)

@@ -15,7 +15,7 @@ Jenkins X solves this as follows:
 
 For example if you create a new [quickstart](/v3/develop/create-project/) pipeline may look like this (slightly condensed)...
 
-```yaml 
+```yaml
 tasks:
 - name: from-build-pack
   taskSpec:
@@ -71,7 +71,7 @@ For a [github.com](https://github.com) source URI we use the syntax:
 - image: uses:owner/repository/pathToFile@version
 ```
 
-This references the https://github.com repository for `owner/repository` and **@version** can be a git tag, branch or SHA.
+This references the <https://github.com> repository for `owner/repository` and **@version** can be a git tag, branch or SHA.
 
 If you are not using [github.com](https://github.com) to host your git repositories you can access a pipeline task or step from your custom git serve use the **uses:lighthouse:** prefix before `owner`:
 
@@ -79,14 +79,13 @@ If you are not using [github.com](https://github.com) to host your git repositor
 - image: uses:lighthouse:owner/repository/pathToFile@version
 ```
 
-We [recommend you version everything with GitOps](/v3/devops/gitops/#recommendations) so you know exactly what versions are being used from git. 
+We [recommend you version everything with GitOps](/v3/devops/gitops/#recommendations) so you know exactly what versions are being used from git.
 
 However you can use **@HEAD** to reference the latest version.
 
 To use a locked down version based on the _version stream_ of your cluster, you can use **@versionStream** which means use the git SHA for the repository which is configured in the version stream.
 
 The nice thing about **@versionStream** is that the pipeline catalog you inherit tasks and steps from is locked down to an exact SHA in the version stream; but it avoids you having to go through every one of your git repositories whenever you upgrade a pipeline catalog.
-
 
 #### file and URL syntax
 
@@ -106,7 +105,7 @@ If there's no @version on a uses string its interpreted as a local file:
 
 So here is an [example release pipeline](https://github.com/jenkins-x/jx3-pipeline-catalog/blob/master/packs/javascript/.lighthouse/jenkins-x/release.yaml) generated via the [Jenkins X Pipeline catalog](https://github.com/jenkins-x/jx3-pipeline-catalog/tree/master/tasks) if you create a [JavaScript quickstart](/v3/develop/pipelines/catalog)
 
-```yaml 
+```yaml
 apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 metadata:
@@ -161,7 +160,7 @@ You can easily add your own steps in between the `uses:` steps in your pipeline 
 
 e.g. see `my-prefix-step` which has an explicit `image:` value so isn't inherited from the `stepTemplate.image`
 
-```yaml 
+```yaml
 apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 spec:
@@ -189,9 +188,8 @@ spec:
 You can edit the step in your [IDE](/v3/develop/pipelines/#ide-support) and add any custom properties such as `command`, `args`, `env`, `script` or `volumeMount` - those values then override the inherited step.
 
 e.g. you can then change any command line, add an environment variable or add a new volume mount without copy pasting the whole step. e.g. we change the `script` value of the `jx-variables` step below:
-     
 
-```yaml 
+```yaml
 apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 spec:
@@ -208,7 +206,6 @@ spec:
 ```
 
 Any extra properties in the steps are used to override the underlying uses step.
-
 
 ## Command line tools
 
@@ -227,7 +224,7 @@ If you want to open the effective pipeline in your editor, such as [VS Code](htt
 ```bash
 jx pipeline effective -e code
 ```
-                   
+
 If you use [Intellij](https://www.jetbrains.com/idea/) or any of [JetBrains other IDEs](https://www.jetbrains.com/products/#type=ide) you can do the following if you have [enabled](https://www.youtube.com/watch?v=SVANj3gAWt8) the `idea` [command line tool](https://www.youtube.com/watch?v=SVANj3gAWt8):
 
 ```bash
@@ -254,7 +251,6 @@ jx pipeline override
 This will then prompt you to pick which pipeline and step that's inherited via the `image: uses:sourceURI` notation. When chosen the step will be inlined into your local file so you can [edit any of the properties](#customizing-an-inherited-step).
 
 You can use the git compare to see the changes and remove any properties you don't wish to override.
-        
 
 ### Overriding specific properties of a step locally
 
@@ -272,24 +268,22 @@ jx pipeline override -P script
 
 You will then just have a locally modified `script` property in the Tekton YAML for the step you overrode. You can then locally modify to suit - or remove to go back to the inherited catalog properties.
 
-
 ## Tekton Catalog
-                        
+
 The [Tekton Catalog](https://github.com/tektoncd/catalog) git repository defines a ton of Tekton pipelines you can reuse in your pipelines
 
 ## Referencing Tasks or Steps from a Catalog
 
 You can `image: uses:sourceURI` notation inside any pipeline file in your `.lighthouse/jenkins-x/mypipeline.yaml` file like this:
 
-```yaml 
+```yaml
 steps:
   - image: uses:tektoncd/catalog/task/git-clone/0.2/git-clone.yaml@HEAD
 ```
 
-This will then include the steps from the [git-clone.yaml](https://github.com/tektoncd/catalog/blob/master/task/git-clone/0.2/git-clone.yaml) file 
+This will then include the steps from the [git-clone.yaml](https://github.com/tektoncd/catalog/blob/master/task/git-clone/0.2/git-clone.yaml) file
 
 It's not just the [Tekton Catalog](https://github.com/tektoncd/catalog) - you can use this same approach to reuse Tasks or steps from any git repository of your choosing; such as the [Jenkins X Pipeline catalog](https://github.com/jenkins-x/jx3-pipeline-catalog/tree/master/tasks)
-
 
 ## Custom Pipeline Catalog
 

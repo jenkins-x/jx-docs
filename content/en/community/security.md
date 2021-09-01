@@ -20,7 +20,6 @@ By restricting access to this potentially sensitive information, we can work on 
 
 If you are unable to report using the above issue tracker, you can also send your report to the private Jenkins Security Team mailing list: [jenkinsci-cert@googlegroups.com](mailto:jenkinsci-cert@googlegroups.com)
 
-
 ## Vulnerabilities in Apps
 
 Whilst the Jenkins X team is not responsible for the quality of third party apps, please still use the above reporting mechanism and we will co-ordinate with the app developer to ensure a fix in a secure maner.

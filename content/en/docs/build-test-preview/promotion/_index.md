@@ -22,7 +22,6 @@ The command waits for the promotion to complete, logging details of its progress
 
 e.g. to wait for 5 hours
 
-
 ```sh
 jx promote  --app myapp --version 1.2.3 --env production --timeout 5h
 ```
@@ -35,8 +34,6 @@ You can use terms like `20m` or `10h30m` for the various duration expressions.
   </div>
 </div>
 
-
-
 ## Feedback
 
 If the commit comments reference issues (e.g. via the text `fixes #123`) then Jenkins X pipelines will generate release notes like those of [the jx releases](https://github.com/jenkins-x/jx/releases).
@@ -48,8 +45,6 @@ Also as the version with those new commits is promoted to `Staging` or `Producti
     <img src="/images/issue-comment.png" class="img-thumbnail">
   </div>
 </div>
-
-
 
 ## Promoting external apps
 
@@ -90,8 +85,3 @@ helm repo add incubator https://kubernetes-charts-incubator.storage.googleapis.c
 ```
 
 There are huge numbers of [charts already created and maintained by the community](https://github.com/helm/charts/tree/master/stable) these days. If you want to add your own apps developed outside of Jenkins X you just need to package the YAML as a helm chart and install it in a chart repository.
-
-
-
-
-

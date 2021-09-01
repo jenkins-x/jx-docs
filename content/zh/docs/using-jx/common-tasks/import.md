@@ -58,4 +58,3 @@ jx import --github --org myname --all
 ```sh
 jx import --github --org myname --all --filter foo
 ```
-

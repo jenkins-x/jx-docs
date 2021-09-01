@@ -27,6 +27,7 @@ Replicates the given ExternalSecret resources into other Environments or Namespa
   jx-secret replicate --name=mysecretname --to jx-staging,jx-production
 
   ```
+
 ### Options
 
 ```
@@ -41,8 +42,6 @@ Replicates the given ExternalSecret resources into other Environments or Namespa
   -t, --to stringArray      one or more Namespaces to replicate the ExternalSecret to
       --verbose             Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
 ```
-
-
 
 ### Source
 

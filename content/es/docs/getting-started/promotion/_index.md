@@ -42,7 +42,6 @@ p.ej.
 
 <img src="/images/issue-comment.png" class="img-thumbnail">
 
-
 ## Promoviendo aplicaciones externas
 
 Puede que existan aplicaciones que estén actualmente liberadas por otros equipos u organizaciones y que tal vez no utilicen Jenkins X ni estén en su repositorio de plantillas Helm.

@@ -156,11 +156,9 @@ kubectl patch storageclass alicloud-disk-ssd \
 
 **NOTE**: Alibaba cloud disks must be [more than 5GiB (basic) or 20GiB (SSD and Ultra)](https://www.alibabacloud.com/help/doc-detail/25513.htm#h2-url-2)) so we will need to configure any service that is deployed with PVCs to have that size as a minimum or the `PersistentVolume` provision will fail. The Jenkins X deployments [are already configured with this in mind](https://github.com/jenkins-x/cloud-environments/blob/master/env-alibaba/myvalues.yaml).
 
-
 ## Installing Jenkins X
 
 Alibaba Kubernetes clusters won't be able to pull images from the insecure docker registry included in Jenkins X, we need to use Alibaba's Container Registry by going to [https://cr.console.aliyun.com](https://cr.console.aliyun.com) and setting a password.
-
 
 Then we need to create a Container Registry namespace that allows us to push any image and make them public by default.
 

@@ -15,7 +15,7 @@ jx pipeline grid
 
 ### Synopsis
 
-Watches pipeline activity in a table 
+Watches pipeline activity in a table
 
 You can use the up/down cursor keys to select a pipeline then hit enter on the selected pipeline to view its log. When the pipeline is completed you can then go back to the pipeline grid and view other pipelines.
 
@@ -29,6 +29,7 @@ You can use the up/down cursor keys to select a pipeline then hit enter on the s
   jx pipeline grid -f foo
 
   ```
+
 ### Options
 
 ```
@@ -39,8 +40,6 @@ You can use the up/down cursor keys to select a pipeline then hit enter on the s
       --log-level string   Sets the logging level. If not specified defaults to $JX_LOG_LEVEL
       --verbose            Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
 ```
-
-
 
 ### Source
 

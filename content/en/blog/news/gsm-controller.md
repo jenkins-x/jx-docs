@@ -21,19 +21,24 @@ One of the initial challenges we had was we didn’t see an obvious way to autom
 
 # Example
 
-Full docs and code can be found here: https://github.com/jenkins-x-labs/gsm-controller/blob/master/README.md
+Full docs and code can be found here: <https://github.com/jenkins-x-labs/gsm-controller/blob/master/README.md>
 
 ## TL;DR
 
 Create an empty secret
+
 ```
 kubectl create secret generic my-secret
 ```
+
 Add the magic annotation that the controller uses to lookup the correct secret in Googles Secret Manager
+
 ```
 kubectl annotate secret my-secret jenkins-x.io/gsm-secret-id=foo
 ```
+
 Optionally if you want the Kubernetes secret to use a specific key for the data you can add another annotation
+
 ```
 kubectl annotate secret my-secret jenkins-x.io/gsm-kubernetes-secret-key=credentials.json
 ```
@@ -43,6 +48,7 @@ kubectl annotate secret my-secret jenkins-x.io/gsm-kubernetes-secret-key=credent
 <iframe width="640" height="360" src="https://www.youtube.com/embed/wLHgkhzeNe8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 # Feadback
+
 This is still early days and we’d love folks to try it and provide feedback ([slack](https://jenkins-x.io/community/#slack) or the new [labs issues](https://github.com/jenkins-x-labs/issues/issues)) on whether it is useful to others and how we can improve it together.
- 
+
 On Jenkins X we make use of Hashicorp’s Vault which is great although it is another service users have to run, manage and upgrade. Wherever possible Jenkins X aims to use the Cloud well, so when users are installing Jenkins X onto a Cloud Provider we would like to leverage their other managed services, reducing the deployments we need to run in users clusters for Jenkins X.

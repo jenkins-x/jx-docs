@@ -24,6 +24,7 @@ Creates a new git provider in a git server
   jx-scm repository create --git-kind gitlab --git-server https://myserver.com --owner myuser --name myrepo%!(EXTRA string=jx-scm)
 
   ```
+
 ### Options
 
 ```
@@ -38,8 +39,6 @@ Creates a new git provider in a git server
   -t, --token string         the token to use on the git server
   -u, --username string      the user name to use on the git server
 ```
-
-
 
 ### Source
 

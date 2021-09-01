@@ -24,6 +24,7 @@ Gets a pull request and displays fields from it
   jx-gitops pr get --head-url
 
   ```
+
 ### Options
 
 ```
@@ -38,8 +39,6 @@ Gets a pull request and displays fields from it
   -r, --repo string         the full git repository name of the form 'owner/name'
       --source-url string   the git source URL of the repository
 ```
-
-
 
 ### Source
 

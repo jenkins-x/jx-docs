@@ -8,12 +8,12 @@ weight: 10
 An installation of Jenkins X consists of:
 
 * a Development Environment per team which is a [kubernetes namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/)
-* zero to many other [Permanent Environments](/about/concepts/features/#environments) 
+* zero to many other [Permanent Environments](/about/concepts/features/#environments)
   * the out of the box is for each team to get their own `Staging` and `Production` environments
-  * each team can have as many environments as they wish and can call them whatever they like 
-* optional [Preview Environments](/about/concepts/features/#preview-environments) 
+  * each team can have as many environments as they wish and can call them whatever they like
+* optional [Preview Environments](/about/concepts/features/#preview-environments)
 
-Typically each environment is associated with its own [kubernetes namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/) which are usually different to ensure clean isolation between the environments. 
+Typically each environment is associated with its own [kubernetes namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/) which are usually different to ensure clean isolation between the environments.
 
 Though technically 2 teams could share the same underlying namespace for, say, `Staging` though we advise separation to keep things simple - otherwise changes in one git repo could conflict with changes in another if they both configure the same namespace; due to, say, service resource name or DNS conflicts. If you wish 2 teams to share the same underlying microservices its much simpler to just use `service linking` to link services in one namespace to another so that they appear as local services with local DNS.
 
@@ -21,9 +21,9 @@ See the full list of [components of Jenkins X](/docs/reference/components/)
 
 ## Development Environment
 
-In the dev environment we have installed a number of core applications we believe are required at a minimum to start folks off with CI/CD on Kubernetes. 
+In the dev environment we have installed a number of core applications we believe are required at a minimum to start folks off with CI/CD on Kubernetes.
 
-We also support [addons](/about/concepts/features/#applications) to extend this core set. 
+We also support [addons](/about/concepts/features/#applications) to extend this core set.
 
 Jenkins X comes with configuration that wires these services together meaning everything works together straight away. This dramatically reduces the time to get started with Kubernetes as all the passwords, environment variables and config files are all setup up to work with each other.
 
@@ -47,8 +47,6 @@ The main difference is preview environments are configured inside the applicatio
 
 Also they are not permanent but created on a Pull Request to an applications git repository and then deleted some time after (manually or via automatic garbage collection).
 
-
 ## Ingress Custom Annotations
 
 To learn how to add custom annotations to the ingress controller, please see [How To Add Custom Annotations to Ingress Controller?](/docs/resources/faq/using/#how-to-add-custom-annotations-to-ingress-controller)
-

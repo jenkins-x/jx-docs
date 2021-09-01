@@ -20,13 +20,15 @@ To create an instance of a project, find the title of the particular quickstart 
 > jx create mlquickstart
 ```
 
-
 **Python Quickstarts:**
 ---
+
 <img src="https://avatars-04.gitter.im/group/iv/4/57542d4cc43b8c601977b6ad?s=48" alt="LightGBM Logo" width="40" align="right">
 
 ---
+
 ## LightGBM
+
 LightGBM is a gradient boosting framework that uses tree based learning algorithms. It is designed to be distributed and efficient with the following advantages:
 
 - Faster training speed and higher efficiency.
@@ -51,10 +53,13 @@ Service Wrapper : [ML-python-lightgbm-cpu-service](https://github.com/machine-le
 <img src="https://pytorch.org/assets/images/logo-dark.svg" alt="PyTorch Logo" width="140" align="right">
 
 ## PyTorch
+
 Pytorch is a rich ecosystem of tools, libraries, and more to support, accelerate, and explore AI development.
 
 Documentation is at [https://pytorch.org/](https://pytorch.org/)
+
 ### Convolutional Neural Networks
+
 **CPU-based:**
 
 `ML-python-pytorch-cpu` is a simple example demostrating the use of Pytorch with a Convolutional Neural Network (AlexNet) for image recognition.
@@ -63,8 +68,8 @@ Training Script : [ML-python-pytorch-cpu-training](https://github.com/machine-le
 
 Service Wrapper : [ML-python-pytorch-cpu-service](https://github.com/machine-learning-quickstarts/ML-python-pytorch-cpu-service)
 
-
 ### Multi-layer Perceptron Networks
+
 **CPU-based:**
 
 `ML-python-pytorch-mlpc-cpu` is a project for training and deploying Multi-layer Perceptron Networks in Pytorch.
@@ -84,15 +89,16 @@ Service Wrapper : [ML-python-pytorch-mlpc-gpu-service](https://github.com/machin
 ---
 <img src="https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png" alt="Scikit Logo" width="140" align="right">
 
-
 ## Scikit-Learn
-Simple and efficient tools for predictive data analysis, accessible to everybody, and reusable in various contexts. 
+
+Simple and efficient tools for predictive data analysis, accessible to everybody, and reusable in various contexts.
 
 Built on NumPy, SciPy, and matplotlib
 
 Documentation is at: [https://scikit-learn.org/](https://scikit-learn.org/)
 
 ### K Nearest Neighbor Classification
+
 **CPU-based:**
 
 `ML-python-sklearn-knc-cpu` is a project for training and deploying K Nearest Neighbor Classification using the SciKit-Learn library.
@@ -102,6 +108,7 @@ Training Script : [ML-python-sklearn-knc-cpu-training](https://github.com/machin
 Service Wrapper : [ML-python-sklearn-knc-cpu-service](https://github.com/machine-learning-quickstarts/ML-python-sklearn-knc-cpu-service)
 
 ### Naive Bayes Classification
+
 **CPU-based:**
 
 `ML-python-sklearn-nbc-cpu` is a project for training and deploying Naive Bayes Classification using the SciKit-Learn library.
@@ -111,6 +118,7 @@ Training Script : [ML-python-sklearn-nbc-cpu-training](https://github.com/machin
 Service Wrapper : [ML-python-sklearn-nbc-cpu-service](https://github.com/machine-learning-quickstarts/ML-python-sklearn-nbc-cpu-service)
 
 ### Random Forest Classification
+
 **CPU-based:**
 
 `ML-python-sklearn-rfc-cpu` is a project for training and deploying Random Forest Classifications using the SciKit-Learn library
@@ -120,6 +128,7 @@ Training Script : [ML-python-sklearn-rfc-cpu-training](https://github.com/machin
 Service Wrapper : [ML-python-sklearn-rfc-cpu-service](https://github.com/machine-learning-quickstarts/ML-python-sklearn-rfc-cpu-service)
 
 ### Ridge Classification
+
 **CPU-based:**
 
 `ML-python-sklearn-rc-cpu` is a project for training and deploying Random Forest Classification using the SciKit-Learn library.
@@ -129,6 +138,7 @@ Training Script : [ML-python-sklearn-rc-cpu-training](https://github.com/machine
 Service Wrapper : [ML-python-sklearn-rc-cpu-service](https://github.com/machine-learning-quickstarts/ML-python-sklearn-rc-cpu-service)
 
 ### Support Vector Machines
+
 **CPU-based:**
 
 `ML-python-sklearn-svm-cpu` is a project for training and deploying Support Vector Machines using the SciKit-Learn library.
@@ -141,11 +151,13 @@ Service Wrapper : [ML-python-sklearn-svm-cpu-service](https://github.com/machine
 <img src="https://www.gstatic.com/devrel-devsite/prod/vbc166ea82921a0c6d4f6ee6c94a3e0bcf7b885b334dd31c4592509cb25134992/tensorflow/images/lockup.svg" alt="TensorFlow Logo" width="140" align="right">
 
 ## TensorFlow
+
 TensorFlow is an end-to-end open source platform for machine learning. It has a comprehensive, flexible ecosystem of tools, libraries and community resources that lets researchers push the state-of-the-art in ML and developers easily build and deploy ML powered applications.
 
 Documentation is at [https://www.tensorflow.org/](https://www.tensorflow.org/)
 
 ### Classification (MNIST)
+
 **CPU-based:**
 
 `ML-python-tensorflow-mnist-cpu` is a project for training and deploying an MNIST classifier using TensorFlow.
@@ -166,11 +178,13 @@ Service Wrapper : [ML-python-tensorflow-mnist-gpu-service](https://github.com/ma
 <img src="https://xgboost.ai/images/logo/xgboost-logo.png" alt="XGBoost Logo" width="140" align="right">
 
 ## XGBoost
+
 Scalable and flexible Gradient Boosting. Supports regression, classification, ranking and user defined objectives.
 
 Documentation is at: [https://xgboost.readthedocs.io/en/latest/](https://xgboost.readthedocs.io/en/latest/)
 
 ### Gradient Boosted Decision Trees
+
 **CPU-based:**
 
 `ML-python-xgb-cpu` is a project for training and deploying gradient boosted decision trees using the XGBoost library.
@@ -178,4 +192,3 @@ Documentation is at: [https://xgboost.readthedocs.io/en/latest/](https://xgboost
 Training Script : [ML-python-xgb-cpu-training](https://github.com/machine-learning-quickstarts/ML-python-xgb-cpu-training)
 
 Service Wrapper : [ML-python-xgb-cpu-service](https://github.com/machine-learning-quickstarts/ML-python-xgb-cpu-service)
-

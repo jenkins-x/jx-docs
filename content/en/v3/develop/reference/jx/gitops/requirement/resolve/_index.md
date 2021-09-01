@@ -25,6 +25,7 @@ For example if the provider is GKE then this step will automatically default the
   jx-gitops requirements resolve
 
   ```
+
 ### Options
 
 ```
@@ -35,8 +36,6 @@ For example if the provider is GKE then this step will automatically default the
       --retries int        Specify the number of times the command should be reattempted on failure (default 3)
       --secret string      the name of the Secret to find the git URL, username and password for creating a git credential if running inside the cluster (default "jx-boot")
 ```
-
-
 
 ### Source
 

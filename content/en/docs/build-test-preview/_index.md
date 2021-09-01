@@ -14,18 +14,17 @@ automates development processes, builds, and promotion.
 
 ## The traditional development environment
 
-
 A common workflow in a Git development involves:
 
 1. Forking - The developer creates a fork of the project repository into their personal repo.
 
 2. Branching - The developer creates a branch of their fork, for various reasons:
 
-  - Creating a new feature
+- Creating a new feature
 
-  - Fixing a bug
+- Fixing a bug
 
-  - Applying a security patch for a vulnerability
+- Applying a security patch for a vulnerability
 
 3. Committing - The developer commits the code and pushes it to their branch, creating a `diff` file.
 

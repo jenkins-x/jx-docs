@@ -62,33 +62,44 @@ If you already have your own ingress controller and do not want `jx boot` to ins
 You may have a problem with Terminating a PVC that is protected.
 
 Describe your pvc.  In the case I saw, it was the jenkins pvc.
+
 ```sh
 kubectl -n jx describe pvc jenkins
 ```
+
 If it's stuck in Terminating and you see that the Finalizer has protection:
+
 ```sh
 Finalizers:    [kubernetes.io/pvc-protection]
 ```
+
 Then, you can remove the protection by issuing the following command and your install should continue.
+
 ```sh
 kubectl -n jx patch pvc jenkins -p '{"metadata":{"finalizers": []}}' --type=merge
 ```
 
 ## How do I debug issues with terraform and JenkinsX?
+
 Set the `TF_LOG` environment variable to `TRACE`, and then run your terraform commands such as `terraform apply` or `terraform plan`.
+
 ```bash
 TF_LOG=TRACE terraform apply
 ```
+
 Use the global `--verbose` flag to add more verbosity to the JenkinsX logs:
+
 ```bash
 jx boot --verbose
 ```
 
 ## How to get a clean terraform destroy
+
 The following steps need to be performed before a terraform destroy can be executed successfully for the EKS cluster.
-* Empty the s3 buckets created by jenkinsX (This is required if `force_destroy` was set to false, when provisioning 
+
+* Empty the s3 buckets created by jenkinsX (This is required if `force_destroy` was set to false, when provisioning
 the EKS cluster)
-* Delete the Network load balancer (The load balancer is created outside terraform, so you need to delete it manually 
+* Delete the Network load balancer (The load balancer is created outside terraform, so you need to delete it manually
 in the EC2 console before executing a terraform destroy.
 You can also import it to terraform, and then execute destroy)
 
@@ -98,6 +109,6 @@ times out.
 
 ## Does Jenkins X install a load balancer?
 
-Jenkins X installs `nginx` which has a `LoadBalancer` kubernetes `Service`. But the underlying kubernetes platform needs to implement the load balancing network and infrastructure. This comes OOTB on all public clouds. 
- 
+Jenkins X installs `nginx` which has a `LoadBalancer` kubernetes `Service`. But the underlying kubernetes platform needs to implement the load balancing network and infrastructure. This comes OOTB on all public clouds.
+
 On-premises you need to install something like [MetalLB](https://metallb.universe.tf/)

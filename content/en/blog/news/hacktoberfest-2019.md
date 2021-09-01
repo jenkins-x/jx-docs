@@ -47,13 +47,12 @@ We're happy to help if you have any questions. Talk to us on our slack channels,
 
 We also have online office hours, where we talk about new developments in Jenkins X and you are welcome to ask us questions, every other Thursday at 4pm UK (BST) / 11am US Eastern / 8am US Pacific.
 
-Next office hours are on **3 October**. Join us here: https://zoom.us/j/397862697
+Next office hours are on **3 October**. Join us here: <https://zoom.us/j/397862697>
 
 ### Jenkins Hacktoberfest
 
 The Jenkins project is also participating in Hacktoberfest!
-Please see https://jenkins.io/events/hacktoberfest/ for more info.
-
+Please see <https://jenkins.io/events/hacktoberfest/> for more info.
 
 *We look forward to seeing you in open source, fixing all the things!*
 

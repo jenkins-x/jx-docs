@@ -11,7 +11,7 @@ aliases: []
 author: James Strachan
 ---
 
-A common question we have heard in the community over the years is [Is there an open source UI for Jenkins X?](/docs/resources/faq/config/#is-there-a-ui-available-for-jenkins-x). 
+A common question we have heard in the community over the years is [Is there an open source UI for Jenkins X?](/docs/resources/faq/config/#is-there-a-ui-available-for-jenkins-x).
 
 Well we now have an answer: its [Octant](https://github.com/vmware-tanzu/octant) using the [octant-jx](https://github.com/jenkins-x/octant-jx) plugin.
 
@@ -25,10 +25,10 @@ We love [Octant](https://github.com/vmware-tanzu/octant) because:
 
 ## Features
 
-Longer term we're planning on making most of the developer and operations features of Jenkins X available through the UI via [octant-jx](https://github.com/jenkins-x/octant-jx). 
+Longer term we're planning on making most of the developer and operations features of Jenkins X available through the UI via [octant-jx](https://github.com/jenkins-x/octant-jx).
 
 e.g. we hope as part of [Jenkins X 3.x](https://github.com/jenkins-x/enhancements/issues/36) you'll be able to install or upgrade Jenkins X and watch the installation proceed all via Octant.
- 
+
 But already right now today you can:
 
 * view applications, environments, pipelines, repositories

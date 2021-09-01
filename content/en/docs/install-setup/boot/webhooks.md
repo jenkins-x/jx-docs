@@ -40,7 +40,7 @@ webhook: prow
 
 ### Lighthouse
 
-[Lighthouse](/architecture/lighthouse/) is currently the default webhook and [ChatOps](/docs/resources/faq/using/chatops/) engine when using [Serverless Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/) and a git server other than https://github.com.
+[Lighthouse](/architecture/lighthouse/) is currently the default webhook and [ChatOps](/docs/resources/faq/using/chatops/) engine when using [Serverless Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) with [Tekton](https://tekton.dev/) and a git server other than <https://github.com>.
 
 Once Lighthouse is more stable and well tested we'll make it the default for all installations using [Serverless Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/).
 

@@ -24,6 +24,7 @@ Annotates the given files with a hash of the given source files for ConfigMaps/S
   jx-gitops hash -s foo/configmap.yaml -s another/configmap.yaml -d someDir
 
   ```
+
 ### Options
 
 ```
@@ -35,8 +36,6 @@ Annotates the given files with a hash of the given source files for ConfigMaps/S
   -p, --pod-spec                  annotate the PodSpec in spec.templates.metadata.annotations rather than the top level annotations
   -s, --source stringArray        the source files to hash
 ```
-
-
 
 ### Source
 

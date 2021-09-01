@@ -23,8 +23,6 @@ Commands for working with Git
   -h, --help   help for git
 ```
 
-
-
 ### Source
 
 [jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)

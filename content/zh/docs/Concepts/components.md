@@ -7,10 +7,10 @@ description: 典型 Jenkins X 安装中的组件概览
 Jenkins X 安装的包括：
 
 * 每个团队一个开发环境，也就是 [kubernetes 命名空间](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/)
-* 零或多个其它 [永久环境](/zh/about/concepts/features/#environments) 
+* 零或多个其它 [永久环境](/zh/about/concepts/features/#environments)
   * 为每个团队获取各自开箱即用的 `Staging` 和 `生产` 环境
   * 每个团队可以按照需要有很多环境，并依据习惯命名
-* 可选的 [预览环境](/zh/about/concepts/features/#preview-environments) 
+* 可选的 [预览环境](/zh/about/concepts/features/#preview-environments)
 
 通常，每个环境会关联对应不同的 [kubernetes 命名空间](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/) ，以确保环境之间干净隔离。
 

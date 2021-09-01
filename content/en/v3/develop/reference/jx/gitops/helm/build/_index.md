@@ -24,6 +24,7 @@ Builds and lints any helm charts
   jx-gitops step helm template
 
   ```
+
 ### Options
 
 ```
@@ -32,8 +33,6 @@ Builds and lints any helm charts
   -h, --help                help for build
       --use-helm-plugin     uses the jx binary plugin for helm rather than whatever helm is on the $PATH
 ```
-
-
 
 ### Source
 

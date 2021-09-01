@@ -27,6 +27,7 @@ Garbage collect old Pods that have completed or failed
   jx gitops gc pods -a 10m
 
   ```
+
 ### Options
 
 ```
@@ -35,8 +36,6 @@ Garbage collect old Pods that have completed or failed
   -n, --namespace string   The namespace to look for the pods. Defaults to the current namespace
   -s, --selector string    The selector to use to filter the pods
 ```
-
-
 
 ### Source
 

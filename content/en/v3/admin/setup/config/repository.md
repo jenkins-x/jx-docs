@@ -38,13 +38,16 @@ To replace `nexus` by `bucketrepo` use the following `jx-requirements.yml` file:
 ```yaml
 repository: bucketrepo
 ```
+
 Then replace the nexus chart in `helmfiles/jx/helmfile.yaml` by:
+
 ```yaml
 - chart: jenkins-x/bucketrepo
   name: bucketrepo
 ```
 
 If you also want to replace `chartmuseum` by bucketrepo, change `jx-requirements.yml` with:
+
 ```yaml
 apiVersion: core.jenkins-x.io/v4beta1
 kind: Requirements
@@ -53,6 +56,7 @@ spec:
   cluster:
     chartRepository: http://bucketrepo.jx.svc.cluster.local/bucketrepo/charts
 ```
+
 Another alternative for the helm chart repository is to use Github gh-pages, as explained [here](/v3/develop/faq/config/registries/#how-do-i-switch-to-github-pages-for-charts). Note that in that case and if you don't have any maven artifact, you don't need bucketrepo.
 
 By default the local file system in the bucket repo is used to store artifacts.
@@ -69,11 +73,10 @@ repository: none
 
 Note that without using an artifact repository you will not be able to deploy Maven artifacts; though [ChartMuseum](https://chartmuseum.com/) will still be used as a repository of charts
 
-
 ## Maven Repository
 
-If you are using Nexus or Bucketrepo things should just work out of the box. 
-          
+If you are using Nexus or Bucketrepo things should just work out of the box.
+
 For other solutions try the following:
 
 ### GitHub
@@ -106,8 +109,7 @@ repositories:
 
 Then the `myrepo` `Secret` will be used with properties `username` and `password` to generate the equivalent `<server>` section in your maven settings XML file:
 
-
-```xml 
+```xml
 <server>
   <id>mycustomrepo</id>
   <username>$secret.mycustomrepo.username</username>

@@ -25,12 +25,12 @@ Una vez que el usuario tiene acceso al clúster de Kubernetes:
 
 Si Jenkins X fue instalado en el namespace `jx`, entonces lo siguientes debe ser [cambiar su contexto](/docs/resources/guides/using-jx/developing/kube-context/) al namespace `jx`:
 
-    $  jx ns jx
+    jx ns jx
 
 Para probar, debe poder escribir:
 
-    $  jx get env
-    $  jx open
+    jx get env
+    jx open
 
 Para ver los entornos y cualquier herramienta de desarrollo como las consolas de Jenkins o Nexus.
 
@@ -46,7 +46,6 @@ Si está utilizando [jx boot](/es/docs/getting-started/setup/boot/) puede habili
 
 Si algo va mal durante la actualización (p.ej, si es borrado el clúster, el namespace o Tekton), puede volver a ejecutar el cmando [jx boot](/es/docs/getting-started/setup/boot/) en su laptop para restaurar el estado del clúster.
 
-
 De lo contrario, el enfoque anterior es el siguiente:
 
 ### Si no utiliza boot
@@ -54,13 +53,13 @@ De lo contrario, el enfoque anterior es el siguiente:
 Puede actualizar Jenkins X a través del comando [jx upgrade](/commands/jx_upgrade/). Comience por:
 
 ```sh
-$ jx upgrade cli
+jx upgrade cli
 ```
 
 para que obtenga la última versión de la sistema CLI, luego actualice la plataforma:
 
 ```sh
-$ jx upgrade platform
+jx upgrade platform
 ```
 
 ## ¿Cómo actualizo el binario jx usado dentro de las compilaciones cuando uso jenkins sin servidor?

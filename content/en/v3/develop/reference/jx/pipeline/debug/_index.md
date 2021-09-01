@@ -24,6 +24,7 @@ Add or remove pipeline breakpoints for debugging pipeline steps.
   jx pipeline breakpoint
 
   ```
+
 ### Options
 
 ```
@@ -34,8 +35,6 @@ Add or remove pipeline breakpoints for debugging pipeline steps.
   -n, --namespace string          The kubernetes namespace to use. If not specified the default namespace is used
       --verbose                   Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
 ```
-
-
 
 ### Source
 

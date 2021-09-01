@@ -24,6 +24,7 @@ CAUTION: Do not make updates to the cluster that require recreating the cluster 
 {{< /alert >}}
 
 # Overview
+
 Many organizations have adopted DevOps practices in the last few years.  This is valuable as it relates to Jenkins X as we provide a way to manage the Kubernetes clusters  Infrastructure as Code which is one of the core concepts of DevOps practices as it relates to automation.
 
 Many environments may only allow for creating cloud resources using IaC, therefore we provide you with guidance on how to get started using Terraform to manage your Jekins X clusters.
@@ -31,11 +32,13 @@ Many environments may only allow for creating cloud resources using IaC, therefo
 Our objective is to bring awareness to our Jenkins X users on know that they can manage the cluster changes and version them by placing the Terraform code source control and adopting the typical developer workflow which includes PRs in source control to make infrastructure changes in a controlled manner.
 
 ## Terraform clusters for AWS, GCP and Azure
+
 Jenkins X supports generating Terraform plans and code for all three leading clouds (AWS, Azure and GCP).
 
 On this post we walk you through the steps for terraforming clusters in GKE.
 
 ## Benefits of Using IaC to Manage Your K8s Clusters
+
 - This is great, because at many companies the Ops team typically is already using IaC to manage the resources deployed to the cloud
 - Our Users gain the ability to version their infrastructure and follow the typical developer workflow as the code is in Github
 - Changes to the cluster can be automated, added to a pipeline
@@ -44,8 +47,8 @@ On this post we walk you through the steps for terraforming clusters in GKE.
 
 To get started, you must have the following items installed on your machine.
 
- - The `jx` CLI installed.
- - Terraform - can be installed using `brew install terraform`
+- The `jx` CLI installed.
+- Terraform - can be installed using `brew install terraform`
 - GCP account with proper rights to create resources
 - The Google Cloud CLI `gcloud`
 `kubectl` must also be installed
@@ -59,6 +62,7 @@ We execute the `jx create terraform -c dev=gke -c stage=gke -c prod=gke`.
 The command generates three different clusters for each environment respectively in GCP.  Other providers supported are  aks, eks.
 
 ## Folder Structure Output
+
 Running the previous command, outputs the following folder structure wherever we executed the command locally.
 
 ```txt
@@ -94,6 +98,7 @@ Running the previous command, outputs the following folder structure wherever we
 
 7 directories, 22 files
 ```
+
 We now have a great code-base to create our clusters on GKE for three different environments.
 
 {{< alert >}}
@@ -110,6 +115,7 @@ For our dev cluster, it has created the jx-questerring-dev@ci-demo-206601.iam.gs
 We need to download the `json` file in order to pass as credentials to our `terraform.tf` file which contains the definition to access the Terraform Backend.
 
 ## Downloading Credentials JSON File
+
 To download the SA account credentials, go to the GCP Console > IAM &  Admin > Service Accounts.
 
 We find the one for our cluster which is named in our case
@@ -133,6 +139,7 @@ terraform {
 Notice that we added the `credentials` portion and point to the credentials `json` file we downloaded from the Google IAM & Admin web console.
 
 # Step 3 - Initiate Terraform Backend
+
 We are now ready to initiate Terraform backend.  Terraform backends are used to save the Terraform State remotely.  This is great for when a team needs to collaborate on making infrastructure changes, because the Terraform State is stored in the GCP Bucket that was also created when we executed our initial command to create the cluster.
 
 ```tf
@@ -152,9 +159,10 @@ Terraform has been successfully initialized!
 We have initiated Terraform and our Terraform State is now configured to use the GCP Buket specified in the terraform.tf file.
 
 # Step 4 - Terraform Plan
+
 We now can execute a `terraform plan` and see what will be created.  At this point, we can opt to augment the terraform code.
 
-For example, you may have an existing network that you wish to deploy the cluster in.  You may also wish to enable the an add-on, or you can specify the cluster_ipv4_cidr_block and many other things (see https://www.terraform.io/docs/providers/google/r/container_cluster.html) for details.
+For example, you may have an existing network that you wish to deploy the cluster in.  You may also wish to enable the an add-on, or you can specify the cluster_ipv4_cidr_block and many other things (see <https://www.terraform.io/docs/providers/google/r/container_cluster.html>) for details.
 
 ```sh
 $ terraform plan
@@ -256,6 +264,7 @@ can't guarantee that exactly these actions will be performed if
 ```
 
 # Step 5 - Create Cluster Using Terraform Apply
+
 Now that we've seen what will be created and using the default terraform code generated, let us create said resources!
 
 ```sh
@@ -268,6 +277,7 @@ Outputs:
 cluster_endpoint = 35.203.147.59
 cluster_master_version = 1.11.7-gke.12
 ```
+
 The outcome shows some key information, like the *cluster_endpoint* and the *cluster_master_version*
 
 ## Set Kubectl Context
@@ -280,6 +290,7 @@ $ gcloud container clusters get-credentials questerring-dev --zone us-west1-a --
 Fetching cluster endpoint and auth data.
 kubeconfig entry generated for questerring-dev.
 ```
+
 This has effectively modified our `kubeconfig` file and we now have a new context.
 
 Executing the following command, we see our new cluster (in bold)
@@ -297,6 +308,7 @@ gke_ci-demo-206601_us-west1_sirjenkinsxgke
 minikube
 1553553075211690000@jxcluster.us-west-2.eksctl.io
 ```
+
 We are now ready to install Jenkins X on our cluster!
 
 # Step 6 - Installing Jenkins X on Cluster
@@ -388,6 +400,7 @@ NOTE: This dashboard is deprecated, and we are only showing you in the context o
 {{ /alert }}
 
 ### Get Access token
+
 ```sh
 gcloud config config-helper --format=json | jq -r '.credential.access_token'
 ```
@@ -396,20 +409,18 @@ Copy the token from the output of that command.
 
 Next, execute `kubectl proxy` which will enable you to access via the following URL
 
-http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy
+<http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy>
 
 Paste the token and now you should be able to access the now deprecated dashboard via the browser.
 
 # Conclusion
+
 We walked through how to create your initial Terraform code and structure, created the Dev cluster and modified it by specifying an add-on to include in our cluster.
 
 Please keep in mind, that once *GitOps* feature in Jenkins X is available, we recommend you manage the platform in that manner.  Documentation, tutorials and presentations on that topic will be coming soon!
-
 
 Cheers,
 
 [@SharePointOscar](http://twitter.com/SharePointOscar)
 
 Developer Advocate | Jenkins X
-
-

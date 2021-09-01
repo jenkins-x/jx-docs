@@ -24,6 +24,7 @@ Lazily creates a .jx/variables.sh script with common pipeline environment variab
   jx-gitops variables
 
   ```
+
 ### Options
 
 ```
@@ -43,8 +44,6 @@ Lazily creates a .jx/variables.sh script with common pipeline environment variab
   -u, --repo-url string         the URL to release to
       --version-file string     the file to load the version from if not specified directly or via a $VERSION environment variable. Defaults to VERSION in the current dir
 ```
-
-
 
 ### Source
 

@@ -24,6 +24,7 @@ Creates or Updates helm Chart CRDs from the helm Secrets
   jx-charter update
 
   ```
+
 ### Options
 
 ```
@@ -33,8 +34,6 @@ Creates or Updates helm Chart CRDs from the helm Secrets
   -n, --namespace string   The kubernetes namespace to look for helm Secrets
       --verbose            Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
 ```
-
-
 
 ### Source
 

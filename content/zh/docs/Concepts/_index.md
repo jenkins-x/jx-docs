@@ -10,6 +10,7 @@ lastmod: 2018-04-21
 Jenkins X 旨在使得 DevOps 原则和最佳实践对于研发人员来说简单。
 
 ## 原则
+
 ---
 *"DevOps 是一套旨在缩短从提交变更到生产发布的时间的实践，同时保证高质量"*
 
@@ -30,6 +31,7 @@ DevOps项目的目标：
 Jenkins X 设计了第一原则，允许团队采用 DevOps 的最佳实践，来达到行业的最高目标。
 
 ## 实践
+
 ---
 下列最佳实践被认为是DevOps成功的关键：
 
@@ -56,6 +58,7 @@ Jenkins X 基于松耦合架构的 DevOps 模型，被设计用来支持在多�
 Jenkins X 基于以下的核心组件：  
   
 ### Kubernetes 和 Docker
+
 ---
 Kubernetes 是系统的核心，它已经成为了 DevOps 事实上的虚拟基础设施平台。每个主要的云服务商现在都已经提供了 Kubernetes 基础设施，并且可能已经在很多私有基础设施中也被安装了。测试环境可能也在使用 Minikube 安装器创建本地开发环境。
 
@@ -86,9 +89,8 @@ Kubernetes 集群可以直接通过命令 `jx create cluster` 来创建，这使
 默认情况下， Pod 的状态是临时的。当 Pod 被删除后，该 Pod 下载本地文件系统中的任何数据都会丢失。研发人员应该明白，Kubernetes 为了节点的负载均衡，可能随时会删除或者重建 Pod，因此本地数据可能会在任何时间丢失。当用到有状态的数据时，应该申明持久化的卷（Volumes），并挂载到指定 Pod 的文件系统中。
 
 ### Helm 和 Draft
+
 ---
 要直接和 kubernetes 交互的话可以使用命令行  `kubectl` ，或者传递各种格式的 YAML 数据给 API。这一点会比较困难，而且错误信息的可读性差。为了沿用 DevOps ”配置即代码” 的原则，Jenkins X 借助 Helm 和 Draft 来创建应用的原子配置。
 
 Helm 通过 Chart 的概念简化了 Kubernetes 的配置，它把一套需要部署到 Kubernetes 中的应用或者服务的原数据文件组织起来。Helm 不是维护一套基于 Kubernetes API 的样板化 YAML 文件，而是使用模板语言来通过需要的值来创建 YAML 文件。这使得在部署期间可以重用 Kubernetes 应用的配置文件。
-
-

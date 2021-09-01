@@ -22,8 +22,8 @@ The pull request is the main place we gate changes in Jenkins X. It's here we:
 Our philosophy is to automate the checks as much as possible - there are some that must still be done by a human but we
 plan to reduce those as far as possible.
 
-These review guidelines apply to all github repos in https://github.com/jenkins-x, https://github.com/jenkins-x-charts,
-https://github.com/jenkins-x-apps, https://github.com/jenkins-x-quickstarts and https://github.com/jenkins-x-buildpacks.
+These review guidelines apply to all github repos in <https://github.com/jenkins-x>, <https://github.com/jenkins-x-charts>,
+<https://github.com/jenkins-x-apps>, <https://github.com/jenkins-x-quickstarts> and <https://github.com/jenkins-x-buildpacks>.
 A repository with the `proof-of-concept` label does not have to follow these guidelines. If we decide that the proof
 of concept is going to become the longterm solution the `proof-of-concept` label should be removed and the code in the
 repository should be reviewed to ensure that these guidelines are met (and any remedial action needed added to the issue
@@ -112,6 +112,7 @@ vault, authentication/authorization, cloud service accounts and permissions, com
 RBAC rules in various helm charts, changes to TLS configuration and so on.
 
 Non automated checks currently include:
+
 * for a PR that includes a new feature, ensure that there is an associated PR for documentation
 * That the commit message type (i.e. `fix`, `chore`, `feat` or `BREAKING CHANGE`) is correct as this will affect the release number used.
 * Changes introduced to debug or test the PR being committed (e.g. changes to the test repo in use)
@@ -140,7 +141,7 @@ but to check it won't cause a problem.
 # Future Enhancements Planned
 
 * Switch config on all repos to use `lgtm` plugin not `approval` plugin, except those with the `proof-of-concept` label
-* Consider using something like https://pullpanda.com/assigner to allocate reviewers automatically
+* Consider using something like <https://pullpanda.com/assigner> to allocate reviewers automatically
 * Add code coverage tools and implement a ratchet. For example, if the overall coverage is 40% then the coverage of the
   change would have to be 50%. We will decide the size of the ratchet as part of this. The goal here is to steadily
   improve the coverage

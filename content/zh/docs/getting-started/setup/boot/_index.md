@@ -17,18 +17,21 @@ _Jenkins X Boot_使用以下方法：
   * 使用Terraform创建您的kubernetes集群+相关的云资源
   * 使用您的云提供商Web控制台创建一个新的kubernetes集群
   * 使用 jx 命令行例如
+
 ```
 jx create cluster gke --skip-installation
 ```
 
-  * 使用选择的一些你们团队自定义工具，或者由您的运营团队提供给您的工具
+* 使用选择的一些你们团队自定义工具，或者由您的运营团队提供给您的工具
 
 * 安装成功以后，您可以通过以下方式验证是否可以与kubernetes集群正常沟通：
+
 ```
 kubectl get ns
 ```
 
 * 运行 [jx boot](/commands/jx_boot/) 命令行:
+
 ```
 jx boot
 ```
@@ -40,7 +43,6 @@ jx boot
 ### 关于 'jx boot'
 
 [jx boot](/commands/jx_boot/) 使用本地`jx`命令行的可执行文件来解析boot pipeline流水线定义，接着通过在kubernetes中的Tekton运行这个流水线来安装启动Jenkins X。 如果Jenkin X安装后了出了问题，您可以随时再次执行`jx boot`来恢复运行状态（例如，如果有人不小心删除了您的集群）。
-
 
 #### 安装前后验证方法
 
@@ -63,7 +65,7 @@ jx boot
 * 如果您正在使用Terraform来管理您的云资源
 * 如果您希望使用kaniko进行容器映像构建
 
-这是`jx boot`的主要配置文件，您可以在其中进行大部分更改。 您可能需要查看[jx-requirements.yml]（https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml）文件并进行任何需要更改。
+这是`jx boot`的主要配置文件，您可以在其中进行大部分更改。 您可能需要查看[jx-requirements.yml]（<https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml>）文件并进行任何需要更改。
 
 ## Secrets
 
@@ -115,9 +117,9 @@ Jenkins X 支持许多用于处理Webhook的引擎，还可以选择支持[ChatO
 
 ### Prow
 
-当用户选择 [Serverless Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) 的安装方式，安装后Jenkins X服务会使用 [Tekton](https://tekton.dev/)的流水线引擎和GitHub的git服务。 [Prow](/docs/reference/components/prow/) 是默认的webhook和[ChatOps](/docs/resources/faq/using/chatops/)的引擎。 
- 
-它的配置方式在 `jx-requirements.yml` 里 `webhook: prow` 
+当用户选择 [Serverless Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) 的安装方式，安装后Jenkins X服务会使用 [Tekton](https://tekton.dev/)的流水线引擎和GitHub的git服务。 [Prow](/docs/reference/components/prow/) 是默认的webhook和[ChatOps](/docs/resources/faq/using/chatops/)的引擎。
+
+它的配置方式在 `jx-requirements.yml` 里 `webhook: prow`
 
 ```yaml
 cluster:
@@ -175,7 +177,6 @@ Jenkins X支持许多不同的git服务。 您可以在[jx-requirements.yml](htt
 
 如果您没做任何改动，这些是默认设置。
 
-
 ```yaml
 cluster:
   environmentGitOwner: myorg
@@ -197,9 +198,9 @@ webhook: prow
 
 ### GitHub Enterprise
 
-配置与上面类似，但是您需要指定 `gitServer` 的URL (如果您用的git服务不是https://github.com) 和 `gitKind: github`
+配置与上面类似，但是您需要指定 `gitServer` 的URL (如果您用的git服务不是<https://github.com>) 和 `gitKind: github`
 
-```yaml   
+```yaml
 cluster:
   provider: gke
   environmentGitOwner: myorg
@@ -227,9 +228,9 @@ webhook: lighthouse
 
 ### Bitbucket Server
 
-您要指定 `gitServer` 和 `gitKind: bitbucketserver`. 如果您安装的是 [Serverless Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) 和 [Tekton](https://tekton.dev/)， 您需要通过指定 `webhook: lighthouse` 来使用[lighthouse webhook](#webhook)。   
+您要指定 `gitServer` 和 `gitKind: bitbucketserver`. 如果您安装的是 [Serverless Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) 和 [Tekton](https://tekton.dev/)， 您需要通过指定 `webhook: lighthouse` 来使用[lighthouse webhook](#webhook)。
 
-```yaml   
+```yaml
 cluster:
   provider: gke
   environmentGitOwner: myorg
@@ -259,7 +260,7 @@ webhook: lighthouse
 
 您要指定 `gitKind: bitbucketcloud`. 如果您安装的是 [Serverless Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) 和 [Tekton](https://tekton.dev/)， 您需要通过指定 `webhook: lighthouse` 来使用[lighthouse webhook](#webhook)。
 
-```yaml   
+```yaml
 cluster:
   provider: gke
   environmentGitOwner: myorg
@@ -284,12 +285,11 @@ storage:
 webhook: lighthouse
 ```
 
-
 ### Gitlab
 
 您要指定 `gitServer` 的URL 和 `gitKind: gitlab`. 如果您安装的是 [Serverless Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) 和 [Tekton](https://tekton.dev/)， 您需要通过指定 `webhook: lighthouse` 来使用[lighthouse webhook](#webhook)。
 
-```yaml   
+```yaml
 cluster:
   provider: gke
   environmentGitOwner: myorg
@@ -337,7 +337,6 @@ storage:
   repository:
     enabled: false
 ```
-
 
 您还可以在`storage`部分中指定存储分区的URL。支持以下URL语法：
 

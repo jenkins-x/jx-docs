@@ -24,6 +24,7 @@ Updates the git deployment status after a release
   jx-gitops helmfile status
 
   ```
+
 ### Options
 
 ```
@@ -31,8 +32,6 @@ Updates the git deployment status after a release
   -f, --fail         if enabled then fail the boot pipeline if we cannot report the deployment status
   -h, --help         help for status
 ```
-
-
 
 ### Source
 

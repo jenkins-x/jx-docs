@@ -24,14 +24,13 @@ Upgrades the binary plugins of the secret command (e.g. the helm binary)
   jx upgrade
 
   ```
+
 ### Options
 
 ```
       --bin string   if set creates a symlink in the bin dir to the plugin binary
   -h, --help         help for upgrade
 ```
-
-
 
 ### Source
 

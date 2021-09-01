@@ -11,7 +11,7 @@ author: CD Foundation
 ---
 Hear ye! Hear ye! Jenkins X Community,
 
-cdCon 2021 (the Continuous Delivery Foundation’s annual flagship event) is happening June 23-24 and its call for papers is open! 
+cdCon 2021 (the Continuous Delivery Foundation’s annual flagship event) is happening June 23-24 and its call for papers is open!
 
 This is your chance to share what you’ve been doing with Jenkins X. Are you building something cool? Using it to solve real-world problems? Are you making things fast? Secure? Or maybe you’re a contributor and want to share what’s new. In all cases, we want to hear from you!
 
@@ -20,7 +20,9 @@ Submit your talk for [cdCon 2021](https://events.linuxfoundation.org/cdcon/) to 
 **Submission Deadline**: Friday, March 5 at 11:59 PM PST
 
 ## Topics
+
 Here are the suggested tracks:
+
 * **Continuous Delivery Ecosystem** – This track spans the entire Continuous Delivery ecosystem, from workflow orchestration, configuration management, testing, security, release automation, deployment strategies, developer experience, and more.
 * **Advanced Delivery Techniques** – For talks on the very cutting edge of continuous delivery and emerging technology, for example, progressive delivery, observability, and MLOps.
 * **GitOps & Cloud-Native CD** – Submit to this track for talks related to continuous delivery involving containers, Kubernetes, and cloud*native technologies. This includes GitOps, cloud-native CD pipelines, chatops, best practices, etc.
@@ -29,6 +31,7 @@ Here are the suggested tracks:
 * **Community Track** – There is more to open source than code contributions. This track covers topics such as growing open source project communities, diversity & inclusion, measuring community health, project roadmaps, and any other topic around sustaining open source and open source communities.
 
 Singular project focus and/or interoperability between:
+
 * Jenkins
 * Jenkins X
 * Ortelius

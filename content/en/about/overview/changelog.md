@@ -15,7 +15,6 @@ Refer to the [Jenkins X Capabilities Matrix](/about/capabilities) for cloud prov
 
 This section describes any specific manual work arounds you may require above and beyond changes described in the [News section](/blog/news/) or using [jx upgrade](/commands/jx_upgrade/) to upgrade the [CLI](/commands/jx_upgrade_cli/) or [platform](/commands/deprecation/).
 
-
 ## 25th June 2019: missing image: bitnami/monocular-api
 
 It looks like the monocular docker images got removed today!
@@ -34,7 +33,6 @@ The latest [version stream release](/about/concepts/version-stream/) has removed
 ](/docs/resources/guides/managing-jx/common-tasks/upgrade-jx/) this issue should be resolved.
 
 We can always add monocular back as an optional [App](/docs/contributing/addons/) later on when it works again.
-
 
 ## 12th June 2019: Knative Build now deprecated
 
@@ -68,8 +66,7 @@ We have changed some of the default CLI arguments when installing Jenkins X.
 * we are now deprecating the use of Knative build with Prow / Serverless Jenkins in favor of [Jenkins X Pipelines and Tekton](/about/concepts/jenkins-x-pipelines/).
 * we default to using `--no-tiller`  to [disable the use of helm's tiller](/news/helm-without-tiller/). We recommend to avoid tiller. If you really still want to use it then use `--no-tiller false` on the CLI when installing Jenkins X.
 
-
-## 6th Feb 2019: Regression in `jx-install-config` secret.
+## 6th Feb 2019: Regression in `jx-install-config` secret
 
 We have spotted a regression in the install process that generates an invalid config file inside the secret `jx-install-config` secret.  Whilst the original defect has been fixed, the invalid secret will create an issue with `jx upgrade platform` causing the cluster to loose all secrets.
 
@@ -112,9 +109,9 @@ If you would prefer to apply this changes manually, edit the secret `jenkins-mav
 ## 8 Jan 2019: Prow and Knative Build upgrade
 
 There are three critical bugs with the prow based Jenkins X
-https://github.com/jenkins-x/jx/issues/2539
-https://github.com/jenkins-x/jx/issues/2561
-https://github.com/jenkins-x/jx/issues/2544
+<https://github.com/jenkins-x/jx/issues/2539>
+<https://github.com/jenkins-x/jx/issues/2561>
+<https://github.com/jenkins-x/jx/issues/2544>
 
 The fixes involve upgrading to a newer version of Prow and Knative Build, the latter caused an issue when performing a traditional `jx upgrade addon` so we recommend uninstalling Knative Build first (removes Knative Build related Custom Resource Definitions) and install the latest release.
 
@@ -137,7 +134,6 @@ jx upgrade addon prow
 
 But this means any existing builds or custom changes to `BuildTemplate` resources will be lost.
 
-
 ## 5 Jan 2019: environment git repository issue
 
 There was a regression added a few weeks ago which led to new installations setting up invalid `exposecontroller` configuration in your `Staging/Production` git repositories. See the [issue and workaround](https://github.com/jenkins-x/jx/issues/2591#issuecomment-451516674).
@@ -145,4 +141,3 @@ There was a regression added a few weeks ago which led to new installations sett
 Make sure that the `env/values.yaml` file for your environment git repository uses `expose:` as the key in the YAML and not `exposecontroller:` - if it uses `exposecontroller:` just edit it back to `expose:` and you should be good to go!
 
 Also we have noticed a possible regression with helm where if you have multiple `expose:` sections in your environment `env/values.yaml` it can disable the `exposecontroller` post install helm hook which can break the creation of `Ingress` resources in your environment - if you have more than one `expose:` sections please combine them into a single entry.
-

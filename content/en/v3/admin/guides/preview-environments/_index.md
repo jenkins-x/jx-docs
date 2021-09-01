@@ -32,7 +32,7 @@ helmfiles:
 
 The second step is to create the `helmfiles/osiris-system/helmfile.yaml` file, with the following content:
 
-```yaml 
+```yaml
 namespace: osiris-system
 releases:
 - chart: osiris/osiris
@@ -41,7 +41,7 @@ releases:
 
 Commit and push these changes, and after a few minutes you should see a few osiris pods running in the `osiris-system` namespace:
 
-```bash 
+```bash
 $ kubectl get pod -n osiris-system
 NAME                                           READY   STATUS    RESTARTS   AGE
 osiris-activator-696b8c85f9-99hnn              1/1     Running   0          31m
@@ -60,5 +60,6 @@ Osiris requires specific annotations to be added to your application's Deploymen
 The configuration is defined in a ["values file" stored in the Jenkins X Version Stream](https://github.com/jenkins-x/jx3-versions/tree/master/charts/osiris/osiris/values.yaml.gotmpl).
 
 If you want to change anything from the default configuration, you can either:
+
 - submit a Pull Request if you believe this change is beneficial for everybody
 - or create a new values file in your development environment git repositor: `values/osiris/values.yaml`

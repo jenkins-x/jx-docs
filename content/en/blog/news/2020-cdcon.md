@@ -10,7 +10,7 @@ slug: "cdcon2020"
 aliases: []
 author: Roxanne Joncas
 ---
-There will be six Jenkins X talks given by various speakers at the first-ever [CDCon](https://events.linuxfoundation.org/cdcon/) on October 7-8. The two-day virtual event, hosted by the Continuous Delivery Foundation, will focus on improving the world's capacity to deliver software with security and speed. 
+There will be six Jenkins X talks given by various speakers at the first-ever [CDCon](https://events.linuxfoundation.org/cdcon/) on October 7-8. The two-day virtual event, hosted by the Continuous Delivery Foundation, will focus on improving the world's capacity to deliver software with security and speed.
 
 [Register](https://events.linuxfoundation.org/cdcon/) to attend the virtual event for only 25 USD and get access to all of the following Jenkins X talks and more.
 

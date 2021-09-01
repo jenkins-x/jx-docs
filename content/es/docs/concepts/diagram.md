@@ -14,9 +14,6 @@ Existen varias arquitecturas basadas en cómo elige instalar Jenkins X. A contin
 </figcaption>
 </figure>
 
-
-
-
 <figure>
 <img src="/images/ArchitectureServerlessJenkins.png"/>
 <figcaption>

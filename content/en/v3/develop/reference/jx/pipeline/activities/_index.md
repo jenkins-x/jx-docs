@@ -30,6 +30,7 @@ Display the current activities for one or more projects.
   jx pipeline act -f foo -w
 
   ```
+
 ### Options
 
 ```
@@ -42,8 +43,6 @@ Display the current activities for one or more projects.
       --verbose            Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
   -w, --watch              Whether to watch the activities for changes
 ```
-
-
 
 ### Source
 

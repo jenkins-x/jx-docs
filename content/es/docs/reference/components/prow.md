@@ -64,6 +64,7 @@ Más tarde, podemos usar diferentes operadores de Kubernetes que reaccionan a lo
 Estos controladores administran [el ciclo de vida de un ProwJob](https://github.com/kubernetes/test-infra/blob/master/prow/life_of_a_prow_job.md).
 
 #### [plank](https://github.com/kubernetes/test-infra/tree/master/prow/plank)
+
 Plank es un operador de Kubernetes que reacciona a los recursos personalizados de ProwJob. Crea un Pod para ejecutar la compilación asociada con el objeto ProwJob. El objeto ProwJob en sí contiene un PodSpec.
 
 - Si ProwJob no tiene un Pod, crea un pod para ejecutar la construcción. Use init-container para hacer la obtención de VCS.
@@ -73,6 +74,7 @@ Plank es un operador de Kubernetes que reacciona a los recursos personalizados d
 Nosotros utilizamos construcciones Knative en Jenkins X, que utilizan el [controlador prow-build](https://github.com/kubernetes/test-infra/blob/master/prow/cmd/build/controller.go), por lo que no tiene que preocuparse por plank.
 
 #### [prow-build](https://github.com/kubernetes/test-infra/blob/master/prow/cmd/build/controller.go)
+
 Operador de Kubernetes que observa los objetos de ProwJob y reacciona a aquellos cuyo campo de agente es el agente de construcción Knative. Creará [un objeto Knative Build](https://github.com/knative/docs/blob/master/build/builds.md) basado en el campo `build_spec` del objeto ProwJob.
 [El controlador de construcción de Knative](https://github.com/knative/build/blob/master/cmd/controller/main.go) reacciona y crea un Pod para ejecutar la construcción. Todos los ProwJob, Build y Pod tienen el mismo nombre (un UUID).
 
@@ -124,6 +126,7 @@ Otro controlador de Kubernetes que mira CRD de ProwJobs. Contiene diferentes not
 Se utiliza para actualizar el estado de confirmación de GitHub cuando finaliza ProwJob.
 
 ## deck
+
 [Presenta una UI de trabajos recientes](https://prow.k8s.io/) e [información de ayuda de comandos/plugins](https://prow.k8s.io/command-help).
 
 ## tide

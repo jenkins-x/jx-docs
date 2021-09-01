@@ -40,8 +40,6 @@ Upgrades the GitOps git repository with the latest configuration and versions th
       --version-stream-dir string   the directory for the version stream. Defaults to 'versionStream' in the current --dir
 ```
 
-
-
 ### Source
 
 [jenkins-x-plugins/jx-gitops](https://github.com/jenkins-x-plugins/jx-gitops)
