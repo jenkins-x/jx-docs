@@ -67,6 +67,7 @@ There are some old labs images and helm charts which should not be in use as the
 2. In your boot git repository, run a search for references of `http://chartmuseum.jenkins-x.io` and `https://storage.googleapis.com/chartmuseum.jenkins-x.io` replace with `https://jenkins-x-charts.github.io/v2`
 
 3. Environment controller (can be skipped if not using)
+   i) change the environment controller image to be `ghcr.io/jenkins-x/builder-maven:0.1.803`
    i) change the image used in the pipline, needs to be changed in the jenkins-x.yaml of the enviromnet repo:
    ```
    agent:
