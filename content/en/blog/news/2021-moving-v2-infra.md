@@ -32,9 +32,25 @@ We will be shutting down a number of GCP projects that contain old helm charts p
  
 #### Helm
  
-`http://chartmuseum.jenkins-x.io` and `https://storage.googleapis.com/chartmuseum.jenkins-x.io` has been moved to `https://jenkins-x-charts.github.io/v2`
+```
+https://chartmuseum.build.cd.jenkins-x.io
+http://chartmuseum.jenkins-x.io
+https://storage.googleapis.com/chartmuseum.jenkins-x.io
+``` 
+have been moved to 
+```
+https://jenkins-x-charts.github.io/v2
+```
  
-`https://storage.googleapis.com/jenkinsxio/charts` has moved to `https://jenkins-x-charts.github.io/repo`
+AND
+
+```
+https://storage.googleapis.com/jenkinsxio/charts
+``` 
+has been moved to 
+``
+https://jenkins-x-charts.github.io/repo
+```
 
 #### Images
  
@@ -49,6 +65,18 @@ There are some old labs images and helm charts which should not be in use as the
 1. The Jenkins X own v2 build infrastructure was retired at the start of the year as no more releases were planned and to reduce costs.  With that we are unable to perform a new release that automatically switches references to images from `gcr.io/jenkinsxio` to `ghcr.io/jenkins-x`.  If you are still using v2 then please update your references to this container registry.  An alternative __which has not yet been verified__ is to use a [image swap Kubernetes mutaing admission controller](https://github.com/phenixblue/imageswap-webhook) which takes configuration to switch the registry on the fly.  [We have asked on slack](https://github.com/phenixblue/imageswap-webhook) for help validating the approach so if you do try it please share feedback and config used to help others in the channel, we can then update docs.
  
 2. In your boot git repository, run a search for references of `http://chartmuseum.jenkins-x.io` and `https://storage.googleapis.com/chartmuseum.jenkins-x.io` replace with `https://jenkins-x-charts.github.io/v2`
+
+3. Environment controller (can be skipped if not using)
+   i) change the image used in the pipline, needs to be changed in the jenkins-x.yaml of the enviromnet repo:
+   ```
+   agent:
+    container: ghcr.io/jenkins-x/builder-go:2.1.155-779
+   ```
+   ii) add this environment variable in the deployment of the environment-controller
+   ```
+    - name: BUILDER_JX_IMAGE
+      value: ghcr.io/jenkins-x/builder-jx:2.1.155-779
+   ```
  
 Have we missed anything?  Please contribute to this blog or feedback on the slack channel.
  
