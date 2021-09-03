@@ -68,12 +68,12 @@ There are some old labs images and helm charts which should not be in use as the
 
 3. Environment controller (can be skipped if not using)
    i) change the environment controller image to be `ghcr.io/jenkins-x/builder-maven:0.1.803`
-   i) change the image used in the pipline, needs to be changed in the jenkins-x.yaml of the enviromnet repo:
+   ii) change the image used in the pipline, needs to be changed in the jenkins-x.yaml of the enviromnet repo:
    ```
    agent:
     container: ghcr.io/jenkins-x/builder-go:2.1.155-779
    ```
-   ii) add this environment variable in the deployment of the environment-controller
+   iii) add this environment variable in the deployment of the environment-controller
    ```
     - name: BUILDER_JX_IMAGE
       value: ghcr.io/jenkins-x/builder-jx:2.1.155-779
