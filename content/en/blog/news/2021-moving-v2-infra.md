@@ -31,24 +31,22 @@ We apologise for any extra work caused however, this is required to preserve the
 We will be shutting down a number of GCP projects that contain old helm charts plus container images and moving them to be hosted by GitHub packages and pages.
  
 #### Helm
- 
+
 ```
 https://chartmuseum.build.cd.jenkins-x.io
 http://chartmuseum.jenkins-x.io
 https://storage.googleapis.com/chartmuseum.jenkins-x.io
 ``` 
-have been moved to 
+have been moved to
 ```
 https://jenkins-x-charts.github.io/v2
 ```
- 
 AND
-
 ```
 https://storage.googleapis.com/jenkinsxio/charts
 ``` 
 has been moved to 
-``
+```
 https://jenkins-x-charts.github.io/repo
 ```
 
@@ -66,7 +64,12 @@ There are some old labs images and helm charts which should not be in use as the
  
 2. In your boot git repository, run a search for references of `http://chartmuseum.jenkins-x.io` and `https://storage.googleapis.com/chartmuseum.jenkins-x.io` replace with `https://jenkins-x-charts.github.io/v2`
 
-3. Environment controller (can be skipped if not using)
+3. Change the `lighthouse-jx-controller` deployment to use an environment variable
+```
+JX_DEFAULT_IMAGE=ghcr.io/jenkins-x/builder-maven:2.1.149-768-patch2
+```
+
+4. Environment controller (can be skipped if not using)
    i) change the environment controller image to be `ghcr.io/jenkins-x/builder-maven:0.1.803`
    ii) change the image used in the pipline, needs to be changed in the jenkins-x.yaml of the enviromnet repo:
    ```
@@ -109,3 +112,35 @@ Have we missed anything?  Please contribute to this blog or feedback on the slac
 ## Why are only the most recent versions v2 images copied to GitHub packages and not all versions?
  
 There are 14 Terabytes of data that make up the jenkinsxio container registry on GCP, it would be costly and wasteful to transfer all this to GitHub so we picked the last known version of each image that was released last year.  If there are specific images that you wish to use either pull / push them yourself to a container registry of your own or reach out and on a case by case effort, we can look to move them to GitHub while the read permissions are made private and before the project is shut down.
+
+## I'm on v2 and use a builder image which is not available on GitHub container registry, how do I build my own version to work with the new helm and image repositories?
+
+The old v2 jx code [lives on a branch](https://github.com/jenkins-x/jx/tree/v2) you will need to:
+
+- fork this branch
+- apply search and replace changes for 
+  i) gcr.io/jenkinsxio to ghcr.io/jenkins-x [example](https://github.com/jenkins-x/jx/commit/9d5f1aa6421a22e311d12482893586a45b485ac8)
+  ii) https://storage.googleapis.com/chartmuseum.jenkins-x.io to https://jenkins-x-charts.github.io/v2 [example](https://github.com/jenkins-x/jx/commit/88965b1696c81349f4e330aeb98ec5e26116341c)
+- run `make linux` to build the updated jx binary
+- build and push the images you require, for example
+```
+docker build -f Dockerfile.builder-maven -t ghcr.io/jenkins-x/builder-maven:2.1.149-768-patch2 .
+docker push ghcr.io/jenkins-x/builder-maven:2.1.149-768-patch2
+```
+
+once the builder-jx/go/maven/etc.. are pushed, you will need to configure the charts:
+
+- if a chart allows the image to be overridden using a value you can add that to your env/values.tmpl.yaml, replacing current gcr.io/jenkinsxio images with ghcr.io/jenkins-x
+e.g.
+```
+jenkins-x-platform:
+  gcpreviews:
+    image:
+      repository: ghcr.io/jenkins-x/builder-jx
+      tag: [your custom tag]
+```
+if you cannot override the image using a helm value you may need to:
+- download each needed chart/subchart needed to make jx work, exemple for jenkins-x-platform/, jxboot-resources/releases
+- for each charts/subcharts replace current gcr.io/jenkinsxio images with ghcr.io/jenkins-x if it exists or rebuild and host them on a private registry if not
+- host updated charts on a private chartmuseum
+- switch boot git repo to use custom charts
