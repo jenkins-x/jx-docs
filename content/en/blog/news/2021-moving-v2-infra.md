@@ -74,7 +74,7 @@ JX_DEFAULT_IMAGE=ghcr.io/jenkins-x/builder-maven:2.1.149-768-patch2
    ii) change the image used in the pipline, needs to be changed in the jenkins-x.yaml of the enviromnet repo:
    ```
    agent:
-    container: ghcr.io/jenkins-x/builder-go:2.1.155-779
+    container: ghcr.io/jenkins-x/builder-go:2.1.149-768-patch2
    ```
    iii) add this environment variable in the deployment of the environment-controller
    ```
