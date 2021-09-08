@@ -76,7 +76,7 @@ JX_DEFAULT_IMAGE=ghcr.io/jenkins-x/builder-maven:2.1.155-778-patch2
    ii) change the image used in the pipeline, needs to be changed in the jenkins-x.yaml of the enviromnet repo:
    ```
    agent:
-    container: ghcr.io/jenkins-x/builder-go:2.1.155-779-patch2
+    container: ghcr.io/jenkins-x/builder-jx:2.1.155-779-patch2
    ```
    iii) add this environment variable in the deployment of the environment-controller
    ```
@@ -168,7 +168,7 @@ Have we missed anything?  Please contribute to this blog or feedback on the slac
 There is not expected to be significant disruption to v3 users but if there is anything needed beyond the steps below then we are asking users to reach out asap and we can update this blog.
 
 
-1. Run `jx upgrade gitops` to ensure you upgrade to the latest version stream with the old helm repository removed. If you are tracking the LTS version stream please delay until Wednesday 1st September to run this.
+1. Run `jx gitops upgrade` to ensure you upgrade to the latest version stream with the old helm repository removed. If you are tracking the LTS version stream please delay until Wednesday 1st September to run this.
  
 2. In your cluster git repository, run a search for references of `https://storage.googleapis.com/jenkinsxio/charts` replace with `https://jenkins-x-charts.github.io/repo`
  
