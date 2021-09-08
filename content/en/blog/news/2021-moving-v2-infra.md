@@ -66,12 +66,14 @@ There are some old labs images and helm charts which should not be in use as the
 
 3. Change the `lighthouse-jx-controller` deployment to use an environment variable
 ```
-JX_DEFAULT_IMAGE=ghcr.io/jenkins-x/builder-maven:2.1.149-768-patch2
+JX_DEFAULT_IMAGE=ghcr.io/jenkins-x/builder-maven:2.1.155-778-patch2
 ```
 
 4. Environment controller (can be skipped if not using)
+
    i) change the environment controller image to be `ghcr.io/jenkins-x/builder-maven:0.1.803`
-   ii) change the image used in the pipline, needs to be changed in the jenkins-x.yaml of the enviromnet repo:
+
+   ii) change the image used in the pipeline, needs to be changed in the jenkins-x.yaml of the enviromnet repo:
    ```
    agent:
     container: ghcr.io/jenkins-x/builder-jx:2.1.155-779-patch2
@@ -82,6 +84,83 @@ JX_DEFAULT_IMAGE=ghcr.io/jenkins-x/builder-maven:2.1.149-768-patch2
       value: ghcr.io/jenkins-x/builder-jx:2.1.155-779-patch2
    ```
  
+5. In your boot git repository, set the following values for  `env/jenkins-x-platform` deployment:
+
+   |Value||
+   |---|---|
+   | **expose.Image** | ghcr.io/jenkins-x/exposecontroller |
+   | **expose.ImageTag** | 2.3.118 |
+   | **cleanup.Image** | ghcr.io/jenkins-x/exposecontroller |
+   | **cleanup.ImageTag** | 2.3.118 |
+   | **controllerbuild.image.repository** | ghcr.io/jenkins-x/builder-jx |
+   | **controllerbuild.image.tag** | 2.1.155-779-patch2 |
+   | **controllerbuild.env.BUILDER_JX_IMAGE** | ghcr.io/jenkins-x/builder-jx:2.1.155-779-patch2 |
+   | **postinstalljob.image.repository** | ghcr.io/jenkins-x/builder-jx |
+   | **postinstalljob.image.tag** | 2.1.155-779-patch2 |
+   | **postinstalljob.env.BUILDER_JX_IMAGE** | ghcr.io/jenkins-x/builder-jx:2.1.155-779-patch2 |
+   | **controllerrole.image.repository** | ghcr.io/jenkins-x/builder-jx |
+   | **controllerrole.image.tag** | 2.1.155-779-patch2 |
+   | **controllerrole.env.BUILDER_JX_IMAGE** | ghcr.io/jenkins-x/builder-jx:2.1.155-779-patch2 |
+   | **gcpreviews.image.repository** | ghcr.io/jenkins-x/builder-jx |
+   | **gcpreviews.image.tag** | 2.1.155-779-patch2 |
+   | **gcpreviews.env.BUILDER_JX_IMAGE** | ghcr.io/jenkins-x/builder-jx:2.1.155-779-patch2 |
+   | **gcactivities.image.repository** | ghcr.io/jenkins-x/builder-jx |
+   | **gcactivities.image.tag** | 2.1.155-779-patch2 |
+   | **gcactivities.env.BUILDER_JX_IMAGE** | ghcr.io/jenkins-x/builder-jx:2.1.155-779-patch2 |
+   | **gcpods.image.repository** | ghcr.io/jenkins-x/builder-jx |
+   | **gcpods.image.tag** | 2.1.155-779-patch2 |
+   | **gcpods.env.BUILDER_JX_IMAGE** | ghcr.io/jenkins-x/builder-jx:2.1.155-779-patch2 |
+
+6. In your boot git repository, set the following values for  `env/lighthouse-jx` deployment:
+
+   |Value||
+   |---|---|
+   | **image.parentRepository** | ghcr.io/jenkins-x |
+   | **image.tag** | 0.0.164 |
+   | **jxcontroller.image.repository** | ghcr.io/jenkins-x/lighthouse-jx-controller |
+   | **jxcontroller.image.tag** | 0.0.164 |
+   | **env.JX_DEFAULT_IMAGE** | ghcr.io/jenkins-x/builder-maven:2.1.155-778-patch2 |
+
+7. In your boot git repository, set the following values for  `env/lighthouse` deployment:
+
+   |Value||
+   |---|---|
+   | **image.parentRepository** | ghcr.io/jenkins-x |
+   | **image.repository** | ghcr.io/jenkins-x/lighthouse |
+   | **env.JX_DEFAULT_IMAGE** | ghcr.io/jenkins-x/builder-maven:2.1.155-778-patch2 |
+
+8. In your boot git repository, update the `jenkins-x.yml` replacing any reference to `image: gcr.io/jenkinsxio/builder-go:2.1.155-778` with `image: ghcr.io/jenkins-x/builder-go:2.1.155-778-patch2`
+
+9. In your boot git repository, update the `jenkins-x-release.yml` replacing any reference to `image: gcr.io/jenkinsxio/builder-go:2.1.155-778` with `image: ghcr.io/jenkins-x/builder-go:2.1.155-778-patch2`
+ 
+10. In your boot git repository, update the `systems/jxing/values.tmpl.yaml` setting
+
+   |Value||
+   |---|---|
+   | **nginx-ingress.controller.image.repository** | ghcr.io/jenkins-x/nginx-ingress-controller |
+
+11. In any environment managed repository (e.g. environment-*-staging | production) update `env/values.yaml`: 
+
+   |Value||
+   |---|---|
+   | **expose.Image** | ghcr.io/jenkins-x/exposecontroller |
+   | **expose.ImageTag** | 2.3.118 |
+   | **cleanup.Image** | ghcr.io/jenkins-x/exposecontroller |
+   | **cleanup.ImageTag** | 2.3.118 |
+
+12. In any environment managed repository (e.g. environment-*-staging | production) update `env/requirements.yaml` replacing any exposecontroller repository url with `https://jenkins-x-charts.github.io/v2`
+    
+   ```
+   - alias: expose
+     name: exposecontroller
+     repository: https://jenkins-x-charts.github.io/v2
+     version: 2.3.118
+   - alias: cleanup
+     name: exposecontroller
+     repository: https://jenkins-x-charts.github.io/v2
+     version: 2.3.118
+   ```
+
 Have we missed anything?  Please contribute to this blog or feedback on the slack channel.
  
 ### v3 users
