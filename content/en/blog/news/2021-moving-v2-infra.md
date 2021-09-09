@@ -176,6 +176,8 @@ There is not expected to be significant disruption to v3 users but if there is a
  
 4. Switch `jx-verify` helm chart repository for any application you have which is built by Jenkins X 3.  This is under your applications git repository `./charts/preview/helmfile.yaml` change `https://storage.googleapis.com/jenkinsxio/charts` to `https://jenkins-x-charts.github.io/repo` .  [Here](https://github.com/jenkins-x/jx3-pipeline-catalog/commit/ed01d636b94b2ea51b878d9b5331bc4c88f6e8b1) is an example that changes the main pipeline catalog packs which are used when first creating or importing applications.
 
+5. Switch any `gcr.io/jenkinsxio` images to `ghcr.io/jenkins-x` in your application git repo `.lighthouse/*.yaml` files if you have references there
+
 Have we missed anything?  Please contribute to this blog or feedback on the slack channel.
  
 ## When will all this take place?
@@ -223,3 +225,55 @@ if you cannot override the image using a helm value you may need to:
 - for each charts/subcharts replace current gcr.io/jenkinsxio images with ghcr.io/jenkins-x if it exists or rebuild and host them on a private registry if not
 - host updated charts on a private chartmuseum
 - switch boot git repo to use custom charts
+
+## I'm getting a missing arg `--provider-values-dir` and helm repository https://jenkins-x-charts.github.io/v2 does not have an associated prefix in in the 'charts/repositories.yml' error
+
+A few users have been hitting this error, it is related to the jx version used.  This thread with the help of Francesco Capozzo contains both image tags and versions to use instead:
+
+https://kubernetes.slack.com/archives/C9MBGQJRH/p1631112970450800
+
+Images: 
+```
+ghcr.io/jenkins-x/builder-jx:2.1.142-761-patch2
+ghcr.io/jenkins-x/builder-maven:2.1.142-761-patch2
+ghcr.io/jenkins-x/builder-go:2.1.142-761-patch2
+```
+
+Chart versions to use rather than relying on the version stream:
+
+```
+dependencies:
+* name: jxboot-resources
+  repository: https://jenkins-x-charts.github.io/v2
+  version: 0.0.43
+* alias: tekton
+  name: tekton
+  repository: https://jenkins-x-charts.github.io/v2
+  version: 0.0.63
+* alias: prow
+  condition: prow.enabled
+  name: prow
+  repository: https://jenkins-x-charts.github.io/v2
+  version: 0.0.1773
+* alias: lighthouse
+  condition: lighthouse.enabled
+  name: lighthouse
+  repository: https://jenkins-x-charts.github.io/v2
+  version: 0.0.843
+* alias: lighthouse-jx
+  condition: lighthouse.enabled
+  name: lighthouse-jx
+  repository: https://jenkins-x-charts.github.io/v2
+  version: 0.0.121
+* alias: bucketrepo
+  condition: bucketrepo.enabled
+  name: bucketrepo
+  repository: https://jenkins-x-charts.github.io/v2
+  version: 0.1.42
+* name: jenkins-x-platform
+  repository: https://jenkins-x-charts.github.io/v2
+  version: 2.0.2411
+* name: jx-pipelines-visualizer
+  repository: https://jenkins-x-charts.github.io/repo
+  version: 1.7.3
+```
