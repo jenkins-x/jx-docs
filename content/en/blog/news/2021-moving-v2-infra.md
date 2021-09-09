@@ -71,17 +71,17 @@ JX_DEFAULT_IMAGE=ghcr.io/jenkins-x/builder-maven:2.1.155-778-patch3
 
 4. Environment controller (can be skipped if not using)
 
-   i) change the environment controller image to be `ghcr.io/jenkins-x/builder-maven:0.1.803`
+   i) change the environment controller image to be `ghcr.io/jenkins-x/builder-maven:2.1.155-778-patch3`
 
    ii) change the image used in the pipeline, needs to be changed in the jenkins-x.yaml of the enviromnet repo:
    ```
    agent:
-    container: ghcr.io/jenkins-x/builder-jx:2.1.155-779-patch3
+    container: ghcr.io/jenkins-x/builder-jx:2.1.155-778-patch3
    ```
    iii) add this environment variable in the deployment of the environment-controller
    ```
     - name: BUILDER_JX_IMAGE
-      value: ghcr.io/jenkins-x/builder-jx:2.1.155-779-patch3
+      value: ghcr.io/jenkins-x/builder-jx:2.1.155-778-patch3
    ```
  
 5. In your boot git repository, set the following values for  `env/jenkins-x-platform` deployment:
@@ -93,23 +93,23 @@ JX_DEFAULT_IMAGE=ghcr.io/jenkins-x/builder-maven:2.1.155-778-patch3
    | **cleanup.Image** | ghcr.io/jenkins-x/exposecontroller |
    | **cleanup.ImageTag** | 2.3.118 |
    | **controllerbuild.image.repository** | ghcr.io/jenkins-x/builder-jx |
-   | **controllerbuild.image.tag** | 2.1.155-779-patch3 |
-   | **controllerbuild.env.BUILDER_JX_IMAGE** | ghcr.io/jenkins-x/builder-jx:2.1.155-779-patch3 |
+   | **controllerbuild.image.tag** | 2.1.155-778-patch3 |
+   | **controllerbuild.env.BUILDER_JX_IMAGE** | ghcr.io/jenkins-x/builder-jx:2.1.155-778-patch3 |
    | **postinstalljob.image.repository** | ghcr.io/jenkins-x/builder-jx |
-   | **postinstalljob.image.tag** | 2.1.155-779-patch3 |
-   | **postinstalljob.env.BUILDER_JX_IMAGE** | ghcr.io/jenkins-x/builder-jx:2.1.155-779-patch3 |
+   | **postinstalljob.image.tag** | 2.1.155-778-patch3 |
+   | **postinstalljob.env.BUILDER_JX_IMAGE** | ghcr.io/jenkins-x/builder-jx:2.1.155-778-patch3 |
    | **controllerrole.image.repository** | ghcr.io/jenkins-x/builder-jx |
-   | **controllerrole.image.tag** | 2.1.155-779-patch3 |
-   | **controllerrole.env.BUILDER_JX_IMAGE** | ghcr.io/jenkins-x/builder-jx:2.1.155-779-patch3 |
+   | **controllerrole.image.tag** | 2.1.155-778-patch3 |
+   | **controllerrole.env.BUILDER_JX_IMAGE** | ghcr.io/jenkins-x/builder-jx:2.1.155-778-patch3 |
    | **gcpreviews.image.repository** | ghcr.io/jenkins-x/builder-jx |
-   | **gcpreviews.image.tag** | 2.1.155-779-patch3 |
-   | **gcpreviews.env.BUILDER_JX_IMAGE** | ghcr.io/jenkins-x/builder-jx:2.1.155-779-patch3 |
+   | **gcpreviews.image.tag** | 2.1.155-778-patch3 |
+   | **gcpreviews.env.BUILDER_JX_IMAGE** | ghcr.io/jenkins-x/builder-jx:2.1.155-778-patch3 |
    | **gcactivities.image.repository** | ghcr.io/jenkins-x/builder-jx |
-   | **gcactivities.image.tag** | 2.1.155-779-patch3 |
-   | **gcactivities.env.BUILDER_JX_IMAGE** | ghcr.io/jenkins-x/builder-jx:2.1.155-779-patch3 |
+   | **gcactivities.image.tag** | 2.1.155-778-patch3 |
+   | **gcactivities.env.BUILDER_JX_IMAGE** | ghcr.io/jenkins-x/builder-jx:2.1.155-778-patch3 |
    | **gcpods.image.repository** | ghcr.io/jenkins-x/builder-jx |
-   | **gcpods.image.tag** | 2.1.155-779-patch3 |
-   | **gcpods.env.BUILDER_JX_IMAGE** | ghcr.io/jenkins-x/builder-jx:2.1.155-779-patch3 |
+   | **gcpods.image.tag** | 2.1.155-778-patch3 |
+   | **gcpods.env.BUILDER_JX_IMAGE** | ghcr.io/jenkins-x/builder-jx:2.1.155-778-patch3 |
 
 6. In your boot git repository, set the following values for  `env/lighthouse-jx` deployment:
 
