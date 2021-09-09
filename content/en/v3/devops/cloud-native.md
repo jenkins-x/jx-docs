@@ -2,33 +2,29 @@
 title: Cloud Native
 linktitle: Cloud Native
 type: docs
-description: Cloud Native recommendations
+description: Recomendações Cloud Native 
 weight: 200
 ---
 
-One of the [Accelerate](/v3/devops/accelerate/) recommendations is around using the cloud well; letting developers use the cloud to solve software problems.
+Uma das recomendações do [Accelerate](/v3/devops/accelerate/) é sobre usar nuvens bem; deixando os desenvolvedores usar nuvens para resolver porblemas de software. 
 
-Here are a few of the lessons we have learnt about using the cloud well.
+Aqui estão algumas das lições que aprendemos sobre usar bem nuvens.  
+## Dê preferencia às nuvens do que kubernetes
 
+Você pode fazer o deploy da base de dados via a helm chart no seu cluster de kubernetes. Ou  você pode configurar seu provedor de nuvem para criar um base de dados gerenciável. 
 
-## Prefer cloud over kubernetes
-
-You can deploy a database via a helm chart in your kubernetes cluster. Or you can configure your cloud provider to create a managed database offering.
-
-You can deploy, say, [vault](https://www.vaultproject.io/) as helm charts inside your kubernetes cluster. Or you can use your cloud providers secret store solution such as:
+Você pode fazer o deploy, digamos,  [vault](https://www.vaultproject.io/) como helm charts  dentro do seu cluster de kubernetes. Ou você pode usar seu armazenamento secreto do provedor de nuvem como, por exemplo:
 
 * Alibaba Cloud KMS Secret Manager
 * Amazon Secret Manager
 * Azure Key Vault
 * GCP Secret Manager
 
-We recommend that if you have a choice; go with the cloud version. 
+Nós recomendamos que se você tiver escolha; vá com a versão em nuvem.
 
-The main reason is these kinds of things are undifferentiated heavy lifting. Your cloud provider already can install, upgrade, backup and manage these services for you.
+O motivo principal é que essas coisas são de toda forma trabalhosas. Seu provedor de nuvem pode instalar, atualizar, fazero backup e gerenciar esses serviços para você. 
 
-If you go with helm charts inside kubernetes then you need to make sure you backup to long term storage all the data (e.g. every Persistent Volume) and test out your backup and restore mechanisms.
-
-
+Se você for com helm charts dentro do kubernetes então você precisa ter certeza de fazer o backup quer irá armazenar todos os dados  e testar seu backup e mecanismos de restauração. 
 ### Prefer cloud databases
 
 As your cloud provider can handle backups, upgrades and elastic scaling for you.
