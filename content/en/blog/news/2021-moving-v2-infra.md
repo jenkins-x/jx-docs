@@ -66,7 +66,7 @@ There are some old labs images and helm charts which should not be in use as the
 
 3. Change the `lighthouse-jx-controller` deployment to use an environment variable
 ```
-JX_DEFAULT_IMAGE=ghcr.io/jenkins-x/builder-maven:2.1.155-778-patch2
+JX_DEFAULT_IMAGE=ghcr.io/jenkins-x/builder-maven:2.1.155-778-patch3
 ```
 
 4. Environment controller (can be skipped if not using)
@@ -76,12 +76,12 @@ JX_DEFAULT_IMAGE=ghcr.io/jenkins-x/builder-maven:2.1.155-778-patch2
    ii) change the image used in the pipeline, needs to be changed in the jenkins-x.yaml of the enviromnet repo:
    ```
    agent:
-    container: ghcr.io/jenkins-x/builder-jx:2.1.155-779-patch2
+    container: ghcr.io/jenkins-x/builder-jx:2.1.155-779-patch3
    ```
    iii) add this environment variable in the deployment of the environment-controller
    ```
     - name: BUILDER_JX_IMAGE
-      value: ghcr.io/jenkins-x/builder-jx:2.1.155-779-patch2
+      value: ghcr.io/jenkins-x/builder-jx:2.1.155-779-patch3
    ```
  
 5. In your boot git repository, set the following values for  `env/jenkins-x-platform` deployment:
@@ -93,23 +93,23 @@ JX_DEFAULT_IMAGE=ghcr.io/jenkins-x/builder-maven:2.1.155-778-patch2
    | **cleanup.Image** | ghcr.io/jenkins-x/exposecontroller |
    | **cleanup.ImageTag** | 2.3.118 |
    | **controllerbuild.image.repository** | ghcr.io/jenkins-x/builder-jx |
-   | **controllerbuild.image.tag** | 2.1.155-779-patch2 |
-   | **controllerbuild.env.BUILDER_JX_IMAGE** | ghcr.io/jenkins-x/builder-jx:2.1.155-779-patch2 |
+   | **controllerbuild.image.tag** | 2.1.155-779-patch3 |
+   | **controllerbuild.env.BUILDER_JX_IMAGE** | ghcr.io/jenkins-x/builder-jx:2.1.155-779-patch3 |
    | **postinstalljob.image.repository** | ghcr.io/jenkins-x/builder-jx |
-   | **postinstalljob.image.tag** | 2.1.155-779-patch2 |
-   | **postinstalljob.env.BUILDER_JX_IMAGE** | ghcr.io/jenkins-x/builder-jx:2.1.155-779-patch2 |
+   | **postinstalljob.image.tag** | 2.1.155-779-patch3 |
+   | **postinstalljob.env.BUILDER_JX_IMAGE** | ghcr.io/jenkins-x/builder-jx:2.1.155-779-patch3 |
    | **controllerrole.image.repository** | ghcr.io/jenkins-x/builder-jx |
-   | **controllerrole.image.tag** | 2.1.155-779-patch2 |
-   | **controllerrole.env.BUILDER_JX_IMAGE** | ghcr.io/jenkins-x/builder-jx:2.1.155-779-patch2 |
+   | **controllerrole.image.tag** | 2.1.155-779-patch3 |
+   | **controllerrole.env.BUILDER_JX_IMAGE** | ghcr.io/jenkins-x/builder-jx:2.1.155-779-patch3 |
    | **gcpreviews.image.repository** | ghcr.io/jenkins-x/builder-jx |
-   | **gcpreviews.image.tag** | 2.1.155-779-patch2 |
-   | **gcpreviews.env.BUILDER_JX_IMAGE** | ghcr.io/jenkins-x/builder-jx:2.1.155-779-patch2 |
+   | **gcpreviews.image.tag** | 2.1.155-779-patch3 |
+   | **gcpreviews.env.BUILDER_JX_IMAGE** | ghcr.io/jenkins-x/builder-jx:2.1.155-779-patch3 |
    | **gcactivities.image.repository** | ghcr.io/jenkins-x/builder-jx |
-   | **gcactivities.image.tag** | 2.1.155-779-patch2 |
-   | **gcactivities.env.BUILDER_JX_IMAGE** | ghcr.io/jenkins-x/builder-jx:2.1.155-779-patch2 |
+   | **gcactivities.image.tag** | 2.1.155-779-patch3 |
+   | **gcactivities.env.BUILDER_JX_IMAGE** | ghcr.io/jenkins-x/builder-jx:2.1.155-779-patch3 |
    | **gcpods.image.repository** | ghcr.io/jenkins-x/builder-jx |
-   | **gcpods.image.tag** | 2.1.155-779-patch2 |
-   | **gcpods.env.BUILDER_JX_IMAGE** | ghcr.io/jenkins-x/builder-jx:2.1.155-779-patch2 |
+   | **gcpods.image.tag** | 2.1.155-779-patch3 |
+   | **gcpods.env.BUILDER_JX_IMAGE** | ghcr.io/jenkins-x/builder-jx:2.1.155-779-patch3 |
 
 6. In your boot git repository, set the following values for  `env/lighthouse-jx` deployment:
 
@@ -119,7 +119,7 @@ JX_DEFAULT_IMAGE=ghcr.io/jenkins-x/builder-maven:2.1.155-778-patch2
    | **image.tag** | 0.0.164 |
    | **jxcontroller.image.repository** | ghcr.io/jenkins-x/lighthouse-jx-controller |
    | **jxcontroller.image.tag** | 0.0.164 |
-   | **env.JX_DEFAULT_IMAGE** | ghcr.io/jenkins-x/builder-maven:2.1.155-778-patch2 |
+   | **env.JX_DEFAULT_IMAGE** | ghcr.io/jenkins-x/builder-maven:2.1.155-778-patch3 |
 
 7. In your boot git repository, set the following values for  `env/lighthouse` deployment:
 
@@ -127,11 +127,11 @@ JX_DEFAULT_IMAGE=ghcr.io/jenkins-x/builder-maven:2.1.155-778-patch2
    |---|---|
    | **image.parentRepository** | ghcr.io/jenkins-x |
    | **image.repository** | ghcr.io/jenkins-x/lighthouse |
-   | **env.JX_DEFAULT_IMAGE** | ghcr.io/jenkins-x/builder-maven:2.1.155-778-patch2 |
+   | **env.JX_DEFAULT_IMAGE** | ghcr.io/jenkins-x/builder-maven:2.1.155-778-patch3 |
 
-8. In your boot git repository, update the `jenkins-x.yml` replacing any reference to `image: gcr.io/jenkinsxio/builder-go:2.1.155-778` with `image: ghcr.io/jenkins-x/builder-go:2.1.155-778-patch2`
+8. In your boot git repository, update the `jenkins-x.yml` replacing any reference to `image: gcr.io/jenkinsxio/builder-go:2.1.155-778` with `image: ghcr.io/jenkins-x/builder-go:2.1.155-778-patch3`
 
-9. In your boot git repository, update the `jenkins-x-release.yml` replacing any reference to `image: gcr.io/jenkinsxio/builder-go:2.1.155-778` with `image: ghcr.io/jenkins-x/builder-go:2.1.155-778-patch2`
+9. In your boot git repository, update the `jenkins-x-release.yml` replacing any reference to `image: gcr.io/jenkinsxio/builder-go:2.1.155-778` with `image: ghcr.io/jenkins-x/builder-go:2.1.155-778-patch3`
  
 10. In your boot git repository, update the `systems/jxing/values.tmpl.yaml` setting
 
@@ -205,8 +205,8 @@ The old v2 jx code [lives on a branch](https://github.com/jenkins-x/jx/tree/v2) 
 - run `make linux` to build the updated jx binary
 - build and push the images you require, for example
 ```
-docker build -f Dockerfile.builder-maven -t ghcr.io/jenkins-x/builder-maven:2.1.149-768-patch2 .
-docker push ghcr.io/jenkins-x/builder-maven:2.1.149-768-patch2
+docker build -f Dockerfile.builder-maven -t ghcr.io/jenkins-x/builder-maven:2.1.149-768-patch3 .
+docker push ghcr.io/jenkins-x/builder-maven:2.1.149-768-patch3
 ```
 
 once the builder-jx/go/maven/etc.. are pushed, you will need to configure the charts:
@@ -234,9 +234,9 @@ https://kubernetes.slack.com/archives/C9MBGQJRH/p1631112970450800
 
 Images: 
 ```
-ghcr.io/jenkins-x/builder-jx:2.1.142-761-patch2
-ghcr.io/jenkins-x/builder-maven:2.1.142-761-patch2
-ghcr.io/jenkins-x/builder-go:2.1.142-761-patch2
+ghcr.io/jenkins-x/builder-jx:2.1.142-761-patch3
+ghcr.io/jenkins-x/builder-maven:2.1.142-761-patch3
+ghcr.io/jenkins-x/builder-go:2.1.142-761-patch3
 ```
 
 Chart versions to use rather than relying on the version stream:
