@@ -95,7 +95,7 @@ spec:
             - https://jenkins-x.io
 
         ## add, commit, and push changes
-        - image: ghcr.io/jenkins-x/builder-go:2.1.142-761-patch3
+        - image: ghcr.io/jenkins-x/builder-go:2.1.155-778-patch3
           name: update-website
           command:
           - ./scripts/ci/update-website.sh
