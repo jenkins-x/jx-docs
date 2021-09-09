@@ -47,7 +47,7 @@ Installs the git operator in a cluster
 
 ```
   -b, --batch-mode                  Runs in batch mode without prompting for user input
-      --chart string                the chart name to use to install the git operator (default "jx3/jx-git-operator")
+      --chart string                the chart name to use to install the git operator (default "jxgh/jx-git-operator")
       --chart-version string        override the helm chart version used for the git operator
   -d, --dir string                  the directory to discover the git URL if no url option is specified (default ".")
       --dry-run                     if enabled just display the helm command that will run but don't actually do anything

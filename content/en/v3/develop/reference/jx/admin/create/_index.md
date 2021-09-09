@@ -37,7 +37,7 @@ Creates a new git repository for a new Jenkins X installation
       --bucket-repo string           the bucket URL to store repository artifacts
       --bucket-reports string        the bucket URL to store reports. If not specified default to te logs bucket
       --canary                       enables Canary deployment of apps by default
-      --chart string                 the chart name to use to install the git operator (default "jx3/jx-git-operator")
+      --chart string                 the chart name to use to install the git operator (default "jxgh/jx-git-operator")
       --chart-version string         override the helm chart version used for the git operator
   -c, --cluster string               configures the cluster name
       --dev-git-kind string          The kind of git server for the development environment
