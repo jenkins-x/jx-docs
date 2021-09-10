@@ -17,7 +17,7 @@ Please follow the usual [getting started guide for boot and helm 3](/v3/admin/pl
 Then, open the `helmfiles/jx/helmfile.yaml` file located in your development environment git repository, and add the following content under the `releases` section:
 
 ```yaml 
-- chart: jx3/lighthouse-webui-plugin
+- chart: jxgh/lighthouse-webui-plugin
   name: lighthouse-webui-plugin
 ```
 
@@ -28,7 +28,7 @@ namespace: jx
 repositories:
 - ...
 releases:
-- chart: jx3/lighthouse-webui-plugin
+- chart: jxgh/lighthouse-webui-plugin
   name: lighthouse-webui-plugin
 - chart: ...
 ```
@@ -49,7 +49,7 @@ See the [Lighthouse Web UI documentation](/v3/develop/ui/lighthouse/) for how to
 
 ## Configuration
 
-The configuration is defined in a ["values file" stored in the Jenkins X Version Stream](https://github.com/jenkins-x/jx3-versions/tree/master/charts/jx3/lighthouse-webui-plugin/values.yaml.gotmpl).
+The configuration is defined in a ["values file" stored in the Jenkins X Version Stream](https://github.com/jenkins-x/jx3-versions/blob/master/charts/jxgh/lighthouse-webui-plugin/values.yaml.gotmpl).
 
 If you want to change anything from the default configuration, you can either:
 - submit a Pull Request if you believe this change is beneficial for everybody
