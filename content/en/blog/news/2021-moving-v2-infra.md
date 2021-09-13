@@ -180,7 +180,7 @@ JX_DEFAULT_IMAGE=ghcr.io/jenkins-x/builder-maven:2.1.155-778-patch3
    | **builder-python37**     | 2.1.155-778-patch3 |
    | **builder-dotnet**       | 2.1.155-778-patch3 |
  
-Have we missed anything?  Please contribute to this blog or feedback on the slack channel.
+Have we missed anything? Please contribute to this blog or feedback on the slack channel.
  
 ### v3 users
 
