@@ -160,7 +160,26 @@ JX_DEFAULT_IMAGE=ghcr.io/jenkins-x/builder-maven:2.1.155-778-patch3
      repository: https://jenkins-x-charts.github.io/v2
      version: 2.3.118
    ```
+13. In any applications repositories who has already import into jx, update the `./jenkins-x.yaml` add or replace :
+    ```
+    pipelineConfig:
+      agent:
+        image: `ghcr.io/jenkins-x/BUILDER_YOU_NEED:2.1.155-778-patch3`
+    ```
+    Here is the list of the principal images who has migrated to new ghcr:
 
+   |Value| Version|
+   |---|---|
+   | **builder-jx**           | 2.1.155-778-patch3 |
+   | **builder-nodejs**       | 2.1.155-778-patch3 |
+   | **builder-nodejs12**     | 2.1.155-778-patch3 |
+   | **builder-nodejs14**     | 2.1.155-778-patch3 |
+   | **builder-maven-java11** | 2.1.155-778-patch3 |
+   | **builder-php5x**        | 2.1.155-778-patch3 |
+   | **builder-php7x**        | 2.1.155-778-patch3 |
+   | **builder-python37**     | 2.1.155-778-patch3 |
+   | **builder-dotnet**       | 2.1.155-778-patch3 |
+ 
 Have we missed anything?  Please contribute to this blog or feedback on the slack channel.
  
 ### v3 users
