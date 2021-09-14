@@ -2,7 +2,7 @@ apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 metadata:
   annotations:
-    lighthouse.jenkins-x.io/prependStepsURL: https://raw.githubusercontent.com/jenkins-x/jx3-pipeline-catalog/005e78cf69b643862344397a635736a51dd1bd89/tasks/git-clone/git-clone-pr.yaml
+    lighthouse.jenkins-x.io/prependStepsURL: https://raw.githubusercontent.com/jenkins-x/jx3-pipeline-catalog/6587692624f71fe48d4d183d510a5d8d4a30fb29/tasks/git-clone/git-clone-pr.yaml
   name: pullrequest
 spec:
   pipelineSpec:
@@ -53,7 +53,7 @@ spec:
             #!/bin/sh
             hugo -d tmp-website --enableGitInfo --baseURL https://${REPO_NAME}-jx-${REPO_OWNER}-${REPO_NAME}-pr-${PULL_NUMBER}.${DOMAIN}/
 
-        - image: gcr.io/jenkinsxio/jx-boot:3.0.788
+        - image: ghcr.io/jenkins-x/jx-boot:3.2.197
           name: jx-variables
           resources: {}
           script: |
@@ -67,7 +67,7 @@ spec:
             source .jx/variables.sh
             /kaniko/executor --context=/workspace/source --dockerfile=/workspace/source/Dockerfile --destination=gcr.io/jx-labs-infra/jx-docs:$VERSION
 
-        - image: gcr.io/jenkinsxio/jx-preview:0.0.135
+        - image: ghcr.io/jenkins-x/jx-preview:0.0.172
           name: promote-jx-preview
           resources: {}
           script: |
