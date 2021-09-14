@@ -53,7 +53,7 @@ spec:
             #!/bin/sh
             hugo -d tmp-website --enableGitInfo --baseURL https://${REPO_NAME}-jx-${REPO_OWNER}-${REPO_NAME}-pr-${PULL_NUMBER}.${DOMAIN}/
 
-        - image: gcr.io/jenkinsxio/jx-boot:3.0.788
+        - image: ghcr.io/jenkins-x/jx-boot:3.2.197
           name: jx-variables
           resources: {}
           script: |
