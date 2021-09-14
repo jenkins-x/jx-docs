@@ -25,7 +25,7 @@ spec:
                   name: ingress-config
                   key: domain
         steps:
-        - image: gcr.io/jenkinsxio/hugo-extended:0.81.0-12
+        - image: ghcr.io/jenkins-x/hugo-extended:0.81.0-12
           name: git-submodules
           command:
           - git
@@ -35,7 +35,7 @@ spec:
           - --init
           - --recursive
 
-        - image: gcr.io/jenkinsxio/hugo-extended:0.81.0-12
+        - image: ghcr.io/jenkins-x/hugo-extended:0.81.0-12
           name: update-content
           command: 
           - ./scripts/ci/update-content.sh
@@ -47,7 +47,7 @@ spec:
           args:
           - install
 
-        - image: gcr.io/jenkinsxio/hugo-extended:0.81.0-12
+        - image: ghcr.io/jenkins-x/hugo-extended:0.81.0-12
           name: build-website
           script: |
             #!/bin/sh
