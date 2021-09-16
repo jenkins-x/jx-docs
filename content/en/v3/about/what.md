@@ -26,7 +26,7 @@ At a high level Jenkins X can be split into a few areas:
 
 ### Infrastructure
 
-Jenkins X aims to use the cloud well, Kubernetes to host the core services, storage buckets for long term storage, container registries and hosted serivces like secrets managers. All of this needs to be created and managed.  Jenkins X defers to [Terraform](https://www.terraform.io/) to setup and manage the Cloud infrastructure needed by Jenkins X.
+Jenkins X aims to use the cloud well, Kubernetes to host the core services, storage buckets for long term storage, container registries and hosted services like secrets managers. All of this needs to be created and managed.  Jenkins X defers to [Terraform](https://www.terraform.io/) to setup and manage the Cloud infrastructure needed by Jenkins X.
  
 ### GitOps
 
@@ -34,17 +34,17 @@ The entire Jenkins X experience is based around Git.  The installation, extensio
 
 Using GitOps means familiar processes can be followed when making any change to the cluster, using reviews, automation, traceability and rollbacks to give better control over consuming changes.
 
-Jenkins X also uses GitOps as the way to [upgrade](/v3/admin/setup/upgrades), including new releases of images, helm charts and pakages.
+Jenkins X also uses GitOps as the way to [upgrade](/v3/admin/setup/upgrades), including new releases of images, helm charts and packages.
 
 ### Secret Management
  
-Using GitOps as above does present a challenge of where to store secrets for your cluster as keeping them in Git is insecure.  There is a way to [encrypt secrets and store them in Git](https://github.com/bitnami-labs/sealed-secrets) but there is a usability issue which makes the approach non trivial to use.  Jenkins X prefers to work with real secret provider solutions like [Vault](https://www.vaultproject.io/) or where possible cloud hosted solutions like [Google](https://cloud.google.com/secret-manager), Azure or Amazon Secrets managers.
+Using GitOps as above does present a challenge of where to store secrets for your cluster as keeping them in Git is insecure.  There is a way to [encrypt secrets and store them in Git](https://github.com/bitnami-labs/sealed-secrets) but there is a usability issue which makes the approach non trivial to use.  Jenkins X prefers to work with real secret provider solutions like [Vault](https://www.vaultproject.io/) or where possible cloud hosted solutions like [Google](https://cloud.google.com/secret-manager), [Azure](https://azure.microsoft.com/en-us/services/key-vault/ or [Amazon](https://aws.amazon.com/secrets-manager/) Secrets managers.
  
 Jenkins X GitOps works with [External Secrets](https://github.com/external-secrets/kubernetes-external-secrets) to provide an integrated experience so your secrets source of truth is a secrets manager and the values are replicated into the cluster when needed.
  
 ### Pipelines
  
-By default Jenkins X ships with Tekton for a clean declarative cloud native way to describe [pipelines](/v3/develop/pipelines/).  Combined with Lighthouse Jenkins X makes it easy to inherit versioned shared pipeline steps via Git and a simple syntax providing flexibility and easy maintenance.
+By default, Jenkins X ships with Tekton for a clean declarative cloud native way to describe [pipelines](/v3/develop/pipelines/).  Combined with [Lighthouse](https://github.com/jenkins-x/lighthouse), Jenkins X makes it easy to inherit versioned shared pipeline steps via Git and a simple syntax providing flexibility and easy maintenance.
  
 Jenkins X can also work well with Jenkins for users that have traditional workloads.  This is not installed by default but with Jenkins X it is easy to install any helm chart and so designed to work great with our inspirational project Jenkins.
  
