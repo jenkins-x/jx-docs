@@ -65,7 +65,7 @@ spec:
           script: |
             #!/busybox/sh
             source .jx/variables.sh
-            /kaniko/executor --context=/workspace/source --dockerfile=/workspace/source/Dockerfile --destination=gcr.io/jx-labs-infra/jx-docs:$VERSION
+            /kaniko/executor --context=/workspace/source --dockerfile=/workspace/source/Dockerfile --destination=gcr.io/jenkinsxio-324711/jx-docs:$VERSION
 
         - image: ghcr.io/jenkins-x/jx-preview:0.0.172
           name: promote-jx-preview
