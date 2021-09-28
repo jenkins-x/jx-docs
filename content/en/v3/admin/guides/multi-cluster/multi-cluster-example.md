@@ -9,6 +9,10 @@ weight: 101
  
 This is an example on how to build a multi-cluster environment having two separate cluster repos (i.e. 'dev' and 'prod'). The steps will include building a GKE/GSM/DSN environment from scratch for both environments, and deploying projects to staging and the remote production. It will use DNS (`jx3rocks.com`), TLS, Let's Encrypt certificates. This example is intended for an audience already familiar with Jenkins X operability and focuses on an example of actual commands used to build a multi-cluster environment. Additional information regarding using Google as the provider for this example can be found under [Google Cloud Platform Prequisites](/v3/admin/guides/tls_dns/#prerequisites).
 
+> ⚠️ Note to _OSX_ users 
+> You may need to substitute `sed -i` commands with `sed -i.bak`, taking note to delete the generated .bak file.
+> Some `sed -i` commands that are additive might not work but can easily be completed with a text editor.
+
 ### Generate the Infra and Cluster Repos for Dev and Prod
 Using a command-line based approach, the example employs a process modeled after the doc [Setup Jenkins X on Google Cloud with GKE](/v3/admin/platforms/google), and will use Google Secret Manger. It requires the installation of [Git](https://git-scm.com/downloads) and [Hub](https://hub.github.com/) command line tools. 
 
@@ -30,7 +34,7 @@ cd  jx3-terraform-gke.prd
 git remote set-url origin https://github.com/${JX3ORG}/jx3-terraform-gke.prd.git
 hub create -p ${JX3ORG}/jx3-terraform-gke.prd
 git commit -a -m "chore: Initial"
-git push -u origin master
+git push -u origin main
 ```
 Building `PROD CLUSTER` repo: `https://github.com/${JX3ORG}/jx3-gke-gsm.prd`
 ```bash
@@ -40,7 +44,7 @@ cd jx3-gke-gsm.prd
 git remote set-url origin https://github.com/${JX3ORG}/jx3-gke-gsm.prd.git
 hub create -p ${JX3ORG}/jx3-gke-gsm.prd
 git commit -a -m "chore: Initial"
-git push -u origin master
+git push -u origin main
 ```
 Building `DEV INFRA` repo: `https://github.com/${JX3ORG}/jx3-terraform-gke.dev` 
 ```bash
@@ -50,7 +54,7 @@ cd  jx3-terraform-gke.dev
 git remote set-url origin https://github.com/${JX3ORG}/jx3-terraform-gke.dev.git
 hub create -p ${JX3ORG}/jx3-terraform-gke.dev
 git commit -a -m "chore: Initial"
-git push -u origin master
+git push -u origin main
 ```
 Buidling `DEV CLUSTER` repo: `https://github.com/${JX3ORG}/jx3-gke-gsm.prd`
 ```bash
@@ -60,14 +64,14 @@ cd jx3-gke-gsm.prd
 git remote set-url origin https://github.com/${JX3ORG}/jx3-gke-gsm.prd.git
 hub create -p ${JX3ORG}/jx3-gke-gsm.prd
 git commit -a -m "chore: Initial"
-git push -u origin master
+git push -u origin main
 ```
 ### Initialize the Prod cluster repo
 Prepare the remote prod cluster repo by using the out of the box (OOTB) config (i.e.  dev, jx-staging, and jx-production environemnts). Also remove the default '-jx' URL value and insert jx-production '-prd' URL value (optional).  Prior to building the prod infra repo, prepare the production cluster repo for use by removing unecessary components. The components to modify/remove in the designated remote prod environment are:
 * Remove default '-jx.' URL format (optional)
 * Remove Non-used JX charts 
 * Remove Tekton pipelines
-* Add jx3/local-external-secrets chart (optional)
+* Add jxgh/local-external-secrets chart (optional)
 * Insert imagePullSecret in jx-global-variables.yaml (optional)
 * Disable webhooks
 ```bash
@@ -79,15 +83,14 @@ sed -i 's/-jx././g' jx-requirements.yml
 sed -i '/tekton-pipelines/d' helmfile.yaml
 
 # JX Chart removals
-sed -i '/- chart: jx3\/jx-pipelines-visualizer/,/  - jx-values.yaml/d' helmfiles/jx/helmfile.yaml
+sed -i '/- chart: jxgh\/jx-pipelines-visualizer/,/  - jx-values.yaml/d' helmfiles/jx/helmfile.yaml
 sed -i '/- chart: jxgh\/jx-preview/,/  - jx-values.yaml/d' helmfiles/jx/helmfile.yaml
-sed -i '/- chart: jenkins-x\/lighthouse/,/  - jx-values.yaml/d' helmfiles/jx/helmfile.yaml
-sed -i '/- chart: jenkins-x\/bucketrepo/,/  - jx-values.yaml/d' helmfiles/jx/helmfile.yaml
-sed -i '/- chart: jx3\/jx-build-controller/,/  - jx-values.yaml/d' helmfiles/jx/helmfile.yaml
+sed -i '/- chart: jxgh\/lighthouse/,/  - jx-values.yaml/d' helmfiles/jx/helmfile.yaml
+sed -i '/- chart: jxgh\/jx-build-controller/,/  - jx-values.yaml/d' helmfiles/jx/helmfile.yaml
 
-# JX Chart additions (jx3/local-external-secrets chart)
-sed -i '/templates:/ i - chart: jx3/local-external-secrets' helmfiles/jx/helmfile.yaml
-sed -i '/templates:/ i   version: 0.0.6' helmfiles/jx/helmfile.yaml
+# JX Chart additions (jxgh/local-external-secrets chart)
+sed -i '/templates:/ i - chart: jxgh/local-external-secrets' helmfiles/jx/helmfile.yaml
+sed -i '/templates:/ i   version: 0.0.14' helmfiles/jx/helmfile.yaml
 sed -i '/templates:/ i   name: local-external-secrets' helmfiles/jx/helmfile.yaml
 sed -i '/templates:/ i   values:' helmfiles/jx/helmfile.yaml
 sed -i '/templates:/ i   - jx-values.yaml' helmfiles/jx/helmfile.yaml
@@ -115,27 +118,27 @@ for i in `find helmfiles -name helmfile.yaml`; do echo; echo $i; grep -- ^-\ cha
 ### Remote Prod Chart List
 ```
 helmfiles/kuberhealthy/helmfile.yaml
-- chart: jx3/kh-tls-check
+- chart: jxgh/kh-tls-check
 
 helmfiles/jx-staging/helmfile.yaml
-- chart: jx3/jx-verify
+- chart: jxgh/jx-verify
 
 helmfiles/secret-infra/helmfile.yaml
 - chart: external-secrets/kubernetes-external-secrets
-- chart: jx3/pusher-wave
+- chart: jxgh/pusher-wave
 
 helmfiles/jx/helmfile.yaml
 - chart: bitnami/external-dns
-- chart: jx3/acme
-- chart: jx3/jxboot-helmfile-resources
-- chart: jx3/jenkins-x-crds
+- chart: jxgh/acme
+- chart: jxgh/jxboot-helmfile-resources
+- chart: jxgh/jenkins-x-crds
 - chart: jenkins-x/nexus
 - chart: stable/chartmuseum
-- chart: jx3/jx-kh-check
-- chart: jx3/local-external-secrets
+- chart: jxgh/jx-kh-check
+- chart: jxgh/local-external-secrets
 
 helmfiles/jx-production/helmfile.yaml
-- chart: jx3/jx-verify
+- chart: jxgh/jx-verify
 
 helmfiles/cert-manager/helmfile.yaml
 - chart: jetstack/cert-manager
@@ -210,30 +213,30 @@ for i in `find helmfiles -name helmfile.yaml`; do echo; echo $i; grep -- ^-\ cha
 ### Dev Chart List (Initial)
 ```
 helmfiles/kuberhealthy/helmfile.yaml
-- chart: jx3/kh-tls-check
+- chart: jxgh/kh-tls-check
 
 helmfiles/jx-staging/helmfile.yaml
-- chart: jx3/jx-verify
+- chart: jxgh/jx-verify
 
 helmfiles/secret-infra/helmfile.yaml
 - chart: external-secrets/kubernetes-external-secrets
-- chart: jx3/pusher-wave
+- chart: jxgh/pusher-wave
 
 helmfiles/jx/helmfile.yaml
 - chart: bitnami/external-dns
-- chart: jx3/acme
-- chart: jx3/jxboot-helmfile-resources
-- chart: jx3/jenkins-x-crds
-- chart: jx3/jx-pipelines-visualizer
+- chart: jxgh/acme
+- chart: jxgh/jxboot-helmfile-resources
+- chart: jxgh/jenkins-x-crds
+- chart: jxgh/jx-pipelines-visualizer
 - chart: jxgh/jx-preview
 - chart: jenkins-x/lighthouse
 - chart: jenkins-x/nexus
 - chart: stable/chartmuseum
-- chart: jx3/jx-build-controller
-- chart: jx3/jx-kh-check
+- chart: jxgh/jx-build-controller
+- chart: jxgh/jx-kh-check
 
 helmfiles/jx-production/helmfile.yaml
-- chart: jx3/jx-verify
+- chart: jxgh/jx-verify
 
 helmfiles/cert-manager/helmfile.yaml
 - chart: jetstack/cert-manager
