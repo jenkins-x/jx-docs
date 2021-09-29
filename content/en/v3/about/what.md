@@ -17,7 +17,7 @@ Open Source projects that Jenkins X integrates with:
  
 - [Kubernetes](https://kubernetes.io/) target platform Jenkins X is installed onto, optionally deploy and run applications built with Jenkins X
 - [Tekton](https://tekton.dev/) Cloud Native pipeline orchestration
-- [Kuberhealthy](https://comcast.github.io/kuberhealthy/) Periodic health checks of the systems
+- [Kuberhealthy](https://github.com/kuberhealthy/kuberhealthy) Periodic health checks of the systems
 - [Grafana](https://grafana.com) __[optional]__ Centralised logs and Observability
 - [Jenkins](https://www.jenkins.io/) __[optional]__ traditional pipeline orchestration
 - [Nexus](https://www.sonatype.com/nexus/repository-oss) __[optional]__ artifact repository
