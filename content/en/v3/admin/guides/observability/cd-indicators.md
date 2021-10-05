@@ -23,11 +23,12 @@ Note that this addon requires a running Grafana instance in your cluster, so you
 
 Please follow the usual [getting started guide for boot and helm 3](/v3/admin/platform/) first.
 
-Installing this addon is a 1 step operation: you need to edit the `helmfiles/jx/helmfile.yaml` file in your development environment git repository, so that it references the `jx3/cd-indicators` chart, such as:
+Installing this addon is a 1 step operation: you need to edit the `helmfiles/jx/helmfile.yaml` file in your development environment git repository, so that it references the `jxgh/cd-indicators` chart, such as:
 
 ```yaml
 releases:
-- chart: jx3/cd-indicators
+- chart: jxgh/cd-indicators
+  name: cd-indicators
 - chart: ...
 ...
 ```
@@ -58,7 +59,7 @@ And because we're re-using the same Grafana instance which already has the Prome
 
 ## Configuration
 
-The configuration is defined in a ["values file" stored in the Jenkins X Version Stream](https://github.com/jenkins-x/jx3-versions/tree/master/charts/jx3/cd-indicators/values.yaml).
+The configuration is defined in a ["values file" stored in the Jenkins X Version Stream](https://github.com/jenkins-x/jx3-versions/blob/master/charts/jxgh/cd-indicators/values.yaml).
 
 If you want to change anything from the default configuration, you can either:
 - submit a Pull Request if you believe this change is beneficial for everybody
