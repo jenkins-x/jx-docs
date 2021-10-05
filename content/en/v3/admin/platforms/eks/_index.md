@@ -12,26 +12,29 @@ aliases:
 ---
 
 ---
+
 **NOTE**
 
-* Ensure you are logged into GitHub else you will get a 404 error when clicking the links below
-* ECR repository needs to be created before running the quickstart or importing existing projects.
+- Ensure you are logged into GitHub else you will get a 404 error when clicking the links below
+- ECR repository needs to be created before running the quickstart or importing existing projects.
+- Refer to this [page](/v3/admin/setup/secrets/vault/#external-vault) for setting up JenkinsX v3 with external/existing vault.
 
 ---
 
 ### EKS + Terraform
+
 This is our current recommended quickstart for EKS:
 
-*  <a href="https://github.com/jx3-gitops-repositories/jx3-terraform-eks/generate" target="github" class="btn bg-primary text-light">Create Git Repository</a> based on the [jx3-gitops-repositories/jx3-terraform-eks](https://github.com/jx3-gitops-repositories/jx3-terraform-eks)  
-   
-    * if the above button does not work then please [Login to GitHub](https://github.com/login) first and then retry the button
+- <a href="https://github.com/jx3-gitops-repositories/jx3-terraform-eks/generate" target="github" class="btn bg-primary text-light">Create Git Repository</a> based on the [jx3-gitops-repositories/jx3-terraform-eks](https://github.com/jx3-gitops-repositories/jx3-terraform-eks)
 
-* `git clone` the new repository via **HTTPS** and `cd` into the git clone directory
+  - if the above button does not work then please [Login to GitHub](https://github.com/login) first and then retry the button
 
-*  <a href="https://github.com/jx3-gitops-repositories/jx3-terraform-eks/blob/master/README.md"
+- `git clone` the new repository via **HTTPS** and `cd` into the git clone directory
+
+- <a href="https://github.com/jx3-gitops-repositories/jx3-terraform-eks/blob/master/README.md"
     target="github" class="btn bg-primary text-light" 
     title="use your new git repository to create your cloud infrastructure and install Jenkins X">
-    Create your infrastructure
-  </a> 
+  Create your infrastructure
+  </a>
 
-*  <a href="/v3/develop/create-project/" class="btn bg-primary text-light">Create or import projects</a>
+- <a href="/v3/develop/create-project/" class="btn bg-primary text-light">Create or import projects</a>
