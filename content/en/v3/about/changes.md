@@ -63,7 +63,7 @@ jx dash
   
 * New [Maturity Matrix](/v3/about/maturity-matrix/) published! You can now view at a glance the different capabilities across clouds and infrastructure. Many thanks [Nitin](https://github.com/borntorock) for all your hard work
 
-* Preview environments how use [helmfile](https://github.com/roboll/helmfile) as a declarative way to describe all of the dependencies you need in your preview environment. 
+* Preview environments now use [helmfile](https://github.com/roboll/helmfile) as a declarative way to describe all of the dependencies you need in your preview environment. 
 
   * This is all handled by the new [jx-preview](https://github.com/jenkins-x/jx-preview) plugin
   * This also opens up the possibility of using multiple namespaces per preview; or using canary releases on multiple previews into a shared environment.
