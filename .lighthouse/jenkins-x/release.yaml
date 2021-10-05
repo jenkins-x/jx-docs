@@ -33,7 +33,7 @@ spec:
             value: '0.74.0'
         steps:
 
-        - image: ghcr.io/jenkins-x/hugo-extended:0.81.0-12
+        - image: klakegg/hugo:0.88.0-ext-alpine
           name: git-clone-website
           command:
           - git
@@ -42,7 +42,7 @@ spec:
           - https://github.com/jenkins-x/jenkins-x-website.git
           - --depth=20
 
-        - image: ghcr.io/jenkins-x/hugo-extended:0.81.0-12
+        - image: klakegg/hugo:0.88.0-ext-alpine
           name: git-submodules
           command:
           - git
@@ -52,12 +52,12 @@ spec:
           - --init
           - --recursive
 
-        - image: ghcr.io/jenkins-x/hugo-extended:0.81.0-12
+        - image: klakegg/hugo:0.88.0-ext-alpine
           name: update-content
           command:
           - ./scripts/ci/update-content.sh
 
-        - image: ghcr.io/jenkins-x/hugo-extended:0.81.0-12
+        - image: klakegg/hugo:0.88.0-ext-alpine
           command:
           - hugo
           args:
@@ -71,7 +71,7 @@ spec:
           - install
 
         ## delete everything in the jenkins-x-website repo clone
-        - image: ghcr.io/jenkins-x/hugo-extended:0.81.0-12
+        - image: klakegg/hugo:0.88.0-ext-alpine
           name: remove-old
           command:
           - git
@@ -83,7 +83,7 @@ spec:
           - '*'
 
         ## build the site into the cloned folder
-        - image: ghcr.io/jenkins-x/hugo-extended:0.81.0-12
+        - image: klakegg/hugo:0.88.0-ext-alpine
           name: build-website
           command:
           - hugo

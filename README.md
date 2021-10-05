@@ -1,38 +1,42 @@
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/jenkins-x/jx-docs)
+
 # Jenkins X Docs
+
 <a id="markdown-jenkins-x-docs" name="jenkins-x-docs"></a>
 
 This repository contains the source files for [jenkins-x.io](http://jenkins-x.io/)
 
 **NOTE:** Please browse these docs on [jenkins-x.io](http://jenkins-x.io/). Not all links work when browsing the Markdown files inside this repository.
 
-----
+---
 
 <!-- TOC -->
 
 - [Building the docs](#building-the-docs)
-    - [Preparing the sources](#preparing-the-sources)
-        - [Git submodules](#git-submodules)
-    - [Downloading npm modules](#downloading-npm-modules)
-    - [Running Hugo](#running-hugo)
-        - [Locally](#locally)
-        - [Dockerized](#dockerized)
+  - [Preparing the sources](#preparing-the-sources)
+    - [Git submodules](#git-submodules)
+  - [Downloading npm modules](#downloading-npm-modules)
+  - [Running Hugo](#running-hugo)
+    - [Locally](#locally)
+    - [Dockerized](#dockerized)
 - [Common Workflows](#common-workflows)
-    - [Running spell check](#running-spell-check)
-    - [Checking links, images, etc](#checking-links-images-etc)
-    - [Adding redirects](#adding-redirects)
-    - [Upgrading the enhancements content](#upgrading-the-enhancements-content)
+  - [Running spell check](#running-spell-check)
+  - [Checking links, images, etc](#checking-links-images-etc)
+  - [Adding redirects](#adding-redirects)
+  - [Upgrading the enhancements content](#upgrading-the-enhancements-content)
 - [Localization](#localization)
 - [Contributing](#contributing)
 
 <!-- /TOC -->
 
-----
+---
 
 ## Building the docs
+
 <a id="markdown-building-the-docs" name="building-the-docs"></a>
 
 ### Preparing the sources
+
 <a id="markdown-preparing-the-sources" name="preparing-the-sources"></a>
 
 To edit the docs locally, you need to clone this repository:
@@ -42,6 +46,7 @@ git clone  --recurse-submodules --depth 1 https://github.com/jenkins-x/jx-docs.g
 ```
 
 #### Git submodules
+
 <a id="markdown-git-submodules" name="git-submodules"></a>
 
 Notice the use of `--recurse-submodules` in the clone command above.
@@ -66,6 +71,7 @@ git submodule status --recursive
 ```
 
 ### Downloading npm modules
+
 <a id="markdown-downloading-npm-modules" name="downloading-npm-modules"></a>
 
 After getting all the sources, you need to [install npm](https://www.npmjs.com/get-npm) and make sure the required npm modules are installed:
@@ -75,6 +81,7 @@ npm install
 ```
 
 ### Running Hugo
+
 <a id="markdown-running-hugo" name="running-hugo"></a>
 
 The site itself is built with [Hugo](https://gohugo.io/) and configured in [`config.toml`](./config.toml).
@@ -85,6 +92,7 @@ The following two sections describe the two alternatives in more detail.
 Per default, no content is written to disk.
 
 #### Locally
+
 <a id="markdown-locally" name="locally"></a>
 
 If you want to build the site locally on your machine, you need to [install](https://gohugo.io/getting-started/installing) Hugo.
@@ -98,6 +106,7 @@ make server
 You can now access the site under [localhost:1313](http://localhost:1313).
 
 #### Dockerized
+
 <a id="markdown-dockerized" name="dockerized"></a>
 
 Instead of installing Hugo locally, you can use the provided `docker-compose.yml` to spin up the Hugo server in a containerized environment.
@@ -116,9 +125,11 @@ make compose-down
 ```
 
 ## Common Workflows
+
 <a id="markdown-common-workflows" name="common-workflows"></a>
 
 ### Running spell check
+
 <a id="markdown-running-spell-check" name="running-spell-check"></a>
 
 We are not all masters of spelling, so luckily there are tools to help us fix that.
@@ -135,6 +146,7 @@ Please edit [`.spelling`](./.spelling) and add the unknown word.
 Also, please try and keep the list alphabetically sorted, which makes it easier to navigate.
 
 ### Checking links, images, etc
+
 <a id="markdown-checking-links-images-etc" name="checking-links-images-etc"></a>
 
 To get help in checking all the links, we'll use [htmlproofer](https://github.com/chabad360/htmlproofer).
@@ -148,6 +160,7 @@ make linkcheck
 **NOTE:**: It's safe to ignore the `... x509: certificate ...` errors for now
 
 ### Adding redirects
+
 <a id="markdown-adding-redirects" name="adding-redirects"></a>
 
 If you move a page to a different location you can add a redirect via using an _aliases_ entry in the header of the page:
@@ -156,9 +169,10 @@ If you move a page to a different location you can add a redirect via using an _
 aliases:
   - /some/old/path
   - /another/path
-```  
+```
 
 ### Upgrading the enhancements content
+
 <a id="markdown-upgrading-the-enhancements-content" name="upgrading-the-enhancements-content"></a>
 
 To upgrade to a new enhancements commit - we'll hopefully automate this soon!
@@ -172,7 +186,19 @@ git add enhancements
 git commit -m "move to latest enhancements"
 ```
 
+### Upgrading docsy
+
+Docsy is added to the jx-docs repository as a submodule under the themes directory.
+To update docsy, run the following commands:
+
+```bash
+cd themes/docsy
+git pull origin master
+git submodule update --init --recursive
+```
+
 ## Localization
+
 <a id="markdown-localization" name="localization"></a>
 
 To let more people know Jenkins X better, localization is essential and meaningful.
@@ -181,6 +207,7 @@ And we should keep some rules about this, please read related languages below:
 - [Chinese](Localization_Chinese.md)
 
 ## Contributing
+
 <a id="markdown-contributing" name="contributing"></a>
 
 Please refer to the documentation contributing guide available at [Jenkins X website](https://jenkins-x.io/community/documentation/).
