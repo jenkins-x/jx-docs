@@ -21,7 +21,7 @@ All backgrounds and skill levels are encouraged to participate in Hacktoberfest 
 
 We welcome your contributions to the [Jenkins X documentation project](https://github.com/jenkins-x/jx-docs)!
 
-[Issues labelled "hacktoberfest"](https://github.com/jenkins-x/jx-docs/issues?q=is%3Aissue+is%3Aopen+hacktoberfest) generally indicate good first issues. However, all pull requests will count towards your Hacktoberfest challenge.
+[Issues labelled "hacktoberfest"](https://github.com/jenkins-x/jx-docs/issues?q=is%3Aissue+is%3Aopen+label%3Ahacktoberfest) generally indicate good first issues. However, all pull requests will count towards your Hacktoberfest challenge.
 
 ### Ask us questions
 
