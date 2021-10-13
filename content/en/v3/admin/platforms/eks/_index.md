@@ -24,6 +24,7 @@ aliases:
   - To use AWS secrets manager instead of vault, refer to this [section](https://github.com/jenkins-x/terraform-aws-eks-jx#secrets-management)
 - Always use the latest module version for the eks-jx module.
   The list of versions can be found [here.](https://github.com/jenkins-x/terraform-aws-eks-jx/releases)
+- Do not specify the last digit of the kubernetes version, so if you want to provision an EKS cluster with kubernetes `1.21.5`, just specify `1.21`. See [this issue](https://github.com/jx3-gitops-repositories/jx3-terraform-eks/issues/26#issuecomment-936055015) for more details.
 
 ---
 
