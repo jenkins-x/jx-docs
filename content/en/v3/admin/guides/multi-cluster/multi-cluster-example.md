@@ -74,6 +74,9 @@ Prepare the remote prod cluster repo by using the out of the box (OOTB) config (
 * Add jxgh/local-external-secrets chart (optional)
 * Insert imagePullSecret in jx-global-variables.yaml (optional)
 * Disable webhooks
+
+> ⚠️ For [cluster autoupdate](/v3/admin/setup/upgrades/cluster/#automatic-upgrades) support both the Lighthouse and jxboot-helmfile-resources charts must be removed.
+
 ```bash
 cd ${JX3HOME}/jx3-gke-gsm.prd
 # File removals
@@ -86,6 +89,7 @@ sed -i '/tekton-pipelines/d' helmfile.yaml
 sed -i '/- chart: jxgh\/jx-pipelines-visualizer/,/  - jx-values.yaml/d' helmfiles/jx/helmfile.yaml
 sed -i '/- chart: jxgh\/jx-preview/,/  - jx-values.yaml/d' helmfiles/jx/helmfile.yaml
 sed -i '/- chart: jxgh\/lighthouse/,/  - jx-values.yaml/d' helmfiles/jx/helmfile.yaml
+sed -i '/- chart: jxgh\/jxboot-helmfile-resources/,/  - jx-values.yaml/d' helmfiles/jx/helmfile.yaml
 sed -i '/- chart: jxgh\/jx-build-controller/,/  - jx-values.yaml/d' helmfiles/jx/helmfile.yaml
 
 # JX Chart additions (jxgh/local-external-secrets chart)
@@ -130,7 +134,6 @@ helmfiles/secret-infra/helmfile.yaml
 helmfiles/jx/helmfile.yaml
 - chart: bitnami/external-dns
 - chart: jxgh/acme
-- chart: jxgh/jxboot-helmfile-resources
 - chart: jxgh/jenkins-x-crds
 - chart: jenkins-x/nexus
 - chart: stable/chartmuseum
