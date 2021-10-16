@@ -50,7 +50,7 @@ If you are having trouble following the installation guides for go, check out [G
 If you are a macOS user and have [Homebrew](https://brew.sh/) installed on your machine, installing Go is as simple as the following command:
 
 ```sh
-brew install go
+brew install go@1.15
 ```
 
 #### Install Go via GVM
@@ -82,7 +82,7 @@ go version
 You should see something similar to the following written to the console (on macOS). Note that the version here reflects the most recent version of Go as of the last update for this page:
 
 ```sh
-go version go1.11 darwin/amd64
+go version go1.15.15 darwin/amd64
 ```
 
 Next, make sure that you set up your `GOPATH` [as described in the installation guide](https://github.com/golang/go/wiki/SettingGOPATH).
@@ -157,7 +157,7 @@ git clone git@github.com:<YOUR_USERNAME>/jx.git
 cd jx
 ```
 
-Add the conventional upstream `git` remote in order to fetch changes from jx's main master
+Add the conventional upstream `git` remote in order to fetch changes from jx's main
 branch and to create pull requests:
 
 ```sh
@@ -197,8 +197,8 @@ First, ensure that your local repository is up-to-date with the latest version o
 
 ```sh
 git fetch upstream
-git checkout master
-git merge upstream/master
+git checkout main
+git merge upstream/main
 ```
 
 Now you can create a new branch for your change:
@@ -298,14 +298,14 @@ In case you already pushed your work to your fork, you need to make a force push
 git push --force
 ```
 
-Last step, to ensure that your change would not conflict with other changes done in parallel by other contributors, you need to rebase your work on the latest changes done on jx master branch. Simply:
+Last step, to ensure that your change would not conflict with other changes done in parallel by other contributors, you need to rebase your work on the latest changes done on jx main branch. Simply:
 
 ```sh
-git checkout master #Move to local master branch
-git fetch upstream #Retrieve change from jx master bracnch
-git merge upstream/master #Merge the change into your local master
+git checkout main #Move to local main branch
+git fetch upstream #Retrieve change from jx main bracnch
+git merge upstream/main #Merge the change into your local main
 git checkout <BRANCH-NAME> #Move back to your local branch where you did your development
-git rebase master
+git rebase main
 ```
 
 Handle any conflicts and make sure your code builds and all tests pass. Then force push your branch to your remote.
@@ -323,30 +323,30 @@ by viewing the `Checks` tab in the GitHub pull request.
 
 #### How to Sign Your Commits
 
-There are a couple of ways to ensure your commits are signed. 
+There are a couple of ways to ensure your commits are signed.
 Described below are three different ways to sign your commits: using git signoff, using GPG, or using webhooks.
 
 ##### Git signoff
-Git signoff adds a line to your commit message with the user.name and user.email values from your git config. 
-Use git signoff by adding the `--signoff` or `-s` flag when creating your commit. 
+Git signoff adds a line to your commit message with the user.name and user.email values from your git config.
+Use git signoff by adding the `--signoff` or `-s` flag when creating your commit.
 This flag must be added to each commit you would like to sign.
 
 ```sh
 git commit -m -s "docs: my commit message"
 ```
 
-If you'd like to keep your personal email address private, you can use a GitHub-provided `no-reply` email address as your commit email address. 
+If you'd like to keep your personal email address private, you can use a GitHub-provided `no-reply` email address as your commit email address.
 GitHub provides [good instructions on setting your commit email address](https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/setting-your-commit-email-address).
 
 ##### GPG sign your commits
-A more secure alternative is to GPG sign all your commits. 
-This has the advantage that as well as stating your agreement to the DCO it also creates a trust mechanism for your commits. 
+A more secure alternative is to GPG sign all your commits.
+This has the advantage that as well as stating your agreement to the DCO it also creates a trust mechanism for your commits.
 There is a good guide from GitHub on how to set this up:
 
 1) If you don't already have a GPG key, then follow [this guide to create one](https://help.github.com/en/articles/generating-a-new-gpg-key).
-2) Now you have a GPG key, tell [tell GitHub about your key so that it can verify your commits](https://help.github.com/en/articles/adding-a-new-gpg-key-to-your-github-account). 
+2) Now you have a GPG key, tell [tell GitHub about your key so that it can verify your commits](https://help.github.com/en/articles/adding-a-new-gpg-key-to-your-github-account).
 Once you upload your public gpg key to your GitHub account, GitHub will mark commits that you sign with the `verified` label.
-3) To sign commits locally, you can add the `-S` flag when creating your commit. 
+3) To sign commits locally, you can add the `-S` flag when creating your commit.
 For more information on signing commits locally, follow [this guide to see how to sign your commit](https://help.github.com/en/articles/signing-commits).
 
 4) You can configure git to always use signed commits by running
@@ -357,12 +357,12 @@ git config --global user.signingkey <key id>
 
 The process to find the key id is described in [this guide on checking for existing GPG keys](https://help.github.com/en/articles/checking-for-existing-gpg-keys).
 
-5) Set up a keychain for your platform. 
-This is entirely optional but means you don't need to type your passphrase every time and allows git to run headless. 
+5) Set up a keychain for your platform.
+This is entirely optional but means you don't need to type your passphrase every time and allows git to run headless.
 If you are using a Mac GPG Suite is a good way to do this. If you are on another platform please open a PR against this document and add your recommendations!
 
 ##### Use a webhook to sign your commits
-Alternatively, you can use a hook to make sure all your commits messages are signed off. 
+Alternatively, you can use a hook to make sure all your commits messages are signed off.
 1) Run:
 ```sh
 mkdir -p ~/.git-templates/hooks
@@ -414,7 +414,7 @@ Here is an example of the release type that will be done based on a commit messa
 
 ### Open a pull request
 
-We made a lot of progress. Good work. In this step we finally open a pull request to submit our additions. Open the [Jenkins X master repository](https://github.com/jenkins-x/jx/) on GitHub in your browser.
+We made a lot of progress. Good work. In this step we finally open a pull request to submit our additions. Open the [Jenkins X main repository](https://github.com/jenkins-x/jx/) on GitHub in your browser.
 
 You should find a green button labeled with "New pull request". But GitHub is clever and probably suggests you a pull request like in the beige box below:
 
@@ -430,11 +430,11 @@ There are a number of automated checks that will run on your PR:
 * DCO - see [Signoff](#signoff)
 * Hound - lints the code and comments inline with any issues. You need this to go to a green tick and and say "No violations found. Woof!"
 * lint - runs a lot more lint checks but in a CI job so won't provide inline feedback. You need this to pass as a green tick. Check the log for any errors.
-* bdd - runs the end to end test [create-spring](https://github.com/jenkins-x/bdd-jx/blob/master/test/spring/jx_create_spring.go) in a new team on an existing cluster using static jenkins. Check the logs for errors.
-* tekton - runs the end to end test [create-spring](https://github.com/jenkins-x/bdd-jx/blob/master/test/spring/jx_create_spring.go), [test-quickstart-golang-http](https://github.com/jenkins-x/bdd-jx/blob/master/test/quickstart/helpers.go#L50) and [test-import-golang-http-from-jenkis-x-yml](https://github.com/jenkins-x/bdd-jx/blob/master/test/_import/jx_import.go#L37) in a new cluster using tekton. Check the logs for errors.
+* bdd - runs the end to end test [create-spring](https://github.com/jenkins-x/bdd-jx/blob/master/test/spring/suite/jx_create_spring.go) in a new team on an existing cluster using static jenkins. Check the logs for errors.
+* tekton - runs the end to end test [create-spring](https://github.com/jenkins-x/bdd-jx/blob/master/test/spring/suite/jx_create_spring.go), [test-quickstart-golang-http](https://github.com/jenkins-x/bdd-jx/blob/master/test/suite/quickstart/helpers.go#L50) and [test-import-golang-http-from-jenkis-x-yml](https://github.com/jenkins-x/bdd-jx/blob/master/test/suite/_import/jx_import.go#L37) in a new cluster using tekton. Check the logs for errors.
 * integration - runs all the tests that are inline in jx codebase. Check the logs for errors.
-* tide - performs the merge when all the checks pass. Don't worry about the state of this one, it doesn't add much info.
-  Clicking on the details link is very helpful as it will take you to the dashboard where you can navigate to the "Tide"
+* Keeper (Lighthouse) - performs the merge when all the checks pass. Don't worry about the state of this one, it doesn't add much info.
+  Clicking on the details link is very helpful as it will take you to the dashboard where you can navigate to the "Lighthouse"
   screen and check the status of your PR in the merge queue.
 
 Then Jenkins X itself and the maintainers will review your PR, potentially initiate discussion around your change and finally, merge it successfully in Jenkins X jx. Congratulations !
@@ -445,9 +445,9 @@ Now your pull request is submitted, you need to get it merged. If you aren't a r
 
 If the tests pass you need to get a `/lgtm` from one of the reviewers (listed in the `OWNERS` file in the repository). You need a new LGTM every time you push changes. Once the tests pass and you have a LGTM for the latest changeset, your PR will be automatically merged.
 
-Jenkins X (well, Tide, a component of Jenkins X) won't merge your changes until it has the tests passing against the *current* `HEAD` of `master` - but don't worry, whilst the tests *continue* to pass it will automatically merge your changeset into master and rerun the tests. As you can imagine, this can take a little while (a few hours) if the merge queue is long. Tide will also automatically attempt to batch up passing changes, but if the batch fails, it will resort to merging the changesets one by one.
+Jenkins X (well, Keeper (lighthouse), a component of Jenkins X) won't merge your changes until it has the tests passing against the *current* `HEAD` of `main` - but don't worry, whilst the tests *continue* to pass it will automatically merge your changeset into main and rerun the tests. As you can imagine, this can take a little while (a few hours) if the merge queue is long. Keeper will also automatically attempt to batch up passing changes, but if the batch fails, it will resort to merging the changesets one by one.
 
-If the retest against `HEAD` of `master` fail, then it will notify you on the pull request and you'll need to make some changes (and potentially get a new LGTM).
+If the retest against `HEAD` of `main` fail, then it will notify you on the pull request and you'll need to make some changes (and potentially get a new LGTM).
 
 ## Testing
 
