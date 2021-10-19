@@ -28,7 +28,7 @@ Before you can install the [jx-slack](https://github.com/jenkins-x-plugins/jx-sl
 To install the [jx-slack](https://github.com/jenkins-x-plugins/jx-slack) plugin add the following to your `helmfiles/jx/helmfile.yaml` file in your dev cluster git repository in the `releases:` section:
 
 ```yaml 
-- chart: jx3/jx-slack
+- chart: jxgh/jx-slack
   name: jx-slack
   values:
   - jx-values.yaml
