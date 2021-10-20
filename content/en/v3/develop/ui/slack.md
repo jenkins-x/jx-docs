@@ -28,7 +28,7 @@ Before you can install the [jx-slack](https://github.com/jenkins-x-plugins/jx-sl
 To install the [jx-slack](https://github.com/jenkins-x-plugins/jx-slack) plugin add the following to your `helmfiles/jx/helmfile.yaml` file in your dev cluster git repository in the `releases:` section:
 
 ```yaml 
-- chart: jx3/jx-slack
+- chart: jxgh/jx-slack
   name: jx-slack
   values:
   - jx-values.yaml
@@ -116,4 +116,4 @@ We recommend the [Toast slack bot](https://toast.ninja/) as a way to get DM'd wi
 
 There is also the [github slack integration](https://slack.github.com/) which is quite good - though it can be quite noisy.
 
-If you have found any other good slack bots please [let us know](http://localhost:1313/community/#slack) or click on the `Edit this page` link on the right of this page to submit a new link!
+If you have found any other good slack bots please [let us know](/community/#slack) or click on the `Edit this page` link on the right of this page to submit a new link!
