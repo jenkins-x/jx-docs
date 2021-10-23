@@ -38,7 +38,7 @@ e.g.
 
 
 ```bash 
-jx application delete --name myapp
+jx application delete --repo myapp
 ```
 
 Or you can remove an application or helm chart from an environment by removing the entry in the `releases:` list in the `helmfiles/$namespace/helmfile.yaml` file in your dev git repository and peforming a git commit and pushing the change (usually via a Pull Request). 
