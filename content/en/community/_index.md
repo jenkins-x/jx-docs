@@ -16,7 +16,7 @@ Welcome to the Jenkins X community!
 
 We value respect and inclusiveness and follow the [CDF Code of Conduct](/community/code_of_conduct/) in all interactions.
 
-Join us on [Slack](/community/#slack), [Discourse](https://jenkinsx.discourse.group/), and during [Office Hours](/community/#office-hours) to ask questions and tell us what you are building.
+Join us on [Slack](/community/#slack), and during [Office Hours](/community/#office-hours) to ask questions and tell us what you are building.
 Upcoming [events and webinars](/community/#events--webinars) are shown on our [Event Calendar](/community/calendar) or announced on [Twitter](https://twitter.com/jenkinsxio).
 
 <!-- {{< figure src="/images/community/GoCommunity-background.png" class="img-thumbnail" >}}
@@ -32,12 +32,6 @@ Join Kubernetes slack [here](https://slack.k8s.io/) and find us on our channels:
 
 * [\#jenkins-x-user](https://kubernetes.slack.com/messages/C9MBGQJRH) for users of Jenkins X
 * [\#jenkins-x-dev](https://kubernetes.slack.com/messages/C9LTHT2BB) for developers of Jenkins X
-
-### Discourse
-
-Discourse is a great place to ask questions about Jenkins X or post topics for discussion. 
-
-Join the [Jenkins X Discourse](https://jenkinsx.discourse.group/) forum to read answers to commonly asked questions and post additional questions.
 
 ### Office Hours
 
