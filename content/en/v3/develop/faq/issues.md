@@ -35,11 +35,11 @@ Try [linting your YAML configuration](/v3/develop/pipelines/editing/#linting) to
 
 Also make sure you are in the git repository collaborators group and are in the `OWNERS` file in the main branch.
 
-       
+
 ## Why is my pipeline pending?
 
 If your pipeline shows pending in the [CLI](/v3/develop/ui/cli/), [Console](/v3/develop/ui/octant/) or [Dashboard](/v3/develop/ui/dashboard/) there could be various causes such as invalid images, pipeline configuration, missing secrets or insufficient cluster capacity to name but a few.
-                                                         
+
 To diagnose why a pipeline pod can't run the simplest thing is to use the [Console](/v3/develop/ui/octant/)
 
 ```bash 
@@ -77,7 +77,8 @@ If you retrigger a release on your repository (e.g. merging a git commit to the 
 
 If not try create a new git tag on your repository for the next version e.g. if 0.1.2 was the last release, create a git tag of `v0.1.3` then then next release will be `0.1.4`). Then trigger a new release via a commit to the main branch.
 
-         
+Sometimes it might happen that some files will remain from a previous commit or a failed merge. Check that there is no `VERSION` file in your root directory that is exporting its value to jx operator. Also verify that there is no `export VERSION` in your `.jx/variables.yaml` file either.
+
 ## My cluster is out of resources
 
 If your cluster is out of resources and cannot deploy pods:
@@ -101,7 +102,6 @@ jx delete preview
 
 * remove deployments you don't need by removing entries from the `releases:` section in `helmfiles/$namespace/helmfile.yaml`
   * e.g. e.g. to remove an application from the `jx-staging` namespace remove releases from  `helmfiles/jx-staging/helmfile.yaml`
-    
 
 ## Diagnose pipeline failure via the CLI
 
@@ -117,14 +117,12 @@ if you know the repository name:
 ```bash
 jx get build pod -r myrepo
 ```
-                          
+
 Then you should be able to see the pod name for the pipeline in question. You can then use `kubectl` to destribe the issue:
 
 ```bash
 kubectl describe pod the-actual-pod-name-for-your-pipeline```
 ```
-   
-
 
 ## Why does Jenkins X fail to download plugins?
 
