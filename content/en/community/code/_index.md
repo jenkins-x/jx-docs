@@ -400,17 +400,32 @@ after the commit message has been created by the user.
 
 ### The commit message
 
-Jenkins X uses [conventional commits](https://www.conventionalcommits.org/en/v1.0.0-beta.4/) as it's commit message format. These are particularly important as semantic releases are in use, and they use the commit messages to determine the type of changes in the codebase. Following formalized conventions for commit messages the semantic release automatically determines the next [semantic version](https://semver.org) number and generates a changelog based on the conventional commit.
+Jenkins X uses [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) message format.
 
-Semantic releases originate in the [Angular Commit Message Conventions](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines), and the rules described there are the ones used by Jenkins X.
+```
+<type>[optional scope]: <description>
 
-Here is an example of the release type that will be done based on a commit messages:
+[optional body]
+```
+
+Common types used in `jx` project.
+
+* fix
+* feat
+* refactor
+* test
+
+If `feat` is mentioned, it increases minor version, e.g. 1.0.0 becomes 1.1.0.
+Others bump patch version. If a major release is needed, an exclamation can be
+added, like `feat!` or a line `BREAKING CHANGE` added to the body.
+
+Examples.
 
 | Commit message                                                                                                                                                                                   | Release type               |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|
-| `fix(pencil): stop graphite breaking when too much pressure applied`                                                                                                                             | Patch Release              |
-| `feat(pencil): add 'graphiteWidth' option`                                                                                                                                                       | ~~Minor~~ Feature Release  |
-| `perf(pencil): remove graphiteWidth option`<br><br>`BREAKING CHANGE: The graphiteWidth option has been removed.`<br>`The default graphite width of 10mm is always used for performance reasons.` | ~~Major~~ Breaking Release |
+| `fix: remove yq from the images`                                                                                                                             | Patch Release              |
+| `feat(install): store admin secrets in vault`                                                                                                                                                       | ~~Minor~~ Feature Release  |
+| `refactor(tekton): restructure of 'step create task' (#4051)`<br><br>`BREAKING CHANGE: prep for #3342.` | ~~Major~~ Breaking Release |
 
 ### Open a pull request
 
