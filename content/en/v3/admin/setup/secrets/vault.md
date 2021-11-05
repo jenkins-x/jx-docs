@@ -68,6 +68,41 @@ and modify the `secrets-populate` target to
 
 Now your vault can be used.
 
+#### Local `jx-secret` with External vault
+
+`jx-secret` uses the `JWT` token type to authenticate with vault.  The `JWT` token is only valid when used from inside the Kubernetes cluster and because of this we have to proxy the connection through a host inside the cluster.
+
+Launch a pod in the jx cluster to act as the proxy host:
+```bash
+kubectl -n jx run vault-proxy --image=hpello/tcp-proxy --port=8200 -- vault.example.com 8200
+```
+
+Forward local port 8200 to the vault-proxy pod:
+```bash
+kubectl port-forward pods/vault-proxy 8200:8200&
+jobid=`echo $!`
+```
+
+Setup your local environment:
+```bash
+unset VAULT_TOKEN
+export VAULT_ADDR=https://localhost:8200/
+export VAULT_SKIP_VERIFY=True
+export JX_VAULT_MOUNT_POINT=kubernetes
+export JX_VAULT_ROLE=jx-vault
+export EXTERNAL_VAULT=true
+```
+
+Run `jx-secret` as you nomrally would:
+```bash
+jx secret edit -i
+```
+
+Cleanup:
+```bash
+kill $foo #stop the port-forward
+kubectl -n jx delete pod vault-proxy #delete the pod
+```
 ### Configuration
 
 To indicate that Vault is being used as the storage engine for your Secrets you need to [configure vault](/v3/guides/config/#vault) via `secretStorage: vault` in your `jx-requirements.yml`. Note that this is usually done automatically for Cloud providers and Terraform:
