@@ -93,7 +93,7 @@ export JX_VAULT_ROLE=jx-vault
 export EXTERNAL_VAULT=true
 ```
 
-Run `jx-secret` as you nomrally would:
+Run `jx-secret` as you normally would:
 ```bash
 jx secret edit -i
 ```
