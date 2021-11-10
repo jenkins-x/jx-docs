@@ -71,7 +71,7 @@ e.g. define environment variables GIT_USERNAME and GIT_API_TOKEN
       --include-merge-commits      Include merge commits when generating the changelog
       --log-level string           Sets the logging level. If not specified defaults to $JX_LOG_LEVEL
       --no-dev-release             Disables the generation of Release CRDs in the development namespace to track releases being performed
-      --output-markdown string     The file to generate for the changelog output if not updating a Git provider release
+      --output-markdown string     Put the changelog output in this file
   -o, --overwrite                  overwrites the Release CRD YAML file if it exists
       --prerelease                 The git provider release is marked as a pre-release
       --previous-date string       the previous date to find a revision in format 'MonthName dayNumber year'
