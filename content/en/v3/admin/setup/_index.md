@@ -3,7 +3,7 @@ title: Getting started
 linktitle: Getting started
 type: docs
 description: Guides on getting your Jenkins X cluster installed
-weight: 200
+weight: 300
 aliases:
   - /v3/guides/
 ---
