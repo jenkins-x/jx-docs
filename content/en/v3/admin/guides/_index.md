@@ -3,7 +3,7 @@ title: Guides
 linktitle: Guides
 type: docs
 description: Guides on configuring, upgrading and managing Jenkins X
-weight: 300
+weight: 400
 aliases:
   - /v3/guides/
 ---
