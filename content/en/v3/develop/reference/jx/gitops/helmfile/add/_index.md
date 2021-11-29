@@ -20,7 +20,7 @@ Adds a chart to the local 'helmfile.yaml' file
 ### Examples
 
   ```bash
-  # adds a chart using the currently known repositories in the verison stream or helmfile.yaml
+  # adds a chart using the currently known repositories in the version stream or helmfile.yaml
   jx-gitops helmfile add --chart somerepo/mychart
   
   # adds a chart using a new repository URL with a custom version and namespace

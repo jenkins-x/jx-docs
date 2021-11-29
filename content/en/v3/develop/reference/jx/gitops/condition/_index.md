@@ -23,7 +23,7 @@ Runs a command if the condition is true
   # runs a command if the last commit messsage has a given prefix
   jx-gitops condition --last-commit-msg-prefix 'Merge pull request' -- make all commit push
   
-  you can use ! in front of a filter to be the equivalant of not matching the condition. e.g.
+  you can use ! in front of a filter to be the equivalent of not matching the condition. e.g.
   
   # runs a command if the last commit message does not have a given prefix
   jx-gitops condition --last-commit-msg-prefix '!Merge pull request' -- make all commit push
