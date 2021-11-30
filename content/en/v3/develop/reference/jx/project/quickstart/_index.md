@@ -61,6 +61,7 @@ For more documentation see: https://jenkins-x.io/developing/create-quickstart/
       --log-level string               Sets the logging level. If not specified defaults to $JX_LOG_LEVEL
       --machine-learning               Allow machine-learning quickstarts in results
       --name string                    Specify the Git repository name to import the project into (if it is not already in one)
+      --nested-repo                    Specify if using nested repositories (in gitlab)
       --no-collaborator                disables checking if the bot user is a collaborator. Only used if you have an issue with your git provider and this functionality in go-scm
       --no-dev-pr                      disables generating a Pull Request on the cluster git repository
       --no-import                      Disable import after the creation

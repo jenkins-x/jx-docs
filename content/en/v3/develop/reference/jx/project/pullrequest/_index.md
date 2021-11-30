@@ -39,7 +39,7 @@ If --push is specified the contents of the directory will be committed, pushed a
 ### Options
 
 ```
-      --base string         The base branch to create the pull request into (default "master")
+      --base string         The base branch to create the pull request into, instead of the default branch
   -b, --batch-mode          Enables batch mode which avoids prompting for user input
       --body string         The body of the pullrequest
       --dir string          the directory to search for the .git to discover the git source URL (default ".")

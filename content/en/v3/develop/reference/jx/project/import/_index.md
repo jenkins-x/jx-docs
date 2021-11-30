@@ -72,6 +72,7 @@ For more documentation see: https://jenkins-x.io/docs/using-jx/creating/import/
       --jx                             if you want to default to importing this project into Jenkins X instead of a Jenkins server if you have a mixed Jenkins X and Jenkins cluster
       --log-level string               Sets the logging level. If not specified defaults to $JX_LOG_LEVEL
   -n, --name string                    Specify the Git repository name to import the project into (if it is not already in one)
+      --nested-repo                    Specify if using nested repositories (in gitlab)
       --no-collaborator                disables checking if the bot user is a collaborator. Only used if you have an issue with your git provider and this functionality in go-scm
       --no-dev-pr                      disables generating a Pull Request on the cluster git repository
       --no-pack                        Disable trying to default a Dockerfile and Helm Chart from the pipeline catalog pack
