@@ -46,7 +46,7 @@ jx version
 or 
 
 ```shell 
-jx help 
+jx --help 
 ```
 
 For more detail see the [Command Line Reference Guide](/v3/develop/reference/jx/) 
