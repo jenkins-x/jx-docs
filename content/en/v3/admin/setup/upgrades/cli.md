@@ -20,6 +20,14 @@ To upgrade jx subcommand plugins run:
 jx upgrade plugins
 ```
 
+{{< alert >}}
+If you encounter this error:
+```
+ERROR: failed to load plugin <plugin-name>: can't find latest version of plugin: {"message":"Not Found","documentation_url":"https://docs.github.com/rest/reference/repos#get-the-latest-release"}
+```
+Then most probably it's an old plugin which is not maintained, and can be removed from `~/.jx3/plugins/bin` folder.
+{{< /alert >}}
+
 The `jx` CLI version used to upgrade to is derived from the Jenkins X [version stream](/about/concepts/version-stream/).  
 
 If you have not installed Jenkins X or are not connected to a Kubernetes cluster with Jenkins X running then the `jx` CLI version defaults to the latest version stream git repository [here](https://github.com/jenkins-x/jxr-versions/blob/master/packages/jx.yml)
