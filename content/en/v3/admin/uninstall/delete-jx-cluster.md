@@ -21,3 +21,5 @@ terraform destroy
 ```
 
 - If you installed jx on minikube/kind/k3s (local installations), refer to the docs of those platforms on how to uninstall the cluster.
+- If you imported repositories into Jenkins X using `jx project import` or `jx project quickstart`, then you
+  also need to delete the webhooks manually from the repositories.
