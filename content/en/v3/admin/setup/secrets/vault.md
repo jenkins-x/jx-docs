@@ -10,7 +10,7 @@ aliases:
 
 ## Installing Vault
 
-### Internal vault (vault inside kubernetes cluster)
+### Internal vault (vault created as part of Jenkins X installation)
 
 If you are using Terraform with one of the [Cloud Providers](/v3/admin/) then your Vault will be installed automatically via Terraform.
 
@@ -68,6 +68,8 @@ module "eks-jx" {
 }
 ....
 ```
+
+This should create a secret `jx-boot-job-env-vars` in the `jx-git-operator` namespace, verify that this secret has `EXTERNAL_VAULT` set to true, and `VAULT_ADDR` set correctly.
 
 This will prevent the terraform module from creating any vault resources in the kubernetes cluster and the cloud (AWS/GCP/Azure) account.
 
