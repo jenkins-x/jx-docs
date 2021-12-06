@@ -28,62 +28,70 @@ You can wait for the `vault-0` pod in namespace `jx-vault` to be ready via [jx s
 jx secret vault wait
 ```
 
-#### External vault
+### External vault
 
 {{< alert >}}
 External vault is only supported for jx versions greater than `3.2.203`
 {{< /alert >}}
 
 Configure external vault to support [kubernetes auth method](https://www.vaultproject.io/docs/auth/kubernetes#configuration).
-This step needs to be done before any jenkinsx related changes are made.
+This step needs to be done before any Jenkins X related changes are made.
 
-Set `vault_url` to the url of the external vault in the terraform [module](https://github.com/jenkins-x/terraform-aws-eks-jx/blob/master/variables.tf#L36-L40).
-Add vault_url to the main.tf file (replace `https://external-vault.com` with the actual vault url):
+```bash
+# Set VAULT_ADDR
+export VAULT_ADDR='<vault url>'
+vault auth enable kubernetes
+```
+
+We only support kubernetes auth method at `kubernetes/` for now.
+
+Add `vault_url` and `boot_secrets` to the main.tf file (replace `https://external-vault.com` with the actual vault url):
 
 ```bash
 ...
 module "eks-jx" {
   source               = "jenkins-x/eks-jx/aws"
   ...
-  vault_url            = "https://external-vault.com"
-  ....
+  vault_url            = "https://external-vault.com:8200"
+  boot_secrets = [
+    {
+      name  = "jxBootJobEnvVarSecrets.EXTERNAL_VAULT"
+      value = "true"
+      type  = "string"
+    },
+    {
+      name  = "jxBootJobEnvVarSecrets.VAULT_ADDR"
+      value = "https://enter-your-vault-url:8200"
+      type  = "string"
+    }
+  ]
 }
 ....
 ```
 
 This will prevent the terraform module from creating any vault resources in the kubernetes cluster and the cloud (AWS/GCP/Azure) account.
 
-Next, in the cluster git repository (the one generated from https://github.com/jx3-gitops-repositories/jx3-eks-vault ), modify the [Makefile](https://github.com/jx3-gitops-repositories/jx3-eks-vault/blob/main/versionStream/src/Makefile.mk) to add 2 extra environment variables (replace `https://external-vault.com` with the actual vault url):
-
-```bash
-VAULT_ADDR=http://external-vault.com
-EXTERNAL_VAULT=true
-```
-
-and modify the `secrets-populate` target to
-
-```bash
--VAULT_ADDR=$(VAULT_ADDR) EXTERNAL_VAULT=$(EXTERNAL_VAULT) VAULT_NAMESPACE=$(VAULT_NAMESPACE) jx secret populate --secret-namespace $(VAULT_NAMESPACE) --no-wait
-```
-
-Now your vault can be used.
+Now your vault can be used with Jenkins X.
 
 #### Local `jx-secret` with External vault
 
-`jx-secret` uses the `JWT` token type to authenticate with vault.  The `JWT` token is only valid when used from inside the Kubernetes cluster and because of this we have to proxy the connection through a host inside the cluster.
+`jx-secret` uses the `JWT` token type to authenticate with vault. The `JWT` token is only valid when used from inside the Kubernetes cluster and because of this we have to proxy the connection through a host inside the cluster.
 
 Launch a pod in the jx cluster to act as the proxy host:
+
 ```bash
 kubectl -n jx run vault-proxy --image=hpello/tcp-proxy --port=8200 -- vault.example.com 8200
 ```
 
 Forward local port 8200 to the vault-proxy pod:
+
 ```bash
 kubectl port-forward pods/vault-proxy 8200:8200&
 jobid=`echo $!`
 ```
 
 Setup your local environment:
+
 ```bash
 unset VAULT_TOKEN
 export VAULT_ADDR=https://localhost:8200/
@@ -94,15 +102,18 @@ export EXTERNAL_VAULT=true
 ```
 
 Run `jx-secret` as you normally would:
+
 ```bash
 jx secret edit -i
 ```
 
 Cleanup:
+
 ```bash
 kill $foo #stop the port-forward
 kubectl -n jx delete pod vault-proxy #delete the pod
 ```
+
 ### Configuration
 
 To indicate that Vault is being used as the storage engine for your Secrets you need to [configure vault](/v3/guides/config/#vault) via `secretStorage: vault` in your `jx-requirements.yml`. Note that this is usually done automatically for Cloud providers and Terraform:
