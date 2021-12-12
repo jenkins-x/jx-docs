@@ -49,7 +49,7 @@ Check [k3s install guide](https://rancher.com/docs/k3s/latest/en/installation/) 
 Make sure you have vault running in a docker container with kubernetes auth enabled.
 
 ```bash
-docker run --cap-add=IPC_LOCK -p 8200:8200 -e 'VAULT_DEV_ROOT_TOKEN_ID=myroot' -e 'VAULT_DEV_LISTEN_ADDRESS=0.0.0.0:8200' --net host vault:latest
+docker run --cap-add=IPC_LOCK -e 'VAULT_DEV_ROOT_TOKEN_ID=myroot' -e 'VAULT_DEV_LISTEN_ADDRESS=0.0.0.0:8200' --net host vault:latest
 ```
 
 In another terminal run:
@@ -83,8 +83,9 @@ git push origin main
 jx admin operator --username $GIT_USERNAME --token $GIT_TOKEN --url <url of the cluster git repo> --set "jxBootJobEnvVarSecrets.EXTERNAL_VAULT=\"true\"" --set "jxBootJobEnvVarSecrets.VAULT_ADDR=http://<replace with k3s node name>:8200"
 ```
 
-> Note:
-> The first job will fail as it cannot authenticate against vault. Once the secret-infra namespace has been created, we can configure the kubernetes backend
+> Note: The first job will fail as it cannot authenticate against vault.
+> The errors will be of the form `error: failed to populate secrets: failed to create a secret manager for ExternalSecret`.
+> Once the secret-infra namespace has been created, we can configure vault.
 
 ### Vault configuration
 
@@ -93,6 +94,7 @@ Remember to run the following commands in a terminal where you have set the valu
 - Create a vault config
 
 ```bash
+export VAULT_ADDR='http://0.0.0.0:8200'
 VAULT_HELM_SECRET_NAME=$(kubectl -n secret-infra get secrets --output=json | jq -r '.items[].metadata | select(.name|startswith("kubernetes-external-secrets-token-")).name')
 TOKEN_REVIEW_JWT=$(kubectl -n secret-infra get secret $VAULT_HELM_SECRET_NAME --output='go-template={{ .data.token }}' | base64 --decode)
 KUBE_CA_CERT=$(kubectl config view --raw --minify --flatten --output='jsonpath={.clusters[].cluster.certificate-authority-data}' | base64 --decode)
@@ -120,6 +122,34 @@ path "secret/*" {
 EOF
 ```
 
+Once vault is configured, pull the changes commited to the cluster git repository by the bootjob, and push a dummy job
+
+```bash
+git pull
+# Make a dummy change (change Readme file for example)
+git add .
+git commit -m "chore: dummy commit 1"
+git push origin main
+```
+
+tail the logs of `jx-git-operator` pod in the `jx-git-operator` namespace.
+
+```
+not creating a Job in namespace jx-git-operator for repo jx-boot sha XXXXXX yet as there is an active job jx-boot-XXXXXXX
+```
+
+Kill that job.
+
+```bash
+kubeclt delete job jx-boot-97dbb72f-4e4e-4b0e-8eb2-8908997b19f7 -n jx-git-operator
+```
+
+Once it's killed a new boot job will be triggered.
+This job will create the secrets in vault which will be used by external secrets to create kubernetes secrets.
+
+- To verify the job succeeded, run `jx admin log`
+- To verfiy the secrets were created, run `kubectl get es -A` and `jx secret verify`
+
 ### Set up ingress and webhook
 
 - Get the external IP of the traefik service (loadbalancer)
@@ -132,6 +162,8 @@ kube-system   traefik          LoadBalancer   <cluster-ip>    <external-ip>    8
 - Edit the jx-requirements.yaml file by editing the ingress domain:
 
 ```bash
+# There may be some changes committed by the jx boot job
+git pull
 jx gitops requirements edit --domain <external-ip>.nip.io
 ```
 
@@ -141,7 +173,7 @@ jx gitops requirements edit --domain <external-ip>.nip.io
 ngrok http 8080
 ```
 
-- Once this tunnel is open, paste the ngrok url in the hook field in the helmfiles/jx/jxboot-helmfile-resources-values.yaml file in the cluster git repository.
+- Once this tunnel is open, paste the ngrok url (without http and https) in the hook field in the helmfiles/jx/jxboot-helmfile-resources-values.yaml file in the cluster git repository.
 - commit and push the changes.
 
 ```bash
@@ -150,9 +182,10 @@ git commit -m "chore: new ngrok ip"
 git push origin main
 ```
 
-- once Jenkins X is installed run the following command to enable webhooks via ngrok
+- In another terminal run the following command to enable webhooks via ngrok
 
 ```bash
+jx ns jx
 kubectl port-forward svc/hook 8080:80
 ```
 
