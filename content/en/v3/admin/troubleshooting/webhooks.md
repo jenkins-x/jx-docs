@@ -3,15 +3,15 @@ title: Webhooks
 linktitle: Webhooks
 type: docs
 description: How to diagnose and fix webhooks
-weight: 200
+weight: 400
 ---
 
 Webhooks are used to trigger [lighthouse](https://github.com/jenkins-x/lighthouse) when you:
 
-* merge commits to your main branch 
-* open a Pull Request
-* push code to a Pull Request branch
-* comment on a Pull Request to trigger ChatOps
+- merge commits to your main branch
+- open a Pull Request
+- push code to a Pull Request branch
+- comment on a Pull Request to trigger ChatOps
 
 If webhooks are not working in your cluster then you won't get ChatOps or pipelines triggered.
 
@@ -21,14 +21,13 @@ For webhooks to work you must have a working `Ingress` for the `hook` endpoint f
 
 The ingress defaults to using the domain name specified in `ingress.domain` in your `jx-requirements.yml` file.
 
-
 ### Diagnosing issues
-        
+
 You can check on the health of your system and webhooks via the [Health guide](/v3/admin/setup/health/)
 
 First make sure you have a valid ingress for hook...
 
-```bash 
+```bash
 # switch to the jx namespace
 jx ns jx
 
@@ -57,9 +56,9 @@ kubectl get environments
 
 Then click the `GIT URL` link for your repository.
 
-Now look at the **Webbooks** page to see if your git provider could send webhooks to your hook endpoint. On GitHub thats **Settings** ->  **Webhooks**
+Now look at the **Webbooks** page to see if your git provider could send webhooks to your hook endpoint. On GitHub thats **Settings** -> **Webhooks**
 
-It could be your git provider can't see public ingress endpoint? If thats the case you may need to look at setting up a tunnel via something like [ngrok to enable on-premises webhooks](/v3/admin/platforms/on-premises/#enable-webhooks) 
+It could be your git provider can't see public ingress endpoint? If thats the case you may need to look at setting up a tunnel via something like [ngrok to enable on-premises webhooks](/v3/admin/platforms/on-premises/#enable-webhooks)
 
 ### AWS specific issues
 
