@@ -46,13 +46,18 @@ Check [k3s install guide](https://rancher.com/docs/k3s/latest/en/installation/) 
 
 #### Vault
 
+Install vault cli.
+Refer to the [vault docs](https://www.vaultproject.io/docs/install) on how to install vault for your platform.
+
 Make sure you have vault running in a docker container with kubernetes auth enabled.
 
 ```bash
-docker run --cap-add=IPC_LOCK -e 'VAULT_DEV_ROOT_TOKEN_ID=myroot' -e 'VAULT_DEV_LISTEN_ADDRESS=0.0.0.0:8200' --net host vault:latest
+docker run --name jx-k3s-vault -d --cap-add=IPC_LOCK -e 'VAULT_DEV_ROOT_TOKEN_ID=myroot' -e 'VAULT_DEV_LISTEN_ADDRESS=0.0.0.0:8200' --net host vault:latest
 ```
 
-In another terminal run:
+To verify if vault started properly use `docker logs jx-k3s-vault`.
+
+Next enable kubernetes auth in vault.
 
 ```bash
 export VAULT_ADDR='http://0.0.0.0:8200'
