@@ -22,6 +22,8 @@ Ensure you are logged into GitHub else you will get a 404 error when clicking th
 
 This is our current recommended quickstart for Azure:
 
+{{< alert >}}  <a href="/blog/2021/12/28/kanikoacrandjenkinsx">**Warning**: Some issues with kaniko have been found on Azure that will require some changes</a> {{< /alert >}}
+
 *  <a href="https://github.com/jx3-gitops-repositories/jx3-terraform-azure/generate" target="github" class="btn bg-primary text-light">Create Git Repository</a>
    
     * if the above button does not work then please [Login to GitHub](https://github.com/login) first and then retry the button
