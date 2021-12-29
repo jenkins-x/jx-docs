@@ -28,7 +28,8 @@ Make sure you have created a cluster using k3s.
 If you dont have an existing k3s cluster, you can install one by running:
 
 ```bash
-curl -sfL https://get.k3s.io | sh -
+# We don't support Kubernetes 1.22+ yet
+curl -sfL https://get.k3s.io | INSTALL_K3S_CHANNEL=v1.21 sh -
 sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/k3s-config
 # Set it also in the bashrc or zshrc file, or you can flatten both of these configs into a single file
 KUBECONFIG=~/.kube/config:~/.kube/k3s-config
@@ -93,6 +94,8 @@ jx admin operator --username $GIT_USERNAME --token $GIT_TOKEN --url <url of the 
 > Once the secret-infra namespace has been created, we can configure vault.
 
 ### Vault configuration
+
+Install [jq](https://stedolan.github.io/jq/download/) before running these commands.
 
 Remember to run the following commands in a terminal where you have set the value of `VAULT_ADDR`
 
