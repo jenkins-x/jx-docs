@@ -8,7 +8,7 @@ weight: 100
 
 ## Check you are using a cluster Git URL
 
-If using Terraform make sure the `values.auto.tfvars` file contains a `jx_git_url = ` value that points to a **cluster** git repo that contains a helmfile.yaml and a folder ./helmfiles. A common mistake is users set the `jx_git_url` to the infrastruture repo instead.
+If using Terraform make sure the `values.auto.tfvars` file contains a `jx_git_url = ` value that points to a **cluster** git repo that contains a helmfile.yaml and a folder ./helmfiles. A common mistake is users set the `jx_git_url` to the infrastructure repo instead.
 
 After a successful bootjob, these are few things to look for:
 
@@ -28,7 +28,7 @@ This is normally because the secret generation failed during the boot job.
 
 - Look at the outputs from `jx secret verify` and `kubectl get es -A`
 - If you see errors (`404 missing`), it most likely means that the secret generation step in the boot log did not work.
-- One way to re-generate secrets is by makine a direct push to the base branch of the cluster git repo.
+- One way to re-generate secrets is by making a direct push to the base branch of the cluster git repo.
 - A direct push to the master (not by creating a pull request) branch will run `regen-phase-1`, `regen-phase-2` and `regen-phase-3`.
   Check the admin logs to verify these steps were executed without failing.
   `regen-phase-3` is where the secret generation happens.
