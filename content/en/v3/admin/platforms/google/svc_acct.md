@@ -1,6 +1,6 @@
 ---
 title: Configure Google Service Account
-linktitle: Service Account
+linktitle: GCP Service Account
 type: docs
 weight: 100
 aliases:
