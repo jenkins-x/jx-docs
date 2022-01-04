@@ -149,7 +149,7 @@ not creating a Job in namespace jx-git-operator for repo jx-boot sha XXXXXX yet 
 Kill that job.
 
 ```bash
-kubeclt delete job jx-boot-97dbb72f-4e4e-4b0e-8eb2-8908997b19f7 -n jx-git-operator
+kubectl delete job jx-boot-97dbb72f-4e4e-4b0e-8eb2-8908997b19f7 -n jx-git-operator
 ```
 
 Once it's killed a new boot job will be triggered.
