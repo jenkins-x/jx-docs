@@ -39,7 +39,7 @@ export ARM_TENANT_ID=$TENANT_ID
 Use the following steps under the portal to set the Cloud Application Administrator admin role.
 
 - SCREEN: Azure Active Directory | Overview | Roles and administrators
-	[https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RolesAndAdministrators](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RolesAndAdministrators)
+	[https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RolesAndAdministrators](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RolesAndAdministrators)<br>
 	___ Search for “Cloud application administrator” then click on the role.
 
 - SCREEN: Cloud application administrator | Assignments<br>
