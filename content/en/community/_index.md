@@ -35,11 +35,11 @@ Join Kubernetes slack [here](https://slack.k8s.io/) and find us on our channels:
 
 During office hours we demo the latest features, answer questions, and share knowledge together.
 
-We meet for office hours **every other Tuesday** at 16:00 UTC (_See your timezone [here](https://time.is/1600_in_UTC)_).
+We meet for office hours **every other Tuesday** at 15:00 UTC (_See your timezone [here](https://time.is/1500_in_UTC)_).
 
 <a href="https://us04web.zoom.us/j/78274076398?pwd=UGZwTDlLRDh1Yng2S09rNm1LZjY0dz09" class="btn btn-lg bg-primary text-white">join the Office Hours meeting</a>
 
-You can save Jenkins X office hours to your calendar by [clicking here](https://calendar.google.com/event?action=TEMPLATE&tmeid=aDFkamY5YXRpMnVocGV2Z2hybXBzMjVwOXNfMjAyMjAxMDRUMTYwMDAwWiByNnE4OW91MzI3MHExZXBnYnI2dWpqMjgxNEBn&tmsrc=r6q89ou3270q1epgbr6ujj2814%40group.calendar.google.com&scp=ALL).
+You can save Jenkins X office hours to your calendar by [clicking here](https://calendar.google.com/event?action=TEMPLATE&tmeid=ZTM2N2ducTd2MDJubXY2N2hwc2N2dGNyMm9fMjAyMjAxMThUMTUwMDAwWiByNnE4OW91MzI3MHExZXBnYnI2dWpqMjgxNEBn&tmsrc=r6q89ou3270q1epgbr6ujj2814%40group.calendar.google.com&scp=ALL).
 
 {{< calendar >}}
 
