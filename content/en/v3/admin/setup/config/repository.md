@@ -90,6 +90,8 @@ repositories:
     snapshotURL: https://maven.pkg.github.com/myowner/mysnapshots/
 ```
 
+Note: The pipeline user token will be used to push maven packages. It needs the "write:packages" permission, which is already set on the link to create the pipeline token so it should work.
+
 ### Custom
 
 If you want to use a custom maven repository then populate it as follows:
