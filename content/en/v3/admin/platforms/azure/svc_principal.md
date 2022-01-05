@@ -32,17 +32,16 @@ read -p "Service Principal (i.e. mySvcPr) : " APP_NAME
 ```
 ```bash
 SUBSCRIPTION_ID=$(az account show --query id --output tsv)
-SVCP=$(az ad sp create-for-rbac --role Contributor --name $APP_NAME --scopes /subscriptions/$SUBSCRIPTION_ID --output json)
+SVCP=$(az ad sp create-for-rbac --role Contributor --name $APP_NAME --scopes /subscriptions/$SUBSCRIPTION_ID --output json --only-show-errors)
 APP_ID=$(echo $SVCP | jq -r .appId)
 OBJ_ID=$(az ad sp list --filter "appId eq '$APP_ID'" --output json | jq '.[0].objectId' -r)
-USER_ID=$(echo $SVCP | jq -r .name)
 PASS_ID=$(echo $SVCP | jq -r .password)
 TENANT_ID=$(echo $SVCP | jq -r .tenant)
-az role assignment create --role "User Access Administrator" --assignee-object-id $OBJ_ID
+az role assignment create --role "User Access Administrator" --assignee-object-id $OBJ_ID --only-show-errors
 ```
 Use the following command to check the service principal subscription role settings.
 ``` bash 
-az role assignment list --assignee $APP_ID --query [].roleDefinitionName --output json
+az role assignment list --assignee $APP_ID --query [].roleDefinitionName --output json --only-show-errors
 ```
 You should see the following:
 ```
@@ -68,7 +67,7 @@ The second step will be to assign the new service principal the `Cloud Applicati
 	___ Select ther service princiapl ($APP_NAME) and click the 'Add' button.
 
 ![cloud app admin section](/images/v3/cloud_app_admin.png)
-To validate that the `Cloud Application Administrator` admin role was assigned to the service principal repeat the above steps for accessing SCREEN 1 and SCREEN 2 and you should see the service principal as part of the list.
+To validate that the assignment was made, while stll on SCREEN 2 click on `Assignments` on the left navigation. You should see the service principal included in the list.
 ### Assign service principal graph API permission
 THe third step is to assign Active Directory Graph API permission `Application.ReadWrite.All`.
 > ⚠️  This application is using Azure AD Graph API, which is on a deprecation path. As of June 30th, 2020 there were no longer any new features added to the Azure AD Graph API.
@@ -76,29 +75,51 @@ THe third step is to assign Active Directory Graph API permission `Application.R
 # Azure Active Directory Graph
 API_ID=00000002-0000-0000-c000-000000000000
 APPLICATION_READWRITE_ALL_ID=$(az ad sp show --id $API_ID --query "appRoles[?value=='Application.ReadWrite.All'].id" --output tsv)
-az ad app permission add --id $APP_ID --api $API_ID --api-permissions $APPLICATION_READWRITE_ALL_ID=Role
-az ad app permission grant --id $APP_ID --api $API_ID
+az ad app permission add --id $APP_ID --api $API_ID --api-permissions $APPLICATION_READWRITE_ALL_ID=Role --only-show-errors
+az ad app permission grant --id $APP_ID --api $API_ID --only-show-errors
 APP_OBJECT_ID=$(az ad sp show --id $APP_ID --query "objectId" --output tsv)
 API_OBJECT_ID=$(az ad sp show --id $API_ID --query "objectId" --output tsv)
 az rest --method POST --uri "https://graph.microsoft.com/v1.0/servicePrincipals/$APP_OBJECT_ID/appRoleAssignments" --headers '{"Content-Type": "application/json"}' --body "{\"principalId\": \"$APP_OBJECT_ID\", \"resourceId\": \"$API_OBJECT_ID\", \"appRoleId\": \"$APPLICATION_READWRITE_ALL_ID\"}" --only-show-errors
 ```
+Use the following command to check the service principal API settings.
+``` bash
+az ad app permission list --id $APP_ID --only-show-errors --output table
+```
+You should see something like the following:
+```
+ExpiryTime                  ResourceAppId
+--------------------------  ------------------------------------
+2022-12-20T00:21:52.224478  00000002-0000-0000-c000-000000000000
+```
+
 ### Prepare to run Terraform
+Once the service prinicpa is created and assigned the appropriate roles and permissions, it can now be used by Terraform to execute the Jenkins X Azure module. In order for Terraform to use the service principal credentials you need to [specify service principal credentials in environment variables](https://docs.microsoft.com/en-us/azure/developer/terraform/get-started-cloud-shell-bash)
+```
+export ARM_CLIENT_ID=${APP_ID}
+export ARM_CLIENT_SECRET=${PASS_ID}
+export ARM_TENANT_ID=${TENANT_ID}
+export ARM_SUBSCRIPTION_ID=${SUBSCRIPTION_ID}
+```
 The following Azure CLI commands will display the role assignment list, app permissions list , and a portal URL for the service principal. It will also export the necessary ARM_ variables required for Terraform credentials.
 ``` bash 
 echo $APP_NAME
 echo $SVCP
-az role assignment list --assignee $APP_ID --query [].roleDefinitionName --output json
-az ad app permission list --id $APP_ID
+az role assignment list --assignee $APP_ID --query [].roleDefinitionName --output json --only-show-errors
+az ad app permission list --id $APP_ID --only-show-errors
 echo "Check Service Principal at:"
 echo " https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationMenuBlade/Overview/appId/$APP_ID"
-# The following variables need to be set for Terraform
-eval export ARM_CLIENT_ID=$USER_ID
+# The following variables need to be set for Terraform environment variables for Azure reources.
+
+eval export ARM_CLIENT_ID=$APP_ID
 eval export ARM_CLIENT_SECRET=$PASS_ID
 eval export ARM_TENANT_ID=$TENANT_ID
+eval export ARM_SUBSCRIPTION_ID=$SUBSCRIPTION_ID
+env | grep ARM_
 ```
-At this point you should now be ready to perform the Terraform steps to build the environment using the service principal credentials. 
+At this point you should now be ready to perform the Terraform steps to build the environment using the service principal credentials. You should keep the Terraform environment variables (ARM_) values in a safe place unitl the service principal resource is deleted. You can find more details on managing the service principal by viewing [Create an Azure service principal with the Azure CLI](https://docs.microsoft.com/en-us/cli/azure/create-an-azure-service-principal-azure-cli#reset-credentials).
 ### Clean up
 Clean is straightforward. Once you delete the service principal all roles and permissopms are also deleted as well.  The following Azure CLI commands will remove the roles and service principal.
 ``` bash
-az ad sp delete --id $APP_ID
+az ad sp delete --id $APP_ID --only-show-errors
+# You also can use $ARM_CLIENT_ID which is the same value as $APP_ID to delete the resource.
 ```
