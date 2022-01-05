@@ -108,8 +108,6 @@ az role assignment list --assignee $APP_ID --query [].roleDefinitionName --outpu
 az ad app permission list --id $APP_ID --only-show-errors
 echo "Check Service Principal at:"
 echo " https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationMenuBlade/Overview/appId/$APP_ID"
-# The following variables need to be set for Terraform environment variables for Azure reources.
-
 eval export ARM_CLIENT_ID=$APP_ID
 eval export ARM_CLIENT_SECRET=$PASS_ID
 eval export ARM_TENANT_ID=$TENANT_ID
@@ -118,7 +116,7 @@ env | grep ARM_
 ```
 At this point you should now be ready to perform the Terraform steps to build the environment using the service principal credentials. You should keep the Terraform environment variables (ARM_) values in a safe place unitl the service principal resource is deleted. You can find more details on managing the service principal by viewing [Create an Azure service principal with the Azure CLI](https://docs.microsoft.com/en-us/cli/azure/create-an-azure-service-principal-azure-cli#reset-credentials).
 ### Clean up
-Clean is straightforward. Once you delete the service principal all roles and permissopms are also deleted as well.  The following Azure CLI commands will remove the roles and service principal.
+Clean up is straightforward. Once you delete the service principal all roles and permissopms are also deleted as well.  The following Azure CLI commands will remove the roles and service principal.
 ``` bash
 az ad sp delete --id $APP_ID --only-show-errors
 # You also can use $ARM_CLIENT_ID which is the same value as $APP_ID to delete the resource.
