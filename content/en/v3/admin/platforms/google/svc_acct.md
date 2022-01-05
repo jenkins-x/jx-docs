@@ -50,21 +50,21 @@ gcloud projects add-iam-policy-binding ${MYPROJECT} --member serviceAccount:${MY
 gcloud projects add-iam-policy-binding ${MYPROJECT} --member serviceAccount:${MY_GCP_SA} --role roles/iam.serviceAccountKeyAdmin 
 ```
 If the environment uses external DNS and has the Apex domain records under a different project, assign to the service account `($MY_GCP_SA)` the necessary role to mangage DNS under the Apex project `($APEXPROJECT)`. 
-> ⚠️  If you are not using a separate Apex project, skip to [CLI Display Commands](http://localhost:1313/v3/admin/platforms/google/svc_acct/#cli-display-commands).
+> ⚠️  If you are not using a separate Apex project, skip to [CLI display commands](http://localhost:1313/v3/admin/platforms/google/svc_acct/#cli-display-commands).
 ```bash
 read -p "Apex Project (if none leave blank) : " APEXPROJECT
 ```
 ``` bash
 [[ ! -z "$APEXPROJECT" ]] && gcloud projects add-iam-policy-binding ${APEXPROJECT} --member serviceAccount:${MY_GCP_SA} --role roles/dns.admin || echo "No project"
 ```
-### CLI Display Commands
+### CLI display commands
 To display the roles assigned to the service account use the following commands;
 ``` bash
 gcloud projects get-iam-policy ${MYPROJECT} --flatten="bindings[].members" --format='table(bindings.role)' --filter="bindings.members:${MY_GCP_SA}"
 [[ ! -z "$APEXPROJECT" ]] && gcloud projects get-iam-policy ${APEXPROJECT} --flatten="bindings[].members"  --format='table(bindings.role)' --filter="bindings.members:${MY_GCP_SA}"
 ```
  
-### Create and Assign Service Account Key
+### Create and assign service account key
 Create the service account key into a json file and assign Google application credentials variable (GOOGLE_APPLICATION_CREDENTIALS) so that it can be used by Terraform.
 ```bash
 gcloud iam service-accounts keys create ~/${IAMNAME}_key.${MYPROJECT}.json --iam-account ${MY_GCP_SA} --project ${MYPROJECT}
@@ -75,7 +75,7 @@ If want the CLI to use the service account credentials, which may be suitable fo
 ``` bash
 gcloud auth activate-service-account ${MY_GCP_SA} --key-file ~/${IAMNAME}_key.${MYPROJECT}.json --project ${MYPROJECT}
 ```
-### Clean Up
+### Clean up
 The following Google CLI commands will remove the roles and service account.
 ``` bash
 gcloud projects remove-iam-policy-binding ${MYPROJECT} --member serviceAccount:${MY_GCP_SA} --role roles/container.admin 

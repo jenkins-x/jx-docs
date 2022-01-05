@@ -67,7 +67,7 @@ The second step will be to assign the new service principal the `Cloud Applicati
 	___ Select ther service princiapl ($APP_NAME) and click the 'Add' button.
 
 ![cloud app admin section](/images/v3/cloud_app_admin.png)
-To validate that the assignment was made, while stll on SCREEN 2 click on `Assignments` on the left navigation. You should see the service principal included in the list.
+To validate that the assignment was made, while stll on SCREEN 2 click on `Assignments`on the left navigation. You should see the service principal included in the list.
 ### Assign service principal graph API permission
 THe third step is to assign Active Directory Graph API permission `Application.ReadWrite.All`.
 > ⚠️  This application is using Azure AD Graph API, which is on a deprecation path. As of June 30th, 2020 there were no longer any new features added to the Azure AD Graph API.
@@ -119,5 +119,6 @@ At this point you should now be ready to perform the Terraform steps to build th
 Clean up is straightforward. Once you delete the service principal all roles and permissopms are also deleted as well.  The following Azure CLI commands will remove the roles and service principal.
 ``` bash
 az ad sp delete --id $APP_ID --only-show-errors
-# You also can use $ARM_CLIENT_ID which is the same value as $APP_ID to delete the resource.
+```
+In the above command you also can use `$ARM_CLIENT_ID` which is the same value as `$APP_ID` to delete the resource.
 ```
