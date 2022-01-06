@@ -8,7 +8,7 @@ aliases:
 
 This doc will demonstrate how to set up a Google service account that can be used by Terraform to execute [Jenkins X GKE Module](https://github.com/jenkins-x/terraform-google-jx#jenkins-x-gke-module)
 
-> ⚠️  This doc has been designed to assist in performing the demonstration through copying and pasting each block of code into a shell terminal.<br>
+> 💡 This doc has been designed to assist in performing the demonstration through copying and pasting each block of code into a shell terminal.<br>
 >
 > To execute the commands listed in your local bash shell will require the [Google gcloud tool and Cloud SDK](https://cloud.google.com/sdk/gcloud/#the_and) and the [JQ command-line JSON processor](https://stedolan.github.io/jq/).<br>
 >
@@ -28,7 +28,7 @@ If the service account needs to access a separate project to manage an apex doma
 
 ### Create service account and assign roles
 The first step is to create a new service account (APP_NAME) and to assign tbe roles.
-> ⚠️  If you are using a local terminal, prior to executing the following commands, in the local terminal log into GCP (`gcloud auth login`) with an ID that has the necessary privileges (i.e. Owner) and set the appropriate project (`gcloud config set project PROJECT_ID`). .
+> 💡  If you are using a local terminal, prior to executing the following commands, in the local terminal log into GCP (`gcloud auth login`) with an ID that has the necessary privileges (i.e. Owner) and set the appropriate project (`gcloud config set project PROJECT_ID`). .
 > Always perform all commands in the same local terminal session to preserve dependent variables that are created.
 >
 > If you are using Google cloud shell, you should be logged into the GCP console with the necessary project selected (`MYPROJECT`) and the terminal window opened. Inside the terminal, run the `gcloud config list` to check the envrionment availability. 
@@ -49,8 +49,8 @@ gcloud projects add-iam-policy-binding ${MYPROJECT} --member serviceAccount:${MY
 gcloud projects add-iam-policy-binding ${MYPROJECT} --member serviceAccount:${MY_GCP_SA} --role roles/iam.serviceAccountAdmin 
 gcloud projects add-iam-policy-binding ${MYPROJECT} --member serviceAccount:${MY_GCP_SA} --role roles/iam.serviceAccountKeyAdmin 
 ```
-If the environment uses external DNS and has the Apex domain records under a different project, assign to the service account `($MY_GCP_SA)` the necessary role to mangage DNS under the Apex project `($APEXPROJECT)`. 
-> ⚠️  If you are not using a separate Apex project, skip to [CLI display commands](http://localhost:1313/v3/admin/platforms/google/svc_acct/#cli-display-commands).
+If the environment uses external DNS and has the Apex domain records under a different project, assign to the service account `($MY_GCP_SA)` the necessary role to manage DNS under the Apex project `($APEXPROJECT)`. 
+> 💡  If you are not using a separate Apex project, proceed to [CLI display commands](http://localhost:1313/v3/admin/platforms/google/svc_acct/#cli-display-commands).
 ```bash
 read -p "Apex Project (if none leave blank) : " APEXPROJECT
 ```
@@ -71,7 +71,7 @@ gcloud iam service-accounts keys create ~/${IAMNAME}_key.${MYPROJECT}.json --iam
 eval export GOOGLE_APPLICATION_CREDENTIALS=~/${IAMNAME}_key.${MYPROJECT}.json
 env | grep GOOGLE_APPLICATION_CREDENTIALS
 ```
-If want the CLI to use the service account credentials, which may be suitable for debugging, use the following command, otherwise skip to [Clean Up](http://localhost:1313/v3/admin/platforms/google/svc_acct/#clean-up).
+> 💡 If you want the CLI to use the service account credentials, which may be suitable for debugging, use the following `gloud auth` command, otherwise proceed to [Clean Up](http://localhost:1313/v3/admin/platforms/google/svc_acct/#clean-up) step.
 ``` bash
 gcloud auth activate-service-account ${MY_GCP_SA} --key-file ~/${IAMNAME}_key.${MYPROJECT}.json --project ${MYPROJECT}
 ```
