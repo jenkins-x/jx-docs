@@ -27,7 +27,7 @@ If the service account needs to access a separate project to manage an apex doma
 * roles/dns.admin
 
 ### Create service account and assign roles
-The first step is to create a new service account (APP_NAME) and to assign tbe roles.
+The first step is to create a new service account (APP_NAME) and to assign the roles.
 > 💡  If you are using a local terminal, prior to executing the following commands, in the local terminal log into GCP (`gcloud auth login`) with an ID that has the necessary privileges (i.e. Owner) and set the appropriate project (`gcloud config set project PROJECT_ID`). .
 > Always perform all commands in the same local terminal session to preserve dependent variables that are created.
 >
