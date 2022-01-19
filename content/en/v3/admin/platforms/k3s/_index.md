@@ -29,7 +29,7 @@ If you dont have an existing k3s cluster, you can install one by running:
 
 ```bash
 # We don't support Kubernetes 1.22+ yet
-curl -sfL https://get.k3s.io | INSTALL_K3S_CHANNEL=v1.21 sh -
+curl -sfL https://get.k3s.io | INSTALL_K3S_CHANNEL=v1.21 sh -s - --write-kubeconfig-mode 644
 sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/k3s-config
 # Set it also in the bashrc or zshrc file, or you can flatten both of these configs into a single file
 KUBECONFIG=~/.kube/config:~/.kube/k3s-config
@@ -64,6 +64,7 @@ Next enable kubernetes auth in vault.
 export VAULT_ADDR='http://0.0.0.0:8200'
 vault auth enable kubernetes
 ```
+Note: If you get the error `Error enabling kubernetes auth: Post "https://127.0.0.1:8200/v1/sys/auth/kubernetes": http: server gave HTTP response to HTTPS client`, try the command `vault login myroot`, replacing `myroot` with your root token if you changed it.
 
 #### Github
 
@@ -92,7 +93,7 @@ jx admin operator --username $GIT_USERNAME --token $GIT_TOKEN --url <url of the 
 > Note: The first job will fail as it cannot authenticate against vault.
 > The errors will be of the form `error: failed to populate secrets: failed to create a secret manager for ExternalSecret`.
 > Once the secret-infra namespace has been created, we can configure vault.
-
+> If you get an error connecting to the cluster, try running `kubectl config view --raw >~/.kube/config` as well as checking the permissions/owner of `~/.kube/config`
 ### Vault configuration
 
 Install [jq](https://stedolan.github.io/jq/download/) before running these commands.
