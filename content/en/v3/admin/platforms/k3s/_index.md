@@ -64,7 +64,7 @@ Next enable kubernetes auth in vault.
 export VAULT_ADDR='http://0.0.0.0:8200'
 vault auth enable kubernetes
 ```
-Note: If you get the error `Error enabling kubernetes auth: Post "https://127.0.0.1:8200/v1/sys/auth/kubernetes": http: server gave HTTP response to HTTPS client`, try the command `vault login myroot`, replacing `myroot` with your root token if you changed it.
+Note: If you get the error `Error enabling kubernetes auth: Post "https://127.0.0.1:8200/v1/sys/auth/kubernetes": http: server gave HTTP response to HTTPS client`, try the command `vault login myroot`.
 
 #### Github
 
