@@ -14,6 +14,4 @@ We have made a short survey where we try to gain insight into how people experie
 
 All contributions are welcome, if you are just browsing or have used it for years, we want to know you all!
 
-The survey stays open until Friday 28 of January 2022. All submissions are anonymous and the results will be published. So don't hesitate, fill in the survey today!
-
-The [Jenkins X Survey 1](https://forms.office.com/r/mWD6Ruzu8C)
+The survey stays open until Friday 28 of January 2022. All submissions are anonymous and the results will be published. So don't hesitate, fill in the [Jenkins X survey](https://forms.office.com/r/mWD6Ruzu8C) today
