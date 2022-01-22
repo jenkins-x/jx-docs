@@ -7,65 +7,53 @@ metadata:
 spec:
   pipelineSpec:
     tasks:
-    - name: from-build-pack
-      resources: {}
-      taskSpec:
-        metadata: {}
-        stepTemplate:
-          name: ""
-          resources:
-            requests:
-              cpu: 400m
-              memory: 512Mi
-          workingDir: /workspace/source
-          env:
-            - name: DOMAIN
-              valueFrom:
-                configMapKeyRef:
-                  name: ingress-config
-                  key: domain
-        steps:
-
-        - image: klakegg/hugo:0.88.0-ext-alpine
-          name: git-submodules
-          command:
-          - git
-          args:
-          - submodule
-          - update
-          - --init
-          - --recursive
-
-        - image: klakegg/hugo:0.88.0-ext-alpine
-          name: version
-          command:
-          - hugo
-          args:
-          - version
-
-        - image: gcr.io/cloud-builders/npm
-          name: install-dependencies
-          command:
-          - npm
-          args:
-          - install
-
-        - image: klakegg/hugo:0.88.0-ext-alpine
-          name: build-website
-          script: |
-            #!/bin/sh
-            ls -al
-            hugo -d tmp-website --enableGitInfo --baseURL https://${REPO_NAME}-jx-${REPO_OWNER}-${REPO_NAME}-pr-${PULL_NUMBER}.${DOMAIN}/
-
-        - image: 18fgsa/html-proofer:latest
-          name: htmlproofer
-          script: |
-            #!/bin/sh
-
-            # disabling HTML checks as we have some bad IDs in some pages...
-            # --check-html
-            htmlproofer ./tmp-website --allow-hash-href --disable-external --checks-to-ignore ScriptCheck --empty-alt-ignore --url-ignore "/#.*/" --file-ignore "/.*apidocs.*/,/.*\/zh.*/,/.*\/es.*/,/.*\/docs\/reference\/api.*/,/.*\/docs\/reference\/config.*/,/.*\/community\/events.*/"
+      - name: from-build-pack
+        resources: {}
+        taskSpec:
+          metadata: {}
+          stepTemplate:
+            name: ""
+            resources:
+              requests:
+                cpu: 400m
+                memory: 512Mi
+            workingDir: /workspace/source
+            env:
+              - name: DOMAIN
+                valueFrom:
+                  configMapKeyRef:
+                    name: ingress-config
+                    key: domain
+          steps:
+            - image: klakegg/hugo:0.91.2-ext-alpine
+              name: git-submodules
+              command:
+                - git
+              args:
+                - submodule
+                - update
+                - --init
+                - --recursive
+            - image: gcr.io/cloud-builders/npm
+              name: install-dependencies
+              command:
+                - npm
+              args:
+                - install
+            - image: klakegg/hugo:0.91.2-ext-alpine
+              name: build-website
+              script: |
+                #!/bin/sh
+                ls -al
+                hugo -d tmp-website --enableGitInfo --baseURL https://${REPO_NAME}-jx-${REPO_OWNER}-${REPO_NAME}-pr-${PULL_NUMBER}.${DOMAIN}/
+            - image: 18fgsa/html-proofer:latest
+              name: htmlproofer
+              script: |
+                #!/bin/sh
+                # disabling HTML checks as we have some bad IDs in some pages...
+                # --check-html
+                htmlproofer ./tmp-website --allow-hash-href --disable-external --checks-to-ignore ScriptCheck --empty-alt-ignore --url-ignore "/#.*/" --file-ignore "/.*apidocs.*/,/.*\/zh.*/,/.*\/es.*/,/.*\/docs\/reference\/api.*/,/.*\/docs\/reference\/config.*/,/.*\/community\/events.*/"
   podTemplate: {}
   serviceAccountName: tekton-bot
-  timeout: 240h0m0s
+  timeout: 30m0s
 status: {}

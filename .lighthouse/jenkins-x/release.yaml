@@ -7,100 +7,86 @@ metadata:
 spec:
   pipelineSpec:
     tasks:
-    - name: from-build-pack
-      resources: {}
-      taskSpec:
-        metadata: {}
-        stepTemplate:
-          name: ""
-          resources:
-            requests:
-              cpu: 400m
-              memory: 512Mi
-          workingDir: /workspace/source
-          env:
-          - name: GIT_COMMITTER_EMAIL
-            value: jenkins-x@googlegroups.com
-          - name: GIT_COMMITTER_NAME
-            value: jenkins-x-bot
-          - name: GIT_AUTHOR_EMAIL
-            value: jenkins-x@googlegroups.com
-          - name: GIT_AUTHOR_NAME
-            value: jenkins-x-bot
-          - name: HUGO_ENV
-            value: production
-          - name: HUGO_VERSION
-            value: '0.74.0'
-        steps:
-
-        - image: klakegg/hugo:0.88.0-ext-alpine
-          name: git-clone-website
-          command:
-          - git
-          args:
-          - clone
-          - https://github.com/jenkins-x/jenkins-x-website.git
-          - --depth=20
-
-        - image: klakegg/hugo:0.88.0-ext-alpine
-          name: git-submodules
-          command:
-          - git
-          args:
-          - submodule
-          - update
-          - --init
-          - --recursive
-
-        - image: klakegg/hugo:0.88.0-ext-alpine
-          name: update-content
-          command:
-          - ./scripts/ci/update-content.sh
-
-        - image: klakegg/hugo:0.88.0-ext-alpine
-          command:
-          - hugo
-          args:
-          - version
-
-        - image: gcr.io/cloud-builders/npm
-          name: install-dependencies
-          command:
-          - npm
-          args:
-          - install
-
-        ## delete everything in the jenkins-x-website repo clone
-        - image: klakegg/hugo:0.88.0-ext-alpine
-          name: remove-old
-          command:
-          - git
-          args:
-          - -C
-          - jenkins-x-website
-          - rm 
-          - -r 
-          - '*'
-
-        ## build the site into the cloned folder
-        - image: klakegg/hugo:0.88.0-ext-alpine
-          name: build-website
-          command:
-          - hugo
-          args:
-            - -d
-            - jenkins-x-website
-            - --enableGitInfo
-            - --baseURL
-            - https://jenkins-x.io
-
-        ## add, commit, and push changes
-        - image: ghcr.io/jenkins-x/builder-go:2.1.155-778-patch3
-          name: update-website
-          command:
-          - ./scripts/ci/update-website.sh
-
+      - name: from-build-pack
+        resources: {}
+        taskSpec:
+          metadata: {}
+          stepTemplate:
+            name: ""
+            resources:
+              requests:
+                cpu: 400m
+                memory: 512Mi
+            workingDir: /workspace/source
+            env:
+              - name: GIT_COMMITTER_EMAIL
+                value: jenkins-x@googlegroups.com
+              - name: GIT_COMMITTER_NAME
+                value: jenkins-x-bot
+              - name: GIT_AUTHOR_EMAIL
+                value: jenkins-x@googlegroups.com
+              - name: GIT_AUTHOR_NAME
+                value: jenkins-x-bot
+              - name: HUGO_ENV
+                value: production
+              - name: HUGO_VERSION
+                value: "0.74.0"
+          steps:
+            - image: klakegg/hugo:0.91.2-ext-alpine
+              name: git-clone-website
+              command:
+                - git
+              args:
+                - clone
+                - https://github.com/jenkins-x/jenkins-x-website.git
+                - --depth=20
+            - image: klakegg/hugo:0.91.2-ext-alpine
+              name: git-submodules
+              command:
+                - git
+              args:
+                - submodule
+                - update
+                - --init
+                - --recursive
+            - image: klakegg/hugo:0.91.2-ext-alpine
+              name: update-content
+              command:
+                - ./scripts/ci/update-content.sh
+            - image: gcr.io/cloud-builders/npm
+              name: install-dependencies
+              command:
+                - npm
+              args:
+                - install
+            ## delete everything in the jenkins-x-website repo clone
+            - image: klakegg/hugo:0.91.2-ext-alpine
+              name: remove-old
+              command:
+                - git
+              args:
+                - -C
+                - jenkins-x-website
+                - rm
+                - -r
+                - "*"
+            ## build the site into the cloned folder
+            - image: klakegg/hugo:0.91.2-ext-alpine
+              name: build-website
+              command:
+                - hugo
+              args:
+                - -d
+                - jenkins-x-website
+                - --enableGitInfo
+                - --baseURL
+                - https://jenkins-x.io
+            ## add, commit, and push changes
+            - image: ghcr.io/jenkins-x/builder-go:2.1.155-778-patch3
+              name: update-website
+              command:
+                - ./scripts/ci/update-website.sh
   podTemplate: {}
   serviceAccountName: tekton-bot
-  timeout: 240h0m0s
+  timeout: 30m0s
 status: {}

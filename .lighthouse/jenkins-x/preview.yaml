@@ -7,78 +7,78 @@ metadata:
 spec:
   pipelineSpec:
     tasks:
-    - name: from-build-pack
-      resources: {}
-      taskSpec:
-        metadata: {}
-        stepTemplate:
-          name: ""
-          resources:
-            requests:
-              cpu: 400m
-              memory: 512Mi
-          workingDir: /workspace/source
-          env:
-            - name: DOMAIN
-              valueFrom:
-                configMapKeyRef:
-                  name: ingress-config
-                  key: domain
-        steps:
-        - image: klakegg/hugo:0.88.0-ext-alpine
-          name: git-submodules
-          command:
-          - git
-          args:
-          - submodule
-          - update
-          - --init
-          - --recursive
+      - name: from-build-pack
+        resources: {}
+        taskSpec:
+          metadata: {}
+          stepTemplate:
+            name: ""
+            resources:
+              requests:
+                cpu: 400m
+                memory: 512Mi
+            workingDir: /workspace/source
+            env:
+              - name: DOMAIN
+                valueFrom:
+                  configMapKeyRef:
+                    name: ingress-config
+                    key: domain
+          steps:
+            - image: klakegg/hugo:0.91.2-ext-alpine
+              name: git-submodules
+              command:
+                - git
+              args:
+                - submodule
+                - update
+                - --init
+                - --recursive
 
-        - image: klakegg/hugo:0.88.0-ext-alpine
-          name: update-content
-          command: 
-          - ./scripts/ci/update-content.sh
+            - image: klakegg/hugo:0.91.2-ext-alpine
+              name: update-content
+              command:
+                - ./scripts/ci/update-content.sh
 
-        - image: gcr.io/cloud-builders/npm
-          name: install-dependencies
-          command:
-          - npm
-          args:
-          - install
+            - image: gcr.io/cloud-builders/npm
+              name: install-dependencies
+              command:
+                - npm
+              args:
+                - install
 
-        - image: klakegg/hugo:0.88.0-ext-alpine
-          name: build-website
-          script: |
-            #!/bin/sh
-            hugo -d tmp-website --enableGitInfo --baseURL https://${REPO_NAME}-jx-${REPO_OWNER}-${REPO_NAME}-pr-${PULL_NUMBER}.${DOMAIN}/
+            - image: klakegg/hugo:0.91.2-ext-alpine
+              name: build-website
+              script: |
+                #!/bin/sh
+                hugo -d tmp-website --enableGitInfo --baseURL https://${REPO_NAME}-jx-${REPO_OWNER}-${REPO_NAME}-pr-${PULL_NUMBER}.${DOMAIN}/
 
-        - image: ghcr.io/jenkins-x/jx-boot:3.2.197
-          name: jx-variables
-          resources: {}
-          script: |
-            #!/usr/bin/env sh
-            jx gitops variables
+            - image: ghcr.io/jenkins-x/jx-boot:3.2.197
+              name: jx-variables
+              resources: {}
+              script: |
+                #!/usr/bin/env sh
+                jx gitops variables
 
-        - image: gcr.io/kaniko-project/executor:debug-v1.3.0
-          name: build-and-push-image
-          script: |
-            #!/busybox/sh
-            source .jx/variables.sh
-            /kaniko/executor --context=/workspace/source --dockerfile=/workspace/source/Dockerfile --destination=gcr.io/jenkinsxio-324711/jx-docs:$VERSION
+            - image: gcr.io/kaniko-project/executor:debug-v1.3.0
+              name: build-and-push-image
+              script: |
+                #!/busybox/sh
+                source .jx/variables.sh
+                /kaniko/executor --context=/workspace/source --dockerfile=/workspace/source/Dockerfile --destination=gcr.io/jenkinsxio-324711/jx-docs:$VERSION
 
-        - image: ghcr.io/jenkins-x/jx-preview:0.0.172
-          name: promote-jx-preview
-          resources: {}
-          script: |
-            #!/usr/bin/env sh
-            source /workspace/source/.jx/variables.sh
-            # sleep infinity
-            jx preview create --file charts/preview/helmfile.yaml
+            - image: ghcr.io/jenkins-x/jx-preview:0.0.172
+              name: promote-jx-preview
+              resources: {}
+              script: |
+                #!/usr/bin/env sh
+                source /workspace/source/.jx/variables.sh
+                # sleep infinity
+                jx preview create --file charts/preview/helmfile.yaml
 
-          env:
-            - name: DOCKER_REGISTRY
-              value: gcr.io
+              env:
+                - name: DOCKER_REGISTRY
+                  value: gcr.io
 
   podTemplate: {}
   serviceAccountName: tekton-bot
