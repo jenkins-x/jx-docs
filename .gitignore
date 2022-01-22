@@ -21,3 +21,6 @@ nohup.out
 jx-plugin
 jx-plugins
 jx-plugin-doc
+
+# Hugo lock file
+.hugo_build.lock
