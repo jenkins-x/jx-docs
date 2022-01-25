@@ -16,7 +16,6 @@ aliases:
 **NOTE**
 
 - Ensure you are logged into GitHub else you will get a 404 error when clicking the links below
-- ECR repository needs to be created before running the quickstart or importing existing projects.
 - The quickstart guides are for users who want to get up and running quickly with Jenkins X.
   Refer to the [eks-jx terraform module readme](https://github.com/jenkins-x/terraform-aws-eks-jx/blob/master/README.md) for all the variables that can be customized.
   - Refer to this [page](/v3/admin/setup/secrets/vault/#external-vault) for setting up Jenkins X v3 with external/existing vault.
@@ -46,11 +45,11 @@ Note: remember to create the Git repositories below in your Git Organization rat
 
 - Install <a href="https://learn.hashicorp.com/tutorials/terraform/install-cli#install-terraform">terraform CLI</a>
 
-- Install <a href="https://github.com/jenkins-x/jx-cli/releases">jx CLI </a>
+- Install <a href="https://jenkins-x.io/v3/admin/setup/jx3/">jx CLI </a>
 
-- For AWS SSO ensure you have installed AWSCLI version 2 - [see here](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html). You must then configure it to use Named Profiles - [see here](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)
+- For AWS SSO ensure you have installed AWSCLI version 2 - [see here](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html). You must then configure it to use Named Profiles - [see here](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure-profiles.html)
 
-- <a href="https://github.com/settings/tokens/new?scopes=repo,read:user,read:org,user:email,admin:repo_hook,write:packages,read:packages,write:discussion,workflow" target="github-token" class="btn bg-primary text-light">Create Git Token for the Bot user </a>
+- You should use a dedicated git user account for the Bot user. Jenkins X will use this user to interact with git.  After you are logged in with the Bot user account you may use the following link  <a href="https://github.com/settings/tokens/new?scopes=repo,read:user,read:org,user:email,admin:repo_hook,write:packages,read:packages,write:discussion,workflow" target="github-token" class="btn bg-primary text-light">Create Git Token for the Bot user </a>
 
 - Override the variable defaults in the Infrastructure repository. (E.g, edit variables.tf, set TF*VAR* environment variables, or pass the values on the terraform command line.)
 
