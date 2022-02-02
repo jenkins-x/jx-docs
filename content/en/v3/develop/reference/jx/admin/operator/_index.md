@@ -58,7 +58,7 @@ Installs the git operator in a cluster
       --no-log                      to disable viewing the logs of the boot Job pods
       --no-switch-namespace         to disable switching to the installation namespace after installing the operator
       --set stringArray             one or more helm set arguments to pass through the git operator chart. Equivalent to running 'helm install --set some.name=value'
-      --setup stringArray           a git configuration command to configure git inside the git operator pod to deal with things like insecure docker registries etc. e.g. supply 'git config --global http.sslverify false' to disable TLS verification
+      --setup stringArray           a git configuration command to configure git inside the git operator pod to deal with things like insecure docker registries etc. e.g. supply 'git config --global http.sslVerify false' to disable TLS verification
       --token string                specify the git token the operator will use to clone the environment git repository if there is no password in the git URL. If not specified defaults to $GIT_TOKEN
   -u, --url string                  the git URL for the environment to boot using the operator. This is optional - the git operator Secret can be created later
       --username string             specify the git user name the operator will use to clone the environment git repository if there is no username in the git URL. If not specified defaults to $GIT_USERNAME

@@ -118,7 +118,7 @@ export GIT_TOKEN=mytoken
 git clone https://github.com/myorg/env-mycluster-dev.git
 cd env-mycluster-dev.git
 
-jx admin operator --setup "git config --global http.sslverify false"
+jx admin operator --setup "git config --global http.sslVerify false"
 ```
 
 <nav>
