@@ -163,12 +163,12 @@ no = 'Sorry to hear that. Please <a href="https://github.com/jenkins-x/jx-docs/i
 	icon = "fa fa-envelope"
 	desc = "Discussion and help from your fellow users"
 [[params.links.user]]
-	name ="Twitter"
+	name = "Twitter"
 	url = "https://twitter.com/jenkinsxio"
 	icon = "fab fa-twitter"
 	desc = "Follow us on Twitter to get the latest news!"
 [[params.links.user]]
-	name ="Calendar"
+	name = "Calendar"
 	url = "/community/calendar/"
 	icon = "fas fa-calendar-alt"
 	desc = "Google Calendar for Jenkins X"
@@ -179,12 +179,12 @@ no = 'Sorry to hear that. Please <a href="https://github.com/jenkins-x/jx-docs/i
 	desc = "Subscribe to the youtube Channel"
 [[params.links.user]]
 	name = "Github"
-	url = "https://github.com/jenkins-x/"
+	url = "https://github.com/jenkins-x/jx"
 	icon = "fa fa-github"
 	desc = "Development takes place here!"
 [[params.links.user]]
 	name = "Contribute"
-	url = "https://jenkins-x.io/community/code/"
+	url = "https://jenkins-x.io/community/documentation/"
 	icon = "fa fa-edit"
 	desc = "Contribute to the Jenkins X website"
 [[params.links.user]]
