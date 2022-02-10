@@ -175,17 +175,17 @@ no = 'Sorry to hear that. Please <a href="https://github.com/jenkins-x/jx-docs/i
 [[params.links.user]]
 	name = "Youtube"
 	url = "https://www.youtube.com/channel/UCN2kblPjXKMcjjVYmwvquvg"
-	icon = "fa fa-youtube"
+	icon = "fab fa-youtube"
 	desc = "Subscribe to the youtube Channel"
 [[params.links.user]]
 	name = "Github"
 	url = "https://github.com/jenkins-x/jx"
-	icon = "fa fa-github"
+	icon = "fab fa-github"
 	desc = "Development takes place here!"
 [[params.links.user]]
 	name = "Contribute"
 	url = "https://jenkins-x.io/community/documentation/"
-	icon = "fa fa-edit"
+	icon = "fas fa-edit"
 	desc = "Contribute to the Jenkins X website"
 [[params.links.user]]
 	name = "User Slack Channel"
