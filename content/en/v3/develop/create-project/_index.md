@@ -33,7 +33,7 @@ jx project import
 
 If you are using nested gitlab repositories (`org/group/repository`), add `--nested-repo` flag to `jx project import`.
 
-**NOTE** that we recommend [trying out a quickstart first](h/v3/develop/create-project/#create-a-new-project-from-a-quickstart) before importing a project so that:
+**NOTE** that we recommend [trying out a quickstart first](#create-a-new-project-from-a-quickstart) before importing a project so that:
 
 - you can verify your cluster is setup correctly so that you can create new charts + images, promote them to staging and create Preview Environments on Pull Requests etc.
 - as you start to import projects which may have their own custom `Dockerfile` or custom charts you can compare your custom chart versus the charts included in the Jenkins X catalog to see how it works. e.g.
