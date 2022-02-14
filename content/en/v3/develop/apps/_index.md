@@ -110,7 +110,7 @@ releases:
   
 You can also use a file called `values.yaml.gotmpl` if you wish to use go templating of the values file. For example this lets you reference properties from the `jx-requirements.yml` file via expressions like `{{ .Values.jxRequirements.ingress.domain }}`.
 
-To see an example of this in action check out the [charts/jenkins-x/tekton/values.yaml.gotmpl](https://github.com/jenkins-x/jxr-versions/blob/master/charts/jenkins-x/tekton/values.yaml.gotmpl) file in the [version stream](https://jenkins-x.io/about/concepts/version-stream/).
+To see an example of this in action check out the [charts/jenkins-x/tekton/values.yaml.gotmpl](https://github.com/jenkins-x/jx3-versions/blob/master/charts/cdf/tekton-pipeline/values.yaml.gotmpl) file in the [version stream](https://jenkins-x.io/about/concepts/version-stream/).
 
 Note that many apps are already configured to make use of the `jx-requirements.yml` settings via the [version stream](https://jenkins-x.io/about/concepts/version-stream/) - but you are free to add your own custom configuration. 
    
