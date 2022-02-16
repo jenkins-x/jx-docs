@@ -1,6 +1,6 @@
 ---
 title: "Jenkins X Survey Results"
-date: 2022-02-14
+date: 2022-02-15
 draft: false
 description: Analyzing results
 categories: [blog]
@@ -10,7 +10,7 @@ aliases: []
 author: Christoffer Vig
 ---
 
-The Jenkins X survey was active for four weeks and closed on February 11 2022. We received lots of valuable insights into how people are using Jenkins X. We need more contributors in the Jenkins X community, so if you feel strongly about how Jenkins X should evolve, your best bet is to dive in and get your hands dirty:) Some highlights of the free text responses we got are collected [here](survey-1-result-details-2022)
+The Jenkins X survey was active for four weeks and closed on February 11 2022. We received lots of valuable insights into how people are using Jenkins X. We need more contributors in the Jenkins X community, so if you feel strongly about how Jenkins X should evolve, your best bet is to dive in and get your hands dirty:) Some highlights of the free text responses we got are collected [here](/blog/2022/02/15/survey-1-result-details-2022/)
 
 According to the survey, a typical Jenkinx X user works with Devops and Software Engineering
 
@@ -37,5 +37,5 @@ The typical person who answers surveys on Jenkins X *is* planning to attend Jenk
 ![Office hours](/images/survey-2022-1/office-hours.png)
 
 
- See you there next week then!
+ [See you there next week then!](/community/#office-hours)
   

@@ -1,16 +1,18 @@
 ---
 title: "Jenkins X Survey Result Details"
-date: 2022-02-14
+date: 2022-02-15
 draft: false
 description: Some specific answers
 categories: [other]
 keywords: [Community, 2022]
 slug: "survey-1-result-details-2022"
+toc_hide: true
+hide_summary: true 
 aliases: []
 author: Christoffer Vig
 ---
 
-For more information on the Jenkins X survey see [Survey results](survey-1-results-2022/)
+For more information on the Jenkins X survey see [Survey results](/blog/2022/02/15/survey-1-results-2022/)
 Some highlights from the free text answers. 
 
 
