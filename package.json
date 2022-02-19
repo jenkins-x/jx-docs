@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "autoprefixer": "^9.8.5",
-    "docsearch.js": "^2.6.3",
+    "@docsearch/js": "^3.0.0-alpha.50",
     "postcss-cli": "^7.1.1"
   }
 }

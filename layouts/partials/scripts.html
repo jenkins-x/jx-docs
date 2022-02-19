@@ -1,7 +1,7 @@
 <script src="https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@alpha"></script>
 {{ $jsBase := resources.Get "js/base.js" }}
 {{ $jsAnchor := resources.Get "js/anchor.js" }}
 {{ $js := (slice $jsBase $jsAnchor) | resources.Concat "js/main.js" }}
@@ -12,13 +12,14 @@
 <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous"></script>
 {{ end }}
 <script>
-  docsearch({
-    apiKey: '8904bbd3ca621bef472e3de7e0e29532',
-    indexName: 'jenkins_x',
-    inputSelector: '#search-input',
-    algoliaOptions: { 'facetFilters': ["lang:{{ .Page.Language.Lang }}"] },
-    debug: false
-  });
+
+docsearch({
+  container: '#docsearch',
+  appId: 'GIN1OS4UKS',
+  indexName: 'jenkins-x',
+  apiKey: 'a9c99be0d65d1a8f6059be9104a12cd4',
+});
+  
 </script>
 <script>mermaid.initialize({startOnLoad:true});</script>
 <!-- CDF -->
