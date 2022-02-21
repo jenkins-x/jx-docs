@@ -126,3 +126,19 @@ config:
 this will configure that the `alpha-git-patch` strategy will be used whenever you try `jx gitops upgrade` which should preserve any local changes; though you may have to resolve some git conflicts in your IDE (as described above).
 
 To avoid any possible git merge issues its a good idea to try keep local source changes out of the `versionStream` folder if you can.
+
+### Locking versions
+
+To prevent manual changes from being overwritten during an upgrade,
+add the `version.jenkins-x.io: lock` label to a chart in your _helmfile.yaml_:
+
+```yaml
+- chart: ingress-nginx/ingress-nginx
+  version: 3.12.0
+  name: nginx-ingress
+  values:
+    - ../../versionStream/charts/ingress-nginx/ingress-nginx/values.yaml.gotmpl
+    - jx-values.yaml
+  labels:
+    version.jenkins-x.io: lock
+```
