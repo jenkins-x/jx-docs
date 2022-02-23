@@ -21,7 +21,9 @@ jx project quickstart
 
 Note that the old Jenkins X 2.x alias `jx quickstart` is still supported but will be deprecated eventually.
 
-See the [quickstart documentation](/docs/create-project/creating/) for more information
+The quickstart files are all found in [the quickstart github organization](https://github.com/jenkins-x-quickstarts).
+
+See the [quickstart documentation](/v3/about/how-it-works/#importing--creating-quickstarts) for more information.
 
 ## Import an existing project
 
@@ -31,6 +33,8 @@ To import an existing project use the [jx project import](/v3/develop/reference/
 jx project import
 ```
 
+The tasks which are copied over during the import process can be found [here](https://github.com/jenkins-x/jx3-pipeline-catalog/tree/master/tasks).
+
 If you are using nested gitlab repositories (`org/group/repository`), add `--nested-repo` flag to `jx project import`.
 
 **NOTE** that we recommend [trying out a quickstart first](#create-a-new-project-from-a-quickstart) before importing a project so that:
@@ -39,6 +43,8 @@ If you are using nested gitlab repositories (`org/group/repository`), add `--nes
 - as you start to import projects which may have their own custom `Dockerfile` or custom charts you can compare your custom chart versus the charts included in the Jenkins X catalog to see how it works. e.g.
   - the way the default pipelines update the image tag on each release to use a versioned image in the helm chart or the
   - how the ingress domain URL is injected into the `Ingress` resource in the helm chart from the environment (preview / staging / production etc) so that the same chart can be deployed into any environment and things just work (with and without TLS)
+
+For troubleshooting what could be wrong with quickstart/import, refer to this [page](/v3/admin/troubleshooting/quickstart-import/)
 
 ### Default file layout
 
