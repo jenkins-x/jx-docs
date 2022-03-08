@@ -46,7 +46,6 @@ spec:
               name: build-website
               script: |
                 #!/bin/sh
-                ls -al
                 hugo -d tmp-website --enableGitInfo --baseURL https://${REPO_NAME}-jx-${REPO_OWNER}-${REPO_NAME}-pr-${PULL_NUMBER}.${DOMAIN}/
             - image: 18fgsa/html-proofer:latest
               name: htmlproofer

@@ -12,8 +12,6 @@ author: Vincent Behar
 
 As a Continuous Delivery platform, Jenkins X has a central part in your infrastructure. If it becomes unstable or unusable, it will impact the whole software delivery of your organization.
 
-{{< tweet 1341177825525547012 >}}
-
 This is why observability is a critical topic for Jenkins X, and work has started to get observability built-in for Jenkins X v3:
 - **Platform Observability**: visualize logs and metrics for everything running in the Kubernetes cluster: Jenkins X's own components - Tekton, Lighthouse, cert-manager, ... - but also your own applications, that will be deployed either in preview environments or in the staging/prod environments.
 - **Continuous Delivery Indicators**: visualize pull requests, pipelines, releases, and deployments metrics, collected from cluster events and git events.
