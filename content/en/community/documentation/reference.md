@@ -16,7 +16,7 @@ We're using [DocSearch](https://community.algolia.com/docsearch/) by Algolia to 
 
 * The script and local config are declared in `/layouts/partials/scripts.html`
 * Styling is included via `/layouts/partials/head-css.html`
-* The configuration of the search index is managed via [docsearch-configs](https://github.com/algolia/docsearch-configs/blob/master/configs/jenkins_x.json) which can be updated via a PR
+* The configuration is managed in the Algolia console. 
 
 ## Markdown Syntax Reference
 
