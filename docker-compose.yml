@@ -1,15 +1,16 @@
 version: "2"
 services:
   server:
-    image: klakegg/hugo:0.91.2-ext-alpine
-    command: ["server", "-s", "/src", "-D", "--bind", "0.0.0.0", "--ignoreCache"]
+    image: klakegg/hugo:0.93.2-ext-alpine
+    command:
+      ["server", "-s", "/src", "-D", "--bind", "0.0.0.0", "--ignoreCache"]
     volumes:
       - .:/src
     ports:
       - "1313:1313"
   spellchecker:
     image: tmaier/markdown-spellcheck:latest
-    command: "--en-us --ignore-numbers --ignore-acronyms --report \"content/**/*.md\""
+    command: '--en-us --ignore-numbers --ignore-acronyms --report "content/**/*.md"'
     volumes:
       - .:/workdir
   linkchecker:
