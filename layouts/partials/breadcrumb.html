@@ -1,35 +1,34 @@
 <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
-	<ol class="breadcrumb spb-1">
-		{{ if hasPrefix .File.Path "docs/" }}
-		v2
-		{{ end }}
-
-		{{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
-	</ol>
-</nav	>
-{{ define "breadcrumbnav" }}
-{{ if .p1.Parent }}
-{{ if not .p1.Parent.IsHome }}
-{{ template "breadcrumbnav" (dict "p1" .p1.Parent "p2" .p2 )  }}
-{{ end }}
-{{ else if not .p1.IsHome }}
-{{ template "breadcrumbnav" (dict "p1" .p1.Site.Home "p2" .p2 )  }}
-{{ end }}
-{{ $isActive :=  eq .p1 .p2  }}
-<li class="breadcrumb-item{{ if $isActive }} active{{ end }}" {{ if $isActive }}aria-current="page"{{ end }}>
-	<a href="{{ .p1.Permalink }}">{{ .p1.LinkTitle }}</a>
-</li>
-{{ end }}
-
-{{ if hasPrefix .File.Path "docs/" }}
+  <ol class="breadcrumb spb-1">
+    {{ if hasPrefix .File.Path "docs/" }} v2 {{ end }} {{ template
+    "breadcrumbnav" (dict "p1" . "p2" .) }}
+  </ol>
+</nav>
+{{ define "breadcrumbnav" }} {{ if .p1.Parent }} {{ if not .p1.Parent.IsHome }}
+{{ template "breadcrumbnav" (dict "p1" .p1.Parent "p2" .p2 ) }} {{ end }} {{
+else if not .p1.IsHome }} {{ template "breadcrumbnav" (dict "p1" .p1.Site.Home
+"p2" .p2 ) }} {{ end }} {{ $isActive := eq .p1 .p2 }}
+<ul style="list-style-type:none">
+  <li
+    class="breadcrumb-item{{ if $isActive }} active{{ end }}"
+    {{
+    if
+    $isActive
+    }}aria-current="page"
+    {{
+    end
+    }}
+  >
+    <a href="{{ .p1.Permalink }}">{{ .p1.LinkTitle }}</a>
+  </li>
+</ul>
+{{ end }} {{ if hasPrefix .File.Path "docs/" }}
 <div class="alert alert-warning" role="alert">
-	<h1>
-		WARNING: Jenkins X version 2.x is deprecated.
-	</h1>
-	<h2>
-		Please refer to the <a href="/v3">v3 documentation</a> for the latest supported version.
-	</h2>
+  <h1>WARNING: Jenkins X version 2.x is unmaintained. Do not use it.</h1>
+  <h2>
+    Please refer to the <a href="/v3">v3 documentation</a> for the latest
+    supported version.
+  </h2>
 </div>
 
-{{ else }}
-{{ end }}
+{{ else }} {{ end }}

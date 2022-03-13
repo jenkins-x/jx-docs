@@ -46,7 +46,7 @@ This is presented here so that you have some clarity around where to start and w
 - Optional: Learn the basics of [golang](https://go.dev/tour/list)
 - Optional: Understand Jenkins X concepts and fundamentals by going over the [documentation](https://jenkins-x.io/)
 - Optional: Set up Jenkins X locally and give it a go (Please don't spend money running Jenkins X in the cloud).
-  - We prefer you use [k3s](https://jenkins-x.io/v3/admin/platforms/k3s/) for this, as it's less resource intensive and can be installed locally on your workstation (linux/mac).
+  - We prefer you use [k3s](https://jenkins-x.io/v3/admin/platforms/k3s/) for this, as it's less resource intensive and can be installed locally on your workstation (linux). Mac users need to install something like multipass to first install k3s.
 
 ### Interview process and selection criteria (April 19 and May 12):
 
