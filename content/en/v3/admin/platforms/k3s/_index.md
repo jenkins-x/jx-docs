@@ -19,6 +19,8 @@ Ensure you are logged into GitHub else you will get a 404 error when clicking th
 
 This guide will walk you though how to setup Jenkins X on your laptop using [k3s](https://k3s.io/)
 
+If you are on Mac OS, you can follow this [guide](https://docs.kalm.dev/install/install-local-k3s/) to set up k3s.
+You do not need to install kalm for the rest of the tutorial.
 ### Prerequisites
 
 #### K3s

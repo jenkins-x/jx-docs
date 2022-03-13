@@ -207,11 +207,11 @@ no = 'Sorry to hear that. Please <a href="https://github.com/jenkins-x/jx-docs/i
 
 # Versioning
 [[params.versions]]
-version = "v3.x"
+version = "v3.x (Current)"
 url = "/v3/about"
 dirpath = "v3"
 
 [[params.versions]]
-version = "v2.x"
+version = "v2.x (Unmaintained)"
 url = "/docs"
 dirpath = "docs"
