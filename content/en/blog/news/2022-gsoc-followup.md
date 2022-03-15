@@ -39,6 +39,7 @@ This is presented here so that you have some clarity around where to start and w
 
 - Recommended: Join the jenkins X community [slack channels](https://jenkins-x.io/community/#slack) and say hello :)
   - We prefer you post messages in the jenkins-x-dev channel
+  - Attend the [office hours](/community/#office-hours)
 - Recommended: Interact with potential mentors to understand/review the requirements of the projects.
 - Recommended: Start working on your proposal early on.
 - Optional: Learn about [docker](https://youtu.be/3c-iBn73dDE)
