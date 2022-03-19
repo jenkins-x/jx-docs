@@ -64,7 +64,6 @@ sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
 sudo chmod 777 ~/.kube/config #warning: this maybe vulnerable to multiple users 
 ```
 
-
 This value of the node will be used later during installation and configuring of Jenkins X.
 
 Check [k3s install guide](https://rancher.com/docs/k3s/latest/en/installation/) for more installation options but keep in mind we don't support Kubernetes 1.22+ yet
