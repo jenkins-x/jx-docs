@@ -34,7 +34,8 @@ If you dont have an existing k3s cluster, you can install one by running:
 curl -sfL https://get.k3s.io | INSTALL_K3S_CHANNEL=v1.21 sh -s - --write-kubeconfig-mode 644
 sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/k3s-config
 # Set it also in the bashrc or zshrc file, or you can flatten both of these configs into a single file
-KUBECONFIG=~/.kube/config:~/.kube/k3s-config
+export KUBECONFIG=~/.kube/config:~/.kube/k3s-config
+
 ```
 
 To verify that k3s has been installed successfully, and configured run:
@@ -43,9 +44,33 @@ To verify that k3s has been installed successfully, and configured run:
 kubectl get nodes
 ```
 
+ - You will need to open multiple terminals later, so setting these env variables in the bashrc or zshrc might help you
+
+```bash
+nano ~/.bashrc
+#go to the end of the file and paste the export command
+export KUBECONFIG=~/.kube/config:~/.kube/k3s-config
+```
+
+**Optional**
+
+- If the above method didn't work, copy the configurations to the ~/.kube/config instead (if you don't have any other clusters, that should be fine)
+```bash
+sudo rm ~/.kube/k3s-config  #to make k3s uses ~/.kube/config
+sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
+```
+- If still got `permission denied`
+```bash
+sudo chmod 777 ~/.kube/config #warning: this maybe vulnerable to multiple users 
+```
+
 This value of the node will be used later during installation and configuring of Jenkins X.
 
-Check [k3s install guide](https://rancher.com/docs/k3s/latest/en/installation/) for more installation options.
+Check [k3s install guide](https://rancher.com/docs/k3s/latest/en/installation/) for more installation options but keep in mind we don't support Kubernetes 1.22+ yet
+
+#### Docker
+
+You need to install [docker](https://docs.docker.com/engine/install/) and [manage it as a non root user](https://docs.docker.com/engine/install/linux-postinstall/)
 
 #### Vault
 
@@ -53,7 +78,6 @@ Install vault cli.
 Refer to the [vault docs](https://www.vaultproject.io/docs/install) on how to install vault for your platform.
 
 Make sure you have vault running in a docker container with kubernetes auth enabled.
-
 ```bash
 docker run --name jx-k3s-vault -d --cap-add=IPC_LOCK -e 'VAULT_DEV_ROOT_TOKEN_ID=myroot' -e 'VAULT_DEV_LISTEN_ADDRESS=0.0.0.0:8200' --net host vault:latest
 ```
@@ -64,6 +88,7 @@ Next enable kubernetes auth in vault.
 
 ```bash
 export VAULT_ADDR='http://0.0.0.0:8200'
+# you may want to set this at the end of the ~/.bashrc file or ~/.zshrc either to be accesible for all terminals you open like the way we did above
 vault auth enable kubernetes
 ```
 Note: If you get the error `Error enabling kubernetes auth: Post "https://127.0.0.1:8200/v1/sys/auth/kubernetes": http: server gave HTTP response to HTTPS client`, try the command `vault login myroot`.
@@ -73,8 +98,10 @@ Note: If you get the error `Error enabling kubernetes auth: Post "https://127.0.
 - Create a git bot user (different from your own personal user) e.g. https://github.com/join and generate a a personal access token, this will be used by Jenkins X to interact with git repositories. e.g. https://github.com/settings/tokens/new?scopes=repo,read:user,read:org,user:email,write:repo_hook,delete_repo,admin:repo_hook
 - This bot user needs to have write permission to write to any git repository used by Jenkins X. This can be done by adding the bot user to the git organisation level or individual repositories as a collaborator Add the new bot user to your Git Organisation, for now give it Owner permissions, we will reduce this to member permissions soon.
 
-### Jenkins X v3 installation
+#### Jenkins-X
+- Make sure you have installed [jx 3.x binary](https://jenkins-x.io/v3/admin/setup/jx3/) and put it on your `$PATH` as the `jx admin operator` will be used 
 
+### Jenkins X v3 installation
 - Generate a cluster git repository from the [jx3-k3s-vault](https://github.com/jx3-gitops-repositories/jx3-k3s-vault) template, by clicking [here](https://github.com/jx3-gitops-repositories/jx3-k3s-vault/generate)
 - Edit the value of the vault url in the `jx-requirements.yaml` file.
   Replace with `"http://<replace with k3s node name>:8200"`
@@ -106,10 +133,13 @@ Remember to run the following commands in a terminal where you have set the valu
 
 ```bash
 export VAULT_ADDR='http://0.0.0.0:8200'
-VAULT_HELM_SECRET_NAME=$(kubectl -n secret-infra get secrets --output=json | jq -r '.items[].metadata | select(.name|startswith("kubernetes-external-secrets-token-")).name')
-TOKEN_REVIEW_JWT=$(kubectl -n secret-infra get secret $VAULT_HELM_SECRET_NAME --output='go-template={{ .data.token }}' | base64 --decode)
-KUBE_CA_CERT=$(kubectl config view --raw --minify --flatten --output='jsonpath={.clusters[].cluster.certificate-authority-data}' | base64 --decode)
-KUBE_HOST=$(kubectl config view --raw --minify --flatten --output='jsonpath={.clusters[].cluster.server}')
+export VAULT_HELM_SECRET_NAME=$(kubectl -n secret-infra get secrets --output=json | jq -r '.items[].metadata | select(.name|startswith("kubernetes-external-secrets-token-")).name')
+export TOKEN_REVIEW_JWT=$(kubectl -n secret-infra get secret $VAULT_HELM_SECRET_NAME --output='go-template={{ .data.token }}' | base64 --decode)
+export KUBE_CA_CERT=$(kubectl config view --raw --minify --flatten --output='jsonpath={.clusters[].cluster.certificate-authority-data}' | base64 --decode)
+export KUBE_HOST=$(kubectl config view --raw --minify --flatten --output='jsonpath={.clusters[].cluster.server}')
+
+# you may want to set this at the end of the ~/.bashrc file or ~/.zshrc either to be accesible for all terminals you open like the way we did above
+
 vault write auth/kubernetes/config \
         token_reviewer_jwt="$TOKEN_REVIEW_JWT" \
         kubernetes_host="$KUBE_HOST" \
@@ -160,7 +190,7 @@ This job will create the secrets in vault which will be used by external secrets
 
 - To verify the job succeeded, run `jx admin log`
 - To verfiy the secrets were created, run `kubectl get es -A` and `jx secret verify`
-
+- If this didn't work try and repeat the steps but commit your dummy changes through github repository directly other than the `git push origin main` command
 ### Set up ingress and webhook
 
 - Get the external IP of the traefik service (loadbalancer)
