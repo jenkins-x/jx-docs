@@ -47,11 +47,6 @@ spec:
     kanikoFlags: "--snapshotMode=redo"     
 ```
 
-To override it for a specific repository you can use the `.jx/settings.yaml` to configure the same thing.
-
-See the [file reference](/v3/develop/reference/files/)
-
-
 ## If I add a file to `config-root` it gets deleted, why?
 
 The `config-root` directory is regenerated on every boot job - basically every time you promote an application or merge a change into the main branch of your git dev cluster git repository.  For background see the [dev git repository layout docs](https://github.com/jenkins-x/jx-gitops/blob/master/docs/git_layout.md))
