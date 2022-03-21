@@ -59,30 +59,34 @@ Note: remember to create the Git repositories below in your Git Organization rat
   - jx_bot_username: The username of the git bot user
 
 - commit and push any changes to your Infrastructure git repository:
-
+```bash
       git commit -a -m "fix: configure cluster repository and project"
       git push
+```
 
 - Define an environment variable to pass the bot token into Terraform:
-
+```bash
       export TF_VAR_jx_bot_token=my-bot-token
+```
 
 - Now, initialise, plan and apply Terraform:
-
+```bash
       terraform init
       terraform plan
       terraform apply
+```
 
 - Tail the Jenkins X installation logs
-
+```bash
   $(terraform output follow_install_logs)
+```
 
 - Once finished you can now move into the Jenkins X Developer namespace
-
+```bash
   jx ns jx
-
+```
 - and create or import your applications
 
-- <a href="/v3/develop/create-project/" class="btn bg-primary text-light">Create or import projects</a>
+- <a href="https://jenkins-x.io/v3/develop/create-project/" class="btn bg-primary text-light">Create or import projects</a>
 
 For more details on how to install Jenkins X on AWS EKS see [Github repository for Jenkins X Terraform module for EKS](https://github.com/jx3-gitops-repositories/jx3-terraform-eks#prerequisites)
