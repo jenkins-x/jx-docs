@@ -34,6 +34,7 @@ Verifies the installation is ready
   -n, --namespace string         if not specified uses the default namespace
   -w, --pod-wait-time duration   The default wait time to wait for the pods to be ready (default 2m0s)
   -p, --poll duration            The period between polls (default 10s)
+  -l, --selector string          Custom selector (label query) for pods
       --verbose                  Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
 ```
 

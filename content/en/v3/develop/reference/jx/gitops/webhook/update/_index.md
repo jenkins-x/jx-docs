@@ -34,6 +34,7 @@ Updates the webhooks for all the source repositories optionally filtering by own
 
 ```
   -b, --batch-mode                 Runs in batch mode without prompting for user input
+      --dev-ns string              Disable development namespace auto detection, instead use specified namespace
       --endpoint string            Don't use the endpoint from the cluster, use the provided endpoint
       --exact-hook-url-match       Whether to exactly match the hook based on the URL (default true)
       --git-kind string            the kind of git server to connect to
