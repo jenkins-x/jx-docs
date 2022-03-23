@@ -30,7 +30,6 @@ Garbage collect the Jenkins X PipelineActivity resources
 ### Options
 
 ```
-      --all-namespaces              Work in all namespaces (requires a ClusterRole)
   -d, --dry-run                     Dry run mode. If enabled just list the resources that would be removed
   -h, --help                        help for activities
       --pipelinerun-age duration    Maximum age to keep completed PipelineRuns for all pipelines (default 12h0m0s)

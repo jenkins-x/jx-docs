@@ -32,7 +32,7 @@ Garbage collect old Pods that have completed or failed
 ```
   -a, --age duration       The minimum age of pods to garbage collect. Any newer pods will be kept (default 1h0m0s)
   -h, --help               help for pods
-  -n, --namespace string   The namespace to look for the pods. If empty will work in namespaces labelled by 'env' and 'gitops.jenkins-x.io/pipeline', also will include `'jx-git-operator' namespace
+  -n, --namespace string   The namespace to look for the pods. Defaults to the current namespace
   -s, --selector string    The selector to use to filter the pods
 ```
 

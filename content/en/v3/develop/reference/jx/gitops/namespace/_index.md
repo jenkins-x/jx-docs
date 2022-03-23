@@ -28,9 +28,6 @@ Updates all kubernetes resources in the given directory to the given namespace
   # e.g. so that the files 'config-root/namespaces/cheese/*.yaml' get set to namespace 'cheese'
   # and 'config-root/namespaces/wine/*.yaml' are set to 'wine'
   jx-gitops namespace --dir-mode --dir config-root/namespaces
-  
-  # In --dir-mode when a resource HAS DEFINED NAMESPACE already, but is in wrong directory
-  # then it will be moved to a directory corresponding it's defined namespace
 
   ```
 ### Options
