@@ -1,6 +1,6 @@
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/jenkins-x/jx-docs)
 
-# Jenkins X Docs
+# Jenkins X Docs                       [中文](./README_CN.md)
 
 <a id="markdown-jenkins-x-docs" name="jenkins-x-docs"></a>
 
@@ -96,7 +96,7 @@ Per default, no content is written to disk.
 <a id="markdown-locally" name="locally"></a>
 
 If you want to build the site locally on your machine, you need to [install](https://gohugo.io/getting-started/installing) Hugo.
-Check the [Makefile](./Makfile) for the latest recommended version use.
+Check the [Makefile](./Makfile) for the latest recommended version use and check whether the environment variables of Golang are set.
 Once installed, you can run:
 
 ```bash
