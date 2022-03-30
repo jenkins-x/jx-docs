@@ -1,24 +1,24 @@
-[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/jenkins-x/jx-docs)
+[English](Readme.md) [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/jenkins-x/jx-docs)
 
 # Jenkins X 文档
 
 <a id="markdown-jenkins-x-docs" name="jenkins-x-docs"></a>
 
-这个仓库保存  [jenkins-x.io](http://jenkins-x.io/) 的源文件
+请在 [jenkins-x.io](http://jenkins-x.io/) 浏览这些文档
 
-**NOTE：**请浏览这些文档在 [jenkins-x.io](http://jenkins-x.io/) ，浏览此库中的 Markdown 文件时，并非所有链接都有效。
+**NOTE：** 请浏览这些文档在 [jenkins-x.io](http://jenkins-x.io/) ，浏览此库中的 Markdown 文件时，并非所有链接都有效。
 
 ---
 
 <!-- TOC -->
 
-- [建立文档](#建立文档)
+- [构建文档](#构建文档)
   - [准备资源](#准备资源)
     - [Git 子模块](#Git 子模块)
   - [下载 npm 模块](#下载 npm 模块)
   - [运行 Hugo](#运行 Hugo)
     - [本地](#本地)
-    - [Dockerized](#dockerized)
+    - [容器化](#容器化)
 - [通用工作流程](#通用工作流程)
   - [运行拼写检查](#运行拼写检查)
   - [检查链接、图像等](#检查链接、图像等)
@@ -32,7 +32,7 @@
 
 ---
 
-## 建立文档
+## 构建文档
 
 <a id="markdown-building-the-docs" name="building-the-docs"></a>
 
@@ -40,7 +40,7 @@
 
 <a id="markdown-preparing-the-sources" name="preparing-the-sources"></a>
 
-为了能够本地编辑这个文档，你需要去 clone 这个仓库：
+为了能够在本地编辑这个文档，你需要去 clone 这个仓库：
 
 ```bash
 git clone  --recurse-submodules --depth 1 https://github.com/jenkins-x/jx-docs.git
@@ -50,11 +50,11 @@ git clone  --recurse-submodules --depth 1 https://github.com/jenkins-x/jx-docs.g
 
 <a id="markdown-git-submodules" name="git-submodules"></a>
 
-注意使用`--recurse-submodules` 在上面的clone命令中。
+请注意上面的 clone 命令的参数 `--recurse-submodules` 的使用。
 
 这个选项会 pull 两个 git [子模块](https://git-scm.com/book/en/v2/Git-Tools-Submodules)，叫做 [docsy](https://github.com/google/docsy) 和 [labs-enhancements](https://github.com/jenkins-x/enhancements)。
 
-如果你已经有一个没有子模块的 git clone，你可以运行：
+如果你已经执行过 git clone，但没有检出子模块的话，可以运行：
 
 ```bash
 git submodule update --init --recursive
@@ -108,23 +108,23 @@ make server
 
 你可以现在访问[localhost:1313](http://localhost:1313)下的站点。
 
-#### Dockerized
+#### 容器化
 
 <a id="markdown-dockerized" name="dockerized"></a>
 
-代替本地安装 Hugo，你可以使用提供的`docker-compose.yml` 去启动 Hugo服务
+如果不在本地安装 Hugo 的话，你可以使用本仓库中提供的 `docker-compose.yml` 在容器中启动 Hugo 服务
 
 在容器化环境中。
 
-确保你已经安装了[Docker](https://docs.docker.com/install/) 。
+确保你已经安装了 [Docker](https://docs.docker.com/install/)  。
 
 ```bash
 make compose-up
 ```
 
-你现在可以访问在[localhost:1313](http://localhost:1313)下的站点。
+你现在可以访问在 [localhost:1313](http://localhost:1313) 下的站点。
 
-这个 Hugo服务在后台运行，你可以通过以下方式停止它：
+这个 Hugo 服务在后台运行，你可以通过以下方式停止它：
 
 ```bash
 make compose-down
@@ -162,7 +162,7 @@ make linkcheck
 
 **NOTE:** 初始运行非常慢（由于外部链接检查），并且缓存仅在完成时才建立。
 
-**NOTE:**  现在忽略`... x509: certificate ...` 错误是安全的
+**NOTE:** 现在忽略`... x509: certificate ...` 错误是安全的
 
 ### 添加重定向
 
@@ -195,7 +195,7 @@ git commit -m "move to latest enhancements"
 
 Docsy 作为主题目录下
 
-文档被加入到 jx-docs仓库作为子模块在主题文件夹下面，
+文档被加入到  jx-docs 仓库作为子模块在主题文件夹下面，
 
 为了升级文档，运行下面的命令：
 
@@ -209,7 +209,7 @@ git submodule update --init --recursive
 
 <a id="markdown-localization" name="localization"></a>
 
-为了让更多人更好的知道 Jenkins X，本土化是很必要的和有意义的。
+为了让更多人更好的知道 Jenkins X ，本土化是很必要的和有意义的。
 
 然后关于这个我们需要遵守一些规则，请阅读下面的相关语言：
 

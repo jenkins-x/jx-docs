@@ -1,6 +1,6 @@
-[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/jenkins-x/jx-docs)
+ [中文](./README_CN.md) [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/jenkins-x/jx-docs)
 
-# Jenkins X Docs                       [中文](./README_CN.md)
+# Jenkins X Docs                     
 
 <a id="markdown-jenkins-x-docs" name="jenkins-x-docs"></a>
 
