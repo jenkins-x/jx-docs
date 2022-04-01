@@ -31,6 +31,7 @@ To contribute to Jenkins X jx binary, you will need:
 
 * [Git](https://git-scm.com) and a [GitHub](https://github.com) account
 * [Go](https://golang.org/) `1.15.X`, with support for compiling to `linux/amd64`
+* [golangci-lint](https://github.com/golangci/golangci-lint)`1.42.1`, wich will be used to lint your code later
 * [pre-commit](https://pre-commit.com/#install) - once installed, ensure you're at the root of the repository which contains a `.pre-commit-config.yaml` configuration file, then:
 
 ```sh
@@ -138,6 +139,8 @@ If you're not familiar with this term, GitHub's [help pages](https://help.github
 
 > A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.
 
+You can contribute to any of [Jenkins X repositories](https://github.com/jenkins-x) or [Jenkins X Plugins repositories](https://github.com/jenkins-x-plugins). You can find all the related issues in each repo, for searching use labels as filters.
+
 Open the [Jenkins X repository](https://github.com/jenkins-x/jx) on GitHub and click on the "Fork" button in the top right.
 
 ![Fork button](/images/contribute/development/forking-a-repository.png)
@@ -220,6 +223,12 @@ Bear in mind when developing that the code can (and will) run on different archi
 * Be aware of path separators (*nix uses `/`, Windows uses `\`) - do not just concatenate strings when using filepaths; instead use [`filepath.Join`](https://golang.org/pkg/path/filepath/#Join) to concatenate file paths safely
 * Be aware of default line endings (*nix uses `LF`, Windows uses `CRLF`)
 
+### Load dependincies
+Before developing in the codebase, you should first load all packages and dependencies in the software we use.
+```sh
+go mod tidy
+```
+
 ### Push commits
 
 To push our commits to the fork on GitHub you need to specify a destination. A destination is defined by the remote and a branch name. Earlier, the remote url of our fork was given the default name of `origin`. The branch should be given the same name as our local one. This makes it easy to identify corresponding branches.
@@ -229,6 +238,16 @@ git push --set-upstream origin <BRANCH-NAME>
 ```
 
 Now Git knows the destination. Next time when you to push commits you just need to enter `git push`.
+
+### Lint your change
+
+It is not a optional step. Linting code is considered as important as writing logical changes as it can increase performance and making the code cleaner and more readable. Make sure you installed golangci-lint `v1.42.1` mentioned above.
+
+```sh
+make lint
+``` 
+Note: 
+Some linting issues that will appear may not be a result of your changes as linting step was not used at the start of the project, pleas consider fixing them.
 
 ### Build your change
 
@@ -457,6 +476,8 @@ Then Jenkins X itself and the maintainers will review your PR, potentially initi
 ### Getting a pull request merged
 
 Now your pull request is submitted, you need to get it merged. If you aren't a regular contributor you'll need a maintainer to manually review your PR and issue a `/ok-to-test` command in a PR comment. This will trigger the automated tests. If the tests fail, you'll need to ask one of the maintainers to send you the failure log (in the future we will make these public but first we need to check we are masking all secrets).
+
+To ask a maintainer to review your PR, type `/cc @<github_username>` in a comment.
 
 If the tests pass you need to get a `/lgtm` from one of the reviewers (listed in the `OWNERS` file in the repository). You need a new LGTM every time you push changes. Once the tests pass and you have a LGTM for the latest changeset, your PR will be automatically merged.
 
