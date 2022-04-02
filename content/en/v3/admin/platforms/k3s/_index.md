@@ -29,39 +29,26 @@ If you dont have an existing k3s cluster, you can install one by running:
 
 #### Linux
 ```bash
-
 # install k3 with kubernetes version 1.21 (We don't support Kubernetes 1.22+ yet)
 curl -sfL https://get.k3s.io | INSTALL_K3S_CHANNEL=v1.21 sh -s - --write-kubeconfig-mode 644
-
 # copy kubeconfig
 sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/k3s-config
 # export kubeconfig
 export KUBECONFIG=~/.kube/config:~/.kube/k3s-config
-# Set it also in the bashrc or zshrc file, or you can flatten both of these configs into a single file
-KUBECONFIG=~/.kube/config:~/.kube/k3s-config
-
 ```
-
-​
-
-#### Mac Os
-
+#### macOS
 ```bash
-
 # install multipass
 brew install --cask multipass
 # Create a vm with 2G memory and 5G disk
 multipass launch --name k3sVM --mem 2G --disk 5G
 # install k3 with kubernetes version 1.21 (We don't support Kubernetes 1.22+ yet)
 multipass shell k3sVMcurl -sfL https://get.k3s.io | INSTALL_K3S_CHANNEL=v1.21 sh -s - --write-kubeconfig-mode 644
-
 # copy kubeconfig
 sudo mkdir -p ~/.kube/ &&  sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/k3s-config
 # export kubeconfig
 export KUBECONFIG=~/.kube/config:~/.kube/k3s-config
-
 ```
-
 
 To verify that k3s has been installed successfully, and configured run:
 
