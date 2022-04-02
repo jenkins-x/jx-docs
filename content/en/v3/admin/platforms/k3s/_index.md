@@ -36,7 +36,6 @@ sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/k3s-config
 # export kubeconfig
 export KUBECONFIG=~/.kube/config:~/.kube/k3s-config
 ```
-
 #### macOS
 ```bash
 # install multipass
