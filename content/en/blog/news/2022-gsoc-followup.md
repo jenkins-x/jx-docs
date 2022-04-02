@@ -14,10 +14,7 @@ author: Ankit D Mohapatra
 We are very happy to announce that Jenkins X has been selected to participate in the Google Summer of Code (GSoC) 2022!
 
 If you are new to GSoC and want to learn more about it, check out their new [site](https://summerofcode.withgoogle.com/).
-Naman Gera has written a very nice guide on how to prepare for GSoC on [quora](https://www.quora.com/How-can-I-apply-and-prepare-for-Google-Summer-of-Code/answer/Naman-Gera-11?ch=10&oid=238449657&share=ec4f0e17&srid=OGHm&target_type=answer)
 You can find the list of project ideas from Jenkins X [here](/blog/2022/02/20/gsoc2022-ideas/).
-
-
 
 If you are interested in applying to Jenkins X, please check the [timeline](https://developers.google.com/open-source/gsoc/timeline).
 Apply as early as possible.
@@ -85,3 +82,6 @@ Nice to have:
 We will make an effort to talk individually to all the Jenkins X GSoC contributor applicants.
 
 We look forward to reviewing your application and working with you.
+
+### Additional resources
+Naman Gera has written a very nice guide on how to prepare for GSoC on [quora](https://www.quora.com/How-can-I-apply-and-prepare-for-Google-Summer-of-Code/answer/Naman-Gera-11?ch=10&oid=238449657&share=ec4f0e17&srid=OGHm&target_type=answer)
