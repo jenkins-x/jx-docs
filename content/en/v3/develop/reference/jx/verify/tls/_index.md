@@ -21,7 +21,7 @@ Verifies a TLS certificate, useful to ensure a HTTPS endpoint is using a certifi
 
   ```bash
   # verifies a TLS certificate issuer and subject
-  jx-verify step verify tls hook.foo.bar.com --insecure --issuer 'CN=Fake LE Intermediate X1' --subject 'CN=*.foo.bar.com'
+  jx-verify step verify tls hook.foo.bar.com --insecure --issuer 'CN=(STAGING) Artificial Apricot R3' --subject 'CN=*.foo.bar.com'
 
   ```
 ### Options
