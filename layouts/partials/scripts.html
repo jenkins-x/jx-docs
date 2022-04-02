@@ -12,14 +12,17 @@
 <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous"></script>
 {{ end }}
 <script>
-
+let lang = $('html').attr('lang');
 docsearch({
+  searchParameters: {
+    facetFilters: ['lang:' + lang ]
+  },
   container: '#docsearch',
   appId: 'GIN1OS4UKS',
   indexName: 'jenkins-x',
   apiKey: 'a9c99be0d65d1a8f6059be9104a12cd4',
 });
-  
+
 </script>
 <script>mermaid.initialize({startOnLoad:true});</script>
 <!-- CDF -->
