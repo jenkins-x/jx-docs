@@ -215,3 +215,9 @@ dirpath = "v3"
 version = "v2.x (Unmaintained)"
 url = "/docs"
 dirpath = "docs"
+
+[module]
+[[module.imports]]
+path = "github.com/google/docsy"
+[[module.imports]]
+path = "github.com/google/docsy/dependencies"
