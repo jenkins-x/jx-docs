@@ -1,17 +1,17 @@
 ---
-title: K3s
-linktitle: K3s
+title: K3s using Vault inside kubernetes
+linktitle: K3s-internal-vault
 type: docs
-description: Setup Jenkins X on a K3s cluster running locally
-date: 2021-11-22
-publishdate: 2021-11-22
-lastmod: 2021-11-22
+description: Setup Jenkins X on a K3s cluster running locally, with Vault installed inside Kubernetes
+date: 2022-04-03
+publishdate: 2022-04-03
 weight: 50
 aliases:
-  - /v3/admin/platform/k3s
+  - /v3/admin/platform/k3s/internal-vault
 ---
 
 ---
+This is an alternative procedure to install k3s with Vault running inside the cluster.  
 
 **NOTE**
 
@@ -76,25 +76,14 @@ This value of the node will be used later during installation and configuring of
 Check [k3s install guide](https://rancher.com/docs/k3s/latest/en/installation/) for more installation options.
 
 
-#### Vault installed externally in docker
-Install vault cli.
-Refer to the [vault docs](https://www.vaultproject.io/docs/install) on how to install vault for your platform.
 
-Make sure you have vault running in a docker container with kubernetes auth enabled.
-
-```bash
-docker run --name jx-k3s-vault -d --cap-add=IPC_LOCK -e 'VAULT_DEV_ROOT_TOKEN_ID=myroot' -e 'VAULT_DEV_LISTEN_ADDRESS=0.0.0.0:8200' --net host vault:latest
+##### Vault installed in  cluster
+Once kubernetes is running, enter the following commands to have Vault started inside the k3s clusters
 ```
+cd infra
+helmfile sync
 
-To verify that vault has started properly use `docker logs jx-k3s-vault`.
-
-Next enable kubernetes auth in vault.
-
-```bash
-export VAULT_ADDR='http://0.0.0.0:8200'
-vault auth enable kubernetes
 ```
-Note: If you get the error `Error enabling kubernetes auth: Post "https://127.0.0.1:8200/v1/sys/auth/kubernetes": http: server gave HTTP response to HTTPS client`, try the command `vault login myroot`.
 
 #### Github
 
@@ -104,10 +93,7 @@ Note: If you get the error `Error enabling kubernetes auth: Post "https://127.0.
 ### Jenkins X v3 installation
 
 - Generate a cluster git repository from the [jx3-k3s-vault](https://github.com/jx3-gitops-repositories/jx3-k3s-vault) template, by clicking [here](https://github.com/jx3-gitops-repositories/jx3-k3s-vault/generate)
-
-- Edit the value of the vault url in the `jx-requirements.yaml` file.
-  Replace with `"http://<replace with k3s node name>:8200"`
-- Commit and push your changes:
+ Commit and push your changes:
 
 ```bash
 git add .
@@ -116,79 +102,12 @@ git push origin main
 ```
 - Set the GIT_USERNAME (bot username) and GIT_TOKEN (bot personal access token) env variable and run:
 
-#### For external vault:
-
-
+#### Using internal vault:
 
 ```bash
-jx admin operator --username $GIT_USERNAME --token $GIT_TOKEN --url <url of the cluster git repo> --set "jxBootJobEnvVarSecrets.EXTERNAL_VAULT=\"true\"" --set "jxBootJobEnvVarSecrets.VAULT_ADDR=http://<replace with k3s node name>:8200"
+jx admin operator --username $GIT_USERNAME --token $GIT_TOKEN --url <url of the cluster git repo>
 ```
-
-> Note: For external vault, the first job will fail as it cannot authenticate against vault.
-> The errors will be of the form `error: failed to populate secrets: failed to create a secret manager for ExternalSecret`.
-> Once the secret-infra namespace has been created, we can configure vault.
-> If you get an error connecting to the cluster, try running `kubectl config view --raw >~/.kube/config` as well as checking the permissions/owner of `~/.kube/config`
-### Vault configuration (only needed for external vault installation)
-
-Install [jq](https://stedolan.github.io/jq/download/) before running these commands.
-
-Remember to run the following commands in a terminal where you have set the value of `VAULT_ADDR`
-
-- Create a vault config
-
-```bash
-export VAULT_ADDR='http://0.0.0.0:8200'
-VAULT_HELM_SECRET_NAME=$(kubectl -n secret-infra get secrets --output=json | jq -r '.items[].metadata | select(.name|startswith("kubernetes-external-secrets-token-")).name')
-TOKEN_REVIEW_JWT=$(kubectl -n secret-infra get secret $VAULT_HELM_SECRET_NAME --output='go-template={{ .data.token }}' | base64 --decode)
-KUBE_CA_CERT=$(kubectl config view --raw --minify --flatten --output='jsonpath={.clusters[].cluster.certificate-authority-data}' | base64 --decode)
-KUBE_HOST=$(kubectl config view --raw --minify --flatten --output='jsonpath={.clusters[].cluster.server}')
-vault write auth/kubernetes/config \
-        token_reviewer_jwt="$TOKEN_REVIEW_JWT" \
-        kubernetes_host="$KUBE_HOST" \
-        kubernetes_ca_cert="$KUBE_CA_CERT" \
-        disable_iss_validation=true
-```
-
-- Create a vault role:
-
-```bash
-vault write /auth/kubernetes/role/jx-vault bound_service_account_names='*' bound_service_account_namespaces=secret-infra token_policies=jx-policy token_no_default_policy=true disable_iss_validation=true
-```
-
-- Create a policy attached to vault role:
-
-```bash
-vault policy write jx-policy - <<EOF
-path "secret/*" {
-  capabilities = ["sudo", "create", "read", "update", "delete", "list"]
-}
-EOF
-```
-
-Once vault is configured, pull the changes commited to the cluster git repository by the bootjob, and push a dummy job
-
-```bash
-git pull
-# Make a dummy change (change Readme file for example)
-git add .
-git commit -m "chore: dummy commit 1"
-git push origin main
-```
-
-tail the logs of `jx-git-operator` pod in the `jx-git-operator` namespace.
-
-```
-not creating a Job in namespace jx-git-operator for repo jx-boot sha XXXXXX yet as there is an active job jx-boot-XXXXXXX
-```
-
-Kill that job.
-
-```bash
-kubectl delete job jx-boot-97dbb72f-4e4e-4b0e-8eb2-8908997b19f7 -n jx-git-operator
-```
-
-Once it's killed a new boot job will be triggered.
-This job will create the secrets in vault which will be used by external secrets to create kubernetes secrets.
+It should install.
 
 ### Verify installation
 
