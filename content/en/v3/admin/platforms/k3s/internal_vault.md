@@ -1,6 +1,6 @@
 ---
 title: K3s using Vault inside kubernetes
-linktitle: K3s-internal-vault
+linktitle: Internal Vault
 type: docs
 description: Setup Jenkins X on a K3s cluster running locally, with Vault installed inside Kubernetes
 date: 2022-04-03

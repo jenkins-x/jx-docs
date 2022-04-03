@@ -128,7 +128,7 @@ jx admin operator --username $GIT_USERNAME --token $GIT_TOKEN --url <url of the 
 > The errors will be of the form `error: failed to populate secrets: failed to create a secret manager for ExternalSecret`.
 > Once the secret-infra namespace has been created, we can configure vault.
 > If you get an error connecting to the cluster, try running `kubectl config view --raw >~/.kube/config` as well as checking the permissions/owner of `~/.kube/config`
-### Vault configuration (only needed for external vault installation)
+### Vault configuration 
 
 Install [jq](https://stedolan.github.io/jq/download/) before running these commands.
 
