@@ -1,82 +1,29 @@
 ---
-title: K3s
+title: K3s with vault in docker
 linktitle: K3s
 type: docs
-description: Setup Jenkins X on a K3s cluster running locally
+description: Setup Jenkins X on a K3s cluster on your computer, with vault running in docker
 date: 2021-11-22
 publishdate: 2021-11-22
-lastmod: 2021-11-22
+lastmod: 2022-04-04
 weight: 50
 aliases:
   - /v3/admin/platform/k3s
 ---
 
----
+This guide will walk you though how to setup Jenkins X on your own computer using [k3s](https://k3s.io/) and vault running in docker.
 
-**NOTE**
+If you would rather run vault inside of k3s, which makes the install procedure somewhat simpler, see this [guide](/v3/admin/platform/k3s/internal-vault)
 
-Ensure you are logged into GitHub else you will get a 404 error when clicking the links below
-
-This guide will walk you though how to setup Jenkins X on your laptop using [k3s](https://k3s.io/)
-
-### Prerequisites
+Please see the [Troubleshooting guide](/v3/admin/platform/k3s/troubleshooting) if you run into problems.
 
 #### K3s
 
-Make sure you have created a cluster using k3s.
+Make sure you have [created a cluster using k3](/v3/admin/platforms/k3s/cluster).
 
-If you dont have an existing k3s cluster, you can install one by running:
+#### Vault 
+To install vault on docker, you first need to install [docker](https://docs.docker.com/engine/install/) and [manage it as a non root user](https://docs.docker.com/engine/install/linux-postinstall/)
 
-#### Linux
-```bash
-# install k3 with kubernetes version 1.21 (We don't support Kubernetes 1.22+ yet)
-curl -sfL https://get.k3s.io | INSTALL_K3S_CHANNEL=v1.21 sh -s - --write-kubeconfig-mode 644
-# copy kubeconfig
-sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/k3s-config
-# export kubeconfig
-export KUBECONFIG=~/.kube/config:~/.kube/k3s-config
-```
-#### macOS
-```bash
-# install multipass
-brew install --cask multipass
-# Create a vm with 2G memory and 5G disk
-multipass launch --name k3sVM --mem 4G --disk 10G
-# install k3 with kubernetes version 1.21 (We don't support Kubernetes 1.22+ yet)
-multipass shell k3sVM
-# once you are into the k3sVM shell
-curl -sfL https://get.k3s.io | INSTALL_K3S_CHANNEL=v1.21 sh -s - --write-kubeconfig-mode 644
-# after this install you should be able to run kubectl get nodes
-kubectl get nodes
-# exit the k3sVM shell
-exit
-```
-
-Next, after exiting the k3sVM shell, find the IP address of the running node, and export the kubeconfig file
-```bash
-multipass info k3sVM
-# Export the IP address
-K3S_IP=$(multipass info k3sVM | grep IPv4 | awk '{print $2}')
-# export `kubeconfig` file
-multipass exec k3sVM sudo cat /etc/rancher/k3s/k3s.yaml > k3s.yaml
-# replace the ip adress with the external
-sed -i '' "s/127.0.0.1/${K3S_IP}/" k3s.yaml
-# set KUBECONFIG
-export KUBECONFIG={$PWD}/k3s.yaml
-```
-#### Verify k3s available
-To verify that k3s has been installed successfully, and configured run:
-
-```bash
-kubectl get nodes
-```
-
-This value of the node will be used later during installation and configuring of Jenkins X.
-
-Check [k3s install guide](https://rancher.com/docs/k3s/latest/en/installation/) for more installation options.
-
-
-#### Vault installed externally in docker
 Install vault cli.
 Refer to the [vault docs](https://www.vaultproject.io/docs/install) on how to install vault for your platform.
 
@@ -85,7 +32,6 @@ Make sure you have vault running in a docker container with kubernetes auth enab
 ```bash
 docker run --name jx-k3s-vault -d --cap-add=IPC_LOCK -e 'VAULT_DEV_ROOT_TOKEN_ID=myroot' -e 'VAULT_DEV_LISTEN_ADDRESS=0.0.0.0:8200' --net host vault:latest
 ```
-
 To verify that vault has started properly use `docker logs jx-k3s-vault`.
 
 Next enable kubernetes auth in vault.
@@ -94,14 +40,15 @@ Next enable kubernetes auth in vault.
 export VAULT_ADDR='http://0.0.0.0:8200'
 vault auth enable kubernetes
 ```
-Note: If you get the error `Error enabling kubernetes auth: Post "https://127.0.0.1:8200/v1/sys/auth/kubernetes": http: server gave HTTP response to HTTPS client`, try the command `vault login myroot`.
-
 #### Github
 
 - Create a git bot user (different from your own personal user) e.g. https://github.com/join and generate a a personal access token, this will be used by Jenkins X to interact with git repositories. e.g. https://github.com/settings/tokens/new?scopes=repo,read:user,read:org,user:email,write:repo_hook,delete_repo,admin:repo_hook
-- This bot user needs to have write permission to write to any git repository used by Jenkins X. This can be done by adding the bot user to the git organisation level or individual repositories as a collaborator Add the new bot user to your Git Organisation, for now give it Owner permissions, we will reduce this to member permissions soon.
+
+- This bot user needs to have write permission to write to any git repository used by Jenkins X. This can be done by adding the bot user to the git organisation level or individual repositories as a collaborator. Add the new bot user to your Git Organisation, for now give it Owner permissions, we will reduce this to member permissions soon.
 
 ### Jenkins X v3 installation
+
+- Make sure you have installed [jx 3.x binary](https://jenkins-x.io/v3/admin/setup/jx3/) and put it on your `$PATH` as the `jx admin operator` will be used
 
 - Generate a cluster git repository from the [jx3-k3s-vault](https://github.com/jx3-gitops-repositories/jx3-k3s-vault) template, by clicking [here](https://github.com/jx3-gitops-repositories/jx3-k3s-vault/generate)
 
@@ -116,19 +63,16 @@ git push origin main
 ```
 - Set the GIT_USERNAME (bot username) and GIT_TOKEN (bot personal access token) env variable and run:
 
-#### For external vault:
-
-
-
 ```bash
 jx admin operator --username $GIT_USERNAME --token $GIT_TOKEN --url <url of the cluster git repo> --set "jxBootJobEnvVarSecrets.EXTERNAL_VAULT=\"true\"" --set "jxBootJobEnvVarSecrets.VAULT_ADDR=http://<replace with k3s node name>:8200"
 ```
 
-> Note: For external vault, the first job will fail as it cannot authenticate against vault.
+> Note: The first job will fail as it cannot authenticate against vault.
 > The errors will be of the form `error: failed to populate secrets: failed to create a secret manager for ExternalSecret`.
 > Once the secret-infra namespace has been created, we can configure vault.
 > If you get an error connecting to the cluster, try running `kubectl config view --raw >~/.kube/config` as well as checking the permissions/owner of `~/.kube/config`
-### Vault configuration 
+
+### Vault configuration
 
 Install [jq](https://stedolan.github.io/jq/download/) before running these commands.
 
