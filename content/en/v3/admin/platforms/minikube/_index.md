@@ -39,7 +39,7 @@ minikube delete
 - You need to create a `minikube` cluster via the following command:
 
 ```bash
-minikube start --cpus 4 --memory 8048 --disk-size=100g --addons=ingress --vm=true
+minikube start --cpus 4 --memory 8048 --disk-size=100g --addons=ingress 
 ```
 
 ## Setup
