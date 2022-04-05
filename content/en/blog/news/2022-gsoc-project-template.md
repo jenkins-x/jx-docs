@@ -25,12 +25,11 @@ author: Jenkins X maintainers
 
 #### 2. GSOC information
 
-- Have you participated in Google Summer of Code previously? Please describe your participation in Google Summer of Code.
-- Are you applying to any other organizations this year? If so, please explain.
-- How many hours will you devote to your GSoC project each week? What are your other summer plans?
+- Have you participated in the Google Summer of Code previously? Please describe your experience.
+- Are you applying to any other organizations this year? If so, please list them.
+- How many hours will you devote to your GSoC project each week? Do you have any other commitments during the summer?
 - Have you ever contributed code to Jenkins X? If you have, post the Pull Request (PR) links (It's ok if they have not been merged/approved yet)
 - Do you plan on contributing to the Jenkins X project after GSoC is finished?
-- How many hours will you devote to your GSoC project each week? What are your other summer plans?
 - Were you able to install Jenkins X locally on your laptop?
   - If no, please explain why (Unsupported architecture, missing documentation, time constraints etc)?
   - If yes, how was the installation experience (missing documentation, complexity etc)?
