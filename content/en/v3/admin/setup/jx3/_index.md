@@ -9,8 +9,6 @@ aliases:
   - /v3/admin/guides/jx3
 ---
 
-To try out the 3.x Beta of Jenkins X you will need the 3.x version of the `jx` binary.
-
 You can download 3.x of `jx` from here: https://github.com/jenkins-x/jx/releases
 
 ### Linux
