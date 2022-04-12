@@ -26,8 +26,9 @@ For macOS, we need to first install [multipass](https://multipass.run/), create 
 ```bash
 # install multipass
 brew install --cask multipass
-# Create a vm with 2G memory and 5G disk
-multipass launch --name k3sVM --mem 4G --disk 10G
+# Create a vm with 4G memory and 30G disk and 4 CPU
+# this worked on my machine but you may need to adjust according to your system and your needs
+multipass launch --name k3sVM --mem 4G --disk 30G -c 4
 # install k3 with kubernetes version 1.21 (We don't support Kubernetes 1.22+ yet)
 multipass shell k3sVM
 # once you are into the k3sVM shell
@@ -47,8 +48,11 @@ K3S_IP=$(multipass info k3sVM | grep IPv4 | awk '{print $2}')
 multipass exec k3sVM sudo cat /etc/rancher/k3s/k3s.yaml > k3s.yaml
 # replace the ip adress with the external
 sed -i '' "s/127.0.0.1/${K3S_IP}/" k3s.yaml
+# set permissions on the kubeconfig file
+chmod 0644 k3s.yaml
 # set KUBECONFIG
-export KUBECONFIG={$PWD}/k3s.yaml
+export KUBECONFIG=${PWD}/k3s.yaml
+cat "$KUBECONFIG"
 ```
 #### Verify k3s available
 To verify that k3s has been installed successfully, and configured run:
@@ -58,5 +62,3 @@ kubectl get nodes
 ```
 
 Check [k3s install guide](https://rancher.com/docs/k3s/latest/en/installation/) for more installation options.
-
-

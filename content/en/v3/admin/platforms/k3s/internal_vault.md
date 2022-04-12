@@ -18,31 +18,34 @@ Please see the [troubleshooting guide](/v3/admin/platform/k3s/troubleshooting) i
 
 Make sure you have [created a cluster using k3](/v3/admin/platforms/k3s/cluster).
 
-### Vault installed in cluster
-Once kubernetes is running, enter the following commands to have vault started inside the k3s clusters
-
-```bash
-cd jx-vault
-helmfile sync
-```
-
 ### Github
 
 - Create a git bot user (different from your own personal user) e.g. https://github.com/join and generate a a personal access token, this will be used by Jenkins X to interact with git repositories. e.g. https://github.com/settings/tokens/new?scopes=repo,read:user,read:org,user:email,write:repo_hook,delete_repo,admin:repo_hook
 - This bot user needs to have write permission to write to any git repository used by Jenkins X. This can be done by adding the bot user to the git organisation level or individual repositories as a collaborator Add the new bot user to your Git Organisation, for now give it Owner permissions, we will reduce this to member permissions soon.
 
-### Jenkins X v3 installation
+### Checkout Jenkins X github repository
 
 - Make sure you have installed [jx 3.x binary](https://jenkins-x.io/v3/admin/setup/jx3/) and put it on your `$PATH` as the `jx admin operator` will be used
 
 - Generate a cluster git repository from the [jx3-k3s-vault](https://github.com/jx3-gitops-repositories/jx3-k3s-vault) template, by clicking [here](https://github.com/jx3-gitops-repositories/jx3-k3s-vault/generate)
- Commit and push your changes:
+
+### Install vault in cluster
+Open a terminal in the root folder of the checked out repository and enter the following commands to install vault inside the k3s cluster.
+
+```bash
+cd jx-vault
+helmfile sync
+```
+### Install Jenkins X
+
+Commit and push your changes:
 
 ```bash
 git add .
 git commit -m "fix: set vault url"
 git push origin main
 ```
+
 - Set the GIT_USERNAME (bot username) and GIT_TOKEN (bot personal access token) env variable and run:
 
 ```bash

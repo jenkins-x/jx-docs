@@ -1,7 +1,7 @@
 ---
-title: Troubleshooting guide 
+title: Troubleshooting guide
 type: docs
-description: Tips to troubleshoot Jenkins X on k3s 
+description: Tips to troubleshoot Jenkins X on k3s
 date: 2022-04-04
 publishdate: 2022-04-04
 weight: 50
@@ -27,12 +27,12 @@ nano ~/.bashrc
 export KUBECONFIG=~/.kube/config:~/.kube/k3s-config
 ```
 
-- If you have problmes with kubeconfig, copy the configuration from /etc/rancher/k3s/k3s.yaml to the ~/.kube/config instead (if you don't have any other clusters, that should be fine)
+- If you have problems with kubeconfig, copy the configuration from /etc/rancher/k3s/k3s.yaml to the ~/.kube/config instead (if you don't have any other clusters, that should be fine)
 ```bash
 sudo rm ~/.kube/k3s-config  #to make k3s uses ~/.kube/config
 sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
 ```
-- If still got `permission denied`
+- If you still get `permission denied`
 ```bash
-sudo chmod 777 ~/.kube/config #warning: this maybe vulnerable to multiple users 
+sudo chmod 777 ~/.kube/config #warning: this maybe vulnerable to multiple users
 ```
