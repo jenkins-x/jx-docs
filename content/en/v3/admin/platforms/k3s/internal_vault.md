@@ -5,7 +5,7 @@ type: docs
 description: Setup Jenkins X on a K3s cluster on your computer, with vault installed inside Kubernetes
 date: 2022-04-04
 publishdate: 2022-04-04
-weight: 50
+weight: 40
 aliases:
   - /v3/admin/platform/k3s/k3s-vault
 ---
@@ -31,6 +31,7 @@ Make sure you have [created a cluster using k3](/v3/admin/platforms/k3s/cluster)
 
 ### Install vault in cluster
 Open a terminal in the root folder of the checked out repository and enter the following commands to install vault inside the k3s cluster.
+You may have to install helmfile.
 
 ```bash
 cd jx-vault
@@ -60,51 +61,8 @@ It should install.
 
 ### Set up ingress and webhook
 
-- Get the external IP of the traefik service (loadbalancer)
-
-```bash
-kubectl get svc -A | grep LoadBalancer
-kube-system   traefik          LoadBalancer   <cluster-ip>    <external-ip>    80:31123/TCP,443:31783/TCP   40m
-```
-
-- Edit the jx-requirements.yaml file by editing the ingress domain:
-
-```bash
-# There may be some changes committed by the jx boot job
-git pull
-jx gitops requirements edit --domain <external-ip>.nip.io
-```
-
-- Next, download and install [ngrok](https://ngrok.com/). Run this in a new terminal window/tab:
-
-```bash
-ngrok http 8080
-```
-
-- Once this tunnel is open, paste the ngrok url (without http and https) in the hook field in the helmfiles/jx/jxboot-helmfile-resources-values.yaml file in the cluster git repository.
-- commit and push the changes.
-
-```bash
-git add .
-git commit -m "chore: new ngrok ip"
-git push origin main
-```
-
-- In another terminal run the following command to enable webhooks via ngrok
-
-```bash
-jx ns jx
-kubectl port-forward svc/hook 8080:80
-```
-
-- Once the bootjob has succeeded, you should see:
-
-```bash
-HTTP Requests
--------------
-
-POST /hook                     200 OK
-```
+Your cluster should now be ready and running.
+To allow git to send webhooks, you can [set up a tunnel using ngrok](ngrok)
 
 ### Next steps
 
