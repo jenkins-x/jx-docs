@@ -13,13 +13,13 @@ aliases:
 
 This guide will walk you though how to setup Jenkins X on your own computer using [k3s](https://k3s.io/) and vault running in docker.
 
-If you would rather run vault inside of k3s, which makes the install procedure somewhat simpler, see this [guide](/v3/admin/platform/k3s/internal_vault)
+If you would rather run vault inside of k3s, which makes the install procedure somewhat simpler, see this [guide](https://jenkins-x.io/v3/admin/platform/k3s/internal_vault)
 
-Please see the [Troubleshooting guide](/v3/admin/platform/k3s/troubleshooting) if you run into problems.
+Please see the [Troubleshooting guide](https://jenkins-x.io/v3/admin/platform/k3s/troubleshooting) if you run into problems.
 
 #### K3s
 
-Make sure you have [created a cluster using k3](/v3/admin/platforms/k3s/cluster).
+Make sure you have [created a cluster using k3](https://jenkins-x.io/v3/admin/platforms/k3s/cluster).
 
 #### Vault
 To install vault on docker, you first need to install [docker](https://docs.docker.com/engine/install/) and [manage it as a non root user](https://docs.docker.com/engine/install/linux-postinstall/)
@@ -142,7 +142,7 @@ This job will create the secrets in vault which will be used by external secrets
 ### Set up ingress and webhook
 
 Your cluster should now be ready and running.
-To allow git to send webhooks, you can [set up a tunnel using ngrok](ngrok) 
+To allow git to send webhooks, you can [set up a tunnel using ngrok](https://jenkins-x.io/v3/admin/platform/k3s/ngrok)
 ### Next steps
 
 - <a href="/v3/develop/create-project/" class="btn bg-primary text-light">Create or import projects</a>

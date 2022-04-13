@@ -12,11 +12,11 @@ aliases:
 
 This guide will walk you though how to setup Jenkins X on your own computer using [k3s](https://k3s.io/) and vault running inside the k3s cluster.
 
-Please see the [troubleshooting guide](/v3/admin/platform/k3s/troubleshooting) if you run into problems.
+Please see the [troubleshooting guide](https://jenkins-x.io/v3/admin/platform/k3s/troubleshooting) if you run into problems.
 
 #### K3s
 
-Make sure you have [created a cluster using k3](/v3/admin/platforms/k3s/cluster).
+Make sure you have [created a cluster using k3](https://jenkins-x.io/v3/admin/platforms/k3s/cluster).
 
 ### Github
 
