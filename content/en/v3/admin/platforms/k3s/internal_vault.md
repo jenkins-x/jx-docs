@@ -62,7 +62,7 @@ It should install.
 ### Set up ingress and webhook
 
 Your cluster should now be ready and running.
-To allow git to send webhooks, you can [set up a tunnel using ngrok](ngrok)
+To allow git to send webhooks, you can [set up a tunnel using ngrok](https://jenkins-x.io/v3/admin/platform/k3s/ngrok)
 
 ### Next steps
 
