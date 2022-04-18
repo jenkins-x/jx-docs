@@ -47,17 +47,17 @@ git commit -m "fix: set vault url"
 git push origin main
 ```
 
-- Set the GIT_USERNAME (bot username) and GIT_TOKEN (bot personal access token) env variable and run:
+- Set the GIT_USERNAME (bot username) and GIT_TOKEN (bot personal access token) env variable and cluster run from the root folder of the cluster repo:
 
 ```bash
-jx admin operator --username $GIT_USERNAME --token $GIT_TOKEN --url <url of the cluster git repo>
+jx admin operator 
 ```
-It should install.
+Jenkins X should now install.
 
 ### Verify installation
 
 - To verify the job succeeded, run `jx admin log`
-- To verfiy the secrets were created, run `kubectl get es -A` and `jx secret verify`
+- To verify the secrets were created, run `kubectl get es -A` and `jx secret verify`
 
 ### Set up ingress and webhook
 
