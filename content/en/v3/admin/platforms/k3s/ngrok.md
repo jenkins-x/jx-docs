@@ -15,8 +15,9 @@ This guide explains how to add ngrok to a running k3s cluster.
 - Get the external IP of the traefik service (loadbalancer)
 
 ```bash
-kubectl get svc -A | grep LoadBalancer
-kube-system   traefik          LoadBalancer   <cluster-ip>    <external-ip>    80:31123/TCP,443:31783/TCP   40m
+LOADBALANCER=$(kubectl get svc traefik -n kube-system --template="{{range .status.loadBalancer.ingress}}{{.ip}}{{end}}")
+echo $LOADBALANCER
+
 ```
 
 - Edit the jx-requirements.yaml file by editing the ingress domain:
@@ -24,7 +25,7 @@ kube-system   traefik          LoadBalancer   <cluster-ip>    <external-ip>    8
 ```bash
 # There may be some changes committed by the jx boot job
 git pull
-jx gitops requirements edit --domain <external-ip>.nip.io
+jx gitops requirements edit --domain "${LOADBALANCER}.nip.io"
 ```
 
 - Next, download and install [ngrok](https://ngrok.com/). Run this in a new terminal window/tab:
