@@ -12,7 +12,16 @@ aliases:
 ### Git
 - If you get a 404 error when clicking on the links to create a repository, check that you are actually logged in to GitHub or your git provider.
 
+### Delete cluster
+To delete the cluster, get a shell into the cluster and run
+```bash
+ multipass shell k3sVM
+ # you are now inside the cluster
+ # uninstall kubernetes_
+ /usr/local/bin/k3s-uninstall.sh
+```
 
+See the [k3s guide](https://rancher.com/docs/k3s/latest/en/installation/uninstall/) for more information.
 
 ### Vault
 - If you get the error
