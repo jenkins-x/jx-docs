@@ -29,14 +29,6 @@ Make sure you have [created a cluster using k3](https://jenkins-x.io/v3/admin/pl
 
 - Generate a cluster git repository from the [jx3-k3s-vault](https://github.com/jx3-gitops-repositories/jx3-k3s-vault) template, by clicking [here](https://github.com/jx3-gitops-repositories/jx3-k3s-vault/generate)
 
-### Install vault in cluster
-Open a terminal in the root folder of the checked out repository and enter the following commands to install vault inside the k3s cluster.
-You may have to install helmfile.
-
-```bash
-cd jx-vault
-helmfile sync
-```
 ### Install Jenkins X
 
 Commit and push your changes:
@@ -50,7 +42,7 @@ git push origin main
 - Set the GIT_USERNAME (bot username) and GIT_TOKEN (bot personal access token) env variable and cluster run from the root folder of the cluster repo:
 
 ```bash
-jx admin operator 
+jx admin operator
 ```
 Jenkins X should now install.
 

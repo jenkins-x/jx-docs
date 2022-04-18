@@ -10,7 +10,7 @@ aliases:
   - /v3/admin/platform/k3s/ngrok
 ---
 
-This guide explains how to add ngrok to a running k3s cluster.
+This guide explains how we can use [ngrok](https://ngrok.com/) to allow a kubernetes cluster running on your own computer to accept connections from the internet. 
 
 - Get the external IP of the traefik service (loadbalancer)
 
