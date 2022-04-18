@@ -39,7 +39,7 @@ kubectl get nodes
 exit
 ```
 
-Next, after exiting the k3sVM shell, find the IP address of the running node, and export the kubeconfig file
+Next, after exiting the k3sVM shell, we need to export the kubeconfig file,  update it with the IP address of the running node, and finally export the kubeconfig file.
 ```bash
 multipass info k3sVM
 # Export the IP address
@@ -49,7 +49,7 @@ multipass exec k3sVM sudo cat /etc/rancher/k3s/k3s.yaml > k3s.yaml
 # replace the ip adress with the external
 sed -i '' "s/127.0.0.1/${K3S_IP}/" k3s.yaml
 # set permissions on the kubeconfig file
-chmod 0644 k3s.yaml
+chmod go-r k3s.yaml
 # set KUBECONFIG
 export KUBECONFIG=${PWD}/k3s.yaml
 cat "$KUBECONFIG"
