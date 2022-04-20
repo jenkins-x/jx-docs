@@ -42,10 +42,9 @@ export KUBECONFIG=~/.kube/config:~/.kube/k3s-config
 
 **For WSL2 users:**
 - Download k3s binary from https://github.com/rancher/k3s/releases/latest
-
 - `chmod +x k3s`
+- Start a new Terminal and Run k3s `sudo ./k3s server` (Don't close this terminal).
 
-- Run k3s `sudo ./k3s server`
 
 To verify that k3s has been installed successfully, and configured run:
 
