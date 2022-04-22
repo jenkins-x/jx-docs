@@ -31,14 +31,6 @@ Make sure you have [created a cluster using k3](https://jenkins-x.io/v3/admin/pl
 
 ### Install Jenkins X
 
-Commit and push your changes:
-
-```bash
-git add .
-git commit -m "fix: set vault url"
-git push origin main
-```
-
 - Set the GIT_USERNAME (bot username) and GIT_TOKEN (bot personal access token) env variable and cluster run from the root folder of the cluster repo:
 
 ```bash
