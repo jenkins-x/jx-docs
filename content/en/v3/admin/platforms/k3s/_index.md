@@ -22,7 +22,7 @@ This guide will walk you though how to setup Jenkins X on your laptop using [k3s
 If you are on Mac OS, you can follow this [guide](https://docs.kalm.dev/install/install-local-k3s/) to set up k3s.
 You do not need to install kalm for the rest of the tutorial.
 
-If you are on Windows, you can use [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/)(WSL).It lets developers run a GNU/Linux environment.This includes CLI tools,utilities, applications on Windows without the use of Virtual Machine or dual-boot setup.
+If you are on Windows, you can use [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/)(WSL). It lets developers run a GNU/Linux environment. This includes CLI tools,utilities, applications on Windows without the use of Virtual Machine or dual-boot setup.
 ### Prerequisites
 
 #### K3s
