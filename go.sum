@@ -5,10 +5,13 @@ github.com/google/docsy v0.1.1-0.20220329190916-9733a5f72258 h1:Zu74mUwQ9Ou+/U0U
 github.com/google/docsy v0.1.1-0.20220329190916-9733a5f72258/go.mod h1:yuKLZHMX5CKiLUH55+ePFJaYnoSwUVVffNareaOGQYo=
 github.com/google/docsy v0.2.0-pre h1:vQc8vUD6ArSKCZM2BA1tckwhHSA5Vi3GwqtdywQiAaU=
 github.com/google/docsy v0.2.0-pre/go.mod h1:yuKLZHMX5CKiLUH55+ePFJaYnoSwUVVffNareaOGQYo=
+github.com/google/docsy v0.2.0 h1:DN6wfyyp2rXsjdV1K3wioxOBTRvG6Gg48wLPDso2lc4=
+github.com/google/docsy v0.2.0/go.mod h1:shlabwAQakGX6qpXU6Iv/b/SilpHRd7d+xqtZQd3v+8=
 github.com/google/docsy/dependencies v0.2.0-pre h1:rr4XfnpvqIEuG71jpo6p7e1/kxvkHQJNh7ewqWpzJzg=
 github.com/google/docsy/dependencies v0.2.0-pre/go.mod h1:oPdn05sNt61uT6K+LqNRhYq1jeqrsbbQMDXkPdPscmA=
 github.com/google/docsy/dependencies v0.2.0-pre.0.20220321183617-02df04c0f2d4 h1:EKYx2OlWxo2HBhZ+dWzZbufBfh+qMKmz2K1lf1GJmto=
 github.com/google/docsy/dependencies v0.2.0-pre.0.20220321183617-02df04c0f2d4/go.mod h1:oPdn05sNt61uT6K+LqNRhYq1jeqrsbbQMDXkPdPscmA=
 github.com/google/docsy/dependencies v0.2.0-pre.0.20220329190916-9733a5f72258 h1:CwV2w2MfY7qGqOY59VjvfH3GFhVJqtP2oUpxDvpLq54=
 github.com/google/docsy/dependencies v0.2.0-pre.0.20220329190916-9733a5f72258/go.mod h1:oPdn05sNt61uT6K+LqNRhYq1jeqrsbbQMDXkPdPscmA=
+github.com/google/docsy/dependencies v0.2.0/go.mod h1:2zZxHF+2qvkyXhLZtsbnqMotxMukJXLaf8fAZER48oo=
 github.com/twbs/bootstrap v4.6.1+incompatible/go.mod h1:fZTSrkpSf0/HkL0IIJzvVspTt1r9zuf7XlZau8kpcY0=
