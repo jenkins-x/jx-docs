@@ -13,10 +13,7 @@ spec:
           metadata: {}
           stepTemplate:
             name: ""
-            resources:
-              requests:
-                cpu: 400m
-                memory: 512Mi
+            resources: {}
             workingDir: /workspace/source
             env:
               - name: DOMAIN
@@ -49,6 +46,10 @@ spec:
 
             - image: klakegg/hugo:0.95.0-ext-alpine
               name: build-website
+              resources:
+                requests:
+                  cpu: 400m
+                  memory: 512Mi
               script: |
                 #!/bin/sh
                 hugo -d tmp-website --enableGitInfo --baseURL https://${REPO_NAME}-jx-${REPO_OWNER}-${REPO_NAME}-pr-${PULL_NUMBER}.${DOMAIN}/
