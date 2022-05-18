@@ -60,7 +60,7 @@ File:`$JX3HOME/jx3-gke-gsm/jx-requirements.yml`
     namespaceSubDomain: .
 ```
 ### Define Jenkins plugins and installers.
-The default Jenkins server installation is a minimum configuration and generally requires additional installers and plugin components for the your specific Jenkins project to operate. This example takes into account the default configuration and describes a method of merging your additional requirements by modifying two files, a `values.yaml` for config scripts and a Go template file (i.e. `mrg-values.yaml.gotmpl`) for plugins and other components. 
+The default Jenkins server installation is a minimum configuration and generally requires additional installers and plugin components for the your specific Jenkins project to operate. This example takes into account the default configuration and describes a method of merging your additional requirements by modifying two files, a `values.yaml` for config scripts and a Go template file (i.e. `values.yaml.gotmpl`) for plugins and other components. 
   
 File: `/tmp/values.yaml` - Config Scripts
 ```
@@ -80,7 +80,7 @@ controller:
                       id: "15.7.0"
                       npmPackagesRefreshHours: 72
 ```
-File: `/tmp/mrg-values.yaml.gotmpl` - Plugins
+File: `/tmp/values.yaml.gotmpl` - Plugins
 ```
 # These components will merge with default versionStream/charts/jenkinsci/jenkins/values.yaml.gotmpl
 controller:
@@ -111,9 +111,9 @@ cd $JX3HOME/jx3-gke-gsm                             ## cluster repo root
 jx gitops jenkins add --name jx-jenkins             ## add Jenkins
 jx gitops helmfile resolve --namespace jx-jenkins   ## resolve charts references (optional but helps later on in editing)
 cp /tmp/values.yaml helmfiles/jx-jenkins            ## Update tool config
-cp /tmp/mrg-values.yaml.gotmpl helmfiles/jx-jenkins ## Update plugin config
+cp /tmp/values.yaml.gotmpl helmfiles/jx-jenkins     ## Update plugin config
 ```
-Modification to the `$JX3HOME/jx3-gke-gsm/helmfiles/jx-jenkins/helmfiles.yaml` file is done to include the additional `mrg-values.yaml.gotmpl`.
+Modification to the `$JX3HOME/jx3-gke-gsm/helmfiles/jx-jenkins/helmfiles.yaml` file is done to include the additional `values.yaml.gotmpl`.
 ```yaml
  - chart: jenkinsci/jenkins
    name: jenkins
@@ -121,7 +121,7 @@ Modification to the `$JX3HOME/jx3-gke-gsm/helmfiles/jx-jenkins/helmfiles.yaml` f
    values:
    - values.yaml
    - ../../versionStream/charts/jenkinsci/jenkins/values.yaml.gotmpl
-   - mrg-values.yaml.gotmpl
+   - values.yaml.gotmpl
    - jx-values.yaml
 ```
 ### Push initial changes to cluster repo
