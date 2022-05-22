@@ -12,10 +12,7 @@ spec:
           metadata: {}
           stepTemplate:
             name: ""
-            resources:
-              requests:
-                cpu: 400m
-                memory: 512Mi
+            resources: {}
             workingDir: /workspace/source
             env:
               - name: GIT_COMMITTER_EMAIL
@@ -29,7 +26,7 @@ spec:
               - name: HUGO_ENV
                 value: production
               - name: HUGO_VERSION
-                value: "0.91.2"
+                value: "0.95.0"
           steps:
             - image: uses:jenkins-x/jx3-pipeline-catalog/tasks/git-clone/git-clone.yaml@versionStream
               name: ""
@@ -83,6 +80,10 @@ spec:
                 - --enableGitInfo
                 - --baseURL
                 - https://jenkins-x.io
+              resources:
+                requests:
+                  cpu: 400m
+                  memory: 512Mi
             ## add, commit, and push changes
             - image: ghcr.io/jenkins-x/builder-go:2.1.155-778-patch3
               name: update-website

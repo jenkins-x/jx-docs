@@ -28,7 +28,6 @@ Install vault cli.
 Refer to the [vault docs](https://www.vaultproject.io/docs/install) on how to install vault for your platform.
 
 Make sure you have vault running in a docker container with kubernetes auth enabled.
-
 ```bash
 docker run --name jx-k3s-vault -d --cap-add=IPC_LOCK -e 'VAULT_DEV_ROOT_TOKEN_ID=myroot' -e 'VAULT_DEV_LISTEN_ADDRESS=0.0.0.0:8200' --net host vault:latest
 ```
@@ -38,6 +37,7 @@ Next enable kubernetes auth in vault.
 
 ```bash
 export VAULT_ADDR='http://0.0.0.0:8200'
+# you may want to set this at the end of the ~/.bashrc file or ~/.zshrc either to be accesible for all terminals you open like the way we did above
 vault auth enable kubernetes
 ```
 #### Github
@@ -46,9 +46,8 @@ vault auth enable kubernetes
 
 - This bot user needs to have write permission to write to any git repository used by Jenkins X. This can be done by adding the bot user to the git organisation level or individual repositories as a collaborator. Add the new bot user to your Git Organisation, for now give it Owner permissions, we will reduce this to member permissions soon.
 
-### Jenkins X v3 installation
-
-- Make sure you have installed [jx 3.x binary](https://jenkins-x.io/v3/admin/setup/jx3/) and put it on your `$PATH` as the `jx admin operator` will be used
+#### Jenkins-X
+- Make sure you have installed [jx 3.x binary](https://jenkins-x.io/v3/admin/setup/jx3/) and put it on your `$PATH` as the `jx admin operator` will be used 
 
 - Generate a cluster git repository from the [jx3-k3s-vault](https://github.com/jx3-gitops-repositories/jx3-k3s-vault) template, by clicking [here](https://github.com/jx3-gitops-repositories/jx3-k3s-vault/generate)
 
@@ -82,10 +81,13 @@ Remember to run the following commands in a terminal where you have set the valu
 
 ```bash
 export VAULT_ADDR='http://0.0.0.0:8200'
-VAULT_HELM_SECRET_NAME=$(kubectl -n secret-infra get secrets --output=json | jq -r '.items[].metadata | select(.name|startswith("kubernetes-external-secrets-token-")).name')
-TOKEN_REVIEW_JWT=$(kubectl -n secret-infra get secret $VAULT_HELM_SECRET_NAME --output='go-template={{ .data.token }}' | base64 --decode)
-KUBE_CA_CERT=$(kubectl config view --raw --minify --flatten --output='jsonpath={.clusters[].cluster.certificate-authority-data}' | base64 --decode)
-KUBE_HOST=$(kubectl config view --raw --minify --flatten --output='jsonpath={.clusters[].cluster.server}')
+export VAULT_HELM_SECRET_NAME=$(kubectl -n secret-infra get secrets --output=json | jq -r '.items[].metadata | select(.name|startswith("kubernetes-external-secrets-token-")).name')
+export TOKEN_REVIEW_JWT=$(kubectl -n secret-infra get secret $VAULT_HELM_SECRET_NAME --output='go-template={{ .data.token }}' | base64 --decode)
+export KUBE_CA_CERT=$(kubectl config view --raw --minify --flatten --output='jsonpath={.clusters[].cluster.certificate-authority-data}' | base64 --decode)
+export KUBE_HOST=$(kubectl config view --raw --minify --flatten --output='jsonpath={.clusters[].cluster.server}')
+
+# you may want to set this at the end of the ~/.bashrc file or ~/.zshrc either to be accesible for all terminals you open like the way we did above
+
 vault write auth/kubernetes/config \
         token_reviewer_jwt="$TOKEN_REVIEW_JWT" \
         kubernetes_host="$KUBE_HOST" \
@@ -138,7 +140,7 @@ This job will create the secrets in vault which will be used by external secrets
 
 - To verify the job succeeded, run `jx admin log`
 - To verfiy the secrets were created, run `kubectl get es -A` and `jx secret verify`
-
+- If this didn't work try and repeat the steps but commit your dummy changes through github repository directly other than the `git push origin main` command
 ### Set up ingress and webhook
 
 Your cluster should now be ready and running.
