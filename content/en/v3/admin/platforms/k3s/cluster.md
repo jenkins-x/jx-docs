@@ -14,8 +14,8 @@ This guide explains how to install k3s for running kubernetes on your own comput
 
 #### Linux
 ```bash
-# install k3 with kubernetes version 1.21 (We don't support Kubernetes 1.22+ yet)
-curl -sfL https://get.k3s.io | INSTALL_K3S_CHANNEL=v1.21 sh -s - --write-kubeconfig-mode 644
+# install k3s 
+curl -sfL https://get.k3s.io | sh -s - --write-kubeconfig-mode 644
 # copy kubeconfig
 sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/k3s-config
 # export kubeconfig
@@ -29,10 +29,10 @@ brew install --cask multipass
 # Create a vm with 4G memory and 30G disk and 4 CPU
 # this worked on my machine but you may need to adjust according to your system and your needs
 multipass launch --name k3sVM --mem 4G --disk 30G -c 4
-# install k3 with kubernetes version 1.21 (We don't support Kubernetes 1.22+ yet)
+# install k3s 
 multipass shell k3sVM
 # once you are into the k3sVM shell
-curl -sfL https://get.k3s.io | INSTALL_K3S_CHANNEL=v1.21 sh -s - --write-kubeconfig-mode 644
+curl -sfL https://get.k3s.io | sh -s - --write-kubeconfig-mode 644
 # after this install you should be able to run kubectl get nodes
 kubectl get nodes
 # exit the k3sVM shell
