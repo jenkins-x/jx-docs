@@ -34,7 +34,7 @@ The entire Jenkins X experience is based around Git.  The installation, extensio
 
 Using GitOps means familiar processes can be followed when making any change to the cluster, using reviews, automation, traceability and rollbacks to give better control over consuming changes.
 
-Jenkins X also uses GitOps as the way to [upgrade](/v3/admin/setup/upgrades), including new releases of images, helm charts and pakages.
+Jenkins X also uses GitOps as the way to [upgrade](/v3/admin/setup/upgrades), including new releases of images, helm charts and packages.
 
 ### Secret Management
  
