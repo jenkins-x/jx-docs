@@ -28,11 +28,22 @@ Creates a pull request in the given repository, requesting the head branch be me
   --body "Useful details for reviewers" \
   --head some-feature-branch \
   --base main
+  
+  # if pull request from head branch to base exists, updates the pr. otherwise creates the pr
+  jx-scm pull-request create \
+  --owner foo \
+  --name bar \
+  --title "chore: a good reason to merge" \
+  --body "Some new reasons to merge" \
+  --head some-feature-branch \
+  --base main \
+  --allow-update
 
   ```
 ### Options
 
 ```
+      --allow-update      if an open pull request from head branch to base branch exists, setting flag to true will update the pull request
       --base string       the name of the branch you want the changes pulled into (default "main")
       --body string       the contents of the pull request
       --head string       the name of the branch where your changes are implemented
