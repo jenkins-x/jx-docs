@@ -60,13 +60,16 @@ File:`$JX3HOME/jx3-gke-gsm/jx-requirements.yml`
     namespaceSubDomain: .
 ```
 ### Define Jenkins plugins and installers.
-The default Jenkins server installation is a minimum configuration and generally requires additional installers and plugin components for the your specific Jenkins project to operate. This example takes into account the default configuration and describes a method of merging your additional requirements by modifying two files, a `values.yaml` for config scripts and a Go template file (i.e. `values.yaml.gotmpl`) for plugins and other components. 
+The default Jenkins server installation is a minimum configuration and generally requires additional installers and plugin components for the your specific Jenkins project to operate. The Jenkins components (i.e. plugins, installerss, etc.) are defined in 3 locations; Chart, System, and User configurations which get loaded in that order. During the build process settings get inherited and can be modified but depending on the end config how to make modifications may vary. This example takes into account the default configuration based upon the Chart and System settings. It will only require small additions to the configuration which is done at the User level. To make these config changes will require the modification of the User  `values.yaml` file. 
+> 💡 Currently there is an issue where the Jenkins URL does not resolve to an IP address. To address this issue, it is imperative to have the `ingressClassName: nginx` included in the values.yaml file.
+>
   
 File: `/tmp/values.yaml` - Config Scripts
 ```
-# These components are configuration settings such as installers.
 controller:
-  JCasC:
+  ingress:             ## Required versionStream DNS/Ingress break fix
+    ingressClassName: nginx
+  JCasC:               ## Example of building an installer
     configScripts:
       mystuff: |
         tool:
@@ -79,31 +82,11 @@ controller:
                   - nodeJSInstaller:
                       id: "15.7.0"
                       npmPackagesRefreshHours: 72
-```
-File: `/tmp/values.yaml.gotmpl` - Plugins
-```
-# These components will merge with default versionStream/charts/jenkinsci/jenkins/values.yaml.gotmpl
-controller:
-  installPlugins:
-    - kubernetes:3546.v6103d89542d6
-    - workflow-aggregator:2.7
-    - git:4.11.2
-    - configuration-as-code:1414.v878271fc496f
-    - nodejs:1.5.1
-  additionalPlugins:
-    - jdk-tool:1.5
-    - job-dsl:1.79
-    - github-branch-source:2.10.2
-    - kubernetes-credentials-provider:0.20
-    - tekton-client:1.0.3
+  additionalPlugins:   ## Additional plugins for example
     - pipeline-stage-view:2.24
-  ingress:
-    enabled: true
-    ingressClassName: nginx
-    kubernetes.io/ingress.class: nginx
-    kubernetes.io/tls-acme: true
-```
+    - nodejs:1.5.1
 
+```
 ### Initialize Jenkins server configuration
 `jx gitops` commands are used to create the Jenkins server configuration. More information can be found under [Adding Jenkins Server into Jenkins X](/v3/admin/guides/jenkins/getting-started/#adding-jenkins-servers-into-jenkins-x). The example uses the following command sequence:
 ```bash
@@ -111,19 +94,8 @@ cd $JX3HOME/jx3-gke-gsm                             ## cluster repo root
 jx gitops jenkins add --name jx-jenkins             ## add Jenkins
 jx gitops helmfile resolve --namespace jx-jenkins   ## resolve charts references (optional but helps later on in editing)
 cp /tmp/values.yaml helmfiles/jx-jenkins            ## Update tool config
-cp /tmp/values.yaml.gotmpl helmfiles/jx-jenkins     ## Update plugin config
 ```
-Modification to the `$JX3HOME/jx3-gke-gsm/helmfiles/jx-jenkins/helmfiles.yaml` file is done to include the additional `values.yaml.gotmpl`.
-```yaml
- - chart: jenkinsci/jenkins
-   name: jenkins
-   namespace: jx-jenkins
-   values:
-   - values.yaml
-   - ../../versionStream/charts/jenkinsci/jenkins/values.yaml.gotmpl
-   - values.yaml.gotmpl
-   - jx-values.yaml
-```
+
 ### Push initial changes to cluster repo
 All the customizations for the cluster repo are now propagated.
 ```bash
@@ -263,6 +235,12 @@ jx project import --git-token <token>  \
                   --name jx-example-node \
                   --batch-mode
 ```
+### Restarting Jenkins pod after pipeline deployment. 
+When the above pipeline is deployed it may be necessary to restart the Jenkins pod berfore you see it appear in the Jenkins dashboard.
+```
+kubectl delete pod jenkins-0 -n jx-jenkins            ## Restarts Jenkins pods
+```
+
 ### Adding Github Webhook (optional)
 The current default configuration of JX3 for the import of Jenkins projects does not include the creation of a GitHub webhook for automated pipeline execution. You can use an GitHub API call to set up a webhook to provide a mechanism to kick off a pipeline when there's an update to the project's repo. Below is an example of the API call for this Jenkins configuration and import project example.
 ```
