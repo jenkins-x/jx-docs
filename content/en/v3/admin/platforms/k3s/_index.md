@@ -21,6 +21,8 @@ This guide will walk you though how to setup Jenkins X on your laptop using [k3s
 
 If you are on Mac OS, you can follow this [guide](https://docs.kalm.dev/install/install-local-k3s/) to set up k3s.
 You do not need to install kalm for the rest of the tutorial.
+
+If you are on Windows, you can use [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/)(WSL). It lets developers run a GNU/Linux environment. This includes CLI tools,utilities, applications on Windows without the use of Virtual Machine or dual-boot setup.
 ### Prerequisites
 
 #### K3s
@@ -37,6 +39,12 @@ sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/k3s-config
 export KUBECONFIG=~/.kube/config:~/.kube/k3s-config
 
 ```
+
+**For WSL2 users:**
+- Download k3s binary from https://github.com/rancher/k3s/releases/latest
+- `chmod +x k3s`
+- Start a new Terminal and Run k3s `sudo ./k3s server` (Don't close this terminal).
+
 
 To verify that k3s has been installed successfully, and configured run:
 
@@ -80,6 +88,10 @@ Refer to the [vault docs](https://www.vaultproject.io/docs/install) on how to in
 Make sure you have vault running in a docker container with kubernetes auth enabled.
 ```bash
 docker run --name jx-k3s-vault -d --cap-add=IPC_LOCK -e 'VAULT_DEV_ROOT_TOKEN_ID=myroot' -e 'VAULT_DEV_LISTEN_ADDRESS=0.0.0.0:8200' --net host vault:latest
+```
+**For WSL2 users:**
+```bash
+docker run --name jx-k3s-vault -d --cap-add=IPC_LOCK -e 'VAULT_DEV_ROOT_TOKEN_ID=myroot' -e 'VAULT_DEV_LISTEN_ADDRESS=0.0.0.0:8200' -p 8200:8200 vault:latest
 ```
 
 To verify if vault started properly use `docker logs jx-k3s-vault`.
