@@ -76,9 +76,17 @@ Refer to the [vault docs](https://www.vaultproject.io/docs/install) on how to in
 
 ##### Internal vault (Preferred)
 
+###### Helm
+
+Follow the [helm documentation](https://helm.sh/docs/intro/install/) to install the helm binary.
+Once helm is installed, proceed to the next steps.
+
 To install vault inside the newly created k3s cluster, you need to install the vault operator and vault instance chart.
 
 ```bash
+helm repo add banzaicloud-stable https://kubernetes-charts.banzaicloud.com
+helm repo add jxgh https://jenkins-x-charts.github.io/repo
+helm repo update
 helm install vault-operator banzaicloud-stable/vault-operator --create-namespace -n jx-vault
 helm install vault-instance jxgh/vault-instance -n jx-vault
 ```
