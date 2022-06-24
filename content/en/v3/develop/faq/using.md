@@ -68,17 +68,22 @@ You may also want to remove the webhook from the repository to be safe.
 
 ## How do I stop jx asking for git credentials
 
-When you run commands like [jx project](/v3/develop/reference/jx/project/) to create/import repositories or [jx application](/v3/develop/reference/jx/application/) to list applications need to be able to access git repositories using tokens.
+Commands like [jx project](/v3/develop/reference/jx/project/) used to create/import repositories or [jx application](/v3/develop/reference/jx/application/) used to list applications need to be able to access git repositories using tokens.
 
-You can define the git credentials so that you can do `git clone` of your private git repositories via...
+Running these commands prompt the user to enter the git-username and git-token to clone the repository into a temporary folder (ssh authentication is not supported at the moment).
+Follow the steps below to stop the prompting (substitute the `<git-username>` and `<git-token>` with your personal username and access token)
 
 ```bash
-mkdir -p ~/git 
-echo "https://$USERNAME:$TOKEN@github.com" >> ~/git/credentials
+export GIT_USERNAME=<git-username>
+export GIT_TOKEN=<git-token>
 
-# enable git credential store
+mkdir -p ~/git 
+echo "https://$GIT_USERNAME:$GIT_TOKEN@github.com" >> ~/git/credentials
+echo "https://$GIT_USERNAME:$GIT_TOKEN@github.com" >> ~/.git-credentials
+
 git config --global credential.helper store
 ```
+To read more about the git credential store follow this [document](https://git-scm.com/docs/git-credential-store)
 
 ## How do I use dev pods?
 
