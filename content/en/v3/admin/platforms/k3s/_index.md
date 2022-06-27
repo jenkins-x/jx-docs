@@ -258,13 +258,43 @@ git pull
 jx gitops requirements edit --domain <external-ip>.nip.io
 ```
 
-- Next, download and install [ngrok](https://ngrok.com/). Run this in a new terminal window/tab:
+#### Ngrok
 
-```bash
-ngrok http 8080
+Next, download and install [ngrok](https://ngrok.com/).
+Log into ngrok account and get the ngrok auth token (Authenticated sessions can run for unlimited time, unauthenticated sessions expire in 1.5 hours):
+
+Create a ngrok config file at `~/.config/ngrok/ngrok.yml` with the following content (replace `<ngrok-auth-token>` with the auth token from the ngrok account):
+
+```yaml
+authtoken: <ngrok-auth-token>
+tunnels:
+  hook:
+    proto: http
+    addr: 8080
+    schemes:
+      - http
+  ui:
+    proto: http
+    addr: 9090
+    schemes:
+      - http
+version: "2"
+region: us
 ```
 
-- Once this tunnel is open, paste the ngrok url (without http and https) in the hook field in the helmfiles/jx/jxboot-helmfile-resources-values.yaml file in the cluster git repository.
+Verify that the config is correct using:
+
+```bash
+ngrok config check
+```
+
+Run this in a new terminal window/tab:
+
+```bash
+ngrok start --all
+```
+
+- Once this tunnel is open, paste the ngrok url (without http) in the hook field in the helmfiles/jx/jxboot-helmfile-resources-values.yaml file in the cluster git repository.
 - commit and push the changes.
 
 ```bash
