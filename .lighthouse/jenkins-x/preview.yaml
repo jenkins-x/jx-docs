@@ -22,7 +22,7 @@ spec:
                     name: ingress-config
                     key: domain
           steps:
-            - image: klakegg/hugo:0.95.0-ext-alpine
+            - image: klakegg/hugo:0.101.0-ext-alpine
               name: git-submodules
               command:
                 - git
@@ -32,7 +32,7 @@ spec:
                 - --init
                 - --recursive
 
-            - image: klakegg/hugo:0.95.0-ext-alpine
+            - image: klakegg/hugo:0.101.0-ext-alpine
               name: update-content
               command:
                 - ./scripts/ci/update-content.sh
@@ -44,7 +44,7 @@ spec:
               args:
                 - install
 
-            - image: klakegg/hugo:0.95.0-ext-alpine
+            - image: klakegg/hugo:0.101.0-ext-alpine
               name: build-website
               resources:
                 requests:

@@ -26,12 +26,12 @@ spec:
               - name: HUGO_ENV
                 value: production
               - name: HUGO_VERSION
-                value: "0.95.0"
+                value: "0.101.0"
           steps:
             - image: uses:jenkins-x/jx3-pipeline-catalog/tasks/git-clone/git-clone.yaml@versionStream
               name: ""
               resources: {}
-            - image: klakegg/hugo:0.95.0-ext-alpine
+            - image: klakegg/hugo:0.101.0-ext-alpine
               name: git-clone-website
               command:
                 - git
@@ -39,7 +39,7 @@ spec:
                 - clone
                 - https://github.com/jenkins-x/jenkins-x-website.git
                 - --depth=20
-            - image: klakegg/hugo:0.95.0-ext-alpine
+            - image: klakegg/hugo:0.101.0-ext-alpine
               name: git-submodules
               command:
                 - git
@@ -48,7 +48,7 @@ spec:
                 - update
                 - --init
                 - --recursive
-            - image: klakegg/hugo:0.95.0-ext-alpine
+            - image: klakegg/hugo:0.101.0-ext-alpine
               name: update-content
               command:
                 - ./scripts/ci/update-content.sh
@@ -59,7 +59,7 @@ spec:
               args:
                 - install
             ## delete everything in the jenkins-x-website repo clone
-            - image: klakegg/hugo:0.95.0-ext-alpine
+            - image: klakegg/hugo:0.101.0-ext-alpine
               name: remove-old
               command:
                 - git
@@ -70,7 +70,7 @@ spec:
                 - -r
                 - "*"
             ## build the site into the cloned folder
-            - image: klakegg/hugo:0.95.0-ext-alpine
+            - image: klakegg/hugo:0.101.0-ext-alpine
               name: build-website
               command:
                 - hugo
