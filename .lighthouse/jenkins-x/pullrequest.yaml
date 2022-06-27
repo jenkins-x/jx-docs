@@ -24,7 +24,7 @@ spec:
             - image: uses:jenkins-x/jx3-pipeline-catalog/tasks/git-clone/git-clone-pr.yaml@versionStream
               name: ""
               resources: {}
-            - image: klakegg/hugo:0.95.0-ext-alpine
+            - image: klakegg/hugo:0.101.0-ext-alpine
               name: git-submodules
               command:
                 - git
@@ -39,7 +39,7 @@ spec:
                 - npm
               args:
                 - install
-            - image: klakegg/hugo:0.95.0-ext-alpine
+            - image: klakegg/hugo:0.101.0-ext-alpine
               name: build-website
               resources:
                 requests:

@@ -8,8 +8,9 @@ ignorefiles = [ "docs/labs/.*" ]
 # Hugo allows theme composition (and inheritance). The precedence is from left to right.
 theme = ["github.com/google/docsy", "github.com/google/docsy/dependencies"]
 
+# Setting this to false to keep builds from breaking: https://github.com/gohugoio/hugo/issues/6035
 # Will give values to .Lastmod etc.
-enableGitInfo = true
+enableGitInfo = false
 
 ###
 # Language configuration
