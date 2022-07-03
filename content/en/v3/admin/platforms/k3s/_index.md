@@ -294,7 +294,28 @@ Run this in a new terminal window/tab:
 ngrok start --all
 ```
 
-- Once this tunnel is open, paste the ngrok url (without http) in the hook field in the helmfiles/jx/jxboot-helmfile-resources-values.yaml file in the cluster git repository.
+- Once the command succeeds, you should see something like this:
+
+```text
+ngrok                                                                                                                                                                                       (Ctrl+C to quit)
+
+Hello World! https://ngrok.com/next-generation
+
+Session Status                online
+Account                       user123 (Plan: Free)
+Update                        update available (version 3.0.6, Ctrl-U to update)
+Version                       3.0.5
+Region                        United States (us)
+Latency                       25ms
+Web Interface                 http://127.0.0.1:4040
+Forwarding                    http://XXXX.ngrok.io -> http://localhost:8080
+Forwarding                    http://YYYY.ngrok.io -> http://localhost:9090
+
+Connections                   ttl     opn     rt1     rt5     p50     p90
+                              0       0       0.00    0.00    0.00    0.00
+```
+
+- Once this tunnel is open, paste the ngrok url (without http) which is forwarding the traffic to port 8080 in the hook field in the helmfiles/jx/jxboot-helmfile-resources-values.yaml file in the cluster git repository.
 - commit and push the changes.
 
 ```bash
