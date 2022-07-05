@@ -4,7 +4,9 @@ linktitle: Maturity Level Matrix
 type: docs
 description: Jenkins X 3.x features maturity assessment on different cloud providers
 weight: 60
-aliases: 
+toc_hide: true
+hide_summary: true
+aliases:
     - /v3/about/maturity-matrix/
 ---
 

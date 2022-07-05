@@ -12,10 +12,7 @@ spec:
           metadata: {}
           stepTemplate:
             name: ""
-            resources:
-              requests:
-                cpu: 400m
-                memory: 512Mi
+            resources: {}
             workingDir: /workspace/source
             env:
               - name: DOMAIN
@@ -27,7 +24,7 @@ spec:
             - image: uses:jenkins-x/jx3-pipeline-catalog/tasks/git-clone/git-clone-pr.yaml@versionStream
               name: ""
               resources: {}
-            - image: klakegg/hugo:0.95.0-ext-alpine
+            - image: klakegg/hugo:0.101.0-ext-alpine
               name: git-submodules
               command:
                 - git
@@ -42,8 +39,12 @@ spec:
                 - npm
               args:
                 - install
-            - image: klakegg/hugo:0.95.0-ext-alpine
+            - image: klakegg/hugo:0.101.0-ext-alpine
               name: build-website
+              resources:
+                requests:
+                  cpu: 400m
+                  memory: 512Mi
               script: |
                 #!/bin/sh
                 hugo -d tmp-website --enableGitInfo --baseURL https://${REPO_NAME}-jx-${REPO_OWNER}-${REPO_NAME}-pr-${PULL_NUMBER}.${DOMAIN}/

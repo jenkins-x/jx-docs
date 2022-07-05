@@ -8,8 +8,9 @@ ignorefiles = [ "docs/labs/.*" ]
 # Hugo allows theme composition (and inheritance). The precedence is from left to right.
 theme = ["github.com/google/docsy", "github.com/google/docsy/dependencies"]
 
+# Setting this to false to keep builds from breaking: https://github.com/gohugoio/hugo/issues/6035
 # Will give values to .Lastmod etc.
-enableGitInfo = true
+enableGitInfo = false
 
 ###
 # Language configuration
@@ -103,10 +104,10 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
 
 [params]
 ## Used for views in rendered HTML (i.e., rather than using the .Hugo variable)
-release = "3.2.297"
+release = "3.2.404"
 
 ## the jx-lens version
-jx_lens_version = "1.0.16"
+jx_lens_version = "1.0.17"
 
 copyright = "The Jenkins X Authors."
 privacy_policy = "https://policies.google.com/privacy"

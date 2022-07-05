@@ -1,4 +1,4 @@
-HUGO_VERSION := v0.95.0
+HUGO_VERSION := v0.101.0
 
 .DEFAULT_GOAL := help
 
