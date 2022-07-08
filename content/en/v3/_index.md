@@ -1,6 +1,6 @@
 ---
 title: Jenkins X 3.x
-linktitle: Docs
+linktitle: Documentation
 type: docs
 weight: 45
 aliases:

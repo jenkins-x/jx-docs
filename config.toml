@@ -104,7 +104,7 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
 
 [params]
 ## Used for views in rendered HTML (i.e., rather than using the .Hugo variable)
-release = "3.2.404"
+release = "3.2.406"
 
 ## the jx-lens version
 jx_lens_version = "1.0.17"
@@ -117,7 +117,7 @@ privacy_policy = "https://policies.google.com/privacy"
 
 # Menu title if your navbar has a versions selector to access old versions of your site.
 # This menu appears only if you have at least one [params.versions] set.
-version_menu = "Docs"
+version_menu = "Documentation"
 
 # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
 github_repo = "https://github.com/jenkins-x/jx-docs"
