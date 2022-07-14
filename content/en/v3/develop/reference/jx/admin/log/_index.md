@@ -22,7 +22,7 @@ Views the boot Job logs in the cluster
   * views the current boot logs
   
   ```bash
-  jx-admin log
+  jx admin log
   ```
 
 ### Options
