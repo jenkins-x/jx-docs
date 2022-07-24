@@ -14,15 +14,18 @@ It is highly desireable to use the latest and greatest version of golang for Jen
 To update golang version in Jenkins X follow these steps
 
 - Open an issue in jx repository announcing the upgrade.
-- Change the go version in the pipeline catalog repository
+- Change the go version in the pipeline catalog repository.
+  See this [PR](https://github.com/jenkins-x/jx3-pipeline-catalog/pull/1162) for which files to change.
 - Update the catalog version in the version stream
-- Update the library packages first
-  - jx-kube-client
-  - jx-api
-  - jx-helpers
-  - jx-logger
-  - go-scm
-  - secretfacade
+  See this [PR](https://github.com/jenkins-x/jx3-versions/pull/3240) for which files to change.
+- Update the library packages first (please follow this order)
+  - [jx-kube-client](https://github.com/jenkins-x/jx-kube-client)
+  - [go-scm](https://github.com/jenkins-x/go-scm)
+  - [logrus-stackdriver-formatter](https://github.com/jenkins-x/logrus-stackdriver-formatter)
+  - [jx-logging](https://github.com/jenkins-x/jx-logging)
+  - [jx-api](https://github.com/jenkins-x/jx-api)
+  - [jx-helpers](https://github.com/jenkins-x/jx-helpers)
+  - [secretfacade](https://github.com/jenkins-x-plugins/secretfacade)
 - Once these packages are upgraded, start the upgrade for the plugins and main jx repository
 - Follow these steps to upgrade the version
   - Change the version in go.mod file
