@@ -107,7 +107,7 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
 release = "3.4.12"
 
 ## the jx-lens version
-jx_lens_version = "1.0.17"
+jx_lens_version = "1.0.18"
 
 copyright = "The Jenkins X Authors."
 privacy_policy = "https://policies.google.com/privacy"
