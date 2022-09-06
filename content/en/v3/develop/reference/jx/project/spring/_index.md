@@ -88,6 +88,7 @@ See Also:
       --pipeline-catalog-dir string    The pipeline catalog directory you want to use instead of the buildPackGitURL in the dev Environment Team settings. Generally only used for testing pipelines
       --pr-poll-period duration        the time between polls of the Pull Request on the cluster environment git repository (default 20s)
       --pr-poll-timeout duration       the maximum amount of time we wait for the Pull Request on the cluster environment git repository (default 20m0s)
+      --scheduler string               Change schedulerName, More info about Scheduler: https://jenkins-x.io/v3/develop/faq/config/repos/#how-do-i-customise-a-scheduler (default "in-repo")
       --service-account string         The Kubernetes ServiceAccount to use to run the initial pipeline (default "tekton-bot")
       --type string                    Project Type (such as maven-project or gradle-project)
       --use-default-git                use default git account

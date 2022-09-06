@@ -14,21 +14,21 @@ You can see the helm charts that are installed along with their version, namespa
 
 You can browse all the kubernetes resources in each namespace using the canonical layout in the `config-root` folder. e.g. all charts are versioned in git as follows:
 
-```bash 
+```bash
 config-root/
   namespaces/
    jx/
      lighthouse/
-       lighthouse-webhooks-deploy.yaml    
+       lighthouse-webhooks-deploy.yaml
 ```
 
 You can see the above kubernetes resource, a `Deployment` with name `lighthouse-webhooks` in the namespace `jx` which comes from the `lighthouse` chart.
 
 There could be some additional charts installed via Terraform for the [git operator](/v3/guides/operator/) and [health subsystem](/v3/guides/health/) which can be viewed via:
 
-```bash 
+```bash
 helm list --all-namespaces
-```                                                                                
+```
 
 ## How do I delete an application?
 
@@ -36,16 +36,15 @@ There is a [jx application delete](/v3/develop/reference/jx/application/delete/)
 
 e.g.
 
-
-```bash 
+```bash
 jx application delete --repo myapp
 ```
 
-Or you can remove an application or helm chart from an environment by removing the entry in the `releases:` list in the `helmfiles/$namespace/helmfile.yaml` file in your dev git repository and peforming a git commit and pushing the change (usually via a Pull Request). 
+Or you can remove an application or helm chart from an environment by removing the entry in the `releases:` list in the `helmfiles/$namespace/helmfile.yaml` file in your dev git repository and peforming a git commit and pushing the change (usually via a Pull Request).
 
 Once the pull request is merged, the [boot job will trigger](/v3/about/how-it-works/#boot-job) which will remove the application from kubernetes.
 
-### Stopping new releases 
+### Stopping new releases
 
 If the application you are removing was released via Jenkins X then the next time there is a change committed to your applications git repsitory a new release will be triggered which will be promoted again.
 
@@ -59,26 +58,35 @@ kubectl get sr
 
 # find the one that you want to remove then:
 kubectl delete sr $theNameToDelete
-````
+```
 
 This will stop Jenkins X creating webhooks and firing pipelines when you make changes.
 
 You may also want to remove the webhook from the repository to be safe.
-        
 
 ## How do I stop jx asking for git credentials
 
-When you run commands like [jx project](/v3/develop/reference/jx/project/) to create/import repositories or [jx application](/v3/develop/reference/jx/application/) to list applications need to be able to access git repositories using tokens.
+Commands like [jx project](/v3/develop/reference/jx/project/) used to create/import repositories or [jx application](/v3/develop/reference/jx/application/) used to list applications need to be able to access git repositories using tokens.
 
-You can define the git credentials so that you can do `git clone` of your private git repositories via...
+Running these commands prompt the user to enter the git-username and git-token to clone the repository into a temporary folder (ssh authentication is not supported at the moment).
+Follow the steps below to stop the prompting (substitute the `<git-username>` and `<git-token>` with your personal username and access token)
 
 ```bash
-mkdir -p ~/git 
-echo "https://$USERNAME:$TOKEN@github.com" >> ~/git/credentials
+export GIT_USERNAME=<git-username>
+export GIT_TOKEN=<git-token>
 
-# enable git credential store
+mkdir -p ~/git
+export XDG_CONFIG_HOME=$HOME
+echo "https://$GIT_USERNAME:$GIT_TOKEN@github.com" >> ~/git/credentials
+# Required if not setting XDG_CONFIG to $HOME
+# echo "https://$GIT_USERNAME:$GIT_TOKEN@github.com" >> ~/.git-credentials
+
 git config --global credential.helper store
 ```
+
+**NOTE**: If you set `XDG_CONFIG_HOME` to `$HOME` environment variable, then you dont have to copy the credentials to `~/.git-credentials`
+
+To read more about the git credential store follow this [document](https://git-scm.com/docs/git-credential-store)
 
 ## How do I use dev pods?
 
@@ -91,6 +99,3 @@ If you want to use a container, such as a database, inside your pipeline so that
 Here is [another example of a sidecar in a pipeline](https://tekton.dev/vault/pipelines-v0.16.3/tasks/#using-a-sidecar-in-a-task)
 
 If you want to use a separate container inside a preview environment then add [charts or resources](/v3/develop/apps/#adding-charts) to the `preview/helmfile.yaml`
-
-
-

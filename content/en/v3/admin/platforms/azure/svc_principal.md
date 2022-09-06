@@ -34,7 +34,7 @@ read -p "Service Principal (i.e. mySvcPr) : " APP_NAME
 SUBSCRIPTION_ID=$(az account show --query id --output tsv)
 SVCP=$(az ad sp create-for-rbac --role Contributor --name $APP_NAME --scopes /subscriptions/$SUBSCRIPTION_ID --output json --only-show-errors)
 APP_ID=$(echo $SVCP | jq -r .appId)
-OBJ_ID=$(az ad sp list --filter "appId eq '$APP_ID'" --output json | jq '.[0].objectId' -r)
+OBJ_ID=$(az ad sp list --filter "appId eq '$APP_ID'" --output json | jq '.[0].id' -r)
 PASS_ID=$(echo $SVCP | jq -r .password)
 TENANT_ID=$(echo $SVCP | jq -r .tenant)
 az role assignment create --role "User Access Administrator" --assignee-object-id $OBJ_ID --only-show-errors
@@ -77,9 +77,7 @@ API_ID=00000002-0000-0000-c000-000000000000
 APPLICATION_READWRITE_ALL_ID=$(az ad sp show --id $API_ID --query "appRoles[?value=='Application.ReadWrite.All'].id" --output tsv)
 az ad app permission add --id $APP_ID --api $API_ID --api-permissions $APPLICATION_READWRITE_ALL_ID=Role --only-show-errors
 az ad app permission grant --id $APP_ID --api $API_ID --only-show-errors
-APP_OBJECT_ID=$(az ad sp show --id $APP_ID --query "objectId" --output tsv)
-API_OBJECT_ID=$(az ad sp show --id $API_ID --query "objectId" --output tsv)
-az rest --method POST --uri "https://graph.microsoft.com/v1.0/servicePrincipals/$APP_OBJECT_ID/appRoleAssignments" --headers '{"Content-Type": "application/json"}' --body "{\"principalId\": \"$APP_OBJECT_ID\", \"resourceId\": \"$API_OBJECT_ID\", \"appRoleId\": \"$APPLICATION_READWRITE_ALL_ID\"}" --only-show-errors
+az ad app permission grant --id $APP_ID --api $API_ID --only-show-errors --scope Application.ReadWrite.All
 ```
 Use the following command to check the service principal API settings.
 ``` bash

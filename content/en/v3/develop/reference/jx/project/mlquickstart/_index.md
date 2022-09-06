@@ -85,6 +85,7 @@ See Also:
       --pr-poll-timeout duration       the maximum amount of time we wait for the Pull Request on the cluster environment git repository (default 20m0s)
   -p, --project-name string            The project name (for use with -b batch mode)
       --quickstart-auth string         The auth mechanism used to authenticate with the git token to download the quickstarts. If not specified defaults to Basic but could be Bearer for bearer token auth
+      --scheduler string               Change schedulerName, More info about Scheduler: https://jenkins-x.io/v3/develop/faq/config/repos/#how-do-i-customise-a-scheduler (default "in-repo")
       --service-account string         The Kubernetes ServiceAccount to use to run the initial pipeline (default "tekton-bot")
   -t, --tag stringArray                The tags on the quickstarts to filter
       --use-default-git                use default git account

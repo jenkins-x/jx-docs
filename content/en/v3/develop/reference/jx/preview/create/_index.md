@@ -20,7 +20,7 @@ Creates a preview
 ### Examples
 
   ```bash
-  # creates a new preview environemnt
+  # creates a new preview environment
   jx-preview create
 
   ```

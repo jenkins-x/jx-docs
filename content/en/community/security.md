@@ -13,13 +13,10 @@ To that end, we work with Jenkins X platform and app developers, as well as secu
 
 ## How to Report a Security Vulnerability
 
-If you find a vulnerability in Jenkins X, please report it in the **Jenkins CI** issue tracker under the [SECURITY project](https://issues.jenkins-ci.org/browse/SECURITY).
+If you find a vulnerability in Jenkins X, please report it by sending an email to the [SECURITY maintainer mailing list](mailto:jenkins-x-admin@googlegroups.com).
 Please **do not report security issues in the github** tracker.  
-This project is configured in such a way that only the reporter and the security team can see the details.
+
 By restricting access to this potentially sensitive information, we can work on a fix and deliver it before the method of attack becomes well-known.
-
-If you are unable to report using the above issue tracker, you can also send your report to the private Jenkins Security Team mailing list: [jenkinsci-cert@googlegroups.com](mailto:jenkinsci-cert@googlegroups.com)
-
 
 ## Vulnerabilities in Apps
 

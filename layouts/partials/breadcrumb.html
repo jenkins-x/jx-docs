@@ -8,7 +8,7 @@
 {{ template "breadcrumbnav" (dict "p1" .p1.Parent "p2" .p2 ) }} {{ end }} {{
 else if not .p1.IsHome }} {{ template "breadcrumbnav" (dict "p1" .p1.Site.Home
 "p2" .p2 ) }} {{ end }} {{ $isActive := eq .p1 .p2 }}
-<ul style="list-style-type:none">
+<ul style="list-style-type: none">
   <li
     class="breadcrumb-item{{ if $isActive }} active{{ end }}"
     {{
