@@ -15,7 +15,6 @@ jobs:
         name: Regenerate the plugins docs
         env:
           GIT_TOKEN: ${{ secrets.GIT_BOT_TOKEN }}
-          DISABLE_COMMMIT: disable
         with:
           entrypoint: ./regen-plugins.sh
       - name: Create pr for regenerated plugin docs
