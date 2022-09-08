@@ -1,4 +1,4 @@
-name: create-plugin-pr
+name: create-pr-for-plugin-docs
 description: Create pr for regenerated plugin docs
 inputs:
   token:
