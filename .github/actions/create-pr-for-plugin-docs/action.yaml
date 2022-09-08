@@ -12,7 +12,7 @@ runs:
   image: 'docker://ghcr.io/jenkins-x/jx-project:latest'
   args:
   - pullrequest
-  - --batch.mode
+  - --batch-mode
   - --title
   - "chore: regenerated plugin docs"
   - --body
