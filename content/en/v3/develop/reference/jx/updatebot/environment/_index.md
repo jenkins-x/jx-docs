@@ -23,7 +23,7 @@ Creates a Pull Request to upgrade the environment git repository from the versio
       --auto-merge                  should we automatically merge if the PR pipeline is green
       --commit-message string       the commit message
       --commit-title string         the commit title
-  -e, --env string                  the name of the environment to upgrade (default "dev")
+  -e, --env string                  the name of the environment to upgrade. If no environment is named then all git repositories for all environments are upgraded
       --git-kind string             the kind of git server to connect to
       --git-server string           the git server URL to create the scm client
       --git-setup                   should we setup git first so that we can create Pull Requests
