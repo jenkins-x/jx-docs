@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -ex
+
 if [ -z "$GITHUB_ACTIONS" ]
 then
   echo "not setting up git as not in a GitHub Action"
@@ -16,8 +18,6 @@ cd jx-plugin-doc
 make build
 cd ..
 
-echo "build the tool"
-
 ls -al 
 
 DIR=$(pwd)
@@ -31,18 +31,9 @@ ls jx-plugins
 echo generated 
 ls -al content/en/v3/develop/reference/jx
 
-echo git commit
-
 git add content/en/v3/develop/reference/jx
 git status
 
-if [ -z "$DISABLE_COMMIT" ]
-then
-    echo "adding generated content"
-    git commit -a -m "chore: regenerated plugin docs"
-    git push
-else
-    echo "disabled commiting changes"
-fi
+git checkout -b regen-plugin-docs-`date +%Y%m%d-%H%M%S`
 
 echo "complete"
