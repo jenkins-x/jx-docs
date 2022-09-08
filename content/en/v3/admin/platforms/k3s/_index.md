@@ -43,7 +43,8 @@ brew install --cask multipass
 # Create a vm with 2G memory and 5G disk
 multipass launch --name k3sVM --mem 2G --disk 5G
 # install k3 with kubernetes version 1.21 (We don't support Kubernetes 1.22+ yet)
-multipass shell k3sVMcurl -sfL https://get.k3s.io | INSTALL_K3S_CHANNEL=v1.21 sh -s - --write-kubeconfig-mode 644
+multipass shell k3sVM
+curl -sfL https://get.k3s.io | INSTALL_K3S_CHANNEL=v1.22 sh -s - --write-kubeconfig-mode 644
 # copy kubeconfig
 sudo mkdir -p ~/.kube/ &&  sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/k3s-config
 # export kubeconfig
