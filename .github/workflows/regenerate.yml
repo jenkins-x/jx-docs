@@ -15,5 +15,21 @@ jobs:
         name: Regenerate the plugins docs
         env:
           GIT_TOKEN: ${{ secrets.GIT_BOT_TOKEN }}
+          DISABLE_COMMMIT: disable
         with:
           entrypoint: ./regen-plugins.sh
+      - name: create-pr
+        uses: docker://ghcr.io/jenkins-x/jx-project:latest
+        with:
+          args:
+          - pullrequest
+          - --batch.mode
+          - --title
+          - chore: regenerated plugin docs
+          - --body
+          - Created by this action run: https://github.com/jenkins-x/jx-docs/runs/${{ github.run_id }}?check_suite_focus=true
+          - --label
+          - updatebot
+          - --push
+          - --git-token
+          - ${{ secrets.GIT_BOT_TOKEN }}
