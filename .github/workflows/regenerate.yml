@@ -18,7 +18,7 @@ jobs:
           DISABLE_COMMMIT: disable
         with:
           entrypoint: ./regen-plugins.sh
-      - name: create-pr
+      - name: Create pr for regenerated plugin docs
         uses: ./.github/actions/create-pr-for-plugin-docs
         with:
           token: ${{ secrets.GIT_BOT_TOKEN }}
