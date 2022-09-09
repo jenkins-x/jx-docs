@@ -16,7 +16,7 @@ runs:
   - --title
   - "chore: regenerated plugin docs"
   - --body
-  - "Created by this action run: https://github.com/jenkins-x/jx-docs/runs/${{ inputs.run_id }}?check_suite_focus=true"
+  - "Created by this action run: https://github.com/jenkins-x/jx-docs/actions/runs/${{ inputs.run_id }}"
   - --label
   - updatebot
   - --push
