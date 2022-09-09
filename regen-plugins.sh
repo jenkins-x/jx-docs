@@ -14,26 +14,26 @@ fi
 
 git clone https://github.com/jenkins-x-plugins/jx-plugin-doc
 
-cd jx-plugin-doc
-make build
-cd ..
+pushd jx-plugin-doc
+  make build
+popd
 
-ls -al 
-
-DIR=$(pwd)
-
-jx-plugin-doc/build/jx-plugin-doc $DIR
+jx-plugin-doc/build/jx-plugin-doc $(pwd)
 
 echo "ran the generator"
 
 ls jx-plugins
 
 echo generated 
-ls -al content/en/v3/develop/reference/jx
+ls -l content/en/v3/develop/reference/jx
 
 git add content/en/v3/develop/reference/jx
 git status
 
-git checkout -b regen-plugin-docs-`date +%Y%m%d-%H%M%S`
-
-echo "complete"
+if git diff --exit-code  --quiet
+then
+    echo "::set-output name=changed::false"
+else
+    git checkout -b regen-plugin-docs-$(date +%Y%m%d-%H%M%S)
+    echo "::set-output name=changed::true"
+fi
