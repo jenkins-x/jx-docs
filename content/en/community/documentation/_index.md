@@ -59,7 +59,7 @@ Use this:
 
 The first thing you'll need to make use of this approach is Docker installed on your local environment.
 How to install a Docker engine depends on your platform etc., so best to head over to [Docker](https://docs.docker.com/install/) to find the right one.
-Next, install docker-compose from the [installation documents](https://docs.docker.com/compose/install/).
+Next, you have install docker compose v2 from the [installation guide](https://docs.docker.com/compose/install/).
 
 To make it as simple as possible, we use the [docker image](https://hub.docker.com/r/klakegg/hugo) recommended in the hugo [documentation](https://gohugo.io/getting-started/installing/#docker), and have setup a [`docker-compose.yml`](https://github.com/jenkins-x/jx-docs/blob/main/docker-compose.yml) file that will help you start up a preview server with a few helpful options.
 
