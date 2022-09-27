@@ -30,8 +30,8 @@ If you're struggling at any point in this contribution guide, reach out to the J
 To contribute to Jenkins X jx binary, you will need:
 
 * [Git](https://git-scm.com) and a [GitHub](https://github.com) account
-* [Go](https://golang.org/) `1.17.X`, with support for compiling to `linux/amd64`
-* [golangci-lint](https://github.com/golangci/golangci-lint)`1.42.1`, wich will be used to lint your code later
+* [Go](https://golang.org/) `1.18.X`, with support for compiling to `linux/amd64`
+* [golangci-lint](https://github.com/golangci/golangci-lint)`1.46.2`, wich will be used to lint your code later
 * [pre-commit](https://pre-commit.com/#install) - once installed, ensure you're at the root of the repository which contains a `.pre-commit-config.yaml` configuration file, then:
 
 ```sh
