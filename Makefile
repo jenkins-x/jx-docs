@@ -18,31 +18,31 @@ generate: ## Let's hugo generate the site into the configured directory
 
 .PHONY: compose-up
 compose-up: ## Runs Hugo in container in background via Docker Compose
-	docker-compose up -d server
+	docker compose up -d server
 
 .PHONY: compose-down
 compose-down: ## Stops Hugo container
-	docker-compose down
+	docker compose down
 
 .PHONY: compose-restart
 compose-restart: ## Restarts Hugo container
-	docker-compose restart server
+	docker compose restart server
 
 .PHONY: compose-stop
 compose-stop: ## Stops Hugo container
-	docker-compose stop server
+	docker compose stop server
 
 .PHONY: compose-logs
 compose-logs: ## Display logs from Hugo container
-	docker-compose logs -f server
+	docker compose logs -f server
 
 .PHONY: spellcheck
 spellcheck: ## Runs spell checker using Docker Compose in foreground
-	docker-compose up spellchecker
+	docker compose up spellchecker
 
 .PHONY: linkcheck
 linkcheck: generate ## Runs spell checker using Docker Compose in foreground
-	docker-compose run linkchecker
+	docker compose run linkchecker
 
 .PHONY: clean
 clean: ## Deletes temporary/generated files

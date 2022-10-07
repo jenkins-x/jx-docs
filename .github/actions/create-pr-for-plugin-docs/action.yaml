@@ -1,0 +1,25 @@
+name: create-pr-for-plugin-docs
+description: Create pr for regenerated plugin docs
+inputs:
+  token:
+    description: GitHub token
+    required: true
+  run_id:
+    description: GitHub action run id
+    required: true
+runs:
+  using: 'docker'
+  image: 'docker://ghcr.io/jenkins-x/jx-project:latest'
+  args:
+  - pullrequest
+  - --batch-mode
+  - --title
+  - "chore: regenerated plugin docs"
+  - --body
+  - "Created by this action run: https://github.com/jenkins-x/jx-docs/actions/runs/${{ inputs.run_id }}"
+  - --label
+  - updatebot
+  - --push
+  - --git-token
+  - ${{ inputs.token }}
+    

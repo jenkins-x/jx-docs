@@ -104,10 +104,10 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
 
 [params]
 ## Used for views in rendered HTML (i.e., rather than using the .Hugo variable)
-release = "3.3.4"
+release = "3.7.8"
 
 ## the jx-lens version
-jx_lens_version = "1.0.17"
+jx_lens_version = "1.0.18"
 
 copyright = "The Jenkins X Authors."
 privacy_policy = "https://policies.google.com/privacy"
