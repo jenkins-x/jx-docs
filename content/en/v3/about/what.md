@@ -40,7 +40,7 @@ Jenkins X also uses GitOps as the way to [upgrade](/v3/admin/setup/upgrades), in
  
 Using GitOps as above does present a challenge of where to store secrets for your cluster as keeping them in Git is insecure.  There is a way to [encrypt secrets and store them in Git](https://github.com/bitnami-labs/sealed-secrets) but there is a usability issue which makes the approach non trivial to use.  Jenkins X prefers to work with real secret provider solutions like [Vault](https://www.vaultproject.io/) or where possible cloud hosted solutions like [Google](https://cloud.google.com/secret-manager), Azure or Amazon Secrets managers.
  
-Jenkins X GitOps works with [External Secrets](https://github.com/external-secrets/kubernetes-external-secrets) to provide an integrated experience so your secrets source of truth is a secrets manager and the values are replicated into the cluster when needed.
+Jenkins X GitOps works with [External Secrets](https://github.com/external-secrets/external-secrets) to provide an integrated experience so your secrets source of truth is a secrets manager and the values are replicated into the cluster when needed.
  
 ### Pipelines
  

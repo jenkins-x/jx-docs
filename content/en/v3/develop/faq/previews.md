@@ -51,7 +51,7 @@ So to add `Secret` resources into your preview namespace try one of the followin
 * if you need configured Secrets to access external services then you can copy them from the `jx` namespace. We copy labelled secrets [by default in the preview helmfile.yaml](https://github.com/jenkins-x/jx3-pipeline-catalog/blob/master/packs/javascript/preview/helmfile.yaml#L23-L31)
     * you just need to add the label: `secret.jenkins-x.io/replica-source=true` to your `Secret` in the `jx` namespace
     * see [how to add a new Secret](/v3/admin/setup/secrets/#create-a-new-secret)  
-* you can add an `ExternalSecret resource` to your preview `helmfile.yaml`as a [nested chart like this](https://jenkins-x.io/v3/develop/apps/#adding-resources) which will then use [kubernetes external secrets](https://github.com/external-secrets/kubernetes-external-secrets) to populate the `Secret` resources from the external secret store.
+* you can add an `ExternalSecret resource` to your preview `helmfile.yaml`as a [nested chart like this](https://jenkins-x.io/v3/develop/apps/#adding-resources) which will then use [external secrets operator](https://github.com/external-secrets/external-secrets) to populate the `Secret` resources from the external secret store.
 * add a `Job`, init-container or helmfile hook in `preview/helmfile.yaml` to generate the `Secret` dynamically using whatever custom logic you prefer 
 
 

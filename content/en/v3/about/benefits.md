@@ -18,12 +18,21 @@ aliases:
     * The `config-root/cluster` folder contains all the global cluster level resources like `ClusterRole`, `Namespace` or Custom Resources
     * The `config-root/namespaces/jx` folder contains all the namespaced resources in the `jx` namespace
   * This makes it easy to use flexible apply logic in different boot `Jobs` with different RBAC (or a system admin could apply the cluster level resources for you by hand) - to make it easier to install Jenkins X on more locked down and restricted clusters
-* We use [Kubernetes External Secrets](https://github.com/external-secrets/kubernetes-external-secrets) to provide a single way to manage secrets which supports the following back end systems:
-  * Alibaba Cloud KMS Secret Manager
+* We use [External Secrets Operator](https://github.com/external-secrets/external-secrets) to provide a single way to manage secrets which supports the following back end systems:
+  * Akeyless
   * AWS Secrets Manager
   * Azure Key Vault
-  * GCP Secret Manager
+  * Doppler
+  * Fake
+  * Gitlab Project Variables
+  * Google Secrets Manager
+  * IBM Secrets manager
   * Hashicorp Vault
+  * senhasegura DevOps Secrets Management
+  * Oracle Vault
+  * Webhook
+  * Yandex Certificate Manager
+  * 1Password Secrets Automation
 * It opens the door to a flexible [multi-cluster support](/v3/guides/multi-cluster/) so that every cluster can be managed in the same canonical GitOps approach from a single git repository 
 * The new [getting started approach](/v3/admin/platform/) runs the boot pipeline as a `Job` inside the Kubernetes cluster. This ensures consistency in tooling used and also improves security by avoiding having the secrets on a developers laptop. 
   * The only thing you run on your local machine when installing Jenkins X is [installing the git operator](/v3/guides/operator/) which is a simple helm chart.
@@ -36,4 +45,4 @@ aliases:
   * We now include the [version stream](https://jenkins-x.io/about/concepts/version-stream/) inside your GitOps repository too inside the `versionStream` directory after installation so that all the information about your installation is inside a single git repository so its simpler to test changes & ensure consistency.
 * We can avoid composite charts to simplfiy configuration and upgrades
 * We no longer use `exposecontroller`, instead use regular helm configuration to create `Ingress` resources and [override domain names](/v3/develop/faq/#how-do-i-configure-the-ingress-domain-in-dev-staging-or-production)
-* secret handling is currently much simpler using Kubernetes External Secrets for any secrets in any namespace or cluster for your own apps or for those used by Jenkins X.
+* secret handling is currently much simpler using External Secrets Operator for any secrets in any namespace or cluster for your own apps or for those used by Jenkins X.

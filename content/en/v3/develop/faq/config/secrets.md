@@ -121,11 +121,11 @@ and passing this values.yaml file into the `helmfiles/jx-production/helmfile.yam
 
 This will then use different paths in vault for staging: `secret/data/staging/$appName/something/$key` to production: `secret/data/production/$appName/something/$key`
 
-## How do I change the secret poll period in kubernetes external secrets?
+## How do I change the secret poll period in external secrets operator?
 
 Your cloud provider could charge per read of a secret and so a frequent poll of your secrets could cost $$$. You may want to tone down the poll period.
 
-You can do this via the `POLLER_INTERVAL_MILLISECONDS` setting in the [kubernetes external secrets configuration](https://github.com/external-secrets/kubernetes-external-secrets/tree/master/charts/kubernetes-external-secrets#configuration)
+You can do this via the `refreshInterval` setting in the [external secrets operator configuration](https://github.com/external-secrets/external-secrets/blob/3d3edcc8af3532e75f48714e45dcdfb7a521125b/docs/api/externalsecret.md)
 
 For more details [see how to configure charts](https://jenkins-x.io/v3/develop/apps/#customising-charts)
 
