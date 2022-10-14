@@ -5,24 +5,18 @@ type: docs
 description: How to upgrade the version of Kubernetes in your cluster.
 weight: 92
 ---
- 
-Upgrading your Kubernetes cluster is one of the tasks you must take on as an operator of Jenkins X. Kubernetes comes out with [new releases](https://kubernetes.io/releases/) regularly, and will only maintain releases for the three latest versions. Meaning if something breaks, or there is a security issue on an older version, Kubernetes will not fix it, but ask you to upgrade.  All the major cloud providers only support a given set of latest versions. 
 
-Jenkins X at the moment supports kubernetes versions 1.20 and 1.21. Version 1.22 introduces a lot of deprecations, and is not fully supported yet. 
-In the future we aim to support the same set of versions supported by the major cloud providers, Google, Amazon and Azure. These versions are described in the links below, ranging from version 1.20 to version 1.24.
-- [Amazon](https://docs.aws.amazon.com/eks/latest/userguide/kubernetes-versions.html)
-- [Azure](https://docs.microsoft.com/en-us/azure/aks/supported-kubernetes-versions?tabs=azure-cli#aks-kubernetes-release-calendar)
-- [Google](https://cloud.google.com/kubernetes-engine/docs/release-notes)
+Upgrading your Kubernetes cluster is one of the tasks you must take on as an operator of Jenkins X. Kubernetes comes out with [new releases](https://kubernetes.io/releases/) regularly, and will only maintain releases for the three latest versions. Meaning if something breaks, or there is a security issue on an older version, Kubernetes will not fix it, but ask you to upgrade. All the major cloud providers only support a given set of latest versions.
 
-## Upgrade procedure:
+{{< k8s-versions >}}
+
+## Upgrade procedure
+
 - It is highly recommended to test upgrades on a separate cluster, where you have all the same setup as you use in production.
 - Run [Pluto](https://github.com/FairwindsOps/pluto) to find any deprecated CRDs present in your cluster. You can run Pluto both on the cluster using `pluto detect-helm`, and on the files on your cluster repo using `pluto detect-files`
 - Cross-check the list of deprecations you find, with the list from [Kubernetes](https://kubernetes.io/docs/reference/using-api/deprecation-guide/) and see what is required for the Kubernetes version you want to upgrade to.
 - Fix what needs to be fixed, and deploy the changes.
-- You may now start the upgrade of Kubernetes. 
-    - The process has two steps, first, you need to upgrade the control plane, and next upgrade the nodes.
-    Follow the upgrade steps according to your cloud provider. 
-        - [Amazon](https://docs.aws.amazon.com/eks/latest/userguide/update-cluster.html)
-        - [Azure](https://docs.microsoft.com/en-us/azure/aks/upgrade-cluster?tabs=azure-cli)
-        - [Google](https://cloud.google.com/kubernetes-engine/docs/how-to/upgrading-a-cluster)
- - Pour yourself a cup of your favorite drink while you sit back and wait for the magic to happen.
+- You may now start the upgrade of Kubernetes.
+  - The process has two steps, first, you need to upgrade the control plane, and next upgrade the nodes.
+    Follow the upgrade steps according to your cloud provider. - [Amazon](https://docs.aws.amazon.com/eks/latest/userguide/update-cluster.html) - [Azure](https://docs.microsoft.com/en-us/azure/aks/upgrade-cluster?tabs=azure-cli) - [Google](https://cloud.google.com/kubernetes-engine/docs/how-to/upgrading-a-cluster)
+- Pour yourself a cup of your favorite drink while you sit back and wait for the magic to happen.
