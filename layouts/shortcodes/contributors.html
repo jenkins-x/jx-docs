@@ -1,4 +1,5 @@
-{{ $contributors := getJSON "layouts/shortcodes/contributors.json" }}
+{{ $urlPre := "https://api.github.com" }}
+{{ $contributors := getJSON $urlPre "/repos/jenkins-x/jx/collaborators" }}
 {{ $sortedContributors := sort $contributors "total" "desc" }}
 
   <table>
@@ -8,8 +9,8 @@
       <tr>
     {{ end }}  
       <td>
-          <a href="{{ .author.html_url }}"><img src="{{ .author.avatar_url }}" width="50%" alt="{{ .author.login }}"/></a>
-          <div style='width: 100px; text-align: center;'><sub><b>{{ .author.login }}</b></sub></div>
+          <a href="{{ .html_url }}"><img src="{{ .avatar_url }}" width="50%" alt="{{ .login }}"/></a>
+          <div style='width: 100px; text-align: center;'><sub><b>{{ .login }}</b></sub></div>
       </td>
     {{ if modBool ( add $count 1 ) 4 }}
       </tr>

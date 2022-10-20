@@ -49,15 +49,6 @@ Office hour meeting notes can be found [here](https://docs.google.com/document/d
 Previous office hour recordings can be found on our [Jenkins X YouTube channel](https://www.youtube.com/channel/UCN2kblPjXKMcjjVYmwvquvg/playlists) in the Office Hours playlist.
 Alternatively, see our office hours [archives](/community/office_hours/).
 
-### Newsletter
-
-Our newsletter is filled with various topics and relevant content for people just starting, or folks who have been using the platform for a while.
-
-{{< mailchimp >}}
-
-You can also sign up using [this link](https://us7.campaign-archive.com/home/?u=d0c128ac1f69ba2bb20742976&id=84d053b0a0).
-The previous newsletters are also available there.
-
 ### Events & Webinars
 
 Our community likes to share! Join us during [Office Hours](/community/office_hours).
@@ -70,10 +61,6 @@ We have a curated list of [Jenkins X talks](/docs/resources/demos-talks-posts/ta
 Got any thoughts, ideas or feedback then please drop them in a [GitHub Issue](https://github.com/jenkins-x/jx/issues/new).
 
 You may also want to try [Stack Overflow](https://stackoverflow.com/questions/tagged/jenkins--x) with the tag `jenkins--x` though we prefer [GitHub Issues](https://github.com/jenkins-x/jx/issues).
-
-### Email
-
-If you prefer email then join us on the [jenkins-developers mailing list](https://groups.google.com/forum/#!forum/jenkinsci-dev). Prefix posts with `[Jenkins X]` in the subject.
 
 ### Contributors
 
