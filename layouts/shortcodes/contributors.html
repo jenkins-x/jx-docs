@@ -1,10 +1,12 @@
 {{ $urlPre := "https://api.github.com" }}
 {{ $contributors := getJSON $urlPre "/repos/jenkins-x/jx/collaborators" (dict "Authorization" (printf "Bearer %s" (os.Getenv "HUGO_GH_ACCESS_TOKEN"))) }}
 {{ $sortedContributors := sort $contributors "total" "desc" }}
+{{ $count := 0 }}
 
   <table>
     <tbody>
-  {{ range $count,$contributor := $sortedContributors }}
+  {{ range $contributor := $sortedContributors }}
+    {{ if (hasPrefix $contributor.login "jenkins-x") }}
     {{ if modBool $count 4 }}
       <tr>
     {{ end }}  
@@ -14,6 +16,8 @@
       </td>
     {{ if modBool ( add $count 1 ) 4 }}
       </tr>
+    {{ end }}
+    {{ $count = $count + 1 }}
     {{ end }} 
   {{ end }}
    </tbody>
