@@ -1,5 +1,5 @@
 {{ $urlPre := "https://api.github.com" }}
-{{ $contributors := getJSON $urlPre "/repos/jenkins-x/jx/collaborators" (dict "Authorization" (printf "Bearer %s" (os.Getenv "GH_ACCESS_TOKEN"))) }}
+{{ $contributors := getJSON $urlPre "/repos/jenkins-x/jx/collaborators" (dict "Authorization" (printf "Bearer %s" (os.Getenv "HUGO_GH_ACCESS_TOKEN"))) }}
 {{ $sortedContributors := sort $contributors "total" "desc" }}
 
   <table>

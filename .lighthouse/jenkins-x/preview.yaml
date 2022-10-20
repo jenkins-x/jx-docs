@@ -42,7 +42,7 @@ spec:
 
             - image: klakegg/hugo:0.101.0-ext-alpine
               env:
-              - name: GH_ACCESS_TOKEN
+              - name: HUGO_GH_ACCESS_TOKEN
                 valueFrom:
                   secretKeyRef:
                     key: password
