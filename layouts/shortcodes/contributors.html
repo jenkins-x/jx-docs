@@ -1,18 +1,18 @@
 {{ $urlPre := "https://api.github.com" }}
-{{ $contributors := getJSON $urlPre "/repos/jenkins-x/jx/collaborators" (dict "Authorization" (printf "Bearer %s" (os.Getenv "HUGO_GH_ACCESS_TOKEN"))) }}
+{{ $contributors := getJSON $urlPre "/repos/jenkins-x/jx/stats/contributors" (dict "Authorization" (printf "Bearer %s" (os.Getenv "HUGO_GH_ACCESS_TOKEN"))) }}
 {{ $sortedContributors := sort $contributors "total" "desc" }}
 {{ $count := 0 }}
 
   <table>
     <tbody>
   {{ range $contributor := $sortedContributors }}
-    {{ if not (or (eq $contributor.login "houndci-bot") (hasPrefix $contributor.login "jenkins-x")) }}
+    {{ if not (or (eq .author.login "houndci-bot") (hasPrefix .author.login "jenkins-x")) }}
     {{ if modBool $count 4 }}
       <tr>
     {{ end }}  
       <td>
-          <a href="{{ .html_url }}"><img src="{{ .avatar_url }}" width="50%" alt="{{ .login }}"/></a>
-          <div style='width: 100px; text-align: center;'><sub><b>{{ .login }}</b></sub></div>
+          <a href="{{ .author.html_url }}"><img src="{{ .author.avatar_url }}" width="50%" alt="{{ .author.login }}"/></a>
+          <div style='width: 100px; text-align: center;'><sub><b>{{ .author.login }}</b></sub></div>
       </td>
     {{ if modBool ( add $count 1 ) 4 }}
       </tr>
