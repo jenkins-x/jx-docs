@@ -6,7 +6,7 @@
   <table>
     <tbody>
   {{ range $contributor := $sortedContributors }}
-    {{ if not (or (eq .author.login "houndci-bot") (hasPrefix .author.login "jenkins-x")) }}
+    {{ if not (or (eq .author.login "pow-devops2020") (in .author.login "bot") (hasPrefix .author.login "jenkins-x")) }}
     {{ if modBool $count 4 }}
       <tr>
     {{ end }}  
