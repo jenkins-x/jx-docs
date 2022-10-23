@@ -2,6 +2,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
 {{ $jsBase := resources.Get "js/base.js" }}
 {{ $jsAnchor := resources.Get "js/anchor.js" }}
 {{ $js := (slice $jsBase $jsAnchor) | resources.Concat "js/main.js" }}
@@ -86,6 +87,18 @@ docsearch({
             }
         }
 	}
+
+    //Add medium-zoom to images specified by the html selector
+    let tagSelector = 'img';
+    let classSelector = '';     // use comma for multiple classes
+    let idSelector = '';        // use comma for multiple id
+    let deselector = ':not([role="presentation"],[alt*="logo"],[alt*="LOGO"],[alt*="Logo"])';        // use selector that are to be filtered from the already selected elements
+    let combinedSelector = tagSelector+classSelector+idSelector+deselector;
+    var images = document.querySelectorAll(combinedSelector);
+
+    mediumZoom(images, {
+        background: "#121212",
+    });
 
 </script>
 {{ with .Site.Params.prism_syntax_highlighting }}
