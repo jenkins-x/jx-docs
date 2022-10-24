@@ -5,8 +5,9 @@
 
   <table>
     <tbody>
-  {{ range $contributor := $sortedContributors }}
-    {{ if not (or (eq .author.login "pow-devops2020") (hasPrefix .author.login "jenkins-x")) }}
+  {{ range $sortedContributors }}
+  {{ if or (eq .author.login "pow-devops2020") (in .author.login "bot") (hasPrefix .author.login "jenkins-x") }}
+  {{ else }}
     {{ if modBool $count 4 }}
       <tr>
     {{ end }}  
