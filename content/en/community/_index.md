@@ -40,7 +40,7 @@ We meet for office hours **every other Tuesday** at 15:00 UTC (_See your timezon
 
 <a href="https://zoom.us/j/94376109791?pwd=OWswL3dvTUxSUW9VWkJmQXBTOHlCZz09" class="btn btn-lg bg-primary text-white">join the Office Hours meeting</a>
 
-You can save Jenkins X office hours to your calendar by [clicking here](https://calendar.google.com/event?action=TEMPLATE&tmeid=ZTM2N2ducTd2MDJubXY2N2hwc2N2dGNyMm9fMjAyMjAxMThUMTUwMDAwWiByNnE4OW91MzI3MHExZXBnYnI2dWpqMjgxNEBn&tmsrc=r6q89ou3270q1epgbr6ujj2814%40group.calendar.google.com&scp=ALL).
+You can save Jenkins X meetings (including office hours) to your calendar by [clicking here](https://calendar.google.com/event?action=TEMPLATE&tmeid=ZTM2N2ducTd2MDJubXY2N2hwc2N2dGNyMm9fMjAyMjAxMThUMTUwMDAwWiByNnE4OW91MzI3MHExZXBnYnI2dWpqMjgxNEBn&tmsrc=r6q89ou3270q1epgbr6ujj2814%40group.calendar.google.com&scp=ALL).
 
 {{< calendar >}}
 
