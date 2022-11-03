@@ -17,6 +17,7 @@ We value respect and inclusiveness and follow the [CDF Code of Conduct](/communi
 
 Join us on [Slack](/community/#slack), and during [Office Hours](/community/#office-hours) to ask questions and tell us what you are building.
 Upcoming [events and webinars](/community/#events--webinars) are shown on our [Event Calendar](/community/calendar) or announced on [Twitter](https://twitter.com/jenkinsxio).
+Visit [jx-community](https://github.com/jenkins-x/jx-community/) repository to read meeting notes.
 
 <!-- {{< figure src="/images/community/GoCommunity-background.png" class="img-thumbnail" >}}
 image by Ashley McNamara, [creative commons license](https://github.com/ashleymcnamara/gophers/blob/master/GoCommunity.png) -->
