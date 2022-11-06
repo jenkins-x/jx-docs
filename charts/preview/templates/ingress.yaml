@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   annotations:
@@ -8,17 +8,20 @@ spec:
   rules:
   - http:
       paths:
-      - backend:
-          serviceName: {{ .Values.service.name }}
-          servicePort: 80
+      - pathType: ImplementationSpecific
+        backend:
+          service:
+            name: {{ .Values.service.name }}
+            port:
+              number: 80
     host: {{ .Values.service.name }}{{ .Values.jxRequirements.ingress.namespaceSubDomain }}{{ .Values.jxRequirements.ingress.domain }}
 {{- if .Values.jxRequirements.ingress.tls.enabled }}
   tls:
   - hosts:
     - {{ .Values.service.name }}{{ .Values.jxRequirements.ingress.namespaceSubDomain }}{{ .Values.jxRequirements.ingress.domain }}
 {{- if .Values.jxRequirements.ingress.tls.production }}
-    secretName: "jx/tls-{{ .Values.jxRequirements.ingress.domain | replace "." "-" }}-p"
+    secretName: "tls-{{ .Values.jxRequirements.ingress.domain | replace "." "-" }}-p"
 {{- else }}
-    secretName: "jx/tls-{{ .Values.jxRequirements.ingress.domain | replace "." "-" }}-s"
+    secretName: "tls-{{ .Values.jxRequirements.ingress.domain | replace "." "-" }}-s"
 {{- end }}
 {{- end }}
