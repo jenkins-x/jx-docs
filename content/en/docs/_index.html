@@ -156,7 +156,13 @@ brew install jenkins-x/jx/jx
 
 {{<highlight sh>}}
 # Download the `.tar` file, unarchive it.
-curl -L "https://github.com/jenkins-x/jx/releases/download/$(curl --silent https://api.github.com/repos/jenkins-x/jx/releases/latest | jq -r '.tag_name')/jx-darwin-amd64.tar.gz" | tar xzv "jx"
+curl -LO https://github.com/jenkins-x/jx/releases/download/latest/jx-linux-amd64.tar.gz -LO https://github.com/jenkins-x/jx/releases/download/latest/jx-linux-amd64.tar.gz.sig
+
+# Verify the signature.
+osign verify-blob --key https://raw.githubusercontent.com/jenkins-x/jx/main/jx.pub --signature jx-linux-amd64.tar.gz.sig jx-linux-amd64.tar.gz
+
+# Unarchive the file.
+tar -zxvf jx-linux-amd64.tar.gz
 
 # Add `jx` to your path
 sudo mv jx /usr/local/bin
