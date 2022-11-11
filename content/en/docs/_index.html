@@ -171,11 +171,14 @@ jx version --short
         &nbsp;
 
 {{<highlight sh>}}
-# Download the `.tar` file, and unarchive it in a directory where you can run the `jx` command.
-curl -L "https://github.com/jenkins-x/jx/releases/download/$(curl --silent "https://github.com/jenkins-x/jx/releases/latest" | sed 's#.*tag/\(.*\)\".*#\1#')/jx-linux-amd64.tar.gz" | tar xzv "jx"
+# Download the `.tar` file, and unarchive it in ``a directory where you can run the `jx` command.
+curl -LO https://github.com/jenkins-x/jx/releases/download/latest/jx-linux-amd64.tar.gz -LO https://github.com/jenkins-x/jx/releases/download/latest/jx-linux-amd64.tar.gz.sig
 
-# Move binary to your path
-sudo mv jx /usr/local/bin
+# Verify the integrity of the d
+cosign verify-blob --key https://raw.githubusercontent.com/jenkins-x/jx/main/jx.pub --signature jx-linux-amd64.tar.gz.sig jx-linux-amd64.tar.gz
+
+# Unarchive the package.
+tar -zxvf jx-linux-amd64.tar.gz
 
 # verify installation
 jx version --short
