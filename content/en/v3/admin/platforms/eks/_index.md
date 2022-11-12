@@ -13,6 +13,8 @@ aliases:
 
 ---
 
+{{< k8s-versions >}}
+
 **NOTE**
 
 - Ensure you are logged into GitHub else you will get a 404 error when clicking the links below
@@ -49,7 +51,7 @@ Note: remember to create the Git repositories below in your Git Organization rat
 
 - For AWS SSO ensure you have installed AWSCLI version 2 - [see here](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html). You must then configure it to use Named Profiles - [see here](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure-profiles.html)
 
-- You should use a dedicated git user account for the Bot user. Jenkins X will use this user to interact with git.  After you are logged in with the Bot user account you may use the following link  <a href="https://github.com/settings/tokens/new?scopes=repo,read:user,read:org,user:email,admin:repo_hook,write:packages,read:packages,write:discussion,workflow" target="github-token" class="btn bg-primary text-light">Create Git Token for the Bot user </a>
+- You should use a dedicated git user account for the Bot user. Jenkins X will use this user to interact with git. After you are logged in with the Bot user account you may use the following link <a href="https://github.com/settings/tokens/new?scopes=repo,read:user,read:org,user:email,admin:repo_hook,write:packages,read:packages,write:discussion,workflow" target="github-token" class="btn bg-primary text-light">Create Git Token for the Bot user </a>
 
 - Override the variable defaults in the Infrastructure repository. (E.g, edit variables.tf, set TF*VAR* environment variables, or pass the values on the terraform command line.)
 
@@ -59,17 +61,20 @@ Note: remember to create the Git repositories below in your Git Organization rat
   - jx_bot_username: The username of the git bot user
 
 - commit and push any changes to your Infrastructure git repository:
+
 ```bash
       git commit -a -m "fix: configure cluster repository and project"
       git push
 ```
 
 - Define an environment variable to pass the bot token into Terraform:
+
 ```bash
       export TF_VAR_jx_bot_token=my-bot-token
 ```
 
 - Now, initialise, plan and apply Terraform:
+
 ```bash
       terraform init
       terraform plan
@@ -77,14 +82,17 @@ Note: remember to create the Git repositories below in your Git Organization rat
 ```
 
 - Tail the Jenkins X installation logs
+
 ```bash
   $(terraform output follow_install_logs)
 ```
 
 - Once finished you can now move into the Jenkins X Developer namespace
+
 ```bash
   jx ns jx
 ```
+
 - and create or import your applications
 
 - <a href="https://jenkins-x.io/v3/develop/create-project/" class="btn bg-primary text-light">Create or import projects</a>

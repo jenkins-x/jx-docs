@@ -13,6 +13,8 @@ aliases:
 
 ---
 
+{{< k8s-versions >}}
+
 **NOTE**
 
 Ensure you are logged into GitHub else you will get a 404 error when clicking the links below

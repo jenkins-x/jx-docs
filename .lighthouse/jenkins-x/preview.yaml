@@ -24,13 +24,9 @@ spec:
           steps:
             - image: klakegg/hugo:0.101.0-ext-alpine
               name: git-submodules
-              command:
-                - git
-              args:
-                - submodule
-                - update
-                - --init
-                - --recursive
+              script: |
+                git config --global --add safe.directory /workspace/source
+                git submodule update --init --recursive
 
             - image: klakegg/hugo:0.101.0-ext-alpine
               name: update-content
@@ -45,6 +41,12 @@ spec:
                 - install
 
             - image: klakegg/hugo:0.101.0-ext-alpine
+              env:
+              - name: HUGO_GH_ACCESS_TOKEN
+                valueFrom:
+                  secretKeyRef:
+                    key: password
+                    name: tekton-git
               name: build-website
               resources:
                 requests:
@@ -52,6 +54,7 @@ spec:
                   memory: 512Mi
               script: |
                 #!/bin/sh
+                git config --global --add safe.directory /workspace/source
                 hugo -d tmp-website --enableGitInfo --baseURL https://${REPO_NAME}-jx-${REPO_OWNER}-${REPO_NAME}-pr-${PULL_NUMBER}.${DOMAIN}/
 
             - image: ghcr.io/jenkins-x/jx-boot:3.2.197
@@ -68,7 +71,7 @@ spec:
                 source .jx/variables.sh
                 /kaniko/executor --context=/workspace/source --dockerfile=/workspace/source/Dockerfile --destination=gcr.io/jenkinsxio-324711/jx-docs:$VERSION
 
-            - image: ghcr.io/jenkins-x/jx-preview:0.0.172
+            - image: ghcr.io/jenkins-x-plugins/jx-preview:0.0.225
               name: promote-jx-preview
               resources: {}
               script: |
