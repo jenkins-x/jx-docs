@@ -97,6 +97,8 @@ Per default, no content is written to disk.
 
 If you want to build the site locally on your machine, you need to [install](https://gohugo.io/getting-started/installing) Hugo.
 Check the [Makefile](./Makfile) for the latest recommended version use and check whether the environment variables of Golang are set.
+Set the env variable HUGO_GH_ACCESS_TOKEN to a github token that can read from jenkins-x/jx repo to allow the contributors plugin to run.
+
 Once installed, you can run:
 
 ```bash
