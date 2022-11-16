@@ -4,6 +4,8 @@ title = "Jenkins X - Cloud Native CI/CD Built On Kubernetes"
 enableRobotsTXT = true
 
 ignorefiles = [ "docs/labs/.*" ]
+# getting an error on the contributors plugin
+ignoreErrors = ["error-remote-getjson"]
 
 # Hugo allows theme composition (and inheritance). The precedence is from left to right.
 theme = ["github.com/google/docsy", "github.com/google/docsy/dependencies"]
