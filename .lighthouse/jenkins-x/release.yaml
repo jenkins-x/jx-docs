@@ -72,6 +72,12 @@ spec:
             ## build the site into the cloned folder
             - image: klakegg/hugo:0.101.0-ext-alpine
               name: build-website
+              env:
+              - name: HUGO_GH_ACCESS_TOKEN
+                valueFrom:
+                  secretKeyRef:
+                    key: password
+                    name: tekton-git
               command:
                 - hugo
               args:
