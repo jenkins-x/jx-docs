@@ -31,7 +31,7 @@ Make sure you have created a cluster using k3s.
 If you dont have an existing k3s cluster, you can install one by running:
 
 ```bash
-curl -sfL https://get.k3s.io | sh -s - --write-kubeconfig-mode 644
+curl -sfL https://get.k3s.io | INSTALL_K3S_CHANNEL=v1.24 sh -s - --write-kubeconfig-mode 644
 sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/k3s-config
 # Set it also in the bashrc or zshrc file, or you can flatten both of these configs into a single file
 export KUBECONFIG=~/.kube/config:~/.kube/k3s-config
