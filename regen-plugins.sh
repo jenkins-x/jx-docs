@@ -30,7 +30,7 @@ ls -l content/en/v3/develop/reference/jx
 git add content/en/v3/develop/reference/jx
 git status
 
-if git diff --exit-code  --quiet
+if git diff --staged  --quiet
 then
     echo "::set-output name=changed::false"
 else
