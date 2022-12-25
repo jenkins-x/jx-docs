@@ -21,9 +21,11 @@ Annotates all kubernetes resources in the given directory tree
 
   ```bash
   # updates recursively annotates all resources in the current directory
-  jx-gitops annotate myannotate=cheese another=thing
+  jx-gitops annotate myannotation=cheese another=thing
   # updates recursively all resources
   jx-gitops annotate --dir myresource-dir foo=bar
+  # remove annotations
+  jx-gitops annotate myannotate- another-
 
   ```
 ### Options
@@ -34,8 +36,10 @@ Annotates all kubernetes resources in the given directory tree
       --invert-selector           inverts the effect of selector to exclude resources matched by selector
   -k, --kind stringArray          adds Kubernetes resource kinds to filter on. For kind expressions see: https://github.com/jenkins-x/jx-helpers/v3/tree/master/docs/kind_filters.md
       --kind-ignore stringArray   adds Kubernetes resource kinds to exclude. For kind expressions see: https://github.com/jenkins-x/jx-helpers/v3/tree/master/docs/kind_filters.md
-  -p, --pod-spec                  annotate the PodSpec in spec.templates.metadata.annotations rather than the top level annotations
+      --overwrite                 Set to false to not overwrite any existing value (default true)
+  -p, --pod-spec                  annotate the PodSpec in spec.template.metadata.annotations (or spec.jobTemplate.spec.template.metadata.annotations for CronJobs) rather than the top level annotations
       --selector stringToString   adds Kubernetes label selector to filter on, e.g. -s app=pusher-wave,heritage=Helm (default [])
+      --selector-target string    sets which path in the Kubernetes resources to select on instead of metadata.labels.
 ```
 
 

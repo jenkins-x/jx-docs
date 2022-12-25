@@ -25,12 +25,17 @@ Update a release
   
   # closes all open pull requests on foo/bar before pull request number 200
   jx-scm pull-request close --owner foo --name bar --before 200
+  
+  # close an open pull request on foo/bar from branch baz onto base branch main
+  %!s(MISSING) pull-request close --owner foo --name bar --head baz --base main
 
   ```
 ### Options
 
 ```
+      --base string       the name of the branch the changes would be pulled into (default "main")
       --before int        a pull request number to used to close ALL open pull requests before it
+      --head string       the name of the branch where changes are implemented
   -h, --help              help for close
   -k, --kind string       the kind of git server to use
   -r, --name string       the name of the repository that contains pull requests to close

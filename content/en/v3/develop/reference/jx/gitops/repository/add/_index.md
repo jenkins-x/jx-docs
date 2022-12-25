@@ -38,6 +38,7 @@ Add one or more repositories to the SourceConfig
       --namespace string          the namespace to discover SourceRepository resources to default the GitKind. If not specified then use the current namespace
   -s, --scheduler string          the name of the Scheduler to use for the repository
       --selector stringToString   adds Kubernetes label selector to filter on, e.g. -s app=pusher-wave,heritage=Helm (default [])
+      --selector-target string    sets which path in the Kubernetes resources to select on instead of metadata.labels.
 ```
 
 
