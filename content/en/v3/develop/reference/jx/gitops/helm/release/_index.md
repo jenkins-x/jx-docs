@@ -38,6 +38,7 @@ Generate the kubernetes resources from a helm chart
       --no-release                 disables publishing the release. Useful for a Pull Request pipeline
       --oci                        treat the repository as an OCI container registry. If not specified its defaulted from the cluster.chartOCI flag on the 'jx-requirements.yml' file
       --pages                      use github pages to release charts
+      --registry-config string     the path to the registry config for OCI login (default "/tekton/creds-secrets/tekton-container-registry-auth/.dockerconfigjson")
   -n, --repo-name string           the name of the helm chart to release to. If not specified uses JX_CHART_REPOSITORY environment variable (default "release-repo")
       --repo-nested string         the nested repository inside the repository. If not specified defaults to empty (not nested repo)
       --repo-password string       the password to access the chart repository. If not specified defaults to the environment variable $JX_REPOSITORY_PASSWORD

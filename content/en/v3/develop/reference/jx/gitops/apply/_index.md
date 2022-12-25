@@ -17,7 +17,7 @@ jx gitops apply
 
 Performs a gitops regeneration and apply on a cluster git repository 
 
-If the last commit was a merge from a pull request the regeneration is skipped. 
+If the last commit was a merge from a pull request the regeneration is skipped, unless the cluster is new. 
 
 Also the process detects if an ingress has changed (or similar changes) and retriggers another regeneration which typically is only required when installing for the first time or if no explicit domain name is being used and the LoadBalancer service has been removed.
 
