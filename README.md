@@ -52,6 +52,7 @@ git clone  --recurse-submodules --depth 1 https://github.com/jenkins-x/jx-docs.g
 Notice the use of `--recurse-submodules` in the clone command above.
 This option will pull in two git [submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules), namely  
 [docsy](https://github.com/google/docsy) and [labs-enhancements](https://github.com/jenkins-x/enhancements).
+
 If you already have a git clone without the submodules checked out you can run:
 
 ```bash
@@ -97,6 +98,8 @@ Per default, no content is written to disk.
 
 If you want to build the site locally on your machine, you need to [install](https://gohugo.io/getting-started/installing) Hugo.
 Check the [Makefile](./Makfile) for the latest recommended version use and check whether the environment variables of Golang are set.
+Set the env variable HUGO_GH_ACCESS_TOKEN to a github token that can read from jenkins-x/jx repo to allow the contributors plugin to run.
+
 Once installed, you can run:
 
 ```bash

@@ -31,7 +31,7 @@ Make sure you have created a cluster using k3s.
 If you dont have an existing k3s cluster, you can install one by running:
 
 ```bash
-curl -sfL https://get.k3s.io | sh -s - --write-kubeconfig-mode 644
+curl -sfL https://get.k3s.io | INSTALL_K3S_CHANNEL=v1.24 sh -s - --write-kubeconfig-mode 644
 sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/k3s-config
 # Set it also in the bashrc or zshrc file, or you can flatten both of these configs into a single file
 export KUBECONFIG=~/.kube/config:~/.kube/k3s-config
@@ -93,6 +93,21 @@ helm install vault-operator banzaicloud-stable/vault-operator --create-namespace
 helm install vault-instance jxgh/vault-instance -n jx-vault
 ```
 
+Wait for the vault pods to be in running status, before proceeding to the next steps.
+
+```bash
+kubectl get pods -n jx-vault
+```
+
+Output should be similar to
+
+```bash
+NAME                                READY   STATUS    RESTARTS   AGE
+vault-operator-d7c697f95-55dfj      1/1     Running   0          4m22s
+vault-0                             3/3     Running   0          4m10s
+vault-configurer-689758f67d-8npcf   1/1     Running   0          3m38s
+```
+
 ##### External vault
 
 ###### Docker
@@ -129,6 +144,34 @@ Note: If you get the error `Error enabling kubernetes auth: Post "https://127.0.
 ### Jenkins X v3 installation
 
 - Generate a cluster git repository from the [jx3-k3s-vault](https://github.com/jx3-gitops-repositories/jx3-k3s-vault) template, by clicking [here](https://github.com/jx3-gitops-repositories/jx3-k3s-vault/generate)
+- Clone the generated repository and cd into the repository folder
+- Set up ingress and webhook
+
+  - Get the external IP of the traefik service (loadbalancer)
+
+  ```bash
+  kubectl get svc -A | grep LoadBalancer
+  kube-system   traefik          LoadBalancer   <cluster-ip>    <external-ip>    80:31123/TCP,443:31783/TCP   40m
+  ```
+
+  - Edit the jx-requirements.yaml file by editing the ingress domain:
+
+  ```bash
+  jx gitops requirements edit --domain <external-ip>.nip.io
+  ```
+
+- set up Ngrok
+
+  - Refer to [these docs](/v3/develop/faq/ngrok/) to set up ngrok
+
+  - Once this tunnel is open, paste the ngrok url (without http) which is forwarding the traffic to port 8080 in the hook field in the helmfiles/jx/jxboot-helmfile-resources-values.yaml file in the cluster git repository.
+  - commit and push the changes.
+
+  ```bash
+  git add .
+  git commit -m "chore: initial commit"
+  git push origin main
+  ```
 
 - Make these changes only when using external vault
 
@@ -226,7 +269,7 @@ git push origin main
 
 tail the logs of `jx-git-operator` pod in the `jx-git-operator` namespace.
 
-```
+```bash
 not creating a Job in namespace jx-git-operator for repo jx-boot sha XXXXXX yet as there is an active job jx-boot-XXXXXXX
 ```
 
@@ -243,90 +286,9 @@ This job will create the secrets in vault which will be used by external secrets
 - To verfiy the secrets were created, run `kubectl get es -A` and `jx secret verify`
 - If this didn't work try and repeat the steps but commit your dummy changes through github repository directly other than the `git push origin main` command
 
-### Set up ingress and webhook
+### Port forwarding for webhooks
 
-- Get the external IP of the traefik service (loadbalancer)
-
-```bash
-kubectl get svc -A | grep LoadBalancer
-kube-system   traefik          LoadBalancer   <cluster-ip>    <external-ip>    80:31123/TCP,443:31783/TCP   40m
-```
-
-- Edit the jx-requirements.yaml file by editing the ingress domain:
-
-```bash
-# There may be some changes committed by the jx boot job
-git pull
-jx gitops requirements edit --domain <external-ip>.nip.io
-```
-
-#### Ngrok
-
-Next, download and install [ngrok](https://ngrok.com/).
-Log into ngrok account and get the ngrok auth token (Authenticated sessions can run for unlimited time, unauthenticated sessions expire in 1.5 hours):
-
-Create a ngrok config file at `~/.config/ngrok/ngrok.yml` with the following content (replace `<ngrok-auth-token>` with the auth token from the ngrok account):
-
-```yaml
-authtoken: <ngrok-auth-token>
-tunnels:
-  hook:
-    proto: http
-    addr: 8080
-    schemes:
-      - http
-  ui:
-    proto: http
-    addr: 9090
-    schemes:
-      - http
-version: "2"
-region: us
-```
-
-Verify that the config is correct using:
-
-```bash
-ngrok config check
-```
-
-Run this in a new terminal window/tab:
-
-```bash
-ngrok start --all
-```
-
-- Once the command succeeds, you should see something like this:
-
-```text
-ngrok                                                                                                                                                                                       (Ctrl+C to quit)
-
-Hello World! https://ngrok.com/next-generation
-
-Session Status                online
-Account                       user123 (Plan: Free)
-Update                        update available (version 3.0.6, Ctrl-U to update)
-Version                       3.0.5
-Region                        United States (us)
-Latency                       25ms
-Web Interface                 http://127.0.0.1:4040
-Forwarding                    http://XXXX.ngrok.io -> http://localhost:8080
-Forwarding                    http://YYYY.ngrok.io -> http://localhost:9090
-
-Connections                   ttl     opn     rt1     rt5     p50     p90
-                              0       0       0.00    0.00    0.00    0.00
-```
-
-- Once this tunnel is open, paste the ngrok url (without http) which is forwarding the traffic to port 8080 in the hook field in the helmfiles/jx/jxboot-helmfile-resources-values.yaml file in the cluster git repository.
-- commit and push the changes.
-
-```bash
-git add .
-git commit -m "chore: new ngrok ip"
-git push origin main
-```
-
-- In another terminal run the following command to enable webhooks via ngrok
+In another terminal run the following command to enable webhooks via ngrok
 
 ```bash
 jx ns jx

@@ -4,6 +4,8 @@ title = "Jenkins X - Cloud Native CI/CD Built On Kubernetes"
 enableRobotsTXT = true
 
 ignorefiles = [ "docs/labs/.*" ]
+# getting an error on the contributors plugin
+ignoreErrors = ["error-remote-getjson"]
 
 # Hugo allows theme composition (and inheritance). The precedence is from left to right.
 theme = ["github.com/google/docsy", "github.com/google/docsy/dependencies"]
@@ -104,7 +106,7 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
 
 [params]
 ## Used for views in rendered HTML (i.e., rather than using the .Hugo variable)
-release = "3.10.12"
+release = "3.10.24"
 
 ## the jx-lens version
 jx_lens_version = "1.0.18"

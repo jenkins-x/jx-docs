@@ -2,7 +2,7 @@
 title: jx gitops label
 linktitle: label
 type: docs
-description: "Updates all kubernetes resources in the given directory tree to add/override the given label"
+description: "Labels all kubernetes resources in the given directory tree"
 aliases:
   - jx-gitops_label
 ---
@@ -15,7 +15,7 @@ jx gitops label
 
 ### Synopsis
 
-Updates all kubernetes resources in the given directory tree to add/override the given label
+Labels all kubernetes resources in the given directory tree
 
 ### Examples
 
@@ -24,6 +24,8 @@ Updates all kubernetes resources in the given directory tree to add/override the
   jx-gitops label mylabel=cheese another=thing
   # updates recursively all resources
   jx-gitops label --dir myresource-dir foo=bar
+  # remove labels
+  jx-gitops label mylabel- another-
 
   ```
 ### Options
@@ -34,7 +36,10 @@ Updates all kubernetes resources in the given directory tree to add/override the
       --invert-selector           inverts the effect of selector to exclude resources matched by selector
   -k, --kind stringArray          adds Kubernetes resource kinds to filter on. For kind expressions see: https://github.com/jenkins-x/jx-helpers/v3/tree/master/docs/kind_filters.md
       --kind-ignore stringArray   adds Kubernetes resource kinds to exclude. For kind expressions see: https://github.com/jenkins-x/jx-helpers/v3/tree/master/docs/kind_filters.md
+      --overwrite                 Set to false to not overwrite any existing value (default true)
+  -p, --pod-spec                  label the PodSpec in spec.template.metadata.labels (or spec.jobTemplate.spec.template.metadata.labels for CronJobs) rather than the top level labels
       --selector stringToString   adds Kubernetes label selector to filter on, e.g. -s app=pusher-wave,heritage=Helm (default [])
+      --selector-target string    sets which path in the Kubernetes resources to select on instead of metadata.labels.
 ```
 
 

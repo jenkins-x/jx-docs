@@ -33,7 +33,7 @@ Upgrades the GitOps git repository with the latest configuration and versions th
       --namespace string            the default namespace if none is specified in the helmfile.yaml (default "jx")
   -o, --owner string                filter on the Kptfile repository owner (user/organisation) for which packages to update
   -r, --repo string                 filter on the Kptfile repository name  for which packages to update
-  -s, --strategy string             the 'kpt' strategy to use. To see available strategies type 'kpt pkg update --help'. Typical values are: resource-merge, fast-forward, alpha-git-patch, force-delete-replace (default "alpha-git-patch")
+  -s, --strategy string             the 'kpt' strategy to use. To see available strategies type 'kpt pkg update --help'. Typical values are: resource-merge, fast-forward, force-delete-replace (default "resource-merge")
   -u, --url string                  filter on the Kptfile repository URL for which packages to update
       --verbose                     Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
   -v, --version string              the git version of the kpt package to upgrade to

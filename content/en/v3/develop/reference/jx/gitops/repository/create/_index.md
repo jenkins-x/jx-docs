@@ -34,6 +34,7 @@ Creates any missing SourceRepository resources
   -k, --kind stringArray          adds Kubernetes resource kinds to filter on. For kind expressions see: https://github.com/jenkins-x/jx-helpers/v3/tree/master/docs/kind_filters.md
       --kind-ignore stringArray   adds Kubernetes resource kinds to exclude. For kind expressions see: https://github.com/jenkins-x/jx-helpers/v3/tree/master/docs/kind_filters.md
       --selector stringToString   adds Kubernetes label selector to filter on, e.g. -s app=pusher-wave,heritage=Helm (default [])
+      --selector-target string    sets which path in the Kubernetes resources to select on instead of metadata.labels.
   -s, --source-dir string         the directory to look for and generate the SourceConfig files
 ```
 

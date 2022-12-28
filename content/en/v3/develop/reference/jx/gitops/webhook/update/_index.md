@@ -36,6 +36,7 @@ Updates the webhooks for all the source repositories optionally filtering by own
   -b, --batch-mode                 Runs in batch mode without prompting for user input
       --endpoint string            Don't use the endpoint from the cluster, use the provided endpoint
       --exact-hook-url-match       Whether to exactly match the hook based on the URL (default true)
+      --fast                       If annotation webhook.jenkins-x.io is true on SourceConfig don't check with git provider
       --git-kind string            the kind of git server to connect to
       --git-server string          the git server URL to create the scm client
       --git-token string           the git token used to operate on the git repository. If not specified it's loaded from the git credentials file

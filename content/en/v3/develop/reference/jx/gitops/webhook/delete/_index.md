@@ -35,7 +35,7 @@ Deletes the webhooks for all the source repositories optionally filtering by own
 ```
       --all-webhooks          WARNING: will delete all webhooks from your source repositories. Do not use lightly.
   -b, --batch-mode            Runs in batch mode without prompting for user input
-      --dry-run               If enabled doesn't actually delete any webhooks, just tells you what it will delete (default true)
+      --dry-run               If enabled doesn't actually delete any webhooks, just tells you what it will delete
       --filter string         The filter to match the endpoints to delete
       --git-kind string       the kind of git server to connect to
       --git-server string     the git server URL to create the scm client

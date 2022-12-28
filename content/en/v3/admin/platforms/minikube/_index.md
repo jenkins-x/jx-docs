@@ -41,7 +41,7 @@ minikube delete
 - You need to create a `minikube` cluster via the following command:
 
 ```bash
-minikube start --cpus 4 --memory 6048 --disk-size=100g --addons=ingress
+minikube start --cpus 4 --memory 6048 --disk-size=100g --addons=ingress --kubernetes-version=1.24
 ```
 
 ## Setup
@@ -100,3 +100,8 @@ kubectl port-forward svc/hook 8080:80
 ```
 
 - <a href="/v3/develop/create-project/" class="btn bg-primary text-light">Create or import projects</a>
+
+
+## Restarting 
+If you quit minikube, reboot and come back to start working on it again, you will have to complete the whole procedure under #setup to get back to speed.
+The minikube ip is normally the same on each invocation, but you should verify that as well.
