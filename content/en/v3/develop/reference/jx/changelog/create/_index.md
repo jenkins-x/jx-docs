@@ -61,13 +61,14 @@ e.g. define environment variables GIT_USERNAME and GIT_API_TOKEN
 
 ```
   -b, --batch-mode                   Runs in batch mode without prompting for user input
-      --build string                 The Build number which is used to update the PipelineActivity. If not specified its defaulted from  the '$BUILD_NUMBER' environment variable
+      --build string                 The Build number which is used to update the PipelineActivity. If not specified its defaulted from the '$BUILD_NUMBER' environment variable
       --changelog-separator string   the separator to use when splitting commit message from changelog in the pull request body. Default to ----- or if set the CHANGELOG_SEPARATOR environment variable
       --conditional-release          Wrap the Release YAML in the helm Capabilities.APIVersions.Has if statement (default true)
   -c, --crd                          Generate the CRD in the chart
       --crd-yaml-file string         the name of the file to generate the Release CustomResourceDefinition YAML (default "release-crd.yaml")
       --dir string                   the directory to search for the .git to discover the git source URL (default ".")
       --draft                        The git provider release is marked as draft
+  -e, --exclude-regexp string        Regexp for excluding commits. Can be set with environment variable CHANGELOG_EXCLUDE_REGEXP. (default "^release ")
       --fail-if-no-commits           Do we want to fail the build if we don't find any commits to generate the changelog
       --footer string                The changelog footer in markdown for the changelog. Can use go template expressions on the ReleaseSpec object: https://golang.org/pkg/text/template/
       --footer-file string           The file name of the changelog footer in markdown for the changelog. Can use go template expressions on the ReleaseSpec object: https://golang.org/pkg/text/template/
@@ -78,7 +79,7 @@ e.g. define environment variables GIT_USERNAME and GIT_API_TOKEN
       --header string                The changelog header in markdown for the changelog. Can use go template expressions on the ReleaseSpec object: https://golang.org/pkg/text/template/
       --header-file string           The file name of the changelog header in markdown for the changelog. Can use go template expressions on the ReleaseSpec object: https://golang.org/pkg/text/template/
   -h, --help                         help for create
-      --include-changelog            Should changelogs from pull requests be included. Defaults to true (default true)
+      --include-changelog            Should changelogs from pull requests be included. (default true)
       --include-merge-commits        Include merge commits when generating the changelog
       --log-level string             Sets the logging level. If not specified defaults to $JX_LOG_LEVEL
       --no-dev-release               Disables the generation of Release CRDs in the development namespace to track releases being performed
@@ -89,10 +90,10 @@ e.g. define environment variables GIT_USERNAME and GIT_API_TOKEN
   -p, --previous-rev string          the previous tag revision
       --release-yaml-file string     the name of the file to generate the Release YAML (default "release.yaml")
       --rev string                   the current tag revision
-      --status-path string           The path to the deployment status file used to calculate dependency updates. Defaults to docs/releases.yaml (default "docs/releases.yaml")
+      --status-path string           The path to the deployment status file used to calculate dependency updates. (default "docs/releases.yaml")
       --tag-prefix string            prefix to filter on when searching for version tags
   -t, --templates-dir string         the directory containing the helm chart templates to generate the resources
-      --update-release               Should we update the release on the Git repository with the changelog (default true)
+      --update-release               Should we update the release on the Git repository with the changelog. (default true)
       --verbose                      Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
   -v, --version string               The version to release
 ```
