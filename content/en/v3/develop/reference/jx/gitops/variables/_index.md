@@ -27,6 +27,7 @@ Lazily creates a .jx/variables.sh script with common pipeline environment variab
 ### Options
 
 ```
+      --app string              Name of the app or repository
       --build-number string     the build number to use. If not specified defaults to $BUILD_NUMBER
       --commit                  commit variables.sh (default true)
       --configmap string        the ConfigMap used to load environment variables (default "jenkins-x-docker-registry")
