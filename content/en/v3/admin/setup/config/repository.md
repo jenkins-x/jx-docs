@@ -87,7 +87,7 @@ repositories:
     releaseUrl: https://maven.pkg.github.com/myowner/myrepo/
 
     # optional if different to the above
-    snapshotURL: https://maven.pkg.github.com/myowner/mysnapshots/
+    snapshotUrl: https://maven.pkg.github.com/myowner/mysnapshots/
 ```
 
 Note: The pipeline user token will be used to push maven packages. It needs the "write:packages" permission, which is already set on the link to create the pipeline token so it should work.
@@ -103,7 +103,7 @@ repositories:
     releaseUrl: https://myrepo.acme.com/releases/
 
     # optional if different to the above
-    snapshotURL: https://myrepo.acme.com/releases/snapshots/
+    snapshotUrl: https://myrepo.acme.com/releases/snapshots/
 ```
 
 Then the `myrepo` `Secret` will be used with properties `username` and `password` to generate the equivalent `<server>` section in your maven settings XML file:
