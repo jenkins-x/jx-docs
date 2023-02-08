@@ -1,6 +1,6 @@
 ---
 title: "Foreign aliases"
-date: 2022-11-28T00:00:00-00:00
+date: 2023-02-09T00:00:00-00:00
 draft: false
 description: >
   Handling of OWNERS and OWNERS_ALIASES for many repositories 
@@ -13,8 +13,8 @@ author: Mårten Svantesson
 
 ## Background
 
-In an organisation with many repositories or developers that are frequently shifting maintaining OWNERS and 
-OWNERS_ALIASES files can be a tedious task. In the passing yer a couple of functionalities has been added to help 
+In an organisation with many repositories and developers that are frequently shifting the maintenance of OWNERS and 
+OWNERS_ALIASES files can be tedious. In the passing year a couple of functionalities has been added to help 
 with this.
 
 ## Foreign aliases
@@ -48,5 +48,5 @@ that useful since only the current user are put in the files.
 If you [create your own quickstarts](https://jenkins-x.io/v3/about/extending/#quickstarts) you place the OWNERS and 
 / or OWNERS_ALIASES files with the content of your liking in those.
 
-A recent new functionality is that you can put OWNERS and / or OWNERS_ALIASES files in the extensions directory of 
+A recent new functionality is that you can put OWNERS and / or OWNERS_ALIASES files in the `extensions` directory of 
 your cluster repository. These files will then be used as the default content of the files in new repositories. 
