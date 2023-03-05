@@ -10,6 +10,10 @@ aliases: []
 author: James Strachan
 ---
 
+{{< alert color="warning" >}}
+`TaskRun` breakpoint functionality is no longer supported since Tekton 0.29.0 upgrades in `3.2.298`. For more info see [Kubernetes 1.22 - Breaking change!](/blog/2022/04/22/kubernetes-1.22-tekton/).
+{{< /alert >}}
+
 Tekton recently introduced a [debug feature](https://github.com/tektoncd/pipeline/blob/main/docs/debug.md#debug) when you create `TaskRun` resources so that steps can be paused at a breakpoint until told to move forwards so that you can diagnose why pipeline steps fail.
 
 The latest Tekton release only supports breakpoints on `TaskRun` resources but there is a [Pull Request #4145](https://github.com/tektoncd/pipeline/pull/4145) to add support also to debugging `PipelineRun` resources as well. If you are reading this please add your thumbs up emoji feedback to the [PR #4145](https://github.com/tektoncd/pipeline/pull/4145)

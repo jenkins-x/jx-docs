@@ -6,6 +6,10 @@ description: Debugging pipelines in Jenkins X
 weight: 410
 ---
 
+{{< alert color="warning" >}}
+`TaskRun` breakpoint functionality is no longer supported since Tekton 0.29.0 upgrades in `3.2.298`. For more info see [Kubernetes 1.22 - Breaking change!](/blog/2022/04/22/kubernetes-1.22-tekton/).
+{{< /alert >}}
+
 Here is a demo which shows how to debug pipelines:
 
 <iframe width="850" height="500" src="https://www.youtube.com/embed/QqTaclB6-oI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
