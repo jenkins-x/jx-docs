@@ -1,6 +1,6 @@
 ---
 title: "Reconcile with kpt live apply"
-date: 2023-02-17T00:00:00-00:00
+date: 2023-03-09T00:00:00-00:00
 draft: false
 description: >
   Using `kpt live apply` to apply manifests in your cluster repository to your cluster 
@@ -23,7 +23,7 @@ Except that it doesn't always work as expected. It will only remove certain kind
 In my case I removed an HorizontalPodAutoscaler from my cluster repository, but it wasn't removed from my cluster.
 
 When trying to find a solution to this I first tried to override this default list in kubectl of things to prune, but 
-this tuned out to be difficult in the general case. I also tried the already existing alternative of using `kapp` to 
+this turned out to be difficult in the general case. I also tried the already existing alternative of using `kapp` to 
 apply the manifests, but I couldn't get that to work. Looking for other options I settled for `kpt live apply`.
 
 ## Configuration
@@ -128,9 +128,5 @@ echo "</body></html>"
 ) | sendmail -t -S smtp.example.com
 ```
 
-To adopt for you own use the minimal changes would be to find and replace the smtp server and mail addresses now 
+To adapt for your own use, the minimal changes would be to find and replace the smtp server and mail addresses now 
 added for the domain **example.com**. Don't forget to make the script executable with `chmod +x ns-reconciled`.
-
-
-
- 
