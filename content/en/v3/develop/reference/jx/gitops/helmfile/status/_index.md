@@ -27,9 +27,11 @@ Updates the git deployment status after a release
 ### Options
 
 ```
-  -d, --dir string   the directory that contains the content (default ".")
-  -f, --fail         if enabled then fail the boot pipeline if we cannot report the deployment status
-  -h, --help         help for status
+  -a, --auto-inactive          if enabled then the the status of previous deployments will be set to inactive (default true)
+      --deploy-offset string   releases deployed after this time offset will have their deployments updated. Set to empty to update all. Format is a golang duration string (default "2h")
+  -d, --dir string             the directory that contains the content (default ".")
+  -f, --fail                   if enabled then fail the boot pipeline if we cannot report the deployment status
+  -h, --help                   help for status
 ```
 
 
