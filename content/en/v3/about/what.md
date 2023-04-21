@@ -26,7 +26,7 @@ At a high level Jenkins X can be split into a few areas:
 
 ### Infrastructure
 
-Jenkins X aims to use the cloud well, Kubernetes to host the core services, storage buckets for long term storage, container registries and hosted serivces like secrets managers. All of this needs to be created and managed.  Jenkins X defers to [Terraform](https://www.terraform.io/) to setup and manage the Cloud infrastructure needed by Jenkins X.
+Jenkins X aims to use the cloud well, Kubernetes to host the core services, storage buckets for long term storage, container registries and hosted services like secrets managers. All of this needs to be created and managed.  Jenkins X defers to [Terraform](https://www.terraform.io/) to setup and manage the Cloud infrastructure needed by Jenkins X.
  
 ### GitOps
 
