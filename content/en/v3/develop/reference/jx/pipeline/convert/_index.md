@@ -1,5 +1,5 @@
 ---
-title: jx pipeline convert
+title: jx pipeline convert uses
 linktitle: convert
 type: docs
 description: "Converts the pipelines to use the 'image: uses:sourceURI' include mechanism"
@@ -10,7 +10,7 @@ aliases:
 ### Usage
 
 ```
-jx pipeline convert
+jx pipeline convert uses
 ```
 
 ### Synopsis
@@ -24,10 +24,10 @@ So that pipelines are smaller, simpler and easier to upgrade pipelines with the 
   ```bash
   # Convert a repository created using the alpha/beta of v3
   # to use the nice new uses: syntax
-  jx pipeline convert
+  jx pipeline convert uses
   
   # Convert a pipeline catalog to the uses syntax and layout
-  jx pipeline convert --catalog
+  jx pipeline convert uses --catalog
 
   ```
 ### Options
