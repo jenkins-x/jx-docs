@@ -8,16 +8,6 @@ aliases:
   - /v3/guides/native-tekton
 ---
 
-Migrating to native Tekton brings a number of changes to the way that Jenkins X pipelines are configured and run.
-The main changes are:
-- The lighthouse PipelineRun resolver (responsible for handling the `uses:sourceURI` syntax) has been replaced with 
-[Tekton's git resolver](https://tekton.dev/docs/pipelines/git-resolver/).
-- Pipelines are no longer confined to a single pod running multiple containers (1 task, many steps). Instead, each step
-now runs as its own pod (many tasks, many steps).
-- As each pipeline now contains many tasks, [Tekton's workspaces](https://tekton.dev/docs/pipelines/workspaces/) are used to share files between tasks.
-
-This guide will walk you through the steps required to migrate your existing pipelines to native Tekton.
-
 ## Prerequisites
 You're cluster git repository will need to be at `versionStream>=[insert version here]` before proceeding with the 
 pipeline upgrade. This can be done by running the following command on your cluster git repository.
