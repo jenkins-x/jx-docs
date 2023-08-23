@@ -2,7 +2,7 @@
 title: jx secret convert
 linktitle: convert
 type: docs
-description: "Converts all Secret resources in the path to ExternalSecret resources so they can be checked into git ***Aliases**: secretmappings,sm,secretmapping*"
+description: "Converts Secret resources in the path to ExternalSecret resources so they can be checked into git ***Aliases**: secretmappings,sm,secretmapping*"
 aliases:
   - jx-secret_convert
 ---
@@ -32,7 +32,10 @@ Converts all Secret resources in the path to ExternalSecret resources so they ca
   -d, --dir string                  the directory to look for the secret mapping files and version stream (default ".")
       --helm-secrets-dir string     the directory where the helm secrets live with a folder per namespace and a file with a '.yaml' extension for each secret name. Defaults to $JX_HELM_SECRET_FOLDER
   -h, --help                        help for convert
+      --invert-selector             inverts the effect of selector to exclude resources matched by selector
       --log-level string            Sets the logging level. If not specified defaults to $JX_LOG_LEVEL
+      --selector stringToString     adds Kubernetes label selector to filter on, e.g. --selector app=pusher-wave,heritage=Helm (default [])
+      --selector-target string      sets which path in the Kubernetes resources to select on instead of metadata.labels.
       --source-dir string           the source directory to recursively look for the *.yaml or *.yml files to convert. If not specified defaults to 'config-root' in the dir
   -m, --vault-mount-point string    the vault authentication mount point (default "kubernetes")
   -r, --vault-role string           the vault role that will be used to fetch the secrets. This role will need to be bound to kubernetes-external-secret's ServiceAccount; see Vault's documentation: https://www.vaultproject.io/docs/auth/kubernetes.html (default "jx-vault")
