@@ -2,7 +2,7 @@
 title: jx updatebot argo promote
 linktitle: promote
 type: docs
-description: "Promotes a new Application version in an ArgoCD git repository"
+description: "Promotes a new Application or ApplicationSet version in an ArgoCD git repository"
 aliases:
   - jx-updatebot_argo_promote
 ---
@@ -15,9 +15,11 @@ jx updatebot argo promote
 
 ### Synopsis
 
-Promotes a new Application version in an ArgoCD git repository 
+Promotes a new Application or ApplicationSet version in an ArgoCD git repository 
 
-This command will use the source git repository URL and version to find the ArgoCD Application resource in the target git URL and create a Pull Request if the version is different. This lets you push promotion pull requests into ArgoCD repositories as part of your CI release pipeline.
+This command will use the source git repository URL and version to find the ArgoCD Application or ApplicationSet resource in the target git URL and create a Pull Request if the version is different. This lets you push promotion pull requests into ArgoCD repositories as part of your CI release pipeline. 
+
+You can get the examples in the directory pkg/cmd/argo/promote/test _data/simple
 
 ### Examples
 
@@ -51,7 +53,7 @@ This command will use the source git repository URL and version to find the Argo
       --target-git-url string       the target git URL to create a Pull Request on
       --version string              the version number to promote. If not specified uses $VERSION or the version file
       --version-file string         the file to load the version from if not specified directly or via a $VERSION environment variable. Defaults to VERSION in the current dir
-      --version-prefix string       the prefix added to the version number that will be used in the Argo CD Application YAML if --version option is not specified and the version is defaulted from $VERSION or the VERSION file (default "v")
+      --version-prefix string       the prefix added to the version number that will be used in the Argo CD Application or ApplicationSet YAML if --version option is not specified and the version is defaulted from $VERSION or the VERSION file (default "v")
 ```
 
 
