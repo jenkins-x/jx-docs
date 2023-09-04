@@ -10,12 +10,12 @@ aliases:
 ---
 
 
-Jenkins X 3.x supports the `helmfile.yaml` file format from the [helmfile project](https://github.com/roboll/helmfile) that can be used to define the [Helm](https://helm.sh/) [charts](https://helm.sh/docs/topics/charts/) you wish to install and their namespace.
+Jenkins X 3.x supports the `helmfile.yaml` file format from the [helmfile project](https://github.com/helmfile/helmfile) that can be used to define the [Helm](https://helm.sh/) [charts](https://helm.sh/docs/topics/charts/) you wish to install and their namespace.
 
 
 ## Adding Charts
             
-Jenkins X uses [helmfile](https://github.com/roboll/helmfile#configuration) to configure which versions of which helm charts are to be deployed in which namespace along with its configuration. 
+Jenkins X uses [helmfile](https://helmfile.readthedocs.io/en/latest/#configuration) to configure which versions of which helm charts are to be deployed in which namespace along with its configuration. 
 
 
 ### Using the CLI
@@ -33,7 +33,7 @@ jx gitops helmfile add --chart somerepo/mychart --repository https://acme.com/my
 
 Instead of using the above command line you can just modify the source code in git via your IDE.
 
-If you need more help on how to edit the helmfiles files check out the [helmfile configuration guide](https://github.com/roboll/helmfile#configuration)  
+If you need more help on how to edit the helmfiles files check out the [helmfile configuration guide](https://helmfile.readthedocs.io/en/latest/#configuration)  
 
 There is a root `helmfile.yaml` file and then a tree of helmfiles for each namespace:
 
