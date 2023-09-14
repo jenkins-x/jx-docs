@@ -10,7 +10,7 @@ jobs:
   issue:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - uses: docker://golang:1.21
         name: Regenerate the plugins docs
         id: regenerate
