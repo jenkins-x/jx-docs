@@ -10,7 +10,7 @@ then
   echo "not setting up git as not in a GitHub Action"
 else
   echo "lets setup git"
-  git config --global --add safe.directory /github/workspace
+  git config --global --add safe.directory $GITHUB_WORKSPACE
   git config user.name github-actions
   git config user.email github-actions@github.com
 fi
