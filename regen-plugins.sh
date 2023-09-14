@@ -2,18 +2,14 @@
 
 set -ex
 
-# Add some debug output
-ls -a
-
-#if [ -z "$GITHUB_ACTIONS" ]
-#then
-#  echo "not setting up git as not in a GitHub Action"
-#else
-#  echo "lets setup git"
-#  git config user.name github-actions
-#  git config user.email github-actions@github.com
-#  git config --global --add safe.directory /github/workspace
-#fi
+if [ -z "$GITHUB_ACTIONS" ]
+then
+  echo "not setting up git as not in a GitHub Action"
+else
+  echo "lets setup git"
+  git config user.name github-actions
+  git config user.email github-actions@github.com
+fi
 
 git clone https://github.com/jenkins-x-plugins/jx-plugin-doc
 
