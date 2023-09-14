@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: docker://golang:1.15
+      - uses: docker://golang:1.21
         name: Regenerate the plugins docs
         id: regenerate
         env:
