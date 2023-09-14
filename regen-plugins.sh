@@ -2,6 +2,11 @@
 
 set -ex
 
+# Add some debug output
+env
+pwd
+ls
+
 if [ -z "$GITHUB_ACTIONS" ]
 then
   echo "not setting up git as not in a GitHub Action"
