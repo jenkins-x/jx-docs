@@ -33,6 +33,7 @@ Display one or more preview environments.
 ```
   -c, --current   Output the URL of the current Preview application the current pipeline just deployed
   -h, --help      help for get
+  -w, --wait      Waits for a preview deployment with commit hash that matches latest commit
 ```
 
 
