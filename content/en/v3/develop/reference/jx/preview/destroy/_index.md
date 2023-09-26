@@ -27,12 +27,11 @@ Destroys a preview environment
 ### Options
 
 ```
-      --all               Select all the filters by default to remove
-      --fail-on-helm      If enabled do not try to remove the namespace or Preview resource if we fail to destroy helmfile resources
-  -f, --file string       Preview helmfile.yaml path to use. If not specified it is discovered in preview/helmfile.yaml and created from a template if needed
-      --filter string     The filter to use to find a preview to delete
-      --git-user string   The user name to git clone the environment repository
-  -h, --help              help for destroy
+      --all             Select all the previews that match filter by default
+      --dir string      The directory where to run the delete preview command - a git clone will be done on a temporary jx-git-xxx directory if this parameter is empty
+      --fail-on-helm    If enabled do not try to remove the namespace or Preview resource if we fail to destroy helmfile resources
+      --filter string   The filter to use to find previews to delete
+  -h, --help            help for destroy
 ```
 
 
