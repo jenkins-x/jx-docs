@@ -73,7 +73,7 @@ To do this you can run the [jx secret vault portforward](https://github.com/jenk
 jx secret vault portforward
 ```                  
  
-You should then be able to run the following `jx secret edit` or `jx secret import` commands.
+You should then be able to run the following `jx secret edit` command. You can also run the `jx secret vault shell` command, which gives you a shell with an environment where you can can issue `vault` commands.
 
 ## Edit Secrets
 
