@@ -10,25 +10,45 @@ When changes are merged to the main branch in the Jenkins X pipeline catalog a n
 
 ## How it works
 
-The release pipelines use the [jx promote --all](https://github.com/jenkins-x/jx-promote/blob/master/docs/cmd/jx-promote.md#jx-promote) command which creates Pull Requests on all Environments configured in your `jx-requirements.yml` file (see the [Configuration](/v3/develop/environments/config/)) 
+The release pipelines use the [jx promote --all](https://github.
+com/jenkins-x/jx-promote/blob/master/docs/cmd/jx-promote.md#jx-promote) command which creates Pull Requests on all 
+Environments configured in your `jx-requirements.yml` file and possibly `.jx/gitops/source-config.yaml` or 
+`.jx/settings.yaml` (see the [Configuration](/v3/develop/environments/config/)).
 
-* every environment which is defined in `jx-requirements.yml` as `promotionStrategy` **Auto** or **Manual** is included in a Pull Request to promote the new version to that environment
+* every environment which is defined as `promotionStrategy` **Auto** or **Manual** is included in a Pull Request to promote the new version to that environment
 
   * **Auto** means the Pull Request will automatically merge if its successful (the Pull Request pipeline succeeds)
 
   * **Manual** means the Pull Request is a draft and won't automatically merge. i.e. the Pull Request needs to be manually approved (comment `/approve`) and taken off hold (comment `/hold cancel`). 
 
-* all local Environments in your `jx-requirements.yml` of the promotion kind **Auto** are promoted using a single Pull Request so that all the promotions automatically merge if the pull request pipeline validates successfully.
+* all local Environments of the promotion kind **Auto** are promoted using a single Pull Request so that all the promotions automatically merge if the pull request pipeline validates successfully.
 
 * you can define multiple local or remote Environments for different system / integration testing environments.
 
 
-## Changing Promotion
+## Disable Promotion
 
-If you want to disable promotion Pull Requests on an environment just remove the entry in `jx-requirements.yml` or configure the `promotionStrategy` to be **Never**
+If you want to disable promotion Pull Requests on an environment just remove the entry or configure the 
+`promotionStrategy` to be **Never**.
 
-If you want your application to promote to different environments to the defaults for your cluster you can always [modify your pipeline](/v3/develop/pipelines/#editing-pipelines) and change the promote step to use different [jx promote](https://github.com/jenkins-x/jx-promote/blob/master/docs/cmd/jx-promote.md#jx-promote) arguments; e.g. pass in the explicit environments or repositories you want to promote to in the pipeline step.
+## Reuse pull requests
 
+By default a new pull request is created for each promotion. You can instead make existing open pull requests for 
+promoting an application be reused. 
+
+Enabling reuse of pull requests for `jx promote` is done in `jx-requirements.yaml` by setting `reusePullRequest` to 
+`true` for an environment. It can also be done in the same way when configuring environments others ways. See 
+https://jenkins-x.io/v3/develop/environments/config/ for more details about configuring environments.
+
+There are two main reasons why you would want to enable this:
+
+To reduce conflicts: if a pull request is created before a previous pull request for upgrading the same application is 
+merged there will be a conflict when the earlier pull request is merged. Since enabling reuse means that `jx 
+promote` won't open more pull requests for an application this can't happen. 
+
+The other reason is if you make use of the functionality to propagate application changelogs to cluster 
+repositories. This is described in the blog post
+[Improve your changelogs](/blog/2023/05/24/propagate-changelogs/#reuse-pull-requests).
 
 ## Synchronizing environments or namespaces
 
