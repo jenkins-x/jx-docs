@@ -38,8 +38,8 @@ Updates all kubernetes resources in the given directory to the given namespace
       --dir-mode                  assumes the first child directory is the name of the namespace to use
   -h, --help                      help for namespace
       --invert-selector           inverts the effect of selector to exclude resources matched by selector
-  -k, --kind stringArray          adds Kubernetes resource kinds to filter on. For kind expressions see: https://github.com/jenkins-x/jx-helpers/v3/tree/master/docs/kind_filters.md
-      --kind-ignore stringArray   adds Kubernetes resource kinds to exclude. For kind expressions see: https://github.com/jenkins-x/jx-helpers/v3/tree/master/docs/kind_filters.md
+  -k, --kind stringArray          adds Kubernetes resource kinds to filter on. For kind expressions see: https://github.com/jenkins-x/jx-helpers/tree/master/docs/kind_filters.md
+      --kind-ignore stringArray   adds Kubernetes resource kinds to exclude. For kind expressions see: https://github.com/jenkins-x/jx-helpers/tree/master/docs/kind_filters.md
   -n, --namespace string          the namespace to modify the resources to
       --selector stringToString   adds Kubernetes label selector to filter on, e.g. -s app=pusher-wave,heritage=Helm (default [])
       --selector-target string    sets which path in the Kubernetes resources to select on instead of metadata.labels.
