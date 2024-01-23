@@ -24,6 +24,7 @@ Upgrades the GitOps git repository with the latest configuration and versions th
   -b, --batch-mode                  Runs in batch mode without prompting for user input
       --bin string                  the 'kpt' binary name to use. If not specified this command will download the jx binary plugin into ~/.jx3/plugins/bin and use that
       --commit-message string       the git commit message used (default "chore: generated kubernetes resources from helm chart")
+  -c, --container-tool string       the underlying container tool for kpt to use (default "docker")
       --dir string                  the directory to recursively look for the *.yaml or *.yml files (default ".")
       --git-commit                  if set then the template command will git commit the modified helmfile.yaml files
       --helmfile string             the helmfile to resolve. If not specified defaults to 'helmfile.yaml' in the dir

@@ -37,6 +37,7 @@ Adds a comment to the current pull request
       --pr int              the Pull Request number. If not specified we detect it via $PULL_NUMBER or $BRANCH_NAME environment variables
   -r, --repo string         the full git repository name of the form 'owner/name'
       --source-url string   the git source URL of the repository
+  -s, --strategy string     comment strategy to choose (create, create-if-not-exists, delete-and-create) (default "create")
 ```
 
 

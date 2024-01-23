@@ -34,8 +34,8 @@ Annotates all kubernetes resources in the given directory tree
       --dir string                the directory to recursively look for the *.yaml or *.yml files (default ".")
   -h, --help                      help for annotate
       --invert-selector           inverts the effect of selector to exclude resources matched by selector
-  -k, --kind stringArray          adds Kubernetes resource kinds to filter on. For kind expressions see: https://github.com/jenkins-x/jx-helpers/v3/tree/master/docs/kind_filters.md
-      --kind-ignore stringArray   adds Kubernetes resource kinds to exclude. For kind expressions see: https://github.com/jenkins-x/jx-helpers/v3/tree/master/docs/kind_filters.md
+  -k, --kind stringArray          adds Kubernetes resource kinds to filter on. For kind expressions see: https://github.com/jenkins-x/jx-helpers/tree/master/docs/kind_filters.md
+      --kind-ignore stringArray   adds Kubernetes resource kinds to exclude. For kind expressions see: https://github.com/jenkins-x/jx-helpers/tree/master/docs/kind_filters.md
       --overwrite                 Set to false to not overwrite any existing value (default true)
   -p, --pod-spec                  annotate the PodSpec in spec.template.metadata.annotations (or spec.jobTemplate.spec.template.metadata.annotations for CronJobs) rather than the top level annotations
       --selector stringToString   adds Kubernetes label selector to filter on, e.g. -s app=pusher-wave,heritage=Helm (default [])

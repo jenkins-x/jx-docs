@@ -33,8 +33,8 @@ Add one or more repositories to the SourceConfig
   -h, --help                      help for add
       --invert-selector           inverts the effect of selector to exclude resources matched by selector
   -j, --jenkins string            the name of the Jenkins server to add the repository to
-  -k, --kind stringArray          adds Kubernetes resource kinds to filter on. For kind expressions see: https://github.com/jenkins-x/jx-helpers/v3/tree/master/docs/kind_filters.md
-      --kind-ignore stringArray   adds Kubernetes resource kinds to exclude. For kind expressions see: https://github.com/jenkins-x/jx-helpers/v3/tree/master/docs/kind_filters.md
+  -k, --kind stringArray          adds Kubernetes resource kinds to filter on. For kind expressions see: https://github.com/jenkins-x/jx-helpers/tree/master/docs/kind_filters.md
+      --kind-ignore stringArray   adds Kubernetes resource kinds to exclude. For kind expressions see: https://github.com/jenkins-x/jx-helpers/tree/master/docs/kind_filters.md
       --namespace string          the namespace to discover SourceRepository resources to default the GitKind. If not specified then use the current namespace
   -s, --scheduler string          the name of the Scheduler to use for the repository
       --selector stringToString   adds Kubernetes label selector to filter on, e.g. -s app=pusher-wave,heritage=Helm (default [])
