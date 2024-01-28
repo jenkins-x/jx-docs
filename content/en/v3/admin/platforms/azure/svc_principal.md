@@ -6,9 +6,9 @@ weight: 100
 aliases:
 ---
 
-Azure has a notion of a **Service Principal** which, in simple terms, is a service acount. This doc will demonstrate how to set up an Azure service principal that can be used by Terraform to execute [Jenkins X Azure Module](https://github.com/jenkins-x/terraform-azurerm-jx#jenkins-x-azure-module)
+Azure has a notion of a **Service Principal** which is a service acount. This doc will demonstrate how to set up an Azure service principal that can be used by Terraform to execute [Jenkins X Azure Module](https://github.com/jenkins-x/terraform-azurerm-jx#jenkins-x-azure-module)
 
-> 💡 This doc has been designed to assist in performing the demonstration through copying and pasting each block of code into a shell terminal and using the Azure portal.
+> 💡 This doc has been designed to assist in performing the demonstration through copying and pasting each block of code into a shell terminal.
 >
 > To execute the commands listed in your local bash shell will require the [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/) and the [JQ command-line JSON processor](https://stedolan.github.io/jq/).
 >
@@ -17,12 +17,12 @@ Azure has a notion of a **Service Principal** which, in simple terms, is a servi
 ### Service principal privileges
 In order to build your Azure environment with Terraform using a service principal, the following are the minimal requirements:
 * Subscription built-in roles;`Contributor`and`User Access Administator`.
-* Active Directory built-in application admin role;`Cloud Application Administrator`.
-* Active Directory Graph API permission;`Application.ReadWrite.All`.
+* Microsoft Entra ID App registration admin role;`Cloud Application Administrator`.
+* Microsoft Graph API permission;`Application.ReadWrite.All`.
 
 Further details can be found under [Jenkins X Azure Module Prequisites](https://github.com/jenkins-x/terraform-azurerm-jx#prerequisites)
 ### Create service principal with subscription roles
-The first step is to create a new service principal (APP_NAME) and to assign it the subscription built-in roles `Contributor` and `Cloud Application Administrator`.
+The first step is to create a new service principal (APP_NAME) and to assign it the subscription built-in roles `Contributor` and `User Access Administrator`.
 > 💡 If you are using a local terminal, prior to executing the following commands, in the local terminal log into Azure (`az login`) with an ID that has the necessary privileges (i.e. Owner). 
 > Always perform all commands in the same local terminal session to preserve dependent variables that are created.
 >
@@ -30,6 +30,7 @@ The first step is to create a new service principal (APP_NAME) and to assign it 
 ```bash
 read -p "Service Principal (i.e. mySvcPr) : " APP_NAME
 ```
+After setting the APP_NAME variable (i.e. mySvcPr) copy and paste the following to create the service principal.
 ```bash
 SUBSCRIPTION_ID=$(az account show --query id --output tsv)
 SVCP=$(az ad sp create-for-rbac --role Contributor --name $APP_NAME --scopes /subscriptions/$SUBSCRIPTION_ID --output json --only-show-errors)
@@ -37,7 +38,7 @@ APP_ID=$(echo $SVCP | jq -r .appId)
 OBJ_ID=$(az ad sp list --filter "appId eq '$APP_ID'" --output json | jq '.[0].id' -r)
 PASS_ID=$(echo $SVCP | jq -r .password)
 TENANT_ID=$(echo $SVCP | jq -r .tenant)
-az role assignment create --role "User Access Administrator" --assignee-object-id $OBJ_ID --only-show-errors
+az role assignment create --role "User Access Administrator" --assignee-object-id $OBJ_ID --assignee-principal-type "ServicePrincipal" --scope /subscriptions/$SUBSCRIPTION_ID --only-show-errors
 ```
 Use the following command to check the service principal subscription role settings.
 ``` bash 
@@ -50,34 +51,39 @@ You should see the following:
   "Contributor"
 ]
 ```
-### Assign service principal admin role using portal
-The second step will be to assign the new service principal the `Cloud Application Administrator` application admin role using the Azure portal. 
-> 💡 If you are using a local terminal session, [Click here](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RolesAndAdministrators) to position to **SCREEN 1**<br>
->
-> If you are using Bash in Azure Cloud Shell session, to avoid potentially losing the session  in the portal window with the terminal navigate to **SCREEN 1**.
-
-- SCREEN 1: Azure Active Directory | Overview | Roles and administrators<br>
-	___ Search for “Cloud application administrator” then click on the role.
-
-![roles admin section](/images/v3/roles_and_admin.svg)
-
-- SCREEN 2:  Cloud application administrator | Assignments<br>
-	___ Click on + Add assignments<br>
-	___ In the 'Add assignments' dialog search for the service principal ($APP_NAME)<br>
-	___ Select ther service princiapl ($APP_NAME) and click the 'Add' button.
-
-![cloud app admin section](/images/v3/cloud_app_admin.svg)
-To validate that the assignment was made, while stll on SCREEN 2 click on `Assignments`on the left navigation. You should see the service principal included in the list.
-### Assign service principal graph API permission
-THe third step is to assign Active Directory Graph API permission `Application.ReadWrite.All`.
-> ⚠️  This application is using Azure AD Graph API, which is on a deprecation path. As of June 30th, 2020 there were no longer any new features added to the Azure AD Graph API.
+### Assign new service principal with owner (optional)
+The second step will be to assign the new service principal an owner. This step is optional but is recommended for ease in maintenance. At this pointtThe new service principal will already have a `Cloud Application Administrator` role assigned.
 ```bash
-# Azure Active Directory Graph
-API_ID=00000002-0000-0000-c000-000000000000
+# Assign the current login as owner of the new service principal
+az ad app owner add --id $APP_ID --owner-object-id $(az ad signed-in-user show --query id --output tsv)
+```
+### Assign service principal graph API permission
+The final step will be to assign the new service principal the Microsoft Graph API permissions.
+```bash
+# Microsoft Graph API Id (03)
+API_ID="00000003-0000-0000-c000-000000000000"
+# Extract application_readwrite_add ID
 APPLICATION_READWRITE_ALL_ID=$(az ad sp show --id $API_ID --query "appRoles[?value=='Application.ReadWrite.All'].id" --output tsv)
-az ad app permission add --id $APP_ID --api $API_ID --api-permissions $APPLICATION_READWRITE_ALL_ID=Role --only-show-errors
-az ad app permission grant --id $APP_ID --api $API_ID --only-show-errors
-az ad app permission grant --id $APP_ID --api $API_ID --only-show-errors --scope Application.ReadWrite.All
+# Add API permission to SP
+az ad app permission add \
+  --id $APP_ID \
+  --api $API_ID \
+  --api-permissions \
+      $APPLICATION_READWRITE_ALL_ID=Role
+# Grant API permission to SP
+az ad app permission grant \
+  --id $APP_ID \
+  --api $API_ID \
+  --scope /subscriptions/$SUBSCRIPTION_ID
+# Granting consent for API permission
+APP_OBJECT_ID=$(az ad sp show --id $APP_ID --query "id" --output tsv)
+API_OBJECT_ID=$(az ad sp show --id $API_ID --query "id" --output tsv)
+az rest \
+  --method POST \
+  --uri "https://graph.microsoft.com/v1.0/servicePrincipals/$APP_OBJECT_ID/appRoleAssignments" \
+  --headers '{"Content-Type": "application/json"}' \
+  --body "{\"principalId\": \"$APP_OBJECT_ID\", \"resourceId\": \"$API_OBJECT_ID\", \"appRoleId\": \"$APPLICATION_READWRITE_ALL_ID\"}" \
+  --only-show-errors
 ```
 Use the following command to check the service principal API settings.
 ``` bash
@@ -85,9 +91,9 @@ az ad app permission list --id $APP_ID --only-show-errors --output table
 ```
 You should see something like the following:
 ```
-ExpiryTime                  ResourceAppId
---------------------------  ------------------------------------
-2022-12-20T00:21:52.224478  00000002-0000-0000-c000-000000000000
+ResourceAppId
+------------------------------------
+00000003-0000-0000-c000-000000000000
 ```
 
 ### Prepare to run Terraform
