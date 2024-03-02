@@ -43,7 +43,7 @@ To create a git token for passing into the operator use this button:
 Run [jx admin operator](https://github.com/jenkins-x/jx-admin/blob/master/docs/cmd/jx-admin_operator.md) command inside the git clone of the [git repository](/v3/admin/platform/) you created previously:
 
 ```bash
-jx admin operator --username mygituser --token mygittoken
+jx admin operator --username <mygituser> --token <mygittoken>
 ```
 
 If you don't specify the `username` or `token` parameters you will be prompted for them.
@@ -51,7 +51,7 @@ If you don't specify the `username` or `token` parameters you will be prompted f
 If you are not inside the git clone of the [git repository](/v3/admin/platform/) you will need to specify the `--url` parameter for the git URL:
 
 ```bash 
-jx admin operator --url=https://github.com/myorg/env-mycluster-dev.git --username mygituser --token mygittoken
+jx admin operator --url=https://github.com/myorg/env-mycluster-dev.git --username <mygituser> --token <mygittoken>
 ```
 
 This command will use helm to install the [git operator](https://github.com/jenkins-x/jx-git-operator) which will trigger a Job to install Jenkins X (and re-trigger a Job whenever you commit to your git repository).
@@ -74,7 +74,7 @@ export HPROXY=http://my.proxy.com
 export NPROXY=localhost\\,127.0.0.1\\,.local\\,0\\,1\\,2\\,3\\,4\\,5\\,6\\,7\\,8\\,9
 
 jx admin operator --url=https://github.com/myorg/env-mycluster-dev.git \
-  --username mygituser --token mygittoken \
+  --username <mygituser> --token <mygittoken> \
   --set jxBootJobEnvVarSecrets.HTTP_PROXY=$HPROXY \
   --set jxBootJobEnvVarSecrets.HTTPS_PROXY=$HPROXY \
   --set jxBootJobEnvVarSecrets.http_proxy=$HPROXY \
