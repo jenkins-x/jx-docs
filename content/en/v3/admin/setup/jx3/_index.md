@@ -9,7 +9,12 @@ aliases:
   - /v3/admin/guides/jx3
 ---
 
-You can download 3.x of `jx` from here: https://github.com/jenkins-x/jx/releases
+You can download 3.x of `jx` from here: https://github.com/jenkins-x/jx/releases or use `HomeBrew` (macOS & Linux).
+
+### Homebrew (macOS & Linux)
+```shell
+brew install --no-quarantine --cask jenkins-x/jx/jx
+```
 
 ### Linux
 
