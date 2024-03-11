@@ -9,7 +9,7 @@ aliases:
   - /v3/admin/guides/jx3
 ---
 
-You can download 3.x of `jx` from here: https://github.com/jenkins-x/jx/releases
+You can download 3.x of `jx` from here: https://github.com/jenkins-x/jx/releases or use `HomeBrew` (macOS).
 
 ### Linux
 
@@ -20,7 +20,11 @@ sudo mv jx /usr/local/bin
 ```
 
 ### macOS
-
+* HomeBrew method:
+```shell
+brew install --no-quarantine --cask jenkins-x/jx/jx
+```
+* Curl method:
 ```shell
 curl -L  https://github.com/jenkins-x/jx/releases/download/v{{< version >}}/jx-darwin-amd64.tar.gz | tar xzv
 chmod +x jx 
