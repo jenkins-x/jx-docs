@@ -18,7 +18,7 @@ Otherwise please see the [On-Premises Vault Install Guide](/v3/admin/platforms/o
 
 whichever apporoach take you should have:
 
-- [Kubernetes External Secrets](https://github.com/external-secrets/kubernetes-external-secrets) is installed to populate Secrets from vault
+- [External Secrets Operator](https://github.com/external-secrets/external-secrets) is installed to populate Secrets from vault
 - the [vault operator](https://banzaicloud.com/products/bank-vaults/) is installed for operating vault
 - a vault instance is created in the `jx-vault` namespace
 

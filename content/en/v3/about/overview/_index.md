@@ -76,7 +76,7 @@ the following are optional extras if not using your cloud providers native secre
 
 ### `secret-infra` 
 
-* **kubernetes-external-secrets** contains the [external-secrets/kubernetes-external-secrets](https://github.com/external-secrets/kubernetes-external-secrets) service for handling `ExternalSecrets`. See [how we use secrets](/v3/guides/secrets/))
+* **external-secrets-operator** contains the [external-secrets/external-secrets-operator](https://github.com/external-secrets/external-secrets) service for handling `ExternalSecrets`. See [how we use secrets](/v3/guides/secrets/))
 * **pusher-wave** contains the [pusher/wave](https://github.com/pusher/wave) service for performing a rolling upgrade of any microservice which consumes `Secret` resources from either vault or a cloud providers secret store and the secrets change in the underlying store 
 
 ### `tekton-pipelines`
