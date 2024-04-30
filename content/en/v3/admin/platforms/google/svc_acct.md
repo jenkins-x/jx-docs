@@ -16,12 +16,15 @@ This doc will demonstrate how to set up a Google service account that can be use
 
 ### Service account privileges
 In order to build your GKE environment with Terraform using a service account, the following are the service accounts minimal role requirements:
+* roles/artifactregistry.admin
 * roles/container.admin
 * roles/editor
 * roles/iam.serviceAccountAdmin
 * roles/iam.serviceAccountKeyAdmin
 * roles/resourcemanager.projectIamAdmin
 * roles/storage.admin
+> 💡  Existing service accounts (MY_GCP_SA) under your project (MYPROJECT) requiring `roles/artifactory.admin` use command:
+> `gcloud projects add-iam-policy-binding ${MYPROJECT} --member serviceAccount:${MY_GCP_SA} --role roles/artifactregistry.admin`
 
 If the service account needs to access a separate project to manage an apex domain then an additional role setting is required for the separate project.
 * roles/dns.admin
@@ -41,7 +44,8 @@ With an IAM Name defined, create the service account and assign the roles:
 ``` bash
 MYPROJECT=`gcloud config get-value project`
 MY_GCP_SA=${IAMNAME}@${MYPROJECT}.iam.gserviceaccount.com
-gcloud iam service-accounts create ${IAMNAME} --description "My SA" --display-name "${IAMNAME}" --project ${MYPROJECT} 
+gcloud iam service-accounts create ${IAMNAME} --description "My SA" --display-name "${IAMNAME}" --project ${MYPROJECT}
+gcloud projects add-iam-policy-binding ${MYPROJECT} --member serviceAccount:${MY_GCP_SA} --role roles/artifactregistry.admin
 gcloud projects add-iam-policy-binding ${MYPROJECT} --member serviceAccount:${MY_GCP_SA} --role roles/container.admin 
 gcloud projects add-iam-policy-binding ${MYPROJECT} --member serviceAccount:${MY_GCP_SA} --role roles/storage.admin 
 gcloud projects add-iam-policy-binding ${MYPROJECT} --member serviceAccount:${MY_GCP_SA} --role roles/editor 
@@ -78,6 +82,7 @@ gcloud auth activate-service-account ${MY_GCP_SA} --key-file ~/${IAMNAME}_key.${
 ### Clean up
 The following Google CLI commands will remove the roles and service account.
 ``` bash
+gcloud projects remove-iam-policy-binding ${MYPROJECT} --member serviceAccount:${MY_GCP_SA} --role roles/artifactregistry.admin
 gcloud projects remove-iam-policy-binding ${MYPROJECT} --member serviceAccount:${MY_GCP_SA} --role roles/container.admin 
 gcloud projects remove-iam-policy-binding ${MYPROJECT} --member serviceAccount:${MY_GCP_SA} --role roles/storage.admin 
 gcloud projects remove-iam-policy-binding ${MYPROJECT} --member serviceAccount:${MY_GCP_SA} --role roles/editor 
