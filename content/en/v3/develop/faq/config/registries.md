@@ -8,6 +8,8 @@ weight: 154
 
 ## How do I use a custom container registry?
 
+What container registry is used by default depends on the which cloud provider you use. There are some things to consider when [migrating from container registry to artifact registry in Google GCP](https://github.com/jenkins-x/terraform-google-jx#migration-from-container-to-artifact-registry).
+
 To allow a pipeline to be able to push to a container registry you can add this secret...
 
 ```bash
