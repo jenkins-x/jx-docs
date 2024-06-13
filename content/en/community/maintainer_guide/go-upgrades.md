@@ -38,4 +38,4 @@ To update golang version in Jenkins X follow these steps
     - tests are working, by running `make test`
     - linting checks are working by running `golangci-lint run`
       - Use the same version that is used by Jenkins X. At the time of writing that is 1.58; you can see what [image version is referenced in the pipeline](https://github.com/jenkins-x/jx3-pipeline-catalog/blob/master/tasks/go/pullrequest.yaml).
-      - If there is a configuration file for golangci-lint in the repository (`.golangci.yaml`) it is likely needed to be updated. See for example https://github.com/jenkins-x/jx-kube-client/blob/main/.golangci.yml for reference. 
+      - If there is a configuration file for golangci-lint in the repository (`.golangci.yaml`) it likely needs to be updated. See for example https://github.com/jenkins-x/jx-kube-client/blob/main/.golangci.yml for reference. 
