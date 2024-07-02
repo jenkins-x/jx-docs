@@ -128,7 +128,7 @@ helmfiles/jx-staging/helmfile.yaml
 - chart: jxgh/jx-verify
 
 helmfiles/secret-infra/helmfile.yaml
-- chart: external-secrets/kubernetes-external-secrets
+- chart: external-secrets/external-secrets-operator
 - chart: jxgh/pusher-wave
 
 helmfiles/jx/helmfile.yaml
@@ -222,7 +222,7 @@ helmfiles/jx-staging/helmfile.yaml
 - chart: jxgh/jx-verify
 
 helmfiles/secret-infra/helmfile.yaml
-- chart: external-secrets/kubernetes-external-secrets
+- chart: external-secrets/external-secrets-operator
 - chart: jxgh/pusher-wave
 
 helmfiles/jx/helmfile.yaml

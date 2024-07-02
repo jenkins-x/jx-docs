@@ -28,7 +28,7 @@ and make sure in the logs `jx secret populate` command is successful.
 
 ```
 kubectl get pods -n secret-infra
-kubectl logs deploy/kubernetes-external-secrets -n secret-infra
+kubectl logs deploy/external-secrets-operator -n secret-infra
 ```
 
 - check the status of the external secret using `kubectl`
