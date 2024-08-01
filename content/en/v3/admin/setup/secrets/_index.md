@@ -9,19 +9,28 @@ aliases:
   - /v3/admin/guides/secrets
 ---
 
-Jenkins X 3.x uses [Kubernetes External Secrets](https://github.com/external-secrets/kubernetes-external-secrets) to manage populating secrets from your underlying secret store such as:
+Jenkins X 3.x uses [External Secrets Operator](https://github.com/external-secrets/external-secrets) to manage populating secrets from your underlying secret store such as:
 
-* Alibaba Cloud KMS Secret Manager
-* Amazon Secret Manager
+* Akeyless
+* AWS Secrets Manager
 * Azure Key Vault
+* Doppler
+* Fake
+* Gitlab Project Variables
+* Google Secrets Manager
+* IBM Secrets manager
 * Hashicorp Vault
-* GCP Secret Manager
+* senhasegura DevOps Secrets Management
+* Oracle Vault
+* Webhook
+* Yandex Certificate Manager
+* 1Password Secrets Automation
 
 This lets you check in all of your other kubernetes resources and custom resource definitions into git for simple and powerful GitOps.
 
 You can then rotate secrets easily independent of git.
 
-This is the exact same graph as [here](https://github.com/external-secrets/kubernetes-external-secrets#system-architecture), with AWS Secrets Manager replaced by vault.
+This is the exact same graph as [here](https://github.com/external-secrets/external-secrets-operator#system-architecture), with AWS Secrets Manager replaced by vault.
 {{<mermaid>}}
 graph TB
     subgraph A[Kubernetes Cluster]
@@ -65,7 +74,7 @@ You can also use [UI](/v3/develop/ui/octant/) via `jx ui` and navigate to the [S
 
 ## Vault
 
-If you are using Vault as your back end for [Kubernetes External Secrets](https://github.com/external-secrets/kubernetes-external-secrets) then before you try any of the following commands to populate secrets you need to make sure your termminal can access Vault.
+If you are using Vault as your back end for [External Secrets Operator](https://github.com/external-secrets/external-secrets) then before you try any of the following commands to populate secrets you need to make sure your termminal can access Vault.
 
 To do this you can run the [jx secret vault portforward](https://github.com/jenkins-x/jx-secret/blob/master/docs/cmd/jx-secret_vault_portforward.md) command in a terminal:
  
