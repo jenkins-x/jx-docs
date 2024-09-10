@@ -19,13 +19,10 @@ aliases:
 
 - Ensure you are logged into GitHub else you will get a 404 error when clicking the links below
 - The quickstart guides are for users who want to get up and running quickly with Jenkins X.
-  Refer to the [eks-jx terraform module readme](https://github.com/jenkins-x/terraform-aws-eks-jx/blob/master/README.md) for all the variables that can be customized.
-  - Refer to this [page](/v3/admin/setup/secrets/vault/#external-vault) for setting up Jenkins X v3 with external/existing vault.
-  - For installing Jenkins X in an existing EKS cluster, refer to this [section](https://github.com/jenkins-x/terraform-aws-eks-jx#existing-eks-cluster).
-  - To use AWS secrets manager instead of vault, refer to this [section](https://github.com/jenkins-x/terraform-aws-eks-jx#secrets-management)
+  Refer to the [eks-jx terraform module readme](https://github.com/jenkins-x/terraform-aws-eks-jx/blob/master/README.md) for all the inputs that can be customized.
 - Always use the latest module version for the eks-jx module.
   The list of versions can be found [here.](https://github.com/jenkins-x/terraform-aws-eks-jx/releases)
-- Do not specify the last digit of the kubernetes version, so if you want to provision an EKS cluster with kubernetes `1.21.5`, just specify `1.21`. See [this issue](https://github.com/jx3-gitops-repositories/jx3-terraform-eks/issues/26#issuecomment-936055015) for more details.
+- Do not specify the last digit of the kubernetes version, so if you want to provision an EKS cluster with kubernetes `1.30.1`, just specify `1.30`.
 
 ---
 
@@ -53,12 +50,14 @@ Note: remember to create the Git repositories below in your Git Organization rat
 
 - You should use a dedicated git user account for the Bot user. Jenkins X will use this user to interact with git. After you are logged in with the Bot user account you may use the following link <a href="https://github.com/settings/tokens/new?scopes=repo,read:user,read:org,user:email,admin:repo_hook,write:packages,read:packages,write:discussion,workflow" target="github-token" class="btn bg-primary text-light">Create Git Token for the Bot user </a>
 
-- Override the variable defaults in the Infrastructure repository. (E.g, edit variables.tf, set TF*VAR* environment variables, or pass the values on the terraform command line.)
+- Override the input defaults in the Infrastructure repository. (E.g, edit variables.tf, set TF*VAR* environment variables, or pass the values on the terraform command line.)
 
-  - cluster_version: Kubernetes version for the EKS cluster. (should be 1.20 at the moment)
-  - region: AWS region code for the AWS region to create the cluster in.
-  - jx_git_url: URL of the Cluster repository.
-  - jx_bot_username: The username of the git bot user
+  - `cluster_version`: Kubernetes version for the EKS cluster. (should be 1.20 at the moment)
+  - `region`: AWS region code for the AWS region to create the cluster in.
+  - `jx_git_url`: URL of the Cluster repository.
+  - `jx_bot_username`: The username of the git bot user
+
+  If you want to use AWS secrets manager instead of vault you should also set the following inputs `use_asm` to true.
 
 - commit and push any changes to your Infrastructure git repository:
 
@@ -84,7 +83,7 @@ Note: remember to create the Git repositories below in your Git Organization rat
 - Tail the Jenkins X installation logs
 
 ```bash
-  $(terraform output follow_install_logs)
+  jx admin log
 ```
 
 - Once finished you can now move into the Jenkins X Developer namespace
