@@ -38,7 +38,7 @@ Labels all kubernetes resources in the given directory tree
       --kind-ignore stringArray   adds Kubernetes resource kinds to exclude. For kind expressions see: https://github.com/jenkins-x/jx-helpers/tree/master/docs/kind_filters.md
       --overwrite                 Set to false to not overwrite any existing value (default true)
   -p, --pod-spec                  label the PodSpec in spec.template.metadata.labels (or spec.jobTemplate.spec.template.metadata.labels for CronJobs) rather than the top level labels
-      --selector stringToString   adds Kubernetes label selector to filter on, e.g. -s app=pusher-wave,heritage=Helm (default [])
+      --selector stringToString   adds Kubernetes label selector to filter on, e.g. --selector app=pusher-wave,heritage=Helm (default [])
       --selector-target string    sets which path in the Kubernetes resources to select on instead of metadata.labels.
 ```
 

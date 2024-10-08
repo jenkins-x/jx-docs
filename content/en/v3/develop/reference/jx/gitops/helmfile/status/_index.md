@@ -15,7 +15,9 @@ jx gitops helmfile status
 
 ### Synopsis
 
-Updates the git deployment status after a release
+Updates the git deployment status after a release. 
+
+By default the version of the release prefixed with v will be used as the git reference. This can be overridden by the annotation gitReference in the Chart.yaml file of the helm chart.
 
 ### Examples
 

@@ -30,6 +30,7 @@ Adds a comment to the current pull request
       --branch string       specifies the branch if not inside a git clone
   -c, --comment string      comment to add
       --dir string          the directory to search for the .git to discover the git source URL (default ".")
+  -f, --file string         add content of file as comment
       --git-kind string     the kind of git server to connect to
       --git-server string   the git server URL to create the git provider client. If not specified its defaulted from the current source URL
       --git-token string    the git token used to operate on the git repository

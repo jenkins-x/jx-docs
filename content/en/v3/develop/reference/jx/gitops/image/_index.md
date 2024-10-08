@@ -36,7 +36,7 @@ Updates images in the kubernetes resources from the version stream
   -k, --kind stringArray            adds Kubernetes resource kinds to filter on. For kind expressions see: https://github.com/jenkins-x/jx-helpers/tree/master/docs/kind_filters.md
       --kind-ignore stringArray     adds Kubernetes resource kinds to exclude. For kind expressions see: https://github.com/jenkins-x/jx-helpers/tree/master/docs/kind_filters.md
       --log-level string            Sets the logging level. If not specified defaults to $JX_LOG_LEVEL
-      --selector stringToString     adds Kubernetes label selector to filter on, e.g. -s app=pusher-wave,heritage=Helm (default [])
+      --selector stringToString     adds Kubernetes label selector to filter on, e.g. --selector app=pusher-wave,heritage=Helm (default [])
       --selector-target string      sets which path in the Kubernetes resources to select on instead of metadata.labels.
   -s, --source-dir string           the directory to recursively look for the *.yaml files to modify (default "content-root")
       --verbose                     Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
