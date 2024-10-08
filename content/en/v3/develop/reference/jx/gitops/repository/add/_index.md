@@ -37,7 +37,7 @@ Add one or more repositories to the SourceConfig
       --kind-ignore stringArray   adds Kubernetes resource kinds to exclude. For kind expressions see: https://github.com/jenkins-x/jx-helpers/tree/master/docs/kind_filters.md
       --namespace string          the namespace to discover SourceRepository resources to default the GitKind. If not specified then use the current namespace
   -s, --scheduler string          the name of the Scheduler to use for the repository
-      --selector stringToString   adds Kubernetes label selector to filter on, e.g. -s app=pusher-wave,heritage=Helm (default [])
+      --selector stringToString   adds Kubernetes label selector to filter on, e.g. --selector app=pusher-wave,heritage=Helm (default [])
       --selector-target string    sets which path in the Kubernetes resources to select on instead of metadata.labels.
 ```
 

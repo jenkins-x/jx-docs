@@ -41,7 +41,7 @@ Updates all kubernetes resources in the given directory to the given namespace
   -k, --kind stringArray          adds Kubernetes resource kinds to filter on. For kind expressions see: https://github.com/jenkins-x/jx-helpers/tree/master/docs/kind_filters.md
       --kind-ignore stringArray   adds Kubernetes resource kinds to exclude. For kind expressions see: https://github.com/jenkins-x/jx-helpers/tree/master/docs/kind_filters.md
   -n, --namespace string          the namespace to modify the resources to
-      --selector stringToString   adds Kubernetes label selector to filter on, e.g. -s app=pusher-wave,heritage=Helm (default [])
+      --selector stringToString   adds Kubernetes label selector to filter on, e.g. --selector app=pusher-wave,heritage=Helm (default [])
       --selector-target string    sets which path in the Kubernetes resources to select on instead of metadata.labels.
 ```
 
