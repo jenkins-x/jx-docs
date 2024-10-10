@@ -72,6 +72,7 @@ Creates a new git repository for a new Jenkins X installation
       --repository string            the artifact repository. Possible values are: none, bucketrepo, nexus, artifactory
   -r, --requirements string          The 'jx-requirements.yml' file to use in the created development git repository. This file may be created via terraform
       --secret string                configures the secret storage kind. Possible values: local, vault
+      --skip-namespace-creation      if enabled skip namespace creation
       --tls                          enable TLS for Ingress
       --tls-email string             the TLS email address to enable TLS on the domain
       --tls-production               the LetsEncrypt production service, defaults to true, set to false to use the Staging service (default true)
