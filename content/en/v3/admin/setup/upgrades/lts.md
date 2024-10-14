@@ -6,8 +6,14 @@ description: Long Term Support (LTS) version stream
 weight: 40
 aliases:
  - /v3/guides/upgrades/lts
+toc_hide: true
+hide_summary: true
 ---
  
+<div class="alert alert-warning" role="alert">
+  <h1>WARNING: The LTS is not updated, so we don't recommend using it</h1>
+</div>
+
 Jenkins X uses [version streams](/about/concepts/version-stream/) as a quality gate when promoting plugins, charts, cli packages, container images etc.  This results in a release of Jenkins X.
  
 The default version stream for Jenkins X 3.x is https://github.com/jenkins-x/jx3-versions.  The Jenkins X own infrastructure runs a number of end to end BDD tests for different base install options which covers the core of Jenkins X.  Provided these tests pass on from a Pull Request it will be merged and users can upgrade their [CLI](/v3/guides/upgrades/cli) and [Cluster](/v3/guides/upgrades/cluster) bringing in the versions that make that release. 
