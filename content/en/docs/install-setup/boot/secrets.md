@@ -45,7 +45,7 @@ In case you are looking for a way to run Vault in your Kubernetes cluster, have 
 {{% /alert %}}
 
 If you do not have a Vault instance, Jenkins X can, depending on where you run your cluster, install Vault as part of the installation process.
-In this case, the Banzai Cloud [Bank-Vaults operator](https://github.com/banzaicloud/bank-vaults) is provisioned in the Jenkins X development namespace.
+In this case, the [Bank-Vaults operator](https://github.com/bank-vaults/vault-operator) is provisioned in the Jenkins X development namespace.
 This apporach is referred to as the _internal_ Vault setup.
 
 #### Internal

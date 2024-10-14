@@ -21,7 +21,7 @@ There are two ways you can use Vault in Jenkins X.
 If you are already a Vault instance, you can configure Jenkins X to use this instance to store its secrets.
 This way you have a central location for managing all secrets of your infrastucture.
 If you do not have a Vault instance, Jenkins X can, depending on where you run your cluster, install Vault as part of the installation process.
-In this case, the Banzai Cloud [Bank-Vaults operator](https://github.com/banzaicloud/bank-vaults) is provisioned in the Jenkins X development namespace.
+In this case, the [Bank-Vaults operator](https://github.com/bank-vaults/vault-operator) is provisioned in the Jenkins X development namespace.
 
 {{% alert %}}
 The Bank-Vaults operator is currently only supported with GKE or EKS.

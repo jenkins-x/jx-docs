@@ -38,4 +38,4 @@ Jenkins X stands on the shoulders of many open source giants...
 * [tekton pipelines](https://github.com/tektoncd/pipeline) cloud native pipeline engine for kubernetes and a fellow [CDF founding project](https://cd.foundation/projects/)
 * [tekton catalog](https://github.com/tektoncd/catalog) a catalog of reusable [tekton pipelines](https://github.com/tektoncd/pipeline) which [can be used easily with Jenkins ](/v3/develop/pipelines/#adding-tasks-from-the-tekton-catalog)
 * [vault](https://www.vaultproject.io/) a secret store
-* [vault operator](https://banzaicloud.com/products/bank-vaults/) an operator for installing and unsealing [vault](https://www.vaultproject.io/)
+* [vault operator](https://bank-vaults.dev/docs/operator/) an operator for installing and unsealing [vault](https://www.vaultproject.io/)
