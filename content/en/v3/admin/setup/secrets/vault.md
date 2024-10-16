@@ -19,7 +19,7 @@ Otherwise please see the [On-Premises Vault Install Guide](/v3/admin/platforms/o
 whichever apporoach take you should have:
 
 - [Kubernetes External Secrets](https://github.com/external-secrets/kubernetes-external-secrets) is installed to populate Secrets from vault
-- the [vault operator](https://banzaicloud.com/products/bank-vaults/) is installed for operating vault
+- the [vault operator](https://bank-vaults.dev/docs/operator/) is installed for operating vault
 - a vault instance is created in the `jx-vault` namespace
 
 You can wait for the `vault-0` pod in namespace `jx-vault` to be ready via [jx secret vault wait](https://github.com/jenkins-x/jx-secret/blob/master/docs/cmd/jx-secret_vault_wait.md) command:
