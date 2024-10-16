@@ -23,7 +23,7 @@ And install only services to run and expose your applications, e.g.:
 
   * Nginx-ingress
   * Cert-manager
-  * [kubernetes external secrets](https://github.com/external-secrets/kubernetes-external-secrets) for [populating Secrets from your secret store](/v3/admin/setup/secrets/) (vault or cloud provider secret manager)
+  * [external secrets operator](https://github.com/external-secrets/external-secrets) for [populating Secrets from your secret store](/v3/admin/setup/secrets/) (vault or cloud provider secret manager)
   * [push-wave](https://github.com/jenkins-x-charts/pusher-wave#wave) for automatically performing rolling upgrades when secrets are rotated in your secret store
          
  
@@ -123,7 +123,7 @@ We do recommend using the Jenkins X GitOps pipeline approach in [production and 
 
 You may want to reuse existing built in charts such as:
 
-* [kubernetes external secrets](https://github.com/external-secrets/kubernetes-external-secrets) for [populating Secrets from your secret store](/v3/admin/setup/secrets/) (vault or cloud provider secret manager)
+* [external secrets operator](https://github.com/external-secrets/external-secrets) for [populating Secrets from your secret store](/v3/admin/setup/secrets/) (vault or cloud provider secret manager)
 * [push-wave](https://github.com/jenkins-x-charts/pusher-wave#wave) for automatically performing rolling upgrades when secrets are rotated in your secret store
 
 
