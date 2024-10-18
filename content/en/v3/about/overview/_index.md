@@ -70,7 +70,7 @@ Contains the [nginx-ingress](https://github.com/helm/charts/tree/master/stable/n
 
 the following are optional extras if not using your cloud providers native secret manager:
 
-* **vault-operator** contains the [vault operator](https://banzaicloud.com/docs/bank-vaults/operator/) which converts `Vault` resources into instances of [HashiCorp Vault](https://www.vaultproject.io/)
+* **vault-operator** contains the [vault operator](https://bank-vaults.dev/docs/operator/) which converts `Vault` resources into instances of [HashiCorp Vault](https://www.vaultproject.io/)
 * **vault-instance** contains the [vault instance](https://github.com/jenkins-x-charts/vault-instance) which creates the default `Vault` resource
 
 
