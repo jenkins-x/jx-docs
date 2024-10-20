@@ -57,7 +57,7 @@ Note: remember to create the Git repositories below in your Git Organization rat
   - `jx_git_url`: URL of the Cluster repository.
   - `jx_bot_username`: The username of the git bot user
 
-  If you want to use AWS secrets manager instead of vault you should also set the following inputs `use_asm` to true.
+  If you want to use AWS secrets manager instead of vault you should also set the input `use_asm` to true.
 
 - commit and push any changes to your Infrastructure git repository:
 
