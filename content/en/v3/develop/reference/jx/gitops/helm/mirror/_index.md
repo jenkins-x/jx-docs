@@ -2,7 +2,7 @@
 title: jx gitops helm mirror
 linktitle: mirror
 type: docs
-description: "Creates a helm mirror"
+description: "Mirror a helm repository"
 aliases:
   - jx-gitops_helm_mirror
 ---
@@ -15,13 +15,16 @@ jx gitops helm mirror
 
 ### Synopsis
 
-Escapes any {{ or }} characters in the YAML files so they can be included in a helm chart
+Mirrors a set of remote Helm repositories specified locally in charts/repositories.yml to a remote git repository
 
 ### Examples
 
   ```bash
-  # escapes any yaml files so they can be included in a helm chart
-  jx-gitops helm escape --dir myyaml
+  # Mirror all Helm repositories defined in charts/repositories.yml to a default github pages branch
+  jx-gitops mirror --url=https://github.com/example/charts.git --no-push=false
+  
+  # Run the mirror command, ignoring unused repositories
+  %!s(MISSING) mirror --url=https://github.com/example/charts.git --no-push=false --exclude=bitnami
 
   ```
 ### Options
@@ -36,6 +39,7 @@ Escapes any {{ or }} characters in the YAML files so they can be included in a h
       --git-username string   the git username used to operate on the git repository. If not specified it's loaded from the git credentials file
   -h, --help                  help for mirror
   -m, --message string        the commit message (default "chore: upgrade mirrored charts")
+      --no-push               disables pushing changes back to the git repository (default true)
   -u, --url string            the git URL of the repository to mirror the charts into
 ```
 
