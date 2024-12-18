@@ -38,7 +38,7 @@ Creates a new git provider in a git server
   -k, --kind string          the kind of git server to use
       --log-level string     Sets the logging level. If not specified defaults to $JX_LOG_LEVEL
   -n, --name string          the name of the repository to create
-  -o, --owner string         the owner of the repository to create. Either an organisation or username
+  -o, --owner string         the owner of the repository to create. Either an organisation or username.  For Azure, include the project: 'organization/project'
       --private              if the repository should be private
       --push-host string     the git host to use when pushing to the git repository. Only really useful in BDD tests if using something like 'kubectl portforward' to access a git repository where you want to push from outside the cluster with a different host name to the host name used inside the cluster
   -s, --server string        the git server URL to use

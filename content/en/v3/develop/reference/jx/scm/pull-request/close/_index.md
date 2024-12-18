@@ -39,7 +39,7 @@ Update a release
   -h, --help              help for close
   -k, --kind string       the kind of git server to use
   -r, --name string       the name of the repository that contains pull requests to close
-  -o, --owner string      the owner of the repository that contains pull requests to close. Either an organisation or username
+  -o, --owner string      the owner of the repository that contains pull requests to close. Either an organisation or username. For Azure, include the project: 'organization/project'
       --pr int            the pull request to close
   -s, --server string     the git server URL to use
       --size int          the number of open pull requests to return if using --before, defaults to 200 (default 200)

@@ -34,7 +34,7 @@ Update a release
   -h, --help                 help for update
   -k, --kind string          the kind of git server to use
   -r, --name string          the name of the repository to update
-  -o, --owner string         the owner of the repository to update. Either an organisation or username
+  -o, --owner string         the owner of the repository to update. Either an organisation or username.  For Azure, include the project: 'organization/project'
       --prerelease           the updated prerelease status, true to identify the release as a prerelease, false to identify the release as a full release. (default true)
   -s, --server string        the git server URL to use
       --tag string           the tag of the release to update
