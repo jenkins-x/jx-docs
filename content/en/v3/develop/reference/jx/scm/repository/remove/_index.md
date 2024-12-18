@@ -46,7 +46,7 @@ Removes one or more repositories
       --git-username string     the git username used to operate on the git repository. If not specified it's loaded from the git credentials file
   -h, --help                    help for remove
   -n, --name string             the name of the repository to create
-  -o, --owner string            the owner of the repository to create. Either an organisation or username
+  -o, --owner string            the owner of the repository to create. Either an organisation or username.  For Azure, include the project: 'organization/project'
 ```
 
 

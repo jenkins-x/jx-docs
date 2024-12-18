@@ -50,7 +50,7 @@ Creates a pull request in the given repository, requesting the head branch be me
   -h, --help              help for create
   -k, --kind string       the kind of git server to use
   -r, --name string       the name of the repository
-  -o, --owner string      the owner of the repository. Either an organisation or username
+  -o, --owner string      the owner of the repository. Either an organisation or username. For Azure, include the project: 'organization/project'
   -s, --server string     the git server URL to use
       --title string      the title of the new pull request
   -t, --token string      the token to use on the git server
