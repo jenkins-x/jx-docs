@@ -60,19 +60,17 @@ Jenkins X installs `nginx` which has a `LoadBalancer` kubernetes `Service` to im
 
 With an on-premises kubernetes cluster you need to install something like [MetalLB](https://metallb.universe.tf/)
 
-If you are on bare metal you could try [these instructions](https://007ba7.us/howto/metallb/)
-
 #### Storage
 
 We need your kubernetes cluster to have a default [storage class](https://kubernetes.io/docs/concepts/storage/storage-classes/) so that `PersistentVolumeClaim` resources in helm charts get resolved to `PersistentVolume` resources so that persistent disks can be used.
 
-You may find [these instructions useful](https://007ba7.us/howto/nfs-storage/)
+You may find [these instructions useful](https://jenkins-x.io/v3/admin/setup/config/storage/)
 
 ### Getting Started
 
 This is our current recommended quickstart for on-premises kubernetes:
 
-- <a href="https://github.com/jx3-gitops-repositories/jx3-kubernetes/generate" target="github" class="btn bg-primary text-light">Create the cluster Git Repository</a> based on the [jx3-gitops-repositories/jx3-kubernetes](https://github.com/jx3-gitops-repositories/jx3-kubernetes/generate) template
+- <a href="https://github.com/jx3-gitops-repositories/jx3-kubernetes" target="github" class="btn bg-primary text-light">Create the cluster Git Repository</a> based on the [jx3-gitops-repositories/jx3-kubernetes](https://github.com/jx3-gitops-repositories/jx3-kubernetes) template
 
   - if the above button does not work then please [Login to GitHub](https://github.com/login) first and then retry the button
 
