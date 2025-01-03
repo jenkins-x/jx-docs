@@ -79,6 +79,8 @@ Note: remember to create the Git repositories below in your Git Organization rat
       terraform plan
       terraform apply
 ```
+- Connect to the cluster using the command shown in the field `connect` of the output of `terraform apply`. To show 
+  it again run `terraform output`.
 
 - Tail the Jenkins X installation logs
 
