@@ -32,7 +32,7 @@ Replicates the given ExternalSecret resources into other Environments or Namespa
 ```
   -b, --batch-mode          Runs in batch mode without prompting for user input
   -f, --file string         the ExternalSecret to replicate (default "t")
-      --from string         one or more Namespaces to replicate the ExternalSecret to
+      --from string         one or more Namespaces to replicate the ExternalSecret from
   -h, --help                help for replicate
       --log-level string    Sets the logging level. If not specified defaults to $JX_LOG_LEVEL
   -n, --name stringArray    specifies the names of the ExternalSecrets to replicate if not using a selector
