@@ -23,13 +23,14 @@ If a pull request is merged or closed the associated preview environment will be
 
   ```bash
   # garbage collect previews
-  %s gc
+  jx-preview gc
 
   ```
 ### Options
 
 ```
-  -h, --help   help for gc
+      --gc-drafts   Also garbage collect drafts
+  -h, --help        help for gc
 ```
 
 
