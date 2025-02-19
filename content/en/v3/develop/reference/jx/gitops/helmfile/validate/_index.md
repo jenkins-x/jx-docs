@@ -21,7 +21,7 @@ Parses a helmfile and any nested helmfiles and validates they conform to a canon
 
   ```bash
   # Validates helmfile.yaml within the current directory
-  jx-gitops helmfile validate%!(EXTRA string=jx-gitops)
+  jx-gitops helmfile validate
 
   ```
 ### Options

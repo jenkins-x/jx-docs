@@ -21,7 +21,7 @@ Upgrades the binary plugins for this plugin
 
   ```bash
   # upgrades your plugin binaries for gitops
-  jx-gitops plugins upgrade
+  jx-gitops plugin upgrade
 
   ```
 ### Options

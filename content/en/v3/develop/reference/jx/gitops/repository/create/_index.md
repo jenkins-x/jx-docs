@@ -17,13 +17,6 @@ jx gitops repository create
 
 Creates any missing SourceRepository resources
 
-### Examples
-
-  ```bash
-  # creates any missing SourceRepository resources
-  jx-gitops repository create https://github.com/myorg/myrepo.git%!(EXTRA string=jx-gitops)
-
-  ```
 ### Options
 
 ```

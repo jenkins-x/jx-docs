@@ -21,7 +21,7 @@ Add one or more repositories to the SourceConfig
 
   ```bash
   # creates any missing SourceConfig resources
-  jx-gitops repository add https://github.com/myorg/myrepo.git%!(EXTRA string=jx-gitops)
+  jx-gitops repository add https://github.com/myorg/myrepo.git
 
   ```
 ### Options
