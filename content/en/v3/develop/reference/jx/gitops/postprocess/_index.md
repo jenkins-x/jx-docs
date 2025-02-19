@@ -24,7 +24,7 @@ Post processes kubernetes resources to enrich resources like ServiceAccounts wit
   jx-gitops postprocess
   
   # you can register some post processing commands, such as to annotate a ServiceAccount via:
-  kubectl create secret generic jx-post-process -n default  --from-literal=commands="kubectl annotate sa tekton-bot hello=world"%!(EXTRA string=jx-gitops)
+  kubectl create secret generic jx-post-process -n default  --from-literal=commands="kubectl annotate sa tekton-bot hello=world"
 
   ```
 ### Options

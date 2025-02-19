@@ -21,7 +21,7 @@ Adds one or more secrets to the given ServiceAccount files
 
   ```bash
   # ensures that the given service account resource has the secret associated
-  jx-gitops sa secret -f config-root/namespaces/jx/mychart/my-sa.yaml --secret my-secret-name%!(EXTRA string=jx-gitops)
+  jx-gitops sa secret -f config-root/namespaces/jx/mychart/my-sa.yaml --secret my-secret-name
 
   ```
 ### Options

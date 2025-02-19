@@ -21,7 +21,7 @@ jx gitops repository export
 
   ```bash
   # creates/populates the .jx/gitops/source-config.yaml file with any SourceRepository resources in the current cluster
-  jx-gitops repository export%!(EXTRA string=jx-gitops)
+  jx-gitops repository export
 
   ```
 ### Options
