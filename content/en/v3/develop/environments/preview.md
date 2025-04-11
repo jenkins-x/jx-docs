@@ -184,7 +184,7 @@ e.g. here is an additional step to curl the preview URL after the `jx preview cr
 ```yaml
 ... 
 - name: test-preview
-  image: golang:1.15
+  image: golang:1.23
   script: |
     #!/usr/bin/env sh
     source .jx/variables.sh
