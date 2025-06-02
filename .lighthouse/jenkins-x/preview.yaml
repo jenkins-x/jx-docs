@@ -13,7 +13,6 @@ spec:
           metadata: {}
           stepTemplate:
             name: ""
-            resources: {}
             workingDir: /workspace/source
             resources:
               requests: {}
@@ -66,7 +65,7 @@ spec:
                 #!/usr/bin/env sh
                 jx gitops variables
 
-            - image: gcr.io/kaniko-project/executor:v1.24.0-debug
+            - image: gcr.io/kaniko-project/executor:debug-v1.3.0
               name: build-and-push-image
               script: |
                 #!/busybox/sh
