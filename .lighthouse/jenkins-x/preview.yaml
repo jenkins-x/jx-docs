@@ -70,6 +70,7 @@ spec:
               script: |
                 #!/busybox/sh
                 source .jx/variables.sh
+                sleep 900
                 /kaniko/executor --context=/workspace/source --dockerfile=/workspace/source/Dockerfile --destination=gcr.io/jenkinsxio-324711/jx-docs:$VERSION
 
             - image: ghcr.io/jenkins-x-plugins/jx-preview:0.0.225
