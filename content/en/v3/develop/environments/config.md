@@ -51,10 +51,8 @@ spec:
 ## Custom environments per repository
 
 If you wish to use different sets of environments for different microservices you can augment the environments that are 
-used for promotion by adding a `.jx/settings.yaml` with [this format](https://github.
-com/jenkins-x/jx-api/blob/master/docs/config.md#settings) which is merged with settings for the development 
-cluster repository's [jx-requirements.yml](https://github.com/jenkins-x/jx-api/blob/master/docs/config.
-md#requirements) file. If you want to override the environments instead of augment you can set 
+used for promotion by adding a `.jx/settings.yaml` with [this format](https://github.com/jenkins-x/jx-api/blob/master/docs/config.md#settings) which is merged with settings for the development 
+cluster repository's [jx-requirements.yml](https://github.com/jenkins-x/jx-api/blob/master/docs/config.md#requirements) file. If you want to override the environments instead of augment you can set 
 `ignoreDevEnvironments: true`. By default the namespace name is the environment name prefixed with `jx-`.
 
 E.g. add something like this to your `.jx/settings.yaml` in a repository to override which environment repositories 
