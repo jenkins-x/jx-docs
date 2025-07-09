@@ -34,7 +34,7 @@ Contains the [git operator](/v3/about/how-it-works/#git-operator) from [jenkins-
 
 Contains the main development services of Jenkins X:
 
-* **jx-build-controller** watches for `PipelineRun` resources and creates/updates the associated `PipelineActivity` resources used by `jx get build log`, [octant](/v3/develop/ui/octant) and the [pipelines visualizer](/v3/develop/ui/dashboard) 
+* **jx-build-controller** watches for `PipelineRun` resources and creates/updates the associated `PipelineActivity` resources used by `jx get build log` and the [pipelines visualizer](/v3/develop/ui/dashboard) 
 * **jx-pipelines-visualizer** visualises `PipelineActivity` resources and the associated build logs in a read only UI
 * **jx-preview-gc-jobs** periodically garbage collects `Preview` resources and their associated preview environments created by [jx preview](https://github.com/jenkins-x/jx-preview)
 * **jxboot-helmfile-resources-gcactivities** periodically garbage collects old and completed `PipelineActivity` resources

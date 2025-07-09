@@ -46,8 +46,6 @@ and check your laptop can access the endpoint. Do you have a running `lighthouse
 kubectl get pod -l app=lighthouse-webhooks
 ```
 
-You could look at your pods in `jx ui` to see their state, events, logs etc.
-
 If everything looks to be working inside your cluster then open the git repository of your dev cluster...
 
 ```bash

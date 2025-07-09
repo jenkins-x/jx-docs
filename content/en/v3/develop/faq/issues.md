@@ -38,21 +38,7 @@ Also make sure you are in the git repository collaborators group and are in the 
 
 ## Why is my pipeline pending?
 
-If your pipeline shows pending in the [CLI](/v3/develop/ui/cli/), [Console](/v3/develop/ui/octant/) or [Dashboard](/v3/develop/ui/dashboard/) there could be various causes such as invalid images, pipeline configuration, missing secrets or insufficient cluster capacity to name but a few.
-
-To diagnose why a pipeline pod can't run the simplest thing is to use the [Console](/v3/develop/ui/octant/)
-
-```bash 
-jx ui
-```
-
-* on the **Pipelines** page pick the pipeline that is having trouble (see the links you can click on the **Build** column)
-* on the **Pipeline** page there is then a **Pod** link in the navigation bar which takes you to the **Pod** view in [octant](https://octant.dev/) that lets you view the detail of the pod. From there you should be able to see any events/issues with the pod such as bad images, missing secrets or whatever.
-          
-e.g. see the **Pod** link to the left of the  **Steps** / **Logs** links in the nav bar
-
-<iframe width="646" height="327" src="https://www.youtube.com/embed/2LCPHi0BnUg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+If your pipeline shows pending in the [CLI](/v3/develop/ui/cli/) or [Dashboard](/v3/develop/ui/dashboard/) there could be various causes such as invalid images, pipeline configuration, missing secrets or insufficient cluster capacity to name but a few.
 
 ## Upgrading CLI fails 
 

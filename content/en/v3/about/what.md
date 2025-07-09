@@ -59,7 +59,5 @@ Along with ChatOps mentioned above Jenkins X aims to help developers have a cons
 Whether creating or importing new projects that automates the setup of CI and CD, packaging applications so they can deploy and run on Kubernetes or simply release as libraries for downstream applications to use.  Jenkins X helps teams have consistency in the way they are built, developed and improved.
 
 The `jx` CLI helps developers interact with Jenkins X using their terminal.
-
-[For GUI's](/v3/develop/ui), Jenkins X has a plugin for [Octant](https://octant.dev/).  Octant runs outside of the cluster and uses the authentication and permissions users have to interact with Kubernetes resources.
  
 There is also a read only in cluster pipeline dashboard that links via pull requests so users can view logs of builds.

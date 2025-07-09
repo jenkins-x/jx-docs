@@ -31,7 +31,7 @@ updatebot fatal: could not read Username for 'https://github.com': No such devic
 
 ## Changes
 
-* we have a new [jx pipeline grid](/v3/develop/reference/jx/pipeline/grid/) command to easily view whats happening in your cluster on the CLI in a similar way to the [Octant Console](/v3/develop/ui/octant/) or [Dashboard](/v3/develop/ui/dashboard/)
+* we have a new [jx pipeline grid](/v3/develop/reference/jx/pipeline/grid/) command to easily view whats happening in your cluster on the CLI in a similar way to the [Dashboard](/v3/develop/ui/dashboard/)
 * The [reference guide](/v3/develop/reference/) now has a full [Command Line Reference](/v3/develop/reference/jx/) for browsing the command line of the various [Jenkins X Plugins](https://github.com/jenkins-x-plugins)
 * There is now support for [automatic upgrades](/v3/admin/setup/upgrades/cluster/#automatic-upgrades) where a Pull Request is automatically generated on your development cluster repository to upgrade the versions of charts in your installation. You can define the upgrade schedule and whether or not the Pull Request is auto merged or requires a manual approval/merge.
 * A preview can fail to create for a multitude of reasons; bad helm charts, missing secrets/volumes, invalid configuration in `jx-requirements.yml`, bad image names, no capacity on the server to name but a few. Unfortunately `helmfile sync` does not give much information other than it succeeded of failed.
@@ -48,10 +48,9 @@ updatebot fatal: could not read Username for 'https://github.com': No such devic
 * We now use multiple helmfiles per namespace so its easier to understand the organisation of your charts across namespaces
 * The [3.0 beta is almost ready](/blog/2020/12/04/jx-v3-update/) so if you have been using the 3.0 alpha we now have a [migration guide](/v3/admin/guides/migrate/v3-alpha/) to smooth your transition to the beta
 
-* You can now easily open the [Octant Console](/v3/develop/ui/octant/) or [Pipeline Dashboard](/v3/develop/ui/dashboard/) via 2 easy commands:
+* You can now easily open the [Pipeline Dashboard](/v3/develop/ui/dashboard/) via the command:
 
 ```bash
-jx ui
 jx dash
 ```    
 

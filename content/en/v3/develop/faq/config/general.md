@@ -69,7 +69,7 @@ Though being able to see the logs of pipelines is useful so you probably want to
 
 ### kubernetes 
 
-If you want to give full access to Jenkins X so that developers can access kubernetes resources via `kubectl`, can use the [jx cli](/v3/develop/reference/jx/) or can use the [Octant console](/v3/develop/ui/octant/) then you need to grant Cloud IAM roles to the developer using your cloud infrastructure.
+If you want to give full access to Jenkins X so that developers can access kubernetes resources via `kubectl` or can use the [jx cli](/v3/develop/reference/jx/) then you need to grant Cloud IAM roles to the developer using your cloud infrastructure.
 
 If the developer does not have access to the kubernetes cluster we need to setup their `~/.kube/config` file so that they can access it.
 

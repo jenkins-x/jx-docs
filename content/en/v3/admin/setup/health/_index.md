@@ -29,11 +29,3 @@ You can use the new health CLI plugin to get health statuses that run periodical
 jx health status --all-namespaces --watch
 ```
 
-You can also view the health status via the [UI Console](/v3/develop/ui/octant/) via:
-
-```bash 
-jx ui
-```
-
-Then navigating to the [Heath view](http://127.0.0.1:7777/#/ojx/health)
-
