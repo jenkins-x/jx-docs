@@ -65,6 +65,7 @@ For more documentation see: https://jenkins-x.io/developing/create-quickstart/
       --no-collaborator                disables checking if the bot user is a collaborator. Only used if you have an issue with your git provider and this functionality in go-scm
       --no-dev-pr                      disables generating a Pull Request on the cluster git repository
       --no-import                      Disable import after the creation
+      --no-maven-fix                   Disable trying to fix existing pom.xml
       --no-pack                        Disable trying to default a Dockerfile and Helm Chart from the pipeline catalog pack
       --no-start                       disables starting a release pipeline when importing/creating a new project
       --operator-namespace string      The namespace where the git operator is installed (default "jx-git-operator")
@@ -81,7 +82,6 @@ For more documentation see: https://jenkins-x.io/developing/create-quickstart/
       --scheduler string               Change schedulerName, More info about Scheduler: https://jenkins-x.io/v3/develop/faq/config/repos/#how-do-i-customise-a-scheduler (default "in-repo")
       --service-account string         The Kubernetes ServiceAccount to use to run the initial pipeline (default "tekton-bot")
   -t, --tag stringArray                The tags on the quickstarts to filter
-      --use-default-git                use default git account
       --verbose                        Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
       --wait-for-pr                    waits for the Pull Request generated on the cluster environment git repository to merge (default true)
 ```
