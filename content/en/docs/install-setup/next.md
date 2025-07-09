@@ -22,5 +22,3 @@ Well the [Using Jenkins X](/docs/resources/guides/using-jx/) section contains th
 * [browsing](/docs/resources/guides/using-jx/developing/browsing/) for browsing pipelines, builds, apps and activity
 
 You may also want to check out the [various demonstrations of what you can do with Jenkins X](/demos/)
-
-If you're looking for a UI check out [Octant the open source web UI for Jenkins X](/docs/reference/components/ui/)

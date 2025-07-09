@@ -74,15 +74,6 @@ It can take a few minutes first time you deploy the quickstart for the database 
 kubectl get pod -n jx-staging -w 
 ```
 
-For a deeper look into whats going on try:
-
-```bash 
-jx ui
-```
-
-Which will open the [Octant UI with the Jenkins X plugin](/v3/develop/ui/octant/) which lets you navigate around namespaces and look at all of your kubernetes resources, deployments, pods and so forth in real time.
-
-
 ## How does it work
 
 In many ways this chart is fairly similar to other quickstarts in that it uses the Jenkins X pipeline catalog with tekton to add automated CI/CD pipelines and so forth.

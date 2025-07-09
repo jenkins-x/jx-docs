@@ -103,7 +103,6 @@ kubectl get cert -n jx
 NAME                     READY   SECRET                   AGE
 tls-web-jx3rocks-com-s   True    tls-web-jx3rocks-com-s   39m
 ```
-You can also use [Octant](http://127.0.0.1:7777/#/overview/namespace/jx/custom-resources) to check certificate status.
 
 Enabling the production certificate will require updates to both infra `(jx-terraform-gke)` and cluster `(jx3-gke-gsm)` repos. The commands to create the prod certificate are:
 ```bash
@@ -137,8 +136,6 @@ NAME                     READY   SECRET                   AGE
 tls-web-jx3rocks-com-p   True    tls-web-jx3rocks-com-p   39m
 tls-web-jx3rocks-com-s   True    tls-web-jx3rocks-com-s   86m
 ```
-You can also use [Octant](http://127.0.0.1:7777/#/overview/namespace/jx/custom-resources) to check the production certificate.
-![Octant Display](/images/v3/octant_display.png)
 ### Deploy project to Stage and Production
 After production certificates become ready, the following commands will deploy a simple JSnode app to staging and production
 ```bash

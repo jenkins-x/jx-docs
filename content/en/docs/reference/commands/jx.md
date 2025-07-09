@@ -60,7 +60,6 @@ jx [flags]
 * [jx stop](/commands/jx_stop/)	 - Stops a process such as a pipeline
 * [jx sync](/commands/jx_sync/)	 - Synchronises your local files to a DevPod
 * [jx team](/commands/jx_team/)	 - View or change the current team in the current Kubernetes cluster
-* [jx ui](/commands/jx_ui/)	 - Opens the CloudBees Jenkins X UI app for Kubernetes for visualising CI/CD and your environments
 * [jx uninstall](/commands/jx_uninstall/)	 - Uninstall the Jenkins X platform
 * [jx update](/commands/jx_update/)	 - Updates an existing resource
 * [jx upgrade](/commands/jx_upgrade/)	 - Upgrades a resource

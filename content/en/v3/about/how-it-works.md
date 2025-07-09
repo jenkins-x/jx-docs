@@ -36,10 +36,6 @@ You can view the boot Job log via the command:
     jx admin log
 ```
 
-
-Or you can browse the log in the Octant UI in the operations tab.
-
-
 ### Boot Job
 
 The boot job runs on startup and on any git commit to the GitOps repository you used to install the operator.

@@ -103,7 +103,7 @@ The files that are changed include:
 - config-root/namespaces/jx/lighthouse/lighthouse-webhooks-deploy.yaml
 - config-root/namespaces/jx/source-repositories/owner-repo.yaml
 
-If the second commit is not created, it means the verify job failed (use the `dashboard` or `octant ui`).
+If the second commit is not created, it means the verify job failed (use the `dashboard`).
 Check the logs of the job which should give you some hints.
 
 If you check the `.lighthouse/jenkins-x/pullrequest.yaml` file, you will see that the PR runs the command make-pr, which actually runs `jx gitops apply --pull-request` which invokes the `pr-regen` target in the `versionStream/src/Makefile.mk` of the cluster git repository.

@@ -61,8 +61,6 @@ jx secret verify
 
 This will list all of the `ExternalSecret` resources and visualise which ones are populated correctly.
 
-You can also use [UI](/v3/develop/ui/octant/) via `jx ui` and navigate to the [Secrets View](http://127.0.0.1:7777/#/ojx/secrets)
-
 ## Vault
 
 If you are using Vault as your back end for [Kubernetes External Secrets](https://github.com/external-secrets/kubernetes-external-secrets) then before you try any of the following commands to populate secrets you need to make sure your termminal can access Vault.

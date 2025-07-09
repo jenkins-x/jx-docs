@@ -17,9 +17,6 @@ Jenkins X stands on the shoulders of many open source giants...
 * [kpt](https://googlecontainertools.github.io/kpt/) provides tools for sharing and configuring YAML files across git repositories
 * [kubectl](https://kubernetes.io/docs/reference/kubectl/kubectl/) a command line tool for interacting with kubernetes clusters
 * [kustomize](https://kustomize.io/) a tool for configuring and modifying kubernetes resources 
-* [mink](https://github.com/mattmoor/mink) a command line tool for building container images and resolving the image digest in JSON/YAML files for local development or for use inside pipelines (we use the [mink plugin for this](https://github.com/jenkins-x-plugins/mink)
-* [octant](https://octant.dev/) an awesome kubernetes console with plugins which we use for the [Jenkins X Console](/v3/develop/ui/octant/)
-* [skaffold](https://github.com/GoogleContainerTools/skaffold) a tool for incremental development of container images and deployments
 * [tekton cli](https://github.com/tektoncd/cli) the CLI tool for working with [tekton pipelines](https://github.com/tektoncd/pipeline)
 * [terraform](https://www.terraform.io/) a tool managing infrastructure as code
 

@@ -8,30 +8,11 @@ weight: 200
 
 ## How do I diagnose a step in a pipeline?
 
-If you are wondering what image, command, environment variables are being used in a step in the pipeline the simplest thing is to [open the octant console](/v3/develop/ui/octant/) via:
+If you are wondering what image, command, environment variables are being used in a step in the pipeline you can look at
+the pipelinerun or the related pod(s). If you use your favourite tool for looking in kubernetes (kubectl, k9s, ...) and
+list the pipelineruns in the jx namespace you will proably be able to identify the one you are interested.
 
-```bash 
-jx ui
-```
-
-Then if you navigate to the pipeline you are interested in and select the envelope icon next to a step name that will take you to the Step details page. e.g. if you click on the icon pointed to by the big red arrow:
-
-<figure>
-<img src="/images/developing/octant-step-click.png" />
-<figcaption>
-<h5>Click on the step icon to see details of a step which then takes you to the step details page</h5>
-</figcaption>
-</figure>
-
-
-<figure>
-<img src="/images/developing/octant-step.png" />
-<figcaption>
-<h5>Step details page lets you see the command, image, environment variables and volumes</h5>
-</figcaption>
-</figure>
-
-If a command fails it can be useful to enable [debugging of pipeline steps](/v3/develop/pipelines/debugging/) so that you can open a terminal inside a failed pipeline pod and try determine why things failed and to try out alternative commands to get things working.
+Looking at the details for the piplinerun will give you the details.
 
 If that doesn't help another option is to [edit the pipeline step](/v3/develop/pipelines/#editing-pipelines) via the `.lighthouse/jenkins-x/release.yaml` or  `.lighthouse/jenkins-x/pullrequest.yaml` file to add the command: `sleep infinity` in the `script:` value before the command that is not working.
 

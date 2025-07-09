@@ -84,6 +84,3 @@ There is a file called [jx-requirements.yml](https://github.com/jenkins-x/jenkin
 This is the main configuration file for `jx boot` where you make most of your changes.
 You may want to review the  [jx-requirements.yml](https://github.com/jenkins-x/jenkins-x-boot-config/blob/master/jx-requirements.yml) file and make any changes you need.
 
-## User Interface
-
-If you're looking for a UI check out [Octant the open source web UI for Jenkins X](/docs/reference/components/ui/)

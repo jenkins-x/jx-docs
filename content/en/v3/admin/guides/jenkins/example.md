@@ -143,7 +143,6 @@ kubectl get cert -n jx
 NAME                     READY   SECRET                   AGE
 tls-web-jx3rocks-com-s   True    tls-web-jx3rocks-com-s   39m
 ```
-You can also use [Octant](http://127.0.0.1:7777/#/overview/namespace/jx/custom-resources) to check certificate status.
 
 Enabling the production certificate will require updates to both infra `(jx-terraform-gke)` and cluster `(jx3-gke-gsm)` repos. The commands to create the prod certificate are:
 ```bash
@@ -177,8 +176,7 @@ NAME                     READY   SECRET                   AGE
 tls-web-jx3rocks-com-p   True    tls-web-jx3rocks-com-p   39m
 tls-web-jx3rocks-com-s   True    tls-web-jx3rocks-com-s   86m
 ```
-You can also use [Octant](http://127.0.0.1:7777/#/overview/namespace/jx/custom-resources) to check the production certificate.
-![Octant Display](/images/v3/octant_display.png)
+
 ### Sign on to Jenkins
 After production certificates become ready, access to the Jenkins site: https://jenkins.web.jx3rocks.com is now available. The site has been configure with an `admin` user id and to obtain the `admin` user password the following commands are used:
 ```bash

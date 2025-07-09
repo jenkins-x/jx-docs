@@ -67,7 +67,6 @@ The following repositories are for 2.x code:
 ### Tools
 
 * [jenkins-x/lighthouse](https://github.com/jenkins-x/lighthouse) the strategic solution for webhooks and ChatOps for multiple git providers.
-* [jenkins-x/octant-jx](https://github.com/jenkins-x/octant-jx) the [octant](https://octant.dev/) plugin for Jenkins X to provide a complete RBAC based console for kubernetes, CI/CD and Jenkins X. For more information see the [documentation](https://jenkins-x.io/docs/reference/components/ui/)
 * [jenkins-x/jx-pipelines-visualizer](https://github.com/jenkins-x/jx-pipelines-visualizer) open source read only UI for visualising pipelines and logs see the [documentation](https://jenkins-x.io/docs/reference/components/ui/)
 
 #### Legacy tools
