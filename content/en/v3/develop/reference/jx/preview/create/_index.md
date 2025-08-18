@@ -30,7 +30,7 @@ Creates a preview
       --app string                     Name of the app or repository
       --debug                          Enables debug logging in helmfile
       --dir string                     the directory to search for the .git to discover the git source URL (default ".")
-  -f, --file string                    Preview helmfile.yaml path to use. If not specified it is discovered in preview/helmfile.yaml and created from a template if needed
+  -f, --file string                    Preview helmfile.yaml.gotmpl path to use. If not specified it is discovered in preview/helmfile.yaml.gotmpl and created from a template if needed
       --git-kind string                the kind of git server to connect to
       --git-server string              the git server URL to create the git provider client. If not specified its defaulted from the current source URL
       --git-token string               the git token used to operate on the git repository
@@ -41,6 +41,7 @@ Creates a preview
       --path string                    An optional path added to the Preview ingress URL. If not specified uses $JX_PREVIEW_PATH
       --pr int                         the Pull Request number. If not specified we detect it via $PULL_NUMBER or $BRANCH_NAME environment variables
       --preview-url-timeout duration   Time to wait for the preview URL to be available (default 1m0.000000005s)
+      --selector stringArray           Filters releases from the helmfile to deploy based on their labels. Can be repeated to apply multiple filters.
       --service string                 Specify the service/ingress name to use for the preview URL. If not specified uses $JX_PREVIEW_SERVICE
 ```
 
