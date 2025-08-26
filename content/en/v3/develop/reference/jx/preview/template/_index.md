@@ -28,7 +28,7 @@ Display one or more preview environments.
 
 ```
       --app string               Name of the app or repository
-  -f, --file string              Preview helmfile.yaml path to use. If not specified it is discovered in preview/helmfile.yaml and created from a template if needed
+  -f, --file string              Preview helmfile.yaml.gotmpl path to use. If not specified it is discovered in preview/helmfile.yaml.gotmpl and created from a template if needed
       --helmfile-binary string   specifies the helmfile binary location to use. If not specified defaults to using the downloaded helmfile plugin
   -h, --help                     help for template
 ```
