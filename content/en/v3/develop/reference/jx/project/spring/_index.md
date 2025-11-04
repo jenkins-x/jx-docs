@@ -17,13 +17,9 @@ jx project spring
 
 Creates a new Spring Boot application and then optionally setups CI/CD pipelines and GitOps promotion.
   
-      You can see a demo of this command here: [https://jenkins-x.io/demos/create_spring/](https://jenkins-x.io/demos/create_spring/)
-  
-      For more documentation see: [https://jenkins-x.io/developing/create-spring/](https://jenkins-x.io/developing/create-spring/)
-  
 See Also: 
 
-  * jx create project : https://jenkins-x.io/commands/jx_create_project
+  * jx project : https://jenkins-x.io/commands/jx_project
 
 ### Examples
 
