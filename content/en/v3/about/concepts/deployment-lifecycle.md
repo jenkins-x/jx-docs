@@ -241,7 +241,7 @@ spec:
             #!/usr/bin/env sh
             jx gitops variables
             jx gitops pr variables
-        - image: golang:1.17.9
+        - image: golang:1.23.2
           name: build-make-linux
           resources: {}
           script: |
