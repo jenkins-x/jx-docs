@@ -20,7 +20,7 @@ Create a new machine learning project from a sample/starter (found in https://gi
       This will create two new projects for you from the selected template. One for training and one for deploying a model as a service.
       It will exclude any work-in-progress repos (containing the "WIP-" pattern)
   
-      For more documentation see: [https://jenkins-x.io/developing/create-mlquickstart/](https://jenkins-x.io/developing/create-mlquickstart/)
+      For more documentation see: https://jenkins-x.io/v3/mlops/
   
 See Also: 
 
@@ -29,11 +29,6 @@ See Also:
 ### Examples
 
   ```bash
-  Create a new machine learning project from a sample/starter (found in https://github.com/machine-learning-quickstarts)
-  
-  This will create a new machine learning project for you from the selected template.
-  It will exclude any work-in-progress repos (containing the "WIP-" pattern)
-  
   jx project mlquickstart
   
   jx project mlquickstart -f pytorch
