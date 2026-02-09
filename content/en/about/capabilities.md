@@ -1,12 +1,12 @@
 ---
-title: Jenkins X Capabilities Matrix
+title: JayeX Capabilities Matrix
 linktitle: Capabilities Matrix
-description: Matrix that describes the current state of Jenkins X capabilities for major Kubernetes platforms
+description: Matrix that describes the current state of JayeX capabilities for major Kubernetes platforms
 type: docs
 weight: 20
 ---
 
-## Jenkins X Capabilities Matrix
+## JayeX Capabilities Matrix
 
 | Capability | GKE | EKS | OpenShift 3.11 |
 | --- | :---:| :---: | :---: |

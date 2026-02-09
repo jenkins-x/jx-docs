@@ -38,7 +38,7 @@ This project was shared very early with the community, after just a few hours of
 
 ## Demo
 
-We did a [demo of jx-pipelines-visualizer](https://youtu.be/zv0Dn9RYzwE?t=709) at the last [office hours](https://jenkins-x.io/community/office_hours/):
+We did a [demo of jx-pipelines-visualizer](https://youtu.be/zv0Dn9RYzwE?t=709) at the last [office hours](https://jayex.io/community/office_hours/):
 
  <iframe width="80%" height="460" src="https://www.youtube.com/embed/zv0Dn9RYzwE?start=709" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -46,4 +46,4 @@ We did a [demo of jx-pipelines-visualizer](https://youtu.be/zv0Dn9RYzwE?t=709) a
 
 Check out the [jx-pipelines-visualizer github repository](https://github.com/dailymotion/jx-pipelines-visualizer) if you want to install it in your cluster - there is a Helm Chart which can be added to your Jenkins X Dev Environment.
 
-And any contributions are welcomed - either create an issue or pull request in the project's github repository, or come in the [#jenkins-x-dev](https://jenkins-x.io/community/#slack) Slack Channel.
+And any contributions are welcomed - either create an issue or pull request in the project's github repository, or come in the [#jenkins-x-dev](https://jayex.io/community/#slack) Slack Channel.

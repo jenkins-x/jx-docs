@@ -18,8 +18,8 @@ We'll go through each step below, but here's what you need to get started with G
 
 Git is a [version control system](https://en.wikipedia.org/wiki/Version_control) to track the changes of source code.
 
-You will need to have Git installed on your computer to contribute to Jenkins X development.
-Teaching Git is outside the scope of the Jenkins X docs, but if you're looking for an excellent reference to learn the basics of Git, we recommend the [Git book](https://git-scm.com/book/) if you are not sure where to begin.
+You will need to have Git installed on your computer to contribute to JayeX development.
+Teaching Git is outside the scope of the JayeX docs, but if you're looking for an excellent reference to learn the basics of Git, we recommend the [Git book](https://git-scm.com/book/) if you are not sure where to begin.
 
 Move back to the terminal and check if Git is already installed.
 Type `git version` and press enter.
@@ -50,7 +50,7 @@ If you're not familiar with this term, GitHub's [help pages](https://help.github
 
 > A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.
 
-Open the [Jenkins X docs repository](https://github.com/jenkins-x/jx-docs) on GitHub and click on the "Fork" button in the top right.
+Open the [JayeX docs repository](https://github.com/jenkins-x/jx-docs) on GitHub and click on the "Fork" button in the top right.
 
 ### Clone your fork locally
 

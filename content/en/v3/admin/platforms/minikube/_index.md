@@ -2,7 +2,7 @@
 title: Minikube
 linktitle: Minikube
 type: docs
-description: Setup Jenkins X on your laptop
+description: Setup JayeX on your laptop
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2020-02-21
@@ -19,7 +19,7 @@ aliases:
 
 Ensure you are logged into GitHub else you will get a 404 error when clicking the links below
 
-This guide will walk you though how to setup Jenkins X on your laptop using [minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/)
+This guide will walk you though how to setup JayeX on your laptop using [minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/)
 
 ## Prerequisites
 
@@ -93,7 +93,7 @@ git push origin main
 jx ns jx
 ```
 
-- once Jenkins X is installed run the following command to enable webhooks via `ngrok`
+- once JayeX is installed run the following command to enable webhooks via `ngrok`
 
 ```bash
 kubectl port-forward svc/hook 8080:80

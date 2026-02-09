@@ -2,7 +2,7 @@
 title: Getting Started 
 linktitle: Getting Started
 type: docs
-description: Getting started with Jenkins and Jenkins X interop
+description: Getting started with Jenkins and JayeX interop
 weight: 20
 aliases:
   - /v3/guides/jenkins/getting-started
@@ -12,9 +12,9 @@ aliases:
 Make sure you have got the [jx 3.x binary](/v3/guides/jx3/) and you have installed [version 3](/v3/admin/platform/) before proceeding.
 
 
-## Adding Jenkins Servers into Jenkins X
+## Adding Jenkins Servers into JayeX
 
-You can use Jenkins X to install one or more Jenkins servers by running the following command in a git clone of your dev cluster git repository:
+You can use JayeX to install one or more Jenkins servers by running the following command in a git clone of your dev cluster git repository:
 
 ```bash 
 jx gitops jenkins add --name myjenkins
@@ -47,7 +47,7 @@ In addition by default each Jenkins server gets to share the pipeline git user n
 
 When you import projects or create quickstarts with the above approach, your projects get added to the jenkins server you choose in  `.jx/gitops/source-config.yaml`. 
 
-Then during the [boot job](/v3/about/how-it-works/#boot-job) Jenkins X will create a [Jenkins Job DSL script](https://plugins.jenkins.io/job-dsl/) for each project in your `.jx/gitops/source-config.yaml` file for each Jenkins server.
+Then during the [boot job](/v3/about/how-it-works/#boot-job) JayeX will create a [Jenkins Job DSL script](https://plugins.jenkins.io/job-dsl/) for each project in your `.jx/gitops/source-config.yaml` file for each Jenkins server.
 
 The Job DSL scripts are generated in the file `helmfiles/myjenkins/job-values.yaml` which is then passed into the [Jenkins helm chart](https://github.com/jenkinsci/helm-charts) via the `values:` item in the `helmfiles/myjenkins/helmfile.yaml`
 
@@ -66,7 +66,7 @@ jx ns myjenkins
 kubectl get ing
 ```
 
-Jenkins X will have generated a username of **admin** and a random password which is stored in your secret store (either Vault or your cloud secret manager).
+JayeX will have generated a username of **admin** and a random password which is stored in your secret store (either Vault or your cloud secret manager).
 
 To find the admin password so that you can login to Jenkins try:
 

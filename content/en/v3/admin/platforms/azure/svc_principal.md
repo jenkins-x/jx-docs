@@ -6,7 +6,7 @@ weight: 100
 aliases:
 ---
 
-Azure has a notion of a **Service Principal** which is a service acount. This doc will demonstrate how to set up an Azure service principal that can be used by Terraform to execute [Jenkins X Azure Module](https://github.com/jenkins-x/terraform-azurerm-jx#jenkins-x-azure-module)
+Azure has a notion of a **Service Principal** which is a service acount. This doc will demonstrate how to set up an Azure service principal that can be used by Terraform to execute [JayeX Azure Module](https://github.com/jenkins-x/terraform-azurerm-jx#jenkins-x-azure-module)
 
 > 💡 This doc has been designed to assist in performing the demonstration through copying and pasting each block of code into a shell terminal.
 >
@@ -20,7 +20,7 @@ In order to build your Azure environment with Terraform using a service principa
 * Microsoft Entra ID App registration admin role;`Cloud Application Administrator`.
 * Microsoft Graph API permission;`Application.ReadWrite.All`.
 
-Further details can be found under [Jenkins X Azure Module Prequisites](https://github.com/jenkins-x/terraform-azurerm-jx#prerequisites)
+Further details can be found under [JayeX Azure Module Prequisites](https://github.com/jenkins-x/terraform-azurerm-jx#prerequisites)
 ### Create service principal with subscription roles
 The first step is to create a new service principal (APP_NAME) and to assign it the subscription built-in roles `Contributor` and `User Access Administrator`.
 > 💡 If you are using a local terminal, prior to executing the following commands, in the local terminal log into Azure (`az login`) with an ID that has the necessary privileges (i.e. Owner). 
@@ -97,7 +97,7 @@ ResourceAppId
 ```
 
 ### Prepare to run Terraform
-Once the service prinicpal is created and assigned the appropriate roles and permissions, it can now be used by Terraform to execute the Jenkins X Azure module. In order for Terraform to use the service principal credentials you need to [specify service principal credentials in environment variables](https://docs.microsoft.com/en-us/azure/developer/terraform/get-started-cloud-shell-bash)
+Once the service prinicpal is created and assigned the appropriate roles and permissions, it can now be used by Terraform to execute the JayeX Azure module. In order for Terraform to use the service principal credentials you need to [specify service principal credentials in environment variables](https://docs.microsoft.com/en-us/azure/developer/terraform/get-started-cloud-shell-bash)
 ```
 export ARM_CLIENT_ID=${APP_ID}
 export ARM_CLIENT_SECRET=${PASS_ID}

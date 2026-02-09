@@ -6,7 +6,7 @@ Fixes # (issue)
 
 # Checklist:
 
-- [ ] I have mentioned the appropriate type(scope), as referenced [here](https://jenkins-x.io/community/code/#the-commit-message) in the commit message and PR title for the semantic checks to pass.
-- [ ] I have signed off the commit, as per instructions mentioned [here](https://jenkins-x.io/community/code/#how-to-sign-your-commits).
+- [ ] I have mentioned the appropriate type(scope), as referenced [here](https://jayex.io/community/code/#the-commit-message) in the commit message and PR title for the semantic checks to pass.
+- [ ] I have signed off the commit, as per instructions mentioned [here](https://jayex.io/community/code/#how-to-sign-your-commits).
 - [ ] Any dependent changes have already been merged.
 

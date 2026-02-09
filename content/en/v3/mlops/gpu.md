@@ -2,7 +2,7 @@
 title: "Working with GPUs"
 date: 2020-03-13T15:03:05Z
 linktitle: "Working with GPUs"
-description: Setting up Jenkins X for use with GPU resources.
+description: Setting up JayeX for use with GPU resources.
 weight: 15
 type: docs
 aliases:

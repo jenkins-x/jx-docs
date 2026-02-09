@@ -10,7 +10,7 @@ aliases:
 
 ## Installing Vault
 
-### Internal vault (vault created as part of Jenkins X installation)
+### Internal vault (vault created as part of JayeX installation)
 
 If you are using Terraform with one of the [Cloud Providers](/v3/admin/) then your Vault will be installed automatically via Terraform.
 
@@ -35,7 +35,7 @@ External vault is only supported for jx versions greater than `3.2.203`
 {{< /alert >}}
 
 Configure external vault to support [kubernetes auth method](https://www.vaultproject.io/docs/auth/kubernetes#configuration).
-This step needs to be done before any Jenkins X related changes are made.
+This step needs to be done before any JayeX related changes are made.
 
 ```bash
 # Set VAULT_ADDR
@@ -73,7 +73,7 @@ This should create a secret `jx-boot-job-env-vars` in the `jx-git-operator` name
 
 This will prevent the terraform module from creating any vault resources in the kubernetes cluster and the cloud (AWS/GCP/Azure) account.
 
-Now your vault can be used with Jenkins X.
+Now your vault can be used with JayeX.
 
 #### Local `jx-secret` with External vault
 

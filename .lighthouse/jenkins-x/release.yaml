@@ -85,7 +85,7 @@ spec:
                 - website
                 - --enableGitInfo
                 - --baseURL
-                - https://jenkins-x.io
+                - https://jayex.io
               resources:
                 requests:
                   cpu: 400m

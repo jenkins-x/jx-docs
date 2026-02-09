@@ -47,7 +47,7 @@ ingress:
 ...
 ```
 
-* verify your cluster does not already have an [nginx](https://www.nginx.com/) installation. If it does then please remove the `nginx` line from your `helmfile.yaml` file and remove the `helmfiles/nginx` files. If you are using a custom nginx installation then you will need to figure out your domain by hand and won't be able to let Jenkins X detect the load balancer IP from its included nginx installation.
+* verify your cluster does not already have an [nginx](https://www.nginx.com/) installation. If it does then please remove the `nginx` line from your `helmfile.yaml` file and remove the `helmfiles/nginx` files. If you are using a custom nginx installation then you will need to figure out your domain by hand and won't be able to let JayeX detect the load balancer IP from its included nginx installation.
 
 * git add, commit and push your changes:
 
@@ -66,7 +66,7 @@ kubectl get node
 
 *  <a href="/v3/guides/operator/" 
     target="github" class="btn bg-primary text-light" 
-    title="install the git operator to setup Jenkins X in your cluster">
+    title="install the git operator to setup JayeX in your cluster">
     Install the git operator
   </a> from inside a git clone of the git repository you created above.
 

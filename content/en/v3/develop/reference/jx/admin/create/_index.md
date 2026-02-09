@@ -2,7 +2,7 @@
 title: jx admin create
 linktitle: create
 type: docs
-description: "Creates a new git repository for a new Jenkins X installation"
+description: "Creates a new git repository for a new JayeX installation"
 aliases:
   - jx-admin_create
 ---
@@ -15,7 +15,7 @@ jx admin create
 
 ### Synopsis
 
-Creates a new git repository for a new Jenkins X installation
+Creates a new git repository for a new JayeX installation
 
 ### Examples
 

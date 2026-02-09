@@ -10,9 +10,9 @@ aliases:
 
 It's a common requirement to want to view pipelines running, their logs or to be able to click on a Pull Request on your git provider and view the pipeline log for that commit on that Pull Request.
 
-To implement this we include the [jx-pipelines-visualizer](https://github.com/jenkins-x/jx-pipelines-visualizer) application inside Jenkins X.
+To implement this we include the [jx-pipelines-visualizer](https://github.com/jenkins-x/jx-pipelines-visualizer) application inside JayeX.
 
-This provides a simple read only web UI for viewing pipelines and pipeline logs and its linked automatically with any Pull Request you create on repositories managed by Jenkins X.
+This provides a simple read only web UI for viewing pipelines and pipeline logs and its linked automatically with any Pull Request you create on repositories managed by JayeX.
 
 ### Accessing the Pipelines Visualizer
 
@@ -28,7 +28,7 @@ and it will open the dashboard using the basic authentication login and password
 
 ### Viewing from a Pull Request
 
-If you create a Pull Request on a git repository you have [created or imported](/v3/develop/create-project/) in Jenkins X you should see a link on the Pull Request. 
+If you create a Pull Request on a git repository you have [created or imported](/v3/develop/create-project/) in JayeX you should see a link on the Pull Request. 
 
 Here's an example - see the **Details** link on the right of the Pull Request pipeline:
 

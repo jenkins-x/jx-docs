@@ -2,11 +2,11 @@
 title: Continuous Delivery Indicators
 linktitle: Continuous Delivery Indicators
 type: docs
-description: How to install and use the Continuous Delivery Indicators addon for Jenkins X
+description: How to install and use the Continuous Delivery Indicators addon for JayeX
 weight: 130
 ---
 
-This guide will help you install, configure and use the [Continuous Delivery Indicators](https://github.com/jenkins-x/cd-indicators) addon in your Jenkins X cluster.
+This guide will help you install, configure and use the [Continuous Delivery Indicators](https://github.com/jenkins-x/cd-indicators) addon in your JayeX cluster.
 
 This addon will automatically:
 - collect metrics from cluster events and git events: pull requests, pipelines, releases, deployments, ...
@@ -59,13 +59,13 @@ And because we're re-using the same Grafana instance which already has the Prome
 
 ## Configuration
 
-The configuration is defined in a ["values file" stored in the Jenkins X Version Stream](https://github.com/jenkins-x/jx3-versions/blob/master/charts/jxgh/cd-indicators/values.yaml).
+The configuration is defined in a ["values file" stored in the JayeX Version Stream](https://github.com/jenkins-x/jx3-versions/blob/master/charts/jxgh/cd-indicators/values.yaml).
 
 If you want to change anything from the default configuration, you can either:
 - submit a Pull Request if you believe this change is beneficial for everybody
 - or create a new values file in your development environment git repositor: `values/cd-indicators/values.yaml`
 
-You should at least configure the `gitOwners`, to ensure you will only collect metrics for your own repositories, and not for Jenkins X's own applications - see [the default values](https://github.com/jenkins-x/cd-indicators/blob/main/charts/cd-indicators/values.yaml). In your `values/cd-indicators/values.yaml` file you can write:
+You should at least configure the `gitOwners`, to ensure you will only collect metrics for your own repositories, and not for JayeX's own applications - see [the default values](https://github.com/jenkins-x/cd-indicators/blob/main/charts/cd-indicators/values.yaml). In your `values/cd-indicators/values.yaml` file you can write:
 
 ```yaml
 config:

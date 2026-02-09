@@ -6,7 +6,7 @@ description: Environments and Promotion
 weight: 400
 ---
 
-Jenkins X supports multiple environments for hosting your applications such as `Development`, `Staging` and `Production`.
+JayeX supports multiple environments for hosting your applications such as `Development`, `Staging` and `Production`.
 
 You can also use environments for different kinds of testing: system, integration, load, soak or regression tests.
 

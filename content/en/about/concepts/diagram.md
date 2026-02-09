@@ -1,11 +1,11 @@
 ---
 title: Diagram
 linktitle: Diagram
-description: A diagram of the Jenkins X architecture
+description: A diagram of the JayeX architecture
 weight: 20
 ---
 
-## Jenkins X with Tekton & [Lighthouse](https://github.com/jenkins-x/lighthouse)
+## JayeX with Tekton & [Lighthouse](https://github.com/jenkins-x/lighthouse)
 
 <figure>
 <img src="/images/ArchitectureServerlessJenkinsLighthouse.png"/>

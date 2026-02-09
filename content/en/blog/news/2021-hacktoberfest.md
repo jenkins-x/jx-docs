@@ -30,6 +30,6 @@ We're happy to help if you have any questions. Talk to us on our slack channels,
 * #jenkins-x-dev for developers of Jenkins X
 * #jenkins-x-user for users of Jenkins X
 
-Find out more about becoming involved in the Jenkins X community [here](https://jenkins-x.io/community/).
+Find out more about becoming involved in the Jenkins X community [here](https://jayex.io/community/).
 
 *We look forward to seeing you in open source, fixing all the things!*

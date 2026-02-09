@@ -7,7 +7,7 @@ description: Cluster Recovery Demo
 weight: 94
 ---
  
-This section describes cluster recovery situations for when things go bad.  It can also be used to reguary recreate clusters, this is something the Jenkins X project does itself as we prefer to treat our clusters as cattle and not pets, giving confidence that we can restore services at any time.
+This section describes cluster recovery situations for when things go bad.  It can also be used to reguary recreate clusters, this is something the JayeX project does itself as we prefer to treat our clusters as cattle and not pets, giving confidence that we can restore services at any time.
  
 Disclaimer: there may well be better approaches so if you know of better ways please contribute and help improve the experience.  There are some manual steps below that we know to work but expect we can improve.
 
@@ -22,9 +22,9 @@ see [other demos here](https://www.youtube.com/playlist?list=PLr_PmC4W69dKM3fo8O
 
 # Cluster applications and services
  
-Jenkins X embraces GitOps, details of any application or configuration are stored declaratively in Git.  Jenkins X recommends using external storage if you require persistence to be preserved.  Cloud Storage buckets are great at achieving this.  With that said Jenkins X has one service that writes data to a persistent volume and is not backed up in cloud storage.  The current use of Chartmuseuam to store helm charts for applications means if we need to recreate a cluster we will need to retrigger release pipelines for any application running in the staging or production cluster.
+JayeX embraces GitOps, details of any application or configuration are stored declaratively in Git.  JayeX recommends using external storage if you require persistence to be preserved.  Cloud Storage buckets are great at achieving this.  With that said JayeX has one service that writes data to a persistent volume and is not backed up in cloud storage.  The current use of Chartmuseuam to store helm charts for applications means if we need to recreate a cluster we will need to retrigger release pipelines for any application running in the staging or production cluster.
  
-The Jenkins X project itself does not use Chartmuseum, instead it uses Work Load Identity and [helm gcs plugin](https://github.com/hayorov/helm-gcs) to write directly to a GCP bucket.  You could consider using this approach but as well Jenkins X will look to resolve this by adding OOTB support for buckets or other external repositories for charts.
+The JayeX project itself does not use Chartmuseum, instead it uses Work Load Identity and [helm gcs plugin](https://github.com/hayorov/helm-gcs) to write directly to a GCP bucket.  You could consider using this approach but as well JayeX will look to resolve this by adding OOTB support for buckets or other external repositories for charts.
  
 For now you will need to modify your cluster git repository and remove the helmfile repository that points to the internal chartmuseum service.
  
@@ -72,7 +72,7 @@ Now select the DELETE ZONE button at the top
 ![Delete Zone](/images/v3/gcp_delete_zone.png)
  
 ## Recover
-The Jenkins X terraform modules write some details into a cluster once it is created, this can cause issues when applying the Terraform plan if that cluster is not available.
+The JayeX terraform modules write some details into a cluster once it is created, this can cause issues when applying the Terraform plan if that cluster is not available.
  
 You will need to modify the state file so navigate to your local clone of your infrastructure git repository
  
@@ -114,4 +114,4 @@ terraform apply
  
 ## What is not recovered
  
-Any Custom Resources not stored in git will not be recovered, for example Jenkins X Pipeline Activities.  There are solutions like [Velero](https://velero.io/) that handles backups which could be used.
+Any Custom Resources not stored in git will not be recovered, for example JayeX Pipeline Activities.  There are solutions like [Velero](https://velero.io/) that handles backups which could be used.

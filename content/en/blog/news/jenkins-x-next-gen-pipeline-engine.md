@@ -12,7 +12,7 @@ aliases:
 
 ## Introducing the new Jenkins X Pipeline Engine
 
-The [Jenkins X](https://jenkins-x.io/) team and [CloudBees](https://www.cloudbees.com/) are excited to announce some changes that we’ve been working on and are jntroducing the new [Jenkins X Pipeline Engine](/architecture/jenkins-x-pipelines/).
+The [Jenkins X](https://jayex.io/) team and [CloudBees](https://www.cloudbees.com/) are excited to announce some changes that we’ve been working on and are jntroducing the new [Jenkins X Pipeline Engine](/architecture/jenkins-x-pipelines/).
 
 {{< youtube id="EYywyqcPVMY" autoplay="true" >}}
 
@@ -27,4 +27,4 @@ Serverless pipeline execution mode will become the best way to run Jenkins X in 
 
 We’ve begun some early work to add Tekton into Jenkins X. You can now begin testing the pipeline, and we’d love to get your feedback. To use the new Tekton execution mode you [install your Jenkins X cluster using the new tekton mode](/about/concepts/jenkins-x-pipelines/). You will then get a `jenkins-x.yml` file with your application instead of a Jenkinsfile in your source code repository. This YAML file is organized similarly to the Jenkins declarative pipeline syntax used in a Jenkinsfile.
 
-We’ll continue to update the community on progress accordingly and welcome your feedback! Feel free to contact the [Jenkins X team via Slack](https://jenkins-x.io/community/#slack), [office hours](https://jenkins-x.io/community/#office-hours) or send us an email with any questions or concerns. The next office hours will be on Thursday, February 21st, at 11:00am ET and Andrew Bayer will be demoing progress. Thanks!
+We’ll continue to update the community on progress accordingly and welcome your feedback! Feel free to contact the [Jenkins X team via Slack](https://jayex.io/community/#slack), [office hours](https://jayex.io/community/#office-hours) or send us an email with any questions or concerns. The next office hours will be on Thursday, February 21st, at 11:00am ET and Andrew Bayer will be demoing progress. Thanks!

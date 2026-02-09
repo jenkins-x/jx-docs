@@ -6,7 +6,7 @@ weight: 100
 aliases:
 ---
 
-This doc will demonstrate how to set up a Google service account that can be used by Terraform to execute [Jenkins X GKE Module](https://github.com/jenkins-x/terraform-google-jx#jenkins-x-gke-module)
+This doc will demonstrate how to set up a Google service account that can be used by Terraform to execute [JayeX GKE Module](https://github.com/jenkins-x/terraform-google-jx#jenkins-x-gke-module)
 
 > 💡 This doc has been designed to assist in performing the demonstration through copying and pasting each block of code into a shell terminal.<br>
 >

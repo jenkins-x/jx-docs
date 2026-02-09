@@ -45,7 +45,7 @@ Using the filed `ref` you can also specify a branch or tag to use instead of the
 When creating or importing a repository using `jx project` the default content of OWNERS and OWNERS_ALIASES isn't 
 that useful since only the current user are put in the files.
 
-If you [create your own quickstarts](https://jenkins-x.io/v3/about/extending/#quickstarts) you place the OWNERS and 
+If you [create your own quickstarts](https://jayex.io/v3/about/extending/#quickstarts) you place the OWNERS and 
 / or OWNERS_ALIASES files with the content of your liking in those.
 
 A recent new functionality is that you can put OWNERS and / or OWNERS_ALIASES files in the `extensions` directory of 

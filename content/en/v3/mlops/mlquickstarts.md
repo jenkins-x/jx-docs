@@ -9,7 +9,7 @@ aliases:
   - /v3/mlops/mlquickstarts
 ---
 
-This directory is intended to help you find your way around the Jenkins X MLOps Quickstarts Library and get you up and running rapidly with a template project based around the class of Machine Learning approach you wish to work with and the language and framework you prefer.
+This directory is intended to help you find your way around the JayeX MLOps Quickstarts Library and get you up and running rapidly with a template project based around the class of Machine Learning approach you wish to work with and the language and framework you prefer.
 
 The directory is divided by target programming language (Python only at this stage, but with additional quickstarts to follow in other languages) and then by ML framework.
 

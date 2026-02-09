@@ -12,4 +12,4 @@ The reason is you never know when a `latest` or `SNAPSHOT` image or artifact wil
 
 If you explicitly version things in all repositories things are stable and repeatable. 
 
-If you are worried about upgrading versions of things over time then look at either tools like [dependabot](https://dependabot.com/) or the [updatebot plugin](https://github.com/jenkins-x-plugins/jx-updatebot) which we use extensively throughout Jenkins X to upgrade versions of libraries, images, binaries etc.
+If you are worried about upgrading versions of things over time then look at either tools like [dependabot](https://dependabot.com/) or the [updatebot plugin](https://github.com/jenkins-x-plugins/jx-updatebot) which we use extensively throughout JayeX to upgrade versions of libraries, images, binaries etc.

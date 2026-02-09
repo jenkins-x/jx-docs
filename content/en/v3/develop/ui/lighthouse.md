@@ -8,7 +8,7 @@ aliases:
   - /v3/develop/ui/lighthouse
 ---
 
-[Lighthouse](https://github.com/jenkins-x/lighthouse) is the Jenkins X component responsible for all interactions between your Git hosting provider (GitHub, Gitlab, ...) and your Kubernetes cluster. Amongst other things, it:
+[Lighthouse](https://github.com/jenkins-x/lighthouse) is the JayeX component responsible for all interactions between your Git hosting provider (GitHub, Gitlab, ...) and your Kubernetes cluster. Amongst other things, it:
 - receive and process webhook events
 - trigger pipelines
 - handle automatic merging of Pull Requests
@@ -52,7 +52,7 @@ If you type the username and password into your browser it should open the web U
 
 ### Viewing from a Pull Request
 
-If you create a Pull Request on a git repository you have [created or imported](/v3/develop/create-project/) in Jenkins X you should see a link on the Pull Request. 
+If you create a Pull Request on a git repository you have [created or imported](/v3/develop/create-project/) in JayeX you should see a link on the Pull Request. 
 
 Here's an example - see the **Details** link on the right of the `Merge Status` line:
 

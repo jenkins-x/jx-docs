@@ -11,7 +11,7 @@ aliases:
 
 Progressive delivery allows you to gradually rollout new versions of your application to an environment using _canaries_ and gradually giving traffic to the new version until you are happy to fully rollover to the new version.
 
-Our recommendation for using progressive delivery with Jenkins X is to use: 
+Our recommendation for using progressive delivery with JayeX is to use: 
 
 * [flagger](https://flagger.app/) as the progressive delivery controller 
 * [istio](https://istio.io/) as the service mesh to provide advanced load balancing capabilities across internal or external networking
@@ -123,7 +123,7 @@ you can enable/disable those 2 flags for canary releases and horizontal pod auto
 
 Once you have followed the above steps create a [quickstart application](/docs/getting-started/first-project/create-quickstart/) in the usual way.
 
-As you merge changes to the master branch of your application Jenkins X will create a new release and [promote it to the staging environment](/docs/resources/faq/using/#how-does-promotion-actually-work). 
+As you merge changes to the master branch of your application JayeX will create a new release and [promote it to the staging environment](/docs/resources/faq/using/#how-does-promotion-actually-work). 
 
 However if Canary deployment is enabled your new version will gradually be rolled out progressively: 
 

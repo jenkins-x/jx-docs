@@ -2,7 +2,7 @@
 title: jx admin
 linktitle: admin
 type: docs
-description: "commands for creating and upgrading Jenkins X environments using GitOps"
+description: "commands for creating and upgrading JayeX environments using GitOps"
 aliases:
   - jx-admin
 ---
@@ -15,7 +15,7 @@ jx admin
 
 ### Synopsis
 
-commands for creating and upgrading Jenkins X environments using GitOps
+commands for creating and upgrading JayeX environments using GitOps
 
 ### Options
 

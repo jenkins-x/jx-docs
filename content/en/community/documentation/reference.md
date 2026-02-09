@@ -1,14 +1,14 @@
 ---
 title: References
 linktitle: References
-description: Additional reference documentation when working on the Jenkins X site
+description: Additional reference documentation when working on the JayeX site
 type: docs
 weight: 30
 aliases:
     - /docs/contributing/documentation/reference/
 ---
 
-The following sections contains other information that's helpful when working with Hugo and the Jenkins X site; you don't necessary need to go through this if this is your first time.
+The following sections contains other information that's helpful when working with Hugo and the JayeX site; you don't necessary need to go through this if this is your first time.
 
 ## Search by Algolia/DocSearch
 
@@ -23,7 +23,7 @@ We're using [DocSearch](https://community.algolia.com/docsearch/) by Algolia to 
 ### Code examples
 Hugo uses [goldmark](https://gohugo.io/getting-started/configuration-markup#goldmark) parser to handle markdown and markdown related configuration and [chroma](https://gohugo.io/content-management/syntax-highlighting/) to handle syntax highlighting.
 Chroma supports the following [languages](https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages).
-All pages on the Jenkins X docs use the typical triple-back-tick markdown syntax.
+All pages on the JayeX docs use the typical triple-back-tick markdown syntax.
 
 ````md
 ```go
@@ -65,13 +65,13 @@ type CommandInterface interface {
 
 ### Blockquotes
 
-Blockquotes can be added to the Jenkins X documentation using [typical Markdown blockquote syntax][bqsyntax]:
+Blockquotes can be added to the JayeX documentation using [typical Markdown blockquote syntax][bqsyntax]:
 
 ```text
 > Without the threat of punishment, there is no joy in flight.
 ```
 
-The preceding blockquote will render as follows in the Jenkins X docs:
+The preceding blockquote will render as follows in the JayeX docs:
 
 > Without the threat of punishment, there is no joy in flight.
 
@@ -81,7 +81,7 @@ However, you can add a quick and easy `<cite>` element (added on the client via 
 > Without the threat of punishment, there is no joy in flight. - [Kobo Abe](https://en.wikipedia.org/wiki/Kobo_Abe)
 ```
 
-Which will render as follows in the Jenkins X docs:
+Which will render as follows in the JayeX docs:
 
 > Without the threat of punishment, there is no joy in flight. - [Kobo Abe][abe]
 

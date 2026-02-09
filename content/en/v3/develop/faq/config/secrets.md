@@ -51,7 +51,7 @@ Secrets are [stored in external secret storage](/v3/admin/setup/secrets/) like V
 
 So you can edit them in the underlying secret store directly (e.g. with your cloud providers CLI or the vault CLI).
 
-When you first boot up Jenkins X it will auto-populate the secrets in the external secret store with the bot user and password you pass in when you run.
+When you first boot up JayeX it will auto-populate the secrets in the external secret store with the bot user and password you pass in when you run.
 
 The bot user and password is replicated into a number of different secrets. This is so that you can use separate accounts and tokens if you wish; or even change scopes per use.
 
@@ -127,7 +127,7 @@ Your cloud provider could charge per read of a secret and so a frequent poll of 
 
 You can do this via the `POLLER_INTERVAL_MILLISECONDS` setting in the [kubernetes external secrets configuration](https://github.com/external-secrets/kubernetes-external-secrets/tree/master/charts/kubernetes-external-secrets#configuration)
 
-For more details [see how to configure charts](https://jenkins-x.io/v3/develop/apps/#customising-charts)
+For more details [see how to configure charts](https://jayex.io/v3/develop/apps/#customising-charts)
 
 ## How do I switch to GSM from Vault?
 

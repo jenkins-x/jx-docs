@@ -31,7 +31,7 @@ Jenkins X invites technical writers to engage with our ongoing efforts to restru
 
 * Create a tutorial for provisioning a Kubernetes cluster and installing Jenkins X with `jx boot` on platforms that are not covered with Terraform. Currently, the [Get started page](/docs/getting-started/) gives the incorrect impression that Jenkins X works only in GKE (Google Cloud Platform) and EKS (Amazon Web Services).
 
-<!-- * Write a how-to guide on using the new Terraform scripts to create Kubernetes clusters. Currently, on the docs site there is a [TODO for documentation on using Terraform to set up cloud resources](https://jenkins-x.io/docs/labs/boot/getting-started/cloud/terraform/). Using Terraform scripts to create clusters makes cluster creation more transparent and can increase default security. For more information on using Terraform scripts, please see a [recent office hours demo](https://www.youtube.com/watch?v=yujge0PHxd4) by [Hardy Ferentschik](https://github.com/hferentschik). -->
+<!-- * Write a how-to guide on using the new Terraform scripts to create Kubernetes clusters. Currently, on the docs site there is a [TODO for documentation on using Terraform to set up cloud resources](https://jayex.io/docs/labs/boot/getting-started/cloud/terraform/). Using Terraform scripts to create clusters makes cluster creation more transparent and can increase default security. For more information on using Terraform scripts, please see a [recent office hours demo](https://www.youtube.com/watch?v=yujge0PHxd4) by [Hardy Ferentschik](https://github.com/hferentschik). -->
 
 * Build out [Creating Projects](/docs/getting-started/first-project/) section to include new or extended sections such as Understanding Buildpacks, New Project With Quickstart Or Import, Defining Environments, etc. The GSoD writer would work with the Jenkins X engineering team and community to build out those pages.
 
@@ -64,7 +64,7 @@ Next office hours are on **5 May**. Join us here: https://zoom.us/j/397862697
 ### Additional Information
 
 #### Technical Writers
-* [Contributing to the Jenkins X documentation](https://jenkins-x.io/community/documentation/)
+* [Contributing to the Jenkins X documentation](https://jayex.io/community/documentation/)
 * [GSoD Technical Writer guide](https://developers.google.com/season-of-docs/docs/tech-writer-guide)
 * [GSoD Timeline](https://developers.google.com/season-of-docs/docs/timeline)
 

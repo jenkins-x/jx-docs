@@ -7,14 +7,14 @@ description: An example how to build a multi-cluster environment using GKE/GSM/D
 weight: 101
 ---
  
-This is an example on how to build a multi-cluster environment having two separate cluster repos (i.e. 'dev' and 'prod'). The steps will include building a GKE/GSM/DSN environment from scratch for both environments, and deploying projects to staging and the remote production. It will use DNS (`jx3rocks.com`), TLS, Let's Encrypt certificates. This example is intended for an audience already familiar with Jenkins X operability and focuses on an example of actual commands used to build a multi-cluster environment. Additional information regarding using Google as the provider for this example can be found under [Google Cloud Platform Prequisites](/v3/admin/guides/tls_dns/#prerequisites).
+This is an example on how to build a multi-cluster environment having two separate cluster repos (i.e. 'dev' and 'prod'). The steps will include building a GKE/GSM/DSN environment from scratch for both environments, and deploying projects to staging and the remote production. It will use DNS (`jx3rocks.com`), TLS, Let's Encrypt certificates. This example is intended for an audience already familiar with JayeX operability and focuses on an example of actual commands used to build a multi-cluster environment. Additional information regarding using Google as the provider for this example can be found under [Google Cloud Platform Prequisites](/v3/admin/guides/tls_dns/#prerequisites).
 
 > ⚠️ Note to _OSX_ users 
 > You may need to substitute `sed -i` commands with `sed -i.bak`, taking note to delete the generated .bak file.
 > Some `sed -i` commands that are additive might not work but can easily be completed with a text editor.
 
 ### Generate the Infra and Cluster Repos for Dev and Prod
-Using a command-line based approach, the example employs a process modeled after the doc [Setup Jenkins X on Google Cloud with GKE](/v3/admin/platforms/google), and will use Google Secret Manger. It requires the installation of [Git](https://git-scm.com/downloads) and [Hub](https://hub.github.com/) command line tools. 
+Using a command-line based approach, the example employs a process modeled after the doc [Setup JayeX on Google Cloud with GKE](/v3/admin/platforms/google), and will use Google Secret Manger. It requires the installation of [Git](https://git-scm.com/downloads) and [Hub](https://hub.github.com/) command line tools. 
 
 The following are the values used for the creation of the Infra and Cluster repos for both the Dev and Prod environments:
 ```
@@ -333,7 +333,7 @@ Pull Request https://github.com/${JX3ORG}/jx3-gke-gsm.src/pull/1 was merged at s
 
 waiting up to 20m0s for a trigger to be added to the lighthouse configuration in ConfigMap config in namespace jx for repository: jx3rocks/jx3-gke-gsm-prd
 you can watch the boot job to update the configuration via: jx admin log
-for more information on how this works see: https://jenkins-x.io/docs/v3/about/how-it-works/#importing--creating-quickstarts
+for more information on how this works see: https://jayex.io/docs/v3/about/how-it-works/#importing--creating-quickstarts
 ```
 Eventually the process appears to time out waiting for the adding of the trigger.
 ```

@@ -10,12 +10,12 @@ aliases:
 ---
 
 
-Jenkins X 3.x supports the `helmfile.yaml` file format from the [helmfile project](https://github.com/helmfile/helmfile) that can be used to define the [Helm](https://helm.sh/) [charts](https://helm.sh/docs/topics/charts/) you wish to install and their namespace.
+JayeX 3.x supports the `helmfile.yaml` file format from the [helmfile project](https://github.com/helmfile/helmfile) that can be used to define the [Helm](https://helm.sh/) [charts](https://helm.sh/docs/topics/charts/) you wish to install and their namespace.
 
 
 ## Adding Charts
             
-Jenkins X uses [helmfile](https://helmfile.readthedocs.io/en/latest/#configuration) to configure which versions of which helm charts are to be deployed in which namespace along with its configuration. 
+JayeX uses [helmfile](https://helmfile.readthedocs.io/en/latest/#configuration) to configure which versions of which helm charts are to be deployed in which namespace along with its configuration. 
 
 
 ### Using the CLI
@@ -60,7 +60,7 @@ releases:
 ...
 ``` 
 
-The `namespace` and `version` properties of the charts get resolved during deployment via the [version stream](https://jenkins-x.io/about/concepts/version-stream/) or you can specify them explicitly.
+The `namespace` and `version` properties of the charts get resolved during deployment via the [version stream](https://jayex.io/about/concepts/version-stream/) or you can specify them explicitly.
 
 
 The prefix of the chart name is the chart repository name. There are a few chart repository names already defined in the `helmfile.yaml` in the `repositories:` section. You can add any number of chart repositories to the `helmfile.yaml` that you need.
@@ -110,9 +110,9 @@ releases:
   
 You can also use a file called `values.yaml.gotmpl` if you wish to use go templating of the values file. For example this lets you reference properties from the `jx-requirements.yml` file via expressions like `{{ .Values.jxRequirements.ingress.domain }}`.
 
-To see an example of this in action check out the [charts/jenkins-x/tekton/values.yaml.gotmpl](https://github.com/jenkins-x/jx3-versions/blob/master/charts/cdf/tekton-pipeline/values.yaml.gotmpl) file in the [version stream](https://jenkins-x.io/about/concepts/version-stream/).
+To see an example of this in action check out the [charts/jenkins-x/tekton/values.yaml.gotmpl](https://github.com/jenkins-x/jx3-versions/blob/master/charts/cdf/tekton-pipeline/values.yaml.gotmpl) file in the [version stream](https://jayex.io/about/concepts/version-stream/).
 
-Note that many apps are already configured to make use of the `jx-requirements.yml` settings via the [version stream](https://jenkins-x.io/about/concepts/version-stream/) - but you are free to add your own custom configuration. 
+Note that many apps are already configured to make use of the `jx-requirements.yml` settings via the [version stream](https://jayex.io/about/concepts/version-stream/) - but you are free to add your own custom configuration. 
    
 ### Using requirements in charts
 

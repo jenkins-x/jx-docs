@@ -8,9 +8,9 @@ weight: 100
 
 ## Prerequisites
 
-- cluster created using Jenkins X [GCP Terraform getting started](/v3/admin/platform/gke/)
+- cluster created using JayeX [GCP Terraform getting started](/v3/admin/platform/gke/)
 - own a domain and have GCP manage it, [configure cloud dns to manage a domain](/v3/guides/infra/google_cloud_dns)
-- latest Jenkins X CLI, Infrastructure and Cluster git repository updates [upgrade](/v3/guides/upgrade)
+- latest JayeX CLI, Infrastructure and Cluster git repository updates [upgrade](/v3/guides/upgrade)
 
 ### Cloud Infrastructure
 First we will configure the cloud infrastructure requirements:
@@ -32,7 +32,7 @@ To use a subdomain for this cluster add the following configuration:
 subdomain     = "dev"
 ```
 
-We will now add details that will be passed to Jenkins X as requirements when booting the cluster.
+We will now add details that will be passed to JayeX as requirements when booting the cluster.
 
 Add these to `values.auto.tfvars`
 ```yaml
@@ -61,7 +61,7 @@ terraform apply
 
 If using a subdomain you will now see your managed zone in GCP [here](https://console.cloud.google.com/net-services/dns/zones)
 
-__Once terraform has finished for now there is a manual trigger of the Jenkins X cluster repository required.  This will not be needed in the future but for now please make a dummy commit on your cluster git repository and follow the boot job as in applies the updates to your cluster.__
+__Once terraform has finished for now there is a manual trigger of the JayeX cluster repository required.  This will not be needed in the future but for now please make a dummy commit on your cluster git repository and follow the boot job as in applies the updates to your cluster.__
 
 To follow the jx boot installation using the instructions given in the terraform output, connect to the cluster and run:
 

@@ -19,7 +19,7 @@ Creates a new Spring Boot application and then optionally setups CI/CD pipelines
   
 See Also: 
 
-  * jx project : https://jenkins-x.io/commands/jx_project
+  * jx project : https://jayex.io/commands/jx_project
 
 ### Examples
 
@@ -50,7 +50,7 @@ See Also:
       --deploy-kind string             The kind of deployment to use for the project. Should be one of knative, default
       --dir string                     Specify the directory to import (default ".")
       --docker-registry-org string     The name of the docker registry organisation to use. If not specified then the Git provider organisation will be used
-      --dry-run                        Performs local changes to the repo but skips the import into Jenkins X
+      --dry-run                        Performs local changes to the repo but skips the import into JayeX
       --env-name string                The name of the environment to create (only used for env projects)
       --env-strategy string            The promotion strategy of the environment to create (only used for env projects) (default "Never")
       --git-kind string                the kind of git server to connect to
@@ -64,8 +64,8 @@ See Also:
       --import-commit-message string   Specifies the initial commit message used when importing the project
   -j, --java-version string            Java version
       --jenkins string                 The name of the Jenkins server to import the project into
-      --jenkinsfilerunner string       if you want to import into Jenkins X with Jenkinsfilerunner this argument lets you specify the container image to use
-      --jx                             if you want to default to importing this project into Jenkins X instead of a Jenkins server if you have a mixed Jenkins X and Jenkins cluster
+      --jenkinsfilerunner string       if you want to import into JayeX with Jenkinsfilerunner this argument lets you specify the container image to use
+      --jx                             if you want to default to importing this project into JayeX instead of a Jenkins server if you have a mixed JayeX and Jenkins cluster
   -k, --kind stringArray               Default dependency kinds to choose from (default [Core,Web,Template Engines,SQL,I/O,Ops,Spring Cloud GCP,Azure,Cloud Contract,Cloud AWS,Cloud Messaging,Cloud Tracing])
   -l, --language string                Language to generate
       --log-level string               Sets the logging level. If not specified defaults to $JX_LOG_LEVEL
@@ -85,7 +85,7 @@ See Also:
       --pipeline-catalog-dir string    The pipeline catalog directory you want to use instead of the buildPackGitURL in the dev Environment Team settings. Generally only used for testing pipelines
       --pr-poll-period duration        the time between polls of the Pull Request on the cluster environment git repository (default 20s)
       --pr-poll-timeout duration       the maximum amount of time we wait for the Pull Request on the cluster environment git repository (default 20m0s)
-      --scheduler string               Change schedulerName, More info about Scheduler: https://jenkins-x.io/v3/develop/faq/config/repos/#how-do-i-customise-a-scheduler (default "in-repo")
+      --scheduler string               Change schedulerName, More info about Scheduler: https://jayex.io/v3/develop/faq/config/repos/#how-do-i-customise-a-scheduler (default "in-repo")
       --service-account string         The Kubernetes ServiceAccount to use to run the initial pipeline (default "tekton-bot")
       --type string                    Project Type (such as maven-project or gradle-project)
       --verbose                        Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace

@@ -41,7 +41,7 @@ We want you to have a great experience contributing to Jenkins X and learn lots 
 You do not have to complete all of these tasks.
 This is presented here so that you have some clarity around where to start and which resources to follow.
 
-- Recommended: Join the jenkins X community [slack channels](https://jenkins-x.io/community/#slack) and say hello :)
+- Recommended: Join the jenkins X community [slack channels](https://jayex.io/community/#slack) and say hello :)
   - We prefer you post messages in the jenkins-x-dev channel
   - Attend the [office hours](/community/#office-hours)
 - Recommended: Interact with potential mentors to understand/review the requirements of the projects.
@@ -49,9 +49,9 @@ This is presented here so that you have some clarity around where to start and w
 - Optional: Learn about [docker](https://youtu.be/3c-iBn73dDE)
 - Optional: Learn about [kubernetes](https://youtu.be/X48VuDVv0do)
 - Optional: Learn the basics of [golang](https://go.dev/tour/list)
-- Optional: Understand Jenkins X concepts and fundamentals by going over the [documentation](https://jenkins-x.io/)
+- Optional: Understand Jenkins X concepts and fundamentals by going over the [documentation](https://jayex.io/)
 - Optional: Set up Jenkins X locally and give it a go (Please don't spend money running Jenkins X in the cloud).
-  - We prefer you use [k3s](https://jenkins-x.io/v3/admin/platforms/k3s/) for this, as it's less resource intensive and can be installed locally on your workstation (linux). Mac users need to install something like multipass to first install k3s.
+  - We prefer you use [k3s](https://jayex.io/v3/admin/platforms/k3s/) for this, as it's less resource intensive and can be installed locally on your workstation (linux). Mac users need to install something like multipass to first install k3s.
 
 ### Interview process and selection criteria (April 19 and May 12)
 

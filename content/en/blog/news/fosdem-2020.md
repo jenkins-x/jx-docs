@@ -53,7 +53,7 @@ We're excited to hear all the talks and discussions in the CI/CD devroom and loo
 
 
 <div class="event-wrapper" itemscope itemtype="http://schema.org/Event">
-  <link href="#" itemprop="image" content="https://jenkins-x.io/images/community/events/2020-fosdem.png" />
+  <link href="#" itemprop="image" content="https://jayex.io/images/community/events/2020-fosdem.png" />
   <meta itemprop="description" content="For the first time, there will be a Continuous Integration and Continuous 
   Deployment (CI/CD) devroom at FOSDEM! The CI/CD devroom will take place on 2nd of February 2020 in Brussels, Belgium." />
   <meta class="event-date" itemprop="startDate" content="2020-02-02" />
@@ -82,7 +82,7 @@ We're excited to hear all the talks and discussions in the CI/CD devroom and loo
 
 <script type="text/javascript">
   DiscourseEmbed = { discourseUrl: 'https://jenkinsx.discourse.group/',
-                     discourseEmbedUrl: 'https://jenkins-x.io/blog/2020/01/09/jxfosdem2020/' };
+                     discourseEmbedUrl: 'https://jayex.io/blog/2020/01/09/jxfosdem2020/' };
 
   (function() {
     var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;

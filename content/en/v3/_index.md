@@ -1,5 +1,5 @@
 ---
-title: Jenkins X 3.x
+title: JayeX 3.x
 linktitle: Documentation
 type: docs
 weight: 45

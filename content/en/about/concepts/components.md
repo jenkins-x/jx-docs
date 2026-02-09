@@ -1,11 +1,11 @@
 ---
 title: Components
 linktitle: Components
-description: Component overview of a typical Jenkins X installation
+description: Component overview of a typical JayeX installation
 weight: 10
 ---
 
-An installation of Jenkins X consists of:
+An installation of JayeX consists of:
 
 * a Development Environment per team which is a [kubernetes namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/)
 * zero to many other [Permanent Environments](/about/concepts/features/#environments) 
@@ -17,7 +17,7 @@ Typically each environment is associated with its own [kubernetes namespace](htt
 
 Though technically 2 teams could share the same underlying namespace for, say, `Staging` though we advise separation to keep things simple - otherwise changes in one git repo could conflict with changes in another if they both configure the same namespace; due to, say, service resource name or DNS conflicts. If you wish 2 teams to share the same underlying microservices its much simpler to just use `service linking` to link services in one namespace to another so that they appear as local services with local DNS.
 
-See the full list of [components of Jenkins X](/docs/reference/components/)
+See the full list of [components of JayeX](/docs/reference/components/)
 
 ## Development Environment
 
@@ -25,7 +25,7 @@ In the dev environment we have installed a number of core applications we believ
 
 We also support [addons](/about/concepts/features/#applications) to extend this core set. 
 
-Jenkins X comes with configuration that wires these services together meaning everything works together straight away. This dramatically reduces the time to get started with Kubernetes as all the passwords, environment variables and config files are all setup up to work with each other.
+JayeX comes with configuration that wires these services together meaning everything works together straight away. This dramatically reduces the time to get started with Kubernetes as all the passwords, environment variables and config files are all setup up to work with each other.
 
 1. __Jenkins__  — provides both CI and CD automation. There is an effort to decompose Jenkins over time to become more cloud native and make use of Kubernetes concepts around CRDs, storage and scaling for example.
 2. __Nexus__ — acts as a dependency cache for NodeJS and Java applications to dramatically improve build times. After an initial build of a SpringBoot application the build time is reduced from 12 minutes to 4. We have not yet but intend to demonstrate swapping this with Artifactory soon.

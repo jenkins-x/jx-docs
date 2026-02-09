@@ -1,7 +1,7 @@
 ---
 title: Changelog
 linktitle: Changelog
-description: Current status of Jenkins X
+description: Current status of JayeX
 date: 2018-02-01
 publishdate: 2018-02-01
 lastmod: 2018-02-01
@@ -9,7 +9,7 @@ weight: 10
 type: docs
 ---
 
-Refer to the [Jenkins X Capabilities Matrix](/about/capabilities) for cloud provider support maturity.
+Refer to the [JayeX Capabilities Matrix](/about/capabilities) for cloud provider support maturity.
 
 # Status Reports
 
@@ -20,7 +20,7 @@ This section describes any specific manual work arounds you may require above an
 
 It looks like the monocular docker images got removed today!
 
-It turns out that monocular is not an absolute requirement for Jenkins X; it works great without it.
+It turns out that monocular is not an absolute requirement for JayeX; it works great without it.
 
 So a quick workaround to the problem is to scale down your monocular deployment:
 
@@ -38,9 +38,9 @@ We can always add monocular back as an optional [App](/docs/contributing/addons/
 
 ## 12th June 2019: Knative Build now deprecated
 
-Knative Build was our first attempt at building a serverless offering in Jenkins X. Since then Knative build got replaced with the more powerful Knative Build Pipelines which then got moved and renamed to [Tekton](https://tekton.dev/).
+Knative Build was our first attempt at building a serverless offering in JayeX. Since then Knative build got replaced with the more powerful Knative Build Pipelines which then got moved and renamed to [Tekton](https://tekton.dev/).
 
-So we highly recommend anyone who has created a Jenkins X installation using Knative build to move to a [Serverless Jenkins X Pipelines](/about/concepts/jenkins-x-pipelines/) cluster using Tekton instead.
+So we highly recommend anyone who has created a JayeX installation using Knative build to move to a [Serverless JayeX Pipelines](/about/concepts/jenkins-x-pipelines/) cluster using Tekton instead.
 
 Now the `jx` binary will warn that any attempt at using `--knative-build` when installing is deprecated.
 
@@ -59,14 +59,14 @@ In the `dev` profile, remove the following section:
 
 For more information, refer to this [PR](https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/pull/50/files).
 
-## 16th April 2019: Jenkins X 2.x
+## 16th April 2019: JayeX 2.x
 
-We are pleased to announce 2.0.x of Jenkins X.
+We are pleased to announce 2.0.x of JayeX.
 
-We have changed some of the default CLI arguments when installing Jenkins X.
+We have changed some of the default CLI arguments when installing JayeX.
 
-* we are now deprecating the use of Knative build with Prow / Serverless Jenkins in favor of [Jenkins X Pipelines and Tekton](/about/concepts/jenkins-x-pipelines/).
-* we default to using `--no-tiller`  to [disable the use of helm's tiller](/news/helm-without-tiller/). We recommend to avoid tiller. If you really still want to use it then use `--no-tiller false` on the CLI when installing Jenkins X.
+* we are now deprecating the use of Knative build with Prow / Serverless Jenkins in favor of [JayeX Pipelines and Tekton](/about/concepts/jenkins-x-pipelines/).
+* we default to using `--no-tiller`  to [disable the use of helm's tiller](/news/helm-without-tiller/). We recommend to avoid tiller. If you really still want to use it then use `--no-tiller false` on the CLI when installing JayeX.
 
 
 ## 6th Feb 2019: Regression in `jx-install-config` secret.
@@ -111,7 +111,7 @@ If you would prefer to apply this changes manually, edit the secret `jenkins-mav
 
 ## 8 Jan 2019: Prow and Knative Build upgrade
 
-There are three critical bugs with the prow based Jenkins X
+There are three critical bugs with the prow based JayeX
 https://github.com/jenkins-x/jx/issues/2539
 https://github.com/jenkins-x/jx/issues/2561
 https://github.com/jenkins-x/jx/issues/2544

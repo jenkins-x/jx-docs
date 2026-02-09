@@ -28,11 +28,11 @@ To help developers get their code out to the world quickly Jenkins X offers prev
 
 ### Preview Environments
 
-These are the Jenkins X killer feature. Preview environments enable developers to preview pull requests before changes merge to master. This takes away the pain of having to look at code to work out how good a PR is. Preview environments allow for fast and early feedback as developers can review actual functionality in an automatically provisioned environment. Typically the creation of preview environments is automated inside the Pipelines created by Jenkins X. Read more about [preview environments](https://jenkins-x.io/about/concepts/features/#preview-environments). 
+These are the Jenkins X killer feature. Preview environments enable developers to preview pull requests before changes merge to master. This takes away the pain of having to look at code to work out how good a PR is. Preview environments allow for fast and early feedback as developers can review actual functionality in an automatically provisioned environment. Typically the creation of preview environments is automated inside the Pipelines created by Jenkins X. Read more about [preview environments](https://jayex.io/about/concepts/features/#preview-environments). 
 
 ### Developer Experience (DevEx)
 
-Jenkins X can provide preview environments and a complete system for scalable CI/CD because it builds on Kubernetes and the cloud native ecosystem (tools such as Helm). However Kubernetes is complex so Jenkins X abstracts away a lot of this complexity, for example by providing a one line [‘jx create cluster’](https://jenkins-x.io/commands/jx_create_cluster/) command to create a fully formed cluster automatically set up with sensible defaults. 
+Jenkins X can provide preview environments and a complete system for scalable CI/CD because it builds on Kubernetes and the cloud native ecosystem (tools such as Helm). However Kubernetes is complex so Jenkins X abstracts away a lot of this complexity, for example by providing a one line [‘jx create cluster’](https://jayex.io/commands/jx_create_cluster/) command to create a fully formed cluster automatically set up with sensible defaults. 
 
 ### Multicloud
 
@@ -42,11 +42,11 @@ Jenkins X can create a cluster with a single command on virtually any flavour of
 
 ### GitOps
 
-Jenkins X comes built in with the most modern best practices for CI/CD including GitOps, operation by pull request. Jenkins X uses GitOps for promoting pull requests and to manage the configuration and version of the kubernetes resources which are deployed to each environment. Read [more about GitOps here](https://jenkins-x.io/about/features/#environments).
+Jenkins X comes built in with the most modern best practices for CI/CD including GitOps, operation by pull request. Jenkins X uses GitOps for promoting pull requests and to manage the configuration and version of the kubernetes resources which are deployed to each environment. Read [more about GitOps here](https://jayex.io/about/features/#environments).
 
 ### Accelerate Capabilities
 
-Jenkins X uses capabilities identified by the Accelerate book such as automating the deployment process, using trunk-based development and using loosely coupled architecture. Read [more here](https://jenkins-x.io/about/accelerate/).
+Jenkins X uses capabilities identified by the Accelerate book such as automating the deployment process, using trunk-based development and using loosely coupled architecture. Read [more here](https://jayex.io/about/accelerate/).
 
 ## Extensibility
 
@@ -54,11 +54,11 @@ Jenkins X works in different environments with any programming language and empo
 
 ### Quickstart templates
 
-This is the most popular way to extend Jenkins X as the community have contributed many quickstart templates for their favourite programming languages and frameworks. Read more about [extending Jenkins X](https://jenkins-x.io/extending/).
+This is the most popular way to extend Jenkins X as the community have contributed many quickstart templates for their favourite programming languages and frameworks. Read more about [extending Jenkins X](https://jayex.io/extending/).
 
 ### Workloads
 
-Not everybody has the luxury of starting on cloud native apps from fresh. so recently Jenkins X added buildpacks to bridge the cloud-native divide for typical Jenkins workloads such as Java, Maven, Gradle etc.. Buildpacks themselves are extensible. Read more about [buildpacks here](https://jenkins-x.io/architecture/build-packs/). 
+Not everybody has the luxury of starting on cloud native apps from fresh. so recently Jenkins X added buildpacks to bridge the cloud-native divide for typical Jenkins workloads such as Java, Maven, Gradle etc.. Buildpacks themselves are extensible. Read more about [buildpacks here](https://jayex.io/architecture/build-packs/). 
 
 ## What do developer think of Jenkins X?
 From the early adopters trying out Jenkins X we hear ‘Wow’ a lot, for example:

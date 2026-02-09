@@ -161,4 +161,4 @@ Talk to us on our slack channels, which are part of the Kubernetes slack. Join  
 * #jenkins-x-dev for developers of Jenkins X
 * #jenkins-x-user for users of Jenkins X
 
-Find out more about becoming involved in the Jenkins X community [here](https://jenkins-x.io/community/).
+Find out more about becoming involved in the Jenkins X community [here](https://jayex.io/community/).

@@ -1,13 +1,13 @@
 ---
 title: Version Stream
 linktitle: Version Stream
-description: How we improve stability of Jenkins X and its Apps
+description: How we improve stability of JayeX and its Apps
 weight: 60
 ---
 
-Jenkins X is made up of a large number of command line _packages_, _images_ and helm _charts_, some of which are released by the Jenkins X community and others come from the wider open source ecosystem.
+JayeX is made up of a large number of command line _packages_, _images_ and helm _charts_, some of which are released by the JayeX community and others come from the wider open source ecosystem.
 
-To improve the stability of Jenkins X when lots of packages and charts are changing all the time we have introduced the Jenkins X `Version Stream`
+To improve the stability of JayeX when lots of packages and charts are changing all the time we have introduced the JayeX `Version Stream`
 
 <figure>
 <img src="/images/jx-version-stream-v1.png"/>
@@ -18,7 +18,7 @@ To improve the stability of Jenkins X when lots of packages and charts are chang
 
 ## How it works
 
-The version stream is stored in the [jenkins-x/jenkins-x-versions](https://github.com/jenkins-x/jenkins-x-versions) git repository and stores the stable version of all packages and charts used by Jenkins X.
+The version stream is stored in the [jenkins-x/jenkins-x-versions](https://github.com/jenkins-x/jenkins-x-versions) git repository and stores the stable version of all packages and charts used by JayeX.
 
 When you run a command, such as to [create a cluster](/docs/getting-started/setup/create-cluster/), [install on an existing cluster](/docs/resources/guides/managing-jx/common-tasks/install-on-cluster/) or run a [jx upgrade](/commands/jx_upgrade/) command the `jx` command will ensure you have a local clone of the  [jenkins-x/jenkins-x-versions](https://github.com/jenkins-x/jenkins-x-versions) git repository and it will then pull the stable version of any chart or package from that source - or log a warning if a version is not yet being maintained.
 
@@ -38,7 +38,7 @@ Upon the successful completion of all BDD tests executed on the PR it will merge
 
 We have a simple CLI command [jx step create pullrequest versions](/commands/jx_step_create_pullrequest_versions/) which can be used to automatically generate Pull Requests on the [jenkins-x/jenkins-x-versions](https://github.com/jenkins-x/jenkins-x-versions) git repository.
 
-If you are the maintainer of an upstream chart that is used by Jenkins X it would be awesome to add this command at the end of your release pipeline to generate a Pull Request for us to upgrade Jenkins X to use your new release (after the BDD tests have run to verify things still work):
+If you are the maintainer of an upstream chart that is used by JayeX it would be awesome to add this command at the end of your release pipeline to generate a Pull Request for us to upgrade JayeX to use your new release (after the BDD tests have run to verify things still work):
 
 ```sh
 jx step create pullrequest versions -n mychartName -v 1.2.3
@@ -48,7 +48,7 @@ where `mychartName` is the fully qualified chart name using the remote repositor
 
 ### Periodic updates
 
-Its not always easy/possible to update upstream pipelines to push version changes to Jenkins X via a Pull Request. So you can setup a periodic job to check for version upgrades for all charts or charts matching some kind of wildcard.
+Its not always easy/possible to update upstream pipelines to push version changes to JayeX via a Pull Request. So you can setup a periodic job to check for version upgrades for all charts or charts matching some kind of wildcard.
 
 e.g. to upgrade the versions of all the `jenkins-x` maintained charts you can run this command:
 

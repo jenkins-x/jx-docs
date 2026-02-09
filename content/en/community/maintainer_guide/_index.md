@@ -1,7 +1,7 @@
 ---
-title: Maintainer Guide for Jenkins X
+title: Maintainer Guide for JayeX
 linktitle: Maintainer Guide
-description: Everything a Jenkins X maintainer should know about
+description: Everything a JayeX maintainer should know about
 weight: 30
 type: docs
 no_list: true
@@ -11,14 +11,14 @@ This document outlines some of the responsibilities expected from you as a maint
 
 ## Requirements of becoming a maintainer
 
-If you are a long time Jenkins X contributor, you should consider becoming a maintainer.
+If you are a long time JayeX contributor, you should consider becoming a maintainer.
 
-- Active contributions in Jenkins X community for atleast 6 months
+- Active contributions in JayeX community for atleast 6 months
   - Pull requests making changes to code or documentation
   - Review PRs from new contributors
   - Answer questions from the community in the slack channel
   - Answer questions in github issues
-- Approval from the current Jenkins X maintainers/TOC (Technical Oversight Committee)
+- Approval from the current JayeX maintainers/TOC (Technical Oversight Committee)
 
 Once you are ready to become a maintainer, open a PR to the jx-community repository.
 
@@ -26,17 +26,17 @@ Once you are ready to become a maintainer, open a PR to the jx-community reposit
 
 A core maintainer is expected to have access to the following resources
 
-- Member role in all Jenkins X github org
-- Jenkins X infra hosted in GCP (jenkins-x-bdd and jenkinsxio projects)
-- [1password account](https://jenkinsx.1password.com) to access Jenkins X related secrets
-- Jenkins X zoom account
-- Jenkins X youtube channel
-- Jenkins X UI password
-- Jenkins X algolia account (used as the search engine in the Jenkins X website)
+- Member role in all JayeX github org
+- JayeX infra hosted in GCP (jenkins-x-bdd and jenkinsxio projects)
+- [1password account](https://jenkinsx.1password.com) to access JayeX related secrets
+- JayeX zoom account
+- JayeX youtube channel
+- JayeX UI password
+- JayeX algolia account (used as the search engine in the JayeX website)
 
 ## Responsibilities
 
-It's expected that a core maintainer will make Jenkins X more stable and feature packed, while engaging with the community.
+It's expected that a core maintainer will make JayeX more stable and feature packed, while engaging with the community.
 
 ### Community effort
 
@@ -55,7 +55,7 @@ It's expected that a core maintainer will make Jenkins X more stable and feature
 
 ### PR Review
 
-Jenkins X has a lot of repositories, and new contributions from a very active community.
+JayeX has a lot of repositories, and new contributions from a very active community.
 It's the responsibilities of a maintainer to ensure we do timely PR reviews.
 
 It's desirable to follow the conventions outlined [here](/community/code/pullrequestreview/)

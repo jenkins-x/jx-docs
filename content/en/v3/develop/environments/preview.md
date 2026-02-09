@@ -9,9 +9,9 @@ aliases:
 ---
 
 
-Jenkins X lets you spin up Preview Environments for your Pull Requests so you can get fast feedback before changes are merged to the main branch. This gives you faster feedback for your changes before they are merged and released and allows you to avoid having human approval inside your release pipeline to speed up delivery of changes merged to master.
+JayeX lets you spin up Preview Environments for your Pull Requests so you can get fast feedback before changes are merged to the main branch. This gives you faster feedback for your changes before they are merged and released and allows you to avoid having human approval inside your release pipeline to speed up delivery of changes merged to master.
 
-When the Preview Environment is up and running Jenkins X will comment on your Pull Request with a link so in one click your team members can try out the preview!
+When the Preview Environment is up and running JayeX will comment on your Pull Request with a link so in one click your team members can try out the preview!
 
 <img src="/images/pr-comment.png" class="img-thumbnail">
 
@@ -20,11 +20,11 @@ When the Preview Environment is up and running Jenkins X will comment on your Pu
 
 To see how to create a Preview Environment on a Pull Request see this demo:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/x-GtKmmhDSI" title="Demo of creating Preview Environments on Pull Requestss with Jenkins X" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/x-GtKmmhDSI" title="Demo of creating Preview Environments on Pull Requestss with JayeX" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Generating a preview environment
 
-In a typical Jenkins X development scenario, users make changes to an  application that has been [imported or created via a quickstart](/v3/develop/create-project/).
+In a typical JayeX development scenario, users make changes to an  application that has been [imported or created via a quickstart](/v3/develop/create-project/).
 
 When the developer makes the change to their branch, with the ultimate
 goal of merging those branch changes into the `main` branch for
@@ -60,7 +60,7 @@ git add index.html server.js
 ```
 5. The program displays a link to a pull request. The developer can highlight the URL, right-click and choose *Open URL* to see the GitHub page in their browser.
 
-6. Jenkins X creates a preview environment in the PR for the application changes and displays a link to evaluate the new feature:
+6. JayeX creates a preview environment in the PR for the application changes and displays a link to evaluate the new feature:
 <div class="row">
   <div class="col col-lg-9">
     <img src="/images/pr-comment.png"/>

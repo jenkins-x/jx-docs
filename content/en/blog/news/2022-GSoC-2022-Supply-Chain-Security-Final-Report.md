@@ -70,7 +70,7 @@ It has many formats and many generating tools but all have the same purpose in t
 Implementation:
 
 I first began with investigating available standards and formats for SBOMs and tools for generating them.
-The results of my investigation were written to a blog post [here](https://jenkins-x.io/blog/2022/07/24/intro-to-sbom/).
+The results of my investigation were written to a blog post [here](https://jayex.io/blog/2022/07/24/intro-to-sbom/).
 
 I've settled for using [syft](https://github.com/anchore/syft) for SBOM generation and [spdx](https://spdx.dev/) as the standard format for SBOMs.
 Also, I've added those installation as pre-defined steps in the Jenkins X pipeline catalog so it will also be available for our users to use in their pipelines and applied those steps to Jenkins X own pipelines.
