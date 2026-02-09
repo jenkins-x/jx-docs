@@ -7,6 +7,9 @@ aliases:
   - /labs
   - /v3/
   - /docs/v3/
+menu:
+  main:
+    weight: 45
 ---
 
 

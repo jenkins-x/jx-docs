@@ -197,14 +197,3 @@ no = 'Sorry to hear that. Please <a href="https://github.com/jenkins-x/jx-docs/i
 	url = "https://kubernetes.slack.com/messages/C9LTHT2BB"
 	icon = "fab fa-slack"
   desc = "Chat with other project developers"
-
-# Versioning
-[[params.versions]]
-version = "v3.x (Current)"
-url = "/v3/about"
-dirpath = "v3"
-
-[[params.versions]]
-version = "v2.x (Unmaintained)"
-url = "/docs"
-dirpath = "docs"
