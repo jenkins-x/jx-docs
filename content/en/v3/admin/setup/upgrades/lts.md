@@ -14,7 +14,7 @@ hide_summary: true
   <h1>WARNING: The LTS is not updated, so we don't recommend using it</h1>
 </div>
 
-JayeX uses [version streams](/about/concepts/version-stream/) as a quality gate when promoting plugins, charts, cli packages, container images etc.  This results in a release of JayeX.
+JayeX uses [version streams](/v3/about/concepts/version-stream/) as a quality gate when promoting plugins, charts, cli packages, container images etc.  This results in a release of JayeX.
  
 The default version stream for JayeX 3.x is https://github.com/jenkins-x/jx3-versions.  The JayeX own infrastructure runs a number of end to end BDD tests for different base install options which covers the core of JayeX.  Provided these tests pass on from a Pull Request it will be merged and users can upgrade their [CLI](/v3/guides/upgrades/cli) and [Cluster](/v3/guides/upgrades/cluster) bringing in the versions that make that release. 
  

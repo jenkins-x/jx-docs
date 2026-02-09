@@ -33,7 +33,7 @@ aliases:
     * This also opens the door to using boot to setup multi-team installations where multiple teams use different namespaces but share services in the same cluster
 * The cluster GitOps repository is simpler and easier to keep in sync/rebase/merge with the upstream git repositories.
   * We use [kpt](https://googlecontainertools.github.io/kpt/) to do that for us
-  * We now include the [version stream](https://jayex.io/about/concepts/version-stream/) inside your GitOps repository too inside the `versionStream` directory after installation so that all the information about your installation is inside a single git repository so its simpler to test changes & ensure consistency.
+  * We now include the [version stream](https://jayex.io/v3/about/concepts/version-stream/) inside your GitOps repository too inside the `versionStream` directory after installation so that all the information about your installation is inside a single git repository so its simpler to test changes & ensure consistency.
 * We can avoid composite charts to simplfiy configuration and upgrades
 * We no longer use `exposecontroller`, instead use regular helm configuration to create `Ingress` resources and [override domain names](/v3/develop/faq/#how-do-i-configure-the-ingress-domain-in-dev-staging-or-production)
 * secret handling is currently much simpler using Kubernetes External Secrets for any secrets in any namespace or cluster for your own apps or for those used by JayeX.

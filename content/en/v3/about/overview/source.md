@@ -26,7 +26,7 @@ Here we'll call out of some of the main repositories in the above organisations:
 
 * [jenkins-x/jx](https://github.com/jenkins-x/jx) is the 3.x CLI 
 * [jenkins-x/jx3-pipeline-catalog](https://github.com/jenkins-x/jx3-pipeline-catalog) the main [Pipeline Catalog](https://jayex.io/v3/guides/pipeline-catalog/)
-* [jenkins-x/jx3-versions](https://github.com/jenkins-x/jx3-versions) contains the [version stream](/about/concepts/version-stream/) - the stable versions of all _charts_ and CLI _packages_
+* [jenkins-x/jx3-versions](https://github.com/jenkins-x/jx3-versions) contains the [version stream](/v3/about/concepts/version-stream/) - the stable versions of all _charts_ and CLI _packages_
 
 Additional repositories:
 

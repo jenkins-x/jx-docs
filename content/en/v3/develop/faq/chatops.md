@@ -51,7 +51,7 @@ In JayeX you can create a custom `Scheduler` resource in your [jx boot](/docs/ge
 
 Then JayeX will invoke each context on demand via `/test mycontext` or automatically if you enable `alwaysRun: true`.
 
-You can see how we define lots of [parallel testing contexts in the version stream here](https://github.com/jenkins-x/environment-tekton-weasel-dev/blob/f377a72498282de9ee49b807b4d5ba74321a4fab/env/templates/jx-versions-scheduler.yaml#L18) which all run in parallel and report their status on each pull request on the [version stream](/about/concepts/version-stream/)
+You can see how we define lots of [parallel testing contexts in the version stream here](https://github.com/jenkins-x/environment-tekton-weasel-dev/blob/f377a72498282de9ee49b807b4d5ba74321a4fab/env/templates/jx-versions-scheduler.yaml#L18) which all run in parallel and report their status on each pull request on the [version stream](/v3/about/concepts/version-stream/)
 
 See also [How do I map SourceRepository to a custom Scheduler?](/docs/resources/faq/setup/#how-do-i-map-sourcerepository-to-a-custom-scheduler)
 
