@@ -43,7 +43,8 @@ Contains the main development services of JayeX:
 
 ### `lighthouse`
 
-[jenkins-x/lighthouse](https://github.com/jenkins-x/lighthouse) creates [tekton pipelines](https://tekton.dev/) and triggers [ChatOps](/docs/resources/faq/using/chatops/) on Pull Requests. Its made up of the following components:
+[jenkins-x/lighthouse](https://github.com/jenkins-x/lighthouse) creates [tekton pipelines](https://tekton.dev/) and 
+triggers [ChatOps](/v3/develop/faq/chatops/) on Pull Requests. Its made up of the following components:
 
 * **lighthouse-webhooks** converts webhooks from your git provider into `LighthouseJob` custom resources
 * **lighthouse-tekton-controller** converts `LighthouseJob` custom resources into [tekton](https://tekton.dev/) `PipelineRun` resources (the [tekton controller](https://tekton.dev/) converts `PipelineRun` resources into kubernetes `Pods`

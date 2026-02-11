@@ -16,7 +16,7 @@ This page lists the main organisations and repositories.
 * [jenkins-x-plugins](https://github.com/jenkins-x-plugins) contains plugins to JayeX 3.x. See the [extension guide](https://jayex.io/v3/about/extending/#plugins) for details
 * [jenkins-x-charts](https://github.com/jenkins-x-charts) the main helm charts we distribute
 * [jenkins-x-images](https://github.com/jenkins-x-images) contains some custom docker image builds
-* [jenkins-x-quickstarts](https://github.com/jenkins-x-quickstarts) the quickstart projects used by [create quickstart](/docs/getting-started/first-project/create-quickstart/)
+* [jenkins-x-quickstarts](https://github.com/jenkins-x-quickstarts) the quickstart projects used by [create quickstart](/v3/develop/create-project/)
 * [jenkins-x-test-projects](https://github.com/jenkins-x-test-projects) test projects we use in test cases 
 * [jx3-gitops-repositories](https://github.com/jx3-gitops-repositories) the quickstart repositories for [creating new infrastructure and installations](/v3/admin/) on different cloud providers
 

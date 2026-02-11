@@ -47,10 +47,6 @@ Previous office hour recordings can be found on our [JayeX YouTube channel](http
 Alternatively, see our office hours [archives](/community/office_hours/).
 -->
 
-### Resources
-
-We have a curated list of [JayeX talks](/docs/resources/demos-talks-posts/talks/) and [articles](/docs/resources/demos-talks-posts/articles/) from our community to check out in our [Resources](/docs/resources/demos-talks-posts/) section.
-
 ### Reporting Issues
 
 Got any thoughts, ideas or feedback then please drop them in a [GitHub Issue](https://github.com/jenkins-x/jx/issues/new).
