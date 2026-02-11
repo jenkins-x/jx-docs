@@ -2,15 +2,15 @@
 title: Overview
 linktitle: Overview
 type: docs
-description: Overview of the architecture, concepts and motivations for JayeX 3.x
+description: Overview of the architecture, concepts and motivations for Jenkins X 3.x
 weight: 50
 aliases: 
     - /v3/about/overview/
 ---
  
-JayeX 3.x creates clearer separation of concerns between conceptual areas and releasable components.
+Jenkins X 3.x creates clearer separation of concerns between conceptual areas and releasable components.
  
-<iframe style="border:none" width="800" height="450" src="https://whimsical.com/lines-2-67T71jkcU3AMwTbFZnAHqu"></iframe>
+<iframe style="border:none" width="800" height="450" src="https://whimsical.com/embed/SnJBgXG6jz9pqQewiDTNRt@2Ux7TurymNDXVRa4FpLk"></iframe>
 
 
 ## Demo
@@ -21,9 +21,9 @@ The following demo walks you through an overview of the architecture:
 
 ## Microservices 
 
-JayeX uses the following microservices by namespace.
+Jenkins X uses the following microservices by namespace.
 
-Note that if you have a working JayeX installation you can browse all the actual kubernetes resources used across each namespace via the `config-root/namespaces/$namespace/$chartName` folder in your cluster git repository.
+Note that if you have a working Jenkins X installation you can browse all the actual kubernetes resources used across each namespace via the `config-root/namespaces/$namespace/$chartName` folder in your cluster git repository.
 
 
 ### `jx-git-operator`
@@ -32,19 +32,18 @@ Contains the [git operator](/v3/about/how-it-works/#git-operator) from [jenkins-
 
 ### `jx` 
 
-Contains the main development services of JayeX:
+Contains the main development services of Jenkins X:
 
 * **jx-build-controller** watches for `PipelineRun` resources and creates/updates the associated `PipelineActivity` resources used by `jx get build log` and the [pipelines visualizer](/v3/develop/ui/dashboard) 
 * **jx-pipelines-visualizer** visualises `PipelineActivity` resources and the associated build logs in a read only UI
 * **jx-preview-gc-jobs** periodically garbage collects `Preview` resources and their associated preview environments created by [jx preview](https://github.com/jenkins-x/jx-preview)
 * **jxboot-helmfile-resources-gcactivities** periodically garbage collects old and completed `PipelineActivity` resources
 * **jxboot-helmfile-resources-gcpods** periodically garbage collects completed `Pods`
-* **jx-kh-check** supports additional [kuberhealthy](https://github.com/Comcast/kuberhealthy) based [health checks](/v3/guides/health/) for JayeX specific resources
+* **jx-kh-check** supports additional [kuberhealthy](https://github.com/Comcast/kuberhealthy) based [health checks](/v3/guides/health/) for Jenkins X specific resources
 
 ### `lighthouse`
 
-[jenkins-x/lighthouse](https://github.com/jenkins-x/lighthouse) creates [tekton pipelines](https://tekton.dev/) and 
-triggers [ChatOps](/v3/develop/faq/chatops/) on Pull Requests. Its made up of the following components:
+[jenkins-x/lighthouse](https://github.com/jenkins-x/lighthouse) creates [tekton pipelines](https://tekton.dev/) and triggers [ChatOps](/docs/resources/faq/using/chatops/) on Pull Requests. Its made up of the following components:
 
 * **lighthouse-webhooks** converts webhooks from your git provider into `LighthouseJob` custom resources
 * **lighthouse-tekton-controller** converts `LighthouseJob` custom resources into [tekton](https://tekton.dev/) `PipelineRun` resources (the [tekton controller](https://tekton.dev/) converts `PipelineRun` resources into kubernetes `Pods`

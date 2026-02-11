@@ -2,7 +2,7 @@
 title: Guides
 linktitle: Guides
 type: docs
-description: Guides on configuring, upgrading and managing JayeX
+description: Guides on configuring, upgrading and managing Jenkins X
 weight: 400
 aliases:
   - /v3/guides/

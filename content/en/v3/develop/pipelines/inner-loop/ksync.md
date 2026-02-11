@@ -2,7 +2,7 @@
 title: ksync
 linktitle: ksync
 type: docs
-description: Using ksync with JayeX
+description: Using ksync with Jenkins X
 weight: 200
 ---
           

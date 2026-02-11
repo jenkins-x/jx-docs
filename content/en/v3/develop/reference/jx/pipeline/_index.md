@@ -2,7 +2,7 @@
 title: jx pipeline
 linktitle: pipeline
 type: docs
-description: "commands for working with JayeX Pipelines"
+description: "commands for working with Jenkins X Pipelines"
 aliases:
   - jx-pipeline
 ---
@@ -15,7 +15,7 @@ jx pipeline
 
 ### Synopsis
 
-commands for working with JayeX Pipelines
+commands for working with Jenkins X Pipelines
 
 ### Options
 

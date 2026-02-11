@@ -15,7 +15,7 @@ jx preview gc
 
 ### Synopsis
 
-Garbage collect JayeX preview environments. 
+Garbage collect Jenkins X preview environments. 
 
 If a pull request is merged or closed the associated preview environment will be deleted.
 

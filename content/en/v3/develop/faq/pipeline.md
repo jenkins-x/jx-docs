@@ -2,7 +2,7 @@
 title: Pipelines
 linktitle: Pipelines
 type: docs
-description: Questions about using Tekton pipelines with JayeX
+description: Questions about using Tekton pipelines with Jenkins X
 weight: 200
 ---
 
@@ -58,7 +58,7 @@ Once you have a kubernetes Secret (see [how to create them](/v3/admin/setup/secr
 
 ## How can I use a monorepo?
 
-If you have an existing monorepo you want to import into JayeX you can; just be aware that you'll have to [create and maintain your own pipelines](/v3/develop/pipelines/editing/) for your monorepo. 
+If you have an existing monorepo you want to import into Jenkins X you can; just be aware that you'll have to [create and maintain your own pipelines](/v3/develop/pipelines/editing/) for your monorepo. 
 
 We currently have no special tekton steps to analyse git changes and conditionally run different sets of tekton steps based on what has changed.
 
