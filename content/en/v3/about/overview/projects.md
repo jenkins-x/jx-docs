@@ -2,11 +2,11 @@
 title: Projects
 linktitle: Projects
 type: docs
-description: The open source projects used by Jenkins X
+description: The open source projects used by JayeX
 weight: 55
 ---
 
-Jenkins X stands on the shoulders of many open source giants...
+JayeX stands on the shoulders of many open source giants...
 
 ## Command Line Tools
 
@@ -26,9 +26,9 @@ Jenkins X stands on the shoulders of many open source giants...
 * [cert-manager](https://docs.cert-manager.io/en/latest/index.html) for managing certificates for [TLS and DNS](/v3/admin/guides/tls_dns/)
 * [external-dns](https://github.com/kubernetes-sigs/external-dns) for managing certificates for [TLS and DNS](/v3/admin/guides/tls_dns/)
 * [knative](https://knative.dev/) a framework for building auto scaling (to zero) serverless style applications on kubernetes
-* [kuberhealthy](https://github.com/Comcast/kuberhealthy) for health reporting of Kubernetes itself, Jenkins X and other microservices
+* [kuberhealthy](https://github.com/Comcast/kuberhealthy) for health reporting of Kubernetes itself, JayeX and other microservices
 * [kubernetes external secrets](https://github.com/external-secrets/kubernetes-external-secrets) for [managing secrets](/v3/admin/setup/secrets/) via [Hashicorp Vault](https://www.vaultproject.io/) or the cloud native secret managers on Alibaba, Amazon, Azure, Google etc
-* [jenkins](https://jenkins.io) the most popular build automation server which can be [setup via GitOps with Jenkins X](/v3/admin/guides/jenkins/) and a fellow [CDF founding project](https://cd.foundation/projects/)
+* [jenkins](https://jenkins.io) the most popular build automation server which can be [setup via GitOps with JayeX](/v3/admin/guides/jenkins/) and a fellow [CDF founding project](https://cd.foundation/projects/)
 * [jenkinsfile runner](https://github.com/jenkinsci/jenkinsfile-runner) a way of running a jenkins pipeline in a container
 * [lighthouse](https://github.com/jenkins-x/lighthouse) our strategic solution for webhooks and ChatOps for multiple git providers
 * [push-wave](https://github.com/jenkins-x-charts/pusher-wave#wave) for automatically performing rolling upgrades when secrets are rotated in your secret store

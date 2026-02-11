@@ -2,7 +2,7 @@
 title: Changes
 linktitle: Changes
 type: docs
-description: The change log for Jenkins X 3.x
+description: The change log for JayeX 3.x
 weight: 55
 toc_hide: true
 hide_summary: true
@@ -32,14 +32,14 @@ updatebot fatal: could not read Username for 'https://github.com': No such devic
 ## Changes
 
 * we have a new [jx pipeline grid](/v3/develop/reference/jx/pipeline/grid/) command to easily view whats happening in your cluster on the CLI in a similar way to the [Dashboard](/v3/develop/ui/dashboard/)
-* The [reference guide](/v3/develop/reference/) now has a full [Command Line Reference](/v3/develop/reference/jx/) for browsing the command line of the various [Jenkins X Plugins](https://github.com/jenkins-x-plugins)
+* The [reference guide](/v3/develop/reference/) now has a full [Command Line Reference](/v3/develop/reference/jx/) for browsing the command line of the various [JayeX Plugins](https://github.com/jenkins-x-plugins)
 * There is now support for [automatic upgrades](/v3/admin/setup/upgrades/cluster/#automatic-upgrades) where a Pull Request is automatically generated on your development cluster repository to upgrade the versions of charts in your installation. You can define the upgrade schedule and whether or not the Pull Request is auto merged or requires a manual approval/merge.
 * A preview can fail to create for a multitude of reasons; bad helm charts, missing secrets/volumes, invalid configuration in `jx-requirements.yml`, bad image names, no capacity on the server to name but a few. Unfortunately `helmfile sync` does not give much information other than it succeeded of failed.
   * to improve feedback on why some previews can fail we have added additional output in the [jx preview create](/v3/develop/reference/jx/preview/create) command to tail the kubernetes events in the preview namespace. This basically runs `kubectl exec get event -n $PREVIEW_NAMESPACE -w` and adds the output to the pipeline output (prefixed with `$PREVIEW_NAMESPACE:`      
   * this means the reason for why a preview fails should appear as a kubernetes event in the pipeline log
-* we have a shiny new [Slack bot for Jenkins X](/v3/develop/ui/slack/) to help notify developers of failing pipelines
+* we have a shiny new [Slack bot for JayeX](/v3/develop/ui/slack/) to help notify developers of failing pipelines
 * its now much easier to [write system tests against Preview Environments](https://github.com/jenkins-x/jx-preview#system-tests-in-previews) so it's easier to test images and charts function as you expect inside a Pull Request before you are happy to merge the work for faster feedback
-* check out the new [DevOps, GitOps and Cloud Native](https://jenkins-x.io/v3/devops/) documentation we're putting together based on the learnings of continuously deliverying Jenkins X with Jenkins X.
+* check out the new [DevOps, GitOps and Cloud Native](https://jayex.io/v3/devops/) documentation we're putting together based on the learnings of continuously deliverying JayeX with JayeX.
 * new clusters created using Terraform that use Vault will be using the `jx-vault` namespace to setup Vault (so that its managed by Terraform)       
 * you can now use [jx pipeline convert](/v3/develop/reference/jx/pipeline/convert) to [convert any old pipelines](/v3/develop/pipelines/upgrading/#converting-older-pipelines) across to the latest [concise syntax](/v3/develop/pipelines/catalog/)
 * we have an awesome [new syntax to help share pipelines across git repositories](/v3/develop/pipelines/catalog/) that makes it easier to simplify the pipelines in each repository while keeping things vanilla Tekton YAML and letting you override and customise anything anywhere
@@ -59,7 +59,7 @@ jx dash
   * [reuse Tasks from the Tekton catalog](/v3/develop/pipelines/#adding-tasks-from-the-tekton-catalog) and optionally modify them locally in your repository
   * [add new pipelines to any git repository](/v3/develop/pipelines/#add-new-taskspipelines-by-hand) to reuse any `PipelineRun` files you find from places like the [tekton catalog](https://github.com/tektoncd/catalog) into your repositories
 
-* We have migrated most of the [Jenkins X Plugins](https://github.com/jenkins-x/jx#plugins) over to the new client-go 1.19.x version now which is a fairly major change due to the API changes in client-go. So we've moved many of the [libraries](https://github.com/jenkins-x/jx#libraries) over to use `v3` instead such as using libraries like [jx-api](https://github.com/jenkins-x/jx-api) or [jx-helpers](https://github.com/jenkins-x/jx-helpers)
+* We have migrated most of the [JayeX Plugins](https://github.com/jenkins-x/jx#plugins) over to the new client-go 1.19.x version now which is a fairly major change due to the API changes in client-go. So we've moved many of the [libraries](https://github.com/jenkins-x/jx#libraries) over to use `v3` instead such as using libraries like [jx-api](https://github.com/jenkins-x/jx-api) or [jx-helpers](https://github.com/jenkins-x/jx-helpers)
   * if you were planning on submitting a Pull Request on any plugin please make sure you rebase before submitting a Pull Request. Also upgrade to go `1.15.2` ASAP
 
 * New [Maturity Matrix](/v3/about/maturity-matrix/) published! You can now view at a glance the different capabilities across clouds and infrastructure. Many thanks [Nitin](https://github.com/borntorock) for all your hard work
@@ -69,4 +69,4 @@ jx dash
   * This is all handled by the new [jx-preview](https://github.com/jenkins-x/jx-preview) plugin
   * This also opens up the possibility of using multiple namespaces per preview; or using canary releases on multiple previews into a shared environment.
 
-* The new Jenkins X version 3 CLI [jx](https://github.com/jenkins-x/jx) is now plugins all the way down; so that all of the features are implemented by [separate binary plugins](https://github.com/jenkins-x/jx#plugins) making the CLI more modular and easier to work on.
+* The new JayeX version 3 CLI [jx](https://github.com/jenkins-x/jx) is now plugins all the way down; so that all of the features are implemented by [separate binary plugins](https://github.com/jenkins-x/jx#plugins) making the CLI more modular and easier to work on.

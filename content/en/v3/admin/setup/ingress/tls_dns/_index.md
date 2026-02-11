@@ -9,6 +9,6 @@ aliases:
   - /v3/admin/guides/tls_dns
 ---
 
-This section will describe how to enable automated TLS and DNS for your Jenkins X installation.
+This section will describe how to enable automated TLS and DNS for your JayeX installation.
 
 

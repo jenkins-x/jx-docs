@@ -42,7 +42,7 @@ Find out [more about installing and using Octant here](https://github.com/vmware
 
 ## Demo
 
-We did a [demo of octant-jx](https://youtu.be/Njl247hjRuU?t=186) at the last [office hours](https://jenkins-x.io/community/office_hours/). We also [presented octant-jx](https://www.youtube.com/watch?v=Njl247hjRuU&t=2027s) at the [octant office hours this week](https://octant.dev/community/).
+We did a [demo of octant-jx](https://youtu.be/Njl247hjRuU?t=186) at the last [office hours](https://jayex.io/community/office_hours/). We also [presented octant-jx](https://www.youtube.com/watch?v=Njl247hjRuU&t=2027s) at the [octant office hours this week](https://octant.dev/community/).
 
 Here is a [demo video showing octant in action with Jenkins X](https://www.youtube.com/watch?v=2LCPHi0BnUg&feature=youtu.be):
 

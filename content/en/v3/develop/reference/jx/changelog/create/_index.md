@@ -29,7 +29,7 @@ You can opt out of the release YAML generation via the '--generate-yaml=false' o
 
 To update the release notes on your git provider needs a git API token which is usually provided via the Tekton git authentication mechanism. 
 
-Apart from using your git provider as the issue tracker there is also support for Jira. You then specify issues in commit messages with the issue key that looks like ABC-123. You can configure this in in similar ways as environments, see https://jenkins-x.io/v3/develop/environments/config/. An example configuration: 
+Apart from using your git provider as the issue tracker there is also support for Jira. You then specify issues in commit messages with the issue key that looks like ABC-123. You can configure this in in similar ways as environments, see https://jayex.io/v3/develop/environments/config/. An example configuration: 
 
   issueProvider:
     jira:

@@ -2,17 +2,17 @@
 title: Preview Environments
 linktitle: Preview Environments
 type: docs
-description: How to scale Preview Environments in Jenkins X 3
+description: How to scale Preview Environments in JayeX 3
 weight: 120
 aliases:
   - /v3/guides/preview-environments
 ---
 
-[Preview environments](/v3/develop/environments/preview/) are temporary environments created automatically by Jenkins X for each Pull Request.
+[Preview environments](/v3/develop/environments/preview/) are temporary environments created automatically by JayeX for each Pull Request.
 
-This is very nice, but if you start adding applications to your Jenkins X cluster, and each application repository has a few opened Pull Requests - each with a preview environment including a few dependencies - then you'll quickly get tens of preview environments and a lot more running pods. But these pods are usually only used to run the integration tests in the Pull Request pipelines, or when someone manually visits the preview environment URL. Most of the time, these pods are just idle, waiting and using resources. What if you could easily scale them down when they are idle?
+This is very nice, but if you start adding applications to your JayeX cluster, and each application repository has a few opened Pull Requests - each with a preview environment including a few dependencies - then you'll quickly get tens of preview environments and a lot more running pods. But these pods are usually only used to run the integration tests in the Pull Request pipelines, or when someone manually visits the preview environment URL. Most of the time, these pods are just idle, waiting and using resources. What if you could easily scale them down when they are idle?
 
-This guide will help you install [Osiris](https://github.com/dailymotion-oss/osiris) in your Jenkins X cluster. Osiris is a Kubernetes component that will inject itself as a proxy in front of your applications, and scale them down when it notices that they are idle for more than a pre-configured period. And if someone wants to access your application, Osiris will receive the request, scale up the application, and forward the request to the application.
+This guide will help you install [Osiris](https://github.com/dailymotion-oss/osiris) in your JayeX cluster. Osiris is a Kubernetes component that will inject itself as a proxy in front of your applications, and scale them down when it notices that they are idle for more than a pre-configured period. And if someone wants to access your application, Osiris will receive the request, scale up the application, and forward the request to the application.
 
 Combined with a cluster autoscaler, Osiris will help you scale down/up your cluster nodes automatically based on your workload.
 
@@ -57,7 +57,7 @@ Osiris requires specific annotations to be added to your application's Deploymen
 
 ## Configuration
 
-The configuration is defined in a ["values file" stored in the Jenkins X Version Stream](https://github.com/jenkins-x/jx3-versions/tree/master/charts/osiris/osiris/values.yaml.gotmpl).
+The configuration is defined in a ["values file" stored in the JayeX Version Stream](https://github.com/jenkins-x/jx3-versions/tree/master/charts/osiris/osiris/values.yaml.gotmpl).
 
 If you want to change anything from the default configuration, you can either:
 - submit a Pull Request if you believe this change is beneficial for everybody

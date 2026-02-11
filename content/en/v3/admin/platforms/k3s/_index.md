@@ -2,7 +2,7 @@
 title: K3s
 linktitle: K3s
 type: docs
-description: Setup Jenkins X on a K3s cluster running locally
+description: Setup JayeX on a K3s cluster running locally
 date: 2021-11-22
 publishdate: 2021-11-22
 lastmod: 2021-11-22
@@ -17,7 +17,7 @@ aliases:
 
 Ensure you are logged into GitHub else you will get a 404 error when clicking the links below
 
-This guide will walk you though how to setup Jenkins X on your laptop using [k3s](https://k3s.io/)
+This guide will walk you though how to setup JayeX on your laptop using [k3s](https://k3s.io/)
 
 If you are on Mac OS, you can follow this [guide](https://docs.kalm.dev/install/install-local-k3s/) to set up k3s.
 You do not need to install kalm for the rest of the tutorial.
@@ -67,7 +67,7 @@ sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
 sudo chmod 777 ~/.kube/config #warning: this maybe vulnerable to multiple users
 ```
 
-This value of the node will be used later during installation and configuring of Jenkins X.
+This value of the node will be used later during installation and configuring of JayeX.
 
 Check [k3s install guide](https://rancher.com/docs/k3s/latest/en/installation/) for more installation options.
 
@@ -133,14 +133,14 @@ Note: If you get the error `Error enabling kubernetes auth: Post "https://127.0.
 
 #### Github
 
-- Create a git bot user (different from your own personal user) e.g. https://github.com/join and generate a a personal access token, this will be used by Jenkins X to interact with git repositories. e.g. https://github.com/settings/tokens/new?scopes=repo,read:user,read:org,user:email,write:repo_hook,delete_repo,admin:repo_hook,write:packages
-- This bot user needs to have write permission to write to any git repository used by Jenkins X. This can be done by adding the bot user to the git organisation level or individual repositories as a collaborator Add the new bot user to your Git Organisation, for now give it Owner permissions, we will reduce this to member permissions soon.
+- Create a git bot user (different from your own personal user) e.g. https://github.com/join and generate a a personal access token, this will be used by JayeX to interact with git repositories. e.g. https://github.com/settings/tokens/new?scopes=repo,read:user,read:org,user:email,write:repo_hook,delete_repo,admin:repo_hook,write:packages
+- This bot user needs to have write permission to write to any git repository used by JayeX. This can be done by adding the bot user to the git organisation level or individual repositories as a collaborator Add the new bot user to your Git Organisation, for now give it Owner permissions, we will reduce this to member permissions soon.
 
 #### Jenkins-X
 
-- Make sure you have installed [jx 3.x binary](https://jenkins-x.io/v3/admin/setup/jx3/) and put it on your `$PATH` as the `jx admin operator` will be used
+- Make sure you have installed [jx 3.x binary](https://jayex.io/v3/admin/setup/jx3/) and put it on your `$PATH` as the `jx admin operator` will be used
 
-### Jenkins X v3 installation
+### JayeX v3 installation
 
 - Generate a cluster git repository from the [jx3-k3s-vault](https://github.com/jx3-gitops-repositories/jx3-k3s-vault) template, by clicking [here](https://github.com/jx3-gitops-repositories/jx3-k3s-vault/generate)
 - Clone the generated repository and cd into the repository folder

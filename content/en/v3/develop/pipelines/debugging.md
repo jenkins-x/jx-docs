@@ -2,7 +2,7 @@
 title: Debugging
 linktitle: Debugging
 type: docs
-description: Debugging pipelines in Jenkins X
+description: Debugging pipelines in JayeX
 weight: 410
 ---
 
@@ -28,7 +28,7 @@ To enable a breakpoint you can:
 * use the [Lens UI](/v3/develop/ui/lens/) as shown in the above video by:
   * right click on a `Pipeline` action menu 
   * select `Breakpoint -> Add`
-* you can use the [jx pipeline debug](https://jenkins-x.io/v3/develop/reference/jx/pipeline/debug/) command then select the pipeline to add/remove a breakpoint.
+* you can use the [jx pipeline debug](https://jayex.io/v3/develop/reference/jx/pipeline/debug/) command then select the pipeline to add/remove a breakpoint.
                                       
 ### Viewing breakpoints
 
@@ -49,8 +49,8 @@ Once you have set a breakpoint defined for a particular Pipeline you need to tri
 The pipeline will execute as normal; you'll be able to view it execute via:
 
 * [Lens UI](/v3/develop/ui/lens/)
-* run [jx pipeline grid](https://jenkins-x.io/v3/develop/reference/jx/pipeline/grid/) to watch pipelines run and select the one you wish to view the log 
-* run [jx pipeline log](https://jenkins-x.io/v3/develop/reference/jx/pipeline/log/) to watch the log of a specific pipeline
+* run [jx pipeline grid](https://jayex.io/v3/develop/reference/jx/pipeline/grid/) to watch pipelines run and select the one you wish to view the log 
+* run [jx pipeline log](https://jayex.io/v3/develop/reference/jx/pipeline/log/) to watch the log of a specific pipeline
 
 ### Opening a shell
 
@@ -79,7 +79,7 @@ If you wish to continue the execution of a pipeline there are [multiple scripts 
 
 There are a few ways to delete breakpoints. 
      
-You can run [jx pipeline debug](https://jenkins-x.io/v3/develop/reference/jx/pipeline/debug/) and toggle off any existing breakpoints.
+You can run [jx pipeline debug](https://jayex.io/v3/develop/reference/jx/pipeline/debug/) and toggle off any existing breakpoints.
 
 You can use the `Breakpoints` tab in [Lens UI](/v3/develop/ui/lens/) then click the breakpoints action menu then `Remove`
 

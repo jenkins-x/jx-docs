@@ -140,7 +140,7 @@ repository with the cluster you also get a changelog generated for each successf
 
 This changelog also includes a list of upgraded / added / deleted releases and the associated versions.
 
-See a [previous blogpost](https://jenkins-x.io/blog/2023/03/09/kpt-live-apply/) for more information.
+See a [previous blogpost](https://jayex.io/blog/2023/03/09/kpt-live-apply/) for more information.
 
 ### Reuse pull requests
 
@@ -157,7 +157,7 @@ no changelog is missed.
 
 Enabling reuse of pull requests for `jx promote` is done in `jx-requirements.yaml` by setting `reusePullRequest` to 
 `true` for an environment. It can also be done in the same way when configuring environments others ways. See 
-https://jenkins-x.io/v3/develop/environments/config/ for more details about configuring environments.  
+https://jayex.io/v3/develop/environments/config/ for more details about configuring environments.  
 
 More information about reuse of pull requests in a future blog post.
 
@@ -212,7 +212,7 @@ adding variables to `jx-boot-job-env-vars`.
 
 ### More customizations
 
-In the [documentations](https://jenkins-x.io/v3/develop/reference/jx/changelog/create/) for `jx changelog create` information about more customisations can be found.
+In the [documentations](https://jayex.io/v3/develop/reference/jx/changelog/create/) for `jx changelog create` information about more customisations can be found.
 
 ## References
 

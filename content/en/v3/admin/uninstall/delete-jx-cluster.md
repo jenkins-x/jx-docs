@@ -7,7 +7,7 @@ weight: 200
 ---
 
 Use this if you created the kubernetes cluster using the AWS/GCP/Azure terraform module.
-This will also work, if you installed Jenkins X on an existing AWS EKS cluster.
+This will also work, if you installed JayeX on an existing AWS EKS cluster.
 
 {{< alert >}} Always examine the plan of the terraform destroy command before approving it, once destroyed there is no going back. {{< /alert >}}
 
@@ -21,5 +21,5 @@ terraform destroy
 ```
 
 - If you installed jx on minikube/kind/k3s (local installations), refer to the docs of those platforms on how to uninstall the cluster.
-- If you imported repositories into Jenkins X using `jx project import` or `jx project quickstart`, then you
+- If you imported repositories into JayeX using `jx project import` or `jx project quickstart`, then you
   also need to delete the webhooks manually from the repositories.

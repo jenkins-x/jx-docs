@@ -2,7 +2,7 @@
 title: OpenShift
 linktitle:  OpenShift
 type: docs
-description: Setup Jenkins X on an existing OpenShift cluster
+description: Setup JayeX on an existing OpenShift cluster
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2020-02-21
@@ -13,7 +13,7 @@ aliases:
   - /docs/v3/getting-started/openshift//
 ---
 
-If you don't have a cluster or want to try Openshift on your laptop then please try <a href="/v3/guides/infra/openshift-crc/" target="github" class="btn bg-primary text-light">Install Jenkins X with OpenShift CodeReady Containers</a> 
+If you don't have a cluster or want to try Openshift on your laptop then please try <a href="/v3/guides/infra/openshift-crc/" target="github" class="btn bg-primary text-light">Install JayeX with OpenShift CodeReady Containers</a> 
  
 
 ---

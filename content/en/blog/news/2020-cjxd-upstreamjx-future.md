@@ -17,7 +17,7 @@ JX3 is in a relatively early stage, we have an enhancement issue [here](https://
 
 While the OSS community works on getting JX3 to GA, users of CJXD have a few options.  Both option 1 and 2 below involve moving to the stable upstream JX2.  One important note here is you will need to remove the Jenkins X UI as this a CloudBees specific offering and will not continue in favour of the new extensible OSS UI powered by Octant.  This was demo’d at the [recent office hours](https://youtu.be/Njl247hjRuU) as well as discussing some next steps we are working through for JX3.
 
-__Option 1:__ Upgrade your existing CJXD installation to upstream JX2.  There are some steps on how to do this below, there may be some edge cases in doing this but as in all the options here the OSS community in on hand to help https://jenkins-x.io/community/
+__Option 1:__ Upgrade your existing CJXD installation to upstream JX2.  There are some steps on how to do this below, there may be some edge cases in doing this but as in all the options here the OSS community in on hand to help https://jayex.io/community/
 
 _Notes:_
 - You will continue to be able to apply JX2 upgrades.  
@@ -66,4 +66,4 @@ Once the boot pipeline has finished successfully you can upgrade to the very lat
 ```
 Review and /approve the generated pull request, follow the boot pipeline logs to success.
 
-If you run into problems, need any help or guidance please ask in the the Jenkins X community https://jenkins-x.io/community/
+If you run into problems, need any help or guidance please ask in the the Jenkins X community https://jayex.io/community/

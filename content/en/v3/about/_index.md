@@ -2,7 +2,7 @@
 title: About
 linktitle: About
 type: docs
-description: Documentation about Jenkins X 3.x benefits, comparison and how it works
+description: Documentation about JayeX 3.x benefits, comparison and how it works
 weight: 5
 menu:
   main:

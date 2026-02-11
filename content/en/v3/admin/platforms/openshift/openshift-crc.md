@@ -2,7 +2,7 @@
 title: OpenShift CodeReady Containers
 linktitle: OpenShift CRC
 type: docs
-description: Use Jenkins X and OpenShift 4.x on your laptop
+description: Use JayeX and OpenShift 4.x on your laptop
 weight: 70
 aliases:
   - /v3/admin/guides/infra/openshift-crc
@@ -10,7 +10,7 @@ aliases:
 ---
 
 
-This guide will walk you though how to setup Jenkins X on your laptop using [OpenShift 4.x with CodeReady Containers](https://cloud.redhat.com/openshift/install/crc/installer-provisioned)
+This guide will walk you though how to setup JayeX on your laptop using [OpenShift 4.x with CodeReady Containers](https://cloud.redhat.com/openshift/install/crc/installer-provisioned)
 
 ## Prerequisites
 

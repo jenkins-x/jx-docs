@@ -1,6 +1,6 @@
- [中文](./README_CN.md) [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/jenkins-x/jx-docs)
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/jenkins-x/jx-docs)
 
-# Jenkins X Docs                     
+# JayeX Docs                     
 
 <a id="markdown-jenkins-x-docs" name="jenkins-x-docs"></a>
 
@@ -204,7 +204,7 @@ git submodule update --init --recursive
 
 <a id="markdown-localization" name="localization"></a>
 
-To let more people know Jenkins X better, localization is essential and meaningful.
+To let more people know JayeX better, localization is essential and meaningful.
 And we should keep some rules about this, please read related languages below:
 
 - [Chinese](Localization_Chinese.md)
@@ -213,4 +213,4 @@ And we should keep some rules about this, please read related languages below:
 
 <a id="markdown-contributing" name="contributing"></a>
 
-Please refer to the documentation contributing guide available at [Jenkins X website](https://jenkins-x.io/community/documentation/).
+Please refer to the documentation contributing guide available at [JayeX website](https://jayex.io/community/documentation/).

@@ -6,7 +6,7 @@ description: Questions about setting up ngrok for local set ups
 weight: 600
 ---
 
-Follow these steps to set up ngrok for local Jenkins X installs.
+Follow these steps to set up ngrok for local JayeX installs.
 
 - Download and install [ngrok](https://ngrok.com/).
 - Log into ngrok account and get the ngrok auth token (Authenticated sessions can run for unlimited time, unauthenticated sessions expire in 1.5 hours):

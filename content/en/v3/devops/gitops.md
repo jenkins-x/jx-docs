@@ -48,12 +48,12 @@ We spend more time reading source code than writing it. So try focus on things l
 
 * use canonical file formats that are easy to understand. 
   * e.g. [helm](https://helm.sh/), [helmfile](https://github.com/roboll/helmfile) and [Tekton YAML syntax](/v3/develop/reference/pipelines/) so that you get [IDE support](/v3/develop/pipelines/editing/#ide-support) and [easy linting](/v3/develop/pipelines/editing/#linting)
-* make good use of reporting. Jenkins X generates easy to read reports to view what applications are deployed in what namespace and with what versions etc:
+* make good use of reporting. JayeX generates easy to read reports to view what applications are deployed in what namespace and with what versions etc:
   * e.g. see the reports for [kubernetes](https://github.com/jx3-gitops-repositories/jx3-kubernetes/tree/master/docs ), [aws](https://github.com/jx3-gitops-repositories/jx3-eks-vault/tree/master/docs), [azure](https://github.com/jx3-gitops-repositories/jx3-azure-akv) and [gke](https://github.com/jx3-gitops-repositories/jx3-gke-gsm/tree/master/docs)
 * we recommend checking in all kubernetes resources apart from Secrets into git. See [this FAQ entry for background](/v3/develop/faq/#why-does-jenkins-x-use-helmfile-template).
   * this makes it easier to review Pull Requests to see what will actually change in Kubernetes if a change is approved (e.g. changes to namespaces, deployments, images, volumes etc)
   * when diagnosing issues you can easily use your IDE to view the history of any kubernetes resource. This avoids having to mentally guess what tools like [helm](https://helm.sh/) or [kustomize](https://kustomize.io/) would actually do over time - you can just compare what they create - the YAML resources in git them mirror exactly what should exist in your kubernetes clusters.
 * always version everything and never use `latest` or `SNAPSHOT` images or artifacts!
-  * if you are worried about upgrading versions of things over time then look at either tools like [dependabot](https://dependabot.com/) or the [updatebot plugin](https://github.com/jenkins-x-plugins/jx-updatebot) which we use extensively throughout Jenkins X to upgrade versions of libraries, images, binaries etc.
+  * if you are worried about upgrading versions of things over time then look at either tools like [dependabot](https://dependabot.com/) or the [updatebot plugin](https://github.com/jenkins-x-plugins/jx-updatebot) which we use extensively throughout JayeX to upgrade versions of libraries, images, binaries etc.
 * try run everything in the cloud rather than on your local laptop
-  * as its easier to keep running for everyone in your team; rather than only work on certain machines with magic setups you forget to document or maintain. e.g. the Jenkins X v3 approach runs the [installer inside Kubernetes as a Job](/v3/about/how-it-works/#boot-job)
+  * as its easier to keep running for everyone in your team; rather than only work on certain machines with magic setups you forget to document or maintain. e.g. the JayeX v3 approach runs the [installer inside Kubernetes as a Job](/v3/about/how-it-works/#boot-job)

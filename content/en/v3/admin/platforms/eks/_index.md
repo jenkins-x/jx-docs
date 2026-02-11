@@ -2,7 +2,7 @@
 title: Amazon
 linktitle: Amazon
 type: docs
-description: Setup Jenkins X on EKS on AWS
+description: Setup JayeX on EKS on AWS
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2020-02-21
@@ -18,7 +18,7 @@ aliases:
 **NOTE**
 
 - Ensure you are logged into GitHub else you will get a 404 error when clicking the links below
-- The quickstart guides are for users who want to get up and running quickly with Jenkins X.
+- The quickstart guides are for users who want to get up and running quickly with JayeX.
   Refer to the [eks-jx terraform module readme](https://github.com/jenkins-x/terraform-aws-eks-jx/blob/master/README.md) for all the inputs that can be customized.
 - Always use the latest module version for the eks-jx module.
   The list of versions can be found [here.](https://github.com/jenkins-x/terraform-aws-eks-jx/releases)
@@ -38,17 +38,17 @@ Note: remember to create the Git repositories below in your Git Organization rat
 
 - Choose the cluster git repository based on the secrets backend
 
-  - <a href="https://github.com/jx3-gitops-repositories/jx3-eks-vault/generate"  target="github-cluster" class="btn bg-primary text-light">Create Git Repository for Jenkins X <b>Cluster</b></a> based on the [jx3-gitops-repositories/jx3-eks-vault](https://github.com/jx3-gitops-repositories/jx3-eks-vault)
+  - <a href="https://github.com/jx3-gitops-repositories/jx3-eks-vault/generate"  target="github-cluster" class="btn bg-primary text-light">Create Git Repository for JayeX <b>Cluster</b></a> based on the [jx3-gitops-repositories/jx3-eks-vault](https://github.com/jx3-gitops-repositories/jx3-eks-vault)
 
-  - <a href="https://github.com/jx3-gitops-repositories/jx3-eks-asm/generate"  target="github-cluster" class="btn bg-primary text-light">Create Git Repository for Jenkins X <b>Cluster</b></a> based on the [jx3-gitops-repositories/jx3-eks-asm](https://github.com/jx3-gitops-repositories/jx3-eks-asm)
+  - <a href="https://github.com/jx3-gitops-repositories/jx3-eks-asm/generate"  target="github-cluster" class="btn bg-primary text-light">Create Git Repository for JayeX <b>Cluster</b></a> based on the [jx3-gitops-repositories/jx3-eks-asm](https://github.com/jx3-gitops-repositories/jx3-eks-asm)
 
 - Install <a href="https://learn.hashicorp.com/tutorials/terraform/install-cli#install-terraform">terraform CLI</a>
 
-- Install <a href="https://jenkins-x.io/v3/admin/setup/jx3/">jx CLI </a>
+- Install <a href="https://jayex.io/v3/admin/setup/jx3/">jx CLI </a>
 
 - For AWS SSO ensure you have installed AWSCLI version 2 - [see here](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html). You must then configure it to use Named Profiles - [see here](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure-profiles.html)
 
-- You should use a dedicated git user account for the Bot user. Jenkins X will use this user to interact with git. After you are logged in with the Bot user account you may use the following link <a href="https://github.com/settings/tokens/new?scopes=repo,read:user,read:org,user:email,admin:repo_hook,write:packages,read:packages,write:discussion,workflow" target="github-token" class="btn bg-primary text-light">Create Git Token for the Bot user </a>
+- You should use a dedicated git user account for the Bot user. JayeX will use this user to interact with git. After you are logged in with the Bot user account you may use the following link <a href="https://github.com/settings/tokens/new?scopes=repo,read:user,read:org,user:email,admin:repo_hook,write:packages,read:packages,write:discussion,workflow" target="github-token" class="btn bg-primary text-light">Create Git Token for the Bot user </a>
 
 - Override the input defaults in the Infrastructure repository. (E.g, edit variables.tf, set TF*VAR* environment variables, or pass the values on the terraform command line.)
 
@@ -82,13 +82,13 @@ Note: remember to create the Git repositories below in your Git Organization rat
 - Connect to the cluster using the command shown in the field `connect` of the output of `terraform apply`. To show 
   it again run `terraform output`.
 
-- Tail the Jenkins X installation logs
+- Tail the JayeX installation logs
 
 ```bash
   jx admin log
 ```
 
-- Once finished you can now move into the Jenkins X Developer namespace
+- Once finished you can now move into the JayeX Developer namespace
 
 ```bash
   jx ns jx
@@ -96,6 +96,6 @@ Note: remember to create the Git repositories below in your Git Organization rat
 
 - and create or import your applications
 
-- <a href="https://jenkins-x.io/v3/develop/create-project/" class="btn bg-primary text-light">Create or import projects</a>
+- <a href="https://jayex.io/v3/develop/create-project/" class="btn bg-primary text-light">Create or import projects</a>
 
-For more details on how to install Jenkins X on AWS EKS see [Github repository for Jenkins X Terraform module for EKS](https://github.com/jx3-gitops-repositories/jx3-terraform-eks#prerequisites)
+For more details on how to install JayeX on AWS EKS see [Github repository for JayeX Terraform module for EKS](https://github.com/jx3-gitops-repositories/jx3-terraform-eks#prerequisites)

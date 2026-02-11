@@ -2,7 +2,7 @@
 title: okteto
 linktitle: okteto
 type: docs
-description: Using okteto with Jenkins X
+description: Using okteto with JayeX
 weight: 100
 ---
 

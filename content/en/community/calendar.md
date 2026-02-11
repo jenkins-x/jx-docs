@@ -1,7 +1,7 @@
 ---
 title: Event Calendar
 linktitle: Event Calendar
-description: This calendar tracks upcoming events related to Jenkins X.
+description: This calendar tracks upcoming events related to JayeX.
 type: docs
 no_list: true
 weight: 60

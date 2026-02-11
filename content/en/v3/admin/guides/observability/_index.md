@@ -2,7 +2,7 @@
 title: Observability
 linktitle: Observability
 type: docs
-description: Observability for Jenkins X
+description: Observability for JayeX
 weight: 120
 aliases:
   - /v3/guides/observability

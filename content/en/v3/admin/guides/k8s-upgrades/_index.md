@@ -6,7 +6,7 @@ description: How to upgrade the version of Kubernetes in your cluster.
 weight: 92
 ---
 
-Upgrading your Kubernetes cluster is one of the tasks you must take on as an operator of Jenkins X. Kubernetes comes out with [new releases](https://kubernetes.io/releases/) regularly, and will only maintain releases for the three latest versions. Meaning if something breaks, or there is a security issue on an older version, Kubernetes will not fix it, but ask you to upgrade. All the major cloud providers only support a given set of latest versions.
+Upgrading your Kubernetes cluster is one of the tasks you must take on as an operator of JayeX. Kubernetes comes out with [new releases](https://kubernetes.io/releases/) regularly, and will only maintain releases for the three latest versions. Meaning if something breaks, or there is a security issue on an older version, Kubernetes will not fix it, but ask you to upgrade. All the major cloud providers only support a given set of latest versions.
 
 {{< k8s-versions >}}
 

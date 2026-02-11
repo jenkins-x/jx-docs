@@ -1,7 +1,7 @@
 ---
 title:
 linktitle: Contribute Documentation
-description: How to help improve the Jenkins X documentation
+description: How to help improve the JayeX documentation
 weight: 20
 type: docs
 no_list: true
@@ -9,7 +9,7 @@ aliases:
   - docs/contributing/documentation/
 ---
 
-We welcome your contributions to Jenkins X documentation whether you are a developer, an end user, or someone who can't stand seeing typos!
+We welcome your contributions to JayeX documentation whether you are a developer, an end user, or someone who can't stand seeing typos!
 
 {{% alert %}}
 If you're looking for the easiest way to correct existing content (typos etc.) have a look at the [Suggest Changes](/community/documentation/changes/) guide.
@@ -20,12 +20,12 @@ If you're looking for the easiest way to correct existing content (typos etc.) h
 This contribution guide takes a step-by-step approach in hopes of helping newcomers.
 Therefore, we only assume the following:
 
-- You are a fan of Jenkins X and enthusiastic about contributing to the project
+- You are a fan of JayeX and enthusiastic about contributing to the project
 
 Regardless your experience, there should be enough information in this documentation to get you up and running for contributing.
 
 {{< alert >}}
-If you're struggling at any point in this contribution guide, reach out to the Jenkins X community in [Jenkins X's Discussion forum](/community/).
+If you're struggling at any point in this contribution guide, reach out to the JayeX community in [JayeX's Discussion forum](/community/).
 {{< /alert >}}
 
 ## Getting Started
@@ -45,7 +45,7 @@ If you are a newcomer to Git and not sure what to do with the above command, hav
 
 The documentation (and the rest of the website) is generated using the static site generator [Hugo](https://gohugo.io).
 
-Although Jenkins X offers preview environments, and they're used as part of the process of contributing documentation, it's usually faster to run the site locally and check that everything looks good for you, before you push your changes.
+Although JayeX offers preview environments, and they're used as part of the process of contributing documentation, it's usually faster to run the site locally and check that everything looks good for you, before you push your changes.
 
 There are two different ways that you can run the site locally: using a locally installed version of Hugo or using a pre-baked Docker image that includes what's normally needed. Which approach you choose is fully up to you.
 
@@ -111,7 +111,7 @@ You can see what these make targets do in the jx-docs [makefile](https://github.
 
 ### Local Hugo install method
 
-For this method you need a recent extended version (we recommend version 0.67 or later) of Hugo to do local builds and previews of the Jenkins X documentation site.
+For this method you need a recent extended version (we recommend version 0.67 or later) of Hugo to do local builds and previews of the JayeX documentation site.
 If you install from the release page, make sure to get the extended Hugo version, which supports SCSS; you may need to scroll down the list of releases to see it.
 Install Hugo following the [gohugo.io instructions](https://gohugo.io/getting-started/installing).
 
@@ -166,4 +166,4 @@ Now that you have your local preview environment, the [contribution workflow](/c
 
 ## Reference
 
-The [references](/community/documentation/reference/) page contains more useful information when working with Hugo and the Jenkins X site.
+The [references](/community/documentation/reference/) page contains more useful information when working with Hugo and the JayeX site.

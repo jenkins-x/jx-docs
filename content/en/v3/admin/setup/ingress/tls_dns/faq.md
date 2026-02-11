@@ -8,7 +8,7 @@ weight: 300
 
 ## What if I have a chartmuseum with charts running using nip.io?
 
-It is best to comment out your Jenkins X chartmuseum repository and charts from your helmfile until your new domain and ingress is working.  Then uncomment and make sure you update the chartmuseum URL to your new one.
+It is best to comment out your JayeX chartmuseum repository and charts from your helmfile until your new domain and ingress is working.  Then uncomment and make sure you update the chartmuseum URL to your new one.
 
 ## What if I use a subdomain with an apex domain in a different GCP project?
 
@@ -52,4 +52,4 @@ kubectl describe certificaterequest -n jx
 
 ## How can I install the charts if not using terraform to autamatically enable them?
 
-If you are not using the Jenkins X Terraform above then you can manually update your cluster git repository and add the charts needed.
+If you are not using the JayeX Terraform above then you can manually update your cluster git repository and add the charts needed.

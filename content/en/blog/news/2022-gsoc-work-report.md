@@ -110,7 +110,7 @@ We're unit testing the component using [vitest](https://vitest.dev/).
 
 ## What's next?
 
-- The UI project is just started, we have also start a seperate **UI-sig** which you can join from [calendar](https://jenkins-x.io/community/#office-hours).
+- The UI project is just started, we have also start a seperate **UI-sig** which you can join from [calendar](https://jayex.io/community/#office-hours).
 - There are some amazing features that we are planning to add to the new UI: 
   - Dynamically update the list of pipelines
   - Upgrade version stream from the UI

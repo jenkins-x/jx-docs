@@ -2,7 +2,7 @@
 title: On-Premises
 linktitle: On-Premises
 type: docs
-description: Setup Jenkins X on vanilla Kubernetes
+description: Setup JayeX on vanilla Kubernetes
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2020-02-21
@@ -29,7 +29,7 @@ If you are using kubernetes we highly recommend you use one of the [managed clou
 - container registries and bucket storage
 - IAM and workload identity (e.g. so kubernetes Service Accounts can be assigned roles to be able to read/write to certain buckets or container registries)
 
-However sometimes you need to run kubernetes on your premises. Longer term we hope the cloud providers can run their managed kubernetes and associated infrastructure on your premises too so you get to reuse the same storage + IAM anywhere. But until then, this guide is intended to get you started installing Jenkins X on a vanilla kubernetes cluster on-premises.
+However sometimes you need to run kubernetes on your premises. Longer term we hope the cloud providers can run their managed kubernetes and associated infrastructure on your premises too so you get to reuse the same storage + IAM anywhere. But until then, this guide is intended to get you started installing JayeX on a vanilla kubernetes cluster on-premises.
 
 ### Prerequisites
 
@@ -54,9 +54,9 @@ To view the namespaces and nodes respectively.
 
 #### Ingress
 
-To use Jenkins X we need ingress to work. This means being able to create a kubernetes `Ingress` resource with a domain name which can be resolved outside of kubernetes to network into kubernetes services.
+To use JayeX we need ingress to work. This means being able to create a kubernetes `Ingress` resource with a domain name which can be resolved outside of kubernetes to network into kubernetes services.
 
-Jenkins X installs `nginx` which has a `LoadBalancer` kubernetes `Service` to implement ingress. But the underlying kubernetes platform needs to implement the load balancing network and infrastructure. This comes out of the box on all public clouds.
+JayeX installs `nginx` which has a `LoadBalancer` kubernetes `Service` to implement ingress. But the underlying kubernetes platform needs to implement the load balancing network and infrastructure. This comes out of the box on all public clouds.
 
 With an on-premises kubernetes cluster you need to install something like [MetalLB](https://metallb.universe.tf/)
 
@@ -87,7 +87,7 @@ ingress:
   domain: mydomain.com
 ```
 
-- verify your cluster does not already have an [nginx](https://www.nginx.com/) installation. If it does then please remove the `nginx` line from your `helmfile.yaml` file and remove the `helmfiles/nginx` files. If you are using a custom nginx installation then you will need to figure out your domain by hand and won't be able to let Jenkins X detect the load balancer IP from its included nginx installation.
+- verify your cluster does not already have an [nginx](https://www.nginx.com/) installation. If it does then please remove the `nginx` line from your `helmfile.yaml` file and remove the `helmfiles/nginx` files. If you are using a custom nginx installation then you will need to figure out your domain by hand and won't be able to let JayeX detect the load balancer IP from its included nginx installation.
 
 - git add, commit and push your changes:
 
@@ -106,7 +106,7 @@ kubectl get node
 
 - <a href="/v3/guides/operator/" 
     target="github" class="btn bg-primary text-light" 
-    title="install the git operator to setup Jenkins X in your cluster">
+    title="install the git operator to setup JayeX in your cluster">
   Install the git operator
   </a> from inside a git clone of the git repository you created above.
 

@@ -88,7 +88,7 @@ You could try [kubedock](https://github.com/joyrex2001/kubedock) with testcontai
 
 It does depend a little on what your solution is for CI. 
 
-If you are using [Jenkins X](https://jenkins-x.io/v3) or [tekton pipelines](https://github.com/tektoncd/pipeline) then you can [define sidecars](https://github.com/tektoncd/pipeline/blob/main/docs/taskruns.md#specifying-sidecars) in your pipeline to make sure you have whatever additional services you need when running your tests.
+If you are using [Jenkins X](https://jayex.io/v3) or [tekton pipelines](https://github.com/tektoncd/pipeline) then you can [define sidecars](https://github.com/tektoncd/pipeline/blob/main/docs/taskruns.md#specifying-sidecars) in your pipeline to make sure you have whatever additional services you need when running your tests.
 
 If you are using [Jenkins](https://www.jenkins.io/) then you can add the side cars to the `pod.yaml` you use with the [kubernetes plugin](https://plugins.jenkins.io/kubernetes/) or you could reuse the [tekton client plugin](https://www.jenkins.io/blog/2021/04/21/tekton-plugin/) and use tekton pipelines and sidecars 
 
@@ -97,13 +97,13 @@ If you are [GitHub Actions](https://github.com/features/actions) then you can sp
 
 ### help! we are not even using kubernetes yet
 
-If you have not even started on your journey to kubernetes and have no idea what a [helm chart](https://helm.sh/) is, you could consider [setting up Jenkins X](https://jenkins-x.io/v3/admin/) in your cluster which will then: 
+If you have not even started on your journey to kubernetes and have no idea what a [helm chart](https://helm.sh/) is, you could consider [setting up Jenkins X](https://jayex.io/v3/admin/) in your cluster which will then: 
 
 * [automate setting up the CI / CD](/v3/develop/create-project/) for your projects including automatically creating versioned container images and helm charts whenever you merge changes to the main branch
-* [automatic promotion through environments via GitOps](https://jenkins-x.io/v3/develop/environments/promotion/) so that new versions of your services are automatically promoted to your `Staging` environment and, by default, when approved are promoted to `Production`
-* [Preview Environments](https://jenkins-x.io/v3/develop/environments/preview/) automatically spin up Preview Environments for your Pull Requests so you can get fast feedback before changes are merged to the main branch
+* [automatic promotion through environments via GitOps](https://jayex.io/v3/develop/environments/promotion/) so that new versions of your services are automatically promoted to your `Staging` environment and, by default, when approved are promoted to `Production`
+* [Preview Environments](https://jayex.io/v3/develop/environments/preview/) automatically spin up Preview Environments for your Pull Requests so you can get fast feedback before changes are merged to the main branch
     
-Once someone on your team has [setup up Jenkins X](https://jenkins-x.io/v3/admin/) then please follow the [development guide](/v3/develop/developing/)
+Once someone on your team has [setup up Jenkins X](https://jayex.io/v3/admin/) then please follow the [development guide](/v3/develop/developing/)
           
 
 ### other handy kubectl commands

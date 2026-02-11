@@ -10,7 +10,7 @@ When you [Version Everything](/v3/devops/patterns/version_everything) you need a
 
 Using the **push** model means that as you create a new versioned release of an artifact (library, binary, image, chart or whatever) you generate the necessary Pull Requests in your downstream repositories to upgrade to use this version.
 
-We do this in Jenkins X using the [updatebot plugin](https://github.com/jenkins-x-plugins/jx-updatebot) as part of a release pipeline. The [go-plugin release pipelines](https://github.com/jenkins-x/jx3-pipeline-catalog/blob/master/packs/go-plugin/.lighthouse/jenkins-x/release.yaml#L38) pipelines have a `promote-release` which uses the updatebot plugin to promote the new version to other git repositories. Here are some examples:
+We do this in JayeX using the [updatebot plugin](https://github.com/jenkins-x-plugins/jx-updatebot) as part of a release pipeline. The [go-plugin release pipelines](https://github.com/jenkins-x/jx3-pipeline-catalog/blob/master/packs/go-plugin/.lighthouse/jenkins-x/release.yaml#L38) pipelines have a `promote-release` which uses the updatebot plugin to promote the new version to other git repositories. Here are some examples:
 
 * the [jenkins-x/lighthouse](https://github.com/jenkins-x/lighthouse)  repository has this [.jx/updatebot.yaml](https://github.com/jenkins-x/lighthouse/blob/master/.jx/updatebot.yaml) to update the version stream on a release
 * the [jx-gitops](https://github.com/jenkins-x/jx-gitops) repository has this  [.jx/updatebot.yaml](https://github.com/jenkins-x/jx-gitops/blob/master/.jx/updatebot.yaml) to update the plugin in the jx cli repository

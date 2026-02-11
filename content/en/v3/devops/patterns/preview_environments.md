@@ -12,7 +12,7 @@ But how can you shift left and do more testing on changes before you are ready t
 
 The idea of a `Preview Environment` is to spin up a temporary environment to deploy the code from a Pull Request before the change is merged to get fast feedback from your team on the change and to shift left and get more testing done before you agree to merge the change.
 
-In Jenkins X we automate a [Preview Environment](/v3/develop/environments/preview/) is created on all Pull Requests which builds the preview image/chart, spins up a temporary namespace and deploys the application then comments on the Pull Request details.
+In JayeX we automate a [Preview Environment](/v3/develop/environments/preview/) is created on all Pull Requests which builds the preview image/chart, spins up a temporary namespace and deploys the application then comments on the Pull Request details.
 
 ### Using Previews for shift left system testing
 

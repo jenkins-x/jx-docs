@@ -6,7 +6,7 @@ description: How Apps are Promoted across Environments
 weight: 250
 ---
 
-When changes are merged to the main branch in the Jenkins X pipeline catalog a new versioned release is created (with a new image and helm chart). This new version is then promoted by creating Pull Requests on GitOps repositories.
+When changes are merged to the main branch in the JayeX pipeline catalog a new versioned release is created (with a new image and helm chart). This new version is then promoted by creating Pull Requests on GitOps repositories.
 
 ## How it works
 
@@ -38,7 +38,7 @@ promoting an application be reused.
 
 Enabling reuse of pull requests for `jx promote` is done in `jx-requirements.yaml` by setting `reusePullRequest` to 
 `true` for an environment. It can also be done in the same way when configuring environments others ways. See 
-https://jenkins-x.io/v3/develop/environments/config/ for more details about configuring environments.
+https://jayex.io/v3/develop/environments/config/ for more details about configuring environments.
 
 There are two main reasons why you would want to enable this:
 
@@ -57,7 +57,7 @@ By default each release of each microservice creates a Pull Request to upgrade t
 When human approval is required in, say, `Production` you can end up with the `drift` between the 2 environments and want an easy way to bring them in sync.
 
 
-The default with Jenkins X is for each new version of each microservice to be promoted immediately to `Staging`. You may want to test the combination of microservices together for a while beforethen choosing to promote changes to production and may want to do this in one atomic Pull Request and commit/merge.
+The default with JayeX is for each new version of each microservice to be promoted immediately to `Staging`. You may want to test the combination of microservices together for a while beforethen choosing to promote changes to production and may want to do this in one atomic Pull Request and commit/merge.
 
 If you wish to work in this way you can create a single Pull Request promoting all of the changes of apps between 2 environments or namespaces.
 

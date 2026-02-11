@@ -2,7 +2,7 @@
 title: CLI
 linktitle: CLI
 type: docs
-description: Jenkins X Command Line Interface
+description: JayeX Command Line Interface
 weight: 10
 aliases:
   - /v3/develop/ui/cli
@@ -14,7 +14,7 @@ You can download 3.x of jx from here: https://github.com/jenkins-x/jx/releases
 
 Browse the [command line commands](https://github.com/jenkins-x/jx/blob/main/docs/cmd/jx.md) along with the [plugin commands](https://github.com/jenkins-x/jx#plugins) 
 
-Many things in Jenkins X are exposed as [custom resources](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/) so that you can also use [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) to interact with the Jenkins X.
+Many things in JayeX are exposed as [custom resources](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/) so that you can also use [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) to interact with the JayeX.
 
 * to view environments
 
