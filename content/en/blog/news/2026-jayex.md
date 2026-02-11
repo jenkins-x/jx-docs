@@ -1,10 +1,10 @@
 ---
-title: "Migrate to Google Artifact Registry"
+title: "Jenkins X changes name to JayeX!"
 date: 2026-02-11T00:00:00-00:00
 draft: false
-description: Jenkins X changes name to JayeX  
+description: Rather nonsense than confusion  
 categories: [blog]
-keywords: [Jenkins X,Community,2026]
+keywords: [JayeX,Community,2026]
 slug: "jayex"
 aliases: []
 author: Mårten Svantesson
