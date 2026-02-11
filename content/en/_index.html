@@ -16,8 +16,13 @@ linkTitle = "JayeX - Cloud Native CI/CD Built On Kubernetes"
     min-height: 75rem;
     /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
   }
-  .td-default main section:first-of-type {
+  .td-default main section.jumbotron {
     padding-top: 0rem !important;
+  }
+
+  .td-default main section.alert {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
   }
 
   /* Home page Hero, contains logo and main tag line */
@@ -159,11 +164,11 @@ linkTitle = "JayeX - Cloud Native CI/CD Built On Kubernetes"
 
 <body>
 <main role="main" class="homepage">
-  <section class="bg-warning">
+  <section class="text-center alert alert-warning" role="alert">
     <div class="container">
       <div class="row">
-        <div class="col tag-line">
-          <a href="/blog/2026/02/11/jayex/">Jenkins X changes name to JayeX</a>
+        <div class="col">
+          <a class="features" href="/blog/2026/02/11/jayex/">Jenkins X changes name to JayeX!</a>
         </div>
       </div>
     </div>
