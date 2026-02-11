@@ -81,6 +81,4 @@ JayeX aims to help polyglot application developers.  Right now JayeX has quickst
 
 JayeX also provides many addons, for example Grafana and Prometheus for automated metrics collection and visualization.  In this example centralized metrics help understand how your applications behave when built and deployed on Kubernetes.
 
-[DevPods](/docs/reference/devpods/) are another feature which enables developers to edit source code in their local IDE, behind the scenes it is then synced to the cloud and rapidly built and redeployed.
-
 JayeX believes providing developers automation that helps them experiment in the cloud, with different technologies and  feedback empowers them to make the best decisions - faster.

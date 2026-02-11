@@ -84,7 +84,7 @@ Once your user has access to the kubernetes cluster:
 
 * [install the jx binary](/v3/admin/setup/jx3/)
 
-If JayeX was installed in the namespace `jx` then the following should [switch your context](/docs/resources/guides/using-jx/developing/kube-context/) to the `jx` namespace:
+If JayeX was installed in the namespace `jx` then the following should [switch your context](https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/) to the `jx` namespace:
 
 ```bash 
 jx ns jx
