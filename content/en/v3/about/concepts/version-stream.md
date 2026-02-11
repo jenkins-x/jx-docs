@@ -10,13 +10,6 @@ JayeX is made up of a large number of command line _packages_, _images_ and helm
 
 To improve the stability of JayeX when lots of packages and charts are changing all the time we have introduced the JayeX `Version Stream`
 
-<figure>
-<img src="/images/jx-version-stream-v1.png"/>
-<figcaption>
-<h5>Diagram depicts how a new JX version will be propagated through the components.</h5>
-</figcaption>
-</figure>
-
 ## How it works
 
 The version stream is stored in the [jenkins-x/jx3-versions](https://github.com/jenkins-x/jx3-versions) git 
