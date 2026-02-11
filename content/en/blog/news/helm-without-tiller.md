@@ -10,7 +10,7 @@ aliases:
   - /news/helm-without-tiller/
 author: jstrachan
 ---
-{{ <jx2> }}
+{{<jx2>}}
 
 ## How to avoid Tiller
 

@@ -10,9 +10,11 @@ aliases:
   - /news/jenkins-x-next-gen-pipeline-engine
 ---
 
+{{<jx2>}}
+
 ## Introducing the new Jenkins X Pipeline Engine
 
-The [Jenkins X](https://jayex.io/) team and [CloudBees](https://www.cloudbees.com/) are excited to announce some changes that we’ve been working on and are jntroducing the new [Jenkins X Pipeline Engine](/architecture/jenkins-x-pipelines/).
+The Jenkins X team and [CloudBees](https://www.cloudbees.com/) are excited to announce some changes that we’ve been working on and are jntroducing the new [Jenkins X Pipeline Engine](/architecture/jenkins-x-pipelines/).
 
 {{< youtube id="EYywyqcPVMY" autoplay="true" >}}
 
@@ -23,7 +25,7 @@ By default today, Jenkins X uses a static traditional Jenkins master and Jenkins
 
 As of last October, you can run Jenkins pipelines without the static Jenkins server -- so, it’s [serverless](https://medium.com/@jdrawlings/serverless-jenkins-with-jenkins-x-9134cbfe6870). 
 
-Serverless pipeline execution mode will become the best way to run Jenkins X in the not-too-distant future. And as we’re looking forward, we’ve begun to find ways to further improve the serverless mode of Jenkins X. We now have [Jenkins X Pipelines](/architecture/jenkins-x-pipelines/) which are based on [Tekton](https://github.com/tektoncd/pipeline) which is a new Kubernetes-native way of running serverless pipelines. While it’s still in its early stages, Tekton will eventually become the best way to run CI/CD pipelines in Kubernetes. 
+Serverless pipeline execution mode will become the best way to run Jenkins X in the not-too-distant future. And as we’re looking forward, we’ve begun to find ways to further improve the serverless mode of Jenkins X. We now have Jenkins X Pipelines which are based on [Tekton](https://github.com/tektoncd/pipeline) which is a new Kubernetes-native way of running serverless pipelines. While it’s still in its early stages, Tekton will eventually become the best way to run CI/CD pipelines in Kubernetes. 
 
 We’ve begun some early work to add Tekton into Jenkins X. You can now begin testing the pipeline, and we’d love to get your feedback. To use the new Tekton execution mode you [install your Jenkins X cluster using the new tekton mode](/about/concepts/jenkins-x-pipelines/). You will then get a `jenkins-x.yml` file with your application instead of a Jenkinsfile in your source code repository. This YAML file is organized similarly to the Jenkins declarative pipeline syntax used in a Jenkinsfile.
 
