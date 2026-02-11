@@ -14,7 +14,8 @@ aliases:
 
 ## Introducing the new Jenkins X Pipeline Engine
 
-The Jenkins X team and [CloudBees](https://www.cloudbees.com/) are excited to announce some changes that we’ve been working on and are jntroducing the new [Jenkins X Pipeline Engine](/architecture/jenkins-x-pipelines/).
+The Jenkins X team and [CloudBees](https://www.cloudbees.com/) are excited to announce some changes that we’ve been 
+working on and are jntroducing the new _Jenkins X Pipeline Engine_.
 
 {{< youtube id="EYywyqcPVMY" autoplay="true" >}}
 
@@ -27,6 +28,6 @@ As of last October, you can run Jenkins pipelines without the static Jenkins ser
 
 Serverless pipeline execution mode will become the best way to run Jenkins X in the not-too-distant future. And as we’re looking forward, we’ve begun to find ways to further improve the serverless mode of Jenkins X. We now have Jenkins X Pipelines which are based on [Tekton](https://github.com/tektoncd/pipeline) which is a new Kubernetes-native way of running serverless pipelines. While it’s still in its early stages, Tekton will eventually become the best way to run CI/CD pipelines in Kubernetes. 
 
-We’ve begun some early work to add Tekton into Jenkins X. You can now begin testing the pipeline, and we’d love to get your feedback. To use the new Tekton execution mode you [install your Jenkins X cluster using the new tekton mode](/about/concepts/jenkins-x-pipelines/). You will then get a `jenkins-x.yml` file with your application instead of a Jenkinsfile in your source code repository. This YAML file is organized similarly to the Jenkins declarative pipeline syntax used in a Jenkinsfile.
+We’ve begun some early work to add Tekton into Jenkins X. You can now begin testing the pipeline, and we’d love to get your feedback. To use the new Tekton execution mode you install your Jenkins X cluster using the new tekton mode. You will then get a `jenkins-x.yml` file with your application instead of a Jenkinsfile in your source code repository. This YAML file is organized similarly to the Jenkins declarative pipeline syntax used in a Jenkinsfile.
 
 We’ll continue to update the community on progress accordingly and welcome your feedback! Feel free to contact the [Jenkins X team via Slack](https://jayex.io/community/#slack), [office hours](https://jayex.io/community/#office-hours) or send us an email with any questions or concerns. The next office hours will be on Thursday, February 21st, at 11:00am ET and Andrew Bayer will be demoing progress. Thanks!

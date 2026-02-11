@@ -47,7 +47,11 @@ See the [ChatOps commands](/v3/develop/reference/chatops/)
 
 It can be useful to have multiple pipelines to perform different kinds of long running tests on Pull Requests. e.g. running the same test suite using different databases, microservice configurations or underlying infrastructure.
 
-In JayeX you can create a custom `Scheduler` resource in your [jx boot](/docs/getting-started/setup/boot/) configuration (in `env/templates/myscheduler.yaml`) which you can add multiple named contexts in the `presubmits` section. Then for each context name make sure you have a file called `jenkins-x-${context}.yml` in your project. 
+In JayeX you can create a custom `TriggerConfig` resource in your
+[Lighthouse](https://github.com/jenkins-x/lighthouse) [configuration](/v3/about/concepts/deployment-lifecycle/) (in 
+the directory `.lighthouse`) in which you
+can add multiple named contexts in the `presubmits` section. Then for
+each context name specify a source file that you then create in the same directory.
 
 Then JayeX will invoke each context on demand via `/test mycontext` or automatically if you enable `alwaysRun: true`.
 
