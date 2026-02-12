@@ -1,4 +1,4 @@
-[submodule "content/en/community/labs/enhancements"]
-	path = content/en/community/labs/enhancements
+[submodule "content/en/community/enhancements"]
+	path = content/en/community/enhancements
 	url = https://github.com/jenkins-x/enhancements.git
 	shallow = true

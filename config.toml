@@ -3,7 +3,6 @@ title = "JayeX - Cloud Native CI/CD Built On Kubernetes"
 
 enableRobotsTXT = true
 
-ignorefiles = [ "docs/labs/.*" ]
 # getting an error on the contributors plugin
 ignoreErrors = ["error-remote-getjson"]
 
