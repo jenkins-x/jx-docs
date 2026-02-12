@@ -181,7 +181,7 @@ aliases:
 To upgrade to a new enhancements commit - we'll hopefully automate this soon!
 
 ```bash
-cd content/en/docs/enhancements
+cd content/en/community/enhancements
 git checkout master
 git pull
 cd ..
