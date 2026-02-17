@@ -10,8 +10,7 @@ aliases:
  
 JayeX 3.x creates clearer separation of concerns between conceptual areas and releasable components.
  
-<iframe style="border:none" width="800" height="450" src="https://whimsical.com/lines-2-67T71jkcU3AMwTbFZnAHqu"></iframe>
-
+<iframe style="border:none" width="800" height="450" src="https://whimsical.com/embed/67T71jkcU3AMwTbFZnAHqu"></iframe>
 
 ## Demo
 
