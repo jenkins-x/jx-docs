@@ -4,6 +4,8 @@ linktitle: Accelerate
 description: How to accelerate the delivery of customer value
 type: docs
 weight: 20
+aliases:
+  - /about/accelerate/
 ---
 
 JayeX is a reimagined CI/CD implementation for the Cloud which is heavily influenced by the State of DevOps reports and more recently the [Accelerate](https://www.amazon.co.uk/Accelerate-Software-Performing-Technology-Organizations/dp/1942788339) book from [Nicole Forsgren](https://twitter.com/nicolefv), [Jez Humble](https://twitter.com/jezhumble) and [Gene Kim](https://twitter.com/RealGeneKim?).  
