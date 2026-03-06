@@ -2,7 +2,6 @@
 title: "Introduction to Software Bill Of Materials"
 date: 2022-07-24
 draft: false
-weight: 300
 description: >
   Here we discuss the concepts of SBOM, how it can help in securing your software.
 categories: [blog]

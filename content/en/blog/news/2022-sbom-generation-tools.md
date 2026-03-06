@@ -2,7 +2,6 @@
 title: "Software Bill Of Materials generation tools"
 date: 2022-07-24
 draft: false
-weight: 100
 description: >
   In the third blog post, we get to realize the actual implementation of Software Bill Of Materials (SBOM) generation through different tools and packages.
 categories: [blog]
