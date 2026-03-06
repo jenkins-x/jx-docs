@@ -2,7 +2,6 @@
 title: "Software Bill Of Materials Formats"
 date: 2022-07-24
 draft: false
-weight: 200
 description: >
   Previously, we discussed the main concepts of Software Bill Of Materials and their use cases. Now we talk about the different formats and standards of generating them.
 categories: [blog]

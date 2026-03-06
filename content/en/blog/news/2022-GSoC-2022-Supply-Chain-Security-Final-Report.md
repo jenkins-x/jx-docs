@@ -2,7 +2,6 @@
 title: "GSoC 2022 Final Report: Improving Supply Chain Security"
 date: 2022-11-08
 draft: false
-weight: 100
 description: >
   Going through my GSoC journey with Jenkins X, this works as a documentation for our work to improve supply chain security of Jenkins X
 categories: [blog]
