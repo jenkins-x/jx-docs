@@ -1,5 +1,5 @@
 ---
-title: "JayeX Most Valuable Contributor 2026"
+title: "JayeX Most Valuable Contributor 2026 🏆"
 date: 2026-04-08T00:00:00-00:00
 draft: false
 description: Vote for JayeX Most Valuable Contributor 2026
