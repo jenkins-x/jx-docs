@@ -12,7 +12,7 @@ author: Mårten Svantesson
 
 # Background
 
-During the early days of Jenkins X the Jenkins part of the name made sence for two reasons: Jenkins was used as the main
+During the early days of Jenkins X the Jenkins part of the name made sense for two reasons: Jenkins was used as the main
 pipeline engine and the development was done within CloudBees, the company that also is the main developer of Jenkins.
 
 # Why change?
