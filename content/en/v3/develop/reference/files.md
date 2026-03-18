@@ -6,7 +6,7 @@ description: File names and formats when using GitOps
 weight: 200
 ---
 
-Jenkins X uses [GitOps](/v3/devops/gitops/) and so has a number of different source files with declarative schemas. 
+JayeX uses [GitOps](/v3/devops/gitops/) and so has a number of different source files with declarative schemas. 
 
 You may also find the [git layout document](https://github.com/jenkins-x/jx-gitops/blob/master/docs/git_layout.md) useful. 
                      
@@ -32,7 +32,7 @@ The following files are only used in a development cluster git repository
 
 | File | Schema | Description |
 | --- | ---| --- |
-| `.jx/gitops/source-config.yaml` | [SourceConfig](https://github.com/jenkins-x/jx-gitops/blob/master/docs/config.md#gitops.jenkins-x.io/v1alpha1.SourceConfig)| Defines the git owners (organisations/users) and repositories which are imported into Jenkins X and so have webhooks and [lighthouse](https://github.com/jenkins-x/lighthouse) [triggers](/v3/develop/reference/pipelines/#lighthouse) defined. Also supports [slack](/v3/develop/ui/slack/) and [jenkins](/v3/develop/create-project/jenkinsfile/) configuration  |
+| `.jx/gitops/source-config.yaml` | [SourceConfig](https://github.com/jenkins-x/jx-gitops/blob/master/docs/config.md#gitops.jenkins-x.io/v1alpha1.SourceConfig)| Defines the git owners (organisations/users) and repositories which are imported into JayeX and so have webhooks and [lighthouse](https://github.com/jenkins-x/lighthouse) [triggers](/v3/develop/reference/pipelines/#lighthouse) defined. Also supports [slack](/v3/develop/ui/slack/) and [jenkins](/v3/develop/create-project/jenkinsfile/) configuration  |
 | `.jx/gitops/kpt-strategy.yaml` | [KptStrategies](https://github.com/jenkins-x/jx-gitops/blob/master/docs/config.md#gitops.jenkins-x.io/v1alpha1.KptStrategies) | Lets you define what kind of [kpt](https://googlecontainertools.github.io/kpt/) upgrade strategy you wish to you for different folders. See [upgrade cluster](/v3/admin/setup/upgrades/cluster/) |
 | `.jx/secret/mapping/secret-mappings.yaml` | [SecretMapping](https://github.com/jenkins-x/jx-gitops/blob/master/docs/config.md#gitops.jenkins-x.io/v1alpha1.SecretMapping) | Defines the generic mapping of `Secrets` to `ExternalSecrets`. For more detail see [how we use ExternalSecrets](/v3/admin/setup/secrets/) |
 | `config-root` | Kubernetes | Defines the kubernetes resources and custom resource definitions generated from the [helmfile](https://github.com/roboll/helmfile#configuration) | The [helmfile](https://github.com/roboll/helmfile) files.

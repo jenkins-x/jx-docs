@@ -2,18 +2,18 @@
 title: Environments
 linktitle: Environments
 type: docs
-description: Introduction to Jenkins X Environments
+description: Introduction to JayeX Environments
 weight: 200
 aliases:
   - /v3/about/concepts/environments
 ---
 
-Environment is a [kubernetes custom resource (CR)](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/) in Jenkins X where the application code lives.
+Environment is a [kubernetes custom resource (CR)](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/) in JayeX where the application code lives.
 Examples of environment include development, testing, staging and production.
-Environments are scoped to kubernetes namespaces and essentially extend a namespace with additional Jenkins X related metadata.
+Environments are scoped to kubernetes namespaces and essentially extend a namespace with additional JayeX related metadata.
 
-After installing Jenkins X, a development environment is created.
-This is the environment where all Jenkins X related resources like lighthouse, build controller, nexus, chart museum are installed.
+After installing JayeX, a development environment is created.
+This is the environment where all JayeX related resources like lighthouse, build controller, nexus, chart museum are installed.
 Dev environment by default is in the `jx` namespace, but it is configurable.
 This is also the environment where all your pipelines will run.
 

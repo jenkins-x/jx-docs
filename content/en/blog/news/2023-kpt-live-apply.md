@@ -13,7 +13,7 @@ author: Mårten Svantesson
 
 Since the dawn of Jenkins X 3 the default last step of reconciling the state of the files in your cluster repository to 
 your cluster has been to execute `kubectl apply`. You can find more details about this 
-[here](https://jenkins-x.io/v3/about/how-it-works/#boot-job).
+[here](https://jayex.io/v3/about/how-it-works/#boot-job).
 
 There are some drawbacks with `kubectl apply` though. The one that made me start looking for alternatives was that if 
 you remove a resource from your cluster repository it may not be removed from your cluster. The way deletion works with 
@@ -30,7 +30,7 @@ apply the manifests, but I couldn't get that to work. Looking for other options 
 
 {{% alert color="warning" %}}
 For all the functionality described here to work you need to have a cluster that is
-[upgraded](https://jenkins-x.io/v3/admin/setup/upgrades/cluster/) later than January 24th 2023.
+[upgraded](https://jayex.io/v3/admin/setup/upgrades/cluster/) later than January 24th 2023.
 {{% /alert %}}
 
 You enable the use of `kpt live apply` by adding 
@@ -40,7 +40,7 @@ KUBEAPPLY = kpt-apply
 ```
 
 to the `Makefile` of your cluster repository anywhere before `include versionStream/src/Makefile.mk`. This works both 
-in a dev cluster and in a [remote cluster](https://jenkins-x.io/v3/admin/guides/multi-cluster/multi-cluster/). 
+in a dev cluster and in a [remote cluster](https://jayex.io/v3/admin/guides/multi-cluster/multi-cluster/). 
 (With the caveat that all bets are off if you have done changes yourself to `versionStream/src/Makefile.mk`.)
 
 After you have pushed this you can watch the log of the boot job using `jx admin log` as usual. When `kpt live 

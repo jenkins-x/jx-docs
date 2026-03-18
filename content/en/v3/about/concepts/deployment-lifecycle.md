@@ -2,18 +2,18 @@
 title: Deployment lifecycle
 linktitle: Deployment lifecycle
 type: docs
-description: How Jenkins X deploys your code
+description: How JayeX deploys your code
 weight: 400
 aliases:
   - /v3/about/concepts/deployment-lifecycle
 ---
 
-Ever wondered how the code you commit to your source control repository ends up deployed in production by Jenkins X?
+Ever wondered how the code you commit to your source control repository ends up deployed in production by JayeX?
 Well, this document is an attempt to answer that question.
 
 Please go over documentation regarding [source repositories](../source-repository), [environments](../environments) and [pipeline activities](../pipeline-activity) before reading this section.
 
-After you have [installed Jenkins X in a kubernetes cluster](/v3/admin/) and created a [quickstart or imported an existing repository](/v3/develop/create-project/), you should see a folder structure which resembles this:
+After you have [installed JayeX in a kubernetes cluster](/v3/admin/) and created a [quickstart or imported an existing repository](/v3/develop/create-project/), you should see a folder structure which resembles this:
 
 ```text
 ├── charts
@@ -53,7 +53,7 @@ After you have [installed Jenkins X in a kubernetes cluster](/v3/admin/) and cre
     └── values.yaml.gotmpl
 ```
 
-The Jenkins X pipeline files are all located in the `.lighthouse/jenkins-x` folder.
+The JayeX pipeline files are all located in the `.lighthouse/jenkins-x` folder.
 Inside this folder, you should see these files:
 
 - triggers.yaml: Defines the rules for triggering pipelines defined in the pull request and release yaml files
@@ -130,7 +130,7 @@ spec:
 status: {}
 ```
 
-Jenkins X allows the end users to write pipelines in native tekton format.
+JayeX allows the end users to write pipelines in native tekton format.
 Here we are defining a tekton pipelinerun with one task named `from-build-pack` which has a few steps.
 Refer to tekton documentation to learn more about [pipelineruns](https://tekton.dev/docs/pipelines/pipelineruns/) and [tasks](https://tekton.dev/docs/pipelines/tasks/).
 
@@ -142,7 +142,7 @@ The thing that is different from tekton is the `uses` key.
   resources: {}
 ```
 
-Jenkins X resolves this step at runtime as follows:
+JayeX resolves this step at runtime as follows:
 
 - It looks for a file git-clone-pr.yaml under tasks/git-clone in the `jx3-pipeline-catalog` repository in the jenkins-x organization in github.
   In this case, the steps defined [here](https://github.com/jenkins-x/jx3-pipeline-catalog/blob/master/tasks/git-clone/git-clone-pr.yaml) are added to the pipeline run.
@@ -151,7 +151,7 @@ Jenkins X resolves this step at runtime as follows:
   - If this is not set to `versionstream`, it uses the sha to get the version of the git-clone-pr.yaml file.
   - If sha is missing, an error is returned.
 
-When a pull request is opened against the base branch of the repository, the lighthouse webhook component of Jenkins X will create a lighthouse job and subsequently a tekton pipelinerun.
+When a pull request is opened against the base branch of the repository, the lighthouse webhook component of JayeX will create a lighthouse job and subsequently a tekton pipelinerun.
 
 The tekton pipelinerun created after a PR is opened looks like this (some fields are removed for simplicity):
 
@@ -280,7 +280,7 @@ status:
         ...
 ```
 
-Another component of Jenkins X, the `jx-build-controller` running in the dev namespace (jx by default) watches newly created tekton pipelineruns and creates Jenkins X pipeline activities from them.
+Another component of JayeX, the `jx-build-controller` running in the dev namespace (jx by default) watches newly created tekton pipelineruns and creates JayeX pipeline activities from them.
 
 The pipeline activity generated from the tekton pipelinerun looks as follows:
 
@@ -343,4 +343,4 @@ This opens a pull request (PR) in the cluster git repository.
 Normally two PRs are opened, one for the staging environment and one for the production environment.
 The staging environment PR is merged automatically if the pipeline passes, thereby promoting the application to the staging environment.
 The production environment PR needs to be merged manually.
-Once the production PR is merged, Jenkins X will promote your code to production.
+Once the production PR is merged, JayeX will promote your code to production.

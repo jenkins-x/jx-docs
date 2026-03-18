@@ -2,7 +2,7 @@
 title: Editing
 linktitle: Editing
 type: docs
-description: Editing pipelines in Jenkins X
+description: Editing pipelines in JayeX
 weight: 200
 ---
 
@@ -10,7 +10,7 @@ weight: 200
 
 If you [upgrade your cluster to the latest version stream](/v3/guides/upgrade/#cluster) then you will find if you [create a new quickstart](/v3/develop/create-project/#create-a-new-project-from-a-quickstart) that:
 
-* `.lighthouse/jenkins-x` directory contains the default CI/CD pipelines for Jenkins X with these files:
+* `.lighthouse/jenkins-x` directory contains the default CI/CD pipelines for JayeX with these files:
   * `triggers.yaml` to define the [lighthouse](https://github.com/jenkins-x/lighthouse) [TriggerConfig](https://github.com/jenkins-x/lighthouse/blob/master/docs/trigger/github-com-jenkins-x-lighthouse-pkg-triggerconfig.md#Config) which defines the [ChatOps](/docs/resources/faq/using/chatops/#what-is-chatops) and triggering configuration via a [spec field](https://github.com/jenkins-x/lighthouse/blob/master/docs/trigger/github-com-jenkins-x-lighthouse-pkg-triggerconfig.md#ConfigSpec) which defines [presubmits](https://github.com/jenkins-x/lighthouse/blob/master/docs/trigger/github-com-jenkins-x-lighthouse-pkg-config-job.md#Presubmit) and [postsubmits](https://github.com/jenkins-x/lighthouse/blob/master/docs/trigger/github-com-jenkins-x-lighthouse-pkg-config-job.md#Postsubmit) (i.e. Pull Request and Release triggers).
   * `pullrequest.yaml` defines the Pull Request pipeline using a Tekton [Task](https://tekton.dev/docs/pipelines/tasks/#configuring-a-task), [Pipeline](https://tekton.dev/docs/pipelines/pipelines/#configuring-a-pipeline) or [PipelineRun](https://tekton.dev/docs/pipelines/pipelineruns/#configuring-a-pipelinerun)
   * `release.yaml` defines the Release pipeline using a Tekton Tekton [Task](https://tekton.dev/docs/pipelines/tasks/#configuring-a-task), [Pipeline](https://tekton.dev/docs/pipelines/pipelines/#configuring-a-pipeline) or [PipelineRun](https://tekton.dev/docs/pipelines/pipelineruns/#configuring-a-pipelinerun)
@@ -22,7 +22,7 @@ If you [upgrade your cluster to the latest version stream](/v3/guides/upgrade/#c
 
 You can now easily modify any of the [Task](https://tekton.dev/docs/pipelines/tasks/#configuring-a-task), [Pipeline](https://tekton.dev/docs/pipelines/pipelines/#configuring-a-pipeline) or [PipelineRun](https://tekton.dev/docs/pipelines/pipelineruns/#configuring-a-pipelinerun) resources in any git repository - just look in each folder inside `.lighthouse` for the YAML files to edit.
 
-e.g. for the default Jenkins X CI/CD pipelines edit either:
+e.g. for the default JayeX CI/CD pipelines edit either:
 
 * `.lighthouse/jenkins-x`
   * `pullrequest.yaml` to edit the Pull Request [Task](https://tekton.dev/docs/pipelines/tasks/#configuring-a-task), [Pipeline](https://tekton.dev/docs/pipelines/pipelines/#configuring-a-pipeline) or [PipelineRun](https://tekton.dev/docs/pipelines/pipelineruns/#configuring-a-pipelinerun)
@@ -32,7 +32,7 @@ You can test out changes to the Pull Request pipeline by submitting changes in a
 
 ### Overriding steps
 
-The default pipelines use the default [Jenkins X Catalog](/v3/develop/pipelines/catalog/) and so the details of the steps such as the container image and commands used are often inherited.
+The default pipelines use the default [JayeX Catalog](/v3/develop/pipelines/catalog/) and so the details of the steps such as the container image and commands used are often inherited.
 
 You can override steps locally by:
 

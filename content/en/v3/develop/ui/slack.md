@@ -2,11 +2,11 @@
 title: Slack
 linktitle: Slack
 type: docs
-description: Slack bot for Jenkins X
+description: Slack bot for JayeX
 weight: 200
 ---
 
-Many of us use chat to keep in touch with the developers and tools we work with. [Slack](https://www.slack.com/) is becoming popular in commercial settings and is already used throughout the Kubernetes open source ecosystem: including the [Jenkins X project slack channels](https://jenkins-x.io/community/#slack)
+Many of us use chat to keep in touch with the developers and tools we work with. [Slack](https://www.slack.com/) is becoming popular in commercial settings and is already used throughout the Kubernetes open source ecosystem: including the [JayeX project slack channels](https://jayex.io/community/#slack)
 
 To get [slack](https://www.slack.com/) notifications of pipelines you can use the [jx-slack](https://github.com/jenkins-x-plugins/jx-slack) plugin.
 
@@ -62,7 +62,7 @@ kubectl get pod -l app=jx-slack
 
 ## Configuring Slack notifications
 
-In your dev cluster repository the `.jx/gitops/source-config.yaml` file (see the [configuration guide](https://github.com/jenkins-x/jx-gitops/blob/master/docs/config.md#gitops.jenkins-x.io/v1alpha1.SourceConfig)) is used to configure which repositories are imported into Jenkins X. This file is [automatically updated](/v3/about/how-it-works/#importing--creating-quickstarts), via pull requests, when you [create or import projects](/v3/develop/create-project/).
+In your dev cluster repository the `.jx/gitops/source-config.yaml` file (see the [configuration guide](https://github.com/jenkins-x/jx-gitops/blob/master/docs/config.md#gitops.jenkins-x.io/v1alpha1.SourceConfig)) is used to configure which repositories are imported into JayeX. This file is [automatically updated](/v3/about/how-it-works/#importing--creating-quickstarts), via pull requests, when you [create or import projects](/v3/develop/create-project/).
 
 You can configure the [slack](https://github.com/jenkins-x/jx-gitops/blob/master/docs/config.md#gitops.jenkins-x.io/v1alpha1.SlackNotify) configuration either globally, for a group of repositories or for a single repository.
 

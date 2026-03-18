@@ -64,10 +64,10 @@ While this is an aggressive timeline, it’s important to know that if you’re 
 
 Next, If you’re looking to migrate existing declarative Jenkins jobs to Jenkins X, we have a [partial Jenkinsfile translator](https://github.com/jenkins-x/jx-convert-jenkinsfile) that can help point you in the right direction. While it won’t fully translate all Jenkinsfiles, it will help point you in the right direction to get the ball rolling.
 
-And finally, if you’d like to keep your Jenkins jobs running but as individual steps inside a Jenkins X pipeline, [we have a proposal for remote execution](https://jenkins-x.io/docs/labs/jenkins/) as a new path forward. Since Jenkins itself can be run on Kubernetes, switching to a remote execution step via Jenkins X - or entirely to Jenkins if it makes more sense for you - should be an easy switch to make. We think this is a much better path forward, as it keeps Jenkins entirely out of Jenkins X while still letting you adopt Jenkins X right away and migrate your traditional Jenkins jobs to Tekton-based jobs over time. We expect a working proof of concept for the community soon.
+And finally, if you’d like to keep your Jenkins jobs running but as individual steps inside a Jenkins X pipeline, [we have a proposal for remote execution](https://jayex.io/docs/labs/jenkins/) as a new path forward. Since Jenkins itself can be run on Kubernetes, switching to a remote execution step via Jenkins X - or entirely to Jenkins if it makes more sense for you - should be an easy switch to make. We think this is a much better path forward, as it keeps Jenkins entirely out of Jenkins X while still letting you adopt Jenkins X right away and migrate your traditional Jenkins jobs to Tekton-based jobs over time. We expect a working proof of concept for the community soon.
 
 ## Conclusion
 
-We know this is a big announcement on a fast timeline and a lot of ideas to take in. We’d love to talk to you about it! Please join the [office hours we have arranged on March 19th](https://jenkins-x.io/community/office_hours/) that will be fully dedicated to discussing this. 
+We know this is a big announcement on a fast timeline and a lot of ideas to take in. We’d love to talk to you about it! Please join the [office hours we have arranged on March 19th](https://jayex.io/community/office_hours/) that will be fully dedicated to discussing this. 
 
 You may reach out to me, [Ethan Jones](mailto:ejones@cloudbees.com), if you’d like to discuss things one on one with some of our product and engineering team members.

@@ -2,7 +2,7 @@
 title: Using
 linktitle: Using
 type: docs
-description: Questions on using Jenkins X
+description: Questions on using JayeX
 weight: 150
 ---
 
@@ -46,7 +46,7 @@ Once the pull request is merged, the [boot job will trigger](/v3/about/how-it-wo
 
 ### Stopping new releases
 
-If the application you are removing was released via Jenkins X then the next time there is a change committed to your applications git repsitory a new release will be triggered which will be promoted again.
+If the application you are removing was released via JayeX then the next time there is a change committed to your applications git repsitory a new release will be triggered which will be promoted again.
 
 So to stop new releases you need to remove the application from the `.jx/gitops/source-config.yaml` repository.
 
@@ -60,7 +60,7 @@ kubectl get sr
 kubectl delete sr $theNameToDelete
 ```
 
-This will stop Jenkins X creating webhooks and firing pipelines when you make changes.
+This will stop JayeX creating webhooks and firing pipelines when you make changes.
 
 You may also want to remove the webhook from the repository to be safe.
 

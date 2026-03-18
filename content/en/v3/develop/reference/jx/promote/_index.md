@@ -17,7 +17,7 @@ promote [application]
 
 Promotes a version of an application to zero to many permanent environments. 
 
-For more documentation see: https://jenkins-x.io/docs/getting-started/promotion/
+For more documentation see: https://jayex.io/docs/getting-started/promotion/
 
 ### Examples
 

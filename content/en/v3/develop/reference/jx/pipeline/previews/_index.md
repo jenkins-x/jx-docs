@@ -19,7 +19,7 @@ Display one or more preview environments.
   
 See Also: 
 
-  * jx get env : https://jenkins-x.io/commands/jx_get_env
+  * jx get env : https://jayex.io/commands/jx_get_env
 
 ### Examples
 

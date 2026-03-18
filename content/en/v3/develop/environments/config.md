@@ -89,7 +89,7 @@ spec:
 
 ## Custom environments per group of repositories
 
-If you have different teams sharing the same Jenkins X installation you may wish to organise the repositories into _groups_ (e.g. a group of repositories per team).
+If you have different teams sharing the same JayeX installation you may wish to organise the repositories into _groups_ (e.g. a group of repositories per team).
  
 The simplest way to do this is to use a separate git organisation (owner) per team and then you already get separate configurations per group/owner in the `.jx/gitops/source-config.yaml` file in your development cluster git repository.
                                                     

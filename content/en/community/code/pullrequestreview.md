@@ -9,7 +9,7 @@ aliases:
     - /docs/contributing/code/pullrequestreview/
 ---
 
-The pull request is the main place we gate changes in Jenkins X. It's here we:
+The pull request is the main place we gate changes in JayeX. It's here we:
 
 * run the tests (`make test-slow-integration`)
 * execute [end to end tests](https://github.com/jenkins-x/bdd-jx) against static jenkins and Tekton
@@ -49,7 +49,7 @@ And above all, remember that as a PR author it's your responsibility to get your
 
 Your five principal tasks as an approver are to:
 
-* verify that the change is of overall benefit to Jenkins X
+* verify that the change is of overall benefit to JayeX
 * spot potential functional or non-functional problems with a PR
 * ensure any non-automated checks pass
 * signal when a PR needs security review by applying the `needs-security-review` label and wait with the approval
@@ -61,7 +61,7 @@ Verifying that the change is of **overall benefit** is your most important respo
 we assume that changes are beneficial and that it is the responsibility of the approver to identify if the change would
 be detrimental (rather than requiring the author to prove or assert benefit in all cases).
 
-If, as a PR approver, you feel that a PR is detrimental to Jenkins X you should:
+If, as a PR approver, you feel that a PR is detrimental to JayeX you should:
 
 1) Place the PR on hold using the `/hold` command, with the comment "I want to discuss whether this PR is beneficial or
 not before approving. I'll start a discussion in the #jenkins-x-dev channel shortly to discuss my concerns."

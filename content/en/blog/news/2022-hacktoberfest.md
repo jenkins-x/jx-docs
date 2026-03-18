@@ -25,9 +25,9 @@ We welcome your contributions to the [Jenkins X project](https://github.com/jenk
 [Issues labelled "hacktoberfest"](https://github.com/jenkins-x/jx/issues?q=is%3Aissue+label%3Ahacktoberfest+is%3Aopen) generally indicate good first issues.
 However, all pull requests will count towards your Hacktoberfest challenge.
 
-Refer to the contribution guides for making [code](https://jenkins-x.io/community/code/) and [documentation](https://jenkins-x.io/community/documentation/) changes.
+Refer to the contribution guides for making [code](https://jayex.io/community/code/) and [documentation](https://jayex.io/community/documentation/) changes.
 
-Refer to [this document](https://jenkins-x.io/v3/about/overview/source/) to get an idea about the location of the different Jenkins X source code repositories.
+Refer to [this document](https://jayex.io/v3/about/overview/source/) to get an idea about the location of the different Jenkins X source code repositories.
 Normally the labels assigned to the ticket will help you in deciding which part of the Jenkins X codebase to look at.
 The maintainers will also try to link the relevant repository for hacktoberfest issues in the issue comment.
 
@@ -44,6 +44,6 @@ We're happy to help if you have any questions. Talk to us on our slack channels,
 - #jenkins-x-dev for developers of Jenkins X
 - #jenkins-x-user for users of Jenkins X
 
-Find out more about becoming involved in the Jenkins X community [here](https://jenkins-x.io/community/).
+Find out more about becoming involved in the Jenkins X community [here](https://jayex.io/community/).
 
 _We look forward to seeing you in open source, fixing all the things!_

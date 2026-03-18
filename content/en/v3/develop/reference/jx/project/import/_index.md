@@ -2,7 +2,7 @@
 title: jx project import
 linktitle: import
 type: docs
-description: "Imports a local project or Git repository into Jenkins X"
+description: "Imports a local project or Git repository into JayeX"
 aliases:
   - jx-project_import
 ---
@@ -15,13 +15,13 @@ jx project import
 
 ### Synopsis
 
-Imports a local folder or Git repository into Jenkins X. 
+Imports a local folder or Git repository into JayeX. 
 
 If you specify no other options or arguments then the current directory is imported. Or you can use '--dir' to specify a directory to import. 
 
 You can specify the git URL as an argument. 
 
-For more documentation see: https://jenkins-x.io/docs/using-jx/creating/import/
+For more documentation see: https://jayex.io/docs/using-jx/creating/import/
 
 ### Examples
 
@@ -55,7 +55,7 @@ For more documentation see: https://jenkins-x.io/docs/using-jx/creating/import/
       --deploy-kind string             The kind of deployment to use for the project. Should be one of knative, default
       --dir string                     Specify the directory to import (default ".")
       --docker-registry-org string     The name of the docker registry organisation to use. If not specified then the Git provider organisation will be used
-      --dry-run                        Performs local changes to the repo but skips the import into Jenkins X
+      --dry-run                        Performs local changes to the repo but skips the import into JayeX
       --env-name string                The name of the environment to create (only used for env projects)
       --env-strategy string            The promotion strategy of the environment to create (only used for env projects) (default "Never")
       --git-kind string                the kind of git server to connect to
@@ -68,8 +68,8 @@ For more documentation see: https://jenkins-x.io/docs/using-jx/creating/import/
       --hpa                            should we enable the Horizontal Pod Autoscaler for this application.
       --import-commit-message string   Specifies the initial commit message used when importing the project
       --jenkins string                 The name of the Jenkins server to import the project into
-      --jenkinsfilerunner string       if you want to import into Jenkins X with Jenkinsfilerunner this argument lets you specify the container image to use
-      --jx                             if you want to default to importing this project into Jenkins X instead of a Jenkins server if you have a mixed Jenkins X and Jenkins cluster
+      --jenkinsfilerunner string       if you want to import into JayeX with Jenkinsfilerunner this argument lets you specify the container image to use
+      --jx                             if you want to default to importing this project into JayeX instead of a Jenkins server if you have a mixed JayeX and Jenkins cluster
       --log-level string               Sets the logging level. If not specified defaults to $JX_LOG_LEVEL
   -n, --name string                    Specify the Git repository name to import the project into (if it is not already in one)
       --nested-repo                    Specify if using nested repositories (in gitlab)
@@ -84,7 +84,7 @@ For more documentation see: https://jenkins-x.io/docs/using-jx/creating/import/
       --pipeline-catalog-dir string    The pipeline catalog directory you want to use instead of the buildPackGitURL in the dev Environment Team settings. Generally only used for testing pipelines
       --pr-poll-period duration        the time between polls of the Pull Request on the cluster environment git repository (default 20s)
       --pr-poll-timeout duration       the maximum amount of time we wait for the Pull Request on the cluster environment git repository (default 20m0s)
-      --scheduler string               Change schedulerName, More info about Scheduler: https://jenkins-x.io/v3/develop/faq/config/repos/#how-do-i-customise-a-scheduler (default "in-repo")
+      --scheduler string               Change schedulerName, More info about Scheduler: https://jayex.io/v3/develop/faq/config/repos/#how-do-i-customise-a-scheduler (default "in-repo")
       --service-account string         The Kubernetes ServiceAccount to use to run the initial pipeline (default "tekton-bot")
   -u, --url string                     The git clone URL to clone into the current directory and then import
       --verbose                        Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace

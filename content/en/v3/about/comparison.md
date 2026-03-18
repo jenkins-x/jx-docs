@@ -2,27 +2,27 @@
 title: Comparison
 linktitle: Comparison
 type: docs
-description: Comparison of Jenkins X version 3.x to 2.x
+description: Comparison of JayeX version 3.x to 2.x
 weight: 90
 aliases: 
     - /v3/about/comparison/
 ---
 
 
-This document outlines the similarities and differences of the 3.x approach for those who are aware of `jx boot` with helm 2 in 2.x of Jenkins X.
+This document outlines the similarities and differences of the 3.x approach for those who are aware of `jx boot` with helm 2 in 2.x of JayeX.
 
 ## Similarities between 2.x and 3.x
 
 Just like classic boot with the [jenkins-x-boot-config](https://github.com/jenkins-x/jenkins-x-boot-config/) git repository, this new [helmfile](https://github.com/roboll/helmfile) solution supports:
 
-* you can install and upgrade Jenkins X via GitOps
-* you can reuse helm charts from the internet, local charts or charts built by Jenkins X in any environment
+* you can install and upgrade JayeX via GitOps
+* you can reuse helm charts from the internet, local charts or charts built by JayeX in any environment
 * a YAML file is used to store all the charts that are applied during install/upgrade
 
 ## Differences with in 3.x
 
 * we support any permutation of tools such as: [helm 3](https://helm.sh/), [helmfile](https://github.com/roboll/helmfile), [kustomize](https://kustomize.io/) and/or [kpt](https://googlecontainertools.github.io/kpt/) to create the kubernetes resources
-* in 3.x the installation/upgrade of Jenkins X is run inside the kubernetes cluster via a `Job` rather than on a developers laptop which helps with consistency and security.
+* in 3.x the installation/upgrade of JayeX is run inside the kubernetes cluster via a `Job` rather than on a developers laptop which helps with consistency and security.
 * in 3.x we use a single git repository for each cluster; which can manage as many teams/namespaces as you like within the cluster
   * so any local environments like `Staging` which reside in the same kubernetes cluster are defined in the same git repository in 3.x - whereas in 2.x we used a separate git repository for `Dev`, `Staging` and `Production` when sharing the same cluster.
   * if `Dev`, `Preprod` and `Production` environments are in separate kubernetes clusters then those will have a git repository each.
@@ -39,12 +39,12 @@ Just like classic boot with the [jenkins-x-boot-config](https://github.com/jenki
 
 ## Removing complexity and magic
  
-Removing complexity out of Jenkins X and reusing other solutions wherever possible.  Jenkins X 2.x was tightly coupled to helm 2 for example.  There were `jx` CLI steps that wrapped helm commands when installing applications into the cluster which injected secrets from an internal Vault and ultimately made it very confusing for users and maintainers. 
+Removing complexity out of JayeX and reusing other solutions wherever possible.  JayeX 2.x was tightly coupled to helm 2 for example.  There were `jx` CLI steps that wrapped helm commands when installing applications into the cluster which injected secrets from an internal Vault and ultimately made it very confusing for users and maintainers. 
 
-Jenkins X 3.x prefers to avoid wrapping other CLIs unless a consistent higher level UX is being provided say around managing secrets and underlying commands being executed are clearly printed in users terminals.
+JayeX 3.x prefers to avoid wrapping other CLIs unless a consistent higher level UX is being provided say around managing secrets and underlying commands being executed are clearly printed in users terminals.
 
 ## Maintainability
  
-Created a new `jx` CLI which includes an extensible plugin model where each main subcommand off the jx base is it's own releasable git repository.  This has significantly improved the Jenkins X codebase which helps with maintainability and contributions.
+Created a new `jx` CLI which includes an extensible plugin model where each main subcommand off the jx base is it's own releasable git repository.  This has significantly improved the JayeX codebase which helps with maintainability and contributions.
 
  

@@ -29,4 +29,4 @@ Jenkins X automatically upgrades its own infrastructure with every version strea
 
 Keep an eye out for announcements of the Beta and thanks again to all involved in the community and we are very much looking forward to welcoming new people too.  We are very excited for the Beta release and given the feedback so far we understand users are too.
  
-For any questions and feedback please reach out on slack https://jenkins-x.io/community/#slack
+For any questions and feedback please reach out on slack https://jayex.io/community/#slack

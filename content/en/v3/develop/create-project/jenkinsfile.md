@@ -11,7 +11,7 @@ aliases:
 
 When importing a project [jx project import](/v3/develop/reference/jx/project/import) looks for a `Jenkinsfile` in the source code. 
 
-If there is no `Jenkinsfile` then the wizard assumes you wish to proceed with automated CI/CD pipelines based on [tekton](https://github.com/tektoncd/pipeline) and imports it in the usual Jenkins X way. You also get to confirm the kind of pipeline catalog  and language you wish to use for the automated CI/CD - so its easy to import any workload whether its a library, a binary, a container image, a helm chart or a fully blown microservice for automated kubernetes based CI/CD.
+If there is no `Jenkinsfile` then the wizard assumes you wish to proceed with automated CI/CD pipelines based on [tekton](https://github.com/tektoncd/pipeline) and imports it in the usual JayeX way. You also get to confirm the kind of pipeline catalog  and language you wish to use for the automated CI/CD - so its easy to import any workload whether its a library, a binary, a container image, a helm chart or a fully blown microservice for automated kubernetes based CI/CD.
 
 If a `Jenkinsfile` is present then the wizard asks you how you want to proceed:
 
@@ -26,7 +26,7 @@ If you choose the [Jenkins server](/v3/admin/guides/jenkins/) option and you hav
 
 Otherwise you choose which Jenkins server to use for your project. You could have multiple jenkins servers with different configurations and plugins.
 
-When using a Jenkins Server you get to use the full power of the Jenkins server and `Jenkinsfile`. Jenkins X uses the [upstream Jenkins helm chart](https://github.com/jenkinsci/helm-charts) which you can [configure fully via GitOps](/v3/admin/guides/jenkins/getting-started/#configure-jenkins)
+When using a Jenkins Server you get to use the full power of the Jenkins server and `Jenkinsfile`. JayeX uses the [upstream Jenkins helm chart](https://github.com/jenkinsci/helm-charts) which you can [configure fully via GitOps](/v3/admin/guides/jenkins/getting-started/#configure-jenkins)
 
 
 ### Using Jenkinsfile Runner

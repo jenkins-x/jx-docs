@@ -12,7 +12,7 @@ In the DevOps space we have been using git to version infrastructure configurati
 
 With [kubernetes](https://kubernetes.io/) you can connect to a cluster and modify it via `kubectl apply` or helm install`.
 
-However with the `GitOps` pattern developers don't modify kubernetes directly; instead they propose changes to a git repository via a Pull Request which when it gets approved and merged causes the kubernetes cluster to be modified via some kind of operator such as the [Jenkins X git operator](https://github.com/jenkins-x/jx-git-operator)
+However with the `GitOps` pattern developers don't modify kubernetes directly; instead they propose changes to a git repository via a Pull Request which when it gets approved and merged causes the kubernetes cluster to be modified via some kind of operator such as the [JayeX git operator](https://github.com/jenkins-x/jx-git-operator)
 
 ### Benefits of GitOps
 

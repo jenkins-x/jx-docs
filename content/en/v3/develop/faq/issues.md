@@ -2,7 +2,7 @@
 title: Troubleshooting
 linktitle: Troubleshooting
 type: docs
-description: Questions on common issues folks hit using the cloud, kubernetes and Jenkins X
+description: Questions on common issues folks hit using the cloud, kubernetes and JayeX
 weight: 400
 ---
 
@@ -110,7 +110,7 @@ Then you should be able to see the pod name for the pipeline in question. You ca
 kubectl describe pod the-actual-pod-name-for-your-pipeline```
 ```
 
-## Why does Jenkins X fail to download plugins?
+## Why does JayeX fail to download plugins?
 
 When I run a `jx` command I get an error like...
 

@@ -2,7 +2,7 @@
 title: skaffold
 linktitle: skaffold
 type: docs
-description: Using skaffold with Jenkins X
+description: Using skaffold with JayeX
 weight: 300
 ---
           

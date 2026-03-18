@@ -2,7 +2,6 @@
 title: "GSoC 2022 Final Report: Improving Supply Chain Security"
 date: 2022-11-08
 draft: false
-weight: 100
 description: >
   Going through my GSoC journey with Jenkins X, this works as a documentation for our work to improve supply chain security of Jenkins X
 categories: [blog]
@@ -70,7 +69,7 @@ It has many formats and many generating tools but all have the same purpose in t
 Implementation:
 
 I first began with investigating available standards and formats for SBOMs and tools for generating them.
-The results of my investigation were written to a blog post [here](https://jenkins-x.io/blog/2022/07/24/intro-to-sbom/).
+The results of my investigation were written to a blog post [here](https://jayex.io/blog/2022/07/24/intro-to-sbom/).
 
 I've settled for using [syft](https://github.com/anchore/syft) for SBOM generation and [spdx](https://spdx.dev/) as the standard format for SBOMs.
 Also, I've added those installation as pre-defined steps in the Jenkins X pipeline catalog so it will also be available for our users to use in their pipelines and applied those steps to Jenkins X own pipelines.

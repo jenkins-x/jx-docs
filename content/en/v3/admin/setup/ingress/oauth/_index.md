@@ -6,7 +6,7 @@ description: How to protect Pipeline Visualizer with OAuth
 weight: 200
 ---
  
-By default Jenkins X installs a publically accessible GUI for viewing pipelines.  This is automatically linked to via the "details" on pull requests.
+By default JayeX installs a publically accessible GUI for viewing pipelines.  This is automatically linked to via the "details" on pull requests.
  
 ![Pull Request](/images/v3/gui-link1.png)
  
@@ -50,7 +50,7 @@ git add ./helmfiles/jx/helmfile.yaml
 git commit -m 'chore: add oauth2 proxy'
 ```
  
-By default Jenkins X is configured to use GitHub as the OAuth provider, to change this edit the file `./helmfiles/jx/helmfile.yaml` and add __extraArgs__ config like the google example here:
+By default JayeX is configured to use GitHub as the OAuth provider, to change this edit the file `./helmfiles/jx/helmfile.yaml` and add __extraArgs__ config like the google example here:
 ```yaml
 - chart: k8s-at-home/oauth2-proxy
  version: 5.0.3
@@ -64,7 +64,7 @@ By default Jenkins X is configured to use GitHub as the OAuth provider, to chang
  
 For a full list of supported providers see [here](https://github.com/oauth2-proxy/oauth2-proxy/blob/7def4bf/docs/docs/configuration/auth.md)
  
-By default this configuration works with the Pipeline Visualizer however you can override the default Jenkins X oauth2-proxy helm config to be any ingress if you prefer instead. 
+By default this configuration works with the Pipeline Visualizer however you can override the default JayeX oauth2-proxy helm config to be any ingress if you prefer instead. 
 i.e. this is the default so you could override the helm value from `dashboard` to be `nexus` if you wanted OAuth on Nexus instead.  No need to do anything if it is the Pipeline Visualizer you want OAuth for.
 ```yaml
 ingress:

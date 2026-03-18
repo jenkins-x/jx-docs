@@ -1,14 +1,14 @@
 ---
-title: Jenkins X Community Code of Conduct
+title: JayeX Community Code of Conduct
 linktitle: Code of Conduct
 description: 
 type: docs
 no_list: true
 weight: 10
 ---
-Jenkins X follows the [Continuous Delivery Foundation Contributor Covenant Code of Conduct](https://github.com/cdfoundation/toc/blob/master/CODE_OF_CONDUCT.md).
+JayeX follows the [Continuous Delivery Foundation Contributor Covenant Code of Conduct](https://github.com/cdfoundation/toc/blob/master/CODE_OF_CONDUCT.md).
 
-If you notice a violation of the Code of Conduct at an event or meeting, in Slack, or in another communication mechanism, reach out by direct message to James Rawlings, James Strachan, or Kara de la Marck on the [Jenkins X Slack](/community/#slack). Your anonymity will be protected.
+If you notice a violation of the Code of Conduct at an event or meeting, in Slack, or in another communication mechanism, reach out by direct message to James Rawlings, James Strachan, or Kara de la Marck on the [JayeX Slack](/community/#slack). Your anonymity will be protected.
 
 # Contributor Covenant Code of Conduct v0.5.0
 
@@ -65,7 +65,7 @@ a project may be further defined and clarified by project maintainers.
 
 ## Enforcement
 
-If you notice a violation of the Code of Conduct at an event or meeting, in Slack, or in another communication mechanism, reach out by direct message to James Rawlings, James Strachan, or Kara de la Marck on the [Jenkins X Slack](/community/#slack). Your anonymity will be protected.
+If you notice a violation of the Code of Conduct at an event or meeting, in Slack, or in another communication mechanism, reach out by direct message to James Rawlings, James Strachan, or Kara de la Marck on the [JayeX Slack](/community/#slack). Your anonymity will be protected.
 
 In addition, instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported by contacting the project team at [conduct@cd.foundation](mailto:conduct@cd.foundation). All

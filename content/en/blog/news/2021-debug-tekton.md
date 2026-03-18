@@ -40,7 +40,7 @@ To enable a breakpoint you can:
 * use the [Lens UI](/v3/develop/ui/lens/) as shown in the above video by:
   * right click on a `Pipeline` action menu 
   * select `Breakpoint -> Add`
-* you can use the [jx pipeline debug](https://jenkins-x.io/v3/develop/reference/jx/pipeline/debug/) command then select the pipeline to add/remove a breakpoint.
+* you can use the [jx pipeline debug](https://jayex.io/v3/develop/reference/jx/pipeline/debug/) command then select the pipeline to add/remove a breakpoint.
                                       
 ### Viewing breakpoints
 
@@ -61,8 +61,8 @@ Once you have set a breakpoint defined for a particular Pipeline you need to tri
 The pipeline will execute as normal; you'll be able to view it execute via:
 
 * [Lens UI](/v3/develop/ui/lens/)
-* run [jx pipeline grid](https://jenkins-x.io/v3/develop/reference/jx/pipeline/grid/) to watch pipelines run and select the one you wish to view the log 
-* run [jx pipeline log](https://jenkins-x.io/v3/develop/reference/jx/pipeline/log/) to watch the log of a specific pipeline
+* run [jx pipeline grid](https://jayex.io/v3/develop/reference/jx/pipeline/grid/) to watch pipelines run and select the one you wish to view the log 
+* run [jx pipeline log](https://jayex.io/v3/develop/reference/jx/pipeline/log/) to watch the log of a specific pipeline
 
 ### Opening a shell
 
@@ -91,7 +91,7 @@ If you wish to continue the execution of a pipeline there are [multiple scripts 
 
 There are a few ways to delete breakpoints. 
      
-You can run [jx pipeline debug](https://jenkins-x.io/v3/develop/reference/jx/pipeline/debug/) and toggle off any existing breakpoints.
+You can run [jx pipeline debug](https://jayex.io/v3/develop/reference/jx/pipeline/debug/) and toggle off any existing breakpoints.
 
 You can use the `Breakpoints` tab in [Lens UI](/v3/develop/ui/lens/) then click the breakpoints action menu then `Remove`
 
@@ -106,7 +106,7 @@ kubectl delete lhbp whatever-the-name-is
 
 So there you have it; nice and easy debugging of pipelines so you can diagnose why pipelines fail and try incrementally fix things up from inside the pipeline pods! Pretty cool eh!
 
-Let us know via [slack](https://jenkins-x.io/community/#slack) or the [issue tracker](https://github.com/jenkins-x/jx/issues) if you can think of any ways we can make this even easier to use! Also check out the [Tekton enhancement proposal 42](https://github.com/tektoncd/community/blob/main/teps/0042-taskrun-breakpoint-on-failure.md) that covers this capability in the underlying tekton controller and pods.
+Let us know via [slack](https://jayex.io/community/#slack) or the [issue tracker](https://github.com/jenkins-x/jx/issues) if you can think of any ways we can make this even easier to use! Also check out the [Tekton enhancement proposal 42](https://github.com/tektoncd/community/blob/main/teps/0042-taskrun-breakpoint-on-failure.md) that covers this capability in the underlying tekton controller and pods.
 
 Finally please add your thumbs up emoji to the [tekton PR #4145](https://github.com/tektoncd/pipeline/pull/4145) :) 
 

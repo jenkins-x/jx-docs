@@ -1,6 +1,6 @@
 # Contributing Rich Event Data
 
-To make upcoming Jenkins X events show up more prominently in Google search and map results, we mark up our event information in structured data.
+To make upcoming JayeX events show up more prominently in Google search and map results, we mark up our event information in structured data.
 
 More information here: https://developers.google.com/search/docs/data-types/event
 
@@ -10,7 +10,7 @@ Here is a multi-day event for DevOps World - Jenkins World with an offers URL fo
 
 ```
 <div class="event-wrapper" itemscope itemtype="http://schema.org/Event">
-  <meta itemprop="image" content="https://jenkins-x.io/images/community/events/2019-DWJW-JAM_banner-600x338.jpg" />
+  <meta itemprop="image" content="https://jayex.io/images/community/events/2019-DWJW-JAM_banner-600x338.jpg" />
   <meta itemprop="description" content="DevOps World - Jenkins World is the largest gathering of Jenkins users in the world, including Jenkins experts, continuous delivery practitioners, and companies offering complementary technologies to Jenkins." />
   <meta class="event-date" itemprop="startDate" content="2019-12-03" />
   <meta class="event-date" itemprop="endDate" content="2019-12-05" />
@@ -35,7 +35,7 @@ Here is a one-day event with start and end times. Google assumes the timezone of
 
 ```
 <div class="event-wrapper" itemscope itemtype="http://schema.org/Event">
-  <link itemprop="image" content="https://jenkins-x.io/images/community/events/2020-fosdem.png" />
+  <link itemprop="image" content="https://jayex.io/images/community/events/2020-fosdem.png" />
   <meta itemprop="description" content="For the first time, there will be a Continuous Integration and Continuous 
   Deployment (CI/CD) devroom at FOSDEM! The CI/CD devroom will take place on 2nd of February 2020 in Brussels, Belgium." />
   <meta class="event-date" itemprop="startDate" content="2020-02-02T09:00:00" />

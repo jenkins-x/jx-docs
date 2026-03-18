@@ -1,6 +1,6 @@
 ---
 name: Feature Request
-about: Suggest a feature or enhancement to the Jenkins X docs project
+about: Suggest a feature or enhancement to the JayeX docs project
 labels:
 - kind/feature
 ---

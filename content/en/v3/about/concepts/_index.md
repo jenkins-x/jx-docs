@@ -1,11 +1,11 @@
 ---
-title: Jenkins X concept models
+title: JayeX concept models
 linktitle: Concepts
 type: docs
-description: Introduction to Jenkins X Concepts
+description: Introduction to JayeX Concepts
 weight: 20
 aliases:
   - /v3/about/concepts/
 ---
 
-This is a conceptual description of the moving parts of Jenkins X.
+This is a conceptual description of the moving parts of JayeX.

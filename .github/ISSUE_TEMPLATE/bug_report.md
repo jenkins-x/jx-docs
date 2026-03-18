@@ -1,6 +1,6 @@
 ---
 name: Bug Report
-about: Report a bug encountered with Jenkins X docs
+about: Report a bug encountered with JayeX docs
 labels:
 - kind/bug
 ---
@@ -14,7 +14,7 @@ labels:
 
 
 **Page to Update:**
-https://jenkins-x.io/docs/....
+https://jayex.io/docs/....
 
 
 **Steps to Reproduce:**

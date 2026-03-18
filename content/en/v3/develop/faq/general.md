@@ -2,22 +2,22 @@
 title: General
 linktitle: General
 type: docs
-description: General questions about Jenkins X
+description: General questions about JayeX
 weight: 100
 ---
 
 ## Where do I raise issues?
 
-One of the challenges with Jenkins X 3.x is the [source code is spread across a number of organisations and repositories](/v3/about/overview/source/) since its highly decoupled into many [plugins and microservices](/v3/about/overview/) so it can be confusing 
+One of the challenges with JayeX 3.x is the [source code is spread across a number of organisations and repositories](/v3/about/overview/source/) since its highly decoupled into many [plugins and microservices](/v3/about/overview/) so it can be confusing 
 
 If you know the specific plugin causing an issue, say [jx-preview](https://github.com/jenkins-x/jx-preview) then just raise the issue there in the issue tracker.
 
-Otherwise use the [issue tracker for Jenkins X 3.x](https://github.com/jenkins-x/issues) and we can triage as required.
+Otherwise use the [issue tracker for JayeX 3.x](https://github.com/jenkins-x/issues) and we can triage as required.
 
 
 
 
-## Why does Jenkins X use `helmfile template`?
+## Why does JayeX use `helmfile template`?
 
 If you look into the **versionStream/src/Makefile.mk** file in your cluster git repository to see how the boot process works you may notice its defined a simple makefile and uses the `helmfile template` command to convert the [helmfile](https://github.com/roboll/helmfile) `helmfile.yaml` files referencing helm charts into YAML.
 
@@ -62,13 +62,13 @@ config-root/
 
   * use [jx gitops annotate](/v3/develop/reference/jx/gitops/annotate) to add add support for tools like [pusher wave](https://github.com/pusher/wave) so that rotating secrets in your underlying secret store can cause rolling upgrades in your `Deployments`
 
-However since the steps to deploy a kubernetes cluster in Jenkins X is defined in a simple makefile stored in your cluster git repository its easy for developers to modify their cluster git repository to add any combination of tools to the makefile to use any permutation of  [helm 3](https://helm.sh/), [helmfile](https://github.com/roboll/helmfile), [kustomize](https://kustomize.io/), [kpt](https://googlecontainertools.github.io/kpt/)  and [kubectl](https://kubernetes.io/docs/reference/kubectl/kubectl/)
+However since the steps to deploy a kubernetes cluster in JayeX is defined in a simple makefile stored in your cluster git repository its easy for developers to modify their cluster git repository to add any combination of tools to the makefile to use any permutation of  [helm 3](https://helm.sh/), [helmfile](https://github.com/roboll/helmfile), [kustomize](https://kustomize.io/), [kpt](https://googlecontainertools.github.io/kpt/)  and [kubectl](https://kubernetes.io/docs/reference/kubectl/kubectl/)
 
 So if you really wanted to opt out of the canonical GitOps, resource and secret management model above you can add a `helm upgrade` or `helmfile sync` command to your makefile. The entire boot job is defined in git in **versionStream/git-operator/job.yaml** so you are free to go in whatever direction you prefer. 
 
 
 
-## Does Jenkins X support helmfile hooks?
+## Does JayeX support helmfile hooks?
 
 Helmfile hooks allow programs to be executed during the lifecycle of the application of your helmfiles.
 
@@ -95,11 +95,11 @@ include versionStream/src/Makefile.mk
 To trigger the tests you could:
 
 * download binaries and run them locally via a shell script 
-* create a kubernetes `Job` and verify that the job succeeds via [jx verify job](https://jenkins-x.io/v3/develop/reference/jx/verify/job/) which also tails the log
-* trigger a pipeline via [jx pipeline start](https://jenkins-x.io/v3/develop/reference/jx/pipeline/start/ )
+* create a kubernetes `Job` and verify that the job succeeds via [jx verify job](https://jayex.io/v3/develop/reference/jx/verify/job/) which also tails the log
+* trigger a pipeline via [jx pipeline start](https://jayex.io/v3/develop/reference/jx/pipeline/start/ )
 
 
-## How do I uninstall Jenkins X?
+## How do I uninstall JayeX?
 
 We don't yet have a nice uninstall command. 
 

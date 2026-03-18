@@ -1,7 +1,7 @@
 ---
 title: Suggest changes to documentation
 linktitle: Suggest changes
-description: How to suggest changes to the Jenkins X site and documentation
+description: How to suggest changes to the JayeX site and documentation
 type: docs
 weight: 10
 aliases:
@@ -30,7 +30,7 @@ On the right hand side of the page, you'll find a column that will always have t
 
 The top one (`Edit this page`) is the one we need here, as it will allow you to suggest changes to the page you're currently on.
 The second one (`Create documentation issue`) is a link to create a documentation related issue, for others to look at and hopefully fix. This could be for missing sections, or maybe larger changes you're not comfortable suggesting yourself.
-The last one (`Create project issue`) is a link to create an issue for the main Jenkins X project. This is for problems related to the code and to how Jenkins X works.
+The last one (`Create project issue`) is a link to create an issue for the main JayeX project. This is for problems related to the code and to how JayeX works.
 
 ## Make suggested changes
 

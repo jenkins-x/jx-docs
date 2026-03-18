@@ -37,7 +37,7 @@ spec:
                 - git
               args:
                 - clone
-                - https://github.com/jenkins-x/jenkins-x-website.git
+                - https://github.com/jayex-io/website.git
                 - --depth=20
             - image: klakegg/hugo:0.101.0-ext-alpine
               name: git-submodules
@@ -58,14 +58,14 @@ spec:
                 - npm
               args:
                 - install
-            ## delete everything in the jenkins-x-website repo clone
+            ## delete everything in the website repo clone
             - image: klakegg/hugo:0.101.0-ext-alpine
               name: remove-old
               command:
                 - git
               args:
                 - -C
-                - jenkins-x-website
+                - website
                 - rm
                 - -r
                 - "*"
@@ -82,10 +82,10 @@ spec:
                 - hugo
               args:
                 - -d
-                - jenkins-x-website
+                - website
                 - --enableGitInfo
                 - --baseURL
-                - https://jenkins-x.io
+                - https://jayex.io
               resources:
                 requests:
                   cpu: 400m

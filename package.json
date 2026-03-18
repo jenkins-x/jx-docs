@@ -1,12 +1,12 @@
 {
   "name": "jx-docs",
   "version": "2.0.0",
-  "description": "Jenkins X Documentation",
+  "description": "JayeX Documentation",
   "author": "budparr",
   "license": "CC-BY-SA-4.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jenkins-x/jx-docs.git"
+    "url": "https://github.com/jayex-io/jx-docs.git"
   },
   "dependencies": {
     "@docsearch/js": "^3.0.0",

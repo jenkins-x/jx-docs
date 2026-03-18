@@ -1,7 +1,7 @@
 /resources/
 node_modules/
 tech-doc-hugo
-jenkins-x-website
+website
 node_modules
 tmp-website
 
