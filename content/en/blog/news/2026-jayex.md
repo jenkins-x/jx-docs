@@ -1,6 +1,6 @@
 ---
 title: "Jenkins X changes name to JayeX!"
-date: 2026-02-11T00:00:00-00:00
+date: 2026-03-19T00:00:00-00:00
 draft: false
 description: Rather nonsense than confusion  
 categories: [blog]
