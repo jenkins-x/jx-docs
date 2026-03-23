@@ -4,11 +4,7 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-pushd content/en/community/enhancements
+pushd content/en/community/labs/enhancements
   git checkout master
   git pull
-  for r in proposals/*/README.md
-  do
-    mv $r ${r%/*}/_index.md
-  done
 popd

@@ -1,8 +1,9 @@
 baseURL = "/"
-title = "JayeX - Cloud Native CI/CD Built On Kubernetes"
+title = "Jenkins X - Cloud Native CI/CD Built On Kubernetes"
 
 enableRobotsTXT = true
 
+ignorefiles = [ "docs/labs/.*" ]
 # getting an error on the contributors plugin
 ignoreErrors = ["error-remote-getjson"]
 
@@ -26,8 +27,8 @@ enableMissingTranslationPlaceholders = true
 
 [languages]
 [languages.en]
-	title = "JayeX - Cloud Native CI/CD Built On Kubernetes"
-	description = "Documentation, guides and support for JayeX"
+	title = "Jenkins X - Cloud Native CI/CD Built On Kubernetes"
+	description = "Documentation, guides and support for Jenkins X"
 	languageName ="English"
 	# Weight used for sorting.
 	weight = 1
@@ -110,7 +111,7 @@ release = "3.16.56"
 ## the jx-lens version
 jx_lens_version = "1.0.18"
 
-copyright = "The JayeX Authors."
+copyright = "The Jenkins X Authors."
 privacy_policy = "https://policies.google.com/privacy"
 
 # First one is picked as the Twitter card image if not set on page.
@@ -121,7 +122,7 @@ privacy_policy = "https://policies.google.com/privacy"
 version_menu = "Documentation"
 
 # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
-github_repo = "https://github.com/jayex-io/jx-docs"
+github_repo = "https://github.com/jenkins-x/jx-docs"
 # An optional link to a related project repo. For example, the sibling repository where your product code lives.
 github_project_repo = "https://github.com/jenkins-x/jx"
 
@@ -163,7 +164,7 @@ no = 'Sorry to hear that. Please <a href="https://github.com/jenkins-x/jx-docs/i
 	name = "Calendar"
 	url = "/community/calendar/"
 	icon = "fas fa-calendar-alt"
-	desc = "Google Calendar for JayeX"
+	desc = "Google Calendar for Jenkins X"
 [[params.links.user]]
 	name = "Youtube"
 	url = "https://www.youtube.com/channel/UCN2kblPjXKMcjjVYmwvquvg"
@@ -176,9 +177,9 @@ no = 'Sorry to hear that. Please <a href="https://github.com/jenkins-x/jx-docs/i
 	desc = "Development takes place here!"
 [[params.links.user]]
 	name = "Contribute"
-	url = "https://jayex.io/community/documentation/"
+	url = "https://jenkins-x.io/community/documentation/"
 	icon = "fas fa-edit"
-	desc = "Contribute to the JayeX website"
+	desc = "Contribute to the Jenkins X website"
 [[params.links.user]]
 	name = "User Slack Channel"
 	url = "https://kubernetes.slack.com/messages/C9MBGQJRH"
@@ -196,3 +197,14 @@ no = 'Sorry to hear that. Please <a href="https://github.com/jenkins-x/jx-docs/i
 	url = "https://kubernetes.slack.com/messages/C9LTHT2BB"
 	icon = "fab fa-slack"
   desc = "Chat with other project developers"
+
+# Versioning
+[[params.versions]]
+version = "v3.x (Current)"
+url = "/v3/about"
+dirpath = "v3"
+
+[[params.versions]]
+version = "v2.x (Unmaintained)"
+url = "/docs"
+dirpath = "docs"

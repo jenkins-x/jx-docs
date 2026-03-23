@@ -34,10 +34,6 @@ spec:
                 - update
                 - --init
                 - --recursive
-            - image: klakegg/hugo:0.101.0-ext-alpine
-              name: update-content
-              command:
-                - ./scripts/ci/update-content.sh
             - image: gcr.io/cloud-builders/npm
               name: install-dependencies
               command:

@@ -6,7 +6,7 @@ description: Changing your artifact or chart repository
 weight: 200
 ---
 
-JayeX lets you configure different artifact repositories. We use artifact repositories to:
+Jenkins X lets you configure different artifact repositories. We use artifact repositories to:
 
 * store artifacts from some kinds of build (e.g. Java builds tend to deploy jars, `pom.xml` files and tarballs)
 * act as a Maven proxy to cache maven dependencies when using java/maven builds
@@ -14,7 +14,7 @@ JayeX lets you configure different artifact repositories. We use artifact reposi
 
 ### Nexus
 
-By default if you don't make any explicit configuration then JayeX uses:
+By default if you don't make any explicit configuration then Jenkins X uses:
 
 * [Nexus](https://www.sonatype.com/nexus-repository-oss) as an artifact repository to store artifacts (e.g. Java jars, `pom.xml` files, tarballs or npm modules etc)
 * [ChartMuseum](https://chartmuseum.com/) as a repository of charts

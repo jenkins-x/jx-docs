@@ -2,7 +2,7 @@
 title: jx verify
 linktitle: verify
 type: docs
-description: "commands for verifying JayeX environments"
+description: "commands for verifying Jenkins X environments"
 aliases:
   - jx-verify
 ---
@@ -15,7 +15,7 @@ jx verify
 
 ### Synopsis
 
-commands for verifying JayeX environments
+commands for verifying Jenkins X environments
 
 ### Options
 

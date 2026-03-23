@@ -1,4 +1,4 @@
-module github.com/jayex-io/jx-docs
+module github.com/jenkins-x/jx-docs
 
 go 1.17
 

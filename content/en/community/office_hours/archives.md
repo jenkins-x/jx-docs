@@ -1,5 +1,5 @@
 ---
-title: "JayeX Office Hours - Archives"
+title: "Jenkins X Office Hours - Archives"
 description: >
     A list of archived Office Hours videos from past events.
 author: omedina

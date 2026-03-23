@@ -1,13 +1,13 @@
 ---
-title: JayeX infrastructure
-linktitle: JayeX infrastructure
-description: Internal infrastructure used for JayeX
+title: Jenkins X infrastructure
+linktitle: Jenkins X infrastructure
+description: Internal infrastructure used for Jenkins X
 weight: 300
 type: docs
 no_list: true
 ---
 
-JayeX runs it's infrastructure in Google Cloud Platform (GCP).
+Jenkins X runs it's infrastructure in Google Cloud Platform (GCP).
 We have 2 GCP projects
 
 - jenkinsxio
