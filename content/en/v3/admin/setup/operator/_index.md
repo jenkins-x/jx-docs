@@ -2,19 +2,19 @@
 title: Install the Operator
 linktitle: Install the Operator
 type: docs
-description: Install the Git Operator to install/upgrade Jenkins X
+description: Install the Git Operator to install/upgrade JayeX
 weight: 20
 aliases:
   - /v3/guides/operator
   - /v3/admin/guides/operator
 ---
 
-Jenkins X 3.x uses a [git operator](https://github.com/jenkins-x/jx-git-operator) to manage installing + upgrading of Jenkins X and any other components in any environment. If you are interested you can read [how it works](/v3/about/how-it-works/).
+JayeX 3.x uses a [git operator](https://github.com/jenkins-x/jx-git-operator) to manage installing + upgrading of JayeX and any other components in any environment. If you are interested you can read [how it works](/v3/about/how-it-works/).
 
 
 ## Using Terraform
 
-*NOTE* if you are using one of the public clouds to install Jenkins X then Terraform will install the [git operator](https://github.com/jenkins-x/jx-git-operator) for you so that there is no need for you to do so manually.
+*NOTE* if you are using one of the public clouds to install JayeX then Terraform will install the [git operator](https://github.com/jenkins-x/jx-git-operator) for you so that there is no need for you to do so manually.
 
 So the following approaches automatically install the operator for you:
 
@@ -28,7 +28,7 @@ To install the [git operator](https://github.com/jenkins-x/jx-git-operator) you 
 
 This user and token needs read and write access to the git repository containing the installation configuration. Ideally the token will also have permissions to be able to create a webhook on the repository (to trigger CI/CD pipelines whenever someone creates a Pull Request on the git repository).
 
-You can always setup webhooks by hand yourself whenever a git repository is [created or imported](/v3/develop/create-project/) or the domain name of your [lighthouse](https://github.com/jenkins-x/lighthouse) hook endpoint changes via the [jx verify webhooks](https://github.com/jenkins-x/jx-verify/blob/master/docs/cmd/jx-verify_webhooks.md) command. Though its easier to get Jenkins X to automate this for you as part of the CI/CD pipelines; it just requires the git user and token to have sufficient permissions to list, create and modify webhooks.
+You can always setup webhooks by hand yourself whenever a git repository is [created or imported](/v3/develop/create-project/) or the domain name of your [lighthouse](https://github.com/jenkins-x/lighthouse) hook endpoint changes via the [jx verify webhooks](https://github.com/jenkins-x/jx-verify/blob/master/docs/cmd/jx-verify_webhooks.md) command. Though its easier to get JayeX to automate this for you as part of the CI/CD pipelines; it just requires the git user and token to have sufficient permissions to list, create and modify webhooks.
 
 Note also that the same pipeline user and token is reused by default for all pipelines on [all repositories created or imported](/v3/develop/create-project/) which will need read, write and webhook permissions on all of those repositories too. Though if you really want you can change this later on by [editing the pipeline token](/v3/guides/secrets/#edit-secrets).
 
@@ -54,11 +54,11 @@ If you are not inside the git clone of the [git repository](/v3/admin/platform/)
 jx admin operator --url=https://github.com/myorg/env-mycluster-dev.git --username <mygituser> --token <mygittoken>
 ```
 
-This command will use helm to install the [git operator](https://github.com/jenkins-x/jx-git-operator) which will trigger a Job to install Jenkins X (and re-trigger a Job whenever you commit to your git repository).
+This command will use helm to install the [git operator](https://github.com/jenkins-x/jx-git-operator) which will trigger a Job to install JayeX (and re-trigger a Job whenever you commit to your git repository).
 
 The terminal will display the logs as the boot `Job` runs. 
 
-Jenkins X will now install itself.
+JayeX will now install itself.
 
 ## HTTP proxy settings
 

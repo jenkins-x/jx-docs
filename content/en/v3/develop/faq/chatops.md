@@ -2,7 +2,7 @@
 title: ChatOps
 linktitle: ChatOps
 type: docs
-description: Using ChatOps with Jenkins X
+description: Using ChatOps with JayeX
 weight: 220
 aliases:
   - /resources/guides/using-jx/faq/chatops/
@@ -47,11 +47,15 @@ See the [ChatOps commands](/v3/develop/reference/chatops/)
 
 It can be useful to have multiple pipelines to perform different kinds of long running tests on Pull Requests. e.g. running the same test suite using different databases, microservice configurations or underlying infrastructure.
 
-In Jenkins X you can create a custom `Scheduler` resource in your [jx boot](/docs/getting-started/setup/boot/) configuration (in `env/templates/myscheduler.yaml`) which you can add multiple named contexts in the `presubmits` section. Then for each context name make sure you have a file called `jenkins-x-${context}.yml` in your project. 
+In JayeX you can create a custom `TriggerConfig` resource in your
+[Lighthouse](https://github.com/jenkins-x/lighthouse) [configuration](/v3/about/concepts/deployment-lifecycle/) (in 
+the directory `.lighthouse`) in which you
+can add multiple named contexts in the `presubmits` section. Then for
+each context name specify a source file that you then create in the same directory.
 
-Then Jenkins X will invoke each context on demand via `/test mycontext` or automatically if you enable `alwaysRun: true`.
+Then JayeX will invoke each context on demand via `/test mycontext` or automatically if you enable `alwaysRun: true`.
 
-You can see how we define lots of [parallel testing contexts in the version stream here](https://github.com/jenkins-x/environment-tekton-weasel-dev/blob/f377a72498282de9ee49b807b4d5ba74321a4fab/env/templates/jx-versions-scheduler.yaml#L18) which all run in parallel and report their status on each pull request on the [version stream](/about/concepts/version-stream/)
+You can see how we define lots of [parallel testing contexts in the version stream here](https://github.com/jenkins-x/environment-tekton-weasel-dev/blob/f377a72498282de9ee49b807b4d5ba74321a4fab/env/templates/jx-versions-scheduler.yaml#L18) which all run in parallel and report their status on each pull request on the [version stream](/v3/about/concepts/version-stream/)
 
 See also [How do I map SourceRepository to a custom Scheduler?](/docs/resources/faq/setup/#how-do-i-map-sourcerepository-to-a-custom-scheduler)
 

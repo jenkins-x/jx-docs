@@ -2,7 +2,7 @@
 title: Admin Guide
 linktitle: Admin Guide
 type: docs
-description: Installing, configuring and upgrading your Jenkins X installation
+description: Installing, configuring and upgrading your JayeX installation
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2020-02-21

@@ -203,7 +203,7 @@ It is difficult to get HTTPS to work in preview environments because each previe
 
 Strictly speaking, Jenkins X does not require its own cluster, but things work better operationally if you use separate clusters for testing, staging and production.
 
-You only need to install Jenkins X on the development cluster. Install the Jenkins X [environment controller](https://github.com/jenkins-x-charts/environment-controller) on the staging and production clusters. This is further explained in the article [Multiple Clusters](https://jenkins-x.io/getting-started/multi-cluster/).
+You only need to install Jenkins X on the development cluster. Install the Jenkins X [environment controller](https://github.com/jenkins-x-charts/environment-controller) on the staging and production clusters. This is further explained in the article [Multiple Clusters](https://jayex.io/getting-started/multi-cluster/).
 
 ## Upcoming Jenkins X features
 
@@ -235,4 +235,4 @@ Many fine examples with source code on GitHub were presented:
 
 ## Getting involved with the Jenkins Community
 
-Multiple presenters recommended the [Jenkins X Slack channels](https://jenkins-x.io/community/) as the best source of help and information. For more ways to get involved, see the [Jenkins X community page](https://jenkins-x.io/community/). I'll see you there.
+Multiple presenters recommended the [Jenkins X Slack channels](https://jayex.io/community/) as the best source of help and information. For more ways to get involved, see the [Jenkins X community page](https://jayex.io/community/). I'll see you there.

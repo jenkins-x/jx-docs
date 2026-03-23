@@ -2,7 +2,7 @@
 title: Cluster
 linktitle: Cluster
 type: docs
-description: Upgrade the Jenkins X cluster managed by GitOps
+description: Upgrade the JayeX cluster managed by GitOps
 weight: 20
 aliases:
   - /v3/guides/upgrades/cluster
@@ -45,7 +45,7 @@ The following demo walks through how to manually upgrade your cluster:
 
 ---
 
-You can upgrade your Jenkins X installation at any time by running the [jx gitops upgrade](/v3/develop/reference/jx/gitops/upgrade) command inside a git checkout of your cluster GitOps repository:
+You can upgrade your JayeX installation at any time by running the [jx gitops upgrade](/v3/develop/reference/jx/gitops/upgrade) command inside a git checkout of your cluster GitOps repository:
 
 First make sure you have the latest git contents as the [boot job will push changes](/v3/about/how-it-works/#boot-job):
 
@@ -67,7 +67,7 @@ jx gitops upgrade
 
 This will: 
 
-* upgrade your local [version stream](/about/concepts/version-stream/) to the latest which has passed the latest tests
+* upgrade your local [version stream](/v3/about/concepts/version-stream/) to the latest which has passed the latest tests
 * make any changes in the version stream to the [boot job and its configuration](/v3/about/how-it-works/#boot-job)
 
 After running this command you will usually have some changes in git you can review. If you are happy with the changes commit them and create a Pull Request so that they can get applied on your cluster.
@@ -96,7 +96,7 @@ config:
     strategy: resource-merge
 ```
 
-Once ready, make a pull request onto your cluster repository, review changes and merge.  The [Jenkins X git operator](https://github.com/jenkins-x/jx-git-operator) will automatically apply the upgrades into your cluster.
+Once ready, make a pull request onto your cluster repository, review changes and merge.  The [JayeX git operator](https://github.com/jenkins-x/jx-git-operator) will automatically apply the upgrades into your cluster.
 
 
 ### Replacing your local versionStream

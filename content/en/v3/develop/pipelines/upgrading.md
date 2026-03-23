@@ -9,7 +9,7 @@ weight: 500
 
 ## Converting older pipelines
 
-If you have older pipelines in your git repository created with an older version of Jenkins X you can convert them to the new concise `image: uses:sourceURI` syntax via the [jx pipeline convert](/v3/develop/reference/jx/pipeline/convert) command:
+If you have older pipelines in your git repository created with an older version of JayeX you can convert them to the new concise `image: uses:sourceURI` syntax via the [jx pipeline convert](/v3/develop/reference/jx/pipeline/convert) command:
 
 ```bash
 jx pipeline convert 

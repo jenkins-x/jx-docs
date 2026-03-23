@@ -15,7 +15,7 @@ jx gitops gc activities
 
 ### Synopsis
 
-Garbage collect the Jenkins X PipelineActivity resources
+Garbage collect the JayeX PipelineActivity resources
 
 ### Examples
 

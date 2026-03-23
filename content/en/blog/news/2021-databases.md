@@ -10,7 +10,7 @@ aliases: []
 author: Jenkins Strachan
 ---
 
-A common question we get asked on the [Jenkins X project](https://jenkins-x.io/) is how to get started creating microservices that use databases with [automated CI/CD](/v3/develop/create-project/) with [GitOps Promotion](/v3/develop/environments/promotion/) and [Preview Environments](/v3/develop/environments/preview/).
+A common question we get asked on the [Jenkins X project](https://jayex.io/) is how to get started creating microservices that use databases with [automated CI/CD](/v3/develop/create-project/) with [GitOps Promotion](/v3/develop/environments/promotion/) and [Preview Environments](/v3/develop/environments/preview/).
 
 To make things a little easier to get started we've created a new [node-postgresql](https://github.com/jenkins-x-quickstarts/node-postgresql) quickstart.
 
@@ -105,11 +105,11 @@ This is done via:
            
 ## How we can improve
 
-This quickstart is just a start but we can improve in a number of directions - fancy [helping out](https://jenkins-x.io/community/)?
+This quickstart is just a start but we can improve in a number of directions - fancy [helping out](https://jayex.io/community/)?
 
 ### More languages and frameworks
 
-It should be easy to replicate the same kind of quickstart mechanism for other languages and frameworks if anyone fancies trying it out? :) We [love contributions](https://jenkins-x.io/community/)! Pop by and chat with us on [slack](https://jenkins-x.io/community/#slack) if you want to discuss it further.
+It should be easy to replicate the same kind of quickstart mechanism for other languages and frameworks if anyone fancies trying it out? :) We [love contributions](https://jayex.io/community/)! Pop by and chat with us on [slack](https://jayex.io/community/#slack) if you want to discuss it further.
 
 ### Cloud databases 
 

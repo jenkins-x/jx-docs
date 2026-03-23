@@ -40,11 +40,11 @@ This is normally because the secret generation failed during the boot job.
   - Wrong cluster git repo
     - If you are using backends other than vault, use the right cluster git repository for that secret backend.
       For example, use `jx3-eks-asm` template repository to generate the cluster git repository if you want to store secrets in AWS secrets manager.
-    - Check [this github organization](https://github.com/jx3-gitops-repositories) for all the different public template repositories you can use with Jenkins X.
+    - Check [this github organization](https://github.com/jx3-gitops-repositories) for all the different public template repositories you can use with JayeX.
 
 ## Issues with webhook
 
-To find if webhooks were created by Jenkins X, navigate to the settings page of your repository, and click on webhooks.
+To find if webhooks were created by JayeX, navigate to the settings page of your repository, and click on webhooks.
 Check the [webhook troubleshooting guide](/v3/admin/troubleshooting/webhooks/) if they exist, and do not work.
 
 The recent delivery tab should have good debugging information on why webhooks failed to deliver payload.

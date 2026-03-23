@@ -6,7 +6,7 @@ description: How to work on code with git and CI/CD
 weight: 90
 ---
     
-Someone on your team has [setup Jenkins X on a kubernetes cluster](/v3/admin/). So how do you use it? 
+Someone on your team has [setup JayeX on a kubernetes cluster](/v3/admin/). So how do you use it? 
 
 Mostly you just use your IDE and git to change code in your usual way.
 
@@ -16,23 +16,23 @@ Though we do prefer you submit code changes via [Pull Requests](https://docs.git
                                                
 To see how to create a [Preview Environment](/v3/develop/environments/preview/) on a Pull Request see this demo:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/x-GtKmmhDSI" title="Demo of creating Preview Environments on Pull Requestss with Jenkins X" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/x-GtKmmhDSI" title="Demo of creating Preview Environments on Pull Requestss with JayeX" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     
    
 ### Creating a project 
 
-To see how to [create a new project](/v3/develop/create-project/) and get started developing with Jenkins X check out this demo:
+To see how to [create a new project](/v3/develop/create-project/) and get started developing with JayeX check out this demo:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/4wqwulEzseM?t=279s" title="Demo of developing with Jenkins X" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4wqwulEzseM?t=279s" title="Demo of developing with JayeX" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 ## Pull Requests
 
-The pull request (PR) is the foundation of Jenkins X CI/CD pipeline execution. 
+The pull request (PR) is the foundation of JayeX CI/CD pipeline execution. 
 
 Note that some git providers call these `merge requests` instead of `pull requests`.
 
-Using Pull Requests allows developers, reviewers and Jenkins X to:
+Using Pull Requests allows developers, reviewers and JayeX to:
 
 * Verify changes are valid: unit tests still pass, code is linted and so forth
 * Review PR code changes and their effects
@@ -42,7 +42,7 @@ Using Pull Requests allows developers, reviewers and Jenkins X to:
 
 ### Preview Environments
 
-The other advantage of working with Pull Requests is the automated CI/CD in Jenkins X creates a [Preview Environment](/v3/develop/environments/preview/) for each Pull Request
+The other advantage of working with Pull Requests is the automated CI/CD in JayeX creates a [Preview Environment](/v3/develop/environments/preview/) for each Pull Request
 
 
 ### Work in progress (WIP)

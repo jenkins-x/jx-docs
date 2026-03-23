@@ -1,7 +1,7 @@
 ---
 title: Contribute code
 linktitle: Contribute Code
-description: How to contribute code to Jenkins X development.
+description: How to contribute code to JayeX development.
 authors: [digitalcraftsman]
 weight: 20
 type: docs
@@ -12,22 +12,22 @@ aliases:
 
 ## Introduction
 
-Jenkins X is an open-source project and lives by the work of its [contributors](https://github.com/jenkins-x/jx/graphs/contributors). There are plenty of [open issues](https://github.com/jenkins-x/jx/issues), and we need your help to make Jenkins X even more awesome. You don't need to be a Go guru to contribute to the project's development.
+JayeX is an open-source project and lives by the work of its [contributors](https://github.com/jenkins-x/jx/graphs/contributors). There are plenty of [open issues](https://github.com/jenkins-x/jx/issues), and we need your help to make JayeX even more awesome. You don't need to be a Go guru to contribute to the project's development.
 
 ## Assumptions
 
 This contribution guide takes a step-by-step approach in hopes of helping newcomers. Therefore, we only assume the following:
 
 * You are new to Git or open-source projects in general
-* You are a fan of Jenkins X and enthusiastic about contributing to the project
+* You are a fan of JayeX and enthusiastic about contributing to the project
 
 {{< alert >}}
-If you're struggling at any point in this contribution guide, reach out to the Jenkins X community in [Jenkins X's Discussion forum](/community/).
+If you're struggling at any point in this contribution guide, reach out to the JayeX community in [JayeX's Discussion forum](/community/).
 {{< /alert >}}
 
 ## Prerequisites
 
-To contribute to Jenkins X jx binary, you will need:
+To contribute to JayeX jx binary, you will need:
 
 * [Git](https://git-scm.com) and a [GitHub](https://github.com) account
 * [Go](https://golang.org/) `1.18.X`, with support for compiling to `linux/amd64`
@@ -44,7 +44,7 @@ We recommend `1.17.X` version of go as the pull request checks run against this 
 
 The installation of Go should take only a few minutes. You have more than one option to get Go up and running on your machine.
 
-If you are having trouble following the installation guides for go, check out [Go Bootcamp](http://www.golangbootcamp.com/book/get_setup) which contains setups for every platform or reach out to the Jenkins X community in the [Jenkins X Slack channels](/community/#slack).
+If you are having trouble following the installation guides for go, check out [Go Bootcamp](http://www.golangbootcamp.com/book/get_setup) which contains setups for every platform or reach out to the JayeX community in the [JayeX Slack channels](/community/#slack).
 
 #### Install Go on macOS
 
@@ -58,7 +58,7 @@ brew install go@1.15
 
 More experienced users can use the [Go Version Manager](https://github.com/moovweb/gvm) (GVM). GVM allows you to switch between different Go versions *on the same machine*. If you're a beginner, you probably don't need this feature. However, GVM makes it easy to upgrade to a new released Go version with just a few commands.
 
-GVM comes in especially handy if you follow the development of Jenkins X over a longer period of time. Future versions of Jenkins X will usually be compiled with the latest version of Go. Sooner or later, you will have to upgrade if you want to keep up.
+GVM comes in especially handy if you follow the development of JayeX over a longer period of time. Future versions of JayeX will usually be compiled with the latest version of Go. Sooner or later, you will have to upgrade if you want to keep up.
 
 #### Install Go on Windows
 
@@ -99,7 +99,7 @@ $ echo $GOPATH
 
 Git is a [version control system](https://en.wikipedia.org/wiki/Version_control) to track the changes of source code.
 
-You will need to have Git installed on your computer to contribute to Jenkins X development. Teaching Git is outside the scope of the Jenkins X docs, but if you're looking for an excellent reference to learn the basics of Git, we recommend the [Git book](https://git-scm.com/book/) if you are not sure where to begin.
+You will need to have Git installed on your computer to contribute to JayeX development. Teaching Git is outside the scope of the JayeX docs, but if you're looking for an excellent reference to learn the basics of Git, we recommend the [Git book](https://git-scm.com/book/) if you are not sure where to begin.
 
 Move back to the terminal and check if Git is already installed. Type in `git version` and press enter. You can skip the rest of this section if the command returned a version number. Otherwise [download](https://git-scm.com/downloads) the latest version and follow this [installation guide](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
@@ -139,9 +139,9 @@ If you're not familiar with this term, GitHub's [help pages](https://help.github
 
 > A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.
 
-You can contribute to any of [Jenkins X repositories](https://github.com/jenkins-x) or [Jenkins X Plugins repositories](https://github.com/jenkins-x-plugins). You can find all the related issues in each repo, for searching use labels as filters.
+You can contribute to any of [JayeX repositories](https://github.com/jenkins-x) or [JayeX Plugins repositories](https://github.com/jenkins-x-plugins). You can find all the related issues in each repo, for searching use labels as filters.
 
-Open the [Jenkins X repository](https://github.com/jenkins-x/jx) on GitHub and click on the "Fork" button in the top right.
+Open the [JayeX repository](https://github.com/jenkins-x/jx) on GitHub and click on the "Fork" button in the top right.
 
 ![Fork button](/images/contribute/development/forking-a-repository.png)
 
@@ -265,7 +265,7 @@ See below to get some advises on how to [test](#testing) and [debug](#debugging)
 
 So you are happy with your development and are ready to prepare the PR. Before going further, let's squash and rebase your work.
 
-This is a bit more advanced but required to ensure a proper Git history of Jenkins X. Git allows you to [rebase](https://git-scm.com/docs/git-rebase) commits. In other words: it allows you to rewrite the commit history.
+This is a bit more advanced but required to ensure a proper Git history of JayeX. Git allows you to [rebase](https://git-scm.com/docs/git-rebase) commits. In other words: it allows you to rewrite the commit history.
 
 Let's take an example.
 
@@ -276,17 +276,17 @@ git rebase --interactive @~3
 The `3` at the end of the command represents the number of commits that should be modified. An editor should open and present a list of last three commit messages:
 
 ```sh
-pick 911c35b Add "How to contribute to Jenkins X" tutorial
+pick 911c35b Add "How to contribute to JayeX" tutorial
 pick 33c8973 Begin workflow
 pick 3502f2e Refactoring and typo fixes
 ```
 
-In the case above we should merge the last 2 commits in the commit of this tutorial (`Add "How to contribute to Jenkins X" tutorial`). You can "squash" commits, i.e. merge two or more commits into a single one.
+In the case above we should merge the last 2 commits in the commit of this tutorial (`Add "How to contribute to JayeX" tutorial`). You can "squash" commits, i.e. merge two or more commits into a single one.
 
 All operations are written before the commit message. Replace `pick` with an operation. In this case `squash` or `s` for short:
 
 ```sh
-pick 911c35b Add "How to contribute to Jenkins X" tutorial
+pick 911c35b Add "How to contribute to JayeX" tutorial
 squash 33c8973 Begin workflow
 squash 3502f2e Refactoring and typo fixes
 ```
@@ -296,7 +296,7 @@ We also want to rewrite the commits message of the third last commit. We forgot 
 You should end up with a similar setup:
 
 ```sh
-reword 911c35b Add "How to contribute to Jenkins X" tutorial
+reword 911c35b Add "How to contribute to JayeX" tutorial
 squash 33c8973 Begin workflow
 squash 3502f2e Refactoring and typo fixes
 ```
@@ -335,7 +335,7 @@ A [Developer Certificate of Origin](https://en.wikipedia.org/wiki/Developer_Cert
 commits. It can be proivided using the [signoff](https://git-scm.com/docs/git-commit#Documentation/git-commit.txt---signoff)
 option for `git commit` or by GPG signing the commit. The developer certificate is available at (https://developercertificate.org/).
 
-Jenkins X enforces the DCO using the a [bot](https://github.com/probot/dco). You can view the details on the DCO check
+JayeX enforces the DCO using the a [bot](https://github.com/probot/dco). You can view the details on the DCO check
 by viewing the `Checks` tab in the GitHub pull request.
 
 ![DCO signoff check](https://user-images.githubusercontent.com/13410355/42352794-85fe1c9c-8071-11e8-834a-05a4aeb8cc90.png)
@@ -419,7 +419,7 @@ after the commit message has been created by the user.
 
 ### The commit message
 
-Jenkins X uses [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) message format.
+JayeX uses [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) message format.
 
 ```
 <type>[optional scope]: <description>
@@ -448,7 +448,7 @@ Examples.
 
 ### Open a pull request
 
-We made a lot of progress. Good work. In this step we finally open a pull request to submit our additions. Open the [Jenkins X main repository](https://github.com/jenkins-x/jx/) on GitHub in your browser.
+We made a lot of progress. Good work. In this step we finally open a pull request to submit our additions. Open the [JayeX main repository](https://github.com/jenkins-x/jx/) on GitHub in your browser.
 
 You should find a green button labeled with "New pull request". But GitHub is clever and probably suggests you a pull request like in the beige box below:
 
@@ -471,7 +471,7 @@ There are a number of automated checks that will run on your PR:
   Clicking on the details link is very helpful as it will take you to the dashboard where you can navigate to the "Lighthouse"
   screen and check the status of your PR in the merge queue.
 
-Then Jenkins X itself and the maintainers will review your PR, potentially initiate discussion around your change and finally, merge it successfully in Jenkins X jx. Congratulations !
+Then JayeX itself and the maintainers will review your PR, potentially initiate discussion around your change and finally, merge it successfully in JayeX jx. Congratulations !
 
 ### Getting a pull request merged
 
@@ -481,7 +481,7 @@ To ask a maintainer to review your PR, type `/cc @<github_username>` in a commen
 
 If the tests pass you need to get a `/lgtm` from one of the reviewers (listed in the `OWNERS` file in the repository). You need a new LGTM every time you push changes. Once the tests pass and you have a LGTM for the latest changeset, your PR will be automatically merged.
 
-Jenkins X (well, Keeper (lighthouse), a component of Jenkins X) won't merge your changes until it has the tests passing against the *current* `HEAD` of `main` - but don't worry, whilst the tests *continue* to pass it will automatically merge your changeset into main and rerun the tests. As you can imagine, this can take a little while (a few hours) if the merge queue is long. Keeper will also automatically attempt to batch up passing changes, but if the batch fails, it will resort to merging the changesets one by one.
+JayeX (well, Keeper (lighthouse), a component of JayeX) won't merge your changes until it has the tests passing against the *current* `HEAD` of `main` - but don't worry, whilst the tests *continue* to pass it will automatically merge your changeset into main and rerun the tests. As you can imagine, this can take a little while (a few hours) if the merge queue is long. Keeper will also automatically attempt to batch up passing changes, but if the batch fails, it will resort to merging the changesets one by one.
 
 If the retest against `HEAD` of `main` fail, then it will notify you on the pull request and you'll need to make some changes (and potentially get a new LGTM).
 
@@ -743,7 +743,7 @@ Another approach is you can make your own docker image, then pause a pipeline an
 
 ## Code Generation
 
-Jenkins X makes use of code generation to create [Mocks](#mocking--stubbing), Kubernetes Custom Resource clients, [OpenAPI spec and API Documentation](/apidocs).
+JayeX makes use of code generation to create [Mocks](#mocking--stubbing), Kubernetes Custom Resource clients, [OpenAPI spec and API Documentation](/apidocs).
 The generated files, except for the HTML docs, checked into version control.
 There are several `make` targets resposible for code generation.
 They can be found in `Makefile.codegen`.

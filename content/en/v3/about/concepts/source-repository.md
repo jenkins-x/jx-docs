@@ -2,13 +2,13 @@
 title: Source Repositories
 linktitle: Source Repositories
 type: docs
-description: Introduction to Jenkins X Source Repositories
+description: Introduction to JayeX Source Repositories
 weight: 100
 aliases:
   - /v3/about/concepts/sourcerepositories
 ---
 
-Source Control Management (SCM) Repositories which have been configured to run CI/CD pipelines using Jenkins X are represented as Source Repositories.
+Source Control Management (SCM) Repositories which have been configured to run CI/CD pipelines using JayeX are represented as Source Repositories.
 Source Repositories are a [kubernetes custom resource (CR)](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/) scoped to a namespace and created in the development namespace/environment.
 
 A source repository includes information about the SCM provider, Organization, Repository name and clone URLs.

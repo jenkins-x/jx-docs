@@ -10,12 +10,12 @@ aliases:
 ---
 
 
-Jenkins X 3.x supports the `helmfile.yaml` file format from the [helmfile project](https://github.com/helmfile/helmfile) that can be used to define the [Helm](https://helm.sh/) [charts](https://helm.sh/docs/topics/charts/) you wish to install and their namespace.
+JayeX 3.x supports the `helmfile.yaml` file format from the [helmfile project](https://github.com/helmfile/helmfile) that can be used to define the [Helm](https://helm.sh/) [charts](https://helm.sh/docs/topics/charts/) you wish to install and their namespace.
 
 
 ## Adding Charts
             
-Jenkins X uses [helmfile](https://helmfile.readthedocs.io/en/latest/#configuration) to configure which versions of which helm charts are to be deployed in which namespace along with its configuration. 
+JayeX uses [helmfile](https://helmfile.readthedocs.io/en/latest/#configuration) to configure which versions of which helm charts are to be deployed in which namespace along with its configuration. 
 
 
 ### Using the CLI
@@ -60,7 +60,7 @@ releases:
 ...
 ``` 
 
-The `namespace` and `version` properties of the charts get resolved during deployment via the [version stream](https://jenkins-x.io/about/concepts/version-stream/) or you can specify them explicitly.
+The `namespace` and `version` properties of the charts get resolved during deployment via the [version stream](https://jayex.io/v3/about/concepts/version-stream/) or you can specify them explicitly.
 
 
 The prefix of the chart name is the chart repository name. There are a few chart repository names already defined in the `helmfile.yaml` in the `repositories:` section. You can add any number of chart repositories to the `helmfile.yaml` that you need.
@@ -110,9 +110,9 @@ releases:
   
 You can also use a file called `values.yaml.gotmpl` if you wish to use go templating of the values file. For example this lets you reference properties from the `jx-requirements.yml` file via expressions like `{{ .Values.jxRequirements.ingress.domain }}`.
 
-To see an example of this in action check out the [charts/jenkins-x/tekton/values.yaml.gotmpl](https://github.com/jenkins-x/jx3-versions/blob/master/charts/cdf/tekton-pipeline/values.yaml.gotmpl) file in the [version stream](https://jenkins-x.io/about/concepts/version-stream/).
+To see an example of this in action check out the [charts/jenkins-x/tekton/values.yaml.gotmpl](https://github.com/jenkins-x/jx3-versions/blob/master/charts/cdf/tekton-pipeline/values.yaml.gotmpl) file in the [version stream](https://jayex.io/v3/about/concepts/version-stream/).
 
-Note that many apps are already configured to make use of the `jx-requirements.yml` settings via the [version stream](https://jenkins-x.io/about/concepts/version-stream/) - but you are free to add your own custom configuration. 
+Note that many apps are already configured to make use of the `jx-requirements.yml` settings via the [version stream](https://jayex.io/v3/about/concepts/version-stream/) - but you are free to add your own custom configuration. 
    
 ### Using requirements in charts
 
@@ -133,7 +133,7 @@ There is also a file called `jx-global-values.yaml` which can include various gl
 
 ### Version Stream folder
 
-You may have noticed there is a folder called `versionStream` inside your clusters git repository. The [version stream](/about/concepts/version-stream/) is used to provide shared configuration such as:
+You may have noticed there is a folder called `versionStream` inside your clusters git repository. The [version stream](/v3/about/concepts/version-stream/) is used to provide shared configuration such as:
 
 * the verified versions of charts, images and git repositories which have been tested to work together
 * the default namespace and configuration of charts.
@@ -145,6 +145,6 @@ This means we can share canonical files and metadata across clusters and git rep
 
 When you [upgrade your cluster](/v3/guides/upgrade/#cluster) the local `versionStream` folder will be upgraded to the latest upstream version stream contents.
 
-We mentioned [above how you can cusomize charts](#customising-charts). Please try keep as many of your customizations as you can outside of the `versionStream` folder as you can so that there's no risk of your configurations getting overridden or causing merge conflicts with upstream [version stream](/about/concepts/version-stream/) changes.
+We mentioned [above how you can cusomize charts](#customising-charts). Please try keep as many of your customizations as you can outside of the `versionStream` folder as you can so that there's no risk of your configurations getting overridden or causing merge conflicts with upstream [version stream](/v3/about/concepts/version-stream/) changes.
 
 Any changes in the local `helmfile.yaml` or `charts` folder are excluded by the [upgrade mechanism](/v3/guides/upgrade/#cluster) and so are totally safe.

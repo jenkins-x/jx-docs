@@ -2,7 +2,7 @@
 title: UI
 linktitle: UI
 type: docs
-description: User interfaces for Jenkins X
+description: User interfaces for JayeX
 weight: 10
 aliases:
   - /v3/guides/ui/

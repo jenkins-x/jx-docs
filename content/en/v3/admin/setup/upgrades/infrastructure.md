@@ -2,7 +2,7 @@
 title: Infrastructure
 linktitle: Infrastructure
 type: docs
-description: Upgrade the Jenkins X Cloud infrastructure
+description: Upgrade the JayeX Cloud infrastructure
 weight: 30
 aliases:
   - /v3/guides/upgrades/infrastructure
@@ -10,7 +10,7 @@ aliases:
 
 ## Infrastructure
 
-If you have used one of the Jenkins X Terraform Git repositories to create and manage your cloud resources then you have two options.
+If you have used one of the JayeX Terraform Git repositories to create and manage your cloud resources then you have two options.
 
 ### Terraform manual apply
 

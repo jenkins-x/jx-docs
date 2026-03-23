@@ -12,7 +12,7 @@ author: Jenkins Strachan
 
 [cdCon 2021](https://events.linuxfoundation.org/cdcon/) is about to start with lots of [great sessions](https://events.linuxfoundation.org/cdcon/program/schedule/).
 
-Here' a list of the [Jenkins X related](https://jenkins-x.io/) sessions:
+Here' a list of the [Jenkins X related](https://jayex.io/) sessions:
             
 ## Tuesday, June 22 GitOps Summit
 

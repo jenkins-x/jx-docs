@@ -2,13 +2,13 @@
 title: Pipeline activites
 linktitle: Pipeline activites
 type: docs
-description: Introduction to Jenkins X Pipeline activites
+description: Introduction to JayeX Pipeline activites
 weight: 300
 aliases:
   - /v3/about/concepts/pipeline-activities
 ---
 
-Jenkins X creates pipeline activites for jobs.
+JayeX creates pipeline activites for jobs.
 It's a [kubernetes custom resource (CR)](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/) which is scoped to a namespace.
 
 Pipeline activities are made up of steps.
@@ -24,7 +24,7 @@ Let's look at each of these kinds in detail.
 
 ### Stage
 
-A step of kind step is made up of multiple sub steps and is normally associated with the Continuous Integration (CI) part of Jenkins X.
+A step of kind step is made up of multiple sub steps and is normally associated with the Continuous Integration (CI) part of JayeX.
 The build controller which runs in the development environment creates a stage for every [tekton taskrun](https://tekton.dev/docs/pipelines/taskruns/).
 
 Example of a pipeline activity with a step of kind stage is shown below (some fields are left out for simplicity):
@@ -54,7 +54,7 @@ spec:
             status: Succeeded
 ```
 
-This is a simple Jenkins X pipeline activity which has a step of kind **stage**.
+This is a simple JayeX pipeline activity which has a step of kind **stage**.
 
 ### Preview
 

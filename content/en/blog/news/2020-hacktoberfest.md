@@ -34,11 +34,11 @@ We welcome your contributions to the Jenkins X project!
 
 There are plenty of [open issues](https://github.com/jenkins-x/jx/issues), and we welcome your help in making Jenkins X even more awesome.
 
-Jenkins X is written largely in Go, but you don't need to be an expert to contribute! If you are new to the project, search for issues labelled "good-first-issue". Our [Contributing Guide](https://jenkins-x.io/community/code/) has advice for getting started with contributing to Jenkins X.
+Jenkins X is written largely in Go, but you don't need to be an expert to contribute! If you are new to the project, search for issues labelled "good-first-issue". Our [Contributing Guide](https://jayex.io/community/code/) has advice for getting started with contributing to Jenkins X.
 
 ### Contribute to the docs
 
-We welcome your help in improving the Jenkins X documenation. If you see areas of the documentation that need fixing or augmentation please raise a pull request. Our guide for [Contributing to the Documentation](https://jenkins-x.io/community/documentation/) has advice for getting started with contributing to the Jenkins X docs.
+We welcome your help in improving the Jenkins X documenation. If you see areas of the documentation that need fixing or augmentation please raise a pull request. Our guide for [Contributing to the Documentation](https://jayex.io/community/documentation/) has advice for getting started with contributing to the Jenkins X docs.
 
 ### Ask us questions
 
@@ -49,9 +49,9 @@ We're happy to help if you have any questions. Talk to us on our slack channels,
 
 We also have online office hours, where we talk about new developments in Jenkins X and you are welcome to ask us questions. We meet for office hours **every other Tuesday** at 15:00 UTC (*See your timezone [here](https://time.is/1500_in_UTC)*).
 
-Next office hours are on **6 October**. Join us on this [meeting link](https://zoom.us/j/397862697). See the [Jenkins X calendar](https://jenkins-x.io/community/calendar/) for events that you are welcome to join.
+Next office hours are on **6 October**. Join us on this [meeting link](https://zoom.us/j/397862697). See the [Jenkins X calendar](https://jayex.io/community/calendar/) for events that you are welcome to join.
 
-Find out more about becoming involved in the Jenkins X community [here](https://jenkins-x.io/community/).
+Find out more about becoming involved in the Jenkins X community [here](https://jayex.io/community/).
 
 *We look forward to seeing you in open source, fixing all the things!*
 

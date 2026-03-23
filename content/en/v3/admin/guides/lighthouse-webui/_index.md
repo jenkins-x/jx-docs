@@ -2,13 +2,13 @@
 title: Lighthouse WebUI
 linktitle: Lighthouse WebUI
 type: docs
-description: How to install the Lighthouse WebUI in Jenkins X 3
+description: How to install the Lighthouse WebUI in JayeX 3
 weight: 120
 aliases:
   - /v3/guides/lighthouse-webui
 ---
 
-This guide will help you install and configure the [lighthouse-webui-plugin](https://github.com/jenkins-x-plugins/lighthouse-webui-plugin) in your Jenkins X cluster. You can see the [Lighthouse Web UI documentation](/v3/develop/ui/lighthouse/) for more details on why you might need to install this optional component.
+This guide will help you install and configure the [lighthouse-webui-plugin](https://github.com/jenkins-x-plugins/lighthouse-webui-plugin) in your JayeX cluster. You can see the [Lighthouse Web UI documentation](/v3/develop/ui/lighthouse/) for more details on why you might need to install this optional component.
 
 ## Installation
 
@@ -49,7 +49,7 @@ See the [Lighthouse Web UI documentation](/v3/develop/ui/lighthouse/) for how to
 
 ## Configuration
 
-The configuration is defined in a ["values file" stored in the Jenkins X Version Stream](https://github.com/jenkins-x/jx3-versions/blob/master/charts/jxgh/lighthouse-webui-plugin/values.yaml.gotmpl).
+The configuration is defined in a ["values file" stored in the JayeX Version Stream](https://github.com/jenkins-x/jx3-versions/blob/master/charts/jxgh/lighthouse-webui-plugin/values.yaml.gotmpl).
 
 If you want to change anything from the default configuration, you can either:
 - submit a Pull Request if you believe this change is beneficial for everybody

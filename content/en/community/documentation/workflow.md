@@ -19,7 +19,7 @@ At a high level, your workflow will likely look something like this:
 * Raise a Pull Request (PR) to have your changes merged into the main `jx-docs` repo
 * Wait for and then participate in a review of your changes
     * might involve making adjustments or adding a bit more
-* See your changes go live on the [Jenkins X site](https://jenkins-x.io)
+* See your changes go live on the [JayeX site](https://jayex.io)
 
 We'll go though each of the steps below in more detail
 
@@ -61,9 +61,9 @@ Some things, like the footer etc. are in the `/themes/docsy` structure, but most
 
 ## Add new Content
 
-The Jenkins X docs make heavy use of Jenkins X's archetypes feature. All content sections in Jenkins X documentation have an assigned archetype.
+The JayeX docs make heavy use of JayeX's archetypes feature. All content sections in JayeX documentation have an assigned archetype.
 
-Adding new content to the Jenkins X docs follows the same pattern, regardless of the content section:
+Adding new content to the JayeX docs follows the same pattern, regardless of the content section:
 
 ```sh
 docker-compose run server new <DOCS-SECTION>/<new-content-lowercase>.md
@@ -109,7 +109,7 @@ If you need to push more commits to the same branch, you can just use `git push`
 
 ### Open a pull request 🎉
 
-In this step, you'll open a pull request to submit your additions. Open either the [Jenkins X documentation master repository](https://github.com/jenkins-x/jx-docs) or your own fork of the respository on GitHub in your browser.
+In this step, you'll open a pull request to submit your additions. Open either the [JayeX documentation master repository](https://github.com/jenkins-x/jx-docs) or your own fork of the respository on GitHub in your browser.
 
 You should find a green button labeled with "New pull request". But GitHub is clever and probably suggests you a pull request like in the beige box below:
 
@@ -130,7 +130,7 @@ There are a number of automated checks that will run on your PR:
 
 The final part of all of this, is letting others review your work and provide feedback. As a rule of thumb, the conversation should happen on the PR, but sometimes things will be sorted out via Slack or a video call.
 
-Sometimes it may take a few days for a review to happen. If you feel it's an urgent change, jump on the [community slack channel](https://jenkins-x.io/community/#slack) `#jenkins-x-user` and ask for someone to review your PR.
+Sometimes it may take a few days for a review to happen. If you feel it's an urgent change, jump on the [community slack channel](https://jayex.io/community/#slack) `#jenkins-x-user` and ask for someone to review your PR.
 
 Once the review is done, your changes will be merged into the master branch, and the site will be updated.
 

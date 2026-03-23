@@ -2,11 +2,11 @@
 title: Platform Observability
 linktitle: Platform Observability
 type: docs
-description: How to setup platform observability for Jenkins X
+description: How to setup platform observability for JayeX
 weight: 125
 ---
 
-This guide will help you install, configure and use an observability stack in your Jenkins X cluster.
+This guide will help you install, configure and use an observability stack in your JayeX cluster.
 
 We selected the [Grafana](http://grafana.com/) stack because:
 - it's [open-source](https://grafana.com/oss/)
@@ -80,7 +80,7 @@ tempo-0                                          1/1     Running   0          10
     - it is deployed as a daemonset on every node of the cluster
   - [Kube State Metrics](https://github.com/kubernetes/kube-state-metrics) collects metrics from the Kubernetes API
 - [Grafana](https://grafana.com/docs/grafana/latest/) is the UI that brings everything together
-- [Grafana Dashboard](https://github.com/jenkins-x-charts/grafana-dashboard) is a Helm Chart that contains Grafana Dashboards for Jenkins X, stored in Kubernetes ConfigMaps
+- [Grafana Dashboard](https://github.com/jenkins-x-charts/grafana-dashboard) is a Helm Chart that contains Grafana Dashboards for JayeX, stored in Kubernetes ConfigMaps
 
 ## Usage
 
@@ -102,11 +102,11 @@ Once you are logged in, you can play with the pre-defined dashboards, or with th
 
 This is an example of a pre-defined dashboard, for [cert-manager](https://cert-manager.io/), where we display on the same dashboard metrics collected by Prometheus (including the certificates expiration dates) and logs collected by Loki/Promtail:
 
-![cert-manager grafana dashboard for Jenkins X](/images/v3/observability_platform_cert-manager.png)
+![cert-manager grafana dashboard for JayeX](/images/v3/observability_platform_cert-manager.png)
 
 ## Configuration
 
-The configuration is defined in "values files" stored in the Jenkins X Version Stream:
+The configuration is defined in "values files" stored in the JayeX Version Stream:
 - [Grafana configuration](https://github.com/jenkins-x/jx3-versions/tree/master/charts/grafana/grafana)
 - [Loki configuration](https://github.com/jenkins-x/jx3-versions/tree/master/charts/grafana/loki)
 - [Promtail configuration](https://github.com/jenkins-x/jx3-versions/tree/master/charts/grafana/promtail)
@@ -121,9 +121,9 @@ If you want to change anything from the default configuration, you can either:
 ## Next steps
 
 Once the Grafana stack is installed and configured, you can:
-- visualize pipelines traces from the [Jenkins X Pipelines Visualizer](/v3/develop/ui/dashboard/)
+- visualize pipelines traces from the [JayeX Pipelines Visualizer](/v3/develop/ui/dashboard/)
 - install the [Continuous Delivery Indicators](/v3/admin/guides/observability/cd-indicators/) addon
 - expose Prometheus metrics from your own applications
 - export traces from your own applications, using [OpenTelemetry](https://opentelemetry.io/)
 - create Grafana dashboards for your applications
-- contribute to the [Jenkins X Grafana Dashboards](https://github.com/jenkins-x-charts/grafana-dashboard)
+- contribute to the [JayeX Grafana Dashboards](https://github.com/jenkins-x-charts/grafana-dashboard)

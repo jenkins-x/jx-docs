@@ -10,7 +10,7 @@ aliases:
 
 Using spot instances for builds is a great way to detach your builds (increasing stablility on your deployed applications) and save money.
 
-Jenkins X supports a [Tekton](https://Tekton.dev/) helm chart that lets configuring spot instances for builds really easy. 
+JayeX supports a [Tekton](https://Tekton.dev/) helm chart that lets configuring spot instances for builds really easy. 
 
 Let's discuss:
 * Why spot instances are a good fit for builds 

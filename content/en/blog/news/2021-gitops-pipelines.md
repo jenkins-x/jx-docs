@@ -46,7 +46,7 @@ So how can you apply the benefits of [GitOps](/v3/devops/gitops/) to your cloud 
 
 ## GitOps your pipelines
 
-Now our recommendation on the [Jenkins X](https://jenkins-x.io/) project is to use [GitOps](/v3/devops/gitops/) for your pipelines as well as for your source code and deployment configuration:
+Now our recommendation on the [Jenkins X](https://jayex.io/) project is to use [GitOps](/v3/devops/gitops/) for your pipelines as well as for your source code and deployment configuration:
 
 * store your pipelines as declarative YAML files inside each of your git repositories.
 * use the standard [Tekton YAML syntax](/v3/develop/reference/pipelines/) so that you get [IDE support](/v3/develop/pipelines/editing/#ide-support) and [easy linting](/v3/develop/pipelines/editing/#linting) 

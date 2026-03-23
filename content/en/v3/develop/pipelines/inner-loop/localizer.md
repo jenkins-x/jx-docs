@@ -2,7 +2,7 @@
 title: localizer
 linktitle: localizer
 type: docs
-description: Using localizer with Jenkins X
+description: Using localizer with JayeX
 weight: 400
 ---
 

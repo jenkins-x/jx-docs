@@ -56,7 +56,7 @@ jx project import
     
 This will create a Pull Request on your development cluster git repository to link to the `Preprod` or `Production` git repository on promotions of apps.
  
-**NOTE**: Jenkins X will [push additional configuration files](/v3/about/how-it-works/#importing--creating-quickstarts) to the created Pull Request, so it is recommended to wait until the Pull Request is auto-merged and avoid manual intervention.
+**NOTE**: JayeX will [push additional configuration files](/v3/about/how-it-works/#importing--creating-quickstarts) to the created Pull Request, so it is recommended to wait until the Pull Request is auto-merged and avoid manual intervention.
 
 ### Changes to `jx-requirements.yml`
 
@@ -92,7 +92,7 @@ Once everything is correctly setup, it will be possible to deploy applications t
 
 ## How it works
 
-The multi cluster setup of Jenkins X is designed around the following goals:
+The multi cluster setup of JayeX is designed around the following goals:
 
 * you have full control over production and pre-production clusters, choosing exactly what software is installed there
   * there are no development tools installed: no tekton, lighthouse, container registries and no images are built in production
@@ -108,7 +108,7 @@ The development cluster:
   * releases of applications create pull requests on remote cluster repositories
 * handles all webhooks for pull requests on remove environments and runs pipelines to validate changes to remote environments
   * reports back to GitHub the status of pull request pipelines 
-  * visualises the pipelines in the [usual Jenkins X UIs](/v3/develop/ui/)
+  * visualises the pipelines in the [usual JayeX UIs](/v3/develop/ui/)
   * supports auto-merge via ChatOps when approved
 
 ### Remote Cluster
@@ -119,7 +119,7 @@ The development cluster:
 
 ## Remote Cluster Recommendations
 
-We do recommend using the Jenkins X GitOps pipeline approach in [production and preproduction for these reasons](/v3/develop/faq/general/#why-does-jenkins-x-use-helmfile-template) then all changes to git result in the [kubernetes resources being checked into git](/v3/about/how-it-works/#boot-job) so they can be easily reviewed without reviewers needing access to production.
+We do recommend using the JayeX GitOps pipeline approach in [production and preproduction for these reasons](/v3/develop/faq/general/#why-does-jenkins-x-use-helmfile-template) then all changes to git result in the [kubernetes resources being checked into git](/v3/about/how-it-works/#boot-job) so they can be easily reviewed without reviewers needing access to production.
 
 You may want to reuse existing built in charts such as:
 
@@ -142,4 +142,4 @@ pr:
 though you will lose [these benefits](/v3/develop/faq/general/#why-does-jenkins-x-use-helmfile-template). You will also need to:
 
 * add your own [pusher-wave integration](https://github.com/jenkins-x-charts/pusher-wave#quick-start) for each chart you want to perform a rolling upgrade if the underlying secrets are rotated.
-* manually populate all secrets in each remote environments via the underlying secret store as you will not be using the [jx-secret](https://github.com/jenkins-x/jx-secret) mechanism built into the default Jenkins X GitOps pipelines for doing this. 
+* manually populate all secrets in each remote environments via the underlying secret store as you will not be using the [jx-secret](https://github.com/jenkins-x/jx-secret) mechanism built into the default JayeX GitOps pipelines for doing this. 

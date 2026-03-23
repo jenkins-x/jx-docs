@@ -8,7 +8,7 @@ no_list: true
 ---
 ## Introduction
 
-Jenkins X started to support supply chain security through different steps.
+JayeX started to support supply chain security through different steps.
 Till now we support:
 
 - SBOM generation

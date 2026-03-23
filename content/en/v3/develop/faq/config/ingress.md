@@ -52,7 +52,7 @@ ingress:
     secretName: my-tls-secret-name
 ```
 
-This will then be applied to all the Jenkins X ingress resources for things like `lighthouse` or `nexus` - plus any apps you deploy to `dev`, `staging` or `production`.
+This will then be applied to all the JayeX ingress resources for things like `lighthouse` or `nexus` - plus any apps you deploy to `dev`, `staging` or `production`.
 
 If you want to override the TLS secret name for a specific app in a specific environment then rather like the [above question](#how-do-i-configure-the-ingress-domain-in-dev-staging-or-production) you can use the [app customisation mechanism](/v3/develop/apps/#customising-charts).
  
@@ -93,7 +93,7 @@ You can watch the boot job run via:
 jx admin log -w
 ```
 
-Once its complete you should see the new annotations on any Ingress created by Jenkins X.
+Once its complete you should see the new annotations on any Ingress created by JayeX.
 
 If you wish to add custom annotations to only a specific ingress then you can [customise the chart](/v3/develop/apps/#customising-charts) in the usual [helmfile](https://github.com/roboll/helmfile) way via a `values.yaml` file you reference in your `helmfile.yaml` file
 
@@ -114,7 +114,7 @@ We recently upgraded to default to `Ingress` `networking.k8s.io/v1` which is inc
 
 If you are on 1.18 we recommend you upgrade to 1.19 if you can.
 
-If not here's how to configure Jenkins X to use the deprecated `networking.k8s.io/v1beta1` version:
+If not here's how to configure JayeX to use the deprecated `networking.k8s.io/v1beta1` version:
 
 * create this file at `helmfiles/jx/jxboot-helmfile-values.yaml`:
 

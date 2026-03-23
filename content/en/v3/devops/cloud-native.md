@@ -69,7 +69,7 @@ In both cases this maps cloud IAM roles to kubernetes `ServiceAccount` resources
 
 This means that you don't have to populate your kubernetes cluster with cluster-admin style cloud IAM secrets - which makes your system more secure and reduces the possibility of accidentally exposing a secret.
 
-Note that if you use [Jenkins X to configure your clusters with Terraform and GitOps](/v3/admin/) then you get this out of the box! 
+Note that if you use [JayeX to configure your clusters with Terraform and GitOps](/v3/admin/) then you get this out of the box! 
 
 ## Terraform for cloud infrastructure
 

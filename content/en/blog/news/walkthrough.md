@@ -19,7 +19,7 @@ The purpose of this tutorial is to give a detailed step-by-step walkthrough of s
 ### Setup used in this tutorial
 * GitHub as our Git provider and a GitHub user account, eg `MarckK` 
 * A Google Cloud Platform (GCP) account with the ability to provision kubernetes resources / create kubernetes clusters
-* Jenkins X `jx` binary installed. See [here for instructions on installing the `jx` binary](https://jenkins-x.io/docs/getting-started/setup/install/). 
+* Jenkins X `jx` binary installed. See [here for instructions on installing the `jx` binary](https://jayex.io/docs/getting-started/setup/install/). 
 
 * The Kubernetes command-line tool, which can be installed to your local installation using the `jx install` command:
 ```
@@ -82,7 +82,7 @@ jx boot --git-public
 ```
 
 Does NOT work. Just returns: `Error: unknown flag: --git-public`
-This has been implemented for `jx create` or `jx install` [apparently](https://jenkins-x.io/docs/getting-started/setup/boot/#git). Not jx boot. And unfortunately, that happens to be where I would like to have it enabled. -->
+This has been implemented for `jx create` or `jx install` [apparently](https://jayex.io/docs/getting-started/setup/boot/#git). Not jx boot. And unfortunately, that happens to be where I would like to have it enabled. -->
 
 * First clone the [Jenkins X Boot configuration repo](https://github.com/jenkins-x/jenkins-x-boot-config) and `cd` into your newly cloned repo.
 
@@ -106,7 +106,7 @@ jx boot
 If you are not in a clone of a boot git repository then `jx boot` will clone this repository and `cd` into the clone.
 
 
-You can read more about [Jenkins X Boot in the documentation](https://jenkins-x.io/docs/getting-started/setup/boot/).
+You can read more about [Jenkins X Boot in the documentation](https://jayex.io/docs/getting-started/setup/boot/).
 
 Your Git and the pre-installation set up for Jenkins X will be checked and validated. You will see printed out: 
 

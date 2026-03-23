@@ -27,7 +27,7 @@ These use subdomains.
 
 In this guide below there is a prerequisite that you must already have a domain which is managed by your cloud provider, this is so that you can choose whichever of the scenarios above you need.  It also means the dns management of the apex domain happens outside of a single cluster installation and can be shared by multiple installations using a subdomain.
 
-Jenkins X services will have URLs like `https://hook-jx.dev.foo.io`.  The jx-requirements.yml `namespaceSubDomain:` of `-jx` which is in the cluster git repository refers to the Kubernetes namespace the service is running in, this avoids clashes of the same application running in different namespaces in the same cluster.
+JayeX services will have URLs like `https://hook-jx.dev.foo.io`.  The jx-requirements.yml `namespaceSubDomain:` of `-jx` which is in the cluster git repository refers to the Kubernetes namespace the service is running in, this avoids clashes of the same application running in different namespaces in the same cluster.
 
 To start with we are focussed on GCP and Azure but will expand to other cloud providers.
 

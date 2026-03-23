@@ -8,7 +8,7 @@ weight: 400
 
 As we create more and more software we tend to get an explosion in the number of git repositories and microservices. Each repository needs automated CI and CD; but how do we manage the hundreds of pipelines we need - while also making it easy to share pipelines across repositories and allowing each repository to customize when required?
 
-Jenkins X solves this as follows:
+JayeX solves this as follows:
 
 * the pipelines, tasks and steps are defined via [Tekton YAML](https://tekton.dev/docs/pipelines/tasks/#configuring-a-task) letting you use any tekton tooling such as [IDE completion and validation](/v3/develop/pipelines/#ide-support)
 * we support an `image: uses:sourceURI` notation that lets you inherit steps from a git repository without having to copy/paste the source code aross repositories.
@@ -104,7 +104,7 @@ If there's no @version on a uses string its interpreted as a local file:
 
 ## How it looks
 
-So here is an [example release pipeline](https://github.com/jenkins-x/jx3-pipeline-catalog/blob/master/packs/javascript/.lighthouse/jenkins-x/release.yaml) generated via the [Jenkins X Pipeline catalog](https://github.com/jenkins-x/jx3-pipeline-catalog/tree/master/tasks) if you create a [JavaScript quickstart](/v3/develop/pipelines/catalog)
+So here is an [example release pipeline](https://github.com/jenkins-x/jx3-pipeline-catalog/blob/master/packs/javascript/.lighthouse/jenkins-x/release.yaml) generated via the [JayeX Pipeline catalog](https://github.com/jenkins-x/jx3-pipeline-catalog/tree/master/tasks) if you create a [JavaScript quickstart](/v3/develop/pipelines/catalog)
 
 ```yaml 
 apiVersion: tekton.dev/v1beta1
@@ -288,9 +288,9 @@ steps:
 
 This will then include the steps from the [git-clone.yaml](https://github.com/tektoncd/catalog/blob/master/task/git-clone/0.2/git-clone.yaml) file 
 
-It's not just the [Tekton Catalog](https://github.com/tektoncd/catalog) - you can use this same approach to reuse Tasks or steps from any git repository of your choosing; such as the [Jenkins X Pipeline catalog](https://github.com/jenkins-x/jx3-pipeline-catalog/tree/master/tasks)
+It's not just the [Tekton Catalog](https://github.com/tektoncd/catalog) - you can use this same approach to reuse Tasks or steps from any git repository of your choosing; such as the [JayeX Pipeline catalog](https://github.com/jenkins-x/jx3-pipeline-catalog/tree/master/tasks)
 
 
 ## Custom Pipeline Catalog
 
-See [this section](https://jenkins-x.io/v3/about/extending/#pipeline-catalog) to configure your custom pipeline catalog.
+See [this section](https://jayex.io/v3/about/extending/#pipeline-catalog) to configure your custom pipeline catalog.
