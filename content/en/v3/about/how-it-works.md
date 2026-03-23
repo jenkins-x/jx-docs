@@ -2,7 +2,7 @@
 title: How it works
 linktitle: How it works
 type: docs
-description: How JayeX 3.x works under the covers
+description: How Jenkins X 3.x works under the covers
 weight: 130
 aliases: 
     - /docs/v3/about/how-it-works/
@@ -89,9 +89,9 @@ The apply step could be performed by other tools if need be (e.g. Google Anthos 
 
 ### Promotion
 
-When you create a quickstart or import a new project a new release is created then promotion is triggered just like in JayeX 2.x.
+When you create a quickstart or import a new project a new release is created then promotion is triggered just like in Jenkins X 2.x.
 
-One change from JayeX 2.x is we default to including the specific kubernetes resources in git; rather than, say, just the name of a helm chart and the version.
+One change from Jenkins X 2.x is we default to including the specific kubernetes resources in git; rather than, say, just the name of a helm chart and the version.
 
 So what tends to happen is:
 
@@ -135,7 +135,7 @@ Here are the steps involved in [creating projects](/v3/develop/create-project/) 
   * when this Promote Pull Request merges your application will be running in `Staging` 
 
 
-You can see an example of this in the [demo of JayeX V3](/blog/2020/09/16/jx-v3-alpha/)  
+You can see an example of this in the [demo of Jenkins X V3](/blog/2020/09/16/jx-v3-alpha/)  
    
 
 ### Secrets 
@@ -162,16 +162,16 @@ Check out the [webhooks troubleshooting guide](/v3/admin/troubleshooting/webhook
 
 ## Comparison to 2.x
 
-From a high level JayeX 3.x similar to 2.x in that:
+From a high level Jenkins X 3.x similar to 2.x in that:
 
 * We use GitOps to manage applications, configurations and versions; keeping everything but secret values in git
 
 However we’ve made a few changes in 3.x:
 
-* We have a [simpler UX now for setting up JayeX](/v3/admin/platform/) which uses a library of GitOps repository templates you can start from
+* We have a [simpler UX now for setting up Jenkins X](/v3/admin/platform/) which uses a library of GitOps repository templates you can start from
     * This lets you choose the closest example to the kind of infrastructure, tools and secret store you want to use so it’s easier to get started if your requirements fit the common quickstarts
 * The setup/install/upgrade process runs inside kubernetes rather than on a developers laptop
     * This avoids all kinds of issues with different installations of tools like git, kubectl, helm etc
 * In 2.x we always had a git repository for Dev, Staging and Production. In 3.x if those environments are all inside the same cluster we use the same git repository for configuring cluster level resources and resources in any namespaces.
-    * So by default there is 1 git repository with JayeX 3.x for the installation
+    * So by default there is 1 git repository with Jenkins X 3.x for the installation
     * Whenever you create separate clusters (e.g. for muticluster support and you want Staging / Production environments to be separate), then each cluster gets its own git repository.

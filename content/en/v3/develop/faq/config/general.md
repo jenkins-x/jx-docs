@@ -55,13 +55,13 @@ To add a new chart add to the `helmfiles/mynamespace/helmfile.yaml` file follow 
 
 To add a new kubernetes resource [follow the add resources guide](/v3/develop/apps/#adding-resources).
 
-## How do I add a user to my JayeX installation?
+## How do I add a user to my Jenkins X installation?
           
 There are a number of different levels of access you may wish to grant:
 
 ### git
 
-When developers are [developing software that has its CI/CD automated by JayeX](/v3/develop/developing/) then usually letting the developer access git is enough.
+When developers are [developing software that has its CI/CD automated by Jenkins X](/v3/develop/developing/) then usually letting the developer access git is enough.
 
 ### dashboard
 
@@ -69,7 +69,7 @@ Though being able to see the logs of pipelines is useful so you probably want to
 
 ### kubernetes 
 
-If you want to give full access to JayeX so that developers can access kubernetes resources via `kubectl` or can use the [jx cli](/v3/develop/reference/jx/) then you need to grant Cloud IAM roles to the developer using your cloud infrastructure.
+If you want to give full access to Jenkins X so that developers can access kubernetes resources via `kubectl` or can use the [jx cli](/v3/develop/reference/jx/) then you need to grant Cloud IAM roles to the developer using your cloud infrastructure.
 
 If the developer does not have access to the kubernetes cluster we need to setup their `~/.kube/config` file so that they can access it.
 
@@ -84,7 +84,7 @@ Once your user has access to the kubernetes cluster:
 
 * [install the jx binary](/v3/admin/setup/jx3/)
 
-If JayeX was installed in the namespace `jx` then the following should [switch your context](https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/) to the `jx` namespace:
+If Jenkins X was installed in the namespace `jx` then the following should [switch your context](/docs/resources/guides/using-jx/developing/kube-context/) to the `jx` namespace:
 
 ```bash 
 jx ns jx

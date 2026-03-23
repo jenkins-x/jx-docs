@@ -1,21 +1,21 @@
 ---
 title: Documentation Style Guide
 linktitle: Style Guide
-description: Guidelines for contributing to JayeX documentation
+description: Guidelines for contributing to Jenkins X documentation
 type: docs
 weight: 21
 ---
 
 # Documentation writer style guide
 
-The JayeX Documentation Special Interest Group (SIG) has established some guidelines for docs contribution. 
+The Jenkins X Documentation Special Interest Group (SIG) has established some guidelines for docs contribution. 
 The following are not meant to be exhaustive, but are simple style and technical tips to help conform to the existing voice and technical writing techniques used in our existing docs content.
 
 
 ## Writer voice and tone
 
 * Pages should have titles, and should be descriptive enough on its own that readers (and web search crawlers) can pick up the title without too much missing context. 
-Proper nouns should be capitalized in titles but nothing else (for example, write "JayeX tips and tricks" instead of "JayeX Tips And Tricks")
+Proper nouns should be capitalized in titles but nothing else (for example, write "Jenkins X tips and tricks" instead of "Jenkins X Tips And Tricks")
 
 * Do not use commands as verbs. 
 For example write "Change to a new directory with `cd`" instead of "cd to the new directory"

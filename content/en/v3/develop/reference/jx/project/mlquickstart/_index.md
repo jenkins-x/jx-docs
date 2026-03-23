@@ -20,11 +20,11 @@ Create a new machine learning project from a sample/starter (found in https://gi
       This will create two new projects for you from the selected template. One for training and one for deploying a model as a service.
       It will exclude any work-in-progress repos (containing the "WIP-" pattern)
   
-      For more documentation see: https://jayex.io/v3/mlops/
+      For more documentation see: https://jenkins-x.io/v3/mlops/
   
 See Also: 
 
-  * jx project : https://jayex.io/commands/jx_project
+  * jx project : https://jenkins-x.io/commands/jx_project
 
 ### Examples
 
@@ -43,7 +43,7 @@ See Also:
       --deploy-kind string             The kind of deployment to use for the project. Should be one of knative, default
       --dir string                     Specify the directory to import (default ".")
       --docker-registry-org string     The name of the docker registry organisation to use. If not specified then the Git provider organisation will be used
-      --dry-run                        Performs local changes to the repo but skips the import into JayeX
+      --dry-run                        Performs local changes to the repo but skips the import into Jenkins X
       --env-name string                The name of the environment to create (only used for env projects)
       --env-strategy string            The promotion strategy of the environment to create (only used for env projects) (default "Never")
   -f, --filter string                  The text filter
@@ -58,8 +58,8 @@ See Also:
       --hpa                            should we enable the Horizontal Pod Autoscaler for this application.
       --import-commit-message string   Specifies the initial commit message used when importing the project
       --jenkins string                 The name of the Jenkins server to import the project into
-      --jenkinsfilerunner string       if you want to import into JayeX with Jenkinsfilerunner this argument lets you specify the container image to use
-      --jx                             if you want to default to importing this project into JayeX instead of a Jenkins server if you have a mixed JayeX and Jenkins cluster
+      --jenkinsfilerunner string       if you want to import into Jenkins X with Jenkinsfilerunner this argument lets you specify the container image to use
+      --jx                             if you want to default to importing this project into Jenkins X instead of a Jenkins server if you have a mixed Jenkins X and Jenkins cluster
   -l, --language string                The language to filter on
       --log-level string               Sets the logging level. If not specified defaults to $JX_LOG_LEVEL
       --name string                    Specify the Git repository name to import the project into (if it is not already in one)
@@ -81,7 +81,7 @@ See Also:
       --pr-poll-timeout duration       the maximum amount of time we wait for the Pull Request on the cluster environment git repository (default 20m0s)
   -p, --project-name string            The project name (for use with -b batch mode)
       --quickstart-auth string         The auth mechanism used to authenticate with the git token to download the quickstarts. If not specified defaults to Basic but could be Bearer for bearer token auth
-      --scheduler string               Change schedulerName, More info about Scheduler: https://jayex.io/v3/develop/faq/config/repos/#how-do-i-customise-a-scheduler (default "in-repo")
+      --scheduler string               Change schedulerName, More info about Scheduler: https://jenkins-x.io/v3/develop/faq/config/repos/#how-do-i-customise-a-scheduler (default "in-repo")
       --service-account string         The Kubernetes ServiceAccount to use to run the initial pipeline (default "tekton-bot")
   -t, --tag stringArray                The tags on the quickstarts to filter
       --verbose                        Enables verbose output. The environment variable JX_LOG_LEVEL has precedence over this flag and allows setting the logging level to any value of: panic, fatal, error, warn, info, debug, trace
