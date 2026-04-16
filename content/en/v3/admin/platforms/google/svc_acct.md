@@ -23,10 +23,24 @@ In order to build your GKE environment with Terraform using a service account, t
 * roles/iam.serviceAccountKeyAdmin
 * roles/resourcemanager.projectIamAdmin
 * roles/storage.admin
-> 💡  Existing service accounts (MY_GCP_SA) under your project (MYPROJECT) requiring `roles/artifactory.admin` use command:
+
+If the service account needs to maintain Vault-based (non-GSM) deployments include 
+* roles/cloudkms.admin
+* roles/secretmanager.secretAccessor
+> 💡  including the cloudkms.admin and secretmanage.secretAccessor roles has no impact on the GSM deployments.
+>
+  
+> 💡  Existing service accounts (MY_GCP_SA) under your project (MYPROJECT) requiring `roles/artifactory.admin` update with command:
+>
 > `gcloud projects add-iam-policy-binding ${MYPROJECT} --member serviceAccount:${MY_GCP_SA} --role roles/artifactregistry.admin`
 
-If the service account needs to access a separate project to manage an apex domain then an additional role setting is required for the separate project.
+>💡  Existing service accounts (MY_GCP_SA) under your project (MYPROJECT) requiring vault based deployment roles update with commands:
+
+> `gcloud projects add-iam-policy-binding ${MYPROJECT} --member serviceAccount:${MY_GCP_SA} --role roles/cloudkms.admin`
+> 
+> `gcloud projects add-iam-policy-binding ${MYPROJECT} --member serviceAccount:${MY_GCP_SA} --role roles/secretmanager.secretAccessor`
+
+If the service account needs to access a separate project to manage an apex domain then an additional role setting is required for the apex domain project.
 * roles/dns.admin
 
 ### Create service account and assign roles
@@ -52,6 +66,11 @@ gcloud projects add-iam-policy-binding ${MYPROJECT} --member serviceAccount:${MY
 gcloud projects add-iam-policy-binding ${MYPROJECT} --member serviceAccount:${MY_GCP_SA} --role roles/resourcemanager.projectIamAdmin 
 gcloud projects add-iam-policy-binding ${MYPROJECT} --member serviceAccount:${MY_GCP_SA} --role roles/iam.serviceAccountAdmin 
 gcloud projects add-iam-policy-binding ${MYPROJECT} --member serviceAccount:${MY_GCP_SA} --role roles/iam.serviceAccountKeyAdmin 
+```
+If the environment requires vault-based (non-GSM) deployments include the additional two roles to the service account
+```bash
+gcloud projects add-iam-policy-binding ${MYPROJECT} --member serviceAccount:${MY_GCP_SA} --role roles/cloudkms.admin
+gcloud projects add-iam-policy-binding ${MYPROJECT} --member serviceAccount:${MY_GCP_SA} --role roles/secretmanager.secretAccessor 
 ```
 If the environment uses external DNS and has the Apex domain records under a different project, assign to the service account `($MY_GCP_SA)` the necessary role to manage DNS under the Apex project `($APEXPROJECT)`. 
 > 💡  If you are not using a separate Apex project, proceed to [CLI display commands](http://localhost:1313/v3/admin/platforms/google/svc_acct/#cli-display-commands).
@@ -88,7 +107,9 @@ gcloud projects remove-iam-policy-binding ${MYPROJECT} --member serviceAccount:$
 gcloud projects remove-iam-policy-binding ${MYPROJECT} --member serviceAccount:${MY_GCP_SA} --role roles/editor 
 gcloud projects remove-iam-policy-binding ${MYPROJECT} --member serviceAccount:${MY_GCP_SA} --role roles/resourcemanager.projectIamAdmin 
 gcloud projects remove-iam-policy-binding ${MYPROJECT} --member serviceAccount:${MY_GCP_SA} --role roles/iam.serviceAccountAdmin 
-gcloud projects remove-iam-policy-binding ${MYPROJECT} --member serviceAccount:${MY_GCP_SA} --role roles/iam.serviceAccountKeyAdmin 
+gcloud projects remove-iam-policy-binding ${MYPROJECT} --member serviceAccount:${MY_GCP_SA} --role roles/iam.serviceAccountKeyAdmin
+gcloud projects remove-iam-policy-binding ${MYPROJECT} --member serviceAccount:${MY_GCP_SA} --role roles/cloudkms.admin 
+gcloud projects remove-iam-policy-binding ${MYPROJECT} --member serviceAccount:${MY_GCP_SA} --role roles/secretmanager.secretAccessor
 [[ ! -z "$APEXPROJECT" ]] && gcloud projects remove-iam-policy-binding ${APEXPROJECT} --member serviceAccount:${MY_GCP_SA} --role roles/dns.admin 
 gcloud iam service-accounts delete ${MY_GCP_SA} --project ${MYPROJECT}
 ```
