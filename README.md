@@ -1,3 +1,7 @@
+# The Jenkins X project is changing name to JayeX and jenkins-x.io is redirected to jayex.io
+
+The source for the new site lives in https://github.com/jayex-io/jx-docs
+ 
  [中文](./README_CN.md) [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/jenkins-x/jx-docs)
 
 # Jenkins X Docs                     
